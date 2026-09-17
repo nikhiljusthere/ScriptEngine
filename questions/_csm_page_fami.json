@@ -339,7 +339,15 @@
       "scope": "closed",
       "answer": [
         {
-          "item": "Famine Devil Hunger Devil Hunger (by Makima)",
+          "item": "Famine Devil",
+          "aliases": []
+        },
+        {
+          "item": "Hunger Devil",
+          "aliases": []
+        },
+        {
+          "item": "Hunger (by Makima)",
           "aliases": []
         }
       ],
@@ -347,7 +355,7 @@
         "https://chainsaw-man.fandom.com/wiki/Fami"
       ],
       "verified": "2026-09-09",
-      "note": "page-gen:alias"
+      "note": "page-gen:alias | D35 gold fix: infobox list cell flattened by the parser (<br> lost); re-split from the raw cell"
     }
   ]
 }

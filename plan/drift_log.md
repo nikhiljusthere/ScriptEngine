@@ -1418,5 +1418,60 @@ entry.
   + `.log`; receipts under `/tmp/csm_model_window/`.
 - **NEXT (fresh session after Qwen is back):** read the window receipts
   → commit them (D35) → the R-9 evidence call (council #33 or owner;
-  inputs: P2.4 done, 486/486 at the campaign instrument, 8 bar reds
-  descriptive, halt rule) → `PHASE_B_COMPLETE`.
+    inputs: P2.4 done, 486/486 at the campaign instrument, 8 bar reds
+    descriptive, halt rule) → `PHASE_B_COMPLETE`.
+
+## D35 — csm-set-05 "Every Weapon Devil" fixed + closure8 full sweep GREEN (2026-09-17, opencode)
+
+- **What:** FAIL8's Weapon Devils union (7 hybrid page-titles + 3 devil names =
+  10 members) dropped the closed 7-item bank set csm-set-05 to 70% precision
+  (devil + human-alias double-cover — FAIL8 Risk #2, materialized). Roster
+  reduced to the 7 devils (Katana/Bomb/Bow/Longsword/Flamethrower/Whip/Spear
+  Devil; none has its own article, the router emits the declared names anyway)
+  → found==canon AND members==canon holds (`canon_gold.py:199`). Working-tree
+  `series/csm/overrides.yaml` (M, uncommitted; HEAD `f49e0d2`); `load_overrides`
+  (`config.py:301`) is uncached, so the running :8000 picked up the change with
+  no restart.
+- **Verification (closure8 live sweep, :8000 CUDA, Qwen 100k co-located + alive
+  pre/post):** 14/14 campaign batches PASS (8 targets + 6 no-regression); the
+  at-risk bank set is fully green — csm-set-05 exact 7/7 (100% recall +
+  precision), csm-set-04 exact 4/4, csm-fact-15 present (facts 18/18). Bank
+  headline 15/19 exact, 18/18 facts; the 5 residual set-partials (set-01/02 +
+  char-01/03 precision over-inclusion, char-04 the D22 extraction-gated floor
+  row) are pre-existing on subjects untouched by the 4 overrides edits — not
+  regressions from this fix. The 4 standing gates are unaffected (no engine
+  hunk); re-run them only if the fix is promoted to a commit.
+- **Return:** receipt `reports/csm/receipts/set05_weapon_devils_fix.md`; GPU left
+  at the sanctioned 100k Phase-1 steady state (Qwen + :8000 co-located CUDA),
+  no CPU restore owed.
+- **Renumber:** the model-window commit that D34's NEXT note reserved as D35
+  moves to D36 when it lands (this entry took D35 as the next free number).
+
+## D36 — model-window commit + FAIL8 close (council #33) (2026-09-17, opencode)
+
+- **What:** the model-window commit D34 reserved (renumbered from D35 by the
+  set-05 fix) lands as D36. Window state `done-restored`; receipts preserved at
+  `reports/csm/receipts/model_window_d36/` (16 files copied from
+  `/tmp/csm_model_window/` before the tmp wipe). Gates @ `f49e0d2`: eval rc=0,
+  span-recall offline + 400-probe rc=0, canon rc=0, coverage rc=0, p23-banks
+  rc=0; pytest window first-pass 1 failed / 1,328 passed (rc=1) → post-patch
+  D35 1,329 passed + 2 xpassed (rc=0, gate-1 pin 1,331). Page-run sweep
+  (receipt `page_run.tsv`): 474 batches — 339 rc=0, 135 rc=2 (known-class
+  residual: box-ranking / width / state-over-time, per the P2.3 triage); the
+  486-bank reproduces P-5 exactly at 417/486.
+- **Verdict (council #33, `reports/csm/COUNCIL_csm_fail8.md` +
+  `receipts/council_fail8/`; ledger #33 + backfills #32b/#31b in
+  `reports/comprehension/COUNCIL_HISTORY.md`):** APPLY-AMENDED — FAIL8 items
+  1–3 ratified, item 4 amended 10-union → 7-devil roster (R2 moot); remap safe
+  on the post-patch 3-batch evidence (yoru 17/17, asa_mitaka 16/16,
+  fourth_east_high_school 4/4, all rc=0; run folders `-2026-09-17-1556`); R5's
+  pre-verdict implementation ratified as a remediated blemish (no revert);
+  close criteria discharged by this window; **R-9 absorbed, no-fire** (firing
+  condition unmet — the 69 reds are box-ranking / width / state-over-time, not
+  a router lever; no `router.py` change owed).
+- **Return:** this commit = the ruled shape (`series/csm/overrides.yaml`:
+  semantic_types, 7-devil Weapon Devils, Four Horsemen members, 4 new
+  rosters) + the 28 accuracy-loop gold updates + the council record + ledger +
+  window receipts + regenerated COVERAGE. The `PHASE_B_COMPLETE` marker
+  (pre-registered `plan/CSM_2PHASE_PLAN.md` P2.5-5(h), form per the PHASE_A
+  block) lands in the doc-only stamp commit after this one.

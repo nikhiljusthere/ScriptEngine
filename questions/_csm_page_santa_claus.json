@@ -291,7 +291,19 @@
       "scope": "closed",
       "answer": [
         {
-          "item": "Santa Claus Master The Puppeteer Tolka’s Master",
+          "item": "Santa Claus",
+          "aliases": []
+        },
+        {
+          "item": "Master",
+          "aliases": []
+        },
+        {
+          "item": "The Puppeteer",
+          "aliases": []
+        },
+        {
+          "item": "Tolka’s Master",
           "aliases": []
         }
       ],
@@ -299,7 +311,7 @@
         "https://chainsaw-man.fandom.com/wiki/Santa_Claus"
       ],
       "verified": "2026-09-09",
-      "note": "page-gen:alias"
+      "note": "page-gen:alias | D35 gold fix: infobox list cell flattened by the parser (<br> lost); re-split from the raw cell"
     }
   ]
 }

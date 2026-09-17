@@ -1,0 +1,44 @@
+      Chunk containment: jjk      
+┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┓
+┃                    ┃           ┃
+┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━┩
+│ sections           │      5507 │
+│ sentences          │     48572 │
+│ present in a chunk │     48572 │
+│ unreachable        │         0 │
+│ coverage           │ 100.0000% │
+└────────────────────┴───────────┘
+52 sentences in link-list boilerplate excluded; --include-boilerplate to audit 
+them.
+      Chunk containment: jjk      
+┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┓
+┃                    ┃           ┃
+┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━┩
+│ sections           │      5507 │
+│ sentences          │     48572 │
+│ present in a chunk │     48572 │
+│ unreachable        │         0 │
+│ coverage           │ 100.0000% │
+└────────────────────┴───────────┘
+52 sentences in link-list boilerplate excluded; --include-boilerplate to audit 
+them.
+  100/400  {'HIT': 99, 'MISS_DOC': 0, 'MISS_SPAN': 1, 'TRUNCATED': 0, 'ERROR': 
+0}
+  200/400  {'HIT': 199, 'MISS_DOC': 0, 'MISS_SPAN': 1, 'TRUNCATED': 0, 'ERROR': 
+0}
+  300/400  {'HIT': 299, 'MISS_DOC': 0, 'MISS_SPAN': 1, 'TRUNCATED': 0, 'ERROR': 
+0}
+  400/400  {'HIT': 398, 'MISS_DOC': 1, 'MISS_SPAN': 1, 'TRUNCATED': 0, 'ERROR': 
+0}
+         Live probe: jjk (verbatim)          
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┓
+┃                             ┃             ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━┩
+│ probes                      │         400 │
+│ served the line             │ 398 (99.5%) │
+│ page not retrieved          │           1 │
+│ page retrieved, line absent │           1 │
+│ bundle truncated            │           0 │
+│ errors                      │           0 │
+└─────────────────────────────┴─────────────┘
+/home/goblin/ScriptEngine/reports/span-recall/jjk/recall_verbatim.jsonl

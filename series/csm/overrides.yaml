@@ -104,6 +104,12 @@ ability_sections_umbrella: [Abilities]
 ability_row_sections:
   transformation: [Appearance]
 
+# `establishment` pages (schools, detention centers) are organizational, not
+# physical locations; without this they route to LOCATION and get dropped from
+# character-set answers (8-failure class-B fix, item 1). JJK has no such pages.
+semantic_types:
+  establishment: organization
+
 rosters:
 
   # The Public Safety special divisions
@@ -133,6 +139,27 @@ rosters:
       - public safety special divisions
       - special divisions exist in public safety devil hunters
     members: [Tokyo Special Division 1, Tokyo Special Division 4, Tokyo Special Division 5, Tokyo Special Division 6, Tokyo Special Division 7]
+
+  # ── 8-failure class-B fix (2026-09-17): declared org membership rosters ──
+  # The campaign asked for each org's members, but the engine reached only the
+  # category (broader than the org's actual membership). Declared against the
+  # wiki's own member lists; every name is a stored node or chunk.
+  - name: Devil Hunter Club
+    match: [devil hunter club]
+    members: [Asa Mitaka, Yoru, Fami, Hirofumi Yoshida, Haruka Iseumi]
+
+  - name: Quanxi and the Fiends
+    match: [quanxi and the fiends]
+    members: [Quanxi, Pingtsi, Long, Cosmo, Tsugihagi]
+
+  - name: Tokyo Devil Detention Center
+    match: [tokyo devil detention center]
+    members: [Unnamed Surgeons, Unnamed Devil Hunters, Unnamed Guards, Takagi,
+              Quanxi]
+
+  - name: Tokyo Special Division 5
+    match: [tokyo special division 5]
+    members: [Makima, Katana Man, Reze, Quanxi, Barem Bridge, Miri Sugo]
 
   # Every devil contract Denji has made
   # Declared 2026-08-15: the engine resolved this to `Listed in the Devil Contracts section on the Denji page` and returned the wrong set. Members transcribed from `Denji`.
@@ -209,17 +236,19 @@ rosters:
     closed_members: [Makima, Aki Hayakawa, Denji, Power, Himeno,
                      Kobeni Higashiyama, Hirokazu Arai]
 
-  # "Every Weapon Devil" resolved to the whole `Devils` category and returned 88
-  # members for 7 canon items -- the worst precision in the run, and 0% recall
-  # with it. The wiki keeps the set on one page, but its Members gallery links
-  # to the *human* each devil later fused with, so these are the page titles:
-  # Katana Man is the Katana Devil, Reze the Bomb Devil, and so on. The bank
-  # already aliases five of the seven that way; `Whip Hybrid` and `Spear Hybrid`
-  # needed the alias adding.
+  # "Every Weapon Devil" (csm-set-05) is a closed 7-item set golded by devil
+  # name, each aliased to the human it fused with. The exact rule is
+  # found==canon AND members==canon (canon_gold.py:199), so the roster must
+  # return exactly 7 members -- one per gold item. Naming them as the devils
+  # (none has its own article, the router emits the declared names anyway)
+  # keeps the set exact, and the infobox `members` fact (Katana/Bomb/Bow
+  # Devil) is a subset of the seven. Listing the human page titles alongside
+  # the devils double-covered three items (devil + its alias) and dropped the
+  # set to 70% precision.
   - name: Weapon Devils
     match: [weapon devil, weapon devils]
-    members: [Katana Man, Reze, Quanxi, Miri Sugo, Barem Bridge, Whip Hybrid,
-              Spear Hybrid]
+    members: [Katana Devil, Bomb Devil, Bow Devil, Longsword Devil,
+              Flamethrower Devil, Whip Devil, Spear Devil]
 
   # Aki's three contracts are stored, as `Fox Devil Contract`, `Curse Devil
   # Contract` and `Future Devil Contract` under
@@ -273,6 +302,7 @@ rosters:
   - name: Four Horsemen
     match: [four horsemen, horseman, horsemen]
     category: Four Horsemen
+    members: [Control Devil, War Devil, Famine Devil, Death Devil]
 
   - name: Primal Fear Devils
     match: [primal, primal fear, primal devil, primal devils]
@@ -290,6 +320,1802 @@ rosters:
   - name: Groups
     match: [group, groups, organisation, organization, organizations]
     category: Groups
+
+  # ── page-gen: accident_devil (2026-09-17) ──
+  - name: "Accident Devil's affiliations"
+    match: [all the affiliations of accident devil, affiliations of accident devil, "accident devil's affiliations"]
+    subject: Accident Devil
+    members: [Yoru]
+  # ── page-gen: aging_devil (2026-09-17) ──
+  - name: "Aging Devil's aliases"
+    match: [all the aliases of aging devil, aliases of aging devil, "aging devil's aliases"]
+    subject: Aging Devil
+    members: [Aging (by Public Safety)]
+  - name: "Aging Devil's affiliations"
+    match: [all the affiliations of aging devil, affiliations of aging devil, "aging devil's affiliations"]
+    subject: Aging Devil
+    members: [Public Safety Devil Hunters]
+  - name: Every named technique of Aging Devil
+    match: [every named technique of aging devil, every named cursed technique of aging devil, all the named techniques of aging devil, "aging devil's named techniques"]
+    subject: Aging Devil
+    members: [Nigh-Absolute Immortality, Immense Healing Factor, Hell Connection, Time Manipulation, Rapid-Onset Aging, Remote Harm, "Aging's World"]
+  - name: Every enemy of Aging Devil
+    match: [every enemy of aging devil, all the enemies of aging devil]
+    subject: Aging Devil
+    members: [Pochita, Yoru, Denji, Hirofumi Yoshida, Fumiko Mifune, "Aging Devil's Victim"]
+  # ── page-gen: aging_devil_s_victim (2026-09-17) ──
+  - name: "Aging Devil's Victim's affiliations"
+    match: ["all the affiliations of aging devil's victim", "affiliations of aging devil's victim", "aging devil's victim's affiliations"]
+    subject: "Aging Devil's Victim"
+    members: [Public Safety Devil Hunters (formerly)]
+  - name: "Every named technique of Aging Devil's Victim"
+    match: ["every named technique of aging devil's victim", "every named cursed technique of aging devil's victim", "all the named techniques of aging devil's victim", "aging devil's victim's named techniques"]
+    subject: "Aging Devil's Victim"
+    members: [Aging Devil Contract]
+  # ── page-gen: akane_sawatari (2026-09-17) ──
+  - name: "Akane Sawatari's affiliations"
+    match: [all the affiliations of akane sawatari, affiliations of akane sawatari, "akane sawatari's affiliations"]
+    subject: Akane Sawatari
+    members: [Gun Devil (ruse), Yakuza (formerly), Makima (postmortem)]
+  - name: "Akane Sawatari's aliases"
+    match: [all the aliases of akane sawatari, aliases of akane sawatari, "akane sawatari's aliases"]
+    subject: Akane Sawatari
+    members: [Hoodie Girl, Snake Girl (by Kishibe)]
+  - name: Every named technique of Akane Sawatari
+    match: [every named technique of akane sawatari, every named cursed technique of akane sawatari, all the named techniques of akane sawatari, "akane sawatari's named techniques"]
+    subject: Akane Sawatari
+    members: [Snake Devil Contract, Swallow it whole, Spit it out, Tail]
+  - name: Every ally of Akane Sawatari
+    match: [every ally of akane sawatari, all the allies of akane sawatari]
+    subject: Akane Sawatari
+    members: [Katana Man, Kobeni Higashiyama]
+  - name: Every enemy of Akane Sawatari
+    match: [every enemy of akane sawatari, all the enemies of akane sawatari]
+    subject: Akane Sawatari
+    members: [Aki Hayakawa, Denji, Kobeni Higashiyama, Himeno, Beam, Princi]
+  - name: Every subordinate of Akane Sawatari
+    match: [every subordinate of akane sawatari, all the subordinates of akane sawatari]
+    subject: Akane Sawatari
+    members: [Katana Man, Makima, Ghost Devil, Galgali, Snake Devil]
+  - name: Every superior of Akane Sawatari
+    match: [every superior of akane sawatari, all the superiors of akane sawatari]
+    subject: Akane Sawatari
+    members: [Katana Man, Makima]
+  # ── page-gen: aki_hayakawa (2026-09-17) ──
+  - name: "Aki Hayakawa's affiliations"
+    match: [all the affiliations of aki hayakawa, affiliations of aki hayakawa, "aki hayakawa's affiliations"]
+    subject: Aki Hayakawa
+    members: [Public Safety Devil Hunters (formerly), Tokyo Division 2 (formerly), Tokyo Special Division 4 (formerly)]
+  - name: "Aki Hayakawa's aliases"
+    match: [all the aliases of aki hayakawa, aliases of aki hayakawa, "aki hayakawa's aliases"]
+    subject: Aki Hayakawa
+    members: [Topknot (by Power), Jerk-face (by Denji), Gun Fiend]
+  - name: Every named technique of Aki Hayakawa
+    match: [every named technique of aki hayakawa, every named cursed technique of aki hayakawa, all the named techniques of aki hayakawa, "aki hayakawa's named techniques"]
+    subject: Aki Hayakawa
+    members: [Enhanced Reflexes, Enhanced Durability, Curse Devil Contract, Fox Devil Contract, Future Devil Contract, Precognition, Summoning, Control Devil Contract, Swordsmanship, Hand-to-Hand Combat, Cooking, Driving, Strong Willpower, Enhanced Speed, Bullet Projection, Blood Consumption]
+  - name: Every ally of Aki Hayakawa
+    match: [every ally of aki hayakawa, all the allies of aki hayakawa]
+    subject: Aki Hayakawa
+    members: [Denji, Angel Devil, Himeno, Power, Hirokazu Arai, Kobeni Higashiyama, Yutaro Kurose, Kishibe, Beam, Quanxi, Makima, Galgali, Future Devil, Fox Devil, Nomo]
+  - name: Every enemy of Aki Hayakawa
+    match: [every enemy of aki hayakawa, all the enemies of aki hayakawa]
+    subject: Aki Hayakawa
+    members: [Gun Devil, Katana Man, Reze, Denji, Power, Akane Sawatari, Leech Devil, Loneliness Fiend]
+  - name: Every family of Aki Hayakawa
+    match: [every family of aki hayakawa, all the families of aki hayakawa]
+    subject: Aki Hayakawa
+    members: [Taiyo Hayakawa, Denji]
+  - name: Every friend of Aki Hayakawa
+    match: [every friend of aki hayakawa, all the friends of aki hayakawa]
+    subject: Aki Hayakawa
+    members: [Denji, Power, Himeno, Nomo, Taiyo Hayakawa]
+  - name: Every romantic of Aki Hayakawa
+    match: [every romantic of aki hayakawa, all the romantics of aki hayakawa]
+    subject: Aki Hayakawa
+    members: [Himeno, Makima]
+  - name: Every subordinate of Aki Hayakawa
+    match: [every subordinate of aki hayakawa, all the subordinates of aki hayakawa]
+    subject: Aki Hayakawa
+    members: [Makima, Kishibe, Denji, Power, Reze, Himeno, Fox Devil, Curse Devil]
+  - name: Every superior of Aki Hayakawa
+    match: [every superior of aki hayakawa, all the superiors of aki hayakawa]
+    subject: Aki Hayakawa
+    members: [Makima, Denji, Power, Kobeni Higashiyama, Yutaro Kurose]
+  # ── page-gen: aldo (2026-09-17) ──
+  - name: "Aldo's affiliations"
+    match: [all the affiliations of aldo, affiliations of aldo, "aldo's affiliations"]
+    subject: Aldo
+    members: [United States of America, American Thugs]
+  - name: Every named technique of Aldo
+    match: [every named technique of aldo, every named cursed technique of aldo, all the named techniques of aldo, "aldo's named techniques"]
+    subject: Aldo
+    members: [Enhanced Durability, Enhanced Reflexes, Skin Devil Contract, Proficient Gunmanship]
+  - name: Every enemy of Aldo
+    match: [every enemy of aldo, all the enemies of aldo]
+    subject: Aldo
+    members: [Michiko Tendo, Hirofumi Yoshida, Quanxi, Long]
+  # ── page-gen: angel_devil (2026-09-17) ──
+  - name: "Angel Devil's affiliations"
+    match: [all the affiliations of angel devil, affiliations of angel devil, "angel devil's affiliations"]
+    subject: Angel Devil
+    members: [Public Safety Devil Hunters, Tokyo Special Division 4]
+  - name: "Angel Devil's aliases"
+    match: [all the aliases of angel devil, aliases of angel devil, "angel devil's aliases"]
+    subject: Angel Devil
+    members: [Angel]
+  - name: Every named technique of Angel Devil
+    match: [every named technique of angel devil, every named cursed technique of angel devil, all the named techniques of angel devil, "angel devil's named techniques"]
+    subject: Angel Devil
+    members: [Enhanced Reflexes, Angelic Wings, Lifespan Absorption, Lifespan Weapons, Spearmanship, Swordsmanship]
+  - name: Every ally of Angel Devil
+    match: [every ally of angel devil, all the allies of angel devil]
+    subject: Angel Devil
+    members: [Aki Hayakawa, Denji, Beam]
+  # ── page-gen: asa_mitaka (2026-09-17) ──
+  - name: "Asa Mitaka's aliases"
+    match: [all the aliases of asa mitaka, aliases of asa mitaka, "asa mitaka's aliases"]
+    subject: Asa Mitaka
+    members: [Chainsaw Woman (by Yuko)]
+  - name: "Asa Mitaka's affiliations"
+    match: [all the affiliations of asa mitaka, affiliations of asa mitaka, "asa mitaka's affiliations"]
+    subject: Asa Mitaka
+    members: [Yoru (coerced; formerly), Four Horsemen (via Yoru; formerly), Fourth East High School, Devil Hunter Club (formerly), Chainsaw Man Church (formerly)]
+  - name: Every named technique of Asa Mitaka
+    match: [every named technique of asa mitaka, every named cursed technique of asa mitaka, all the named techniques of asa mitaka, "asa mitaka's named techniques"]
+    subject: Asa Mitaka
+    members: [War Devil Possession, Enhanced Durability, Enhanced Healing Factor, Object Weapon Creation, Room 606 Sword, College Fund Turrets, Flesh Weapon Creation, Nail Knife, Aging Devil Contract, Swordsmanship]
+  - name: Every ally of Asa Mitaka
+    match: [every ally of asa mitaka, all the allies of asa mitaka]
+    subject: Asa Mitaka
+    members: [Yoru, Denji, Yuko, Pochita, Hirofumi Yoshida, Fami, Haruka Iseumi, Katana Man, Nail Fiend, Nobana Higashiyama, Seigi Akoku, Famine Devil, Death Devil]
+  - name: Every enemy of Asa Mitaka
+    match: [every enemy of asa mitaka, all the enemies of asa mitaka]
+    subject: Asa Mitaka
+    members: [Yoru, Pochita, Barem Bridge, Yuko, Fami, Falling Devil, Hirofumi Yoshida, Takagi, Quanxi, Katana Man, Nail Fiend, Fake Chainsaw Man, Bat Devil, Eternity Devil, Carpenter Bee Devil]
+  - name: Every family of Asa Mitaka
+    match: [every family of asa mitaka, all the families of asa mitaka]
+    subject: Asa Mitaka
+    members: [Crambon, "Denji's Father", Yoru, Fami, "Asa Mitaka's Mother", "Asa Mitaka's Father"]
+  - name: Every friend of Asa Mitaka
+    match: [every friend of asa mitaka, all the friends of asa mitaka]
+    subject: Asa Mitaka
+    members: [Yoru, Yuko, Bucky, Denji]
+  - name: Every rival of Asa Mitaka
+    match: [every rival of asa mitaka, all the rivals of asa mitaka]
+    subject: Asa Mitaka
+    members: [Denji, Yoru]
+  - name: Every romantic of Asa Mitaka
+    match: [every romantic of asa mitaka, all the romantics of asa mitaka]
+    subject: Asa Mitaka
+    members: [Pochita, Hirofumi Yoshida, Denji, Yoru, Bucky]
+  - name: Every superior of Asa Mitaka
+    match: [every superior of asa mitaka, all the superiors of asa mitaka]
+    subject: Asa Mitaka
+    members: [Yoru, Haruka Iseumi, Fami]
+  # ── page-gen: asa_mitaka_s_caretaker (2026-09-17) ──
+  - name: "Asa Mitaka's caretaker's affiliations"
+    match: ["all the affiliations of asa mitaka's caretaker", "affiliations of asa mitaka's caretaker", "asa mitaka's caretaker's affiliations"]
+    subject: "Asa Mitaka's caretaker"
+    members: [Unnamed orphanage]
+  # ── page-gen: barem_bridge (2026-09-17) ──
+  - name: "Barem Bridge's affiliations"
+    match: [all the affiliations of barem bridge, affiliations of barem bridge, "barem bridge's affiliations"]
+    subject: Barem Bridge
+    members: [Makima (brainwashed), Tokyo Special Division 5 (formerly), Fami, Chainsaw Man Church]
+  - name: Every named technique of Barem Bridge
+    match: [every named technique of barem bridge, every named cursed technique of barem bridge, all the named techniques of barem bridge, "barem bridge's named techniques"]
+    subject: Barem Bridge
+    members: [Hybrid Transformation, Augmented Body, Flamethrowers, Blood Consumption, Nigh-Immortality]
+  - name: Every ally of Barem Bridge
+    match: [every ally of barem bridge, all the allies of barem bridge]
+    subject: Barem Bridge
+    members: [Makima, Miri Sugo, Whip Hybrid, Spear Hybrid, Fami, Fumiko Mifune]
+  - name: Every enemy of Barem Bridge
+    match: [every enemy of barem bridge, all the enemies of barem bridge]
+    subject: Barem Bridge
+    members: [Denji, Nayuta, Hirofumi Yoshida, Asa Mitaka, Haruka Iseumi, Nobana Higashiyama]
+  - name: Every subordinate of Barem Bridge
+    match: [every subordinate of barem bridge, all the subordinates of barem bridge]
+    subject: Barem Bridge
+    members: [Haruka Iseumi, Nobana Higashiyama, Miri Sugo, Whip Hybrid, Spear Hybrid]
+  - name: Every superior of Barem Bridge
+    match: [every superior of barem bridge, all the superiors of barem bridge]
+    subject: Barem Bridge
+    members: [Makima, Fami, Miri Sugo]
+  # ── page-gen: bat_devil (2026-09-17) ──
+  - name: "Bat Devil's affiliations"
+    match: [all the affiliations of bat devil, affiliations of bat devil, "bat devil's affiliations"]
+    subject: Bat Devil
+    members: ["Power (briefly, via coercion)", Leech Devil †]
+  - name: "Bat Devil's aliases"
+    match: [all the aliases of bat devil, aliases of bat devil, "bat devil's aliases"]
+    subject: Bat Devil
+    members: [Batty (by Leech Devil)]
+  - name: Every named technique of Bat Devil
+    match: [every named technique of bat devil, every named cursed technique of bat devil, all the named techniques of bat devil, "bat devil's named techniques"]
+    subject: Bat Devil
+    members: [Enhanced Strength, Enhanced Durability, Bat Wings, Mouth Cannon, Blood Consumption, Enhanced Smell]
+  - name: Every enemy of Bat Devil
+    match: [every enemy of bat devil, all the enemies of bat devil]
+    subject: Bat Devil
+    members: [Denji, Power, Meowy, Asa Mitaka, Yuko, Cockroach Devil]
+  # ── page-gen: beam (2026-09-17) ──
+  - name: "Beam's affiliations"
+    match: [all the affiliations of beam, affiliations of beam, "beam's affiliations"]
+    subject: Beam
+    members: [Public Safety Devil Hunters, Tokyo Special Division 4]
+  - name: "Beam's aliases"
+    match: [all the aliases of beam, aliases of beam, "beam's aliases"]
+    subject: Beam
+    members: [Shark Fiend, Shark Devil]
+  - name: Every named technique of Beam
+    match: [every named technique of beam, every named cursed technique of beam, all the named techniques of beam, "beam's named techniques"]
+    subject: Beam
+    members: [Enhanced Durability, Intangibility, Devil Transformation, Enhanced Smell]
+  - name: Every ally of Beam
+    match: [every ally of beam, all the allies of beam]
+    subject: Beam
+    members: [Denji, Aki Hayakawa, Hirofumi Yoshida, Angel Devil]
+  - name: Every enemy of Beam
+    match: [every enemy of beam, all the enemies of beam]
+    subject: Beam
+    members: [Akane Sawatari, Reze, Typhoon Devil, Tolka]
+  # ── page-gen: bucky (2026-09-17) ──
+  - name: "Bucky's affiliations"
+    match: [all the affiliations of bucky, affiliations of bucky, "bucky's affiliations"]
+    subject: Bucky
+    members: [Fourth East High School]
+  # ── page-gen: centipede_devil (2026-09-17) ──
+  - name: "Centipede Devil's affiliations"
+    match: [all the affiliations of centipede devil, affiliations of centipede devil, "centipede devil's affiliations"]
+    subject: Centipede Devil
+    members: [Public Safety Devil Hunters, Tokyo Special Division 6]
+  - name: Every ally of Centipede Devil
+    match: [every ally of centipede devil, all the allies of centipede devil]
+    subject: Centipede Devil
+    members: [Stag Beetle Devil, Pillbug Devil]
+  # ── page-gen: class_president (2026-09-17) ──
+  - name: "Class President's affiliations"
+    match: [all the affiliations of class president, affiliations of class president, "class president's affiliations"]
+    subject: Class President
+    members: [Fourth East High School]
+  - name: Every named technique of Class President
+    match: [every named technique of class president, every named cursed technique of class president, all the named techniques of class president, "class president's named techniques"]
+    subject: Class President
+    members: [Fire Devil Contract, Sharp Claws, Devil Transformation, Enhanced Strength, Enhanced Speed]
+  # ── page-gen: cockroach_devil (2026-09-17) ──
+  - name: Every named technique of Cockroach Devil
+    match: [every named technique of cockroach devil, every named cursed technique of cockroach devil, all the named techniques of cockroach devil, "cockroach devil's named techniques"]
+    subject: Cockroach Devil
+    members: [Enhanced Strength, Enhanced Speed, Enhanced Durability]
+  - name: Every enemy of Cockroach Devil
+    match: [every enemy of cockroach devil, all the enemies of cockroach devil]
+    subject: Cockroach Devil
+    members: [Pochita, Bat Devil]
+  # ── page-gen: cosmo (2026-09-17) ──
+  - name: "Cosmo's affiliations"
+    match: [all the affiliations of cosmo, affiliations of cosmo, "cosmo's affiliations"]
+    subject: Cosmo
+    members: [Quanxi and the Fiends]
+  - name: Every named technique of Cosmo
+    match: [every named technique of cosmo, every named cursed technique of cosmo, all the named techniques of cosmo, "cosmo's named techniques"]
+    subject: Cosmo
+    members: [Total Understanding, Omniscience]
+  - name: Every enemy of Cosmo
+    match: [every enemy of cosmo, all the enemies of cosmo]
+    subject: Cosmo
+    members: [Santa Claus, Makima]
+  # ── page-gen: curse_devil (2026-09-17) ──
+  - name: Every named technique of Curse Devil
+    match: [every named technique of curse devil, every named cursed technique of curse devil, all the named techniques of curse devil, "curse devil's named techniques"]
+    subject: Curse Devil
+    members: [Curse, Invisibility]
+  # ── page-gen: darkness_devil (2026-09-17) ──
+  - name: Every named technique of Darkness Devil
+    match: [every named technique of darkness devil, every named cursed technique of darkness devil, all the named techniques of darkness devil, "darkness devil's named techniques"]
+    subject: Darkness Devil
+    members: [Immense Speed, Immense Strength, Nigh-Absolute Immortality, Immense Healing Factor, Darkness Manipulation, Blade of Darkness, Force Manipulation, Regeneration Nullification, Shapeshifting, Devil Manifestation]
+  - name: Every enemy of Darkness Devil
+    match: [every enemy of darkness devil, all the enemies of darkness devil]
+    subject: Darkness Devil
+    members: [Princi, Makima]
+  # ── page-gen: death_devil (2026-09-17) ──
+  - name: "Death Devil's aliases"
+    match: [all the aliases of death devil, aliases of death devil, "death devil's aliases"]
+    subject: Death Devil
+    members: [Ultimate Terror, Great King of Terror, Lady Death Devil, "Li'l D (self-proclaimed)", Death (by Yoru), Fami (fake alias), Famine Devil (fake alias)]
+  - name: "Death Devil's affiliations"
+    match: [all the affiliations of death devil, affiliations of death devil, "death devil's affiliations"]
+    subject: Death Devil
+    members: [Four Horsemen, Fourth East High School, Devil Hunter Club (formerly), Chainsaw Man Church]
+  - name: Every named technique of Death Devil
+    match: [every named technique of death devil, every named cursed technique of death devil, all the named techniques of death devil, "death devil's named techniques"]
+    subject: Death Devil
+    members: [Absolute Immortality, Death Inducement, Resurrection, Enhancing Healing, Enslavement, Teleportation, Murdercraft]
+  - name: Every ally of Death Devil
+    match: [every ally of death devil, all the allies of death devil]
+    subject: Death Devil
+    members: [Pochita, Nayuta, Denji, Famine Devil, Asa Mitaka, Miri Sugo]
+  - name: Every enemy of Death Devil
+    match: [every enemy of death devil, all the enemies of death devil]
+    subject: Death Devil
+    members: [Makima, Yoru, Pochita]
+  - name: Every family of Death Devil
+    match: [every family of death devil, all the families of death devil]
+    subject: Death Devil
+    members: [Yoru, Nayuta, Fami, Famine Devil, Makima, Yuko]
+  - name: Every subordinate of Death Devil
+    match: [every subordinate of death devil, all the subordinates of death devil]
+    subject: Death Devil
+    members: [Denji, Famine Devil, Fake Chainsaw Man, Falling Devil, Fire Devil, Legs Devil, Guillotine Devil, Teeth Devil]
+  - name: Every superior of Death Devil
+    match: [every superior of death devil, all the superiors of death devil]
+    subject: Death Devil
+    members: [Denji, Fami, Fake Chainsaw Man, Yoru]
+  # ── page-gen: debt_collector (2026-09-17) ──
+  - name: "Debt Collector's affiliations"
+    match: [all the affiliations of debt collector, affiliations of debt collector, "debt collector's affiliations"]
+    subject: Debt Collector
+    members: [Yakuza]
+  # ── page-gen: denji (2026-09-17) ──
+  - name: "Denji's aliases"
+    match: [all the aliases of denji, aliases of denji, "denji's aliases"]
+    subject: Denji
+    members: [Chainsaw Man, Lord Chainsaw (by Beam), Chainsaw Kid (by Angel Devil), Red Chainsaw Man (by Fami)]
+  - name: "Denji's affiliations"
+    match: [all the affiliations of denji, affiliations of denji, "denji's affiliations"]
+    subject: Denji
+    members: [Pochita (formerly), "Yakuza (coerced, formerly)", Public Safety Devil Hunters, Tokyo Special Division 4 (formerly), Fourth East High School (formerly)]
+  - name: Every named technique of Denji
+    match: [every named technique of denji, every named cursed technique of denji, all the named techniques of denji, "denji's named techniques"]
+    subject: Denji
+    members: [Enhanced Human Condition, Enhanced Endurance, Hybrid Transformation, Augmented Strength, Augmented Durability, Augmented Stamina, Chainsaw Manifestation, Chainsaw Retraction, Chain Entanglement, Chain Grappling, Devil Transformation, Blood Consumption, Nigh-Immortality, Body Duplication, Chainsaw Devil Contract, Blood Devil Contract, Blood Chainsaw, Aging Devil Contract, Hand-to-Hand Combat, Strategic Intelligence, Swimming, Super Chainsaw Man Motorcycle, Bitterness Axe]
+  - name: Every ally of Denji
+    match: [every ally of denji, all the allies of denji]
+    subject: Denji
+    members: [Pochita, Asa Mitaka, Aki Hayakawa, Beam, Hirofumi Yoshida, Fumiko Mifune, Power, Himeno, Makima, Kobeni Higashiyama, Kusakabe, Tamaoki, Quanxi, Kishibe, Nayuta, Miri Sugo, Fami, Katana Man, Nail Fiend, Yoru, Death Devil, Reze, Angel Devil, Haruka Iseumi, Nobana Higashiyama, Seigi Akoku, Hirokazu Arai, Yutaro Kurose, Michiko Tendo, Meowy]
+  - name: Every enemy of Denji
+    match: [every enemy of denji, all the enemies of denji]
+    subject: Denji
+    members: [Makima, Reze, Yoru, Hirofumi Yoshida, Barem Bridge, Katana Man, Quanxi, Santa Claus, Aki Hayakawa, Yuko, Falling Devil, Miri Sugo, Aging Devil, Fake Chainsaw Man, Fire Devil, Power, Fumiko Mifune, Gun Devil, Whip Hybrid, Bat Devil, Spear Hybrid, Eternity Devil, Akane Sawatari, Debt Collector, Typhoon Devil, Tolka, Locust Devil, Zombie Devil, Leech Devil, Muscle Devil, House Devil]
+  - name: Every family of Denji
+    match: [every family of denji, all the families of denji]
+    subject: Denji
+    members: [Nayuta, Power, "Denji's Father", Pochita, Aki Hayakawa, Reze]
+  - name: Every friend of Denji
+    match: [every friend of denji, all the friends of denji]
+    subject: Denji
+    members: [Pochita, Asa Mitaka, Aki Hayakawa, Power, Himeno, Beam, Fumiko Mifune, Yoru, Hirofumi Yoshida, Miri Sugo]
+  - name: Every mentor of Denji
+    match: [every mentor of denji, all the mentors of denji]
+    subject: Denji
+    members: [Kishibe, Reze]
+  - name: Every rival of Denji
+    match: [every rival of denji, all the rivals of denji]
+    subject: Denji
+    members: [Yoru, Fake Chainsaw Man, Asa Mitaka, Aki Hayakawa, Katana Man]
+  - name: Every romantic of Denji
+    match: [every romantic of denji, all the romantics of denji]
+    subject: Denji
+    members: [Makima, Reze, Asa Mitaka, Fumiko Mifune, Nayuta, Yoru, Power, Himeno]
+  - name: Every student of Denji
+    match: [every student of denji, all the students of denji]
+    subject: Denji
+    members: [Kishibe, Power]
+  - name: Every subordinate of Denji
+    match: [every subordinate of denji, all the subordinates of denji]
+    subject: Denji
+    members: [Makima, Nayuta, Aki Hayakawa, Hirofumi Yoshida, Power, Pochita, Death Devil, Fumiko Mifune, Fake Chainsaw Man, Meowy]
+  - name: Every superior of Denji
+    match: [every superior of denji, all the superiors of denji]
+    subject: Denji
+    members: [Makima, Aki Hayakawa, Power, Nayuta, Hirofumi Yoshida, Death Devil, Debt Collector, Takagi, Kusakabe]
+  # ── page-gen: denji_s_father (2026-09-17) ──
+  - name: "Denji's Father's affiliations"
+    match: ["all the affiliations of denji's father", "affiliations of denji's father", "denji's father's affiliations"]
+    subject: "Denji's Father"
+    members: [Yakuza]
+  - name: "Every family of Denji's Father"
+    match: ["every family of denji's father", "all the families of denji's father"]
+    subject: "Denji's Father"
+    members: [Denji, Asa Mitaka]
+  # ── page-gen: devil (2026-09-17) ──
+  - name: "Devil's affiliations"
+    match: [all the affiliations of devil, affiliations of devil, "devil's affiliations"]
+    subject: Devil
+    members: [Hell]
+  # ── page-gen: devil_hunter (2026-09-17) ──
+  - name: "Devil Hunter's affiliations"
+    match: [all the affiliations of devil hunter, affiliations of devil hunter, "devil hunter's affiliations"]
+    subject: Devil Hunter
+    members: ["Government, Private Sector"]
+  # ── page-gen: division_2_vice_captain (2026-09-17) ──
+  - name: "Division 2 Vice Captain's affiliations"
+    match: [all the affiliations of division 2 vice captain, affiliations of division 2 vice captain, "division 2 vice captain's affiliations"]
+    subject: Division 2 Vice Captain
+    members: [Public Safety Devil Hunters, Tokyo Division 2]
+  - name: "Division 2 Vice Captain's aliases"
+    match: [all the aliases of division 2 vice captain, aliases of division 2 vice captain, "division 2 vice captain's aliases"]
+    subject: Division 2 Vice Captain
+    members: [Vice Captain]
+  - name: Every named technique of Division 2 Vice Captain
+    match: [every named technique of division 2 vice captain, every named cursed technique of division 2 vice captain, all the named techniques of division 2 vice captain, "division 2 vice captain's named techniques"]
+    subject: Division 2 Vice Captain
+    members: [Fox Devil Contract]
+  # ── page-gen: division_4_female_member (2026-09-17) ──
+  - name: "Division 4 Female Member's affiliations"
+    match: [all the affiliations of division 4 female member, affiliations of division 4 female member, "division 4 female member's affiliations"]
+    subject: Division 4 Female Member
+    members: [Tokyo Special Division 4]
+  # ── page-gen: division_4_male_member (2026-09-17) ──
+  - name: "Division 4 Male Member's affiliations"
+    match: [all the affiliations of division 4 male member, affiliations of division 4 male member, "division 4 male member's affiliations"]
+    subject: Division 4 Male Member
+    members: [Tokyo Special Division 4]
+  # ── page-gen: doll_devil (2026-09-17) ──
+  - name: "Doll Devil's affiliations"
+    match: [all the affiliations of doll devil, affiliations of doll devil, "doll devil's affiliations"]
+    subject: Doll Devil
+    members: [Santa Claus]
+  # ── page-gen: dominion (2026-09-17) ──
+  - name: "Dominion's affiliations"
+    match: [all the affiliations of dominion, affiliations of dominion, "dominion's affiliations"]
+    subject: Dominion
+    members: [Public Safety Devil Hunters]
+  # ── page-gen: ear_devil (2026-09-17) ──
+  - name: "Ear Devil's aliases"
+    match: [all the aliases of ear devil, aliases of ear devil, "ear devil's aliases"]
+    subject: Ear Devil
+    members: [Ear (by Public Safety)]
+  - name: "Ear Devil's affiliations"
+    match: [all the affiliations of ear devil, affiliations of ear devil, "ear devil's affiliations"]
+    subject: Ear Devil
+    members: [Public Safety Devil Hunters, Tokyo Special Division 5]
+  # ── page-gen: eternity_devil (2026-09-17) ──
+  - name: "Eternity Devil's affiliations"
+    match: [all the affiliations of eternity devil, affiliations of eternity devil, "eternity devil's affiliations"]
+    subject: Eternity Devil
+    members: [Fami]
+  - name: Every named technique of Eternity Devil
+    match: [every named technique of eternity devil, every named cursed technique of eternity devil, all the named techniques of eternity devil, "eternity devil's named techniques"]
+    subject: Eternity Devil
+    members: [Pocket Reality Creation, Time Stop, Looped Environment, Avatar Creation]
+  - name: Every ally of Eternity Devil
+    match: [every ally of eternity devil, all the allies of eternity devil]
+    subject: Eternity Devil
+    members: [Gun Devil, Fami]
+  - name: Every enemy of Eternity Devil
+    match: [every enemy of eternity devil, all the enemies of eternity devil]
+    subject: Eternity Devil
+    members: [Denji, Himeno, Asa Mitaka, Hirofumi Yoshida, Yoru]
+  # ── page-gen: fake_chainsaw_man (2026-09-17) ──
+  - name: "Fake Chainsaw Man's affiliations"
+    match: [all the affiliations of fake chainsaw man, affiliations of fake chainsaw man, "fake chainsaw man's affiliations"]
+    subject: Fake Chainsaw Man
+    members: [Chainsaw Man Church, Death Devil (brainwashed)]
+  - name: "Fake Chainsaw Man's aliases"
+    match: [all the aliases of fake chainsaw man, aliases of fake chainsaw man, "fake chainsaw man's aliases"]
+    subject: Fake Chainsaw Man
+    members: [Chainsaw Man (self-proclaimed)]
+  - name: Every named technique of Fake Chainsaw Man
+    match: [every named technique of fake chainsaw man, every named cursed technique of fake chainsaw man, all the named techniques of fake chainsaw man, "fake chainsaw man's named techniques"]
+    subject: Fake Chainsaw Man
+    members: [Fire Devil Contract, Chainsaw Manifestation, Body Absorption, Enhanced Strength, Enhanced Durability, Enhanced Speed]
+  - name: Every enemy of Fake Chainsaw Man
+    match: [every enemy of fake chainsaw man, all the enemies of fake chainsaw man]
+    subject: Fake Chainsaw Man
+    members: [Denji, Yuko, Asa Mitaka]
+  - name: Every superior of Fake Chainsaw Man
+    match: [every superior of fake chainsaw man, all the superiors of fake chainsaw man]
+    subject: Fake Chainsaw Man
+    members: [Denji, Death Devil]
+  # ── page-gen: falling_devil (2026-09-17) ──
+  - name: "Falling Devil's affiliations"
+    match: [all the affiliations of falling devil, affiliations of falling devil, "falling devil's affiliations"]
+    subject: Falling Devil
+    members: [Yoru (transformed), Death Devil (brainwashed) †, Justice Devil †]
+  - name: Every named technique of Falling Devil
+    match: [every named technique of falling devil, every named cursed technique of falling devil, all the named techniques of falling devil, "falling devil's named techniques"]
+    subject: Falling Devil
+    members: [Nigh-Absolute Immortality, Immense Healing Factor, Hell Connection, Gravity Manipulation, Traumatic Anti-Gravity, Levitation, Area Denial, Targeted Control, Energy Beam, Thought Manipulation, Emotion Manipulation, Psychic Assault, Trauma based anti-gravity powers, Body Control, Object Creation, Immense Strength, Immense Speed, Enhanced Smell, Low Durability]
+  - name: Every enemy of Falling Devil
+    match: [every enemy of falling devil, all the enemies of falling devil]
+    subject: Falling Devil
+    members: [Asa Mitaka, Denji, Justice Devil, Yoru]
+  - name: Every superior of Falling Devil
+    match: [every superior of falling devil, all the superiors of falling devil]
+    subject: Falling Devil
+    members: [Fami, Death Devil, Famine Devil]
+  # ── page-gen: fami (2026-09-17) ──
+  - name: "Fami's affiliations"
+    match: [all the affiliations of fami, affiliations of fami, "fami's affiliations"]
+    subject: Fami
+    members: [Four Horsemen, Fourth East High School, Devil Hunter Club (formerly), Chainsaw Man Church]
+  - name: "Fami's aliases"
+    match: [all the aliases of fami, aliases of fami, "fami's aliases"]
+    subject: Fami
+    members: [Famine Devil, Hunger Devil, Hunger (by Makima)]
+  - name: Every ally of Fami
+    match: [every ally of fami, all the allies of fami]
+    subject: Fami
+    members: [Haruka Iseumi, Barem Bridge, Asa Mitaka, Yoru, Denji, Nobana Higashiyama, Seigi Akoku, Fumiko Mifune, Hirofumi Yoshida, Falling Devil, Nail Fiend, Eternity Devil]
+  - name: Every enemy of Fami
+    match: [every enemy of fami, all the enemies of fami]
+    subject: Fami
+    members: [Pochita, Yoru, Asa Mitaka, Haruka Iseumi, Takagi]
+  - name: Every family of Fami
+    match: [every family of fami, all the families of fami]
+    subject: Fami
+    members: [Yuko, Yoru, Asa Mitaka, Death Devil, Nayuta]
+  - name: Every subordinate of Fami
+    match: [every subordinate of fami, all the subordinates of fami]
+    subject: Fami
+    members: [Haruka Iseumi, Barem Bridge, Asa Mitaka, Death Devil, Falling Devil]
+  # ── page-gen: famine_devil (2026-09-17) ──
+  - name: "Famine Devil's aliases"
+    match: [all the aliases of famine devil, aliases of famine devil, "famine devil's aliases"]
+    subject: Famine Devil
+    members: [Famine Devil, Hunger Devil, Hunger (by Makima), Famine (by Yoru), Death Devil (façade by the real Death Devil)]
+  - name: "Famine Devil's affiliations"
+    match: [all the affiliations of famine devil, affiliations of famine devil, "famine devil's affiliations"]
+    subject: Famine Devil
+    members: [Four Horsemen, Fourth East High School, Death Devil (brainwashed)]
+  - name: Every named technique of Famine Devil
+    match: [every named technique of famine devil, every named cursed technique of famine devil, all the named techniques of famine devil, "famine devil's named techniques"]
+    subject: Famine Devil
+    members: [Life Absorption, Immense Healing Factor, Immense Durability, Hand-to-Hand Combat]
+  - name: Every ally of Famine Devil
+    match: [every ally of famine devil, all the allies of famine devil]
+    subject: Famine Devil
+    members: [Pochita, Death Devil, Asa Mitaka]
+  - name: Every enemy of Famine Devil
+    match: [every enemy of famine devil, all the enemies of famine devil]
+    subject: Famine Devil
+    members: [Yoru, Pochita]
+  # ── page-gen: fiend (2026-09-17) ──
+  - name: "Fiend's affiliations"
+    match: [all the affiliations of fiend, affiliations of fiend, "fiend's affiliations"]
+    subject: Fiend
+    members: ["Government, Private Sector, Devils"]
+  # ── page-gen: fire_devil (2026-09-17) ──
+  - name: "Fire Devil's affiliations"
+    match: [all the affiliations of fire devil, affiliations of fire devil, "fire devil's affiliations"]
+    subject: Fire Devil
+    members: [Death Devil (brainwashed), Fourth East High School (Allegedly), Barem Bridge, Chainsaw Man Church]
+  - name: "Fire Devil's aliases"
+    match: [all the aliases of fire devil, aliases of fire devil, "fire devil's aliases"]
+    subject: Fire Devil
+    members: [Justice Devil (fake alias)]
+  - name: Every named technique of Fire Devil
+    match: [every named technique of fire devil, every named cursed technique of fire devil, all the named techniques of fire devil, "fire devil's named techniques"]
+    subject: Fire Devil
+    members: [Desire Granting, Collective Empowerment, Fire Imagery, Fire Dispersement]
+  - name: Every ally of Fire Devil
+    match: [every ally of fire devil, all the allies of fire devil]
+    subject: Fire Devil
+    members: [Class president, Fake Chainsaw Man]
+  # ── page-gen: fox_devil (2026-09-17) ──
+  - name: "Fox Devil's affiliations"
+    match: [all the affiliations of fox devil, affiliations of fox devil, "fox devil's affiliations"]
+    subject: Fox Devil
+    members: [Public Safety Devil Hunters]
+  - name: Every named technique of Fox Devil
+    match: [every named technique of fox devil, every named cursed technique of fox devil, all the named techniques of fox devil, "fox devil's named techniques"]
+    subject: Fox Devil
+    members: [Enhanced Strength, Enhanced Durability, Blood Consumption]
+  - name: Every ally of Fox Devil
+    match: [every ally of fox devil, all the allies of fox devil]
+    subject: Fox Devil
+    members: [Aki Hayakawa, Hirokazu Arai]
+  # ── page-gen: fumiko_mifune (2026-09-17) ──
+  - name: "Fumiko Mifune's affiliations"
+    match: [all the affiliations of fumiko mifune, affiliations of fumiko mifune, "fumiko mifune's affiliations"]
+    subject: Fumiko Mifune
+    members: [Public Safety Devil Hunters, Tokyo Special Division 7, Fourth East High School]
+  - name: Every named technique of Fumiko Mifune
+    match: [every named technique of fumiko mifune, every named cursed technique of fumiko mifune, all the named techniques of fumiko mifune, "fumiko mifune's named techniques"]
+    subject: Fumiko Mifune
+    members: [Aging Devil Contract, STD Devil Contract, Blunt Weapon Proficiency, Firearm Proficiency]
+  - name: Every ally of Fumiko Mifune
+    match: [every ally of fumiko mifune, all the allies of fumiko mifune]
+    subject: Fumiko Mifune
+    members: [Nayuta, Denji, Hirofumi Yoshida, Fami, Yoru, Barem Bridge]
+  - name: Every enemy of Fumiko Mifune
+    match: [every enemy of fumiko mifune, all the enemies of fumiko mifune]
+    subject: Fumiko Mifune
+    members: [Nayuta, Denji, Aging Devil, Whip Hybrid]
+  - name: Every friend of Fumiko Mifune
+    match: [every friend of fumiko mifune, all the friends of fumiko mifune]
+    subject: Fumiko Mifune
+    members: [Denji, Quanxi]
+  - name: Every romantic of Fumiko Mifune
+    match: [every romantic of fumiko mifune, all the romantics of fumiko mifune]
+    subject: Fumiko Mifune
+    members: [Denji, Quanxi]
+  - name: Every superior of Fumiko Mifune
+    match: [every superior of fumiko mifune, all the superiors of fumiko mifune]
+    subject: Fumiko Mifune
+    members: [Denji, Hirofumi Yoshida]
+  # ── page-gen: furio (2026-09-17) ──
+  - name: "Furio's affiliations"
+    match: [all the affiliations of furio, affiliations of furio, "furio's affiliations"]
+    subject: Furio
+    members: [Fourth East High School, Devil Hunter Club]
+  - name: Every named technique of Furio
+    match: [every named technique of furio, every named cursed technique of furio, all the named techniques of furio, "furio's named techniques"]
+    subject: Furio
+    members: [Marksmanship]
+  # ── page-gen: furuno (2026-09-17) ──
+  - name: "Furuno's affiliations"
+    match: [all the affiliations of furuno, affiliations of furuno, "furuno's affiliations"]
+    subject: Furuno
+    members: [Public Safety Devil Hunters, Tokyo Division 2]
+  - name: Every ally of Furuno
+    match: [every ally of furuno, all the allies of furuno]
+    subject: Furuno
+    members: [Shiina, Kishibe]
+  # ── page-gen: fushi (2026-09-17) ──
+  - name: "Fushi's affiliations"
+    match: [all the affiliations of fushi, affiliations of fushi, "fushi's affiliations"]
+    subject: Fushi
+    members: [Public Safety Devil Hunters, Tokyo Special Division 4]
+  # ── page-gen: future_devil (2026-09-17) ──
+  - name: "Future Devil's affiliations"
+    match: [all the affiliations of future devil, affiliations of future devil, "future devil's affiliations"]
+    subject: Future Devil
+    members: [Public Safety Devil Hunters]
+  - name: Every named technique of Future Devil
+    match: [every named technique of future devil, every named cursed technique of future devil, all the named techniques of future devil, "future devil's named techniques"]
+    subject: Future Devil
+    members: [Precognition]
+  # ── page-gen: galgali (2026-09-17) ──
+  - name: "Galgali's aliases"
+    match: [all the aliases of galgali, aliases of galgali, "galgali's aliases"]
+    subject: Galgali
+    members: [Violence Fiend, Violence Devil]
+  - name: "Galgali's affiliations"
+    match: [all the affiliations of galgali, affiliations of galgali, "galgali's affiliations"]
+    subject: Galgali
+    members: [Public Safety Devil Hunters, Tokyo Special Division 4]
+  - name: Every named technique of Galgali
+    match: [every named technique of galgali, every named cursed technique of galgali, all the named techniques of galgali, "galgali's named techniques"]
+    subject: Galgali
+    members: [Enhanced Strength, Poison Resistance, Body Transformation, Hand-to-Hand Combat]
+  - name: Every ally of Galgali
+    match: [every ally of galgali, all the allies of galgali]
+    subject: Galgali
+    members: [Makima, Kobeni Higashiyama, Aki Hayakawa, Hirofumi Yoshida]
+  - name: Every enemy of Galgali
+    match: [every enemy of galgali, all the enemies of galgali]
+    subject: Galgali
+    members: [Reze, Grape Devil]
+  # ── page-gen: ghost_devil (2026-09-17) ──
+  - name: Every named technique of Ghost Devil
+    match: [every named technique of ghost devil, every named cursed technique of ghost devil, all the named techniques of ghost devil, "ghost devil's named techniques"]
+    subject: Ghost Devil
+    members: [Enhanced Strength, Ghost Physiology, Fear Perception, Near Lack of Senses]
+  - name: Every superior of Ghost Devil
+    match: [every superior of ghost devil, all the superiors of ghost devil]
+    subject: Ghost Devil
+    members: [Himeno, Akane Sawatari]
+  # ── page-gen: grape_devil (2026-09-17) ──
+  - name: Every enemy of Grape Devil
+    match: [every enemy of grape devil, all the enemies of grape devil]
+    subject: Grape Devil
+    members: [Galgali, Kobeni Higashiyama]
+  # ── page-gen: guillotine_devil (2026-09-17) ──
+  - name: "Guillotine Devil's aliases"
+    match: [all the aliases of guillotine devil, aliases of guillotine devil, "guillotine devil's aliases"]
+    subject: Guillotine Devil
+    members: [Guilly (by Death Devil)]
+  - name: "Guillotine Devil's affiliations"
+    match: [all the affiliations of guillotine devil, affiliations of guillotine devil, "guillotine devil's affiliations"]
+    subject: Guillotine Devil
+    members: [Death Devil (brainwashed)]
+  - name: Every named technique of Guillotine Devil
+    match: [every named technique of guillotine devil, every named cursed technique of guillotine devil, all the named techniques of guillotine devil, "guillotine devil's named techniques"]
+    subject: Guillotine Devil
+    members: [Enhanced Durability, Slicing]
+  # ── page-gen: gun_devil (2026-09-17) ──
+  - name: "Gun Devil's aliases"
+    match: [all the aliases of gun devil, aliases of gun devil, "gun devil's aliases"]
+    subject: Gun Devil
+    members: [Gun]
+  - name: "Gun Devil's affiliations"
+    match: [all the affiliations of gun devil, affiliations of gun devil, "gun devil's affiliations"]
+    subject: Gun Devil
+    members: [USA (formerly), Soviet Union (formerly), Multiple Governments Across The Globe, Yoru]
+  - name: Every named technique of Gun Devil
+    match: [every named technique of gun devil, every named cursed technique of gun devil, all the named techniques of gun devil, "gun devil's named techniques"]
+    subject: Gun Devil
+    members: [Bullet Flesh, Passive Regeneration, Bullet Projection]
+  - name: Every ally of Gun Devil
+    match: [every ally of gun devil, all the allies of gun devil]
+    subject: Gun Devil
+    members: [Reze, Yoru, Eternity Devil]
+  - name: Every enemy of Gun Devil
+    match: [every enemy of gun devil, all the enemies of gun devil]
+    subject: Gun Devil
+    members: [Denji, Aki Hayakawa, Himeno, Makima]
+  # ── page-gen: haruka_iseumi (2026-09-17) ──
+  - name: "Haruka Iseumi's affiliations"
+    match: [all the affiliations of haruka iseumi, affiliations of haruka iseumi, "haruka iseumi's affiliations"]
+    subject: Haruka Iseumi
+    members: [Fourth East High School, Devil Hunter Club (president), Student Council (president), Chainsaw Man Church (formerly), "\"Fami\" (formerly)"]
+  - name: "Haruka Iseumi's aliases"
+    match: [all the aliases of haruka iseumi, aliases of haruka iseumi, "haruka iseumi's aliases"]
+    subject: Haruka Iseumi
+    members: [Chainsaw Man ( self-proclaimed )]
+  - name: Every ally of Haruka Iseumi
+    match: [every ally of haruka iseumi, all the allies of haruka iseumi]
+    subject: Haruka Iseumi
+    members: [Asa Mitaka, Fami, Nobana Higashiyama, Seigi Akoku, Denji, Yoru, Nail Fiend]
+  - name: Every enemy of Haruka Iseumi
+    match: [every enemy of haruka iseumi, all the enemies of haruka iseumi]
+    subject: Haruka Iseumi
+    members: [Fami, Barem Bridge]
+  - name: Every subordinate of Haruka Iseumi
+    match: [every subordinate of haruka iseumi, all the subordinates of haruka iseumi]
+    subject: Haruka Iseumi
+    members: [Asa Mitaka, Seigi Akoku]
+  - name: Every superior of Haruka Iseumi
+    match: [every superior of haruka iseumi, all the superiors of haruka iseumi]
+    subject: Haruka Iseumi
+    members: [Fami, Barem Bridge]
+  # ── page-gen: hell_devil (2026-09-17) ──
+  - name: "Hell Devil's affiliations"
+    match: [all the affiliations of hell devil, affiliations of hell devil, "hell devil's affiliations"]
+    subject: Hell Devil
+    members: [Santa Claus, Anti-Makima Squad]
+  - name: Every named technique of Hell Devil
+    match: [every named technique of hell devil, every named cursed technique of hell devil, all the named techniques of hell devil, "hell devil's named techniques"]
+    subject: Hell Devil
+    members: [Hell Connection]
+  - name: Every enemy of Hell Devil
+    match: [every enemy of hell devil, all the enemies of hell devil]
+    subject: Hell Devil
+    members: [Makima, Pochita]
+  - name: Every subordinate of Hell Devil
+    match: [every subordinate of hell devil, all the subordinates of hell devil]
+    subject: Hell Devil
+    members: [Santa Claus, Makima]
+  # ── page-gen: himeno (2026-09-17) ──
+  - name: "Himeno's aliases"
+    match: [all the aliases of himeno, aliases of himeno, "himeno's aliases"]
+    subject: Himeno
+    members: [Barf Woman (by Denji)]
+  - name: "Himeno's affiliations"
+    match: [all the affiliations of himeno, affiliations of himeno, "himeno's affiliations"]
+    subject: Himeno
+    members: [Public Safety Devil Hunters, Tokyo Special Division 4]
+  - name: Every named technique of Himeno
+    match: [every named technique of himeno, every named cursed technique of himeno, all the named techniques of himeno, "himeno's named techniques"]
+    subject: Himeno
+    members: [Ghost Devil Contract]
+  - name: Every ally of Himeno
+    match: [every ally of himeno, all the allies of himeno]
+    subject: Himeno
+    members: [Aki Hayakawa, Denji, Hirokazu Arai, Kobeni Higashiyama, Power, Makima, Fushi, Kishibe, Ghost Devil]
+  - name: Every enemy of Himeno
+    match: [every enemy of himeno, all the enemies of himeno]
+    subject: Himeno
+    members: [Makima, Katana Man, Akane Sawatari, Gun Devil, Eternity Devil, Loneliness Fiend]
+  - name: Every friend of Himeno
+    match: [every friend of himeno, all the friends of himeno]
+    subject: Himeno
+    members: [Denji, Aki Hayakawa]
+  - name: Every romantic of Himeno
+    match: [every romantic of himeno, all the romantics of himeno]
+    subject: Himeno
+    members: [Aki Hayakawa, Denji, Hirokazu Arai]
+  - name: Every subordinate of Himeno
+    match: [every subordinate of himeno, all the subordinates of himeno]
+    subject: Himeno
+    members: [Makima, Kobeni Higashiyama, Ghost Devil]
+  - name: Every superior of Himeno
+    match: [every superior of himeno, all the superiors of himeno]
+    subject: Himeno
+    members: [Aki Hayakawa, Kobeni Higashiyama, Hirokazu Arai, Makima]
+  # ── page-gen: hirofumi_yoshida (2026-09-17) ──
+  - name: "Hirofumi Yoshida's affiliations"
+    match: [all the affiliations of hirofumi yoshida, affiliations of hirofumi yoshida, "hirofumi yoshida's affiliations"]
+    subject: Hirofumi Yoshida
+    members: [Public Safety Devil Hunters, Tokyo Special Division 7, Fourth East High School, Devil Hunter Club]
+  - name: Every named technique of Hirofumi Yoshida
+    match: [every named technique of hirofumi yoshida, every named cursed technique of hirofumi yoshida, all the named techniques of hirofumi yoshida, "hirofumi yoshida's named techniques"]
+    subject: Hirofumi Yoshida
+    members: [Tentacle Summoning, Ink, Grab, Swallow, Hand-to-Hand Combat, Strategic Intelligence, Swordsmanship]
+  - name: Every ally of Hirofumi Yoshida
+    match: [every ally of hirofumi yoshida, all the allies of hirofumi yoshida]
+    subject: Hirofumi Yoshida
+    members: [Denji, Kusakabe, Tamaoki, Power, Kobeni Higashiyama, Galgali, Kishibe, Beam, Asa Mitaka, Fumiko Mifune, Fami, Yoru, Pochita, Seigi Akoku, Octopus Devil]
+  - name: Every enemy of Hirofumi Yoshida
+    match: [every enemy of hirofumi yoshida, all the enemies of hirofumi yoshida]
+    subject: Hirofumi Yoshida
+    members: [Quanxi, Aldo, Joey, Asa Mitaka, Yoru, Denji, Barem Bridge, Aging Devil, Eternity Devil]
+  - name: Every romantic of Hirofumi Yoshida
+    match: [every romantic of hirofumi yoshida, all the romantics of hirofumi yoshida]
+    subject: Hirofumi Yoshida
+    members: [Yoru, Asa Mitaka]
+  - name: Every subordinate of Hirofumi Yoshida
+    match: [every subordinate of hirofumi yoshida, all the subordinates of hirofumi yoshida]
+    subject: Hirofumi Yoshida
+    members: [Denji, Fumiko Mifune, Octopus Devil]
+  - name: Every superior of Hirofumi Yoshida
+    match: [every superior of hirofumi yoshida, all the superiors of hirofumi yoshida]
+    subject: Hirofumi Yoshida
+    members: [Makima, Fumiko Mifune, Denji]
+  # ── page-gen: hirokazu_arai (2026-09-17) ──
+  - name: "Hirokazu Arai's affiliations"
+    match: [all the affiliations of hirokazu arai, affiliations of hirokazu arai, "hirokazu arai's affiliations"]
+    subject: Hirokazu Arai
+    members: [Public Safety Devil Hunters, Tokyo Special Division 4]
+  - name: Every named technique of Hirokazu Arai
+    match: [every named technique of hirokazu arai, every named cursed technique of hirokazu arai, all the named techniques of hirokazu arai, "hirokazu arai's named techniques"]
+    subject: Hirokazu Arai
+    members: [Fox Devil Contract]
+  - name: Every ally of Hirokazu Arai
+    match: [every ally of hirokazu arai, all the allies of hirokazu arai]
+    subject: Hirokazu Arai
+    members: [Aki Hayakawa, Kobeni Higashiyama, Himeno, Denji, Power, Fox Devil]
+  - name: Every subordinate of Hirokazu Arai
+    match: [every subordinate of hirokazu arai, all the subordinates of hirokazu arai]
+    subject: Hirokazu Arai
+    members: [Himeno, Kobeni Higashiyama]
+  # ── page-gen: house_devil (2026-09-17) ──
+  - name: "House Devil's affiliations"
+    match: [all the affiliations of house devil, affiliations of house devil, "house devil's affiliations"]
+    subject: House Devil
+    members: [Mr. Kanbayashi (owner)]
+  - name: Every enemy of House Devil
+    match: [every enemy of house devil, all the enemies of house devil]
+    subject: House Devil
+    members: [Denji, Power]
+  # ── page-gen: hybrid (2026-09-17) ──
+  - name: "Hybrid's affiliations"
+    match: [all the affiliations of hybrid, affiliations of hybrid, "hybrid's affiliations"]
+    subject: Hybrid
+    members: [Devil Hunters, Weapon Devils, Chainsaw Man Church]
+  # ── page-gen: joey (2026-09-17) ──
+  - name: "Joey's affiliations"
+    match: [all the affiliations of joey, affiliations of joey, "joey's affiliations"]
+    subject: Joey
+    members: [United States of America, American Thugs]
+  - name: Every named technique of Joey
+    match: [every named technique of joey, every named cursed technique of joey, all the named techniques of joey, "joey's named techniques"]
+    subject: Joey
+    members: [Skin Devil Contract, Proficient Gunmanship]
+  - name: Every enemy of Joey
+    match: [every enemy of joey, all the enemies of joey]
+    subject: Joey
+    members: [Michiko Tendo, Hirofumi Yoshida]
+  # ── page-gen: justice_devil (2026-09-17) ──
+  - name: "Justice Devil's affiliations"
+    match: [all the affiliations of justice devil, affiliations of justice devil, "justice devil's affiliations"]
+    subject: Justice Devil
+    members: [Falling Devil (Customer)]
+  - name: Every named technique of Justice Devil
+    match: [every named technique of justice devil, every named cursed technique of justice devil, all the named techniques of justice devil, "justice devil's named techniques"]
+    subject: Justice Devil
+    members: [Immense Speed, Immense Strength, Regeneration, Shapeshifting]
+  # ── page-gen: kanbayashi (2026-09-17) ──
+  - name: "Kanbayashi's affiliations"
+    match: [all the affiliations of kanbayashi, affiliations of kanbayashi, "kanbayashi's affiliations"]
+    subject: Kanbayashi
+    members: ["House Devil (formerly, coerced)"]
+  # ── page-gen: katana_man (2026-09-17) ──
+  - name: "Katana Man's affiliations"
+    match: [all the affiliations of katana man, affiliations of katana man, "katana man's affiliations"]
+    subject: Katana Man
+    members: [Yakuza (formerly), Gun Devil (ruse), Akane Sawatari (formerly), Makima (brainwashed), Tokyo Special Division 5 (formerly), Public Safety Devil Hunters (temporarily), Tokyo Special Division 7 (formerly), Nail Fiend]
+  - name: "Katana Man's aliases"
+    match: [all the aliases of katana man, aliases of katana man, "katana man's aliases"]
+    subject: Katana Man
+    members: [Samurai Sword, Sideburns Man (by Denji), Katana, Samurai]
+  - name: Every named technique of Katana Man
+    match: [every named technique of katana man, every named cursed technique of katana man, all the named techniques of katana man, "katana man's named techniques"]
+    subject: Katana Man
+    members: [Hybrid Transformation, Augmented Strength, Augmented Durability, Augmented Speed, Sword-Draw Dash, Blood Consumption, Nigh-Immortality, Marksmanship, Swordsmanship]
+  - name: Every ally of Katana Man
+    match: [every ally of katana man, all the allies of katana man]
+    subject: Katana Man
+    members: [Akane Sawatari, Nail Fiend, Yoru, Asa Mitaka, Pochita, Denji]
+  - name: Every enemy of Katana Man
+    match: [every enemy of katana man, all the enemies of katana man]
+    subject: Katana Man
+    members: [Denji, Aki Hayakawa, Kobeni Higashiyama, Pochita, Takagi, Quanxi, Asa Mitaka, Power, Himeno]
+  - name: Every rival of Katana Man
+    match: [every rival of katana man, all the rivals of katana man]
+    subject: Katana Man
+    members: [Pochita, Denji]
+  - name: Every subordinate of Katana Man
+    match: [every subordinate of katana man, all the subordinates of katana man]
+    subject: Katana Man
+    members: [Akane Sawatari, Takagi, Makima]
+  - name: Every superior of Katana Man
+    match: [every superior of katana man, all the superiors of katana man]
+    subject: Katana Man
+    members: [Makima, Akane Sawatari, Takagi]
+  # ── page-gen: kato (2026-09-17) ──
+  - name: "Kato's affiliations"
+    match: [all the affiliations of kato, affiliations of kato, "kato's affiliations"]
+    subject: Kato
+    members: [Public Safety Devil Hunters, Tokyo Division 2]
+  - name: Every named technique of Kato
+    match: [every named technique of kato, every named cursed technique of kato, all the named techniques of kato, "kato's named techniques"]
+    subject: Kato
+    members: [Mold Devil Contract]
+  # ── page-gen: kenzo (2026-09-17) ──
+  - name: "Kenzo's aliases"
+    match: [all the aliases of kenzo, aliases of kenzo, "kenzo's aliases"]
+    subject: Kenzo
+    members: [Grandpa (by Denji and Power)]
+  # ── page-gen: kishibe (2026-09-17) ──
+  - name: "Kishibe's aliases"
+    match: [all the aliases of kishibe, aliases of kishibe, "kishibe's aliases"]
+    subject: Kishibe
+    members: [Master, Captain Kishibe, Mad Dog Kishibe]
+  - name: "Kishibe's affiliations"
+    match: [all the affiliations of kishibe, affiliations of kishibe, "kishibe's affiliations"]
+    subject: Kishibe
+    members: [Public Safety Devil Hunters, Tokyo Special Division 1 (formerly), Captain of Tokyo Special Division 4, Leader of the Anti-Makima Squad]
+  - name: Every named technique of Kishibe
+    match: [every named technique of kishibe, every named cursed technique of kishibe, all the named techniques of kishibe, "kishibe's named techniques"]
+    subject: Kishibe
+    members: [Enhanced Strength, Enhanced Speed, Enhanced Reflexes, Enhanced Durability, Claw Devil Contract, Knife Devil Contract, Needle Devil Contract, High Intelligence, Knifemanship, Expertise in Hand-to-Hand Combat]
+  - name: Every ally of Kishibe
+    match: [every ally of kishibe, all the allies of kishibe]
+    subject: Kishibe
+    members: [Himeno, Makima, Denji, Hirofumi Yoshida, Aki Hayakawa, Kobeni Higashiyama, Meowy, Shiina, Furuno]
+  - name: Every enemy of Kishibe
+    match: [every enemy of kishibe, all the enemies of kishibe]
+    subject: Kishibe
+    members: [Quanxi, Makima, Pingtsi, Mannequin Devil]
+  - name: Every mentor of Kishibe
+    match: [every mentor of kishibe, all the mentors of kishibe]
+    subject: Kishibe
+    members: [Denji, Power]
+  - name: Every student of Kishibe
+    match: [every student of kishibe, all the students of kishibe]
+    subject: Kishibe
+    members: [Denji, Power]
+  - name: Every superior of Kishibe
+    match: [every superior of kishibe, all the superiors of kishibe]
+    subject: Kishibe
+    members: [Makima, Kobeni Higashiyama, Aki Hayakawa, Quanxi]
+  # ── page-gen: kobeni_higashiyama (2026-09-17) ──
+  - name: "Kobeni Higashiyama's affiliations"
+    match: [all the affiliations of kobeni higashiyama, affiliations of kobeni higashiyama, "kobeni higashiyama's affiliations"]
+    subject: Kobeni Higashiyama
+    members: [Public Safety Devil Hunters (formerly), Tokyo Special Division 4 (formerly), Family Burger Restaurant (formerly)]
+  - name: Every named technique of Kobeni Higashiyama
+    match: [every named technique of kobeni higashiyama, every named cursed technique of kobeni higashiyama, all the named techniques of kobeni higashiyama, "kobeni higashiyama's named techniques"]
+    subject: Kobeni Higashiyama
+    members: [Enhanced Strength, Enhanced Agility, Knifemanship, Marksmanship, Driving, Dancing]
+  - name: Every ally of Kobeni Higashiyama
+    match: [every ally of kobeni higashiyama, all the allies of kobeni higashiyama]
+    subject: Kobeni Higashiyama
+    members: [Aki Hayakawa, Himeno, Denji, Power, Hirokazu Arai, Akane Sawatari, Kishibe, Pochita, Hirofumi Yoshida, Galgali]
+  - name: Every enemy of Kobeni Higashiyama
+    match: [every enemy of kobeni higashiyama, all the enemies of kobeni higashiyama]
+    subject: Kobeni Higashiyama
+    members: [Akane Sawatari, Reze, Power, Katana Man, Grape Devil]
+  - name: Every subordinate of Kobeni Higashiyama
+    match: [every subordinate of kobeni higashiyama, all the subordinates of kobeni higashiyama]
+    subject: Kobeni Higashiyama
+    members: [Aki Hayakawa, Reze, Himeno, Kishibe]
+  - name: Every superior of Kobeni Higashiyama
+    match: [every superior of kobeni higashiyama, all the superiors of kobeni higashiyama]
+    subject: Kobeni Higashiyama
+    members: [Hirokazu Arai, Himeno, Kishibe, Pochita, Makima]
+  # ── page-gen: kusakabe (2026-09-17) ──
+  - name: "Kusakabe's affiliations"
+    match: [all the affiliations of kusakabe, affiliations of kusakabe, "kusakabe's affiliations"]
+    subject: Kusakabe
+    members: [Public Safety Devil Hunters, Miyagi Division 2]
+  - name: Every named technique of Kusakabe
+    match: [every named technique of kusakabe, every named cursed technique of kusakabe, all the named techniques of kusakabe, "kusakabe's named techniques"]
+    subject: Kusakabe
+    members: [Stone Devil Contract]
+  - name: Every ally of Kusakabe
+    match: [every ally of kusakabe, all the allies of kusakabe]
+    subject: Kusakabe
+    members: [Denji, Power, Hirofumi Yoshida, Tamaoki]
+  # ── page-gen: leech_devil (2026-09-17) ──
+  - name: "Leech Devil's affiliations"
+    match: [all the affiliations of leech devil, affiliations of leech devil, "leech devil's affiliations"]
+    subject: Leech Devil
+    members: [Bat Devil †]
+  - name: Every enemy of Leech Devil
+    match: [every enemy of leech devil, all the enemies of leech devil]
+    subject: Leech Devil
+    members: [Denji, Aki Hayakawa]
+  # ── page-gen: legs_devil (2026-09-17) ──
+  - name: "Legs Devil's affiliations"
+    match: [all the affiliations of legs devil, affiliations of legs devil, "legs devil's affiliations"]
+    subject: Legs Devil
+    members: [Death Devil (brainwashed)]
+  # ── page-gen: light_of_a_star_that_breaks_children_s_minds_devil (2026-09-17) ──
+  - name: "Every named technique of Light of a Star That Breaks Children's Minds Devil"
+    match: ["every named technique of light of a star that breaks children's minds devil", "every named cursed technique of light of a star that breaks children's minds devil", "all the named techniques of light of a star that breaks children's minds devil", "light of a star that breaks children's minds devil's named techniques"]
+    subject: "Light of a Star That Breaks Children's Minds Devil"
+    members: [Psychological Ruin]
+  # ── page-gen: lion_devil (2026-09-17) ──
+  - name: "Lion Devil's affiliations"
+    match: [all the affiliations of lion devil, affiliations of lion devil, "lion devil's affiliations"]
+    subject: Lion Devil
+    members: [Yoru]
+  # ── page-gen: locust_devil (2026-09-17) ──
+  - name: Every named technique of Locust Devil
+    match: [every named technique of locust devil, every named cursed technique of locust devil, all the named techniques of locust devil, "locust devil's named techniques"]
+    subject: Locust Devil
+    members: [Swarm Manifestation, Immense Durability, Immense Strength]
+  - name: Every enemy of Locust Devil
+    match: [every enemy of locust devil, all the enemies of locust devil]
+    subject: Locust Devil
+    members: [Denji, Yoru]
+  # ── page-gen: loneliness_fiend (2026-09-17) ──
+  - name: Every named technique of Loneliness Fiend
+    match: [every named technique of loneliness fiend, every named cursed technique of loneliness fiend, all the named techniques of loneliness fiend, "loneliness fiend's named techniques"]
+    subject: Loneliness Fiend
+    members: [Crossbows]
+  - name: Every enemy of Loneliness Fiend
+    match: [every enemy of loneliness fiend, all the enemies of loneliness fiend]
+    subject: Loneliness Fiend
+    members: [Himeno, Aki Hayakawa]
+  # ── page-gen: long (2026-09-17) ──
+  - name: "Long's affiliations"
+    match: [all the affiliations of long, affiliations of long, "long's affiliations"]
+    subject: Long
+    members: [Quanxi and the Fiends]
+  - name: Every named technique of Long
+    match: [every named technique of long, every named cursed technique of long, all the named techniques of long, "long's named techniques"]
+    subject: Long
+    members: [Hand-to-Hand Combat]
+  - name: Every ally of Long
+    match: [every ally of long, all the allies of long]
+    subject: Long
+    members: [Quanxi, Power]
+  - name: Every enemy of Long
+    match: [every enemy of long, all the enemies of long]
+    subject: Long
+    members: [Aldo, Quanxi]
+  - name: Every subordinate of Long
+    match: [every subordinate of long, all the subordinates of long]
+    subject: Long
+    members: [Power, Quanxi]
+  # ── page-gen: madoka (2026-09-17) ──
+  - name: "Madoka's affiliations"
+    match: [all the affiliations of madoka, affiliations of madoka, "madoka's affiliations"]
+    subject: Madoka
+    members: [Public Safety Devil Hunters (formerly), Tokyo Special Division 4 (formerly)]
+  # ── page-gen: makima (2026-09-17) ──
+  - name: "Makima's affiliations"
+    match: [all the affiliations of makima, affiliations of makima, "makima's affiliations"]
+    subject: Makima
+    members: [Four Horsemen, Public Safety Devil Hunters, Head of the Tokyo Special Division 4, Head of the Tokyo Special Division 5]
+  - name: "Makima's aliases"
+    match: [all the aliases of makima, aliases of makima, "makima's aliases"]
+    subject: Makima
+    members: [Control Devil, Conquest Devil, Devil of Domination]
+  - name: Every named technique of Makima
+    match: [every named technique of makima, every named cursed technique of makima, all the named techniques of makima, "makima's named techniques"]
+    subject: Makima
+    members: [Immense Strength, Enhanced Smell, Control, Force Manipulation]
+  - name: Every ally of Makima
+    match: [every ally of makima, all the allies of makima]
+    subject: Makima
+    members: [Aki Hayakawa, Pochita, Kishibe, Denji, Power, Himeno, Barem Bridge, Galgali]
+  - name: Every enemy of Makima
+    match: [every enemy of makima, all the enemies of makima]
+    subject: Makima
+    members: [Denji, Reze, Quanxi, Kishibe, Power, Pochita, Death Devil, Himeno, Gun Devil, Darkness Devil, Hell Devil, Tolka, Cosmo]
+  - name: Every romantic of Makima
+    match: [every romantic of makima, all the romantics of makima]
+    subject: Makima
+    members: [Pochita, Denji, Aki Hayakawa]
+  - name: Every subordinate of Makima
+    match: [every subordinate of makima, all the subordinates of makima]
+    subject: Makima
+    members: [Denji, Aki Hayakawa, Angel Devil, Power, Akane Sawatari, Beam, Kusakabe, Tamaoki, Subaru, Hirofumi Yoshida, Princi, Reze, Katana Man, Himeno, Quanxi, Kishibe, Kobeni Higashiyama, Barem Bridge, Miri Sugo, Whip Hybrid, Spear Hybrid, Yutaro Kurose, Michiko Tendo, Zombie Devil, Tsugihagi, Madoka, Punishment Devil]
+  - name: Every superior of Makima
+    match: [every superior of makima, all the superiors of makima]
+    subject: Makima
+    members: [Denji, Power, Aki Hayakawa, Santa Claus, Akane Sawatari, Beam, Princi, Angel Devil, Reze, Quanxi, Katana Man, Himeno, Miri Sugo, Whip Hybrid, Spear Hybrid, Hell Devil]
+  # ── page-gen: mannequin_devil (2026-09-17) ──
+  - name: Every named technique of Mannequin Devil
+    match: [every named technique of mannequin devil, every named cursed technique of mannequin devil, all the named techniques of mannequin devil, "mannequin devil's named techniques"]
+    subject: Mannequin Devil
+    members: [Mannequin Mimicry, Mannequin Possession]
+  - name: Every enemy of Mannequin Devil
+    match: [every enemy of mannequin devil, all the enemies of mannequin devil]
+    subject: Mannequin Devil
+    members: [Kishibe, Quanxi]
+  # ── page-gen: masaki_ando (2026-09-17) ──
+  - name: "Masaki Ando's affiliations"
+    match: [all the affiliations of masaki ando, affiliations of masaki ando, "masaki ando's affiliations"]
+    subject: Masaki Ando
+    members: [Public Safety Devil Hunters, Tokyo Division 2]
+  # ── page-gen: meowy (2026-09-17) ──
+  - name: Every ally of Meowy
+    match: [every ally of meowy, all the allies of meowy]
+    subject: Meowy
+    members: [Kishibe, Power, Denji]
+  - name: Every superior of Meowy
+    match: [every superior of meowy, all the superiors of meowy]
+    subject: Meowy
+    members: [Power, Denji, Nayuta]
+  # ── page-gen: michiko_tendo (2026-09-17) ──
+  - name: "Michiko Tendo's affiliations"
+    match: [all the affiliations of michiko tendo, affiliations of michiko tendo, "michiko tendo's affiliations"]
+    subject: Michiko Tendo
+    members: [Public Safety Devil Hunters, Kyoto Division 1, Makima (postmortem)]
+  - name: Every ally of Michiko Tendo
+    match: [every ally of michiko tendo, all the allies of michiko tendo]
+    subject: Michiko Tendo
+    members: [Yutaro Kurose, Subaru, Denji, Punishment Devil]
+  - name: Every enemy of Michiko Tendo
+    match: [every enemy of michiko tendo, all the enemies of michiko tendo]
+    subject: Michiko Tendo
+    members: [Aldo, Joey]
+  # ── page-gen: minami_nakano (2026-09-17) ──
+  - name: "Minami Nakano's aliases"
+    match: [all the aliases of minami nakano, aliases of minami nakano, "minami nakano's aliases"]
+    subject: Minami Nakano
+    members: [Minami, New Kid (by Kishibe)]
+  - name: "Minami Nakano's affiliations"
+    match: [all the affiliations of minami nakano, affiliations of minami nakano, "minami nakano's affiliations"]
+    subject: Minami Nakano
+    members: [Public Safety Devil Hunters (formerly)]
+  # ── page-gen: miri_sugo (2026-09-17) ──
+  - name: "Miri Sugo's aliases"
+    match: [all the aliases of miri sugo, aliases of miri sugo, "miri sugo's aliases"]
+    subject: Miri Sugo
+    members: [Sword Man]
+  - name: "Miri Sugo's affiliations"
+    match: [all the affiliations of miri sugo, affiliations of miri sugo, "miri sugo's affiliations"]
+    subject: Miri Sugo
+    members: [Makima (brainwashed), Tokyo Special Division 5 (formerly), Chainsaw Man Church, Fourth East High School]
+  - name: Every named technique of Miri Sugo
+    match: [every named technique of miri sugo, every named cursed technique of miri sugo, all the named techniques of miri sugo, "miri sugo's named techniques"]
+    subject: Miri Sugo
+    members: [Hybrid Transformation, Augmented Body, Blades, Blood Consumption, Nigh-Immortality]
+  - name: Every ally of Miri Sugo
+    match: [every ally of miri sugo, all the allies of miri sugo]
+    subject: Miri Sugo
+    members: [Barem Bridge, Whip Hybrid, Spear Hybrid, Denji, Death Devil, Nobana Higashiyama]
+  - name: Every enemy of Miri Sugo
+    match: [every enemy of miri sugo, all the enemies of miri sugo]
+    subject: Miri Sugo
+    members: [Denji, Yoru]
+  - name: Every subordinate of Miri Sugo
+    match: [every subordinate of miri sugo, all the subordinates of miri sugo]
+    subject: Miri Sugo
+    members: [Makima, Barem Bridge]
+  - name: Every superior of Miri Sugo
+    match: [every superior of miri sugo, all the superiors of miri sugo]
+    subject: Miri Sugo
+    members: [Makima, Barem Bridge]
+  # ── page-gen: moray_eel_devil (2026-09-17) ──
+  - name: "Moray Eel Devil's affiliations"
+    match: [all the affiliations of moray eel devil, affiliations of moray eel devil, "moray eel devil's affiliations"]
+    subject: Moray Eel Devil
+    members: [Yoru]
+  # ── page-gen: muscle_devil (2026-09-17) ──
+  - name: Every named technique of Muscle Devil
+    match: [every named technique of muscle devil, every named cursed technique of muscle devil, all the named techniques of muscle devil, "muscle devil's named techniques"]
+    subject: Muscle Devil
+    members: [Muscle Manipulation]
+  # ── page-gen: mysterious_man (2026-09-17) ──
+  - name: "Mysterious Man's aliases"
+    match: [all the aliases of mysterious man, aliases of mysterious man, "mysterious man's aliases"]
+    subject: Mysterious Man
+    members: [Mohawk Man]
+  - name: "Mysterious Man's affiliations"
+    match: [all the affiliations of mysterious man, affiliations of mysterious man, "mysterious man's affiliations"]
+    subject: Mysterious Man
+    members: [Unknown]
+  - name: Every named technique of Mysterious Man
+    match: [every named technique of mysterious man, every named cursed technique of mysterious man, all the named techniques of mysterious man, "mysterious man's named techniques"]
+    subject: Mysterious Man
+    members: [Typhoon Devil Contract]
+  # ── page-gen: nail_fiend (2026-09-17) ──
+  - name: "Nail Fiend's aliases"
+    match: [all the aliases of nail fiend, aliases of nail fiend, "nail fiend's aliases"]
+    subject: Nail Fiend
+    members: [Nail (by Public Safety), Nail Devil]
+  - name: "Nail Fiend's affiliations"
+    match: [all the affiliations of nail fiend, affiliations of nail fiend, "nail fiend's affiliations"]
+    subject: Nail Fiend
+    members: [Public Safety Devil Hunters (formerly), Tokyo Special Division 7 (formerly), Katana Man]
+  - name: Every named technique of Nail Fiend
+    match: [every named technique of nail fiend, every named cursed technique of nail fiend, all the named techniques of nail fiend, "nail fiend's named techniques"]
+    subject: Nail Fiend
+    members: [Enhanced Physique]
+  - name: Every ally of Nail Fiend
+    match: [every ally of nail fiend, all the allies of nail fiend]
+    subject: Nail Fiend
+    members: [Katana Man, Asa Mitaka, Fami, Yoru, Denji, Seigi Akoku, Haruka Iseumi, Nobana Higashiyama]
+  - name: Every enemy of Nail Fiend
+    match: [every enemy of nail fiend, all the enemies of nail fiend]
+    subject: Nail Fiend
+    members: [Quanxi, Asa Mitaka]
+  # ── page-gen: nakamura (2026-09-17) ──
+  - name: "Nakamura's affiliations"
+    match: [all the affiliations of nakamura, affiliations of nakamura, "nakamura's affiliations"]
+    subject: Nakamura
+    members: [Public Safety Devil Hunters, Tokyo Division 2]
+  - name: Every named technique of Nakamura
+    match: [every named technique of nakamura, every named cursed technique of nakamura, all the named techniques of nakamura, "nakamura's named techniques"]
+    subject: Nakamura
+    members: [Fox Devil Contract]
+  # ── page-gen: nayuta (2026-09-17) ──
+  - name: "Nayuta's affiliations"
+    match: [all the affiliations of nayuta, affiliations of nayuta, "nayuta's affiliations"]
+    subject: Nayuta
+    members: [Four Horsemen, Public Safety Devil Hunters]
+  - name: "Nayuta's aliases"
+    match: [all the aliases of nayuta, aliases of nayuta, "nayuta's aliases"]
+    subject: Nayuta
+    members: [Control Devil, "Control (by \"Fami\")", Conquest Devil, Devil of Domination, The Former Makima (by Barem)]
+  - name: Every named technique of Nayuta
+    match: [every named technique of nayuta, every named cursed technique of nayuta, all the named techniques of nayuta, "nayuta's named techniques"]
+    subject: Nayuta
+    members: ["Bang!", Memory Alteration, Perception Alteration]
+  - name: Every ally of Nayuta
+    match: [every ally of nayuta, all the allies of nayuta]
+    subject: Nayuta
+    members: [Fumiko Mifune, Denji, Death Devil, Seigi Akoku]
+  - name: Every enemy of Nayuta
+    match: [every enemy of nayuta, all the enemies of nayuta]
+    subject: Nayuta
+    members: [Yoru, Barem Bridge, Fumiko Mifune]
+  - name: Every family of Nayuta
+    match: [every family of nayuta, all the families of nayuta]
+    subject: Nayuta
+    members: [Denji, Fami, Death Devil]
+  - name: Every subordinate of Nayuta
+    match: [every subordinate of nayuta, all the subordinates of nayuta]
+    subject: Nayuta
+    members: [Denji, Power, Meowy]
+  - name: Every superior of Nayuta
+    match: [every superior of nayuta, all the superiors of nayuta]
+    subject: Nayuta
+    members: [Denji, Power]
+  # ── page-gen: nazi_devil (2026-09-17) ──
+  - name: "Nazi Devil's affiliations"
+    match: [all the affiliations of nazi devil, affiliations of nazi devil, "nazi devil's affiliations"]
+    subject: Nazi Devil
+    members: [World War II Devil †]
+  # ── page-gen: nobana_higashiyama (2026-09-17) ──
+  - name: "Nobana Higashiyama's affiliations"
+    match: [all the affiliations of nobana higashiyama, affiliations of nobana higashiyama, "nobana higashiyama's affiliations"]
+    subject: Nobana Higashiyama
+    members: [Fourth East High School, Devil Hunter Club, Chainsaw Man Church (formerly)]
+  - name: "Nobana Higashiyama's aliases"
+    match: [all the aliases of nobana higashiyama, aliases of nobana higashiyama, "nobana higashiyama's aliases"]
+    subject: Nobana Higashiyama
+    members: [Glass Licker (by Denji)]
+  - name: Every ally of Nobana Higashiyama
+    match: [every ally of nobana higashiyama, all the allies of nobana higashiyama]
+    subject: Nobana Higashiyama
+    members: [Asa Mitaka, Miri Sugo, Haruka Iseumi, Denji, Seigi Akoku, Fami, Yoru, Nail Fiend]
+  - name: Every enemy of Nobana Higashiyama
+    match: [every enemy of nobana higashiyama, all the enemies of nobana higashiyama]
+    subject: Nobana Higashiyama
+    members: [Quanxi, Barem Bridge]
+  # ── page-gen: nomo (2026-09-17) ──
+  - name: "Nomo's affiliations"
+    match: [all the affiliations of nomo, affiliations of nomo, "nomo's affiliations"]
+    subject: Nomo
+    members: [Public Safety Devil Hunters, Tokyo Division 2]
+  - name: Every named technique of Nomo
+    match: [every named technique of nomo, every named cursed technique of nomo, all the named techniques of nomo, "nomo's named techniques"]
+    subject: Nomo
+    members: [Enhanced Durability, Fox Devil Contract]
+  # ── page-gen: nuclear_weapons_devil (2026-09-17) ──
+  - name: "Nuclear Weapons Devil's affiliations"
+    match: [all the affiliations of nuclear weapons devil, affiliations of nuclear weapons devil, "nuclear weapons devil's affiliations"]
+    subject: Nuclear Weapons Devil
+    members: [Yoru]
+  # ── page-gen: octopus_devil (2026-09-17) ──
+  - name: "Octopus Devil's aliases"
+    match: [all the aliases of octopus devil, aliases of octopus devil, "octopus devil's aliases"]
+    subject: Octopus Devil
+    members: [Octopus]
+  - name: Every named technique of Octopus Devil
+    match: [every named technique of octopus devil, every named cursed technique of octopus devil, all the named techniques of octopus devil, "octopus devil's named techniques"]
+    subject: Octopus Devil
+    members: [Enhanced Strength, Ink Cloud]
+  # ── page-gen: pillbug_devil (2026-09-17) ──
+  - name: "Pillbug Devil's aliases"
+    match: [all the aliases of pillbug devil, aliases of pillbug devil, "pillbug devil's aliases"]
+    subject: Pillbug Devil
+    members: [Pillbug (by Public Safety)]
+  - name: "Pillbug Devil's affiliations"
+    match: [all the affiliations of pillbug devil, affiliations of pillbug devil, "pillbug devil's affiliations"]
+    subject: Pillbug Devil
+    members: [Public Safety Devil Hunters, Tokyo Special Division 6]
+  - name: Every named technique of Pillbug Devil
+    match: [every named technique of pillbug devil, every named cursed technique of pillbug devil, all the named techniques of pillbug devil, "pillbug devil's named techniques"]
+    subject: Pillbug Devil
+    members: [Armored Plates]
+  # ── page-gen: pingtsi (2026-09-17) ──
+  - name: "Pingtsi's affiliations"
+    match: [all the affiliations of pingtsi, affiliations of pingtsi, "pingtsi's affiliations"]
+    subject: Pingtsi
+    members: [Quanxi and the Fiends]
+  - name: Every named technique of Pingtsi
+    match: [every named technique of pingtsi, every named cursed technique of pingtsi, all the named techniques of pingtsi, "pingtsi's named techniques"]
+    subject: Pingtsi
+    members: [Magnifying Glass, Contract Perception, Bilingual]
+  - name: Every enemy of Pingtsi
+    match: [every enemy of pingtsi, all the enemies of pingtsi]
+    subject: Pingtsi
+    members: [Kishibe, Power, Tsugihagi, Quanxi]
+  # ── page-gen: pochita (2026-09-17) ──
+  - name: "Pochita's aliases"
+    match: [all the aliases of pochita, aliases of pochita, "pochita's aliases"]
+    subject: Pochita
+    members: [Chainsaw, Chainsaw Devil, Chainsaw Man, Hero of Hell, Black Chainsaw Man]
+  - name: "Pochita's affiliations"
+    match: [all the affiliations of pochita, affiliations of pochita, "pochita's affiliations"]
+    subject: Pochita
+    members: [Yakuza (formerly), Denji]
+  - name: Every named technique of Pochita
+    match: [every named technique of pochita, every named cursed technique of pochita, all the named techniques of pochita, "pochita's named techniques"]
+    subject: Pochita
+    members: [Immense Speed, Immense Durability, Immense Strength, Immense Healing Factor, Immense Hearing, Devil Erasure, Chainsaw Appendage, Chain Entanglement, Body Assimilation, Devil Transformation]
+  - name: Every ally of Pochita
+    match: [every ally of pochita, all the allies of pochita]
+    subject: Pochita
+    members: [Denji, Makima, Kobeni Higashiyama, Power, Hirofumi Yoshida, Yoru, Death Devil, Asa Mitaka, Famine Devil, Katana Man, Ear Devil]
+  - name: Every enemy of Pochita
+    match: [every enemy of pochita, all the enemies of pochita]
+    subject: Pochita
+    members: [Makima, Reze, Yoru, Aging Devil, Katana Man, Death Devil, Famine Devil, Asa Mitaka, Fami, Whip Hybrid, Hell Devil, Ear Devil, World War II Devil, Centipede Devil, Cockroach Devil, Accident Devil]
+  - name: Every rival of Pochita
+    match: [every rival of pochita, all the rivals of pochita]
+    subject: Pochita
+    members: [Yoru, Katana Man, Makima]
+  - name: Every romantic of Pochita
+    match: [every romantic of pochita, all the romantics of pochita]
+    subject: Pochita
+    members: [Asa Mitaka, Makima]
+  # ── page-gen: power (2026-09-17) ──
+  - name: "Power's affiliations"
+    match: [all the affiliations of power, affiliations of power, "power's affiliations"]
+    subject: Power
+    members: ["Bat Devil (briefly, coerced)", Public Safety Devil Hunters, Tokyo Special Division 4]
+  - name: "Power's aliases"
+    match: [all the aliases of power, aliases of power, "power's aliases"]
+    subject: Power
+    members: [Blood Fiend, Blood Devil, Detective Power, Powy (by Denji), Number One]
+  - name: Every named technique of Power
+    match: [every named technique of power, every named cursed technique of power, all the named techniques of power, "power's named techniques"]
+    subject: Power
+    members: [Enhanced Strength, Enhanced Speed, Blood Manipulation, Blood Hammer, Blood Knife, Blood Spear, Blood Scythe, Blood Dagger, Blood Axe, Blood Chainsaw, Thousand Tera Blood Rain, Blood Transfer, Blood Empowerment, Knifemanship, Acting Skills, Enhanced Smell]
+  - name: Every ally of Power
+    match: [every ally of power, all the allies of power]
+    subject: Power
+    members: [Denji, Aki Hayakawa, Himeno, Kobeni Higashiyama, Hirokazu Arai, Kusakabe, Long, Makima, Pochita, Hirofumi Yoshida, Meowy]
+  - name: Every enemy of Power
+    match: [every enemy of power, all the enemies of power]
+    subject: Power
+    members: [Bat Devil, Katana Man, Kobeni Higashiyama, Quanxi, Makima, Denji, Aki Hayakawa, Pingtsi, House Devil]
+  - name: Every friend of Power
+    match: [every friend of power, all the friends of power]
+    subject: Power
+    members: [Meowy, Denji, Aki Hayakawa, Chocolate]
+  - name: Every mentor of Power
+    match: [every mentor of power, all the mentors of power]
+    subject: Power
+    members: [Denji, Aki Hayakawa, Kishibe]
+  - name: Every subordinate of Power
+    match: [every subordinate of power, all the subordinates of power]
+    subject: Power
+    members: [Makima, Aki Hayakawa, Nayuta, Denji, Meowy]
+  - name: Every superior of Power
+    match: [every superior of power, all the superiors of power]
+    subject: Power
+    members: [Makima, Aki Hayakawa, Denji, Nayuta, Long]
+  # ── page-gen: princi (2026-09-17) ──
+  - name: "Princi's affiliations"
+    match: [all the affiliations of princi, affiliations of princi, "princi's affiliations"]
+    subject: Princi
+    members: [Public Safety Devil Hunters, Tokyo Special Division 4]
+  - name: Every named technique of Princi
+    match: [every named technique of princi, every named cursed technique of princi, all the named techniques of princi, "princi's named techniques"]
+    subject: Princi
+    members: [Intangibility, Summoning]
+  - name: Every enemy of Princi
+    match: [every enemy of princi, all the enemies of princi]
+    subject: Princi
+    members: [Akane Sawatari, Darkness Devil]
+  # ── page-gen: punishment_devil (2026-09-17) ──
+  - name: Every ally of Punishment Devil
+    match: [every ally of punishment devil, all the allies of punishment devil]
+    subject: Punishment Devil
+    members: [Yutaro Kurose, Michiko Tendo]
+  # ── page-gen: quanxi (2026-09-17) ──
+  - name: "Quanxi's affiliations"
+    match: [all the affiliations of quanxi, affiliations of quanxi, "quanxi's affiliations"]
+    subject: Quanxi
+    members: [China, Quanxi and the Fiends, Makima (brainwashed), Tokyo Special Division 5 (formerly), Public Safety Devil Hunters, Tokyo Special Division 7, Tokyo Devil Detention Center]
+  - name: "Quanxi's aliases"
+    match: [all the aliases of quanxi, aliases of quanxi, "quanxi's aliases"]
+    subject: Quanxi
+    members: [The First Devil Hunter, Bow (by Fumiko Mifune)]
+  - name: Every named technique of Quanxi
+    match: [every named technique of quanxi, every named cursed technique of quanxi, all the named techniques of quanxi, "quanxi's named techniques"]
+    subject: Quanxi
+    members: [Enhanced Strength, Enhanced Speed, Enhanced Reflexes, Hybrid Transformation, Arrow Shooting, Blood Consumption, Nigh-Immortality, Bilingual, Hand-to-Hand Combat, Archery, Swordsmanship]
+  - name: Every ally of Quanxi
+    match: [every ally of quanxi, all the allies of quanxi]
+    subject: Quanxi
+    members: [Fiend, Denji, Tamaoki, Yoru, Aki Hayakawa, Long, Tsugihagi]
+  - name: Every enemy of Quanxi
+    match: [every enemy of quanxi, all the enemies of quanxi]
+    subject: Quanxi
+    members: [Denji, Kishibe, Aldo, Power, Asa Mitaka, Katana Man, Makima, Hirofumi Yoshida, Nobana Higashiyama, Santa Claus, Nail Fiend, Pingtsi, Mannequin Devil, Long]
+  - name: Every rival of Quanxi
+    match: [every rival of quanxi, all the rivals of quanxi]
+    subject: Quanxi
+    members: [Kishibe, Power]
+  - name: Every romantic of Quanxi
+    match: [every romantic of quanxi, all the romantics of quanxi]
+    subject: Quanxi
+    members: [Kishibe, Fiend, Fumiko Mifune, Pingtsi, Cosmo, Long, Tsugihagi]
+  - name: Every subordinate of Quanxi
+    match: [every subordinate of quanxi, all the subordinates of quanxi]
+    subject: Quanxi
+    members: [Fiend, Cosmo, Makima, Kishibe, Pingtsi]
+  - name: Every superior of Quanxi
+    match: [every superior of quanxi, all the superiors of quanxi]
+    subject: Quanxi
+    members: [Long, Pingtsi, Makima, Takagi]
+  # ── page-gen: reze (2026-09-17) ──
+  - name: "Reze's affiliations"
+    match: [all the affiliations of reze, affiliations of reze, "reze's affiliations"]
+    subject: Reze
+    members: [Gun Devil (ruse), Soviet Union (formerly), Makima (brainwashed), Tokyo Special Division 5 (formerly)]
+  - name: "Reze's aliases"
+    match: [all the aliases of reze, aliases of reze, "reze's aliases"]
+    subject: Reze
+    members: [Lady Reze, Bomb, Bomb Girl]
+  - name: Every named technique of Reze
+    match: [every named technique of reze, every named cursed technique of reze, all the named techniques of reze, "reze's named techniques"]
+    subject: Reze
+    members: [Enhanced Strength, Enhanced Speed, Hybrid Transformation, Augmented Durability, Explosion Creation, Explosive Propulsion, Augmented Strength, Augmented Speed, Explosive Spark, Self-Detonation, Torpedo Transformation, Blood Consumption, Nigh-Immortality, Knifemanship, Hand-to-Hand Combat, Bilingual]
+  - name: Every ally of Reze
+    match: [every ally of reze, all the allies of reze]
+    subject: Reze
+    members: [Typhoon Devil, Denji, Gun Devil]
+  - name: Every enemy of Reze
+    match: [every enemy of reze, all the enemies of reze]
+    subject: Reze
+    members: [Beam, Nomo, Kato, Tanabe, Aki Hayakawa, Denji, Makima, Pochita, Kobeni Higashiyama, Angel Devil, Galgali, Masaki Ando]
+  - name: Every subordinate of Reze
+    match: [every subordinate of reze, all the subordinates of reze]
+    subject: Reze
+    members: [Typhoon Devil, Makima]
+  - name: Every superior of Reze
+    match: [every superior of reze, all the superiors of reze]
+    subject: Reze
+    members: [Aki Hayakawa, Kobeni Higashiyama, Makima]
+  # ── page-gen: santa_claus (2026-09-17) ──
+  - name: "Santa Claus's affiliations"
+    match: [all the affiliations of santa claus, affiliations of santa claus, "santa claus's affiliations"]
+    subject: Santa Claus
+    members: [Germany (possible ruse)]
+  - name: "Santa Claus's aliases"
+    match: [all the aliases of santa claus, aliases of santa claus, "santa claus's aliases"]
+    subject: Santa Claus
+    members: [Santa Claus, Master, The Puppeteer, Tolka’s Master]
+  - name: Every named technique of Santa Claus
+    match: [every named technique of santa claus, every named cursed technique of santa claus, all the named techniques of santa claus, "santa claus's named techniques"]
+    subject: Santa Claus
+    members: [Doll Creation, Perfect Doll Creation, Mind Transfer, Curse Devil Contract, Hell Devil Contract, Enhanced Doll Devil Power, Enhanced Strength, Enhanced Speed, Enhanced Intelligence, Immense Regeneration, Devil Transformation]
+  - name: Every enemy of Santa Claus
+    match: [every enemy of santa claus, all the enemies of santa claus]
+    subject: Santa Claus
+    members: [Denji, Quanxi, Cosmo]
+  - name: Every subordinate of Santa Claus
+    match: [every subordinate of santa claus, all the subordinates of santa claus]
+    subject: Santa Claus
+    members: [Tolka, Makima]
+  - name: Every superior of Santa Claus
+    match: [every superior of santa claus, all the superiors of santa claus]
+    subject: Santa Claus
+    members: [Tolka, Hell Devil]
+  # ── page-gen: sato (2026-09-17) ──
+  - name: "Sato's affiliations"
+    match: [all the affiliations of sato, affiliations of sato, "sato's affiliations"]
+    subject: Sato
+    members: [Public Safety Devil Hunters]
+  # ── page-gen: seigi_akoku (2026-09-17) ──
+  - name: "Seigi Akoku's affiliations"
+    match: [all the affiliations of seigi akoku, affiliations of seigi akoku, "seigi akoku's affiliations"]
+    subject: Seigi Akoku
+    members: [Fourth East High School, Devil Hunter Club, Chainsaw Man Church (formerly)]
+  - name: Every named technique of Seigi Akoku
+    match: [every named technique of seigi akoku, every named cursed technique of seigi akoku, all the named techniques of seigi akoku, "seigi akoku's named techniques"]
+    subject: Seigi Akoku
+    members: [Hand-to-Hand Combat]
+  - name: Every ally of Seigi Akoku
+    match: [every ally of seigi akoku, all the allies of seigi akoku]
+    subject: Seigi Akoku
+    members: [Asa Mitaka, Hirofumi Yoshida, Denji, Nayuta, Yoru, Nail Fiend, Fami, Haruka Iseumi, Nobana Higashiyama]
+  # ── page-gen: seraphim (2026-09-17) ──
+  - name: "Seraphim's affiliations"
+    match: [all the affiliations of seraphim, affiliations of seraphim, "seraphim's affiliations"]
+    subject: Seraphim
+    members: [Public Safety Devil Hunters]
+  # ── page-gen: shiina (2026-09-17) ──
+  - name: "Shiina's affiliations"
+    match: [all the affiliations of shiina, affiliations of shiina, "shiina's affiliations"]
+    subject: Shiina
+    members: [Police Force]
+  - name: Every ally of Shiina
+    match: [every ally of shiina, all the allies of shiina]
+    subject: Shiina
+    members: [Furuno, Kishibe]
+  # ── page-gen: spear_hybrid (2026-09-17) ──
+  - name: "Spear Hybrid's affiliations"
+    match: [all the affiliations of spear hybrid, affiliations of spear hybrid, "spear hybrid's affiliations"]
+    subject: Spear Hybrid
+    members: [Makima (brainwashed), Tokyo Special Division 5 (formerly), Chainsaw Man Church]
+  - name: Every named technique of Spear Hybrid
+    match: [every named technique of spear hybrid, every named cursed technique of spear hybrid, all the named techniques of spear hybrid, "spear hybrid's named techniques"]
+    subject: Spear Hybrid
+    members: [Hybrid Transformation, Augmented Body, Spear Generation, Blood Consumption, Nigh-Immortality]
+  - name: Every ally of Spear Hybrid
+    match: [every ally of spear hybrid, all the allies of spear hybrid]
+    subject: Spear Hybrid
+    members: [Barem Bridge, Whip Hybrid, Miri Sugo]
+  - name: Every superior of Spear Hybrid
+    match: [every superior of spear hybrid, all the superiors of spear hybrid]
+    subject: Spear Hybrid
+    members: [Makima, Barem Bridge]
+  # ── page-gen: stag_beetle_devil (2026-09-17) ──
+  - name: "Stag Beetle Devil's affiliations"
+    match: [all the affiliations of stag beetle devil, affiliations of stag beetle devil, "stag beetle devil's affiliations"]
+    subject: Stag Beetle Devil
+    members: [Public Safety Devil Hunters, Tokyo Special Division 6]
+  # ── page-gen: std_devil (2026-09-17) ──
+  - name: Every named technique of STD Devil
+    match: [every named technique of std devil, every named cursed technique of std devil, all the named techniques of std devil, "std devil's named techniques"]
+    subject: STD Devil
+    members: [Infectious Duplication]
+  # ── page-gen: stone_devil (2026-09-17) ──
+  - name: Every named technique of Stone Devil
+    match: [every named technique of stone devil, every named cursed technique of stone devil, all the named techniques of stone devil, "stone devil's named techniques"]
+    subject: Stone Devil
+    members: [Petrification]
+  # ── page-gen: subaru (2026-09-17) ──
+  - name: "Subaru's affiliations"
+    match: [all the affiliations of subaru, affiliations of subaru, "subaru's affiliations"]
+    subject: Subaru
+    members: [Public Safety Devil Hunters, Kyoto Division 1]
+  - name: Every ally of Subaru
+    match: [every ally of subaru, all the allies of subaru]
+    subject: Subaru
+    members: [Yutaro Kurose, Michiko Tendo]
+  # ── page-gen: takagi (2026-09-17) ──
+  - name: "Takagi's affiliations"
+    match: [all the affiliations of takagi, affiliations of takagi, "takagi's affiliations"]
+    subject: Takagi
+    members: [Public Safety Devil Hunters, Tokyo Special Division 7, Tokyo Devil Detention Center]
+  - name: Every enemy of Takagi
+    match: [every enemy of takagi, all the enemies of takagi]
+    subject: Takagi
+    members: [Asa Mitaka, Fami, Yoru, Katana Man]
+  - name: Every subordinate of Takagi
+    match: [every subordinate of takagi, all the subordinates of takagi]
+    subject: Takagi
+    members: [Denji, Katana Man, Quanxi]
+  # ── page-gen: tamaoki (2026-09-17) ──
+  - name: "Tamaoki's affiliations"
+    match: [all the affiliations of tamaoki, affiliations of tamaoki, "tamaoki's affiliations"]
+    subject: Tamaoki
+    members: [Public Safety Devil Hunters, Miyagi Division 2]
+  - name: Every ally of Tamaoki
+    match: [every ally of tamaoki, all the allies of tamaoki]
+    subject: Tamaoki
+    members: [Kusakabe, Denji, Hirofumi Yoshida, Quanxi]
+  # ── page-gen: tanabe (2026-09-17) ──
+  - name: "Tanabe's affiliations"
+    match: [all the affiliations of tanabe, affiliations of tanabe, "tanabe's affiliations"]
+    subject: Tanabe
+    members: [Public Safety Devil Hunters, Tokyo Division 2]
+  - name: Every named technique of Tanabe
+    match: [every named technique of tanabe, every named cursed technique of tanabe, all the named techniques of tanabe, "tanabe's named techniques"]
+    subject: Tanabe
+    members: [Mold Devil Contract]
+  # ── page-gen: tanaka (2026-09-17) ──
+  - name: "Tanaka's affiliations"
+    match: [all the affiliations of tanaka, affiliations of tanaka, "tanaka's affiliations"]
+    subject: Tanaka
+    members: [Fourth East High School]
+  # ── page-gen: tank_devil (2026-09-17) ──
+  - name: "Tank Devil's aliases"
+    match: [all the aliases of tank devil, aliases of tank devil, "tank devil's aliases"]
+    subject: Tank Devil
+    members: [Tank]
+  - name: "Tank Devil's affiliations"
+    match: [all the affiliations of tank devil, affiliations of tank devil, "tank devil's affiliations"]
+    subject: Tank Devil
+    members: [Mexico (formerly), Yoru]
+  # ── page-gen: teeth_devil (2026-09-17) ──
+  - name: "Teeth Devil's affiliations"
+    match: [all the affiliations of teeth devil, affiliations of teeth devil, "teeth devil's affiliations"]
+    subject: Teeth Devil
+    members: [Death Devil (brainwashed)]
+  # ── page-gen: tolka (2026-09-17) ──
+  - name: "Tolka's affiliations"
+    match: [all the affiliations of tolka, affiliations of tolka, "tolka's affiliations"]
+    subject: Tolka
+    members: [Soviet Union, Santa Claus (mentor)]
+  - name: Every enemy of Tolka
+    match: [every enemy of tolka, all the enemies of tolka]
+    subject: Tolka
+    members: [Denji, Beam, Makima]
+  - name: Every superior of Tolka
+    match: [every superior of tolka, all the superiors of tolka]
+    subject: Tolka
+    members: [Santa Claus, Curse Devil]
+  # ── page-gen: tomato_devil (2026-09-17) ──
+  - name: Every named technique of Tomato Devil
+    match: [every named technique of tomato devil, every named cursed technique of tomato devil, all the named techniques of tomato devil, "tomato devil's named techniques"]
+    subject: Tomato Devil
+    members: [Seed Revival]
+  # ── page-gen: tomono (2026-09-17) ──
+  - name: Every ally of Tomono
+    match: [every ally of tomono, all the allies of tomono]
+    subject: Tomono
+    members: [Yutaro Kurose, Aldo]
+  - name: Every friend of Tomono
+    match: [every friend of tomono, all the friends of tomono]
+    subject: Tomono
+    members: [Yutaro Kurose, Michiko Tendo, Aldo]
+  # ── page-gen: tsugihagi (2026-09-17) ──
+  - name: "Tsugihagi's affiliations"
+    match: [all the affiliations of tsugihagi, affiliations of tsugihagi, "tsugihagi's affiliations"]
+    subject: Tsugihagi
+    members: [Quanxi and the Fiends]
+  # ── page-gen: typhoon_devil (2026-09-17) ──
+  - name: "Typhoon Devil's affiliations"
+    match: [all the affiliations of typhoon devil, affiliations of typhoon devil, "typhoon devil's affiliations"]
+    subject: Typhoon Devil
+    members: [Reze]
+  - name: Every named technique of Typhoon Devil
+    match: [every named technique of typhoon devil, every named cursed technique of typhoon devil, all the named techniques of typhoon devil, "typhoon devil's named techniques"]
+    subject: Typhoon Devil
+    members: [Enhanced Strength, Storm Creation, Water Communication]
+  - name: Every ally of Typhoon Devil
+    match: [every ally of typhoon devil, all the allies of typhoon devil]
+    subject: Typhoon Devil
+    members: [Reze, Mysterious Man]
+  - name: Every enemy of Typhoon Devil
+    match: [every enemy of typhoon devil, all the enemies of typhoon devil]
+    subject: Typhoon Devil
+    members: [Denji, Beam]
+  # ── page-gen: virtue (2026-09-17) ──
+  - name: "Virtue's affiliations"
+    match: [all the affiliations of virtue, affiliations of virtue, "virtue's affiliations"]
+    subject: Virtue
+    members: [Public Safety Devil Hunters]
+  # ── page-gen: whip_hybrid (2026-09-17) ──
+  - name: "Whip Hybrid's affiliations"
+    match: [all the affiliations of whip hybrid, affiliations of whip hybrid, "whip hybrid's affiliations"]
+    subject: Whip Hybrid
+    members: [Makima (brainwashed), Tokyo Special Division 5 (formerly), Chainsaw Man Church]
+  - name: Every named technique of Whip Hybrid
+    match: [every named technique of whip hybrid, every named cursed technique of whip hybrid, all the named techniques of whip hybrid, "whip hybrid's named techniques"]
+    subject: Whip Hybrid
+    members: [Hybrid Transformation, Augmented Body, Whips, Blood Consumption, Nigh-Immortality]
+  - name: Every ally of Whip Hybrid
+    match: [every ally of whip hybrid, all the allies of whip hybrid]
+    subject: Whip Hybrid
+    members: [Spear Hybrid, Miri Sugo, Barem Bridge]
+  - name: Every enemy of Whip Hybrid
+    match: [every enemy of whip hybrid, all the enemies of whip hybrid]
+    subject: Whip Hybrid
+    members: [Pochita, Denji, Fumiko Mifune]
+  - name: Every superior of Whip Hybrid
+    match: [every superior of whip hybrid, all the superiors of whip hybrid]
+    subject: Whip Hybrid
+    members: [Makima, Barem Bridge]
+  # ── page-gen: world_war_ii_devil (2026-09-17) ──
+  - name: "World War II Devil's affiliations"
+    match: [all the affiliations of world war ii devil, affiliations of world war ii devil, "world war ii devil's affiliations"]
+    subject: World War II Devil
+    members: [Yoru]
+  # ── page-gen: yoru (2026-09-17) ──
+  - name: "Yoru's affiliations"
+    match: [all the affiliations of yoru, affiliations of yoru, "yoru's affiliations"]
+    subject: Yoru
+    members: [Asa Mitaka (via coercion; formerly), Four Horsemen, Nuclear Weapons Devil, World War II Devil †, Fourth East High School (formerly), Devil Hunter Club (formerly), Chainsaw Man Church (formerly)]
+  - name: "Yoru's aliases"
+    match: [all the aliases of yoru, aliases of yoru, "yoru's aliases"]
+    subject: Yoru
+    members: [Lady Yoru, War Fiend, War Devil, War]
+  - name: Every named technique of Yoru
+    match: [every named technique of yoru, every named cursed technique of yoru, all the named techniques of yoru, "yoru's named techniques"]
+    subject: Yoru
+    members: [Contract Trigger, Immense Strength, Nuclear Punch, Immense Speed, Immense Durability, Immense Healing Factor, Flesh Weapon Creation, Tanaka Spinal Cord Sword, Flesh Hand Grenade, Yuko Leg Sword, Left Tank Gauntlet, Right Gun Gauntlet, Falling Devil Clothes, Hell Connection, Gravity Manipulation, Chainsaw Whip, Object Weapon Creation, Pencil Spear, Ruler Sword, Scalpel Sword, Soap Sword, Straw Knife, Sushi Sword, Building Sword, Unspecified Sword Weapon, Michigan Sword, Oregon Sword, Moon Spear, Chainsaw Motorcycle, Gun Goddess, Swordsmanship, Spearmanship, Gunmanship, Strategic Intelligence]
+  - name: Every ally of Yoru
+    match: [every ally of yoru, all the allies of yoru]
+    subject: Yoru
+    members: [Asa Mitaka, Pochita, Fami, Denji, Katana Man, Nail Fiend, Haruka Iseumi, Nobana Higashiyama, Seigi Akoku, Hirofumi Yoshida, Quanxi, Fumiko Mifune, Gun Devil, Tank Devil, Moray Eel Devil, Lion Devil]
+  - name: Every creator of Yoru
+    match: [every creator of yoru, all the creators of yoru]
+    subject: Yoru
+    members: [Asa Mitaka, Gun Devil, Tank Devil]
+  - name: Every enemy of Yoru
+    match: [every enemy of yoru, all the enemies of yoru]
+    subject: Yoru
+    members: [Pochita, Denji, Fami, Death Devil, Yuko, Nayuta, Falling Devil, Asa Mitaka, Famine Devil, Hirofumi Yoshida, Miri Sugo, Aging Devil, Eternity Devil, Takagi, Locust Devil]
+  - name: Every family of Yoru
+    match: [every family of yoru, all the families of yoru]
+    subject: Yoru
+    members: [Fami, Death Devil, Gun Devil, Tank Devil, Asa Mitaka]
+  - name: Every friend of Yoru
+    match: [every friend of yoru, all the friends of yoru]
+    subject: Yoru
+    members: [Asa Mitaka, Denji, Moray Eel Devil]
+  - name: Every rival of Yoru
+    match: [every rival of yoru, all the rivals of yoru]
+    subject: Yoru
+    members: [Yuko, Pochita, Denji, Asa Mitaka]
+  - name: Every romantic of Yoru
+    match: [every romantic of yoru, all the romantics of yoru]
+    subject: Yoru
+    members: [Denji, Hirofumi Yoshida, Asa Mitaka]
+  - name: Every subordinate of Yoru
+    match: [every subordinate of yoru, all the subordinates of yoru]
+    subject: Yoru
+    members: [Asa Mitaka, Death Devil, Moray Eel Devil, Accident Devil]
+  # ── page-gen: yuko (2026-09-17) ──
+  - name: "Yuko's affiliations"
+    match: [all the affiliations of yuko, affiliations of yuko, "yuko's affiliations"]
+    subject: Yuko
+    members: [Fourth East High School, Devil Hunter Club]
+  - name: Every named technique of Yuko
+    match: [every named technique of yuko, every named cursed technique of yuko, all the named techniques of yuko, "yuko's named techniques"]
+    subject: Yuko
+    members: [Fire Devil Contract, Mind Reading, Sharp Claws, Devil Transformation, Enhanced Strength, Enhanced Speed]
+  - name: Every enemy of Yuko
+    match: [every enemy of yuko, all the enemies of yuko]
+    subject: Yuko
+    members: [Yoru, Denji, Asa Mitaka, Fake Chainsaw Man, Seigi Akoku, Bat Devil, Furio]
+  - name: Every family of Yuko
+    match: [every family of yuko, all the families of yuko]
+    subject: Yuko
+    members: [Death Devil, Fami]
+  # ── page-gen: yutaro_kurose (2026-09-17) ──
+  - name: "Yutaro Kurose's affiliations"
+    match: [all the affiliations of yutaro kurose, affiliations of yutaro kurose, "yutaro kurose's affiliations"]
+    subject: Yutaro Kurose
+    members: [Public Safety Devil Hunters, Kyoto Division 1, Makima (postmortem)]
+  - name: Every ally of Yutaro Kurose
+    match: [every ally of yutaro kurose, all the allies of yutaro kurose]
+    subject: Yutaro Kurose
+    members: [Aki Hayakawa, Michiko Tendo, Subaru, Denji, Tomono, Punishment Devil]
+  # ── page-gen: zombie_devil (2026-09-17) ──
+  - name: "Zombie Devil's affiliations"
+    match: [all the affiliations of zombie devil, affiliations of zombie devil, "zombie devil's affiliations"]
+    subject: Zombie Devil
+    members: [Yakuza (formerly), Makima (brainwashed)]
+  - name: Every named technique of Zombie Devil
+    match: [every named technique of zombie devil, every named cursed technique of zombie devil, all the named techniques of zombie devil, "zombie devil's named techniques"]
+    subject: Zombie Devil
+    members: [Zombie Creation, Blood Consumption]
+  - name: Every creation of Zombie Devil
+    match: [every creation of zombie devil, all the creations of zombie devil]
+    subject: Zombie Devil
+    members: [Katana Man, Akane Sawatari]
 
 # Section labels that kept arriving as members. A heading is where an
 # ability is described, never one itself, and `_drop_templates` only

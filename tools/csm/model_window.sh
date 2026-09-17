@@ -27,6 +27,14 @@ phase() { echo "$1" > "$STATE"; say "PHASE $1"; }
 restore() {
   trap - EXIT
   say "RESTORE: bringing the steady state back (Qwen up, :8000 CPU)"
+  # The CUDA :8000 must leave the card BEFORE Qwen loads: the 2026-09-17
+  # window restored Qwen first, Qwen found 7.7 of its 10 GB runtime reservation
+  # and exited, and the mode file still claimed a restore (Qwen down 13:30-18:28).
+  pkill -f 'scriptengine.api.main' 2>/dev/null
+  for i in $(seq 1 30); do
+    [ "$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits | head -1)" -lt 2048 ] && break
+    sleep 2
+  done
   if ! pgrep -f 'qwen3_8_27b_nvfp4.ninfer' >/dev/null; then
     nohup "$NINFER/serve_ctx_174080.sh" >> "$NINFER/logs/serve_170k_window.log" 2>&1 &
     say "RESTORE: serve_ctx_174080 launched"
@@ -39,9 +47,9 @@ restore() {
     printf 'mode=174080 ctx=174080 qwen_pid=%s ts=%s free_mib=%s api=off\n' \
       "${QPID:-0}" "$(date +%Y-%m-%dT%H:%M:%S%:z)" "$FREE" > "$NINFER/qwen_mode.txt"
     say "RESTORE: Qwen mode file written (pid ${QPID:-MISSING})"
+    curl -s -m 2 http://127.0.0.1:18080/health 2>/dev/null | grep -q ok \
+      || say "RESTORE: FAILED — Qwen :18080 not healthy (see $NINFER/logs/serve_170k_window.log)"
   fi
-  pkill -f 'scriptengine.api.main' 2>/dev/null
-  sleep 3
   SCRIPTENGINE_DEVICE=cpu nohup "$VENV" -m scriptengine.api.main > /tmp/scriptengine_api.log 2>&1 &
   for i in $(seq 1 30); do
     curl -s -m 2 http://127.0.0.1:8000/health 2>/dev/null | grep -q ok && break
@@ -120,7 +128,7 @@ tail -8 "$STATEDIR/p23_grader.log" >> "$LOG"
 phase page-run
 # batch files are questions/_csm_page_<slug>.json; the .coverage./.verify.
 # twins are score artifacts, not batches
-SLUGS=$(ls questions/_csm_page_*.json 2>/dev/null | grep -v '\.coverage\.json$' | grep -v '\.verify\.json$' | sed 's|questions/_csm_page_||; s|\.json$||')
+SLUGS=$(ls questions/_csm_page_*.json 2>/dev/null | grep -v '\.coverage\.json$' | grep -v '\.verify\.json$' | grep -v '\.report\.json$' | sed 's|questions/_csm_page_||; s|\.json$||')
 N=$(echo "$SLUGS" | grep -c . || true)
 say "page-run: $N batches"
 : > "$STATEDIR/page_run.tsv"
