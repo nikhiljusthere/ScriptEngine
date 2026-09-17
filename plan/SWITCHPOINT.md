@@ -25,6 +25,19 @@ edit those.
     `script-gen` + `cli verify` on CSM) → the R-9-vs-writer-bar evidence
     call (input: `p23_red_triage.md` + the P2.4 output) → residual triage
     sign-off (P-4, all logs on disk) → `PHASE_B_COMPLETE`.
+  - **P2.4 FIRED 2026-09-17 (opencode session, Qwen up @ 174080 pid 286402,
+    no switch needed):** `script-gen "Denji" --series csm --words 6000
+    --mode auto`, writer via `SCRIPTENGINE_WRITER_BACKEND=opencode`
+    (opencode → Qwen `:18080`), research in-process on
+    `SCRIPTENGINE_DEVICE=cpu` (4.4 GB free < 5.3 GB; Qwen owns the GPU —
+    hard rule). Essence (owner-rule pick, stated not asked): quiet heavy
+    opening (Tokyo alley, the boy with nothing to lose), slow anime pacing,
+    resolution = "love is the power that keeps a heart moving" (a reading),
+    tragedies worked: debt, the abusive father, agency lost to Public
+    Safety. Also fixed: `.env` SCRIPTS_ROOT was a stale Windows path — the
+    two JJK video folders moved into `scripts output/`. If this session dies
+    mid-run: poll `/tmp/p24_writer_leg.log`; a re-fire reuses the video
+    folder (idempotent subject+title).
 - **2026-09-17 ~09:50 (Claude session C — owner-directed switch 262k → 170k, ctx 174080):**
   - **Switch:** `qwen-switch.sh 174080 --force` (owner correction: 170k, not
     full context; same dead 09-12 pi transcript trips the fit guard). Configs
