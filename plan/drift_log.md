@@ -2212,3 +2212,110 @@ entry.
     VOID formal → CLOSE.
   - **Return:** owner says "commit" (one word) → execute to the next
     council checkpoint.
+
+  ## D62 — D7 re-score-council session resume (post muse-spark limit);
+  narrow legs staged on disk (2026-09-18, opencode)
+
+  - **What:** prior session (`ses_f503d5a0`, muse-spark, 1,647 msgs) hit
+    its model limit 16:24 mid-plan; a fresh opencode session resumed from
+    disk (SWITCHPOINT + GATE D7 blocks + `/tmp/d7_gates` state files):
+    deriv leg CONFIRMED (D61) + committed `20d6da4e`; post-commit gates
+    green 15:46–15:59. Uncommitted = the 44-line narrow legs
+    (TIERED env-flagged + ABILWIDTH unflagged) in `context.py` + 3 report
+    jsonl. Two read-only prep subagents ran in parallel (owner 16:4x,
+    superseding the one-at-a-time limit for read-only work): state
+    compaction (`ses_f4bd05f4`) + re-score staging (`ses_f4bd05f3`) —
+    staging corrections now on disk: confirm legs already executed (D61),
+    `qwen_mode.txt` stale (Qwen actually 135k owner-manual, pid 1137321,
+    argv captured), `tools/csm/d7_gates.sh` 65k-restore stale, `D6_OOS_PRE.
+    jsonl` clobber warning (the `:8000` OOS scorer overwrites it — back up
+    first).
+  - **Wall for the council:** ranking probe RED (arcb-05, limit unproven,
+    upstream-of-ranking) vs the D61 width queue (tiered → depth → official
+    suite → VOID → CLOSE). GPU: 135k leaves 5,142 MiB free < the ~5.3 GB
+    in-process stack → 100k switch or stop-restore-135k (owner-manual
+    profile; restore argv on disk in the SWITCHPOINT session record).
+  - **Return:** the D7 re-score council (sequential, one subagent at a
+    time) rules ordering + GPU path + the one-subagent task; then that task
+    executes (pre-register → run narrow leg singly → grade p23 + blind +
+    OOS/green30 → 4 standing gates at closure → commit only on green +
+    owner word).
+
+  ## D63 — D7 re-score council complete (council #36); verdict
+  LEGS-FIRST-FLAGGED (2026-09-18, opencode)
+
+  - **What:** the D7 re-score council ran to completion — 11 members
+    strictly sequential (5 advisors A–E: A=Executor, B=Outsider,
+    C=First-Principles, D=Contrarian, E=Expansionist; 5 reviewers R1–R5;
+    chairman `ses_f4bb05537ffeYp79GIRq7R63az`), each fresh-context,
+    zero-GPU, read-only; all finals + the verdict restored verbatim from
+    opencode.db session transcripts (in-conversation copies truncated the
+    chairman at clash C2; letter↔session maps in the receipts). On-disk:
+    `reports/csm/COUNCIL_csm_d7_rescore.md` (summary record) +
+    `reports/csm/receipts/council_d7_rescore/{framed_question,advisors,
+    reviews,chairman}.md` + ledger #36 + the SWITCHPOINT current-position
+    entry (the superseded "FIRST ACTION ON RESUME" bullet replaced).
+  - **Verdict: LEGS-FIRST-FLAGGED (Q3 (b) 4–1; only E for (a)).** (Q1)
+    grade the two narrow legs SINGLY in one detached kill-window (A:
+    TIERED=1/ABILWIDTH=0 → B: TIERED=0/ABILWIDTH=1 → C: both); the
+    focus-resolution spike runs AFTER, GPU-free, in the live session —
+    GATE's "spike first" line ruled stale/superseded (it predates D59,
+    which already flipped D7 row org-03). (Q2) ABILWIDTH behind the new
+    `SCRIPTENGINE_ABILWIDTH_RECALL` (default OFF, 3-line mirror of
+    `_tiered_enabled`), ruled AGAINST the 3-advisor as-is majority
+    (A/C/E) on JJK-baseline-untouched: its JJK no-op is data-dependent
+    (JJK's ability table is empty), not by-construction; rollback becomes
+    "unset the flag". (Q3) stop owner-manual 135k → grade legs + the four
+    standing gates with both flags default-OFF on the whole card → restore
+    135k from the freshly captured + verified argv (pid/argv/cwd to
+    `/tmp/d7_qwen_{pid,argv,cwd}.txt`, `test -x` binary, `test -e` model
+    path — the `qwen-switch` state record and `d7_gates.sh` 65k argv are
+    both stale) — executed as ONE `setsid nohup` detached chain
+    `tools/csm/d7_window_chain.sh` (every post-kill step is shell; the
+    session runs on the server being killed — R2/R3/R4 unanimous), issued
+    as the subagent's final act; owner resumes `opencode -c` and reads
+    `reports/csm/receipts/d7_window/RECEIPT_DONE` + `/tmp/d7_gpu_chain.log`
+    (no sentinel within the hour ⇒ relaunch 135k by hand from the captured
+    argv). (Q4) the ONE subagent task = 6 pre-staging steps while Qwen is
+    alive: (1) D59 receipts gate — the chairman verified on disk that
+    ABILWIDTH ∉ D59's 473 tree (`ABILWIDTH_PREDICT.md` post-dates D60's
+    "remaining reds: 17"; pool-140/358 stayed red in D59) so the full-bank
+    grade genuinely remains unbought and the window stands; a contradiction
+    discards legs B/C (no window, record + stop); (2) 17/6/23 arithmetic
+    re-stated (p23 486−469 = 17 reds + OOS200 194/200 = 6 reds = 23 = 7
+    D7 holdout rows + 16 floor rows; org-05/06/vol-10 green post-commit
+    ⇒ 4 live D7 reds: chap-01, org-03, pool-140/358); (3) OOS floor
+    authority = `d6_flip.py` exit-2 (any green30 flip OR oos200 drop ≥ 3
+    vs `D6_OOS_PRE.jsonl`, backed up first — the two OOS instruments
+    clobber it); (4) TIERED flag-off inertness by read, folded into the
+    gate run (asserted-not-proven, R1/R2); (5) argv capture +
+    verification; (6) snapshots + the 3-line flag edit + per-leg
+    `PREDICT.md` (Leg A W ≥ 469, flips ⊇ {arcn-02, arcn-10, org-03,
+    state-08}; Leg B W ≥ 469, flips ⊇ {pool-140, pool-358}; Leg C the
+    union; each 0 counter-flips, blind 19/19, `d6_flip.py` rc=0; + the
+    16-row floor re-count) + `check_targets.py` + the SWITCHPOINT
+    governance commit (engine code stays uncommitted) → then the chain.
+  - **Pass bar / stop conditions:** pass = all three legs PASS + the four
+    standing gates (pytest 1,331 pin / eval jjk 31/31 / span jjk 48,572 +
+    400-probe / canon opm ≥ 10/16 · 236/236 · 79.0%); first RED leg →
+    halt the remaining legs (gates still run for the record; Qwen
+    restored; receipt = RED + that leg's kill clause — no ex-post
+    retuning, D59); OOM / restore failure → receipt + owner relaunches
+    135k manually; **no engine-code commit without owner word.**
+  - **Post-commit flag configuration (R5 gap closed):** both flags ship
+    default-OFF in the commit; the CSM `p23_grader` grade runs flag-ON;
+    the four standing gates run default-OFF (the committed tree = the
+    structural JJK no-op proof); the default-flip (shipping CSM
+    default-ON) + its 4-gate rerun + GATE.md record = DEFERRED, a
+    separate owner decision. **C5 record obligation:** TIERED's +4 flipped
+    extraction-floor rows (arcn-02/10, state-08) — the receipt re-counts
+    the 16-row floor after the legs and GATE.md carries the re-count.
+    **P6 note (E, recorded out-of-gate):** TIERED/ABILWIDTH are generic,
+    zero-hardcoded cross-corpus retrieval primitives — the P6 seed; P6
+    stays deferred until Phase 1 closes; the spike is the first
+    P6-adjacent task.
+  - **Return:** launch the ONE subagent task per the chair's Q4 spec (full
+    spec + the chain script's verbatim body in
+    `reports/csm/receipts/council_d7_rescore/chairman.md`); after the
+    chain the owner reads the receipts; commit only on all-green + owner
+    word.

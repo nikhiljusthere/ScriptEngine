@@ -8,6 +8,99 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-18 ~16:5x (opencode session — CSM D7 re-score council resume;
+  prior muse-spark session `ses_f503d5a0` (1,647 msgs) hit its model limit
+  at 16:24 mid-plan):**
+  - **CSM position: D7 post-deriv-leg.** HEAD `20d6da4e` = derivation leg
+    (verbatim-first + possessive-deferral) committed after the D61 owner-word;
+    post-commit gate window `/tmp/d7_gates` (15:46–15:59) ALL PASS (pytest
+    1,329+2x / eval jjk 31/31 / span 48,572+probe / canon baseline / p23 469
+    w/ 4 flips + 0 counter). D6 CLOSED (A20, `9ef7082e`). Remaining reds
+    **23** = 7 D7 holdouts (chap-01, org-03/05/06, vol-10, pool-140/358) +
+    16 Phase-2 floor.
+  - **UNCOMMITTED (D59 rule — never lose; stash-surgical, snapshot grade
+    files before overwriting):** 44-line narrow legs in
+    `scriptengine/api/context.py` — **TIERED** (env-flagged
+    `SCRIPTENGINE_TIERED_RECALL=1`; second top_k=30 search; tier-2 novel
+    chunks appended after beam+floor, rendered only from leftover budget;
+    flag off = byte-identical) + **ABILWIDTH** (possessive query +
+    `_owner_attribute_hit` declared (character, ability-prefix) pair →
+    top_k=30; NOT flagged; targets pool-140/358 width holdouts, gold ranks
+    12–47 cut at 8) + 3 report jsonl (`census_widened_csm_results.jsonl`,
+    `reports/index.md`, `recall_verbatim.jsonl`). D59 measured tiered at
+    **473** (+4: arcn-02/10, org-03, state-08; 0 counter); ABILWIDTH
+    unmeasured. Queue per D61: width (tiered, chair-ordered) → depth
+    (arcn-03/04, state-03, vol-10-class) → official suite → VOID formal →
+    CLOSE.
+  - **Open wall for the council:** ranking probe **RED** (arcb-05 "What
+    happens in the Katana Man arc?", gold 4988 never shortlisted — defect is
+    UPSTREAM of ranking; the D7 limit is still unproven; GATE's last line:
+    "follow-up is a focus-resolution spike, then the D7 leg proper"). Ruling
+    needed: narrow-legs-singly (pre-register → run → grade) vs
+    focus-resolution spike first, the GPU path, and the one-subagent task.
+  - **Live GPU (re-verified 16:4x):** Qwen **135k owner-manual** (pid
+    1137321, launched 16:31 via `serve_ctx_135168.sh` — open in the owner's
+    editor; `--max-context 135168 --kv-capacity 143360`; 26,962 used /
+    5,142 free MiB) → the ~5.3 GB in-process CUDA stack does NOT fit;
+    `:8000` DOWN; `qwen_mode.txt` STALE (says mode=off @16:30:50);
+    `tools/csm/d7_gates.sh` restore STALE (hardcoded 65k argv). Full 135k
+    restore argv captured in the 16:4x ps output (this entry's session
+    record). This opencode session runs ON Qwen :18080 — a mode switch kills
+    the in-flight turn (owner resumes `opencode -c`); fill THIS section
+    first, per the file's rule.
+  - **Prep subagents (read-only, 2 in parallel per owner 16:4x):** state
+    compaction (task `ses_f4bd05f4`) + re-score staging (task
+    `ses_f4bd05f3`: launch commands, preflight, wall-clocks; corrections =
+    confirm legs ALREADY ran D61, `qwen_mode.txt` stale, `d7_gates.sh` 65k
+    stale, two-OOS-instruments clobber warning on `D6_OOS_PRE.jsonl`).
+  - **COUNCIL #36 COMPLETE (D7 re-score; sequential 11 members, all finals +
+    the verdict restored verbatim from opencode.db):** record
+    `reports/csm/COUNCIL_csm_d7_rescore.md` + receipts
+    `reports/csm/receipts/council_d7_rescore/{framed_question,advisors,
+    reviews,chairman}.md`; ledger #36; drift D63. **Verdict:
+    LEGS-FIRST-FLAGGED** (Q3 (b) 4–1): (Q1) grade the two narrow legs
+    SINGLY in one detached kill-window (A: TIERED=1/ABILWIDTH=0 → B:
+    TIERED=0/ABILWIDTH=1 → C: both); the focus-resolution spike runs AFTER,
+    GPU-free, in the live session (GATE's "spike first" line ruled stale —
+    it predates D59, which already flipped D7 row org-03); (Q2) ABILWIDTH
+    behind the new flag `SCRIPTENGINE_ABILWIDTH_RECALL` (default OFF,
+    3-line mirror of `_tiered_enabled`; ruled against the 3-advisor as-is
+    majority — its JJK no-op is data-dependent, not by-construction); (Q3)
+    stop owner-manual 135k → grade legs + four standing gates (both flags
+    default-OFF) on the whole card → restore 135k from the freshly captured
+    + verified argv — as ONE `setsid nohup` chain
+    `tools/csm/d7_window_chain.sh` (every post-kill step is shell; this
+    session runs on the server being killed), issued as the subagent's
+    final act; (Q4) ONE subagent task: 6 pre-staging steps (D59 receipts
+    gate — chairman verified ABILWIDTH ∉ D59's 473 tree, so the full-bank
+    grade genuinely remains unbought; 17/6/23 arithmetic re-statement; OOS
+    floor authority = `d6_flip.py` exit-2 + `D6_OOS_PRE.jsonl` backed up;
+    TIERED flag-off inertness by read; argv capture + verification to
+    `/tmp/d7_qwen_{pid,argv,cwd}.txt`; snapshots + the 3-line flag edit +
+    per-leg `PREDICT.md` (A: W ≥ 469, flips ⊇ {arcn-02, arcn-10, org-03,
+    state-08}; B: W ≥ 469, flips ⊇ {pool-140, pool-358}; C: the union;
+    each 0 counter-flips, blind 19/19, `d6_flip.py` rc=0; + the 16-row
+    floor re-count — TIERED's +4 flipped floor rows arcn-02/10, state-08)
+    + `check_targets.py` + the SWITCHPOINT governance commit (engine code
+    stays uncommitted) → then the chain. **Pass bar** = all three legs +
+    the four standing gates (pytest 1,331 pin / eval jjk 31/31 / span jjk
+    48,572 + 400-probe / canon opm ≥ 10/16 · 236/236 · 79.0%); **stop
+    conditions** = first RED leg (halt the rest; gates still run for the
+    record; Qwen restored; receipt = RED + that leg's kill clause — no
+    ex-post retuning, D59) / OOM or restore failure (receipt + owner
+    relaunches 135k by hand from the captured argv) / **no engine-code
+    commit without owner word**. **Post-commit flag config (R5 gap
+    closed):** both flags default-OFF in the commit; the CSM `p23_grader`
+    grade runs flag-ON; the four standing gates run default-OFF (the
+    committed tree = the structural JJK no-op proof); the default-flip
+    (shipping CSM default-ON) + its 4-gate rerun + GATE.md record =
+    DEFERRED, a separate owner decision.
+  - **NEXT ACTION:** launch the ONE subagent task per the chair's Q4 spec
+    (full spec + the chain script's verbatim body in `chairman.md`). After
+    the chain: owner resumes `opencode -c`, reads `reports/csm/receipts/
+    d7_window/RECEIPT_DONE` + `/tmp/d7_gpu_chain.log` (no sentinel within
+    the hour ⇒ card in known-bad state ⇒ relaunch 135k by hand from the
+    captured argv); commit the engine diff only on all-green + owner word.
 - **2026-09-18 (opencode session — D6 dedicated-GPU window checkpoint,
   council #35 D39 lock @ `2ee7edc`):**
   - **NO Qwen mode switch in this window** — Qwen is already at the 100k
