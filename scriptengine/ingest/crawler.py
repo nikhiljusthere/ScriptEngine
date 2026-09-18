@@ -178,7 +178,10 @@ class WikiCrawler:
         assert self._session is not None, "Use WikiCrawler as an async context manager"
         headers = {
             "User-Agent": self.settings.user_agent,
-            "Accept": "application/json",
+            # No `Accept: application/json`: Fandom's edge WAF answers 403 to
+            # it (verified 2026-09-18, the 2026-08-16 CSM crawl predates the
+            # rule). The format is pinned by the `format=json` parameter, so
+            # the header only cost blocks.
             "Accept-Language": "en-US,en;q=0.9",
         }
 
