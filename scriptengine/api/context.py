@@ -448,6 +448,53 @@ def _relations_context(
     }
 
 
+_STORY_PAGE_RE = re.compile(
+    r"\b([\w'’\-]+(?:\s+[\w'’\-]+){0,6}?)\s+(arc|chapter|episode|volume)\b",
+    re.IGNORECASE,
+)
+_STORY_PAGE_LEAD_RE = re.compile(
+    r"\b(arc|chapter|episode|volume)\s+([A-Za-z0-9'’\-]+(?:\s+[A-Za-z0-9'’\-]+){0,3})",
+    re.IGNORECASE,
+)
+
+
+def _story_page_subject(paths: SeriesPaths, query: str) -> str | None:
+    """A story page (arc/chapter/episode/volume) the query names, if it resolves.
+
+    D7 spike: the no-hint qa path scopes retrieval to linked entities, so a
+    question about a story page ("What happens in the Katana Man arc?")
+    reads the character the page is named after and never reaches the page's
+    own chunks (probe 1: gold absent top-50+dropped; probes 2/3: naming the
+    page flips the verdict). When the query names such a page and it resolves
+    to a node, return it so the R6 floor + focus include it. Resolution is by
+    node/alias lookup (subject_node_name, case-insensitive); anything
+    unresolvable returns None and the ranked behaviour stands unchanged.
+    Generic page-type patterns only — no series names.
+    """
+    from scriptengine.stores.facts import FactStore
+
+    candidates: list[str] = []
+    for match in _STORY_PAGE_RE.finditer(query or ""):
+        words = match.group(1).split()
+        keyword = match.group(2)
+        for i in range(len(words)):
+            candidates.append(" ".join(words[i:]) + " " + keyword)
+    for match in _STORY_PAGE_LEAD_RE.finditer(query or ""):
+        # Keyword-first titles ("Chapter 1", "Episode 12", "Volume 13"):
+        # the number follows the keyword, so the trailing pattern above
+        # never sees them.
+        words = (match.group(1) + " " + match.group(2)).split()
+        for i in range(len(words)):
+            candidates.append(" ".join(words[i:]))
+    if not candidates:
+        return None
+    with FactStore(paths.facts_db) as store:
+        for candidate in candidates:
+            if store.subject_node_name(candidate) is not None:
+                return candidate
+    return None
+
+
 def _qa_context(
     paths: SeriesPaths,
     query: str,
@@ -458,6 +505,23 @@ def _qa_context(
 ) -> dict[str, Any]:
     from scriptengine.retrieve.hybrid import HybridRetriever, Passage
     from scriptengine.stores.facts import FactStore
+
+    # D7 spike: derive a story-page subject when the caller names none, so
+    # arc/chapter/episode/volume questions read the page they are about
+    # instead of the entity the page is named after. Tier 2 falls back to
+    # the router's subject read (the auto path's 2-prep forward) for
+    # character/organization subjects the story patterns never name. None
+    # when nothing resolves: behaviour unchanged.
+    if subject is None:
+        subject = _story_page_subject(paths, query)
+    if subject is None:
+        try:
+            from scriptengine.retrieve.router import route as _route_qa
+
+            _routed = _route_qa(paths, query, subject=None)
+            subject = (_routed.signals or {}).get("subject") or None
+        except Exception:
+            subject = None
 
     with HybridRetriever(paths, settings) as retriever:
         result = retriever.search(query, top_k=top_k, rerank=True, focus=subject)
