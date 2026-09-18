@@ -1,0 +1,219 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Takagi?",
+      "set": "Every enemy of Takagi",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the subordinates of Takagi?",
+      "set": "Every subordinate of Takagi",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Takagi?",
+      "set": "Takagi's affiliations",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the enemies of Takagi?",
+      "found": [
+        "Asa Mitaka",
+        "Fami",
+        "Yoru",
+        "Katana Man"
+      ],
+      "missing": [],
+      "members": [
+        "Asa Mitaka",
+        "Fami",
+        "Katana Man",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the subordinates of Takagi?",
+      "found": [
+        "Denji",
+        "Katana Man",
+        "Quanxi"
+      ],
+      "missing": [],
+      "members": [
+        "Denji",
+        "Katana Man",
+        "Quanxi"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Takagi?",
+      "found": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 7",
+        "Tokyo Devil Detention Center"
+      ],
+      "missing": [],
+      "members": [
+        "Public Safety Devil Hunters",
+        "Tokyo Devil Detention Center",
+        "Tokyo Special Division 7"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Takagi's name?",
+      "id": "csm-pg-takagi-001",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "\u9ad8\u6728"
+      ],
+      "found": [
+        "\u9ad8\u6728"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Takagi's name?",
+      "id": "csm-pg-takagi-002",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "Takagi"
+      ],
+      "found": [
+        "Takagi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Takagi?",
+      "id": "csm-pg-takagi-003",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Takagi's gender?",
+      "id": "csm-pg-takagi-004",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Takagi?",
+      "id": "csm-pg-takagi-005",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Takagi's occupation?",
+      "id": "csm-pg-takagi-006",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 10,
+    "canon_total": 10,
+    "canon_recall": 1.0,
+    "members_returned": 10,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

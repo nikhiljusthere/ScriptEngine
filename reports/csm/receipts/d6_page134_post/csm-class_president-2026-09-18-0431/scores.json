@@ -1,0 +1,135 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Class President?",
+      "set": "Every named technique of Class President",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Class President?",
+      "set": "Class President's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Class President?",
+      "found": [
+        "Fire Devil Contract",
+        "Sharp Claws",
+        "Devil Transformation",
+        "Enhanced Strength",
+        "Enhanced Speed"
+      ],
+      "missing": [],
+      "members": [
+        "Devil Transformation",
+        "Enhanced Speed",
+        "Enhanced Strength",
+        "Fire Devil Contract",
+        "Sharp Claws"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Class President?",
+      "found": [
+        "Fourth East High School"
+      ],
+      "missing": [],
+      "members": [
+        "Fourth East High School"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Class President's gender?",
+      "id": "csm-pg-class_president-001",
+      "subject": "Class President",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Class President?",
+      "id": "csm-pg-class_president-002",
+      "subject": "Class President",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Class President's occupation?",
+      "id": "csm-pg-class_president-003",
+      "subject": "Class President",
+      "accept": "all",
+      "expected": [
+        "High School Student Class President"
+      ],
+      "found": [
+        "High School Student Class President"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 6,
+    "canon_total": 6,
+    "canon_recall": 1.0,
+    "members_returned": 6,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

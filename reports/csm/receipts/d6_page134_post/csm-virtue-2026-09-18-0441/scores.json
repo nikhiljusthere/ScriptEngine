@@ -1,0 +1,139 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Virtue?",
+      "set": "Virtue's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Virtue?",
+      "found": [
+        "Public Safety Devil Hunters"
+      ],
+      "missing": [],
+      "members": [
+        "Public Safety Devil Hunters"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Virtue's name?",
+      "id": "csm-pg-virtue-001",
+      "subject": "Virtue",
+      "accept": "all",
+      "expected": [
+        "\u30f4\u30a1\u30fc\u30c1\u30a7"
+      ],
+      "found": [
+        "\u30f4\u30a1\u30fc\u30c1\u30a7"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Virtue's name?",
+      "id": "csm-pg-virtue-002",
+      "subject": "Virtue",
+      "accept": "all",
+      "expected": [
+        "V\u0101che"
+      ],
+      "found": [
+        "V\u0101che"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Virtue's gender?",
+      "id": "csm-pg-virtue-003",
+      "subject": "Virtue",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Virtue?",
+      "id": "csm-pg-virtue-004",
+      "subject": "Virtue",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Virtue's occupation?",
+      "id": "csm-pg-virtue-005",
+      "subject": "Virtue",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

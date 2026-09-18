@@ -1,0 +1,141 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Grape Devil?",
+      "set": "Every enemy of Grape Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the enemies of Grape Devil?",
+      "found": [
+        "Galgali",
+        "Kobeni Higashiyama"
+      ],
+      "missing": [],
+      "members": [
+        "Galgali",
+        "Kobeni Higashiyama"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Grape Devil's name?",
+      "id": "csm-pg-grape_devil-001",
+      "subject": "Grape Devil",
+      "accept": "all",
+      "expected": [
+        "\u30d6\u30c9\u30a6\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u30d6\u30c9\u30a6\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Grape Devil's name?",
+      "id": "csm-pg-grape_devil-002",
+      "subject": "Grape Devil",
+      "accept": "all",
+      "expected": [
+        "Bud\u014d no Akuma"
+      ],
+      "found": [
+        "Bud\u014d no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Grape Devil?",
+      "id": "csm-pg-grape_devil-003",
+      "subject": "Grape Devil",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Grape Devil's gender?",
+      "id": "csm-pg-grape_devil-004",
+      "subject": "Grape Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Grape Devil's occupation?",
+      "id": "csm-pg-grape_devil-005",
+      "subject": "Grape Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Devil"
+      ],
+      "found": [
+        "Wild Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

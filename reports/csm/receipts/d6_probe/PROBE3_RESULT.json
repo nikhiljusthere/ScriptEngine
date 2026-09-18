@@ -1,0 +1,694 @@
+{
+  "n": 48,
+  "flips": 45,
+  "errors": 0,
+  "by_class": [
+    "ability-pool MECH_GREEN: 4",
+    "ability-pool MECH_RED: 2",
+    "chapter_box MECH_GREEN: 8",
+    "chapter_box MECH_RED: 1",
+    "episode MECH_GREEN: 9",
+    "organization MECH_GREEN: 5",
+    "story_arcs_box MECH_GREEN: 10",
+    "volume_box MECH_GREEN: 9"
+  ],
+  "prediction_met": true,
+  "rows": [
+    {
+      "id": "csm-dim-arcb-01",
+      "class": "story_arcs_box",
+      "subject": "Introduction arc",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Pochita becomes his heart and Denji turns into Chainsaw Man",
+        "the Debt Collector, manipulated by the Zombie Devil, tricks them and kills them",
+        "Denji is put to work with Aki Hayakawa"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-arcb-02",
+      "class": "story_arcs_box",
+      "subject": "Bat Devil arc",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "a devil kidnapped her cat",
+        "the Bat Devil then drinks some of Denji's blood and regenerates his arm and back",
+        "Denji grabs his leg and goes with him, transforming into Chainsaw Man to fight him"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-arcb-03",
+      "class": "story_arcs_box",
+      "subject": "Eternity Devil arc",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "the Gun Devil's flesh they had doesn't react strongly",
+        "she will reward the one who kills the devil with a kiss on the cheek",
+        "they are always on the 8th floor"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-arcb-04",
+      "class": "story_arcs_box",
+      "subject": "Gun Devil arc",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Makima asked Denji if he wanted to go on their trip, just the two of them",
+        "the Gun Devil has already been defeated and confined"
+      ],
+      "missing": [
+        "him and Power will be killed by Denji in the future"
+      ],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-arcb-05",
+      "class": "story_arcs_box",
+      "subject": "Katana Man arc",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "the Katana Man explains his connection to Denji before shooting him in the head",
+        "Sawatari uses her Snake Devil to eat the Ghost Devil",
+        "Makima's train arrives in Kyoto"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-arcb-06",
+      "class": "story_arcs_box",
+      "subject": "Falling Devil arc",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Yoshida takes Asa to the Devil Hunter's Club council room",
+        "a middle-aged man falls to his death beside her",
+        "the orphanage lady kills her pet cat Crambon out of jealousy"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-arcb-07",
+      "class": "story_arcs_box",
+      "subject": "Bomb Girl arc",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Denji is suddenly uppercutted by Power",
+        "Makima proposes a date with him for the following day",
+        "a serial killer working with the Typhoon Devil plans on targeting Reze to lure Denji out for his heart"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-arcb-08",
+      "class": "story_arcs_box",
+      "subject": "Justice Devil arc",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "in three months the class will have to kill Bucky and eat him",
+        "the class president then takes on a monstrous form, revealing that she has made a contract with the Justice Devil",
+        "a beige potoo-like bird appears on a traffic light and revives Asa"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-arcb-09",
+      "class": "story_arcs_box",
+      "subject": "Control Devil arc",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Makima gives Denji tea and a dessert",
+        "Kishibe commands the Anti-Makima Squad to fire",
+        "the Hell Devil regenerates after drinking a devil hunter's blood and casts Pochita into Hell"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-arcb-10",
+      "class": "story_arcs_box",
+      "subject": "War Devil arc",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Yoshida reveals that Public Safety has Katana Man, Haruka, Nobana, and Seigi as prisoners",
+        "Yoru reveals her role as the War Devil",
+        "the two decide to eat potstickers Yoru cooked on top of a building"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-chap-01",
+      "class": "chapter_box",
+      "subject": "Chapter 1",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_RED",
+      "hits": [
+        "kill a Tomato Devil as part of his devil hunting job for the Yakuza"
+      ],
+      "missing": [
+        "turning into Chainsaw Man, ripping the zombies",
+        "become her pet, and as a pet she would feed him"
+      ],
+      "flipped": false
+    },
+    {
+      "id": "csm-dim-chap-02",
+      "class": "chapter_box",
+      "subject": "Chapter 2",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "a man enters wanting help since a devil took his daughter",
+        "the girl runs away with the devil so that he may also be spared",
+        "proceeds chopping the Muscle Devil to pieces"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-chap-03",
+      "class": "chapter_box",
+      "subject": "Chapter 52",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Reze was one of those children",
+        "impaled by a spear thrown from a rooftop by Angel Devil",
+        "Denji quickly shoves them into his mouth"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-chap-04",
+      "class": "chapter_box",
+      "subject": "Chapter 84",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "to control any being that she believes is lesser than herself",
+        "the Chainsaw Devil emerges, showered in blood and organs",
+        "Kishibe, alongside humanity at large, has no knowledge of Nazism"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-chap-05",
+      "class": "chapter_box",
+      "subject": "Chapter 97",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "her eyes also had the same target-like pattern as Makima's",
+        "her name was Nayuta",
+        "she wanted to eat sliced bread"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-chap-07",
+      "class": "chapter_box",
+      "subject": "Chapter 146",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "catches on fire and begins billowing smoke out of a window",
+        "the church's Chinese and Canadian locations held mass weddings",
+        "make everyone on Earth afraid of Chainsaw Man and war"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-chap-08",
+      "class": "chapter_box",
+      "subject": "Chapter 165",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "the group will have to settle with a budget restaurant, Sushishi",
+        "if they break his contract with Pochita, they can beat the devil",
+        "a place that will cheer any man up in an instant"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-chap-09",
+      "class": "chapter_box",
+      "subject": "Chapter 191",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "She finally reveals her role as the War Devil",
+        "defeated him and levelled a large chunk of Tokyo using the Statue of Liberty",
+        "the gun is revealed to be unloaded"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-chap-10",
+      "class": "chapter_box",
+      "subject": "Chapter 232",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "he had experienced both a good and a bad dream",
+        "feeds him her blood in exchange for lifelong servitude",
+        "Denji rushes forward and catches her just in time"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-ep-01",
+      "class": "episode",
+      "subject": "Episode 1",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "he gives Denji only 70,000 yen",
+        "Denji spits out the cigarette",
+        "he heard people put jam on it, but that's just a dream for them"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-ep-02",
+      "class": "episode",
+      "subject": "Episode 2",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Denji orders udon and sausage, while Makima orders curry udon",
+        "Makima then feeds him the udon",
+        "also gives him his coat as he is shirtless"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-ep-03",
+      "class": "episode",
+      "subject": "Episode 4",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "When the Bat Devil captures Meowy and requests a human in return",
+        "The Leech Devil then picks up his arm and eats it",
+        "Denji pulls the cord on his chest, but only a small chainsaw comes out"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-ep-04",
+      "class": "episode",
+      "subject": "Episode 5",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Power reveals its pads that make her breasts bigger",
+        "Denji explains he got what he always wanted, but it didn't feel great when he got it",
+        "Makima places his hand on her chest"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-ep-05",
+      "class": "episode",
+      "subject": "Episode 6",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Aki then realizes they are stuck on the 8th floor",
+        "The windows lead to the rooms across them and elevators don't work",
+        "Kobeni cries, stating they will all die"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-ep-06",
+      "class": "episode",
+      "subject": "Episode 7",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "he bites the Eternity Devil and drinks its blood",
+        "Himeno pulls his cord with the Ghost Devil's arm",
+        "Denji's chainsaw arms retract"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-ep-07",
+      "class": "episode",
+      "subject": "Episode 8",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "An inebriated Himeno takes Denji to her place and lays him on her bed",
+        "Himeno proceeds to take off his pants but finds a Chupa Chups in his pocket",
+        "his first indirect kiss tastes like a cola-flavored Chupa Chups"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-ep-09",
+      "class": "episode",
+      "subject": "Episode 11",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "he wants to live in Aki's right eye, granting him his power",
+        "Kishibe beats Denji and Power once again",
+        "they will be doing live combat training"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-ep-10",
+      "class": "episode",
+      "subject": "Episode 12",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Aki takes the cigarette and sees \"easy revenge\" written on it",
+        "Power states that meat is meat, and that pork, beef and human, are all the same",
+        "Denji states their job is to capture the Katana Man"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-org-03",
+      "class": "organization",
+      "subject": "Prophecy of Nostradamus",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Nostradamus' original writings were written in archaic French",
+        "From the sky will come a great King of Alarm",
+        "To bring back to life the great King of Angoulmois"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-org-04",
+      "class": "organization",
+      "subject": "American Thugs",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Joey, the middle brother and Aldo, the youngest brother",
+        "they ended up becoming an assassin as their way of living",
+        "employed by the US Government to find, and retrieve the chainsaw heart back to the USA for two million dollars"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-org-05",
+      "class": "organization",
+      "subject": "Tokyo Special Division 5",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "most members, including Katana Man, Quanxi, and Reze, seemed to have lost all semblance of their original personality",
+        "Pochita ruthlessly tearing through them one by one",
+        "all members allegedly survived the battle"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-org-06",
+      "class": "organization",
+      "subject": "Yakuza",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Denji's father sustained an enormous debt to the Yakuza for unknown reasons",
+        "they were all murdered by Denji as revenge for betraying him",
+        "Katana Man sought revenge against Denji on behalf of the Yakuza for killing his grandfather"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-org-08",
+      "class": "organization",
+      "subject": "Weapon Devils",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "The Weapon Devils once fought alongside the Four Horsemen against Pochita",
+        "Pochita vanished and is reduced to a completely changed, near-death state and ended up on Earth",
+        "they later become fused with different humans all throughout the world, thus creating 7 new Weapon Humans"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-vol-01",
+      "class": "volume_box",
+      "subject": "Volume 1",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "01. Dog & Chainsaw",
+        "04. Power",
+        "07. Meowy's Whereabouts"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-vol-02",
+      "class": "volume_box",
+      "subject": "Volume 4",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "26. The Gun is Mightier",
+        "31. The Future Rules",
+        "34. Full Team"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-vol-04",
+      "class": "volume_box",
+      "subject": "Volume 13",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "106. Bonfire",
+        "108. Something Important to Asa",
+        "112. Between Cat and Criminal"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-vol-05",
+      "class": "volume_box",
+      "subject": "Volume 15",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "125. Apple Thief",
+        "129. Save Me, Chainsaw Man",
+        "132. Protection"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-vol-06",
+      "class": "volume_box",
+      "subject": "Volume 18",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "157. College Fund",
+        "161. Chainsaw Man Puzzle",
+        "164. Charred Remains"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-vol-07",
+      "class": "volume_box",
+      "subject": "Volume 20",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "178. Gun Goddess",
+        "181. Trees on the Mind",
+        "184. Run, Denji"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-vol-08",
+      "class": "volume_box",
+      "subject": "Volume 22",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "200. Toxic Couple",
+        "207. Budda Budda Budda Budda!",
+        "210. Peace"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-vol-09",
+      "class": "volume_box",
+      "subject": "Volume 24",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "223. Ultimate Armor",
+        "231. Goodbye, Pochita",
+        "232. Thank You, Chainsaw Man"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-dim-vol-10",
+      "class": "volume_box",
+      "subject": "Love, Flower, Chainsaw Guide",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Newly drawn original 4-panel manga by Tatsuki Fujimoto",
+        "Special making-of commentary featuring rough storyboards and draft sketches from Chainsaw Man - The Movie: Reze Arc",
+        "Valuable setting materials and storyboards from Chainsaw Man - The Movie: Reze Arc"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-abl-pool-140",
+      "class": "ability-pool",
+      "subject": "Falling Devil",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_RED",
+      "hits": [],
+      "missing": [
+        "Body Control",
+        "Aside from controlling her own vessel made out of human corpses, she appears to",
+        "be able to force humans to move against their will, as seen by her forcing a"
+      ],
+      "flipped": false
+    },
+    {
+      "id": "csm-abl-pool-149",
+      "class": "ability-pool",
+      "subject": "Famine Devil",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Hand-to-Hand Combat",
+        "Fami possesses some level of martial arts prowess and knowledge, though the",
+        "extent of which is questionable"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-abl-pool-166",
+      "class": "ability-pool",
+      "subject": "Galgali",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Hand-to-Hand Combat",
+        "The Violence Fiend's primary fighting style is unarmed combat; being able to",
+        "knock back Beam with a punch and decapitate a zombie at point-blank range with"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-abl-pool-237",
+      "class": "ability-pool",
+      "subject": "Mysterious Man",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Typhoon Devil Contract",
+        "He was offered a contract with the Typhoon Devil but was unable to fulfill it",
+        "due to his demise at Reze's hands and failure to obtain the Chainsaw Devil's"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-abl-pool-252",
+      "class": "ability-pool",
+      "subject": "Pochita",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_GREEN",
+      "hits": [
+        "Immense Durability",
+        "The Chainsaw Devil's body is incredibly tough, being able to survive sonic",
+        "lashes, explosions, piercing attacks, massive concussive blasts capable of"
+      ],
+      "missing": [],
+      "flipped": true
+    },
+    {
+      "id": "csm-abl-pool-358",
+      "class": "ability-pool",
+      "subject": "Yoru",
+      "baseline": "MECH_RED",
+      "verdict": "MECH_RED",
+      "hits": [
+        "Building Sword"
+      ],
+      "missing": [
+        "ビル剣 Biru Ken: A sword formed from a ruined building the Falling Devil attempted",
+        "to launch onto multiple civilians during Denji's battle with the Fake Chainsaw"
+      ],
+      "flipped": false
+    }
+  ],
+  "seconds": 37.2
+}

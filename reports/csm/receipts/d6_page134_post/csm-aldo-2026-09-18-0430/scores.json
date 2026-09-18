@@ -1,0 +1,201 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Aldo?",
+      "set": "Every named technique of Aldo",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Aldo?",
+      "set": "Every enemy of Aldo",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Aldo?",
+      "set": "Aldo's affiliations",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Aldo?",
+      "found": [
+        "Enhanced Durability",
+        "Enhanced Reflexes",
+        "Skin Devil Contract",
+        "Proficient Gunmanship"
+      ],
+      "missing": [],
+      "members": [
+        "Enhanced Durability",
+        "Enhanced Reflexes",
+        "Proficient Gunmanship",
+        "Skin Devil Contract"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Aldo?",
+      "found": [
+        "Michiko Tendo",
+        "Hirofumi Yoshida",
+        "Quanxi",
+        "Long"
+      ],
+      "missing": [],
+      "members": [
+        "Hirofumi Yoshida",
+        "Long",
+        "Michiko Tendo",
+        "Quanxi"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Aldo?",
+      "found": [
+        "United States of America",
+        "American Thugs"
+      ],
+      "missing": [],
+      "members": [
+        "American Thugs",
+        "United States of America"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is the status of Aldo?",
+      "id": "csm-pg-aldo-001",
+      "subject": "Aldo",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Aldo's occupation?",
+      "id": "csm-pg-aldo-002",
+      "subject": "Aldo",
+      "accept": "all",
+      "expected": [
+        "Private Devil Hunter"
+      ],
+      "found": [
+        "Private Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Aldo's gender?",
+      "id": "csm-pg-aldo-003",
+      "subject": "Aldo",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What are the kanji for Aldo's name?",
+      "id": "csm-pg-aldo-004",
+      "subject": "Aldo",
+      "accept": "all",
+      "expected": [
+        "\u30a2\u30eb\u30c9"
+      ],
+      "found": [
+        "\u30a2\u30eb\u30c9"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Aldo's name?",
+      "id": "csm-pg-aldo-005",
+      "subject": "Aldo",
+      "accept": "all",
+      "expected": [
+        "Arudo"
+      ],
+      "found": [
+        "Arudo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 10,
+    "canon_total": 10,
+    "canon_recall": 1.0,
+    "members_returned": 10,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

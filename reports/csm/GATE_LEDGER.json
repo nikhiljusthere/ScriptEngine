@@ -64,5 +64,14 @@
     "rulings": "reports/csm/CLOSE_COUNCIL_RULINGS_Q1_Q4.md — Q1 No (widen census to the 5 in-scope page types), Q2 No (size the pool to the 376 ability rows), Q3 Yes (re-gate the P2.3 null branch on the widened census), Q4 Yes alongside P2.1 (175/537, 1,260 q, remainder 52), Q5 out-of-gate (D-only: in-parts long-prose = Phase-2 scope item)",
     "env_mc": "deferred to P1.5; test-side fix (expect qa per the router's documented bare-name rule, router.py:809-812 / 8d07487); pin 1,321 unchanged",
     "phase2_gate": "verify this file's sha256 (as recorded in the marker) + the 22-row floor before any panel spend; P2.1 step-0 on-disk re-estimate (17,181 x measured s/probe per door + A17 floor policy) precedes the go"
+  },
+  "d6_close": {
+    "ts": "2026-09-18T11:45:00+05:30",
+    "council": "landing (reports/csm/COUNCIL_csm_d7_landing.md) — LAND-then-STAMP conditional; all five conditions posted in this commit (pinned base 9ef7082e, post-commit re-gate, JJK-exact re-proof, register 46->green, 16-row docs)",
+    "marker": "reports/csm/D6_CLOSE_A20.md (substance: landing base 9ef7082e + post-commit gate receipts + flip list receipts/d6_probe/CONFIRM_FLIPS.json + pre-spike snapshot receipts/d6_window/census_widened_csm_results_pred7.jsonl + 69-ledger 46/7/16/0)",
+    "gates": "post-commit whole-card window (tools/csm/d7_gates.sh): pytest 1,329+2x rc=0 / eval jjk 31/31 / span-recall 48,572 offline + 398/400 live / canon-run opm 236/236, 10/16, 79.0%; p23 official regrade 417->463 (+46/-0, 0 errors); OOS200 168->190; green30 0 flips; bar-qa 11->13",
+    "register": "46 flipped rows recovered_by qa+subject (D7 spike, landed); 7 amended holdouts in D7 named limit (chap-01, org-03/05/06, vol-10, pool-140/358); 16 floor rows defect-classed (ROUTINGx12/CONTENTx2/PARTIALx2) with Phase-2 owner + post-Phase-2 retest; 134 setrel COMPLETE pre+post",
+    "jjk_diff": "gate-output artifacts only (recall_verbatim.jsonl +rows, reports/index.md +row); no JJK code/corpus/store moves",
+    "open": "page-run blackout root-cause UNDETERMINED (guards added, no contamination); served-text trailing-beat drift (verdicts stable); 3 width holdouts need subsection recall; Phase-2 extraction campaign untouched (333-row events table unread by graded doors)"
   }
 }

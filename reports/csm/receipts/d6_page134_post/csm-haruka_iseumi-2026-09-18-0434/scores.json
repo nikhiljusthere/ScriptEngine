@@ -1,0 +1,285 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the allies of Haruka Iseumi?",
+      "set": "Every ally of Haruka Iseumi",
+      "confidence": "declared",
+      "returned": 7,
+      "available": 7,
+      "canon": 7,
+      "found": 7,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Haruka Iseumi?",
+      "set": "Every enemy of Haruka Iseumi",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the subordinates of Haruka Iseumi?",
+      "set": "Every subordinate of Haruka Iseumi",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the superiors of Haruka Iseumi?",
+      "set": "Every superior of Haruka Iseumi",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Haruka Iseumi?",
+      "set": "Haruka Iseumi's affiliations",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Haruka Iseumi?",
+      "set": "Haruka Iseumi's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Haruka Iseumi?",
+      "found": [
+        "Asa Mitaka",
+        "Fami",
+        "Nobana Higashiyama",
+        "Seigi Akoku",
+        "Denji",
+        "Yoru",
+        "Nail Fiend"
+      ],
+      "missing": [],
+      "members": [
+        "Asa Mitaka",
+        "Denji",
+        "Fami",
+        "Nail Fiend",
+        "Nobana Higashiyama",
+        "Seigi Akoku",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Haruka Iseumi?",
+      "found": [
+        "Fami",
+        "Barem Bridge"
+      ],
+      "missing": [],
+      "members": [
+        "Barem Bridge",
+        "Fami"
+      ]
+    },
+    {
+      "query": "What are all the subordinates of Haruka Iseumi?",
+      "found": [
+        "Asa Mitaka",
+        "Seigi Akoku"
+      ],
+      "missing": [],
+      "members": [
+        "Asa Mitaka",
+        "Seigi Akoku"
+      ]
+    },
+    {
+      "query": "What are all the superiors of Haruka Iseumi?",
+      "found": [
+        "Fami",
+        "Barem Bridge"
+      ],
+      "missing": [],
+      "members": [
+        "Barem Bridge",
+        "Fami"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Haruka Iseumi?",
+      "found": [
+        "Fourth East High School",
+        "Devil Hunter Club (president)",
+        "Student Council (president)",
+        "Chainsaw Man Church (formerly)",
+        "\"Fami\" (formerly)"
+      ],
+      "missing": [],
+      "members": [
+        "\"Fami\" (formerly)",
+        "Chainsaw Man Church (formerly)",
+        "Devil Hunter Club (president)",
+        "Fourth East High School",
+        "Student Council (president)"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Haruka Iseumi?",
+      "found": [
+        "Chainsaw Man ( self-proclaimed )"
+      ],
+      "missing": [],
+      "members": [
+        "Chainsaw Man ( self-proclaimed )"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Haruka Iseumi's name?",
+      "id": "csm-pg-haruka_iseumi-001",
+      "subject": "Haruka Iseumi",
+      "accept": "all",
+      "expected": [
+        "\u4f0a\u52e2\u6d77 \u30cf\u30eb\u30ab"
+      ],
+      "found": [
+        "\u4f0a\u52e2\u6d77 \u30cf\u30eb\u30ab"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Haruka Iseumi's name?",
+      "id": "csm-pg-haruka_iseumi-002",
+      "subject": "Haruka Iseumi",
+      "accept": "all",
+      "expected": [
+        "Iseumi Haruka"
+      ],
+      "found": [
+        "Iseumi Haruka"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Haruka Iseumi?",
+      "id": "csm-pg-haruka_iseumi-003",
+      "subject": "Haruka Iseumi",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Haruka Iseumi's occupation?",
+      "id": "csm-pg-haruka_iseumi-004",
+      "subject": "Haruka Iseumi",
+      "accept": "all",
+      "expected": [
+        "High School Student Devil Hunter Public Speaker"
+      ],
+      "found": [
+        "High School Student Devil Hunter Public Speaker"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Haruka Iseumi's gender?",
+      "id": "csm-pg-haruka_iseumi-005",
+      "subject": "Haruka Iseumi",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 6,
+    "canon_found": 19,
+    "canon_total": 19,
+    "canon_recall": 1.0,
+    "members_returned": 19,
+    "exact_answers": 6,
+    "exact_of": 6,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "6/6",
+    "at_recall_zero": 0,
+    "at_recall_80": 6,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

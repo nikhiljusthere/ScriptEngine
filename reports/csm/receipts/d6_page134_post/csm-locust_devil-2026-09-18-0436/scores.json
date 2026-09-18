@@ -1,0 +1,169 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Locust Devil?",
+      "set": "Every named technique of Locust Devil",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Locust Devil?",
+      "set": "Every enemy of Locust Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Locust Devil?",
+      "found": [
+        "Swarm Manifestation",
+        "Immense Durability",
+        "Immense Strength"
+      ],
+      "missing": [],
+      "members": [
+        "Immense Durability",
+        "Immense Strength",
+        "Swarm Manifestation"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Locust Devil?",
+      "found": [
+        "Denji",
+        "Yoru"
+      ],
+      "missing": [],
+      "members": [
+        "Denji",
+        "Yoru"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Locust Devil's name?",
+      "id": "csm-pg-locust_devil-001",
+      "subject": "Locust Devil",
+      "accept": "all",
+      "expected": [
+        "\u30d0\u30c3\u30bf\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u30d0\u30c3\u30bf\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Locust Devil's name?",
+      "id": "csm-pg-locust_devil-002",
+      "subject": "Locust Devil",
+      "accept": "all",
+      "expected": [
+        "Batta no Akuma"
+      ],
+      "found": [
+        "Batta no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Locust Devil?",
+      "id": "csm-pg-locust_devil-003",
+      "subject": "Locust Devil",
+      "accept": "all",
+      "expected": [
+        "Erased (original timeline) Unknown (new timeline)"
+      ],
+      "found": [
+        "Erased (original timeline) Unknown (new timeline)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Locust Devil's gender?",
+      "id": "csm-pg-locust_devil-004",
+      "subject": "Locust Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Locust Devil's occupation?",
+      "id": "csm-pg-locust_devil-005",
+      "subject": "Locust Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Devil"
+      ],
+      "found": [
+        "Wild Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 5,
+    "canon_total": 5,
+    "canon_recall": 1.0,
+    "members_returned": 5,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

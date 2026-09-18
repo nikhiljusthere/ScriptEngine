@@ -1,0 +1,99 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Weapon Devils's allegiance?",
+      "id": "csm-pg-weapon_devils-001",
+      "subject": "Weapon Devils",
+      "accept": "all",
+      "expected": [
+        "Four Horsemen (formerly)\nHybrids (currently)\nChainsaw Man Church (via proxy)"
+      ],
+      "found": [
+        "Four Horsemen (formerly)\nHybrids (currently)\nChainsaw Man Church (via proxy)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Who are Weapon Devils's notable members?",
+      "id": "csm-pg-weapon_devils-002",
+      "subject": "Weapon Devils",
+      "accept": "all",
+      "expected": [
+        "Katana Devil",
+        "Bomb Devil",
+        "Bow Devil"
+      ],
+      "found": [
+        "Katana Devil",
+        "Bomb Devil",
+        "Bow Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "partial",
+      "routed": "roster"
+    },
+    {
+      "series": "csm",
+      "query": "In which manga chapter does Weapon Devils first appear?",
+      "id": "csm-pg-weapon_devils-003",
+      "subject": "Weapon Devils",
+      "accept": "all",
+      "expected": [
+        "Chapter 87 (mentioned)"
+      ],
+      "found": [
+        "Chapter 87 (mentioned)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What type of song is Weapon Devils?",
+      "id": "csm-pg-weapon_devils-004",
+      "subject": "Weapon Devils",
+      "accept": "all",
+      "expected": [
+        "Specific group of weapon-based Devils that worked under the Four Horsemen"
+      ],
+      "found": [
+        "Specific group of weapon-based Devils that worked under the Four Horsemen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

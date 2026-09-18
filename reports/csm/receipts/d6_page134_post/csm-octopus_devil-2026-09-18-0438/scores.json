@@ -1,0 +1,165 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Octopus Devil?",
+      "set": "Every named technique of Octopus Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Octopus Devil?",
+      "set": "Octopus Devil's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Octopus Devil?",
+      "found": [
+        "Enhanced Strength",
+        "Ink Cloud"
+      ],
+      "missing": [],
+      "members": [
+        "Enhanced Strength",
+        "Ink Cloud"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Octopus Devil?",
+      "found": [
+        "Octopus"
+      ],
+      "missing": [],
+      "members": [
+        "Octopus"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Octopus Devil's name?",
+      "id": "csm-pg-octopus_devil-001",
+      "subject": "Octopus Devil",
+      "accept": "all",
+      "expected": [
+        "\u86f8\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u86f8\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Octopus Devil's name?",
+      "id": "csm-pg-octopus_devil-002",
+      "subject": "Octopus Devil",
+      "accept": "all",
+      "expected": [
+        "Tako no Akuma"
+      ],
+      "found": [
+        "Tako no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Octopus Devil?",
+      "id": "csm-pg-octopus_devil-003",
+      "subject": "Octopus Devil",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Octopus Devil's gender?",
+      "id": "csm-pg-octopus_devil-004",
+      "subject": "Octopus Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Octopus Devil's occupation?",
+      "id": "csm-pg-octopus_devil-005",
+      "subject": "Octopus Devil",
+      "accept": "all",
+      "expected": [
+        "Contract Devil"
+      ],
+      "found": [
+        "Contract Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

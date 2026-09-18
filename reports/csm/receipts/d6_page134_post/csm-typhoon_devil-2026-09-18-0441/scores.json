@@ -1,0 +1,219 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Typhoon Devil?",
+      "set": "Every named technique of Typhoon Devil",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Typhoon Devil?",
+      "set": "Every ally of Typhoon Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Typhoon Devil?",
+      "set": "Every enemy of Typhoon Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Typhoon Devil?",
+      "set": "Typhoon Devil's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Typhoon Devil?",
+      "found": [
+        "Enhanced Strength",
+        "Storm Creation",
+        "Water Communication"
+      ],
+      "missing": [],
+      "members": [
+        "Enhanced Strength",
+        "Storm Creation",
+        "Water Communication"
+      ]
+    },
+    {
+      "query": "What are all the allies of Typhoon Devil?",
+      "found": [
+        "Reze",
+        "Mysterious Man"
+      ],
+      "missing": [],
+      "members": [
+        "Mysterious Man",
+        "Reze"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Typhoon Devil?",
+      "found": [
+        "Denji",
+        "Beam"
+      ],
+      "missing": [],
+      "members": [
+        "Beam",
+        "Denji"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Typhoon Devil?",
+      "found": [
+        "Reze"
+      ],
+      "missing": [],
+      "members": [
+        "Reze"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Typhoon Devil's name?",
+      "id": "csm-pg-typhoon_devil-001",
+      "subject": "Typhoon Devil",
+      "accept": "all",
+      "expected": [
+        "\u53f0\u98a8\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u53f0\u98a8\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Typhoon Devil's name?",
+      "id": "csm-pg-typhoon_devil-002",
+      "subject": "Typhoon Devil",
+      "accept": "all",
+      "expected": [
+        "Taif\u016b no Akuma"
+      ],
+      "found": [
+        "Taif\u016b no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Typhoon Devil?",
+      "id": "csm-pg-typhoon_devil-003",
+      "subject": "Typhoon Devil",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Typhoon Devil's gender?",
+      "id": "csm-pg-typhoon_devil-004",
+      "subject": "Typhoon Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Typhoon Devil's occupation?",
+      "id": "csm-pg-typhoon_devil-005",
+      "subject": "Typhoon Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Devil Contract Devil"
+      ],
+      "found": [
+        "Wild Devil Contract Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 8,
+    "canon_total": 8,
+    "canon_recall": 1.0,
+    "members_returned": 8,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

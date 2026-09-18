@@ -1,0 +1,333 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the allies of Fami?",
+      "set": "Every ally of Fami",
+      "confidence": "declared",
+      "returned": 12,
+      "available": 12,
+      "canon": 12,
+      "found": 12,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Fami?",
+      "set": "Every enemy of Fami",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the families of Fami?",
+      "set": "Every family of Fami",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the subordinates of Fami?",
+      "set": "Every subordinate of Fami",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Fami?",
+      "set": "Fami's affiliations",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Fami?",
+      "set": "Fami's aliases",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Fami?",
+      "found": [
+        "Haruka Iseumi",
+        "Barem Bridge",
+        "Asa Mitaka",
+        "Yoru",
+        "Denji",
+        "Nobana Higashiyama",
+        "Seigi Akoku",
+        "Fumiko Mifune",
+        "Hirofumi Yoshida",
+        "Falling Devil",
+        "Nail Fiend",
+        "Eternity Devil"
+      ],
+      "missing": [],
+      "members": [
+        "Asa Mitaka",
+        "Barem Bridge",
+        "Denji",
+        "Eternity Devil",
+        "Falling Devil",
+        "Fumiko Mifune",
+        "Haruka Iseumi",
+        "Hirofumi Yoshida",
+        "Nail Fiend",
+        "Nobana Higashiyama",
+        "Seigi Akoku",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Fami?",
+      "found": [
+        "Pochita",
+        "Yoru",
+        "Asa Mitaka",
+        "Haruka Iseumi",
+        "Takagi"
+      ],
+      "missing": [],
+      "members": [
+        "Asa Mitaka",
+        "Haruka Iseumi",
+        "Pochita",
+        "Takagi",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the families of Fami?",
+      "found": [
+        "Yuko",
+        "Yoru",
+        "Asa Mitaka",
+        "Death Devil",
+        "Nayuta"
+      ],
+      "missing": [],
+      "members": [
+        "Asa Mitaka",
+        "Death Devil",
+        "Nayuta",
+        "Yoru",
+        "Yuko"
+      ]
+    },
+    {
+      "query": "What are all the subordinates of Fami?",
+      "found": [
+        "Haruka Iseumi",
+        "Barem Bridge",
+        "Asa Mitaka",
+        "Death Devil",
+        "Falling Devil"
+      ],
+      "missing": [],
+      "members": [
+        "Asa Mitaka",
+        "Barem Bridge",
+        "Death Devil",
+        "Falling Devil",
+        "Haruka Iseumi"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Fami?",
+      "found": [
+        "Four Horsemen",
+        "Fourth East High School",
+        "Devil Hunter Club (formerly)",
+        "Chainsaw Man Church"
+      ],
+      "missing": [],
+      "members": [
+        "Chainsaw Man Church",
+        "Devil Hunter Club (formerly)",
+        "Four Horsemen",
+        "Fourth East High School"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Fami?",
+      "found": [
+        "Famine Devil",
+        "Hunger Devil",
+        "Hunger (by Makima)"
+      ],
+      "missing": [],
+      "members": [
+        "Famine Devil",
+        "Hunger (by Makima)",
+        "Hunger Devil"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Fami's name?",
+      "id": "csm-pg-fami-001",
+      "subject": "Fami",
+      "accept": "all",
+      "expected": [
+        "\u30ad\u30ac"
+      ],
+      "found": [
+        "\u30ad\u30ac"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Fami's name?",
+      "id": "csm-pg-fami-002",
+      "subject": "Fami",
+      "accept": "all",
+      "expected": [
+        "Kiga"
+      ],
+      "found": [
+        "Kiga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Fami's gender?",
+      "id": "csm-pg-fami-003",
+      "subject": "Fami",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Fami?",
+      "id": "csm-pg-fami-004",
+      "subject": "Fami",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Fami's occupation?",
+      "id": "csm-pg-fami-005",
+      "subject": "Fami",
+      "accept": "all",
+      "expected": [
+        "High School Student (cover) Wild Devil"
+      ],
+      "found": [
+        "High School Student (cover) Wild Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Fami?",
+      "id": "csm-pg-fami-006",
+      "subject": "Fami",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 6,
+    "canon_found": 34,
+    "canon_total": 34,
+    "canon_recall": 1.0,
+    "members_returned": 34,
+    "exact_answers": 6,
+    "exact_of": 6,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "6/6",
+    "at_recall_zero": 0,
+    "at_recall_80": 6,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

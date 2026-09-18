@@ -1701,6 +1701,221 @@ entry.
   ~7 GB free → `events-extract --series csm --scope corpus --pages
   reports/csm/D6_PAGES_FROZEN.txt --workers 2` (atomic per-page resume;
   abort → resume + drop to workers 1) → index rebuild → model-unloaded side
-  session (486 re-grade + 134 page-run re-run + 4 standing gates, JJK
-  baseline diff empty) → closure council → A20 stamp. P6 §7 addendum (due
-  2026-09-25) interleaves.
+   session (486 re-grade + 134 page-run re-run + 4 standing gates, JJK
+   baseline diff empty) → closure council → A20 stamp. P6 §7 addendum (due
+   2026-09-25) interleaves.
+
+  ## D41 — D6 GPU window executed: extraction + rebuild + side session + rerun; closure evidence ready (2026-09-18, opencode)
+
+  - **What:** the locked chain end-to-end. (1) **Extraction:** 72 pages
+    considered / 71 extracted + Katana Man arc failed on the 8192 thinking
+    budget → retry at `ANSWER_TOKENS=16384`: 16 extracted / 56 cached /
+    0 failed / +31 events → **333 events (302+31), 195 on-axis / 138 off,
+    59 pages** (`/tmp/d6_events_retry.log`). (2) **Rebuild**
+    `--force --no-embed`: identical shape; events 333→333, 0 dropped;
+    Qdrant untouched (5,513 pts = level 0+2 by design). (3) **Side session**
+    (`tools/csm/d6_model_window.sh`, new; D33/D34 pattern, deltas = 134
+    frozen slugs + restore 100k/CUDA): pytest **1,329+2xpass rc=0**; eval
+    **31/31**; span **48,572 + probe 398/400**; canon **exact baseline**;
+    p23 **417/486, 0 errors**; page-run phase **134×rc=1 operational**
+    (see anomaly); bare coverage run wrote JJK (restored after). Restore:
+    Qwen 100k PID 861609 + `:8000` CUDA, both `/health` ok.
+    (4) **Rerun** (`tools/csm/d6_pagererun.sh`, new, identical conditions):
+    **134/134 rc=0, all COMPLETE** (`/tmp/d6_pagererun.tsv`); 134 report
+    folders relocated to `reports/csm/receipts/d6_page134_post/` (rerun
+    wrote the default location; pre used `--out` — noted).
+  - **Anomaly:** side-session page-runs failed at preflight `health()`
+    (connection refused), zero of 134 checks in the access log, server
+    alive through ~09:50 and graceful-shutdown only at the restore pkill.
+    Eliminated: pipeline killers, proxy env (none set), port conflict,
+    stale server, clock skew. Correction: dmesg is UNAVAILABLE here
+    (Operation not permitted) — "clean" was no-data; OOM is excluded by
+    the graceful-shutdown lines instead (SIGTERM, not SIGKILL).
+    Root cause undetermined; rerun passes → transient/environmental.
+    Council adjudicates.
+  - **Findings (flip analysis, `/tmp/d6_flip.py`, pre = git `3d43a21`):**
+    486 green 417→417, **0 flips either way**; OOS200 168→168 (delta 0);
+    green30 0 flips — no void fires. Root cause: events feed only the
+    narrative door (`retrieve/narrative.py`); the 486 grades the qa door
+    (hybrid chunks + facts + relations; live Katana Man bundle 14,201
+    chars, zero event content). Expect sentences ARE in chunks (`Katana
+    Man arc / Synopsis` L1+L2) but lose to the character card →
+    retrieval-ranking gap, same family as the 37 box-class wrong-page
+    reds. The "42 dim → extraction" lever could not move qa verdicts;
+    dim reds need re-bucketing (retrieval-layer limit, D7, or new root
+    cause) — council decision. Served text not byte-stable run-to-run
+    (abl-pool-345/346 trailing beats differ; verdicts stable) — noted.
+  - **Coverage:** `coverage_report.py csm` → **473/537, 4,013 Qs,
+    remainder 0, orphans 0** (D36 convention restored at the shared path).
+  - **Why:** the chain is executed; the evidence is on disk; the only
+    remaining step before the stamp is judgment on the pass test —
+    including the anomaly and the dim re-bucketing.
+  - **Steady state:** Qwen 100k PID 861609 + `:8000` CUDA co-located
+    loaded (~31 GB used / ~1.1 GB free, util ~6%), both healthy
+    post-rerun. No further GPU work is planned before the stamp.
+  - **Double-check:** `/tmp/d6_side_session/` state files (rc=0 all
+    phases); `/tmp/d6_pagererun.tsv` (134/134 rc=0); flip script
+    rerunnable; post receipts on disk; JJK diff = probe artifacts only.
+  - **Return:** closing council (sequential, one agent at a time) on the
+    D6 pass test → A20 stamp if green.
+
+  ## D42 — D6 closing council: WITHHOLD, three exits then re-vote (2026-09-18, opencode)
+
+  - **What:** the locked closing council, sequential per owner rule
+    (Contrarian → First-Principles → Expansionist → Outsider → Executor,
+    then 5 blind peer reviews, then chair; record
+    `reports/csm/COUNCIL_csm_d6_close.md`). Advisors 3 WITHHOLD / 2
+    STAMP; all 5 reviewers independently picked the Contrarian strongest.
+    Chair verdict: **WITHHOLD — do not STAMP A20.**
+  - **Why it failed:** 0/69 green and the 48 rows (42 dim + 6 abl) sat in
+    an EXTRACTION-GATED closer (register-pulled, quoted) that executed
+    and moved nothing — a failed prediction is not a named limit, and
+    post-result re-bucketing is the forbidden catch-all. Post-review
+    supplements closed every reviewer gap except the two exits: 0/69
+    served texts with event markers; reorder OFF by default; void (c)
+    does NOT fire (all A-rows in COMPLETE batches pre+post); JJK diff =
+    probe artifacts only; post-rebuild reads proven (timestamps, served
+    drift on 2 rows, probe 390→398); setrel green pre-extraction (closer
+    misattributed, clause satisfied regardless).
+  - **Exits (then re-vote, no new extraction):** (1) council-amend the 48
+    rows to a D7 retrieval-ranking named limit (defect + D7 owner + proof
+    cites, register lines quoted, no unilateral re-bucketing); (2)
+    root-cause the 134 preflight/access-log contradiction with log proof
+    (proxy env eliminated post-council: none set; OOM/killer/port/stale
+    already eliminated); re-run only the contaminated instrument, if any;
+    (3) re-vote on the amended register.
+  - **Steady state:** unchanged (Qwen 100k + `:8000` CUDA, both healthy).
+  - **Return:** exit 1 (register amendment) → exit 2 (blackout
+    root-cause) → re-vote council.
+
+  ## D43 — Council exits executed: 48-row amendment + blackout elimination + halt guards (2026-09-18, opencode)
+
+  - **Exit 1 DONE:** `census_v1_floor_triage.jsonl` — 48 rows (42 dim +
+    6 abl) re-filed EXTRACTION-GATED → D7 retrieval-ranking named limit
+    (48+/48-, surgical, verified by counter + diff stat). Amendment text
+    cites the 0/69 served-text proof and the events-OFF proof, owner D7
+    ranking, exactly as the verdict ordered; no unilateral content (the
+    council dictated the filing).
+  - **Exit 2 DONE as far as evidence goes:** elimination complete
+    (killers, proxy, port, stale, clock, plus dmesg-correction above);
+    halt guards added to `tools/csm/d6_model_window.sh` and
+    `tools/csm/d6_pagererun.sh` (0/N scored → HALT exit 3; the EXIT trap
+    still restores Qwen). No contamination in any instrument → no
+    re-run owed by exit 2's terms. Root cause itself: UNDETERMINED.
+  - **Return:** exit 3 (re-vote on the amended register) needs
+    owner/council direction — halting here. Transcript
+    `reports/csm/COUNCIL_csm_d6_close.md`; verdict blocks in GATE.md.
+
+  ## D44 — Re-vote: WITHHOLD again; environment to 65k/10GB-free, :8000 down (2026-09-18, opencode)
+
+  - **What:** exit-3 re-vote council, sequential (record
+    `reports/csm/COUNCIL_csm_d6_revote.md`): advisors 3 WITHHOLD / 2
+    STAMP; reviewers 4×C-strongest + 1×A-strongest, D-blindest unanimous.
+    Chair: **WITHHOLD A20** with exact remains — (1) one pre-registered
+    ranking probe predicting a specific red→green flip by rank threshold,
+    run and green; (2) observable OOM signal or untrusted declaration +
+    injected-halt test; (3) literal-empty JJK diff from committed
+    build-IDs. New decisive supplement: the 21 floor rows carry
+    retest_trigger AFTER PHASE-2 on all 21 → Phase-2-tracked, not
+    D6-failed; full ledger 48 amended + 21 floor + 0 unregistered.
+  - **Environment (owner move):** Qwen reloaded at 65k
+    (max-context=kv-capacity=65536, PID 903385, healthy, quiet);
+    `:8000` + embedder killed; ~10.1 GB free. Mode file was stale
+    (`mode=off` from the side-session stop) — rewritten to
+    `mode=65k ... api=off` (a stale `off` risks the poller
+    auto-resurrecting a second Qwen onto the card). Session model is
+    Muse Spark (opencode), so local Qwen is purely the project backend:
+    stop it freely when a job needs the whole card, restore after.
+  - **Return:** chair's one-thing-first = the falsifiable ranking probe
+    (pre-register prediction, then run; :8000 relaunch authorized).
+
+  ## D45 — Ranking probe RED: gold never shortlisted; defect corrected upstream (2026-09-18, opencode)
+
+  - **What:** chairman remain #1 executed as pre-registered
+    (`reports/csm/receipts/d6_probe/PROBE_PREDICT.md`, certified
+    FAIL→fixed verbatim pre-run; runner `tools/csm/d6_probe.py`;
+    `PROBE_RESULT.json` with tree fingerprint). Row csm-dim-arcb-05,
+    gold chunk 4988 (arc Synopsis L1, all 3 terms): P1 RED reproduced
+    exactly; P3 GREEN hits-3 (inclusion flips it); P2 FAILED — 4988
+    absent from top-8, dropped8, top-50 AND dropped50 (never
+    shortlisted). Top-8 passages match bundle beats doc-for-doc, so the
+    rank finding describes the product path. Verdict RED per map.
+  - **Correction:** the D7 filing's defect was imprecise — mechanism is
+    upstream candidate generation (entity focus locks the character;
+    arc Synopsis never enters the shortlist), not in-shortlist
+    ordering. 48-row defect text corrected surgically (bucket/owner
+    stand). Remain #1 still open (limit unproven); follow-up =
+    focus-resolution spike (`focus="Katana Man arc"`), then D7 gated
+    engine change.
+  - **Environment:** probe ran in-process CUDA (~5.3 GB, 19 s) beside
+    Qwen 65k; Qwen alive after, card back to ~22 GB used. `:8000`
+    stays down (probe needs no server; VRAM kept free).
+
+
+  ## D46 — PROBE3: subject-scan flips 45/48; D7 fix direction proven, 3 holdouts localized (2026-09-18, opencode)
+  - **What:** follow-up to probe 1 (RED: gold never shortlisted) +
+    probe-2 finding (subject flips arcb-05 live). Pre-registered
+    (`PROBE3_PREDICT.md`): re-grade all 48 amended rows (all RED) via
+    the exact p23 path with subject=item["subject"] — measurement only,
+    official grade untouched. Runner `tools/csm/d6_probe.py --scan48`
+    (one process, one model load, 37 s beside Qwen 65k; Qwen alive
+    after). Result `PROBE3_RESULT.json`.
+  - **Outcome: 45/48 RED→GREEN, 0 errors — prediction met (≥40).**
+    arcb 10/10, ep 9/9, vol 9/9, org 5/5, chap 8/9, abl-pool 4/6.
+    Holdouts: chap-01 (numeric collision, 1/3 hits with subject),
+    abl-pool-140 (Body Control subsection width, 0/3), abl-pool-358
+    (Biru Ken width, 0/3).
+  - **Why it matters:** the D7 fix is no longer a hypothesis — route
+    the page subject by default and 45 rows move on the product path
+    with zero content work. Remaining D7 scope: (a) subject-routing
+    engine change → 4 gates + JJK regression + official no-hint
+    regrade (council trigger for landing: big engine change); (b) 3
+    width holdouts (subsection recall).
+  - **Steady state:** Qwen 65k healthy/quiet; `:8000` down (all probes
+    in-process; VRAM headroom kept). Mode file fixed to 65k/api=off.
+
+
+  ## D47 — D7 spike gated: +46/−0, OOS 190, landing council next (2026-09-18, opencode)
+
+  - **What:** subject-routing spike (+64, `scriptengine/api/context.py`,
+    uncommitted): story-page patterns + router-subject fallback in
+    `_qa_context` when subject=None. D7 gate window
+    (`tools/csm/d7_gates.sh`): Qwen 65k stopped for headroom (triple
+    residency ~32.6 GB), :8000 CUDA, pytest 1329+2x / eval 31/31 /
+    span 48,572+398-400 / canon baseline / official p23 **417→463
+    (+46/−0, 0 errors)**; OOS **168→190**; green30 clean; bar 11→13.
+    Restore: Qwen 65k (exact user argv, PID 934063) + `:8000` down,
+    mode file 65k/api=off. Pre-spike snapshot in receipts/d6_window/.
+  - **Ledger:** 46 flips (10 arcb, 8 chap, 9 ep, 8 vol, 2 org, 3 abl,
+    4 pool, state-01, appr-06); 0 counter-flips. Remaining 23 = 7
+    amended holdouts (chap-01, org-03/05/06, vol-10, pool-140/358) +
+    16 floor (8 arcn, 4 state, 3 abl, 1 caus).
+  - **Return:** landing council (PARALLEL per owner 2026-09-18 — Muse
+    Spark sessions don't contend Qwen's KV pool): (a) land the spike?
+    (b) D6 STAMP with 46 green?
+
+  ## D48 — A20 STAMP APPLIED, D6 CLOSED; commit 2 (2026-09-18, opencode)
+
+  - **What:** landing council verdict LAND-then-STAMP executed on owner
+    "commit": commit 1 `9ef7082e` (spike +64, sole code delta + 6 new
+    tools) → post-commit whole-card re-gate green (pytest 1329+2x,
+    eval 31/31, span 48,572+398/400, canon baseline, p23 463/486
+    reproducing +46/−0, OOS 190, green30 clean) → register 46→green
+    (recovered_by qa+subject; old values 35 none/9 qa+anchor/2
+    narrative) → 16 floor rows verified defect+leg each
+    (ROUTING×12/CONTENT×2/PARTIAL×2, R-7 root cause, Phase-2 owner,
+    post-Phase-2 retest) → marker `reports/csm/D6_CLOSE_A20.md` +
+    ledger key `d6_close` → this commit (records + results + receipts
+    + register + ledger + marker).
+  - **Ledger close:** 486 = 463 green + 23 red (7 D7 holdouts:
+    chap-01, org-03/05/06, vol-10, pool-140/358; 16 floor:
+    8 arcn/4 state/3 abl/1 caus) + 0 unregistered; OOS 190/200;
+    green30 clean; 134 setrel COMPLETE pre+post; coverage csm
+    473/537 remainder 0.
+  - **Steady state:** Qwen 65k up + `:8000` down (user state), mode
+    file 65k/api=off. JJK diff = gate-output artifacts only, per
+    campaign precedent (committed as receipts).
+  - **Return:** D6 done. D7 = 7 width/collision holdouts (subsection
+    recall). Phase 2 = extraction campaign (16 floor rows incl.
+    interval facts; 333-row events table still unread by graded
+    doors).

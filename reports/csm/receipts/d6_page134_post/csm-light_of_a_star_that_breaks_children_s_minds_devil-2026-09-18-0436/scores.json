@@ -1,0 +1,121 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Light of a Star That Breaks Children's Minds Devil?",
+      "set": "Every named technique of Light of a Star That Breaks Children's Minds Devil",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Light of a Star That Breaks Children's Minds Devil?",
+      "found": [
+        "Psychological Ruin"
+      ],
+      "missing": [],
+      "members": [
+        "Psychological Ruin"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Light of a Star That Breaks Children's Minds Devil's name?",
+      "id": "csm-pg-light_of_a_star_that_breaks_children_s_minds_devil-001",
+      "subject": "Light of a Star That Breaks Children's Minds Devil",
+      "accept": "all",
+      "expected": [
+        "\u5b50\u4f9b\u306e\u7cbe\u795e\u3092\u58ca\u3059\u3068\u3042\u308b\u661f\u306e\u5149\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u5b50\u4f9b\u306e\u7cbe\u795e\u3092\u58ca\u3059\u3068\u3042\u308b\u661f\u306e\u5149\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Light of a Star That Breaks Children's Minds Devil's name?",
+      "id": "csm-pg-light_of_a_star_that_breaks_children_s_minds_devil-002",
+      "subject": "Light of a Star That Breaks Children's Minds Devil",
+      "accept": "all",
+      "expected": [
+        "Kodomo no Seishin o Kowasu Toaru Hoshi no Hikari no Akuma"
+      ],
+      "found": [
+        "Kodomo no Seishin o Kowasu Toaru Hoshi no Hikari no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Light of a Star That Breaks Children's Minds Devil's gender?",
+      "id": "csm-pg-light_of_a_star_that_breaks_children_s_minds_devil-003",
+      "subject": "Light of a Star That Breaks Children's Minds Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Light of a Star That Breaks Children's Minds Devil?",
+      "id": "csm-pg-light_of_a_star_that_breaks_children_s_minds_devil-004",
+      "subject": "Light of a Star That Breaks Children's Minds Devil",
+      "accept": "all",
+      "expected": [
+        "Erased (original timeline)"
+      ],
+      "found": [
+        "Erased (original timeline)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

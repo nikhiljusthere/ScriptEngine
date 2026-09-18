@@ -1,0 +1,171 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Guillotine Devil?",
+      "set": "Every named technique of Guillotine Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Guillotine Devil?",
+      "set": "Guillotine Devil's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Guillotine Devil?",
+      "set": "Guillotine Devil's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Guillotine Devil?",
+      "found": [
+        "Enhanced Durability",
+        "Slicing"
+      ],
+      "missing": [],
+      "members": [
+        "Enhanced Durability",
+        "Slicing"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Guillotine Devil?",
+      "found": [
+        "Guilly (by Death Devil)"
+      ],
+      "missing": [],
+      "members": [
+        "Guilly (by Death Devil)"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Guillotine Devil?",
+      "found": [
+        "Death Devil (brainwashed)"
+      ],
+      "missing": [],
+      "members": [
+        "Death Devil (brainwashed)"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Guillotine Devil's name?",
+      "id": "csm-pg-guillotine_devil-001",
+      "subject": "Guillotine Devil",
+      "accept": "all",
+      "expected": [
+        "\u30ae\u30ed\u30c1\u30f3\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u30ae\u30ed\u30c1\u30f3\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Guillotine Devil's name?",
+      "id": "csm-pg-guillotine_devil-002",
+      "subject": "Guillotine Devil",
+      "accept": "all",
+      "expected": [
+        "Girochin no Akuma"
+      ],
+      "found": [
+        "Girochin no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Guillotine Devil?",
+      "id": "csm-pg-guillotine_devil-003",
+      "subject": "Guillotine Devil",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Guillotine Devil's occupation?",
+      "id": "csm-pg-guillotine_devil-004",
+      "subject": "Guillotine Devil",
+      "accept": "all",
+      "expected": [
+        "Death's Pawn"
+      ],
+      "found": [
+        "Death's Pawn"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

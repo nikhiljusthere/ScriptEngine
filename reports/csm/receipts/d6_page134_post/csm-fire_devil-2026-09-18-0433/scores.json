@@ -1,0 +1,225 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Fire Devil?",
+      "set": "Every named technique of Fire Devil",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Fire Devil?",
+      "set": "Every ally of Fire Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Fire Devil?",
+      "set": "Fire Devil's affiliations",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Fire Devil?",
+      "set": "Fire Devil's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Fire Devil?",
+      "found": [
+        "Desire Granting",
+        "Collective Empowerment",
+        "Fire Imagery",
+        "Fire Dispersement"
+      ],
+      "missing": [],
+      "members": [
+        "Collective Empowerment",
+        "Desire Granting",
+        "Fire Dispersement",
+        "Fire Imagery"
+      ]
+    },
+    {
+      "query": "What are all the allies of Fire Devil?",
+      "found": [
+        "Class president",
+        "Fake Chainsaw Man"
+      ],
+      "missing": [],
+      "members": [
+        "Class president",
+        "Fake Chainsaw Man"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Fire Devil?",
+      "found": [
+        "Death Devil (brainwashed)",
+        "Fourth East High School (Allegedly)",
+        "Barem Bridge",
+        "Chainsaw Man Church"
+      ],
+      "missing": [],
+      "members": [
+        "Barem Bridge",
+        "Chainsaw Man Church",
+        "Death Devil (brainwashed)",
+        "Fourth East High School (Allegedly)"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Fire Devil?",
+      "found": [
+        "Justice Devil (fake alias)"
+      ],
+      "missing": [],
+      "members": [
+        "Justice Devil (fake alias)"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Fire Devil's name?",
+      "id": "csm-pg-fire_devil-001",
+      "subject": "Fire Devil",
+      "accept": "all",
+      "expected": [
+        "\u706b\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u706b\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Fire Devil's name?",
+      "id": "csm-pg-fire_devil-002",
+      "subject": "Fire Devil",
+      "accept": "all",
+      "expected": [
+        "Hi no Akuma"
+      ],
+      "found": [
+        "Hi no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Fire Devil's gender?",
+      "id": "csm-pg-fire_devil-003",
+      "subject": "Fire Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Fire Devil?",
+      "id": "csm-pg-fire_devil-004",
+      "subject": "Fire Devil",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Fire Devil's occupation?",
+      "id": "csm-pg-fire_devil-005",
+      "subject": "Fire Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Contract Devil High School Student (Allegedly) Death's Pawn"
+      ],
+      "found": [
+        "Wild Contract Devil High School Student (Allegedly) Death's Pawn"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 11,
+    "canon_total": 11,
+    "canon_recall": 1.0,
+    "members_returned": 11,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Beam?",
+      "set": "Every named technique of Beam",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Beam?",
+      "set": "Every ally of Beam",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Beam?",
+      "set": "Every enemy of Beam",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Beam?",
+      "set": "Beam's affiliations",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Beam?",
+      "set": "Beam's aliases",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Beam?",
+      "found": [
+        "Enhanced Durability",
+        "Intangibility",
+        "Devil Transformation",
+        "Enhanced Smell"
+      ],
+      "missing": [],
+      "members": [
+        "Devil Transformation",
+        "Enhanced Durability",
+        "Enhanced Smell",
+        "Intangibility"
+      ]
+    },
+    {
+      "query": "What are all the allies of Beam?",
+      "found": [
+        "Denji",
+        "Aki Hayakawa",
+        "Hirofumi Yoshida",
+        "Angel Devil"
+      ],
+      "missing": [],
+      "members": [
+        "Aki Hayakawa",
+        "Angel Devil",
+        "Denji",
+        "Hirofumi Yoshida"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Beam?",
+      "found": [
+        "Akane Sawatari",
+        "Reze",
+        "Typhoon Devil",
+        "Tolka"
+      ],
+      "missing": [],
+      "members": [
+        "Akane Sawatari",
+        "Reze",
+        "Tolka",
+        "Typhoon Devil"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Beam?",
+      "found": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 4"
+      ],
+      "missing": [],
+      "members": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 4"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Beam?",
+      "found": [
+        "Shark Fiend",
+        "Shark Devil"
+      ],
+      "missing": [],
+      "members": [
+        "Shark Devil",
+        "Shark Fiend"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Beam's name?",
+      "id": "csm-pg-beam-001",
+      "subject": "Beam",
+      "accept": "all",
+      "expected": [
+        "\u30d3\u30fc\u30e0"
+      ],
+      "found": [
+        "\u30d3\u30fc\u30e0"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Beam's name?",
+      "id": "csm-pg-beam-002",
+      "subject": "Beam",
+      "accept": "all",
+      "expected": [
+        "B\u012bmu"
+      ],
+      "found": [
+        "B\u012bmu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Beam's gender?",
+      "id": "csm-pg-beam-003",
+      "subject": "Beam",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Beam's height?",
+      "id": "csm-pg-beam-004",
+      "subject": "Beam",
+      "accept": "all",
+      "expected": [
+        "176 cm (5'9\u00bc\")"
+      ],
+      "found": [
+        "176 cm (5'9\u00bc\")"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Beam?",
+      "id": "csm-pg-beam-005",
+      "subject": "Beam",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Beam's occupation?",
+      "id": "csm-pg-beam-006",
+      "subject": "Beam",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 5,
+    "canon_found": 16,
+    "canon_total": 16,
+    "canon_recall": 1.0,
+    "members_returned": 16,
+    "exact_answers": 5,
+    "exact_of": 5,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "5/5",
+    "at_recall_zero": 0,
+    "at_recall_80": 5,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

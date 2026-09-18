@@ -1,0 +1,121 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "Which series does Tokyo Devil Detention Center belong to?",
+      "id": "csm-pg-tokyo_devil_detention_center-001",
+      "subject": "Tokyo Devil Detention Center",
+      "accept": "all",
+      "expected": [
+        "Tokyo Devil Detention Center"
+      ],
+      "found": [
+        "Tokyo Devil Detention Center"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What type of song is Tokyo Devil Detention Center?",
+      "id": "csm-pg-tokyo_devil_detention_center-002",
+      "subject": "Tokyo Devil Detention Center",
+      "accept": "all",
+      "expected": [
+        "Detention Center"
+      ],
+      "found": [
+        "Detention Center"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What services does Tokyo Devil Detention Center provide?",
+      "id": "csm-pg-tokyo_devil_detention_center-003",
+      "subject": "Tokyo Devil Detention Center",
+      "accept": "all",
+      "expected": [
+        "Public Security"
+      ],
+      "found": [
+        "Public Security"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Who are Tokyo Devil Detention Center's employees?",
+      "id": "csm-pg-tokyo_devil_detention_center-004",
+      "subject": "Tokyo Devil Detention Center",
+      "accept": "all",
+      "expected": [
+        "Unnamed Surgeons",
+        "Unnamed Devil Hunters",
+        "Unnamed Guards",
+        "Takagi \u2020",
+        "Quanxi"
+      ],
+      "found": [
+        "Unnamed Surgeons",
+        "Unnamed Devil Hunters",
+        "Unnamed Guards",
+        "Takagi \u2020",
+        "Quanxi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "partial",
+      "routed": "roster"
+    },
+    {
+      "series": "csm",
+      "query": "In which manga chapter does Tokyo Devil Detention Center first appear?",
+      "id": "csm-pg-tokyo_devil_detention_center-005",
+      "subject": "Tokyo Devil Detention Center",
+      "accept": "all",
+      "expected": [
+        "Chapter 156"
+      ],
+      "found": [
+        "Chapter 156"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Devil?",
+      "set": "Devil's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Devil?",
+      "found": [
+        "Hell"
+      ],
+      "missing": [],
+      "members": [
+        "Hell"
+      ]
+    }
+  ],
+  "facts": [],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 0,
+    "fact_present": 0
+  }
+}

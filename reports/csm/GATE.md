@@ -754,3 +754,221 @@ null branch.
 
 **Status: LOCKED. Next action = the D6 GPU window (§4 mechanics); P6 §7
 method addendum owed by 2026-09-25.****
+
+## D6 closure evidence (2026-09-18, opencode — for the closing council)
+
+- **Extraction:** 72 pages considered / 71 extracted + Katana Man arc failed
+  on the 8192 thinking budget → retry at `ANSWER_TOKENS=16384`: 16 extracted
+  / 56 cached / 0 failed / +31 events → **333 events total (302+31), 195
+  on-axis / 138 off, 59 pages** (`/tmp/d6_events_retry.log`).
+- **Index rebuild** (`--force --no-embed`): shape identical
+  (537 docs / 3,917 sections / 755 nodes / 11,261 edges / 5,081 facts /
+  7,797 chunks); events remapped 333→333, 0 dropped; Qdrant untouched
+  (5,513 pts = level 0+2 by design; L1 2,284 never embedded).
+- **Side session** (`tools/csm/d6_model_window.sh`): pytest **1,329 passed +
+  2 xpassed, rc=0**; eval jjk **31/31**; span-recall **48,572/48,572 offline +
+  398/400 live probe** (baseline 390/400); canon-opm **exact baseline
+  (10/16, 236/236, 79.0%)**; p23 **417/486, 0 errors**; page-run phase
+  **134×rc=1 operational failure** (see anomaly). State files:
+  `/tmp/d6_side_session/`.
+- **Anomaly:** all 134 page-runs failed at preflight `health()` with
+  connection-refused; zero of the 134 checks appear in the `:8000` access
+  log, though the server served ~400 requests through ~09:50 and shut down
+  gracefully only at the post-phase restore pkill. Eliminated: pipeline
+  killers (none in code; only SIGTERM source is the post-phase restore
+  pkill), proxy env (none set), port conflict (fresh bind + served
+  traffic), stale server (fresh PID), clock skew (self-consistent phase
+  durations). Correction: dmesg is UNAVAILABLE in this environment
+  (`read kernel buffer failed: Operation not permitted`), so "dmesg
+  clean" was no-data, not clean data — OOM is excluded instead by the
+  graceful-shutdown lines, which require SIGTERM (an OOM kill is SIGKILL
+  and logs nothing). Root cause UNDETERMINED — transient/environmental
+  (council adjudicates). Hardening applied: both window scripts now HALT
+  (exit 3) when 0/N page-runs score instead of rolling into done.
+- **Rerun** (`tools/csm/d6_pagererun.sh`, identical conditions): **134/134
+  rc=0, all COMPLETE**; `/tmp/d6_pagererun.tsv`; receipts relocated to
+  `reports/csm/receipts/d6_page134_post/`.
+- **Flip analysis** (pre = git `3d43a21`, `/tmp/d6_flip.py`): 486 green
+  417→417 with **0 flips either way**; **OOS200 168→168 (delta 0, floor
+  pre−2 holds)**; **green30 0 flips**. No void condition fires.
+- **Why zero flips (root-caused):** the events table is consumed only by the
+  narrative door (`retrieve/narrative.py`); the 486 grades the qa door
+  (hybrid chunks + facts + relations — the live Katana Man arc bundle,
+  14,201 chars, carries zero event content). The expect sentences ARE in
+  chunks (`Katana Man arc / Synopsis` L1+L2) but lose to the character card
+  → retrieval-ranking gap, same family as the 37 box-class wrong-page reds
+  (`p23_red_triage.md`). The judge sees the full bundle (no truncation).
+  Consequence for the pass test: the "42 dim → extraction" lever could not
+  move qa-door verdicts; the dim reds need re-bucketing to a retrieval-layer
+  named limit (owning leg D7) or a new root cause — **council decision**.
+- **69-red accounting:** 0 green; all 69 carry pre-registered triage
+  (`p23_red_triage.md`: 37 box wrong-page + 27 width/enumeration + 5
+  state-over-time content + arc-narrative width/narrative-floor), refined by
+  the finding above. No catch-all; A-row "closes" rows: none claimed.
+- **Coverage:** `coverage_report.py csm` → **473/537 (88.1%), 4,013 Qs,
+  remainder 0, orphans 0** (restores the D36 convention at the shared path;
+  the side session's bare run had flipped it to JJK — JJK numbers unchanged,
+  reproducible via `coverage_report.py jjk`).
+- **JJK baseline diff:** probe artifacts only (`recall_verbatim.jsonl` +400
+  rows, `reports/index.md` +1 canon row); no JJK code/corpus moves.
+
+**Status: EVIDENCE COMPLETE. Next = closing council on the pass test → A20
+stamp if green.**
+
+## D6 closing council verdict: WITHHOLD — do not STAMP A20 (2026-09-18)
+
+Full record: `reports/csm/COUNCIL_csm_d6_close.md` (5 advisors sequential →
+5 blind reviews R1–R5 sequential → chair; advisors 3 WITHHOLD / 2 STAMP;
+all 5 reviewers picked the Contrarian response strongest).
+Chair verdict WITHHOLD with three exits then re-vote: (1) council-amend
+the 48 rows (42 dim + 6 abl) from the failed EXTRACTION-GATED closer to a
+D7 retrieval-ranking named limit (defect: character-card dominance over
+arc Synopsis chunks in the qa door; owner D7 ranking; cite 0/69
+served-text proof + events-OFF proof; quote register lines; no unilateral
+re-bucketing); (2) root-cause the 134 preflight/access-log contradiction
+with log proof (no full re-run required — post-rebuild reads proven —
+unless contamination found); (3) re-vote on the amended register, no new
+extraction. Decisive supplements: register pull (dim-42 filed to the
+extraction closer, not a named limit — executed, 0 moved); 0/69 served
+texts with event markers; reorder OFF by default; void trigger (c) does
+NOT fire; JJK diff = probe artifacts only; setrel already green
+pre-extraction (closer misattributed, clause satisfied).
+
+**Status: D6 WITHHELD. Next = exit 1 (register amendment) → exit 2
+(blackout root-cause) → re-vote.**
+
+## Exits executed (2026-09-18, opencode)
+
+- **Exit 1 DONE:** `census_v1_floor_triage.jsonl` amended — the 48 rows
+  (42 dim + 6 abl) re-filed from EXTRACTION-GATED to the D7
+  retrieval-ranking named limit (triage/closer/lever/root_cause/
+  owning_phase/retest_trigger rewritten, extraction_gated→false; 48+/48-,
+  no collateral). Amendment text cites the 0/69 proof + events-OFF proof.
+- **Exit 2 DONE as far as evidence goes:** root cause UNDETERMINED after
+  the full elimination list above (incl. post-council proxy check);
+  dmesg-correction recorded; halt-guard hardening in both scripts. No
+  contamination found in any instrument (all show genuine post-rebuild
+  server interaction), so no instrument re-run is owed by exit 2's own
+  terms.
+- **Remaining:** exit 3 — re-vote on the amended register (owner/council
+direction needed).
+
+## Landing council verdict: LAND-then-STAMP, conditional on commit (2026-09-18)
+
+Full record: `reports/csm/COUNCIL_csm_d7_landing.md` (5 advisors
+parallel → 5 reviews parallel → chair; LAND 3 / REJECT-or-conditional
+2; STAMP 3 / WITHHOLD 2; reviews unanimous B-strongest). Chair:
+CONDITIONAL LAND + CONDITIONAL STAMP after post-commit receipts.
+Staff supplements closed three charges pre-chair (attribution = sole
++64 delta; patterns generic-compliant; per-row prediction pre-existed
+via probe-3). Ordered steps: (1) OWNER AUTHORIZES COMMIT (blocking);
+(2) commit spike + new tools at pinned hash; (3) re-gate from committed
+IDs; (4) JJK-exact re-proof + register 46→green + 16-row docs; (5)
+STAMP.
+
+## D7 spike: subject-routing default — +46 green, 0 counter-flips (2026-09-18)
+
+Spike (UNCOMMITTED, +64 insertions in `scriptengine/api/context.py`
+only): `_story_page_subject()` (generic arc/chapter/episode/volume
+title patterns → node/alias resolution, None when unresolvable) + tier-2
+router-subject forward, applied in `_qa_context` when the caller passes
+no subject. Design from probes 1–3 (gold never shortlisted unfocused;
+45/48 flip with subject). No series names; no instrument changes (p23
+still passes subject=None).
+- **D7 gate window** (`tools/csm/d7_gates.sh`; Qwen 65k stopped — triple
+  residency would peak ~32.6 GB; restored after with exact user argv):
+  pytest **1,329+2x rc=0** (pin holds); eval jjk **31/31**; span
+  **48,572 offline + 398/400 probe**; canon **exact baseline**;
+  official p23 regrade (spike active) **417→463 (+46/−0), 0 errors**.
+  State: `/tmp/d7_gates/` (archived to receipts after).
+- **Flip ledger:** 46 red→green (10 arcb, 8 chap, 9 ep, 8 vol, 2 org,
+  3 abl, 4 abl-pool, state-01, appr-06); **0 green→red**; OOS200
+  **168→190 (+22)**; green30 **0 flips**; bar-qa 11→13.
+- **Remaining reds: 23** = 7 amended holdouts (chap-01 numeric
+  collision; org-03/05/06; vol-10 guidebook; pool-140/358 width) + 16
+  floor (8 arc-narrative, 4 state-over-time, 3 abilities, 1 causality;
+  Phase-2-tracked).
+- **JJK diff:** engine spike (CSM/JJK-shared path, gated green) + probe
+  artifacts only; no JJK corpus/store moves.
+- Pre-spike 486 snapshot preserved at
+  `reports/csm/receipts/d6_window/census_widened_csm_results_pred7.jsonl`.
+
+## PROBE3 subject-scan: 45/48 flip — D7 fix direction proven (2026-09-18)
+
+Pre-registration: `reports/csm/receipts/d6_probe/PROBE3_PREDICT.md`;
+runner `tools/csm/d6_probe.py --scan48`; result `PROBE3_RESULT.json`.
+Measurement only (official no-hint grade untouched, no code/store
+change): all 48 amended rows (all RED post-rebuild) re-graded through
+the exact p23 path with subject=item["subject"].
+- **45/48 flip RED→GREEN, 0 errors — prediction met (≥40).**
+  Per-class: story_arcs 10/10, episode 9/9, volume 9/9, organization
+  5/5, chapter 8/9, ability-pool 4/6.
+- Holdouts (3): csm-dim-chap-01 (Chapter 1, numeric-collision family,
+  missing 2/3 with subject); csm-abl-pool-140 (Falling Devil Body
+  Control, missing 3/3 — subsection-width defect); csm-abl-pool-358
+  (Yoru Biru Ken, missing 3/3 — width).
+- Reading: the 48 rows are answerable TODAY through the supported
+  subject parameter; the no-hint entity-focus path is the sole blocker
+  for 45 of them. D7 fix = route the question's page subject by default
+  (engine change → full 4-gate suite + JJK regression + official
+  no-hint regrade must move the same rows). The 3 holdouts need
+  subsection-recall work beyond focus routing.
+
+## Re-vote verdict: WITHHOLD A20 again (2026-09-18)
+
+Full record: `reports/csm/COUNCIL_csm_d6_revote.md` (5 advisors
+sequential → 5 blind reviews sequential → chair; advisors 3 WITHHOLD / 2
+STAMP — same split; reviewers Converged C-strongest / D-blindest again).
+Chair WITHHOLD with exact remains: (1) prove the 48-row limit — one
+pre-registered, independently-registered ranking probe predicting a
+specific red→green flip by rank threshold, run and green; no probe, no
+limit; (2) close the blackout — observable OOM signal or declare harness
+untrusted + injected-halt test proving guards fire; (3) meet empty
+literally — JJK diff byte-empty from committed build-IDs, no /tmp
+citations, no probe-artifact exemption. Decisive supplements: 21 floor
+rows are Phase-2-tracked (retest_trigger AFTER PHASE-2 on all 21), not
+D6-failed — full 69 ledger now 48 amended + 21 floor + 0 unregistered.
+One thing first: the single falsifiable ranking probe (if it flips,
+items 1+3 fall together; if not, D7 has its first negative result).
+
+**Status: D6 WITHHELD ×2. Next = the falsifiable ranking probe.**
+
+## A20 STAMP APPLIED — D6 CLOSED (2026-09-18)
+
+Landing council conditions all posted: commit `9ef7082e` (spike +64,
+sole code delta) → post-commit whole-card re-gate green (pytest
+1,329+2x, eval 31/31, span 48,572+398/400, canon baseline, p23 463/486
+reproducing +46/−0) → JJK-exact (artifacts only) → register 46→green +
+16-row docs verified. Marker `reports/csm/D6_CLOSE_A20.md`; ledger key
+`d6_close` in `GATE_LEDGER.json`; flip list
+`receipts/d6_probe/CONFIRM_FLIPS.json`. 69-ledger: 46 green + 7 D7
+limit + 16 Phase-2 floor + 0 unregistered. D6's pass test holds on
+every clause. What remains is NOT D6: 7 width/collision holdouts (D7)
++ 16 floor rows (Phase 2) + the Phase-2 extraction campaign.
+
+**Status: D6 CLOSED (A20). Next = D7 holdouts + Phase 2.**
+
+## Ranking probe result: RED — D7's first negative result (2026-09-18)
+
+Pre-registration: `reports/csm/receipts/d6_probe/PROBE_PREDICT.md`
+(certified pre-run with FAIL→fixes applied verbatim); runner
+`tools/csm/d6_probe.py`; result `PROBE_RESULT.json` (build fingerprinted:
+HEAD `db53ec4`, events 333, chunks 7,797, final_top_k 8, cuda).
+Row csm-dim-arcb-05 ("What happens in the Katana Man arc?"), gold chunk
+4988 ("Katana Man arc / Synopsis" L1, carries all 3 expect terms):
+- P1 true: in-process qa bundle (exact p23 path) reproduces MECH_RED,
+  missing all 3; 8 beats led by the Katana Man card.
+- P2 FALSE: 4988 NOT in top-8, NOT in dropped8 (22 dropped), NOT in
+  top-50, NOT in dropped50 — never shortlisted at all. The top-8
+  passages match the bundle beats doc-for-doc (honesty control holds),
+  so this describes the product path faithfully.
+- P3 true: bundle + gold beat → MECH_GREEN, hits all 3.
+Probe verdict RED per the registered map ("absent top-50+dropped →
+deeper gap, never retrieved"). Consequence: the D7 filing's defect
+sentence was imprecise — the mechanism is UPSTREAM of ranking
+(candidate generation / entity focus locks the character; the arc
+Synopsis never enters the shortlist), not card-over-Synopsis ordering.
+The 48-row defect text is corrected accordingly (same surgical method);
+bucket (D7 named limit) and owner stand. Remain #1 unresolved: the limit
+is still unproven — the follow-up is a focus-resolution spike, then the
+D7 leg proper (gated engine change + JJK regression + regrade).
