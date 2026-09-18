@@ -660,6 +660,15 @@ def events_extract(
             " --refresh run (the rules can be disjoint)."
         ),
     ),
+    pages_file: str = typer.Option(
+        "",
+        "--pages",
+        help=(
+            "Only extract the pages named in this file (one title per"
+            " line, '#' lines ignored), intersected with the scope queue."
+            " Absent leaves the native path untouched."
+        ),
+    ),
 ) -> None:
     """Extract the events this wiki's arc, event and battle pages state.
 
@@ -694,17 +703,33 @@ def events_extract(
         console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
         raise typer.Exit(code=1)
 
+    page_filter: list[str] | None = None
+    if pages_file:
+        list_path = Path(pages_file)
+        if not list_path.exists():
+            console.print(f"[red]{list_path} does not exist.[/red]")
+            raise typer.Exit(code=1)
+        page_filter = [
+            line.strip()
+            for line in list_path.read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.lstrip().startswith("#")
+        ]
+
     if dry_run:
         with FactStore(paths.facts_db) as store:
             store.ensure_events()
             pages, by_page = scope_plan(store, scope)
+            if page_filter is not None:
+                allowed = set(page_filter)
+                pages = [page for page in pages if page in allowed]
 
             if limit:
                 pages = pages[:limit]
             total = sum(len(by_page[page]) for page in pages)
+            note = f", filter {len(page_filter)}" if page_filter is not None else ""
             console.print(
                 f"[dim]{len(pages)} pages / {total} sections would be read"
-                f" (scope={scope}, prompt {PROMPT_VERSION}):[/dim]"
+                f" (scope={scope}{note}, prompt {PROMPT_VERSION}):[/dim]"
             )
             for page in pages[:40]:
                 sections = by_page[page]
@@ -721,7 +746,7 @@ def events_extract(
     try:
         report = extract_events_series(
             paths, limit=limit or None, refresh=refresh, progress=show,
-            workers=max(1, workers), scope=scope,
+            workers=max(1, workers), scope=scope, page_filter=page_filter,
         )
     except LLMUnavailable as error:
         console.print(f"[red]{error}[/red]")

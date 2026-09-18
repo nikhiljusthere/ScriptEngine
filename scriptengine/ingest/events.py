@@ -1105,6 +1105,7 @@ def extract_events_series(
     progress: Any = None,
     workers: int = 1,
     scope: str = "placement",
+    page_filter: list[str] | None = None,
 ) -> dict[str, Any]:
     """Extract this series' placed events, skipping what is current.
 
@@ -1119,7 +1120,9 @@ def extract_events_series(
     sections that name two or more of the wiki's characters (a character's own
     Synopsis/History, a chapter's Plot Details), which is where most of what a
     wiki says about a character actually lives. `all` is the union of the two,
-    the complete-coverage path for a `--refresh` run.
+    the complete-coverage path for a `--refresh` run. `page_filter`
+    intersects the scope queue with a frozen slug list (the D6
+    targeted-extraction flag); `None` leaves the native path untouched.
     """
     from concurrent.futures import ThreadPoolExecutor
 
@@ -1138,6 +1141,9 @@ def extract_events_series(
         # Resolved here, on the thread that owns the connection.
         known = known_participants(store)
         pages, by_page = scope_plan(store, scope)
+        if page_filter is not None:
+            allowed = set(page_filter)
+            pages = [page for page in pages if page in allowed]
         report["considered"] = len(pages)
         wanted = pages[:limit] if limit else pages
 
