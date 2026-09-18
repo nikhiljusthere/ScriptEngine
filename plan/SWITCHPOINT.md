@@ -8,6 +8,44 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-18 (opencode session — D6 dedicated-GPU window checkpoint,
+  council #35 D39 lock @ `2ee7edc`):**
+  - **NO Qwen mode switch in this window** — Qwen is already at the 100k
+    profile (pid 495401, `--kv-capacity 102400`, port 18080); the locked
+    "checkpoint (switchpoint)" is resumability-only (this file + git), so
+    no `qwen-switch.sh` line is appended.
+  - **CSM position: D6 extraction window** (campaign todo 6, P2.3 D6
+    extraction leg). Locked scope (council #35): additive `events-extract
+    --pages <frozen-list>` flag (NOT a `--scope` change), 30-row green
+    sample (N=5/dim × 6 dims, seeded, disjoint from the 200-row held-out
+    OOS), P/T/A triage on the 134 setrel + 6 abl rows, A20 stamp. Full
+    record: `reports/csm/COUNCIL_csm_d6.md` + `GATE.md` D6 block +
+    `plan/drift_log.md` D39.
+  - **`--pages` flag IMPLEMENTED + proven this session** (JJK zero-regression
+    gates A byte-identical + B scope-plan identity, CSM corpus = 235 pages
+    / 412 sections; native `--scope corpus` untouched, remains the
+    fallback): receipt `reports/csm/D6_PAGES_FLAG_RECEIPT.md`, code in
+    `scriptengine/cli.py` + `scriptengine/ingest/events.py` (committed
+    `aa410c0`).
+  - **GPU window order (locked §4, model-unloaded first):** (1) pre-window
+    chain — targeted re-crawl Yoru + Asa Mitaka → CSM re-index with
+    zero-regression receipt → frozen P/T/A triage + the CSM `--pages`
+    frozen list → freeze 30-row green + 200-row OOS sets (seeded,
+    disjoint) → pre-extraction OOS + 134 page-run baselines. (2)
+    `nvidia-smi` pre-check → stop `:8000` (pid 745658) → dry-run receipt
+    → `events-extract --pages <list> --workers 2` (per-page atomic resume;
+    abort → resume with workers 1) → index rebuild → restore `:8000` to
+    CUDA. (3) model-unloaded side session: re-grade + JJK 4 standing
+    gates → closure council → A20 stamp.
+  - **Steady-state GPU on disk now:** Qwen 100k pid 495401 (24,876 MiB)
+    + `:8000` CUDA pid 745658 (4,110 MiB, log `/tmp/scriptengine_api_cuda.log`),
+    ~2.9 GB free of 32 GB. Window flips the inversion of W1: Qwen model-only
+    + ~7 GB free during extraction.
+  - **P6 §7 addendum due 2026-09-25** (method seed only; 7-wiki rollout is
+    a separate future owner decision): `plan/Plan_to_perfection.md` §7.
+  - **FIRST ACTION ON RESUME:** the pre-window model-unloaded chain above
+    (item 1); read `reports/csm/GATE.md` D6 block + `COUNCIL_csm_d6.md`
+    first if context is lost.
 - **2026-09-17 (opencode session — post-P2.1-sweep council #31; P2.3+P2.2
   graded via the Claude model-unloaded handoff):**
   - **CSM position: post-sweep close, P2.3+P2.2 DONE, pre-P2.4.** Council #31
