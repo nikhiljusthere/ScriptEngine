@@ -2019,8 +2019,7 @@ entry.
   - **Return:** arm probes on 15 floor rows → P2-scope council with
     measured scope (extraction residual only).
 
-  ## D54 — Q6: 15/15 floor rows flip; P2 extraction scope voids (2026-09-18, opencode)
-  - **What:** pre-registered Q6 (`Q6_PREDICT.md`) arm probes on all 15
+  ## D54 — Q6: 15/15 floor rows flip; P2 extraction scope voids (2026-09-18, opencode)  - **What:** pre-registered Q6 (`Q6_PREDICT.md`) arm probes on all 15
     floor reds (subject=row subject; budget-20000 / width top_k-30
     arms; zero code; in-process co-located, 32 s; Qwen alive after).
     Result (`Q6_RESULT.json`): **15/15 flip under ≥1 arm** (arc 7/7:
@@ -2062,3 +2061,154 @@ entry.
     mechanisms singly → P2-scope council → CLOSE.
   - **Return:** owner says "commit" (one word) → execute landing
     sequence to the next council checkpoint.
+
+  ## D56 — Q8: floor flips width-only; program collapses to width+depth (2026-09-18, opencode)
+
+  - **What:** pre-registered Q8 (`Q8_PREDICT.md`): top_k=30 with
+    subject=None on all 15 floor reds. Result (`Q8_RESULT.json`):
+    **11/15 flip** (arcn-02/06/08/10, state-02/08/09, abl-01/02/09,
+    caus-03); derivations unnecessary for all 11. Non-flippers:
+    arcn-01/03/04, state-03 (need subject+depth — same 4 as
+    predicted-adjacent).
+  - **Revision:** the program is now TWO legs, not four — (1) GLOBAL
+    beam width (top_k default 8→30, one number, zero new rules;
+    covers 16 width-flipping rows: 5 ex-holdouts + 11 floor);
+    (2) subject+depth for 5 rows (arcn-01/03/04, state-03, vol-10).
+    Derivation-only and breadth legs EVAPORATE (no row needs them
+    alone). Precision/latency adjudicated by gates (canon precision,
+    eval, OOS, span timings); fallback = class-scoped width if
+    global breaches.
+  - **Return:** program council (global-width-first + depth leg +
+    P2-void formal) → implement → gate → CLOSE.
+
+  ## D57 — Global width KILLED in production (+16/−23, blind 10/19); rolled back + verified (2026-09-18, opencode)
+
+  - **What:** shipped top_k 8→30 globally per program (pre-registered
+    WIDTH_PREDICT). Full-bank result: **458/486 (+16 flips, −23
+    counter-flips across arcb/chap/ep/org/pool)**; blind collapsed
+    **19/19 → 10/19** (the control caught what bank-counting would
+    have rationalized); net −7. KILL fired exactly as registered.
+  - **Rollback:** one-number revert, byte-identical to committed
+    (verified via diff). Restoration re-measured (not asserted):
+    bank 465 with flip set == stamped CONFIRM + chap-01/arcn-07,
+    0 counter; blind re-run 19/19; eval 31/31 held throughout.
+    Qwen 65k alive after every load.
+  - **Harness incident:** a `| head -2` pipe on the blind scorer
+    caused 19 BrokenPipe ERRORs and clobbered the results file
+    (recovered by clean re-run). Rule: NEVER pipe GPU-job stdio to
+    `head`; redirect to file, then tail the file.
+  - **Consequence:** global width dead permanently. Fallback per
+    chair order: class-scoped width (possessive-ability + org
+    classes) with precision budget; vol-10 subject+depth; org-06
+    breadth folded into width leg; floor rows per Q8 arms. P2 void
+    still premature (production flips required, not probes).
+  - **Return:** narrow-program council (scoped width + depth legs
+    with per-leg win/kill) → implement singly → gates → CLOSE.
+
+  ## D58 — ARCSEC MISS + rollback; combined multi+arcsec design queued (2026-09-18, opencode)
+
+  - **What:** ARCSEC leg (keep subject terms iff subject page is a
+    story container) measured 0/3 targets (arcn-01/03, state-03 all
+    RED; controls held) → KILL fired per registered map. Root cause
+    found in the same session: the SUBJECT is the arc page, so the
+    floor being reordered is the ARC page's (Synopsis×21 ov=0) — the
+    gold lives on CHARACTER pages under arc-named sections, which no
+    subject routing reaches (arc-subject gives arc floor; character
+    path strips arc terms). Rolled back byte-identical on the spot;
+    restoration smoked (arcn-01 RED, arcb-05/chap-01/abl-04 GREEN).
+  - **Combined design (next leg, pre-register before implementing):**
+    multi-subject floor (character primary + arc secondary, facts/
+    focus stay primary, explicit-subject calls untouched) PLUS keep
+    arc-title terms whenever an arc page is implicated (primary OR
+    secondary), excluding only primary-name tokens. Predicts
+    arcn-01/03 flips via character-floor arc-section boost; blind
+    arc rows + controls must hold; full-bank/blind/eval guards;
+    rollback on breach.
+  - **Return:** combined-design council → implement → measure →
+    D7c official suite when a graduate exists.
+
+  ## D59 — Derivation leg WIN (4 flips, 0 counter); term-handling autopsy; tiered flagged (2026-09-18, opencode)
+
+  - **What:** DERIV v3+v4 (verbatim-first + possessive-owner
+    deferral) measured: vol-10/org-05/org-06/arcn-01 flip, pool-237
+    restored, 0 counter-flips (total 469), blind 19/19, eval 31/31,
+    OOS 194, green30 clean. Bank/blind/eval all co-located, Qwen
+    alive throughout. WIN per registered terms.
+  - **Tiered-append** implemented behind SCRIPTENGINE_TIERED_RECALL
+    (default OFF = byte-identical current behavior, verified by
+    flag-off smoke): identical tier-1 + leftover-only ranks 9–30.
+    Smoke flag-ON: arcn-02/org-03 flip, pool-140 still red (no
+    leftover: 39 beats saturated), controls hold. Full-bank tiered
+    run: 473 total (+4, 0 counter: arcn-02/10, org-03, state-08),
+    blind 19/19, eval 31/31. Tiered works exactly as theorized
+    (leftover-only gains, saturated rows untouched).
+  - **Term-handling autopsy (next leg's design):** arcn-01 flipped
+    via Fake-subject NOT arc-subject — because verbatim excludes
+    only Fake-name tokens, LEAVING arc terms live to boost the
+    Fake/WarDevilArc section. General principle forming: exclusion
+    should drop only non-discriminative name tokens, never
+    arc-title terms (they select sections even on character pages).
+    Candidate: never-exclude-arc-terms, or drop exclusion entirely
+    (guards adjudicate character-row safety).
+  - **Remaining reds: 13** (pool-140/358, arcn-03/04/06, state-02/03/
+    09, abl-01/02/09, caus-03). All mapped: pool/abl/caus/state =
+    saturated-budget rows (tiered can't reach); arcn/state =
+    character-subject + arc-terms rows (term rule).
+  - **Return:** term-rule leg (pre-register → implement → guards) →
+    official suite → results council → P2-scope → CLOSE.
+
+  ## D59 — Derivation code lost + reconstructed byte-behavior-exact (2026-09-18, opencode)
+
+  - **What:** the M2 rollback (`git checkout -- stores/facts.py`)
+    was clean, but a LATER `git checkout -- scriptengine/api/
+    context.py` (ARCSEC rollback) also wiped the UNCOMMITTED
+    derivation v3/v4 living in the same file. Detected via subject
+    table + file audit before any council acted on it. Lesson
+    restated as law: snapshot grade files before overwriting runs;
+    never checkout a file holding uncommitted legs (surgical revert
+    by hunk instead).
+  - **Recovery:** derivation v3/v4 reconstructed from session record
+    (verbatim-longest + possessive-owner deferral + router-kept);
+    verified 12/12 subjects EXACT (incl. curly-quote bytes) +
+    full-bank 469 with EXACTLY the 4 recorded flips (arcn-01,
+    org-05/06, vol-10) + 0 counter + blind 19/19 + eval 31/31,
+    all co-located, Qwen alive throughout. State meets the
+    derivation-leg WIN terms again, implementation-identical in
+    behavior.
+  - **Return:** term-rule leg per D58 analysis → official suite →
+    results council → P2-scope → CLOSE.
+
+  ## D60 — Derivation re-verified; numbering wart noted; results council next (2026-09-18, opencode)
+  - **What:** reconstructed derivation measured end-to-end:
+    469/486 (+4 flips arcn-01/org-05/org-06/vol-10, 0 counter),
+    blind 19/19, eval-jjk 31/31, OOS 194, green30 clean, Qwen alive.
+    Tree: spike + Q1 committed; derivation v3/v4 uncommitted but
+    verified 12/12 subjects + full-bank identical to recorded wins.
+    Note: TWO entries numbered D59 exist above (2130 derivation WIN,
+    2160 code-loss recovery) — numbering collision from a long
+    session; left as-is for audit honesty, referenced by title.
+  - **Remaining reds: 17** (org-03, pool-140/358 + 14 floor). All
+    mapped: width-responsive (Q7/Q8) except vol-10-class (done) and
+    arcn/state depth rows. Next legs: (a) width vehicle — tiered
+    (re-implement flagged) vs class-scoped top_k (possessive-ability
+    + org + arc/state classes); (b) floor-depth for subject-resolved
+    rows that width misses; (c) P2-void formal on production flips.
+  - **Return:** results council (derivation WIN record + width-vehicle
+    choice + P2-void formal) → implement winner singly → gates →
+    CLOSE.
+
+  ## D61 — CONFIRM passed; commit blocked on owner word (2026-09-18, opencode)
+
+  - **What:** chair-ordered promotion gate executed: instrument-hash
+    verified no-drift (`0d882cb9…`), identical-config p23 regrade →
+    **469/486 with the EXACT same 4 flips** (arcn-01/org-05/org-06/
+    vol-10) + 0 counter; OOS recomputed 194; green30 0 flips;
+    independent blind re-run 19/19, 0 errors. All co-located, Qwen
+    alive. Derivation WIN is now CONFIRMED (not provisional).
+  - **Blocked on:** explicit owner commit word for the derivation
+    diff (standing rule; prior "commit" authorizations consumed by
+    the landing chain). Then: commit → width (tiered, chair-ordered)
+    → depth (arcn-03/04, state-03, vol-10-class) → official suite →
+    VOID formal → CLOSE.
+  - **Return:** owner says "commit" (one word) → execute to the next
+    council checkpoint.

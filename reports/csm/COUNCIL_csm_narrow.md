@@ -37,3 +37,29 @@ arms already; re-open only on neither-arm rows); anti-accretion
 enforced; official suite runs NOW on frozen tree then after each
 leg; dirty tree must be committed before suite counts.
 One thing first: freeze (commit) + full official suite now.
+
+## Round 2 — derivation + depth + width + breadth program (same day)
+
+5 advisors parallel → 5 reviewers parallel → chair. Question:
+approve narrow mechanisms (derivation repair, floor-depth, scoped
+beam-width, breadth-folded-into-width) singly with guards, given Q1
+WIN record + Q5/Q6/Q7 maps + M1-moot + derivation-recorded state?
+
+- Contrarian: split combined legs; guard the cap; validate
+  fallback; narrow the guard; keep title-fix standing guard.
+- First-Principles: ship derivation-total alone; blind-proven
+  budgets; unifying statement; anti-accretion test.
+- Expansionist: approve all legs with generalization order;
+  compounding.
+- Outsider: combined leg confounded (joint-win-only); win/kill
+  unfalsifiable as stated; beam-width justified; breadth incoherent
+  (row flips under both arms already); reserve breadth for
+  neither-arm rows (none exist).
+- Executor: freeze dirty tree; derivation-only regrade; batched
+  breadth; official suite once; Monday plan, wall-clock honesty.
+Reviews (strongest D×2/A×2/E×1; blindest C×5): frozen predicates,
+per-leg JJK gates, n=2 weight, kill-math + victim continuity,
+causal postmortem, JJK-100% guard, no batched regrades, state
+survival. Chair verdict recorded in drift (binding order:
+derivation leg → depth/width legs singly → official suite →
+P2-scope → CLOSE; breadth held for neither-arm rows).

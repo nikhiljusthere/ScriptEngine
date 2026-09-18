@@ -933,6 +933,29 @@ items 1+3 fall together; if not, D7 has its first negative result).
 
 **Status: D6 WITHHELD ×2. Next = the falsifiable ranking probe.**
 
+## DERIV leg: FALSIFIABLE PASS (not closed win; confirm + commit pending)
+
+Recorded per results-chair order (defeasible until promotion rule
+passes): verbatim-title + possessive-owner deferral + router-kept
+derivation measured 4 predicted flips (vol-10/org-05/org-06/arcn-01),
+0 counter-flips, blind 19/19, eval-jjk 31/31, OOS200 194 (floor 166),
+green30 zero flips, bar-qa 13/26. Bank 469/486.
+- git SHA: `90206940` + uncommitted derivation diff
+  (`scriptengine/api/context.py`, verbatim + possessive-deferral).
+- instrument-hash (context.py + p23_grader.py + census_dimensions.py
+  + span_recall.py, sha256-16): `0d882cb9dd57b9dc` — re-verify at
+  CONFIRM time; any drift voids this record.
+- judge identity: `tools/census_dimensions.judge` (≥2/3 expect
+  terms) over `span_recall.served_text`, via in-process
+  `api.main.context`, mode qa, subject None, CENSUS_DEVICE=cuda.
+- reconstruction command: `CENSUS_DEVICE=cuda
+  ./scriptengine/.venv/bin/python tools/csm/p23_grader.py`
+  (writes `reports/csm/census_widened_csm_results.jsonl`).
+- promotion rule (all must hold): identical-config confirmatory
+  regrade reproduces 469 with the same 4 flips + 0 counter;
+  independent blind re-run 19/19; OOS/green30 recomputed exact;
+  owner word; pre-commit gates green; then commit derivation diff
+  only.
 ## A20 STAMP APPLIED — D6 CLOSED (2026-09-18)
 
 Landing council conditions all posted: commit `9ef7082e` (spike +64,

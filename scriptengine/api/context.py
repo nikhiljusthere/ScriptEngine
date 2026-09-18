@@ -457,6 +457,84 @@ _STORY_PAGE_LEAD_RE = re.compile(
     re.IGNORECASE,
 )
 
+_STRIP_PUNCT = " \t\n\r\f\v.,;:!?()[]{}\"'“”‘’—-"
+_APOSTROPHES = ("'", "’", "‘", "ʼ")
+_POSSESSIVE_RE = re.compile(
+    r"\b((?:[\w'’\-]+\s+){0,1}[\w'’\-]+)\s*['’]s\b\s+([A-Za-z0-9'’\-]+)",
+    re.IGNORECASE,
+)
+_OWNER_LEAD_STOPWORDS = frozenset({
+    "the", "a", "an", "to", "of", "in", "on", "for", "with", "is", "are",
+    "was", "were", "be", "and", "or", "at", "by", "from", "that", "what",
+    "who", "do", "does", "did",
+})
+
+
+def _owner_attribute_hit(store, query: str) -> bool:
+    """Whether the query names an owner's declared ability/contract.
+
+    "Mysterious Man's Typhoon Devil Contract" is answered on the
+    owner's page (the router's possessive-owner rule reads it
+    correctly); the abilities table declares the (character,
+    ability-prefix) pair, so verbatim defers instead of hijacking the
+    subject to the ability's namesake page. Generic mechanism (store
+    lookup, no names); per-row evidence decides each pair.
+    """
+    for match in _POSSESSIVE_RE.finditer(query or ""):
+        owner = match.group(1).strip(_STRIP_PUNCT)
+        head = match.group(2).strip(_STRIP_PUNCT)
+        if not owner or not head:
+            continue
+        parts = [w for w in owner.split() if w.lower() not in _OWNER_LEAD_STOPWORDS]
+        if not parts:
+            continue
+        owner = " ".join(parts)
+        hit = store.connection.execute(
+            "SELECT 1 FROM abilities WHERE character = ? COLLATE NOCASE"
+            " AND name LIKE ? ESCAPE '\\' LIMIT 1",
+            (owner, head.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_") + "%"),
+        ).fetchone()
+        if hit is not None:
+            return True
+    return False
+
+
+def _verbatim_title_subject(paths: SeriesPaths, query: str) -> str | None:
+    """The longest exact document title occurring in the query, if resolved.
+
+    DERIV leg v3 (general rule): possessive spans ("Denji's") are
+    modifiers, never referents; trailing punctuation ("arc?",
+    "Thugs,") is orthography (internal punctuation belongs to the
+    title and is kept). Longest match wins, then leftmost — so
+    "Tokyo Special Division 5" beats "Control Devil arc" with no
+    temporal special-casing, and "Yakuza" beats possessive "Denji's".
+    Possessive-owner-with-declared-ability queries defer entirely
+    (see _owner_attribute_hit). Resolution via subject_node_name;
+    anything unresolvable returns None and the next tier runs
+    unchanged. Generic vocabulary only.
+    """
+    from scriptengine.stores.facts import FactStore
+
+    if not query:
+        return None
+    words = query.split()
+    if not words:
+        return None
+    with FactStore(paths.facts_db) as store:
+        if _owner_attribute_hit(store, query):
+            return None
+        for width in range(min(6, len(words)), 0, -1):
+            for i in range(len(words) - width + 1):
+                span = words[i:i + width]
+                if any(q in w for w in span for q in _APOSTROPHES):
+                    continue
+                candidate = " ".join(span).strip(_STRIP_PUNCT)
+                if not candidate:
+                    continue
+                if store.subject_node_name(candidate) is not None:
+                    return candidate
+    return None
+
 
 def _story_page_subject(paths: SeriesPaths, query: str) -> str | None:
     """A story page (arc/chapter/episode/volume) the query names, if it resolves.
@@ -512,6 +590,14 @@ def _qa_context(
     # the router's subject read (the auto path's 2-prep forward) for
     # character/organization subjects the story patterns never name. None
     # when nothing resolves: behaviour unchanged.
+    # DERIV leg (v3 general rule): verbatim-title containment FIRST —
+    # the longest exact document title occurring in the query (trailing
+    # punctuation stripped, possessive spans skipped, must resolve).
+    # Outranks story/router by construction: longer beats shorter, then
+    # leftmost. Router stays last so every currently-served row keeps
+    # its subject unless verbatim finds better (measured per row).
+    if subject is None:
+        subject = _verbatim_title_subject(paths, query)
     if subject is None:
         subject = _story_page_subject(paths, query)
     if subject is None:
