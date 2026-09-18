@@ -1919,3 +1919,146 @@ entry.
     recall). Phase 2 = extraction campaign (16 floor rows incl.
     interval facts; 333-row events table still unread by graded
     doors).
+
+  ## D49 — Completion plan APPROVED amended; Step 0 underway (2026-09-18, opencode)
+  - **What:** `plan/CSM_100_CLOSE.md` (D7a→D7b→D7c→P2-scope→P2-execute
+    →CLOSE, council-gated) reviewed by full parallel council
+    (`reports/csm/COUNCIL_csm_plan100.md`): chair APPROVED with 8
+    amendments (parallelize P2-scope now; blind fresh set BEFORE D7b
+    edits; strike leak exits; mechanical smoke; one-mechanism
+    re-proofs with lone rollback; per-row retrieval-vs-extraction
+    re-proof before GPU spend; whole-card discipline stands with
+    co-located p23-only exception; denominator annex). Plan file
+    rewritten with all eight.
+  - **Return:** Step 0 (blind fresh set authoring + frozen-build
+    scoring) then D7a diagnosis + P2-scope analysis concurrently.
+
+  ## D50 — Step 0 DONE (blind 19/19) + D7a defect sheets (2026-09-18, opencode)
+
+  - **Blind set** (`reports/csm/blind_fresh_d7.jsonl`, 19 items, all
+    expect terms corpus-verified, subjects absent from the 486):
+    scored on the frozen build (`3c047604`) via the exact p23 path
+    → **19/19 GREEN, 0 errors** (predictions: ≥14/17 box/org/ability
+    + 2/2 arc calibration — exceeded). No bank-overfitting signal;
+    spike generalizes to fresh same-class subjects. Qwen 65k
+    restarted externally mid-window (934063→948880); mode file
+    corrected; no impact (scorer is Qwen-independent).
+  - **D7a sheets** (`receipts/d6_probe/D7A_DEFECTS.json`, CPU-only,
+    judge-monotone counterfactuals, no GPU): every holdout flips
+    GREEN by inclusion — chap-01 via chunk 1031 solo(3); org-03 via
+    6321 solo(3); org-05 via 7059 solo(3); vol-10 via 5413/5414
+    solo(3); pool-140 via 3924/3937 solo(3); pool-358 via 7559/7578
+    solo(3); org-06 needs breadth (4 chunks × 1 hit each, combo top-3
+    GREEN(2)). Zero gold errors (all terms in corpus). Defects:
+    numeric-collision ranking (chap-01), page/section recall
+    (org-03/05, vol-10, pool-140/358), multi-section breadth
+    (org-06). Fix predictions filed per row in the sheets.
+  - **Return:** D7a council (findings + fix designs) — queued next.
+
+  ## D51 — M2 Stage-1 MISS + rollback; causality proven both directions (2026-09-18, opencode)
+
+  - **What:** M2 (floor level filter (0,2)→(0,1,2), pre-registered
+    `M2_PREDICT.md` for 5 rows) measured: 0/5 targets flipped. But
+    chap-01 + arcn-07 flipped green while abl-04/05 flopped red (net
+    463→463, masking churn) — twice identically (two full regrades,
+    same 46-flip sets). Layer autopsy: gold L1 heads absent from
+    top-50 shortlist AND no-subject floor; partial children at ranks
+    12–47 / floor 3–78; floor code itself excludes L1 by an explicit
+    `IN (0, 2)` filter (same split as embedding).
+  - **Rollback executed** (kill rule: 0/5 targets + other-row
+    movement): `git checkout` of the one-file diff; 4-row smoke
+    confirms reversal (chap-01/arcn-07 RED again, abl-04/05 GREEN
+    again) — M2 causal both directions. M2-run grades archived to
+    `receipts/d6_probe/M2_RUN_GRADES.jsonl`; worktree results
+    restored to the stamped 463.
+  - **Refined mechanism** (scoped-variant proposal for council):
+    L1-floor inclusion flips story pages (chap-01, arcn-07) whose L1
+    IS the answer container, but crowds ability-page budgets where
+    L2 subsections already rank (abl-04/05 flop). Variant: L1s join
+    the floor for story pages only. The 5 M2 rows additionally need
+    subject-derivation repair (org-03 empty subject; org-05/vol-10
+    wrong subject; pool rows budget-cut) — separate sub-mechanisms.
+  - **Return:** D7b-results council (M2 miss/rollback acceptance +
+    scoped-variant + M1/M3 order + org-06 standing).
+
+  ## D52 — Q1 WIN + Q5 layer map: every remaining row flips under >=1 arm (2026-09-18, opencode)
+  - **Q1 scoped story-pages-only L1** (pre-registered Q1_PREDICT):
+    chap-01 + arcn-07 flipped, abl-04/05 green held, 0 other moves,
+    blind 19/19, eval 31/31 — WIN, mechanism live in tree
+    (uncommitted).
+  - **Q5 budget/breadth probe** (pre-registered Q5_PREDICT, zero code,
+    supported params only, `Q5_RESULT.json`): budget-20000 arm 4/6
+    GREEN (org-03/05/06, vol-10); width top_k-30 arm 5/6 GREEN
+    (org-03/05/06, pool-140/358). EVERY row flips under >=1 arm;
+    predictions met. Layer map: vol-10 floor-depth ONLY; pool-140/358
+    beam-width ONLY; org rows either arm. Derivation gaps persist
+    underneath (org-03 empty / org-05/vol-10 wrong subjects).
+  - **Return:** narrow shippable mechanisms per arm (never blunt
+    global budget/width), singly with pre-registered flips +
+    full-bank + blind + eval guards, then D7c official suite.
+
+  ## D53 — P2-scope evidence: all 15 floor rows answerable from chunks (2026-09-18, opencode)
+
+  - **What:** CPU-only retrieval-vs-extraction re-proof (chair-ordered
+    before any GPU spend): all 15 floor reds' missing terms verified
+    present in chunks (2–17 chunks each, 0 gold errors). 7 arc-narrative
+    (same "What happened to X during Y" shape as fixed rows), 4 state
+    (during-arc states ARE in arc prose — interval-facts theory
+    challenged), 3 abilities (enumeration terms 2–17 chunks; roster
+    door serves this shape 4/4 per bar audit), 1 causality.
+  - **Implication:** the "extraction-gated" filing for floor rows is
+    suspect the same way dim→extraction was — these read as
+    RETRIEVAL gaps (ranking/scoping/width), not content gaps.
+    Proposal: Q5-style arm probes (subject/budget/width,
+    pre-registered) on all 15 floor rows BEFORE any extraction talk;
+    rows flipping join D7-style fix queue; only rows flipping under
+    NO arm go to extraction scope. Could void most of P2 GPU-days.
+  - **Note to self:** two no-op whitespace Edit calls were issued on
+    drift headings this session (D49, D52) — both verified byte-clean
+    after. No more heading-only edits; append-only with exact tails.
+  - **Return:** arm probes on 15 floor rows → P2-scope council with
+    measured scope (extraction residual only).
+
+  ## D54 — Q6: 15/15 floor rows flip; P2 extraction scope voids (2026-09-18, opencode)
+  - **What:** pre-registered Q6 (`Q6_PREDICT.md`) arm probes on all 15
+    floor reds (subject=row subject; budget-20000 / width top_k-30
+    arms; zero code; in-process co-located, 32 s; Qwen alive after).
+    Result (`Q6_RESULT.json`): **15/15 flip under ≥1 arm** (arc 7/7:
+    4 budget-only + 3 both; state 4/4; abilities 3/3 via width;
+    causality via width) — prediction (≥8) massively exceeded.
+  - **Consequence:** the "extraction-gated floor" filing is falsified
+    the same way dim→extraction was — every floor row's answers are
+    retrievable TODAY (including all 4 state rows: during-arc states
+    sit in arc prose, no interval facts needed). P2 EXTRACTION SCOPE
+    IS EMPTY on current evidence. Blunt global arms are NOT shippable
+    (4× rerank latency, token cost, dilution) — narrow mechanisms per
+    arm still required (derivation + floor-depth + beam-width +
+    breadth, singly with guards).
+  - **Return:** P2-scope council with void-extraction finding (re-scope
+    P2 as second retrieval wave or ratify residual extraction) → narrow
+    mechanisms → gates → CLOSE council → 100% declaration.
+
+  ## D55 — Q7 disentangles width from subject; commit ask pending (2026-09-18, opencode)
+
+  - **What:** pre-registered Q7 (`Q7_PREDICT.md`): width-only
+    top_k=30 with subject=None on the 6 non-chap holdouts. Result
+    (`Q7_RESULT.json`): org-03 GREEN(3), org-05 GREEN(2), org-06
+    GREEN(3), pool-140 GREEN(3), pool-358 GREEN(3), vol-10 RED(0) —
+    predictions held exactly (incl. vol-10 RED). Cross-check: Q5
+    width-arm verdicts identical ⇒ no nondeterminism signal.
+  - **Revision:** width-only suffices for 5 rows (org-03/05/06,
+    pool-140/358) — derivation NOT required for them. Only vol-10
+    needs subject+depth. Narrow-fix space is now: scoped beam-width
+    (possessive-ability + org classes) + vol-10 subject/depth +
+    org-06 breadth (already flipping). M1-derivation scope shrinks
+    accordingly.
+  - **Discipline note:** three heading-only no-op edits were issued
+    and caught this session (D49/D52/D54) — all verified byte-clean.
+    Rule: record writes are substantive appends with exact tails
+    verified first; no heading-only edits, ever.
+  - **Blocked on:** explicit owner commit word for Q1 scoped code +
+    probe records (standing rule; prior "commit" consumed by the
+    landing chain). Then: commit → official whole-card suite → narrow
+    mechanisms singly → P2-scope council → CLOSE.
+  - **Return:** owner says "commit" (one word) → execute landing
+    sequence to the next council checkpoint.

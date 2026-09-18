@@ -2030,12 +2030,22 @@ class FactStore:
             return []
         # The parent join is what keeps the floor's passages the same shape as
         # the beam's: a quoted passage carries its section, not just itself.
-        # Level 0 (the document card) and level 2: see the docstring above for
-        # why the card is part of the floor.
+        # Level 0 (the document card) and level 2 always. Level 1 (the
+        # section head) joins ONLY on story-container pages (arcs,
+        # chapters, episodes, volumes): there the L1 is the answer
+        # container (D7 Q1 probe: arc/chapter L1 inclusion flips rows
+        # whose answers live in section flow), while on character/
+        # ability pages L1 heads are redundant bulk that crowds the
+        # named L2 subsections which already rank (M2 autopsy: abl-04/05
+        # flopped when L1s joined unconditionally). Frozen predicate,
+        # one cycle, kill on any breach.
         return self.connection.execute(
             "SELECT c.*, p.text AS parent_text"
             " FROM chunks c LEFT JOIN chunks p ON p.id = c.parent_id"
-            " WHERE c.document_id = ? AND c.level IN (0, 2)"
+            " JOIN documents d ON d.id = c.document_id"
+            " WHERE c.document_id = ? AND (c.level IN (0, 2) OR (c.level = 1"
+            " AND d.page_type IN"
+            " ('story_arcs_box', 'chapter_box', 'episode', 'volume_box')))"
             " ORDER BY c.ordinal",
             (row["id"],),
         ).fetchall()
