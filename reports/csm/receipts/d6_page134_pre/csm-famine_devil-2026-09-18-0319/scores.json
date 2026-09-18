@@ -1,0 +1,277 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Famine Devil?",
+      "set": "Every named technique of Famine Devil",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Famine Devil?",
+      "set": "Every ally of Famine Devil",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Famine Devil?",
+      "set": "Every enemy of Famine Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Famine Devil?",
+      "set": "Famine Devil's aliases",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Famine Devil?",
+      "set": "Famine Devil's affiliations",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Famine Devil?",
+      "found": [
+        "Life Absorption",
+        "Immense Healing Factor",
+        "Immense Durability",
+        "Hand-to-Hand Combat"
+      ],
+      "missing": [],
+      "members": [
+        "Hand-to-Hand Combat",
+        "Immense Durability",
+        "Immense Healing Factor",
+        "Life Absorption"
+      ]
+    },
+    {
+      "query": "What are all the allies of Famine Devil?",
+      "found": [
+        "Pochita",
+        "Death Devil",
+        "Asa Mitaka"
+      ],
+      "missing": [],
+      "members": [
+        "Asa Mitaka",
+        "Death Devil",
+        "Pochita"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Famine Devil?",
+      "found": [
+        "Yoru",
+        "Pochita"
+      ],
+      "missing": [],
+      "members": [
+        "Pochita",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Famine Devil?",
+      "found": [
+        "Famine Devil",
+        "Hunger Devil",
+        "Hunger (by Makima)",
+        "Famine (by Yoru)",
+        "Death Devil (fa\u00e7ade by the real Death Devil)"
+      ],
+      "missing": [],
+      "members": [
+        "Death Devil (fa\u00e7ade by the real Death Devil)",
+        "Famine (by Yoru)",
+        "Famine Devil",
+        "Hunger (by Makima)",
+        "Hunger Devil"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Famine Devil?",
+      "found": [
+        "Four Horsemen",
+        "Fourth East High School",
+        "Death Devil (brainwashed)"
+      ],
+      "missing": [],
+      "members": [
+        "Death Devil (brainwashed)",
+        "Four Horsemen",
+        "Fourth East High School"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Famine Devil's name?",
+      "id": "csm-pg-famine_devil-001",
+      "subject": "Famine Devil",
+      "accept": "all",
+      "expected": [
+        "\u30ad\u30ac\u3061\u3083\u3093"
+      ],
+      "found": [
+        "\u30ad\u30ac\u3061\u3083\u3093"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Famine Devil's name?",
+      "id": "csm-pg-famine_devil-002",
+      "subject": "Famine Devil",
+      "accept": "all",
+      "expected": [
+        "Kiga-chan"
+      ],
+      "found": [
+        "Kiga-chan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Famine Devil's gender?",
+      "id": "csm-pg-famine_devil-003",
+      "subject": "Famine Devil",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Famine Devil?",
+      "id": "csm-pg-famine_devil-004",
+      "subject": "Famine Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Famine Devil?",
+      "id": "csm-pg-famine_devil-005",
+      "subject": "Famine Devil",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Famine Devil's occupation?",
+      "id": "csm-pg-famine_devil-006",
+      "subject": "Famine Devil",
+      "accept": "all",
+      "expected": [
+        "High School Student (cover) Wild Devil"
+      ],
+      "found": [
+        "High School Student (cover) Wild Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 5,
+    "canon_found": 17,
+    "canon_total": 17,
+    "canon_recall": 1.0,
+    "members_returned": 17,
+    "exact_answers": 5,
+    "exact_of": 5,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "5/5",
+    "at_recall_zero": 0,
+    "at_recall_80": 5,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

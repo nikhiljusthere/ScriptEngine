@@ -1,0 +1,197 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Pingtsi?",
+      "set": "Every named technique of Pingtsi",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Pingtsi?",
+      "set": "Every enemy of Pingtsi",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Pingtsi?",
+      "set": "Pingtsi's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Pingtsi?",
+      "found": [
+        "Magnifying Glass",
+        "Contract Perception",
+        "Bilingual"
+      ],
+      "missing": [],
+      "members": [
+        "Bilingual",
+        "Contract Perception",
+        "Magnifying Glass"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Pingtsi?",
+      "found": [
+        "Kishibe",
+        "Power",
+        "Tsugihagi",
+        "Quanxi"
+      ],
+      "missing": [],
+      "members": [
+        "Kishibe",
+        "Power",
+        "Quanxi",
+        "Tsugihagi"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Pingtsi?",
+      "found": [
+        "Quanxi and the Fiends"
+      ],
+      "missing": [],
+      "members": [
+        "Quanxi and the Fiends"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Pingtsi's name?",
+      "id": "csm-pg-pingtsi-001",
+      "subject": "Pingtsi",
+      "accept": "all",
+      "expected": [
+        "\u30d4\u30f3\u30c4\u30a4"
+      ],
+      "found": [
+        "\u30d4\u30f3\u30c4\u30a4"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Pingtsi's name?",
+      "id": "csm-pg-pingtsi-002",
+      "subject": "Pingtsi",
+      "accept": "all",
+      "expected": [
+        "Pintsui"
+      ],
+      "found": [
+        "Pintsui"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Pingtsi's gender?",
+      "id": "csm-pg-pingtsi-003",
+      "subject": "Pingtsi",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Pingtsi?",
+      "id": "csm-pg-pingtsi-004",
+      "subject": "Pingtsi",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Pingtsi's occupation?",
+      "id": "csm-pg-pingtsi-005",
+      "subject": "Pingtsi",
+      "accept": "all",
+      "expected": [
+        "Private Devil Hunter"
+      ],
+      "found": [
+        "Private Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 8,
+    "canon_total": 8,
+    "canon_recall": 1.0,
+    "members_returned": 8,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

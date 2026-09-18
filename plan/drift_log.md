@@ -1630,3 +1630,77 @@ entry.
   GPU window (executes the §4 mechanics above). P6 §7 method addendum (this
   entry's pointer, due ≤2026-09-25) documents the pre-registered method seed
   and can land in parallel.
+
+ ## D40 — D6 pre-window chain executed: triage + `--pages` + dry-run parity + freeze v2 + OOS pre-baseline (2026-09-18, opencode)
+
+- **What:** D39's ordered pre-window chain, steps 1–7, all pre-model-call:
+  (1) **P/T/A triage** (`tools/csm/d6_pta_triage.py`, alnum-fuzzy subject
+  match): 140 rows {P:61, T:8, A:64, NA:7} → `reports/csm/D6_PTA_TRIAGE.jsonl`
+  + `.md`; the A rows + the 2 content rows (Yoru/Asa) = the 111-page frozen
+  list `D6_PAGES_FROZEN.txt` (0 unmatched). (2) **`--pages` flag** @ `aa410c0`
+  (additive `events-extract --pages <list>`, TITLES one per line, `#` ignored,
+  ∩ scope queue; JJK zero-regression via `--dry-run` scope-plan identity +
+  default-absent gate test; fallback = native `--scope corpus`). (3) **2-page
+  targeted re-crawl** (Yoru.json, Asa Mitaka.json) with the 403 root-caused:
+  Fandom's WAF rejects `Accept: application/json` on the MediaWiki API — the
+  header was removed from `WikiCrawler._get` (`D6_RECREWL_RECEIPT.md`); CSM
+  re-index **zero-regression** (`D6_REINDEX_RECEIPT.md`); `:8000` restored to
+  CUDA (PID 788943). (4) **Dry-run parity** (`D6_DRYRUN_RECEIPT.md`): corpus
+  baseline 235 pages / 412 sections; the 111-page filter → 72 pages / 108
+  sections; placement quirk documented (CSM `documents.page_type` ∩
+  `PLACEMENT_TYPES` = ∅ → the window is scoped `--scope corpus`); 39 of the 111
+  sit outside corpus scope; window ⊆ baseline. Items 1–4 committed @
+  `95337f4` (11 files, the gate checkpoint). (5) **Freeze v2**
+  (`tools/csm/d6_oos_freeze.py`): the v1 leak-excluded draw silently dropped
+  state-over-time (green=25, 5 dims); reverted per the chair's literal lock —
+  **no leak exclusion**, draws from the whole 486 population: green30 = 5
+  MECH_GREEN per dim × 6 dims (id-sorted candidates, sorted class order),
+  oos200 = seeded draw from (486 − green30), single `random.Random(20260918)`,
+  disjointness asserted, `in_window` flag (subject ∈ 72-page window) = 5
+  green / 69 oos → `D6_OOS_FREEZE.jsonl` (230 rows; oos offline mix 168
+  MECH_GREEN / 32 MECH_RED) + register `D6_OOS_FREEZE.md` +
+  `D6_PAGE134_SLUGS.txt` (134 setrel slugs). (6) **OOS pre-baseline**
+  (`tools/csm/d6_oos_score.py`): sequential HTTP against the live `:8000`
+  (P2.3 shape, no subject; 60 s × 3 retries; verdict =
+  `tools/census_dimensions.judge` over `span_recall.served_text`; no
+  in-process model load — `:8000` stays the single model holder): **230 rows,
+  0 errors, 115 s; green30 = 30/30 live MECH_GREEN (zero flips); oos200 = 168
+  G / 32 R — the live run reproduces the offline freeze mix exactly** →
+`D6_OOS_PRE.jsonl`. (7) **134 page-run baseline COMPLETE** (background
+   loop over `D6_PAGE134_SLUGS.txt` → `page-run --series csm --batch <slug>
+   --out reports/csm/receipts/d6_page134_pre/`): **134/134 rc=0, all 100%**
+   — 417/417 set questions exact + 665/665 fact answers present
+   (1,082/1,082 total); per-slug receipts on disk (REPORT.md + run.json +
+   scores.json, 2.4 MB).
+- **Findings (page-run completion, 2026-09-18):** the D36 cross-check shows
+   the set-rel class is **closed pre-extraction**: the D36 model-window
+   sweep (`reports/csm/receipts/model_window_d36/page_run.tsv`, 475 rows)
+   has exactly 136 rc=2 rows = the 134 setrel slugs + `sweep_a.report` +
+   `sweep_b.report` (473 page batches / 134 rc=2 pages; the D36 prose
+   "474 batches, 135 rc=2" is off by one), and all 134 now pass 100%
+   pre-extraction. The D37 register row "134 setrel, no closer until D6"
+   is therefore closed by engine state that landed between the D36 sweep
+   and D40 (candidates: the D36 model-window roster patches, the R-8
+   router window @ `8661850`, the D40 CSM re-index) — attribution left to
+   the closure council. The D6-window 134 page-run re-run is a
+   no-regression check (must stay 134/134). The P6 §7 method addendum
+   (due 2026-09-25) **landed early** in `plan/Plan_to_perfection.md` §7
+   (Census v1 schema + grader + 200-row OOS protocol + named-limit
+   register).
+- **Why:** D39's lock pre-registered this exact ordered chain; every
+  artifact is frozen pre-model-call (the green30 zero-flip arm and the OOS
+  pre/post floor only mean something if nothing moves between pre-grade and
+  the extraction model call).
+- **Steady state:** unchanged (Qwen 100k PID 495401 + `:8000` CUDA PID 788943
+  co-located; the OOS pre-scorer is HTTP-only, no in-process models).
+- **Double-check:** freeze tool asserts disjointness + the `in_window` flag;
+  pre-scorer exit 0 + per-set verdict composition; page-run rc distribution
+  logged per page in `/tmp/d6_page134_pre.log`.
+- **Return:** next = the D6 **GPU window**: switchpoint checkpoint →
+  `nvidia-smi` pre-check → stop `:8000` (PID 788943, re-verified at launch) →
+  ~7 GB free → `events-extract --series csm --scope corpus --pages
+  reports/csm/D6_PAGES_FROZEN.txt --workers 2` (atomic per-page resume;
+  abort → resume + drop to workers 1) → index rebuild → model-unloaded side
+  session (486 re-grade + 134 page-run re-run + 4 standing gates, JJK
+  baseline diff empty) → closure council → A20 stamp. P6 §7 addendum (due
+  2026-09-25) interleaves.

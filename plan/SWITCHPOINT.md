@@ -27,25 +27,41 @@ edit those.
     fallback): receipt `reports/csm/D6_PAGES_FLAG_RECEIPT.md`, code in
     `scriptengine/cli.py` + `scriptengine/ingest/events.py` (committed
     `aa410c0`).
-  - **GPU window order (locked §4, model-unloaded first):** (1) pre-window
-    chain — targeted re-crawl Yoru + Asa Mitaka → CSM re-index with
-    zero-regression receipt → frozen P/T/A triage + the CSM `--pages`
-    frozen list → freeze 30-row green + 200-row OOS sets (seeded,
-    disjoint) → pre-extraction OOS + 134 page-run baselines. (2)
-    `nvidia-smi` pre-check → stop `:8000` (pid 745658) → dry-run receipt
-    → `events-extract --pages <list> --workers 2` (per-page atomic resume;
-    abort → resume with workers 1) → index rebuild → restore `:8000` to
-    CUDA. (3) model-unloaded side session: re-grade + JJK 4 standing
-    gates → closure council → A20 stamp.
-  - **Steady-state GPU on disk now:** Qwen 100k pid 495401 (24,876 MiB)
-    + `:8000` CUDA pid 745658 (4,110 MiB, log `/tmp/scriptengine_api_cuda.log`),
-    ~2.9 GB free of 32 GB. Window flips the inversion of W1: Qwen model-only
-    + ~7 GB free during extraction.
+- **GPU window order (locked §4, model-unloaded first):** (1) pre-window
+     chain — targeted re-crawl Yoru + Asa Mitaka → CSM re-index with
+     zero-regression receipt → frozen P/T/A triage + the CSM `--pages`
+     frozen list → freeze 30-row green + 200-row OOS sets (seeded,
+     disjoint) → pre-extraction OOS + 134 page-run baselines. **(1)
+     COMPLETE 2026-09-18:** `D6_OOS_PRE.jsonl` (230 rows, 0 errors:
+     green30 30/30 MECH_GREEN; oos200 168G/32R — matches the offline freeze
+     mix) + 134/134 page-run rc=0 all 100% (417 set + 665 fact questions;
+     receipts in `reports/csm/receipts/d6_page134_pre/`, 2.4 MB) — the
+     setrel class is closed pre-extraction (D36 cross-check: 136 rc=2 rows
+     = 134 setrel slugs + 2 sweep reports). (2)
+     `nvidia-smi` pre-check → stop `:8000` (pid 788943, re-verified at
+     launch; 745658 was the pre-re-crawl pid) → `events-extract --series
+     csm --scope corpus --pages reports/csm/D6_PAGES_FROZEN.txt --workers 2`
+     (dry-run receipt already @ `95337f4`; per-page atomic resume; abort →
+     resume with workers 1) → index rebuild → restore `:8000` to CUDA. (3)
+     model-unloaded side session: re-grade + JJK 4 standing
+     gates → closure council → A20 stamp.
+- **Steady-state GPU on disk now (re-verified 2026-09-18 pre-window):**
+     Qwen 100k pid 495401 (25,543 MiB) + `:8000` CUDA pid 788943 (log
+     `/tmp/scriptengine_api_cuda.log`), 29,275/2,829 MiB used/free of
+     32 GB. Window flips the inversion of W1: Qwen model-only + ~7 GB free
+     during extraction.
   - **P6 §7 addendum due 2026-09-25** (method seed only; 7-wiki rollout is
     a separate future owner decision): `plan/Plan_to_perfection.md` §7.
-  - **FIRST ACTION ON RESUME:** the pre-window model-unloaded chain above
-    (item 1); read `reports/csm/GATE.md` D6 block + `COUNCIL_csm_d6.md`
-    first if context is lost.
+- **FIRST ACTION ON RESUME:** the D6 GPU window (item 2): `nvidia-smi`
+     pre-check → stop `:8000` (pid 788943) → confirm Qwen model-only +
+     ~7 GB free → launch `events-extract --series csm --scope corpus
+     --pages reports/csm/D6_PAGES_FROZEN.txt --workers 2` detached
+     (`setsid nohup`, log `/tmp/d6_events_extract.log`) → poll → index
+     rebuild → restore `:8000` (CUDA) → model-unloaded side session
+     (486 re-grade + 134 page-run re-run + 4 standing gates) → closure
+     council → A20 stamp. Item 1 is COMPLETE (receipts above). Read
+     `reports/csm/GATE.md` D6 block + `COUNCIL_csm_d6.md` first if context
+     is lost.
 - **2026-09-17 (opencode session — post-P2.1-sweep council #31; P2.3+P2.2
   graded via the Claude model-unloaded handoff):**
   - **CSM position: post-sweep close, P2.3+P2.2 DONE, pre-P2.4.** Council #31

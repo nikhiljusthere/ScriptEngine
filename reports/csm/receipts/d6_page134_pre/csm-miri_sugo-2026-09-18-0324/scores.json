@@ -1,0 +1,313 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Miri Sugo?",
+      "set": "Every named technique of Miri Sugo",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Miri Sugo?",
+      "set": "Every ally of Miri Sugo",
+      "confidence": "declared",
+      "returned": 6,
+      "available": 6,
+      "canon": 6,
+      "found": 6,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Miri Sugo?",
+      "set": "Every enemy of Miri Sugo",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the subordinates of Miri Sugo?",
+      "set": "Every subordinate of Miri Sugo",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the superiors of Miri Sugo?",
+      "set": "Every superior of Miri Sugo",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Miri Sugo?",
+      "set": "Miri Sugo's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Miri Sugo?",
+      "set": "Miri Sugo's affiliations",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Miri Sugo?",
+      "found": [
+        "Hybrid Transformation",
+        "Augmented Body",
+        "Blades",
+        "Blood Consumption",
+        "Nigh-Immortality"
+      ],
+      "missing": [],
+      "members": [
+        "Augmented Body",
+        "Blades",
+        "Blood Consumption",
+        "Hybrid Transformation",
+        "Nigh-Immortality"
+      ]
+    },
+    {
+      "query": "What are all the allies of Miri Sugo?",
+      "found": [
+        "Barem Bridge",
+        "Whip Hybrid",
+        "Spear Hybrid",
+        "Denji",
+        "Death Devil",
+        "Nobana Higashiyama"
+      ],
+      "missing": [],
+      "members": [
+        "Barem Bridge",
+        "Death Devil",
+        "Denji",
+        "Nobana Higashiyama",
+        "Spear Hybrid",
+        "Whip Hybrid"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Miri Sugo?",
+      "found": [
+        "Denji",
+        "Yoru"
+      ],
+      "missing": [],
+      "members": [
+        "Denji",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the subordinates of Miri Sugo?",
+      "found": [
+        "Makima",
+        "Barem Bridge"
+      ],
+      "missing": [],
+      "members": [
+        "Barem Bridge",
+        "Makima"
+      ]
+    },
+    {
+      "query": "What are all the superiors of Miri Sugo?",
+      "found": [
+        "Makima",
+        "Barem Bridge"
+      ],
+      "missing": [],
+      "members": [
+        "Barem Bridge",
+        "Makima"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Miri Sugo?",
+      "found": [
+        "Sword Man"
+      ],
+      "missing": [],
+      "members": [
+        "Sword Man"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Miri Sugo?",
+      "found": [
+        "Makima (brainwashed)",
+        "Tokyo Special Division 5 (formerly)",
+        "Chainsaw Man Church",
+        "Fourth East High School"
+      ],
+      "missing": [],
+      "members": [
+        "Chainsaw Man Church",
+        "Fourth East High School",
+        "Makima (brainwashed)",
+        "Tokyo Special Division 5 (formerly)"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Miri Sugo's name?",
+      "id": "csm-pg-miri_sugo-001",
+      "subject": "Miri Sugo",
+      "accept": "all",
+      "expected": [
+        "\u9808\u90f7 \u30df\u30ea"
+      ],
+      "found": [
+        "\u9808\u90f7 \u30df\u30ea"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Miri Sugo's name?",
+      "id": "csm-pg-miri_sugo-002",
+      "subject": "Miri Sugo",
+      "accept": "all",
+      "expected": [
+        "Sug\u014d Miri"
+      ],
+      "found": [
+        "Sug\u014d Miri"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Miri Sugo?",
+      "id": "csm-pg-miri_sugo-003",
+      "subject": "Miri Sugo",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Miri Sugo's occupation?",
+      "id": "csm-pg-miri_sugo-004",
+      "subject": "Miri Sugo",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter (brainwashed) High School Student"
+      ],
+      "found": [
+        "Public Safety Devil Hunter (brainwashed) High School Student"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Miri Sugo's gender?",
+      "id": "csm-pg-miri_sugo-005",
+      "subject": "Miri Sugo",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 7,
+    "canon_found": 22,
+    "canon_total": 22,
+    "canon_recall": 1.0,
+    "members_returned": 22,
+    "exact_answers": 7,
+    "exact_of": 7,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "7/7",
+    "at_recall_zero": 0,
+    "at_recall_80": 7,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Seigi Akoku?",
+      "set": "Every named technique of Seigi Akoku",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Seigi Akoku?",
+      "set": "Every ally of Seigi Akoku",
+      "confidence": "declared",
+      "returned": 9,
+      "available": 9,
+      "canon": 9,
+      "found": 9,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Seigi Akoku?",
+      "set": "Seigi Akoku's affiliations",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Seigi Akoku?",
+      "found": [
+        "Hand-to-Hand Combat"
+      ],
+      "missing": [],
+      "members": [
+        "Hand-to-Hand Combat"
+      ]
+    },
+    {
+      "query": "What are all the allies of Seigi Akoku?",
+      "found": [
+        "Asa Mitaka",
+        "Hirofumi Yoshida",
+        "Denji",
+        "Nayuta",
+        "Yoru",
+        "Nail Fiend",
+        "Fami",
+        "Haruka Iseumi",
+        "Nobana Higashiyama"
+      ],
+      "missing": [],
+      "members": [
+        "Asa Mitaka",
+        "Denji",
+        "Fami",
+        "Haruka Iseumi",
+        "Hirofumi Yoshida",
+        "Nail Fiend",
+        "Nayuta",
+        "Nobana Higashiyama",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Seigi Akoku?",
+      "found": [
+        "Fourth East High School",
+        "Devil Hunter Club",
+        "Chainsaw Man Church (formerly)"
+      ],
+      "missing": [],
+      "members": [
+        "Chainsaw Man Church (formerly)",
+        "Devil Hunter Club",
+        "Fourth East High School"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is the status of Seigi Akoku?",
+      "id": "csm-pg-seigi_akoku-001",
+      "subject": "Seigi Akoku",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Seigi Akoku's occupation?",
+      "id": "csm-pg-seigi_akoku-002",
+      "subject": "Seigi Akoku",
+      "accept": "all",
+      "expected": [
+        "High School Student Devil Hunter"
+      ],
+      "found": [
+        "High School Student Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Seigi Akoku's gender?",
+      "id": "csm-pg-seigi_akoku-003",
+      "subject": "Seigi Akoku",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What are the kanji for Seigi Akoku's name?",
+      "id": "csm-pg-seigi_akoku-004",
+      "subject": "Seigi Akoku",
+      "accept": "all",
+      "expected": [
+        "\u4e9c\u56fd \u30bb\u30a4\u30ae"
+      ],
+      "found": [
+        "\u4e9c\u56fd \u30bb\u30a4\u30ae"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Seigi Akoku's name?",
+      "id": "csm-pg-seigi_akoku-005",
+      "subject": "Seigi Akoku",
+      "accept": "all",
+      "expected": [
+        "Akoku Seigi"
+      ],
+      "found": [
+        "Akoku Seigi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 13,
+    "canon_total": 13,
+    "canon_recall": 1.0,
+    "members_returned": 13,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

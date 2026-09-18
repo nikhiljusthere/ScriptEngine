@@ -1,0 +1,193 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Spear Hybrid?",
+      "set": "Every named technique of Spear Hybrid",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Spear Hybrid?",
+      "set": "Every ally of Spear Hybrid",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the superiors of Spear Hybrid?",
+      "set": "Every superior of Spear Hybrid",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Spear Hybrid?",
+      "set": "Spear Hybrid's affiliations",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Spear Hybrid?",
+      "found": [
+        "Hybrid Transformation",
+        "Augmented Body",
+        "Spear Generation",
+        "Blood Consumption",
+        "Nigh-Immortality"
+      ],
+      "missing": [],
+      "members": [
+        "Augmented Body",
+        "Blood Consumption",
+        "Hybrid Transformation",
+        "Nigh-Immortality",
+        "Spear Generation"
+      ]
+    },
+    {
+      "query": "What are all the allies of Spear Hybrid?",
+      "found": [
+        "Barem Bridge",
+        "Whip Hybrid",
+        "Miri Sugo"
+      ],
+      "missing": [],
+      "members": [
+        "Barem Bridge",
+        "Miri Sugo",
+        "Whip Hybrid"
+      ]
+    },
+    {
+      "query": "What are all the superiors of Spear Hybrid?",
+      "found": [
+        "Makima",
+        "Barem Bridge"
+      ],
+      "missing": [],
+      "members": [
+        "Barem Bridge",
+        "Makima"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Spear Hybrid?",
+      "found": [
+        "Makima (brainwashed)",
+        "Tokyo Special Division 5 (formerly)",
+        "Chainsaw Man Church"
+      ],
+      "missing": [],
+      "members": [
+        "Chainsaw Man Church",
+        "Makima (brainwashed)",
+        "Tokyo Special Division 5 (formerly)"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is the status of Spear Hybrid?",
+      "id": "csm-pg-spear_hybrid-001",
+      "subject": "Spear Hybrid",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Spear Hybrid's occupation?",
+      "id": "csm-pg-spear_hybrid-002",
+      "subject": "Spear Hybrid",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter (brainwashed)"
+      ],
+      "found": [
+        "Public Safety Devil Hunter (brainwashed)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Spear Hybrid's gender?",
+      "id": "csm-pg-spear_hybrid-003",
+      "subject": "Spear Hybrid",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 13,
+    "canon_total": 13,
+    "canon_recall": 1.0,
+    "members_returned": 13,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

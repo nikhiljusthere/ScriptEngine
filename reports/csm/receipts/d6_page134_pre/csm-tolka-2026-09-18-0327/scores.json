@@ -1,0 +1,195 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Tolka?",
+      "set": "Every enemy of Tolka",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the superiors of Tolka?",
+      "set": "Every superior of Tolka",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Tolka?",
+      "set": "Tolka's affiliations",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the enemies of Tolka?",
+      "found": [
+        "Denji",
+        "Beam",
+        "Makima"
+      ],
+      "missing": [],
+      "members": [
+        "Beam",
+        "Denji",
+        "Makima"
+      ]
+    },
+    {
+      "query": "What are all the superiors of Tolka?",
+      "found": [
+        "Santa Claus",
+        "Curse Devil"
+      ],
+      "missing": [],
+      "members": [
+        "Curse Devil",
+        "Santa Claus"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Tolka?",
+      "found": [
+        "Soviet Union",
+        "Santa Claus (mentor)"
+      ],
+      "missing": [],
+      "members": [
+        "Santa Claus (mentor)",
+        "Soviet Union"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Tolka's name?",
+      "id": "csm-pg-tolka-001",
+      "subject": "Tolka",
+      "accept": "all",
+      "expected": [
+        "\u30c8\u30fc\u30ea\u30ab"
+      ],
+      "found": [
+        "\u30c8\u30fc\u30ea\u30ab"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Tolka's name?",
+      "id": "csm-pg-tolka-002",
+      "subject": "Tolka",
+      "accept": "all",
+      "expected": [
+        "T\u014drika"
+      ],
+      "found": [
+        "T\u014drika"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Tolka?",
+      "id": "csm-pg-tolka-003",
+      "subject": "Tolka",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Tolka's occupation?",
+      "id": "csm-pg-tolka-004",
+      "subject": "Tolka",
+      "accept": "all",
+      "expected": [
+        "Private Devil Hunter"
+      ],
+      "found": [
+        "Private Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Tolka's gender?",
+      "id": "csm-pg-tolka-005",
+      "subject": "Tolka",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 7,
+    "canon_total": 7,
+    "canon_recall": 1.0,
+    "members_returned": 7,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

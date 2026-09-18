@@ -1,0 +1,85 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Quanxi and the Fiends's allegiance?",
+      "id": "csm-pg-quanxi_and_the_fiends-001",
+      "subject": "Quanxi and the Fiends",
+      "accept": "all",
+      "expected": [
+        "China"
+      ],
+      "found": [
+        "China"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Who are Quanxi and the Fiends's notable members?",
+      "id": "csm-pg-quanxi_and_the_fiends-002",
+      "subject": "Quanxi and the Fiends",
+      "accept": "all",
+      "expected": [
+        "Quanxi",
+        "Pingtsi \u2020",
+        "Long \u2020",
+        "Cosmo \u2020",
+        "Tsugihagi \u2020"
+      ],
+      "found": [
+        "Quanxi",
+        "Pingtsi \u2020",
+        "Long \u2020",
+        "Cosmo \u2020",
+        "Tsugihagi \u2020"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "partial",
+      "routed": "roster"
+    },
+    {
+      "series": "csm",
+      "query": "In which manga chapter does Quanxi and the Fiends first appear?",
+      "id": "csm-pg-quanxi_and_the_fiends-003",
+      "subject": "Quanxi and the Fiends",
+      "accept": "all",
+      "expected": [
+        "Chapter 54"
+      ],
+      "found": [
+        "Chapter 54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

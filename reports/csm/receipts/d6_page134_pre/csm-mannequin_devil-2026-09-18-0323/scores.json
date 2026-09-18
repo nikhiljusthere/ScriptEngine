@@ -1,0 +1,167 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Mannequin Devil?",
+      "set": "Every named technique of Mannequin Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Mannequin Devil?",
+      "set": "Every enemy of Mannequin Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Mannequin Devil?",
+      "found": [
+        "Mannequin Mimicry",
+        "Mannequin Possession"
+      ],
+      "missing": [],
+      "members": [
+        "Mannequin Mimicry",
+        "Mannequin Possession"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Mannequin Devil?",
+      "found": [
+        "Kishibe",
+        "Quanxi"
+      ],
+      "missing": [],
+      "members": [
+        "Kishibe",
+        "Quanxi"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Mannequin Devil's name?",
+      "id": "csm-pg-mannequin_devil-001",
+      "subject": "Mannequin Devil",
+      "accept": "all",
+      "expected": [
+        "\u30de\u30cd\u30ad\u30f3\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u30de\u30cd\u30ad\u30f3\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Mannequin Devil's name?",
+      "id": "csm-pg-mannequin_devil-002",
+      "subject": "Mannequin Devil",
+      "accept": "all",
+      "expected": [
+        "Manekin no Akuma"
+      ],
+      "found": [
+        "Manekin no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Mannequin Devil's gender?",
+      "id": "csm-pg-mannequin_devil-003",
+      "subject": "Mannequin Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Mannequin Devil?",
+      "id": "csm-pg-mannequin_devil-004",
+      "subject": "Mannequin Devil",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Mannequin Devil's occupation?",
+      "id": "csm-pg-mannequin_devil-005",
+      "subject": "Mannequin Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Devil"
+      ],
+      "found": [
+        "Wild Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

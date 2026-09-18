@@ -1,0 +1,52 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Hybrid?",
+      "set": "Hybrid's affiliations",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Hybrid?",
+      "found": [
+        "Devil Hunters",
+        "Weapon Devils",
+        "Chainsaw Man Church"
+      ],
+      "missing": [],
+      "members": [
+        "Chainsaw Man Church",
+        "Devil Hunters",
+        "Weapon Devils"
+      ]
+    }
+  ],
+  "facts": [],
+  "summary": {
+    "questions": 1,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 0,
+    "fact_present": 0
+  }
+}

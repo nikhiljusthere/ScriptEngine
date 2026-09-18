@@ -1,0 +1,101 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Tokyo Special Division 4's allegiance?",
+      "id": "csm-pg-tokyo_special_division_4-001",
+      "subject": "Tokyo Special Division 4",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunters"
+      ],
+      "found": [
+        "Public Safety Devil Hunters"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Who are Tokyo Special Division 4's notable members?",
+      "id": "csm-pg-tokyo_special_division_4-002",
+      "subject": "Tokyo Special Division 4",
+      "accept": "all",
+      "expected": [
+        "Himeno",
+        "Denji",
+        "Aki Hayakawa",
+        "Power"
+      ],
+      "found": [
+        "Himeno",
+        "Denji",
+        "Aki Hayakawa",
+        "Power"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "partial",
+      "routed": "roster"
+    },
+    {
+      "series": "csm",
+      "query": "Which series does Tokyo Special Division 4 belong to?",
+      "id": "csm-pg-tokyo_special_division_4-003",
+      "subject": "Tokyo Special Division 4",
+      "accept": "all",
+      "expected": [
+        "Tokyo Special Division 4"
+      ],
+      "found": [
+        "Tokyo Special Division 4"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which manga chapter does Tokyo Special Division 4 first appear?",
+      "id": "csm-pg-tokyo_special_division_4-004",
+      "subject": "Tokyo Special Division 4",
+      "accept": "all",
+      "expected": [
+        "Chapter 5 (mentioned)"
+      ],
+      "found": [
+        "Chapter 5 (mentioned)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

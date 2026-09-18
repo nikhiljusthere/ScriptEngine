@@ -773,6 +773,49 @@ T0 questions actually emerge; what fraction survive verification; how many new
 gaps a fresh wiki produces; and how many human round-trips the whole thing took.
 Those four numbers set every subsequent estimate.
 
+### Method seed (pre-registered 2026-09-18, council #35)
+
+The CSM pilot produced a method surface that a later 7-wiki rollout would
+inherit. This section documents that seed — so a future rollout inherits a
+closed method, not a post-hoc scope guess. It is **not a rollout commitment**:
+the rollout above stays a separate owner decision (council #34 R3 refused it
+while the pilot was open).
+
+**Census v1 schema.** One row per in-scope question, graded against the
+engine's live context door:
+
+| field | meaning |
+|---|---|
+| `class` | the doc archetype (ability-pool / personality / state-over-time / arc-narrative / …) |
+| `subject` | the page the question is about |
+| `q` / `expect` | the question + its expected terms (the grading key) |
+| `hits` / `missing` | how many expected terms the served context contained |
+| `verdict` | `MECH_GREEN` iff `hits ≥ 2`, else `MECH_RED` (mechanical; no model in the grader) |
+| `in_window` | whether the subject sits in the extraction window — a flag only, never a leak exclusion |
+| `set` | `green` (flip-detection sample) / `oos` (held-out) |
+
+**Grader.** `tools/census_dimensions.judge(item, text)` — a term-count rule,
+run against the *served* context of the engine's `/context` door in the P2.3
+shape (`{"series","query","mode":"qa"}`, subject-free query), so a grade is
+what a writer would actually get, not an offline artifact.
+
+**200-row OOS protocol.** The held-out set is drawn from the *whole* census
+population with a recorded seed (CSM: `random.Random(20260918)`, 486-row
+census) — **no leak exclusion**, so no dimension can silently drop out of the
+held-out set (the v1 leak-excluded draw silently dropped state-over-time and
+was reverted, D40). A disjoint N=30 green sample (5 per green dimension) is
+the flip arm: any green→red flip after an engine change voids the pass. Floor:
+OOS post ≥ pre − 2; a drop of 3+ voids.
+
+**Named-limit register.** Every residual row closes as a *named limit* —
+defect + owning leg/phase + re-test trigger. No catch-all bucket. The phase
+stamp (A20) signs the register diff; a named limit does not void the stamp, a
+regression does.
+
+**Escape clause.** A flawed method — an OOS collapse, or a named limit without
+a defect + owner — voids this addendum and re-locks the method before any
+rollout proceeds.
+
 ---
 
 ## 8. The stop rule

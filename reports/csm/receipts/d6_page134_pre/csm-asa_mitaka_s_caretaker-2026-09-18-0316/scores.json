@@ -1,0 +1,121 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Asa Mitaka's caretaker?",
+      "set": "Asa Mitaka's caretaker's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Asa Mitaka's caretaker?",
+      "found": [
+        "Unnamed orphanage"
+      ],
+      "missing": [],
+      "members": [
+        "Unnamed orphanage"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Asa Mitaka's caretaker's gender?",
+      "id": "csm-pg-asa_mitaka_s_caretaker-001",
+      "subject": "Asa Mitaka's caretaker",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Asa Mitaka's caretaker?",
+      "id": "csm-pg-asa_mitaka_s_caretaker-002",
+      "subject": "Asa Mitaka's caretaker",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Asa Mitaka's caretaker?",
+      "id": "csm-pg-asa_mitaka_s_caretaker-003",
+      "subject": "Asa Mitaka's caretaker",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Asa Mitaka's caretaker's occupation?",
+      "id": "csm-pg-asa_mitaka_s_caretaker-004",
+      "subject": "Asa Mitaka's caretaker",
+      "accept": "all",
+      "expected": [
+        "Caretaker"
+      ],
+      "found": [
+        "Caretaker"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

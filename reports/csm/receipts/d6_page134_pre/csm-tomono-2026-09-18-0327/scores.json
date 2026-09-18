@@ -1,0 +1,169 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the allies of Tomono?",
+      "set": "Every ally of Tomono",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the friends of Tomono?",
+      "set": "Every friend of Tomono",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Tomono?",
+      "found": [
+        "Yutaro Kurose",
+        "Aldo"
+      ],
+      "missing": [],
+      "members": [
+        "Aldo",
+        "Yutaro Kurose"
+      ]
+    },
+    {
+      "query": "What are all the friends of Tomono?",
+      "found": [
+        "Yutaro Kurose",
+        "Michiko Tendo",
+        "Aldo"
+      ],
+      "missing": [],
+      "members": [
+        "Aldo",
+        "Michiko Tendo",
+        "Yutaro Kurose"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Tomono's name?",
+      "id": "csm-pg-tomono-001",
+      "subject": "Tomono",
+      "accept": "all",
+      "expected": [
+        "\u53cb\u91ce"
+      ],
+      "found": [
+        "\u53cb\u91ce"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Tomono's name?",
+      "id": "csm-pg-tomono-002",
+      "subject": "Tomono",
+      "accept": "all",
+      "expected": [
+        "Tomono"
+      ],
+      "found": [
+        "Tomono"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Tomono?",
+      "id": "csm-pg-tomono-003",
+      "subject": "Tomono",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Tomono's occupation?",
+      "id": "csm-pg-tomono-004",
+      "subject": "Tomono",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Tomono's gender?",
+      "id": "csm-pg-tomono-005",
+      "subject": "Tomono",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 5,
+    "canon_total": 5,
+    "canon_recall": 1.0,
+    "members_returned": 5,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

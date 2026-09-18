@@ -1,0 +1,165 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the enemies of House Devil?",
+      "set": "Every enemy of House Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of House Devil?",
+      "set": "House Devil's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the enemies of House Devil?",
+      "found": [
+        "Denji",
+        "Power"
+      ],
+      "missing": [],
+      "members": [
+        "Denji",
+        "Power"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of House Devil?",
+      "found": [
+        "Mr. Kanbayashi (owner)"
+      ],
+      "missing": [],
+      "members": [
+        "Mr. Kanbayashi (owner)"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for House Devil's name?",
+      "id": "csm-pg-house_devil-001",
+      "subject": "House Devil",
+      "accept": "all",
+      "expected": [
+        "\u5bb6\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u5bb6\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of House Devil's name?",
+      "id": "csm-pg-house_devil-002",
+      "subject": "House Devil",
+      "accept": "all",
+      "expected": [
+        "Ie no Akuma"
+      ],
+      "found": [
+        "Ie no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is House Devil's gender?",
+      "id": "csm-pg-house_devil-003",
+      "subject": "House Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of House Devil?",
+      "id": "csm-pg-house_devil-004",
+      "subject": "House Devil",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is House Devil's occupation?",
+      "id": "csm-pg-house_devil-005",
+      "subject": "House Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Devil"
+      ],
+      "found": [
+        "Wild Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

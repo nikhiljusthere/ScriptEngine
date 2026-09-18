@@ -1,0 +1,231 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the allies of Nobana Higashiyama?",
+      "set": "Every ally of Nobana Higashiyama",
+      "confidence": "declared",
+      "returned": 8,
+      "available": 8,
+      "canon": 8,
+      "found": 8,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Nobana Higashiyama?",
+      "set": "Every enemy of Nobana Higashiyama",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Nobana Higashiyama?",
+      "set": "Nobana Higashiyama's affiliations",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Nobana Higashiyama?",
+      "set": "Nobana Higashiyama's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Nobana Higashiyama?",
+      "found": [
+        "Asa Mitaka",
+        "Miri Sugo",
+        "Haruka Iseumi",
+        "Denji",
+        "Seigi Akoku",
+        "Fami",
+        "Yoru",
+        "Nail Fiend"
+      ],
+      "missing": [],
+      "members": [
+        "Asa Mitaka",
+        "Denji",
+        "Fami",
+        "Haruka Iseumi",
+        "Miri Sugo",
+        "Nail Fiend",
+        "Seigi Akoku",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Nobana Higashiyama?",
+      "found": [
+        "Quanxi",
+        "Barem Bridge"
+      ],
+      "missing": [],
+      "members": [
+        "Barem Bridge",
+        "Quanxi"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Nobana Higashiyama?",
+      "found": [
+        "Fourth East High School",
+        "Devil Hunter Club",
+        "Chainsaw Man Church (formerly)"
+      ],
+      "missing": [],
+      "members": [
+        "Chainsaw Man Church (formerly)",
+        "Devil Hunter Club",
+        "Fourth East High School"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Nobana Higashiyama?",
+      "found": [
+        "Glass Licker (by Denji)"
+      ],
+      "missing": [],
+      "members": [
+        "Glass Licker (by Denji)"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Nobana Higashiyama's name?",
+      "id": "csm-pg-nobana_higashiyama-001",
+      "subject": "Nobana Higashiyama",
+      "accept": "all",
+      "expected": [
+        "\u6771\u5c71 \u30ce\u30d0\u30ca"
+      ],
+      "found": [
+        "\u6771\u5c71 \u30ce\u30d0\u30ca"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Nobana Higashiyama's name?",
+      "id": "csm-pg-nobana_higashiyama-002",
+      "subject": "Nobana Higashiyama",
+      "accept": "all",
+      "expected": [
+        "Higashiyama Nobana"
+      ],
+      "found": [
+        "Higashiyama Nobana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Nobana Higashiyama's gender?",
+      "id": "csm-pg-nobana_higashiyama-003",
+      "subject": "Nobana Higashiyama",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Nobana Higashiyama?",
+      "id": "csm-pg-nobana_higashiyama-004",
+      "subject": "Nobana Higashiyama",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Nobana Higashiyama's occupation?",
+      "id": "csm-pg-nobana_higashiyama-005",
+      "subject": "Nobana Higashiyama",
+      "accept": "all",
+      "expected": [
+        "High School Student Devil Hunter"
+      ],
+      "found": [
+        "High School Student Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 14,
+    "canon_total": 14,
+    "canon_recall": 1.0,
+    "members_returned": 14,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

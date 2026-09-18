@@ -1,0 +1,351 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Fumiko Mifune?",
+      "set": "Every named technique of Fumiko Mifune",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Fumiko Mifune?",
+      "set": "Every ally of Fumiko Mifune",
+      "confidence": "declared",
+      "returned": 6,
+      "available": 6,
+      "canon": 6,
+      "found": 6,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Fumiko Mifune?",
+      "set": "Every enemy of Fumiko Mifune",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the friends of Fumiko Mifune?",
+      "set": "Every friend of Fumiko Mifune",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the romantics of Fumiko Mifune?",
+      "set": "Every romantic of Fumiko Mifune",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the superiors of Fumiko Mifune?",
+      "set": "Every superior of Fumiko Mifune",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Fumiko Mifune?",
+      "set": "Fumiko Mifune's affiliations",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Fumiko Mifune?",
+      "found": [
+        "Aging Devil Contract",
+        "STD Devil Contract",
+        "Blunt Weapon Proficiency",
+        "Firearm Proficiency"
+      ],
+      "missing": [],
+      "members": [
+        "Aging Devil Contract",
+        "Blunt Weapon Proficiency",
+        "Firearm Proficiency",
+        "STD Devil Contract"
+      ]
+    },
+    {
+      "query": "What are all the allies of Fumiko Mifune?",
+      "found": [
+        "Nayuta",
+        "Denji",
+        "Hirofumi Yoshida",
+        "Fami",
+        "Yoru",
+        "Barem Bridge"
+      ],
+      "missing": [],
+      "members": [
+        "Barem Bridge",
+        "Denji",
+        "Fami",
+        "Hirofumi Yoshida",
+        "Nayuta",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Fumiko Mifune?",
+      "found": [
+        "Nayuta",
+        "Denji",
+        "Aging Devil",
+        "Whip Hybrid"
+      ],
+      "missing": [],
+      "members": [
+        "Aging Devil",
+        "Denji",
+        "Nayuta",
+        "Whip Hybrid"
+      ]
+    },
+    {
+      "query": "What are all the friends of Fumiko Mifune?",
+      "found": [
+        "Denji",
+        "Quanxi"
+      ],
+      "missing": [],
+      "members": [
+        "Denji",
+        "Quanxi"
+      ]
+    },
+    {
+      "query": "What are all the romantics of Fumiko Mifune?",
+      "found": [
+        "Denji",
+        "Quanxi"
+      ],
+      "missing": [],
+      "members": [
+        "Denji",
+        "Quanxi"
+      ]
+    },
+    {
+      "query": "What are all the superiors of Fumiko Mifune?",
+      "found": [
+        "Denji",
+        "Hirofumi Yoshida"
+      ],
+      "missing": [],
+      "members": [
+        "Denji",
+        "Hirofumi Yoshida"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Fumiko Mifune?",
+      "found": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 7",
+        "Fourth East High School"
+      ],
+      "missing": [],
+      "members": [
+        "Fourth East High School",
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 7"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Fumiko Mifune's name?",
+      "id": "csm-pg-fumiko_mifune-001",
+      "subject": "Fumiko Mifune",
+      "accept": "all",
+      "expected": [
+        "\u4e09\u8239\u30d5\u30df\u30b3"
+      ],
+      "found": [
+        "\u4e09\u8239\u30d5\u30df\u30b3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Fumiko Mifune's name?",
+      "id": "csm-pg-fumiko_mifune-002",
+      "subject": "Fumiko Mifune",
+      "accept": "all",
+      "expected": [
+        "Mifune Fumiko"
+      ],
+      "found": [
+        "Mifune Fumiko"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Fumiko Mifune?",
+      "id": "csm-pg-fumiko_mifune-003",
+      "subject": "Fumiko Mifune",
+      "accept": "all",
+      "expected": [
+        "22"
+      ],
+      "found": [
+        "22"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Fumiko Mifune's gender?",
+      "id": "csm-pg-fumiko_mifune-004",
+      "subject": "Fumiko Mifune",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Fumiko Mifune?",
+      "id": "csm-pg-fumiko_mifune-005",
+      "subject": "Fumiko Mifune",
+      "accept": "all",
+      "expected": [
+        "Unknown (original timeline)"
+      ],
+      "found": [
+        "Unknown (original timeline)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Fumiko Mifune's occupation?",
+      "id": "csm-pg-fumiko_mifune-006",
+      "subject": "Fumiko Mifune",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter High School Student (cover) Denji\u2019s Bodyguard (formerly)"
+      ],
+      "found": [
+        "Public Safety Devil Hunter High School Student (cover) Denji\u2019s Bodyguard (formerly)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Fumiko Mifune's birthday?",
+      "id": "csm-pg-fumiko_mifune-007",
+      "subject": "Fumiko Mifune",
+      "accept": "all",
+      "expected": [
+        "1976/1977"
+      ],
+      "found": [
+        "1976/1977"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 7,
+    "canon_found": 23,
+    "canon_total": 23,
+    "canon_recall": 1.0,
+    "members_returned": 23,
+    "exact_answers": 7,
+    "exact_of": 7,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "7/7",
+    "at_recall_zero": 0,
+    "at_recall_80": 7,
+    "confident_and_wrong": [],
+    "fact_questions": 7,
+    "fact_present": 7
+  }
+}

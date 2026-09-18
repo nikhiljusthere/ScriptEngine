@@ -1,0 +1,163 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Aging Devil's Victim?",
+      "set": "Every named technique of Aging Devil's Victim",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Aging Devil's Victim?",
+      "set": "Aging Devil's Victim's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Aging Devil's Victim?",
+      "found": [
+        "Aging Devil Contract"
+      ],
+      "missing": [],
+      "members": [
+        "Aging Devil Contract"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Aging Devil's Victim?",
+      "found": [
+        "Public Safety Devil Hunters (formerly)"
+      ],
+      "missing": [],
+      "members": [
+        "Public Safety Devil Hunters (formerly)"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Aging Devil's Victim's gender?",
+      "id": "csm-pg-aging_devil_s_victim-001",
+      "subject": "Aging Devil's Victim",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Aging Devil's Victim's birthday?",
+      "id": "csm-pg-aging_devil_s_victim-002",
+      "subject": "Aging Devil's Victim",
+      "accept": "all",
+      "expected": [
+        "Before 1917"
+      ],
+      "found": [
+        "Before 1917"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Aging Devil's Victim?",
+      "id": "csm-pg-aging_devil_s_victim-003",
+      "subject": "Aging Devil's Victim",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Aging Devil's Victim's occupation?",
+      "id": "csm-pg-aging_devil_s_victim-004",
+      "subject": "Aging Devil's Victim",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter (formerly)\nConstruction Worker"
+      ],
+      "found": [
+        "Public Safety Devil Hunter (formerly)\nConstruction Worker"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Aging Devil's Victim?",
+      "id": "csm-pg-aging_devil_s_victim-005",
+      "subject": "Aging Devil's Victim",
+      "accept": "all",
+      "expected": [
+        "82+"
+      ],
+      "found": [
+        "82+"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Four Horsemen's allegiance?",
+      "id": "csm-pg-four_horsemen-001",
+      "subject": "Four Horsemen",
+      "accept": "all",
+      "expected": [
+        "Devils Weapon Devils (formerly) Themselves"
+      ],
+      "found": [
+        "Devils Weapon Devils (formerly) Themselves"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Who are Four Horsemen's notable members?",
+      "id": "csm-pg-four_horsemen-002",
+      "subject": "Four Horsemen",
+      "accept": "all",
+      "expected": [
+        "Control Devil",
+        "War Devil",
+        "Famine Devil",
+        "Death Devil"
+      ],
+      "found": [
+        "Control Devil",
+        "War Devil",
+        "Famine Devil",
+        "Death Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "partial",
+      "routed": "roster"
+    },
+    {
+      "series": "csm",
+      "query": "In which manga chapter does Four Horsemen first appear?",
+      "id": "csm-pg-four_horsemen-003",
+      "subject": "Four Horsemen",
+      "accept": "all",
+      "expected": [
+        "Chapter 84 (Mentioned as a group)\nChapter 1 (Previous Control Devil's debut)\nChapter 97 (Previous Control Devil's debut)\nChapter 98 (War Devil's debut)\nChapter 108 (Death Devil's debut)\nChapter 195 (Famine Devil's debut)"
+      ],
+      "found": [
+        "Chapter 84 (Mentioned as a group)\nChapter 1 (Previous Control Devil's debut)\nChapter 97 (Previous Control Devil's debut)\nChapter 98 (War Devil's debut)\nChapter 108 (Death Devil's debut)\nChapter 195 (Famine Devil's debut)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

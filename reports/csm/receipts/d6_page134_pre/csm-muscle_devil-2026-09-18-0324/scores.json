@@ -1,0 +1,139 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Muscle Devil?",
+      "set": "Every named technique of Muscle Devil",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Muscle Devil?",
+      "found": [
+        "Muscle Manipulation"
+      ],
+      "missing": [],
+      "members": [
+        "Muscle Manipulation"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Muscle Devil's name?",
+      "id": "csm-pg-muscle_devil-001",
+      "subject": "Muscle Devil",
+      "accept": "all",
+      "expected": [
+        "\u7b4b\u8089\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u7b4b\u8089\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Muscle Devil's name?",
+      "id": "csm-pg-muscle_devil-002",
+      "subject": "Muscle Devil",
+      "accept": "all",
+      "expected": [
+        "Kin'niku no Akuma"
+      ],
+      "found": [
+        "Kin'niku no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Muscle Devil's gender?",
+      "id": "csm-pg-muscle_devil-003",
+      "subject": "Muscle Devil",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Muscle Devil?",
+      "id": "csm-pg-muscle_devil-004",
+      "subject": "Muscle Devil",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Muscle Devil's occupation?",
+      "id": "csm-pg-muscle_devil-005",
+      "subject": "Muscle Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Devil"
+      ],
+      "found": [
+        "Wild Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}
