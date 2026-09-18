@@ -688,4 +688,69 @@ windows) before starting the 22 floor-row extraction.
   sample under the full-panel ≥97.5 % bar; auto 37 is the known second misroute
   (router 89.1 % narrative) with the R-8 lever unchanged since `4b60043`. No
   regression. **Pre-flight PASS — the 22 floor-row D6 extraction leg is cleared
-  to begin (design lock via council; dedicated-GPU window).**
+  to begin (design lock via council; dedicated-GPU window).
+
+## D6 extraction-leg design lock (council #35, 2026-09-18)
+
+Full record: `reports/csm/COUNCIL_csm_d6.md` (5 advisors A–E → 5 blind
+reviews R1–R5 → chair, one agent at a time, fresh context each).
+
+**Locked scope: (ii) composite — targeted red-class extraction + a frozen
+30-row flip-detection green sample + a pre-registered named-limit
+register.** Not (iii) full ownership, not blind (i). Adopts D
+(First-Principles), adapted with A's green sample + A's frozen offline
+recoverability triage (134 setrel + 6 abl), C's named-limit discipline
+(defect + owning leg on every residual), and deletion of D's post-hoc
+null branch.
+
+- **Extraction scope = a new additive `--pages <frozen-list>` flag**
+  (not `--scope corpus`). Minimal: read a slug list, intersect the
+  scope page queue. JJK zero-regression proof pre-registered (model-
+  unloaded, seconds): `--dry-run` on `--scope corpus`, flag-absent vs
+  present-with-full-list → identical scope plans; gate test that the
+  flag's default (absent) leaves the native path byte-identical. Rides
+  the standing 4 gates at D6 closure — **no second gate cycle.**
+  Pre-registered fallback: dry-run equivalence fails → native
+  `--scope corpus`.
+- **Green sample:** N = 5 per green dimension (6 dims = 30), seeded
+  RNG (seed recorded), frozen in the register before the model call;
+  disjoint from the 200-row held-out OOS (also frozen). Always re-
+  graded at closure; any green→red flip = rebuild void + re-run.
+- **Per-row lever map (204):** 22 floor = 17 routing (extraction) +
+  3 partial (5.4 re-adjudication) + 2 content (Yoru, Asa Mitaka —
+  targeted re-crawl pre-window + extraction). 134 setrel + 6 abl →
+  frozen P/T/A triage: P/T → named limit "single-candidate enumeration
+  width (retrieval-layer)", owning leg D7, re-tested post-rebuild via
+  page-run; A → extraction (into the `--pages` list). 42 dim →
+  extraction. 16 empty + 10 by-design + 3 r1-blast → struck,
+  unchanged.
+- **Pass test (pre-registered):** every p23 red (69) ends green OR
+  individually triaged to a pre-registered bucket (named limit w/
+  defect+leg, or new root cause) — no catch-all; P/T setrel each end
+  named or close post-rebuild (receipted); 200-row OOS post ≥ pre − 2
+  (a 3+ drop = void); 30-row sample zero flips; 4 standing gates at
+  fix-class closure (JJK baseline diff empty). A20 stamps against the
+  register diff; void set pre-registered (JJK 4-gate regression /
+  sample+OOS flip / an A-row triaged "closes" still red). **A named
+  limit does not void the stamp.**
+- **GPU window (ordered):** checkpoint (switchpoint) → pre-window
+  model-unloaded (2-page re-crawl + CSM re-index, zero-regression
+  receipt; frozen triage + `--pages` list; dry-run equivalence; freeze
+  30-row + 200-row sets; pre-extraction OOS + 134 page-run baselines)
+  → `nvidia-smi` pre-check (stop `:8000`/CPU; LLM owns the card,
+  model-only + ~7 GB free) → dry-run receipt → `--workers 2` (4 risks
+  OOM given the 508/524 history; abort: model near memory ceiling or a
+  per-page crash → resume, drop to workers 1) → atomic per-page
+  resume → index rebuild → model-unloaded side session (re-grade + 4
+  gates) → closure council → A20 stamp.
+- **P6 boundary:** the lock pre-registers the **method seed** (Census
+  v1 schema + grader + 200-row OOS protocol + named-limit register
+  format) — the surface a 7-wiki rollout would inherit, **not** a
+  rollout commitment. The §7 addendum (due 2026-09-25) documents that
+  seed; the 7-wiki rollout itself stays a separate future owner
+  decision. Escape hatch: a flawed method (OOS collapse / named limit
+  missing defect+owner) voids the §7 addendum and re-locks the method
+  before any rollout.
+
+**Status: LOCKED. Next action = the D6 GPU window (§4 mechanics); P6 §7
+method addendum owed by 2026-09-25.****

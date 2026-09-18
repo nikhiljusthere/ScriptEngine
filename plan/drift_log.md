@@ -1560,3 +1560,73 @@ entry.
   rows, on a dedicated-GPU window (stop Qwen, `:8000` down or CPU); the 7-wiki
   rollout stays refused until post-register (council #34 R3). P6 §7 addendum
   (this entry's pointer, due ≤2026-09-25) can land in parallel.
+
+ ## D39 — D6 extraction-leg design lock (council #35, 2026-09-18, opencode)
+
+- **What:** D38's return (the D6 design lock, a big engine decision) closed via
+  council #35 — the 5-advisor → 5-blind-review → chair sequence, one sub-agent
+  at a time (owner rule 2026-09-08), fresh context each: A Outsider, B
+  Executor, C Contrarian, D First-Principles, E Expansive, then R1–R5 (Rigor,
+  Practicality, Risk, Voice/Clarity, Stakeholder), then the chair. Full record
+  `reports/csm/COUNCIL_csm_d6.md`.
+- **Locked scope:** a **(ii) composite — targeted red-class extraction + a
+  frozen 30-row flip-detection green sample + a pre-registered named-limit
+  register.** Not (iii) full ownership, not blind (i). Adopts **D
+  (First-Principles)**, adapted with (a) **A's** frozen 30-row green sample as
+  the flip arm D dropped (reinstated; R1/R4/R5 flag the green→red blind spot),
+  (b) **A's** frozen offline recoverability triage on the 134 setrel + 6 abl
+  (P=facts-present / T=crawl-present / A=absent; D's "re-test, document the
+  rest" had no pre-registered protocol), (c) **C's** named-limit discipline
+  (defect + owning leg on every residual), and (d) deletion of D's post-hoc
+  null branch (a council re-deciding N after the red results = evidence
+  selection, R4).
+- **Key locked parameters:** extraction scope = a **new additive `--pages
+  <frozen-list>` flag** (not `--scope corpus`; minimal slug-list ∩ scope queue,
+  JJK zero-regression proof via `--dry-run` scope-plan identity + default-absent
+  gate test; no second gate cycle; pre-registered fallback to native
+  `--scope corpus`). Green sample N=30 (5/dim, seeded, frozen pre-model-call,
+  disjoint from the 200-row OOS). Per-row lever map (all 204): 22 floor = 17
+  routing (extraction) + 3 partial (5.4) + 2 content (Yoru/Asa targeted re-
+  crawl + extraction); 134 setrel + 6 abl → P/T = named limit "single-candidate
+  enumeration width (retrieval-layer)" owning leg D7 (re-tested post-rebuild
+  via page-run), A = extraction (into the `--pages` list); 42 dim = extraction;
+  16 empty + 10 by-design + 3 r1-blast = struck. Pass test (pre-registered):
+  every p23 red (69) green OR individually triaged to a pre-registered named
+  bucket (no catch-all); P/T setrel named-or-closed (receipted); 200-row OOS
+  post ≥ pre − 2 (3+ drop = void); 30-row sample zero flips; 4 standing gates
+  at fix-class closure (JJK baseline diff empty); **A20 stamps the register
+  diff, void set pre-registered, a named limit does NOT void the stamp**. GPU
+  window (ordered): checkpoint (switchpoint) → pre-window model-unloaded (2-
+  page re-crawl + CSM re-index, zero-regression receipt; frozen triage +
+  `--pages` list; dry-run equivalence; freeze 30-row + 200-row; pre-extraction
+  OOS + 134 page-run baselines) → `nvidia-smi` pre-check (stop `:8000`/CPU; LLM
+  owns the card, model-only + ~7 GB free) → dry-run receipt → `--workers 2`
+  (4 risks OOM; abort → resume + drop to workers 1) → atomic per-page resume →
+  index rebuild → model-unloaded side session (re-grade + 4 gates) → closure
+  council → A20 stamp.
+- **P6 boundary (locked):** the lock pre-registers the **method seed** (Census
+  v1 schema + grader + 200-row OOS protocol + named-limit register format) —
+  the surface a 7-wiki rollout would inherit, **not** a rollout commitment (E's
+  full-method-in-the-lock was the least-reversible ×7 lock, R3). The §7
+  addendum (due 2026-09-25) documents that seed; the 7-wiki rollout itself
+  stays a separate future owner decision. Pre-registered escape hatch: a flawed
+  method (OOS collapse / named limit missing defect+owner) voids the §7
+  addendum and re-locks the method before any rollout.
+- **Why:** D38 gated the D6 extraction leg (closing the 22 floor rows) on a
+  design lock (a big engine decision → council). The 204-row red class splits
+  into two populations with different levers (extraction-gated vs retrieval-
+  layer enumeration); the lock extracts only the pages the triage names, keeps
+  a frozen flip-detection sample, and closes every residual as a named limit —
+  so the leg claims no row it cannot receipt and the method surface is closed
+  enough that a future ×7 rollout inherits a complete method, not a post-hoc
+  scope guess.
+- **Steady state:** unchanged (Qwen 100k + `:8000` CUDA co-located, D38). The
+  design lock is a read-only decision; no GPU work, no tree move, no
+  re-baseline.
+- **Double-check:** bounded read-only auditor (fresh context) over the council
+  record, the GATE.md lock block, and this drift entry for internal
+  consistency.
+- **Return:** the D6 design is **LOCKED** (GATE.md D6 block). Next = the D6
+  GPU window (executes the §4 mechanics above). P6 §7 method addendum (this
+  entry's pointer, due ≤2026-09-25) documents the pre-registered method seed
+  and can land in parallel.
