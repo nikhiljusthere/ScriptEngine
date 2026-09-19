@@ -68,3 +68,40 @@ fix (expect `qa`); gate-1 pin 1,321 unchanged.**
   P2.3 verdict.
 - The Phase-2 gate verifies the marker's ledger sha256 + floor before any
   panel spend.
+
+## D7 re-stamp (council #37, 2026-09-20 — PROVISIONAL)
+
+Phase 1 closes at the **re-stamped** floor via council #37 (receipt
+`reports/csm/receipts/council_d7_close/`: framed question, advisors
+A–E, peer reviews R1–R5, chairman ruling `chairman.md`). The 22-row
+floor section above **stands as history** (register-22 = the
+historical P1.4 stamp). Re-stamp: register **22 → 24** — the 2 pool
+width rows {csm-abl-pool-140, csm-abl-pool-358} join the floor as the
+width-class P2 retest — and the halt meter **35 → 37 (24+10+3; 35 =
+the superseded P1.4 stamp)**. The halt rule is UNMET as registered
+(the pool rows sit in the A20 D7 holdout register, not register-22)
+and MET via the re-stamp (D's governing share, verbatim: "halt rule
+unmet-as-registered, met-via-provisional-stamp").
+
+- **Close register (13 reds @473/486):** 11 extraction-gated dim rows
+  ⊂ register-22 (owner: P2 extraction track / 5.4 re-adjudication;
+  retest: post-extraction re-grade) + 2 width-class rows (defect:
+  width — subsection recall; gold ranks 12–47 cut at 8; owner: P2
+  width leg; retest: owner-triggerable per the width-class trigger
+  line in GATE.md D7-CLOSE). **PROVISIONAL: council-ratified (#37);
+  owner-ratified-by-return; void on veto.**
+- **FLOOR16 relabel (bookkeeping, not re-scope):** 14 floor + 2
+  ratified-width, ratified as the 473-era denominator.
+- **VOID formal 3/3 PASS** (model-free, pre-stamp,
+  `receipts/council_d7_close/VOID_FORMAL.md`); the four standing gates
+  stand @`0c8cc953` via the reboot_rule (gate-relevant diff
+  `4a8616bd..HEAD` empty — a docs-only close owes no gate re-run).
+- **The 100% claim, re-stamped:** 100% of the pre-registered fixable
+  classes at the re-stamped floor; shipped product (flag-OFF) 469/486;
+  campaign grade (flag-ON) 473/486; JJK remains 100%. The TIERED
+  default-flip (owner option 3) amends this claim if ordered.
+- **Owner's decision set on return:** 1 "Commit" = ratify (stamp
+  final); 2 "Commit without sign-off" = close stands as a council
+  stamp, re-scope pending; 3 "TIERED flip word" = gated engine
+  window; 4 "None" = the provisional stamp is voided, the close
+  reverts to deferred.

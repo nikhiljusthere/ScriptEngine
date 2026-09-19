@@ -2355,3 +2355,61 @@ entry.
     → official suite → VOID formal → `PHASE_A_COMPLETE_AT_FLOOR.md` +
     halt at the floor, or a final width leg for pool-140/358); (c) the
     TIERED default-flip = owner decision (R5).
+
+  ## D65 — D7 close council #37 ruled CLOSE; provisional re-stamp executed docs-only (2026-09-20, opencode)
+
+  - **What:** council #37 (one subagent at a time, full record on disk
+    under `reports/csm/receipts/council_d7_close/`: framed question,
+    advisors A–E, peer reviews R1–R5, chairman ruling) ruled
+    **CLOSE NOW via a PROVISIONAL council re-stamp** — the §9a
+    closure loop halts at the re-stamped extraction-gated floor.
+    Verdict carries A/B/C/E (close-now) + D's constraints through
+    R5's bridge: register 22 → 24, halt meter 35 → 37 (24+10+3),
+    FLOOR16 relabel 14 floor + 2 ratified-width, ratified as the
+    473-era denominator; the 2 pool rows {csm-abl-pool-140,
+    csm-abl-pool-358} join the floor as the width-class P2 retest
+    (A20 D7 holdout register). Halt rule UNMET as registered (pool
+    rows in the D7 holdout register, not in register-22 — R1
+    verified) and MET via the re-stamp (D's share, verbatim: "halt
+    rule unmet-as-registered, met-via-provisional-stamp"). Stamp
+    mark: **PROVISIONAL — council-ratified (#37); owner-ratified-by-
+    return; void on veto.**
+  - **Q2 (unanimous):** ABILWIDTH hunk stays dead behind its
+    default-OFF flag (byte-inert, R1 code-level); no standalone
+    revert (owes 4 gates + owner word for zero behavior change,
+    burns the P6 seed + Leg-C union); optional revert rides the
+    TIERED-flip window. **Q3:** TIERED default-flip = post-close
+    gated owner decision (one-char commit `context.py:583` + 4 gates
+    flag-ON + p23 473/486 repro + JJK non-regression; any gate RED
+    ⇒ no flip). **Q4:** attribution of the 463→469 closed-6 settled
+    (4 deriv + 2 Q1-L1; "the 2 unattributed" was a ledger artifact).
+    **Q5:** close ritual fully docs-only (re-grade rejected as zero-
+    information); "official suite" = the committed ledger greens
+    @`0c8cc953` + reboot-rule diff; "VOID formal" = R4's 3 model-
+    free checks.
+  - **VOID formal: 3/3 PASS, model-free, pre-stamp** (`receipts/
+    council_d7_close/VOID_FORMAL.md`): (1) reboot_rule — gate-
+    relevant diff `4a8616bd..ea9a541c` empty, last_green green @
+    `0c8cc953`; (2) `d6_flip` rc=0 with census state declared (live/
+    worktree = 469-era product state; campaign 473 cited from the
+    ledger legA entry — never the silent 469v469); (3) A20's 46-row
+    `CONFIRM_FLIPS.json` ∩ 13 reds @473 = ∅ (13 = 17 @469 − FLIPS A,
+    cross-checked = FLOOR16 − {arcn-02, arcn-10, state-08}).
+  - **State:** 13 reds remaining @473/486 (TIERED ON) = 11
+    extraction-gated dim rows ⊂ register-22 + 2 width-class rows
+    (owner: P2 extraction track / P2 width leg; retest triggers
+    pre-registered in GATE.md D7-CLOSE). Shipped product (flag-OFF)
+    = 469/486; the 4 standing gates stand @`0c8cc953` via
+    reboot_rule (no gate re-run owed — docs-only close).
+  - **Auditability fix (in the close commit):** the 473-era census
+    was claim-only (tracked census holds 469; `LEGA_*.log`
+    gitignored; canon dir untracked) — the `LEGA_*.log` set is
+    force-added and `reports/2026-09-19-2004/` tracked, so 473 is
+    reproducible from a fresh clone.
+  - **Next:** owner's return — the 4-choice decision set (GATE.md
+    D7-CLOSE / ledger `d7_close`): 1 "Commit" = ratify (stamp final);
+    2 "Commit without sign-off" = close stands as council stamp, re-
+    scope pending; 3 "TIERED flip word" = the gated engine window; 4
+    "None" = the provisional stamp is voided, close reverts to
+    deferred. The standing session made no engine diff, no TIERED
+    flip, no width leg, no p23 re-grade, no JJK move, no GPU use.

@@ -1058,3 +1058,93 @@ landed in checkpoint `4a8616bd`).
   reds in FLOOR16 → official suite → VOID formal →
   `PHASE_A_COMPLETE_AT_FLOOR.md` + halt at the floor, or a final width
   leg for pool-140/358); (c) the TIERED default-flip = owner decision.
+
+## D7-CLOSE (council #37): PROVISIONAL close re-stamp — Phase 1 closed at the re-stamped floor (2026-09-20)
+
+Council #37 (receipt `reports/csm/receipts/council_d7_close/`:
+`framed_question.md`, advisors A–E `advisors.md`, peer reviews R1–R5
+`reviews.md`, chairman ruling `chairman.md`) ruled **CLOSE NOW via a
+PROVISIONAL council re-stamp** (carries A/B/C/E close-now + D's
+constraints through R5's bridge; Q2 unanimous). The VOID formal
+(R4's 3 model-free checks, executed pre-stamp, receipt
+`receipts/council_d7_close/VOID_FORMAL.md`) passed **3/3**:
+(1) reboot_rule — gate-relevant diff `4a8616bd..HEAD`
+(`scriptengine`, `series/csm/overrides.yaml`, `tests`) empty,
+last_green green @`0c8cc953`; (2) `d6_flip` rc=0 with census state
+**declared** (live/worktree = 469-era product state; campaign 473
+cited from the committed ledger legA entry — never the silent
+469v469); (3) A20's 46-row `CONFIRM_FLIPS.json` ∩ 13 reds @473 = ∅
+(13 derived as 17 @469 − FLIPS A; cross-checked = FLOOR16 − {arcn-
+02, arcn-10, state-08}).
+
+- **Register 22 → 24; halt meter 35 → 37 (24+10+3; fixed-register
+  semantics; 35 = the superseded P1.4 stamp; the 10 now-green floor
+  rows are a staleness note, not a strike — 3 of them are flag-ON-
+  only greens, so striking is not provable for the flag-OFF product
+  state).** The 2 pool rows join the floor as the width-class P2
+  retest. Halt rule: UNMET as registered (pool-140/358 ∈ the A20 D7
+  holdout register, ∉ register-22 — R1 item 6, verified), **met via
+  the provisional re-stamp** (D's governing share, verbatim: "halt
+  rule unmet-as-registered, met-via-provisional-stamp").
+- **Close register — 13 reds @473/486: 11 extraction-gated dim rows
+  ⊂ register-22 (owner: P2 extraction track / 5.4 re-adjudication;
+  retest: post-extraction re-grade) + 2 width-class rows
+  {csm-abl-pool-140, csm-abl-pool-358} (defect: width — subsection
+  recall; gold ranks 12–47 cut at 8; owner: P2 width leg; retest:
+  owner-triggerable per the width-class trigger line).**
+  **PROVISIONAL: council-ratified (#37); owner-ratified-by-return;
+  void on veto.**
+- **FLOOR16 relabel (bookkeeping, not re-scope): 14 floor + 2
+  ratified-width**, ratified as the 473-era denominator; register-22
+  remains the historical P1.4 stamp (`PHASE_A_COMPLETE_AT_FLOOR.md`
+  22-row section stands as history).
+- **ABILWIDTH (Q2, unanimous): keep dead behind its default-OFF
+  flag; no standalone revert** — flag-OFF is byte-inert (R1 item 4,
+  code-level); a revert owes a 4-gate re-run + owner word for zero
+  behavior change and burns the P6 seed + the Leg-C union
+  (`check_targets.py:39`). Trap-stamp: measured RED (counter-flips
+  {pool-149, pool-252}); enable only via a new pre-registered
+  instrument + 4 gates. P6 seed = `_owner_attribute_hit`
+  (`context.py` ~474). An optional revert may ride the TIERED-flip
+  window (owner option 3).
+- **TIERED default-flip (Q3): owner decision, post-close, its own
+  gated engine window.** Bar: one-char commit (`context.py:583`
+  "0"→"1") + 4 gates flag-ON (pytest 1,331 / eval jjk 31/31 / span
+  48,572 + probe ≥390/400 / canon 236/236·10/16·79.0%) + p23 473/486
+  repro, with JJK non-regression at flag-ON (the flag changes JJK
+  bundles — tier-2 append). Any gate RED ⇒ no flip (flag stays
+  default-OFF; the campaign grade stays flag-ON, R5). Not part of
+  this close.
+- **Width-class trigger line (pre-registered):** "Width-class
+  (pool-140/358) Phase-2 retest, owner-triggerable: one new
+  pre-registered instrument — a class-scoped top_k=30 campaign (NOT
+  an ABILWIDTH re-tune; D59 bars Leg-B knobs). Bar: flips ⊇
+  {pool-140, pool-358} AND 0 counter-flips vs {pool-149, pool-252};
+  blind 19/19; OOS200 floor (drop < 3 vs `D6_OOS_PRE`); `d6_flip`
+  rc=0. RED ⇒ kill clause: rows stay P2 floor-registered; no ex-post
+  re-tune." (A new width leg post-freeze would be a #34 floor-moving
+  act — D59 closed the leg, not the class; the class-scoped top_k=30
+  vehicle was never run.)
+- **Claim-scope line (time-stamped):** "[stamp-commit <stamp-commit>,
+  2026-09-20] CSM Phase 1 closed at the stamped floor: campaign grade
+  flag-ON 473/486; shipped product (flag-OFF) 469/486; 13 reds = 11
+  extraction-P2 + 2 width-P2 (PROVISIONAL, owner-ratified-by-return,
+  void on veto); JJK remains 100% (4 gates @`0c8cc953`). This line
+  is amended by the TIERED flip (owner option 3) if ordered."
+- **Owner's decision set on return:** 1 "Commit" = ratify close +
+  re-scope → stamp final (the 100% claim stands in full form); 2
+  "Commit without sign-off" = close stands as a council stamp, re-
+  scope pending (the 2 pool rows stay holdout-pending-ratification);
+  3 "TIERED flip word" = the gated engine window per the Q3 bar; 4
+  "None — status quo" = the provisional stamp is voided (docs-only
+  reversal), the close reverts to "D7 window closed, close deferred",
+  the pool rows revert to D7 holdouts, council reconvenes or P2
+  opens them.
+- **Attribution note (R1):** 463→469 closed-6 = 4 deriv {arcn-01,
+  org-05/06, vol-10} + 2 Q1-L1 {csm-dim-chap-01, csm-dim-arcn-07} —
+  "the 2 unattributed" was a ledger artifact (D61/63 tracked the
+  deriv leg only; drift D57:2093 "bank 465").
+- **Auditability fix (in this close commit):** the 473-era evidence
+  is committed, not claim-only on a fresh clone — the `LEGA_*.log`
+  set is force-added (gitignored `*.log`) and the canon re-run dir
+  `reports/2026-09-19-2004/` is tracked.
