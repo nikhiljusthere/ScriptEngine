@@ -29,10 +29,14 @@ oc_window() { # opencode window: title is set by opencode as "OC | <task>"
   local w
   w=$(xdotool search --name '^OC ' 2>/dev/null | head -1)
   if [ -n "$w" ]; then echo "$w"; return; fi
-  # fallback: the gnome-terminal window that is neither pi's nor a bare "Terminal"
-  for w in $(xdotool search --class Gnome-terminal 2>/dev/null); do
-    local n; n=$(xdotool getwindowname "$w" 2>/dev/null)
-    case "$n" in *'π - ScriptEngine'|Terminal) : ;; *) echo "$w"; return ;; esac
+  # fallback (tabbed/retitled terminals where opencode's tab shows as bare "Terminal"):
+  # newest gnome-terminal window that is not pi's (window ids ascend with creation order)
+  local pi n
+  pi=$(pi_window)
+  for w in $(xdotool search --class Gnome-terminal 2>/dev/null | sort -rn); do
+    [ "$w" = "$pi" ] && continue
+    n=$(xdotool getwindowname "$w" 2>/dev/null)
+    case "$n" in *'π - ScriptEngine') : ;; *) echo "$w"; return ;; esac
   done
 }
 pi_window() { xdotool search --name 'π - ScriptEngine' 2>/dev/null | head -1; }
@@ -62,7 +66,7 @@ while :; do
   fi
   # --- blocked prompt? last line of the log is an unresolved asking entry ---
   if tail -1 "$LOG" 2>/dev/null | grep -qa 'message=asking'; then
-    AID=$(tail -1 "$LOG" | grep -oa 'id=[a-z_]*[a-z0-9_]*' | head -1 | cut -d= -f2)
+    AID=$(tail -1 "$LOG" | grep -oaE 'id=[A-Za-z0-9_]+' | head -1 | cut -d= -f2)
     if [ -n "$AID" ] && ! grep -qsaF "$AID" "$STATE"; then
       echo "$AID" >> "$STATE"; tail -50 "$STATE" > "${STATE}.t" && mv "${STATE}.t" "$STATE"
       case "$AID" in
