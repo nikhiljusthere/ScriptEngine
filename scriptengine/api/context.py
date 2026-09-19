@@ -31,6 +31,7 @@ writer never has to guess and never has to leave a block untagged.
 
 from __future__ import annotations
 
+import os
 import re
 from typing import Any
 
@@ -573,6 +574,23 @@ def _story_page_subject(paths: SeriesPaths, query: str) -> str | None:
     return None
 
 
+def _tiered_enabled() -> bool:
+    """Whether tier-2 recall appends ranks 9-30 within leftover budget.
+
+    TIERED leg (flagged experiment, kill = unset, no revert commit).
+    Mirrors the events_order_enabled pattern: read on every call.
+    """
+    return os.environ.get("SCRIPTENGINE_TIERED_RECALL", "0") == "1"
+
+
+def _abilwidth_enabled() -> bool:
+    """ABILWIDTH leg gate (kill = unset, no revert commit): widen beam
+    top_k to 30 for possessive-owner ability queries. Mirrors
+    _tiered_enabled: read on every call; OFF = committed-tree behavior.
+    """
+    return os.environ.get("SCRIPTENGINE_ABILWIDTH_RECALL", "0") == "1"
+
+
 def _qa_context(
     paths: SeriesPaths,
     query: str,
@@ -609,8 +627,33 @@ def _qa_context(
         except Exception:
             subject = None
 
+    # ABILWIDTH leg: possessive-owner-with-declared-ability queries
+    # ("Mysterious Man's Typhoon Devil Contract", "Falling Devil's Body
+    # Control") get beam top_k=30 — their gold ranks 12-47, cut at 8,
+    # and tiered appends can't reach them (saturated bundles, no
+    # leftover). Reuses the _owner_attribute_hit predicate (derivation
+    # deferral): only declared (character, ability-prefix) pairs trigger.
+    # Caller-passed top_k always wins; no-apostrophe queries skip the
+    # store open entirely.
+    if top_k is None and _abilwidth_enabled() and any(q in query for q in _APOSTROPHES):
+        from scriptengine.stores.facts import FactStore
+
+        with FactStore(paths.facts_db) as _store:
+            if _owner_attribute_hit(_store, query):
+                top_k = 30
+
     with HybridRetriever(paths, settings) as retriever:
         result = retriever.search(query, top_k=top_k, rerank=True, focus=subject)
+        # TIERED leg: second identical search at top_k=30; tier-1 above
+        # untouched (same shortlist, same rerank, same order). Tier-2 =
+        # passages tier-1 lacks; the budget walk below only renders them
+        # from genuinely unused budget (walk breaks at cap), so a full
+        # budget yields byte-identical bundles with the flag on or off.
+        tier2: list = []
+        if _tiered_enabled():
+            _r2 = retriever.search(query, top_k=30, rerank=True, focus=subject)
+            _seen = {p.chunk_id for p in result.passages}
+            tier2 = [p for p in _r2.passages if p.chunk_id not in _seen]
         retriever.release_models()
 
     with FactStore(paths.facts_db) as store:
@@ -812,10 +855,15 @@ def _qa_context(
             -_qrank(p)[0] < best_score for p in floor_fill[1:]
         ):
             lead = best
+    # TIERED leg: tier-2 appends after beam+floor, deduped by chunk,
+    # so the budget walk (breaks at cap below) renders it only from
+    # leftover budget. Identical tier-1 + floor order when flag off.
+    _have_ids = {p.chunk_id for p in [*result.passages, *floor_fill]}
+    tier2_novel = [p for p in tier2 if p.chunk_id not in _have_ids]
     if lead is not None:
-        ordered = [lead, *[p for p in [*result.passages, *floor_fill] if p is not lead]]
+        ordered = [lead, *[p for p in [*result.passages, *floor_fill] if p is not lead], *tier2_novel]
     else:
-        ordered = [*result.passages, *floor_fill]
+        ordered = [*result.passages, *floor_fill, *tier2_novel]
     for order, passage in enumerate(ordered, start=1):
         cost = estimate_tokens(passage.text) + 30
         if used + cost > token_budget and beats:

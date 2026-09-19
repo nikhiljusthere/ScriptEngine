@@ -1,0 +1,27 @@
+Fri Sep 18 18:06:06 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 595.84                 Driver Version: 595.84         CUDA Version: 13.2     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 5090        Off |   00000000:01:00.0 Off |                  N/A |
+| 30%   37C    P8              5W /  600W |     663MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            2208      G   /usr/lib/xorg/Xorg                      202MiB |
+|    0   N/A  N/A            2452      G   /usr/bin/gnome-shell                     25MiB |
+|    0   N/A  N/A            3069      G   ...exec/xdg-desktop-portal-gnome          9MiB |
+|    0   N/A  N/A          966695      G   ...rack-uuid=3190708988185955192         34MiB |
+|    0   N/A  N/A          996742      G   ...rack-uuid=3190708988185955192         98MiB |
+|    0   N/A  N/A          997894      G   ...nap-store/1390/bin/snap-store        143MiB |
+|    0   N/A  N/A         1135753      G   /usr/bin/nautilus                        19MiB |
+|    0   N/A  N/A         1136875      G   /usr/bin/gnome-text-editor               18MiB |
++-----------------------------------------------------------------------------------------+

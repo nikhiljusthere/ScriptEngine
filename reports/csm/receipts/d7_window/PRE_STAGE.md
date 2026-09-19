@@ -108,3 +108,12 @@ be delivered. Resume on `reports/csm/receipts/d7_window/RECEIPT_DONE` +
 `/tmp/d7_gpu_chain.log`. If no sentinel within an hour, relaunch the 135k by
 hand from `/tmp/d7_qwen_argv.txt` in `/tmp/d7_qwen_cwd.txt`. After issuing the
 chain: no poll, no wait, no further action.
+
+## Commit locator
+
+Governance commit `c60f858b` (branch `character-scoped-questions`), message
+`council #36 (D7 re-score) record + D7 window chain pre-stage` (16 files).
+Find it: `git log --oneline --grep 'council #36 (D7 re-score)'`. This locator
+line is appended after the commit (no amend), so it is intentionally
+dirty-unstaged; the chain's own receipts stay uncommitted until the owner
+decides.
