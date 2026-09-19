@@ -1125,7 +1125,7 @@ cited from the committed ledger legA entry — never the silent
   re-tune." (A new width leg post-freeze would be a #34 floor-moving
   act — D59 closed the leg, not the class; the class-scoped top_k=30
   vehicle was never run.)
-- **Claim-scope line (time-stamped):** "[stamp-commit <stamp-commit>,
+- **Claim-scope line (time-stamped):** "[stamp-commit 78323240,
   2026-09-20] CSM Phase 1 closed at the stamped floor: campaign grade
   flag-ON 473/486; shipped product (flag-OFF) 469/486; 13 reds = 11
   extraction-P2 + 2 width-P2 (PROVISIONAL, owner-ratified-by-return,
