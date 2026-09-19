@@ -1,6 +1,6 @@
 ---
 name: qwen-switch
-description: Switch the local Qwen 3.8 27B (ninfer, :18080) between context modes — 262k exploratory, 100k service, or a dial-down — to free or reclaim GPU headroom, autonomously, mid-plan. Owner standard (2026-09-10): one detached 3-part shell — unload → load+place → internal LLM call triggers a gnome-terminal relaunch of the SAME session (pi --session); the agent never types the LLM call or the relaunch. Use when the next phase needs the :8000 embedder+reranker on CUDA alongside Qwen, or 2 parallel subagents, and when the GPU phase ends and full context is wanted again.
+description: "Switch the local Qwen 3.8 27B (ninfer, :18080) between context modes — 262k exploratory, 100k service, or a dial-down — to free or reclaim GPU headroom, autonomously, mid-plan. Owner standard (2026-09-10): one detached 3-part shell — unload → load+place → internal LLM call triggers a gnome-terminal relaunch of the SAME session (pi --session); the agent never types the LLM call or the relaunch. Use when the next phase needs the :8000 embedder+reranker on CUDA alongside Qwen, or 2 parallel subagents, and when the GPU phase ends and full context is wanted again."
 ---
 
 # qwen-switch — autonomous Qwen context-mode switching

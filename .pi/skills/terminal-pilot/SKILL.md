@@ -1,6 +1,6 @@
 ---
 name: terminal-pilot
-description: Open and control second gnome-terminals each running its own pi agent (the "control terminal" pattern), restart/verify the local ninfer Qwen model (:18080), enforce the GPU one-copy steady state, and run the monitor + judgment loop over the worker's shells. Use when a task needs a second pi agent (worker/council/reviewer), when ninfer must be (re)started or its mode checked, when a worker terminal died (close, reboot, power loss) and must be relaunched with a resume bootstrap, or when supervising a worker's shell activity. Hard-won lessons from the 2026-09-08 CSM campaign: vte/XTEST typing, file-probe verification, monitor false-positive kills, subagent wave stacking, post-reboot state drift.
+description: "Open and control second gnome-terminals each running its own pi agent (the \"control terminal\" pattern), restart/verify the local ninfer Qwen model (:18080), enforce the GPU one-copy steady state, and run the monitor + judgment loop over the worker's shells. Use when a task needs a second pi agent (worker/council/reviewer), when ninfer must be (re)started or its mode checked, when a worker terminal died (close, reboot, power loss) and must be relaunched with a resume bootstrap, or when supervising a worker's shell activity. Hard-won lessons from the 2026-09-08 CSM campaign: vte/XTEST typing, file-probe verification, monitor false-positive kills, subagent wave stacking, post-reboot state drift."
 ---
 
 # terminal-pilot — second-terminal + pi-agent control, ninfer ops, judgment loop
