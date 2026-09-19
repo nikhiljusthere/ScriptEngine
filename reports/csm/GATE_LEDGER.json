@@ -3,18 +3,18 @@
   "series": "csm",
   "purpose": "ledger-of-record v1 (council #24) — the committed machine-readable gate state so a reboot costs zero. Read this FIRST after any reboot. If the reboot_rule check passes, the four gates stand: do NOT re-run them. If it fails, re-run all four on the new tree (one-copy 100k + CUDA :8000) before the next fix-class.",
   "last_green": {
-    "unit": "R-8 (wants_chronology_set: set-in-order -> roster, one-subject order -> narrative) — the P2.1 pre-sweep gate window (council #30 A2)",
+    "unit": "D7 re-score window (council #36): TIERED/ABILWIDTH legs graded (Leg A PASS / Leg B RED, kill clause) + the four standing gates re-run on the post-4a8616bd tree (flag-OFF = 20d6da4e behavior)",
     "fix_classes": [
-      "R-8"
+      "D7 window (TIERED leg A)"
     ],
-    "fixes_commit": "aada154",
-    "gate_tree": "8661850 (last gate-relevant commit b8b0ed5: the env-mc test rename, count-neutral)",
-    "receipts_commit": "4b60043",
-    "ts": "2026-09-17T07:22:01+05:30",
+    "fixes_commit": "4a8616bd (the flag-gated TIERED/ABILWIDTH checkpoint; both flags default-OFF)",
+    "gate_tree": "0c8cc953 (last gate-relevant commit 4a8616bd: the flag-gated retrieval hunks; gate-relevant diff 4a8616bd..0c8cc953 empty)",
+    "receipts_commit": "c60f858b (window chain + receipts) / 4a8616bd (checkpoint)",
+    "ts": "2026-09-20T01:34:00+05:30",
     "gates": {
       "gate1_pytest": {
         "value": "1331",
-        "note": "W1 (:8000 down, Qwen stopped via ninfer-stop.sh, mode=off): 1,331 collected = 1,326 passed + 3 failed + 2 xpassed; the 3 failures are the env-mc trio tests/test_mcp_server.py:20,35,46 (httpx.ConnectError, :8000 down by design) = the council #30 A5 W1 pin. 1,321 R-7 pin + 10 R-8 router tests.",
+        "note": "W1 (:8000-down window conditions): 1,331 collected = 1,326 passed + 2 xpassed + 3 failed; the 3 failures are the env-mc trio (httpx.ConnectError, :8000 down) = the council #30 A5 W1 pin shape (1,321 R-7 pin + 10 R-8 router tests). No new regressions.",
         "status": "green"
       },
       "gate2_eval_jjk": {
@@ -23,22 +23,25 @@
       },
       "gate3_span_recall_jjk": {
         "value": "48,572 offline rc=0 (100.0000%) + 398/400 live probe (99.5%)",
-        "probe": "398/400 >= the 390/400 (97.5%) bar (1 MISS_DOC, 1 MISS_SPAN, 0 errors); W2 against :8000 pid 178118 on CUDA, whole card; ledger reports/span-recall/jjk/recall_verbatim.jsonl (+400 rows, 2026-09-17 07:21)",
+        "note": "the live probe ran on the chain's own CUDA :8000 (Qwen stopped for the window); 398/400 >= the 390/400 (97.5%) bar; ledger reports/span-recall/jjk/recall_verbatim.jsonl (+400 rows, 2026-09-18 window)",
         "status": "green"
       },
       "gate4_canon_opm": {
         "value": "236/236 canon (100%), 10/16 exact, 79.0% precision, 0 confident-wrong",
-        "report": "reports/2026-09-17-0151/",
+        "report": "reports/2026-09-19-2004/",
+        "note": "the window's step missed (no :8000 server — the chain's pkill after the span probe); re-run 2026-09-20 on CUDA co-located with Qwen 138240 (short bounded task; Qwen alive before/after; GPU peak 31,393 MiB; :8000 restored to CPU after)",
         "status": "green"
       }
     },
-    "receipt": "reports/csm/receipts/r8_gate_window.md",
-    "class_sweeps": {
-      "r8_wants_chronology_set": "MEASURED 2026-09-17 (P2.1 full-panel sweep, runner exit 0, reports/csm/p21_sweep_2026-09-17/REPORT.md): qa 98.48% (>= 97.5% bar; 261-row miss file owed), narrative 10.74%, roster 0.77%, auto 15.43% (FAILS the 97.5% bar; heldout 14.00% agrees). R-8 changed 0/100 auto routing decisions on the sanity lines vs pre-R-8 2f67222: the auto gap is the second misroute (router sends 89.1% of line lookups to narrative, 10.6% served; forced qa serves 98.48%). Gate state unaffected (the sweep is a measurement, not a gate)."
+    "receipt": "reports/csm/receipts/d7_window/ (window) + reports/2026-09-19-2004/ (canon re-run) + the GATE.md 'D7 re-score window' section (recorded 2026-09-20)",
+    "legs": {
+      "legA_tiered": "PASS — W 473/486 (+4/−0 vs bank 469: arcn-02/10, org-03, state-08), 0 counter-flips, blind 19/19, OOS200 168→198, green30 clean, d6_flip rc 0; FLOOR A 3/16 (arcn-02, arcn-10, state-08)",
+      "legB_abilwidth": "RED — W 469/486; registered targets pool-140/358 flipped but 2 counter-flips {pool-149, pool-252} (bar: 0 counter-flips); FLOOR B 2/16 (pool-140, pool-358); kill clause (D59): the ABILWIDTH hunk stays behind its default-OFF flag (inert), no ex-post re-tuning",
+      "legC_both": "not run (halt at the first RED leg; gates still ran for the record)"
     },
-    "note": "Supersedes last_green P1.2/R-7 (fixes 60e568f, receipts 4f5d075, pin 1,321; git-recoverable). The R-7 queue stamps (23 closed / 35 open / 58) are not re-stamped here — this window grades no queue rows; post-sweep A17 grading owns that. receipts_commit = 4b60043 (the gate-window receipts commit; filled at the post-sweep commit — no mid-sweep commits, A18). reboot_rule anchor moved 81df799 -> b8b0ed5 in the same edit (anchored on 81df799 the check is non-empty — R-8 touched router.py/chronology.py — and would read as false drift)."
+    "note": "Supersedes last_green R-8 (aada154/8661850, receipts 4b60043, 2026-09-17; git-recoverable). The p23 grades run flag-ON per R5 (TIERED ON = 473/486); the standing gates run default-OFF (committed-tree = 20d6da4e behavior; the 4a8616bd hunks are flag-gated dead code). The TIERED default-flip (ship CSM default-ON) + its 4-gate re-run remains DEFERRED, a separate owner decision. Red state after Leg A: 473/486 = 13 reds, all 13 inside the instrument's 16-row Phase-2 floor list (FLOOR16 in tools/csm/check_targets.py)."
   },
-  "reboot_rule": "The four gates STAND iff: (a) HEAD is at or after b8b0ed5 (the last gate-relevant commit inside the R-8 gate window's tree 8661850), AND (b) no gate-relevant file changed between that commit and HEAD -- check: `git diff --name-only b8b0ed5..HEAD -- scriptengine series/csm/overrides.yaml tests` is empty. Doc-only commits (this ledger, reports/csm/GATE.md, work_log, drift_log, receipts, COUNCIL_HISTORY, CLAUDE.md, HALT_METER_P13*) pass the check and do NOT invalidate the gates. If either (a) or (b) fails, re-run all four gates on the new tree (one-copy 100k + CUDA :8000) before the next fix-class. The 22 extraction-gated floor rows (the 21 D6-extraction rows + csm-char-04, whose close lever is the Phase-2 extraction track / 5.4 re-adjudication) + the 10 invariant/residual rows (csmdoor-01 31/88; the D5 reachability residuals csmd5-01/02/03/05/06 + gate400-320 + red-R-4; the closed-class curation residuals csm-char-03 + csm-set-02; governing stamps: the red_list R-2/R-3 close notes) stay open by design. The 3 r1blast-* stamped rows stay open as stamps (never fix targets).",
+  "reboot_rule": "The four gates STAND iff: (a) HEAD is at or after 4a8616bd (the last gate-relevant commit inside the D7 window's gate tree 0c8cc953), AND (b) no gate-relevant file changed between that commit and HEAD -- check: `git diff --name-only 4a8616bd..HEAD -- scriptengine series/csm/overrides.yaml tests` is empty. Doc-only commits (this ledger, reports/csm/GATE.md, work_log, drift_log, receipts, COUNCIL_HISTORY, CLAUDE.md, HALT_METER_P13*) pass the check and do NOT invalidate the gates. If either (a) or (b) fails, re-run all four gates on the new tree (the current one-copy dial per qwen_mode.txt + CUDA :8000 for W2) before the next fix-class. The 22 extraction-gated floor rows (the 21 D6-extraction rows + csm-char-04, whose close lever is the Phase-2 extraction track / 5.4 re-adjudication) + the 10 invariant/residual rows (csmdoor-01 31/88; the D5 reachability residuals csmd5-01/02/03/05/06 + gate400-320 + red-R-4; the closed-class curation residuals csm-char-03 + csm-set-02; governing stamps: the red_list R-2/R-3 close notes) stay open by design. The 3 r1blast-* stamped rows stay open as stamps (never fix targets).",
   "p14_close_copy": {
     "ts": "2026-09-12T03:55:00+05:30",
     "head": "407c016",

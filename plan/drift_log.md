@@ -2319,3 +2319,39 @@ entry.
     `reports/csm/receipts/council_d7_rescore/chairman.md`); after the
     chain the owner reads the receipts; commit only on all-green + owner
     word.
+
+  ## D64 — D7 window result recorded; 4/4 gates green at 0c8cc953 (2026-09-20, opencode)
+
+  - **What:** the D7 re-score window (council #36, LEGS-FIRST-FLAGGED)
+    was executed by the kill-window chain (`RECEIPT_DONE`, receipts
+    `reports/csm/receipts/d7_window/`) but its result never landed in
+    GATE.md (the chain's own model died with its Qwen, by design; the
+    session that ran it went quiet on the API gap). Recorded from the
+    receipts: **Leg A (TIERED=1, ABILWIDTH=0) PASS** — 473/486
+    (+4/−0: arcn-02/10, org-03, state-08), 0 counter-flips, blind
+    19/19, OOS200 168→198, FLOOR A 3/16; **Leg B (TIERED=0,
+    ABILWIDTH=1) RED** — 469/486, targets pool-140/358 flipped but
+    **2 counter-flips {pool-149, pool-252}** → kill clause (the flag
+    stays default-OFF; no ex-post re-tuning, D59), FLOOR B 2/16;
+    **Leg C not run** (halt at first RED).
+  - **Gates:** the window left canon red on "no server on :8000"
+    (mechanical: the chain's pkill after the span probe); re-run
+    2026-09-20 on CUDA co-located with Qwen 138240 (Qwen alive before/
+    after; GPU peak 31,393 MiB; `:8000` restored to CPU after):
+    **236/236, 10/16, 79.0%, 0 confident-wrong** (run dir
+    `reports/2026-09-19-2004/`) → all four gates green on tree
+    `0c8cc953` (flag-OFF = `20d6da4e` behavior; gate-relevant diff
+    `4a8616bd..0c8cc953` empty). GATE_LEDGER `last_green` bumped;
+    reboot anchor moved b8b0ed5 → 4a8616bd.
+  - **State:** 13 reds remaining (473/486, TIERED ON) — per
+    `check_targets.py` FLOOR16, all 13 sit inside the 16-row Phase-2
+    floor list (pool-140/358 included). Qwen re-dialed by the owner to
+    138240 (pid 28619; `qwen_mode` ts 2026-09-20T01:20:31, api=cpu);
+    oc-switch tooling in place (`tools/master-work/switch_restart3_oc.
+    sh`, `0c8cc953`; `~/.config/opencode/skills/oc-switch/`).
+  - **Next:** council #37 (one subagent at a time) — (a) the ABILWIDTH
+    kill-clause disposition (revert the inert hunk vs keep dead); (b)
+    the Phase-1 close determination (all 13 remaining reds in FLOOR16
+    → official suite → VOID formal → `PHASE_A_COMPLETE_AT_FLOOR.md` +
+    halt at the floor, or a final width leg for pool-140/358); (c) the
+    TIERED default-flip = owner decision (R5).

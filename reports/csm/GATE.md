@@ -995,3 +995,66 @@ The 48-row defect text is corrected accordingly (same surgical method);
 bucket (D7 named limit) and owner stand. Remain #1 unresolved: the limit
 is still unproven — the follow-up is a focus-resolution spike, then the
 D7 leg proper (gated engine change + JJK regression + regrade).
+
+## D7 re-score window (council #36): Leg A (TIERED) PASS / Leg B (ABILWIDTH) RED — window 2026-09-18, recorded 2026-09-20
+
+The LEGS-FIRST-FLAGGED verdict was executed by the detached kill-window
+chain `tools/csm/d7_window_chain.sh` (Qwen 135k owner-manual stopped →
+whole card to the window → restore; receipts `reports/csm/receipts/
+d7_window/`, chain `RECEIPT_DONE`). The chain's own model call died with
+its Qwen (by design); this section is the record the window owed,
+reconstructed from the receipts. Flags `SCRIPTENGINE_TIERED_RECALL` /
+`SCRIPTENGINE_ABILWIDTH_RECALL`, both default "0" (the Q2 flag gate
+landed in checkpoint `4a8616bd`).
+
+- **Leg A (TIERED=1, ABILWIDTH=0) — PASS** (`LEGA_targets.log`):
+  W = 473/486 (bank 469, +4/−0); registered flips {arcn-02, arcn-10,
+  org-03, state-08} all MECH_GREEN; 0 counter-flips; blind 19/19 (0
+  errors, 33.8 s); OOS200 168→198 (Δ+30); green30 0 flips; `d6_flip`
+  rc 0. **FLOOR A: 3/16 flipped** (arcn-02, arcn-10, state-08) — 13 of
+  the 16 floor rows remain.
+- **Leg B (TIERED=0, ABILWIDTH=1) — RED** (`LEGB_targets.log`):
+  W = 469/486; both registered targets flipped (pool-140, pool-358)
+  **but 2 counter-flips {pool-149, pool-252}** ⇒ RED per the
+  pre-registration (bar: 0 counter-flips). Blind 19/19 (25.6 s);
+  OOS200 168→195; green30 clean. **FLOOR B: 2/16 flipped** (pool-140,
+  pool-358). Kill clause (D59): the ABILWIDTH hunk stays behind its
+  default-OFF flag (unset = inert); no ex-post re-tuning. The width
+  class (pool-140/358) needs a design that does not counter-flip
+  pool-149/252.
+- **Leg C (both ON) — not run** (halt at the first RED leg; the chain
+  still ran the four standing gates for the record, then restored Qwen).
+- **Standing gates, both flags default-OFF (= committed-tree behavior =
+  `20d6da4e`):** pytest **1,331 collected = 1,326 passed + 2 xpassed +
+  3 known env-mc** (the W1 pin shape, :8000-down window conditions) ✓;
+  eval jjk **31/31** ✓; span-recall jjk **48,572/48,572 offline rc=0 +
+  398/400 live (99.5% ≥ the 390/400 bar)** ✓ (the chain's own CUDA
+  `:8000`, Qwen stopped); canon opm — the window's step hit "no server
+  on :8000" (mechanical miss: the chain pkilled `:8000` after the span
+  probe, before canon); **re-run 2026-09-20 (run dir
+  `reports/2026-09-19-2004/`)** on CUDA co-located with Qwen 138240
+  (short bounded task, ~5.3 GB within the 5,986 MiB headroom; GPU peak
+  31,393 MiB; Qwen alive before/after; `:8000` restored to CPU after):
+  **236/236 canon, 10/16 exact, 79.0% closed-set precision, 0
+  confident-and-wrong** ✓. **All four gates green on tree `0c8cc953`
+  (flag-OFF = `20d6da4e` behavior; the `4a8616bd` hunks are flag-gated
+  dead code — gate-relevant diff `4a8616bd..0c8cc953` empty).**
+- **Red state after Leg A (TIERED ON): 473/486 = 13 reds.** Per the
+  window's instrument (`tools/csm/check_targets.py` FLOOR16: "the 16
+  Phase-2 floor rows = the 17 git-HEAD p23 reds minus the org-03 D7
+  holdout"), **all 13 remaining reds sit inside the 16-row Phase-2
+  floor list** (pool-140/358 are in FLOOR16 even though the D7 spike
+  labels their defect class "width" and the D6 close registered them as
+  D7 named-limit holdouts). Whether that leaves Phase 1 at the
+  extraction floor (halt) or pool-140/358 still Phase-1-closeable is
+  the close council's call, not the window's.
+- **Post-commit flag configuration (R5):** both flags ship default-OFF;
+  the CSM p23 grades run flag-ON; the standing gates run default-OFF.
+  The TIERED default-flip (ship CSM default-ON) + its 4-gate re-run +
+  this record = **DEFERRED, a separate owner decision**.
+- **Next:** council #37 — (a) the ABILWIDTH kill-clause disposition
+  (revert the inert hunk vs keep it dead behind the flag); (b) the
+  Phase-1 close determination against the halt rule (all 13 remaining
+  reds in FLOOR16 → official suite → VOID formal →
+  `PHASE_A_COMPLETE_AT_FLOOR.md` + halt at the floor, or a final width
+  leg for pool-140/358); (c) the TIERED default-flip = owner decision.
