@@ -100,6 +100,9 @@ def main(argv=None) -> int:
     ap.add_argument("--limit", type=int, default=0, help="judge only the first N sections (probe)")
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--out", default=None, help="results jsonl (default <series>_prefilter_<ts>.jsonl in cwd)")
+    ap.add_argument("--keep-list", default=None,
+                    help="also write the kept section ids (+ p, +force flag) to this file; "
+                         "force-includes sections that have kept events (recovery net)")
     args = ap.parse_args(argv)
 
     db = db_path(args.series)
@@ -140,6 +143,18 @@ def main(argv=None) -> int:
         print(f"sensitivity vs event sections: {len(hit)}/{len(pos)} = {len(hit) / len(pos):.1%}")
         if miss:
             print(f"MISSED event sections ({len(miss)}): " + ", ".join(r["id"] for r in miss[:20]))
+
+    if args.keep_list:
+        keep_rows = [r for r in results if r["keep"] or r["has_events"]]
+        with open(args.keep_list, "w", encoding="utf-8") as f:
+            for r in keep_rows:
+                f.write(json.dumps({
+                    "id": r["id"], "section_id": r["section_id"], "doc": r["doc"],
+                    "title": r["title"], "p": r["p"],
+                    "keep": r["keep"], "forced_event_section": (r["has_events"] and not r["keep"]),
+                }, ensure_ascii=False) + "\n")
+        forced = sum(1 for r in keep_rows if r["has_events"] and not r["keep"])
+        print(f"keep-list -> {args.keep_list} ({len(keep_rows)} sections, {forced} forced event sections)")
     return 0
 
 

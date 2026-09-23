@@ -22,11 +22,15 @@ Stack control: `~/tools/jev/bin/jev-up|jev-down|jev-status`.
   Verified: 36,980-char pytest output → 1,596 chars, FAILURES block kept,
   full output archived; repeat model calls hit a local cache (0 ms).
 - **P2-extract section pre-filter** — `tools/jev/jev-prefilter.py` (fast lane,
-  one plain question per wiki section). JJK validation (7,601 sections,
-  ground truth = the 2,748 kept `events` rows) is the adoption gate:
-  sensitivity against event sections must be ≥ 99% — a wrongly dropped
-  section is lost content. Probe (200 sections): 100% hit, 49% keep rate,
-  clean p-separation (event 0.63–0.85 vs dropped ≤ 0.29).
+  one plain question per wiki section). JJK validation gate **PASSED**:
+  full 7,601-section run (33.4 min CPU, `~/tools/jev/reports/jjk-prefilter-full.jsonl`)
+  scored sensitivity **837/838 = 99.9%** vs the 2,748 kept `events` rows
+  (bar was ≥ 99%; a dropped event section = lost content). The single miss is
+  borderline (p=0.263, jjk-sec-6896, one-sentence bio). Keep rate 47.3%.
+  CSM application: 3,917 sections → `~/tools/jev/reports/csm-prefilter-full.jsonl`;
+  the P2.3 keep-list force-includes CSM's known event sections as a recovery
+  net. The pre-filter never replaces the plan's three exact-match checks on
+  extracted rows.
 - **Red-row triage** — `tools/jev/jev-red-triage.py` (model-free DB check;
   the model is an opt-in paraphrase net). Run 2026-09-24:
   **23/23 red rows' gold is supported by the crawled corpus**
@@ -44,6 +48,36 @@ Stack control: `~/tools/jev/bin/jev-up|jev-down|jev-status`.
 | D7b dev loop | `pytest_filter.py` smoke runs | never replaces the pinned full gates (1,331) |
 | future CSM video script drafts | `voice_lint.py` / slop-grader before humanscope Mode B | off the 100% critical path |
 | red-row sorting | `jev-red-triage.py` | done (23/23 supported); re-run only if the red set changes |
+| research / web-search passes | `jev-search-triage.py` + `jev-page-trim.mjs` | see "Research path" below |
+
+## Research path (web search + page content, all CPU)
+
+Replaces the "hours of GPU" judging fraction of a research pass with the
+fast lane (~190 ms p50 per judgment, 4–5/s sustained; the deep lane is a
+503 while opencode runs anyway). Fetching wall-clock is unchanged — only the
+judging collapses.
+
+- **Search-result triage** — `tools/jev/jev-search-triage.py`:
+  - `--query "..."` mode: fetch + judge via the `:8041` search-judge service
+    (`runtime/D/jev_search_local.py`; 5 keyless engines — duckduckgo,
+    wikipedia, hackernews, github, arxiv — every judgment rides `:8018`).
+    Bring it up with `~/tools/jev/bin/start-D-services.sh`.
+  - `--input results.jsonl` mode: judge an existing set (agent-reach output
+    or any `{title, snippet, url}` list), one plain question per item.
+  - Output = ranked keep list (p ≥ 0.3; unjudged items kept + flagged) —
+    hand the 27B only the survivors.
+- **Page trim** — `tools/jev/bin/jev-page-trim.mjs` (bun): fetch a URL (or
+  read a file), strip to text, and if > ~4k tokens run the JEV trim engine
+  with a web-page question — kept content verbatim, omissions marked, full
+  text archived to `~/.opencode/fast-jev-web/<sha1>.txt` with a recovery
+  footer (same design as the bash-pruner). Under 4k tokens: passthrough,
+  zero model calls. Use it for large off-target pages (fandom dumps, docs,
+  long threads); for an on-target article most chunks are kept by design —
+  just fetch the section instead.
+- **Not sped up** (unchanged by the fast lane): network fetches, platform
+  API latency/rate limits, page loads; fine-grained ranking (the 0.8b is a
+  coarse keep/drop judge — measured relevant ≥ 0.6 vs noise ≤ 0.3 — not a
+  "best of 50" ranker; that stays with the deep lane in quiet windows).
 
 ## Must NOT use (plan constraints, unchanged)
 
@@ -67,6 +101,11 @@ Stack control: `~/tools/jev/bin/jev-up|jev-down|jev-status`.
    left verbatim).
 3. Pre-filter: the jsonl report carries per-section p + keep + has_events;
    the summary line carries sensitivity/selectivity.
+4. Research pass: `jev-search-triage.py` prints the judged count + keep count
+   per run; `jev-page-trim.mjs` logs chars before/after + kept/dropped chunk
+   counts + the archive path to stderr. Both use only the fast lane while
+   opencode runs (the deep lane is a 503 by design), so they never touch the
+   27B or its prefix cache.
 
 ## Kill switches
 
@@ -75,6 +114,9 @@ Stack control: `~/tools/jev/bin/jev-up|jev-down|jev-status`.
 - Fast lane down → both pruners fail open (no mutation, logged).
 - Pre-filter is opt-in per run (`jev-prefilter.py`); nothing in the engine
   changed.
+- `:8041` search-judge: stop the process (started by
+  `bin/start-D-services.sh`); `jev-search-triage.py --query` needs it, while
+  `--input` mode needs only the `:8018` fast lane.
 
 ## Known pre-existing issue (not JEV)
 
@@ -87,6 +129,11 @@ for the compaction job; ponytail itself needs a v2 port by its owner.
 ## Receipts
 
 - JJK pre-filter full run: `~/tools/jev/reports/jjk-prefilter-full.{jsonl,log}`
+  (sensitivity 837/838 = 99.9%, gate passed)
+- CSM pre-filter full run: `~/tools/jev/reports/csm-prefilter-full.{jsonl,log}`
 - Red triage: `~/tools/jev/reports/csm-red-triage.{md,jsonl}`
+- Research-path tools: `~/tools/jev/bin/jev-search-triage.py`,
+  `~/tools/jev/bin/jev-page-trim.mjs`; search-judge service
+  `~/tools/jev/runtime/D/jev_search_local.py` (:8041)
 - v2 plugin source + patches: `~/tools/jev/opencode-plugins-v2/`,
   `~/tools/jev/patches/opencode-jev-pruner.{local-output-tweaks,local-question}.patch`
