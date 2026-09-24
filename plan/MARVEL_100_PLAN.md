@@ -202,6 +202,32 @@ pending (`nordvpn login` → browser flow, headless fallback
 `connect` — record it, do not stop the run on it (the crawl runs on the
 direct ISP egress until rotation is needed).
 
+**2026-09-25 addendum (verified on resume):** the three `nordvpn-dns*`
+units named above no longer exist on this host (`systemctl is-enabled` →
+not-found; 5353 is held by avahi-daemon; `resolv.conf` rides the
+systemd-resolved stub → ISP `192.168.1.1`; `nordvpnd` active; `nordvpn
+status` responsive, no 15-second stall). The owner's fix — the VPN was
+declared fixed after this section was written — does not use that unit set.
+Baseline direct-egress IP at resume: `103.124.15.71`. The rotation
+protocol above applies unchanged; if a rotation 15-seconds again, the first
+suspect is the live DNS chain (systemd-resolved → ISP resolver), not the
+absent units. Receipt:
+`reports/marvel/receipts/egress_verification_2026-09-25.md`.
+
+**2026-09-25 rotations #1 + #2 (executed ~04:0x / ~04:2x):** both crawls
+throttled on the baseline ISP egress — the Marvel run 1 hit `CrawlStalled`
+(exit 42) after enumerating 42,692 titles; the MCU run 1 `CrawlStalled` at
+04:05:44 with 10,968 titles outstanding (~37k fetched). Per the protocol
+above: rotation #1 `nordvpn connect us` → us13908, egress verified
+`187.14.224.72` (≠ `103.124.15.71`), both crawl commands re-run (disk
+resume; the per-run logs are the receipts). The US exit then throttled on
+the MCU host only (marvel.fandom.com stayed clean on the same egress —
+429 pools are per-host), MCU run 2 `CrawlStalled` at 04:23 → rotation #2
+`nordvpn connect de` → de1507, egress verified `187.40.55.180`, MCU
+re-run (0 429s on the fresh log). If throttling recurs, rotate to a
+different country/server — a fresh exit IP every time; 10 workers
+unchanged.
+
 ## 2. Phase A — Download (no model, no GPU; resumable, hash-pinned)
 
 **A0 — series scaffolding + overrides. (EXECUTED at plan time.)**
@@ -499,6 +525,19 @@ decided — never by phrasing). **That council, not this plan, declares
   (Qwen dial-down, trap-restored to the exact argv) REQUIRED whenever the
   retrieval stack must co-locate or a 27B extraction batch runs — triple
   residency peaks above the 32 GB card.
+- **Steady state re-measured 2026-09-25 (Qwen 153600 dial, owner switch line
+  2026-09-25T03:50:38):** 5,462 MiB free of 32,607 MiB (nvidia-smi) — the
+  owner's ~5 GB is the campaign's working VRAM.
+- **GPU-only rule (owner directive 2026-09-25):** every model-bearing
+  campaign task runs on the GPU (CUDA); the CPU is never a default. The one
+  exception: the JEV systemone fast lane (local decision model, `~/tools/jev`)
+  may take any task it can process faster than the GPU (triage, ranking,
+  keep/drop, claim checks, voice lint) — JEV over CPU, never CPU. A CPU
+  fallback requires a measured reason, recorded to the council.
+- Gate runs (eval / span-recall / canon-run) co-locate the retrieval stack
+  on CUDA within the ~5 GB (CSM precedent: gate stacks co-located at ~2.8 GB
+  free under a 100k dial). 27B batches (B2 pilot, C4 extraction) still need
+  the ab-bay whole-card window — a 27B does not fit 5 GB.
 - B2 pilot + C4 extraction = 27B card-to-itself windows (ab-bay discipline;
   the invoking session directs only).
 - CC audio processing (ASR + diarization): pilot measures it; GPU windows
