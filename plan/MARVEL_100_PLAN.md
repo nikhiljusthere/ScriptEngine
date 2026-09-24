@@ -314,6 +314,24 @@ re-parses stored wikitext with the current parser at index time
 corrected without refetching. The MCU `TV` alias (found in A0) is already
 in `series/mcu/overrides.yaml`.
 
+**A-status (2026-09-25 ~05:0x; SWITCHPOINT + receipts carry the detail):**
+A1 MCU crawl **complete** (run 3, 04:45:59 — `0 written, 12817 skipped
+(category policy), 0 failed`; 35,209 is the final MCU set). Marvel fetch
+in progress on the NL egress (279,111 enumerated; ~1,200/min at 04:58 →
+ETA ~09:00; zero 429s). A1c + A1b landed as the one gate-covered commit
+`6a1f6ceb` (four standing gates green on the union tree). Council medium
+gates 4–6 on the final MCU corpus: **GREEN** — base-vs-new parser diff
+(stable delta +0.00%, 0/35,209 pages changed → PROCEED; the only
+difference is the label-level `tv*`→`tv_series*` rename on 225 pages);
+hand-validation 40/40 character pages faithful + the 1 stored
+disambiguation page at zero facts; full `load_extracted` dry-run
+0 exceptions / 0 quarantined per tree; the truncation characterization
+shows the F2 unclosed-lead branch never fabricates facts. Receipts:
+`reports/marvel/receipts/gates_4_6_mcu_2026-09-25.md`,
+`parse_diff_mcu_report.md`, `gate5_mcu_sheet.md`. The Marvel-set gate
+run (same diff + `currentalias`/colon-template assertions + a 10-page
+disambiguation zero-facts sample) runs after the fetch completes.
+
 **A2 — marvel.com sub-store (S3).** Crawl the 22,676 sitemap URLs →
 `series/marvel/web/` (raw HTML + extracted JSON: name/description/cast-ish
 fields), `manifest.json` with per-URL sha256 + fetched_at. Campaign-neutral:
@@ -335,6 +353,14 @@ pages with infoboxes (L1 proof); (5) L4 expand spot-check on 5 pages;
 proves it); (7) council verdict recorded in
 `reports/marvel/COUNCIL_gate_A_download.md`.
 GATE A is a precondition on Phase B/C advancement, not a hand-off.
+Council hardening (2026-09-25, `reports/marvel/COUNCIL_a1c_a1b_landed.md`):
+GATE A convenes **only after the council gate list 1–6 pass** (1–3 done
+2026-09-25; 4–6 MCU done, Marvel set after its fetch) and the checkpoint
+blesses the *Marvel* validation, not just the four JJK/CSM gates.
+Source B (`tools/marvel/export_fetch.py` + `reconcile.py`, inspected
+2026-09-25) is serialized AFTER the source-A fetch (same host, shared
+429 pool) and its `reconcile.py` S0 receipt (`sourcing_100`) joins the
+exit evidence.
 
 ## 3. Phase B — CC corpus (speaker attribution is a hard requirement)
 
