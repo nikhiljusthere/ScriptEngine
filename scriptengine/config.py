@@ -64,7 +64,18 @@ class Settings(BaseSettings):
     crawl_concurrency: int = 10
     crawl_delay_seconds: float = 0.25
     crawl_max_retries: int = 4
+    # Per-request fetch timeout: a page that does not answer within this is
+    # abandoned (retried, then failed), so one dead route can never hold a
+    # worker hostage for the host's own multi-minute TCP timeout.
     crawl_timeout_seconds: int = 30
+    # Zero completed pages for this long while titles are still outstanding
+    # means the egress path is stalled (throttled or dead), not merely slow:
+    # a single 429 pause is capped at 120 s, so 300 s of no progress is a dead
+    # path, and waiting it out in place burns hours. The crawl then raises
+    # `CrawlStalled` so the operator can change the egress IP (a different
+    # VPN server/country, or another network) and re-run the same command;
+    # the crawl resumes from disk, so stopping costs nothing.
+    crawl_stall_seconds: float = 300.0
     user_agent: str = (
         "ScriptEngine/0.1 (wiki knowledge indexer; "
         "https://github.com/nikhiljusthere/ScriptEngine)"

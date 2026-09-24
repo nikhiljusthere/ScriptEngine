@@ -88,6 +88,14 @@ ENUMERATION_PAGE_SIZE = 100
 class EnumerationFailed(RuntimeError):
     """The wiki would not return its page list. Distinct from an empty wiki."""
 
+class CrawlStalled(RuntimeError):
+    """No page completed for the stall window while work remained.
+
+    That is a dead or throttled egress path, not a slow one: the operator
+    changes the egress IP (a different VPN server/country, or another
+    network) and re-runs the same command, and the crawl resumes from disk.
+    """
+
 # Only one crawl at a time. The Electron UI can deliver the same IPC message
 # twice, which previously produced two interleaved crawls writing the same files.
 _CRAWL_LOCK = asyncio.Lock()
@@ -630,10 +638,37 @@ class WikiCrawler:
         # `redirects=1` means several enumerated titles can resolve to the same
         # article, which otherwise gets fetched and written more than once.
         seen_pages: set[Any] = set()
+        # A stalled crawl is one with work left but no progress: a throttled or
+        # dead egress path, where every in-flight batch times out and the queue
+        # never drains. Waiting it out in place burns hours, so a watchdog stops
+        # the crawl after `crawl_stall_seconds` of zero completed pages and the
+        # operator changes the egress IP (a different VPN server/country, or
+        # another network) and re-runs: the crawl resumes from disk, so
+        # stopping costs nothing. The watchdog only counts real work — queued
+        # titles plus in-flight batches — so a crawl finishing its last batch
+        # is never mistaken for a stall.
+        loop = asyncio.get_running_loop()
+        progress = {"last": loop.time()}
+        in_flight = {"titles": 0}
+        stalled = asyncio.Event()
+
+        async def watchdog() -> None:
+            while True:
+                await asyncio.sleep(min(5.0, self.settings.crawl_stall_seconds / 10))
+                remaining = queue.qsize() + in_flight["titles"]
+                if remaining and loop.time() - progress["last"] > self.settings.crawl_stall_seconds:
+                    logger.error(
+                        "no page completed for %.0fs with %s titles still "
+                        "outstanding; the egress path is stalled, stopping the "
+                        "crawl (CrawlStalled)",
+                        self.settings.crawl_stall_seconds, remaining,
+                    )
+                    stalled.set()
+                    return
 
         async def worker() -> None:
             nonlocal written
-            while True:
+            while not stalled.is_set():
                 batch: list[str] = []
                 while len(batch) < BATCH_SIZE:
                     try:
@@ -643,6 +678,7 @@ class WikiCrawler:
                 if not batch:
                     return
 
+                in_flight["titles"] += len(batch)
                 try:
                     async with semaphore:
                         fetched = await self.fetch_batch(base, batch)
@@ -678,6 +714,9 @@ class WikiCrawler:
                         async with counter_lock:
                             written += 1
                             done = written
+                            # A page hit disk: the egress path is alive, and the
+                            # stall clock resets.
+                            progress["last"] = loop.time()
                         # The UI parses this line for live progress.
                         print(
                             f"[{done}/{len(titles)}] {page.title} "
@@ -690,14 +729,19 @@ class WikiCrawler:
                     logger.warning("failed on batch of %s: %s", len(batch), error)
                     failed.extend(batch)
                 finally:
+                    in_flight["titles"] -= len(batch)
                     for _ in batch:
                         queue.task_done()
                     if self.settings.crawl_delay_seconds:
                         await asyncio.sleep(self.settings.crawl_delay_seconds)
 
-        await asyncio.gather(
-            *(worker() for _ in range(self.settings.crawl_concurrency))
-        )
+        watchdog_task = asyncio.ensure_future(watchdog())
+        try:
+            await asyncio.gather(
+                *(worker() for _ in range(self.settings.crawl_concurrency))
+            )
+        finally:
+            watchdog_task.cancel()
 
         manifest = {
             "series": paths.name,
@@ -740,10 +784,31 @@ class WikiCrawler:
             manifest["all_titles"] = previous["all_titles"]
             manifest["pages_enumerated"] = len(previous["all_titles"])
 
+        if stalled.is_set():
+            # Persist the partial manifest (the full `all_titles` list still
+            # has audit value on an incomplete run), then stop: a crawl with
+            # zero progress and work left is stalled, not finished.
+            manifest["stalled"] = True
+            manifest["stall_remaining"] = queue.qsize() + in_flight["titles"]
+            manifest["stall_reason"] = (
+                f"no page completed for "
+                f"{self.settings.crawl_stall_seconds:.0f}s while titles were "
+                "outstanding; change the egress IP and re-run to resume"
+            )
         paths.manifest.write_text(
             json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
         )
 
+        if stalled.is_set():
+            raise CrawlStalled(
+                f"no pages completed for {self.settings.crawl_stall_seconds:.0f}s "
+                f"while {manifest['stall_remaining']} titles were still "
+                f"outstanding ({written} written this run). The egress path is "
+                "stalled (throttled or dead), not slow: change the egress IP "
+                "(a different VPN server/country, or another network), then "
+                "re-run the same command — the crawl resumes from what is on "
+                "disk."
+            )
         logger.info(
             "crawl complete: %s written, %s skipped, %s failed",
             written, len(skipped), len(failed),

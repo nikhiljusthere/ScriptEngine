@@ -1,0 +1,546 @@
+# MARVEL 100% — campaign plan (2026-09-25, opencode; owner-ordered)
+
+# Reference shapes: plan/CSM_100_CLOSE.md (100% closure shape) and
+# plan/Plan_to_perfection.md (D1–D6, supply tiers, standing rules).
+# This plan is the owner's order: the entire Marvel fandom, from multiple
+# sources, with speaker-labeled closed captions in the corpus, every
+# character/comic/event mapped, to the JJK/CSM bar. Only the final council
+# declares 100% (§D5).
+
+Objective: Marvel reaches the CSM 100% bar — every in-scope question green,
+content remainder 0, standing gates green at every change, the CC corpus
+carries per-line speaker attribution (owner requirement 2026-09-25: visible
+speaker names, not bare subtitle text), and every character, comic and event
+is mapped across the whole Marvel surface.
+
+Start state (2026-09-25):
+- JEV stack verified live: 8017/8018/8020/8025/8026/8040/8041/8050 all UP
+  (`jev-status`; 8018 fast lane answered a live systemone probe; 8040 is the
+  group-D restored listener — owner to confirm).
+- CSM closed state per plan/CSM_100_CLOSE.md (463/486, gates green): every
+  engine change in this campaign must keep the four standing gates green
+  (pytest / eval jjk / span-recall jjk / canon opm). JJK + CSM are baselines,
+  never touched.
+- No Marvel series on disk (`series/` = berserk, bleach, csm, db, doom, hxh,
+  jjk, onepiece, opm) — greenfield, no phantom-work assumption.
+- GPU: Qwen 30.4/32.6 GB resident; ~2.2 GB free — window discipline below.
+- CPU: 32 cores, 30 GB RAM. No ffmpeg, no whisperx/pyannote/faster-whisper
+  installed (install items, §B2).
+
+## Denominator annex
+
+Every exit below is read against these numbers. Re-measure each before its
+phase; a number that disagrees with a fresh run wins and this document is
+wrong.
+
+| surface | number | measured 2026-09-25 | regenerate |
+|---|---:|---|---|
+| Marvel Database articles | 279,440 | `api.php?action=query&meta=siteinfo&siprop=statistics` (articles field) | same, per wiki |
+| MCU Wiki articles | 48,025 | same | same |
+| Marvel DB `Template:` ns | 508 | `allpages` ns 10 full walk | same |
+| Marvel DB project ns (`Marvel Database:`) | 162 pages, ~30 infobox templates | `allpages` ns 4 | same |
+| MCU `Template:` ns | 489 | `allpages` ns 10 | same |
+| marvel.com URLs | 22,676 (23 sub-sitemaps: characters 3,468 · articles 13,727 · watch 4,000 · teams 403 · videos 387 · tv-shows 108 · items 81 · movies 64 · games 39 · rest) | `sitemap.xml` index + per-sub-sitemap `<loc>` count | same |
+| CC catalog | built in B0 (estimate 3,500–4,000 titles: ~35 MCU movies + ~45 animated films + ~2,000+ live-action episodes + ~1,000+ animated episodes) | `reports/marvel/cc_catalog.jsonl` row count | `wc -l` |
+| CC text coverage | 100% of catalog, or named exclusion with cause | per-title `cc.db` presence | SQL §B gate |
+| speaker-attributed coverage | measured, reported, with named floor (no floor may swallow a title that has an audio source) | SQL over `cc.db.speakers` | SQL §B gate |
+
+## Standing rules
+
+Verbatim copy of `plan/STANDING_RULES.md` (repeated deliberately so reading
+only this document is sufficient).
+
+**1. No user input. None, for the duration of this plan.** Every wall where
+you would normally stop and ask — a design fork, an ambiguous result, a
+blocked step, a judgement call — **run `llm-council` instead.** The council
+decides; you act on its verdict and record it. The only stop is the halt path,
+and that runs a council first. Council claims are DB-verified before recording;
+one that cannot be verified did not happen.
+
+**2. The GPU is available. Do not default to CPU.** Qwen's compute idles while
+a shell command runs; ~7.4 GB free under Qwen at normal dial — enough for the
+~5.3 GB retrieval stack. Check `nvidia-smi` first and size the job. A
+sustained 27B extraction batch wants the card to itself (one OOM-crashed
+co-located). Falling back to CPU needs a measured reason.
+
+**3. Council cadence — three mandatory points.** (a) Every 2–3 completed
+todos, a council reviewing the fixes just made. (b) At the end of every
+sub-list, a council assessing completion before the return pointer fires. (c)
+At every phase gate. Write each to `reports/marvel/COUNCIL_<subject>.md` and
+commit it with the work it reviewed. If it is not on disk, it did not happen.
+
+---
+
+## 1. Source catalog (all verified 2026-09-25; raw receipts in
+`reports/marvel/exploration_2026-09-25.md`)
+
+| id | source | role | verified |
+|---|---|---|---|
+| S1 | **Marvel Database** — `marvel.fandom.com` (279,440 articles) | primary structured corpus: every character (Earth-designated), comic issue/series/volume, event, team, location, power | API live; 50-page batch fetch verified at **2,123 pages/min** (0.3 s sleep, zero 429 in a 500-page window); `expandtemplates` verified |
+| S2 | **MCU Wiki** — `marvelcinematicuniverse.fandom.com` (48,025 articles) | live-action continuity: movies/episodes with `Plot`, `Cast`, `Appearances`, `Events` sections; the canonical cross-check set for CC speaker mapping | API live; **1,974 pages/min** verified |
+| S3 | **Marvel.com** (`/explore`, characters, comics, movies, tv-shows, articles; 22,676 sitemap URLs) | official editorial descriptions (current continuity); sub-store, campaign-neutral | sitemap index + 23 sub-sitemaps fetched; character page server-rendered (JSON-LD + embedded state) |
+| S4 | **Wikipedia** (publisher/imprint/corporate-history slice) | publisher history the fandom wikis omit | MediaWiki API (trivial); scope = decision D-4 (default: yes) |
+| S5 | **YouTube official full-episode uploads** — `Marvel Animation \| Full Episodes` playlist + @MarvelHQ full-episode uploads | CC text for the animated library (90s–2020s) | `youtube-transcript-api` verified end-to-end: 1,711 timestamped caption snippets from one official full-episode video (auto-generated track present; **no speaker labels** — see §3 speaker layer) |
+| S6 | **SDH/CC subtitle databases** — OpenSubtitles (v3, HI/"Hearing Impaired" flag), Subscene (SDH tag), Addic7ed (HI tag; reachable 200 from this host), Podnapisi (HI filter) | CC/SDH text for live-action + films: SDH adds non-verbal cues (`[MUSIC]`, `[SIREN]`, song lyrics) = `kind: sign` lines in the JJK transcript model | addic7ed reachable; subscene 403; podnapesi + opensubtitles-v3 unreachable from this host (000) — **reachability is a per-pilot measurement, not an assertion**; OpenSubtitles v3 needs a free API key (setup item) |
+| S7 | **Disney+ official CC (and audio)** — owner-account downloaders | the only legal route to live-action CC + audio (movies/Disney+ series) | decision **D-1** (owner asset) |
+| S8 | Comic Vine (issue-level credits) | candidate issue→creator mapping surface | deferred to C5; not in the download scope |
+
+Detail-loss register (why "we don't lose details"):
+
+- **L1** — Marvel infoboxes are project-namespace templates (`Marvel Database:
+  Character Template`, ~30 of them; MCU uses `Template:Character` / `Movie` /
+  …). Crawl-time `build_ontology` only elects templates whose *name* contains
+  "infobox", so without action every Marvel page would store as type
+  `unknown` with zero infobox facts. Fix: `type_aliases:` in
+  `series/marvel/overrides.yaml` + `series/mcu/overrides.yaml` (the §6
+  mapping-file mechanism; no engine change). **Done pre-crawl (A0).**
+- **L2** — Disambiguation pages (e.g. `Spider-Man`) carry the wiki's own
+  alias graph (`main_articleN` lists) and the engine's default skip pattern
+  drops them. Fix: `skip_patterns:` override hook + a small gap-fill pass
+  over the disambiguation title list (A1b) so the alias data is on disk;
+  `_aliases()` gains `currentalias` via `alias_fact_keys:` override.
+- **L3** — Fandom's Portable Infobox schema on these wikis is **v5**
+  (`parser_tag_version: 5`, a list of `{type,data}` rows with
+  `source`/`label`); `learn_field_labels` only walks the legacy `sources`
+  dict, so display labels are silently dropped. Fix: v5 walker branch
+  (small engine change, gated; lands before Phase C indexing — re-extraction
+  re-parses stored wikitext with the current parser, no re-crawl).
+- **L4** — first-appearance data templates (`1st`, `1stChron`, `1stFull`, …)
+  transclude curated lists; resolved by the existing `expandtemplates`
+  pass, which the crawler already runs per template it cannot parse.
+- **L5** — slash categories encode typed relations: `Avengers (Earth-616)/
+  Members` (group membership), `Brian Michael Bendis/Creator` (credits),
+  `A.X.E.: Judgment Day casualties` (event participation),
+  `1962 Character Debuts` (era). The generic edge builder only emits
+  wikilink mentions; the category grammar is declared per-wiki in
+  `category_relations:` (C2, generic mechanism).
+- **L6** — Lua-module rendering (what the *browser* sees) is out of scope by
+  construction: the engine parses stored wikitext, and that is what the wiki
+  is made of. Recorded so nobody later "fixes" a rendered-page mismatch.
+- **L7** — character pages wrap the **entire narrative inside the
+  infobox**: `{{Marvel Database:Character Template | ... | History = <the
+  abridged-history note>` and the box only closes at page end, so every
+  narrative section sits inside the template's parameter (measured on
+  `Peter Parker (Earth-616)`: lead `{{`/`}}` 266/265, whole page
+  1163/1163). Two generic parser gaps follow and are named, not discovered
+  ad hoc: **F1** — `find_infobox` colon-fold mismatch
+  (`Marvel Database: Character Template` vs the alias key) → character
+  pages store `facts=0` while closed-box types (comic/event/film) extract
+  fine; **F2** — the lead is the raw infobox parameter block instead of the
+  `History` value. Both fixed in A1c (gated; re-extraction applies them to
+  the stored corpus). Sections themselves are unaffected (headings are
+  found in the raw text; 37 on that page).
+- **L8** — the wiki publishes its own sample formats: every infobox's
+  `/Documentation` (or `/doc`) page carries the full empty-syntax parameter
+  list + per-field meaning (Marvel DB: 29 KB for the character template;
+  `First`, `Powers`, `Abilities`, `Affiliation`, `Creators` among the
+  fields). These are the per-archetype field specs for C1/C5 (tier 1),
+  with the PIB v5 blob (tier 2) and observed keys (tier 3) where the wiki
+  has no doc page (MCU: verified absent for `TV`/`Character`).
+
+## 1a. Bot-protected source ladder (owner-approved 2026-09-25)
+
+When a source is bot-protected — Subscene 403, Podnapisi / OpenSubtitles
+000 today, any Fandom WAF 403 escalation mid-crawl, any new wall hit in a
+pilot — climb the ladder, in order, and record which rung worked:
+
+1. **API route** (default): plain curl / `curl_cffi` with the browser UA
+   (verified on both Fandom APIs 2026-09-25; the crawler's WAF note — no
+   `Accept: application/json` header — is the first fix before any ladder).
+2. **agent-reach + OpenCLI (browser-grade; the owner's "brave app" channel):**
+   `agent-reach` (installed; `agent-reach doctor --json` verified 2026-09-25)
+   routes platforms through OpenCLI / per-platform CLIs. OpenCLI's browser
+   backend drives a real browser session, which is what gets past bot walls
+   that block headless fetches. Precondition: a browser with the OpenCLI
+   extension connected (doctor today: extension not connected — one-time
+   owner setup, recorded when done). YouTube already resolves via its
+   `yt-dlp` backend (doctor: ok).
+3. **JEV triage of what the rung found:** `~/tools/jev/bin/jev-search-
+   triage.py --query "<title> <SDH|subtitles>"` (or `--input results.jsonl`)
+   ranks the candidate URLs/files with the local decider (survivors
+   p ≥ 0.3, unjudged kept + flagged); the agent researches only survivors —
+   manual research stays cheap because the 27B never sees the raw candidate
+   pile.
+4. **Record it:** every bot-protected fetch goes to
+   `reports/marvel/receipts/<phase>/` — source, ladder rung, tool, output
+   sha256. A claim that is not on disk did not happen.
+
+Where the ladder applies: B0/B1 tier-source failures (T-SC Subscene,
+T-PN Podnapisi, T-OS OpenSubtitles v3), Fandom 429→403 escalation during A1
+(run the ladder, then resume the crawl — never blind-retry), and any D4
+blind-set source verification. A source the whole ladder cannot reach is
+not silently dropped: it becomes a named row in the CC catalog with cause
+`bot-protected: all rungs failed <date>` + retest trigger (the wall may be
+temporary; a retest is one `doctor` + one rung probe).
+
+**Throttle → egress-IP rotation (owner policy 2026-09-25).** Fandom
+throttles per IP, and a throttled IP stays throttled for the whole run.
+When a crawl connection throttles — a sustained 429 pause-loop, or the
+stall watchdog firing (`CrawlStalled`, CLI exit **42**: zero completed
+pages for `crawl_stall_seconds`, default 300 s, while titles were still
+outstanding) — the response is to **change the egress IP before
+escalating anything**: `nordvpn connect` to a *different* country/server
+(a fresh exit IP), verify the egress actually changed
+(`curl -s https://api.ipify.org` ≠ the pre-switch IP), then re-run the
+same crawl command (resumable from disk: already-fetched pages are
+skipped, `all_titles` is re-enumerated, the partial manifest's `stalled`
+marker is replaced). Keep rotating servers while throttling persists; a
+stalled path is never blind-retried on the same IP. The VPN switch is the
+rate-limit escape hatch, not a rung of the bot-wall ladder above (that
+ladder is for walls; this is for limits).
+
+Egress state of this host (2026-09-25 — the stack must stay true or the
+VPN is useless): the ISP blackholes public TCP/53 + UDP/53 and outbound
+UDP/443 (QUIC), so all resolver traffic rides the local DoH-backed DNS
+stack: `nordvpn-dnsfwd` (127.0.0.1:5353 + 127.0.0.55:53),
+`nordvpn-dnsfix` (DNAT/REJECT iptables), `nordvpn-conntrack-flush.timer`
+(60 s), static `/etc/resolv.conf` → `127.0.0.55`. If `nordvpn` starts
+15-seconding again, the first suspect is one of those four units having
+died, not the account. Account: the owner's OAuth login may still be
+pending (`nordvpn login` → browser flow, headless fallback
+`--callback`); a session reporting "You're not logged in" cannot
+`connect` — record it, do not stop the run on it (the crawl runs on the
+direct ISP egress until rotation is needed).
+
+## 2. Phase A — Download (no model, no GPU; resumable, hash-pinned)
+
+**A0 — series scaffolding + overrides. (EXECUTED at plan time.)**
+- `series/marvel/`, `series/mcu/` trees + `overrides.yaml` each
+  (`type_aliases` per L1; minimal `skip_categories`; `citation_params`
+  `r → comic` for Marvel DB's `{{r|Amazing Spider-Man Vol 1 15}}` reference
+  grammar — verified on character pages; refine in C1).
+- PREMISE: `type_aliases` keys match the normalized template names the
+  crawler sees. VERIFY: one 50-title batch fetch; assert a `Peter Parker
+  (Earth-616)`-shaped page types as `character` with `facts > 0`
+  (`reextract` + inspect). IF REFUTED: log deviation, fix the alias spelling
+  (the `Marvel Database:` prefix normalisation), re-verify.
+
+**A1 — full crawl, S1 + S2.**
+- `python -m scriptengine.cli crawl --series marvel --start-url
+  https://marvel.fandom.com/wiki/Marvel_Database` (279,440 titles ≈ 3–4 h at
+  the measured rate; crawler resumes by on-disk title set).
+- `crawl --series mcu --start-url
+  https://marvelcinematicuniverse.fandom.com/wiki/Marvel_Cinematic_Universe_Wiki`
+  (48,025 ≈ 30–60 min; separate host, may run in parallel — 429 pools are
+  per-host; watch both logs).
+- Manifest pins: `revid` per page (gold-pinning per Plan_to_perfection §5.2),
+  `all_titles` (the audit resolves links against the full enumeration),
+  `crawled_at`, failed/skipped lists.
+- **Crawl ops (owner 2026-09-25):** per-page fetch timeout =
+  `crawl_timeout_seconds` (30 s, `SCRIPTENGINE_CRAWL_TIMEOUT_SECONDS`) — a
+  page that does not answer in 30 s is abandoned, retried, then failed, so
+  one dead route can never hold a worker; stall watchdog =
+  `crawl_stall_seconds` (300 s, `SCRIPTENGINE_CRAWL_STALL_SECONDS`) →
+  `CrawlStalled` → CLI exit **42** + a `stalled` marker row in the
+  manifest → **switch the VPN server/country for a fresh egress IP,
+  re-run the same command** (the §1a throttle policy; the resume is
+  disk-driven, nothing is lost). Each run's log is a receipt:
+  `reports/marvel/receipts/crawl_marvel.log` / `crawl_mcu.log` (rewritten
+  per run).
+
+**A1b — hook + gap-fill (L2).** `skip_patterns:` override hook +
+`alias_fact_keys:` (both small, four gates green) + targeted crawl of the
+disambiguation title list (from `list=search`/category walk) + re-extract.
+
+**A1c — parser shape fixes F1 + F2 (L7), during the crawl.** Generic,
+gated: (F1) colon-fold template-name normalisation in `find_infobox` /
+`infobox_candidates` (one helper, both sides); (F2) when the lead's first
+top-level template is unclosed inside the lead (parameter-wrapped
+narrative, L7), the lead is the `History`-value pre-heading portion, not
+the raw parameter block — the branch fires only on the unclosed shape, so
+JJK/CSM pages are untouched (pinned by the existing suite). Four standing
+gates green before the change is committed. No re-crawl: `load_extracted`
+re-parses stored wikitext with the current parser at index time
+(documented crawler architecture), so the stored JSON snapshots are
+corrected without refetching. The MCU `TV` alias (found in A0) is already
+in `series/mcu/overrides.yaml`.
+
+**A2 — marvel.com sub-store (S3).** Crawl the 22,676 sitemap URLs →
+`series/marvel/web/` (raw HTML + extracted JSON: name/description/cast-ish
+fields), `manifest.json` with per-URL sha256 + fetched_at. Campaign-neutral:
+outside the `facts.db` denominator (JJK-transcripts precedent; drift-log
+entry required).
+
+**A3 — Wikipedia slice (S4, if D-4 yes).** Publisher/imprint/history pages →
+`series/marvel/wiki/`, same sub-store shape.
+
+**GATE A — DOWNLOAD (council checkpoint).**
+Exit evidence, emitted: (1) manifest `pages_enumerated` == denominator annex
+for both wikis (re-measured same day); (2) on-disk page count == enumerated −
+skipped − failed, with the skipped/failed lists archived and every non-empty
+failed list re-run to zero or named; (3) `revid` spot-check: 10 random pages,
+stored `revid` == live API `revid` (or an explicit diff = wiki edited between
+crawl and check, recorded); (4) type histogram: `unknown`-type share < 5% of
+pages with infoboxes (L1 proof); (5) L4 expand spot-check on 5 pages;
+(6) four standing gates green (crawl touches no gated code — the gate run
+proves it); (7) council verdict recorded in
+`reports/marvel/COUNCIL_gate_A_download.md`.
+GATE A is a precondition on Phase B/C advancement, not a hand-off.
+
+## 3. Phase B — CC corpus (speaker attribution is a hard requirement)
+
+Owner requirement (2026-09-25, both messages): closed captions — **speaker
+names visible**, not bare subtitle text. Architecture (JJK-transcript
+precedent, extended): per-title documents with lines
+`{t, speaker, text, kind: line|sign}`, `sign` = SDH non-verbal cue
+(`[MUSIC]`, `[SIREN]`, song lyric) — the JJK `SIGN` line class.
+
+Storage: `series/marvel/cc/` — raw caption files + `manifest.json` (url,
+sha256, source, credits, fetched_at) + `cc.db` (SQLite FTS5, separate from
+`facts.db`) + `qdrant-cc/` (own VectorStore dir, JJK Phase-2 shape).
+Campaign-neutral w.r.t. the wiki gates; drift-log entry required.
+
+**B0 — catalog (no model).** Build `reports/marvel/cc_catalog.jsonl` from the
+wikis themselves, not from a hardcoded list (JJK-lesson: structure is the
+source of truth):
+- MCU movies/series: MCU Wiki categories (`Released Movies`, `Phase N Movies`,
+  per-series nav templates) → title, year, episode_count.
+- Animated library: Marvel DB `Series Template`/`Episode Template` pages +
+  the YouTube official playlist inventory (S5) → title, season, episodes,
+  `audio_source: youtube:<id>` when present.
+- Live-action (Netflix/ABC era): MCU Wiki + Marvel DB series pages; cross-
+  check against S6 catalog availability.
+Each row: `{title, class: movie|series|animated, source_tier, audio_source,
+cc_source, episode_count, status}`. **Completeness is measured, not
+asserted**: every released title in S2's movie/series pages must have a row,
+or be named-excluded with a one-line cause (D1 discipline).
+
+**B1 — text layer (no model).** Per row, fetch CC/SDH text via the tier
+order, per-title first hit wins, recorded:
+`T-YT` (S5, transcript API; `asr: true` flag) → `T-OS` (OpenSubtitles v3,
+`hearing_impaired` flag preferred, fallback any) → `T-SC` (Subscene, SDH
+tag) → `T-A7` (Addic7ed, HI tag) → `T-PN` (Podnapisi, HI filter) →
+`T-DP` (S7, if D-1 yes). A tier whose fetch is bot-protected climbs the
+§1a ladder (agent-reach + OpenCLI browser-grade rung, JEV-triaged) before
+the tier is marked failed; reachability is re-measured at run time per
+source (addic7ed 200 / subscene 403 / others 000 from this host today —
+the catalog records what actually served each title, not what was intended).
+Parse to `{t, speaker, text, kind}` — SDH cue lines become `kind: sign`
+(verbatim, JJK lossless rule: every cue line lands, zero loss).
+Licensing (JJK blind spot #8, carried): personal local KB only; source +
+upload/sub-team credits in the manifest; any derived product carries the
+credit tag.
+
+**GATE B1 (council checkpoint).** Catalog completeness == denominator
+annex CC row (every released title present or named-excluded); zero parse
+failures (assert every timestamped line carries text; `sign` lines counted,
+not dropped); per-title manifest sha256 pinned; four gates unchanged.
+Exit evidence emitted, archived in `reports/marvel/receipts/b1/`.
+
+**B2 — speaker-attribution pilot (10 titles, all tiers; GPU window).**
+This is the CSM "pilot's job" pattern: 10 titles end-to-end, measured cost,
+council sets the scale budget. Nothing scales before the pilot numbers exist.
+1. **Install (prereq):** ffmpeg (static or apt), `faster-whisper` (ASR,
+   large-v3), `pyannote.audio` (diarization 3.1 — needs a free HF token,
+   terms acceptance). Streaming audio: one title in flight, process → keep
+   text/JSON, drop audio (35 GB free on /home; the full library would be
+   ~250 GB — disk math recorded in the pilot receipt).
+2. **Per title:** audio (T-YT: yt-dlp `--audio-only`; T-DP: downloader
+   media) → faster-whisper ASR (forced-alignment timestamps) + pyannote
+   diarization (per-line speaker cluster) → **deterministic mapping,
+   closed-set, no-guess** (the JJK alias-table discipline):
+   - candidate set for each title = the episode/movie's wiki
+     `Appearances`/`Cast` list (S2 has both; Marvel DB animated shows carry
+     voice-cast data) — a mapped speaker MUST be in that set (FK gate);
+   - live-action: cluster → actor via per-scene cast where the scene is a
+     closed set; otherwise the 27B mapping pass (GPU card-to-itself window)
+     proposes character assignments, each stamped `confidence` + evidence
+     quote; `confidence < 0.8` → `SPEAKER n (unmapped)`;
+   - animation: recurring-voice consistency across episodes is the extra
+     check (a character's cluster must be stable across the series;
+     violations → re-cluster, not re-guess).
+3. **Pilot exit (council):** measured per-episode cost (ASR min, diarization
+   min, mapping calls, wall-clock), mapping gate violation count (target 0),
+   and the budget ruling: full scale in GPU windows (ab-bay discipline: Qwen
+   dial-down window, ~200–300 GPU-h estimated for the priority ~400 titles)
+   vs CPU batch (32 cores; measured at pilot, ~5–8× GPU time — abort/shrink
+   rule per CSM-P2 precedent: over budget → shrink to T1 priority titles,
+   long tail keeps B1 text with `speaker: none` + named floor).
+   **Named floor (pre-registered):** a title may end at text-only only if it
+   has **no audio source at all** (no T-YT, no S7, no legal audio) — cause +
+   retest trigger recorded. "Audio exists but mapping was expensive" is
+   not a floor; it is budget, and budget goes to the council.
+
+**B3 — scale (tiered).** T1: MCU movies (35) + flagship Disney+ series +
+flagship animated series. T2: Netflix/ABC live-action. T3: animated long
+tail. Each tier closes with the B-gate checks below + a council checkpoint.
+
+**GATE B (council checkpoint, per tier and final).**
+(1) CC text coverage of catalog = 100% or named floor (SQL: catalog rows
+without a cc.db doc, cause column populated). (2) Speaker coverage: per-tier
+`attributed / total lines`, reported with the named floor — the number, not
+the phrase "done". (3) Mapping gate violations = 0 (FK: every mapped
+speaker resolves to a wiki character node; closed-set: mapped speaker ∈
+title's Appearances/Cast; verbatim: line text == source caption text, no
+rewording — the JJK "never reword to pass" rule, mechanical here); (4)
+temporal sanity: no speaker active at two overlapping timestamps (diarization
+invariant, checked on stored rows); (5) four standing gates unchanged.
+Council verdict per tier.
+
+## 4. Phase C — Extraction & the full map ("every character, comic, event")
+
+**C1 — T0 structured generation (free).** `page_gen` is series-agnostic
+(Plan_to_perfection §4): point it at `marvel` + `mcu` `facts.db`; identity
+fields declared in overrides (`Name`, `CurrentAlias`, `Title`, `Image`…
+Marvel's infobox params are already human-readable keys, so the
+`identity_fields:` map is short). Measure field coverage per wiki (the
+readiness metric); a low number here buys a mapping-file entry, not a
+campaign. Field specs come from the three-tier source (L8): the wiki's own
+`/Documentation` page where it exists (Marvel DB — parse the empty-syntax
+`<pre>` block + per-field meaning into a per-archetype spec), else the PIB
+v5 `infoboxes` blob (after the L3 walker fix), else observed parameter keys.
+A field in the spec but absent on a page is an empty fact, not an error;
+a field *not* in the spec is kept and flagged (no silent drop — the detail
+rule).
+
+**C2 — category → relation edges (L5).** `category_relations:` override
+grammar, generic mechanism: `{pattern: "*/Members", relation: member_of}`,
+`{pattern: "*/Creator", relation: created_by}`, `{pattern: "*/casualties",
+relation: event_participant, kind: casualty}`, `{pattern: "(\\d{4}) Character
+Debuts", relation: debuted_year}`. Edges carry provenance
+`category:<name>` + confidence. Gate: sampled against the infobox's own
+affiliation/creator fields — a category edge contradicting the page's
+infobox is a finding, not a keep.
+
+**C3 — alias & universe alignment (deterministic).**
+- Within-wiki: disambiguation `main_articleN` graph (A1b) + infobox
+  `Name`/`CurrentAlias` (L2 hook) → canonical entity per (name, Earth-XXXX).
+- Cross-corpus: `marvel` (Earth-616 canon) ↔ `mcu` (Earth-199999) ↔
+  `marvel.com` ↔ `cc.db` speakers, via explicit alias tables in
+  `overrides.yaml` (`subject_aliases:` shape) — never LLM-guessed; the
+  MCU-wiki `Appearances` lists are the cross-check (a CC speaker mapped to
+  "Iron Man" must appear in that movie's MCU-wiki Appearances list).
+
+**C4 — events (D6 shape).** `ingest/events.py` precedent (JJK Phase 2):
+two passes — (3a) placement set on `event`/`conflict`/`story_arc` types
+(Marvel DB) + MCU movie/episode `Plot`/`Events` sections (cheap, gate-
+proven first), then (3b) widen to character narrative sections (the
+"Ragnarok Cycle / Civil War (Event) / One More Day" headings — event-named
+sections, the JJK arc-heading finding: placement is structural where the
+wiki files it under a heading). Event rows: `(subject, verb, object,
+placement_key, section, quote, temporal)`, three-check gate (verbatim quote,
+FK participants, placement exists **or** `temporal=false`), plus cross-page
+agreement (the Civil War fight on Peter Parker's page, the event page, and
+the CC episode must agree). **CC-derived events**: per-episode beat rows
+from B2/B3 (episode = placement container; the MCU timeline spine).
+
+**C5 — dimension map (JJK §12 shape; nothing scheduled without its
+consumer + failing test).**
+| dimension | source | consumer (the query it buys) |
+|---|---|---|
+| character → abilities/powers | `Power Template` pages + `Abilities` sections | "what can X do" |
+| character → affiliations over time | `*/Members` categories + team pages | "who was in the Avengers in 1964" (state-over-time) |
+| character → event history | C4 events + event-named sections | "what happened to X, in order" |
+| comic issue → credits | `Comic Template` (writers/artists) + C8 if adopted | "who wrote Amazing Spider-Man #300" |
+| comic issue → events/plots | `Comic Template` plot fields + episode/issue `Plot` | issue-level beat support for scripts |
+| character → filmography | MCU wiki `Appearances`/`Cast` + CC speaker rows | "every MCU movie X is in, with what they did" |
+| character → voice/dialogue | `cc.db` per-character dialogue (JJK `dialogue` door) | the character's actual lines — voice dataset |
+Each row schedules only when the consumer names a real query and the
+acceptance column names a test that can fail (the §12 rule, verbatim).
+
+**C6 — question bank + census (CSM method seed).** `page-gen` T0 batch →
+census (CSM v1 schema: class/subject/q/expect/hits/verdict, mechanical
+term-count judge) + 200-row OOS protocol (seeded draw from the whole
+population, no leak exclusion) + named-limit register. The bank is the
+regression suite; the OOS is the anti-theater arm (the executing agent runs
+it, never edits it).
+
+**GATE C (council checkpoint).** D1 (every page covered or excluded in
+writing — the exclusion file committed), D2 (archetype depth floors:
+character/comic/event/film/series/episode/location, measured against
+populated sections), D3 (zero unfiled engine gaps; red list not empty),
+C-gate evidence: census baseline + OOS pre-score + `unknown`-type residue
+report + four standing gates + `chunk-containment` (tier 0) for both wikis
+at 0 unreachable (the JJK D5 class: chunker-skip vs oracle-content
+divergence is checked before any prose work — the wave-0 pre-pass,
+Plan_to_perfection §7).
+
+## 5. Phase D — 100% declaration
+
+**D1 — standing gates (per change, no exceptions).**
+Four unchanged (pytest pin from CLAUDE.md, eval jjk, span-recall jjk,
+canon opm) + Marvel set: pytest full, `eval --series marvel`,
+`chunk-containment --series marvel`, `eval --series mcu`,
+`chunk-containment --series mcu`, census OOS re-score (floor per CSM
+annex: OOS post ≥ pre − 2; a drop of 3+ voids), CC mapping-gate SQL
+(§B gate 3) after any cc.db change.
+Standing guards: 0 green→red counter-flips (a counter-flip rolls back its
+mechanism alone); blind-set accuracy must not trail bank movement.
+
+**D2 — blind fresh set (CSM Step 0 shape).** ~24 fresh Marvel questions
+(named limit classes: universe-variant characters, event enumeration,
+issue-level facts, state-over-time), corpus-verified expect terms, frozen
+to `reports/marvel/blind_fresh.jsonl`, scored against the frozen build.
+Fixes that move only the bank fail against it.
+
+**D3 — D5 reachability exhaustive.** Pinned panel (hashed, not
+`random.Random(7)` — the §2a trap), held-out split the executing agent
+never sees, full tier-1 sweep (the real D5: the served bundle contains the
+line) across qa/roster/narrative doors, miss file to zero (or a
+documented floor with cause + retest).
+
+**D4 — D6 consistency.** Event placement + cross-page agreement + CC-episode
+agreement checks (§2b gates: one event in two placements, era-less event
+rows, beat ordering contradicting an episode number, cross-page fact
+disagreement) → zero violations.
+
+**D5 — declaration (final council).** Only when: bank 100% green +
+blind set at declared threshold + D3 miss file empty (or documented floor)
++ D4 zero violations + CC text coverage 100%/named floor + speaker
+coverage number on the record + final four-gate green run +
+`PHASE_MARVEL_100.md` declaration record. Remainder rows close by flip or by
+explicit void-set criteria (cause + defect + retest pointer, council-
+decided — never by phrasing). **That council, not this plan, declares
+100%.**
+
+## 6. GPU & resource discipline (carried from CSM_100_CLOSE)
+
+- Steady state: Qwen at working dial, `:8000` down. Whole-card windows
+  (Qwen dial-down, trap-restored to the exact argv) REQUIRED whenever the
+  retrieval stack must co-locate or a 27B extraction batch runs — triple
+  residency peaks above the 32 GB card.
+- B2 pilot + C4 extraction = 27B card-to-itself windows (ab-bay discipline;
+  the invoking session directs only).
+- CC audio processing (ASR + diarization): pilot measures it; GPU windows
+  vs CPU batch is the B2 council ruling (budget in hours, abort/shrink
+  rules, CPU-fallback number — a CPU fallback is a decision with a measured
+  reason, never a default).
+- Disk: 35 GB free — streaming audio (one title in flight), text/JSON
+  retained, audio dropped; the pilot receipt records the disk math.
+- State survival: commit BEFORE gates; never gate an uncommitted tree
+  twice; re-crawls are hash/resume-driven (manifest sha256), never blind.
+
+## 7. Halt, step semantics, councils
+
+- Every step carries **PREMISE / VERIFY (exact command, exact tree) /
+  IF HOLDS / IF REFUTED** (flow.md §14). A refuted premise halts the step,
+  logs to `plan/deviation_reasons.md` with the raw output that refuted it,
+  and surfaces. Refusal authority, not substitution authority.
+- Halt conditions suspend the phase, not the run; the halt path runs a
+  council first; a halt the council finds unresolvable inside the plan as
+  written stops the run.
+- Councils: GATE A, GATE B1, B2 pilot (budget), GATE B (per tier + final),
+  GATE C, D5 final — plus cadence (a)/(b)/(c). All to
+  `reports/marvel/COUNCIL_*.md`, committed with the work, DB-verified
+  before recording.
+- Drift-log entries: CC layer, marvel.com sub-store, Wikipedia sub-store
+  (campaign-neutral additions, JJK-transcript precedent).
+
+## 8. Open decisions (owner assets / scope — recorded, not asked at runtime)
+
+- **D-1** Disney+ account for S7 (live-action CC + audio). Without it:
+  live-action audio comes from S5/S6 where legal, and the B-gate named
+  floor swallows the residue with causes. Owner can supply at any time;
+  the catalog's `source_tier` picks it up without rework.
+- **D-2** Scope boundary: Fox-era X-Men / Men in Black / 3rd-party
+  licensed shows (e.g. Sony's Spider-Man 2017). Default: **in when
+  Marvel-owned or Marvel-licensed** (the fandom wikis' own categories
+  decide, not this plan); otherwise named-excluded with cause.
+- **D-3** CC long-tail budget cap (B2 council sets the number; this plan
+  pre-registers the abort/shrink shape only).
+- **D-4** Wikipedia slice (S4). Default: yes (cheap; publisher history the
+  fandom wikis omit).
+- **D-5** OpenCLI browser-extension connection (one-time owner setup;
+  precondition for the §1a rung-2 browser-grade fetches). Until it is done,
+  rung 2 degrades to the per-platform CLI backends agent-reach has healthy
+  (youtube: yt-dlp, ok today).

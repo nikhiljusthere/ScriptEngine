@@ -70,7 +70,7 @@ def crawl(
     paths = series_paths(series, settings)
     overrides = _load_overrides(paths)
 
-    from scriptengine.ingest.crawler import EnumerationFailed
+    from scriptengine.ingest.crawler import CrawlStalled, EnumerationFailed
 
     async def run() -> dict:
         async with WikiCrawler(settings) as crawler:
@@ -78,6 +78,15 @@ def crawl(
 
     try:
         manifest = asyncio.run(run())
+    except CrawlStalled as error:
+        console.print(f"\n[magenta]Crawl stalled:[/magenta] {error}")
+        console.print(
+            "[yellow]Switch the egress IP (a different VPN server/country, or a "
+            "different network), then re-run the same command — the crawl "
+            "resumes from disk. Never blind-retry a stalled path on the same "
+            "IP.[/yellow]"
+        )
+        raise typer.Exit(code=42) from error
     except EnumerationFailed as error:
         console.print(f"\n[red]Crawl aborted:[/red] {error}")
         raise typer.Exit(code=1) from error
