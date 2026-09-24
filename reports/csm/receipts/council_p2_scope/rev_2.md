@@ -1,0 +1,7 @@
+# Peer review R2 (logic) — council #38 (2026-09-24)
+
+**1. Strongest: B** — most plan-changing catches: (Q1) the registered "post-extraction re-grade" of the 11 extraction-gated rows is a qa-axis no-op (the qa door doesn't read events; chunks unchanged) → relabel retrieval-gated; (Q2) 7–9 h omits post-extraction full gates + span/coverage re-proof → honest 8.5–11 h; (Q3) the bar binds only {149,252}, so 40 beyond-class counter-flips still PASS → pre-register a bound. D leads on Q4 (index-state + partial-index confound).
+
+**2. Biggest blind spot: E.** "Flip + width ship: 486/486" is false — 469 + 4 (flip) + 2 (width) = 475; the 11 residual rows (abl, arcn-03/04/06/08, caus-03, state-02/03/09) need roster routing / 5.4. "Fund the full 511-page keep-list" is infeasible — only 230 keep-list pages are in the corpus queue. Its "must ride the post-extraction index else stale index" is a non-sequitur: both arms grade one index; the real issue (D) is completeness.
+
+**3. All five missed: the plan's P2-execute zero-regression receipt (index shape, events remap, vector counts).** A/B/C add span/coverage + full gates, but nobody budgets the events-remap-loss + vector-count check (framed Q2's failure mode). A silent remap drop passes uncaught; pre-register it in leg (e) vs D6's "333→333, 0 dropped" (B's no-op rests on that guard).

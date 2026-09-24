@@ -1148,3 +1148,96 @@ cited from the committed ledger legA entry — never the silent
   is committed, not claim-only on a fresh clone — the `LEGA_*.log`
   set is force-added (gitignored `*.log`) and the canon re-run dir
   `reports/2026-09-19-2004/` is tracked.
+
+## D37 — P2-scope lock (council #38) + the GPU window's pre-registered shape (2026-09-24)
+
+Council #38 (receipts `reports/csm/receipts/council_p2_scope/` —
+`framed_question`, advisors `adv_A–E` + `ANON` (A=Executor, B=Contrarian,
+C=First-Principles, D=Outsider, E=Expansionist), peer reviews
+`rev_1–5` (R1 fact-check / R2 logic / R3 risk / R4 completeness, retried
+after a harness abort / R5 devil's advocate), `chairman.md`, JEV
+measurement `JEV_MEASUREMENT.md`; design docs
+`P2_SCOPE_EXTRACTION.md` + `receipts/d6_probe/WIDTHCLASS_PREDICT.md` +
+`D7A_NUMERIC_COLLISION.md` amended in place; ledger #38 + backfilled #37
+in `reports/comprehension/COUNCIL_HISTORY.md`) ruled the P2-scope design
+**LOCKED with 8 amendments**. The rulings, as landed:
+
+- **Q1 (extraction ≠ the qa-floor lever):** all 16 FLOOR16 rows
+  re-proven per-row, model-free — every row's gold sits in kept ∩
+  chunked sections and loses at qa-door ranking (width / ranking /
+  door); D6 measured 333 events flipped 0/486. Leg (c) extraction is a
+  **pre-registered STRETCH leg**: it completes the narrative/auto-door
+  event layer + the Q4 coverage compounding and buys none of the 16
+  qa-door flips. The 11 "extraction-gated" dim rows of the D7-CLOSE
+  register are **re-labeled retrieval-gated** on the qa axis (their
+  disposition = the levers or the 5.4 named-limit void set).
+- **Q2 (window shape):** the window commits to **minimum-viable
+  (a)+(b)+(d)+(e) ≈ 5 h**; (c) runs only on owner word + the
+  first-10-pages rate probe (≤ 1.2× D6 rate ⇒ full 230 pages;
+  1.2–2× ⇒ shrink to the 16-floor gold-section union + the 69 event
+  sections; > 2× ⇒ abort (c) to the next window, MV legs unaffected).
+  Leg (e) carries the **zero-regression receipts** (index shape vs the
+  D6 baseline, events remap 333→N with 0 drops, Qdrant vector counts,
+  JJK diff = gate artifacts only, span-recall + coverage 473/537
+  remainder-0 re-proof). **No commits during the window** (a mid-window
+  HEAD move mixed-stamps the A18 sweep ledger ⇒ 2.7 h restart; commits
+  at window boundaries only, path-limited, never staging the owner's
+  dirty files).
+- **Q3 (the width instrument):** faithful to the D7-CLOSE trigger line
+  — a class-scoped top_k=30 *measurement* (not an ABILWIDTH re-tune;
+  D59). New **beyond-class bound**: 0 beyond-class counter-flips for
+  PASS; a violation does not void the class-scoped evidence but bounds
+  the shippable unit to the class-scoped hunk.
+- **Q4 (order):** **(d) runs BEFORE (c)** (3-of-5 + the chair; the
+  Expansionist alone dissented). (d) grades the same-index counter
+  sweep; (c) only appends the narrative-door events table, so the
+  pre-extraction index is not stale for (d) — and a leg-(c) OOM/abort
+  can never grade (d) on a partial index.
+- **Q5 (TIERED flip):** stays **a separate gated owner-word window**
+  (unanimous): one-char `context.py:583` "0"→"1" + 4 gates flag-ON +
+  p23 473 repro + JJK non-regression. Never bundled with this window
+  (mixed-stamps the A18 ledger; confounds flag-OFF/ON floors).
+- **Close arithmetic (corrected record, R1/R2):** close = **ledger
+  closure** — every 486 row green OR voided with a named defect + leg +
+  retest pointer (council-ruled, never by phrasing). The lever path
+  caps at **475** (TIERED flip → 473, + 2 width rows → 475); the 11
+  residuals close by lever retest or the 5.4 named-limit void set. A
+  guaranteed 486/486 is **never** claimed.
+
+**Window-killer pre-checks (run BEFORE Qwen is stopped):** (1)
+`mountpoint /mnt/PROJECTS` (root-owned fuseblk, touched 2026-09-24
+~00:27 — re-verify); (2) the model file
+`/mnt/PROJECTS/ninfer-transfer/models/qwen3_8_27b_nvfp4.ninfer`
+(18.3 GB) present + readable; (3) the owner's uncommitted
+`tools/csm/d7_gates.sh` restore argv (line 36) resolves — verified this
+session ~05:3x (mount up, file present, argv resolves; the argv is
+authoritative and stays uncommitted); (4) the detached window chain
+(`d7_window_chain.sh` pattern) writes STATE + RECEIPT sentinels per leg
+(OOM/per-page crash resumes at workers 1 inside the chain — there is no
+mid-window executor); (5) owner-alert rule: any gate leg RED, a
+sentinel missing by its leg's budget, or a restore failure ⇒ owner
+intervention (the window runs owner-out-of-the-room; failures surface
+at window end via the sentinels).
+
+**The window's leg commands (owner-triggered; per-leg, detached):**
+
+| leg | command | receipt |
+|---|---|---|
+| (a) R-8 gate window | `setsid nohup bash tools/csm/d7_gates.sh` | `/tmp/d7_gates/` STATE + RECEIPT |
+| (b) P2.1 sweep (stamp-wipe @ current HEAD) | `setsid nohup bash tools/csm/p21_sweep.sh` | the A18 five-ledger set |
+| (c) extraction — **stretch only** (owner word + rate probe; dry-run first: re-verify 230/406 at the window's HEAD) | `scriptengine/.venv/bin/python -m scriptengine.cli events-extract --series csm --scope corpus --pages reports/csm/p2_keep_pages.txt --workers 2` | `reports/csm/receipts/p2_extract/RECEIPT` (a fresh writer, owed pre-window) |
+| (d) width-class instrument | `tools/csm/widthclass_run.py` (the pre-registered vehicle, owed pre-window) | `reports/csm/receipts/d6_probe/widthclass_run.md` |
+| (e) re-grade + guards | `setsid nohup bash tools/csm/p23_handoff.sh` | p23 legs + the zero-regression receipts + the D7a 37-row retest (id-pinned roster) + blind 19 |
+
+Standing guards on every regrade, no exceptions: 0 green→red
+counter-flips; green30 30/30; OOS200 drop < 3 vs `D6_OOS_PRE` (floor
+166); blind 19/19; the 4 gates green; JJK diff = gate artifacts only;
+blind-set accuracy must not trail bank movement.
+
+**JEV measurement (amend #38-7):** the council #38 window cost = 175
+requests / 10.46M prompt / 336k output / **67.76% prefix-cache hit** vs
+the R-5 baseline 3.76M / 110k / 6.1% (`JEV_MEASUREMENT.md`); pruner
+logs clean (0 `hook_error` in both; the bash pruner's 61
+`no_scoring_capacity` fail-open events 23:05–00:06 UTC = the fast lane
+had no scoring capacity for that ~1 h — by design, no mutation,
+logged). Repeat per council through the close.

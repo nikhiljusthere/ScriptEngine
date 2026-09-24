@@ -1,0 +1,11 @@
+# The Outsider — council #38 (2026-09-24)
+
+Q1. The D6 zero-flip result (333 events, 0 flips) justifies "extraction is not the qa-door lever," but the claim is door-specific: the docs themselves concede state-over-time interval facts (state-02/03/09) are enriched by extraction for the narrative door. Keep those rows in scope — but the narrative-axis re-grade has no named bar, so that lever is unmeasured.
+
+Q2. Two load-bearing gaps. The on-disk census file is the Leg B census (469, pool-140/358 green / pool-149/252 red) — the same count as product (469) but the opposite red set; a fresh owner reading it at the window will mistake Leg B for product state. And the window's restore path depends on an uncommitted "do not commit it" edit in `tools/csm/d7_gates.sh` (the /mnt/PROJECTS model path): a 7–9 h Qwen-down window whose recovery hinges on an unversioned file.
+
+Q3. Faithful to #37, but the line between "new pre-registered instrument" and the forbidden "ex-post re-tune" (D59) is undefined operationally — a stranger cannot tell when measuring top_k=30 becomes a re-tune. The bar is also weaker than the standing guards it runs under: it binds only on the 4-row class and lets an outside counter-flip "re-open class scope" without voiding PASS, while every regrade's guard is 0 green→red counter-flips.
+
+Q4. The instrument is stated to be measurement-only and to touch no engine state, so it has no hard dependency on extraction. But it grades against whatever index exists, and extraction rebuilds it — so the width verdict silently rides on extraction's index state. If extraction OOMs/shrinks (pre-registered), the instrument runs against a partial index and the width verdict is confounded. Run it before extraction, or pre-register which index state it grades against.
+
+Q5. Keep TIERED separate: it is a one-char engine commit + 4 gates at flag-ON + owner word — a different gate profile and a different decision than this flag-OFF measurement window. Bundling couples a binary engine-ship to a 7–9 h window and muddies the abort path.

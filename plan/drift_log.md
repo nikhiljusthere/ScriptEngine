@@ -2413,3 +2413,69 @@ entry.
     "None" = the provisional stamp is voided, close reverts to
     deferred. The standing session made no engine diff, no TIERED
     flip, no width leg, no p23 re-grade, no JJK move, no GPU use.
+
+## D37 — P2-scope lock (council #38) + JEV measurement receipt (2026-09-24, opencode)
+
+- **What:** the CPU-side plan-order leg of the JEV-setup checkpoint:
+  (1) model-free re-proof of the 16 FLOOR16 rows (every row's gold in
+  kept ∩ chunked sections; all 16 = retrieval-config gaps — width /
+  ranking / door; D6 measured 333 events flipped 0/486 ⇒ extraction ≠
+  the qa-floor flip lever); (2) the locked extraction scope (27B
+  events-extract on the JEV keep-list: 230 pages / 406 sections
+  dry-run-verified, ~158 pages net-new vs D6's 72); (3) council #38 on
+  the P2-scope design + D7a exit (5 advisors + 5 peer reviewers +
+  chairman, strictly sequential; receipts
+  `reports/csm/receipts/council_p2_scope/`, R4 retried after a harness
+  abort); (4) the 8 amendments landed in place:
+  `reports/csm/P2_SCOPE_EXTRACTION.md` (window shape minimum-viable
+  (a)+(b)+(d)+(e) ≈ 5 h with (c) as the pre-registered stretch leg;
+  (d) BEFORE (c); zero-regression receipts + no-commit rule in (e);
+  1.2–2× shrink band; window-killer pre-checks; JEV receipt
+  assignment; close arithmetic), `reports/csm/receipts/d6_probe/WIDTHCLASS_PREDICT.md`
+  (beyond-class counter-flip bound = 0 ⇒ class-scoped hunk only on
+  violation), `reports/csm/D7A_NUMERIC_COLLISION.md` (id-pinned 37-row
+  box-class roster: story_arcs_box 10 / chapter_box 9 / episode 9 /
+  volume_box 9).
+- **Verdict (council #38, `chairman.md`):** **LOCKED WITH 8 AMENDMENTS.**
+  Q1 extraction is not the qa-floor lever (stretch leg, narrative-door
+  event layer + Q4 coverage; the 11 "extraction-gated" close-register
+  rows re-labeled retrieval-gated on the qa axis). Q2 minimum-viable
+  window ≈ 5 h; (c) owner word + first-10-pages rate probe (≤1.2× full,
+  1.2–2× shrink to the 16-floor gold union + 69 event sections, >2×
+  abort to the next window); no commits in-window (A18 mixed-stamp
+  trap); window-killer pre-checks BEFORE Qwen stop (mount / model file /
+  the owner's uncommitted restore argv / sentinel chain / owner-alert
+  rule) — all three disk-checks verified this session (~05:3x: mount up,
+  18.3 GB file present, argv line 36 resolves). Q3 the width instrument
+  stands (measurement, not an ABILWIDTH re-tune; D59) + the beyond-class
+  bound. Q4 (d) before (c) 3-of-5 + chair (index-state argument: (c)
+  only appends the narrative-door events table; a leg-(c) OOM can never
+  grade (d) on a partial index). Q5 TIERED flip = its own gated
+  owner-word window (unanimous). Close = ledger closure (green OR voided
+  with named defect + leg + retest): lever path caps at 475 (flip → 473,
+  +2 width); the 11 residuals by lever retest or the 5.4 named-limit
+  void set; a guaranteed 486/486 is never claimed (R1/R2).
+- **JEV measurement receipt (amend #38-7, `JEV_MEASUREMENT.md`):**
+  council #38 window (04:49:26–05:34:36 +0530, `serve-4332`) = 175
+  requests / 10.46M prompt / 336k output / **67.76% prefix-cache hit**
+  (7,090,433 hit tokens) vs the R-5 baseline 3.76M / 110k / 6.1% — the
+  cache-hit delta is the JEV win; prompt volume ~2.8× is the 11
+  subagent sessions vs the smaller R-5 session (directional, not
+  like-for-like). Pruner logs: context-pruner 12 lines (2 apply, this
+  session's apply = 332,192 chars → 6 results dropped / 0 calls,
+  40.1 s; 0 hook_error); bash-pruner 68 lines (2 trimmed, **61
+  `no_scoring_capacity` fail-open events 23:05–00:06 UTC** — the
+  `:8018` fast lane had no scoring capacity for that ~1 h interval; by
+  design the pruner no-mutated + logged; 0 hook_error).
+- **State:** the GPU window is owner-triggered and unblocked on the
+  design side: (a) `d7_gates.sh` → (b) `p21_sweep.sh` → (d)
+  width-class instrument (the `tools/csm/widthclass_run.py` vehicle +
+  fresh `receipts/p2_extract/RECEIPT` writer are the two pre-window
+  CPU-side artifacts still owed before the owner calls the stretch) →
+  (e) p23 re-grade + zero-regression receipts, with (c) extraction
+  behind the owner word + rate probe. The owner's dirty files
+  (`plan/SWITCHPOINT.md`, `tools/csm/d7_gates.sh`,
+  `tools/master-work/switch_restart3_oc.sh`) stay uncommitted per the
+  D7-CLOSE trap note; the d7_gates.sh restore argv is authoritative.
+- **Records:** ledger `reports/comprehension/COUNCIL_HISTORY.md` rows
+  #38 + backfilled #37; this entry; GATE.md D37 section.

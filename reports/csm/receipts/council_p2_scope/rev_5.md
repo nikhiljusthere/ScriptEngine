@@ -1,0 +1,7 @@
+# Peer review R5 (devil's advocate) — council #38 (2026-09-24)
+
+**1. Strongest: A** — the only response with per-leg launch/poll/proof/wedge and the window priced down: (d) right after (b), (c) as stretch leg; minimum (a)+(b)+(d)+(e) ≈ 4.75–5.75 h. A also names the sharpest SPOF: the restore trap runs the owner's uncommitted argv on a root-owned fuseblk mount; if it is down, Qwen never comes back.
+
+**2. Biggest blind spot: E.** E's GROW branch (fast rate ⇒ 511-page keep-list in the same window) removes the 7–9 h upper bound, and "the instrument must ride on the post-extraction index" (against A/C/D) couples the width verdict to the slowest, OOM-prone leg — D's confound. E optimizes upside while (c) flips 0 of 486.
+
+**3. All five missed (A gestures, none completes):** close is ledger closure (green OR voided, C's reframe), so the minimum the owner needs is (a)+(b)+(d)+(e) — the evidence base — in ~5 h; the proposal buries that inside 7–9 h plus one restore SPOF (unversioned argv + fuseblk mount). The window is unattended, Qwen down: a RED at hour 3 or a failed restore surfaces only at window end. Pre-register: a mount check at start, a versioned fallback restore (qwen-switch.sh, plan A19), owner notification on end/failure. As framed, "lock now" buys more than the close needs.

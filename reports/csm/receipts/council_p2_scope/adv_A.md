@@ -1,0 +1,11 @@
+# The Contrarian — council #38 (2026-09-24)
+
+**Q1.** "0 of 486 flipped" proves only that the D6 extraction shape flipped nothing at the 417-era HEAD; the load-bearing evidence is the wiring fact (the qa door does not consume the events table), which is sound. But the registered retest "post-extraction re-grade" for the 11 "extraction-gated" rows is a no-op by construction — re-label them retrieval-gated — and the chunk-substring check is stated class-level ("every pool phrase"); the state/arc rows' gold phrases owe a per-row disk check, not a D6-family inference.
+
+**Q2.** Scope is sound; the budget is not. The 7–9 h omits the post-extraction full-gate cycle + span/coverage re-proof that plan step P2-execute requires ("full gates + guards" after the shape change) — the honest window is 8.5–11 h. A 1.2–2× rate drift, or the workers-1 OOM resume, blows the 9 h bound with no pre-registered path (the abort trigger fires only >2×); and any mid-window commit mixed-stamps the A18 sweep ledger → 2.7 h restart. Pre-register a no-commit rule.
+
+**Q3.** Faithful to the trigger line, but the full-486 counter sweep at top_k=30 is missing a guard: the bar binds {149, 252} only, beyond-class counter-flips are "recorded and reported" with no bound, and blind/OOS are measured at product config — so the top_k=30 config itself is guarded only by {149, 252} + an unbounded log. A sweep showing 40 counter-flips still PASSes. Pre-register a bound: beyond-class counter-flips = 0, else only a class-scoped top_k hunk may ship.
+
+**Q4.** Order is right for attribution (sweep before extraction; one post-extraction re-grade avoids a double re-grade). But the real defect is the reverse: extraction is off the 486 critical path, so pre-register it as a non-blocking stretch leg — minimum viable window = gates + sweep + instrument + re-grade (≈5 h), extraction on owner call, not only on the rate trigger.
+
+**Q5.** Keep it separate. A mid-window TIERED commit moves HEAD, mixed-stamps the sweep ledger (2.7 h restart), confounds the A17 flag-OFF floors with flag-ON numbers, and breaks D7b's one-mechanism-at-a-time counter-flip attribution. Its own gated window, after this one.
