@@ -228,6 +228,39 @@ re-run (0 429s on the fresh log). If throttling recurs, rotate to a
 different country/server — a fresh exit IP every time; 10 workers
 unchanged.
 
+**2026-09-25 rotation #3 (executed ~04:36):** the DE egress throttled the
+MCU host within ~5 min of the re-run (sustained `rate limited` pause-loop,
+04:31–04:36) → MCU run 2 `CrawlStalled` at 04:35:47 (zero completed pages
+for 300 s, 4,867 titles outstanding; 35,209/48,026 on disk). Per protocol:
+`nordvpn connect nl` → **nl1260.nordvpn.com** (third country — us/de already
+used; rotation #4+ needs owner budget sign-off, council hardening #6), egress
+verified `186.247.163.23` (≠ de1507's `187.40.55.180`), DE stall log
+archived to `reports/marvel/receipts/crawl_mcu_run2_de_stalled.log` before
+the per-run log rewrite, MCU re-run from disk (setsid wrapper 37211; 0 429s
+on the fresh log for 3+ min). The Marvel crawl (run 2, pid 17631 — healthy
+on the DE egress, 0 429s, still enumerating ~182k/279k at 04:40) rides the
+NL egress into its fetch phase: the council-flagged per-host-pool risk
+(rotating both crawls can trade a clean IP for a dirty one) is live — the
+Marvel log is the monitor; a Marvel-side 429 loop on NL is the trigger for
+rotation #4 (owner wall, per hardening #6). 10 workers unchanged.
+
+**Rotation protocol hardening (council A1c/A1b ruling, 2026-09-25 —
+`reports/marvel/COUNCIL_a1c_a1b_landed.md`):** (1) record the egress IP
+(`curl -s https://api.ipify.org`) after every connect and verify it changed
+(done for rotations #1–#3; VPN pools churn — the "DE server" that worked is
+not guaranteed at resume time); (2) rotate per-host, not per-country, where
+the per-host pools allow — keep a clean host's crawl running, switch only the
+throttled one; (3) resume at reduced concurrency for a cooldown window before
+returning to 10 workers (the do-not-raise rule caps at 10); (4) a wall-clock
+no-progress alarm must trigger rotation — a hung backoff loop never fires
+exit 42 by itself (the 300 s stall watchdog is the catch-all); (5)
+client-side 429 limiting (honor Retry-After, backoff, jitter) is the primary
+control; rotation is the last resort; (6) rotation #4+ requires owner budget
+sign-off (three consumed: us, de, nl). The US/DE evidence proves host-scoping
+but NOT per-(host,IP) vs a per-host-global budget — if global, rotation is a
+placebo and only time clears a budget; NordVPN exit IPs are shared and often
+dirty, so "changed country" ≠ "clean IP".
+
 ## 2. Phase A — Download (no model, no GPU; resumable, hash-pinned)
 
 **A0 — series scaffolding + overrides. (EXECUTED at plan time.)**
@@ -486,6 +519,12 @@ Plan_to_perfection §7).
 **D1 — standing gates (per change, no exceptions).**
 Four unchanged (pytest pin from CLAUDE.md, eval jjk, span-recall jjk,
 canon opm) + Marvel set: pytest full, `eval --series marvel`,
+**pytest GREEN definition (codified 2026-09-25, council A1c/A1b ruling):**
+1,350 total = 1,345 passed + 2 xpassed + 3 failed, and the 3 failures must
+be exactly the documented `:8000`-down `tests/test_mcp_server.py` env trio
+(steady state = `:8000` down; the trio passes when it is up — never
+deselect). Any other failure, or a trio failure on a non-env cause, is
+RED; "ALL GREEN" while three fail is a definition error, not prose.
 `chunk-containment --series marvel`, `eval --series mcu`,
 `chunk-containment --series mcu`, census OOS re-score (floor per CSM
 annex: OOS post ≥ pre − 2; a drop of 3+ voids), CC mapping-gate SQL
