@@ -127,6 +127,70 @@ class TestOverrides:
         assert not ontology.is_skippable(["Articles needing cleanup"])
         assert not ontology.is_skippable(["Articles needing citation"])
 
+    def test_the_default_skip_patterns_stand_without_configuration(self):
+        ontology = build_ontology("https://example.fandom.com", JJK_TEMPLATES)
+        assert ontology.skip_patterns is None
+        assert ontology.is_skippable(["Disambiguation Pages"])
+
+    def test_skip_patterns_declares_the_patterns_a_series_uses(self):
+        # L2 (plan MARVEL_100_PLAN.md §1): the defaults drop the
+        # disambiguation pages, which on the Marvel Database carry the wiki's
+        # own alias graph and must land on disk. Declaring the list is full
+        # ownership of the pattern behaviour: the declared patterns apply and
+        # the built-ins do not.
+        marvel = [
+            "images", "gallery", "galleries", "candidates for deletion",
+            "stubs", "blog posts", "browse", "site maintenance",
+            "templates", "wiki",
+        ]
+        ontology = build_ontology(
+            "https://marvel.fandom.com", [], overrides={"skip_patterns": marvel}
+        )
+        assert ontology.skip_patterns is not None
+        assert not ontology.is_skippable(["Disambiguation Pages"])
+        # The declared patterns keep working, and the exact `skip_categories`
+        # list still applies on top.
+        assert ontology.is_skippable(["Some Series Stubs"])
+        assert not ontology.is_skippable(["Characters"])
+
+    def test_an_empty_skip_patterns_list_switches_patterns_off(self):
+        ontology = build_ontology(
+            "https://example.fandom.com",
+            JJK_TEMPLATES,
+            overrides={"skip_patterns": []},
+        )
+        assert ontology.skip_patterns == ()
+        assert not ontology.is_skippable(["Disambiguation Pages"])
+        assert not ontology.is_skippable(["Aoi Todo Images"])
+
+    def test_skip_patterns_survive_the_manifest_round_trip(self):
+        ontology = build_ontology(
+            "https://marvel.fandom.com",
+            [],
+            overrides={
+                "skip_patterns": ["stubs"],
+                "alias_fact_keys": ["CurrentAlias"],
+            },
+        )
+        restored = Ontology.from_dict(ontology.to_dict())
+        assert restored.skip_patterns == ("stubs",)
+        assert restored.alias_fact_keys == ("currentalias",)
+        # A manifest that predates the hooks stays on the defaults.
+        legacy = Ontology.from_dict({"wiki": "example.fandom.com"})
+        assert legacy.skip_patterns is None
+        assert legacy.alias_fact_keys == ()
+
+    def test_alias_fact_keys_are_declared_on_the_ontology(self):
+        ontology = build_ontology(
+            "https://marvel.fandom.com",
+            [],
+            overrides={"alias_fact_keys": ["CurrentAlias"]},
+        )
+        assert ontology.alias_fact_keys == ("currentalias",)
+        assert build_ontology(
+            "https://example.fandom.com", []
+        ).alias_fact_keys == ()
+
 
 class TestStructuralDiscovery:
     """Type discovery from page shape, which is what makes this wiki-agnostic."""

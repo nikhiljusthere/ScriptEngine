@@ -1001,6 +1001,20 @@ def _flatten_links(text: str) -> str:
 # ─────────────────────────────────────────────────────────────────────────────
 
 
+def fold_template_colons(name: str) -> str:
+    """``Marvel Database: Character Template`` == ``Marvel Database:Character
+    Template``.
+
+    MediaWiki folds the space after a namespace colon, so a transclusion may
+    carry one while the name the template was registered under — an override
+    alias key, an API title — does not. Without the fold the same template
+    compares unequal on the two sides of a lookup, and the page's facts go
+    missing (plan MARVEL_100_PLAN.md §1 L7, gap F1: character pages stored
+    ``facts=0`` while the closed-box types extracted fine).
+    """
+    return re.sub(r"\s*:\s*", ":", name)
+
+
 def infobox_candidates(text: str, min_params: int = 3) -> list[tuple[str, int]]:
     """Templates on this page that look structurally like an infobox.
 
@@ -1025,7 +1039,9 @@ def infobox_candidates(text: str, min_params: int = 3) -> list[tuple[str, int]]:
 
     for _, _, body in find_templates(lead):
         name, named, _ = parse_template(body)
-        clean = normalise_title(name.strip().lstrip(":"))
+        # Folded before `normalise_title` so the candidate name is the one the
+        # override alias keys and the API titles compare against (F1).
+        clean = normalise_title(fold_template_colons(name.strip().lstrip(":")))
         if not clean:
             continue
         counts[clean] = counts.get(clean, 0) + 1
@@ -1048,12 +1064,15 @@ def find_infobox(
     ``Template:`` namespace. When supplied it is authoritative; otherwise the
     name is matched on the word "infobox", which is the Fandom convention.
     """
-    normalised = {t.lower().replace("_", " ") for t in (known_templates or set())}
+    normalised = {
+        fold_template_colons(t.lower().replace("_", " "))
+        for t in (known_templates or set())
+    }
     matches: list[tuple[int, str, dict[str, str]]] = []
 
     for _, _, body in find_templates(text):
         name, named, _ = parse_template(body)
-        clean = name.strip().lstrip(":").replace("_", " ")
+        clean = fold_template_colons(name.strip().lstrip(":").replace("_", " "))
         lowered = clean.lower()
 
         if lowered.startswith("template:"):
@@ -1179,6 +1198,55 @@ def split_items(body: str) -> tuple[str, list[tuple[str, str, str]]]:
     return preamble, items
 
 
+def _unclosed_lead_prose(lead: str) -> str | None:
+    """The narrative text of a lead whose first top-level template never closes
+    inside the lead (plan §1 L7, gap F2).
+
+    The Marvel Database character templates open at the top of the page and
+    close at the page end, carrying the whole narrative in a single parameter:
+    `{{Marvel Database: Character Template | ... | History = <the abridged
+    history and every narrative section> | ...}}` — measured on `Peter Parker
+    (Earth-616)`: 266 open braces against 265 close in the lead, balanced only
+    at page end. For those pages the stored lead must be the narrative
+    parameter's pre-heading text, not the raw parameter block.
+
+    The branch fires only on the unclosed shape. A lead whose templates all
+    close inside it — every JJK/CSM page — returns None and the lead is built
+    exactly as before, so the existing suite pins the old behaviour.
+    """
+    i = 0
+
+    while True:
+        open_at = lead.find("{{", i)
+        if open_at == -1:
+            return None
+        end = _scan_balanced(lead, open_at, "{{", "}}")
+        if end == -1:
+            # The first top-level template the lead does not close: its body
+            # runs on to the first heading (or the page end).
+            break
+        i = end
+
+    parts = split_params(lead[open_at + 2 :])
+    if len(parts) < 2:
+        return None
+
+    for part in parts[1:]:
+        if "=" not in part:
+            continue
+        key, _, value = part.partition("=")
+        if _normalise_param(key) != "history":
+            continue
+        # Only the pre-heading portion belongs in the lead; from the first
+        # heading on the text is a section, already split from the raw text.
+        heading = _HEADING.search(value)
+        prose = value[: heading.start()] if heading else value
+        if not prose.strip():
+            return None
+        return prose
+    return None
+
+
 def split_sections(
     text: str,
     api_sections: list[dict] | None = None,
@@ -1213,8 +1281,13 @@ def split_sections(
     ref_tags = collect_ref_tag_definitions(text)
 
     matches = list(_HEADING.finditer(text))
+    lead_raw = text[: matches[0].start()] if matches else text
+    # The L7 shape: the lead's first top-level template never closes inside the
+    # lead and wraps the page's narrative in a parameter, so the stored lead is
+    # that parameter's pre-heading text, not the raw parameter block (F2).
+    lead_prose = _unclosed_lead_prose(lead_raw)
     lead = strip_markup(
-        text[: matches[0].start()] if matches else text,
+        lead_prose if lead_prose is not None else lead_raw,
         ref_names=ref_names,
         works=works,
         ref_tags=ref_tags,

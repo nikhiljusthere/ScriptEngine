@@ -84,6 +84,11 @@ BATCH_SIZE = 50
 # maximum and reliably triggers a 429; 100 does not.
 ENUMERATION_PAGE_SIZE = 100
 
+# Infobox fact keys that name a page's other names. The common wikis agree on
+# this vocabulary; a wiki that does not (Marvel's `CurrentAlias`) adds its own
+# via the `alias_fact_keys:` override, which `_aliases` reads off the ontology.
+_ALIAS_FACT_KEYS = ("name", "romaji", "alias", "aliases", "othername", "eng name")
+
 
 class EnumerationFailed(RuntimeError):
     """The wiki would not return its page list. Distinct from an empty wiki."""
@@ -490,7 +495,7 @@ class WikiCrawler:
             fetched_at=datetime.now(timezone.utc).isoformat(timespec="seconds"),
         )
         ontology.page_types[title] = page_type
-        page.aliases = self._aliases(page)
+        page.aliases = self._aliases(page, ontology.alias_fact_keys)
         page.edges = self._edges(page)
 
         if not sections and not lead:
@@ -500,10 +505,16 @@ class WikiCrawler:
 
         return page
 
-    def _aliases(self, page: WikiPage) -> list[str]:
-        """Other names this page answers to, for entity linking later."""
+    def _aliases(self, page: WikiPage, extra_keys: tuple[str, ...] = ()) -> list[str]:
+        """Other names this page answers to, for entity linking later.
+
+        ``extra_keys`` comes from the series' `alias_fact_keys:` override:
+        the built-ins cover the common wikis, and a wiki whose alias fields
+        sit under other parameter names (Marvel's `CurrentAlias`) declares
+        them, so the data lands on disk instead of being dropped (plan §1 L2).
+        """
         names = {page.title, *page.redirects}
-        for key in ("name", "romaji", "alias", "aliases", "othername", "eng name"):
+        for key in dict.fromkeys((*_ALIAS_FACT_KEYS, *extra_keys)):
             fact = page.fact(key)
             if fact and fact.value:
                 # Aliases are often a comma or <br>-separated list.
@@ -885,6 +896,13 @@ def load_extracted(
     # Same reason: the manifest was written before `ability_sections` existed,
     # and re-extraction is the only place the item markers are read.
     ontology.item_sections = discovered.item_sections
+    # L2 hooks (plan §1): only where the current override declares them, so a
+    # corpus crawled with a declared set is not wiped by a later no-override
+    # re-extraction.
+    if discovered.skip_patterns is not None:
+        ontology.skip_patterns = discovered.skip_patterns
+    if discovered.alias_fact_keys:
+        ontology.alias_fact_keys = discovered.alias_fact_keys
 
     return [reextract(page, ontology) for page in pages], ontology
 

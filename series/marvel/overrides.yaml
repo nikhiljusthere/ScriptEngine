@@ -1,0 +1,94 @@
+# Per-wiki handling for the Marvel Database (marvel.fandom.com).
+# The only place series-specific rules may live (config.load_overrides).
+#
+# The wiki's infoboxes are project-namespace templates, and NONE of the 508
+# `Template:`-namespace names contains the word "infobox" (measured
+# 2026-09-25: only `Template:Short Info` matches "info"). Crawl-time
+# `build_ontology` elects types by that word match, so without these aliases
+# every page would store as type `unknown` with zero infobox facts (plan
+# MARVEL_100_PLAN.md §1, L1). The ~30 infobox templates live in the
+# `Marvel Database:` namespace (id 4, 162 pages).
+
+type_aliases:
+  "Marvel Database:Character Template": character
+  "Marvel Database:Event Template": event
+  "Marvel Database:Event Infobox Template": event
+  "Marvel Database:Comic Template": comic
+  "Marvel Database:Series Template": series
+  "Marvel Database:Volume Template": volume
+  "Marvel Database:New Volume Template": volume
+  "Marvel Database:Legacy Volume Template": volume
+  "Marvel Database:Film Template": film
+  "Marvel Database:Episode Template": episode
+  "Marvel Database:Organization Template": organization
+  "Marvel Database:Team Template": team
+  "Marvel Database:Location Template": location
+  "Marvel Database:Item Template": item
+  "Marvel Database:Power Template": power
+  "Marvel Database:Vehicle Template": vehicle
+  "Marvel Database:Race Template": race
+  "Marvel Database:Reality Template": reality
+  "Marvel Database:Creator Template": creator
+  "Marvel Database:Staff Template": staff
+  "Marvel Database:Conflict Template": conflict
+  "Marvel Database:Story Arc Template": story_arc
+  "Marvel Database:Storyline Template": storyline
+  "Marvel Database:Novel Template": novel
+  "Marvel Database:Book Template": book
+  "Marvel Database:Video Game Template": video_game
+  "Marvel Database:Board Game Template": board_game
+  "Marvel Database:Publisher Template": publisher
+  "Marvel Database:Glossary Template": glossary
+  "Marvel Database:Handbook Template": handbook
+  "Marvel Database:Sourcebook Template": sourcebook
+  "Marvel Database:Review Template": review
+  "Marvel Database:Gallery Template": gallery
+  "Marvel Database:Image Template": image
+  # `User Page Template` and `Templates` (a meta-listing) are deliberately not
+  # typed: user pages are maintenance, and the meta page describes templates.
+
+# The wiki's citation grammar: character pages cite comic issues by named
+# reference, e.g. `{{r|Amazing Spider-Man Vol 1 15}}` and `{{r|Ultimate
+# Fallout Vol 1 4}}` (measured 2026-09-25 on Miles Morales / Peter Parker
+# pages). Declared here so citations resolve to a work + number; the exact
+# RefRole shape is verified in Phase C1 (plan MARVEL_100_PLAN.md) before any
+# citation-dependent extraction — this key stays commented until then.
+# citation_params:
+#   r: comic
+
+# L5 (plan §1): category -> relation grammar, declared for Phase C2 once the
+# generic `category_relations:` mechanism lands; pre-registered here so the
+# mapping-file decision is not re-litigated per wiki:
+#   `X (Earth-616)/Members`  -> member_of (group affiliation)
+#   `X/Creator`              -> created_by (creator credit)
+#   `X casualties`           -> event_participant (kind: casualty)
+#   `YYYY Character Debuts`  -> debuted_year (era)
+# category_relations:
+#   - {pattern: "*/Members", relation: member_of}
+#   - {pattern: "*/Creator", relation: created_by}
+
+# NOTE (L2): disambiguation pages (e.g. `Spider-Man`) carry the wiki's own
+# alias graph (`main_articleN` lists) but the engine's default skip pattern
+# drops them. Declaring `skip_patterns:` below takes ownership of the pattern
+# behaviour (the declared list replaces the engine's MediaWiki-wide defaults;
+# `skip_categories:` still adds exact names on top), so the disambiguation
+# pages are crawled and their alias data is on disk. The gap-fill is a plain
+# re-run of the crawl after this hook lands: the resume is disk-driven, so
+# exactly the pages the earlier run skipped are the ones re-fetched.
+# (plan MARVEL_100_PLAN.md §1 L2 + step A1b; landed 2026-09-25.)
+skip_patterns:
+  - images
+  - gallery
+  - galleries
+  - candidates for deletion
+  - stubs
+  - blog posts
+  - browse
+  - site maintenance
+  - templates
+  - wiki
+# The character boxes carry the live alias under `CurrentAlias` (plan §1 L8
+# field list), which the engine's built-in alias keys never look for.
+alias_fact_keys:
+  - currentalias
+skip_categories: []

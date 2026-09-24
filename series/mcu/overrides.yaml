@@ -1,0 +1,31 @@
+# Per-wiki handling for the Marvel Cinematic Universe Wiki
+# (marvelcinematicuniverse.fandom.com).
+#
+# Infoboxes are plain `Template:` templates without the word "infobox" in
+# their names (measured 2026-09-25: 489 templates; the only "infobox"-named
+# entries are `InfoboxWP` and `Infobox List`). Without these aliases every
+# page stores as `unknown` with zero facts (plan MARVEL_100_PLAN.md §1, L1).
+#
+# The per-series navigation templates (`Hawkeye Series`, `Loki Series`,
+# `AOS Series`, ...) are nav boxes, not subject types, so they are
+# deliberately NOT typed; `type_for_templates` prefers the richest known
+# infobox, which is what these pages actually lead with.
+
+type_aliases:
+  "Character": character
+  "Movie": movie
+  "Episode": episode
+  "Event": event
+  "Item": item
+  "Location": location
+  "Organization": organization
+  "Concept": concept
+  "Media": media
+  "Comic": comic
+  "Filmmaker": filmmaker
+  "TV": tv_series
+  # `Template:Series` does not exist on this wiki (pageid 0, checked
+  # 2026-09-25); TV series use `Template:TV` (WandaVision, Loki, What If...?,
+  # X-Men '97 all carry it — verified 2026-09-25).
+
+skip_categories: []

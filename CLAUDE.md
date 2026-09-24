@@ -351,16 +351,24 @@ miss_queue_csm_iter1.jsonl` (the frozen miss queue). P6 (cross-corpus,
 
 **Gates (re-run before calling any pass done; re-baselined 2026-09-08 via the
 gpu-gate3 100k+CUDA side session — raw receipts `reports/csm/GATE_REBASELINE_2.md`):**
-`pytest tests/ -q` = **1,331** (the current gate-1 pin: the 1,321 R-7 pin +
-10 new R-8 router tests; the known env-mcp trio fails under a stopped :8000,
-council #25 close; R-8 window discharged 2026-09-17 @ tree `8661850`,
-receipts `4b60043`). Per Ruling 5e a known +N test delta does
-not re-run the gates — the full four-gate re-run happens at each fix-class's
-closure. (Historical: 1,249 re-baselined 2026-09-08; 1,254 = 1,249 + 4 CSM-3
-+ 1 CSM-3b roster-door test @ `f93d396`.) `eval --series jjk` = 31/31 (15:22–15:23); `span-recall
+`pytest tests/ -q` = **1,350** (the current gate-1 pin: the 1,331 pin + 2
+crawl stall-watchdog tests @ `1adb0d42` (known delta, un-stamped until now)
++ 17 Marvel A1c/A1b tests — 9 `test_wikitext` (F1 colon-fold + F2
+unclosed-lead) + 5 `test_ontology` (L2 `skip_patterns:`/`alias_fact_keys:`
+hooks) + 3 `test_crawler_aliases`; the known env-mcp trio
+(`test_mcp_server.py`) fails under a stopped :8000, council #25 close —
+measured 2026-09-25 on the union tree as 1,345 passed + 2 xpassed + 3
+:8000-down env failures, receipts `reports/marvel/receipts/gates_2026-09-25_union/`;
+history: 1,331 = the 1,321 R-7 pin + 10 new R-8 router tests, R-8 window
+discharged 2026-09-17 @ tree `8661850`, receipts `4b60043`). Per Ruling 5e a
+known +N test delta does not re-run the gates — the full four-gate re-run
+happens at each fix-class's closure. (Historical: 1,249 re-baselined
+2026-09-08; 1,254 = 1,249 + 4 CSM-3 + 1 CSM-3b roster-door test @
+`f93d396`.) `eval --series jjk` = 31/31 (15:22–15:23); `span-recall
 --series jjk` = 48,572/48,572 offline (rc=0) + 390/400 live probe (97.5%;
-15:23–15:26, CUDA `:8000`); `canon-run --series opm` = 10/16 exact,
-236/236 canon, 79.0% (15:26, `--skip-eval` one-copy rule).
+15:23–15:26, CUDA `:8000`; the 2026-09-25 union run re-measured 398/400,
+99.5%); `canon-run --series opm` = 10/16 exact, 236/236 canon, 79.0%
+(15:26, `--skip-eval` one-copy rule).
 Batch files are `_`-prefixed so they stay out of the official gold bank. The
 historical accuracy-campaign records (rounds 1/2, OPM + JJK waves) are in
 `reports/page-campaign/STATUS.md` (the OPM handoffs `HANDOFF_OPM.md` /

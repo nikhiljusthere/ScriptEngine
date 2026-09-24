@@ -15,6 +15,7 @@ from scriptengine.ingest.wikitext import (
     facts_from_infobox,
     find_infobox,
     flatten_tables,
+    infobox_candidates,
     split_params,
     split_sections,
     strip_markup,
@@ -473,6 +474,127 @@ class TestInfobox:
         _, params = found
         (fact,) = facts_from_infobox(params, labels={"class": "Grade"})
         assert fact.key == "class" and fact.label == "Grade"
+
+
+class TestColonFoldedTemplateNames:
+    """F1 (plan MARVEL_100_PLAN.md §1 L7): the space after a namespace colon.
+
+    The Marvel Database writes `{{Marvel Database: Character Template}}` with
+    a space after the colon, while the override alias key and the API title
+    carry none. MediaWiki folds the space, so both spellings are one template
+    and the lookup must not split on it. Measured 2026-09-25: character
+    pages stored `type=character, facts=0` while the closed-box types
+    (comic 25 facts, event 24) extracted fine.
+    """
+
+    PAGE = (
+        "{{Marvel Database: Character Template\n"
+        "|Name = Peter Parker\n"
+        "|CurrentAlias = Spider-Man\n"
+        "|Affiliation = Earth-616\n"
+        "}}\n"
+        "Prose follows."
+    )
+
+    def test_the_text_side_matches_the_unspaced_alias_key(self):
+        found = find_infobox(
+            self.PAGE, known_templates={"Marvel Database:Character Template"}
+        )
+        assert found is not None
+        assert found[0] == "Marvel Database:Character Template"
+        assert found[1]["name"] == "Peter Parker"
+
+    def test_the_spaced_alias_key_matches_too(self):
+        found = find_infobox(
+            self.PAGE, known_templates={"Marvel Database: Character Template"}
+        )
+        assert found is not None and found[0] == "Marvel Database:Character Template"
+
+    def test_candidates_are_returned_in_folded_form(self):
+        page = (
+            "{{Marvel Database: Character Template\n"
+            "|Name = A\n"
+            "|Age = 1\n"
+            "|Race = Human\n"
+            "}}\n"
+        )
+        assert infobox_candidates(page) == [
+            ("Marvel Database:Character Template", 3)
+        ]
+
+    def test_the_plain_template_prefix_still_strips(self):
+        # Folding must not break the existing `Template:X` namespace handling.
+        found = find_infobox(
+            "{{Template: Character Infobox|name = A|class = 1|race = Human}}",
+            known_templates={"Character Infobox"},
+        )
+        assert found is not None and found[0] == "Character Infobox"
+
+
+class TestUnclosedLead:
+    """F2 (plan MARVEL_100_PLAN.md §1 L7): the narrative wrapped in the box.
+
+    The character templates open at the top of the page and close at the page
+    end, so the lead's first top-level template never closes inside the lead
+    and its `History` parameter carries the narrative. The stored lead is that
+    parameter's pre-heading text, not the raw parameter block. The branch only
+    fires on the unclosed shape, so closed-box wikis (JJK/CSM) are untouched.
+    """
+
+    PAGE = (
+        "{{Marvel Database: Character Template\n"
+        "|Name = Peter Parker\n"
+        "|History = Peter Parker is the abridged history note.\n"
+        "==Civil War (Event)==\n"
+        "Peter fights the battle.\n"
+        "}}\n"
+    )
+
+    def test_the_lead_is_the_narrative_parameters_pre_heading_text(self):
+        lead, sections = split_sections(self.PAGE)
+        assert lead == "Peter Parker is the abridged history note."
+        assert [s.title for s in sections] == ["Civil War (Event)"]
+
+    def test_the_history_key_is_case_insensitive(self):
+        page = (
+            "{{Some Template|Name = X\n"
+            "|history = The lead note.\n"
+            "==Appearance==\n"
+            "Tall.\n"
+            "}}\n"
+        )
+        lead, _ = split_sections(page)
+        assert lead == "The lead note."
+
+    def test_a_closed_box_is_untouched(self):
+        # The JJK/CSM shape: the infobox closes inside the lead, so the lead
+        # is exactly what it always was.
+        page = (
+            "{{Character_Infobox|name = Aoi Todo|class = Grade 1|race = Human}}\n"
+            "Lead prose.\n"
+            "==Appearance==\n"
+            "Tall.\n"
+        )
+        lead, _ = split_sections(page)
+        assert lead == "Lead prose."
+
+    def test_an_unclosed_box_without_a_history_parameter_keeps_the_raw_lead(self):
+        # The branch needs the narrative parameter; a malformed page without
+        # one falls back to the raw lead exactly as before.
+        page = (
+            "{{Some Box|name = X\n"
+            "==Appearance==\n"
+            "Tall.\n"
+            "}}\n"
+        )
+        lead, _ = split_sections(page)
+        assert "Some Box" in lead
+
+    def test_an_unclosed_box_on_a_page_without_headings(self):
+        page = "{{Some Box|History = Only prose.\n"
+        lead, sections = split_sections(page)
+        assert lead == "Only prose."
+        assert sections == []
 
 
 class TestSections:

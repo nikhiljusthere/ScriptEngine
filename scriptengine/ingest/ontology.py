@@ -116,6 +116,18 @@ class Ontology:
     # writes 7,491 of them, and its heaviest pages are `Chapter 1161` and
     # `Chapters and Volumes`, which are listings and not abilities.
     item_sections: set[str] = field(default_factory=set)
+    # The category patterns that mark a page as maintenance or media rather
+    # than content. None = the MediaWiki-wide `_SKIP_CATEGORY_PATTERNS`; a
+    # declared list — even an empty one — replaces them, which is how a wiki
+    # keeps the pages the defaults drop (plan MARVEL_100_PLAN.md §1 L2: the
+    # disambiguation pages carry the wiki's own alias graph and must land on
+    # disk, so Marvel declares the default list minus "disambiguation").
+    skip_patterns: tuple[str, ...] | None = None
+    # Infobox fact keys that name the page's other names, added to the
+    # engine's built-in set (`name`, `alias`, ...). The parameter vocabulary
+    # is per-wiki: Marvel's character boxes carry the live alias under
+    # `CurrentAlias`, which the built-ins never look for (plan §1 L2).
+    alias_fact_keys: tuple[str, ...] = ()
 
     @property
     def types(self) -> list[str]:
@@ -158,11 +170,19 @@ class Ontology:
 
     def is_skippable(self, categories: Iterable[str]) -> str:
         """Return a reason to skip the page, or an empty string to keep it."""
+        # A declared `skip_patterns:` is the series' full ownership of the
+        # pattern behaviour (even an empty list: patterns off, exact
+        # `skip_categories` still apply); None keeps the MediaWiki defaults.
+        patterns = (
+            _SKIP_CATEGORY_PATTERNS
+            if self.skip_patterns is None
+            else self.skip_patterns
+        )
         for category in categories:
             lowered = category.lower()
             if lowered in self.skip_categories:
                 return f"category: {category}"
-            for pattern in _SKIP_CATEGORY_PATTERNS:
+            for pattern in patterns:
                 if pattern in lowered:
                     return f"category: {category}"
         return ""
@@ -174,6 +194,10 @@ class Ontology:
             "field_labels": self.field_labels,
             "categories": self.categories,
             "skip_categories": sorted(self.skip_categories),
+            "skip_patterns": (
+                list(self.skip_patterns) if self.skip_patterns is not None else None
+            ),
+            "alias_fact_keys": list(self.alias_fact_keys),
             "infobox_votes": self.infobox_votes,
         }
 
@@ -186,6 +210,12 @@ class Ontology:
             categories=payload.get("categories", {}),
             skip_categories=set(payload.get("skip_categories", [])),
             infobox_votes=payload.get("infobox_votes", {}),
+            skip_patterns=(
+                tuple(payload["skip_patterns"])
+                if payload.get("skip_patterns") is not None
+                else None
+            ),
+            alias_fact_keys=tuple(payload.get("alias_fact_keys") or ()),
         )
 
 
@@ -226,12 +256,34 @@ def build_ontology(
     for template, type_id in (overrides.get("type_aliases") or {}).items():
         ontology.infobox_types[_normalise_template(template)] = slugify_type(type_id)
 
+    _apply_skip_and_alias_overrides(ontology, overrides)
     ontology.skip_categories = {
         str(c).lower() for c in (overrides.get("skip_categories") or [])
     }
     ontology.citation_works = CitationGrammar.from_overrides(overrides)
     ontology.item_sections = item_section_names(overrides)
     return ontology
+
+
+def _apply_skip_and_alias_overrides(ontology: Ontology, overrides: dict[str, Any]) -> None:
+    """The L2 hooks (plan MARVEL_100_PLAN.md §1): `skip_patterns:` and
+    `alias_fact_keys:`.
+
+    `skip_patterns:` — when present, is the series' full declaration of the
+    category patterns that mark a page as maintenance or media; it replaces
+    the MediaWiki-wide defaults, so a wiki can keep the pages the defaults
+    drop (Marvel: the disambiguation pages, which carry the alias graph).
+    Absent, the defaults stand. `alias_fact_keys:` is additive: the wiki's
+    alias-bearing infobox parameters, on top of the engine's built-ins.
+    """
+    declared = overrides.get("skip_patterns")
+    if declared is not None:
+        ontology.skip_patterns = tuple(
+            str(pattern).strip().lower() for pattern in declared
+        )
+    ontology.alias_fact_keys = tuple(
+        str(key).strip().lower() for key in (overrides.get("alias_fact_keys") or [])
+    )
 
 
 def build_ontology_from_transclusions(
@@ -311,6 +363,7 @@ def discover_infoboxes(
     for template, type_id in (overrides.get("type_aliases") or {}).items():
         ontology.infobox_types[_normalise_template(template)] = slugify_type(type_id)
 
+    _apply_skip_and_alias_overrides(ontology, overrides)
     ontology.skip_categories = {
         str(c).lower() for c in (overrides.get("skip_categories") or [])
     }
