@@ -394,12 +394,21 @@ for CA/JP/SG), the discriminator: clean UK batch path ⇒ the 187.15
 range is what is batch-limited; UK also loops ⇒ the batch endpoint is
 limited across NordVPN exits (range/ASN level) and the fix is
 client-side (slimmer batch / reduced rate), not another rotation. c3 +
-60-s timeout relaunched ~15:40 (pid 255764); 15-min health judge on
-the UK fetch phase (~15:56): >100 completions + <10 rate-limit lines +
-low timeout rate → 15-min watch cycles to completion; RED → the UK
-outcome decides (range-level → retry a 187.15 country at c2 or client-
-side slim batch; endpoint-level → client-side fix as the next council
-item; egress logged + re-judged each time).
+60-s attempt ~15:40 (pid 255764) CrawlStalled at 300 s with **0 rate-
+limit lines** (one six-0-s batch timeout, 0 completions): a transient
+SG→UK tunnel degradation, NOT throttling — `crawl_marvel_c3_uk_stall_transient_2026-09-25.log`
+(reconstructed from the session transcript). Discriminator answer so
+far: the 187.15 exits' 429 loops were egress-specific (burned/dirty),
+not a range/ASN-level batch limit — the 194.88 exit is 429-clean.
+Direct 50-title batch probe from the same UK egress ~15:58: HTTP 200 in
+1.64 s, 50/50 pages (endpoint healthy from UK). Relaunched c3 + 60-s on
+the SAME UK egress (no new rotation; pid 264208, ~16:00); 15-min health
+judge ~16:15: >100 completions + <10 rate-limit lines + low timeout
+rate → 15-min watch cycles to completion; RED → rotate to a
+proven-clean egress (DE #1507 ran the MCU crawl today, 187.40 range)
+or, if a clean egress also stalls on the batch endpoint, the client-
+side fix (slimmer batch / reduced rate) is the next council item;
+egress logged + re-judged each time.
 A1c + A1b landed as the one gate-covered commit
 `6a1f6ceb` (four standing gates green on the union tree). Council medium
 gates 4–6 on the final MCU corpus: **GREEN** — base-vs-new parser diff
