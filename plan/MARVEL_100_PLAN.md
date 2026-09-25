@@ -304,12 +304,21 @@ accounted for — 22,701 written + 42,530 skipped (no-content / skippable-
 category / duplicate pageid: the enumeration's tail is stubs, redirects and
 galleries) + 1 failed ("Elizabeth Tyne")**; corpus now 236,580 on disk
 (`crawl_marvel_c2_fi_full_done_2026-09-25.log` + `manifest.shard_full.json`).
-**Reconciliation in flight since 18:06 (pid 320221, same egress): canonical
-`crawl --series marvel` = fresh full sequential enumeration + on-disk
-resume-skip + catch-up fetch of the post-15:21 delta (the failed page + new
-pages), rewriting the canonical `series/marvel/manifest.json` (the stalled
-`stall_remaining: 64091` manifest is obsolete). Then: Marvel-set gates 4–6
-→ GATE A council (sequential; must bless the *Marvel* validation).**
+**Reconciliation COMPLETE 19:06:58 (pid 320221, same egress, launched
+18:06; receipt `crawl_marvel_recon_done_2026-09-25.log`): canonical
+`crawl --series marvel` = fresh full sequential enumeration to
+**279,133** (the wiki grew +21 since the 15:21 list — 279,133 is the new
+ground-truth denominator, superseding 279,116) + on-disk resume-skip +
+catch-up fetch: **48 written + 42,504 re-verified skips + 0 failed**
+(the 42,552 non-on-disk queue was the shard run's no-content/skippable
+tail, re-proven by the pipeline itself, including the shard run's one
+failed page). Canonical `series/marvel/manifest.json` REBUILT CLEAN
+(`stalled` marker gone; accounting closes exactly: `resuming: 236581 of
+279133 already on disk` (2 titles share one filename) + 48 + 42,504 + 0
+= 279,133 — every enumerated title on-disk ∪ skipped ∪ failed).
+**Marvel fetch phase = 100% COMPLETE (236,628 on disk, 0 failed).**
+Then: Marvel-set gates 4–6 → GATE A council (sequential; must bless the
+*Marvel* validation).**
 
 ## 2. Phase A — Download (no model, no GPU; resumable, hash-pinned)
 
