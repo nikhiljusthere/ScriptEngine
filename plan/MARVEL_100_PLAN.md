@@ -533,6 +533,62 @@ Source B (`tools/marvel/export_fetch.py` + `reconcile.py`, inspected
 429 pool) and its `reconcile.py` S0 receipt (`sourcing_100`) joins the
 exit evidence.
 
+Council verdict (2026-09-25, `reports/marvel/COUNCIL_gate_A_download.md` —
+GATE A item 7, recorded): **GATE A = PASS (conditional)** — 5/5 advisors +
+5 peer reviews unanimous; the Marvel download validation is blessed;
+Phase B unblocked now; Phase C gated on the entry checklist below.
+Finding dispositions F1–F7 + the F1 root cause (the gated `fetch_batch`
+sends `rvprop=content` @ `scriptengine/ingest/crawler.py:334`, which
+filters the API revision object to content-only, so stored `revid` is
+always 0; fix = `rvprop=ids|content` — a one-word **gated** change:
++ four standing gates + commit by named paths, landing before the Phase B
+top-up crawls; interim = campaign-tooling revid backfill or explicit
+waiver; latent second gap recorded: the per-page `action=parse` path
+reads a key Fandom's parse response never returns) are in the council
+doc.
+- **Phase C entry checklist (ordered; council):** 1. F1 gated fix
+  (before the top-up crawls — new files stamp natively); 2. F1 backfill
+  (campaign tooling: `action=query`, `rvprop=ids`, 50-title batches ≈ 4,733
+  Marvel + ≈ 962 MCU requests) or an explicit waiver on record; 3. F3:
+  zero-egress inspection of the 2 folded collision files + 1 orphan, then
+  re-crawl the 4 collision titles under disambiguated filenames (after #1);
+  4. F5: 33-page MCU top-up (bundled with #3's egress); 5. F7:
+  grep-quantify the stray-`'` blast radius (zero egress); if material,
+  patch the value cleaner + re-emit + O*N*E regression fixture (the fixture
+  lands either way); 6. F2: 46-title rename map into
+  `reports/marvel/receipts/known_diffs_2026-09-25.md`, wired into the
+  re-validation plan (the next revid spot-check must include renamed
+  titles); 7. F6: owner ruling at the wall (item 2, costed: revert =
+  612-file rework; interim default = typed + fact-free, no edges — C does
+  not wait on it); 8. **delta re-gate** (S5): after #1–#6 mutate the
+  corpus — G4-style diff on changed/added files, G5 sample on them, G6
+  full dry-run on the mutated corpus, re-archived accounting lists →
+  receipt; Phase C start = after this receipt; 9. GATE A (3) explicit-diff
+  branch quoted verbatim in the record (done in the council doc).
+- **Standing rules adopted (campaign-level, S1–S7):** S1 revid-stamp at
+  crawl time (every future franchise + Marvel backfill/waiver); S2
+  title-normalization collision check in crawl tooling (a 4-titles→2-files
+  fold flags at crawl time, not reconciliation); S3 same-day pre-gate
+  re-enumeration standing and non-optional (it caught the MCU +33); S4
+  synthetic truncation probe (60%×5 + 15%×6) per corpus; S5
+  freeze-and-verify — no post-green corpus mutation without a delta
+  re-gate + re-archived accounting lists, logged to a receipt; S6
+  value-cleaner regression fixtures (O*N*E class) + the shared-defect
+  blind spot recorded in the gate-4 spec (a base-vs-new diff cancels
+  defects shared by both parsers); S7 franchise-gate template — the GATE A
+  receipt + the G4 diff report + this gate list are the reusable template
+  for the next franchise (DC, Star Wars, any fandom wiki).
+- **A2 unlock conditions (council union; A2 stays NO-GO until all):**
+  1. owner ToS/robots ruling + written clearance (wall item 1;
+  Disney-owned, non-CC, no official API/feed); 2. a marvel.com enumeration
+  source (the 22,676-URL sitemap index exists) demonstrated to close
+  enumerated−skipped−failed accounting; 3. a marvel.com-specific extractor
+  + type mapping dry-run-verified with its OWN stop conditions (the
+  Fandom gate apparatus does not transfer); 4. egress/rate budget
+  demonstrated, with no risk to the closed fandom corpus; 5. the template
+  completes Phase C end-to-end on a wiki corpus first (template before
+  extension).
+
 ## 3. Phase B — CC corpus (speaker attribution is a hard requirement)
 
 Owner requirement (2026-09-25, both messages): closed captions — **speaker
