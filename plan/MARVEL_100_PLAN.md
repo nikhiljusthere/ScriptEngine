@@ -328,9 +328,13 @@ cleanly and its 429-retry traffic keeps the IP penalty alive, so the
 operator killed it at 07:35; logs archived:
 `crawl_marvel_nl_429loop_2026-09-25.log` +
 `crawl_marvel_c3_stalled_2026-09-25.log`), 213,718 on disk at 06:44.
-Now: 45-minute cooldown → restart at `SCRIPTENGINE_CRAWL_CONCURRENCY=2`
-(single-request probes at ~+15/+30 min; a second CrawlStalled = rotation
-#4 = owner wall). A1c + A1b landed as the one gate-covered commit
+Now: c2 (07:50, after the clean 07:49 single-request probe) also stalled
+immediately on the fetch endpoint (CrawlStalled 08:34:28, 0 completions —
+`crawl_marvel_c2_stalled_2026-09-25.log`); same-egress hardening exhausted,
+owner wall TRIGGERED for rotation #4+. One last in-authority attempt: c2
+retry ≈11:30 after a ~3 h fully-quiet egress; a second CrawlStalled = hard
+stop at the owner wall (briefing `reports/marvel/OWNER_WALL_2026-09-25.md`).
+A1c + A1b landed as the one gate-covered commit
 `6a1f6ceb` (four standing gates green on the union tree). Council medium
 gates 4–6 on the final MCU corpus: **GREEN** — base-vs-new parser diff
 (stable delta +0.00%, 0/35,209 pages changed → PROCEED; the only
