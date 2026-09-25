@@ -291,10 +291,25 @@ endpoint stays healthy. **Patch (gated on the four standing gates before
 use/commit):** the learn fetch is bounded (`asyncio.wait_for(crawl_
 timeout_seconds + 30 s)`) + failure-tolerant, and a type with no PI schema
 (or a failed attempt) is recorded once with an empty label set so it is
-never re-fetched; output is unchanged on a healthy egress. Next: full-list
-c2 + browser UA from FI egress `187.40.62.59` → reconciliation (fresh full
-enumeration + catch-up fetch; denominator 279,116) → Marvel-set gates 4–6
-→ GATE A council.
+never re-fetched; output is unchanged on a healthy egress. **CLOSED
+17:27–18:0x (rotation #12 FI egress `187.40.62.59`):** the four standing
+gates went GREEN on the patch (pytest 1,345+2+3 exactly the documented
+`:8000`-down trio; eval jjk 31/31 CPU; span-recall jjk 48,572 rc=0 + probe
+398/400 behind a bounded `:8000` window; canon opm 10/16 · 236/236 · 79.0% —
+receipts `reports/marvel/receipts/gates_learn_patch_2026-09-25/`) and were
+committed as `e78e1f62` (named paths: `crawler.py` + both plan files).
+**Full-list c2 fetch COMPLETE 17:45:55–18:00 (pid 314745, chrome136 UA,
+60-s timeout, rl=0 / to=0 / learn-warn=0): all 65,231 outstanding titles
+accounted for — 22,701 written + 42,530 skipped (no-content / skippable-
+category / duplicate pageid: the enumeration's tail is stubs, redirects and
+galleries) + 1 failed ("Elizabeth Tyne")**; corpus now 236,580 on disk
+(`crawl_marvel_c2_fi_full_done_2026-09-25.log` + `manifest.shard_full.json`).
+**Reconciliation in flight since 18:06 (pid 320221, same egress): canonical
+`crawl --series marvel` = fresh full sequential enumeration + on-disk
+resume-skip + catch-up fetch of the post-15:21 delta (the failed page + new
+pages), rewriting the canonical `series/marvel/manifest.json` (the stalled
+`stall_remaining: 64091` manifest is obsolete). Then: Marvel-set gates 4–6
+→ GATE A council (sequential; must bless the *Marvel* validation).**
 
 ## 2. Phase A — Download (no model, no GPU; resumable, hash-pinned)
 
