@@ -379,18 +379,40 @@ class WikiCrawler:
         The labels are a property of the type, and `learn_field_labels` already
         ignores a type it has seen. Fetching them per page cost one request per
         page for information that changes once per twenty-odd types.
+
+        The fetch is bounded: a challenged egress (a WAF 429-loop on the parse
+        endpoint) used to wedge this call for minutes, and the wedge sat
+        between the batch fetch and the page write, so a hot egress stalled the
+        whole crawl with "0 written" while the batch endpoint was healthy.
+        Labels are enrichment only, so a failed or timed-out attempt falls back
+        to the default labels and the crawl keeps moving.
         """
         if not page_type or page_type == "unknown" or page_type in ontology.field_labels:
             return
-        data = await self._get(
-            base,
-            {
-                "action": "parse", "page": title, "prop": "properties",
-                "format": "json", "formatversion": "2", "redirects": "1",
-            },
-        )
+        try:
+            data = await asyncio.wait_for(
+                self._get(
+                    base,
+                    {
+                        "action": "parse", "page": title, "prop": "properties",
+                        "format": "json", "formatversion": "2", "redirects": "1",
+                    },
+                ),
+                timeout=self.settings.crawl_timeout_seconds + 30.0,
+            )
+        except Exception as error:
+            logger.warning(
+                "label learning failed for type %r (%s); using default labels",
+                page_type, error,
+            )
+            data = None
         if data and "error" not in data:
             learn_field_labels(ontology, page_type, (data.get("parse") or {}).get("properties"))
+        if page_type not in ontology.field_labels:
+            # The attempt found no Portable Infobox schema (or failed above):
+            # record the type anyway, or every page of it pays this request
+            # again.
+            ontology.field_labels[page_type] = {}
 
     async def expand_templates(self, base: str, text: str) -> str:
         """Expand one template call, returning the resolved wikitext.

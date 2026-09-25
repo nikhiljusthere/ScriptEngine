@@ -261,6 +261,41 @@ but NOT per-(host,IP) vs a per-host-global budget — if global, rotation is a
 placebo and only time clears a budget; NordVPN exit IPs are shared and often
 dirty, so "changed country" ≠ "clean IP".
 
+**2026-09-25 rotations #4–#12 + the c2 root cause (executed 14:54–17:23;
+full episode record in `plan/SWITCHPOINT.md` +
+`reports/marvel/OWNER_WALL_2026-09-25.md`):** after the owner's "single
+machine, rotate for speed" ruling (wall item 5, RESOLVED), the Marvel
+fetch (65,391 outstanding; `tools/marvel/shard_fetch.py` full shard) ran:
+#4 CA #1980 (`187.15.140.90`; c3, then c8 burst 429-loop), #5 JP #1295
+(`187.15.136.110`; 60-s fetch timeouts), #6 SG #646 (`187.15.101.107`; c3
+429-loop), #7 UK #2640 (`194.88.96.77`; c3 429-loop ×2 + one transient
+post-switch tunnel stall), #8 DE #1544 (`187.40.54.176`; c3 429-loop),
+#9 FR #1136 (`187.14.107.20`; c2 silent stall), #10 CH #383
+(`89.37.173.228`; c2 silent stall + c3 429-loop), #11 ES #175
+(`187.13.187.62`; c2 silent stall ×2 + the 17:10 tail-200 repro that added
+160 pages), #12 FI #214 (`187.40.62.59` — current egress). **Two findings
+close the afternoon's stalls:** (1) the c3 429 loops were Cloudflare **WAF
+UA challenges**, not Fandom's rate limiter — proven 16:44 on CH (crawler
+UA `ScriptEngine/0.1` → 429 "Just a moment…" HTML in 1.1 s; browser UA
+→ 200 JSON 50/50 in 0.51 s, same session/egress;
+`tools/marvel/batch_probe_ua.py`); the sustained-rate-limit theory is
+retired for those loops, and every launch now carries the chrome136
+browser UA. (2) The c2 **silent stalls (300 s, 0 completions, 0 RLs, 0
+failures, on every egress, UA-independent) are a client-side bug —
+RESOLVED by the SIGUSR1 task dump** (`tools/marvel/c2_diag.py`,
+`crawl_marvel_c2_es_learn429_taskdump_2026-09-25.log`): both workers
+suspended in `_learn_labels` (`crawler.py:708`) — the per-new-type
+`action=parse` label fetch sits between the batch fetch and the page write
+and 429-loops/hangs in hot WAF state, pinning the crawl while the batch
+endpoint stays healthy. **Patch (gated on the four standing gates before
+use/commit):** the learn fetch is bounded (`asyncio.wait_for(crawl_
+timeout_seconds + 30 s)`) + failure-tolerant, and a type with no PI schema
+(or a failed attempt) is recorded once with an empty label set so it is
+never re-fetched; output is unchanged on a healthy egress. Next: full-list
+c2 + browser UA from FI egress `187.40.62.59` → reconciliation (fresh full
+enumeration + catch-up fetch; denominator 279,116) → Marvel-set gates 4–6
+→ GATE A council.
+
 ## 2. Phase A — Download (no model, no GPU; resumable, hash-pinned)
 
 **A0 — series scaffolding + overrides. (EXECUTED at plan time.)**
