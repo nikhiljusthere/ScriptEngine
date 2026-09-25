@@ -555,10 +555,13 @@ doc.
   4. F5: 33-page MCU top-up (bundled with #3's egress); 5. F7:
   grep-quantify the stray-`'` blast radius (zero egress); if material,
   patch the value cleaner + re-emit + O*N*E regression fixture (the fixture
-  lands either way); 6. F2: 46-title rename map into
-  `reports/marvel/receipts/known_diffs_2026-09-25.md`, wired into the
-  re-validation plan (the next revid spot-check must include renamed
-  titles); 7. F6: owner ruling at the wall (item 2, costed: revert =
+  lands either way); 6. F2: record the title drift in
+  `reports/marvel/receipts/known_diffs_2026-09-25.md` — the "46-title
+  rename map" is NOT reproducible (zero-egress audit: no metric yields
+  46); actual drift = 1 orphan file `Elizabeth Tyne (Earth-33263)` + 23
+  net-new titles (enum 279,112→279,133, net +21), wired into the
+  re-validation plan (the next revid spot-check must include the orphan
+  + the net-new titles); 7. F6: owner ruling at the wall (item 2, costed: revert =
   612-file rework; interim default = typed + fact-free, no edges — C does
   not wait on it); 8. **delta re-gate** (S5): after #1–#6 mutate the
   corpus — G4-style diff on changed/added files, G5 sample on them, G6
