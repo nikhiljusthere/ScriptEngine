@@ -35,8 +35,8 @@ wrong.
 
 | surface | number | measured 2026-09-25 | regenerate |
 |---|---:|---|---|
-| Marvel Database articles | 279,440 | `api.php?action=query&meta=siteinfo&siprop=statistics` (articles field) | same, per wiki |
-| MCU Wiki articles | 48,025 | same | same |
+| Marvel Database articles | 279,133 | same-day `allpages` enumeration 18:58 (the reconciliation run's fresh full enumeration — supersedes the siteinfo-statistics 279,440 per the fresh-run-wins rule; `series/marvel/manifest.json` `pages_enumerated` matches) | same, per wiki |
+| MCU Wiki articles | 48,059 | same-day trusted sequential full-chain `allpages` enumeration ~20:01 (supersedes the siteinfo-statistics 48,025 and the 04:45 crawl-time count 48,026 — the +33 = wiki growth after the final crawl, recorded; `reports/marvel/receipts/mcu_all_pages_fresh_2026-09-25.jsonl`) | same, per wiki |
 | Marvel DB `Template:` ns | 508 | `allpages` ns 10 full walk | same |
 | Marvel DB project ns (`Marvel Database:`) | 162 pages, ~30 infobox templates | `allpages` ns 4 | same |
 | MCU `Template:` ns | 489 | `allpages` ns 10 | same |
