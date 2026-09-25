@@ -374,7 +374,7 @@ completions and <10 rate-limit lines → 15-min watch cycles to
 completion; RED → step down c5/c3, then rotate for speed (pre-authorized).
 Pages added after the c2 08:48 enumeration are caught by the final
 reconciliation (fresh full enumeration + catch-up fetch of the delta).
-**Episode 15:23–15:35 (recorded):** c8 burst-looped on CA within 115 s
+**Episode 15:23–15:40 (recorded):** c8 burst-looped on CA within 115 s
 (16 rate-limit lines, 0 completions — `receipts/
 crawl_marvel_c8_429burst_2026-09-25.log`); c3 step-down on CA 429'd
 within 4 s (the c8 burst left the CA egress hot even on the light path —
@@ -384,10 +384,22 @@ speed tool) Japan #1295, egress `187.15.136.110`: clean of 429s but
 (`crawl_marvel_c3_jp_timeouts_2026-09-25.log`) → relaunched with
 `SCRIPTENGINE_CRAWL_TIMEOUT_SECONDS=60`; rotation #6 (owner: "use a
 closer VPN") Singapore #646, egress `187.15.101.107`, c3 + 60-s timeout
-in flight (probes 1.2–1.5 s, 1/3 a 15-s timeout — route watch item).
-15-min health judge on the SG fetch phase: >100 completions + <10
-rate-limit lines + low timeout rate → 15-min watch cycles; RED → next
-rotation (pre-authorized; egress logged + re-judged each time).
+relaunched ~15:32 — CrawlStalled at 300 s (14 rate-limit lines, 0
+completions; light path clean but the heavy 50-page batch endpoint
+429-looped within 4 min on a fresh exit — `crawl_marvel_c3_sg_429loop_2026-09-25.log`;
+1,200 titles dropped out under the storm are re-tried by disk-resume,
+no loss). Rotation #7 (~15:38) United Kingdom #2640 (London), egress
+`194.88.96.77` — a **different Nord range** (`194.88.x` vs `187.15.x`
+for CA/JP/SG), the discriminator: clean UK batch path ⇒ the 187.15
+range is what is batch-limited; UK also loops ⇒ the batch endpoint is
+limited across NordVPN exits (range/ASN level) and the fix is
+client-side (slimmer batch / reduced rate), not another rotation. c3 +
+60-s timeout relaunched ~15:40 (pid 255764); 15-min health judge on
+the UK fetch phase (~15:56): >100 completions + <10 rate-limit lines +
+low timeout rate → 15-min watch cycles to completion; RED → the UK
+outcome decides (range-level → retry a 187.15 country at c2 or client-
+side slim batch; endpoint-level → client-side fix as the next council
+item; egress logged + re-judged each time).
 A1c + A1b landed as the one gate-covered commit
 `6a1f6ceb` (four standing gates green on the union tree). Council medium
 gates 4–6 on the final MCU corpus: **GREEN** — base-vs-new parser diff
