@@ -348,6 +348,32 @@ triggered the NL lockout; 65,395 outstanding, ETA ~1.5–2 h into the fetch
 phase). Hard stop lifted; the fetch phase (~15:35) is judged with the
 15-min health judge (>100 completions, <10 rate-limit lines); CrawlStalled
 on CA = this exit is dirty too → record + kill + rotation #5 = owner wall.
+**Fetch-strategy pivot (owner ruling ~15:2x, 2026-09-25): single machine,
+higher concurrency, rotation pre-authorized as a speed tool.** The owner
+ruled: do it all on this machine (the 2nd-device / multi-IP plan and the
+home-line second-egress idea are retired — the home line is a diagnosed
+dead end: a wired macvlan netns gets L3 reachability, but the router
+does not NAT static source IPs, cannot receive the DHCP broadcast over
+Wi-Fi, and ignores unicast DHCP), try more workers or anything, start
+right now, switch the VPN to download faster (rotations are now
+pre-authorized as a *speed* tool — any rotation still gets its egress
+logged on connect and a 15-min health judge after relaunch). Executed
+15:23: the stale c2 manifest's complete `all_titles` (279,112,
+enumerated 08:48 today) was reused as the page list (no network
+enumeration) → `tools/marvel/make_shards.py --shards 1` →
+`tools/marvel/shard_a.jsonl` (65,391 outstanding, 213,721 on disk);
+the in-flight c3 run (pid 221627) was killed at 15:23:03 (still
+enumerating — zero fetch progress lost); `tools/marvel/shard_fetch.py
+--shard-id full` (ShardCrawler feeds the fixed list in place of the
+45-min re-enumeration; per-run manifest `manifest.shard_full.json`, the
+canonical manifest is rebuilt by the reconciliation run after the
+fetch) launched 15:23:08 (pid 242771) at
+`SCRIPTENGINE_CRAWL_CONCURRENCY=8` on CA egress `187.15.140.90`
+(ipify-verified). 15-min health judge on the c8 fetch phase: >100
+completions and <10 rate-limit lines → 15-min watch cycles to
+completion; RED → step down c5/c3, then rotate for speed (pre-authorized).
+Pages added after the c2 08:48 enumeration are caught by the final
+reconciliation (fresh full enumeration + catch-up fetch of the delta).
 A1c + A1b landed as the one gate-covered commit
 `6a1f6ceb` (four standing gates green on the union tree). Council medium
 gates 4–6 on the final MCU corpus: **GREEN** — base-vs-new parser diff
