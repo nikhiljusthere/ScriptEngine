@@ -331,7 +331,7 @@ class WikiCrawler:
                 "action": "query",
                 "titles": "|".join(titles),
                 "prop": "revisions|categories|templates",
-                "rvprop": "content",
+                "rvprop": "ids|content",  # ids -> revid; `content` alone filters revid out of the revision (F1, GATE A council 2026-09-25)
                 "rvslots": "main",
                 "cllimit": "max",
                 "tllimit": "max",
