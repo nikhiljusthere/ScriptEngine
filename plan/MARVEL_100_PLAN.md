@@ -318,7 +318,12 @@ in `series/mcu/overrides.yaml`.
 A1 MCU crawl **complete** (run 3, 04:45:59 — `0 written, 12817 skipped
 (category policy), 0 failed`; 35,209 is the final MCU set). Marvel fetch
 in progress on the NL egress (279,111 enumerated; ~1,200/min at 04:58 →
-ETA ~09:00; zero 429s). A1c + A1b landed as the one gate-covered commit
+ETA ~09:00; zero 429s at that time). At ~06:25 the NL egress 429-looped at
+concurrency 10 (~12/min); resolved per council hardening (client-side
+throttling primary, rotation last resort): 8-minute cooldown + restart at
+`SCRIPTENGINE_CRAWL_CONCURRENCY=3` (06:39:37) — clean since (log archived:
+`reports/marvel/receipts/crawl_marvel_nl_429loop_2026-09-25.log`), 213,718
+on disk at 06:44, ETA ~08:20–08:40. A1c + A1b landed as the one gate-covered commit
 `6a1f6ceb` (four standing gates green on the union tree). Council medium
 gates 4–6 on the final MCU corpus: **GREEN** — base-vs-new parser diff
 (stable delta +0.00%, 0/35,209 pages changed → PROCEED; the only
