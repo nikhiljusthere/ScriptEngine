@@ -331,9 +331,13 @@ operator killed it at 07:35; logs archived:
 Now: c2 (07:50, after the clean 07:49 single-request probe) also stalled
 immediately on the fetch endpoint (CrawlStalled 08:34:28, 0 completions —
 `crawl_marvel_c2_stalled_2026-09-25.log`); same-egress hardening exhausted,
-owner wall TRIGGERED for rotation #4+. One last in-authority attempt: c2
-retry ≈11:30 after a ~3 h fully-quiet egress; a second CrawlStalled = hard
-stop at the owner wall (briefing `reports/marvel/OWNER_WALL_2026-09-25.md`).
+owner wall TRIGGERED for rotation #4+. The last in-authority attempt — a
+c2 retry at 11:30 after a ~3 h fully-quiet egress — also stalled:
+CrawlStalled 12:19:15, 0 completions, 52 rate-limit lines
+(`crawl_marvel_c2retry_stalled_2026-09-25.log`; this run left the stalled
+manifest on disk: `stalled: true`, `stall_remaining: 64091`). **HARD STOP
+in effect: no further in-authority crawl actions**; the campaign now waits
+at the owner wall (briefing `reports/marvel/OWNER_WALL_2026-09-25.md`).
 A1c + A1b landed as the one gate-covered commit
 `6a1f6ceb` (four standing gates green on the union tree). Council medium
 gates 4–6 on the final MCU corpus: **GREEN** — base-vs-new parser diff
