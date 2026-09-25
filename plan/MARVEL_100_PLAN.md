@@ -402,13 +402,34 @@ far: the 187.15 exits' 429 loops were egress-specific (burned/dirty),
 not a range/ASN-level batch limit — the 194.88 exit is 429-clean.
 Direct 50-title batch probe from the same UK egress ~15:58: HTTP 200 in
 1.64 s, 50/50 pages (endpoint healthy from UK). Relaunched c3 + 60-s on
-the SAME UK egress (no new rotation; pid 264208, ~16:00); 15-min health
-judge ~16:15: >100 completions + <10 rate-limit lines + low timeout
-rate → 15-min watch cycles to completion; RED → rotate to a
-proven-clean egress (DE #1507 ran the MCU crawl today, 187.40 range)
-or, if a clean egress also stalls on the batch endpoint, the client-
-side fix (slimmer batch / reduced rate) is the next council item;
-egress logged + re-judged each time.
+the SAME UK egress (no new rotation; pid 264208, ~16:00). **The UK
+relaunch 429-looped within 3 min** (20 rate-limit lines, 0 completions,
+CrawlStalled fired — `crawl_marvel_c3_uk_429loop_2026-09-25.log`;
+single-request probes pass but sustained c3 trips the limit). **Owner
+ruling (~16:0x): "why are you waiting 15 min? just download it, if it
+doesnt start, use new VPN"** — the 15-min health judge is RETIRED:
+quick check (2–4 min) after every relaunch; not starting / 429-looping
+→ rotate immediately (pre-authorization stands; egress logged each
+time). **Rotation #8 Germany #1544 (~16:04, egress `187.40.54.176` —
+the proven MCU-crawl 187.40 range):** attempt 1 (c3, ~16:05) hung with
+2 failed first-attempts at the 60-s cap and 0 RLs (stale pooled
+connections from the post-switch window; direct batch probe 50/50 in
+1.92 s — `crawl_marvel_c3_de_stall_1_2026-09-25.log`) → restart #2
+(c3, ~16:11) 429-looped (6 RLs, 0 completions —
+`crawl_marvel_c3_de_429loop_2026-09-25.log`). **Pattern: every egress
+tried today (CA, SG, UK, DE) 429-loops on sustained c3 batch traffic
+within minutes while single-request probes always pass** → consistent
+with a sustained-rate limit on VPN ranges for the heavy batch query,
+not egress-specific dirt. **Rotation #9 France #1136 (~16:18, egress
+`187.14.107.20`; slow route — light 3.2–10 s, batch 50/50 in 14.5 s,
+no 429s):** launched **c2** (half the c3 request rate; env-var lever,
+no gate needed) + 60-s timeout (pid 273739, ~16:20, `receipts/shard_full.log`).
+Quick check ~16:24: completions flowing (ondisk delta from 213,721) →
+15-min watch cycles to completion (c2 on the slow FR route ≈ 3–4 h for
+65,391); 429-loop = the FIFTH egress → decisive evidence for the
+sustained-rate limit → escalate to the council (client-side slimmer
+batch = gate-covered code change; per-page parse fallback; or a
+cooldown) — no sixth blind rotation.
 A1c + A1b landed as the one gate-covered commit
 `6a1f6ceb` (four standing gates green on the union tree). Council medium
 gates 4–6 on the final MCU corpus: **GREEN** — base-vs-new parser diff
