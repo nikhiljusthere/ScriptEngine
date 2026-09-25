@@ -374,6 +374,20 @@ completions and <10 rate-limit lines → 15-min watch cycles to
 completion; RED → step down c5/c3, then rotate for speed (pre-authorized).
 Pages added after the c2 08:48 enumeration are caught by the final
 reconciliation (fresh full enumeration + catch-up fetch of the delta).
+**Episode 15:23–15:35 (recorded):** c8 burst-looped on CA within 115 s
+(16 rate-limit lines, 0 completions — `receipts/
+crawl_marvel_c8_429burst_2026-09-25.log`); c3 step-down on CA 429'd
+within 4 s (the c8 burst left the CA egress hot even on the light path —
+`crawl_marvel_c3_ca_hot_2026-09-25.log`) → rotation #5 (pre-authorized
+speed tool) Japan #1295, egress `187.15.136.110`: clean of 429s but
+~2 s RTT — heavy 50-page batches hit the 30-s fetch timeout
+(`crawl_marvel_c3_jp_timeouts_2026-09-25.log`) → relaunched with
+`SCRIPTENGINE_CRAWL_TIMEOUT_SECONDS=60`; rotation #6 (owner: "use a
+closer VPN") Singapore #646, egress `187.15.101.107`, c3 + 60-s timeout
+in flight (probes 1.2–1.5 s, 1/3 a 15-s timeout — route watch item).
+15-min health judge on the SG fetch phase: >100 completions + <10
+rate-limit lines + low timeout rate → 15-min watch cycles; RED → next
+rotation (pre-authorized; egress logged + re-judged each time).
 A1c + A1b landed as the one gate-covered commit
 `6a1f6ceb` (four standing gates green on the union tree). Council medium
 gates 4–6 on the final MCU corpus: **GREEN** — base-vs-new parser diff
