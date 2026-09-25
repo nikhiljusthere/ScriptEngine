@@ -338,6 +338,16 @@ CrawlStalled 12:19:15, 0 completions, 52 rate-limit lines
 manifest on disk: `stalled: true`, `stall_remaining: 64091`). **HARD STOP
 in effect: no further in-authority crawl actions**; the campaign now waits
 at the owner wall (briefing `reports/marvel/OWNER_WALL_2026-09-25.md`).
+**Owner ruling at the wall (~14:52): "use the VPN to download the
+remaining pages"** → rotation #4 approved (country ≠ us/de/nl; budget = VPN
+connection time until the crawl finishes). Executed: `nordvpn connect
+canada` → Canada #1980, egress `187.15.140.90` (fresh IP; the locked NL
+egress `186.247.163.23` now unused); single light probe HTTP 200; c3 run
+launched 14:54:46 (pid 221627; ~15 req/min vs the ~48 req/min that
+triggered the NL lockout; 65,395 outstanding, ETA ~1.5–2 h into the fetch
+phase). Hard stop lifted; the fetch phase (~15:35) is judged with the
+15-min health judge (>100 completions, <10 rate-limit lines); CrawlStalled
+on CA = this exit is dirty too → record + kill + rotation #5 = owner wall.
 A1c + A1b landed as the one gate-covered commit
 `6a1f6ceb` (four standing gates green on the union tree). Council medium
 gates 4–6 on the final MCU corpus: **GREEN** — base-vs-new parser diff
