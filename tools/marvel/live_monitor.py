@@ -198,6 +198,13 @@ def build_data() -> dict:
             else:
                 entry.update({"batch": 0, "done": 0, "total": 0,
                               "stamped": 0, "missing": 0, "rate_per_h": None})
+            if done_receipt and rec:
+                # show the receipt's true totals (the stage log may be a
+                # stale/intermediate _runN file): stamped = pre + this run
+                entry["done"] = rec.get("already_stamped", 0) + rec.get("stamped_this_run", 0)
+                entry["total"] = rec.get("files_total", 0)
+                entry["stamped"] = entry["done"]
+                entry["missing"] = len(rec.get("missing_live") or [])
         else:  # f3 / f5: count written rows in the log
             total = 4 if key == "f3" else 33
             written = 0
