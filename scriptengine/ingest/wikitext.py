@@ -207,6 +207,10 @@ class CitationGrammar:
 # no retrieval gain here.
 TRANSPARENT_TEMPLATES: dict[str, str] = {
     "nihongo": "all",
+    # {{Conjecture|Name}} marks a speculative real-world identity; the first
+    # positional arg is the name itself (e.g. Ajax = Francis Freeman), so it
+    # must survive as prose or the identity is lost from the extracted lead.
+    "conjecture": "first",
     "ruby": "first",
     "sub": "first",
     "sup": "first",
@@ -287,7 +291,11 @@ _MIN_ITEM_MARKERS = 3
 # Wikitable cell attributes precede the content after a single `|`, e.g.
 # `| colspan="2" style="..." |Binding Vows`. Only the content is wanted.
 _CELL_ATTRS = re.compile(r'^[^|\[{]*?(?:=|colspan|rowspan|style|align|width)[^|]*\|(?!\|)')
-_QUOTES = re.compile(r"'{2,5}")
+# Unbounded: capping at five left one stray `'` behind whenever template
+# stripping collapsed a nested emphasis run to six+ quotes, e.g.
+# `'''{{Conjecture|X}}'''` -> `''''''`. Well-formed emphasis is at most
+# three quotes, so stripping longer runs changes nothing for valid wikitext.
+_QUOTES = re.compile(r"'{2,}")
 _LIST_PREFIX = re.compile(r"^[*#:;]+\s*", re.MULTILINE)
 _WHITESPACE = re.compile(r"[ \t]+")
 _BLANK_LINES = re.compile(r"\n{3,}")
