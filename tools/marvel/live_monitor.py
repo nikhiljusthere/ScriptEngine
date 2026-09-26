@@ -298,6 +298,7 @@ PAGE = """<!doctype html>
   .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:16px; }
   .card { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:16px; }
   .card h2 { font-size:13px; color:#8b949e; margin:0 0 10px; text-transform:uppercase; letter-spacing:.06em; }
+  .srow { display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid #21262d; gap:12px; }
   .big { font-size:26px; margin:4px 0; }
   .bar { height:10px; background:#21262d; border-radius:5px; overflow:hidden; margin:10px 0; }
   .bar > div { height:100%; background:#2ea043; transition:width .8s; }
@@ -312,6 +313,7 @@ PAGE = """<!doctype html>
 <div class="sub">F1 revid backfill + F3 re-crawl + F5 top-up · watchdog-orchestrated · refresh 5 s</div>
 <div class="pipe" id="pipe"></div>
 <div class="grid">
+  <div class="card"><h2>All stages</h2><div id="all"></div></div>
   <div class="card"><h2>Current stage</h2><div id="cur"></div></div>
   <div class="card"><h2>Egress / watchdog</h2><div id="egress"></div></div>
   <div class="card"><h2>Watchdog log</h2><pre id="wdlog"></pre></div>
@@ -324,14 +326,33 @@ function pct(d,t){return t? (100*d/t).toFixed(2)+"%" : "—";}
 function etaStr(c){ if(c.eta_min!=null) return Math.round(c.eta_min/60)+" h "+(c.eta_min%60)+" m";
   if(c.rate_per_h&&c.total>c.done){ const h=(c.total-c.done)/c.rate_per_h; return Math.round(h/60)+" h "+Math.round(h%60)+" m (est)"; }
   return "—"; }
+function stageProg(s){
+  if(s.done!==undefined && s.total>0){
+    let t=s.done.toLocaleString()+" / "+s.total.toLocaleString();
+    if(s.state==="done"&&s.missing) t+=" · "+s.missing+" missing (live)";
+    return t;
+  }
+  if(s.written!==undefined&&s.total) return s.written+" / "+s.total+" written";
+  return s.state==="done"?"done":"not started";
+}
 function render(d){
   const pipe=document.getElementById('pipe'); pipe.innerHTML="";
   d.stages.forEach(s=>{
     const c=document.createElement('div');
     c.className="chip "+s.state;
     const tag=s.state==="running"?" (run "+ (d.watchdog.run) +")":s.state==="stalled"?" (launch failing)":"";
-    c.textContent=s.key.toUpperCase()+tag;
+    const cnt=" "+stageProg(s);
+    c.textContent=s.key.toUpperCase()+tag+cnt;
     pipe.appendChild(c);
+  });
+  const allEl=document.getElementById('all'); allEl.innerHTML="";
+  d.stages.forEach(s=>{
+    const row=document.createElement('div');
+    row.className="srow";
+    const cls=s.state==="done"?"ok":s.state==="running"?"":s.state==="stalled"?"warn":"sub";
+    const detail=s.state==="queued"?"waits for watchdog tick":stageProg(s);
+    row.innerHTML='<span>'+s.key.toUpperCase()+'</span><span class="'+cls+'">'+s.state+' · '+detail+'</span>';
+    allEl.appendChild(row);
   });
   const cur=d.stages.find(s=>s.state!=="done"&&s.state!=="queued")||d.stages.find(s=>s.state==="queued")||null;
   const curEl=document.getElementById('cur');
