@@ -173,23 +173,47 @@ stop_stage() {  # clean stop of a running stage (resumable: tools re-scan unstam
   if [ -d "/proc/$P" ]; then log "  still alive — SIGKILL"; kill -KILL "$P" 2>/dev/null; fi
 }
 
-launch() {  # (re)start the current stage with a fresh egress note
+launch() {  # (re)start the current stage with a fresh egress note; VERIFY the spawn
+  # (2026-09-27 hardening: run-2's first launch() silently failed — the setsid job
+  # never started, its error went to the watchdog's /dev/null stderr, and the
+  # "launched" line was a lie (found when the marvel log stayed empty). Now: 3
+  # in-place attempts on the SAME egress (no rotation), each verified via
+  # stage_pid after 5 s; success is logged with the real pid. If all 3 fail the
+  # failure is logged here (visible in $LOG) and the next tick's dead-run path
+  # rotates egress and launches again.)
   NOTE="$COUNTRY ${LAST_IP} (nordvpn, exhausted pool 2026-09-26, watchdog run $RUN)"
   case "$STAGE" in
-    marvel) setsid nohup env PYTHONPATH="$REPO" "$PY" tools/marvel/revid_backfill.py \
-             --series marvel --workers 8 --egress-note "$NOTE" >> "$(stage_log)" 2>&1 < /dev/null & ;;
-    mcu)    setsid nohup env PYTHONPATH="$REPO" "$PY" tools/marvel/revid_backfill.py \
-             --series mcu --workers 8 --egress-note "$NOTE" >> "$(stage_log)" 2>&1 < /dev/null & ;;
-    f3)     setsid nohup env PYTHONPATH="$REPO" "$PY" tools/marvel/fixlist_fetch.py \
-             --series marvel --titles-file tools/marvel/f3_recrawl_2026-09-26.jsonl \
-             --disambiguate --shard-id f3_recrawl_2026-09-26 \
-             --egress-note "$NOTE" >> "$(stage_log)" 2>&1 < /dev/null & ;;
-    f5)     setsid nohup env PYTHONPATH="$REPO" "$PY" tools/marvel/fixlist_fetch.py \
-             --series mcu --titles-file tools/marvel/mcu_topup_f5_2026-09-26.jsonl \
-             --shard-id mcu_topup_f5_2026-09-26 \
-             --egress-note "$NOTE" >> "$(stage_log)" 2>&1 < /dev/null & ;;
+    marvel|mcu) : ;;
+    f3|f5)      : ;;
+    *) log "LAUNCH: unknown stage $STAGE — refusing"; return 1 ;;
   esac
-  log "launched stage=$STAGE run=$RUN (note: $NOTE) -> $(stage_log)"
+  attempt=1
+  while [ $attempt -le 3 ]; do
+    case "$STAGE" in
+      marvel) setsid nohup env PYTHONPATH="$REPO" "$PY" tools/marvel/revid_backfill.py \
+                --series marvel --workers 8 --egress-note "$NOTE" >> "$(stage_log)" 2>&1 < /dev/null & ;;
+      mcu)    setsid nohup env PYTHONPATH="$REPO" "$PY" tools/marvel/revid_backfill.py \
+                --series mcu --workers 8 --egress-note "$NOTE" >> "$(stage_log)" 2>&1 < /dev/null & ;;
+      f3)     setsid nohup env PYTHONPATH="$REPO" "$PY" tools/marvel/fixlist_fetch.py \
+                --series marvel --titles-file tools/marvel/f3_recrawl_2026-09-26.jsonl \
+                --disambiguate --shard-id f3_recrawl_2026-09-26 \
+                --egress-note "$NOTE" >> "$(stage_log)" 2>&1 < /dev/null & ;;
+      f5)     setsid nohup env PYTHONPATH="$REPO" "$PY" tools/marvel/fixlist_fetch.py \
+                --series mcu --titles-file tools/marvel/mcu_topup_f5_2026-09-26.jsonl \
+                --shard-id mcu_topup_f5_2026-09-26 \
+                --egress-note "$NOTE" >> "$(stage_log)" 2>&1 < /dev/null & ;;
+    esac
+    sleep 5
+    P="$(stage_pid)"
+    if [ -n "$P" ]; then
+      log "launched stage=$STAGE run=$RUN (pid $P, attempt $attempt, note: $NOTE) -> $(stage_log)"
+      return 0
+    fi
+    log "LAUNCH attempt $attempt/3 FAILED stage=$STAGE run=$RUN (no stage process after 5 s) — retrying on same egress $LAST_IP"
+    attempt=$((attempt+1))
+  done
+  log "LAUNCH FAILED stage=$STAGE run=$RUN (3 attempts, no stage process) — next tick will rotate egress and launch again"
+  return 1
 }
 
 advance() {
