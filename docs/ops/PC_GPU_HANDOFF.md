@@ -32,8 +32,9 @@ Executable chain: `tools/master-work/gpu-handoff.sh`.
   the newest-file fallback A's 262k transcript → the 262k switch exits 2 →
   machine stranded at 100k).
 - **No `--api` on the chain's switches:** without it, `:8000` is untouched
-  (stays on CPU). A long extraction under a CUDA `:8000` re-triggers the
-  508/524 Qwen-OOM class — the batch needs `:8000` on CPU.
+  (stays off). A long extraction under a CUDA `:8000` re-triggers the
+  508/524 Qwen-OOM class — the batch needs `:8000` off (GPU-only since
+  2026-09-26: never moved to CPU).
 - **No-vision PC control is proven** (2026-09-08): open terminal
   (xdotool window-id diff) → `windowactivate` + `type` (visible keystrokes) →
   verify by **file side-channel** (the typed command writes a file) → close by
@@ -52,7 +53,7 @@ Executable chain: `tools/master-work/gpu-handoff.sh`.
 ## Tier 1 — no flip (deterministic Qwen-batch steps)
 
 `events-extract` / LLM batches need **no mode switch at all**: under 262k,
-Qwen owns the GPU and `:8000` on CPU is normal behavior. A just detaches:
+Qwen owns the GPU and `:8000` off is normal behavior. A just detaches:
 
 ```bash
 tools/master-work/gpu-handoff.sh --tier1 <spec>   # batch + gated typer, no switch, no new session

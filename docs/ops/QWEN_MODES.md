@@ -26,7 +26,8 @@ further; `qwen-switch.sh <tokens>` generates the profile on the fly.
 
 - **262k — exploratory / linear.** Maximum context for long linear dives and
   exploratory code fixes. Headroom is below the 5.3 GiB the reranker wants, so
-  `:8000` must run on CPU (or be stopped). Work is linear: **no parallel
+  `:8000` stays stopped (GPU-only since 2026-09-26 — never on CPU; dial down to
+  host it). Work is linear: **no parallel
   subagents**.
 - **100k — service.** ~7–8 GiB headroom: the `:8000` API co-locates on CUDA
   (fast cross-encoder) and **up to 2 subagents run in parallel**. This is the
@@ -116,7 +117,7 @@ that is the designed working mode, not an exception. Protocol (skill:
    |---|---|
    | `:8000` embedder+reranker needed on CUDA *alongside* Qwen (live span-recall probes, page-runs, `/context` work) | switch **down** (100k) |
    | ≥2 parallel subagents (extraction / reading / review fan-out) | switch **down** (100k) |
-   | heavy Qwen LLM batch (`events-extract`) | **no switch** — the hard rule: stop `:8000` (or CPU), Qwen owns the card |
+   | heavy Qwen LLM batch (`events-extract`) | **no switch** — the hard rule: stop `:8000` (never CPU), Qwen owns the card |
    | GPU phase + subagent phase finished, inline work remains | switch **back** to 262k |
 2. **Pre-flight (model alive):** `switchpoint` checkpoint (commit +
    `plan/SWITCHPOINT.md`); fit check — the current session's transcript
