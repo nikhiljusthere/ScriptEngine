@@ -205,7 +205,8 @@ def build_data() -> dict:
                 entry["total"] = rec.get("files_total", 0)
                 entry["stamped"] = entry["done"]
                 entry["missing"] = len(rec.get("missing_live") or [])
-        else:  # f3 / f5: count written rows in the log
+        else:  # f3 / f5: live progress from the stage log; the receipt (fixed
+            # names, overwritten per run) is the truth once the stage finished
             total = 4 if key == "f3" else 33
             written = 0
             last_fetch = None
@@ -215,13 +216,19 @@ def build_data() -> dict:
                     last_fetch = m.group(1)
                 if line.strip().startswith("-> ") or " (revid=" in line:
                     written += 1
-            rec = newest_receipt(f"fixlist_{key + '_recrawl' if key == 'f3' else '_mcu_topup_f5'}_2026-09-26.json".replace("f5_mcu_topup_f5", "mcu_topup_f5"))
+            rec_name = ("fixlist_f3_recrawl_2026-09-26.json" if key == "f3"
+                        else "fixlist_mcu_topup_f5_2026-09-26.json")
+            rec = newest_receipt(rec_name)
             bad_rows = 0
             if rec:
                 bad_rows = sum(
                     1 for x in rec.get("rows", [])
                     if str(x.get("status", "")).startswith("missing-or-failed")
                 )
+                # receipt overrides the log count (the log accumulates every
+                # launch attempt's run, so its line count over-counts)
+                written = rec.get("written", written)
+                total = rec.get("titles_in", total)
             entry["written"] = written
             entry["total"] = total
             entry["last_fetch"] = last_fetch
@@ -244,7 +251,9 @@ def build_data() -> dict:
                 wd_lines = read_log_tail(RECEIPTS / "egress_watchdog_2026-09-26.log", 20)
                 fail_i = max((j for j, l in enumerate(wd_lines) if "LAUNCH FAILED" in l), default=-1)
                 ok_i = max((j for j, l in enumerate(wd_lines)
-                            if l.startswith("launched stage=") or "advancing to stage=" in l),
+                            if l.startswith("launched stage=") or "advancing to stage=" in l
+                            or "EGRESS BATCH COMPLETE" in l
+                            or re.search(r"stage=f\d run=\d+ complete", l)),
                            default=-1)
                 entry["state"] = "stalled" if fail_i > ok_i else "pending"
         else:
@@ -332,7 +341,11 @@ function stageProg(s){
     if(s.state==="done"&&s.missing) t+=" · "+s.missing+" missing (live)";
     return t;
   }
-  if(s.written!==undefined&&s.total) return s.written+" / "+s.total+" written";
+  if(s.written!==undefined&&s.total){
+    let t=s.written.toLocaleString()+" / "+s.total.toLocaleString()+" written";
+    if(s.state==="done"&&s.written<s.total) t+=" · "+(s.total-s.written)+" skipped (by design)";
+    return t;
+  }
   return s.state==="done"?"done":"not started";
 }
 function render(d){
