@@ -50,12 +50,19 @@ restore() {
     curl -s -m 2 http://127.0.0.1:18080/health 2>/dev/null | grep -q ok \
       || say "RESTORE: FAILED — Qwen :18080 not healthy (see $NINFER/logs/serve_170k_window.log)"
   fi
-  SCRIPTENGINE_DEVICE=cpu nohup "$VENV" -m scriptengine.api.main > /tmp/scriptengine_api.log 2>&1 &
-  for i in $(seq 1 30); do
-    curl -s -m 2 http://127.0.0.1:8000/health 2>/dev/null | grep -q ok && break
-    sleep 5
-  done
-  say "RESTORE: :8000 on CPU; steady state restored"
+  # GPU-only (owner directive 2026-09-26): :8000 comes back on CUDA or stays off —
+  # never CPU. The embedder + reranker need ~5.3 GiB beside Qwen.
+  FREE_API=$(nvidia-smi --query-gpu=memory.free --format=csv,noheader,nounits | head -1)
+  if [ "${FREE_API:-0}" -ge 5632 ]; then
+    SCRIPTENGINE_DEVICE=cuda nohup "$VENV" -m scriptengine.api.main > /tmp/scriptengine_api.log 2>&1 &
+    for i in $(seq 1 30); do
+      curl -s -m 2 http://127.0.0.1:8000/health 2>/dev/null | grep -q ok && break
+      sleep 5
+    done
+    say "RESTORE: :8000 on CUDA; steady state restored"
+  else
+    say "RESTORE: :8000 left OFF — ${FREE_API:-?} MiB free < 5.5 GiB (GPU-only: never CPU; dial Qwen down to host it)"
+  fi
   echo "done-restored" > "$STATE"
 }
 trap restore EXIT

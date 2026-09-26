@@ -157,7 +157,16 @@ re-crawling.
   - **Long sequential background work:** `setsid nohup bash -c 'for s in …; do
     cmd "$s" >> /tmp/x.txt; done' > /tmp/x.txt 2>&1 < /dev/null &`, then poll the
     file with a bounded status-printing loop. The job survives the tool timeout.
-- **GPU device selection for servers/APIs and any job: CUDA first, CPU last.** Whenever
+- **GPU device selection for servers/APIs and any job: GPU-only.** **Owner directive
+     2026-09-26 (supersedes every CPU clause below):** every test or job that needs a
+     model — the `:8000` service, the four gates (pytest / `eval` / `span-recall` /
+     `canon-run`), census, grading, embedding — runs on CUDA. No script defaults to
+     `auto` (the `Settings.device` default is `cuda`; `auto` resolves to `cuda`, with no
+     silent CPU fallback) and none sets `SCRIPTENGINE_DEVICE=cpu`. When the card cannot
+     hold the job beside Qwen, dial Qwen down (`ninfer-work/qwen-switch.sh 120k` /
+     `100k`) or keep `:8000` off; never move the work to CPU. The only model work that
+     may stay off the GPU is the local JEV decision stack (CPU, `~/tools/jev`) and only
+     where it does the work faster than the GPU route. Whenever
      you launch a server or API (`:8000` FastAPI, MCP, anything loading the
      embedder/reranker) or a job that loads them, decide the device in this order:
      1. **Check if the GPU is free** (`nvidia-smi`). If the card is free (or has
@@ -175,9 +184,8 @@ re-crawling.
         not block on the GPU, that 100k job runs in a FRESH 100k side session
         via the gpu-handoff chain (`docs/ops/PC_GPU_HANDOFF.md`, tier 2) — the
         campaign session sits idle, the side session does the GPU work, the
-        chain flips back and types the resume. CPU is reserved for: the
-        `:8000` *service* (it just runs slower) and short (<15 min) jobs
-        (point 5).
+        chain flips back and types the resume. (The CPU reservation for the
+        `:8000` service and short jobs is retired — 2026-09-26 directive above.)
       4. **Borrow the headroom for a *short* `:8000` task, even with Qwen on the
          card.** Qwen's KV pool is *pre-reserved* (`--kv-capacity 155648`), so its
          ~24.6 GB is a fixed allocation and the ~7 GB "free" is genuinely spare
@@ -189,17 +197,17 @@ re-crawling.
          OOM). Only do it when (a) Qwen is in a quiet window (low util, no
          extraction batch running), (b) the task is short, (c) you check Qwen's
          health right after (`nvidia-smi` / `kill -0`), and (d) you restore the
-         safe steady-state (stop the CUDA `:8000`, bring up CPU `:8000`) when
-         done. **Not** for `events-extract` / heavy LLM batches — those keep Qwen
+         safe steady-state (stop the CUDA `:8000`; it stays off — never a CPU
+         `:8000`) when done. **Not** for `events-extract` / heavy LLM batches — those keep Qwen
          under continuous load and are what the hard rule below forbids co-locating.
      5. **No CPU job longer than 15 minutes (2026-09-07 user directive).** Any
         job that would run >15 min on CPU — or that would simply be *faster*
         on the GPU — runs on CUDA. If the 262k Qwen profile is holding the
         card, switch it to 100k first (`ninfer-work/qwen-switch.sh 100k --api`;
         frees ~9 GB and the embedder+reranker co-locate on CUDA — this is 100k
-        mode's use case 1). CPU is reserved for short (<15 min) jobs and for
-        running the `:8000` *service* while Qwen owns the card for a long LLM
-        batch (the hard rule below — that clause is about the service, never
+        mode's use case 1). (Superseded 2026-09-26: no CPU jobs at all, short or
+        long, and no CPU `:8000` service — while Qwen owns the card for a long LLM
+        batch the `:8000` service stays off) (the hard rule below — that clause is about the service, never
         about a job's own models).
 - **Coverage is a live artifact, not a sentence.** No document states what is
       next or what remains — docs point at `reports/page-campaign/COVERAGE.md`,
@@ -271,14 +279,14 @@ further ~4 GB, and the Qwen model OOM-crashes under load. That is exactly what
 took down the first full-corpus extraction: **508/524 pages failed with
 `[Errno 111] Connection refused`** because the model died mid-run. So when you
 run `events-extract` (or any heavy LLM batch) on GPU, **dedicate the GPU to the
-Qwen model**: stop the `:8000` API (or run it on CPU with
-`SCRIPTENGINE_DEVICE=cpu`) first, then confirm `nvidia-smi` shows only the model
+Qwen model**: stop the `:8000` API first (GPU-only since 2026-09-26: it stays off,
+never moved to CPU), then confirm `nvidia-smi` shows only the model
 process and ~7 GB free before launching. Never run the extraction's LLM on CPU
 as a workaround — the GPU is the path; just keep the card free for it. For
 launching the `:8000` API itself, the decision order is the working-agreement
-**"GPU device selection for servers/APIs: CUDA first, CPU last"** — free →
-CUDA, can-free → free and CUDA, cannot-free → 100k switch for the job
-(`:8000` service → CPU). The one sanctioned exception
+**"GPU device selection for servers/APIs: GPU-only"** — free →
+CUDA, can-free → free and CUDA, cannot-free → dial Qwen down (120k/100k) for the
+job, or keep the `:8000` service off (never CPU). The one sanctioned exception
 is a **short, bounded `:8000` probe** in a Qwen quiet window (working-agreement
 point 4 above): Qwen's KV pool is pre-reserved, so its ~7 GB of headroom is
 genuinely free between prompt bursts and a lazily-loaded embedder+reranker (~5.3 GB)

@@ -94,7 +94,10 @@ class Settings(BaseSettings):
     # ComfyUI and a resident LLM cannot share VRAM on this machine, so the
     # embedder and reranker (~3.5 GB combined) must not squat on the GPU while
     # ComfyUI renders. They load on first use and unload after idling.
-    device: Device = "auto"
+    # GPU-only (owner directive 2026-09-26): every model-bearing job runs on
+    # CUDA; there is no silent CPU fallback. `cpu` stays selectable only as an
+    # explicit, deliberate override.
+    device: Device = "cuda"
     model_idle_unload_seconds: int = 300
 
     # ── Chunking ─────────────────────────────────────────────────────────────
@@ -167,15 +170,16 @@ class Settings(BaseSettings):
     api_port: int = 8000
 
     def resolved_device(self) -> str:
-        """Resolve ``auto`` to a concrete torch device without importing torch eagerly."""
-        if self.device != "auto":
-            return self.device
-        try:
-            import torch
+        """The torch device to load models on.
 
-            return "cuda" if torch.cuda.is_available() else "cpu"
-        except Exception:
-            return "cpu"
+        ``auto`` resolves to ``cuda`` (GPU-only, owner directive 2026-09-26): it
+        used to fall back to CPU when CUDA looked unavailable, which silently
+        moved embedding and reranking off the GPU. A missing GPU now fails
+        loudly at model load instead.
+        """
+        if self.device == "auto":
+            return "cuda"
+        return self.device
 
 
 # ── Subject resolution ───────────────────────────────────────────────────────
