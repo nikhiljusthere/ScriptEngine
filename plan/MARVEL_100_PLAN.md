@@ -637,7 +637,13 @@ Agatha 9912, Secret Invasion 9464, …) — Netflix-era shows (Punisher,
 Iron Fist, Daredevil, Jessica Jones, Loki S1, …) and films absent →
 T-OS (free owner API key) or T-SC (ladder); T-OS unkeyed API answers
 `kong-user-agent-block` / "cannot consume this service" (re-measured
-09-27); T-SC 403, T-PN 000. A tier whose fetch is bot-protected climbs the
+09-27); T-SC 403, T-PN 000. **Label-density measurement (pilot #2,
+09-27, 6 Disney+-era episodes, HI files):** speaker labels present on
+only 0–8% of dialogue lines (real character names when present) — the
+B1 text layer satisfies timing + verbatim text + SDH `sign` cues, and
+the hard names-on-every-line requirement is closed in B2
+(diarization vs named characters), unless the owner requires a
+fully-labeled source first (GATE B1 decision item). A tier whose fetch is bot-protected climbs the
 §1a ladder (agent-reach + OpenCLI browser-grade rung, JEV-triaged) before
 the tier is marked failed; reachability is re-measured at run time per
 source (addic7ed 200 / subscene 403 / others 000 from this host today —
