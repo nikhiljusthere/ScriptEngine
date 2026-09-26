@@ -34,7 +34,7 @@ import time
 from collections import Counter
 from pathlib import Path
 
-DEVICE = os.environ.get("CENSUS_DEVICE", "cpu")
+DEVICE = os.environ.get("CENSUS_DEVICE", "cuda")  # GPU-only (owner 2026-09-26)
 os.environ.setdefault("SCRIPTENGINE_DEVICE", DEVICE)
 
 ROOT = Path(__file__).resolve().parent.parent

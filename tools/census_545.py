@@ -21,12 +21,12 @@ reached beats 100% sourced. A minor ``reached-uncited`` is *published, not
 failed* (a corpus property, like Berserk's 0% sourced).
 
 The full census is ~13s/pair on CPU (~2h for 545) but ~1/sec on GPU (~9 min),
-so the default device is CPU (a long sustained cross-encoder run must not pin
-Qwen's GPU headroom); override ``--device cuda`` for the fast path.
+so it runs on CUDA (GPU-only, owner directive 2026-09-26: model-bearing jobs never
+fall back to CPU; free VRAM or dial Qwen down instead).
 
 Usage:
     python tools/census_545.py [--series jjk] [--pairs PATH] [--out PATH]
-                               [--limit N] [--device cpu|cuda]
+                               [--limit N] [--device cuda|cpu]
 """
 from __future__ import annotations
 
@@ -39,7 +39,7 @@ import time
 from pathlib import Path
 
 # Device must be chosen before the retrieval models are imported.
-DEVICE = os.environ.get("CENSUS_DEVICE", "cpu")
+DEVICE = os.environ.get("CENSUS_DEVICE", "cuda")
 os.environ.setdefault("SCRIPTENGINE_DEVICE", DEVICE)
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -191,7 +191,7 @@ def main() -> None:
     ap.add_argument("--pairs", default=str(DEFAULT_PAIRS))
     ap.add_argument("--out", default="/tmp/census_545_results.json")
     ap.add_argument("--limit", type=int, default=0, help="0 = all")
-    ap.add_argument("--device", default=DEVICE, choices=["cpu", "cuda"])
+    ap.add_argument("--device", default=DEVICE, choices=["cuda", "cpu"])
     args = ap.parse_args()
 
     if args.device != DEVICE:

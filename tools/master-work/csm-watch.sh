@@ -120,14 +120,13 @@ esc_stop(){
 
 esc_restart(){
   local l=$1 dev pid i ok d n
-  case "$l" in *"device=cpu"*|*"on CPU"*) dev=cpu;; *) dev=cuda;; esac
+  # GPU-only (owner directive 2026-09-26): :8000 always restarts on CUDA; a
+  # "device=cpu" / "on CPU" request is logged and ignored, never honored.
+  dev=cuda
+  case "$l" in *"device=cpu"*|*"on CPU"*) dec ":8000 restart ESC asked for CPU — ignored (GPU-only rule); restarting on CUDA";; esac
   pid=$(pgrep -f "$APIPG" | head -1 || true)
   if [ -n "$pid" ]; then dec ":8000 restart ESC: already up (pid $pid) — no-op."; return; fi
-  if [ "$dev" = cpu ]; then
-    setsid nohup env SCRIPTENGINE_DEVICE=cpu scriptengine/.venv/bin/python -m scriptengine.api.main >> /tmp/scriptengine_api.log 2>&1 < /dev/null &
-  else
-    setsid nohup scriptengine/.venv/bin/python -m scriptengine.api.main >> /tmp/scriptengine_api.log 2>&1 < /dev/null &
-  fi
+  setsid nohup env SCRIPTENGINE_DEVICE=cuda scriptengine/.venv/bin/python -m scriptengine.api.main >> /tmp/scriptengine_api.log 2>&1 < /dev/null &
   ok=0
   for i in $(seq 1 45); do
     if curl -s -m 3 http://localhost:8000/health 2>/dev/null | grep -q '"status":"ok"'; then ok=1; break; fi
