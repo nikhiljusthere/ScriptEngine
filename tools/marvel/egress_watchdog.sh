@@ -41,8 +41,8 @@ if [ -z "${STAGE:-}" ]; then
   STAGE=marvel; COUNTRY=FI; RUN=1; RUN_START=$(date +%s); LAST_IP=""
 fi
 save_state() {
-  printf 'STAGE=%s\nCOUNTRY=%s\nRUN=%s\nRUN_START=%s\nLAST_IP=%s\n' \
-    "$STAGE" "$COUNTRY" "$RUN" "$RUN_START" "$LAST_IP" > "$STATE"
+  printf 'STAGE=%s\nCOUNTRY=%s\nRUN=%s\nRUN_START=%s\nLAST_IP=%s\nREEXEC_FOR=%s\n' \
+    "$STAGE" "$COUNTRY" "$RUN" "$RUN_START" "$LAST_IP" "${REEXEC_FOR:-}" > "$STATE"
 }
 
 # ---------- stage helpers (anchored patterns skip the bash launcher wrapper) ----------
@@ -212,7 +212,13 @@ launch() {  # (re)start the current stage with a fresh egress note; VERIFY the s
     log "LAUNCH attempt $attempt/3 FAILED stage=$STAGE run=$RUN (no stage process after 5 s) — retrying on same egress $LAST_IP"
     attempt=$((attempt+1))
   done
-  log "LAUNCH FAILED stage=$STAGE run=$RUN (3 attempts, no stage process) — next tick will rotate egress and launch again"
+  log "LAUNCH FAILED stage=$STAGE run=$RUN (3 attempts, no stage process) — re-execing watchdog in a FRESH process context (2026-09-27: long-lived watchdogs lost the ability to spawn stage jobs silently after nordvpn connect; re-exec adopts the state file, one re-exec per RUN to avoid burning pool countries in a failure loop)"
+  if [ "${REEXEC_FOR:-}" != "$RUN" ]; then
+    REEXEC_FOR=$RUN
+    save_state
+    exec sh "$0"
+  fi
+  log "LAUNCH FAILED (re-exec already used for run $RUN) — next tick will rotate egress and launch again"
   return 1
 }
 
