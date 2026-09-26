@@ -622,10 +622,22 @@ or be named-excluded with a one-line cause (D1 discipline).
 
 **B1 — text layer (no model).** Per row, fetch CC/SDH text via the tier
 order, per-title first hit wins, recorded:
-`T-YT` (S5, transcript API; `asr: true` flag) → `T-OS` (OpenSubtitles v3,
+`T-OS` (OpenSubtitles v3,
 `hearing_impaired` flag preferred, fallback any) → `T-SC` (Subscene, SDH
 tag) → `T-A7` (Addic7ed, HI tag) → `T-PN` (Podnapisi, HI filter) →
-`T-DP` (S7, if D-1 yes). A tier whose fetch is bot-protected climbs the
+`T-DP` (S7, if D-1 yes). **Owner decision 2026-09-27: websites first —
+`T-YT` (S5) dropped from the tier order** (YouTube auto-captions carry no
+speaker labels; the owner requirement is character names with dialogue,
+which only tagged SDH/subtitle files provide; S5 survives as D-1/owner
+fallback for legal live-action audio). **Pilot re-measure 2026-09-27
+(egress FI #214):** T-A7 reachable + anonymous download works (no login),
+HI files are per-file siblings of normal files (row flag `HI`); T-A7
+catalog = Disney+ era only (WandaVision 8219, Loki 8435 = S2 only,
+Agatha 9912, Secret Invasion 9464, …) — Netflix-era shows (Punisher,
+Iron Fist, Daredevil, Jessica Jones, Loki S1, …) and films absent →
+T-OS (free owner API key) or T-SC (ladder); T-OS unkeyed API answers
+`kong-user-agent-block` / "cannot consume this service" (re-measured
+09-27); T-SC 403, T-PN 000. A tier whose fetch is bot-protected climbs the
 §1a ladder (agent-reach + OpenCLI browser-grade rung, JEV-triaged) before
 the tier is marked failed; reachability is re-measured at run time per
 source (addic7ed 200 / subscene 403 / others 000 from this host today —
