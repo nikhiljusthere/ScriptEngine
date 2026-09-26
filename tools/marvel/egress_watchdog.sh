@@ -28,6 +28,8 @@ STATE=/tmp/opencode/egress_watchdog_2026-09-26.state
 LOG="reports/marvel/receipts/egress_watchdog_2026-09-26.log"
 POOL="FI DE FR ES UK SG JP CA NL US CH"
 TICK=600          # 10 min
+SHORT_TICK=90     # adaptive: 90 s after a launch/advance (catch failed launches fast + chain small stages without a 10-min idle); reverts to TICK while a stage runs
+NEXTSLEEP=""      # set per-tick; empty = full $TICK
 MAX_TICKS=432     # 72 h hard stop (owner review)
 
 log() { echo "$(date '+%F %T') $*" >> "$LOG"; }
@@ -178,9 +180,12 @@ launch() {  # (re)start the current stage with a fresh egress note; VERIFY the s
   # never started, its error went to the watchdog's /dev/null stderr, and the
   # "launched" line was a lie (found when the marvel log stayed empty). Now: 3
   # in-place attempts on the SAME egress (no rotation), each verified via
-  # stage_pid after 5 s; success is logged with the real pid. If all 3 fail the
-  # failure is logged here (visible in $LOG) and the next tick's dead-run path
-  # rotates egress and launches again.)
+  # stage_pid after 5 s; success is logged with the real pid. Fast stages (a
+  # fixlist fetch of a few titles) can finish inside that 5 s window — a fresh,
+  # fully-successful receipt for the run window counts as success too (2026-09-27
+  # f3/f5 race: every attempt false-alarmed "no stage process" while the stage
+  # had already completed). If all 3 fail the failure is logged here (visible
+  # in $LOG) and the next tick's dead-run path rotates egress and launches again.)
   NOTE="$COUNTRY ${LAST_IP} (nordvpn, exhausted pool 2026-09-26, watchdog run $RUN)"
   case "$STAGE" in
     marvel|mcu) : ;;
@@ -207,6 +212,16 @@ launch() {  # (re)start the current stage with a fresh egress note; VERIFY the s
     P="$(stage_pid)"
     if [ -n "$P" ]; then
       log "launched stage=$STAGE run=$RUN (pid $P, attempt $attempt, note: $NOTE) -> $(stage_log)"
+      return 0
+    fi
+    # Fast-stage race (2026-09-27: f3/f5 fixlist fetches of a few titles finish
+    # in <5 s, so the pid check above misses them and every attempt false-alarms
+    # "no stage process"). If a fresh, fully-successful receipt for this run
+    # window exists, the stage finished inside the window — accept it (same
+    # test the tick's dead-run path uses).
+    R="$(latest_receipt)"
+    if [ -n "$R" ] && stage_ok "$R"; then
+      log "launched stage=$STAGE run=$RUN (pid already gone — completed within the 5 s window; receipt: $(basename "$R")) -> $(stage_log)"
       return 0
     fi
     log "LAUNCH attempt $attempt/3 FAILED stage=$STAGE run=$RUN (no stage process after 5 s) — retrying on same egress $LAST_IP"
@@ -246,12 +261,13 @@ advance() {
 
 # ---------- tick ----------
 tick() {
+  NEXTSLEEP=""    # default: full $TICK; a successful launch/advance below shortens it
   PID="$(stage_pid)"
   if [ -n "$PID" ]; then
     if ! vpn_ok; then
       log "tick: stage=$STAGE run=$RUN ALIVE (pid $PID) but VPN DOWN — stop -> rotate -> resume"
       stop_stage
-      if rotate_egress "same"; then RUN=$((RUN+1)); RUN_START=$(date +%s); launch; fi
+      if rotate_egress "same"; then RUN=$((RUN+1)); RUN_START=$(date +%s); launch && NEXTSLEEP=$SHORT_TICK; fi
       save_state
       return
     fi
@@ -265,7 +281,7 @@ tick() {
     if [ "$STAGNANT" -gt 900 ]; then
       log "tick: stage=$STAGE alive (pid $PID) but log stagnant ${STAGNANT}s — stop -> rotate -> resume"
       stop_stage
-      if rotate_egress "same"; then RUN=$((RUN+1)); RUN_START=$(date +%s); launch; fi
+      if rotate_egress "same"; then RUN=$((RUN+1)); RUN_START=$(date +%s); launch && NEXTSLEEP=$SHORT_TICK; fi
       save_state
       return
     fi
@@ -278,18 +294,18 @@ tick() {
   REC="$(latest_receipt)"
   if [ -n "$REC" ] && stage_ok "$REC"; then
     log "stage=$STAGE run=$RUN complete ($(stop_summary "$REC"); echo; basename "$REC")"
-    advance
+    advance && NEXTSLEEP=$SHORT_TICK
     save_state
     return
   fi
   if [ -n "$REC" ]; then
     log "stage=$STAGE run=$RUN stopped: $(stop_summary "$REC") — rotating to a FRESH IP (no blind retry)"
-    if rotate_egress "other"; then RUN=$((RUN+1)); RUN_START=$(date +%s); launch; fi
+    if rotate_egress "other"; then RUN=$((RUN+1)); RUN_START=$(date +%s); launch && NEXTSLEEP=$SHORT_TICK; fi
     save_state
     return
   fi
   log "stage=$STAGE run=$RUN dead with NO receipt (crash or hard kill) — rotating and re-running (idempotent)"
-  if rotate_egress "other"; then RUN=$((RUN+1)); RUN_START=$(date +%s); launch; fi
+  if rotate_egress "other"; then RUN=$((RUN+1)); RUN_START=$(date +%s); launch && NEXTSLEEP=$SHORT_TICK; fi
   save_state
 }
 
@@ -301,7 +317,7 @@ while :; do
   i=$((i+1))
   tick
   [ $i -ge "$MAX_TICKS" ] && { log "HARD STOP: ${MAX_TICKS} ticks elapsed — owner review"; break; }
-  sleep "$TICK"
+  sleep "${NEXTSLEEP:-$TICK}"
 done
 log "watchdog exit (stage=$STAGE run=$RUN)"
 save_state
