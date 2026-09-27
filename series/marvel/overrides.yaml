@@ -166,3 +166,13 @@ content_sections:
   - gallery
   - image gallery
   - external links
+# The JJK-era page-gen guard bans the route keywords "arc"/"saga" in roster
+# match phrases. The router only routes on `arc` where the wiki records `arc`
+# facts (router.py `_FIELD_ASKERS`), and marvel records none, so the ban is a
+# false positive here: the words are ordinary names (measured 2026-09-27:
+# 6/99,591 tier-a character titles trip it -- Arc (Hellbent) (Earth-616),
+# Arc (Imperial Guard) (Earth-21923/616), Arc Light (Earth-616),
+# Jeanne d'Arc (Earth-616), Saga (Earth-616) -- the tier-a sweep hard-erred
+# all 4 pages it had reached). Declaring the ban empty turns the guard off
+# for this series; the JJK default (arc, saga) is untouched.
+roster_route_words: []

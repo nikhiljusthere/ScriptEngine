@@ -272,15 +272,47 @@ def _page_type_is_episode(store, title: str) -> bool:
     ).fetchone()
     return bool(row and row["page_type"] and "episode" in row["page_type"].lower())
 
-def _roster_phrase_safe(title: str) -> bool:
+# The words a roster match phrase must not contain, because the shared router
+# would parse them as a route keyword. JJK's battle pages record an `arc`
+# field (router.py's `_FIELD_ASKERS`: "In which arc does X..."), so a
+# JJK story-arc page title like "Fearsome Womb Arc" would land the route
+# keyword in every generated match phrase built from it. The router only
+# routes on `arc` where the wiki records `arc` facts (a wiki that records
+# none never routes on the word -- router.py, _FIELD_ASKERS comment), so the
+# ban is series data, not engine truth: a wiki where the words are ordinary
+# names (Marvel's "Arc (Hellbent)", "Jeanne d'Arc", "Saga") declares
+# `roster_route_words: []` in its override and the guard goes quiet there.
+_ROUTE_WORDS_DEFAULT = ("arc", "saga")
+
+
+def _route_words(overrides: dict | None) -> tuple[str, ...]:
+    """The series' banned roster-phrase words (the override owns the list)."""
+    words = (overrides or {}).get(
+        "roster_route_words", list(_ROUTE_WORDS_DEFAULT))
+    return tuple(str(w).lower() for w in words)
+
+
+def _route_word_pattern(words: tuple[str, ...]):
+    """None when the series bans no word (the guard is disabled there)."""
+    if not words:
+        return None
+    return re.compile(r"\b(" + "|".join(re.escape(w) for w in words) + r")s?\b")
+
+
+def _roster_phrase_safe(
+    title: str, route_words: tuple[str, ...] = _ROUTE_WORDS_DEFAULT,
+) -> bool:
     """False when the title would put a banned word into a roster match phrase.
 
-    The guard (below) rejects any roster match phrase containing "arc"/"saga"
-    (a route trap); the roster phrases are built from the page title, so a
+    The guard (below) rejects any roster match phrase containing a banned
+    route word; the roster phrases are built from the page title, so a
     story-arc page like "Fearsome Womb Arc" would always trip it. Its
     per-battle facts stay; only the 'every battle' set is withheld.
     """
-    return not re.search(r"\b(arc|saga)s?\b", title.lower())
+    pattern = _route_word_pattern(route_words)
+    if pattern is None:
+        return True
+    return not pattern.search(title.lower())
 
 def _declared_battles(overrides, title: str) -> list[str] | None:
     """Members of the declared `<title> Battles` roster, or None.
@@ -460,7 +492,7 @@ def _battle_builder(store, paths, title, aliases, overrides, wiki, out, verified
                             f"page-gen:battle:{battle}:techniques")
 
     battle_titles = sorted(battles)
-    if not own_battle and _roster_phrase_safe(title):
+    if not own_battle and _roster_phrase_safe(title, _route_words(overrides)):
         out.questions.append(_question(
             f"Every battle involving {title}", "set", title, battle_titles, wiki, title,
             "page-gen:battles", verified, expect_mode="roster",
@@ -758,17 +790,23 @@ def _verify(out: PageGenOutput) -> None:
     out.verify = rows
 
 
-def _guard(out: PageGenOutput) -> None:
+def _guard(
+    out: PageGenOutput,
+    route_words: tuple[str, ...] = _ROUTE_WORDS_DEFAULT,
+) -> None:
     """The generator cannot emit a trap question or a trap match phrase."""
     problems: list[str] = []
     for q in out.questions:
         for violation in route_safe(q["question"], q.get("kind", "fact")):
             problems.append(f"{q.get('note', '?')}: {violation} in {q['question']!r}")
-    for roster in out.rosters:
-        for phrase in roster.get("match", []):
-            if re.search(r"\b(arc|saga)s?\b", phrase.lower()):
-                problems.append(
-                    f"roster {roster['name']!r}: arc/saga in match phrase {phrase!r}")
+    pattern = _route_word_pattern(route_words)
+    if pattern is not None:
+        for roster in out.rosters:
+            for phrase in roster.get("match", []):
+                if pattern.search(phrase.lower()):
+                    problems.append(
+                        f"roster {roster['name']!r}: banned route word in match "
+                        f"phrase {phrase!r}")
     if problems:
         raise PageGenError(
             "route-unsafe generated material:\n" + "\n".join(problems))
@@ -836,7 +874,7 @@ def generate_structured(
             builder(store, paths, title, aliases, overrides, wiki, out, verified)
         _coverage(store, paths, title, aliases, overrides, out, extra_sections)
         _verify(out)
-        _guard(out)
+        _guard(out, _route_words(overrides))
         return out
     finally:
         store.close()

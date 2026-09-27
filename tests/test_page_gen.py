@@ -822,6 +822,64 @@ def test_roster_phrase_safe_bans_arc_saga_words():
     assert not _roster_phrase_safe("The Final Saga")
 
 
+def test_roster_route_words_are_series_data():
+    """The JJK-era arc/saga ban is scoped by the series' override.
+
+    Marvel's tier-a sweep hard-erred every page whose name carries the word
+    "arc"/"saga" (Arc (Hellbent), Arc Light, Jeanne d'Arc, Saga, ...) --
+    6/99,591 titles -- because the ban is JJK route grammar baked into the
+    engine. The router only routes on `arc` where the wiki records `arc`
+    facts, so a series where the words are ordinary names declares
+    `roster_route_words: []` and the guard goes quiet; the default (no key)
+    keeps the JJK pair, so JJK/OPM behaviour is untouched.
+    """
+    from scriptengine.eval.page_gen import (
+        PageGenError, _guard, _route_words, _roster_phrase_safe)
+
+    # the default (absent key) is the JJK pair; an explicit list is
+    # casefolded; the empty list disables the ban.
+    assert _route_words(None) == ("arc", "saga")
+    assert _route_words({}) == ("arc", "saga")
+    assert _route_words({"roster_route_words": ["Arc"]}) == ("arc",)
+    assert _route_words({"roster_route_words": []}) == ()
+
+    assert not _roster_phrase_safe("Fearsome Womb Arc")  # default still bans
+    assert _roster_phrase_safe("Fearsome Womb Arc", ())  # series opt-out
+    assert _roster_phrase_safe("Arc (Hellbent) (Earth-616)", ())
+
+    # a roster whose match phrase carries the word: banned by default,
+    # clean for a series that declared no ban.
+    class _Out:
+        questions = []
+        rosters = [{
+            "name": "Arc (Hellbent) (Earth-616)'s affiliations",
+            "match": ["all the affiliations of arc (hellbent) (earth-616)"],
+            "subject": "Arc (Hellbent) (Earth-616)", "members": [],
+        }]
+    _guard(_Out(), ())  # no ban -> no error
+    try:
+        _guard(_Out())  # default JJK pair -> still a trap
+    except PageGenError as error:
+        assert "banned route word" in str(error)
+    else:
+        raise AssertionError("the default guard must still ban the JJK words")
+
+
+def test_marvel_mcu_overrides_declare_no_route_ban():
+    """The campaign series' overrides carry the opt-out (the sweep depends on it)."""
+    from pathlib import Path
+
+    import yaml
+
+    root = Path(__file__).resolve().parents[1]
+    for series in ("marvel", "mcu"):
+        ov = yaml.safe_load(
+            (root / "series" / series / "overrides.yaml").read_text(encoding="utf-8"))
+        assert ov.get("roster_route_words") == [], (
+            f"{series}: roster_route_words must be declared (empty) -- the "
+            f"arc/saga words are ordinary names in this corpus")
+
+
 def test_declared_battles_wins_over_discovery():
     from scriptengine.eval.page_gen import _declared_battles
 

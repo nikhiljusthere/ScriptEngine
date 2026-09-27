@@ -85,3 +85,13 @@ content_sections:
   - references
   - notes
   - gallery
+# Same rationale as the marvel override (see there): the JJK-era guard bans
+# the route keywords "arc"/"saga" in roster match phrases, but the router
+# only routes on `arc` where the wiki records `arc` facts and mcu records
+# none, so the ban is a false positive. Measured 2026-09-27: exactly 1 of
+# 4,804 tier-a character titles would trip it, and that one (the item page
+# "Justin Hammer/Artificial Heart Arc Reactor") is not in the tier-a
+# population -- which is why the 100%-complete MCU sweep finished with 0
+# errors. Declared here so a later tier-b sweep (non-characters) hits the
+# same clean path.
+roster_route_words: []
