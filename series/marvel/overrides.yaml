@@ -149,3 +149,20 @@ disambig_list_keys:
   - media
   - main_article1
   - main_article2
+
+# Chunk containment (plan MARVEL_100_PLAN.md §4, gate C): the span-recall
+# oracle counts the trivia prose under `Notes` / `References` / `Gallery`
+# / `Image Gallery` / `External Links` as reachable content (the JJK
+# precedent: `References` trivia is in oracle scope, so the chunker must
+# index it too), but the engine's default boilerplate set skips those
+# sections -- 214 sentences in 80 documents were unreachable on the
+# 2026-09-27 tier-0 run (Notes 101, References 85, Gallery 14, Image
+# Gallery 13, External Links 1). Promoting them to content makes the
+# chunker index them; sections with no text of their own still die in
+# the chunker's `word_count == 0` guard.
+content_sections:
+  - references
+  - notes
+  - gallery
+  - image gallery
+  - external links

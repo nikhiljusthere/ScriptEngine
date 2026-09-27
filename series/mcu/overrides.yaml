@@ -74,3 +74,14 @@ identity_fields:
 # known_diffs_2026-09-25.md rather than guessed here.
 category_relations:
   - {pattern: "^(.+) Crew Members$", relation: crew_of, target: 1}
+
+# Chunk containment (plan MARVEL_100_PLAN.md §4, gate C): same divergence as
+# the Marvel DB -- the oracle counts the trivia under `References` / `Notes`
+# / `Gallery` (138 sentences in 104 documents unreachable on the 2026-09-27
+# tier-0 run: References 98, Notes 38, Gallery 2), but the engine default
+# skips those sections. Promoted to content; text-free sections still die in
+# the chunker's `word_count == 0` guard.
+content_sections:
+  - references
+  - notes
+  - gallery
