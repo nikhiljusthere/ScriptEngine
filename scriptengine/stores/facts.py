@@ -193,6 +193,8 @@ class ResetRefusedError(RuntimeError):
 _MEMO: dict[tuple[Any, ...], tuple[tuple[int, ...], Any]] = {}
 _MEMO_LOCK = threading.Lock()
 _MEMO_MAX = 20_000
+_CATEGORY_TERMS: dict[tuple[str, str, int], tuple[tuple[int, ...], list[dict[str, Any]]]] = {}
+_ASCII_FOLD = str.maketrans("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")
 
 
 def _store_signature(path: Path) -> tuple[int, ...] | None:
@@ -2222,16 +2224,49 @@ class FactStore:
             (category, limit),
         ).fetchall()
 
-    def categories_like(self, term: str, limit: int = 20) -> list[sqlite3.Row]:
+    def categories_like(self, term: str, limit: int = 20) -> list[Any]:
         """Categories whose name contains `term`, largest first."""
-        # A leading-wildcard LIKE no index serves: ~0.09 s a call, ~10 a Marvel
-        # roster probe, over terms that recur from question to question.
-        return list(self.memoised(("categories_like", term, limit), lambda: self.connection.execute(
-            "SELECT c.category, COUNT(*) AS members FROM categories c"
-            " WHERE c.category LIKE ? COLLATE NOCASE"
-            " GROUP BY c.category ORDER BY members DESC LIMIT ?",
-            (f"%{term}%", limit),
-        ).fetchall()))
+        if "%" in term or "_" in term:
+            # LIKE wildcards inside the term: only SQLite matches them exactly.
+            return self.connection.execute(
+                "SELECT c.category, COUNT(*) AS members FROM categories c"
+                " WHERE c.category LIKE ? COLLATE NOCASE"
+                " GROUP BY c.category ORDER BY members DESC LIMIT ?",
+                (f"%{term}%", limit),
+            ).fetchall()
+        # The same query answered from memory. A leading-wildcard LIKE no index
+        # serves cost ~0.18 s a call, ~8 a Marvel roster probe (D3 sweep), over
+        # 212k distinct categories. LIKE folds ASCII letters only, hence the
+        # A-Z table rather than str.lower(); groups keep the GROUP BY (binary)
+        # order and the sort is stable, which is how SQLite breaks the members
+        # ties -- checked equal to the SQL on thousands of real query terms.
+        # Terms recur across questions ("earth", "members", a team's name):
+        # answered once per store signature, in a cache of its own so a sweep's
+        # thousands of terms never evict the category list itself.
+        signature = (None if self.connection.in_transaction
+                     else _store_signature(self.path))
+        term_key = (str(self.path.resolve()), term, limit)
+        with _MEMO_LOCK:
+            hit = _CATEGORY_TERMS.get(term_key)
+        if hit is not None and signature is not None and hit[0] == signature:
+            return [dict(row) for row in hit[1]]
+        groups = self.memoised(("category_groups",), lambda: [
+            (row[0], row[1], row[0].translate(_ASCII_FOLD))
+            for row in self.connection.execute(
+                "SELECT category, COUNT(*) FROM categories GROUP BY category")
+        ])
+        needle = term.translate(_ASCII_FOLD)
+        hits = [(name, members) for name, members, folded in groups
+                if needle in folded]
+        hits.sort(key=lambda hit: -hit[1])
+        rows = [{"category": name, "members": members}
+                for name, members in hits[:limit]]
+        if signature is not None:
+            with _MEMO_LOCK:
+                if len(_CATEGORY_TERMS) >= _MEMO_MAX * 5:
+                    _CATEGORY_TERMS.clear()
+                _CATEGORY_TERMS[term_key] = (signature, rows)
+        return [dict(row) for row in rows]
 
     def fact_groups(self, key: str, limit: int = 400) -> list[sqlite3.Row]:
         """Who holds which value of one infobox field.
@@ -2240,13 +2275,15 @@ class FactStore:
         `grade` across every page that declares one, and who holds each. No
         prose is involved, so nothing is missed and nothing is invented.
         """
-        return self.connection.execute(
+        # A NOCASE key the BINARY idx_facts_key cannot serve (0.3 s a Marvel
+        # roster probe); keys repeat across questions, so memoised per store.
+        return list(self.memoised(("fact_groups", key, limit), lambda: self.connection.execute(
             "SELECT f.value, n.name, n.label FROM facts f"
             " JOIN nodes n ON n.id = f.node_id"
             " WHERE f.key = ? COLLATE NOCASE AND n.is_resolved = 1"
             " ORDER BY f.value, n.name LIMIT ?",
             (key, limit),
-        ).fetchall()
+        ).fetchall()))
 
     def fact_keys(self, limit: int = 400) -> list[sqlite3.Row]:
         """Infobox fields in use, with the wiki's label and how many declare each.
@@ -2266,13 +2303,15 @@ class FactStore:
 
     def edges_by_relation(self, relation: str, limit: int = 2000) -> list[sqlite3.Row]:
         """Every edge of one kind, as ``(source, target)`` names."""
-        return self.connection.execute(
+        # Called with fixed relations by every bundle's citations (0.2-0.4 s a
+        # Marvel probe); memoised per store, so it is the same rows each time.
+        return list(self.memoised(("edges_by_relation", relation, limit), lambda: self.connection.execute(
             "SELECT s.name AS source, t.name AS target FROM edges e"
             " JOIN nodes s ON s.id = e.source_id"
             " JOIN nodes t ON t.id = e.target_id"
             " WHERE e.relation = ? LIMIT ?",
             (relation, limit),
-        ).fetchall()
+        ).fetchall()))
 
     def document_lead(self, title: str) -> str:
         row = self.connection.execute(

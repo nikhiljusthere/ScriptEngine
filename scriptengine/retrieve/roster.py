@@ -4386,12 +4386,27 @@ def work_title(paths: SeriesPaths) -> str:
     typed `unknown` and a prune deleted it, so anything that learns the series'
     name from its pages learns nothing on exactly the wiki that needs it most.
     """
+    # Memoised on the manifest's (mtime, size): Marvel's is 9.5 MB, and parsing
+    # it on every roster request was ~0.06 s a probe for one host string.
+    try:
+        stat = paths.manifest.stat()
+    except OSError:
+        return ""
+    key = (str(paths.manifest), stat.st_mtime_ns, stat.st_size)
+    found = _WORK_TITLES.get(key)
+    if found is not None:
+        return found
     try:
         data = json.loads(paths.manifest.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return ""
     host = str(data.get("wiki", "")).split("//")[-1].split("/")[0]
-    return re.sub(r"[^a-z]", "", host.split(".")[0].lower())
+    found = re.sub(r"[^a-z]", "", host.split(".")[0].lower())
+    _WORK_TITLES[key] = found
+    return found
+
+
+_WORK_TITLES: dict[tuple[str, int, int], str] = {}
 
 
 def rate_match(basis: str, words: list[str], subject_words: list[str]) -> tuple[str, list[str]]:

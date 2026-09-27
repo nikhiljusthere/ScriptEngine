@@ -129,3 +129,61 @@ def test_parallel_sweep_writes_the_serial_rows(tmp_path, monkeypatch):
             json.loads(line) for line in
             results.read_text(encoding="utf-8").splitlines() if line])
     assert ledgers[1] == ledgers[8]
+
+
+def test_categories_like_from_memory_equals_the_sql(tmp_path):
+    """Same rows, same members-tie order, ASCII-only folding (as LIKE does)."""
+    store = FactStore(tmp_path / "facts.db")
+    store.initialise()
+    rng = random.Random(8)
+    names = ["Avengers Members", "avengers villains", "X-Men (Earth-616)/Members",
+             "Élan Vital", "élan vital", "Über Team", "über team", "Spider-Man Foes",
+             "Ties A", "Ties B", "Ties C", "under_score Pages", "100% Heroes"]
+    for n in range(60):
+        document = store.add_document(
+            title=f"Page {n}", url="", page_type="character", infobox_template="",
+            lead="", word_count=0, revid=1, fetched_at="")
+        store.connection.executemany(
+            "INSERT OR IGNORE INTO categories (document_id, category) VALUES (?, ?)",
+            [(document, name) for name in rng.sample(names, rng.randint(1, 5))])
+    for n, name in enumerate(["Ties A", "Ties B", "Ties C"]):  # forced equal sizes
+        store.connection.execute(
+            "DELETE FROM categories WHERE category = ?", (name,))
+        store.connection.executemany(
+            "INSERT INTO categories (document_id, category) VALUES (?, ?)",
+            [(d, name) for d in (1, 2, 3)])
+    store.commit()
+
+    def sql(term, limit):
+        return [(r[0], r[1]) for r in store.connection.execute(
+            "SELECT c.category, COUNT(*) AS members FROM categories c"
+            " WHERE c.category LIKE ? COLLATE NOCASE"
+            " GROUP BY c.category ORDER BY members DESC LIMIT ?",
+            (f"%{term}%", limit))]
+
+    for term in ["avengers", "AVENGERS", "members", "ties", "élan", "ÉLAN", "über",
+                 "team", "x-men", "earth-616", "a", "zzz", "_", "under_score", "100%"]:
+        for limit in (1, 2, 8, 20):
+            got = [(r["category"], r["members"])
+                   for r in store.categories_like(term, limit=limit)]
+            assert got == sql(term, limit), (term, limit)
+            again = [(r["category"], r["members"])  # the per-term cache path
+                     for r in store.categories_like(term, limit=limit)]
+            assert again == got
+    store.close()
+
+
+def test_store_memos_see_a_committed_write(tmp_path):
+    store = FactStore(tmp_path / "facts.db")
+    store.initialise()
+    a, b = store.add_node("A"), store.add_node("B")
+    store.add_edge(source_id=a, relation="adapted from", target_id=b,
+                   confidence=1.0, provenance="infobox", section="")
+    store.commit()
+    assert [tuple(r) for r in store.edges_by_relation("adapted from")] == [("A", "B")]
+    c = store.add_node("C")
+    store.add_edge(source_id=c, relation="adapted from", target_id=a,
+                   confidence=1.0, provenance="infobox", section="")
+    store.commit()
+    assert len(store.edges_by_relation("adapted from")) == 2
+    store.close()
