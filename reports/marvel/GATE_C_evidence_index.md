@@ -95,13 +95,23 @@ state.
   regression, v2 re-sealed before any authoring (1 subject re-drawn →
   `Dominikos Petrakis (Earth-77995)`, other 23 rows byte-identical; v1
   in git `e4ef2c75`; known_diffs D2 record). seed 20260927; disjoint
-  from the 264 scored subjects; sealed on the complete bank). Next =
-  corpus-blind AUTHORING (non-executing party) →
-  `validate` → `blind_fresh.jsonl` → `score`. Named gap: the `eval` CLI
-  loads `scriptengine/eval/gold_<series>.json` while the D2 protocol
-  produces `reports/<series>/blind_fresh.jsonl` — the materialization
-  step (and the mcu gold source) is an owner call; steps 7–8 stay
-  PENDING-owner until then.
+  from the 264 scored subjects; sealed on the complete bank).
+  **DONE 2026-09-27 ~18:2x (post-reboot round 3):** owner authored
+  corpus-blind in 2 rounds (v1 24 rows → 14 verified, floor unmet; v2
+  20 rows → **18 verified, floor met in all 4 classes** = 4/4/4/6,
+  floor 4/class); frozen `reports/marvel/blind_fresh.jsonl` (18 rows,
+  sha256 `ebc7f3beaf21c6c81a886530c3b891495e39450c9e8652b5ccb99097e31a8735`);
+  scored in-process on GPU (no `:8000`): **13/18 MECH_GREEN = 0.722, 0
+  errors** — universe-variant 6/6 · event-enum 4/4 · state-over-time 2/4
+  · issue-level 1/4; all 5 REDs are fine-grained credit/affiliation
+  terms (both writer questions 0-hit in the served bundle = systematic
+  issue-credits door gap, D5-council input). Threshold = council
+  declaration (plan §834/839); numbers + RED characterization in receipt
+  `reports/marvel/receipts/d2_blind_score_2026-09-27.md`. Named gap
+  (unchanged): the `eval` CLI loads `scriptengine/eval/gold_<series>.json`
+  while the D2 protocol produces `reports/<series>/blind_fresh.jsonl` —
+  the materialization step (and the mcu gold source) is an owner call;
+  steps 7–8 stay PENDING-owner until then.
 - `chunk-containment --series marvel`: chain step 2.
 - census OOS re-score floor: chain step 6 (post ≥ pre − 2; a drop of 3+
   voids — CSM annex).
