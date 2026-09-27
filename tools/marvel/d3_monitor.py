@@ -330,7 +330,11 @@ const V=Object.keys(C);const css=v=>getComputedStyle(document.documentElement).g
 const f=n=>n==null?'—':Math.round(n).toLocaleString();
 const pct=(x,d=1)=>x==null?'—':(x*100).toFixed(d)+'%';
 function dur(s){if(s==null||!isFinite(s))return'—';if(s<90)return Math.round(s)+'s';const m=s/60;if(m<90)return Math.round(m)+'m';const h=m/60;if(h<48)return h.toFixed(1)+'h';return(h/24).toFixed(1)+'d'}
-function pace(r){if(r==null)return'—';if(r===0)return'stalled';return r>=1?(r).toFixed(1)+'/s':(1/r).toFixed(2)+'s/probe'}
+// Always s/probe (the unit the receipts use), never probes/s: mixing the two
+// read as a slowdown (0.245 s/probe vs "4.7/s" are the same pace).
+const BASELINE=8.9; // s/probe, the pre-speed-up sequential sweep (SWITCHPOINT round-5)
+function pace(r){if(r==null)return'—';if(r===0)return'stalled';const s=1/r;return(s<0.1?s.toFixed(3):s.toFixed(2))+' s/probe'}
+function gain(r){return r?Math.round(BASELINE*r)+'× vs 8.9 s':''}
 try{const t=localStorage.getItem('d3theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
 document.getElementById('theme').onclick=()=>{const r=document.documentElement;const dark=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=dark?'light':'dark';try{localStorage.setItem('d3theme',r.dataset.theme)}catch(e){};if(last)render(last)};
 function bar(counts,total){return V.map(v=>{const w=100*(counts[v]||0)/total;return w>0?`<span style="width:${w}%;background:var(${C[v]})" title="${v} ${f(counts[v])}"></span>`:''}).join('')}
@@ -353,7 +357,7 @@ document.getElementById('doors').innerHTML=Object.entries(D).map(([d,x])=>{
 const chip=x.complete?'<span class="chip done">complete</span>':x.running?'<span class="chip run">● running</span>':(x.done?'<span class="chip idle">paused</span>':'<span class="chip">queued</span>');
 return`<div class="card door"><h2>${d}${chip}</h2>
 <div class="stats"><div class="stat"><div class="k">done</div><div class="v">${pct(x.done/x.panel,2)}</div><div class="sub">${f(x.done)}</div></div>
-<div class="stat"><div class="k">pace</div><div class="v">${x.done||x.running?pace(x.rate):'—'}</div><div class="sub">${x.rate?f(x.rate*60)+'/min':'&nbsp;'}</div></div>
+<div class="stat"><div class="k">pace</div><div class="v">${x.done||x.running?pace(x.rate):'—'}</div><div class="sub">${x.rate?f(x.rate*60)+'/min · '+gain(x.rate):'&nbsp;'}</div></div>
 <div class="stat"><div class="k">eta</div><div class="v">${x.complete?'done':dur(x.eta_s)}</div><div class="sub">${x.eta_s&&!x.complete?new Date((s.now+x.eta_s)*1000).toLocaleString([], {weekday:'short',hour:'2-digit',minute:'2-digit'}):'&nbsp;'}</div></div></div>
 <div class="bar">${bar(x.counts,x.panel)}</div>
 <div class="legend">${V.map(v=>`<span><i style="background:var(${C[v]})"></i>${v} <b>${f(x.counts[v])}</b></span>`).join('')}</div>
