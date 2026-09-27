@@ -81,6 +81,15 @@ _LIST_SPLIT = re.compile(r"\n|<br\s*/?>", re.IGNORECASE)
 LIST_FIELDS = {
     "alias": ("aliases", "alias"),
     "affiliation": ("affiliations", "affiliation"),
+    # Marvel DB (plan MARVEL_100_PLAN.md C1): the alias cell keys are
+    # `currentalias` (the live alias) and `aliases` (a newline list) -- the
+    # roster shape, not a single value (a whole-cell gold would match none of
+    # the members). `nicknames` and `spouses` are closed lists of the same
+    # shape.
+    "currentalias": ("aliases", "alias"),
+    "aliases": ("aliases", "alias"),
+    "nicknames": ("nicknames", "nickname"),
+    "spouses": ("spouses", "spouse"),
 }
 
 def slug_of(title: str) -> str:

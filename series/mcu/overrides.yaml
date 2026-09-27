@@ -29,3 +29,35 @@ type_aliases:
   # X-Men '97 all carry it — verified 2026-09-25).
 
 skip_categories: []
+
+# C1 (plan MARVEL_100_PLAN.md §4): per-wiki identity-field map (fix class R-7,
+# config.identity_fields). The character infobox (`Template:Character`) keys
+# are measured 2026-09-27 from the G6 final extract (33,686 character pages);
+# `status`/`gender`/`age`/`citizenship`/`height`/`weight` already sit in the
+# shared engine dict. `alias`/`affiliation` take the roster path
+# (LIST_FIELDS). Deliberately NOT here: `name` (the subject), the three
+# one-off wiki typos `affilitation`/`affiliatoion`/`voice acrtor` (1 page
+# each -- data-quality residue, recorded in known_diffs, not a mapping), and
+# `idno`'s sibling maintenance keys.
+identity_fields:
+  species: "What is {name}'s species?"
+  real name: "What is {name}'s real name?"
+  tv series: "In which TV series does {name} appear?"
+  movie: "In which movie does {name} first appear?"
+  comic: "In which comic does {name} appear?"
+  actor: "Who portrays {name}?"
+  voice actor: "Who is {name}'s voice actor?"
+  title: "What is {name}'s title?"
+  dob: "When was {name} born?"
+  dod: "When does {name} die?"
+  snapped: "What is {name}'s status after the Snap?"
+  clearance: "What is {name}'s security clearance?"
+  citizenship: "What is {name}'s citizenship?"
+  game: "In which game does {name} appear?"
+  book: "In which book does {name} appear?"
+  web series: "In which web series does {name} appear?"
+  docuseries: "In which documentary series does {name} appear?"
+  tv movie: "In which TV movie does {name} appear?"
+  oneshot: "In which one-shot does {name} appear?"
+  theme park: "In which theme park does {name} appear?"
+  idno: "What is {name}'s ID number?"

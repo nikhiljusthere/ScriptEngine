@@ -126,6 +126,37 @@ legitimate quotes; a naive walk = 1.87M false artifacts):
   2 occ; a fix (adding `wps` to TRANSPARENT_TEMPLATES) is its own
   gated commit — owner call, not a scope extension of F7.
 
+## C1 — MCU infobox key typos (2026-09-27, found in the C1 field-coverage census)
+
+- **3 one-off wiki-side key typos on the MCU wiki's `Template:Character`**
+  (measured from the G6 final extract, 35,234 pages): `affilitation` (1
+  page), `affiliatoion` (1 page), `voice acrtor` (1 page). Each is a
+  single-page wiki-editor typo, not a parser class (no recurrence anywhere
+  else in either corpus). **Decision:** NOT mapped in `identity_fields:`
+  (one page each buys no question; a per-wiki alias map for them would
+  encode wiki-side noise). The fields stay on the reader/uncovered side of
+  the C1 readiness metric (`reports/marvel/receipts/c1_field_coverage_2026-09-27.json`),
+  so they remain visible if the wiki ever fixes or multiplies them.
+
+## C1 — MCU pilot link-artifact residue (2026-09-27, tier-a sweep quality scan)
+
+- **6 of 32,129 gold answer items (0.02%) in the FULL 4,804-page MCU
+  tier-a sweep carry a raw-wikitext link fragment** (the pilot scan
+  found 1; the full sweep multiplied it 6×, so per the standing note it
+  is recorded as a finding, not a residue): `2kk9090` (real name),
+  `beast` (movie), `mystique` (affiliation), `nightcrawler` (actor +
+  affiliation), `ultron_emergence_response_suit_team` (dod) — in every
+  case the wiki editor pasted a bare YouTube URL into the infobox cell
+  (several cite the *unreleased* Avengers: Doomsday trailer) and the
+  value cleaner preserved it (bare `[https://` is not a `[[...]]`-style
+  link, so it survives cleaning). **Single class, 5 pages, 0.02% of
+  gold items.** No parser change queued: a value-cleaner strip for
+  bare-bracket URLs would be its own gated change + re-emit for 6
+  occurrences, and the closed-scope golds stay verbatim-faithful to the
+  stored cells (the detail rule). If the owner wants those 6 golds
+  cleaned, it is a one-line cleaner rule + re-sweep, schedulable with
+  any later engine pass.
+
 ## Standing
 
 JJK + CSM corpora are baselines, never touched. MCU is in-campaign (the

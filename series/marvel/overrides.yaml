@@ -92,3 +92,34 @@ skip_patterns:
 alias_fact_keys:
   - currentalias
 skip_categories: []
+
+# C1 (plan MARVEL_100_PLAN.md §4): per-wiki identity-field map (fix class R-7,
+# config.identity_fields). The character infobox (`Character Template`) uses
+# a DB-flattened vocabulary the shared engine dict does not name
+# (measured 2026-09-27 from the G6 final extract: 1,471,259 character pages);
+# keys not mapped here stay with the reader (the ledger leaves their section
+# uncovered). Deliberately NOT here: `name` (the subject, skipped by the
+# builder), `currentalias`/`aliases`/`nicknames`/`spouses` (roster path,
+# LIST_FIELDS), `history`/`abilities`/`equipment`/`weapons`/`relatives`
+# (prose beats, left to a reader), `nogallery`/`gallerytype`/`gallerydata`
+# (maintenance), `wikipedia`/`links`/`marvel` (external), `notes`/`trivia`/
+# `overview`/`appendix` (open prose), `quotation`/`speaker`/`quotesource`
+# (the quote box, not identity).
+identity_fields:
+  reality: "What is {name}'s home reality?"
+  creators: "Who created {name}?"
+  first: "In which comic does {name} first appear?"
+  origin: "What is {name}'s origin?"
+  identity: "What is the status of {name}'s identity?"
+  citizenship: "What is {name}'s citizenship?"
+  hair: "What color is {name}'s hair?"
+  eyes: "What color are {name}'s eyes?"
+  skin: "What is {name}'s skin color?"
+  baseofoperations: "What is {name}'s base of operations?"
+  maritalstatus: "What is {name}'s marital status?"
+  death: "In which comic does {name} die?"
+  killedby: "Who killed {name}?"
+  causeofdeath: "What is {name}'s cause of death?"
+  placeofbirth: "Where was {name} born?"
+  # `height`/`weight`/`gender`/`occupation`/`status` are already in the
+  # shared engine dict and need no per-wiki entry.
