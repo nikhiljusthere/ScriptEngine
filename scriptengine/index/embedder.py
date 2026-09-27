@@ -165,14 +165,18 @@ class Embedder:
     ) -> list[list[float]]:
         if not texts:
             return []
-        model = self.load()
-        vectors = model.encode(
-            [prefix + text for text in texts],
-            batch_size=self.settings.embed_batch_size,
-            show_progress_bar=show_progress,
-            normalize_embeddings=True,   # required for cosine similarity
-            convert_to_numpy=True,
-        )
+        # Held across the call: the API serves requests on a threadpool, and a
+        # Hugging Face fast tokenizer shared between threads raises "Already
+        # borrowed" under concurrent use (the parallel D3 sweep's dispatch).
+        with self._lock:
+            model = self.load()
+            vectors = model.encode(
+                [prefix + text for text in texts],
+                batch_size=self.settings.embed_batch_size,
+                show_progress_bar=show_progress,
+                normalize_embeddings=True,   # required for cosine similarity
+                convert_to_numpy=True,
+            )
         self._last_used = time.monotonic()
         return [vector.tolist() for vector in vectors]
 
@@ -237,9 +241,12 @@ class Reranker:
         """
         if not passages:
             return []
-        model = self.load()
         # Long passages are truncated anyway; trimming first keeps batches even.
         pairs = [(query, passage[:2000]) for passage in passages]
-        scores = model.predict(pairs, batch_size=32, show_progress_bar=False)
+        # Serialised for the same reason as Embedder._encode: a shared fast
+        # tokenizer is not safe across the API's request threads.
+        with self._lock:
+            model = self.load()
+            scores = model.predict(pairs, batch_size=32, show_progress_bar=False)
         self._last_used = time.monotonic()
         return [float(score) for score in scores]

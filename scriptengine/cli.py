@@ -2232,6 +2232,11 @@ def span_recall(
              "purpose."),
     out: Path = typer.Option(
         None, "--out", help="Write the run folder here instead of reports/."),
+    workers: int = typer.Option(
+        1, "--workers",
+        help="With --panel: probes in flight at once. Only the HTTP call "
+             "fans out; verdicts and the ledger write stay serial, so the "
+             "rows are the same at any width."),
 ) -> None:
     """Check every sentence in a series is reachable, not just the sampled ones.
 
@@ -2340,7 +2345,7 @@ def span_recall(
                 series, settings, mode=mode, panel=probes,
                 panel_hash=panel_hash, results_path=rows_path, door=door,
                 limit=sanity or None, stamps=_sweep_stamps(),
-                on_progress=on_progress)
+                on_progress=on_progress, workers=workers)
         except impl.SpanRecallError as error:
             # a tampered/corrupted ledger refuses the resume (Ruling 7)
             console.print(f"[red]{error}[/red]", err=True)

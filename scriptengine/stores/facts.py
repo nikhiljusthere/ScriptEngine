@@ -16,7 +16,8 @@ import json
 import logging
 import re
 import sqlite3
-from collections.abc import Iterable, Sequence
+import threading
+from collections.abc import Callable, Iterable, Sequence
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -186,6 +187,36 @@ class ResetRefusedError(RuntimeError):
     pass; an explicit `--force` rebuilds and remaps the rows instead of wiping."""
 
 
+# Read-only answers that depend on the store alone (not on the question),
+# memoised per store file by `FactStore.memoised`. Bounded crudely: cleared when
+# full, since a sweep reuses a few hundred keys and a restart costs one query.
+_MEMO: dict[tuple[Any, ...], tuple[tuple[int, ...], Any]] = {}
+_MEMO_LOCK = threading.Lock()
+_MEMO_MAX = 20_000
+
+
+def _store_signature(path: Path) -> tuple[int, ...] | None:
+    """(mtime, size) of the store and its WAL: changes whenever anything writes.
+
+    An empty WAL counts as absent: the last connection to close checkpoints
+    and deletes it and the next reader recreates it empty with a fresh mtime,
+    so keying on that file flipped the signature on every request with
+    nothing written. Only frames (a write) give the WAL a size.
+
+    None for an in-memory or missing store, which is then never memoised.
+    """
+    try:
+        store = path.stat()
+    except OSError:
+        return None
+    try:
+        wal = path.with_name(path.name + "-wal").stat()
+        wal_part = (wal.st_mtime_ns, wal.st_size) if wal.st_size else (0, 0)
+    except OSError:
+        wal_part = (0, 0)
+    return (store.st_mtime_ns, store.st_size, *wal_part)
+
+
 class FactStore:
     """Read/write access to one series' `facts.db`."""
 
@@ -205,6 +236,30 @@ class FactStore:
 
     def close(self) -> None:
         self.connection.close()
+
+    def memoised(self, key: tuple[Any, ...], compute: Callable[[], Any]) -> Any:
+        """`compute()`, reused until this store file is next written.
+
+        For answers that depend on the store alone. The signature covers the
+        WAL, so an `index` or any committed write invalidates it; a connection
+        holding uncommitted writes sees rows no signature reflects, so it
+        always computes. Callers copy what they return: the value is shared.
+        """
+        signature = (None if self.connection.in_transaction
+                     else _store_signature(self.path))
+        full_key = (str(self.path.resolve()), *key)
+        if signature is not None:
+            with _MEMO_LOCK:
+                hit = _MEMO.get(full_key)
+            if hit is not None and hit[0] == signature:
+                return hit[1]
+        value = compute()
+        if signature is not None:
+            with _MEMO_LOCK:
+                if len(_MEMO) >= _MEMO_MAX:
+                    _MEMO.clear()
+                _MEMO[full_key] = (signature, value)
+        return value
 
     def initialise(self) -> None:
         self.connection.executescript(SCHEMA_PATH.read_text(encoding="utf-8"))
@@ -896,17 +951,46 @@ class FactStore:
         return rows
 
     def neighbours(
-        self, node_ids: Sequence[int], depth: int = 2, min_confidence: float = 0.5
+        self, node_ids: Sequence[int], depth: int = 2, min_confidence: float = 0.5,
+        limit: int | None = None,
     ) -> list[sqlite3.Row]:
         """Entities reachable within `depth` hops, nearest first.
 
         Edges are traversed in both directions: "Todo affiliation Kyoto High"
         should also let a question about Kyoto High reach Todo.
+
+        `limit` returns only the first `limit` rows of that same ordering. On a
+        dense graph the second hop is most of the corpus -- 100k-300k Marvel
+        nodes per question, 2.6 s a call, for a caller that reads 40 -- while
+        every one-hop node already sorts ahead of every two-hop one. So when the
+        first hop alone fills `limit` it is the answer, ordered as the full
+        query orders it (hops, then is_resolved, ties by id as its GROUP BY
+        emits them); otherwise the full walk runs and is cut.
         """
         if not node_ids:
             return []
 
         placeholders = ",".join("?" * len(node_ids))
+        if limit is not None and depth >= 1:
+            first_hop = self.connection.execute(
+                f"""
+                WITH seeds(id) AS (SELECT id FROM nodes WHERE id IN ({placeholders})),
+                hop1(node_id) AS (
+                    SELECT e.target_id FROM seeds s
+                    JOIN edges e ON e.source_id = s.id WHERE e.confidence >= ?
+                    UNION
+                    SELECT e.source_id FROM seeds s
+                    JOIN edges e ON e.target_id = s.id WHERE e.confidence >= ?
+                )
+                SELECT n.*, 1 AS hops
+                FROM hop1 h JOIN nodes n ON n.id = h.node_id
+                ORDER BY n.is_resolved DESC, n.id
+                LIMIT ?
+                """,
+                (*node_ids, min_confidence, min_confidence, limit),
+            ).fetchall()
+            if len(first_hop) >= limit:
+                return first_hop
         rows = self.connection.execute(
             f"""
             WITH RECURSIVE reachable(node_id, depth) AS (
@@ -930,7 +1014,7 @@ class FactStore:
             """,
             (*node_ids, depth, min_confidence),
         ).fetchall()
-        return rows
+        return rows if limit is None else rows[:limit]
 
     def edges_for(
         self, node_ids: Sequence[int], min_confidence: float = 0.5, limit: int = 60
@@ -1970,9 +2054,15 @@ class FactStore:
         # `ORDER BY` handed it whatever order SQLite happened to scan in. That
         # made the graph retriever's contribution to the fused score arbitrary
         # and non-reproducible across rebuilds.
+        #
+        # CROSS JOIN pins the join order: left to itself the planner drove the
+        # scan from idx_chunks_level, visiting every level-2 chunk in the corpus
+        # and probing chunk_nodes for each (3.3 s a call on Marvel's 441k
+        # chunks). Starting from the named nodes' links is the same row set,
+        # and the ORDER BY fixes the order either way.
         return self.connection.execute(
-            f"SELECT DISTINCT c.* FROM chunks c"
-            f" JOIN chunk_nodes cn ON cn.chunk_id = c.id"
+            f"SELECT DISTINCT c.* FROM chunk_nodes cn"
+            f" CROSS JOIN chunks c ON c.id = cn.chunk_id"
             f" WHERE cn.node_id IN ({placeholders}) AND c.level = ?"
             f" ORDER BY c.document_id, c.ordinal"
             f" LIMIT ?",
@@ -2134,12 +2224,14 @@ class FactStore:
 
     def categories_like(self, term: str, limit: int = 20) -> list[sqlite3.Row]:
         """Categories whose name contains `term`, largest first."""
-        return self.connection.execute(
+        # A leading-wildcard LIKE no index serves: ~0.09 s a call, ~10 a Marvel
+        # roster probe, over terms that recur from question to question.
+        return list(self.memoised(("categories_like", term, limit), lambda: self.connection.execute(
             "SELECT c.category, COUNT(*) AS members FROM categories c"
             " WHERE c.category LIKE ? COLLATE NOCASE"
             " GROUP BY c.category ORDER BY members DESC LIMIT ?",
             (f"%{term}%", limit),
-        ).fetchall()
+        ).fetchall()))
 
     def fact_groups(self, key: str, limit: int = 400) -> list[sqlite3.Row]:
         """Who holds which value of one infobox field.
@@ -2163,11 +2255,14 @@ class FactStore:
         rank under `class` and renders it as "Grade", so a query asking about
         grades only finds the field through the label.
         """
-        return self.connection.execute(
+        # The same answer for every question until the store is written, yet
+        # it aggregates the whole facts table: 2.2 s of every Marvel roster
+        # probe (D3 sweep).
+        return list(self.memoised(("fact_keys", limit), lambda: self.connection.execute(
             "SELECT key, MAX(label) AS label, COUNT(DISTINCT node_id) AS holders"
             " FROM facts GROUP BY key ORDER BY holders DESC LIMIT ?",
             (limit,),
-        ).fetchall()
+        ).fetchall()))
 
     def edges_by_relation(self, relation: str, limit: int = 2000) -> list[sqlite3.Row]:
         """Every edge of one kind, as ``(source, target)`` names."""

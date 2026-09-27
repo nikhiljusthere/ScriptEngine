@@ -4070,6 +4070,13 @@ def race_vocabulary(store: FactStore) -> set[str]:
     on Dragon Ball for the same reason `Quincy` would on Bleach and `Mink` on
     One Piece, because a character page says so.
     """
+    # Depends on the store alone, yet scans every fact: 0.6 s of each Marvel
+    # roster probe (D3 sweep) before memoising.
+    return set(store.memoised(("race_vocabulary",),
+                              lambda: _race_vocabulary(store)))
+
+
+def _race_vocabulary(store: FactStore) -> set[str]:
     counts: Counter[str] = Counter()
     placeholders = ",".join("?" * len(_RACE_FIELDS))
     rows = store.connection.execute(

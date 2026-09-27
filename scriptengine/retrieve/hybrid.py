@@ -193,8 +193,11 @@ class HybridRetriever:
         result.entities = [row["name"] for row in entities]
 
         # 2. What is one or two hops away from them?
+        # Only the first 40 are ever read (below); asking for them lets the
+        # store skip a second hop that spans most of a dense graph.
         related = self.store.neighbours(
-            entity_ids, depth=self.settings.graph_hop_depth, min_confidence=0.5
+            entity_ids, depth=self.settings.graph_hop_depth, min_confidence=0.5,
+            limit=40,
         )
         result.related = [row["name"] for row in related[:40]]
 

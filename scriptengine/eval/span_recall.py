@@ -35,8 +35,10 @@ import re
 import time
 import unicodedata
 import urllib.request
+from collections import deque
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any, Callable, Iterator
 
 from scriptengine.config import Settings
 from scriptengine.stores.facts import FactStore
@@ -378,6 +380,7 @@ def recall(series: str, settings: Settings | None = None, mode: str = "verbatim"
            door: str | None = None,
            limit: int | None = None,
            stamps: dict[str, str] | None = None,
+           workers: int = 1,
            ) -> dict[str, Any]:
     """Tier 1: does the served bundle actually contain the line?
 
@@ -430,13 +433,41 @@ def recall(series: str, settings: Settings | None = None, mode: str = "verbatim"
         counts = {"HIT": 0, "MISS_DOC": 0, "MISS_SPAN": 0,
                   "TRUNCATED": 0, "ERROR": 0}
         started = time.time()
-        for index, (title, breadcrumb, sentence) in enumerate(to_run, 1):
+
+        def fetch(item: tuple[str, str, str]) -> tuple[dict[str, Any], str | None]:
+            try:
+                return _ask(make_query(item[2], mode, item[0]), series, timeout,
+                            base, door=door), None
+            except Exception as exc:  # a probe failing must not end the sweep
+                return {}, str(exc)[:200]
+
+        # Only the HTTP call fans out: at one request in flight the D3 sweep
+        # left 31 of 32 cores idle while the server answered serially. The
+        # verdict, counts and the sidecar write stay on this thread, in the
+        # panel's order, so one writer appends and a probe's verdict is the
+        # same whichever worker fetched it.
+        pool = ThreadPoolExecutor(max_workers=workers) if workers > 1 else None
+
+        def fetched() -> Iterator[tuple[dict[str, Any], str | None]]:
+            if pool is None:
+                yield from map(fetch, to_run)
+                return
+            window: deque = deque()
+            for item in to_run:
+                window.append(pool.submit(fetch, item))
+                if len(window) >= workers * 4:
+                    yield window.popleft().result()
+            while window:
+                yield window.popleft().result()
+
+        for index, ((title, breadcrumb, sentence), (bundle, failure)) in enumerate(
+                zip(to_run, fetched()), 1):
             query = make_query(sentence, mode, title)
             returned: list[str] = []
             error = None
-            bundle: dict[str, Any] = {}
             try:
-                bundle = _ask(query, series, timeout, base, door=door)
+                if failure is not None:
+                    raise RuntimeError(failure)
                 text = served_text(bundle)
                 returned = [b.get("doc_title") for b in bundle.get("beats", [])
                             if isinstance(b, dict)]
@@ -473,6 +504,8 @@ def recall(series: str, settings: Settings | None = None, mode: str = "verbatim"
                 on_row(row)
             if on_progress and index % 100 == 0:
                 on_progress(index, len(to_run), counts)
+        if pool is not None:
+            pool.shutdown()
 
         # Merge prior rows + this run's sidecar rows, rewrite the results
         # file in panel order (deterministic, idempotent resume).

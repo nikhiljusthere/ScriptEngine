@@ -57,6 +57,9 @@ CREATE TABLE IF NOT EXISTS categories (
 );
 
 CREATE INDEX IF NOT EXISTS idx_categories_name ON categories(category);
+-- Roster category lookups are `= ?` / `LIKE ?` under COLLATE NOCASE, which
+-- idx_categories_name (BINARY) cannot serve: 3.9 s per Marvel roster probe.
+CREATE INDEX IF NOT EXISTS idx_categories_name_nocase ON categories(category COLLATE NOCASE);
 
 -- ── Graph ───────────────────────────────────────────────────────────────────
 
@@ -72,6 +75,13 @@ CREATE TABLE IF NOT EXISTS nodes (
 );
 
 CREATE INDEX IF NOT EXISTS idx_nodes_label ON nodes(label);
+-- Name and label lookups are `= ? COLLATE NOCASE`, which the BINARY-collated
+-- UNIQUE(name) and idx_nodes_label cannot serve, so each one full-scanned the
+-- table: 0.17 s a call on Marvel's 354k nodes, x211 calls per roster probe
+-- (46 s/probe on the D3 sweep). Equal NOCASE keys sit in rowid order, which is
+-- the order the scan returned them in, so no result or tie order changes.
+CREATE INDEX IF NOT EXISTS idx_nodes_name_nocase ON nodes(name COLLATE NOCASE);
+CREATE INDEX IF NOT EXISTS idx_nodes_label_nocase ON nodes(label COLLATE NOCASE);
 
 -- Alias lookup is how a query mentioning "Todo" reaches the page "Aoi Todo".
 -- Matching is done on whole words by the caller; storing aliases folded to
