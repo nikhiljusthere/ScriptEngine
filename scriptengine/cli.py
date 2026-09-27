@@ -2594,17 +2594,28 @@ def page_sweep(
         0, "--limit", help="Sweep at most N pages this run (0 = all that remain)."),
     out: Path = typer.Option(
         None, "--out", help="Write the report there instead of alongside the batches."),
+    shard: int = typer.Option(
+        0, "--shard",
+        help="Shard index (0-based). With --shards N, sweep only the pages whose "
+             "stable hash lands on this shard; N such processes (each into its own "
+             "--out report) then cover the whole tier concurrently."),
+    shards: int = typer.Option(
+        1, "--shards",
+        help="Total shard count for a concurrent sweep; see --shard."),
 ) -> None:
     """Run `page-gen` across a whole page tier, writing each page's artifacts
     plus a per-page status report. Resumable: pages already swept (no error) are
     skipped unless `--force`. A page that fails is recorded with its error and
-    the sweep continues, so one bad page never aborts the tier."""
+    the sweep continues, so one bad page never aborts the tier. For the
+    concurrent split, `--shard K --shards N --out <report-K>` per process: the
+    shards are disjoint and stable, so merge the reports afterwards
+    (tools/marvel/merge_sweep_shards.py)."""
     import logging
     from datetime import date
 
     from scriptengine.config import load_overrides
     from scriptengine.eval.page_gen import (
-        PageGenError, page_set, run_page_gen, slug_of)
+        PageGenError, page_set, run_page_gen, shard_of, slug_of)
     from scriptengine.stores.facts import FactStore
 
     logging.disable(logging.INFO)
@@ -2621,6 +2632,14 @@ def page_sweep(
         raise typer.Exit(code=1) from error
     finally:
         store.close()
+
+    if shards > 1:
+        if not 0 <= shard < shards:
+            console.print(
+                f"[red]--shard {shard} is out of range for --shards {shards} "
+                f"(expected 0..{shards - 1})[/red]")
+            raise typer.Exit(code=1)
+        titles = [t for t in titles if shard_of(t, shards) == shard]
 
     questions_root = settings.questions_root
     questions_root.mkdir(parents=True, exist_ok=True)

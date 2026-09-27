@@ -37,7 +37,10 @@ step() { # step <name> <cmd...>
 # MCU OOS re-score or any other job must be finished first).
 wait_gpu() {
   while :; do
-    free=$(nvidia-smi --query-gpu=memory_free --format=csv,noheader,nounits | head -1)
+    # This driver rejects `memory_free`; derive it from the valid fields.
+    used=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits | head -1)
+    total=$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits | head -1)
+    free=$((total - used))
     [ "$free" -gt 6000 ] && break
     log "GPU busy (free=${free} MiB); sleeping 60s"
     sleep 60

@@ -11,6 +11,7 @@ synopsis, relationships, trivia) are left to a reader.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import unicodedata
@@ -94,6 +95,16 @@ LIST_FIELDS = {
 
 def slug_of(title: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", title.lower()).strip("_")
+
+def shard_of(title: str, shards: int) -> int:
+    """Which shard (0-based) owns `title` when a tier sweep runs across
+    `shards` concurrent processes.
+
+    A fixed sha256 digest, never the built-in per-process-salted `hash()`, so
+    the partition is identical in every process and across restarts: the
+    shards' page sets are disjoint and stable, and re-running a shard after
+    a crash sweeps exactly the same remaining pages."""
+    return int(hashlib.sha256(title.encode("utf-8")).hexdigest(), 16) % shards
 
 def chunked(store: FactStore, value: str) -> bool:
     """True iff some chunk carries `value` -- the campaign's G3 check."""

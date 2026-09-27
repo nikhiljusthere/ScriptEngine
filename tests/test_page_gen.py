@@ -1002,3 +1002,56 @@ def test_page_sweep_command(tmp_path, series_with_store, monkeypatch):
     # resumable: a second run sweeps nothing new
     result = CliRunner().invoke(cli.app, ["page-sweep", "--series", "jjk", "--tier", "b"])
     assert "swept 0 page(s)" in result.output
+
+def test_shard_of_partitions_titles_disjointly():
+    from scriptengine.eval.page_gen import shard_of
+
+    titles = ["Angel vs. Sukuna", "Jujutsu Sorcerers vs. Sukuna",
+              "Carnage (Symbiote) (Earth-TRN1817)", "Booskans"]
+    shards = 4
+    buckets: dict[int, list[str]] = {i: [] for i in range(shards)}
+    for t in titles:
+        s = shard_of(t, shards)
+        assert 0 <= s < shards
+        buckets[s].append(t)
+    # a partition: the buckets are disjoint and cover the whole set
+    union = sorted(t for b in buckets.values() for t in b)
+    assert union == sorted(titles)
+    # order-independent: the shard of a title depends on the title alone
+    assert {t: shard_of(t, shards) for t in sorted(titles)} == \
+           {t: shard_of(t, shards) for t in reversed(titles)}
+    # canary: the partition is a fixed digest, never the per-process-salted
+    # built-in hash(). A change to the digest re-partitions in-flight shards,
+    # so it must be a deliberate, reviewed change.
+    assert shard_of("Angel", 4) == 1
+    assert shard_of("Angel vs. Sukuna", 4) == 3
+
+def test_page_sweep_sharded_command(tmp_path, series_with_store, monkeypatch):
+    import json
+    from typer.testing import CliRunner
+    from scriptengine.eval.page_gen import shard_of, slug_of
+
+    cli = _cli(tmp_path, monkeypatch)
+    runner = CliRunner()
+    all_pages = {"Angel vs. Sukuna", "Jujutsu Sorcerers vs. Sukuna"}
+    union = set()
+    for k in range(2):
+        out = tmp_path / "questions" / f"_jjk_page_sweep_b.report.json.shard{k:02d}"
+        result = runner.invoke(cli.app, [
+            "page-sweep", "--series", "jjk", "--tier", "b",
+            "--shard", str(k), "--shards", "2", "--out", str(out)])
+        assert result.exit_code == 0, result.output
+        report = json.loads(out.read_text(encoding="utf-8"))
+        swept = {p["page"] for p in report["pages"]}
+        # this shard swept exactly the pages its stable hash owns
+        assert swept == {t for t in all_pages if shard_of(t, 2) == k}
+        union |= swept
+    assert union == all_pages
+    for page in union:
+        assert (tmp_path / "questions" / f"_jjk_page_{slug_of(page)}.json").exists()
+    # an out-of-range shard index is a hard error, not a silent empty sweep
+    result = runner.invoke(cli.app, [
+        "page-sweep", "--series", "jjk", "--tier", "b",
+        "--shard", "2", "--shards", "2", "--out", str(tmp_path / "q.json")])
+    assert result.exit_code == 1
+    assert "out of range" in result.output
