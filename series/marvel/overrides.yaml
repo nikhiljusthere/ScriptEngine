@@ -135,3 +135,17 @@ identity_fields:
   placeofbirth: "Where was {name} born?"
   # `height`/`weight`/`gender`/`occupation`/`status` are already in the
   # shared engine dict and need no per-wiki entry.
+
+# C3 (plan MARVEL_100_PLAN.md §4, A1b): a disambiguation page (606 of them,
+# page_type `disambiguation`) is the wiki's own statement of what a bare term
+# refers to; its list fields file the entries. `alias-align` parses the
+# entries (first line, `<name> from <file>.jpg` stripped, bare image
+# filenames skipped) and promotes the resolvable names into the `aliases`
+# table (exact 1.0 / alias 0.9; unresolved flagged, never invented).
+disambig_list_keys:
+  - others
+  - related
+  - teams
+  - media
+  - main_article1
+  - main_article2

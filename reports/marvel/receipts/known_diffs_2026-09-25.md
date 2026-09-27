@@ -182,6 +182,29 @@ the production?). Declining to guess: the mapping is recorded here and in
 each when decided. `X Crew Members` (19,507 `crew_of` edges) shipped in
 C2 with target capture.
 
+## C3 — Marvel disambiguation entries with no store node (2026-09-27, C3 alignment)
+
+`alias-align` (plan §C3, within-wiki) resolved 6,157 of the 8,510 parsed
+disambiguation entries into the `aliases` table; **746 entries (742 fact
+rows, 677 distinct values) name a referent the store has no node for** —
+e.g. `A'Lars (son of Thanos)`, `Abomination (Morlock)`, `A.I.M.
+(Heroes Reborn)`, `Ultron / "Adam Warlock"`. Two shapes: missing
+character pages (gap-fill candidates) and compound/informal names the wiki
+itself uses inconsistently. Recorded as `disambig_unresolved` facts under
+`disambig:<page>` provenance (queryable, the seed for the cross-corpus
+pass), not dropped. Bounded, deterministic, no parser regression.
+
+## C3 — cross-corpus alias tables deferred (2026-09-27, owner call)
+
+The plan's C3 cross-corpus half (`marvel` Earth-616 ↔ `mcu` 199999 ↔
+`cc.db` speakers, via explicit `subject_aliases:` override tables
+cross-checked against the MCU-wiki `Appearances` lists) is **not
+scheduled**: the `subject_aliases:` tables do not exist yet and the
+`cc.db` speaker set is not in this campaign's corpus. The 742
+`disambig_unresolved` facts are the queryable seed for it. Not a
+regression, not a residue — an unscheduled item, recorded so it is not
+mistaken for done.
+
 ## Standing
 
 JJK + CSM corpora are baselines, never touched. MCU is in-campaign (the

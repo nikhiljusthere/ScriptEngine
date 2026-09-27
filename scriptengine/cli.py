@@ -1125,6 +1125,52 @@ def category_relations(
             )
 
 
+@app.command(name="alias-align")
+def alias_align(
+    series: str = typer.Option(..., "--series"),
+    limit: int = typer.Option(
+        0, "--limit", help="Consider at most N disambiguation pages."
+    ),
+) -> None:
+    """Align the names a wiki's disambiguation pages file to canonical nodes. (plan §C3)
+
+    A disambiguation page is the wiki's own statement of what a bare term
+    refers to: its list fields file the entries, and each entry is the wiki's
+    pointer to the canonical entity. The `disambig_list_keys:` override
+    declares the field names (a wiki convention, not an engine fact); the
+    entries resolve against the store's nodes then aliases (exact = 1.0,
+    alias = 0.9) and the resolved names are promoted into the `aliases`
+    table. Unresolved names are counted and written to a `disambig_unresolved`
+    fact under `disambig:<page>` provenance -- flagged, never invented.
+    Idempotent: a second run is a counting no-op. Deterministic, no model.
+    """
+    from scriptengine.ingest.alias_align import align
+
+    paths = series_paths(series)
+    report = align(paths, limit=limit)
+    table = Table(title=f"Alias alignment: {series}")
+    table.add_column("outcome")
+    table.add_column("count", justify="right")
+    for key in (
+        "pages",
+        "entries",
+        "image_only",
+        "resolved_exact",
+        "resolved_alias",
+        "already",
+        "unresolved",
+    ):
+        table.add_row(key, str(report[key]))
+    console.print(table)
+    if report["unresolved_names"]:
+        shown = ", ".join(report["unresolved_names"][:10])
+        console.print(
+            f"[yellow]{report['unresolved']} unresolved entry names "
+            f"(flagged, not invented): {shown}"
+            + (" ..." if report["unresolved"] > 10 else "")
+        )
+
+
 @app.command()
 def classify(
     series: str = typer.Option(..., "--series"),

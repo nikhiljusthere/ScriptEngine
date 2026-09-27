@@ -359,16 +359,19 @@ miss_queue_csm_iter1.jsonl` (the frozen miss queue). P6 (cross-corpus,
 
 **Gates (re-run before calling any pass done; re-baselined 2026-09-08 via the
 gpu-gate3 100k+CUDA side session — raw receipts `reports/csm/GATE_REBASELINE_2.md`):**
-`pytest tests/ -q` = **1,350** (the current gate-1 pin: the 1,331 pin + 2
-crawl stall-watchdog tests @ `1adb0d42` (known delta, un-stamped until now)
-+ 17 Marvel A1c/A1b tests — 9 `test_wikitext` (F1 colon-fold + F2
-unclosed-lead) + 5 `test_ontology` (L2 `skip_patterns:`/`alias_fact_keys:`
-hooks) + 3 `test_crawler_aliases`; the known env-mcp trio
+`pytest tests/ -q` = **1,367** (the current gate-1 pin: the 1,350 pin
++ 10 `test_category_relations` (C2 L5) + 7 `test_alias_align` (C3 A1b
+within-wiki) — Marvel-campaign tests; the known env-mcp trio
 (`test_mcp_server.py`) fails under a stopped :8000, council #25 close —
-measured 2026-09-25 on the union tree as 1,345 passed + 2 xpassed + 3
-:8000-down env failures, receipts `reports/marvel/receipts/gates_2026-09-25_union/`;
-history: 1,331 = the 1,321 R-7 pin + 10 new R-8 router tests, R-8 window
-discharged 2026-09-17 @ tree `8661850`, receipts `4b60043`). Per Ruling 5e a
+re-measured 2026-09-27 as 1,362 passed + 2 xpassed + 3 :8000-down env
+failures (C3 gate, log `/tmp/opencode/c3_pytest_gate.log`; the 09-25
+union-tree measurement 1,345 + 2 + 3 stands, receipts
+`reports/marvel/receipts/gates_2026-09-25_union/`);
+history: 1,350 = the 1,331 pin + 2 crawl stall-watchdog tests @ `1adb0d42`
+(known delta, un-stamped until now) + 17 Marvel A1c/A1b tests (9
+`test_wikitext` + 5 `test_ontology` + 3 `test_crawler_aliases`); 1,331 =
+the 1,321 R-7 pin + 10 new R-8 router tests, R-8 window discharged
+2026-09-17 @ tree `8661850`, receipts `4b60043`). Per Ruling 5e a
 known +N test delta does not re-run the gates — the full four-gate re-run
 happens at each fix-class's closure. (Historical: 1,249 re-baselined
 2026-09-08; 1,254 = 1,249 + 4 CSM-3 + 1 CSM-3b roster-door test @
