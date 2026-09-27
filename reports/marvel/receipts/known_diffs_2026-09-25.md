@@ -237,6 +237,25 @@ scheduled**: the `subject_aliases:` tables do not exist yet and the
 regression, not a residue — an unscheduled item, recorded so it is not
 mistaken for done.
 
+## D2 — blind panel v1 eligibility-filter defect (2026-09-27, re-sealed as v2)
+
+The sealed D2 panel v1 (commit `e4ef2c75`, sha256 `623153ba…`) was drawn
+with the universe-variant class's eligibility filter silently a **no-op**:
+`blind_panel._universe` compared an 8-char slice against the 7-char
+marker `"(Earth-"` (never equal), so it returned `""` for every title
+and the class filter kept every `(Earth-%)` character the SQL selected —
+including the primary universes 616/199999. One v1 subject,
+`Snake Sanchus (Earth-616)`, therefore violated the class's declared
+eligibility ("the universe is not 616/199999"). The state-over-time
+class is unaffected (its filter uses affiliation-fact SQL, not
+`_universe`). Fixed (`tools/marvel/blind_panel.py`, 1 line) + 3-test
+regression (`tests/test_blind_panel_universe.py`); the panel was re-
+sealed as **v2** (`61f51093…`) BEFORE any questions were authored, so
+nothing is invalidated: v2 re-drew only that class's 6th subject →
+`Dominikos Petrakis (Earth-77995)` (doc_id 54772); the other 23 rows are
+byte-identical; v1 is preserved in git (`e4ef2c75`). No parser change;
+no corpus residue.
+
 ## Standing
 
 JJK + CSM corpora are baselines, never touched. MCU is in-campaign (the

@@ -86,11 +86,17 @@ state.
   `scriptengine/eval/gold_marvel.json` nor `gold_mcu.json` exists — the
   eval CLI refuses a series without a gold ("cannot be measured, only
   hoped about"). Marvel's named gold path is the D2 blind-fresh protocol:
-  panel SEALED `reports/marvel/blind_panel_2026-09-27.jsonl` (24 subjects
-  = 4 classes × 6; sha256
-  `623153ba6c57e7c84fd0acbb583feecb98d5f1f151dec01d827dbfc9b7c378b0`;
-  seed 20260927; disjoint from the 264 scored subjects; sealed on the
-  complete bank). Next = corpus-blind AUTHORING (non-executing party) →
+  panel SEALED (v2) `reports/marvel/blind_panel_2026-09-27.jsonl`
+  (24 subjects = 4 classes × 6; v2 sha256
+  `61f5109376eef77b7af0eb7a73a3848440948570711368f826f1dc64bf1aa829`;
+  v1 `623153ba…` superseded same day — its universe-variant class was
+  drawn with the eligibility filter a silent no-op (`_universe` 8-char
+  slice vs 7-char marker), letting one 616 subject in; fixed + 3-test
+  regression, v2 re-sealed before any authoring (1 subject re-drawn →
+  `Dominikos Petrakis (Earth-77995)`, other 23 rows byte-identical; v1
+  in git `e4ef2c75`; known_diffs D2 record). seed 20260927; disjoint
+  from the 264 scored subjects; sealed on the complete bank). Next =
+  corpus-blind AUTHORING (non-executing party) →
   `validate` → `blind_fresh.jsonl` → `score`. Named gap: the `eval` CLI
   loads `scriptengine/eval/gold_<series>.json` while the D2 protocol
   produces `reports/<series>/blind_fresh.jsonl` — the materialization

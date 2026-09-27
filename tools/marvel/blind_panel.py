@@ -111,7 +111,7 @@ def _universe(title: str) -> str:
     # "Peter Parker (Earth-616)" -> "616"; no marker -> ""
     if title.endswith(")"):
         open_idx = title.rfind("(Earth-")
-        if open_idx != -1 and title[open_idx:open_idx + 8] == "(Earth-":
+        if open_idx != -1 and title[open_idx:open_idx + 7] == "(Earth-":
             return title[open_idx + 7:-1]
     return ""
 
