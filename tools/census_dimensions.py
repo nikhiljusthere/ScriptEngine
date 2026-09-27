@@ -5,8 +5,11 @@ census_3b_dimensions.json) through the qa door, in-process -- the same path
 the :8000 /context endpoint uses. No subject anchor: a natural writer
 question goes through auto-routing, which is the stricter honest test.
 
-Mechanical pass: each question carries 3 `expect` terms (the distinctive
-answer content); >=2 present in the served bundle text is MECH_GREEN.
+Mechanical pass: each question carries `expect` terms (the distinctive
+answer content); the frozen X2.e bank carries 3 per question and >=2
+present in the served bundle text is MECH_GREEN. Banks with variable
+term counts (C6) scale the same 2/3 ratio: a single-term question is
+green iff its term is present.
 Every MECH_RED is a triage item: the judging agent re-reads the saved
 bundle excerpt and rules (a) green-mechanical-miss (answer present, terms
 wrong) or (b) genuinely red -- then classifies the red: paragraph present
@@ -28,6 +31,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
 import sys
 import time
@@ -72,11 +76,15 @@ TEXT_CAP = 3000
 def judge(item: dict, text: str) -> dict:
     low = text.lower()
     hits = [t for t in item["expect"] if t.lower() in low]
+    # The X2.e rule is 2-of-3 (its frozen bank is exactly 3 terms per
+    # question, so this is a no-op for it); variable-length banks scale
+    # the same 2/3 ratio so a 1-term question can go green at all.
+    threshold = max(1, math.ceil(2 * len(item["expect"]) / 3))
     return {
         **{k: item[k] for k in ("id", "class", "subject", "q", "expect")},
         "hits": hits,
         "missing": [t for t in item["expect"] if t not in hits],
-        "verdict": "MECH_GREEN" if len(hits) >= 2 else "MECH_RED",
+        "verdict": "MECH_GREEN" if len(hits) >= threshold else "MECH_RED",
         "served": text[:TEXT_CAP],
     }
 

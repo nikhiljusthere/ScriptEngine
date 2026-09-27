@@ -33,6 +33,7 @@ from __future__ import annotations
 
 import os
 import re
+import sqlite3
 from typing import Any
 
 from scriptengine.api.rules import writing_rules
@@ -490,11 +491,18 @@ def _owner_attribute_hit(store, query: str) -> bool:
         if not parts:
             continue
         owner = " ".join(parts)
-        hit = store.connection.execute(
-            "SELECT 1 FROM abilities WHERE character = ? COLLATE NOCASE"
-            " AND name LIKE ? ESCAPE '\\' LIMIT 1",
-            (owner, head.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_") + "%"),
-        ).fetchone()
+        try:
+            hit = store.connection.execute(
+                "SELECT 1 FROM abilities WHERE character = ? COLLATE NOCASE"
+                " AND name LIKE ? ESCAPE '\\' LIMIT 1",
+                (owner, head.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_") + "%"),
+            ).fetchone()
+        except sqlite3.OperationalError:
+            # A store built before ability extraction has no abilities table
+            # at all; then no (character, ability) pair is declared and the
+            # check is trivially negative (the same contract as
+            # FactStore.abilities_of: absence is a complete answer).
+            return False
         if hit is not None:
             return True
     return False
