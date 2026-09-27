@@ -124,3 +124,18 @@ state.
   roster-guard false positive on marvel/mcu (6/99,591 tier-a titles; the
   sweep hard-errored the 4 `Arc*` pages it had reached — re-swept clean on
   resume, report 13,589 pages / 0 errors at chain-launch time).
+
+## Phase D evidence (post-GATE C)
+- **D3 — D5 reachability: pinned tier-1 panel LANDED (2026-09-27, offline
+  half done; live 3-door sweep PENDING owner's `:8000` bounded window,
+  CUDA-only).** `reports/marvel/receipts/d3_tier1_panel_2026-09-27.md` (full
+  seals + runbook): `reports/marvel/tier1_panel_2026-09-27.json`
+  (517,960 rows = every tier-0-eligible sentence; panel hash
+  `a880bf250cd0fe89…`; file sha256 `faede3c9…`; on disk, NOT committed —
+  deterministic rebuild, same rule as the bank); held-out 200-row split
+  `…json.heldout.json` **committed** (blind-panel precedent; sha256
+  `3ffdf17c…`; executing agent never opens it, §9a). Tier-0 containment at
+  pin time: 519,318/519,318 sentences, 0 unreachable, 100.0000%. The 3-door
+  sweep (qa/roster/narrative, ~1.55 M probes total, resumable per-door
+  ledgers `sweep_<door>_a880bf25.jsonl`) is a multi-window step — owner
+  schedules the window; runbook in the receipt.
