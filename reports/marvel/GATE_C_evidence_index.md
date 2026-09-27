@@ -43,8 +43,15 @@ state.
      `/tmp/opencode/oos_rescore_census_c6_mcu.log`). The 4 pre-reds are
      stable across the fix; the new pre baseline (196) equals the
      2026-09-26 one — floor post ≥ pre − 2 = 194.
-   - Marvel — PENDING the post-sweep chain (bank → oos-freeze → census →
-     oos-score pre; steps 3–6 of `tools/marvel/post_sweep_chain.sh`).
+   - Marvel — DONE 2026-09-27 16:14–16:42 (post-sweep chain steps 3–6,
+     after the 16-core sharded sweep per `27202157`; the box rebooted
+     ~16:53 so /tmp logs are gone — all artifacts below are on disk):
+     bank **99,581 artifacts / 99,591 sweep pages (complete), residue
+     1,237** (`census_c6_bank_meta_marvel.json`, `sweep_complete: true`)
+     · `oos-freeze` 200 rows (seed 20260927, frozen pre-model-call) ·
+     census **55/64 MECH_GREEN (86%)**
+     (`reports/marvel/census_c6_results_marvel.jsonl`) · **OOS pre 184/200
+     (92%)** (`census_c6_oos_pre_marvel.jsonl`) — floor post ≥ pre − 2 = 182.
 2. **`unknown`-type residue report** — DONE:
    `receipts/unknown_residue_2026-09-27.{md,jsonl}` (marvel 529/236,720 =
    0.223%; mcu 616/35,234 = 1.748%; cause: absent infobox template in
@@ -58,12 +65,27 @@ state.
    - MCU — DONE post-reindex (with the `content_sections` promotion,
      commit `0720df76`): **coverage 100.0000%**, 430 boilerplate sentences
      excluded per policy (`/tmp/opencode/containment_mcu_post_reindex.log`).
-   - Marvel — PENDING post-sweep chain step 2 (re-index step 1 first, since
-     the promotion changes what the chunker indexes).
+   - Marvel — DONE 2026-09-27 16:13 (chain step 1 re-index, then step 2):
+     `reports/span-recall/marvel/index_misses.jsonl` = 0 bytes → **0
+     unreachable / 0 misses** (tier 0 rc=0 proves containment by
+     construction — `cli.py` chunk-containment).
 
 ## D1 (phase D) standing-gate marvel set — tracked to the chain
 - `eval --series marvel` + `eval --series mcu`: chain steps 7–8 (GPU,
-  serialized after C6).
+  serialized after C6). **BLOCKED 2026-09-27 (owner call)**: neither
+  `scriptengine/eval/gold_marvel.json` nor `gold_mcu.json` exists — the
+  eval CLI refuses a series without a gold ("cannot be measured, only
+  hoped about"). Marvel's named gold path is the D2 blind-fresh protocol:
+  panel SEALED `reports/marvel/blind_panel_2026-09-27.jsonl` (24 subjects
+  = 4 classes × 6; sha256
+  `623153ba6c57e7c84fd0acbb583feecb98d5f1f151dec01d827dbfc9b7c378b0`;
+  seed 20260927; disjoint from the 264 scored subjects; sealed on the
+  complete bank). Next = corpus-blind AUTHORING (non-executing party) →
+  `validate` → `blind_fresh.jsonl` → `score`. Named gap: the `eval` CLI
+  loads `scriptengine/eval/gold_<series>.json` while the D2 protocol
+  produces `reports/<series>/blind_fresh.jsonl` — the materialization
+  step (and the mcu gold source) is an owner call; steps 7–8 stay
+  PENDING-owner until then.
 - `chunk-containment --series marvel`: chain step 2.
 - census OOS re-score floor: chain step 6 (post ≥ pre − 2; a drop of 3+
   voids — CSM annex).
@@ -81,7 +103,11 @@ state.
 ## Tree stamps at GATE C
 - Re-index: MCU done (events/meaning empty → no `--force`; emphasis
   re-derived deterministically, reindex lossless — `build.py:201-206`).
-  Marvel pending chain step 1.
+  Marvel done 2026-09-27 16:13 (post-sweep chain step 1).
+- Tier-a sweep 16-core sharded (`27202157`,
+  `tools/marvel/run_sweep_shards.sh`, launched 14:08): 99,591/99,591
+  pages / 0 errors; chain steps 1–6 done by 16:42; box rebooted ~16:53
+  (jobs + /tmp logs lost, all artifacts durable on disk).
 - Parser-evolution re-emit (F7 + current parser): MCU 16,706/35,209 ·
   marvel 7,929/236,628 files rewritten; `preserved_key_violations: []`.
 - `roster_route_words` guard fix (commit `37a799ca`): the JJK-era arc/saga
