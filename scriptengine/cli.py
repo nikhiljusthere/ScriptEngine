@@ -9,6 +9,7 @@ non-zero with a message naming the phase, rather than failing obscurely.
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -2415,7 +2416,10 @@ def span_recall(
 def _write_jsonl(path: Path, rows: list[dict]) -> None:
     """Plain utf-8, no BOM: a BOM corrupts the first record of a JSONL stream."""
     payload = "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows)
-    tmp = path.with_suffix(path.suffix + ".tmp")
+    # Per-process temp name: two span-recall runs starting together (the D3
+    # qa + narrative supervisors) both rewrite index_misses.jsonl, and a shared
+    # ".tmp" let one rename the other's file away (FileNotFoundError, rc=1).
+    tmp = path.with_suffix(path.suffix + f".{os.getpid()}.tmp")
     try:
         tmp.write_text(payload, encoding="utf-8")
         assert tmp.read_text(encoding="utf-8") == payload
