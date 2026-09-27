@@ -157,6 +157,38 @@ legitimate quotes; a naive walk = 1.87M false artifacts):
   cleaned, it is a one-line cleaner rule + re-sweep, schedulable with
   any later engine pass.
 
+## C1 — Marvel full-sweep link-artifact residue (2026-09-27, tier-a sweep quality scan)
+
+- **22 of 1,063,712 gold answer items (0.0021%) across the full 99,591-page
+  Marvel tier-a sweep carry a raw-wikitext / URL residue** — 11 distinct
+  pages. Scan: `tools/marvel/link_artifact_scan.py --series marvel` (hit
+  detail `reports/marvel/receipts/link_scan_marvel_2026-09-27.jsonl`); the
+  same tool **reproduces the MCU 6-item finding above exactly** (6/32,129,
+  5 pages, all bare-bracket), so the scan is faithful to the precedent.
+  Three bounded classes, all wiki-editor noise the value cleaner preserved
+  (the closed-scope detail rule):
+  - **6 bare-bracket URLs** (the MCU class — a bare `[http(s)://` the
+    editor pasted into a cell): `elsa_bloodstone` (nicknames, a *Hunter
+    Heiress* trailer), `herman_schultz` (height, a DC-Animated interview),
+    `joseph_armstrong` + `ronald_pulaski` (origin + affiliation, both the
+    same evandorkin Tumblr "Fight-Man handbook-notes" post).
+  - **2 un-stripped `[[...]]` wiki links**: `hulgar` (affiliation →
+    `[[Humans (Homo sapiens)`), `joey_hammerhead` (baseofoperations → a
+    multi-field block ending `New York]]`).
+  - **16 raw infobox-block / wrong-field cell leaks**: the infobox parser
+    left a `| Field = value` block (or a `| Value` row) inside one cell.
+    `hulgar` is the worst (10 hits — its whole infobox landed in the
+    `affiliation` cell); the rest are misparse strays (`dane_whitman`
+    weight→`Eyes = Brown`, `en_sabah_nur` weight→`Eyes = Red`,
+    `fourth_nurse` placeofbirth→`|The Dome, Northern Germany`,
+    `daniel_sousa` origin→`|Human`).
+- **No parser change queued** (same standing rule as the MCU C1 note): a
+  value-cleaner strip for bare-bracket URLs, and a wrong-field infobox
+  guard, would each be their own gated change + re-emit, and the
+  closed-scope golds stay verbatim-faithful to the stored cells. If the
+  owner wants these 22 golds cleaned, it is a bounded cleaner rule +
+  re-sweep, schedulable with any later engine pass.
+
 ## C2 — Marvel `Formerly:` affiliation-field artifact (2026-09-27, C2 audit)
 
 22 of the 70 category-edge contradictions in the C2 audit
