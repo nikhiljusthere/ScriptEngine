@@ -28,6 +28,7 @@ import json
 import logging
 import re
 import sqlite3
+from pathlib import Path
 from typing import Any
 
 from scriptengine.config import SeriesPaths, Settings, get_settings
@@ -58,6 +59,29 @@ EVENTIVE_VERBS = frozenset(
 # the event/battle pages that are one arc each. A placement in anything else
 # is a finding, not a row.
 PLACEMENT_TYPES = {"arc", "saga", "event", "battle", "story_arcs"}
+
+
+def placement_types(store: FactStore) -> set[str]:
+    """The page types an event may be placed in, for this store's wiki.
+
+    The defaults are the type names the first wikis used. Other wikis file the
+    same pages under their own infobox's name -- a fight is `conflict` on one,
+    an arc `story_arc` on another -- and a name nothing here reads leaves those
+    pages out of the placement set entirely (the 2026-09-28 C4 dry-run read 198
+    of Marvel's pages and none of MCU's 870 `conflict` pages). So a wiki adds its
+    own under `events: placement_types:` in `series/<name>/overrides.yaml`,
+    which sits beside the store; the defaults always stay in.
+    """
+    extra: set[str] = set()
+    overrides = Path(store.path).with_name("overrides.yaml")
+    if overrides.exists():
+        import yaml
+
+        loaded = yaml.safe_load(overrides.read_text(encoding="utf-8")) or {}
+        declared = ((loaded.get("events") or {}) if isinstance(loaded, dict)
+                    else {}).get("placement_types") or []
+        extra = {str(name) for name in declared}
+    return PLACEMENT_TYPES | extra
 
 # Section titles that are extraction-only furniture, on top of the narrative
 # retriever's list set: they state times or links rather than events, and a
@@ -531,7 +555,7 @@ def validate_phase1_rows(store: FactStore) -> list[str]:
     """
     findings: list[str] = []
     arc_row = store.node_by_name(PHASE1_ARC)
-    if arc_row is None or arc_row["label"] not in PLACEMENT_TYPES:
+    if arc_row is None or arc_row["label"] not in placement_types(store):
         findings.append(
             f"arc {PHASE1_ARC!r} is not a page of a placement type"
             f" ({arc_row['label'] if arc_row else 'unresolved'})"
@@ -706,7 +730,9 @@ def known_participants(store: FactStore) -> dict[str, tuple[str, int]]:
     as a plain dict, for the reason `relations.known_names` gives: a
     connection belongs to one thread.
     """
-    placeholders = ",".join("?" * len(NON_PARTICIPANT_TYPES))
+    # The wiki's own placement types are containers too (see placement_types).
+    containers = NON_PARTICIPANT_TYPES | placement_types(store)
+    placeholders = ",".join("?" * len(containers))
     # The ids of resolved nodes whose page is a container, to be skipped.
     container_ids = {
         int(row["id"])
@@ -714,7 +740,7 @@ def known_participants(store: FactStore) -> dict[str, tuple[str, int]]:
             f"SELECT n.id FROM nodes n"
             f" JOIN documents d ON d.id = n.document_id"
             f" WHERE n.is_resolved = 1 AND d.page_type IN ({placeholders})",
-            tuple(sorted(NON_PARTICIPANT_TYPES)),
+            tuple(sorted(containers)),
         )
     }
     canon: dict[str, tuple[str, int]] = {}
@@ -780,11 +806,12 @@ def placement_pages(store: FactStore) -> list[str]:
     means the pages that matter rather than the first alphabetically.
     """
     excluded = _excluded_section_titles()
-    placeholders = ",".join("?" * len(PLACEMENT_TYPES))
+    types = placement_types(store)
+    placeholders = ",".join("?" * len(types))
     rows = store.connection.execute(
         f"SELECT d.title FROM documents d"
         f" WHERE d.page_type IN ({placeholders})",
-        tuple(sorted(PLACEMENT_TYPES)),
+        tuple(sorted(types)),
     ).fetchall()
     weight: dict[str, int] = {}
     for row in rows:

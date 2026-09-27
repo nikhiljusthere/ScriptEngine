@@ -187,3 +187,20 @@ def test_store_memos_see_a_committed_write(tmp_path):
     store.commit()
     assert len(store.edges_by_relation("adapted from")) == 2
     store.close()
+
+
+def test_placement_types_read_the_wikis_own_names(tmp_path):
+    """Defaults stay; a wiki's `events: placement_types:` adds its own names."""
+    from scriptengine.ingest.events import PLACEMENT_TYPES, placement_types
+
+    root = tmp_path / "demo"
+    root.mkdir()
+    store = FactStore(root / "facts.db")
+    store.initialise()
+    assert placement_types(store) == PLACEMENT_TYPES  # no overrides file
+    (root / "overrides.yaml").write_text("type_aliases: {}\n", encoding="utf-8")
+    assert placement_types(store) == PLACEMENT_TYPES  # no events key
+    (root / "overrides.yaml").write_text(
+        "events:\n  placement_types: [conflict, story_arc]\n", encoding="utf-8")
+    assert placement_types(store) == PLACEMENT_TYPES | {"conflict", "story_arc"}
+    store.close()

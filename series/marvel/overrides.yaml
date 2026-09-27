@@ -176,3 +176,8 @@ content_sections:
 # all 4 pages it had reached). Declaring the ban empty turns the guard off
 # for this series; the JJK default (arc, saga) is untouched.
 roster_route_words: []
+# C4 events (2026-09-28): this wiki files arc pages under its own
+# `Marvel Database:Story Arc Template` name, `story_arc`, which the engine's
+# default placement set (arc/saga/event/battle/story_arcs) does not read.
+events:
+  placement_types: [story_arc]

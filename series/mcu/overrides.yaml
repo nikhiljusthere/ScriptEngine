@@ -95,3 +95,8 @@ content_sections:
 # errors. Declared here so a later tier-b sweep (non-characters) hits the
 # same clean path.
 roster_route_words: []
+# C4 events (2026-09-28): this wiki's battle pages are `conflict` (870 pages,
+# Background/Battle/Aftermath sections), outside the engine's default
+# placement set (arc/saga/event/battle/story_arcs).
+events:
+  placement_types: [conflict]
