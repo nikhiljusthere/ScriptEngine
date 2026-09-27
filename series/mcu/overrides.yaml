@@ -61,3 +61,16 @@ identity_fields:
   oneshot: "In which one-shot does {name} appear?"
   theme park: "In which theme park does {name} appear?"
   idno: "What is {name}'s ID number?"
+
+# C2 (plan MARVEL_100_PLAN.md §4, L5): category -> relation grammar. The
+# plan's four patterns are Marvel-DB conventions and hit zero on this wiki,
+# which embeds the target in the category name instead (measured 2026-09-27
+# against the store's 155,189 category rows): `X Crew Members` names the
+# production the crew member belongs to (8,356 docs; 105 of 119 distinct
+# targets resolve to nodes, the rest are skipped and counted, never
+# invented). `Episodes` (717 docs), `Soundtrack` (2,088) and
+# `Interviewees` (626) are mechanism-ready but their mapping is deferred:
+# the edge direction is a per-wiki judgment, recorded in
+# known_diffs_2026-09-25.md rather than guessed here.
+category_relations:
+  - {pattern: "^(.+) Crew Members$", relation: crew_of, target: 1}

@@ -1053,6 +1053,79 @@ def link(
 
 
 @app.command()
+def category_relations(
+    series: str = typer.Option(..., "--series"),
+    limit: int = typer.Option(
+        0, "--limit", help="Consider at most N matching category rows."
+    ),
+    audit_sample: int = typer.Option(
+        200,
+        "--audit",
+        help="Sample N category edges against the infobox field they can contradict (0 = derive only).",
+    ),
+) -> None:
+    """Write the relations a wiki files as categories. (L5, plan §C2)
+
+    The `category_relations:` override grammar declares, per series, which
+    category names state a relation and what it states: `X/Members` files
+    `member_of X`, `Stan Lee/Creator` files `created_by Stan Lee`,
+    `2009 Character Debuts` files `debuted_year 2009`. Targets resolve
+    against the store's nodes and aliases (exact = 1.0, alias = 0.9,
+    unresolved = skipped, never invented), and each edge is written under
+    provenance `category:<name>` so what the wiki filed stays
+    distinguishable from what a field declared.
+
+    Idempotent: one edge per (subject, relation, target), so a second run
+    is a counting no-op. Rule-based, not a model. Run after `index`, which
+    rebuilds the graph. The `--audit` gate samples the edges against the
+    infobox field the rule declares in `contradicts:`; an edge the page's
+    own field denies is a finding, not a keep.
+    """
+    import logging
+
+    from scriptengine.ingest.category_relations import audit, derive
+
+    logging.disable(logging.INFO)
+    paths = series_paths(series)
+    if not paths.facts_db.exists():
+        console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
+        raise typer.Exit(code=1)
+
+    report = derive(paths, limit)
+    table = Table(title=f"Category relations: {series}")
+    table.add_column("outcome")
+    table.add_column("count", justify="right")
+    for key in (
+        "rules",
+        "considered",
+        "matched",
+        "edges_written",
+        "facts_written",
+        "already",
+        "unresolved",
+        "no_subject",
+    ):
+        table.add_row(key, str(report[key]))
+    console.print(table)
+
+    if audit_sample:
+        findings = audit(paths, sample=audit_sample)
+        table = Table(title=f"Contradiction audit (sample {findings['sampled']}): {series}")
+        table.add_column("outcome")
+        table.add_column("count", justify="right")
+        for key in ("auditable", "unauditable", "consistent", "contradictions"):
+            value = findings[key]
+            table.add_row(key, str(len(value) if isinstance(value, list) else value))
+        console.print(table)
+        for item in findings["contradictions"][:5]:
+            console.print(
+                f"[yellow]finding[/yellow] {item['provenance']} -> "
+                f"{item['relation']} {item['category']!r}, but the infobox says "
+                f"{item['field'][:60]!r}"
+            )
+
+
+@app.command()
 def classify(
     series: str = typer.Option(..., "--series"),
     limit: int = typer.Option(0, "--limit", help="Stop after this many pages."),

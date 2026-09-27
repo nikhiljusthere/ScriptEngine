@@ -157,6 +157,31 @@ legitimate quotes; a naive walk = 1.87M false artifacts):
   cleaned, it is a one-line cleaner rule + re-sweep, schedulable with
   any later engine pass.
 
+## C2 — Marvel `Formerly:` affiliation-field artifact (2026-09-27, C2 audit)
+
+22 of the 70 category-edge contradictions in the C2 audit
+(`reports/marvel/receipts/c2_category_relations_2026-09-27.md`) are not
+disagreements between channels: the page's `affiliation` infobox field is a
+broken multi-line `Formerly:` list that the infobox parser renders as the
+literal string `Formerly:` (or `Formerly:\nand`, `Formerly:\nGoodman
+Productions`). The `member_of` edge the category files is the page's
+correct statement; the field is malformed. **Bounded class, field-side,
+not a parser regression** — the category edges are kept and the artifact is
+recorded here. A field-parser fix for multi-line `Formerly:` lists would be
+its own gated change, schedulable with any later pass; until then the audit
+should read these 22 as noise, not signal.
+
+## C2 — MCU `Episodes` / `Soundtrack` / `Interviewees` mapping deferred (2026-09-27)
+
+The MCU wiki's remaining relation-shaped categories — `Episodes` (717
+docs), `Soundtrack` (2,088), `Interviewees` (626) — are ready for the C2
+mechanism, but each needs a per-wiki judgment on edge direction (e.g. does
+`X Episodes` file `appears_in X` on the character, or `has_episode X` on
+the production?). Declining to guess: the mapping is recorded here and in
+`series/mcu/overrides.yaml` for the owner, one `category_relations:` line
+each when decided. `X Crew Members` (19,507 `crew_of` edges) shipped in
+C2 with target capture.
+
 ## Standing
 
 JJK + CSM corpora are baselines, never touched. MCU is in-campaign (the

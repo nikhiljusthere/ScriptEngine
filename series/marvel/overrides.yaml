@@ -56,16 +56,28 @@ type_aliases:
 # citation_params:
 #   r: comic
 
-# L5 (plan §1): category -> relation grammar, declared for Phase C2 once the
-# generic `category_relations:` mechanism lands; pre-registered here so the
-# mapping-file decision is not re-litigated per wiki:
-#   `X (Earth-616)/Members`  -> member_of (group affiliation)
-#   `X/Creator`              -> created_by (creator credit)
-#   `X casualties`           -> event_participant (kind: casualty)
-#   `YYYY Character Debuts`  -> debuted_year (era)
-# category_relations:
-#   - {pattern: "*/Members", relation: member_of}
-#   - {pattern: "*/Creator", relation: created_by}
+# L5 (plan §1): category -> relation grammar. The generic mechanism
+# (ingest/category_relations.py, CLI `category-relations`) matches each
+# category name against the patterns below and writes the edge the
+# category states. Pre-registered 2026-09-25, activated for C2
+# 2026-09-27 against the G6-final store (2,582,190 category rows /
+# 212,341 names):
+#   `X (Earth-616)/Members`  -> member_of X      (49,244 rows / 34,646 docs)
+#   `Stan Lee/Creator`       -> created_by Stan Lee (200,375 rows /
+#                               102,867 docs — the category sits under the
+#                               CREATOR's page, the work is the member)
+#   `X casualties`           -> event_participant (kind: casualty, 993 rows)
+#   `YYYY Character Debuts`  -> debuted_year YYYY (a property, not a node;
+#                               79,625 rows, written to facts)
+# Target resolution: exact node name = confidence 1.0, alias hit 0.9,
+# unresolved = counted and skipped, never invented. `contradicts:` is the
+# plan's gate: the audit samples the edge against the page's own infobox
+# field, and an edge the field denies is a finding, not a keep.
+category_relations:
+  - {pattern: "^(.+)/Members$", relation: member_of, target: 1, contradicts: affiliation}
+  - {pattern: "^([^/]+)/Creator$", relation: created_by, target: 1, contradicts: creators}
+  - {pattern: "^(.+) casualties$", relation: event_participant, kind: casualty, target: 1}
+  - {pattern: '^(\d{4}) Character Debuts$', relation: debuted_year, value: 1}
 
 # NOTE (L2): disambiguation pages (e.g. `Spider-Man`) carry the wiki's own
 # alias graph (`main_articleN` lists) but the engine's default skip pattern
