@@ -2564,6 +2564,22 @@ def page_gen(
         console.print(f"[bold]verify[/bold]: {verify_path}")
 
 
+def _flush_report(report_path: Path, report: dict) -> None:
+    """Atomically persist the sweep report (tmp + rename).
+
+    The sweep is resumable via the report's `pages` (no-error rows are
+    skipped); a mid-run reboot otherwise loses every in-memory row. Flushing
+    every 50 pages (and after every error) bounds the re-sweep cost of a
+    crash to ~50 idempotent pages instead of the whole run."""
+    from datetime import date
+
+    tmp = report_path.with_suffix(report_path.suffix + ".tmp")
+    report["updated"] = date.today().isoformat()
+    tmp.write_text(json.dumps(report, indent=2, ensure_ascii=False),
+                   encoding="utf-8")
+    tmp.replace(report_path)
+
+
 @app.command("page-sweep")
 def page_sweep(
     series: str = typer.Option(..., "--series", help="The series to sweep."),
@@ -2645,13 +2661,15 @@ def page_sweep(
         if row.get("error"):
             errors += 1
             console.print(f"[red]  {title}: {row['error']}[/red]")
+            _flush_report(report_path, report)  # never lose a failed page
         else:
             console.print(f"[dim]  {title}: {row['structured']} structured, "
                           f"{len(row['uncovered'])} uncovered[/dim]")
+            if swept % 50 == 0:
+                _flush_report(report_path, report)
 
     report["updated"] = date.today().isoformat()
-    report_path.write_text(
-        json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
+    _flush_report(report_path, report)
     total_structured = sum(
         p.get("structured", 0) for p in report["pages"] if not p.get("error"))
     console.print(
