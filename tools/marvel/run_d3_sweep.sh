@@ -28,9 +28,16 @@ VENV=scriptengine/.venv/bin/python
 PANEL=reports/marvel/tier1_panel_2026-09-27.json
 HASH8=a880bf25            # the panel hash (stamped in-file; ledger name key)
 PANEL_SIZE=517960
-DOORS=(qa narrative roster)
-LOG=/tmp/opencode/d3_sweep.log
-STATE=/tmp/opencode/d3_sweep_state
+# Parallel dispatch (2026-09-27 speed-up, commit d9082cb2): DOORS, WORKERS
+# and TAG are env-overridable so one supervisor per server can overlap doors
+# (e.g. qa on the CUDA :8000 stack, narrative+roster on a model-free :8002
+# stack via SCRIPTENGINE_API_BASE). Defaults keep the original single chain.
+read -r -a DOORS <<< "${DOORS:-qa narrative roster}"
+WORKERS=${WORKERS:-1}
+TAG=${TAG:+_$TAG}
+API=${SCRIPTENGINE_API_BASE:-http://127.0.0.1:8000}
+LOG=/tmp/opencode/d3_sweep${TAG}.log
+STATE=/tmp/opencode/d3_sweep_state${TAG}
 mkdir -p /tmp/opencode
 
 say() { echo "$(date +%H:%M:%S) $*" | tee -a "$LOG"; }
@@ -51,8 +58,8 @@ errors() {
   fi
 }
 
-say "D3 supervisor start $(date '+%F %T'); :8000 health: $(curl -s -m 3 http://127.0.0.1:8000/health 2>/dev/null | head -c 160)"
-if ! curl -s -m 3 http://127.0.0.1:8000/health 2>/dev/null | grep -q ok; then
+say "D3 supervisor start $(date '+%F %T'); :8000 health: $(curl -s -m 3 "$API/health" 2>/dev/null | head -c 160)"
+if ! curl -s -m 3 "$API/health" 2>/dev/null | grep -q ok; then
   say "ABORT: :8000 not healthy -- start the serving stack (CUDA) and relaunch; the ledgers resume"
   exit 1
 fi
@@ -68,7 +75,7 @@ for door in "${DOORS[@]}"; do
   if [ "$unprobed" -gt 0 ]; then
     say "$door: sanity-100 gate ($p/$PANEL_SIZE probed, $e error rows to re-probe)"
     "$VENV" -m scriptengine.cli span-recall --series marvel --panel "$PANEL" \
-      --door "$door" --sanity 100 >> "$LOG" 2>&1
+      --door "$door" --sanity 100 --workers "$WORKERS" >> "$LOG" 2>&1
     rc=$?
     if [ "$rc" -eq 3 ]; then
       say "$door: DEAD-DOOR HALT (zero hits on the sanity subset, exit 3) -- full sweep not run (council addendum)"
@@ -85,7 +92,7 @@ for door in "${DOORS[@]}"; do
   say "$door: full sweep start ($p/$PANEL_SIZE probed; ~$((unprobed / 1000))k probes left this window)"
   t0=$(date +%s)
   "$VENV" -m scriptengine.cli span-recall --series marvel --panel "$PANEL" \
-    --door "$door" > "/tmp/opencode/d3_full_${door}.log" 2>&1
+    --door "$door" --workers "$WORKERS" > "/tmp/opencode/d3_full_${door}.log" 2>&1
   rc=$?
   t1=$(date +%s)
   p2=$(probed "$door"); e2=$(errors "$door")

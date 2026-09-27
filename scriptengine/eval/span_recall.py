@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import random
 import re
 import time
@@ -43,7 +44,10 @@ from typing import Any, Callable, Iterator
 from scriptengine.config import Settings
 from scriptengine.stores.facts import FactStore
 
-BASE = "http://127.0.0.1:8000"
+# Overridable so a sweep can target a second serving stack: the D3 speed-up
+# runs the model-free doors (narrative, roster) on their own port beside the
+# CUDA qa stack on :8000, instead of queueing behind it.
+BASE = os.environ.get("SCRIPTENGINE_API_BASE", "http://127.0.0.1:8000")
 
 # Sentence boundaries the wiki's own prose style breaks. Splitting on
 # `(?<=[.!?])\s+` alone silently welds sentences together, because the corpus
