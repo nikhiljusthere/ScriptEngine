@@ -1,0 +1,32 @@
+{
+  "action": "f3_folded_retirement_quarantine",
+  "date": "2026-09-27",
+  "reason": "S5 step 3 (owner-ratified): the F3 re-crawl resolved the 4 \"What If:?/: Thor Vol 1 [1]\" titles to 4 distinct pageid-suffixed owner files; these 2 last-write-win folded files (S2 collision) are superseded. Moved, NOT deleted — reversible.",
+  "superseded_by": {
+    "What If_ Thor Vol 1.json": "What If_ Thor Vol 1 (1173315).json",
+    "What If_ Thor Vol 1 1.json": "What If_ Thor Vol 1 1 (1173308).json"
+  },
+  "moved": [
+    {
+      "file": "What If_ Thor Vol 1.json",
+      "title": "What If? Thor Vol 1",
+      "pageid": 1173315,
+      "revid": 9914191,
+      "wikitext_len": 359,
+      "sha256": "1eae521f5581075957f4e5fec4760f343cda814440dea35175decc20b5c35dd3",
+      "from": "series/marvel/wikitext/What If_ Thor Vol 1.json",
+      "to": "reports/marvel/receipts/f3_quarantine_2026-09-27/What If_ Thor Vol 1.json"
+    },
+    {
+      "file": "What If_ Thor Vol 1 1.json",
+      "title": "What If? Thor Vol 1 1",
+      "pageid": 1173308,
+      "revid": 10803690,
+      "wikitext_len": 10431,
+      "sha256": "e7ee81613ae957df5b7b8628ba5521be6679b20e26f93f49637a4a2961990eee",
+      "from": "series/marvel/wikitext/What If_ Thor Vol 1 1.json",
+      "to": "reports/marvel/receipts/f3_quarantine_2026-09-27/What If_ Thor Vol 1 1.json"
+    }
+  ],
+  "revert": "move each file back to series/marvel/wikitext/ (corpus series/ is git-ignored; the per-file backups under series/ are the safety net)"
+}

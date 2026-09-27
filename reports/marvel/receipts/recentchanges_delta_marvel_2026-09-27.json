@@ -1,0 +1,876 @@
+{
+  "tool": "tools/marvel/recentchanges_delta.py",
+  "series": "marvel",
+  "wiki": "https://marvel.fandom.com",
+  "rcend": "2026-09-25T18:30:00Z",
+  "started_utc": "2026-09-27T02:42:21+00:00",
+  "finished_utc": "2026-09-27T02:42:25+00:00",
+  "status": "complete; titles-complete",
+  "api_calls": 3,
+  "rcprop_used": "title|timestamp|user|ids|oldtitle",
+  "note": "",
+  "egress_note": "FI #216 187.40.62.123 (pre-authorized exhausted pool; ipify-verified 2026-09-27 ~09:0xZ)",
+  "type_counts": {
+    "edit": 666,
+    "log": 9,
+    "new": 93
+  },
+  "window_first_ts": "2026-09-27T02:37:44Z",
+  "window_last_ts": "2026-09-25T18:34:34Z",
+  "interesting_rows": [
+    {
+      "type": "new",
+      "title": "Frederick Frederickson IV (Earth-TRN1963)",
+      "ts": "2026-09-27T02:03:39Z",
+      "user": "Ztesrxgdfjcvgkbh",
+      "pageid": 2123428,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Baymax (Earth-TRN1963)",
+      "ts": "2026-09-26T22:34:38Z",
+      "user": "Ztesrxgdfjcvgkbh",
+      "pageid": 2123411,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Sleepwalker (Earth-6215)/Gallery",
+      "ts": "2026-09-26T21:34:29Z",
+      "user": "Ershelby",
+      "pageid": 2123402,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Terranometer",
+      "ts": "2026-09-26T21:19:32Z",
+      "user": "Jasonmaia",
+      "pageid": 2123399,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Robert Baldwin (Earth-6215)/Gallery",
+      "ts": "2026-09-26T21:17:25Z",
+      "user": "Ershelby",
+      "pageid": 2123397,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Tenzin Gyatso (Earth-616)",
+      "ts": "2026-09-26T21:13:17Z",
+      "user": "Jasonmaia",
+      "pageid": 2123393,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Remmick (Echelon) (Earth-616)",
+      "ts": "2026-09-26T20:46:15Z",
+      "user": "Jasonmaia",
+      "pageid": 2123388,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Laura Kinney (Earth-6215)/Gallery",
+      "ts": "2026-09-26T20:22:42Z",
+      "user": "Ershelby",
+      "pageid": 2123385,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Bobby (Iron Shogun) (Earth-616)",
+      "ts": "2026-09-26T18:12:08Z",
+      "user": "Jasonmaia",
+      "pageid": 2123377,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Bobby (Policeman) (Earth-616)",
+      "ts": "2026-09-26T18:06:36Z",
+      "user": "Jasonmaia",
+      "pageid": 2123373,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Bobby (Paramedic) (Earth-616)",
+      "ts": "2026-09-26T17:59:45Z",
+      "user": "Jasonmaia",
+      "pageid": 2123369,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Rocket Raccoon (Earth-14121)",
+      "ts": "2026-09-26T17:58:54Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123368,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Piotr Rasputin (Earth-14121)",
+      "ts": "2026-09-26T17:58:52Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123367,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Robert Drake (Earth-14121)",
+      "ts": "2026-09-26T17:58:49Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123366,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Bobby (Bellboy) (Earth-616)",
+      "ts": "2026-09-26T17:49:56Z",
+      "user": "Jasonmaia",
+      "pageid": 2123359,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Nathaniel Richards (Kang) (Earth-14121)",
+      "ts": "2026-09-26T17:34:16Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123352,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Peter Quill (Earth-14121)",
+      "ts": "2026-09-26T17:34:14Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123351,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Groot (Earth-14121)",
+      "ts": "2026-09-26T17:34:12Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123350,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "T'Challa (Earth-14121)",
+      "ts": "2026-09-26T17:34:10Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123349,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Greer Nelson (Earth-14121)",
+      "ts": "2026-09-26T17:34:06Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123348,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Vision (Earth-14121)",
+      "ts": "2026-09-26T17:34:02Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123347,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Bobby (Newborn) (Earth-616)",
+      "ts": "2026-09-26T17:30:57Z",
+      "user": "Jasonmaia",
+      "pageid": 2123345,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Bobby (Los Angeles) (Earth-616)",
+      "ts": "2026-09-26T17:22:36Z",
+      "user": "Jasonmaia",
+      "pageid": 2123334,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Chris (Manhattan) (Earth-616)",
+      "ts": "2026-09-26T17:16:39Z",
+      "user": "Jasonmaia",
+      "pageid": 2123330,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Bobby (Manhattan) (Earth-616)",
+      "ts": "2026-09-26T17:14:28Z",
+      "user": "Jasonmaia",
+      "pageid": 2123328,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Bobby (Forest Hills) (Earth-616)",
+      "ts": "2026-09-26T16:57:54Z",
+      "user": "Jasonmaia",
+      "pageid": 2123320,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Arthur Douglas (Earth-14121)",
+      "ts": "2026-09-26T16:51:31Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123314,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Gamora Zen Whoberi Ben Titan (Earth-14121)",
+      "ts": "2026-09-26T16:51:28Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123313,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Aldrif Odinsdottir (Earth-14121)",
+      "ts": "2026-09-26T16:51:26Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123312,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Alison Blaire (Earth-14121)",
+      "ts": "2026-09-26T16:51:24Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123311,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Angelica Jones (Earth-14121)",
+      "ts": "2026-09-26T16:51:21Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123310,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Blackagar Boltagon (Earth-14121)",
+      "ts": "2026-09-26T16:51:19Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123309,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Bobby (Dr. Blake's Patient) (Earth-616)",
+      "ts": "2026-09-26T16:51:07Z",
+      "user": "Jasonmaia",
+      "pageid": 2123308,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Bobby (New Mexico) (Earth-616)",
+      "ts": "2026-09-26T16:41:49Z",
+      "user": "Jasonmaia",
+      "pageid": 2123301,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Hawkeye (Robot)",
+      "ts": "2026-09-26T16:37:28Z",
+      "user": "MysteryScooby",
+      "pageid": 2123297,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Bobby (Unsuspecting) (Earth-616)",
+      "ts": "2026-09-26T16:34:28Z",
+      "user": "Jasonmaia",
+      "pageid": 2123294,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Ororo Munroe (Earth-14121)",
+      "ts": "2026-09-26T16:23:53Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123288,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Carol Danvers (Earth-14121)",
+      "ts": "2026-09-26T16:23:46Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123287,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Natalia Romanova (Earth-14121)",
+      "ts": "2026-09-26T16:23:43Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123286,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Scott Lang (Earth-14121)",
+      "ts": "2026-09-26T16:23:40Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123285,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Kurt Wagner (Earth-14121)",
+      "ts": "2026-09-26T16:23:38Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123284,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Bobby (Alien's Friend) (Earth-616)",
+      "ts": "2026-09-26T16:23:10Z",
+      "user": "Jasonmaia",
+      "pageid": 2123283,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Kallark (Earth-14121)",
+      "ts": "2026-09-26T16:17:24Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123279,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Bobby (Park Guide) (Earth-616)",
+      "ts": "2026-09-26T16:14:06Z",
+      "user": "Jasonmaia",
+      "pageid": 2123278,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Army of the Serpent Cult (Earth-616)",
+      "ts": "2026-09-26T15:41:56Z",
+      "user": "Undoniel",
+      "pageid": 2123258,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Hardboil (Earth-90214)",
+      "ts": "2026-09-26T15:19:22Z",
+      "user": "Lupo95GxD",
+      "pageid": 2123253,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Earth-TRN1975",
+      "ts": "2026-09-26T11:21:00Z",
+      "user": "DemKnux",
+      "pageid": 2123234,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Kingdom Hearts III: The Novel, Vol. 3: Remind Me Again",
+      "ts": "2026-09-26T10:59:39Z",
+      "user": "DemKnux",
+      "pageid": 2123222,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Queensport Boardwalk and Funfair",
+      "ts": "2026-09-26T10:25:04Z",
+      "user": "Jasonmaia",
+      "pageid": 2123215,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Tadashi Hamada (Earth-TRN1974)",
+      "ts": "2026-09-26T09:50:51Z",
+      "user": "DemKnux",
+      "pageid": 2123209,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Baymax (Earth-TRN1974)",
+      "ts": "2026-09-26T09:35:05Z",
+      "user": "DemKnux",
+      "pageid": 2123205,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Fear the Future",
+      "ts": "2026-09-26T09:26:34Z",
+      "user": "Jasonmaia",
+      "pageid": 2123202,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Wyman Insurance Company",
+      "ts": "2026-09-26T08:56:05Z",
+      "user": "Behjeh",
+      "pageid": 2123198,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Big \"A\" Cafe",
+      "ts": "2026-09-26T08:43:37Z",
+      "user": "Behjeh",
+      "pageid": 2123193,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Frederick Frederickson IV (Earth-TRN1974)",
+      "ts": "2026-09-26T08:39:36Z",
+      "user": "DemKnux",
+      "pageid": 2123189,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Continental Trucking Corporate Headquarters",
+      "ts": "2026-09-26T08:29:58Z",
+      "user": "Behjeh",
+      "pageid": 2123184,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Wasabi-No Ginger (Earth-TRN1974)",
+      "ts": "2026-09-26T08:22:20Z",
+      "user": "DemKnux",
+      "pageid": 2123180,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Honey Lemon (Earth-TRN1974)",
+      "ts": "2026-09-26T08:12:27Z",
+      "user": "DemKnux",
+      "pageid": 2123176,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Continental Trucking Warehouse",
+      "ts": "2026-09-26T08:06:56Z",
+      "user": "Behjeh",
+      "pageid": 2123172,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Go Go Tomago (Earth-TRN1974)",
+      "ts": "2026-09-26T08:02:03Z",
+      "user": "DemKnux",
+      "pageid": 2123168,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Hiro Hamada (Earth-TRN1974)",
+      "ts": "2026-09-26T07:54:11Z",
+      "user": "DemKnux",
+      "pageid": 2123164,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Valusian Guard",
+      "ts": "2026-09-26T07:37:51Z",
+      "user": "Undoniel",
+      "pageid": 2123162,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Baymax II (Earth-TRN1974)",
+      "ts": "2026-09-26T07:18:53Z",
+      "user": "DemKnux",
+      "pageid": 2123156,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Iron Man Vol 7 14",
+      "ts": "2026-09-26T05:52:26Z",
+      "user": "MarlonAkiino",
+      "pageid": 2123146,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Doomquest Vol 1 7",
+      "ts": "2026-09-26T05:51:01Z",
+      "user": "MarlonAkiino",
+      "pageid": 2123145,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Captain America Vol 14 19",
+      "ts": "2026-09-26T05:50:46Z",
+      "user": "MarlonAkiino",
+      "pageid": 2123144,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Amazing Venom Vol 1 5",
+      "ts": "2026-09-26T05:50:14Z",
+      "user": "MarlonAkiino",
+      "pageid": 2123143,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Wolverine Vol 8 31",
+      "ts": "2026-09-26T05:49:46Z",
+      "user": "MarlonAkiino",
+      "pageid": 2123142,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Uncanny X-Men Vol 6 41",
+      "ts": "2026-09-26T05:37:17Z",
+      "user": "MarlonAkiino",
+      "pageid": 2123134,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Black Panther/Namor: Doomed Vol 1 5",
+      "ts": "2026-09-26T05:37:10Z",
+      "user": "MarlonAkiino",
+      "pageid": 2123133,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Amazing Spider-Man Vol 7 1007",
+      "ts": "2026-09-26T05:25:21Z",
+      "user": "MarlonAkiino",
+      "pageid": 2123131,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Vision (Earth-TRN1222)",
+      "ts": "2026-09-26T04:40:16Z",
+      "user": "MakotoYuki19",
+      "pageid": 2123130,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Battle Fever J (Earth-79203)",
+      "ts": "2026-09-26T03:12:42Z",
+      "user": "TheRealMG64",
+      "pageid": 2123125,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Spidey and His Amazing Friends: Search & Rescue Lift the Flaps",
+      "ts": "2026-09-26T00:13:41Z",
+      "user": "SpiderVerseFanboy",
+      "pageid": 2123116,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Spidey and His Amazing Friends: A Spidey Valentine’s Day",
+      "ts": "2026-09-25T23:44:32Z",
+      "user": "SpiderVerseFanboy",
+      "pageid": 2123114,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Edward Brock (Earth-0937)",
+      "ts": "2026-09-25T23:22:03Z",
+      "user": "MakotoYuki19",
+      "pageid": 2123112,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Clinton Barton (Earth-0937)",
+      "ts": "2026-09-25T23:15:59Z",
+      "user": "MakotoYuki19",
+      "pageid": 2123110,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Army of Darkness Vol 2",
+      "ts": "2026-09-25T23:06:38Z",
+      "user": "MarvelBoy2002",
+      "pageid": 2123108,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Army of Darkness Vol 2 5",
+      "ts": "2026-09-25T22:41:41Z",
+      "user": "MarvelBoy2002",
+      "pageid": 2123103,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Tandy Bowen (Earth-2992)",
+      "ts": "2026-09-25T22:03:20Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123100,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Robert Baldwin (Earth-2992)",
+      "ts": "2026-09-25T22:03:17Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123099,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "En Sabah Nur (Earth-2992)",
+      "ts": "2026-09-25T22:03:11Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123098,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Christopher Powell (Earth-2992)",
+      "ts": "2026-09-25T22:00:02Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123097,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Laura Kinney (Earth-2992)",
+      "ts": "2026-09-25T21:59:58Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123096,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Greg Willis (Earth-2992)",
+      "ts": "2026-09-25T21:59:30Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123095,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Clinton Barton (Earth-6925)",
+      "ts": "2026-09-25T21:42:33Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123094,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Jessica Drew (Earth-6025)",
+      "ts": "2026-09-25T21:42:30Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123093,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Lucas Cage (Earth-6025)",
+      "ts": "2026-09-25T21:42:27Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123092,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Robert Reynolds (Earth-6925)",
+      "ts": "2026-09-25T21:42:24Z",
+      "user": "Mosè Ceri",
+      "pageid": 2123091,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Marvel's Spidey and His Amazing Friends Season 5 18",
+      "ts": "2026-09-25T21:31:16Z",
+      "user": "SpiderVerseFanboy",
+      "pageid": 2123090,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Marvel's Spidey and His Amazing Friends Season 5 17",
+      "ts": "2026-09-25T21:13:43Z",
+      "user": "SpiderVerseFanboy",
+      "pageid": 2123089,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Earth-32443",
+      "ts": "2026-09-25T19:44:37Z",
+      "user": "RobertTodd2026",
+      "pageid": 2123087,
+      "oldtitle": null
+    },
+    {
+      "type": "new",
+      "title": "Irving Forbush (Earth-9013)",
+      "ts": "2026-09-25T18:52:53Z",
+      "user": "Ztesrxgdfjcvgkbh",
+      "pageid": 2123081,
+      "oldtitle": null
+    }
+  ],
+  "new_titles_file": "tools/marvel/recent_new_marvel_2026-09-27.jsonl",
+  "new_titles": [
+    "Aldrif Odinsdottir (Earth-14121)",
+    "Alison Blaire (Earth-14121)",
+    "Amazing Spider-Man Vol 7 1007",
+    "Amazing Venom Vol 1 5",
+    "Angelica Jones (Earth-14121)",
+    "Army of Darkness Vol 2",
+    "Army of Darkness Vol 2 5",
+    "Army of the Serpent Cult (Earth-616)",
+    "Arthur Douglas (Earth-14121)",
+    "Battle Fever J (Earth-79203)",
+    "Baymax (Earth-TRN1963)",
+    "Baymax (Earth-TRN1974)",
+    "Baymax II (Earth-TRN1974)",
+    "Big \"A\" Cafe",
+    "Black Panther/Namor: Doomed Vol 1 5",
+    "Blackagar Boltagon (Earth-14121)",
+    "Bobby (Alien's Friend) (Earth-616)",
+    "Bobby (Bellboy) (Earth-616)",
+    "Bobby (Dr. Blake's Patient) (Earth-616)",
+    "Bobby (Forest Hills) (Earth-616)",
+    "Bobby (Iron Shogun) (Earth-616)",
+    "Bobby (Los Angeles) (Earth-616)",
+    "Bobby (Manhattan) (Earth-616)",
+    "Bobby (New Mexico) (Earth-616)",
+    "Bobby (Newborn) (Earth-616)",
+    "Bobby (Paramedic) (Earth-616)",
+    "Bobby (Park Guide) (Earth-616)",
+    "Bobby (Policeman) (Earth-616)",
+    "Bobby (Unsuspecting) (Earth-616)",
+    "Captain America Vol 14 19",
+    "Carol Danvers (Earth-14121)",
+    "Chris (Manhattan) (Earth-616)",
+    "Christopher Powell (Earth-2992)",
+    "Clinton Barton (Earth-0937)",
+    "Clinton Barton (Earth-6925)",
+    "Continental Trucking Corporate Headquarters",
+    "Continental Trucking Warehouse",
+    "Doomquest Vol 1 7",
+    "Earth-32443",
+    "Earth-TRN1975",
+    "Edward Brock (Earth-0937)",
+    "En Sabah Nur (Earth-2992)",
+    "Fear the Future",
+    "Frederick Frederickson IV (Earth-TRN1963)",
+    "Frederick Frederickson IV (Earth-TRN1974)",
+    "Gamora Zen Whoberi Ben Titan (Earth-14121)",
+    "Go Go Tomago (Earth-TRN1974)",
+    "Greer Nelson (Earth-14121)",
+    "Greg Willis (Earth-2992)",
+    "Groot (Earth-14121)",
+    "Hardboil (Earth-90214)",
+    "Hawkeye (Robot)",
+    "Hiro Hamada (Earth-TRN1974)",
+    "Honey Lemon (Earth-TRN1974)",
+    "Iron Man Vol 7 14",
+    "Irving Forbush (Earth-9013)",
+    "Jessica Drew (Earth-6025)",
+    "Kallark (Earth-14121)",
+    "Kingdom Hearts III: The Novel, Vol. 3: Remind Me Again",
+    "Kurt Wagner (Earth-14121)",
+    "Laura Kinney (Earth-2992)",
+    "Laura Kinney (Earth-6215)/Gallery",
+    "Lucas Cage (Earth-6025)",
+    "Marvel's Spidey and His Amazing Friends Season 5 17",
+    "Marvel's Spidey and His Amazing Friends Season 5 18",
+    "Natalia Romanova (Earth-14121)",
+    "Nathaniel Richards (Kang) (Earth-14121)",
+    "Ororo Munroe (Earth-14121)",
+    "Peter Quill (Earth-14121)",
+    "Piotr Rasputin (Earth-14121)",
+    "Queensport Boardwalk and Funfair",
+    "Remmick (Echelon) (Earth-616)",
+    "Robert Baldwin (Earth-2992)",
+    "Robert Baldwin (Earth-6215)/Gallery",
+    "Robert Drake (Earth-14121)",
+    "Robert Reynolds (Earth-6925)",
+    "Rocket Raccoon (Earth-14121)",
+    "Scott Lang (Earth-14121)",
+    "Sleepwalker (Earth-6215)/Gallery",
+    "Spidey and His Amazing Friends: A Spidey Valentine’s Day",
+    "Spidey and His Amazing Friends: Search & Rescue Lift the Flaps",
+    "T'Challa (Earth-14121)",
+    "Tadashi Hamada (Earth-TRN1974)",
+    "Tandy Bowen (Earth-2992)",
+    "Tenzin Gyatso (Earth-616)",
+    "Terranometer",
+    "Uncanny X-Men Vol 6 41",
+    "Valusian Guard",
+    "Vision (Earth-14121)",
+    "Vision (Earth-TRN1222)",
+    "Wasabi-No Ginger (Earth-TRN1974)",
+    "Wolverine Vol 8 31",
+    "Wyman Insurance Company"
+  ],
+  "check_titles": {
+    "status": "complete",
+    "pages": {
+      "Elizabeth Tyne (Earth-33263)": {
+        "status": "missing"
+      },
+      "Enok (Hyboria) (Earth-616)": {
+        "status": "missing"
+      },
+      "Realm of Nothingness (Forbidden Dimension)": {
+        "status": "unknown"
+      }
+    }
+  }
+}

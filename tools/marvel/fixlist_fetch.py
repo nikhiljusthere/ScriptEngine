@@ -15,8 +15,8 @@ filenames:
 Two modes:
   * `--disambiguate` (F3): sequential single-title fetches, one write +
     rename per title, so a collision can never last-write-win;
-  * batch (F5): one 50-title `fetch_batch` request, sequential per-page
-    saves (build_page mutates the shared ontology, so order is pinned).
+  * batch (F5): chunked 50-title `fetch_batch` requests (Fandom API cap),
+    sequential per-page saves (build_page mutates the shared ontology).
 
 The ontology comes from the series manifest (the vocabulary the corpus was
 crawled with); unknown infobox templates degrade exactly as a capped crawl
@@ -153,35 +153,40 @@ async def run(a: argparse.Namespace) -> int:
                 print(f"[fixlist]   -> {destination.name} "
                       f"(revid={page.revid}, facts={len(page.facts)})", flush=True)
         else:
-            # Batch mode: one request for the whole list (50-title cap),
-            # sequential per-page saves.
-            fetched = await crawler.fetch_batch(base, titles[:50])
-            returned = {p.get("title", "") for p in fetched}
-            for title in titles[:50]:
-                if title not in returned:
-                    rows.append({"title": title, "status": "missing-or-failed"})
-            for parse in fetched:
-                page = crawler.build_page(parse, wiki_url, ontology)
-                await crawler._learn_labels(base, page.title, page.page_type, ontology)
-                reason = ontology.is_skippable(page.categories)
-                if reason:
-                    rows.append({"title": page.title, "pageid": page.pageid,
-                                 "status": f"skipped: {reason}"})
-                    continue
-                if not page.word_count and not page.facts:
-                    rows.append({"title": page.title, "pageid": page.pageid,
-                                 "status": "skipped: no content"})
-                    continue
-                destination = paths.wikitext / f"{sanitise_filename(page.title)}.json"
-                if a.dry_run:
+            # Batch mode: chunked fetch_batch requests (Fandom API 50-title
+            # cap), sequential per-page saves.
+            for i in range(0, len(titles), 50):
+                chunk = titles[i:i + 50]
+                fetched = await crawler.fetch_batch(base, chunk)
+                returned = {p.get("title", "") for p in fetched}
+                for title in chunk:
+                    if title not in returned:
+                        rows.append({"title": title,
+                                     "status": "missing-or-failed"})
+                for parse in fetched:
+                    page = crawler.build_page(parse, wiki_url, ontology)
+                    await crawler._learn_labels(base, page.title,
+                                                page.page_type, ontology)
+                    reason = ontology.is_skippable(page.categories)
+                    if reason:
+                        rows.append({"title": page.title, "pageid": page.pageid,
+                                     "status": f"skipped: {reason}"})
+                        continue
+                    if not page.word_count and not page.facts:
+                        rows.append({"title": page.title,
+                                     "pageid": page.pageid,
+                                     "status": "skipped: no content"})
+                        continue
+                    destination = paths.wikitext / f"{sanitise_filename(page.title)}.json"
+                    if a.dry_run:
+                        rows.append({"title": page.title, "pageid": page.pageid,
+                                     "revid": page.revid, "file": destination.name,
+                                     "status": "dry-run"})
+                        continue
+                    atomic_write(destination, page.to_json())
                     rows.append({"title": page.title, "pageid": page.pageid,
                                  "revid": page.revid, "file": destination.name,
-                                 "status": "dry-run"})
-                    continue
-                atomic_write(destination, page.to_json())
-                rows.append({"title": page.title, "pageid": page.pageid,
-                             "revid": page.revid, "file": destination.name,
-                             "type": page.page_type, "facts": len(page.facts),
+                                 "type": page.page_type, "facts": len(page.facts),
                                  "status": "written"})
 
     receipt = {

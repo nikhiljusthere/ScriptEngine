@@ -572,7 +572,14 @@ doc.
   crawl time (every future franchise + Marvel backfill/waiver); S2
   title-normalization collision check in crawl tooling (a 4-titles→2-files
   fold flags at crawl time, not reconciliation); S3 same-day pre-gate
-  re-enumeration standing and non-optional (it caught the MCU +33); S4
+  re-enumeration standing and non-optional (it caught the MCU +33) —
+  **owner addendum 2026-09-27 (PERMANENT RULE): S3 runs DELTA-ONLY —
+  fetch what changed since the last archived enumeration (MediaWiki
+  `recentchanges` rctype=new|delete|move from the archived list's
+  timestamp) + direct liveness check of known missing-live titles, then
+  reconstruct + re-archive the gate-day accounting list; a FULL
+  `allpages` re-enumeration is prohibited unless the owner explicitly
+  asks for one.** S4
   synthetic truncation probe (60%×5 + 15%×6) per corpus; S5
   freeze-and-verify — no post-green corpus mutation without a delta
   re-gate + re-archived accounting lists, logged to a receipt; S6
