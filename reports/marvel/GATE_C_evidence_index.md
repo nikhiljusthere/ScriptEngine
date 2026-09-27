@@ -61,6 +61,16 @@ state.
    2 xpassed + the 3 documented `:8000`-down env trio) · eval jjk 31/31 ·
    span-recall jjk 48,572/48,572 · canon opm 10/16 exact · 236/236 ·
    79.0%.
+   - Post-sharding pytest re-run 2026-09-27 ~17:05 (post-reboot, after
+     `27202157`): full-suite tally **1,371 pin** (= 1,367 + 2 from
+     `37a799ca` + 2 from `27202157`; matches `--collect-only` 1,371) =
+     **1,366 passed + 2 xpassed + 3 failed**, the 3 being exactly the
+     documented `:8000`-down `tests/test_mcp_server.py` env trio
+     (`:8000` not listening = steady state → **GREEN** per the codified
+     definition; no other failures). Composition: 1,365-test run
+     excluding `test_model_residency.py`
+     (`/tmp/opencode/pytest_shard_build.log`: 3 failed / 1,360 passed / 2
+     xpassed) + the 6/6 residency run.
 4. **`chunk-containment` (tier 0), 0 unreachable, both wikis**
    - MCU — DONE post-reindex (with the `content_sections` promotion,
      commit `0720df76`): **coverage 100.0000%**, 430 boilerplate sentences
