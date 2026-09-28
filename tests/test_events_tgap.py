@@ -323,3 +323,23 @@ def test_verify_sets_the_confidence_flag_and_skips_checked_rows(series, monkeypa
         assert store.connection.execute(
             "SELECT verified FROM events").fetchone()[0] == 1
     assert events.verify_events(paths, settings=settings)["checked"] == 0
+
+
+def test_an_empty_reply_is_retried_before_the_page_fails(series, monkeypatch):
+    paths, settings, _, _, _ = series
+    from scriptengine.llm.client import LLMUnavailable
+
+    class FlakyStub(StubLLMClient):
+        empties = 2
+
+        def complete(self, prompt, system="", temperature=0.2,
+                     max_tokens=1024, extra_body=None):
+            self.calls.append(prompt)
+            if type(self).empties:
+                type(self).empties -= 1
+                raise LLMUnavailable("stub returned no content.")
+            return json.dumps(ANSWER)
+
+    monkeypatch.setattr(events, "LLMClient", FlakyStub)
+    report = events.extract_events_series(paths, settings=settings)
+    assert report["failed"] == 0 and report["events"] == 1

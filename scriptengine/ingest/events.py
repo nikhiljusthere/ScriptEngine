@@ -2177,6 +2177,19 @@ def extract_from_sections(
     system = system_prompt(verbs)
 
     def ask(unit: tuple[str, str, list[dict[str, Any]]]) -> str:
+        # An empty reply is intermittent under batched decoding (2026-09-29
+        # MCU shard: 22/1,000 pages "returned no content"; the same windows
+        # replayed alone answered normally), so it is retried twice before the
+        # page is failed. A truncation or an unreachable server is not retried.
+        for attempt in range(3):
+            try:
+                return ask_once(unit)
+            except LLMUnavailable as error:
+                if "no content" not in str(error) or attempt == 2:
+                    raise
+        raise AssertionError("unreachable")
+
+    def ask_once(unit: tuple[str, str, list[dict[str, Any]]]) -> str:
         window, section_title, _ = unit
         return client.complete(
             _TEMPLATE.format(
