@@ -88,17 +88,20 @@ category_relations:
 # re-run of the crawl after this hook lands: the resume is disk-driven, so
 # exactly the pages the earlier run skipped are the ones re-fetched.
 # (plan MARVEL_100_PLAN.md §1 L2 + step A1b; landed 2026-09-25.)
+# 100% scope (2026-09-29, architect): the MediaWiki default skip patterns
+# "images", "stubs", "browse" and "wiki" match CONTENT categories on this wiki
+# ("Articles with No Applicable Images", "Article stubs"): a stub is a short
+# article, still lines of the corpus. They caused the delta found at MCU shard 1
+# (mcu 3,672 / marvel 19,532 plain article titles enumerated, never fetched).
+# Kept: the genuinely non-content filters.
 skip_patterns:
-  - images
   - gallery
   - galleries
   - candidates for deletion
-  - stubs
+  - disambiguation
   - blog posts
-  - browse
   - site maintenance
   - templates
-  - wiki
 # The character boxes carry the live alias under `CurrentAlias` (plan §1 L8
 # field list), which the engine's built-in alias keys never look for.
 alias_fact_keys:

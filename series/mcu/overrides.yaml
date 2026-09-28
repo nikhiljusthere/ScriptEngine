@@ -28,6 +28,20 @@ type_aliases:
   # 2026-09-25); TV series use `Template:TV` (WandaVision, Loki, What If...?,
   # X-Men '97 all carry it — verified 2026-09-25).
 
+# 100% scope (2026-09-29, architect): the MediaWiki default skip patterns
+# "images", "stubs", "browse" and "wiki" match CONTENT categories on this wiki
+# ("Articles with No Applicable Images", "Article stubs"): a stub is a short
+# article, still lines of the corpus. They caused the delta found at MCU shard 1
+# (mcu 3,672 / marvel 19,532 plain article titles enumerated, never fetched).
+# Kept: the genuinely non-content filters.
+skip_patterns:
+  - gallery
+  - galleries
+  - candidates for deletion
+  - disambiguation
+  - blog posts
+  - site maintenance
+  - templates
 skip_categories: []
 
 # C1 (plan MARVEL_100_PLAN.md §4): per-wiki identity-field map (fix class R-7,
