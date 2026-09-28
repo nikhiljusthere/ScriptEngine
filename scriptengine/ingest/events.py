@@ -1075,7 +1075,40 @@ def re_resolve_participants(store: FactStore) -> dict:
         }
 
     before = tally()
-    moved = ambiguous_new = unresolved_kept = link_broken = 0
+    moved = ambiguous_new = unresolved_kept = link_broken = merged = 0
+
+    def repoint(role: str, row_id: int, node: int, name_out: str) -> None:
+        """Re-point one row. Where the new pointer pair duplicates a row the
+        page already stores, the re-pointed row is the duplicate -- the
+        wiki's answer, recorded once (the store's own dedup rule) -- and is
+        merged away, counted."""
+        nonlocal merged
+        other = "object" if role == "subject" else "subject"
+        key = store.connection.execute(
+            f"SELECT {other}_node, verb, section_id, time_rank, passage"
+            f" FROM events WHERE rowid = ?",
+            (row_id,),
+        ).fetchone()
+        if key[f"{other}_node"] is not None and key["section_id"] is not None:
+            duplicate = store.connection.execute(
+                f"SELECT 1 FROM events WHERE rowid != ?"
+                f" AND {role}_node = ? AND {other}_node = ?"
+                " AND verb = ? AND section_id = ? AND time_rank = ?"
+                " AND passage = ? LIMIT 1",
+                (row_id, node, key[f"{other}_node"], key["verb"],
+                 key["section_id"], key["time_rank"], key["passage"]),
+            ).fetchone()
+            if duplicate:
+                store.connection.execute(
+                    "DELETE FROM events WHERE rowid = ?", (row_id,)
+                )
+                merged += 1
+                return
+        store.connection.execute(
+            f"UPDATE events SET {role}_node = ?, {role}_name = ? WHERE rowid = ?",
+            (node, name_out, row_id),
+        )
+
     for role in ("subject", "object"):
         rows = store.connection.execute(
             f"SELECT DISTINCT doc_title, {role}_name FROM events"
@@ -1091,18 +1124,28 @@ def re_resolve_participants(store: FactStore) -> dict:
                 unresolved_kept += 1
                 continue
             if isinstance(pick, dict):
-                node, name_out = None, " | ".join(sorted(c[1] for c in pick["ambiguous"]))
+                # Re-filing ambiguous: a NULL node can never collide with a
+                # stored row (NULLs keep the unique key distinct), so the
+                # pair updates wholesale.
+                name_out = " | ".join(sorted(c[1] for c in pick["ambiguous"]))
                 ambiguous_new += 1
-            else:
-                node, name_out = pick[0], pick[1]
-                moved += 1
-                if linked and isinstance(pick_candidate(pool, real, None), dict):
-                    link_broken += 1
-            store.connection.execute(
-                f"UPDATE events SET {role}_node = ?, {role}_name = ?"
-                f" WHERE doc_title = ? AND {role}_name = ? COLLATE NOCASE",
-                (node, name_out, row["doc_title"], name),
-            )
+                store.connection.execute(
+                    f"UPDATE events SET {role}_node = NULL, {role}_name = ?"
+                    f" WHERE doc_title = ? AND {role}_name = ? COLLATE NOCASE",
+                    (name_out, row["doc_title"], name),
+                )
+                continue
+            node, name_out = pick[0], pick[1]
+            moved += 1
+            if linked and isinstance(pick_candidate(pool, real, None), dict):
+                link_broken += 1
+            for r in store.connection.execute(
+                f"SELECT rowid FROM events"
+                f" WHERE doc_title = ? AND {role}_name = ? COLLATE NOCASE"
+                f" AND {role}_node IS NOT NULL",
+                (row["doc_title"], name),
+            ):
+                repoint(role, r["rowid"], node, name_out)
 
     # The explicit-ambiguous rows -- node NULL, the candidate list in the
     # name -- take the same link signal. The listed names are node names
@@ -1134,18 +1177,25 @@ def re_resolve_participants(store: FactStore) -> dict:
             if len(hits) != 1:
                 continue
             part, node = hits[0]
-            cursor = store.connection.execute(
-                f"UPDATE events SET {role}_node = ?, {role}_name = ?"
-                f" WHERE doc_title = ? AND {role}_name = ? COLLATE NOCASE",
-                (node, part, pair["doc_title"], listed),
-            )
-            link_broken += cursor.rowcount
+            row_ids = [
+                r["rowid"]
+                for r in store.connection.execute(
+                    f"SELECT rowid FROM events"
+                    f" WHERE doc_title = ? AND {role}_name = ? COLLATE NOCASE"
+                    f" AND {role}_node IS NULL",
+                    (pair["doc_title"], listed),
+                )
+            ]
+            for row_id in row_ids:
+                repoint(role, row_id, node, part)
+            link_broken += len(row_ids)
     store.connection.commit()
     after = tally()
     after["moved"] = moved
     after["ambiguous_new"] = ambiguous_new
     after["unresolved_kept"] = unresolved_kept
     after["link_broken"] = link_broken
+    after["merged"] = merged
     return {"before": before, "after": after}
 
 

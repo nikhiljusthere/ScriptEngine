@@ -13,6 +13,8 @@ Three tests pin it:
   in the explicit-ambiguous form (NULL node, the candidate list in the name)
   is re-pointed to its page's sole linked candidate, and a row that already
   carries a node is re-pointed when its name maps to a multi-candidate pool;
+  a re-point that would duplicate a row the page already stores merges
+  (the wiki's answer is recorded once, the store's own dedup rule);
 * the receipt's numbers: the ambiguous tally drops by exactly the rescued
   rows, and `link_broken` counts what the link signal alone did.
 """
@@ -61,7 +63,11 @@ def store(tmp_path):
       did not answer;
     * Civil War: the same filed name, the page links to neither;
     * Secret Invasion: a row that already carries a node, under the bare
-      codename, on a page that links to the *other* variant.
+      codename, on a page that links to the *other* variant;
+    * Avengers: the same event stored twice -- once resolved (the wiki's
+      answer) and once in the ambiguous form. The page links to the
+      resolved variant, so the rescue re-points the ambiguous row onto its
+      duplicate and the pair merges.
     """
     root = tmp_path / "linkres"
     root.mkdir()
@@ -146,6 +152,19 @@ def store(tmp_path):
         [row(event_page("Secret Invasion", [hellverine, magneto]), wolverine, "Wolverine")],
         revid=1, prompt_version="test", model="test",
     )
+    # The same event, two ways of filing it: once resolved (the row the
+    # page's link points at -- the wiki's answer) and once in the ambiguous
+    # form. The rescue re-points the latter onto its duplicate, and the pair
+    # must merge, not double-record the event.
+    avengers_section = event_page("Avengers", [wolverine, magneto])
+    store.save_events(
+        "Avengers",
+        [
+            row(avengers_section, wolverine, "Wolverine (Earth-616)"),
+            row(avengers_section, None, ambiguous_name),
+        ],
+        revid=1, prompt_version="test", model="test",
+    )
     store.commit()
     store.close()
     return root, wolverine, hellverine, magneto
@@ -162,9 +181,12 @@ def test_the_pages_own_links_repair_the_filed_rows(store):
                 "SELECT arc_key, subject_node, subject_name FROM events"
             )
         }
+        row_count = s.connection.execute("SELECT COUNT(*) FROM events").fetchone()[0]
 
-    # One of the three filed ambiguities is the wiki's own answer.
-    assert report["before"]["ambiguous"] == 3
+    # Two of the four filed ambiguities are the wiki's own answers.
+    assert report["before"]["rows"] == 6
+    assert report["before"]["ambiguous"] == 4
+    assert report["after"]["rows"] == 5
     assert report["after"]["ambiguous"] == 2
     assert rows["X of Swords"] == (wolverine, "Wolverine (Earth-616)")
     # The page that linked both variants, and the one that linked neither,
@@ -174,7 +196,12 @@ def test_the_pages_own_links_repair_the_filed_rows(store):
     # The row that already carried a node is re-pointed by the page's link
     # to the variant the page actually means.
     assert rows["Secret Invasion"] == (hellverine, "Hellverine (Demon) (Earth-616)")
-    # The link signal alone did two re-pointings: the rescued row and the
-    # re-pointed row. What it did is its own number, not the move total.
-    assert report["after"]["link_broken"] == 2
-    assert report["after"]["moved"] >= 2
+    # The re-pointed row that duplicates the page's stored answer merges:
+    # the event is recorded once, and the merge is its own number.
+    assert rows["Avengers"] == (wolverine, "Wolverine (Earth-616)")
+    assert row_count == 5
+    assert report["after"]["merged"] == 1
+    # The link signal alone did three re-pointings: the rescued row, the
+    # merged row, and the re-pointed row.
+    assert report["after"]["link_broken"] == 3
+    assert report["after"]["moved"] == 7
