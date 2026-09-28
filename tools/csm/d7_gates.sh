@@ -33,7 +33,7 @@ restore() {
   done
   if ! pgrep -f 'qwen3_8_27b_nvfp4.ninfer' >/dev/null; then
     cd "$NINFER"
-    nohup ./ninfer/build/apps/ninfer-serve models/qwen3_8_27b_nvfp4.ninfer \
+    nohup ./ninfer/build/apps/ninfer-serve /mnt/PROJECTS/ninfer-transfer/models/qwen3_8_27b_nvfp4.ninfer \
       --host 0.0.0.0 --port 18080 \
       --model-id qwen3.8-27b-ninfer \
       --max-context 65536 \

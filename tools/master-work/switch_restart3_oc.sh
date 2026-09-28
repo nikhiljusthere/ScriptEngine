@@ -3,11 +3,18 @@
 #
 # The opencode twin of switch_restart3.sh (the pi flow): one detached shell
 # switches the Qwen context mode and relaunches THIS opencode's terminal
-# window, so opencode continues the SAME session (opencode -c) in a new
-# window after the model reload. Owner standard (qwen-switch skill,
+# window, so opencode continues the SAME session in a new window after the
+# model reload. The resume is PINNED to the exact session id the old
+# opencode was in (opencode -s; bare -c resumes the NEWEST session in the
+# directory, which another window can steal during the reload — 2026-09-21
+# incident: the new window "did not continue"). After the relaunch the
+# switcher types the switchpoint-resume prompt into the new TUI (xdotool,
+# verified via a new model turn in opencode's log) so the work continues
+# instead of idling on the composer. Owner standard (qwen-switch skill,
 # 2026-09-10): the LLM readiness call is made INTERNALLY by this shell
-# (HTTP to :18080), never typed into any pane; the agent that launches
-# this ends its turn immediately — the new opencode resumes on its own.
+# (HTTP to :18080), never typed into any pane; the resume prompt is the one
+# thing typed, into the NEW window only; the agent that launches this ends
+# its turn immediately — the new opencode picks up on its own.
 #
 # Launch (the agent's last act):
 #   setsid nohup bash tools/master-work/switch_restart3_oc.sh 262k \
@@ -30,7 +37,8 @@ if [ "$DRY" -eq 1 ]; then
   echo "  would: part 1 ninfer-stop.sh (instant unload)"
   echo "  would: part 2 qwen-switch.sh $MODE --api (json sync + :8000 placement)"
   echo "  would: part 3 internal LLM call (curl :18080) -> readiness trigger"
-  echo "  would: new window: cd /home/goblin/ScriptEngine && exec opencode -c"
+  echo "  would: new window in old cwd: opencode -s <pinned session> (fallback -c)"
+  echo "  would: type switchpoint-resume prompt into the new TUI (auto-continue)"
   echo "  would: TERM/KILL old oc $OLD_OC + shell ${OLD_SHELL}"
   exit 0
 fi
@@ -66,8 +74,32 @@ fi
 # ordering as relaunch_term.sh, and the same TERM-verify-KILL -9
 # escalation (this machine's interactive bash survives SIGTERM — proven
 # 2026-09-10, proven again today on shell 24567).
+#
+# Pin the resume to the exact session the OLD opencode was in, not the
+# newest-in-directory. `opencode -c` resumes the most recently updated
+# session in the cwd; if a second window/session was created in the same
+# dir during this run's reload, `-c` lands on the wrong one (2026-09-21:
+# new window opened but "did not continue" because it resumed a sibling
+# session, not the one being switched). The session id is the newest
+# session row in the opencode db whose project dir == the old opencode's
+# cwd. Fall back to `-c` if we can't resolve it.
+CWD=$(readlink "/proc/$OLD_OC/cwd" 2>/dev/null)
+[ -n "$CWD" ] || CWD=/home/goblin/ScriptEngine
+SES=$(python3 - "$CWD" <<'PY' 2>/dev/null
+import sqlite3, sys
+c = sys.argv[1]
+db = sqlite3.connect("file:/home/goblin/.local/share/opencode/opencode.db?mode=ro", uri=True)
+row = db.execute(
+    "SELECT s.id FROM session s JOIN project p ON p.id = s.project_id "
+    "WHERE p.directory = ? ORDER BY s.time_updated DESC LIMIT 1", (c,)
+).fetchone()
+print(row[0] if row else "")
+PY
+)
+if [ -n "$SES" ]; then RESUME="-s $SES"; else RESUME="-c"; fi
+say "resume target: $RESUME (cwd $CWD)"
 PRE=" $(pgrep -x opencode | tr '\n' ' ')"
-DISPLAY=:0 setsid gnome-terminal -- bash -lc "cd /home/goblin/ScriptEngine && exec /home/goblin/.opencode/bin/opencode -c" &
+DISPLAY=:0 setsid gnome-terminal -- bash -lc "cd '$CWD' && exec /home/goblin/.opencode/bin/opencode $RESUME" &
 say "new opencode window launched"
 NEW=""
 for _ in $(seq 1 90); do
@@ -94,4 +126,37 @@ if [ "$OLD_SHELL" != "none" ]; then
 else
   say "old window has no separate shell (exec chain) — it closes when the old opencode died"
 fi
-say "switch3-oc done: new opencode $NEW (session resumed via opencode -c)"
+# auto-continue: type the switchpoint-resume prompt into the new TUI so the
+# work continues instead of idling on the composer (owner rule 2026-09-21).
+# vte key discipline from opencode-watch: windowactivate --sync, then plain
+# type/key (never --window). Prove the prompt took effect via a new
+# `message=process` line in opencode's log (opencode logs nothing while
+# idle); one retry if the keys did not land.
+sleep 3
+W=""
+for _ in $(seq 1 30); do
+  W=$(DISPLAY=:0 xdotool search --name '^OC ' 2>/dev/null | tail -1)
+  [ -n "$W" ] && break
+  sleep 1
+done
+OCLOG="$HOME/.local/share/opencode/log/opencode.log"
+PROMPT='Resume: read plan/SWITCHPOINT.md (if present) and execute its "first action on resume"; otherwise continue the current task. Do not idle.'
+if [ -n "$W" ] && [ -f "$OCLOG" ]; then
+  for attempt in 1 2; do
+    MARK=$(grep -c 'message=process' "$OCLOG" || true)
+    DISPLAY=:0 xdotool windowactivate --sync "$W"
+    DISPLAY=:0 xdotool type --clearmodifiers "$PROMPT"
+    DISPLAY=:0 xdotool key Return
+    say "auto-continue: prompt typed into window $W (attempt $attempt)"
+    ok=0
+    for _ in $(seq 1 30); do
+      [ "$(grep -c 'message=process' "$OCLOG" || true)" -gt "$MARK" ] && { ok=1; break; }
+      sleep 1
+    done
+    [ "$ok" -eq 1 ] && { say "auto-continue: verified — new model turn started"; break; }
+    say "WARN: no new model turn after attempt $attempt — keys may not have landed; owner may need to type the prompt"
+  done
+else
+  say "WARN: OC window or opencode log not found — type the resume prompt into the new window manually"
+fi
+say "switch3-oc done: new opencode $NEW (resume $RESUME, auto-continue typed)"
