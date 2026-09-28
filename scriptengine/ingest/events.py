@@ -2357,41 +2357,59 @@ def extract_events_series(
                 store_result(page, revid, found, stats)
             return report
 
-        for start in range(0, len(todo), workers * 4):
-            chunk = todo[start : start + workers * 4]
-            # Built here, on the thread that owns the connection: the lead and
-            # fact passages read the store, and a connection belongs to one
-            # thread. The plain passage dicts travel to the workers.
-            work = [
-                (
-                    page, revid,
-                    build_passages(
-                        store, page, by_page[page], scope,
-                        axis_ranks.get(page),
-                    ),
-                )
-                for page, revid in chunk
-            ]
+        # A sliding window, not chunk-and-wait: the old loop mapped
+        # `workers * 4` pages and waited for the slowest before starting the
+        # next chunk, so one long page idled every other LLM slot (2026-09-29,
+        # the full-scope run's throughput wall, review R11). Passages are
+        # still built, and results still stored, on this thread -- the one
+        # that owns the connection -- and each page's rows are the same; only
+        # the order pages finish in changes.
+        from concurrent.futures import FIRST_COMPLETED, wait
 
-            def run(job):
-                page, _, passages = job
-                return extract_from_sections(
-                    client, paths.name, page, passages, known,
-                    real_by_page.get(page), linked_by_page.get(page),
-                )
+        def run(job):
+            page, _, passages = job
+            return extract_from_sections(
+                client, paths.name, page, passages, known,
+                real_by_page.get(page), linked_by_page.get(page),
+            )
 
-            with ThreadPoolExecutor(max_workers=workers) as pool:
-                for (page, revid, _), outcome in zip(
-                    work, pool.map(_guarded(run), work)
-                ):
+        guarded = _guarded(run)
+        pending_pages = iter(todo)
+        in_flight: dict[Any, tuple[str, str]] = {}
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+
+            def submit_next() -> None:
+                for page, revid in pending_pages:
+                    job = (
+                        page, revid,
+                        build_passages(
+                            store, page, by_page[page], scope,
+                            axis_ranks.get(page),
+                        ),
+                    )
+                    in_flight[pool.submit(guarded, job)] = (page, revid)
+                    return
+
+            # Two jobs per slot: a slot that finishes never waits on this
+            # thread building the next page's passages.
+            for _ in range(workers * 2):
+                submit_next()
+            while in_flight:
+                done, _ = wait(in_flight, return_when=FIRST_COMPLETED)
+                for future in done:
+                    page, revid = in_flight.pop(future)
+                    outcome = future.result()
                     if isinstance(outcome, BaseException):
                         if isinstance(outcome, LLMRateLimited):
+                            for other in in_flight:
+                                other.cancel()
                             raise outcome
                         logger.warning(
                             "Events for %r failed: %s", page, outcome
                         )
                         report["failed"] += 1
-                        continue
-                    found, stats = outcome
-                    store_result(page, revid, found, stats)
+                    else:
+                        found, stats = outcome
+                        store_result(page, revid, found, stats)
+                    submit_next()
     return report
