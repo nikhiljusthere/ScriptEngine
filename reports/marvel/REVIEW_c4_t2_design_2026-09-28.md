@@ -76,3 +76,30 @@ Revise the design for R1–R5 and re-dry-run with the per-class exclusion counts
 - the 2 mcu retries at `SCRIPTENGINE_ANSWER_TOKENS=20480`.
 
 Those are cheap and can run on the free slot now.
+
+---
+
+# Rev 2 review (`399c6ec6`), 2026-09-28 ~08:4x
+
+**Verdict: APPROVED with one binding amendment (R7).** R1–R5 are addressed:
+- a heading-agnostic prose scope, with explicit furniture counted per heading;
+- guard accounting;
+- an override-declared store time axis (date / chain / order / partition), with `temporal` re-derived on stored rows;
+- overlap dedup, with `passage` added to the PK;
+- the full-scope pilot mix.
+
+Proceed to code + tests with R7 folded in.
+
+## R7 (binding): the "understood" denominator is the D3 panel's line definition
+
+Rev 2 keeps a **20-word section floor** ("below-floor, a counted class"). But the 100% denominator (D3, the pinned tier-1 panel) counts every sentence of **≥6 words** (`span_recall.sentences(min_words=6)`). A short section holding one real sentence is a line in the panel, so the extractor must read it. Measured (architect, `strip_markup` + `sentences(min_words=6)` over `sections` with `word_count < 20`):
+
+| series | below-20w sections | with ≥1 panel-eligible sentence | sentences hidden by the floor |
+|---|---:|---:|---:|
+| mcu | 111,533 | **20,178** | **21,010** |
+| marvel | 20,420 | **3,336** | **3,497** |
+
+**Required:**
+1. **Prose test = "contains ≥1 panel-eligible sentence"**, the same `sentences()` function and `min_words` the panel uses. Not a 20-word section floor. The same rule applies to leads and fact values. The short passages batch naturally (the council's R6 batching lever), so this costs little.
+2. **Mechanical D6 coverage check (the checkable 100%):** every panel sentence (and every tier-0-eligible sentence on the store) must lie inside a passage the extractor read, or inside a named furniture/floor class. Report `covered / total` per series in the dry-run and the receipt; the target is 100% with every exception named. This is the "understood" twin of D3's "recallable" number, over the same denominator.
+3. Whatever is still below that rule (no ≥6-word sentence: pure markup, link stubs) remains the counted `below_floor` class, as rev 2 already specifies.
