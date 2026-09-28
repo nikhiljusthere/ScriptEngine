@@ -41,11 +41,15 @@ partition (marvel's `reality`).
 
 ## Store state produced (series/mcu/facts.db, untracked)
 
-| | before | after |
+| | before | after (repair) |
 |---|---|---|
 | placed rows (`arc_index` set) | **0 / 6,339** | **6,097 / 6,326** (96.4%) |
 | `temporal` nonzero | 0 | 6,097 (= placed; `recompute_temporal` consistent) |
 | unplaced (residue, the inference pass' queue) | 6,339 | 229 |
+
+The `after (repair)` column is this piece's produced state; the final live
+state after the `recompute_temporal` below is **6,116 placed / 210
+unplaced** of 6,326 (96.7%).
 
 Store-axis tally of the run (pre-pilot, 22:19): 1,873/1,988 placement
 pages placed (chain 1,630, date 243, order-key 0, residue 115);
