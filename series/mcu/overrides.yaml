@@ -124,11 +124,15 @@ structural_infoboxes:
 # written under the bare name therefore forked a stub node (store census
 # 2026-09-28: node 35256, 2,997 in-edges, 13,304 chunk links; the Iron Man
 # page itself holds the `tony stark` alias, so the two nodes are one entity
-# split across a redirect). The engine now merges a bare name into the page
-# its own evidence points at (usage: >=3 pages write `[[Iron Man|Tony Stark]]`
-# -- 68 do; or a page's own alias fields), and this pin makes the merge
-# deterministic regardless of that count: the wiki's own answer for the bare
-# name is the character page. The store changes only via re-index after the
-# gates; no direct surgery.
+# split across a redirect). This pin resolves the bare name to the character
+# page and is the ONLY merge the mcu build applies: the engine's generic
+# evidence-based inference is gated behind a per-wiki `alias_merge: true`
+# declaration (default off -- the P2b merge census 2026-09-28 found it fires
+# on every wiki, e.g. 1,203 names in jjk, several of them wrong such as db's
+# `funimation` -> Crunchyroll, so no wiki infers unless it declares it).
+# The census found 5,870 inferred candidates in mcu (34,764 edges); to adopt
+# them the wiki would add `alias_merge: true` next to this pin (deliberately
+# not done: the mcu build applies the pin only). The store changes only via
+# re-index after the gates; no direct surgery.
 alias_map:
   "Tony Stark": "Iron Man"

@@ -16,6 +16,13 @@ only writer, so the fix lands in the build, from the wiki's own evidence:
 
 A name two or more pages claim stays a stub: a coin-flip merge is worse than
 the stub it replaces.
+
+The inferred evidence (usage + claims) is gated behind `alias_merge: true`
+in the series' `overrides.yaml`: a bare-name merge reshapes the graph that
+drives retrieval, so every wiki opts in on its own evidence and the 100%
+baselines stay byte-identical (architect 2026-09-28, P2b merge census: the
+un-gated heuristic absorbed 28 stub nodes in csm alone). An `alias_map` pin
+is a declaration in its own right and applies even without `alias_merge`.
 """
 
 from __future__ import annotations
@@ -88,11 +95,15 @@ def _aliases_of(store: FactStore, node_id: int) -> set[str]:
 
 
 class TestUsageMerge:
+    MERGE = {"alias_merge": True}
+
     def test_unambiguous_usage_merges_the_bare_name_into_the_page_node(
         self, store: FactStore
     ):
         pages = [_page("Iron Man"), *_voters(), _edge_page()]
-        node_ids, resolver = _load_graph(store, pages, None, None, {})
+        node_ids, resolver = _load_graph(
+            store, pages, None, None, self.MERGE
+        )
 
         assert "tony stark" in resolver
         by_name = _node_ids_by_name(store)
@@ -113,7 +124,9 @@ class TestUsageMerge:
             *_voters(),
             _edge_page(),
         ]
-        node_ids, resolver = _load_graph(store, pages, None, None, {})
+        node_ids, resolver = _load_graph(
+            store, pages, None, None, self.MERGE
+        )
 
         assert "tony stark" not in resolver
         by_name = _node_ids_by_name(store)
@@ -125,6 +138,8 @@ class TestUsageMerge:
 
 
 class TestClaimMerge:
+    MERGE = {"alias_merge": True}
+
     def test_a_subpages_alias_claims_count_for_their_root(self, store: FactStore):
         # One claim from the subpage's own alias fields is enough, and it
         # counts for the root page the subpage is about.
@@ -133,7 +148,9 @@ class TestClaimMerge:
             _page("Iron Man/Avengers Assassinated", aliases=["Tony Stark"]),
             _edge_page(),
         ]
-        node_ids, resolver = _load_graph(store, pages, None, None, {})
+        node_ids, resolver = _load_graph(
+            store, pages, None, None, self.MERGE
+        )
         assert resolver.get("tony stark") == node_ids["Iron Man"]
 
     def test_unbacked_names_still_fork_bare_nodes(self, store: FactStore):
@@ -159,7 +176,36 @@ class TestClaimMerge:
         )
 
 
+class TestGatedByDeclaration:
+    def test_default_off_keeps_bare_names_forking_even_with_evidence(
+        self, store: FactStore
+    ):
+        # A wiki that declares nothing keeps its graph as-is: the unambiguous
+        # usage evidence must not reshape it (the 100% baselines stay
+        # byte-identical; architect 2026-09-28).
+        pages = [_page("Iron Man"), *_voters(), _edge_page()]
+        node_ids, resolver = _load_graph(store, pages, None, None, {})
+
+        assert "tony stark" not in resolver
+        by_name = _node_ids_by_name(store)
+        assert "Tony Stark" in by_name  # the stub was forked
+        edge = store.connection.execute(
+            "SELECT target_id FROM edges WHERE relation = 'mentions'"
+        ).fetchone()
+        assert edge["target_id"] == by_name["Tony Stark"]
+
+    def test_an_explicit_false_disables_the_inference(self, store: FactStore):
+        pages = [_page("Iron Man"), *_voters(), _edge_page()]
+        node_ids, resolver = _load_graph(
+            store, pages, None, None, {"alias_merge": False}
+        )
+
+        assert resolver == {}
+
+
 class TestDeclarationMerge:
+    # No `alias_merge` key: a pin is a declaration in its own right and
+    # applies even on a wiki that opts out of the inference.
     OVERRIDES = {"alias_map": {"tony stark": "Iron Man"}}
 
     def test_the_declaration_pins_a_name_with_no_evidence(self, store: FactStore):
@@ -220,7 +266,9 @@ class TestChunkEntityMerge:
             revid=1,
             fetched_at="",
         )
-        node_ids, resolver = _load_graph(store, pages, None, None, {})
+        node_ids, resolver = _load_graph(
+            store, pages, None, None, {"alias_merge": True}
+        )
         chunk = Chunk(
             level=1,
             text="Tony Stark builds the mark XLIX.",

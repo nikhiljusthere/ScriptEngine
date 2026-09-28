@@ -268,11 +268,16 @@ def _build_alias_resolver(
     - a name several pages claim stays unresolved: a coin-flip merge is
       worse than the stub it replaces.
 
-    A series pins or blocks a name in `overrides.yaml` under `alias_map`
-    (`{name: page_title}`); the declaration wins over the inferred evidence,
-    and a title the build does not hold is skipped with a warning, never
-    invented.
+    The inferred evidence applies only when the series declares
+    `alias_merge: true` in `overrides.yaml`: a bare-name merge reshapes the
+    graph that drives retrieval, so every wiki opts in on its own evidence
+    and the 100% baselines stay byte-identical (architect 2026-09-28, P2b
+    merge census: the un-gated heuristic absorbed 28 stub nodes in csm
+    alone). An `alias_map` pin is a declaration in its own right and always
+    applies; a title the build does not hold is skipped with a warning,
+    never invented.
     """
+    ov = overrides or {}
     claimers: dict[str, set[str]] = {}
 
     def claim(name: str, page_title: str) -> None:
@@ -280,13 +285,14 @@ def _build_alias_resolver(
         if root in node_ids:
             claimers.setdefault(name.strip().lower(), set()).add(root)
 
-    for page in pages:
-        for name in [*page.aliases, *page.redirects]:
-            claim(name, page.title)
-    for target, names in usage.items():
-        if target in node_ids:
-            for name in names:
-                claim(name, target)
+    if ov.get("alias_merge"):
+        for page in pages:
+            for name in [*page.aliases, *page.redirects]:
+                claim(name, page.title)
+        for target, names in usage.items():
+            if target in node_ids:
+                for name in names:
+                    claim(name, target)
 
     resolver: dict[str, int] = {
         name: node_ids[next(iter(roots))]
