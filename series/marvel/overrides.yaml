@@ -176,11 +176,40 @@ content_sections:
 # all 4 pages it had reached). Declaring the ban empty turns the guard off
 # for this series; the JJK default (arc, saga) is untouched.
 roster_route_words: []
+# P4b (2026-09-28): P4's infobox branch types a page from its richest box
+# before the subpage rule, and the wiki's `Cite` citation wrapper won on
+# three prose subpages, shadowing their parent-derived types (the P4 diff
+# classes character_expanded_history->cite x1 plus the Character Index and
+# Spider Society Members rows; ~26,000 Cite-family boxes across 2,658 pages:
+# 23,309 {{cite}}, 2,308 {{cite web}}, plus case variants). A citation box is
+# the page's apparatus, not its subject: this declaration withholds the type
+# on subpages (the parent-derived type stands) while the box stays in the
+# discovered vocabulary, so its facts are still extracted (n_facts unchanged
+# base vs P4: 7/8/10 on the three rows). Main pages keep the box's type —
+# the 23 pre-existing cite-typed main pages are deliberately untouched.
+facts_only_infoboxes:
+  - "Cite"
+  - "Cite web"
 # C4 events (2026-09-28): this wiki files arc pages under its own
 # `Marvel Database:Story Arc Template` name, `story_arc`, which the engine's
 # default placement set (arc/saga/event/battle/story_arcs) does not read.
 events:
   placement_types: [story_arc]
+  # R3 (2026-09-28 architect steer): this wiki's declared time axis. A page
+  # with a `releasedate` sits at its publication clock; a page without one
+  # inherits the clock of the instalments it cites -- its `first` / `last`
+  # appearance and a multi-part story's `part*` instalments (the pattern
+  # also reaches the contaminated `part1_above` / `partof*` keys; their
+  # unparseable or unresolvable values are counted unmapped, never guessed).
+  # The axis is partitioned by the `reality` fact value: within a partition
+  # the wiki's own order is law, between partitions the value sort is only a
+  # sort; a page carrying no `reality` fact sits in the counted `<no value>`
+  # bucket, last. A multi-valued reality (e.g. `Earth-616; Tierra-616`,
+  # 307 rows) is one counted bucket of its own.
+  axis:
+    date_keys: [releasedate]
+    order_keys: [first, last, "part*"]
+    partition_key: reality
   # R8 (2026-09-28 architect finding): the wiki's reality-naming convention,
   # declared here instead of hard-coded in the engine. The engine reads this
   # block (`reality_config`); a wiki that declares nothing gets no reality

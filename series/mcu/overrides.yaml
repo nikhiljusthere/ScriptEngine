@@ -98,8 +98,30 @@ roster_route_words: []
 # C4 events (2026-09-28): this wiki's battle pages are `conflict` (870 pages,
 # Background/Battle/Aftermath sections), outside the engine's default
 # placement set (arc/saga/event/battle/story_arcs).
+# R3 axis steer (2026-09-28): conflict / war / event are one axis on this
+# wiki -- the engine default already carries `event`; `war` (99 pages) is the
+# gap, so all three are declared so the store axis and the placement queue
+# walk the same set.
 events:
-  placement_types: [conflict]
+  placement_types: [conflict, war, event]
+  # R3 (2026-09-28 architect steer): this wiki's declared time axis. The
+  # episode instalments chain into runs through their own `previous` / `next`
+  # facts (the chain walk reads `previous` backwards, value -> page), and the
+  # pages the chain leaves sit at the clock their `date` fact parses to.
+  # The store axis (timeaxis.store_time_axis) places its placement pages by
+  # these, strongest first; the run's receipt is its tally.
+  axis:
+    date_keys: [date]
+    chain_keys: [previous, next]
+  # P5 (2026-09-28 architect steer): the wiki's `Hub:` index pages (1,499
+  # nodes) are apparatus, never event participants -- a bare name that folds
+  # over one (`'Hub:Thanos | Thanos | ...'`) must resolve to the character
+  # page, and the 252 rows filed on hubs re-resolve under the prefix-
+  # stripped name. Declared here, not engine-wide: which pages are
+  # apparatus is a wiki decision (the marvel store carries no `Hub:`
+  # nodes at all).
+  participant_excludes:
+    - "Hub:"
 
 # P2 (2026-09-28): `Infobox List` is the wiki's collapsible list wrapper,
 # nested inside the subject infoboxes (it renders the `tv series` /
