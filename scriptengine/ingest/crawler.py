@@ -471,6 +471,7 @@ class WikiCrawler:
 
         facts = []
         infobox = find_infobox(wikitext, set(ontology.infobox_types))
+        box_defers_to_subpage = False
         if infobox:
             # A page that carries its own infobox is typed from it, before the
             # subpage heuristic (P4). Crossover issue titles contain "/"
@@ -481,12 +482,29 @@ class WikiCrawler:
             facts = facts_from_infobox(
                 params, ontology.labels_for(page_type), ref_names
             )
-            if page_type == "unknown":
-                page_type = ontology.infobox_types.get(
-                    template_name.lower().replace("_", " "), "unknown"
-                )
-            matched = matched or template_name
-        elif page_type == "unknown" and "/" in title:
+            normalised_box = template_name.lower().replace("_", " ")
+            # P4b: a declared facts-only box (Marvel's `Cite` citation
+            # wrapper) supplies facts but never types a subpage: a citation
+            # box is the page's apparatus, not its subject, and the
+            # parent-derived type below is the real one. On a main page the
+            # box still types — that is pre-P4 behaviour, so the pre-existing
+            # cite-typed main pages stay put.
+            box_defers_to_subpage = (
+                page_type == "unknown"
+                and "/" in title
+                and normalised_box in ontology.facts_only_infoboxes
+            )
+            if not box_defers_to_subpage:
+                if page_type == "unknown":
+                    page_type = ontology.infobox_types.get(
+                        normalised_box, "unknown"
+                    )
+                matched = matched or template_name
+        if (
+            page_type == "unknown"
+            and "/" in title
+            and (not infobox or box_defers_to_subpage)
+        ):
             # MediaWiki subpages ("Aoi Todo/Synopsis") carry no infobox of their
             # own; they elaborate on their parent. Typing them from the parent
             # keeps substantial prose out of the "unknown" bucket. This is
@@ -920,6 +938,9 @@ def load_extracted(
     # re-extraction must take the declared wrappers from the fresh ontology —
     # otherwise the manifest's engine-wide set would shadow them again (plan P2).
     ontology.structural_infoboxes |= discovered.structural_infoboxes
+    # P4b, same reason: the manifest predates the declaration, and the
+    # freshly built ontology is what carries the series' facts-only boxes.
+    ontology.facts_only_infoboxes |= discovered.facts_only_infoboxes
     # The manifest predates the overrides being read here, and re-extraction is
     # the only place the citation vocabulary is used. Taking it from the freshly
     # built ontology is what lets `overrides.yaml` reach a corpus that is being

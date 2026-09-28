@@ -138,6 +138,15 @@ class Ontology:
     structural_infoboxes: set[str] = field(
         default_factory=lambda: set(_STRUCTURAL_INFOBOXES)
     )
+    # Infobox templates the series declares (`facts_only_infoboxes:`): parsed
+    # like any infobox, with their facts extracted, but never used to type
+    # the page (P4b). Unlike `structural_infoboxes` they stay in the
+    # discovered vocabulary — what is withheld is the type, not the facts.
+    # Marvel's `Cite` citation wrapper is the case that motivated it: P4's
+    # infobox branch types before the subpage rule, and a citation box is
+    # the page's apparatus, not its subject. Declared, not engine-wide:
+    # which boxes are presentation is a wiki decision.
+    facts_only_infoboxes: set[str] = field(default_factory=set)
 
     @property
     def types(self) -> list[str]:
@@ -209,6 +218,7 @@ class Ontology:
             ),
             "alias_fact_keys": list(self.alias_fact_keys),
             "structural_infoboxes": sorted(self.structural_infoboxes),
+            "facts_only_infoboxes": sorted(self.facts_only_infoboxes),
             "infobox_votes": self.infobox_votes,
         }
 
@@ -230,6 +240,9 @@ class Ontology:
             structural_infoboxes=set(
                 payload.get("structural_infoboxes") or _STRUCTURAL_INFOBOXES
             ),
+            # Pre-P4b manifests never carry the key; an undeclared wiki has
+            # no facts-only boxes, so the legacy fallback is the empty set.
+            facts_only_infoboxes=set(payload.get("facts_only_infoboxes") or ()),
         )
 
 
@@ -264,6 +277,25 @@ def declared_structural_infoboxes(
     }
 
 
+def declared_facts_only_infoboxes(
+    overrides: dict[str, Any] | None,
+) -> set[str]:
+    """The series' declared facts-only boxes (P4b), normalised.
+
+    `facts_only_infoboxes:` in overrides.yaml names templates that carry
+    facts but never a type — Marvel's `Cite` citation wrapper: P4's infobox
+    branch types from the page's richest box before the subpage rule, and a
+    citation box is the page's apparatus, not its subject. Unlike
+    `structural_infoboxes` a facts-only box stays in the discovered
+    vocabulary, so `find_infobox` still locates it and its facts are
+    extracted; what the declaration withholds is the type, not the facts.
+    """
+    return {
+        _normalise_template(str(template))
+        for template in (overrides or {}).get("facts_only_infoboxes") or []
+    }
+
+
 def build_ontology(
     wiki: str,
     template_titles: Iterable[str],
@@ -278,6 +310,7 @@ def build_ontology(
     ontology = Ontology(wiki=wiki)
     structural = declared_structural_infoboxes(overrides)
     ontology.structural_infoboxes = structural
+    ontology.facts_only_infoboxes = declared_facts_only_infoboxes(overrides)
 
     for title in template_titles:
         normalised = _normalise_template(title)
@@ -377,6 +410,7 @@ def discover_infoboxes(
     ontology = Ontology(wiki=wiki)
     structural = declared_structural_infoboxes(overrides)
     ontology.structural_infoboxes = structural
+    ontology.facts_only_infoboxes = declared_facts_only_infoboxes(overrides)
 
     # Deliberately not routed through `build_ontology`: that filters on the word
     # "infobox", which is the very assumption this function exists to replace.
