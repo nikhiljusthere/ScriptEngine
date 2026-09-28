@@ -372,3 +372,13 @@ def test_stored_rows_re_resolve_from_the_raw_mention(tmp_path):
     s.close()
     assert (got["subject_node"], got["subject_name"], got["subject_mention"]) == (
         beast, "Henry McCoy (Earth-616)", "Beast")
+
+
+def test_a_subpage_never_outranks_its_base_page():
+    from scriptengine.ingest.events import pick_candidate
+
+    base = (1, "Quake", None)
+    sub = (2, "Quake/Destroyed Earth", None)
+    assert pick_candidate([base, sub], "Daisy Johnson") == base
+    # A passage that links the subpage keeps it in play (and the link breaks it).
+    assert pick_candidate([base, sub], "Daisy Johnson", None, {2}) == sub

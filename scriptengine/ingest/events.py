@@ -853,6 +853,15 @@ def _node_reality(
     return None
 
 
+# English pronouns and determiners an alias harvester can file as names; a
+# language rule, not a wiki's.
+_PRONOUN_ALIASES = frozenset(
+    "i me my mine you your yours he him his she her hers it its we us our ours"
+    " they them their theirs who whom whose which what that this these those"
+    " someone somebody anyone everyone man woman boy girl".split()
+)
+
+
 def participant_candidates(
     store: FactStore,
 ) -> dict[str, list[tuple[int, str, str | None]]]:
@@ -919,7 +928,22 @@ def participant_candidates(
         "SELECT a.alias, n.id, n.name FROM aliases a"
         " JOIN nodes n ON n.id = a.node_id WHERE n.is_resolved = 1"
     ):
-        add(row["alias"], row["id"], row["name"])
+        alias = (row["alias"] or "").strip()
+        # A pronoun is never a name, however an alias harvester filed it
+        # (mcu aliases carry "he", "her", "who" -- 2026-09-29 shard 1).
+        if alias.lower() in _PRONOUN_ALIASES:
+            continue
+        add(alias, row["id"], row["name"])
+        # A slash-joined alias names the one entity several ways
+        # ("skye/daisy johnson/quake" on the mcu's Quake page): each part is
+        # a name of it. Without the split, "Daisy Johnson" reached only her
+        # variant subpages and the main page's events were dropped as
+        # unknown participants (MCU shard 1: 50% of proposals dropped).
+        if "/" in alias:
+            for part in alias.split("/"):
+                part = part.strip()
+                if len(part) > 2 and part.lower() not in _PRONOUN_ALIASES:
+                    add(part, row["id"], row["name"])
     # A disambiguation page's `main_articleN` targets are participants the
     # page's own name should reach: the value's first field is the article,
     # the rest is citation noise.
@@ -1082,6 +1106,18 @@ def pick_candidate(
     ]
     if not cands:
         return None
+    # A subpage never outranks its own base page for a shared name: with
+    # "Quake" and "Quake/Destroyed Earth" both reached by "Daisy Johnson"
+    # (the slash-alias split, 2026-09-29), the name names the page, not the
+    # variant -- unless the passage points at the subpage.
+    bases = {c[1].casefold() for c in cands}
+    cands = [
+        c for c in cands
+        if "/" not in c[1]
+        or c[1].split("/", 1)[0].strip().casefold() not in bases
+        or c[0] in (linked or ())
+        or (self_folded and c[1].casefold() == self_folded)
+    ]
     if len(cands) == 1:
         return cands[0]
 
