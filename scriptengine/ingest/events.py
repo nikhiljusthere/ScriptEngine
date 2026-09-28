@@ -930,7 +930,9 @@ def page_realities(
 
 
 def pick_candidate(
-    cands: list[tuple[int, str, str | None]], page_real: str | None
+    cands: list[tuple[int, str, str | None]],
+    page_real: str | None,
+    linked: set[int] | None = None,
 ) -> tuple[int, str, str | None] | dict | None:
     """The one candidate a passage names, an explicit ambiguity, or None.
 
@@ -939,25 +941,39 @@ def pick_candidate(
     and what no signal breaks is returned as `{"ambiguous": cands}` for the
     store to file as a counted class. None means the wiki has no node for the
     name at all: a finding, not a row.
+
+    `linked` is the set of nodes the passage's page itself links to -- the
+    wiki's pre-resolved wikilinks (architect 2026-09-28). An ambiguous set
+    with exactly one linked member is the wiki's own answer and resolves
+    deterministically; zero or several linked members leave it a counted
+    ambiguity.
     """
     if not cands:
         return None
     if len(cands) == 1:
         return cands[0]
+
+    def broken(ambiguous: list[tuple[int, str, str | None]]):
+        if linked:
+            hits = [c for c in ambiguous if c[0] in linked]
+            if len(hits) == 1:
+                return hits[0]
+        return {"ambiguous": ambiguous}
+
     if page_real:
         matching = [c for c in cands if c[2] == page_real]
         if len(matching) == 1:
             return matching[0]
         if len(matching) > 1:
-            return {"ambiguous": matching}
+            return broken(matching)
         base = [c for c in cands if c[2] is None]
         if len(base) == 1:
             return base[0]
-        return {"ambiguous": cands}
+        return broken(cands)
     base = [c for c in cands if c[2] is None]
     if len(base) == 1:
         return base[0]
-    return {"ambiguous": cands}
+    return broken(cands)
 
 
 def re_resolve_participants(store: FactStore) -> dict:
@@ -968,8 +984,16 @@ def re_resolve_participants(store: FactStore) -> dict:
     destroyed) and an unbreakable ambiguity takes the explicit-ambiguous
     form: the node goes NULL and the candidate list goes in the name field.
 
+    Two signals break a set the wiki's own pages carry. The page's reality
+    picks the variant that belongs to it. And the page's links -- the
+    wiki's pre-resolved wikilinks, one set per page from `chunk_nodes`
+    (architect 2026-09-28) -- break what reality leaves: an ambiguous set
+    with exactly one linked member is the wiki's own answer and is filed;
+    zero or several linked members stay a counted ambiguity.
+
     Returns the before/after tally the receipt reports: rows on a
-    disambiguation node, rows cross-reality, rows filed ambiguous.
+    disambiguation node, rows cross-reality, rows filed ambiguous, and how
+    many rows the link signal alone re-pointed.
     """
     cands = participant_candidates(store)
     cfg = reality_config(store)
@@ -988,6 +1012,17 @@ def re_resolve_participants(store: FactStore) -> dict:
                 (str(cfg["fact_key"]).lower(),),
             )
         }
+    # The wiki's own pre-resolved wikilinks (architect 2026-09-28): per page,
+    # the nodes its chunks link to. A same-reality ambiguity the reality
+    # signal cannot break is broken by them when exactly one candidate is
+    # linked -- the wiki answered; the rows the links do not answer stay a
+    # counted ambiguity.
+    linked_by_page: dict[str, set[int]] = {}
+    for title, node_id in store.connection.execute(
+        "SELECT c.doc_title, cn.node_id"
+        " FROM chunk_nodes cn JOIN chunks c ON c.id = cn.chunk_id"
+    ):
+        linked_by_page.setdefault(title, set()).add(int(node_id))
 
     def page_real(doc_title: str) -> str | None:
         return realities.get(doc_title)
@@ -1040,7 +1075,7 @@ def re_resolve_participants(store: FactStore) -> dict:
         }
 
     before = tally()
-    moved = ambiguous_new = unresolved_kept = 0
+    moved = ambiguous_new = unresolved_kept = link_broken = 0
     for role in ("subject", "object"):
         rows = store.connection.execute(
             f"SELECT DISTINCT doc_title, {role}_name FROM events"
@@ -1048,7 +1083,10 @@ def re_resolve_participants(store: FactStore) -> dict:
         ).fetchall()
         for row in rows:
             name = (row[f"{role}_name"] or "").strip()
-            pick = pick_candidate(cands.get(name.lower(), []), page_real(row["doc_title"]))
+            pool = cands.get(name.lower(), [])
+            real = page_real(row["doc_title"])
+            linked = linked_by_page.get(row["doc_title"])
+            pick = pick_candidate(pool, real, linked)
             if pick is None:
                 unresolved_kept += 1
                 continue
@@ -1058,16 +1096,56 @@ def re_resolve_participants(store: FactStore) -> dict:
             else:
                 node, name_out = pick[0], pick[1]
                 moved += 1
+                if linked and isinstance(pick_candidate(pool, real, None), dict):
+                    link_broken += 1
             store.connection.execute(
                 f"UPDATE events SET {role}_node = ?, {role}_name = ?"
                 f" WHERE doc_title = ? AND {role}_name = ? COLLATE NOCASE",
                 (node, name_out, row["doc_title"], name),
             )
+
+    # The explicit-ambiguous rows -- node NULL, the candidate list in the
+    # name -- take the same link signal. The listed names are node names
+    # (the resolver's canonical form), so each maps back to exactly one
+    # node, and exactly one of the listed nodes linked from the page is
+    # the wiki's answer (architect 2026-09-28). Zero or several linked
+    # members keep the row a counted ambiguity; a name no node carries is
+    # a finding, and the row is left as filed.
+    name_to_node: dict[str, int] = {
+        row["name"].strip().lower(): int(row["id"])
+        for row in store.connection.execute(
+            "SELECT id, name FROM nodes WHERE is_resolved = 1"
+        )
+    }
+    for role in ("subject", "object"):
+        pairs = store.connection.execute(
+            f"SELECT DISTINCT doc_title, {role}_name FROM events"
+            f" WHERE {role}_node IS NULL AND {role}_name LIKE '% | %'"
+        ).fetchall()
+        for pair in pairs:
+            listed = pair[f"{role}_name"]
+            linked = linked_by_page.get(pair["doc_title"]) or set()
+            hits = [
+                (part, name_to_node[part.strip().lower()])
+                for part in listed.split(" | ")
+                if part.strip().lower() in name_to_node
+                and name_to_node[part.strip().lower()] in linked
+            ]
+            if len(hits) != 1:
+                continue
+            part, node = hits[0]
+            cursor = store.connection.execute(
+                f"UPDATE events SET {role}_node = ?, {role}_name = ?"
+                f" WHERE doc_title = ? AND {role}_name = ? COLLATE NOCASE",
+                (node, part, pair["doc_title"], listed),
+            )
+            link_broken += cursor.rowcount
     store.connection.commit()
     after = tally()
     after["moved"] = moved
     after["ambiguous_new"] = ambiguous_new
     after["unresolved_kept"] = unresolved_kept
+    after["link_broken"] = link_broken
     return {"before": before, "after": after}
 
 
@@ -1683,6 +1761,7 @@ def extract_from_sections(
     passages: list[dict[str, Any]],
     known: dict[str, list[tuple[int, str, str | None]]],
     page_real: str | None = None,
+    linked: set[int] | None = None,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """Events the page states, over its read passages.
 
@@ -1693,7 +1772,10 @@ def extract_from_sections(
     axis rank, or their in-value ordinal where the page sits off the axis.
 
     `known` maps a folded name to its candidate nodes (P1); `page_real` is
-    the page's reality, the signal that picks the variant. A candidate no
+    the page's reality, the signal that picks the variant; `linked` is the
+    set of nodes the page itself links to, the wiki's pre-resolved wikilinks
+    (architect 2026-09-28), which break an ambiguity the reality signal
+    leaves: exactly one linked candidate is the wiki's own answer. A candidate no
     signal breaks is stored as an explicitly ambiguous participant -- the
     node goes NULL and the candidate list goes in the name field -- so the
     receipt can separate "the wiki has no such entity" from "the wiki has
@@ -1768,8 +1850,12 @@ def extract_from_sections(
                 # Both ends have to be somebody or somewhere this wiki actually
                 # has a page for, or a model supplies a plausible name from the
                 # series it has read and nothing in the row shows it.
-                sub_pick = pick_candidate(known.get(subject.lower(), []), page_real)
-                obj_pick = pick_candidate(known.get(object_.lower(), []), page_real)
+                sub_pick = pick_candidate(
+                    known.get(subject.lower(), []), page_real, linked
+                )
+                obj_pick = pick_candidate(
+                    known.get(object_.lower(), []), page_real, linked
+                )
                 if sub_pick is None or obj_pick is None:
                     stats["dropped"]["unknown_participant"] += 1
                     logger.info(
@@ -1954,6 +2040,20 @@ def extract_events_series(
                 continue
             todo.append((page, revid))
 
+        # The wiki's pre-resolved wikilinks, for the pages this run reads:
+        # exactly one linked candidate in an ambiguous set is the wiki's
+        # own answer (architect 2026-09-28). One full scan, filtered to the
+        # run's pages, so a `limit` run stays small.
+        linked_by_page: dict[str, set[int]] = {}
+        if wanted:
+            wanted_titles = set(wanted)
+            for title, node_id in store.connection.execute(
+                "SELECT c.doc_title, cn.node_id"
+                " FROM chunk_nodes cn JOIN chunks c ON c.id = cn.chunk_id"
+            ):
+                if title in wanted_titles:
+                    linked_by_page.setdefault(title, set()).add(int(node_id))
+
         def store_result(
             page: str, revid: str, found: list[dict[str, Any]],
             stats: dict[str, Any],
@@ -1985,6 +2085,7 @@ def extract_events_series(
                     found, stats = extract_from_sections(
                         client, paths.name, page,
                         passages, known, real_by_page.get(page),
+                        linked_by_page.get(page),
                     )
                 except LLMUnavailable:
                     raise
@@ -2015,7 +2116,7 @@ def extract_events_series(
                 page, _, passages = job
                 return extract_from_sections(
                     client, paths.name, page, passages, known,
-                    real_by_page.get(page),
+                    real_by_page.get(page), linked_by_page.get(page),
                 )
 
             with ThreadPoolExecutor(max_workers=workers) as pool:
