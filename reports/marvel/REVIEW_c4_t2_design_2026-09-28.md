@@ -151,3 +151,32 @@ One fix before P1 is run on the stores:
 - declare it in `series/marvel/overrides.yaml`, for example `events: reality: {title_pattern: '\((?:Earth|Tierra)-?([\w-]+)\)\s*$', fact_key: reality}`;
 - the engine reads the declared pattern, and a wiki that declares nothing gets no reality partitioning (MCU, JJK unchanged);
 - add a test with a non-Marvel pattern, to prove it is data-driven.
+
+---
+
+# Survey findings for the worker (architect, `franchise_kit/tools/survey_wiki.py --series marvel`), 2026-09-28 ~12:0x
+
+## R9 (100% scope): `narrative_fact_keys` must cover every long prose fact, not only `history` + `synopsis*`
+
+Long prose fact values on marvel (rows / total chars):
+
+| key | rows | total chars | note |
+|---|---:|---:|---|
+| `solicit` | 33,529 | 13.0 M | publisher solicitation text, comic issues |
+| `powers` | 14,817 | 6.7 M | the abilities dimension |
+| `abilities` | 7,319 | 1.4 M | the abilities dimension |
+| `overview` | 4,119 | 1.6 M | |
+| `personality` | 934 | 0.57 M | |
+| `professionalhistory` | 896 | 0.47 M | |
+| `properties` | 760 | 0.58 M | |
+| `plot` | 227 | 0.78 M | |
+
+Under the owner's 100% definition these are lines too. Declare them, or route `powers`/`abilities` to the `abilities` pass under a council sequencing ruling (never silence). Report per-key covered/total in the dry-run.
+
+## P4 (typing): slash-titled comic crossovers treated as subpages
+
+**306 marvel pages across 303 junk `page_type` ids** of the form `disambiguation_<...>`. Examples:
+- `Avengers/Defenders War Vol 1 1`: `infobox_template` = `subpage of Avengers`;
+- `Captain America/Iron Man Vol 1 1`: `page_type` = `disambiguation_iron_man_vol_1_1`.
+
+Crossover issue titles contain `/`, so the subpage heuristic reads "Avengers" as a parent page. MCU uses `/` for genuine subpages (`Wanda Maximoff/Relationships`), so the fix must be generic. One option: treat `/` as a subpage separator only when the prefix is an existing page AND the suffix is not itself an infobox-bearing page title shape, or make the separator rule declarable per wiki. Small (306 pages / 28k words) but these comic issues miss comic handling; fold into P2's typing pass.
