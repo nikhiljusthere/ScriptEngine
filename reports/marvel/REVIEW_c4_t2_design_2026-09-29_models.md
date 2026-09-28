@@ -15,4 +15,16 @@ Ninfer cannot serve the uncensored weights: its converter needs a BF16 base of t
 
 Resolver (independent of the model; the 35B/MTP runs store raw mentions since `df0c1066`): mention "Beast" → `Henry McCoy (Clone) (Earth-616)`, "Dark Beast" → `Henry McCoy (Earth-616)`, "Hank" → `Blast-Hands (Hank)`. R12 fixes 1–3 are required before any full run, whichever model runs it.
 
-K2-Horizon-MoVA-36B-A4B (owner-requested fifth model): pending.
+## Final table (all five runs, same 160 pages / 285 passages, workers 8)
+
+Token figures: ninfer runs from the server request log (exact); SGLang from its decode log (40-step interval × running requests × MTP accept length, approximate); llama.cpp from per-request eval timings. "Peak" = steady full-batch aggregate decode rate; "avg" = total output tokens / wall (the single-slot Beast tail drags every run's average down). Precision = architect judgment of 30 seeded rows (±~10 pts). "Common pages" = rows on the 155 pages no run failed.
+
+| model (serving, thinking) | slots | wall s | s/passage | peak out tok/s | avg out tok/s | out tok / call | rows | rows on common pages | both ends resolved (common) | ambiguous | bad-verb / dup drops | failed pages | precision |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|---:|---:|
+| Qwen3.8-27B NVFP4 (ninfer + MTP, low) | 8 | 1,150 | 4.04 | ~1,265 | 417 | 1,400 | 471 | 208 | 164 | 210 | 0 / 44 | 0 | 27/30 (90%) |
+| Qwen3.8-27B uncensored NVFP4 (SGLang, off) | 8 | 358 | 1.26 | ~624 | ~136 | ~142 | 481 | 192 | 141 | 301 | 0 / 47 | 1 | 26/30 (87%) |
+| same + native MTP (SGLang NEXTN, off; accept 3.87) | 6 | **203** | **0.71** | ~922 | ~215 | ~135 | 481 | 207 | 157 | 271 | 0 / 39 | 2 | **27/30 (90%)** |
+| Qwen3.6-35B-A3B MoE (ninfer + MTP, off) | 8 | 127 | 0.45 | ~1,229 | 567 | 210 | 801 | 297 | 218 | 507 | 27 / 125 | 0 | 24/30 (80%) |
+| K2-Horizon-MoVA-36B-A4B Q4_K_M (llama.cpp IFM fork, low; can't be off) | 8 × 8K | 313 | 1.10 | n/a | 313 | 373 | 127 | 127 | 93 | 36 | 15 / 6 | 3 (truncated at 6,144) | 24/30 (80%) |
+
+K2 notes: the 22 GB Q4 weights leave room for 8 × 8K slots only, so its answers were capped at 6,144 tokens and three pages (Henry McCoy, Madrox (Cortex), Rinehart) truncated; its yield on the common pages is still the lowest (127 vs 192–297). Its errors: `arrived` with a person as object, self-objects, an object as killer ("warehouse killed Julia Starr"), intentions read as events.
