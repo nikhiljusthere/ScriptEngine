@@ -659,49 +659,71 @@ def seed_phase1_rows(
 # from, and a number the model supplies is a number nobody verified.
 
 # Bump to invalidate every stored event, exactly as `relations` does.
-PROMPT_VERSION = "events-2026-09-05.3"
+PROMPT_VERSION = "events-2026-09-29.4"
 
-SYSTEM = (
-    "You extract stated events from fiction-wiki prose. You answer with JSON "
-    "only: no prose, no code fences. You never state an event the passage does "
-    "not state, however well you know the series."
-)
+# What each verb means, for the model. The set a wiki may use is
+# `eventive_verbs(store)`; only the verbs in that set are described to it.
+# 2026-09-29 (council, COUNCIL_extraction_optimization_2026-09-29.md): the
+# definitions carry the precision fixes (a place object for arrived/departed,
+# a stated encounter for met) and the outcome verbs a match-up needs.
+VERB_DEFINITIONS = {
+    "fought": "the subject fought the object, and the passage does not say who won",
+    "defeated": (
+        "the subject beat the object: defeated, overpowered, bested, knocked "
+        "out, drove off (write \"Y lost to X\" as X defeated Y)"
+    ),
+    "killed": "the subject killed the object (a stated death, not an attempt)",
+    "captured": "the subject captured, subdued, imprisoned or took the object hostage",
+    "escaped": "the subject escaped from or fled the object",
+    "saved": "the subject rescued, freed or protected the object from harm",
+    "betrayed": "the subject betrayed or turned against the object",
+    "sealed": "the subject sealed, trapped or banished the object",
+    "awakened": "the subject woke up, revived or gained a power (no object: use null)",
+    "met": (
+        "the subject met the object: a stated first meeting, visit, "
+        "encounter or conversation; not merely being in the same place or sentence"
+    ),
+    "arrived": "the subject arrived at a PLACE (the object is the place, never a person)",
+    "departed": "the subject left a PLACE or a group (the object is the place or group)",
+}
 
-_TEMPLATE = """List the events this passage states: things that happen to somebody, or that somebody does, during {page}.
+# Verbs whose missing object means the subject itself (Mahito awakens).
+# Every other verb needs a stated object: a missing one is `incomplete`.
+_SELF_VERBS = {"awakened"}
 
-Series: {series}
+
+def system_prompt(verbs: frozenset[str]) -> str:
+    """Everything a call shares, in one fixed prefix: role, rules, verb
+    definitions and the answer shape. The page and passage come after it, in
+    the user message, so a server's prefix cache reuses this on every call
+    (the old template put the page name on line 1 and the rules after the
+    passage, so no two calls shared a prefix)."""
+    defs = "\n".join(
+        f"- {verb}: {VERB_DEFINITIONS.get(verb, verb)}" for verb in sorted(verbs)
+    )
+    return f"""You extract the events a fiction-wiki passage states. Answer with JSON only: no prose, no code fences.
+
+Answer exactly in this shape:
+{{"events": [{{"subject": "...", "verb": "...", "object": "..." or null, "quote": "..."}}]}}
+
+`verb` must be exactly one of these words, never a synonym or another tense:
+{defs}
+
+Rules:
+- An event is something the passage says happened. A description of who a character is, their powers, a list of who is present, a rule of the story, a plan, an intention ("intends to", "plans to"), a hypothetical or a teaser ("a beatdown is coming") is not an event.
+- The subject does the verb and the object is the one it is done to. Both must be names the passage uses; give the fullest name the passage uses for each (its real name or codename, not a pronoun). One name per role: "Gojo and Nanami fight Mahito" is two events.
+- If a verb takes no object in the passage, set "object" to null. Never repeat the subject as the object unless the passage says the subject did it to themselves ("he shot himself").
+- Pick the most specific verb the passage supports: a fight whose winner is stated is `defeated`, not `fought`.
+- `quote` is copied from the passage word for word: the clause that states the event. Do not paraphrase, shorten or tidy it.
+- Only events the passage itself states, however well you know the series. If it states none, answer {{"events": []}}: an empty answer is correct and useful."""
+
+
+_TEMPLATE = """Series: {series}
 Page: {page}
 Section: {section}
 
 Passage:
-{passage}
-
-Answer with JSON exactly in this shape:
-{{"events": [{{"subject": "...", "verb": "...", "object": "...", "quote": "..."}}]}}
-
-`verb` must be exactly one of these words, as written here, never a synonym
-or a different tense of one: {verbs}.
-
-Rules:
-- An event is something the passage says happens: a fight, a killing, an
-  awakening, a sealing, a betrayal, a rescue, an arrival, a departure, a
-  meeting. A description of who a character is, a list of who is present, or
-  a rule the story follows is not an event.
-- A stated meeting or encounter between named characters is an event, with
-  the verb `met` ("they meet", "their paths cross"). Sharing a place or a
-  sentence, with no stated meeting, is not one.
-- The subject does the verb, the object is the one it is done to, and both
-  must be names the passage uses, given as the passage writes them. One name
-  per role: if the passage says "Gojo and Nanami fight Mahito", that is two
-  events, one for each subject. If the passage names no object -- "Mahito
-  awakens" -- the subject is the object.
-- `quote` must be copied from the passage word for word: the clause that
-  states the event. Do not paraphrase it, shorten it or tidy it.
-- If the passage states no event, answer {{"events": []}}. An empty answer is
-  correct and useful.
-- Only events the passage actually states. Two characters being in the same
-  sentence is not a fight, and a character being present at a place is not an
-  arrival there."""
+{passage}"""
 
 
 def parse_events_response(text: str) -> list[dict[str, str]]:
@@ -2114,6 +2136,8 @@ def extract_from_sections(
                 units.append(
                     (window, (passage["title"] or "").strip(), [passage])
                 )
+    system = system_prompt(verbs)
+
     def ask(unit: tuple[str, str, list[dict[str, Any]]]) -> str:
         window, section_title, _ = unit
         return client.complete(
@@ -2122,9 +2146,8 @@ def extract_from_sections(
                 page=page,
                 section=section_title,
                 passage=window,
-                verbs=", ".join(sorted(verbs)),
             ),
-            system=SYSTEM,
+            system=system,
             temperature=0.0,
             max_tokens=_answer_budget(),
             extra_body=_effort_body(),
@@ -2150,6 +2173,8 @@ def extract_from_sections(
             object_ = str(entry.get("object") or "").strip()
             quote = str(entry.get("quote") or "").strip()
             stats["proposed"] += 1
+            if not object_ and verb in _SELF_VERBS:
+                object_ = subject
             if not subject or not object_:
                 stats["dropped"]["incomplete"] += 1
                 continue

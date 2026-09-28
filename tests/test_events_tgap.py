@@ -268,3 +268,36 @@ def test_a_wiki_declares_its_extra_verbs(tmp_path):
         "events:\n  extra_verbs: [defeated, Escaped]\n", encoding="utf-8")
     assert events.eventive_verbs(store) == events.EVENTIVE_VERBS | {"defeated", "escaped"}
     store.close()
+
+
+def test_null_object_is_self_only_for_awakened_and_incomplete_otherwise(series, monkeypatch):
+    paths, settings, _, steve, _ = series
+
+    class NullObjectStub(StubLLMClient):
+        def complete(self, prompt, system="", temperature=0.2,
+                     max_tokens=1024, extra_body=None):
+            self.calls.append(prompt)
+            return json.dumps({"events": [
+                {"subject": "Steve", "verb": "awakened", "object": None,
+                 "quote": "Steve fights Peggy at the laboratory"},
+                {"subject": "Steve", "verb": "fought", "object": None,
+                 "quote": "Steve fights Peggy at the laboratory"},
+            ]})
+
+    monkeypatch.setattr(events, "LLMClient", NullObjectStub)
+    report = events.extract_events_series(paths, settings=settings)
+    assert report["dropped"]["incomplete"] == 1
+    with FactStore(paths.facts_db) as store:
+        store.ensure_events()
+        rows = store.connection.execute(
+            "SELECT verb, subject_node, object_node FROM events").fetchall()
+    assert [(r["verb"], r["subject_node"], r["object_node"]) for r in rows] == [
+        ("awakened", steve, steve)]
+
+
+def test_the_system_prompt_describes_only_the_wikis_verbs():
+    shared = events.system_prompt(events.EVENTIVE_VERBS)
+    extended = events.system_prompt(events.EVENTIVE_VERBS | {"defeated"})
+    assert "- defeated:" not in shared and "- defeated:" in extended
+    # The page never enters the shared prefix (the prefix cache's premise).
+    assert "{page}" not in shared and "Page:" not in shared
