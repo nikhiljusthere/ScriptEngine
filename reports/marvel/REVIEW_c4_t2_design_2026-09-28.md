@@ -233,3 +233,16 @@ Required:
 3. Re-dry-run Marvel: per-key `in queue == prose` for every declared key (100%), plus the new page/section/fact-passage totals. Amend the `r1_scope_all_dryrun` receipt, or write a new one.
 4. JJK/CSM stay byte-identical (they declare no fact keys; prove the `all` page list is unchanged on jjk).
 5. Then the four gates, once, on the final tree.
+
+## R11 (architect 2026-09-29 ~01:10): the full-run throughput wall, and what the pilot must measure
+
+After R10 the read plan is Marvel 179,276 pages / 51,723 sections / 225,045 fact passages, plus MCU 14,869 pages / 83,127 sections. At the MCU pilot's measured **14.36 s/passage** (workers=2; `/tmp/se_p2/mcu_pilot_report.json`: 51 passages, 732 s, 4.5 rows/passage), about 360k passages take about 5.2M s, **about 60 days** on one card. Coverage is not the variable (R6); throughput is.
+
+The shape of the work (Marvel declared fact values, 233,973 rows, 194 M chars): **median 281 chars, p90 1,881, p99 7,804; 87% under 1,500 chars.** For those, per-call overhead (system prompt + the reasoning preamble) dominates, not the passage. The earlier "batching gave no gain" measurement was on section passages, so it does not rule out packing short fact values.
+
+The Marvel pilot must measure, on one fixed, seeded sample (e.g. 60 section + 140 fact passages, stratified by length), each lever **alone** and then combined, with s/passage, rows/passage and a row-level diff against the lever-free baseline:
+1. **Concurrency:** Qwen `--max-concurrency` 3 → 4/6 (the `qwen-switch` profile; KV headroom permitting), `--workers` to match.
+2. **Packing:** several short fact values of one page (the same page, the same key family) in one call, each keeping its own `passage` anchor (`fact:<key>`, value order) so the remap still verifies every row's quote. A generic mechanism with an inert default (pack size 1).
+3. **Reasoning budget:** thinking capped or off for fact passages under N chars. It must show a row-set diff within tolerance against the baseline (the council sets the tolerance); never adopted on speed alone.
+
+Adopt only what the diff proves. Report the projected full-run days for each combination to the owner; the owner picks from measured numbers. No full run before that.
