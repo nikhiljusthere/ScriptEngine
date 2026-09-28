@@ -246,3 +246,27 @@ The Marvel pilot must measure, on one fixed, seeded sample (e.g. 60 section + 14
 3. **Reasoning budget:** thinking capped or off for fact passages under N chars. It must show a row-set diff within tolerance against the baseline (the council sets the tolerance); never adopted on speed alone.
 
 Adopt only what the diff proves. Report the projected full-run days for each combination to the owner; the owner picks from measured numbers. No full run before that.
+
+## R12 (architect 2026-09-29 ~02:00): model trial measured; the resolver, not the model, is the quality gap
+
+Same 160 seeded-random pages of the Marvel `all` queue (285 passages), workers 8, row sets in `/tmp/se_p2/marvel_tput_rows_{ninfer,unc}.json`:
+
+| | ninfer Qwen3.8-27B, thinking low | uncensored Qwen3.8-27B (SGLang), thinking off |
+|---|---:|---:|
+| wall | 1,150 s (4.04 s/passage, Beast tail) | **358 s (1.26 s/passage)** |
+| rows | 471 | 481 |
+| rows with both ends resolved | 292 | 237 |
+| ambiguous (kept) | 210 | 301 |
+| dropped unknown participant | 217 | 259 |
+| unquoted / incomplete | 3 / 2 | 0 / 0 |
+| pages with rows | 66 | 80 |
+| failed pages | 0 | 1 (empty reply, retryable) |
+
+Row agreement is 42%; neither set contains the other. A read of 16 rows from each model's disjoint set: both make some extraction mistakes (ninfer read a powers sentence, "Hank … immunity to tranquilizers", as `met` Kravinoff), but **most wrong rows in both are resolver errors**:
+1. `Henry McCoy` → `Henry McCoy (Clone) (Earth-616)`: on a wiki whose titles all carry the reality suffix, "exact title wins" never fires. Rule: the candidate whose title minus the reality suffix equals the mention, with no extra qualifier, wins.
+2. `Hank` → `Blast-Hands (Hank) (Earth-616)` on Henry McCoy's own page: the page's own entity must win for its own names, aliases and nicknames.
+3. `Character Index/M` as a participant: an index page. Declare it in marvel `participant_excludes` (data).
+
+**Blocking for the full run: rows store the resolved name, not the model's mention.** A resolver error is baked in, and fixing it means re-extraction (days). Store the raw `subject_mention`/`object_mention` on every row, so `re_resolve_participants` can repair any resolver change in minutes.
+
+Throughput verdict: thinking-off is 3.2× faster at comparable extraction quality on this sample. Adopt it for the full run once (a) raw mentions are stored, (b) resolver fixes 1–3 land, and (c) a re-run of this sample shows the resolved-both-ends share at or above ninfer's. Packing (`SCRIPTENGINE_EVENTS_PACK_CHARS`, `1cde6013`) is measured on the same sample next.
