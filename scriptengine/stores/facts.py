@@ -2002,6 +2002,7 @@ class FactStore:
         revid: int | None,
         prompt_version: str,
         model: str,
+        read_passages: Iterable[str] | None = None,
     ) -> tuple[int, int]:
         """Replace each passage's rows for one arc, in one transaction.
 
@@ -2054,7 +2055,13 @@ class FactStore:
             # A passage row is read from this arc's own page.
             return arc_key, 0, passage
 
-        for passage in {str(row.get("passage") or "").strip() for row in found}:
+        # Every passage this run read is replaced, not only the ones that
+        # yielded rows: a passage whose re-read finds nothing must lose the
+        # rows an earlier run (another model, an older prompt) left there
+        # (2026-09-29, the model trials left 23 stale rows on re-read pages).
+        replaced = {str(row.get("passage") or "").strip() for row in found}
+        replaced |= {str(p or "").strip() for p in (read_passages or ())}
+        for passage in replaced:
             self.connection.execute(
                 "DELETE FROM events WHERE arc_key = ? COLLATE NOCASE"
                 " AND passage = ?",

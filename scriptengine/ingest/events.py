@@ -2207,6 +2207,7 @@ def extract_from_sections(
                     "passage": label,
                 }
             )
+    stats["read"] = sorted({p["passage"] for p in readable})
     return found, stats
 
 
@@ -2372,6 +2373,7 @@ def extract_events_series(
                 page, found,
                 revid=int(revid) if revid.isdigit() else None,
                 prompt_version=PROMPT_VERSION, model=settings.llm_model,
+                read_passages=stats.get("read"),
             )
             report["extracted"] += 1
             report["events"] += stored

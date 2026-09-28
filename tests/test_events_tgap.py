@@ -234,3 +234,25 @@ def test_the_model_mention_is_stored_beside_the_resolved_name(series):
         row = store.connection.execute(
             "SELECT subject_mention, object_mention FROM events").fetchone()
     assert (row["subject_mention"], row["object_mention"]) == ("Steve", "Peggy")
+
+
+def test_a_reread_that_finds_nothing_clears_the_old_rows(series, monkeypatch):
+    """A passage re-read under a new model or prompt that yields no rows must
+    not keep the previous run's rows (2026-09-29 model trials: 23 stale rows
+    survived on re-read pages)."""
+    paths, settings, _, _, _ = series
+    events.extract_events_series(paths, settings=settings)
+
+    class EmptyStub(StubLLMClient):
+        def complete(self, prompt, system="", temperature=0.2,
+                     max_tokens=1024, extra_body=None):
+            self.calls.append(prompt)
+            return json.dumps({"events": []})
+
+    monkeypatch.setattr(events, "LLMClient", EmptyStub)
+    report = events.extract_events_series(paths, settings=settings, refresh=True)
+    assert report["extracted"] == 1 and report["events"] == 0
+    with FactStore(paths.facts_db) as store:
+        store.ensure_events()
+        left = store.connection.execute("SELECT COUNT(*) FROM events").fetchone()[0]
+    assert left == 0
