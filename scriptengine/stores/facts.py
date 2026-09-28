@@ -597,6 +597,7 @@ class FactStore:
                     row["arc_index"], row["doc_title"], row["section_ordinal"],
                     passage,
                     row.get("subject_mention"), row.get("object_mention"),
+                    row.get("verified"),
                     row["revid"], row["prompt_version"], row["model"],
                     row["extracted_at"],
                 ))
@@ -605,9 +606,9 @@ class FactStore:
                 " (subject_node, subject_name, object_node, object_name, verb,"
                 "  arc_key, section_id, quote, temporal, time_rank,"
                 "  arc_index, doc_title, section_ordinal, passage,"
-                "  subject_mention, object_mention,"
+                "  subject_mention, object_mention, verified,"
                 "  revid, prompt_version, model, extracted_at)"
-                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 rows,
             )
             stats["remapped"] = len(rows)
@@ -1726,6 +1727,13 @@ class FactStore:
             if "object_mention" not in columns:
                 self.connection.execute(
                     "ALTER TABLE events ADD COLUMN object_mention TEXT")
+            # The verification pass's verdict (2026-09-29): 1 = a second read
+            # of the quote in its passage confirms the row, 0 = it does not,
+            # NULL = not checked. A confidence tier, never a filter: coverage
+            # is not a budget variable, so a 0 row is kept and labeled.
+            if "verified" not in columns:
+                self.connection.execute(
+                    "ALTER TABLE events ADD COLUMN verified INTEGER")
             if added_durable:
                 # Backfill the rows written before the columns existed. A row
                 # whose section no longer resolves keeps the column defaults
@@ -1771,7 +1779,7 @@ class FactStore:
                 " doc_title TEXT NOT NULL DEFAULT '',"
                 " section_ordinal INTEGER NOT NULL DEFAULT 0,"
                 " passage TEXT NOT NULL DEFAULT '',"
-                " subject_mention TEXT, object_mention TEXT,"
+                " subject_mention TEXT, object_mention TEXT, verified INTEGER,"
                 " revid INTEGER, prompt_version TEXT,"
                 " model TEXT, extracted_at TEXT,"
                 " PRIMARY KEY (subject_node, verb, object_node, section_id,"
@@ -1803,7 +1811,7 @@ class FactStore:
             " doc_title TEXT NOT NULL DEFAULT '',"
             " section_ordinal INTEGER NOT NULL DEFAULT 0,"
             " passage TEXT NOT NULL DEFAULT '',"
-                " subject_mention TEXT, object_mention TEXT,"
+                " subject_mention TEXT, object_mention TEXT, verified INTEGER,"
             " revid INTEGER, prompt_version TEXT,"
             " model TEXT, extracted_at TEXT,"
             " PRIMARY KEY (subject_node, verb, object_node, section_id,"
@@ -1814,7 +1822,7 @@ class FactStore:
             " (subject_node, subject_name, object_node, object_name, verb,"
             "  arc_key, section_id, quote, temporal, time_rank, arc_index,"
             "  doc_title, section_ordinal, passage,"
-            "  subject_mention, object_mention,"
+            "  subject_mention, object_mention, verified,"
             "  revid, prompt_version, model, extracted_at)"
             " SELECT subject_node, subject_name, object_node, object_name,"
             "  verb, arc_key, section_id, quote, temporal, time_rank,"
@@ -1827,7 +1835,7 @@ class FactStore:
             "   SELECT s.ordinal FROM sections s"
             "   WHERE s.id = events.section_id), 0),"
             "  passage,"
-            "  subject_mention, object_mention,"
+            "  subject_mention, object_mention, verified,"
             "  revid, prompt_version, model, extracted_at"
             " FROM events"
             " WHERE (subject_node IS NULL"

@@ -301,3 +301,25 @@ def test_the_system_prompt_describes_only_the_wikis_verbs():
     assert "- defeated:" not in shared and "- defeated:" in extended
     # The page never enters the shared prefix (the prefix cache's premise).
     assert "{page}" not in shared and "Page:" not in shared
+
+
+def test_verify_sets_the_confidence_flag_and_skips_checked_rows(series, monkeypatch):
+    paths, settings, _, _, _ = series
+    events.extract_events_series(paths, settings=settings)
+
+    class YesStub(StubLLMClient):
+        def complete(self, prompt, system="", temperature=0.2,
+                     max_tokens=1024, extra_body=None):
+            self.calls.append(prompt)
+            assert "Steve fights Peggy at the laboratory" in prompt
+            assert "- fought:" in system
+            return "Yes"
+
+    monkeypatch.setattr(events, "LLMClient", YesStub)
+    tally = events.verify_events(paths, settings=settings, workers=2)
+    assert tally["checked"] == 1 and tally["yes"] == 1
+    with FactStore(paths.facts_db) as store:
+        store.ensure_events()
+        assert store.connection.execute(
+            "SELECT verified FROM events").fetchone()[0] == 1
+    assert events.verify_events(paths, settings=settings)["checked"] == 0

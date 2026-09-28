@@ -273,6 +273,7 @@ CREATE TABLE IF NOT EXISTS events (
     passage         TEXT NOT NULL DEFAULT '',
     subject_mention TEXT,
     object_mention  TEXT,
+    verified        INTEGER,
     revid           INTEGER,
     prompt_version  TEXT,
     model           TEXT,

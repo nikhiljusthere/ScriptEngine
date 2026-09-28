@@ -2559,3 +2559,127 @@ def extract_events_series(
                         store_result(page, revid, found, stats)
                     submit_next()
     return report
+
+# ── Verification pass (2026-09-29) ──────────────────────────────────────────
+# A second, cheap read of each stored row: the quote in its passage, and one
+# yes/no question. Measured on the 160-page Marvel sample (thinking off,
+# COUNCIL_extraction_optimization_2026-09-29.md): the rows it confirms are
+# ~95% correct, but it rejects about half the true rows, so the verdict is a
+# confidence tier on the row (`verified` 1/0), never a filter.
+
+VERIFY_PROMPT_VERSION = "verify-2026-09-29.1"
+
+VERIFY_SYSTEM = """You check one extracted event against the passage it was taken from. Answer with one word: yes or no.
+The quote is a clause from the passage shown; use the passage to tell whom a pronoun or group word (he, him, she, they, them, the team) refers to.
+Say yes if the quote states that the SUBJECT did the VERB to the OBJECT, in that direction (the subject is the doer).
+Say no only if: the roles are reversed (the object is the doer); the doer is not stated at all (a passive sentence with no "by ..." and no doer named); a different person or thing than the SUBJECT is the doer; the event is only planned, attempted, intended or hypothetical; or the verb does not fit what the quote says happened.
+Verb meanings:
+{defs}"""
+
+_VERIFY_CONTEXT = 1800
+
+
+def _row_passage_text(store: FactStore, row: sqlite3.Row) -> str:
+    """The text a stored row was read from: its section, its declared fact
+    value (the one holding the quote), or its page lead."""
+    from scriptengine.ingest.wikitext import strip_markup
+
+    passage = row["passage"] or ""
+    if row["section_id"] is not None and not passage:
+        hit = store.connection.execute(
+            "SELECT text FROM sections WHERE id = ?", (row["section_id"],)
+        ).fetchone()
+        return (hit["text"] if hit else "") or ""
+    if passage.startswith("fact:"):
+        quote = (row["quote"] or "")[:60]
+        for (value,) in store.connection.execute(
+            "SELECT f.value FROM facts f JOIN nodes n ON n.id = f.node_id"
+            " JOIN documents d ON d.id = n.document_id"
+            " WHERE d.title = ? COLLATE NOCASE AND f.key = ?",
+            (row["doc_title"], passage[5:]),
+        ):
+            text = strip_markup(value or "")
+            if quote in text:
+                return text
+        return ""
+    hit = store.connection.execute(
+        "SELECT lead FROM documents WHERE title = ? COLLATE NOCASE",
+        (row["doc_title"],),
+    ).fetchone()
+    return strip_markup((hit["lead"] if hit else "") or "")
+
+
+def verify_events(
+    paths: SeriesPaths,
+    settings: Settings | None = None,
+    workers: int = 8,
+    limit: int | None = None,
+    redo: bool = False,
+) -> dict[str, int]:
+    """Set `verified` on this series' event rows (NULL rows only, unless
+    `redo`). The store is read and written on this thread; the model calls
+    run on `workers` threads."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    settings = settings or get_settings()
+    client = LLMClient(settings, workdir=str(paths.root))
+    tally = {"checked": 0, "yes": 0, "no": 0, "unanswered": 0, "no_passage": 0}
+    with FactStore(paths.facts_db) as store:
+        store.ensure_events()
+        verbs = eventive_verbs(store)
+        system = VERIFY_SYSTEM.format(defs="\n".join(
+            f"- {verb}: {VERB_DEFINITIONS.get(verb, verb)}" for verb in sorted(verbs)
+        ))
+        where = "" if redo else " WHERE verified IS NULL"
+        rows = store.connection.execute(
+            "SELECT rowid AS rid, * FROM events" + where
+            + " ORDER BY doc_title, passage, section_id"
+            + (f" LIMIT {int(limit)}" if limit else "")
+        ).fetchall()
+        jobs = []
+        for row in rows:
+            text = _row_passage_text(store, row)
+            at = text.find((row["quote"] or "")[:60])
+            if at < 0:
+                tally["no_passage"] += 1
+                continue
+            subject = row["subject_mention"] or row["subject_name"]
+            object_ = row["object_mention"] or row["object_name"]
+            jobs.append((row["rid"], (
+                f"Passage:\n{text[max(0, at - _VERIFY_CONTEXT): at + _VERIFY_CONTEXT]}"
+                f"\n\nQuote (from the passage): \"{row['quote']}\""
+                f"\nEvent: SUBJECT={subject} VERB={row['verb']} OBJECT={object_}"
+                "\nUsing the passage to tell who \"he\", \"they\" etc. are,"
+                " does the quote state this event?"
+            )))
+
+        def ask(job):
+            try:
+                answer = client.complete(
+                    job[1], system=system, temperature=0.0, max_tokens=4,
+                    extra_body=_effort_body(),
+                )
+            except Exception:  # noqa: BLE001 - one row must not stop the pass
+                return job[0], None
+            answer = answer.strip().lower()
+            if answer.startswith("yes"):
+                return job[0], 1
+            if answer.startswith("no"):
+                return job[0], 0
+            return job[0], None
+
+        with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+            for start in range(0, len(jobs), 512):
+                verdicts = list(pool.map(ask, jobs[start : start + 512]))
+                for rid, verdict in verdicts:
+                    tally["checked"] += 1
+                    if verdict is None:
+                        tally["unanswered"] += 1
+                        continue
+                    tally["yes" if verdict else "no"] += 1
+                    store.connection.execute(
+                        "UPDATE events SET verified = ? WHERE rowid = ?",
+                        (verdict, rid),
+                    )
+                store.connection.commit()
+    return tally

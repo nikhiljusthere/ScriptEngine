@@ -646,6 +646,23 @@ def events(
             )
 
 
+@app.command("events-verify")
+def events_verify(
+    series: str = typer.Option(..., "--series"),
+    workers: int = typer.Option(8, "--workers", help="Rows checked at once."),
+    limit: int = typer.Option(0, "--limit", help="Check at most this many rows."),
+    redo: bool = typer.Option(False, "--redo", help="Re-check rows already verified."),
+) -> None:
+    """Set each event row's `verified` confidence flag: a second yes/no read
+    of its quote in its passage (a tier, never a filter)."""
+    from scriptengine.ingest.events import verify_events
+
+    tally = verify_events(
+        series_paths(series), workers=workers, limit=limit or None, redo=redo
+    )
+    console.print(tally)
+
+
 @app.command()
 def events_extract(
     series: str = typer.Option(..., "--series"),
