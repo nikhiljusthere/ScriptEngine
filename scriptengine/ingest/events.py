@@ -2193,8 +2193,18 @@ def _effort_body() -> dict[str, str] | None:
     """
     import os
 
+    import json
+
     effort = os.environ.get("SCRIPTENGINE_EVENTS_REASONING_EFFORT", "low").strip()
-    return {"reasoning_effort": effort} if effort else None
+    body: dict[str, Any] = {"reasoning_effort": effort} if effort else {}
+    # A server whose thinking switch is not `reasoning_effort` (SGLang's
+    # `chat_template_kwargs: {"enable_thinking": false}`, 2026-09-29 owner
+    # trial of a thinking-off model) takes its fields as a JSON object here.
+    # Unset, the request is byte-identical to before.
+    extra = os.environ.get("SCRIPTENGINE_EVENTS_EXTRA_BODY", "").strip()
+    if extra:
+        body.update(json.loads(extra))
+    return body or None
 
 
 def _answer_budget() -> int:
