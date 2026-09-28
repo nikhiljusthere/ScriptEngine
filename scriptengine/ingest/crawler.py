@@ -916,6 +916,10 @@ def load_extracted(
     ontology.infobox_types.update(discovered.infobox_types)
     ontology.infobox_votes = discovered.infobox_votes
     ontology.skip_categories |= discovered.skip_categories
+    # Same reason: the manifest predates the `structural_infoboxes:` key, so a
+    # re-extraction must take the declared wrappers from the fresh ontology —
+    # otherwise the manifest's engine-wide set would shadow them again (plan P2).
+    ontology.structural_infoboxes |= discovered.structural_infoboxes
     # The manifest predates the overrides being read here, and re-extraction is
     # the only place the citation vocabulary is used. Taking it from the freshly
     # built ontology is what lets `overrides.yaml` reach a corpus that is being

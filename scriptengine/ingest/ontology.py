@@ -128,6 +128,16 @@ class Ontology:
     # is per-wiki: Marvel's character boxes carry the live alias under
     # `CurrentAlias`, which the built-ins never look for (plan §1 L2).
     alias_fact_keys: tuple[str, ...] = ()
+    # Layout wrappers the series declares (the `structural_infoboxes:`
+    # override): "infobox"-named templates the wiki uses to group content
+    # (list boxes, scroll boxes) rather than to type a page. A union with
+    # the engine-wide `_STRUCTURAL_INFOBOXES`, so a wrapper's longer name
+    # can never shadow the subject infobox in `type_for_templates`'s
+    # longest-name rule (plan P2: mcu's `Infobox List` typed 430 main
+    # pages as `list`).
+    structural_infoboxes: set[str] = field(
+        default_factory=lambda: set(_STRUCTURAL_INFOBOXES)
+    )
 
     @property
     def types(self) -> list[str]:
@@ -143,7 +153,7 @@ class Ontology:
         candidates = []
         for template in templates:
             normalised = _normalise_template(template)
-            if normalised in _STRUCTURAL_INFOBOXES:
+            if normalised in self.structural_infoboxes:
                 continue
             if normalised in self.infobox_types:
                 candidates.append((normalised, self.infobox_types[normalised]))
@@ -160,7 +170,7 @@ class Ontology:
             if _is_module(template):
                 continue
             normalised = _normalise_template(template)
-            if "infobox" in normalised and normalised not in _STRUCTURAL_INFOBOXES:
+            if "infobox" in normalised and normalised not in self.structural_infoboxes:
                 return slugify_type(normalised), normalised
 
         return "unknown", ""
@@ -198,6 +208,7 @@ class Ontology:
                 list(self.skip_patterns) if self.skip_patterns is not None else None
             ),
             "alias_fact_keys": list(self.alias_fact_keys),
+            "structural_infoboxes": sorted(self.structural_infoboxes),
             "infobox_votes": self.infobox_votes,
         }
 
@@ -216,6 +227,9 @@ class Ontology:
                 else None
             ),
             alias_fact_keys=tuple(payload.get("alias_fact_keys") or ()),
+            structural_infoboxes=set(
+                payload.get("structural_infoboxes") or _STRUCTURAL_INFOBOXES
+            ),
         )
 
 
@@ -234,6 +248,22 @@ def _normalise_template(name: str) -> str:
     return cleaned.replace("_", " ").strip().lower()
 
 
+def declared_structural_infoboxes(
+    overrides: dict[str, Any] | None,
+) -> set[str]:
+    """The engine-wide structural set plus the series' declared wrappers.
+
+    `structural_infoboxes:` in overrides.yaml names templates the wiki uses
+    to group content — mcu nests a collapsible `Infobox List` inside its
+    subject boxes. Declaring them keeps discovery from electing them and
+    typing from shadowing the real subject with their longer names.
+    """
+    return set(_STRUCTURAL_INFOBOXES) | {
+        _normalise_template(str(template))
+        for template in (overrides or {}).get("structural_infoboxes") or []
+    }
+
+
 def build_ontology(
     wiki: str,
     template_titles: Iterable[str],
@@ -246,10 +276,12 @@ def build_ontology(
     """
     overrides = overrides or {}
     ontology = Ontology(wiki=wiki)
+    structural = declared_structural_infoboxes(overrides)
+    ontology.structural_infoboxes = structural
 
     for title in template_titles:
         normalised = _normalise_template(title)
-        if "infobox" not in normalised or normalised in _STRUCTURAL_INFOBOXES:
+        if "infobox" not in normalised or normalised in structural:
             continue
         ontology.infobox_types[normalised] = slugify_type(normalised)
 
@@ -298,13 +330,14 @@ def build_ontology_from_transclusions(
     use is by definition transcluded by the pages using it, so the result is the
     same vocabulary reached from the other direction.
     """
+    structural = declared_structural_infoboxes(overrides)
     seen: set[str] = set()
     for templates in pages_templates:
         for template in templates:
             if _is_module(template):
                 continue
             normalised = _normalise_template(template)
-            if "infobox" in normalised and normalised not in _STRUCTURAL_INFOBOXES:
+            if "infobox" in normalised and normalised not in structural:
                 seen.add(template)
     return build_ontology(wiki, sorted(seen), overrides)
 
@@ -342,6 +375,8 @@ def discover_infoboxes(
 
     overrides = overrides or {}
     ontology = Ontology(wiki=wiki)
+    structural = declared_structural_infoboxes(overrides)
+    ontology.structural_infoboxes = structural
 
     # Deliberately not routed through `build_ontology`: that filters on the word
     # "infobox", which is the very assumption this function exists to replace.
@@ -349,7 +384,7 @@ def discover_infoboxes(
     # called.
     for name, count in votes.items():
         normalised = _normalise_template(name)
-        if count < min_pages or normalised in _STRUCTURAL_INFOBOXES:
+        if count < min_pages or normalised in structural:
             continue
         # A template that never describes more than a handful of fields on any
         # page is layout, not a subject. `Tabs` peaks at three parameters

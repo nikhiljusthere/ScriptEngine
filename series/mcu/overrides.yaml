@@ -100,3 +100,20 @@ roster_route_words: []
 # placement set (arc/saga/event/battle/story_arcs).
 events:
   placement_types: [conflict]
+
+# P2 (2026-09-28): `Infobox List` is the wiki's collapsible list wrapper,
+# nested inside the subject infoboxes (it renders the `tv series` /
+# `appearances` lists inside `Template:Character` et al.), not a subject
+# type. Its name is longer than every subject template, so the
+# longest-name rule in `type_for_templates` shadowed 430 main pages
+# (Thanos, Gamora, Iron Man; 3.04 M words; 3,656/6,108 event rows touch
+# them) as `list`. Declaring it structural restores each page's subject
+# type (census 2026-09-28: 302 character, 53 war, 17 location, 15
+# organization, 12 item, 6 filmmaker, 6 race, 6 concept, 5 project, 5
+# armor, 2 vehicle, 1 event; zero fall to unknown). `InfoboxWP` — the
+# other "infobox"-named entry — is declared alongside: a wiki-port
+# wrapper, types zero pages today, and the declaration keeps it from
+# shadowing later.
+structural_infoboxes:
+  - "Infobox List"
+  - "InfoboxWP"

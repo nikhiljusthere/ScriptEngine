@@ -236,6 +236,76 @@ class TestStructuralDiscovery:
         assert ontology.infobox_votes.get("Character") == 2
 
 
+class TestDeclaredStructuralInfoboxes:
+    """`structural_infoboxes:` — a series declares its own layout wrappers.
+
+    mcu nests a collapsible `Infobox List` inside its subject infoboxes;
+    the wrapper's longer name shadows the subject in the longest-name
+    rule, and the declaration is what undoes it. A generic wiki stands in
+    for mcu so the declaration, not a named series, is what is under test.
+    """
+
+    SUBJECT = "Template:Character Infobox"
+    WRAPPER = "Template:Infobox Character List"  # 22 chars: beats the 17-char subject name
+
+    def test_the_longer_wrapper_wins_without_a_declaration(self):
+        # Documents the shadowing the declaration removes: the wrapper is
+        # auto-detected (the word "infobox" in its name) and its longer
+        # name wins the tiebreak.
+        ontology = build_ontology(
+            "https://example.fandom.com", [self.SUBJECT, self.WRAPPER]
+        )
+        type_id, matched = ontology.type_for_templates([self.SUBJECT, self.WRAPPER])
+        assert (type_id, matched) == ("character_list", "infobox character list")
+
+    def test_a_declared_wrapper_does_not_shadow_the_subject(self):
+        ontology = build_ontology(
+            "https://example.fandom.com",
+            [self.SUBJECT, self.WRAPPER],
+            {"structural_infoboxes": ["Infobox Character List"]},
+        )
+        type_id, matched = ontology.type_for_templates([self.SUBJECT, self.WRAPPER])
+        assert (type_id, matched) == ("character", "character infobox")
+
+    def test_the_declaration_reaches_structure_discovery(self):
+        # A wrapper rich enough to win the shape vote on pages without a
+        # subject box must not be elected when the series declares it.
+        wrapper_rich = (
+            "{{Infobox Character List|"
+            + "|".join(f"entry{i} = x" for i in range(6))
+            + "}}\n==Section==\nText."
+        )
+        declared = discover_infoboxes(
+            "https://example.fandom.com",
+            [("One", wrapper_rich), ("Two", wrapper_rich)],
+            {"structural_infoboxes": ["Infobox Character List"]},
+        )
+        assert "infobox character list" not in declared.infobox_types
+        plain = discover_infoboxes(
+            "https://example.fandom.com",
+            [("One", wrapper_rich), ("Two", wrapper_rich)],
+        )
+        assert "infobox character list" in plain.infobox_types
+
+    def test_the_declaration_survives_serialisation(self):
+        # A manifest written with the key restored must keep the wrapper
+        # structural; one predating the key falls back to the engine-wide set.
+        ontology = build_ontology(
+            "https://example.fandom.com",
+            [self.SUBJECT, self.WRAPPER],
+            {"structural_infoboxes": ["Infobox Character List"]},
+        )
+        payload = ontology.to_dict()
+        assert "infobox character list" in payload["structural_infoboxes"]
+        restored = Ontology.from_dict(payload)
+        assert restored.structural_infoboxes == ontology.structural_infoboxes
+        payload.pop("structural_infoboxes")
+        legacy = Ontology.from_dict(payload)
+        assert legacy.structural_infoboxes == set(
+            {"infobox scroll box", "infobox", "scroll box"}
+        )
+
+
 class TestFieldLabels:
     def test_labels_are_learned_from_the_portable_infobox_schema(self):
         # `class` alone is meaningless; the wiki calls it "Grade".
