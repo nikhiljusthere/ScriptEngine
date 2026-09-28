@@ -1556,24 +1556,52 @@ def narrative_fact_keys(store: FactStore) -> list[str]:
     ]
 
 
+def excluded_fact_keys(store: FactStore) -> list[dict[str, str]]:
+    """The wiki's declared-but-excluded fact keys (R10): fnmatch patterns,
+    each with a one-line reason, in the overrides only.
+
+    Inert by default -- no extraction behaviour reads them -- but counted:
+    the dry-run census reports each, so a key the council later wants read
+    is a one-line move to `narrative_fact_keys`, never a silence. An entry
+    is ``{"key": <pattern>, "reason": <text>}``; a bare string is a pattern
+    with no reason.
+    """
+    out: list[dict[str, str]] = []
+    for entry in _events_overrides(store).get("excluded_fact_keys") or []:
+        if isinstance(entry, dict):
+            key = str(entry.get("key") or "").strip()
+            reason = str(entry.get("reason") or "").strip()
+        else:
+            key = str(entry).strip()
+            reason = ""
+        if key:
+            out.append({"key": key, "reason": reason})
+    return out
+
+
 def fact_key_census(
     store: FactStore, pages: set[str] | None
 ) -> list[dict[str, Any]]:
-    """The per-key census of the declared narrative fact keys (R9, 100% scope).
+    """The per-key census of the wiki's declared narrative fact keys (R9,
+    100% scope) and its counted exclusions (R10).
 
     One row per concrete key the wiki's patterns reach: how many fact values
     the key carries in the store (`total`), how many of those hold a
     panel-eligible sentence (`prose`), and how many of those sit on a page of
-    the queue (`queue`, `None` counts the whole store). The dry-run reports
-    it, so a declared key the corpus no longer backs, or prose a scope cannot
-    reach, is a number the council can rule on -- never a silence.
+    the queue (`queue`, `None` counts the whole store). Each row carries a
+    `status` -- `declared` (read under `--scope all`) or `excluded`
+    (deliberately not read, with the `reason` the wiki recorded) -- so the
+    dry run reports both: a declared key the corpus no longer backs, or prose
+    a scope cannot reach, is a number the council can rule on, never a
+    silence.
     """
     import fnmatch
 
     from scriptengine.ingest.wikitext import strip_markup
 
-    patterns = narrative_fact_keys(store)
-    if not patterns:
+    declared = narrative_fact_keys(store)
+    excluded = excluded_fact_keys(store)
+    if not declared and not excluded:
         return []
     distinct = {
         row["key"]
@@ -1581,10 +1609,8 @@ def fact_key_census(
             "SELECT DISTINCT LOWER(key) AS key FROM facts"
         )
     }
-    out: list[dict[str, Any]] = []
-    for key in sorted(distinct):
-        if not any(fnmatch.fnmatch(key, p) for p in patterns):
-            continue
+
+    def row_for(key: str, status: str, reason: str) -> dict[str, Any]:
         rows = store.connection.execute(
             "SELECT f.value AS value, d.title AS title FROM facts f"
             " JOIN nodes n ON n.id = f.node_id"
@@ -1600,15 +1626,75 @@ def fact_key_census(
             prose += 1
             if pages is None or row["title"] in pages:
                 in_queue += 1
-        out.append(
-            {
-                "key": key,
-                "total": len(rows),
-                "prose": prose,
-                "queue": in_queue,
-            }
-        )
+        return {
+            "key": key,
+            "total": len(rows),
+            "prose": prose,
+            "queue": in_queue,
+            "status": status,
+            "reason": reason,
+        }
+
+    out: list[dict[str, Any]] = []
+    declared_keys: set[str] = set()
+    for key in sorted(distinct):
+        if any(fnmatch.fnmatch(key, p) for p in declared):
+            declared_keys.add(key)
+            out.append(row_for(key, "declared", ""))
+    for entry in excluded:
+        for key in sorted(distinct):
+            if key in declared_keys or not fnmatch.fnmatch(key, entry["key"]):
+                continue
+            out.append(row_for(key, "excluded", entry["reason"]))
     return out
+
+
+def fact_pages(store: FactStore) -> list[str]:
+    """The pages a declared narrative fact value reaches (R10), ordered by the
+    prose they carry, densest first.
+
+    A page whose story lives only in fact values -- a `history` beat with no
+    prose section -- is in no other rule's queue: placement, the corpus rule
+    and the R1 prose scope all key on sections. Its declared fact values hold
+    the panel-eligible sentences the extractor reads, so the page joins the
+    `all` queue on them. Generic: keyed on the wiki's declared
+    `narrative_fact_keys` only -- a wiki that declares none (JJK, CSM) sees
+    `[]` and its `all` page list is byte-identical to the pre-fix tree.
+    """
+    import fnmatch
+
+    from scriptengine.ingest.wikitext import strip_markup
+
+    patterns = narrative_fact_keys(store)
+    if not patterns:
+        return []
+    distinct = {
+        row["key"]
+        for row in store.connection.execute(
+            "SELECT DISTINCT LOWER(key) AS key FROM facts"
+        )
+    }
+    keys = [
+        key
+        for key in sorted(distinct)
+        if any(fnmatch.fnmatch(key, p) for p in patterns)
+    ]
+    if not keys:
+        return []
+    placeholders = ",".join("?" * len(keys))
+    weight: dict[str, int] = {}
+    for row in store.connection.execute(
+        "SELECT d.title AS title, f.value AS value FROM facts f"
+        " JOIN nodes n ON n.id = f.node_id"
+        " JOIN documents d ON d.id = n.document_id"
+        f" WHERE LOWER(f.key) IN ({placeholders})",
+        keys,
+    ):
+        text = strip_markup(row["value"] or "").strip()
+        if not panel_sentences(text):
+            continue
+        weight[row["title"]] = weight.get(row["title"], 0) + len(text.split())
+    return sorted(weight, key=lambda t: (weight[t], t), reverse=True)
 
 
 def _fact_key_order(key: str) -> tuple[str, int]:
@@ -1809,16 +1895,25 @@ def scope_plan(
     plus the R1 prose scope -- every prose section of every page type,
     heading-agnostic (R1 applies to page types as well as headings: an
     episode, location, organization or character page states story too) --
-    and a page several rules cover reads the union of its sections, deduped.
+    and the R10 fact scope: a page whose declared narrative fact values hold a
+    panel-eligible sentence joins the queue even when it has no prose section
+    at all (`fact_pages`), so a story that lives only in a `history` /
+    `synopsis*` value is read, not skipped. A page several rules cover reads
+    the union of its sections, deduped.
 
     The union exists because the rules can be disjoint: on JJK no placement
     section satisfies the corpus rule, so a corpus-only re-extract would
     silently stop reading the 388 sections (165,941 words) that hold all 714
     placed events -- the scope-shrink check in reports/comprehension/GATE.md.
+    The fact scope is a no-op for a wiki that declares no narrative fact keys
+    (JJK, CSM), so their `all` page list is unchanged.
     """
     placement = placement_pages(store)
     corpus = corpus_scope(store) if scope in ("corpus", "all") else {}
     prose_pages, prose_by_page = prose_scope(store) if scope == "all" else ([], {})
+    # R10: the pages a declared narrative fact value reaches. A fact-only page
+    # (no prose section) is in no other rule's queue, so only this reaches it.
+    fact_page_list = fact_pages(store) if scope == "all" else []
     if scope == "placement":
         pages = list(placement)
     elif scope == "corpus":
@@ -1828,6 +1923,8 @@ def scope_plan(
         pages = list(placement) + [p for p in corpus if p not in seen]
         seen.update(pages)
         pages += [p for p in prose_pages if p not in seen]
+        seen.update(pages)
+        pages += [p for p in fact_page_list if p not in seen]
 
     base_pages = set(placement) if scope in ("placement", "all") else set()
     by_page: dict[str, list[sqlite3.Row]] = {}

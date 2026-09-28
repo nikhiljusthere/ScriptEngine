@@ -746,14 +746,33 @@ def events_extract(
                 f" (scope={scope}{note}, prompt {PROMPT_VERSION}):[/dim]"
             )
             if census:
+                declared = [r for r in census if r.get("status") == "declared"]
+                excluded = [r for r in census if r.get("status") == "excluded"]
                 console.print(
                     "[dim]narrative fact keys (declared in overrides):[/dim]"
                 )
-                for row in census:
+                for row in declared:
+                    # R10 100% check: a declared key whose prose is not fully
+                    # in the queue is a gap the council can rule on.
+                    marker = (
+                        "" if row["queue"] >= row["prose"]
+                        else "  <- not 100% in queue"
+                    )
                     console.print(
                         f"  [dim]{row['key']:22}{row['total']:>8} store /"
-                        f" {row['prose']:>8} prose / {row['queue']:>8} in queue[/dim]"
+                        f" {row['prose']:>8} prose / {row['queue']:>8} in queue"
+                        f"{marker}[/dim]"
                     )
+                if excluded:
+                    console.print(
+                        "[dim]fact keys excluded (counted, with reason):[/dim]"
+                    )
+                    for row in excluded:
+                        console.print(
+                            f"  [dim]{row['key']:22}{row['total']:>8} store /"
+                            f" {row['prose']:>8} prose / {row['queue']:>8} in queue"
+                            f"  [{row['reason']}][/dim]"
+                        )
                 if scope != "all":
                     console.print(
                         "[dim]fact values are read under --scope all only;"
