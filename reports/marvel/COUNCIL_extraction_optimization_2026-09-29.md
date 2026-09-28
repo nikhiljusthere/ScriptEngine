@@ -153,3 +153,24 @@ Write the 30 real Marvel "who would win" questions and check each against the ro
 
 ---
 Architect status at close: step 3 (window-level scheduling) landed as `e6af2523` (SCRIPTENGINE_EVENTS_WINDOW_WORKERS, default 1; identity test in tests/test_events_window.py).
+
+## Architect execution record (2026-09-29, after the verdict)
+
+Same 160-page Marvel sample, uncensored 27B on SGLang with MTP, window workers 4, judged by the architect (seed 11):
+
+| step | change | wall | rows | outcome rows (defeated/captured/escaped) | failed | precision |
+|---|---|---:|---:|---|---:|---:|
+| baseline | prompt .3 (9 verbs) | 203 s | 481 | 0 | 2 | 27/30 (90%) on an easier met/fought mix |
+| 1 | outcome verbs per wiki (`de1633a7`), schema test 0/30 (`e103aba9`) | | | | | |
+| 3 | window-level scheduling (`e6af2523`) | | | | | |
+| 5 | prompt .4: static prefix (cache hit 576 tokens/call), nullable object, verb definitions | 152 s | 924 | 157/113/26 | 0 | 22/30 (73%) |
+| 5b | .5 tightened outcome definitions | 152 s | 851 | 122/74/32 | 0 | 22/30 (73%) |
+| 5c | .6 direction examples (few-shot) | 141 s | 756 | 129/84/30 | 1 | 44/60 (73%) |
+| 5d | .7 quote-first field order (`61573958`) | 155 s | 864 | 147/99/31 | 0 | 46/60 (77%) |
+| - | .7 with thinking ON | killed | | | | KV-starved at the MTP profile's 16k-token pool: 1 running, 28 queued, 140 tok/s |
+| - | yes/no verifier, quote only | 0.023 s/row | | | | kept 21/46 true rows, 0/14 wrong |
+| - | verifier + passage context | 0.051 s/row | | | | kept 21/46 true, 1/14 wrong: 95% precision on the kept tier, 46% recall |
+
+**Decision (best measured method):** extraction prompt .7, thinking off, + the verifier stored as a per-row confidence flag, not a filter. A filter would discard ~54% of true rows (coverage is never a budget variable); a flag keeps every row with its quote and raw mention, and gives the brain a ~95%-precision tier to cite as fact and a labeled lower-confidence tier. Resolver fixes 2+3 landed (`f088539b`); re-resolving stored rows from raw mentions is a follow-up (the mentions are stored).
+
+Next: the staged launch (council step 8): a seeded mixed shard of MCU + Marvel pages, judged, then the full run.
