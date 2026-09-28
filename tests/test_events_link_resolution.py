@@ -326,3 +326,49 @@ def test_the_pages_own_entity_wins_for_its_own_names():
     # On another page the same pair stays the link signal's call.
     assert pick_candidate([own, clone], "Beast", "616", {2},
                           "Utopia (X-Men Base)") == clone
+
+
+def test_stored_rows_re_resolve_from_the_raw_mention(tmp_path):
+    """R12 follow-up: a row filed on the wrong namesake by an older resolver
+    is repaired from the model's stored mention, with no re-extraction."""
+    s = FactStore(tmp_path / "facts.db")
+    s.initialise()
+    s.ensure_events()
+    docs = {}
+    for title in ("Henry McCoy (Earth-616)", "Henry McCoy (Clone) (Earth-616)", "Magneto"):
+        docs[title] = s.add_document(
+            title=title, url="", page_type="character",
+            infobox_template="Character Infobox", lead=f"{title} is a mutant.",
+            word_count=5, revid=1, fetched_at="",
+        )
+    beast = s.add_node("Henry McCoy (Earth-616)", "character", docs["Henry McCoy (Earth-616)"])
+    clone = s.add_node("Henry McCoy (Clone) (Earth-616)", "character",
+                       docs["Henry McCoy (Clone) (Earth-616)"])
+    magneto = s.add_node("Magneto", "character", docs["Magneto"])
+    s.add_aliases(beast, ["Beast"])
+    s.add_aliases(clone, ["Beast"])
+    section = s.add_section(
+        document_id=docs["Henry McCoy (Earth-616)"], title="History",
+        breadcrumb="Henry McCoy (Earth-616)/History", level=2, ordinal=0,
+        text="Beast fought Magneto on the island.", word_count=6,
+    )
+    chunk = s.add_chunk(
+        document_id=docs["Henry McCoy (Earth-616)"], section_id=section,
+        parent_id=None, level=2, ordinal=0, doc_title="Henry McCoy (Earth-616)",
+        breadcrumb="Henry McCoy (Earth-616)/History", text="Beast fought Magneto.",
+    )
+    s.link_chunk_nodes(chunk, [clone, magneto])
+    s.save_events("Henry McCoy (Earth-616)", [{
+        "subject_node": clone, "subject_name": "Henry McCoy (Clone) (Earth-616)",
+        "subject_mention": "Beast", "object_node": magneto,
+        "object_name": "Magneto", "object_mention": "Magneto",
+        "verb": "fought", "section_id": section,
+        "quote": "Beast fought Magneto", "temporal": True, "time_rank": 0.0,
+    }], revid=1, prompt_version="test", model="test")
+    s.commit()
+    re_resolve_participants(s)
+    got = s.connection.execute(
+        "SELECT subject_node, subject_name, subject_mention FROM events").fetchone()
+    s.close()
+    assert (got["subject_node"], got["subject_name"], got["subject_mention"]) == (
+        beast, "Henry McCoy (Earth-616)", "Beast")

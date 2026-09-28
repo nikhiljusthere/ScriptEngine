@@ -1242,23 +1242,35 @@ def re_resolve_participants(store: FactStore) -> dict:
         )
 
     for role in ("subject", "object"):
+        # A row that stores the model's own mention (R12, 2026-09-29) is
+        # re-resolved from the mention, not from the name an earlier resolver
+        # picked -- including a row filed ambiguous, which a better resolver
+        # may now break. Rows without a mention keep the name path.
         rows = store.connection.execute(
-            f"SELECT DISTINCT doc_title, {role}_name FROM events"
-            f" WHERE {role}_node IS NOT NULL AND {role}_name IS NOT NULL"
+            f"SELECT DISTINCT doc_title, {role}_name, {role}_mention FROM events"
+            f" WHERE ({role}_node IS NOT NULL AND {role}_name IS NOT NULL)"
+            f" OR {role}_mention IS NOT NULL"
         ).fetchall()
         for row in rows:
             name = (row[f"{role}_name"] or "").strip()
-            pool = cands.get(name.lower(), [])
+            mention = (row[f"{role}_mention"] or "").strip()
+            same = (
+                f"doc_title = ? AND {role}_name = ? COLLATE NOCASE"
+                f" AND {role}_mention IS ?"
+            )
+            same_args = (row["doc_title"], name, row[f"{role}_mention"])
+            name_key = mention or name
+            pool = cands.get(name_key.lower(), [])
             # The pools refuse a name the wiki declared a non-participant
             # (`participant_excludes:` -- the mcu's `Hub:` index pages,
             # 2026-09-28): a row filed on the hub is re-resolved under the
             # bare name the hub indexes. The declaration drives the repair;
             # a name no pool carries stays a finding, kept as filed.
-            resolve_name = name
+            resolve_name = name_key
             if not pool:
                 for prefix in participant_excludes(store):
-                    if name.casefold().startswith(prefix):
-                        resolve_name = name[len(prefix):].strip()
+                    if name_key.casefold().startswith(prefix):
+                        resolve_name = name_key[len(prefix):].strip()
                         pool = cands.get(resolve_name.lower(), [])
                         break
             real = page_real(row["doc_title"])
@@ -1275,8 +1287,8 @@ def re_resolve_participants(store: FactStore) -> dict:
                 ambiguous_new += 1
                 store.connection.execute(
                     f"UPDATE events SET {role}_node = NULL, {role}_name = ?"
-                    f" WHERE doc_title = ? AND {role}_name = ? COLLATE NOCASE",
-                    (name_out, row["doc_title"], name),
+                    f" WHERE {same}",
+                    (name_out, *same_args),
                 )
                 continue
             node, name_out = pick[0], pick[1]
@@ -1287,10 +1299,9 @@ def re_resolve_participants(store: FactStore) -> dict:
             if linked and isinstance(pick_candidate(pool, resolve_name, real), dict):
                 link_broken += 1
             for r in store.connection.execute(
-                f"SELECT rowid FROM events"
-                f" WHERE doc_title = ? AND {role}_name = ? COLLATE NOCASE"
-                f" AND {role}_node IS NOT NULL",
-                (row["doc_title"], name),
+                f"SELECT rowid FROM events WHERE {same}"
+                + ("" if mention else f" AND {role}_node IS NOT NULL"),
+                same_args,
             ):
                 repoint(role, r["rowid"], node, name_out)
 
