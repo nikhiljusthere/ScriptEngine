@@ -659,7 +659,7 @@ def seed_phase1_rows(
 # from, and a number the model supplies is a number nobody verified.
 
 # Bump to invalidate every stored event, exactly as `relations` does.
-PROMPT_VERSION = "events-2026-09-29.4"
+PROMPT_VERSION = "events-2026-09-29.7"
 
 # What each verb means, for the model. The set a wiki may use is
 # `eventive_verbs(store)`; only the verbs in that set are described to it.
@@ -669,12 +669,18 @@ PROMPT_VERSION = "events-2026-09-29.4"
 VERB_DEFINITIONS = {
     "fought": "the subject fought the object, and the passage does not say who won",
     "defeated": (
-        "the subject beat the object: defeated, overpowered, bested, knocked "
-        "out, drove off (write \"Y lost to X\" as X defeated Y)"
+        "the passage says in words that the subject won: defeated, beat, "
+        "overpowered, bested, knocked out, subdued (write \"Y lost to X\" as "
+        "X defeated Y); never inferred from a plan failing, a place "
+        "collapsing or a fight merely ending"
     ),
     "killed": "the subject killed the object (a stated death, not an attempt)",
-    "captured": "the subject captured, subdued, imprisoned or took the object hostage",
-    "escaped": "the subject escaped from or fled the object",
+    "captured": (
+        "the passage says the subject captured, imprisoned or took the object "
+        "hostage; a passive sentence that does not say who did it (\"he was "
+        "imprisoned\") is no event"
+    ),
+    "escaped": "the passage says the subject escaped, fled or broke free from the object",
     "saved": "the subject rescued, freed or protected the object from harm",
     "betrayed": "the subject betrayed or turned against the object",
     "sealed": "the subject sealed, trapped or banished the object",
@@ -704,7 +710,8 @@ def system_prompt(verbs: frozenset[str]) -> str:
     return f"""You extract the events a fiction-wiki passage states. Answer with JSON only: no prose, no code fences.
 
 Answer exactly in this shape:
-{{"events": [{{"subject": "...", "verb": "...", "object": "..." or null, "quote": "..."}}]}}
+{{"events": [{{"quote": "...", "subject": "...", "verb": "...", "object": "..." or null}}]}}
+Write each event's `quote` first, then read who does what in that quote, and only then fill subject, verb and object from it.
 
 `verb` must be exactly one of these words, never a synonym or another tense:
 {defs}
@@ -713,9 +720,19 @@ Rules:
 - An event is something the passage says happened. A description of who a character is, their powers, a list of who is present, a rule of the story, a plan, an intention ("intends to", "plans to"), a hypothetical or a teaser ("a beatdown is coming") is not an event.
 - The subject does the verb and the object is the one it is done to. Both must be names the passage uses; give the fullest name the passage uses for each (its real name or codename, not a pronoun). One name per role: "Gojo and Nanami fight Mahito" is two events.
 - If a verb takes no object in the passage, set "object" to null. Never repeat the subject as the object unless the passage says the subject did it to themselves ("he shot himself").
-- Pick the most specific verb the passage supports: a fight whose winner is stated is `defeated`, not `fought`.
+- Pick the most specific verb the passage states: a fight whose winner the passage names in words is `defeated`, not `fought`. An outcome the passage does not state in words is not an outcome: use `fought`, or no event.
+- Never supply a subject or an object the passage does not state. A passive sentence that does not say who did it, or a pronoun whose person the passage does not make clear, is no event: skip it rather than guess.
 - `quote` is copied from the passage word for word: the clause that states the event. Do not paraphrase, shorten or tidy it.
-- Only events the passage itself states, however well you know the series. If it states none, answer {{"events": []}}: an empty answer is correct and useful."""
+- Only events the passage itself states, however well you know the series. If it states none, answer {{"events": []}}: an empty answer is correct and useful.
+
+Examples (names invented; read the direction of each sentence carefully):
+- "Mira was captured by the Order and imprisoned." -> {{"subject": "the Order", "verb": "captured", "object": "Mira", ...}} (passive voice: the doer is the one after "by")
+- "Kade confronted the guards but met defeat." -> {{"subject": "the guards", "verb": "defeated", "object": "Kade", ...}} (Kade lost)
+- "Vos was knocked out by Kade." -> {{"subject": "Kade", "verb": "defeated", "object": "Vos", ...}}
+- "Before departing to the capital, Kade said goodbye to Mira." -> no event (a journey toward a place is not an arrival there, and a goodbye is not a meeting)
+- "Vos tormented Mira in her dreams." -> no event (tormenting is not betrayal)
+- "Mira identified Vos as the culprit." -> no event (identifying is not killing, capturing or fighting)
+- "Kade and Mira fought the Wraith, who fled." -> fought Kade/the Wraith, fought Mira/the Wraith, and {{"subject": "the Wraith", "verb": "escaped", "object": "Kade", ...}} only if the passage says whom it fled"""
 
 
 _TEMPLATE = """Series: {series}
