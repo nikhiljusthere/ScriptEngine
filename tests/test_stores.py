@@ -438,7 +438,7 @@ class TestEventsForeignKeys:
         ).fetchone()[0]
 
     def _save(self, store, todo, yuji, section_id, time_rank=1.0, quote=QUOTE, revid=1):
-        return store.save_events(
+        stored, _dedup = store.save_events(
             "Test Arc",
             [{
                 "subject_node": todo, "subject_name": "Aoi Todo",
@@ -448,6 +448,7 @@ class TestEventsForeignKeys:
             }],
             revid=revid, prompt_version="test", model="test",
         )
+        return stored
 
     def _rebuild(self, store, revid=1, section_text=SECTION_TEXT, add_nodes=True):
         """Re-run the base load after a reset: same doc / section /

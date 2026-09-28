@@ -12,6 +12,12 @@ three cheap signals that supply it, in the order the plan names them:
 * **residue** -- neither reaches. That is where inference goes, and only there;
   a standing state the axis cannot place is a correct answer, not a miss.
 
+A wiki that records its order another way declares it in its overrides
+(`events: axis:`) -- a date key, a previous/next chain, order keys whose
+values cite a page, a partition key -- and `store_time_axis` places its
+pages by those, strongest first. Same rule: the wiki's own filings, not a
+guess.
+
 Nothing here calls a model. It walks the wiki's own `previous`/`next` arc chain
 (`chronology.chains`) and reads the `arc` and `chapters` facts the pages carry,
 so the same question orders the timeline the same on Tuesday as on Monday.
@@ -19,10 +25,16 @@ so the same question orders the timeline the same on Tuesday as on Monday.
 
 from __future__ import annotations
 
+import fnmatch
 import re
 from dataclasses import dataclass
+from typing import Any
 
-from scriptengine.ingest.events import EVENTIVE_VERBS, placement_pages
+from scriptengine.ingest.events import (
+    EVENTIVE_VERBS,
+    events_axis_config,
+    placement_pages,
+)
 from scriptengine.retrieve import chronology
 from scriptengine.stores.facts import FactStore
 

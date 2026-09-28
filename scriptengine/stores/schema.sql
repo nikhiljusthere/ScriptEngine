@@ -250,6 +250,12 @@ CREATE INDEX IF NOT EXISTS idx_emphasis_name ON emphasis(name COLLATE NOCASE);
 -- can shift them with no revid change at all). The snapshot a rebuild takes
 -- is also written to a file beside the database, so a build that dies between
 -- the drop and the remap is recoverable from it.
+-- `passage` names the text a row was read from: '' = the section's own prose;
+-- 'lead' and 'fact:<key>' are section-like passages (the page lead, or a
+-- declared narrative fact value) whose `section_id` is NULL. It joins the PK
+-- because two fact values of one page can state the same (S, verb, O) at the
+-- same axis rank, and `save_events` replaces per passage, so a re-run of one
+-- passage never wipes a sibling's rows.
 CREATE TABLE IF NOT EXISTS events (
     subject_node    INTEGER REFERENCES nodes(id) ON DELETE CASCADE,
     subject_name    TEXT,
@@ -264,11 +270,12 @@ CREATE TABLE IF NOT EXISTS events (
     arc_index       INTEGER,
     doc_title       TEXT NOT NULL DEFAULT '',
     section_ordinal INTEGER NOT NULL DEFAULT 0,
+    passage         TEXT NOT NULL DEFAULT '',
     revid           INTEGER,
     prompt_version  TEXT,
     model           TEXT,
     extracted_at    TEXT,
-    PRIMARY KEY (subject_node, verb, object_node, section_id, time_rank)
+    PRIMARY KEY (subject_node, verb, object_node, section_id, time_rank, passage)
 );
 
 CREATE INDEX IF NOT EXISTS events_by_arc ON events (arc_key COLLATE NOCASE);

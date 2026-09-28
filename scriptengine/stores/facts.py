@@ -23,6 +23,7 @@ from pathlib import Path
 from typing import Any
 
 from scriptengine.ingest.verbatim import quoted_in
+from scriptengine.ingest.wikitext import strip_markup
 from scriptengine.index.chunker import sentence_content_hash, split_sentences
 
 SCHEMA_PATH = Path(__file__).with_name("schema.sql")
@@ -498,14 +499,67 @@ class FactStore:
         if events:
             stats = {"before": len(events), "remapped": 0, "stale": 0,
                      "orphaned": 0, "unverified": 0}
+            # The page-level view the section-less passage rows ('' is a
+            # section row; 'lead' and 'fact:<key>' have section_id NULL and
+            # anchor on (doc_title, section_ordinal=0, passage)): the doc's
+            # new revid for the stale check, and the passage's current
+            # source text for the unverified check.
+            doc_view: dict[str, tuple[Any, str]] = {}
+            for title, revid, lead in self.connection.execute(
+                "SELECT title, revid, lead FROM documents"
+            ):
+                doc_view[title] = (revid, lead or "")
+            fact_keys = {
+                str(row.get("passage") or "")[len("fact:"):]
+                for row in events
+                if str(row.get("passage") or "").startswith("fact:")
+            }
+            fact_values: dict[tuple[str, str], list[str]] = {}
+            if fact_keys:
+                placeholders = ",".join("?" for _ in fact_keys)
+                for doc_title, key, value in self.connection.execute(
+                    "SELECT d.title, f.key, f.value FROM facts f"
+                    " JOIN nodes n ON n.id = f.node_id"
+                    " JOIN documents d ON d.id = n.document_id"
+                    f" WHERE f.key IN ({placeholders})",
+                    sorted(fact_keys),
+                ):
+                    if value:
+                        fact_values.setdefault(
+                            (doc_title, key), []).append(value)
+
+            def passage_source(row: dict[str, Any]) -> str:
+                """The text a section-less row must still sit in."""
+                passage = str(row.get("passage") or "")
+                if passage == "lead":
+                    return doc_view.get(row["doc_title"], (None, ""))[1]
+                if passage.startswith("fact:"):
+                    # Fact values are stored raw and reach the model stripped,
+                    # so the check runs on the stripped text.
+                    values = fact_values.get(
+                        (row["doc_title"], passage[len("fact:"):]), [])
+                    return strip_markup(" ".join(values))
+                return ""
+
             rows = []
             for row in events:
-                new_section, doc_revid = section_key.get(
-                    (row["doc_title"], row["section_ordinal"]), (None, None)
-                )
-                if new_section is None:
-                    stats["orphaned"] += 1
-                    continue
+                passage = str(row.get("passage") or "")
+                if passage:
+                    # No section to re-key onto: the row stays section-less.
+                    doc_revid = doc_view.get(row["doc_title"], (None, None))[0]
+                    if doc_revid is None:
+                        stats["orphaned"] += 1
+                        continue
+                    new_section = None
+                    source = passage_source(row)
+                else:
+                    new_section, doc_revid = section_key.get(
+                        (row["doc_title"], row["section_ordinal"]), (None, None)
+                    )
+                    if new_section is None:
+                        stats["orphaned"] += 1
+                        continue
+                    source = section_text.get(new_section, "")
                 if row["revid"] is not None and doc_revid is not None \
                         and row["revid"] != doc_revid:
                     stats["stale"] += 1
@@ -515,9 +569,7 @@ class FactStore:
                 if new_subject is None or new_object is None:
                     stats["orphaned"] += 1
                     continue
-                if not quoted_in(
-                    row["quote"] or "", section_text.get(new_section, "")
-                ):
+                if not quoted_in(row["quote"] or "", source):
                     stats["unverified"] += 1
                     continue
                 rows.append((
@@ -526,6 +578,7 @@ class FactStore:
                     row["verb"], row["arc_key"],
                     new_section, row["quote"], row["temporal"], row["time_rank"],
                     row["arc_index"], row["doc_title"], row["section_ordinal"],
+                    passage,
                     row["revid"], row["prompt_version"], row["model"],
                     row["extracted_at"],
                 ))
@@ -533,9 +586,9 @@ class FactStore:
                 "INSERT OR REPLACE INTO events"
                 " (subject_node, subject_name, object_node, object_name, verb,"
                 "  arc_key, section_id, quote, temporal, time_rank,"
-                "  arc_index, doc_title, section_ordinal,"
+                "  arc_index, doc_title, section_ordinal, passage,"
                 "  revid, prompt_version, model, extracted_at)"
-                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 rows,
             )
             stats["remapped"] = len(rows)
@@ -1633,6 +1686,16 @@ class FactStore:
                     " INTEGER NOT NULL DEFAULT 0"
                 )
                 added_durable = True
+            # The `passage` column (C4 T2): '' marks a row read from a
+            # section; 'fact:<key>' / 'lead' mark a section-like passage read
+            # from a declared narrative fact value or the page lead, whose
+            # `section_id` is NULL and whose durable key is (doc_title,
+            # section_ordinal, passage).
+            if "passage" not in columns:
+                self.connection.execute(
+                    "ALTER TABLE events ADD COLUMN passage"
+                    " TEXT NOT NULL DEFAULT ''"
+                )
             if added_durable:
                 # Backfill the rows written before the columns existed. A row
                 # whose section no longer resolves keeps the column defaults
@@ -1651,9 +1714,18 @@ class FactStore:
                     "   WHERE s.id = events.section_id), 0)"
                     " WHERE doc_title = ''"
                 )
+            # `passage` joins the PK under C4 T2, and SQLite can add a column
+            # but not a key: a store that already had its FKs when the column
+            # landed still carries the old five-part key, so the same rebuild
+            # repairs it (its rows all read from sections, `passage` = '').
+            pk = {
+                row[1] for row in self.connection.execute(
+                    "PRAGMA table_info(events)")
+                if row[5]
+            }
             if not self.connection.execute(
                 "PRAGMA foreign_key_list(events)"
-            ).fetchall():
+            ).fetchall() or "passage" not in pk:
                 return self._migrate_events_to_fk()
         else:
             self.connection.execute(
@@ -1667,10 +1739,11 @@ class FactStore:
                 " arc_index INTEGER,"
                 " doc_title TEXT NOT NULL DEFAULT '',"
                 " section_ordinal INTEGER NOT NULL DEFAULT 0,"
+                " passage TEXT NOT NULL DEFAULT '',"
                 " revid INTEGER, prompt_version TEXT,"
                 " model TEXT, extracted_at TEXT,"
                 " PRIMARY KEY (subject_node, verb, object_node, section_id,"
-                " time_rank))"
+                " time_rank, passage))"
             )
         self.connection.execute(
             "CREATE INDEX IF NOT EXISTS events_by_arc"
@@ -1696,16 +1769,17 @@ class FactStore:
             " arc_index INTEGER,"
             " doc_title TEXT NOT NULL DEFAULT '',"
             " section_ordinal INTEGER NOT NULL DEFAULT 0,"
+            " passage TEXT NOT NULL DEFAULT '',"
             " revid INTEGER, prompt_version TEXT,"
             " model TEXT, extracted_at TEXT,"
             " PRIMARY KEY (subject_node, verb, object_node, section_id,"
-            " time_rank))"
+            " time_rank, passage))"
         )
         self.connection.execute(
             "INSERT INTO events_fk_migrated"
             " (subject_node, subject_name, object_node, object_name, verb,"
             "  arc_key, section_id, quote, temporal, time_rank, arc_index,"
-            "  doc_title, section_ordinal,"
+            "  doc_title, section_ordinal, passage,"
             "  revid, prompt_version, model, extracted_at)"
             " SELECT subject_node, subject_name, object_node, object_name,"
             "  verb, arc_key, section_id, quote, temporal, time_rank,"
@@ -1717,6 +1791,7 @@ class FactStore:
             "  COALESCE(("
             "   SELECT s.ordinal FROM sections s"
             "   WHERE s.id = events.section_id), 0),"
+            "  passage,"
             "  revid, prompt_version, model, extracted_at"
             " FROM events"
             " WHERE (subject_node IS NULL"
@@ -1734,6 +1809,17 @@ class FactStore:
         self.connection.execute("DROP TABLE events")
         self.connection.execute(
             "ALTER TABLE events_fk_migrated RENAME TO events")
+        # The indexes died with the old table; the migration path returns
+        # before `ensure_events` would create them, so create them here.
+        self.connection.execute(
+            "CREATE INDEX IF NOT EXISTS events_by_arc"
+            " ON events (arc_key COLLATE NOCASE)"
+        )
+        self.connection.execute(
+            "CREATE INDEX IF NOT EXISTS events_by_subject"
+            " ON events (subject_node)"
+        )
+        self.connection.commit()
         if dropped:
             logger.warning(
                 "events FK migration dropped %d/%d row(s) whose node or "
@@ -1880,18 +1966,35 @@ class FactStore:
         revid: int | None,
         prompt_version: str,
         model: str,
-    ) -> int:
-        """Replace everything stored for one arc, in one transaction.
+    ) -> tuple[int, int]:
+        """Replace each passage's rows for one arc, in one transaction.
 
         Replaced rather than merged, exactly as `save_relations` is: a re-run
-        under a new prompt is the whole answer for that arc.
+        under a new prompt is the whole answer for a passage. The replace is
+        per passage (`passage` column: '' = the section rows, `fact:<key>`
+        and `lead` = section-like passages read from a fact value or the
+        lead, whose `section_id` is NULL), so a re-run that reads one
+        passage never wipes the rows a sibling passage still owns.
+
+        Within the batch, duplicate rows -- the same (doc, passage, S, v, O,
+        quote) a 300-character window overlap surfaces twice -- are dropped
+        here, first one to win, and counted, so the D4 cross-page checks do
+        not double-count them.
+
+        Returns (stored, dedup_dropped): the rows this call stored for the
+        arc (its batch, after dedup -- a per-passage re-run reports its own
+        batch, not the rows sibling passages still hold), and the batch
+        duplicates dropped.
         """
         stamp = datetime.now(timezone.utc).isoformat(timespec="seconds")
-        # The durable key is resolved once for the arc's sections, not per row:
-        # `section_id` renumbers on a rebuild, but (doc_title, section_ordinal)
-        # does not, so a remap can re-key this arc's rows onto a new build.
+        # The durable key is resolved once for the arc's sections, not per
+        # row: `section_id` renumbers on a rebuild, but (doc_title,
+        # section_ordinal, passage) does not, so a remap can re-key this
+        # arc's rows onto a new build. A passage row carries no section:
+        # its anchor is (arc's page, passage) itself.
         section_ids = {
-            int(row["section_id"]) for row in found if row.get("section_id")
+            int(row["section_id"]) for row in found
+            if row.get("section_id") and not row.get("passage")
         }
         durable: dict[int, tuple[str, int]] = {}
         if section_ids:
@@ -1906,46 +2009,82 @@ class FactStore:
                 )
             }
 
-        def durable_of(section_id: Any) -> tuple[str, int]:
-            return durable.get(int(section_id), ("", 0))
+        def durable_of(row: dict[str, Any]) -> tuple[str, int, str]:
+            section_id = row.get("section_id")
+            passage = str(row.get("passage") or "").strip()
+            if section_id and not passage:
+                doc, ordinal = durable.get(int(section_id), ("", 0))
+                return doc, ordinal, passage
+            # A passage row is read from this arc's own page.
+            return arc_key, 0, passage
 
-        self.connection.execute(
-            "DELETE FROM events WHERE arc_key = ? COLLATE NOCASE", (arc_key,)
-        )
+        for passage in {str(row.get("passage") or "").strip() for row in found}:
+            self.connection.execute(
+                "DELETE FROM events WHERE arc_key = ? COLLATE NOCASE"
+                " AND passage = ?",
+                (arc_key, passage),
+            )
+        seen: set[tuple[str, Any]] = set()
+        dedup_dropped = 0
+        rows = []
+        for row in found:
+            if not (row.get("subject_node") and row.get("object_node")
+                    and row.get("verb")):
+                continue
+            doc, ordinal, passage = durable_of(row)
+            quote = str(row.get("quote") or "").strip()[:400]
+            key = (doc, passage, row["subject_node"], str(row["verb"]).strip().lower(),
+                   row["object_node"], quote)
+            if key in seen:
+                dedup_dropped += 1
+                continue
+            seen.add(key)
+            section_id = row.get("section_id")
+            rows.append((
+                int(row["subject_node"]),
+                str(row["subject_name"]).strip(),
+                int(row["object_node"]),
+                str(row["object_name"]).strip(),
+                str(row["verb"]).strip().lower(),
+                arc_key,
+                int(section_id) if section_id else None,
+                quote,
+                1 if row.get("temporal", True) else 0,
+                float(row["time_rank"]),
+                doc,
+                ordinal,
+                passage,
+                revid,
+                prompt_version,
+                model,
+                stamp,
+            ))
         self.connection.executemany(
             "INSERT OR REPLACE INTO events"
             " (subject_node, subject_name, object_node, object_name, verb,"
             "  arc_key, section_id, quote, temporal, time_rank,"
-            "  doc_title, section_ordinal, revid,"
+            "  doc_title, section_ordinal, passage, revid,"
             "  prompt_version, model, extracted_at)"
-            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-            [
-                (
-                    int(row["subject_node"]),
-                    str(row["subject_name"]).strip(),
-                    int(row["object_node"]),
-                    str(row["object_name"]).strip(),
-                    str(row["verb"]).strip().lower(),
-                    arc_key,
-                    int(row["section_id"]),
-                    str(row.get("quote") or "").strip()[:400],
-                    1 if row.get("temporal", True) else 0,
-                    float(row["time_rank"]),
-                    *durable_of(row["section_id"]),
-                    revid,
-                    prompt_version,
-                    model,
-                    stamp,
-                )
-                for row in found
-                if row.get("subject_node") and row.get("object_node") and row.get("verb")
-            ],
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            rows,
         )
         self.connection.commit()
-        return self.connection.execute(
-            "SELECT COUNT(*) FROM events WHERE arc_key = ? COLLATE NOCASE",
-            (arc_key,),
-        ).fetchone()[0]
+        return (len(rows), dedup_dropped)
+
+    def event_passages(self, arc_key: str) -> set[str]:
+        """The passage markers this arc's stored rows were read from.
+
+        A passage that read to zero events stores no rows and is absent
+        here: like today's zero-event pages, it is re-read on the next run
+        rather than cached.
+        """
+        return {
+            row[0] for row in self.connection.execute(
+                "SELECT DISTINCT passage FROM events"
+                " WHERE arc_key = ? COLLATE NOCASE",
+                (arc_key,),
+            )
+        }
 
     def semantics_of(self, title: str) -> dict[str, Any] | None:
         """The stored classification for one page, or ``None``.

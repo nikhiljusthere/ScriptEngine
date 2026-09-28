@@ -626,7 +626,7 @@ def seed_phase1_rows(
                 "time_rank": raw["time_rank"],
             }
         )
-    stored = store.save_events(PHASE1_ARC, rows, revid, prompt_version, model)
+    stored, _dedup = store.save_events(PHASE1_ARC, rows, revid, prompt_version, model)
     return stored, []
 
 
@@ -764,6 +764,281 @@ def known_participants(store: FactStore) -> dict[str, tuple[str, int]]:
     return canon
 
 
+# P1 (2026-09-28 architect finding): a bare name can name several variants
+# (`Conan` -> Conan (Earth-16356), (Earth-20007), ...) and a disambiguation
+# node is a container of names, not a participant. The resolver therefore
+# works on candidate sets, and a passage page's reality (its `reality` fact,
+# its title suffix, or the wiki's declared default) picks the variant. An
+# ambiguity no signal breaks is stored as an explicitly ambiguous
+# participant, never pinned to a guess and never dropped.
+
+_REALITY_SUFFIX = re.compile(r"\((?:[Ee]arth|[Tt]ierra)-?([\w-]+)\)\s*$")
+
+
+def normalize_reality(value: str | None) -> str | None:
+    """`Earth-616`, `Tierra-616`, `616` -> `616`; unknown -> None."""
+    if value is None:
+        return None
+    v = str(value).strip().lower()
+    if not v or v in ("unknown", "unspecified"):
+        return None
+    for prefix in ("earth-", "tierra-"):
+        if v.startswith(prefix):
+            v = v[len(prefix):]
+            break
+    return v or None
+
+
+def _node_reality(name: str, fact: str | None) -> str | None:
+    """A variant's reality: the title suffix, else its `reality` fact."""
+    match = _REALITY_SUFFIX.search((name or "").strip())
+    if match:
+        normalized = normalize_reality(match.group(1))
+        if normalized is not None:
+            return normalized
+    return normalize_reality(fact)
+
+
+def participant_candidates(
+    store: FactStore,
+) -> dict[str, list[tuple[int, str, str | None]]]:
+    """Folded name -> candidate nodes: `(node_id, canonical name, reality)`."""
+    containers = NON_PARTICIPANT_TYPES | placement_types(store) | {"disambiguation"}
+    placeholders = ",".join("?" * len(containers))
+    container_ids = {
+        int(row["id"])
+        for row in store.connection.execute(
+            f"SELECT n.id FROM nodes n"
+            f" JOIN documents d ON d.id = n.document_id"
+            f" WHERE n.is_resolved = 1 AND d.page_type IN ({placeholders})",
+            tuple(sorted(containers)),
+        )
+    }
+    reality: dict[int, str | None] = {
+        int(row["node_id"]): row["value"]
+        for row in store.connection.execute(
+            "SELECT node_id, value FROM facts WHERE LOWER(key) = 'reality'"
+        )
+    }
+
+    def candidate(node_id: int, name: str) -> tuple[int, str, str | None] | None:
+        if int(node_id) in container_ids or not (name or "").strip():
+            return None
+        return (int(node_id), name.strip(), _node_reality(name, reality.get(int(node_id))))
+
+    cands: dict[str, list[tuple[int, str, str | None]]] = {}
+
+    def add(name: str, node_id: int, canonical: str) -> None:
+        folded = (name or "").strip().lower()
+        row = candidate(node_id, canonical)
+        if not folded or row is None:
+            return
+        bucket = cands.setdefault(folded, [])
+        if not any(existing[0] == row[0] for existing in bucket):
+            bucket.append(row)
+
+    for row in store.connection.execute(
+        "SELECT id, name FROM nodes WHERE is_resolved = 1"
+    ):
+        add(row["name"], row["id"], row["name"])
+    for row in store.connection.execute(
+        "SELECT a.alias, n.id, n.name FROM aliases a"
+        " JOIN nodes n ON n.id = a.node_id WHERE n.is_resolved = 1"
+    ):
+        add(row["alias"], row["id"], row["name"])
+    # A disambiguation page's `main_articleN` targets are participants the
+    # page's own name should reach: the value's first field is the article,
+    # the rest is citation noise.
+    for row in store.connection.execute(
+        "SELECT n.id AS nid, n.name AS disambig, f.value AS value FROM nodes n"
+        " JOIN documents d ON d.id = n.document_id"
+        " JOIN facts f ON f.node_id = n.id"
+        " WHERE d.page_type = 'disambiguation' AND n.is_resolved = 1"
+        " AND LOWER(f.key) LIKE 'main_article%'"
+    ):
+        target = re.sub(r"[\[\]{}]", "", (row["value"] or "").split(";")[0]).strip()
+        node = store.node_by_name(target) if target else None
+        if node is not None and int(node["is_resolved"]):
+            add(row["disambig"], node["id"], node["name"])
+    return cands
+
+
+def page_reality(
+    store: FactStore, page: str, default: str | None = None
+) -> str | None:
+    """The passage page's reality: its `reality` fact, its title suffix, else
+    the wiki's declared default (`events: default_reality:` in the overrides,
+    the only place a wiki-level rule may live)."""
+    row = store.connection.execute(
+        "SELECT f.value FROM facts f"
+        " JOIN nodes n ON n.id = f.node_id"
+        " WHERE n.name = ? COLLATE NOCASE AND LOWER(f.key) = 'reality'"
+        " LIMIT 1",
+        (page,),
+    ).fetchone()
+    if row is not None and normalize_reality(row["value"]) is not None:
+        return normalize_reality(row["value"])
+    match = _REALITY_SUFFIX.search((page or "").strip())
+    if match:
+        return normalize_reality(match.group(1))
+    return normalize_reality(default)
+
+
+def page_realities(
+    store: FactStore, pages: list[str], default: str | None = None
+) -> dict[str, str | None]:
+    """`page_reality` for a queue, in one pass (the connection belongs to the
+    calling thread; the result travels to workers as a plain dict)."""
+    out: dict[str, str | None] = {}
+    for page in pages:
+        out[page] = page_reality(store, page, default)
+    return out
+
+
+def pick_candidate(
+    cands: list[tuple[int, str, str | None]], page_real: str | None
+) -> tuple[int, str, str | None] | dict | None:
+    """The one candidate a passage names, an explicit ambiguity, or None.
+
+    A page reality filters the candidates to its own reality; where no
+    candidate carries that reality the base variant (no known reality) wins,
+    and what no signal breaks is returned as `{"ambiguous": cands}` for the
+    store to file as a counted class. None means the wiki has no node for the
+    name at all: a finding, not a row.
+    """
+    if not cands:
+        return None
+    if len(cands) == 1:
+        return cands[0]
+    if page_real:
+        matching = [c for c in cands if c[2] == page_real]
+        if len(matching) == 1:
+            return matching[0]
+        if len(matching) > 1:
+            return {"ambiguous": matching}
+        base = [c for c in cands if c[2] is None]
+        if len(base) == 1:
+            return base[0]
+        return {"ambiguous": cands}
+    base = [c for c in cands if c[2] is None]
+    if len(base) == 1:
+        return base[0]
+    return {"ambiguous": cands}
+
+
+def re_resolve_participants(store: FactStore) -> dict:
+    """Re-point the stored rows' participants through the reality-aware
+    resolver. The quotes are kept -- no re-extraction -- so a store extracted
+    before the resolver existed is repaired in place. A row whose name no
+    candidate set reaches keeps its old pointers (a finding, counted, never
+    destroyed) and an unbreakable ambiguity takes the explicit-ambiguous
+    form: the node goes NULL and the candidate list goes in the name field.
+
+    Returns the before/after tally the receipt reports: rows on a
+    disambiguation node, rows cross-reality, rows filed ambiguous.
+    """
+    cands = participant_candidates(store)
+    default = _wiki_default_reality(store)
+    titles = {
+        row["doc_title"]
+        for row in store.connection.execute("SELECT DISTINCT doc_title FROM events")
+    }
+    realities = page_realities(store, sorted(titles), default)
+
+    def page_real(doc_title: str) -> str | None:
+        return realities.get(doc_title)
+
+    def is_disambig(node_id: int | None) -> bool:
+        if node_id is None:
+            return False
+        row = store.connection.execute(
+            "SELECT d.page_type FROM nodes n"
+            " JOIN documents d ON d.id = n.document_id"
+            " WHERE n.id = ?",
+            (int(node_id),),
+        ).fetchone()
+        return row is not None and row["page_type"] == "disambiguation"
+
+    def crossed(node_id: int | None, name: str | None, doc_title: str) -> bool:
+        if node_id is None:
+            return False
+        real = _node_reality(name or "", None)
+        if real is None:
+            return False
+        page_real = page_real(doc_title)
+        return page_real is not None and real != page_real
+
+    def tally() -> dict:
+        rows = store.connection.execute(
+            "SELECT subject_node, subject_name, object_node, object_name, doc_title"
+            " FROM events"
+        ).fetchall()
+        return {
+            "rows": len(rows),
+            "on_disambiguation_node": sum(
+                1
+                for r in rows
+                if is_disambig(r["subject_node"]) or is_disambig(r["object_node"])
+            ),
+            "cross_reality": sum(
+                1
+                for r in rows
+                if crossed(r["subject_node"], r["subject_name"], r["doc_title"])
+                or crossed(r["object_node"], r["object_name"], r["doc_title"])
+            ),
+            "ambiguous": sum(
+                1
+                for r in rows
+                if r["subject_node"] is None or r["object_node"] is None
+            ),
+        }
+
+    before = tally()
+    moved = ambiguous_new = unresolved_kept = 0
+    for role in ("subject", "object"):
+        rows = store.connection.execute(
+            f"SELECT DISTINCT doc_title, {role}_name FROM events"
+            f" WHERE {role}_node IS NOT NULL AND {role}_name IS NOT NULL"
+        ).fetchall()
+        for row in rows:
+            name = (row[f"{role}_name"] or "").strip()
+            pick = pick_candidate(cands.get(name.lower(), []), page_real(row["doc_title"]))
+            if pick is None:
+                unresolved_kept += 1
+                continue
+            if isinstance(pick, dict):
+                node, name_out = None, " | ".join(sorted(c[1] for c in pick["ambiguous"]))
+                ambiguous_new += 1
+            else:
+                node, name_out = pick[0], pick[1]
+                moved += 1
+            store.connection.execute(
+                f"UPDATE events SET {role}_node = ?, {role}_name = ?"
+                f" WHERE doc_title = ? AND {role}_name = ? COLLATE NOCASE",
+                (node, name_out, row["doc_title"], name),
+            )
+    store.connection.commit()
+    after = tally()
+    after["moved"] = moved
+    after["ambiguous_new"] = ambiguous_new
+    after["unresolved_kept"] = unresolved_kept
+    return {"before": before, "after": after}
+
+
+def _wiki_default_reality(store: FactStore) -> str | None:
+    """The wiki-level default reality, declared in the overrides only."""
+    overrides = Path(store.path).with_name("overrides.yaml")
+    if not overrides.exists():
+        return None
+    import yaml
+
+    loaded = yaml.safe_load(overrides.read_text(encoding="utf-8")) or {}
+    declared = ((loaded.get("events") or {}) if isinstance(loaded, dict) else {}).get(
+        "default_reality"
+    )
+    return str(declared) if declared else None
+
+
 def _excluded_section_titles() -> set[str]:
     """The section titles that state no events: list furniture, and the
     extraction-only furniture on top of it."""
@@ -826,6 +1101,298 @@ def placement_pages(store: FactStore) -> list[str]:
         if total:
             weight[page] = total
     return sorted(weight, key=weight.get, reverse=True)  # type: ignore[arg-type]
+
+
+# T2 (C4, R1): the furniture the prose scope excludes -- the ONLY exclusion.
+# The generic default is wiki-agnostic (heading names, no series names): the
+# extractor's list set (the narrative retriever's, minus the narrative
+# plot/summary/synopsis, plus the extraction-only furniture) extended with the
+# link/image families no wiki writes prose under. A wiki extends it with
+# `events: furniture:` in its overrides -- the only place a per-wiki rule may
+# live -- and every excluded section is counted per heading, with the named
+# cause, in the dry-run and the receipt.
+_FURNITURE_LINK_FAMILIES = {
+    "external links", "see also", "further reading", "bibliography",
+    "references", "screenshots", "cover art", "interior art", "media",
+    "gallery",
+}
+
+# R1.3: the list-shaped headings are text, never silently skipped. Where they
+# carry a panel-eligible sentence the extractor reads them (rows land as
+# standing-state, `temporal=0`); in the receipt they are counted per heading
+# as the `list_class` class, and their relational content is the plan-C5
+# `relations` work the council rules on with the counts in hand.
+LIST_CLASS_TITLES = {
+    "allies", "enemies", "appearances", "family", "equipment",
+    "vehicles", "relationships", "dialogue",
+}
+
+
+def _events_overrides(store: FactStore) -> dict[str, Any]:
+    """This store's `events:` override block, `{}` when the file is absent.
+
+    The only place a per-wiki event rule may live: `placement_types`,
+    `furniture`, `narrative_fact_keys`, the `axis` declaration and
+    `default_reality` all read off this one block.
+    """
+    overrides = Path(store.path).with_name("overrides.yaml")
+    if not overrides.exists():
+        return {}
+    import yaml
+
+    loaded = yaml.safe_load(overrides.read_text(encoding="utf-8")) or {}
+    block = (loaded.get("events") or {}) if isinstance(loaded, dict) else {}
+    return block if isinstance(block, dict) else {}
+
+
+def events_axis_config(store: FactStore) -> dict[str, Any]:
+    """The store's declared store-axis (R3): its `events: axis:` block.
+
+    A wiki declares the order signals it records -- `date_keys`,
+    `chain_keys`, `order_keys`, `partition_key` -- and the store axis
+    (``timeaxis.store_time_axis``) places its pages by them, strongest
+    first: the chain, then the date, then a citation that inherits the
+    cited page's rank. A wiki that declares nothing sees ``{}``, and the
+    manga signals stand alone.
+    """
+    axis = _events_overrides(store).get("axis")
+    return axis if isinstance(axis, dict) else {}
+
+
+def generic_furniture() -> set[str]:
+    """The wiki-agnostic furniture headings, folded (R1)."""
+    return _excluded_section_titles() | _FURNITURE_LINK_FAMILIES
+
+
+def furniture_titles(store: FactStore) -> dict[str, str]:
+    """Folded furniture heading -> cause, `generic` or `wiki` (R1).
+
+    A heading both lists carry is caused by the generic default: the wiki
+    declaration only extends the set, it does not re-cause what it repeats.
+    """
+    causes = {heading: "generic" for heading in generic_furniture()}
+    for heading in _events_overrides(store).get("furniture") or []:
+        folded = str(heading).strip().lower()
+        if folded:
+            causes.setdefault(folded, "wiki")
+    return causes
+
+
+def panel_sentences(text: str | None) -> list[str]:
+    """The panel-eligible sentences a stretch of text carries (R7).
+
+    The D3 panel's own line definition -- `span_recall.sentences` at
+    `min_words=6`, the tier-1 denominator -- so a passage the extractor reads
+    is exactly a line the panel counts. A section, lead or fact value holding
+    none of them (pure markup, a link stub, an empty template) is the counted
+    `below_floor` class: accounted for the council, never silently dropped.
+    """
+    from scriptengine.eval.span_recall import sentences
+
+    return sentences(text or "", 6)
+
+
+def prose_sections(store: FactStore, page: str) -> list[sqlite3.Row]:
+    """The page's prose sections, heading-agnostic (R1, R7).
+
+    The extractable-prose test is decided on content, not title: a section is
+    read when it holds a panel-eligible sentence and its heading is not
+    furniture. The heading allow-list cannot reach the story-named
+    sub-sections a character biography is split into, which is why the test
+    lives here instead of on the title.
+    """
+    furniture = furniture_titles(store)
+    out: list[sqlite3.Row] = []
+    for section in store.document_sections(page):
+        heading = (section["title"] or "").strip().lower()
+        if heading in furniture:
+            continue
+        if panel_sentences((section["text"] or "").strip()):
+            out.append(section)
+    return out
+
+
+def prose_scope(
+    store: FactStore,
+) -> tuple[list[str], dict[str, list[sqlite3.Row]]]:
+    """`(pages, sections_by_page)`: every prose section in the store (R1).
+
+    One pass over `sections`, heading-agnostic: a section is prose when it
+    holds a panel-eligible sentence (R7) and its heading is not furniture.
+    The page queue is ordered by the prose it carries, as `placement_pages`
+    is, so `--limit` reaches the densest pages first.
+    """
+    furniture = furniture_titles(store)
+    titles = {
+        int(row["id"]): row["title"]
+        for row in store.connection.execute("SELECT id, title FROM documents")
+    }
+    by_doc: dict[int, list[sqlite3.Row]] = {}
+    weight: dict[int, int] = {}
+    for section in store.connection.execute(
+        "SELECT s.* FROM sections s ORDER BY s.document_id, s.ordinal"
+    ):
+        heading = (section["title"] or "").strip().lower()
+        if heading in furniture:
+            continue
+        if not panel_sentences((section["text"] or "").strip()):
+            continue
+        doc_id = int(section["document_id"])
+        by_doc.setdefault(doc_id, []).append(section)
+        weight[doc_id] = weight.get(doc_id, 0) + int(section["word_count"] or 0)
+    ordered = sorted(by_doc, key=lambda d: (weight[d], d), reverse=True)
+    return (
+        [titles[d] for d in ordered],
+        {titles[d]: by_doc[d] for d in ordered},
+    )
+
+
+def _section_passage(section: sqlite3.Row) -> dict[str, Any]:
+    """A section row as a passage: the row's own prose, its own time rank."""
+    title = (section["title"] or "").strip()
+    return {
+        "kind": "section",
+        "id": int(section["id"]),
+        "passage": title,
+        "title": title,
+        "text": (section["text"] or "").strip(),
+    }
+
+
+def lead_passage(store: FactStore, page: str) -> dict[str, Any] | None:
+    """The page lead as a passage (R2, R7), or None when it holds no
+    panel-eligible sentence -- the counted `lead_dropped` class.
+
+    The lead is stored raw wikitext, so the test strips first; the strip is a
+    no-op on a clean lead and the test is the panel's, not a word floor.
+    """
+    from scriptengine.ingest.wikitext import strip_markup
+
+    row = store.connection.execute(
+        "SELECT lead FROM documents WHERE title = ? COLLATE NOCASE", (page,)
+    ).fetchone()
+    text = strip_markup((row["lead"] if row else "") or "").strip()
+    if not panel_sentences(text):
+        return None
+    return {
+        "kind": "lead",
+        "id": None,
+        "passage": "lead",
+        "title": "",
+        "text": text,
+    }
+
+
+def narrative_fact_keys(store: FactStore) -> list[str]:
+    """The wiki's declared narrative fact keys (design 1): fnmatch patterns,
+    case-insensitive, in the overrides only -- the keys whose values are
+    prose the extractor reads (a `history` beat, a `synopsis*` instalment)."""
+    return [
+        str(pattern).strip()
+        for pattern in _events_overrides(store).get("narrative_fact_keys") or []
+        if str(pattern).strip()
+    ]
+
+
+def _fact_key_order(key: str) -> tuple[str, int]:
+    """`synopsis2` < `synopsis10`: the trailing numeral orders, not sorts."""
+    match = re.match(r"^(.*?)(\d+)$", (key or "").strip().lower())
+    if match:
+        return match.group(1), int(match.group(2))
+    return (key or "").strip().lower(), 0
+
+
+def fact_passages(
+    store: FactStore, page: str
+) -> list[dict[str, Any]]:
+    """The page's declared narrative fact values as passages (design 1).
+
+    Only the keys the wiki declared read: the values of `history`, of
+    `synopsis*`, in the in-value order. A value holding no panel-eligible
+    sentence is junk (a `synopsis    header` residue) and stays out -- the
+    counted `fact_key_dropped` class, accounted in the dry-run per key.
+    """
+    import fnmatch
+
+    from scriptengine.ingest.wikitext import strip_markup
+
+    patterns = narrative_fact_keys(store)
+    if not patterns:
+        return []
+    rows = store.connection.execute(
+        "SELECT f.key AS key, f.value AS value FROM facts f"
+        " JOIN nodes n ON n.id = f.node_id"
+        " JOIN documents d ON d.id = n.document_id"
+        " WHERE d.title = ? COLLATE NOCASE",
+        (page,),
+    ).fetchall()
+    matches: dict[str, list[str]] = {}
+    for row in rows:
+        key = (row["key"] or "").strip()
+        if not any(fnmatch.fnmatch(key.lower(), p) for p in patterns):
+            continue
+        matches.setdefault(key, []).append(row["value"] or "")
+    out: list[dict[str, Any]] = []
+    for key in sorted(matches, key=_fact_key_order):
+        for value in matches[key]:
+            text = strip_markup(value).strip()
+            if not panel_sentences(text):
+                continue
+            out.append(
+                {
+                    "kind": "fact",
+                    "id": None,
+                    "passage": f"fact:{key}",
+                    "title": key,
+                    "text": text,
+                }
+            )
+    return out
+
+
+def build_passages(
+    store: FactStore,
+    page: str,
+    sections: list[sqlite3.Row],
+    scope: str,
+    axis_rank: float | None,
+) -> list[dict[str, Any]]:
+    """The passages one page is read over (R1, R2, R7).
+
+    `placement` and `corpus` read their sections exactly as today. `all`
+    reads the union -- the page's prose sections, its lead and its declared
+    narrative fact values -- and the lead / fact passages carry the page's
+    store-axis rank (R3) where the page sits on the axis, else the in-value
+    ordinal: the lead opens the page, the fact values follow in in-value
+    order.
+    """
+    passages = [_section_passage(section) for section in sections]
+    if scope != "all":
+        return passages
+    ordinal = 0.0
+    lead = lead_passage(store, page)
+    if lead is not None:
+        lead["rank"] = axis_rank if axis_rank is not None else ordinal
+        passages.append(lead)
+        ordinal += 1.0
+    for fact in fact_passages(store, page):
+        fact["rank"] = axis_rank if axis_rank is not None else ordinal
+        passages.append(fact)
+        ordinal += 1.0
+    return passages
+
+
+def _store_axis_ranks(store: FactStore) -> dict[str, float]:
+    """The store time axis' page -> rank (R3): the fallback every lead and
+    fact passage inherits. A wiki that declares no axis sees `{}`, which is
+    the rev-1 in-value-ordinal rule standing alone."""
+    from scriptengine.ingest.timeaxis import store_time_axis
+
+    ranks: dict[str, float] = {}
+    for page, axis in store_time_axis(store).pages.items():
+        if axis.index is not None:
+            ranks[page] = float(axis.index)
+    return ranks
 
 
 # Section titles that narrate what happened, in story order. The complement of
@@ -1011,30 +1578,69 @@ def extract_from_sections(
     client: LLMClient,
     series: str,
     page: str,
-    sections: list[sqlite3.Row],
-    known: dict[str, tuple[str, int]],
-) -> list[dict[str, Any]]:
-    """Events the page states, over its prose sections.
+    passages: list[dict[str, Any]],
+    known: dict[str, list[tuple[int, str, str | None]]],
+    page_real: str | None = None,
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Events the page states, over its read passages.
 
-    `known` is the set of names this wiki has a resolved node for, resolved by
-    the caller. Everything here is prompt-building, network and string work,
-    so it is safe on a worker thread.
+    A passage is a wiki section (``kind="section"``, the row's own prose),
+    the page lead (``kind="lead"``), or a declared narrative fact value
+    (``kind="fact"``, ``passage="fact:<key>"``). Section passages carry the
+    section's own ``time_rank``; lead and fact passages carry the page's
+    axis rank, or their in-value ordinal where the page sits off the axis.
 
-    `time_rank` is not the model's: the section's place on the page's axis is
-    looked up from its heading and position, and a number the model supplies
-    is a number nobody verified.
+    `known` maps a folded name to its candidate nodes (P1); `page_real` is
+    the page's reality, the signal that picks the variant. A candidate no
+    signal breaks is stored as an explicitly ambiguous participant -- the
+    node goes NULL and the candidate list goes in the name field -- so the
+    receipt can separate "the wiki has no such entity" from "the wiki has
+    several and none is determined".
+
+    `known` is the set of names this wiki has resolved nodes for, resolved
+    by the caller. Everything here is prompt-building, network and string
+    work, so it is safe on a worker thread.
+
+    The second return is the page's P3 accounting: candidates proposed,
+    kept, and dropped by named reason, so a zero-event page is a number
+    with a cause, not a silence.
     """
-    ranks = section_time_ranks(sections)
+    sections = [p for p in passages if p["kind"] == "section"]
+    ranks = section_time_ranks(
+        [
+            {**p, "id": p["id"]}
+            for p in sections
+        ]
+    ) if sections else {}
+    for p in passages:
+        if p["kind"] == "section":
+            p["rank"] = ranks[int(p["id"])]
     found: list[dict[str, Any]] = []
-    seen: set[tuple[str, str, str]] = set()
-    for section in sections:
-        section_id = int(section["id"])
-        text = (section["text"] or "").strip()
+    seen: set[tuple[str, object, str, object]] = set()
+    stats: dict[str, Any] = {
+        "proposed": 0,
+        "kept": 0,
+        "ambiguous": 0,
+        "cross_reality": 0,
+        "dropped": {
+            "incomplete": 0,
+            "verb": 0,
+            "unknown_participant": 0,
+            "unquoted": 0,
+            "dedup": 0,
+        },
+    }
+    for passage in passages:
+        label = passage["passage"]
+        section_id = int(passage["id"]) if passage["kind"] == "section" else None
+        text = (passage["text"] or "").strip()
+        if not text:
+            continue
         for window in _windows(text):
             prompt = _TEMPLATE.format(
                 series=series,
                 page=page,
-                section=(section["title"] or "").strip(),
+                section=(passage["title"] or "").strip(),
                 passage=window,
                 verbs=", ".join(sorted(EVENTIVE_VERBS)),
             )
@@ -1050,14 +1656,20 @@ def extract_from_sections(
                 verb = str(entry.get("verb") or "").strip().lower()
                 object_ = str(entry.get("object") or "").strip()
                 quote = str(entry.get("quote") or "").strip()
-                if not subject or not object_ or verb not in EVENTIVE_VERBS:
+                stats["proposed"] += 1
+                if not subject or not object_:
+                    stats["dropped"]["incomplete"] += 1
+                    continue
+                if verb not in EVENTIVE_VERBS:
+                    stats["dropped"]["verb"] += 1
                     continue
                 # Both ends have to be somebody or somewhere this wiki actually
                 # has a page for, or a model supplies a plausible name from the
                 # series it has read and nothing in the row shows it.
-                subject_resolved = known.get(subject.lower())
-                object_resolved = known.get(object_.lower())
-                if not subject_resolved or not object_resolved:
+                sub_pick = pick_candidate(known.get(subject.lower(), []), page_real)
+                obj_pick = pick_candidate(known.get(object_.lower(), []), page_real)
+                if sub_pick is None or obj_pick is None:
+                    stats["dropped"]["unknown_participant"] += 1
                     logger.info(
                         "unknown participant %r/%r for %s",
                         subject, object_, page,
@@ -1066,28 +1678,59 @@ def extract_from_sections(
                 # Self-directed events are real: Toji kills himself, Mahito
                 # awakens. The gate allows subject == object and says so.
                 if not _quoted_in(quote, text):
+                    stats["dropped"]["unquoted"] += 1
                     logger.info("unquoted %s->%s for %s", verb, object_, page)
                     continue
+
+                def filed(pick):
+                    # (node_id_or_None, name, candidate_list_or_None)
+                    if isinstance(pick, dict):
+                        names = " | ".join(sorted(c[1] for c in pick["ambiguous"]))
+                        return None, names
+                    return pick[0], pick[1]
+
+                sub_node, sub_name = filed(sub_pick)
+                obj_node, obj_name = filed(obj_pick)
+                ambiguous = (
+                    isinstance(sub_pick, dict) or isinstance(obj_pick, dict)
+                )
+                if ambiguous:
+                    stats["ambiguous"] += 1
+                if (
+                    not ambiguous
+                    and page_real
+                    and sub_pick[2] is not None
+                    and sub_pick[2] != page_real
+                    and obj_pick[2] is not None
+                    and obj_pick[2] != page_real
+                ):
+                    stats["cross_reality"] += 1
                 key = (
-                    subject_resolved[0].lower(), verb, object_resolved[0].lower()
+                    label,
+                    (sub_node if sub_node is not None else sub_name),
+                    verb,
+                    (obj_node if obj_node is not None else obj_name),
                 )
                 if key in seen:
+                    stats["dropped"]["dedup"] += 1
                     continue
                 seen.add(key)
+                stats["kept"] += 1
                 found.append(
                     {
-                        "subject_node": subject_resolved[1],
-                        "subject_name": subject_resolved[0],
-                        "object_node": object_resolved[1],
-                        "object_name": object_resolved[0],
+                        "subject_node": sub_node,
+                        "subject_name": sub_name,
+                        "object_node": obj_node,
+                        "object_name": obj_name,
                         "verb": verb,
                         "section_id": section_id,
                         "quote": quote,
                         "temporal": True,
-                        "time_rank": ranks[section_id],
+                        "time_rank": passage["rank"],
+                        "passage": label,
                     }
                 )
-    return found
+    return found, stats
 
 
 def _effort_body() -> dict[str, str] | None:
@@ -1162,6 +1805,7 @@ def extract_events_series(
 
     report = {
         "considered": 0, "extracted": 0, "cached": 0, "failed": 0, "events": 0,
+        "dedup_dropped": 0,
     }
     with FactStore(paths.facts_db) as store:
         store.ensure_events()
@@ -1196,13 +1840,14 @@ def extract_events_series(
             todo.append((page, revid))
 
         def store_result(page: str, revid: str, found: list[dict[str, Any]]):
-            stored = store.save_events(
+            stored, dedup_dropped = store.save_events(
                 page, found,
                 revid=int(revid) if revid.isdigit() else None,
                 prompt_version=PROMPT_VERSION, model=settings.llm_model,
             )
             report["extracted"] += 1
             report["events"] += stored
+            report["dedup_dropped"] += dedup_dropped
             if progress is not None:
                 progress(page, stored)
 
