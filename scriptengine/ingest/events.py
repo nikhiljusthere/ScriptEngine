@@ -714,89 +714,87 @@ def parse_events_response(text: str) -> list[dict[str, str]]:
 NON_PARTICIPANT_TYPES = PLACEMENT_TYPES | {"chapter", "episode"}
 
 
-def known_participants(store: FactStore) -> dict[str, tuple[str, int]]:
-    """Every name this wiki has a resolved node for, folded, to (name, id).
-
-    Events name places and things as well as people -- `arrived in Shibuya`,
-    `killed with Playful Cloud` -- so the set is all resolved nodes and their
-    aliases, not characters alone as `relations.known_names` keeps it. Only
-    resolved nodes: the unresolved ones are link targets the wiki never gave a
-    page, and placing an event on a guess is the failure the guard exists to
-    stop. A page title always wins over an alias pointing elsewhere. And a node
-    whose page is a container of events is left out: the set names
-    participants, not the pages that hold them.
-
-    Read once on the thread that owns the connection and handed to the workers
-    as a plain dict, for the reason `relations.known_names` gives: a
-    connection belongs to one thread.
-    """
-    # The wiki's own placement types are containers too (see placement_types).
-    containers = NON_PARTICIPANT_TYPES | placement_types(store)
-    placeholders = ",".join("?" * len(containers))
-    # The ids of resolved nodes whose page is a container, to be skipped.
-    container_ids = {
-        int(row["id"])
-        for row in store.connection.execute(
-            f"SELECT n.id FROM nodes n"
-            f" JOIN documents d ON d.id = n.document_id"
-            f" WHERE n.is_resolved = 1 AND d.page_type IN ({placeholders})",
-            tuple(sorted(containers)),
-        )
-    }
-    canon: dict[str, tuple[str, int]] = {}
-    for row in store.connection.execute(
-        "SELECT id, name FROM nodes WHERE is_resolved = 1"
-    ):
-        name = (row["name"] or "").strip()
-        if name and int(row["id"]) not in container_ids:
-            canon[name.lower()] = (name, int(row["id"]))
-    for row in store.connection.execute(
-        "SELECT a.alias, n.id, n.name FROM aliases a"
-        " JOIN nodes n ON n.id = a.node_id WHERE n.is_resolved = 1"
-    ):
-        if int(row["id"]) in container_ids:
-            continue
-        alias = (row["alias"] or "").strip().lower()
-        target = (row["name"] or "").strip()
-        # A page title always wins over an alias pointing elsewhere.
-        if alias and target and alias not in canon:
-            canon[alias] = (target, int(row["id"]))
-    return canon
-
-
 # P1 (2026-09-28 architect finding): a bare name can name several variants
-# (`Conan` -> Conan (Earth-16356), (Earth-20007), ...) and a disambiguation
-# node is a container of names, not a participant. The resolver therefore
-# works on candidate sets, and a passage page's reality (its `reality` fact,
-# its title suffix, or the wiki's declared default) picks the variant. An
-# ambiguity no signal breaks is stored as an explicitly ambiguous
-# participant, never pinned to a guess and never dropped.
+# of the same character (a wiki's reality-suffixed titles, one name per
+# world) and a disambiguation node is a container of names, not a
+# participant. The resolver therefore works on candidate sets, and a
+# passage page's reality (its declared reality fact, its title's declared
+# pattern, or the wiki's declared default) picks the variant. An ambiguity
+# no signal breaks is stored as an explicitly ambiguous participant, never
+# pinned to a guess and never dropped. The naming convention itself is the
+# wiki's, declared in its overrides (R8) -- this file carries the generic
+# resolver only.
 
-_REALITY_SUFFIX = re.compile(r"\((?:[Ee]arth|[Tt]ierra)-?([\w-]+)\)\s*$")
+
+def reality_config(store: FactStore) -> dict[str, Any]:
+    """The store's declared reality rules (R8): its `events: reality:` block.
+
+    The only place a wiki's reality-naming convention may live:
+    `title_pattern` (a title-suffix regex, its one capture group the
+    reality), `value_patterns` (regexes tried in order against a fact
+    value, the first match's capture group wins) and `fact_key` (the fact
+    that carries the value, default `reality`). A wiki that declares
+    nothing gets no reality partitioning -- no title match, no fact read:
+    a wiki whose convention this file does not know stays unpartitioned
+    instead of mis-partitioned.
+    """
+    block = _events_overrides(store).get("reality")
+    if not isinstance(block, dict):
+        return {}
+    title = str(block.get("title_pattern") or "").strip()
+    return {
+        "title_pattern": re.compile(title) if title else None,
+        "value_patterns": [
+            re.compile(str(pattern).strip())
+            for pattern in block.get("value_patterns") or []
+            if str(pattern).strip()
+        ],
+        "fact_key": str(block.get("fact_key") or "reality").strip(),
+    }
 
 
-def normalize_reality(value: str | None) -> str | None:
-    """`Earth-616`, `Tierra-616`, `616` -> `616`; unknown -> None."""
+def normalize_reality(
+    value: str | None, cfg: dict[str, Any] | None = None
+) -> str | None:
+    """A declared reality value, normalized by the wiki's own rules (R8).
+
+    The wiki's `value_patterns` are tried in order (the first match's
+    capture group is the reality), else the value stands as-is; the result
+    is folded for comparison, and a value that names nothing (`unknown`,
+    `unspecified`, empty) is None.
+    """
     if value is None:
         return None
-    v = str(value).strip().lower()
-    if not v or v in ("unknown", "unspecified"):
+    v = str(value).strip()
+    if not v or v.lower() in ("unknown", "unspecified"):
         return None
-    for prefix in ("earth-", "tierra-"):
-        if v.startswith(prefix):
-            v = v[len(prefix):]
+    for pattern in (cfg or {}).get("value_patterns") or []:
+        match = pattern.search(v)
+        if match:
+            v = match.group(1).strip()
             break
-    return v or None
+    if not v or v.lower() in ("unknown", "unspecified"):
+        return None
+    return v.casefold()
 
 
-def _node_reality(name: str, fact: str | None) -> str | None:
-    """A variant's reality: the title suffix, else its `reality` fact."""
-    match = _REALITY_SUFFIX.search((name or "").strip())
-    if match:
-        normalized = normalize_reality(match.group(1))
-        if normalized is not None:
-            return normalized
-    return normalize_reality(fact)
+def _node_reality(
+    name: str, fact: str | None, cfg: dict[str, Any] | None
+) -> str | None:
+    """A variant's reality: its title's declared pattern, else its declared
+    reality fact. A wiki that declares no reality rules gets None (R8)."""
+    cfg = cfg or {}
+    title_pattern = cfg.get("title_pattern")
+    if title_pattern:
+        match = title_pattern.search((name or "").strip())
+        if match:
+            normalized = normalize_reality(match.group(1), cfg)
+            if normalized is not None:
+                return normalized
+    fact_key = cfg.get("fact_key")
+    if fact_key and fact is not None:
+        return normalize_reality(fact, cfg)
+    return None
 
 
 def participant_candidates(
@@ -814,17 +812,27 @@ def participant_candidates(
             tuple(sorted(containers)),
         )
     }
-    reality: dict[int, str | None] = {
-        int(row["node_id"]): row["value"]
-        for row in store.connection.execute(
-            "SELECT node_id, value FROM facts WHERE LOWER(key) = 'reality'"
-        )
-    }
+    cfg = reality_config(store)
+    reality: dict[int, str | None] = {}
+    if cfg.get("fact_key"):
+        # A wiki that declares no reality rules reads no reality fact: the
+        # partitioning is the wiki's declaration, not this file's (R8).
+        reality = {
+            int(row["node_id"]): row["value"]
+            for row in store.connection.execute(
+                "SELECT node_id, value FROM facts WHERE LOWER(key) = ?",
+                (str(cfg["fact_key"]).lower(),),
+            )
+        }
 
     def candidate(node_id: int, name: str) -> tuple[int, str, str | None] | None:
         if int(node_id) in container_ids or not (name or "").strip():
             return None
-        return (int(node_id), name.strip(), _node_reality(name, reality.get(int(node_id))))
+        return (
+            int(node_id),
+            name.strip(),
+            _node_reality(name, reality.get(int(node_id)), cfg),
+        )
 
     cands: dict[str, list[tuple[int, str, str | None]]] = {}
 
@@ -863,25 +871,48 @@ def participant_candidates(
     return cands
 
 
+def _page_reality(
+    store: FactStore, page: str, default: str | None, cfg: dict[str, Any]
+) -> str | None:
+    """The page-reality body, given a preloaded reality config (R8)."""
+    fact_key = cfg.get("fact_key")
+    row = None
+    if fact_key:
+        row = store.connection.execute(
+            "SELECT f.value FROM facts f"
+            " JOIN nodes n ON n.id = f.node_id"
+            " WHERE n.name = ? COLLATE NOCASE AND LOWER(f.key) = ?"
+            " LIMIT 1",
+            (page, str(fact_key).lower()),
+        ).fetchone()
+    if row is not None:
+        normalized = normalize_reality(row["value"], cfg)
+        if normalized is not None:
+            return normalized
+    title_pattern = cfg.get("title_pattern")
+    if title_pattern:
+        match = title_pattern.search((page or "").strip())
+        if match:
+            normalized = normalize_reality(match.group(1), cfg)
+            if normalized is not None:
+                return normalized
+    return normalize_reality(default, cfg)
+
+
 def page_reality(
     store: FactStore, page: str, default: str | None = None
 ) -> str | None:
-    """The passage page's reality: its `reality` fact, its title suffix, else
-    the wiki's declared default (`events: default_reality:` in the overrides,
-    the only place a wiki-level rule may live)."""
-    row = store.connection.execute(
-        "SELECT f.value FROM facts f"
-        " JOIN nodes n ON n.id = f.node_id"
-        " WHERE n.name = ? COLLATE NOCASE AND LOWER(f.key) = 'reality'"
-        " LIMIT 1",
-        (page,),
-    ).fetchone()
-    if row is not None and normalize_reality(row["value"]) is not None:
-        return normalize_reality(row["value"])
-    match = _REALITY_SUFFIX.search((page or "").strip())
-    if match:
-        return normalize_reality(match.group(1))
-    return normalize_reality(default)
+    """The passage page's reality: its declared reality fact, its title's
+    declared pattern, else the wiki's declared default (`events:
+    default_reality:` in the overrides, the only place a wiki-level rule may
+    live). A wiki that declares no reality rules gets None (R8).
+
+    `default` may be preloaded by the caller (`_wiki_default_reality`, once
+    per run); absent, it is read here -- the batch path passes it, so a
+    per-page call pays the override read only on its own."""
+    if default is None:
+        default = _wiki_default_reality(store)
+    return _page_reality(store, page, default, reality_config(store))
 
 
 def page_realities(
@@ -889,9 +920,12 @@ def page_realities(
 ) -> dict[str, str | None]:
     """`page_reality` for a queue, in one pass (the connection belongs to the
     calling thread; the result travels to workers as a plain dict)."""
+    cfg = reality_config(store)
+    if default is None:
+        default = _wiki_default_reality(store)
     out: dict[str, str | None] = {}
     for page in pages:
-        out[page] = page_reality(store, page, default)
+        out[page] = _page_reality(store, page, default, cfg)
     return out
 
 
@@ -938,12 +972,22 @@ def re_resolve_participants(store: FactStore) -> dict:
     disambiguation node, rows cross-reality, rows filed ambiguous.
     """
     cands = participant_candidates(store)
+    cfg = reality_config(store)
     default = _wiki_default_reality(store)
     titles = {
         row["doc_title"]
         for row in store.connection.execute("SELECT DISTINCT doc_title FROM events")
     }
     realities = page_realities(store, sorted(titles), default)
+    node_facts: dict[int, str | None] = {}
+    if cfg.get("fact_key"):
+        node_facts = {
+            int(row["node_id"]): row["value"]
+            for row in store.connection.execute(
+                "SELECT node_id, value FROM facts WHERE LOWER(key) = ?",
+                (str(cfg["fact_key"]).lower(),),
+            )
+        }
 
     def page_real(doc_title: str) -> str | None:
         return realities.get(doc_title)
@@ -962,11 +1006,13 @@ def re_resolve_participants(store: FactStore) -> dict:
     def crossed(node_id: int | None, name: str | None, doc_title: str) -> bool:
         if node_id is None:
             return False
-        real = _node_reality(name or "", None)
+        real = _node_reality(
+            name or "", node_facts.get(int(node_id)), cfg
+        )
         if real is None:
             return False
-        page_real = page_real(doc_title)
-        return page_real is not None and real != page_real
+        page_real_ = page_real(doc_title)
+        return page_real_ is not None and real != page_real_
 
     def tally() -> dict:
         rows = store.connection.execute(
@@ -1253,6 +1299,7 @@ def _section_passage(section: sqlite3.Row) -> dict[str, Any]:
     return {
         "kind": "section",
         "id": int(section["id"]),
+        "ordinal": int(section["ordinal"]),
         "passage": title,
         "title": title,
         "text": (section["text"] or "").strip(),
@@ -1292,6 +1339,61 @@ def narrative_fact_keys(store: FactStore) -> list[str]:
         for pattern in _events_overrides(store).get("narrative_fact_keys") or []
         if str(pattern).strip()
     ]
+
+
+def fact_key_census(
+    store: FactStore, pages: set[str] | None
+) -> list[dict[str, Any]]:
+    """The per-key census of the declared narrative fact keys (R9, 100% scope).
+
+    One row per concrete key the wiki's patterns reach: how many fact values
+    the key carries in the store (`total`), how many of those hold a
+    panel-eligible sentence (`prose`), and how many of those sit on a page of
+    the queue (`queue`, `None` counts the whole store). The dry-run reports
+    it, so a declared key the corpus no longer backs, or prose a scope cannot
+    reach, is a number the council can rule on -- never a silence.
+    """
+    import fnmatch
+
+    from scriptengine.ingest.wikitext import strip_markup
+
+    patterns = narrative_fact_keys(store)
+    if not patterns:
+        return []
+    distinct = {
+        row["key"]
+        for row in store.connection.execute(
+            "SELECT DISTINCT LOWER(key) AS key FROM facts"
+        )
+    }
+    out: list[dict[str, Any]] = []
+    for key in sorted(distinct):
+        if not any(fnmatch.fnmatch(key, p) for p in patterns):
+            continue
+        rows = store.connection.execute(
+            "SELECT f.value AS value, d.title AS title FROM facts f"
+            " JOIN nodes n ON n.id = f.node_id"
+            " JOIN documents d ON d.id = n.document_id"
+            " WHERE LOWER(f.key) = ?",
+            (key,),
+        ).fetchall()
+        prose = 0
+        in_queue = 0
+        for row in rows:
+            if not panel_sentences(strip_markup(row["value"] or "")):
+                continue
+            prose += 1
+            if pages is None or row["title"] in pages:
+                in_queue += 1
+        out.append(
+            {
+                "key": key,
+                "total": len(rows),
+                "prose": prose,
+                "queue": in_queue,
+            }
+        )
+    return out
 
 
 def _fact_key_order(key: str) -> tuple[str, int]:
@@ -1806,12 +1908,25 @@ def extract_events_series(
     report = {
         "considered": 0, "extracted": 0, "cached": 0, "failed": 0, "events": 0,
         "dedup_dropped": 0,
+        # P3: the rejection accounting, so a zero-event page is a number with
+        # a cause, not a silence.
+        "proposed": 0, "kept": 0, "ambiguous": 0, "cross_reality": 0,
+        "dropped": {
+            "incomplete": 0, "verb": 0, "unknown_participant": 0,
+            "unquoted": 0, "dedup": 0,
+        },
     }
     with FactStore(paths.facts_db) as store:
         store.ensure_events()
-        # Resolved here, on the thread that owns the connection.
-        known = known_participants(store)
+        # Resolved here, on the thread that owns the connection, and handed to
+        # the workers as plain dicts: the candidate set (P1), the page reality
+        # that picks the variant, and the store-axis rank the lead and fact
+        # passages inherit (R3).
+        known = participant_candidates(store)
+        default_real = _wiki_default_reality(store)
         pages, by_page = scope_plan(store, scope)
+        real_by_page = page_realities(store, pages, default_real)
+        axis_ranks = _store_axis_ranks(store)
         if page_filter is not None:
             allowed = set(page_filter)
             pages = [page for page in pages if page in allowed]
@@ -1839,7 +1954,10 @@ def extract_events_series(
                 continue
             todo.append((page, revid))
 
-        def store_result(page: str, revid: str, found: list[dict[str, Any]]):
+        def store_result(
+            page: str, revid: str, found: list[dict[str, Any]],
+            stats: dict[str, Any],
+        ):
             stored, dedup_dropped = store.save_events(
                 page, found,
                 revid=int(revid) if revid.isdigit() else None,
@@ -1848,15 +1966,25 @@ def extract_events_series(
             report["extracted"] += 1
             report["events"] += stored
             report["dedup_dropped"] += dedup_dropped
+            report["proposed"] += stats["proposed"]
+            report["kept"] += stats["kept"]
+            report["ambiguous"] += stats["ambiguous"]
+            report["cross_reality"] += stats["cross_reality"]
+            for key, n in stats["dropped"].items():
+                report["dropped"][key] += n
             if progress is not None:
                 progress(page, stored)
 
         if workers <= 1:
             for page, revid in todo:
                 try:
-                    found = extract_from_sections(
+                    passages = build_passages(
+                        store, page, by_page[page], scope,
+                        axis_ranks.get(page),
+                    )
+                    found, stats = extract_from_sections(
                         client, paths.name, page,
-                        by_page[page], known,
+                        passages, known, real_by_page.get(page),
                     )
                 except LLMUnavailable:
                     raise
@@ -1864,20 +1992,30 @@ def extract_events_series(
                     logger.warning("Events for %r failed: %s", page, error)
                     report["failed"] += 1
                     continue
-                store_result(page, revid, found)
+                store_result(page, revid, found, stats)
             return report
 
         for start in range(0, len(todo), workers * 4):
             chunk = todo[start : start + workers * 4]
+            # Built here, on the thread that owns the connection: the lead and
+            # fact passages read the store, and a connection belongs to one
+            # thread. The plain passage dicts travel to the workers.
             work = [
-                (page, revid, by_page[page])
+                (
+                    page, revid,
+                    build_passages(
+                        store, page, by_page[page], scope,
+                        axis_ranks.get(page),
+                    ),
+                )
                 for page, revid in chunk
             ]
 
             def run(job):
-                page, _, sections = job
+                page, _, passages = job
                 return extract_from_sections(
-                    client, paths.name, page, sections, known,
+                    client, paths.name, page, passages, known,
+                    real_by_page.get(page),
                 )
 
             with ThreadPoolExecutor(max_workers=workers) as pool:
@@ -1892,5 +2030,6 @@ def extract_events_series(
                         )
                         report["failed"] += 1
                         continue
-                    store_result(page, revid, outcome)
+                    found, stats = outcome
+                    store_result(page, revid, found, stats)
     return report

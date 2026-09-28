@@ -181,3 +181,32 @@ roster_route_words: []
 # default placement set (arc/saga/event/battle/story_arcs) does not read.
 events:
   placement_types: [story_arc]
+  # R8 (2026-09-28 architect finding): the wiki's reality-naming convention,
+  # declared here instead of hard-coded in the engine. The engine reads this
+  # block (`reality_config`); a wiki that declares nothing gets no reality
+  # partitioning. The `value_patterns` fold `Earth-616` / `Tierra-616` /
+  # `616` to one key, the way the values on this wiki actually mix.
+  reality:
+    title_pattern: '\((?:[Ee]arth|[Tt]ierra)-?([\w-]+)\)\s*$'
+    value_patterns:
+      - '(?i)^(?:earth|tierra)-?(.+)$'
+    fact_key: reality
+  # R9 (2026-09-28 architect finding, 100% scope): the wiki's long-prose fact
+  # keys, measured 2026-09-28 against the store (rows / total chars):
+  # solicit 33,529 / 13.0M, powers 14,817 / 6.7M, abilities 7,319 / 1.4M,
+  # overview 4,119 / 1.6M, personality 934 / 0.57M, professionalhistory
+  # 896 / 0.47M, properties 760 / 0.58M, plot 227 / 0.78M. Under the owner's
+  # 100% definition these are lines the extractor reads, never silence: all
+  # declared. `powers`/`abilities` are the abilities dimension (plan C5) and
+  # move to that pass under a council sequencing ruling -- declared here in
+  # the meantime, so nothing is dropped. The dry-run's per-key census
+  # (`fact_key_census`) reports covered/total for each of these.
+  narrative_fact_keys:
+    - solicit
+    - powers
+    - abilities
+    - overview
+    - personality
+    - professionalhistory
+    - properties
+    - plot

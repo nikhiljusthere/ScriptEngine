@@ -564,9 +564,26 @@ class FactStore:
                         and row["revid"] != doc_revid:
                     stats["stale"] += 1
                     continue
-                new_subject = node_key.get((row["subject_name"] or "").lower())
-                new_object = node_key.get((row["object_name"] or "").lower())
-                if new_subject is None or new_object is None:
+                # An ambiguous row (P1) holds a NULL node and its candidate list in the
+                # name: there is no node to re-key, so it survives the rebuild
+                # as filed. A row that did hold a node is orphaned only when
+                # that node's name no longer resolves.
+                if row["subject_node"] is None:
+                    new_subject = None
+                else:
+                    new_subject = node_key.get(
+                        (row["subject_name"] or "").lower()
+                    )
+                if row["object_node"] is None:
+                    new_object = None
+                else:
+                    new_object = node_key.get(
+                        (row["object_name"] or "").lower()
+                    )
+                if new_subject is None and row["subject_node"] is not None:
+                    stats["orphaned"] += 1
+                    continue
+                if new_object is None and row["object_node"] is not None:
                     stats["orphaned"] += 1
                     continue
                 if not quoted_in(row["quote"] or "", source):
@@ -2028,8 +2045,14 @@ class FactStore:
         dedup_dropped = 0
         rows = []
         for row in found:
-            if not (row.get("subject_node") and row.get("object_node")
-                    and row.get("verb")):
+            # An ambiguous participant holds a NULL node and its candidate
+            # list in the name field (P1), so an end is filed when it carries
+            # a node OR a name, never neither.
+            if not row.get("verb"):
+                continue
+            if not (row.get("subject_node") or row.get("subject_name")):
+                continue
+            if not (row.get("object_node") or row.get("object_name")):
                 continue
             doc, ordinal, passage = durable_of(row)
             quote = str(row.get("quote") or "").strip()[:400]
@@ -2041,10 +2064,10 @@ class FactStore:
             seen.add(key)
             section_id = row.get("section_id")
             rows.append((
-                int(row["subject_node"]),
-                str(row["subject_name"]).strip(),
-                int(row["object_node"]),
-                str(row["object_name"]).strip(),
+                row.get("subject_node"),
+                str(row.get("subject_name") or "").strip(),
+                row.get("object_node"),
+                str(row.get("object_name") or "").strip(),
                 str(row["verb"]).strip().lower(),
                 arc_key,
                 int(section_id) if section_id else None,
