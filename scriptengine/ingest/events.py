@@ -1805,8 +1805,11 @@ def scope_plan(
 
     `placement` reads the arc/event/battle set, every extractable section of
     it; `corpus` reads the corpus rule only (the narrative sections that name
-    two or more of the wiki's characters); `all` reads the union, and a page
-    both rules cover reads the union of its sections, deduped.
+    two or more of the wiki's characters); `all` reads the union of the two
+    plus the R1 prose scope -- every prose section of every page type,
+    heading-agnostic (R1 applies to page types as well as headings: an
+    episode, location, organization or character page states story too) --
+    and a page several rules cover reads the union of its sections, deduped.
 
     The union exists because the rules can be disjoint: on JJK no placement
     section satisfies the corpus rule, so a corpus-only re-extract would
@@ -1815,6 +1818,7 @@ def scope_plan(
     """
     placement = placement_pages(store)
     corpus = corpus_scope(store) if scope in ("corpus", "all") else {}
+    prose_pages, prose_by_page = prose_scope(store) if scope == "all" else ([], {})
     if scope == "placement":
         pages = list(placement)
     elif scope == "corpus":
@@ -1822,19 +1826,32 @@ def scope_plan(
     else:
         seen = set(placement)
         pages = list(placement) + [p for p in corpus if p not in seen]
+        seen.update(pages)
+        pages += [p for p in prose_pages if p not in seen]
 
     base_pages = set(placement) if scope in ("placement", "all") else set()
     by_page: dict[str, list[sqlite3.Row]] = {}
     for page in pages:
-        base = extractable_sections(store, page) if page in base_pages else []
-        extra = list(corpus.get(page, [])) if scope in ("corpus", "all") else []
-        if not base:
-            by_page[page] = extra
-        elif not extra:
-            by_page[page] = base
-        else:
-            seen = {s["id"] for s in base}
-            by_page[page] = base + [s for s in extra if s["id"] not in seen]
+        # Order: the page's own extractable sections first, then the corpus
+        # rule, then the R1 prose sections; a section several rules name is
+        # read once (deduped by id across all three, which the old two-rule
+        # merge could not need).
+        parts: list[list[sqlite3.Row]] = []
+        if page in base_pages:
+            parts.append(extractable_sections(store, page))
+        if scope in ("corpus", "all"):
+            parts.append(list(corpus.get(page, [])))
+        if scope == "all":
+            parts.append(list(prose_by_page.get(page, [])))
+        merged: list[sqlite3.Row] = []
+        seen_ids: set[int] = set()
+        for part in parts:
+            for section in part:
+                section_id = int(section["id"])
+                if section_id not in seen_ids:
+                    seen_ids.add(section_id)
+                    merged.append(section)
+        by_page[page] = merged
     return pages, by_page
 
 
@@ -2123,8 +2140,9 @@ def extract_events_series(
     round. `corpus` reaches the rest of the story: the narrative-family
     sections that name two or more of the wiki's characters (a character's own
     Synopsis/History, a chapter's Plot Details), which is where most of what a
-    wiki says about a character actually lives. `all` is the union of the two,
-    the complete-coverage path for a `--refresh` run. `page_filter`
+    wiki says about a character actually lives. `all` is the union of the two
+    plus the R1 prose scope -- every prose section of every page type -- the
+    complete-coverage path for a `--refresh` run. `page_filter`
     intersects the scope queue with a frozen slug list (the D6
     targeted-extraction flag); `None` leaves the native path untouched.
     """

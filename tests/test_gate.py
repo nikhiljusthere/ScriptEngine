@@ -20,6 +20,7 @@ from scriptengine.ingest.events import (
     extractable_sections,
     is_narrative_heading,
     placement_pages,
+    prose_scope,
     scope_plan,
 )
 from scriptengine.stores.facts import FactStore
@@ -165,11 +166,15 @@ class TestCorpusScope:
 
 class TestScopePlan:
     def test_all_covers_both_rule_sets(self, jjk_store):
+        """`all` is placement | corpus | the R1 prose scope (steer 2026-09-28:
+        R1 applies to page types as well as headings, so a prose section of
+        any page type is in the queue)."""
         pages, _ = scope_plan(jjk_store, "all")
         placement = set(placement_pages(jjk_store))
         corpus = set(corpus_scope(jjk_store))
-        assert set(pages) == placement | corpus
-        assert len(pages) == len(placement | corpus)
+        prose_pages, _ = prose_scope(jjk_store)
+        assert set(pages) == placement | corpus | set(prose_pages)
+        assert len(pages) == len(placement | corpus | set(prose_pages))
 
     def test_all_dedupes_sections_where_both_rules_cover_a_page(self, jjk_store):
         _, by_page = scope_plan(jjk_store, "all")
