@@ -701,6 +701,7 @@ def events_extract(
     from scriptengine.ingest.events import (
         PROMPT_VERSION,
         extract_events_series,
+        fact_key_census,
         scope_plan,
     )
     from scriptengine.ingest import timeaxis as t_axis
@@ -729,6 +730,9 @@ def events_extract(
         with FactStore(paths.facts_db) as store:
             store.ensure_events()
             pages, by_page = scope_plan(store, scope)
+            # R9: census the declared narrative fact keys over the full
+            # queue, before the filter/limit below narrows the listing.
+            census = fact_key_census(store, set(pages))
             if page_filter is not None:
                 allowed = set(page_filter)
                 pages = [page for page in pages if page in allowed]
@@ -741,6 +745,20 @@ def events_extract(
                 f"[dim]{len(pages)} pages / {total} sections would be read"
                 f" (scope={scope}{note}, prompt {PROMPT_VERSION}):[/dim]"
             )
+            if census:
+                console.print(
+                    "[dim]narrative fact keys (declared in overrides):[/dim]"
+                )
+                for row in census:
+                    console.print(
+                        f"  [dim]{row['key']:22}{row['total']:>8} store /"
+                        f" {row['prose']:>8} prose / {row['queue']:>8} in queue[/dim]"
+                    )
+                if scope != "all":
+                    console.print(
+                        "[dim]fact values are read under --scope all only;"
+                        f" this run is scope={scope}.[/dim]"
+                    )
             for page in pages[:40]:
                 sections = by_page[page]
                 console.print(f"  {page}  [dim]({len(sections)} sections)[/dim]")
