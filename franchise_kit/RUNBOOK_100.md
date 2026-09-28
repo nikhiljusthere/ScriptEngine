@@ -2,21 +2,26 @@
 
 Distilled from JJK (the first 100%), CSM, and the Marvel/MCU campaign (2026-09-25..28). Every ordering rule below exists because doing it the other way cost hours or days on a real wiki.
 
-## 0. What "100%" means (owner's definition; it governs everything)
+## 0. What "100%" means: a franchise BRAIN (owner's definition, 2026-09-28; it governs everything)
 
-> "Every single line of the corpus should be **understood, recallable and traceable** by our RAG. Nothing should be left anywhere."
+> The goal is not fetching and saving data. **The goal is a brain for the franchise.** Every line of the corpus is understood, recallable and traceable, **and** the corpus holds a complete understanding of the franchise's events, characters and everything there is to know about them, enough to make **good, grounded assumptions and speculations** when asked. Example: two characters from different Earths who have never fought. Who would win? That is answered from known facts plus explicit assumptions. The fight is one case of a whole class of questions.
+
+Four layers. The first three are the foundation; the fourth is what makes it a brain.
 
 | layer | meaning | the checkable number | tool |
 |---|---|---|---|
-| **Recallable** (D5) | `/context` actually serves the line | tier-1 sweep over the pinned panel: HIT per door ÷ full panel | `span-recall --panel … --door {qa,narrative,roster}` |
-| **Understood** (D6) | the line was read by the extractor and carries a row: an event with participants + a placement, or a named standing/atemporal class | every panel sentence inside a read passage + `comprehension-gate` coverage split; D4 = 0 violations | `events-extract` dry-run coverage, `comprehension-gate` |
-| **Traceable** | the line resolves to its source (chapter / issue / episode / film) | `audit` citation coverage; gaps named by cause | `audit --series` |
+| **Recallable** (D5) | `/context` actually serves every line | tier-1 sweep over the pinned panel: HIT per door ÷ full panel | `span-recall --panel … --door {qa,narrative,roster}` |
+| **Understood** (D6) | every line read by the extractor and classified; every event with its participants resolved to the **right entity in the right reality**, placed on the timeline; every character's powers/abilities, affiliations over time, relationships, feats and defeats held as structured rows | panel-sentence coverage + `comprehension-gate` coverage split; D4 consistency = 0 violations; temporal coverage; ambiguous-participant class counted | `events-extract` dry-run, `comprehension-gate`, `relations`/`abilities` passes |
+| **Traceable** | every fact resolves to its source (chapter / issue / episode / film) | `audit` citation coverage; gaps named by cause | `audit --series` |
+| **Reasoned** (the brain) | questions the wiki never answers directly are answerable from served evidence: **comparisons and match-ups** (who wins, who is stronger, cross-reality), **hypotheticals / counterfactuals** (what if X, what would Y do), **trajectories and parallels** (how an arc echoes another), **group and state questions** (strongest member, who knew what, when). The engine serves the **complete evidence set** each side needs (powers, feats, defeats, weaknesses, relevant battles, reality and timeline context). The answering model keeps **cited facts separate from labeled assumptions**, never invents a fact, and says when evidence is insufficient | a **reasoning bank**: hypothetical/comparison questions across those classes, each with a pre-registered required-evidence set. Scored on (a) evidence served ⊇ required set, (b) zero fabricated facts, (c) assumptions stated. Plus an owner-authored blind set of the same kind | reasoning bank (Phase D), bundle evidence audit |
 
 Rules that follow:
 - **Coverage is never a budget variable.** A council may rule on order, speed and sequencing, never on leaving lines unread.
+- **The dimensions a brain reasons with are required, not optional:** powers/abilities, feats/defeats (events), relationships, affiliations over time, reality and timeline placement. The plan's C5 "consumer + failing test" rule is satisfied by the reasoning bank, which is the consumer.
 - **No triage model may drop work** (JEV was removed from extraction for exactly this).
 - **Tier 0 (chunk containment) is a precondition, not coverage.** It is true by construction.
-- **Name the door.** A forced-door D5 number and an auto-routed one are different claims.
+- **Name the door.** A forced-door D5 number and an auto-routed one are different claims. Reasoning questions need a door that serves two or more subjects' evidence together (comparison / versus).
+- **ScriptEngine serves evidence; the model reasons.** "Brain" means the served bundle is complete and cited enough that grounded reasoning is possible. The engine itself never asserts an unstated fact.
 
 ## 1. Roles
 
@@ -100,6 +105,7 @@ Legend: **[C]** Claude/architect, **[W]** worker/opencode, **[O]** owner. GPU mo
 16. [W] **Time axis:** re-derive `temporal` / `arc_index` on stored rows from the declared signals (no re-extraction). [C] verifies temporal coverage: every eventive row placed, or counted residue (no-year dates and the like; never guessed). Where the wiki gives two orders (in-universe date vs publication), the **council** picks. Marvel issues carry both `releasedate` (on-sale) and cover `month/year`.
 17. [W] `relations` / `abilities` passes. Plan C5 schedules each only with a named consumer query + a failing test, but under 100% none is left out; sequencing is the council's call.
 18. [W] Four standing gates after every engine change (§4). [W] Re-index if derived layers changed.
+18b. **[C] design → [W] builds the reasoning path:** a comparison / "versus" retrieval that serves two or more subjects' evidence together (powers, feats, defeats, weaknesses, relevant battles, reality and timeline state, each cited), with a generic mechanism and a per-wiki declaration where the wiki's vocabulary differs. Author the reasoning bank alongside: ~50–100 questions across the classes in §0 (match-ups incl. cross-reality, hypotheticals, trajectories/parallels, group/state), each with a pre-registered required-evidence set drawn from the store.
 
 ### Phase D: verification and declaration
 19. [O] **D2 blind set:** the owner authors ~24 corpus-blind questions per the named-limit classes. [W] `blind_panel.py validate` → freeze → score.
@@ -112,7 +118,8 @@ Legend: **[C]** Claude/architect, **[W]** worker/opencode, **[O]** owner. GPU mo
     **Only on the final build.** Any later index or extraction change forces a per-door ledger re-probe diff (first 100 rows: 0 verdict flips = rows stay valid, else clean-restart that door).
 21. [W] D4 consistency: `comprehension-gate` + cross-page agreement → 0 violations.
 22. [W] Miss files per door → root-cause each class → fix → re-gate → re-probe the affected rows.
-23. [W] **D5 declaration council** (records only; the council, not the plan, declares 100%).
+22b. [W] **Reasoning bank scoring** (the brain layer): evidence served ⊇ the required set, zero fabricated facts, assumptions stated. Plus the owner's blind reasoning questions ([O] authors, as with D2). Misses → root-cause (missing dimension, wrong entity or reality, door gap) → fix → re-score.
+23. [W] **D5 declaration council** (records only; the council, not the plan, declares 100%). Inputs: D3 recall, D6 coverage + D4, traceability, **and the reasoning bank**.
 
 ## 4. Gates (after every engine change, no exceptions)
 

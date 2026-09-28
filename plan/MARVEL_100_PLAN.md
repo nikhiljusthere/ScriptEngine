@@ -7,11 +7,25 @@
 # character/comic/event mapped, to the JJK/CSM bar. Only the final council
 # declares 100% (§D5).
 
-Objective: Marvel reaches the CSM 100% bar — every in-scope question green,
-content remainder 0, standing gates green at every change, the CC corpus
-carries per-line speaker attribution (owner requirement 2026-09-25: visible
-speaker names, not bare subtitle text), and every character, comic and event
-is mapped across the whole Marvel surface.
+Objective (owner, 2026-09-28; supersedes the 2026-09-25 wording): a
+**Marvel / MCU BRAIN**, not a data store. Across the ~300k pages of both wikis
+(Marvel Database 279,133 enumerated / 236,720 on disk; MCU Wiki 48,102 /
+35,234), every line is **understood, recallable and traceable**, and the corpus
+holds a complete understanding of the events, characters and everything there
+is to know about them, enough for **good, grounded assumptions and
+speculations** when asked. Example: two characters from different Earths
+who have never fought. Who would win? That is answered from known facts plus
+explicit, labeled assumptions, and the fight is one case of a whole class
+(match-ups, hypotheticals, trajectories and parallels, group and state
+questions). Layers and measures: `franchise_kit/RUNBOOK_100.md` §0
+(recallable = the D3 tier-1 sweep; understood = D6 coverage + D4 consistency
++ resolved entities per reality + timeline + the powers / feats / relations /
+affiliation dimensions; traceable = `audit`; reasoned = the reasoning bank,
+see D6 below). ScriptEngine serves the complete cited evidence; the answering
+model separates cited facts from labeled assumptions and never invents a
+fact. Unchanged requirements: standing gates green at every change; the CC
+corpus carries per-line speaker attribution (owner 2026-09-25); every
+character, comic and event is mapped across the whole Marvel surface.
 
 Start state (2026-09-25):
 - JEV stack verified live: 8017/8018/8020/8025/8026/8040/8041/8050 all UP
@@ -830,9 +844,21 @@ agreement checks (§2b gates: one event in two placements, era-less event
 rows, beat ordering contradicting an episode number, cross-page fact
 disagreement) → zero violations.
 
+**D6 — reasoning bank (the brain layer; owner 2026-09-28).** A
+comparison / "versus" retrieval path that serves two or more subjects' cited
+evidence together (powers, feats, defeats, weaknesses, relevant battles,
+reality + timeline state), plus a reasoning bank: ~50–100 questions across
+match-ups (incl. cross-Earth), hypotheticals / counterfactuals,
+trajectories / parallels, and group / state, each with a pre-registered
+required-evidence set drawn from the store. Scored on evidence served ⊇
+required, zero fabricated facts, and assumptions stated; plus an
+owner-authored blind reasoning set (D2 shape). The C5 dimensions (powers /
+abilities, feats, relations, affiliations over time) are required inputs,
+not optional: this bank is their consumer and failing test.
+
 **D5 — declaration (final council).** Only when: bank 100% green +
 blind set at declared threshold + D3 miss file empty (or documented floor)
-+ D4 zero violations + CC text coverage 100%/named floor + speaker
++ D4 zero violations + **D6 reasoning bank green (and the owner blind reasoning set)** + CC text coverage 100%/named floor + speaker
 coverage number on the record + final four-gate green run +
 `PHASE_MARVEL_100.md` declaration record. Remainder rows close by flip or by
 explicit void-set criteria (cause + defect + retest pointer, council-

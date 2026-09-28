@@ -1,6 +1,6 @@
 # Franchise kit: onboarding a new anime / fandom wiki to 100%
 
-Everything needed to take a new franchise from "a wiki URL" to "every line understood, recallable and traceable", reusing the engine the earlier campaigns built. Distilled from JJK, CSM and Marvel/MCU (2026-09).
+Everything needed to take a new franchise from "a wiki URL" to **a franchise brain**: every line understood, recallable and traceable, plus grounded reasoning over it (match-ups, hypotheticals, trajectories, with facts cited and assumptions labeled). It reuses the engine the earlier campaigns built. Distilled from JJK, CSM and Marvel/MCU (2026-09).
 
 **Start with `RUNBOOK_100.md`.**
 
@@ -8,7 +8,7 @@ Everything needed to take a new franchise from "a wiki URL" to "every line under
 
 | file | what it is |
 |---|---|
-| `RUNBOOK_100.md` | **The procedure**: the 100% definition, roles (owner / Claude architect / opencode worker), GPU resource modes, the phases in order (acquire → survey and declare → understand → verify → declare), gates, and the time-saving rules |
+| `RUNBOOK_100.md` | **The procedure**: the 100% = brain definition, roles (owner / Claude architect / opencode worker), GPU resource modes, the phases in order (acquire → survey and declare → understand → verify → declare), gates, and the time-saving rules |
 | `DECISION_one_engine.md` | The structural decision: one shared engine; every wiki difference declared in `series/<name>/overrides.yaml`; new shapes become generic mechanisms + override keys (defaults inert); no per-franchise code |
 | `OVERRIDES_REFERENCE.md` | Every `overrides.yaml` key: the code that reads it, its purpose, an example |
 | `overrides.template.yaml` | An annotated starting `overrides.yaml` for a new wiki |

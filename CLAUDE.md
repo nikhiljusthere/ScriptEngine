@@ -348,6 +348,13 @@ router or chunker) — never rephrase the question to dodge it. Coverage is a
 regenerated list, not a number stated here — see
 `reports/page-campaign/COVERAGE.md` (`tools/coverage_report.py`).
 
+**Marvel / MCU campaign goal (owner, 2026-09-28): a franchise BRAIN, not a
+data store.** Every line understood, recallable and traceable, plus grounded
+reasoning over it: match-ups (incl. cross-Earth "who would win"),
+hypotheticals, trajectories, group/state questions, answered from served,
+cited evidence with assumptions labeled. Definition and measures:
+`franchise_kit/RUNBOOK_100.md` §0; plan: `plan/MARVEL_100_PLAN.md`.
+
 **Now active: the CSM (Chainsaw Man) 100% campaign, Phase 1 (the §9a closure
 loop).** JJK D6 is DONE (D1–D10, 2026-09-07) and is the baseline-exact
 reference every CSM engine change must not regress. The goal: CSM reaches the
