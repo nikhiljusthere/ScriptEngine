@@ -2,6 +2,9 @@
 # Type a message into the opencode worker's TUI and verify it was delivered.
 #
 #   franchise_kit/tools/oc_send.sh "<window title substring>" <message-file> [session-title-substring]
+#   (pass the session title when it differs from the window title, e.g. the window
+#   "OC | MARVEL C4 ..." vs the session "MARVEL C4 ...": the default reuses arg 1,
+#   finds no session and refuses with rc=2)
 #
 # Needs the owner's xdotool permission. Proven method (2026-09-28):
 #   - activate the window, confirm it is the active one, then type WITHOUT --window
