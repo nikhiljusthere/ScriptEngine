@@ -103,3 +103,36 @@ Rev 2 keeps a **20-word section floor** ("below-floor, a counted class"). But th
 1. **Prose test = "contains ≥1 panel-eligible sentence"**, the same `sentences()` function and `min_words` the panel uses. Not a 20-word section floor. The same rule applies to leads and fact values. The short passages batch naturally (the council's R6 batching lever), so this costs little.
 2. **Mechanical D6 coverage check (the checkable 100%):** every panel sentence (and every tier-0-eligible sentence on the store) must lie inside a passage the extractor read, or inside a named furniture/floor class. Report `covered / total` per series in the dry-run and the receipt; the target is 100% with every exception named. This is the "understood" twin of D3's "recallable" number, over the same denominator.
 3. Whatever is still below that rule (no ≥6-word sentence: pure markup, link stubs) remains the counted `below_floor` class, as rev 2 already specifies.
+
+---
+
+# Architect finding on the T1 output (`ab5ab727`), 2026-09-28 ~09:0x: PARTICIPANT RESOLUTION (blocking before the large T2 run)
+
+The T1 receipt's numbers match the stores:
+- marvel: 1,221 events on 128 pages, so 85 are zero-event pages; 79 on the axis;
+- mcu: 6,108 events, failed = 0; Battle of Wakanda 43, Infiltration into Westview 12.
+
+Verifying *what* the rows point at turned up three defects. They must be fixed before the ~178k-passage run, or that run stores mostly mis-attributed rows.
+
+## P1 (blocking): marvel participants resolve to the wrong entity
+
+`known_participants` maps a bare lower-cased name to one node, with no reality awareness. Measured on the stored rows:
+- **589 of 1,221 marvel event rows (48%) have a participant resolved to a DISAMBIGUATION page.** "Captain America", "Spider-Man" and "Peter Parker" are all `page_type=disambiguation` nodes.
+- Others resolve to arbitrary alternate realities: "Conan" → `Conan (Earth-16356)`; "Kulan Gath" → `Kulan Gath (Impostor) (Earth-2099)`; inside the Earth-616 "Secret Invasion (Event)", participants land on `Khn'nr (Earth-10021)`, `Cobalt Man (Robot) (Earth-12041)` and `Beast (Alien) (Earth-616)`.
+
+The FK gate passes (a node exists), so nothing flags it. Required:
+1. **Reality-aware resolution.** The candidate set is the matching node, plus the disambiguation page's `main_articleN` targets (C3/A1b alias-alignment data already on disk), plus aliases. Pick the variant whose reality matches the passage page's reality (the title suffix, or the page's `reality` fact). A wiki-level default reality only where `overrides.yaml` declares one.
+2. **Never guess.** An unresolvable ambiguity is stored as an explicitly ambiguous participant with its candidate list (a counted class for the council), not silently pinned to one variant and not dropped.
+3. **Re-resolve the stored rows** with the new resolver. The quotes are kept, so no re-extraction is needed. Report before/after: rows on a disambiguation node, rows cross-reality.
+
+## P2: mcu main character pages typed `list`
+
+MCU's `Infobox List` template types **430 pages / 3.04 M words** as `list`. That includes Thanos (18,892 words), Gamora, Mantis, Adam Warlock and Knowhere: main articles. 3,656 of 6,108 mcu event rows touch these pages. Separately, "Tony Stark" is an unresolved node (the wiki titles the character differently).
+
+Required: establish what `Infobox List` means on this wiki (a multi-version character hub?) and fix the typing through `type_aliases` in `series/mcu/overrides.yaml` if these are character articles. Resolve the name gaps through the alias data. Report affected rows before/after.
+
+## P3: rejection accounting is silent
+
+`extract_from_sections` drops candidates at INFO level: missing end / verb outside `EVENTIVE_VERBS` (no log at all), "unknown participant", "unquoted". The CLI does not show INFO. So the receipt cannot separate "the page states no event" from "every candidate was rejected", and the 85 zero-event marvel pages include "Civil War II", "Spider-Verse", "Secret Empire", "Infinity Gauntlet (Event)" and "Hyborian Age" (1,010 words).
+
+Required: per-page counters for candidates proposed / kept / dropped by reason, in the run report and the receipt. Then re-account the 85 pages. A dry accounting pass on a sample with INFO logging is fine before the counters land.
