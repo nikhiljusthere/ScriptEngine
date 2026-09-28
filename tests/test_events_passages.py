@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import pytest
 
+from scriptengine.ingest.events import build_passages
 from scriptengine.stores.facts import FactStore
 
 
@@ -288,3 +289,48 @@ class TestRemap:
         assert report["events"]["stale"] == 1
         assert store.connection.execute(
             "SELECT COUNT(*) FROM events").fetchone()[0] == 0
+
+    def test_pilot_shaped_section_row_survives_a_force_rebuild(self, store):
+        """The mcu pilot's writer bug (2026-09-28, bug A): the section rows
+        stored the SECTION TITLE in `passage`, which the remap reads as a
+        section-less passage -- verified against nothing, dropped on the
+        next `--force` rebuild. The committed design: `passage` stays ''
+        (the section's own marker), so the row re-keys on
+        (doc_title, section_ordinal) and its quote re-verifies against the
+        section's text. This test drives the row through the writer's own
+        passage builder, not a hand-built dict."""
+        _, section, steve, peggy = base(store)
+        store.ensure_events()
+        srow = store.connection.execute(
+            "SELECT * FROM sections WHERE id = ?", (section,)
+        ).fetchone()
+        passages = build_passages(store, "Test Arc", [srow], "placement", None)
+        # The writer's contract: the section's own marker, never its title.
+        assert passages[0]["passage"] == ""
+        store.save_events(
+            "Test Arc",
+            [
+                {
+                    "subject_node": steve, "subject_name": "Steve",
+                    "object_node": peggy, "object_name": "Peggy",
+                    "verb": "fights", "section_id": section,
+                    "quote": "Steve fights Peggy at the laboratory.",
+                    "temporal": True, "time_rank": 0.0,
+                    "passage": passages[0]["passage"],
+                }
+            ],
+            revid=1, prompt_version="p1", model="m",
+        )
+        stored = store.connection.execute(
+            "SELECT section_id, section_ordinal, passage FROM events"
+        ).fetchone()
+        assert tuple(stored) == (section, 0, ""), "the row anchors on its section"
+        snapshot = store.reset()
+        new_section, _, _ = self._rebuild(store)
+        report = store.remap_derived(snapshot)
+        assert report["events"]["remapped"] == 1
+        assert report["events"]["unverified"] == 0
+        row = store.connection.execute(
+            "SELECT section_id, section_ordinal, passage FROM events"
+        ).fetchone()
+        assert tuple(row) == (new_section, 0, ""), "re-keyed onto the new build"

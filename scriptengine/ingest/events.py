@@ -1422,13 +1422,21 @@ def prose_scope(
 
 
 def _section_passage(section: sqlite3.Row) -> dict[str, Any]:
-    """A section row as a passage: the row's own prose, its own time rank."""
+    """A section row as a passage: the row's own prose, its own time rank.
+
+    The row's `passage` field stays '' -- the committed section-row marker:
+    the row's anchor is the section itself, re-keyed on a rebuild by
+    (doc_title, section_ordinal). The section title travels separately, for
+    the prompt, and must not leak into `passage`: a non-empty, non-lead,
+    non-`fact:` passage reads as a section-less row, and its quote
+    verifies against nothing, so the next rebuild drops the row
+    unverified (2026-09-28 pilot finding)."""
     title = (section["title"] or "").strip()
     return {
         "kind": "section",
         "id": int(section["id"]),
         "ordinal": int(section["ordinal"]),
-        "passage": title,
+        "passage": "",
         "title": title,
         "text": (section["text"] or "").strip(),
     }
