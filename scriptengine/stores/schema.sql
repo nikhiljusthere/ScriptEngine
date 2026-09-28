@@ -271,6 +271,8 @@ CREATE TABLE IF NOT EXISTS events (
     doc_title       TEXT NOT NULL DEFAULT '',
     section_ordinal INTEGER NOT NULL DEFAULT 0,
     passage         TEXT NOT NULL DEFAULT '',
+    subject_mention TEXT,
+    object_mention  TEXT,
     revid           INTEGER,
     prompt_version  TEXT,
     model           TEXT,

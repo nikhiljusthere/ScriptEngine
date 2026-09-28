@@ -222,3 +222,15 @@ def test_a_page_over_the_pack_size_is_read_per_passage(series, monkeypatch):
     monkeypatch.setenv("SCRIPTENGINE_EVENTS_PACK_CHARS", "50")
     events.extract_events_series(paths, settings=settings, scope="all")
     assert len(StubLLMClient.instances[0].calls) == 2
+
+
+def test_the_model_mention_is_stored_beside_the_resolved_name(series):
+    """R12: the raw mention survives, so a resolver fix can re-resolve stored
+    rows instead of re-reading the corpus."""
+    paths, settings, _, _, _ = series
+    events.extract_events_series(paths, settings=settings)
+    with FactStore(paths.facts_db) as store:
+        store.ensure_events()
+        row = store.connection.execute(
+            "SELECT subject_mention, object_mention FROM events").fetchone()
+    assert (row["subject_mention"], row["object_mention"]) == ("Steve", "Peggy")

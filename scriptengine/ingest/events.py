@@ -2197,6 +2197,8 @@ def extract_from_sections(
                     "subject_name": sub_name,
                     "object_node": obj_node,
                     "object_name": obj_name,
+                    "subject_mention": subject,
+                    "object_mention": object_,
                     "verb": verb,
                     "section_id": section_id,
                     "quote": quote,

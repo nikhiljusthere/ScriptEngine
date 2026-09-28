@@ -596,6 +596,7 @@ class FactStore:
                     new_section, row["quote"], row["temporal"], row["time_rank"],
                     row["arc_index"], row["doc_title"], row["section_ordinal"],
                     passage,
+                    row.get("subject_mention"), row.get("object_mention"),
                     row["revid"], row["prompt_version"], row["model"],
                     row["extracted_at"],
                 ))
@@ -604,8 +605,9 @@ class FactStore:
                 " (subject_node, subject_name, object_node, object_name, verb,"
                 "  arc_key, section_id, quote, temporal, time_rank,"
                 "  arc_index, doc_title, section_ordinal, passage,"
+                "  subject_mention, object_mention,"
                 "  revid, prompt_version, model, extracted_at)"
-                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 rows,
             )
             stats["remapped"] = len(rows)
@@ -1713,6 +1715,17 @@ class FactStore:
                     "ALTER TABLE events ADD COLUMN passage"
                     " TEXT NOT NULL DEFAULT ''"
                 )
+            # The model's own participant strings (R12, 2026-09-29): the
+            # `*_name` columns hold what the resolver picked, so without the
+            # raw mention a resolver fix could only be applied by re-reading
+            # the corpus (days). With it, `re_resolve_participants` repairs
+            # stored rows in minutes. NULL on rows written before the column.
+            if "subject_mention" not in columns:
+                self.connection.execute(
+                    "ALTER TABLE events ADD COLUMN subject_mention TEXT")
+            if "object_mention" not in columns:
+                self.connection.execute(
+                    "ALTER TABLE events ADD COLUMN object_mention TEXT")
             if added_durable:
                 # Backfill the rows written before the columns existed. A row
                 # whose section no longer resolves keeps the column defaults
@@ -1758,6 +1771,7 @@ class FactStore:
                 " doc_title TEXT NOT NULL DEFAULT '',"
                 " section_ordinal INTEGER NOT NULL DEFAULT 0,"
                 " passage TEXT NOT NULL DEFAULT '',"
+                " subject_mention TEXT, object_mention TEXT,"
                 " revid INTEGER, prompt_version TEXT,"
                 " model TEXT, extracted_at TEXT,"
                 " PRIMARY KEY (subject_node, verb, object_node, section_id,"
@@ -1789,6 +1803,7 @@ class FactStore:
             " doc_title TEXT NOT NULL DEFAULT '',"
             " section_ordinal INTEGER NOT NULL DEFAULT 0,"
             " passage TEXT NOT NULL DEFAULT '',"
+                " subject_mention TEXT, object_mention TEXT,"
             " revid INTEGER, prompt_version TEXT,"
             " model TEXT, extracted_at TEXT,"
             " PRIMARY KEY (subject_node, verb, object_node, section_id,"
@@ -1799,6 +1814,7 @@ class FactStore:
             " (subject_node, subject_name, object_node, object_name, verb,"
             "  arc_key, section_id, quote, temporal, time_rank, arc_index,"
             "  doc_title, section_ordinal, passage,"
+            "  subject_mention, object_mention,"
             "  revid, prompt_version, model, extracted_at)"
             " SELECT subject_node, subject_name, object_node, object_name,"
             "  verb, arc_key, section_id, quote, temporal, time_rank,"
@@ -1811,6 +1827,7 @@ class FactStore:
             "   SELECT s.ordinal FROM sections s"
             "   WHERE s.id = events.section_id), 0),"
             "  passage,"
+            "  subject_mention, object_mention,"
             "  revid, prompt_version, model, extracted_at"
             " FROM events"
             " WHERE (subject_node IS NULL"
@@ -2079,6 +2096,8 @@ class FactStore:
                 doc,
                 ordinal,
                 passage,
+                row.get("subject_mention"),
+                row.get("object_mention"),
                 revid,
                 prompt_version,
                 model,
@@ -2088,9 +2107,10 @@ class FactStore:
             "INSERT OR REPLACE INTO events"
             " (subject_node, subject_name, object_node, object_name, verb,"
             "  arc_key, section_id, quote, temporal, time_rank,"
-            "  doc_title, section_ordinal, passage, revid,"
+            "  doc_title, section_ordinal, passage,"
+            "  subject_mention, object_mention, revid,"
             "  prompt_version, model, extracted_at)"
-            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             rows,
         )
         self.connection.commit()
