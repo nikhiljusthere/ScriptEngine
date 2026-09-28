@@ -230,6 +230,13 @@ events:
   # move to that pass under a council sequencing ruling -- declared here in
   # the meantime, so nothing is dropped. The dry-run's per-key census
   # (`fact_key_census`) reports covered/total for each of these.
+  # R10 (2026-09-29): the wiki's two biggest story keys were never declared --
+  # `history` 127,035 rows / 106.7M chars and `synopsis*` ~40k rows / 61.5M
+  # (the wiki's two largest prose stores) -- plus `weakness*` (the abilities
+  # dimension, 3,939 / 0.85M) and `alternateversions` (198 / 0.41M). Declared
+  # here so the `all` queue reaches them: a page whose story lives only in fact
+  # values joins the queue on its prose fact values (`scope_plan` /
+  # `fact_pages`), so a fact-only page is read, not skipped.
   narrative_fact_keys:
     - solicit
     - powers
@@ -239,3 +246,22 @@ events:
     - professionalhistory
     - properties
     - plot
+    - history
+    - "synopsis*"
+    - "weakness*"
+    - alternateversions
+  # R10 (2026-09-29): the prose fact keys this wiki deliberately does NOT read
+  # as narrative, each with a one-line reason. Inert (no extraction behaviour
+  # reads them) but counted: the dry-run census (`fact_key_census`) reports
+  # each, so a key the council later wants read is a one-line move to
+  # `narrative_fact_keys`, never a silence. `appearing*` (the "appears in"
+  # rosters, 82,853 rows / 11.8M) is roster/structure, not prose (plan C1) --
+  # recorded in the receipt and counted here.
+  excluded_fact_keys:
+    - {key: "notes*", reason: "open prose / editorial notes, not story beats (C5 relations work)"}
+    - {key: "trivia*", reason: "trivia, not narrative"}
+    - {key: pointsofinterest, reason: "reference list, not story beats"}
+    - {key: "others*", reason: "disambiguation roster (C3), not prose"}
+    - {key: "related*", reason: "disambiguation / related references, not prose"}
+    - {key: "appearances*", reason: "appearance roster (C1), not prose"}
+    - {key: "appearing*", reason: "appears-in roster / structure (C1), not prose"}
