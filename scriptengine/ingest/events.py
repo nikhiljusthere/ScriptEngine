@@ -2096,21 +2096,36 @@ def extract_from_sections(
                 units.append(
                     (window, (passage["title"] or "").strip(), [passage])
                 )
-    for window, section_title, holders in units:
-        prompt = _TEMPLATE.format(
-            series=series,
-            page=page,
-            section=section_title,
-            passage=window,
-            verbs=", ".join(sorted(EVENTIVE_VERBS)),
-        )
-        answer = client.complete(
-            prompt,
+    def ask(unit: tuple[str, str, list[dict[str, Any]]]) -> str:
+        window, section_title, _ = unit
+        return client.complete(
+            _TEMPLATE.format(
+                series=series,
+                page=page,
+                section=section_title,
+                passage=window,
+                verbs=", ".join(sorted(EVENTIVE_VERBS)),
+            ),
             system=SYSTEM,
             temperature=0.0,
             max_tokens=_answer_budget(),
             extra_body=_effort_body(),
         )
+
+    # One huge page (Marvel's Henry McCoy: a 129k-char history value, ~35
+    # windows) used to hold one slot for the whole run's tail while the
+    # others idled (2026-09-29 model trials, council lever 9). Its windows
+    # may now be asked concurrently; the answers are still read in window
+    # order below, so the rows, dedup and accounting are the serial ones.
+    window_workers = _window_workers()
+    if window_workers > 1 and len(units) > 1:
+        from concurrent.futures import ThreadPoolExecutor
+
+        with ThreadPoolExecutor(max_workers=window_workers) as pool:
+            answers = list(pool.map(ask, units))
+    else:
+        answers = (ask(unit) for unit in units)
+    for (window, section_title, holders), answer in zip(units, answers):
         for entry in parse_events_response(answer):
             subject = str(entry.get("subject") or "").strip()
             verb = str(entry.get("verb") or "").strip().lower()
@@ -2235,6 +2250,14 @@ def _effort_body() -> dict[str, str] | None:
     if extra:
         body.update(json.loads(extra))
     return body or None
+
+
+def _window_workers() -> int:
+    """How many of one page's window calls may be in flight at once; 1 =
+    serial (the default, byte-for-byte the old loop)."""
+    import os
+
+    return max(1, int(os.environ.get("SCRIPTENGINE_EVENTS_WINDOW_WORKERS", "1") or 1))
 
 
 def _pack_chars() -> int:

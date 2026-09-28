@@ -137,3 +137,69 @@ def test_window_keeps_every_slot_busy(tmp_path, stub):
     paths = _series(tmp_path, "busy")
     events.extract_events_series(paths, settings=settings, workers=3)
     assert SlowStub.peak == 3
+
+
+class WindowStub(SlowStub):
+    """Every window answers the same verbatim event; calls overlap-count."""
+
+    def complete(self, prompt: str, system: str = "", temperature: float = 0.2,
+                 max_tokens: int = 1024, extra_body: dict | None = None) -> str:
+        cls = type(self)
+        with cls.lock:
+            cls.in_flight += 1
+            cls.peak = max(cls.peak, cls.in_flight)
+        try:
+            time.sleep(0.03)
+            return json.dumps(ANSWER)
+        finally:
+            with cls.lock:
+                cls.in_flight -= 1
+
+
+def _long_page(tmp_path, name: str) -> SeriesPaths:
+    root = tmp_path / name
+    root.mkdir()
+    store = FactStore(root / "facts.db")
+    store.initialise()
+    doc = store.add_document(
+        title="Long Arc", url="", page_type="event",
+        infobox_template="Event Infobox", lead="", word_count=3000,
+        revid=1, fetched_at="",
+    )
+    sentence = ("The laboratory explodes as Steve fights Peggy at the laboratory"
+                " and the fight continues for several minutes. ")
+    store.add_section(
+        document_id=doc, title="Plot", breadcrumb="Long Arc/Plot", level=2,
+        ordinal=0, text=sentence * 150, word_count=3000,
+    )
+    for person in ("Steve", "Peggy"):
+        pdoc = store.add_document(
+            title=person, url="", page_type="character",
+            infobox_template="Character Infobox",
+            lead=f"{person} is a character in the series.",
+            word_count=7, revid=1, fetched_at="",
+        )
+        store.add_node(person, "character", pdoc)
+    store.commit()
+    store.close()
+    return SeriesPaths(name=name, root=root)
+
+
+def test_one_pages_windows_run_concurrently_with_identical_rows(tmp_path, monkeypatch):
+    monkeypatch.setattr(events, "LLMClient", WindowStub)
+    settings = Settings(series_root=tmp_path, llm_model="stub")
+    serial, windowed = _long_page(tmp_path, "serial"), _long_page(tmp_path, "windowed")
+
+    WindowStub.in_flight = WindowStub.peak = 0
+    one = events.extract_events_series(serial, settings=settings)
+    serial_peak = WindowStub.peak
+
+    WindowStub.in_flight = WindowStub.peak = 0
+    monkeypatch.setenv("SCRIPTENGINE_EVENTS_WINDOW_WORKERS", "4")
+    many = events.extract_events_series(windowed, settings=settings)
+
+    assert serial_peak == 1 and WindowStub.peak == 4
+    assert _rows(windowed) == _rows(serial)
+    for key in ("events", "proposed", "kept"):
+        assert many[key] == one[key], key
+    assert many["dropped"] == one["dropped"]
