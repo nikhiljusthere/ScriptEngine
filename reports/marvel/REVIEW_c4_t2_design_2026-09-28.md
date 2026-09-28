@@ -180,3 +180,15 @@ Under the owner's 100% definition these are lines too. Declare them, or route `p
 - `Captain America/Iron Man Vol 1 1`: `page_type` = `disambiguation_iron_man_vol_1_1`.
 
 Crossover issue titles contain `/`, so the subpage heuristic reads "Avengers" as a parent page. MCU uses `/` for genuine subpages (`Wanda Maximoff/Relationships`), so the fix must be generic. One option: treat `/` as a subpage separator only when the prefix is an existing page AND the suffix is not itself an infobox-bearing page title shape, or make the separator rule declarable per wiki. Small (306 pages / 28k words) but these comic issues miss comic handling; fold into P2's typing pass.
+
+---
+
+# Architect note, 2026-09-28 ~17:0x (after the owner's PC restart; nothing lost: the worker's `timeaxis.py` +435 lines are on disk, uncommitted)
+
+**Wiring defect in the committed checkpoint `55c2cb9e` (found by the worker itself on resume):** `extract_events_series` still passes section rows and the flat `known` dict to `extract_from_sections`, which after P1 expects passage dicts, the candidate-set dict and `page_real`. Any `events-extract` run on `55c2cb9e` fails. The 131 green tests call `extract_from_sections` directly, so they never exercised the series driver.
+
+**Required with the fix (T-gap):**
+- an integration test driving a stub LLM through `extract_events_series`, from a tiny store to stored rows, for each passage kind (section, `fact:<key>`, lead) and the ambiguous-participant class;
+- a CLI `events-extract --dry-run` smoke on a fixture store.
+
+**No `events-extract` run (not even a pilot) until the fix + these tests + the four gates are green and committed.**
