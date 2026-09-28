@@ -211,3 +211,25 @@ Crossover issue titles contain `/`, so the subpage heuristic reads "Avengers" as
   - an exact title match wins over `(qualifier)` and `/subpage` variants;
   - a variant subpage is a candidate only when the passage links to it, or when the passage page is that variant;
   - hub pages (declared per wiki) and disambiguation pages are never participants.
+
+## R10 (BLOCKING, architect 2026-09-29 ~00:45): Marvel's two biggest story keys are undeclared, and fact-only pages never enter the queue
+
+R9's heading assumed `history` + `synopsis*` were already declared. They never were: `series/marvel/overrides.yaml` `events.narrative_fact_keys` lists only the eight R9 keys, and `narrative_fact_keys()` has no default. Measured on the live store (read-only):
+
+| key | rows | chars | fact-only (400-row sample: text in no section of its page) |
+|---|---:|---:|---|
+| `history` | 127,035 | 106.7 M | 358/400 rows, 58% of chars |
+| `synopsis1` | 22,952 | 47.9 M | 398/400, 99% |
+| `synopsis` | 3,307 | 5.0 M | 359/400, 78% |
+| `synopsis2..N` | ~12k | ~9 M | 394/400, 99% |
+
+So the `all` queue as committed at `45d18b17` skips most of the comics' story. MCU has no such key (its long prose is in sections); only `book` (1,332 rows / 0.23 M) is a candidate there.
+
+Second defect, same root: `fact_passages()` runs only for pages already in the queue, and the page queue is built from sections. A page whose story lives only in fact values (Children of the Comet (Earth-616): `history` 3.6k chars, 0 sections) is in no queue. The R9 census shows the effect: `solicit` 935/33,529 in queue, `powers` 3,067/14,817.
+
+Required:
+1. Declare in `series/marvel/overrides.yaml` (data, not code): `history`, `synopsis*` (fnmatch), `weaknesses` (abilities dimension, 3,938 / 0.85 M), `alternateversions` (198 / 0.41 M). For `notes`, `trivia`, `pointsofinterest`, `others`, `related`, `appearances`: declare them, or list them under a new counted exclusion key (inert default) with a one-line reason each. Never silence. `appearing*` lists are roster/structure (C1), not prose; record that in the receipt.
+2. `scope_plan('all')`: a page with any declared fact value that holds a panel-eligible sentence joins the page queue (generic; no series names in `.py`). A test: a fact-only fixture page is in `all`.
+3. Re-dry-run Marvel: per-key `in queue == prose` for every declared key (100%), plus the new page/section/fact-passage totals. Amend the `r1_scope_all_dryrun` receipt, or write a new one.
+4. JJK/CSM stay byte-identical (they declare no fact keys; prove the `all` page list is unchanged on jjk).
+5. Then the four gates, once, on the final tree.
