@@ -454,13 +454,43 @@ class WikiCrawler:
         templates = [t.get("title", t) if isinstance(t, dict) else t
                      for t in parse.get("templates", [])]
 
+        # Prose first: the infobox needs the named-reference map, and neither
+        # depends on typing.
+        lead, sections = split_sections(
+            wikitext,
+            parse.get("sections", []),
+            ontology.citation_works,
+            item_sections=ontology.item_sections,
+            title=title,
+        )
+        # Named references are defined once per page and reused by name, so the
+        # map has to be built from the whole page before anything is stripped.
+        ref_names = collect_ref_definitions(wikitext)
+
         page_type, matched = ontology.type_for_templates(templates)
 
-        # MediaWiki subpages ("Aoi Todo/Synopsis") carry no infobox of their own
-        # they elaborate on their parent. Typing them from the parent keeps
-        # substantial prose out of the "unknown" bucket. This is MediaWiki
-        # convention, not a wiki-specific rule.
-        if page_type == "unknown" and "/" in title:
+        facts = []
+        infobox = find_infobox(wikitext, set(ontology.infobox_types))
+        if infobox:
+            # A page that carries its own infobox is typed from it, before the
+            # subpage heuristic (P4). Crossover issue titles contain "/"
+            # ("Avengers/Defenders War Vol 1 1"); the subpage branch would
+            # otherwise read the comic as a subpage of "Avengers", invent a
+            # junk type, and this rescue would then never fire.
+            template_name, params = infobox
+            facts = facts_from_infobox(
+                params, ontology.labels_for(page_type), ref_names
+            )
+            if page_type == "unknown":
+                page_type = ontology.infobox_types.get(
+                    template_name.lower().replace("_", " "), "unknown"
+                )
+            matched = matched or template_name
+        elif page_type == "unknown" and "/" in title:
+            # MediaWiki subpages ("Aoi Todo/Synopsis") carry no infobox of their
+            # own; they elaborate on their parent. Typing them from the parent
+            # keeps substantial prose out of the "unknown" bucket. This is
+            # MediaWiki convention, not a wiki-specific rule.
             parent, _, leaf = title.rpartition("/")
             parent_type = ontology.page_types.get(parent, "")
             if parent and parent_type and parent_type != "unknown":
@@ -473,30 +503,6 @@ class WikiCrawler:
             matched = matched or f"subpage of {parent}"
 
         learn_field_labels(ontology, page_type, parse.get("properties"))
-
-        lead, sections = split_sections(
-            wikitext,
-            parse.get("sections", []),
-            ontology.citation_works,
-            item_sections=ontology.item_sections,
-            title=title,
-        )
-        # Named references are defined once per page and reused by name, so the
-        # map has to be built from the whole page before anything is stripped.
-        ref_names = collect_ref_definitions(wikitext)
-
-        facts = []
-        infobox = find_infobox(wikitext, set(ontology.infobox_types))
-        if infobox:
-            template_name, params = infobox
-            facts = facts_from_infobox(
-                params, ontology.labels_for(page_type), ref_names
-            )
-            if page_type == "unknown":
-                page_type = ontology.infobox_types.get(
-                    template_name.lower().replace("_", " "), "unknown"
-                )
-            matched = matched or template_name
 
         page = WikiPage(
             title=title,
