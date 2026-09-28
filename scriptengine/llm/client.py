@@ -229,6 +229,17 @@ class LLMClient:
         except (KeyError, IndexError, ValueError) as error:
             raise LLMUnavailable(f"Unexpected response from {base}") from error
 
+        # A server with no reasoning parser for the model leaves its thinking
+        # inline, ended by a model-specific tag (K2-Horizon's `</ifm|think>`
+        # on llama.cpp, 2026-09-29 trial). The thinking can hold braces that
+        # break the JSON read, so the text up to the last marker is dropped.
+        # Unset, the answer is untouched.
+        import os
+
+        marker = os.environ.get("SCRIPTENGINE_LLM_REASONING_END", "")
+        if marker and marker in answer:
+            answer = answer.rsplit(marker, 1)[1].strip()
+
         # A thinking model spends its budget before it answers. Gemma 4 returns
         # `content: ""` with the whole reply in `reasoning_content` and
         # `finish_reason: length`, which reads as a successful call returning
