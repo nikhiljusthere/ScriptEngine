@@ -800,8 +800,16 @@ def _node_reality(
 def participant_candidates(
     store: FactStore,
 ) -> dict[str, list[tuple[int, str, str | None]]]:
-    """Folded name -> candidate nodes: `(node_id, canonical name, reality)`."""
+    """Folded name -> candidate nodes: `(node_id, canonical name, reality)`.
+
+    Disambiguation pages and the wiki's declared non-participant name
+    prefixes (its `events: participant_excludes:` -- the mcu's `Hub:`
+    index pages, 2026-09-28) never participate: their nodes are left out
+    of every pool, so a bare name that folds over a hub resolves to the
+    character page, never to the hub. A wiki that declares no prefixes
+    is untouched."""
     containers = NON_PARTICIPANT_TYPES | placement_types(store) | {"disambiguation"}
+    excluded_prefixes = participant_excludes(store)
     placeholders = ",".join("?" * len(containers))
     container_ids = {
         int(row["id"])
@@ -827,6 +835,8 @@ def participant_candidates(
 
     def candidate(node_id: int, name: str) -> tuple[int, str, str | None] | None:
         if int(node_id) in container_ids or not (name or "").strip():
+            return None
+        if any((name or "").strip().casefold().startswith(p) for p in excluded_prefixes):
             return None
         return (
             int(node_id),
@@ -929,14 +939,51 @@ def page_realities(
     return out
 
 
+def participant_excludes(store: FactStore) -> list[str]:
+    """The wiki's declared non-participant name prefixes, casefolded.
+
+    The `events: participant_excludes:` block of its overrides (the mcu's
+    `Hub:` index pages, 2026-09-28): the declared pages are never
+    participants, and the declaration is what drives the repair of the rows
+    filed on them -- a wiki that declares nothing is untouched."""
+    return [
+        str(prefix).strip().casefold()
+        for prefix in _events_overrides(store).get("participant_excludes") or []
+        if str(prefix).strip()
+    ]
+
+
+def _is_variant_of(canonical: str, name: str) -> bool:
+    """`canonical` is the wiki's variant form of `name`: the same title with
+    a `/subpage` or a space-then-`(` qualifier appended (`Conan/Earth-16356`,
+    `The Avengers (comic)`). The bare name itself, a longer different title,
+    or another name entirely are not variants. Case-insensitive: the model's
+    casing is not the wiki's."""
+    q = (name or "").strip().casefold()
+    c = (canonical or "").strip().casefold()
+    if not q or len(c) <= len(q) or not c.startswith(q):
+        return False
+    return c[len(q)] in "/(" or c[len(q):len(q) + 2] == " ("
+
+
 def pick_candidate(
     cands: list[tuple[int, str, str | None]],
-    page_real: str | None,
+    name: str | None,
+    page_real: str | None = None,
     linked: set[int] | None = None,
+    self_page: str | None = None,
 ) -> tuple[int, str, str | None] | dict | None:
     """The one candidate a passage names, an explicit ambiguity, or None.
 
-    A page reality filters the candidates to its own reality; where no
+    An exact title match wins over the wiki's variant forms of the same
+    name (`(qualifier)` and `/subpage`): the bare name names the page,
+    never a spin-off. Where the exact page is absent, a variant is a
+    candidate only where the passage itself points at it -- the page links
+    to the variant, or the passage's own page is that variant (architect
+    2026-09-28): the bare name never names a subpage, and a pool of
+    unpointed variants alone resolves to nothing.
+
+    A page reality filters the survivors to its own reality; where no
     candidate carries that reality the base variant (no known reality) wins,
     and what no signal breaks is returned as `{"ambiguous": cands}` for the
     store to file as a counted class. None means the wiki has no node for the
@@ -948,6 +995,25 @@ def pick_candidate(
     deterministically; zero or several linked members leave it a counted
     ambiguity.
     """
+    if not cands:
+        return None
+    # The exact page, not the wiki's variant forms of its title: the bare
+    # name names the page, never a spin-off.
+    folded = (name or "").strip().casefold()
+    exact = [c for c in cands if c[1].casefold() == folded]
+    if len(exact) == 1:
+        return exact[0]
+    # A variant form of the name is a candidate only where the passage
+    # points at it: the page links to it, or the passage's own page is that
+    # variant (architect 2026-09-28) -- the bare name never names a
+    # subpage, with or without a link set.
+    self_folded = (self_page or "").strip().casefold()
+    cands = [
+        c for c in cands
+        if not _is_variant_of(c[1], name)
+        or c[0] in (linked or ())
+        or (self_folded and c[1].casefold() == self_folded)
+    ]
     if not cands:
         return None
     if len(cands) == 1:
@@ -1117,9 +1183,21 @@ def re_resolve_participants(store: FactStore) -> dict:
         for row in rows:
             name = (row[f"{role}_name"] or "").strip()
             pool = cands.get(name.lower(), [])
+            # The pools refuse a name the wiki declared a non-participant
+            # (`participant_excludes:` -- the mcu's `Hub:` index pages,
+            # 2026-09-28): a row filed on the hub is re-resolved under the
+            # bare name the hub indexes. The declaration drives the repair;
+            # a name no pool carries stays a finding, kept as filed.
+            resolve_name = name
+            if not pool:
+                for prefix in participant_excludes(store):
+                    if name.casefold().startswith(prefix):
+                        resolve_name = name[len(prefix):].strip()
+                        pool = cands.get(resolve_name.lower(), [])
+                        break
             real = page_real(row["doc_title"])
             linked = linked_by_page.get(row["doc_title"])
-            pick = pick_candidate(pool, real, linked)
+            pick = pick_candidate(pool, resolve_name, real, linked, row["doc_title"])
             if pick is None:
                 unresolved_kept += 1
                 continue
@@ -1137,7 +1215,10 @@ def re_resolve_participants(store: FactStore) -> dict:
                 continue
             node, name_out = pick[0], pick[1]
             moved += 1
-            if linked and isinstance(pick_candidate(pool, real, None), dict):
+            # The probe strips both page signals -- links and the page
+            # itself: a row the signals left ambiguous on their own is
+            # what the link signal alone broke.
+            if linked and isinstance(pick_candidate(pool, resolve_name, real), dict):
                 link_broken += 1
             for r in store.connection.execute(
                 f"SELECT rowid FROM events"
@@ -1147,19 +1228,17 @@ def re_resolve_participants(store: FactStore) -> dict:
             ):
                 repoint(role, r["rowid"], node, name_out)
 
-    # The explicit-ambiguous rows -- node NULL, the candidate list in the
-    # name -- take the same link signal. The listed names are node names
-    # (the resolver's canonical form), so each maps back to exactly one
-    # node, and exactly one of the listed nodes linked from the page is
-    # the wiki's answer (architect 2026-09-28). Zero or several linked
-    # members keep the row a counted ambiguity; a name no node carries is
-    # a finding, and the row is left as filed.
-    name_to_node: dict[str, int] = {
-        row["name"].strip().lower(): int(row["id"])
-        for row in store.connection.execute(
-            "SELECT id, name FROM nodes WHERE is_resolved = 1"
-        )
-    }
+    # The listed names are node names (the resolver's canonical form). Map
+    # them back through the candidate pools, not the node table: a name the
+    # pools refuse -- a hub or a disambiguation page (2026-09-28) -- is never
+    # a re-point target. Exactly one of the listed nodes linked from the
+    # page is the wiki's answer (architect 2026-09-28). Zero or several linked
+    # members keep the row a counted ambiguity; a name no pool carries is a
+    # finding, and the row is left as filed.
+    name_to_node: dict[str, int] = {}
+    for pool in cands.values():
+        for node_id, canonical, _ in pool:
+            name_to_node.setdefault(canonical.strip().lower(), int(node_id))
     for role in ("subject", "object"):
         pairs = store.connection.execute(
             f"SELECT DISTINCT doc_title, {role}_name FROM events"
@@ -1839,6 +1918,13 @@ def extract_from_sections(
     receipt can separate "the wiki has no such entity" from "the wiki has
     several and none is determined".
 
+    The candidate pools carry the wiki's shape rules (2026-09-28): an exact
+    title match wins over the name's `(qualifier)` and `/subpage` variants;
+    a variant is a candidate only where the page links to it or is itself
+    that variant; and the wiki's declared non-participants (its
+    `events: participant_excludes:`, e.g. the mcu's `Hub:` index pages)
+    plus disambiguation pages never appear in a pool.
+
     `known` is the set of names this wiki has resolved nodes for, resolved
     by the caller. Everything here is prompt-building, network and string
     work, so it is safe on a worker thread.
@@ -1909,10 +1995,12 @@ def extract_from_sections(
                 # has a page for, or a model supplies a plausible name from the
                 # series it has read and nothing in the row shows it.
                 sub_pick = pick_candidate(
-                    known.get(subject.lower(), []), page_real, linked
+                    known.get(subject.lower(), []), subject,
+                    page_real, linked, page,
                 )
                 obj_pick = pick_candidate(
-                    known.get(object_.lower(), []), page_real, linked
+                    known.get(object_.lower(), []), object_,
+                    page_real, linked, page,
                 )
                 if sub_pick is None or obj_pick is None:
                     stats["dropped"]["unknown_participant"] += 1

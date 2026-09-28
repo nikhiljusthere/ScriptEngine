@@ -5,10 +5,14 @@ is the wiki's answer to "which variant of this name does this page mean".
 The rule: an ambiguous candidate set with exactly one linked member resolves
 deterministically; zero or several linked members stay a counted ambiguity.
 
-Three tests pin it:
+Four tests pin it:
 
 * `pick_candidate` carries the link set: it breaks a tie the reality signal
   leaves, inside the reality-narrowed set when reality narrows;
+* the wiki's shape rules (2026-09-28): an exact title match wins over the
+  name's `(qualifier)` and `/subpage` variants, and a variant is a
+  candidate only where the passage points at it -- a link from the page or
+  the passage's own page; unpointed variants alone resolve to nothing;
 * `re_resolve_participants` repairs stored rows in both directions -- a row
   in the explicit-ambiguous form (NULL node, the candidate list in the name)
   is re-pointed to its page's sole linked candidate, and a row that already
@@ -16,14 +20,25 @@ Three tests pin it:
   a re-point that would duplicate a row the page already stores merges
   (the wiki's answer is recorded once, the store's own dedup rule);
 * the receipt's numbers: the ambiguous tally drops by exactly the rescued
-  rows, and `link_broken` counts what the link signal alone did.
+  rows, and `link_broken` counts what the link signal alone did -- a
+  re-point the shape rule reaches on its own is the shape rule's, not the
+  link's.
+
+The wiki's declared non-participant prefixes (`events:
+participant_excludes:`, the mcu's `Hub:` index pages, 2026-09-28) are
+tested where they live: in the pool the shapes fold over,
+`participant_candidates`.
 """
 
 from __future__ import annotations
 
 import pytest
 
-from scriptengine.ingest.events import pick_candidate, re_resolve_participants
+from scriptengine.ingest.events import (
+    participant_candidates,
+    pick_candidate,
+    re_resolve_participants,
+)
 from scriptengine.stores.facts import FactStore
 
 
@@ -33,20 +48,108 @@ def test_the_link_signal_breaks_a_set_that_reality_leaves():
         (12, "Hellverine (Demon) (Earth-616)", None),
     ]
     # No signal at all: a counted ambiguity...
-    assert pick_candidate(cands, None) == {"ambiguous": cands}
+    assert pick_candidate(cands, None, None) == {"ambiguous": cands}
     # ...and exactly one linked member is the wiki's own answer.
-    assert pick_candidate(cands, None, {11}) == (11, "Wolverine (Earth-616)", None)
+    assert pick_candidate(cands, None, None, {11}) == (11, "Wolverine (Earth-616)", None)
     # Several linked members break nothing, and neither does none.
-    assert pick_candidate(cands, None, {11, 12}) == {"ambiguous": cands}
-    assert pick_candidate(cands, None, set()) == {"ambiguous": cands}
+    assert pick_candidate(cands, None, None, {11, 12}) == {"ambiguous": cands}
+    assert pick_candidate(cands, None, None, set()) == {"ambiguous": cands}
     # Where reality narrows the set, the link breaks the tie inside it.
     real = [
         (11, "A (Earth-616)", "earth-616"),
         (12, "B (Earth-616)", "earth-616"),
         (13, "C (Tierra-982)", "tierra-982"),
     ]
-    assert pick_candidate(real, "earth-616") == {"ambiguous": real[:2]}
-    assert pick_candidate(real, "earth-616", {12}) == (12, "B (Earth-616)", "earth-616")
+    assert pick_candidate(real, None, "earth-616") == {"ambiguous": real[:2]}
+    assert pick_candidate(real, None, "earth-616", {12}) == (12, "B (Earth-616)", "earth-616")
+
+
+def test_the_bare_name_never_names_a_variant_the_passage_does_not_point_at():
+    # The pool a bare name folds over carries the wiki's variant forms of it
+    # (the `/subpage` and `(qualifier)` shapes, 2026-09-28).
+    pool = [
+        (21, "Thanos", None),
+        (22, "Thanos/Age of Ultron", None),
+        (23, "Thanos/Earth-838", None),
+    ]
+    # The exact title match wins over every variant of the name, whatever
+    # the casing the model wrote.
+    assert pick_candidate(pool, "Thanos", None) == (21, "Thanos", None)
+    assert pick_candidate(pool, "thanos", None) == (21, "Thanos", None)
+    # Where the exact page is absent, a variant is a candidate only where
+    # the passage points at it: a link from the page...
+    spin = [(22, "Thanos/Age of Ultron", None), (23, "Thanos/Earth-838", None)]
+    assert pick_candidate(spin, "Thanos") is None
+    assert pick_candidate(spin, "Thanos", None, {22}) == (22, "Thanos/Age of Ultron", None)
+    # ...or the passage's own page is that variant.
+    avengers = [
+        (31, "The Avengers", None),
+        (32, "The Avengers (comic)", None),
+        (33, "The Avengers/Home Video", None),
+    ]
+    assert pick_candidate(avengers, "The Avengers") == (31, "The Avengers", None)
+    spin_av = [(32, "The Avengers (comic)", None), (33, "The Avengers/Home Video", None)]
+    assert pick_candidate(spin_av, "The Avengers", None, {32}) == (32, "The Avengers (comic)", None)
+    assert pick_candidate(
+        spin_av, "The Avengers", None, set(), "The Avengers/Home Video"
+    ) == (33, "The Avengers/Home Video", None)
+    # A page that is the variant of another name points at nothing here.
+    assert pick_candidate(spin_av, "The Avengers", None, set(), "Loki") is None
+    # Several pointed variants break nothing: a counted ambiguity.
+    assert isinstance(pick_candidate(spin, "Thanos", None, {22, 23}), dict)
+
+
+def test_the_wikis_declared_non_participants_leave_their_pools(tmp_path):
+    # The mcu declaration (2026-09-28): the wiki's `Hub:` index pages are
+    # apparatus, never event participants.
+    root = tmp_path / "hubwiki"
+    root.mkdir()
+    (root / "overrides.yaml").write_text(
+        "events:\n  participant_excludes:\n    - 'Hub:'\n", encoding="utf-8"
+    )
+    store = FactStore(root / "facts.db")
+    store.initialise()
+    c = store.connection
+    c.executemany(
+        "INSERT INTO documents (id, title, page_type) VALUES (?, ?, ?)",
+        [(1, "Thanos", "character"), (2, "Hub:Thanos", "character")],
+    )
+    c.executemany(
+        "INSERT INTO nodes (id, name, document_id, is_resolved) VALUES (?, ?, ?, 1)",
+        [(1, "Thanos", 1), (2, "Hub:Thanos", 2)],
+    )
+    c.execute("INSERT INTO aliases (alias, node_id) VALUES ('Thanos', 2)")
+    c.commit()
+
+    cands = participant_candidates(store)
+    # The hub's own name and its alias both fold onto the declared prefix:
+    # the pool the bare name reaches carries the character page, never the
+    # hub, so the bare name resolves exactly.
+    assert [c[1] for c in cands["thanos"]] == ["Thanos"]
+    assert "hub:thanos" not in cands
+    store.close()
+
+    # A wiki that declares nothing is untouched: the hub stays a candidate.
+    silent = tmp_path / "silent"
+    silent.mkdir()
+    s2 = FactStore(silent / "facts.db")
+    s2.initialise()
+    c2 = s2.connection
+    c2.executemany(
+        "INSERT INTO documents (id, title, page_type) VALUES (?, ?, ?)",
+        [(1, "Thanos", "character"), (2, "Hub:Thanos", "character")],
+    )
+    c2.executemany(
+        "INSERT INTO nodes (id, name, document_id, is_resolved) VALUES (?, ?, ?, 1)",
+        [(1, "Thanos", 1), (2, "Hub:Thanos", 2)],
+    )
+    c2.execute("INSERT INTO aliases (alias, node_id) VALUES ('Thanos', 2)")
+    c2.commit()
+    assert [c[1] for c in participant_candidates(s2)["thanos"]] == [
+        "Thanos",
+        "Hub:Thanos",
+    ]
+    s2.close()
 
 
 @pytest.fixture()
@@ -201,7 +304,10 @@ def test_the_pages_own_links_repair_the_filed_rows(store):
     assert rows["Avengers"] == (wolverine, "Wolverine (Earth-616)")
     assert row_count == 5
     assert report["after"]["merged"] == 1
-    # The link signal alone did three re-pointings: the rescued row, the
-    # merged row, and the re-pointed row.
-    assert report["after"]["link_broken"] == 3
+    # The link signal alone did two re-pointings: the rescued row and the
+    # merged row. The 'Secret Invasion' re-point is the shape rule's -- the
+    # unpointed variant falls out of the pool on its own, so the probe
+    # without the page signals reaches the same node, and the tally keeps
+    # the two signals apart.
+    assert report["after"]["link_broken"] == 2
     assert report["after"]["moved"] == 7

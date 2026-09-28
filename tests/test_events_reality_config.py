@@ -154,8 +154,8 @@ def test_the_declared_convention_partitions_candidates(declared):
 
     # A page in reality `7` resolves to the variant; no page reality falls
     # back to the base.
-    assert pick_candidate(cands["zed"], "7") == (2, "Zed (Alt 7)", "7")
-    assert pick_candidate(cands["zed"], None) == (1, "Zed", None)
+    assert pick_candidate(cands["zed"], None, "7") == (2, "Zed (Alt 7)", "7")
+    assert pick_candidate(cands["zed"], None, None) == (1, "Zed", None)
 
 
 def test_the_declared_convention_reads_the_page_reality(declared):
@@ -174,7 +174,7 @@ def test_a_wiki_that_declares_nothing_gets_no_partitioning(silent):
     # an explicit ambiguity -- the wiki's silence, not the engine's guess.
     zed = {c[0]: c[2] for c in cands["zed"]}
     assert zed == {1: None, 2: None}
-    assert isinstance(pick_candidate(cands["zed"], None), dict)
+    assert isinstance(pick_candidate(cands["zed"], None, None), dict)
     assert page_reality(silent, "Battle (Alt 7)") is None
 
 
@@ -186,7 +186,7 @@ def test_the_default_reality_reaches_only_declared_wikis(defaulted, silent):
     assert page_reality(defaulted, "Battle") == "7"
     cands = participant_candidates(defaulted)
     assert pick_candidate(
-        cands["zed"], page_reality(defaulted, "Battle")
+        cands["zed"], None, page_reality(defaulted, "Battle")
     ) == (2, "Zed (Alt 7)", "7")
 
     # Where the overrides declare no default, the same page stays
