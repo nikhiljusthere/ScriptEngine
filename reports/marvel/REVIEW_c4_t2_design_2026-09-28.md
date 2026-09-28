@@ -136,3 +136,18 @@ Required: establish what `Infobox List` means on this wiki (a multi-version char
 `extract_from_sections` drops candidates at INFO level: missing end / verb outside `EVENTIVE_VERBS` (no log at all), "unknown participant", "unquoted". The CLI does not show INFO. So the receipt cannot separate "the page states no event" from "every candidate was rejected", and the 85 zero-event marvel pages include "Civil War II", "Spider-Verse", "Secret Empire", "Infinity Gauntlet (Event)" and "Hyborian Age" (1,010 words).
 
 Required: per-page counters for candidates proposed / kept / dropped by reason, in the run report and the receipt. Then re-account the 85 pages. A dry accounting pass on a sample with INFO logging is fine before the counters land.
+
+---
+
+# Review of `55c2cb9e` (R1/R2/R4 + P1 code + R3 scaffolding), 2026-09-28 ~11:1x
+
+**Accepted as a safe checkpoint.** 131 tests pass (architect re-run: test_events_passages + test_stores + test_timeaxis + test_gate).
+
+One fix before P1 is run on the stores:
+
+## R8: the reality pattern belongs in overrides, not `.py`
+
+`events.py:775` hard-codes Marvel's naming convention: `_REALITY_SUFFIX = r"\((?:[Ee]arth|[Tt]ierra)-?([\w-]+)\)\s*$"`. CLAUDE.md: "if a fix mentions a series name [or a series' convention] and lives in a `.py` file, it is in the wrong place." The resolver *logic* is generic and correct. Only the pattern moves:
+- declare it in `series/marvel/overrides.yaml`, for example `events: reality: {title_pattern: '\((?:Earth|Tierra)-?([\w-]+)\)\s*$', fact_key: reality}`;
+- the engine reads the declared pattern, and a wiki that declares nothing gets no reality partitioning (MCU, JJK unchanged);
+- add a test with a non-Marvel pattern, to prove it is data-driven.
