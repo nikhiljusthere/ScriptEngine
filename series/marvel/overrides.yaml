@@ -203,6 +203,11 @@ events:
   # (subject captured / subdued / imprisoned object). `fought` stays for a
   # fight whose outcome the passage does not state.
   extra_verbs: [defeated, escaped, captured]
+  # R12 fix 3 (2026-09-29): the wiki's alphabetical Character Index pages
+  # ("Character Index/M") are navigation, not participants (seen as a row end
+  # in the 2026-09-29 model trials). Same mechanism as the mcu's `Hub:`.
+  participant_excludes:
+    - "Character Index/"
   placement_types: [story_arc]
   # R3 (2026-09-28 architect steer): this wiki's declared time axis. A page
   # with a `releasedate` sits at its publication clock; a page without one

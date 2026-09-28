@@ -311,3 +311,18 @@ def test_the_pages_own_links_repair_the_filed_rows(store):
     # the two signals apart.
     assert report["after"]["link_broken"] == 2
     assert report["after"]["moved"] == 7
+
+def test_the_pages_own_entity_wins_for_its_own_names():
+    """R12 fix 2: on Henry McCoy (Earth-616), "Beast" names the page's own
+    subject; the page never links to itself, so without this rule the link
+    signal picked the only linked namesake (the clone)."""
+    from scriptengine.ingest.events import pick_candidate
+
+    own = (1, "Henry McCoy (Earth-616)", "616")
+    clone = (2, "Henry McCoy (Clone) (Earth-616)", "616")
+    pick = pick_candidate([own, clone], "Beast", "616", {2},
+                          "Henry McCoy (Earth-616)")
+    assert pick == own
+    # On another page the same pair stays the link signal's call.
+    assert pick_candidate([own, clone], "Beast", "616", {2},
+                          "Utopia (X-Men Base)") == clone

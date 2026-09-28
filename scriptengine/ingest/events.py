@@ -1059,11 +1059,21 @@ def pick_candidate(
     exact = [c for c in cands if c[1].casefold() == folded]
     if len(exact) == 1:
         return exact[0]
+    # The page's own entity wins for its own names: the page is a candidate
+    # for this name only because the name is one of its subject's names, and
+    # a page never links to itself, so the link signal below would otherwise
+    # pick a sibling. 2026-09-28 pilot: "Beast" on Henry McCoy (Earth-616)
+    # resolved to Henry McCoy (Clone) (Earth-616), the page's only linked
+    # namesake (review R12 fix 2).
+    self_folded = (self_page or "").strip().casefold()
+    if self_folded:
+        own = [c for c in cands if c[1].casefold() == self_folded]
+        if len(own) == 1:
+            return own[0]
     # A variant form of the name is a candidate only where the passage
     # points at it: the page links to it, or the passage's own page is that
     # variant (architect 2026-09-28) -- the bare name never names a
     # subpage, with or without a link set.
-    self_folded = (self_page or "").strip().casefold()
     cands = [
         c for c in cands
         if not _is_variant_of(c[1], name)
