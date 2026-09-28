@@ -192,3 +192,22 @@ Crossover issue titles contain `/`, so the subpage heuristic reads "Avengers" as
 - a CLI `events-extract --dry-run` smoke on a fixture store.
 
 **No `events-extract` run (not even a pilot) until the fix + these tests + the four gates are green and committed.**
+
+---
+
+# Architect review of the MCU pilot rows, 2026-09-28 ~22:5x (SQL + code)
+
+**(A) Data-loss bug: section rows store the section title in `events.passage`.**
+- Observed values: `Plot`, `Battle of Titan`, … The committed design is `''` for sections, `lead`, `fact:<key>`.
+- `facts.py` remap treats any non-empty `passage` as section-less. `passage_source()` then returns `''`, so the quote check fails and the row is dropped as unverified at the next re-index.
+- **Impact:** all 231 MCU pilot rows, and every section row of the full run, would be lost on rebuild.
+- **Fix:** the writer, or title-aware remap keying. Add a survives-`--force` test and repair the stored rows.
+
+**(B) MCU ambiguity (~27% of pilot rows) is a candidate-set bug, not real ambiguity.**
+- Bare names fold in variant subpages and hubs:
+  - `Thanos` → `Hub:Thanos | Thanos | Thanos/Earth-838 | …`
+  - `The Avengers` → `The Avengers | The Avengers (comic) | The Avengers/Home Video`
+- Rules:
+  - an exact title match wins over `(qualifier)` and `/subpage` variants;
+  - a variant subpage is a candidate only when the passage links to it, or when the passage page is that variant;
+  - hub pages (declared per wiki) and disambiguation pages are never participants.

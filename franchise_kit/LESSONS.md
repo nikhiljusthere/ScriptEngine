@@ -27,6 +27,8 @@ Each row: the symptom as it first appeared, how to detect it in minutes, and the
 | trap | detect | fix |
 |---|---|---|
 | Bare names resolve to **disambiguation hubs** or wrong-reality variants (Marvel: 48% of event rows; Conan → Earth-16356) | survey S7; SQL on stored rows | reality-aware resolver (disambiguation `main_articleN` + page partition; ambiguous = counted class) |
+| Section rows written with the section title in `passage` (not `''`) are dropped as unverified by the rebuild remap (MCU pilot, all 231 rows at risk) | SQL `select passage, count(*) from events group by 1` after any pilot; a survives-`--force` test | writer and remap share one passage vocabulary (`''` / `lead` / `fact:<key>`) |
+| Variant subpages and hubs inflate candidate sets (MCU `Thanos` → `Hub:Thanos \| Thanos/Earth-838 \| …`): ~27% of pilot rows ambiguous | per-row candidate lists on pilot rows | exact title wins; variant subpages only via link/context; hubs and disambiguation never participants |
 | Placement types named differently (MCU `conflict`, `war`; Marvel `story_arc`) → placement set too small | survey S4 | `events.placement_types` |
 | Manga-shaped time axis (arc chain / `arc` / `chapters`) orders nothing (Marvel 20/1,149, MCU 0/6,053 on the axis) | survey S5; `sum(temporal)` | `events.axis` (date / chain / order / partition), re-derive on stored rows |
 | Two orders for the same thing (Marvel on-sale `releasedate` vs cover `month/year`) | survey S5 samples | the council picks; never guess |
