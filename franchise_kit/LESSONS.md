@@ -56,6 +56,8 @@ Each row: the symptom as it first appeared, how to detect it in minutes, and the
 
 | trap | detect | fix |
 |---|---|---|
+| `index` re-extraction is single-threaded: Marvel's 236k pages take ~35 min on 1 of 32 cores while the GPU idles | `uptime` load ≈ 1, `nvidia-smi` ≈ 1% | overlap: run the other series' GPU steps (dry-run, pilot) during one series' CPU re-index; parallelize re-extraction across cores (byte-identical proof), as page-sweep sharding already does |
+| A worker ends its turn "waiting for a completion notification" (opencode sends none) and idles | session `idle` + a background job still running | the architect's watcher is the wake-up: wait on the job PID, then resume the worker with the next steps |
 | `pkill -f <pattern>` kills your own shell (the pattern is in its argv) | exit 144 | kill by PID from `ss -ltnp` / `/proc` |
 | `setsid … & echo $!` records the wrapper, not the server | `kill` says no such process | read the listener PID from `ss -ltnp` |
 | `FORCE_COLOR=3` in the shell breaks a pytest that asserts on plain text | `test_page_gen` ANSI failure | `env -u FORCE_COLOR` for gates |

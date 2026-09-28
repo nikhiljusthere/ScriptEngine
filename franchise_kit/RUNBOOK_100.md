@@ -44,7 +44,7 @@ Rules that follow:
 | **R, retrieval-owned** | `:8000` ×6 uvicorn workers on CUDA (~4 GB each) + a model-free `:8002` | D3 sweep, gates, bundle-identity proofs | Qwen |
 | **Free CPU** (either mode) | none | survey, dry-runs, SQL verification, audits, unit tests, the D3 panel build | nothing heavy >15 min on CPU for model work (GPU-only rule) |
 
-A mode switch costs about a minute (unload Qwen / start `:8000`, or the reverse). **Batch the work by mode.** Do all Q-mode work together and all R-mode work together, and fill the other side's waiting time with CPU work.
+**Check utilization (`uptime` load vs cores, `nvidia-smi` util) whenever a long step runs: a single-threaded CPU step (a re-index) should always have GPU work overlapping it on another series' store.** A mode switch costs about a minute (unload Qwen / start `:8000`, or the reverse). **Batch the work by mode.** Do all Q-mode work together and all R-mode work together, and fill the other side's waiting time with CPU work.
 
 Key measured numbers:
 - **Extraction:** ~2.7–5 sections/min on 2 slots with thinking on. Answer budget 8,192 tokens; failed pages retry at `SCRIPTENGINE_ANSWER_TOKENS=20480` (Qwen's `--default-max-tokens`).
