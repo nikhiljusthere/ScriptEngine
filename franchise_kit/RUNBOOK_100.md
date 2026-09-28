@@ -51,6 +51,8 @@ Rules that follow:
 
 **Check utilization (`uptime` load vs cores, `nvidia-smi` util) whenever a long step runs: a single-threaded CPU step (a re-index) should always have GPU work overlapping it on another series' store.** A mode switch costs about a minute (unload Qwen / start `:8000`, or the reverse). **Batch the work by mode.** Do all Q-mode work together and all R-mode work together, and fill the other side's waiting time with CPU work.
 
+**Use the whole machine (owner directive 2026-09-29).** 32 cores: every CPU-bound step (re-index extraction, time-axis re-derivation, dry-run census, SQL receipts, tier-0 containment, panel builds) shards across up to 32 processes, with a byte-identity proof of the sharded path against the single-threaded one. GPU: extraction at the highest Qwen concurrency the KV headroom holds, client workers matched. A step that leaves load ≈ 1 and the GPU idle is a defect to fix, not a wait.
+
 Key measured numbers:
 - **Extraction:** ~2.7–5 sections/min on 2 slots with thinking on. Answer budget 8,192 tokens; failed pages retry at `SCRIPTENGINE_ANSWER_TOKENS=20480` (Qwen's `--default-max-tokens`).
 - **D3 sweep after the query-plan fixes:** qa ≈ 0.22 s/probe with 6 CUDA workers, narrative ≈ 0.02 s, roster ≈ 0.4–1 s. 517,960 probes: qa ~31 h, narrative ~3 h, roster ~1–3 days.
