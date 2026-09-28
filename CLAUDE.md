@@ -260,6 +260,8 @@ reports/          dated run dirs + page-campaign/ (question batches, wave
                   records, COVERAGE.md) + comprehension/ (GATE.md, council
                   records + COUNCIL_HISTORY.md ledger)
 tools/            offline harnesses: census_545.py, coverage_report.py, …
+franchise_kit/    onboarding a new franchise to 100%: RUNBOOK_100.md, the one-engine
+                  decision, overrides reference/template, lessons, survey_wiki.py
 ```
 
 ## Infrastructure

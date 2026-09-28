@@ -1,5 +1,7 @@
 # Onboarding a new wiki
 
+> **Taking a franchise to 100%?** Start with [`franchise_kit/RUNBOOK_100.md`](../franchise_kit/RUNBOOK_100.md) (phase order, roles, resource modes) and run [`franchise_kit/tools/survey_wiki.py`](../franchise_kit/tools/survey_wiki.py) before declaring anything. This page stays the detailed reference for the typing and section-name audits.
+
 The order that took the bank from 71.3% recall / 33.5% precision to 91.2% / 60.0%,
 and a One Punch Man battle bank to 97.7% / 97.3%. Written as a checklist because
 every step here was learned by getting it wrong first, and the same traps are

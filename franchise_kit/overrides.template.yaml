@@ -1,0 +1,70 @@
+# series/<name>/overrides.yaml: starting template for a new franchise.
+#
+# Fill it FROM THE SURVEY (franchise_kit/tools/survey_wiki.py --series <name>),
+# never from memory: measure, then declare. Every key is optional. An absent
+# key keeps the engine default, which is exactly the behaviour every other wiki
+# gets. Full key list and readers: franchise_kit/OVERRIDES_REFERENCE.md.
+# Delete the sections this wiki does not need.
+
+# --- Typing (survey S1) ------------------------------------------------------
+# The wiki's infobox template name -> the page type the engine should use.
+# Fix any big article typed `list` / `hub` / junk (MCU: `infobox list` typed
+# Thanos, Daredevil, Iron Man as `list`).
+type_aliases:
+  # "Character Template": character
+
+# Categories / title patterns skipped at crawl + index (disambiguation, galleries).
+skip_categories: []
+# skip_patterns: []
+
+# Infobox keys that hold aliases (codenames), and disambiguation list fields
+# (C3 alias alignment).
+# alias_fact_keys: [currentalias]
+# disambig_list_keys: [main_article1, main_article2]
+
+# Infobox keys used for identity questions (C1).
+# identity_fields: [reality, first, origin, ...]
+
+# --- Chunking + traceability (tier 0, audit) --------------------------------
+# Sections the default chunker skips but that hold prose (Notes/References/Gallery):
+# promote them, or chunk-containment reports unreachable lines.
+content_sections: []
+
+# Citation grammar: how this wiki cites its source instalment. Map only what
+# you have verified; an unmapped parameter stays unmapped.
+# citation_params: { r: comic }
+# citation_ref_tags: []
+
+# --- Relations / categories (C2, C5) ----------------------------------------
+# category_relations:
+#   - { pattern: "(.+)/Members", relation: member_of }
+# relation_sections: [Biography, Background]
+# ability_sections: [Powers and Abilities, Abilities]
+
+# --- Events, time axis, understanding (C4): declare BEFORE any extraction ---
+events:
+  # The wiki's own names for event containers, added to the defaults
+  # (arc, saga, event, battle, story_arcs). Survey S4.
+  placement_types: []
+
+  # Infobox fact keys that carry prose. Declare EVERY long prose key the
+  # survey (S2) lists: under the 100% rule, unread text is a gap.
+  # narrative_fact_keys: [history, "synopsis*"]
+
+  # Extra non-prose headings to exclude. Every exclusion is counted per
+  # heading in the dry-run and the receipt.
+  # furniture: []
+
+  # Time-axis signals (survey S5). Deterministic: no model, no guessing.
+  # axis:
+  #   date_keys: [date]              # absolute rank; no-year values = counted residue
+  #   chain_keys: [previous, next]   # linked-list order, walked per partition
+  #   order_keys: [first, last, "part*"]  # cite a page (issue/episode), inherit its rank
+  #   partition_key: reality         # multiverse: one axis per value
+
+  # Partition naming convention for participant resolution (survey S6).
+  # reality: { title_pattern: '\((?:Earth)-?([\w-]+)\)\s*$', fact_key: reality }
+
+# --- Retrieval / roster ------------------------------------------------------
+# rosters: {}              # viewer word -> the wiki's own set (roster registry)
+# roster_route_words: []   # [] disables the JJK arc/saga roster guard

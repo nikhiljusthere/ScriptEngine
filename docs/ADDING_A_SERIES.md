@@ -1,5 +1,7 @@
 # Adding a series
 
+> **Taking a franchise to 100%?** Start with [`franchise_kit/RUNBOOK_100.md`](../franchise_kit/RUNBOOK_100.md) (phase order, roles, resource modes) and run [`franchise_kit/tools/survey_wiki.py`](../franchise_kit/tools/survey_wiki.py) before declaring anything. This page stays the detailed reference for the typing and section-name audits.
+
 Adding a series should be a name and a URL. No Python, no schema, no alias table.
 Seven of the eight series on disk were added exactly this way; each one needed
 only an `overrides.yaml` describing how that wiki writes a citation.
