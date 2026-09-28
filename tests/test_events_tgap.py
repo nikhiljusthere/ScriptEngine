@@ -194,3 +194,31 @@ def test_cli_dry_run_lists_pages_and_calls_no_model(series, tmp_path, monkeypatc
         assert NoModelAllowed.attempts == 0
     finally:
         get_settings.cache_clear()
+
+def test_a_small_page_is_read_in_one_packed_call(series, monkeypatch):
+    """Owner 2026-09-29: "smaller pages can be read in whole". With the pack
+    size set, the lead and the Plot section go in one call, and the row is
+    still anchored to the passage that holds its quote (the section)."""
+    paths, settings, section, steve, peggy = series
+    monkeypatch.setenv("SCRIPTENGINE_EVENTS_PACK_CHARS", "10000")
+    report = events.extract_events_series(
+        paths, settings=settings, scope="all"
+    )
+
+    assert len(StubLLMClient.instances[0].calls) == 1
+    assert report["events"] == 1
+    assert report["dropped"]["unquoted"] == 0
+    with FactStore(paths.facts_db) as store:
+        store.ensure_events()
+        row = store.connection.execute(
+            "SELECT section_id, passage, subject_node, object_node FROM events"
+        ).fetchone()
+    assert row["section_id"] == section and row["passage"] == ""
+    assert (row["subject_node"], row["object_node"]) == (steve, peggy)
+
+
+def test_a_page_over_the_pack_size_is_read_per_passage(series, monkeypatch):
+    paths, settings, _, _, _ = series
+    monkeypatch.setenv("SCRIPTENGINE_EVENTS_PACK_CHARS", "50")
+    events.extract_events_series(paths, settings=settings, scope="all")
+    assert len(StubLLMClient.instances[0].calls) == 2

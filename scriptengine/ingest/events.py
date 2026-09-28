@@ -2072,112 +2072,139 @@ def extract_from_sections(
             "dedup": 0,
         },
     }
-    for passage in passages:
-        label = passage["passage"]
-        section_id = int(passage["id"]) if passage["kind"] == "section" else None
-        text = (passage["text"] or "").strip()
-        if not text:
-            continue
-        for window in _windows(text):
-            prompt = _TEMPLATE.format(
-                series=series,
-                page=page,
-                section=(passage["title"] or "").strip(),
-                passage=window,
-                verbs=", ".join(sorted(EVENTIVE_VERBS)),
+    # The calls this page costs: one per window of each passage, or -- a page
+    # whose passages together fit `_pack_chars()` (owner 2026-09-29: "smaller
+    # pages can be read in whole") -- one call over all of them. Each answer
+    # row is anchored to the passage that holds its quote, so a packed read
+    # stores the same row shape as a per-passage one.
+    readable = [p for p in passages if (p["text"] or "").strip()]
+    pack = _pack_chars()
+    units: list[tuple[str, str, list[dict[str, Any]]]] = []
+    if (
+        pack
+        and len(readable) > 1
+        and sum(len(p["text"].strip()) for p in readable) <= pack
+    ):
+        joined = "\n\n".join(
+            f"[{(p['title'] or p['passage'] or 'lead').strip()}]\n{p['text'].strip()}"
+            for p in readable
+        )
+        units.append((joined, "", readable))
+    else:
+        for passage in readable:
+            for window in _windows(passage["text"].strip()):
+                units.append(
+                    (window, (passage["title"] or "").strip(), [passage])
+                )
+    for window, section_title, holders in units:
+        prompt = _TEMPLATE.format(
+            series=series,
+            page=page,
+            section=section_title,
+            passage=window,
+            verbs=", ".join(sorted(EVENTIVE_VERBS)),
+        )
+        answer = client.complete(
+            prompt,
+            system=SYSTEM,
+            temperature=0.0,
+            max_tokens=_answer_budget(),
+            extra_body=_effort_body(),
+        )
+        for entry in parse_events_response(answer):
+            subject = str(entry.get("subject") or "").strip()
+            verb = str(entry.get("verb") or "").strip().lower()
+            object_ = str(entry.get("object") or "").strip()
+            quote = str(entry.get("quote") or "").strip()
+            stats["proposed"] += 1
+            if not subject or not object_:
+                stats["dropped"]["incomplete"] += 1
+                continue
+            if verb not in EVENTIVE_VERBS:
+                stats["dropped"]["verb"] += 1
+                continue
+            # Both ends have to be somebody or somewhere this wiki actually
+            # has a page for, or a model supplies a plausible name from the
+            # series it has read and nothing in the row shows it.
+            sub_pick = pick_candidate(
+                known.get(subject.lower(), []), subject,
+                page_real, linked, page,
             )
-            answer = client.complete(
-                prompt,
-                system=SYSTEM,
-                temperature=0.0,
-                max_tokens=_answer_budget(),
-                extra_body=_effort_body(),
+            obj_pick = pick_candidate(
+                known.get(object_.lower(), []), object_,
+                page_real, linked, page,
             )
-            for entry in parse_events_response(answer):
-                subject = str(entry.get("subject") or "").strip()
-                verb = str(entry.get("verb") or "").strip().lower()
-                object_ = str(entry.get("object") or "").strip()
-                quote = str(entry.get("quote") or "").strip()
-                stats["proposed"] += 1
-                if not subject or not object_:
-                    stats["dropped"]["incomplete"] += 1
-                    continue
-                if verb not in EVENTIVE_VERBS:
-                    stats["dropped"]["verb"] += 1
-                    continue
-                # Both ends have to be somebody or somewhere this wiki actually
-                # has a page for, or a model supplies a plausible name from the
-                # series it has read and nothing in the row shows it.
-                sub_pick = pick_candidate(
-                    known.get(subject.lower(), []), subject,
-                    page_real, linked, page,
+            if sub_pick is None or obj_pick is None:
+                stats["dropped"]["unknown_participant"] += 1
+                logger.info(
+                    "unknown participant %r/%r for %s",
+                    subject, object_, page,
                 )
-                obj_pick = pick_candidate(
-                    known.get(object_.lower(), []), object_,
-                    page_real, linked, page,
-                )
-                if sub_pick is None or obj_pick is None:
-                    stats["dropped"]["unknown_participant"] += 1
-                    logger.info(
-                        "unknown participant %r/%r for %s",
-                        subject, object_, page,
-                    )
-                    continue
-                # Self-directed events are real: Toji kills himself, Mahito
-                # awakens. The gate allows subject == object and says so.
-                if not _quoted_in(quote, text):
-                    stats["dropped"]["unquoted"] += 1
-                    logger.info("unquoted %s->%s for %s", verb, object_, page)
-                    continue
+                continue
+            # Self-directed events are real: Toji kills himself, Mahito
+            # awakens. The gate allows subject == object and says so.
+            passage = next(
+                (h for h in holders
+                 if _quoted_in(quote, (h["text"] or "").strip())),
+                None,
+            )
+            if passage is None:
+                stats["dropped"]["unquoted"] += 1
+                logger.info("unquoted %s->%s for %s", verb, object_, page)
+                continue
+            label = passage["passage"]
+            section_id = (
+                int(passage["id"]) if passage["kind"] == "section" else None
+            )
 
-                def filed(pick):
-                    # (node_id_or_None, name, candidate_list_or_None)
-                    if isinstance(pick, dict):
-                        names = " | ".join(sorted(c[1] for c in pick["ambiguous"]))
-                        return None, names
-                    return pick[0], pick[1]
+            def filed(pick):
+                # (node_id_or_None, name, candidate_list_or_None)
+                if isinstance(pick, dict):
+                    names = " | ".join(sorted(c[1] for c in pick["ambiguous"]))
+                    return None, names
+                return pick[0], pick[1]
 
-                sub_node, sub_name = filed(sub_pick)
-                obj_node, obj_name = filed(obj_pick)
-                ambiguous = (
-                    isinstance(sub_pick, dict) or isinstance(obj_pick, dict)
-                )
-                if ambiguous:
-                    stats["ambiguous"] += 1
-                if (
-                    not ambiguous
-                    and page_real
-                    and sub_pick[2] is not None
-                    and sub_pick[2] != page_real
-                    and obj_pick[2] is not None
-                    and obj_pick[2] != page_real
-                ):
-                    stats["cross_reality"] += 1
-                key = (
-                    label,
-                    (sub_node if sub_node is not None else sub_name),
-                    verb,
-                    (obj_node if obj_node is not None else obj_name),
-                )
-                if key in seen:
-                    stats["dropped"]["dedup"] += 1
-                    continue
-                seen.add(key)
-                stats["kept"] += 1
-                found.append(
-                    {
-                        "subject_node": sub_node,
-                        "subject_name": sub_name,
-                        "object_node": obj_node,
-                        "object_name": obj_name,
-                        "verb": verb,
-                        "section_id": section_id,
-                        "quote": quote,
-                        "temporal": True,
-                        "time_rank": passage["rank"],
-                        "passage": label,
-                    }
-                )
+            sub_node, sub_name = filed(sub_pick)
+            obj_node, obj_name = filed(obj_pick)
+            ambiguous = (
+                isinstance(sub_pick, dict) or isinstance(obj_pick, dict)
+            )
+            if ambiguous:
+                stats["ambiguous"] += 1
+            if (
+                not ambiguous
+                and page_real
+                and sub_pick[2] is not None
+                and sub_pick[2] != page_real
+                and obj_pick[2] is not None
+                and obj_pick[2] != page_real
+            ):
+                stats["cross_reality"] += 1
+            key = (
+                label,
+                (sub_node if sub_node is not None else sub_name),
+                verb,
+                (obj_node if obj_node is not None else obj_name),
+            )
+            if key in seen:
+                stats["dropped"]["dedup"] += 1
+                continue
+            seen.add(key)
+            stats["kept"] += 1
+            found.append(
+                {
+                    "subject_node": sub_node,
+                    "subject_name": sub_name,
+                    "object_node": obj_node,
+                    "object_name": obj_name,
+                    "verb": verb,
+                    "section_id": section_id,
+                    "quote": quote,
+                    "temporal": True,
+                    "time_rank": passage["rank"],
+                    "passage": label,
+                }
+            )
     return found, stats
 
 
@@ -2205,6 +2232,16 @@ def _effort_body() -> dict[str, str] | None:
     if extra:
         body.update(json.loads(extra))
     return body or None
+
+
+def _pack_chars() -> int:
+    """The largest page (total passage chars) read in one call; 0 = off.
+
+    Off by default: a packed read is a different prompt, so it is adopted
+    only on a row-set diff against the per-passage read (review R11)."""
+    import os
+
+    return int(os.environ.get("SCRIPTENGINE_EVENTS_PACK_CHARS", "0") or 0)
 
 
 def _answer_budget() -> int:
