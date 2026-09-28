@@ -117,3 +117,18 @@ events:
 structural_infoboxes:
   - "Infobox List"
   - "InfoboxWP"
+
+# P2b (2026-09-28): the live wiki's `Tony Stark` page (pageid 26303) is
+# `#REDIRECT [[Iron Man]]`, and redirects are followed, not crawled: the
+# corpus holds `Iron Man`, never the redirect. Every edge and chunk entity
+# written under the bare name therefore forked a stub node (store census
+# 2026-09-28: node 35256, 2,997 in-edges, 13,304 chunk links; the Iron Man
+# page itself holds the `tony stark` alias, so the two nodes are one entity
+# split across a redirect). The engine now merges a bare name into the page
+# its own evidence points at (usage: >=3 pages write `[[Iron Man|Tony Stark]]`
+# -- 68 do; or a page's own alias fields), and this pin makes the merge
+# deterministic regardless of that count: the wiki's own answer for the bare
+# name is the character page. The store changes only via re-index after the
+# gates; no direct surgery.
+alias_map:
+  "Tony Stark": "Iron Man"

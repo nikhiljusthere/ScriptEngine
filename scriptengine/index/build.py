@@ -122,7 +122,9 @@ def build_index(
         chunks_by_page = _load_documents(
             store, pages, progress, works, dropped, boilerplate
         )
-        node_ids = _load_graph(store, pages, progress, dropped)
+        node_ids, alias_resolver = _load_graph(
+            store, pages, progress, dropped, overrides
+        )
         # Facts the wiki declares and the extractor cannot derive (interval
         # states: what a character's state was *during* an arc, which the
         # infobox's current-state read cannot express). Per-wiki data in
@@ -131,7 +133,9 @@ def build_index(
         report["declared_facts"] = _apply_declared_facts(
             store, node_ids, overrides.get("extra_facts") or [], dropped
         )
-        chunk_rows = _load_chunks(store, pages, chunks_by_page, progress)
+        chunk_rows = _load_chunks(
+            store, pages, chunks_by_page, progress, alias_resolver
+        )
         store.rebuild_fts()
         # Re-key the snapshotted derived layers onto the build that just ran:
         # their section/node ids were renumbered, but their durable keys
@@ -233,22 +237,94 @@ def _load_documents(
     return chunks_by_page
 
 
+def _root_of(title: str) -> str:
+    """The page a subpage's names are about.
+
+    `Iron Man/Avengers Assassinated` writing "Tony Stark" is evidence about
+    the `Iron Man` page, not about a second entity, so alias claims from a
+    subpage count for its root.
+    """
+    return title.split("/", 1)[0]
+
+
+def _build_alias_resolver(
+    pages: list[WikiPage],
+    usage: dict[str, set[str]],
+    overrides: dict[str, Any],
+    node_ids: dict[str, int],
+) -> dict[str, int]:
+    """Which page's node a bare alias name resolves to, by the wiki's own evidence.
+
+    A name like `Tony Stark` that is not itself a page title (the live wiki's
+    page is `#REDIRECT [[Iron Man]]`, and redirects are followed, not
+    crawled) would otherwise spawn a stub node that forks the entity: every
+    edge and chunk link written under the bare name lands on the stub. The
+    name resolves to a page's node when the wiki's evidence points at exactly
+    one page:
+
+    - a page's own `aliases` / `redirects` fields name it;
+    - at least three independent pages write ``[[Page|Name]]`` (the same
+      usage evidence the harvest feeds the alias table);
+    - a name several pages claim stays unresolved: a coin-flip merge is
+      worse than the stub it replaces.
+
+    A series pins or blocks a name in `overrides.yaml` under `alias_map`
+    (`{name: page_title}`); the declaration wins over the inferred evidence,
+    and a title the build does not hold is skipped with a warning, never
+    invented.
+    """
+    claimers: dict[str, set[str]] = {}
+
+    def claim(name: str, page_title: str) -> None:
+        root = _root_of(page_title)
+        if root in node_ids:
+            claimers.setdefault(name.strip().lower(), set()).add(root)
+
+    for page in pages:
+        for name in [*page.aliases, *page.redirects]:
+            claim(name, page.title)
+    for target, names in usage.items():
+        if target in node_ids:
+            for name in names:
+                claim(name, target)
+
+    resolver: dict[str, int] = {
+        name: node_ids[next(iter(roots))]
+        for name, roots in claimers.items()
+        if len(roots) == 1
+    }
+    for name, title in ((overrides or {}).get("alias_map") or {}).items():
+        title = str(title).strip()
+        node_id = node_ids.get(title)
+        if node_id is None:
+            logger.warning(
+                "alias_map %r -> %r skipped: no such page in this build", name, title,
+            )
+            continue
+        resolver[str(name).strip().lower()] = node_id
+    return resolver
+
+
 def _load_graph(
     store: FactStore,
     pages: Iterable[WikiPage],
     progress: Progress | None,
     dropped: set[str] | None = None,
-) -> dict[str, int]:
+    overrides: dict[str, Any] | None = None,
+) -> tuple[dict[str, int], dict[str, int]]:
     """Insert nodes, aliases, facts and edges.
 
     Nodes are created for every page first, so that an edge pointing at a page
     crawled later still resolves. Unresolved targets (links to pages the crawl
     never reached) are created as bare nodes and flagged, rather than dropped:
     knowing that Todo is affiliated with something is worth more than silence,
-    even when that something has no page here.
+    even when that something has no page here. One exception: a target the
+    wiki's own alias evidence points at a single page merges into that page's
+    node (`_build_alias_resolver`) instead of forking a stub.
 
-    Returns the title-to-node-id map, so a later build step can resolve a
-    declared fact by the name the wiki wrote it under.
+    Returns the title-to-node-id map (so a later build step can resolve a
+    declared fact by the name the wiki wrote it under) and the alias resolver
+    (so chunk entity links follow the same merge).
     """
     pages = list(pages)
     dropped = dropped or set()
@@ -262,10 +338,13 @@ def _load_graph(
         node_ids[page.title] = node_id
         store.add_aliases(node_id, [page.title, *page.aliases])
 
-    for target, alias in _harvest_link_aliases(pages).items():
+    usage = _harvest_link_aliases(pages)
+    for target, alias in usage.items():
         node_id = node_ids.get(target)
         if node_id is not None:
             store.add_aliases(node_id, alias)
+    resolver = _build_alias_resolver(pages, usage, overrides or {}, node_ids)
+    merged_names: set[str] = set()
 
     for index, page in enumerate(pages):
         source_id = node_ids[page.title]
@@ -289,9 +368,16 @@ def _load_graph(
                 continue
             target_id = node_ids.get(edge.target)
             if target_id is None:
-                target_id = store.add_node(edge.target)
-                node_ids[edge.target] = target_id
-                store.add_aliases(target_id, [edge.target])
+                # The wiki's own alias evidence may point this bare name at a
+                # single page's node: merge instead of forking a stub.
+                target_id = resolver.get(edge.target.strip().lower())
+                if target_id is not None:
+                    node_ids[edge.target] = target_id
+                    merged_names.add(edge.target)
+                else:
+                    target_id = store.add_node(edge.target)
+                    node_ids[edge.target] = target_id
+                    store.add_aliases(target_id, [edge.target])
 
             store.add_edge(
                 source_id=source_id,
@@ -305,8 +391,17 @@ def _load_graph(
         if progress and index % 100 == 0:
             progress("graph", index + 1, len(pages))
 
+    for name in sorted(merged_names):
+        # The merged name is now a known alias of the page's node: record it
+        # (idempotent) so alias lookups find it, as the harvest would have.
+        store.add_aliases(resolver[name.strip().lower()], [name])
+
     store.commit()
-    return node_ids
+    if resolver:
+        logger.info(
+            "alias resolution: %s names merge into their page's node", len(resolver),
+        )
+    return node_ids, resolver
 
 
 def _apply_declared_facts(
@@ -395,6 +490,7 @@ def _load_chunks(
     pages: Iterable[WikiPage],
     chunks_by_page: dict[str, list[Chunk]],
     progress: Progress | None,
+    resolver: dict[str, int] | None = None,
 ) -> list[dict[str, Any]]:
     """Insert chunks, wire parents, and link each chunk to the entities it names.
 
@@ -448,10 +544,21 @@ def _load_chunks(
             if chunk.entities:
                 placeholders = ",".join("?" * len(chunk.entities))
                 rows = store.connection.execute(
-                    f"SELECT id FROM nodes WHERE name IN ({placeholders})",
+                    f"SELECT id, name FROM nodes WHERE name IN ({placeholders})",
                     tuple(chunk.entities),
                 ).fetchall()
-                store.link_chunk_nodes(chunk_id, [int(r["id"]) for r in rows])
+                linked = {int(r["id"]) for r in rows}
+                found = {r["name"] for r in rows}
+                # An entity written under a page's alias (the wiki's own
+                # display name) links to that page's node, not a stub: the
+                # same merge the graph edges follow above.
+                if resolver:
+                    for name in chunk.entities:
+                        if name not in found:
+                            node_id = resolver.get(name.strip().lower())
+                            if node_id is not None:
+                                linked.add(node_id)
+                store.link_chunk_nodes(chunk_id, list(linked))
 
             if chunk.level in (0, 2):
                 to_embed.append(
