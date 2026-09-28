@@ -275,6 +275,129 @@ class TestBackfill:
             assert foreign == 0
 
 
+class TestStoreAxisBackfill:
+    """R3: the wiki's declared store axis is the weakest placement signal.
+
+    A row the page, section and citation signals missed inherits the rank
+    of its page on the declared axis -- the wiki's own clock, per
+    partition -- and the axis' partition value, written to the
+    `partition` column. A wiki that declares no axis sees the step as a
+    no-op, so its rows keep their baseline.
+    """
+
+    OVERRIDES = """\
+events:
+  axis:
+    date_keys: [releasedate]
+    partition_key: reality
+"""
+
+    @pytest.fixture()
+    def axis_store(self, tmp_path):
+        """Two episode instalments, dated, filed under one reality.
+
+        Neither instalment carries an `arc` or chapter fact, so the story
+        axis and the section signal reach no row: only the declared store
+        axis can place them."""
+        root = tmp_path / "axiswiki"
+        root.mkdir()
+        (root / "overrides.yaml").write_text(self.OVERRIDES, encoding="utf-8")
+        store = FactStore(root / "facts.db")
+        store.initialise()
+        c = store.connection
+        c.executemany(
+            "INSERT INTO documents (id, title, page_type) VALUES (?, ?, ?)",
+            [(1, "Ep One", "episode"), (2, "Ep Two", "episode")],
+        )
+        c.executemany(
+            "INSERT INTO sections"
+            " (id, document_id, title, breadcrumb, level, ordinal, text,"
+            " word_count) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            [
+                (1, 1, "Plot", "", 1, 0, "Ep One happens.", 10),
+                (2, 2, "Plot", "", 1, 0, "Ep Two happens.", 10),
+            ],
+        )
+        c.executemany(
+            "INSERT INTO nodes (id, name, document_id, is_resolved)"
+            " VALUES (?, ?, ?, 1)",
+            [(1, "Ep One", 1), (2, "Ep Two", 2)],
+        )
+        c.executemany(
+            "INSERT INTO facts (id, node_id, key, value) VALUES (?, ?, ?, ?)",
+            [
+                (1, 1, "releasedate", "March 2020"),
+                (2, 1, "reality", "Earth-838"),
+                (3, 2, "releasedate", "April 2020"),
+                (4, 2, "reality", "Earth-838"),
+            ],
+        )
+        c.executemany(
+            "INSERT INTO events (subject_node, subject_name, object_node,"
+            " object_name, verb, arc_key, section_id, quote, time_rank,"
+            " passage, doc_title, section_ordinal)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, '', ?, '', ?, ?)",
+            [
+                (1, "Ep One", 2, "Ep Two", "defeats", "Ep One", 1, 1,
+                 "Ep One", 0),
+                (1, "Ep One", 2, "Ep Two", "defeats", "Ep Two", 2, 1,
+                 "Ep Two", 0),
+            ],
+        )
+        c.commit()
+        return store
+
+    def test_declared_axis_places_the_missed_rows_with_partition(
+        self, axis_store
+    ):
+        tally = timeaxis.backfill_event_arc_index(axis_store)
+        rows = {
+            row["arc_key"]: row
+            for row in axis_store.connection.execute(
+                'SELECT arc_key, arc_index, "partition" FROM events'
+                " ORDER BY arc_key"
+            )
+        }
+        # Both rows the story signals missed; the declared axis reached both.
+        assert tally["store_axis"] == 2
+        # The axis' order, not an invention: the earlier date sits first.
+        assert rows["Ep One"]["arc_index"] < rows["Ep Two"]["arc_index"]
+        # The axis' partition value, written to the column.
+        assert rows["Ep One"]["partition"] == "Earth-838"
+        assert rows["Ep Two"]["partition"] == "Earth-838"
+
+    def test_axis_tally_is_stable_across_reruns(self, axis_store):
+        # The tally counts reach, not updates: a settled re-run reports the
+        # same number and moves nothing.
+        first = timeaxis.backfill_event_arc_index(axis_store)
+        placed = {
+            row["arc_key"]: row["arc_index"]
+            for row in axis_store.connection.execute(
+                "SELECT arc_key, arc_index FROM events"
+            )
+        }
+        second = timeaxis.backfill_event_arc_index(axis_store)
+        assert second["store_axis"] == first["store_axis"] == 2
+        same = axis_store.connection.execute(
+            "SELECT COUNT(*) FROM events WHERE arc_index IS NOT NULL"
+        ).fetchone()[0]
+        assert same == 2
+        for key, value in placed.items():
+            assert axis_store.connection.execute(
+                "SELECT arc_index FROM events WHERE arc_key = ?", (key,)
+            ).fetchone()[0] == value
+
+    def test_a_wiki_that_declares_no_axis_sees_a_noop(self, jjk_store):
+        # jjk declares no `events: axis:` block: the step is a no-op, no row
+        # gains a partition value, and the tally reports zero reach.
+        tally = timeaxis.backfill_event_arc_index(jjk_store)
+        assert tally["store_axis"] == 0
+        set_ = jjk_store.connection.execute(
+            'SELECT COUNT(*) FROM events WHERE "partition" IS NOT NULL'
+        ).fetchone()[0]
+        assert set_ == 0
+
+
 class TestRecomputeTemporal:
     def test_temporal_tracks_the_placement(self, jjk_store):
         # After the recompute the flag agrees with the placement: no temporal

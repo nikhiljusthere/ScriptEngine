@@ -1754,6 +1754,7 @@ class FactStore:
                 " section_id INTEGER REFERENCES sections(id) ON DELETE CASCADE,"
                 " quote TEXT, temporal INTEGER, time_rank REAL,"
                 " arc_index INTEGER,"
+                ' "partition" TEXT,'
                 " doc_title TEXT NOT NULL DEFAULT '',"
                 " section_ordinal INTEGER NOT NULL DEFAULT 0,"
                 " passage TEXT NOT NULL DEFAULT '',"
@@ -1784,6 +1785,7 @@ class FactStore:
             " section_id INTEGER REFERENCES sections(id) ON DELETE CASCADE,"
             " quote TEXT, temporal INTEGER, time_rank REAL,"
             " arc_index INTEGER,"
+            ' "partition" TEXT,'
             " doc_title TEXT NOT NULL DEFAULT '',"
             " section_ordinal INTEGER NOT NULL DEFAULT 0,"
             " passage TEXT NOT NULL DEFAULT '',"

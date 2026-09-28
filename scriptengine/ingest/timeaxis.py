@@ -839,12 +839,25 @@ def backfill_event_arc_index(store: FactStore) -> dict[str, int]:
     The returned tally is the coverage number the residue pass reads: how many
     placement pages each cheap signal reaches, across every placement page, not
     just the ones that happen to carry an event.
+
+    The signals run strongest first: the page's own arc filing, the section's
+    arc filing, the wiki's in-text citation, and finally -- only on a wiki
+    that declares one -- the declared store axis, which inherits the page's
+    rank (and that axis' partition value, written to the `partition` column)
+    for every row the other signals missed. A wiki that declares no axis sees
+    the last step as a no-op.
     """
     store.ensure_events()
-    if "arc_index" not in {
+    columns = {
         row[1] for row in store.connection.execute("PRAGMA table_info(events)")
-    }:
+    }
+    if "arc_index" not in columns:
         store.connection.execute("ALTER TABLE events ADD COLUMN arc_index INTEGER")
+        store.connection.commit()
+    if "partition" not in columns:
+        store.connection.execute(
+            'ALTER TABLE events ADD COLUMN "partition" TEXT'
+        )
         store.connection.commit()
 
     axis = placement_time_axis(store)
@@ -893,7 +906,26 @@ def backfill_event_arc_index(store: FactStore) -> dict[str, int]:
         row["id"]: (row["text"] or "")
         for row in store.connection.execute("SELECT id, text FROM sections")
     }
+
+    # (R3) The wiki's declared store axis, weakest placement signal: a row the
+    # page, section and citation signals missed inherits the rank of its page
+    # on the declared axis -- the wiki's own chain / date / cited-page clock,
+    # per partition -- with that axis' partition value, written to the
+    # `partition` column. The rank is the wiki's order, not this engine's
+    # inference; a wiki that declares no axis -- or whose axis reaches no
+    # page -- sees the step as a no-op, so the manga stores keep their
+    # byte-identical baselines.
+    store_axis = store_time_axis(store) if events_axis_config(store) else None
+    axis_rank: dict[str, tuple[float | None, str | None]] = {}
+    if store_axis is not None:
+        axis_rank = {
+            page.lower(): (placement.index, placement.partition)
+            for page, placement in store_axis.pages.items()
+            if placement.index is not None
+        }
+
     citation_placed = 0
+    store_axis_placed = 0
     for (page_lower, section_id) in sorted(
         (key for key, value in pair_index.items() if value is None),
         key=lambda key: (key[0], key[1] or -1),
@@ -908,16 +940,42 @@ def backfill_event_arc_index(store: FactStore) -> dict[str, int]:
             index, _signal, _detail = _citation_decision(
                 maps, arc_names, row["quote"], text
             )
-            if index is None:
+            rank, partition = axis_rank.get(page_lower, (None, None))
+            if index is not None:
+                # The citation (the stronger, per-row signal) owns the rank.
+                citation_placed += 1
+            elif rank is not None:
+                # By right: the store axis reaches the row whether or not a
+                # settled store already placed it, so the tally is stable
+                # across re-runs, as the citation tally is.
+                store_axis_placed += 1
+            if index is None and rank is None:
                 continue
-            citation_placed += 1
             if row["arc_index"] is None:
                 store.connection.execute(
-                    "UPDATE events SET arc_index = ? WHERE subject_node = ?"
+                    "UPDATE events SET arc_index = ? WHERE subject_node IS ?"
                     " AND verb = ? AND object_node IS ? AND section_id IS ?"
                     " AND time_rank IS ?",
                     (
-                        index,
+                        index if index is not None else rank,
+                        row["subject_node"],
+                        row["verb"],
+                        row["object_node"],
+                        row["section_id"],
+                        row["time_rank"],
+                    ),
+                )
+            if rank is not None:
+                # The page's partition holds whatever signal placed the row;
+                # rewritten on every run (a settled run writes the same
+                # value), so an FK rebuild that loses the column's contents
+                # is healed on the next backfill.
+                store.connection.execute(
+                    'UPDATE events SET "partition" = ? WHERE subject_node IS ?'
+                    " AND verb = ? AND object_node IS ? AND section_id IS ?"
+                    " AND time_rank IS ?",
+                    (
+                        partition,
                         row["subject_node"],
                         row["verb"],
                         row["object_node"],
@@ -927,6 +985,7 @@ def backfill_event_arc_index(store: FactStore) -> dict[str, int]:
                 )
     store.connection.commit()
     tally["citations"] = citation_placed
+    tally["store_axis"] = store_axis_placed
     tally["pages"] = len(axis)
     tally["rows"] = store.connection.execute("SELECT COUNT(*) FROM events").fetchone()[0]
     return tally
