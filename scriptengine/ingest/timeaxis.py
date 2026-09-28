@@ -55,15 +55,19 @@ _RANGE = re.compile(r"(\d+)\s*[-\u2013]\s*(\d+)")
 class PlacementAxis:
     """Where one placement page sits on the story's time axis.
 
-    `arc` is the arc page it filed under (None on the residue), `index` its
-    orderable position on that axis (None when the arc is off the story chain),
-    and `signal` which of the three cheap signals placed it -- the report a
-    residue pass reads to know what inference still has to do.
+    `arc` is the arc page it filed under (None on the residue and on the
+    store axis, which orders by the store's own signal, not a story arc),
+    `index` its orderable position on that axis (a float where the store
+    axis ranks it, None on the residue), and `signal` which cheap signal
+    placed it -- the report a residue pass reads to know what inference
+    still has to do. `partition` is the store axis' partition value (None
+    where the page carries none or the wiki declares no partition key).
     """
 
     arc: str | None
-    index: int | None
-    signal: str  # "arc_page" | "arc_fact" | "chapters" | "residue"
+    index: int | float | None
+    signal: str  # "arc_page" | "arc_fact" | "chapters" | "store_axis" | "residue"
+    partition: str | None = None
 
 
 def story_arc_index(store: FactStore) -> dict[str, int]:
@@ -303,6 +307,425 @@ def citation_arc_maps(
         if match is not None and placed.index is not None:
             episode_map[int(match.group(1))] = placed.index
     return chapter_map, episode_map
+
+
+# --- R3: the store's declared time axis ------------------------------------
+
+
+@dataclass(frozen=True)
+class StoreAxisPlacement:
+    """Where one page sits on the store's declared time axis.
+
+    `index` is the page's orderable rank across the store -- a float, the
+    partitions value-sorted ahead of the within-partition order -- and None
+    on the residue. `signal` is the strongest declared signal that reached it
+    (`chain`, `date`, `order_key`), and `partition` the value of the declared
+    partition key (None where the page carries none).
+    """
+
+    index: float | None
+    signal: str
+    partition: str | None
+    detail: str = ""
+
+
+@dataclass(frozen=True)
+class StoreAxis:
+    """The store's declared time axis, walked over its placement pages.
+
+    `pages` maps each placement page to its placement; `tally` is the receipt:
+    how many pages each declared signal reached, how the partition key cut the
+    store, and where two declared signals disagreed. A wiki that declares no
+    axis sees empty `pages` and a zeroed tally.
+    """
+
+    pages: dict[str, StoreAxisPlacement]
+    tally: dict[str, Any]
+
+
+# A chain fact declared to read backwards: its value is the page's
+# *predecessor* (value -> page). A declared key spelled any other way reads
+# forwards (page -> value); `next`/`previous` are the only generic spellings
+# the chain walk knows.
+_BACKWARD_CHAIN_KEYS = {"previous", "prev"}
+
+# The month names a date value may spell, full or abbreviated.
+_MONTHS = {
+    "january": 1, "february": 2, "march": 3, "april": 4, "may": 5, "june": 6,
+    "july": 7, "august": 8, "september": 9, "october": 10, "november": 11,
+    "december": 12,
+    "jan": 1, "feb": 2, "mar": 3, "apr": 4, "jun": 6, "jul": 7, "aug": 8,
+    "sep": 9, "sept": 9, "oct": 10, "nov": 11, "dec": 12,
+}
+_YEAR_IN = re.compile(r"(?<!\d)(\d{3,4})(?!\d)")
+_DAY_IN = re.compile(r"(?<!\d)(\d{1,2})(?!\d)")
+
+
+def _date_rank(value: str | None) -> float | None:
+    """The clock a date fact parses to: `(year, month, day)` as a float.
+
+    A range yields its first year (`2020-2021` -> 2020), an optional month
+    name adds its part of the year, and an optional day its part of the month,
+    so a parsed rank always sorts with the wiki's own publication order. A
+    value with no year is unparseable -- the residue signal, counted -- and
+    the axis does not invent a number for it.
+    """
+    if value is None:
+        return None
+    text = str(value).strip()
+    if not text:
+        return None
+    years = [int(year) for year in _YEAR_IN.findall(text)]
+    if not years:
+        return None
+    month = None
+    for name, number in _MONTHS.items():
+        if re.search(rf"\b{re.escape(name)}\b", text, re.IGNORECASE):
+            month = number
+            break
+    day = None
+    for candidate in _DAY_IN.findall(text):
+        number = int(candidate)
+        if number not in years and 1 <= number <= 31:
+            day = number
+            break
+    rank = float(years[0])
+    if month is not None:
+        rank += (month - 1) / 12.0
+    if day is not None:
+        rank += (day - 1) / 365.0
+    return rank
+
+
+def _chain_targets(value: str | None) -> list[str]:
+    """The pages one chain fact names, in the order written.
+
+    A wiki splits a chain value into labelled runs -- a "Chronologically:"
+    line introducing the target line that follows it -- so the lines are read
+    one at a time: a bare label line only introduces, and every other line
+    names a target. A target the wiki did not file, or filed in another
+    partition, resolves to nothing: the walk counts it, never invents it.
+    """
+    if not value:
+        return []
+    targets: list[str] = []
+    for line in str(value).splitlines():
+        line = line.strip().strip("*").strip()
+        if not line or line.endswith(":"):
+            continue
+        if line.startswith("[[") and line.endswith("]]"):
+            line = line[2:-2].strip()
+        if line:
+            targets.append(line)
+    return targets
+
+
+def _walk_chains(
+    pages: list[str], forward: dict[str, str], backward: dict[str, str]
+) -> list[list[str]]:
+    """The linked-list runs of a partition, longest first.
+
+    A run is the `next` chain the wiki filed: an edge is followed only when
+    both ends sit in the partition, so a link out of it (a soundtrack, a poll,
+    another reality) breaks the run rather than dragging a stranger into the
+    order. A page the wiki linked but whose partner the wiki filed elsewhere
+    keeps its run of one -- the link is counted, the order is not invented.
+    """
+    visited: set[str] = set()
+    runs: list[list[str]] = []
+
+    def walk(start: str) -> list[str]:
+        run: list[str] = []
+        node: str | None = start
+        while node is not None and node not in visited and node not in run:
+            run.append(node)
+            visited.add(node)
+            node = forward.get(node)
+        return run
+
+    for head in sorted(pages, key=str.lower):
+        if head not in backward and head not in visited:
+            runs.append(walk(head))
+    for page in sorted(pages, key=str.lower):
+        if page in visited:
+            continue
+        pred = backward.get(page)
+        if pred is None or pred not in visited:
+            runs.append(walk(page))
+    kept = [
+        run for run in runs if len(run) > 1 or run[0] in forward or run[0] in backward
+    ]
+    kept.sort(key=lambda run: (-len(run), run[0].lower()))
+    return kept
+
+
+def store_time_axis(store: FactStore) -> StoreAxis:
+    """The store's declared time axis: its placement pages, placed by the
+    wiki's own order signals, strongest first.
+
+    The wiki declares the signals it records in its overrides
+    (`events: axis:`): `date_keys` whose values parse to a clock, `chain_keys`
+    whose values link the pages into runs, `order_keys` whose values cite a
+    page and inherit that page's clock, and a `partition_key` that cuts the
+    store into one axis per value. A wiki that declares nothing sees an empty
+    axis: the manga signals stand alone.
+
+    Within a partition the order is the wiki's own: the chain runs, longest
+    first; then the pages the chain leaves, in the clock their `date_keys`
+    parse to; then the pages a citation reaches, in the cited page's clock.
+    Two signals on one page are checked against each other and counted, not
+    blended. Across partitions the order is value-sorted -- a named
+    assumption: within a partition the wiki's own order is law, between
+    partitions it is only a sort. A value the wiki does not file stays
+    unmapped -- a gap, never a number to invent. Nothing here calls a model.
+    """
+    config = events_axis_config(store)
+    pages = placement_pages(store) + _supplementary_pages(store)
+    tally: dict[str, Any] = {
+        "pages": len(pages),
+        "chain": 0,
+        "date": 0,
+        "order_key": 0,
+        "residue": 0,
+        "partitions": {},
+        "chain_date_pairs": 0,
+        "chain_date_conflicts": 0,
+        "chain_edges_unmapped": 0,
+        "citations": 0,
+        "citations_unmapped": 0,
+        "citations_undated": 0,
+    }
+    date_keys = [str(key) for key in config.get("date_keys") or []]
+    chain_keys = [str(key) for key in config.get("chain_keys") or []]
+    order_keys = [str(key) for key in config.get("order_keys") or []]
+    partition_key = config.get("partition_key")
+    if not pages or not (date_keys or chain_keys or order_keys):
+        return StoreAxis({}, tally)
+    partition_key = (
+        str(partition_key).strip().lower() if partition_key else None
+    )
+
+    # One pass for every fact the declaration names. The key patterns are
+    # fnmatch, case-insensitive -- the convention the overrides' other key
+    # lists use -- so `part*` reaches `part1` through `part24`.
+    patterns = list(
+        dict.fromkeys(
+            date_keys
+            + chain_keys
+            + order_keys
+            + ([partition_key] if partition_key else [])
+        )
+    )
+    facts: dict[str, dict[str, str]] = {page: {} for page in pages}
+    rows = store.connection.execute(
+        f"SELECT n.name AS page, LOWER(f.key) AS key, f.value AS value"
+        f" FROM facts f JOIN nodes n ON n.id = f.node_id"
+        f" WHERE n.name IN ({','.join('?' * len(pages))})",
+        tuple(pages),
+    ).fetchall()
+    for row in rows:
+        key = row["key"]
+        if any(fnmatch.fnmatch(key, pattern.lower()) for pattern in patterns):
+            facts[row["page"]].setdefault(key, row["value"])
+
+    def value_under(page: str, key_patterns: list[str]) -> str | None:
+        """The page's value under the first declared pattern that matches it."""
+        for pattern in key_patterns:
+            for key, value in sorted(facts.get(page, {}).items()):
+                if fnmatch.fnmatch(key, pattern.lower()):
+                    return value
+        return None
+
+    # One axis per partition value; a page that carries no value of its own
+    # sits in its own counted bucket, last.
+    partitions: dict[str | None, list[str]] = {}
+    for page in pages:
+        value: str | None = None
+        if partition_key:
+            raw = facts.get(page, {}).get(partition_key)
+            if raw is not None and str(raw).strip():
+                value = str(raw).strip()
+        partitions.setdefault(value, []).append(page)
+    ordered_parts = (
+        sorted(part for part in partitions if part is not None)
+        + ([None] if None in partitions else [])
+    )
+    tally["partitions"] = {
+        part if part is not None else "<no value>": len(members)
+        for part, members in partitions.items()
+    }
+
+    out: dict[str, StoreAxisPlacement] = {}
+    # The within-partition groups (chain, date, citation) stay a million
+    # apart, and the partitions a ten-million: a page's rank sorts with the
+    # wiki's own order inside its group and its value's sort outside it.
+    partition_stride = 10_000_000.0
+    group_stride = 1_000_000.0
+    for position, part in enumerate(ordered_parts):
+        part_pages = partitions[part]
+        names = {page.lower(): page for page in part_pages}
+
+        forward: dict[str, str] = {}
+        backward: dict[str, str] = {}
+        for page in part_pages:
+            for key in sorted(facts.get(page, {})):
+                if not any(
+                    fnmatch.fnmatch(key, pattern.lower())
+                    for pattern in chain_keys
+                ):
+                    continue
+                backwards = key in _BACKWARD_CHAIN_KEYS
+                for target in _chain_targets(facts[page][key]):
+                    resolved = names.get(target.lower())
+                    if resolved is None:
+                        # A link out of the partition (or to a page the wiki
+                        # has not): the edge breaks, the count keeps it.
+                        tally["chain_edges_unmapped"] += 1
+                        continue
+                    if resolved == page:
+                        continue
+                    if backwards:
+                        backward.setdefault(resolved, page)
+                    else:
+                        forward.setdefault(page, resolved)
+        chains = _walk_chains(part_pages, forward, backward)
+
+        chain_rank: dict[str, float] = {}
+        offset = 0.0
+        for chain in chains:
+            for i, page in enumerate(chain):
+                chain_rank[page] = offset + i
+            offset += len(chain)
+
+        page_date: dict[str, float] = {}
+        for page in part_pages:
+            rank = _date_rank(value_under(page, date_keys))
+            if rank is not None:
+                page_date[page] = rank
+        # A page the chain reached AND the clock reads is checked, not
+        # blended: the chain orders it, the clock is counted against it.
+        for chain in chains:
+            for a, b in zip(chain, chain[1:]):
+                if a in page_date and b in page_date:
+                    tally["chain_date_pairs"] += 1
+                    if page_date[a] > page_date[b]:
+                        tally["chain_date_conflicts"] += 1
+
+        order_pages = [
+            page
+            for page in part_pages
+            if page not in chain_rank and page not in page_date
+        ]
+        cites: dict[str, list[str]] = {}
+        cited: set[str] = set()
+        for page in order_pages:
+            values: list[str] = []
+            for pattern in order_keys:
+                for key, raw in sorted(facts.get(page, {}).items()):
+                    if fnmatch.fnmatch(key, pattern.lower()):
+                        for line in str(raw).splitlines():
+                            line = line.strip().strip("*").strip()
+                            if line.startswith("[[") and line.endswith("]]"):
+                                line = line[2:-2].strip()
+                            if line:
+                                values.append(line)
+            cites[page] = values
+            cited.update(values)
+        tally["citations"] += sum(len(values) for values in cites.values())
+
+        doc_for: dict[str, str] = {}
+        if cited:
+            lookup = sorted({value.lower() for value in cited})
+            found = store.connection.execute(
+                f"SELECT title FROM documents WHERE LOWER(title) IN"
+                f" ({','.join('?' * len(lookup))})",
+                lookup,
+            ).fetchall()
+            doc_for = {row["title"].lower(): row["title"] for row in found}
+        dated_docs = [
+            doc_for[value.lower()] for value in cited if value.lower() in doc_for
+        ]
+        # The generalized citation map: a cited page's rank is the clock its
+        # own declared date keys parse to -- the issue's `releasedate`, the
+        # instalment's -- a number the wiki filed, not one invented.
+        cited_date: dict[str, float] = {}
+        if dated_docs:
+            doc_facts: dict[str, dict[str, str]] = {}
+            doc_rows = store.connection.execute(
+                f"SELECT n.name AS doc, LOWER(f.key) AS key, f.value AS value"
+                f" FROM facts f JOIN nodes n ON n.id = f.node_id"
+                f" WHERE n.name IN ({','.join('?' * len(dated_docs))})",
+                dated_docs,
+            ).fetchall()
+            for row in doc_rows:
+                if any(
+                    fnmatch.fnmatch(row["key"], pattern.lower())
+                    for pattern in date_keys
+                ):
+                    doc_facts.setdefault(row["doc"], {})[
+                        row["key"]
+                    ] = row["value"]
+            for doc, key_values in doc_facts.items():
+                for pattern in date_keys:
+                    for key, raw in sorted(key_values.items()):
+                        if fnmatch.fnmatch(key, pattern.lower()):
+                            rank = _date_rank(raw)
+                            if rank is not None:
+                                cited_date[doc] = rank
+                            break
+
+        order_rank: dict[str, tuple[float, str]] = {}
+        for page in order_pages:
+            best: tuple[float, str] | None = None
+            for value in cites[page]:
+                title = doc_for.get(value.lower())
+                if title is None:
+                    # The citation names a page the store does not have: a
+                    # gap in the wiki, counted, never mapped by guess.
+                    tally["citations_unmapped"] += 1
+                    continue
+                rank = cited_date.get(title)
+                if rank is None:
+                    tally["citations_undated"] += 1
+                    continue
+                # A page filed against several instalments sits where its
+                # earliest filing sits: the min, never an average.
+                if best is None or rank < best[0]:
+                    best = (rank, title)
+            if best is not None:
+                order_rank[page] = best
+
+        base = position * partition_stride
+        for page in part_pages:
+            if page in chain_rank:
+                out[page] = StoreAxisPlacement(
+                    base + chain_rank[page],
+                    "chain",
+                    part,
+                    f"chain position {int(chain_rank[page])}",
+                )
+                tally["chain"] += 1
+            elif page in page_date:
+                out[page] = StoreAxisPlacement(
+                    base + group_stride + page_date[page],
+                    "date",
+                    part,
+                    f"date {value_under(page, date_keys)}",
+                )
+                tally["date"] += 1
+            elif page in order_rank:
+                rank, cited_title = order_rank[page]
+                out[page] = StoreAxisPlacement(
+                    base + 2 * group_stride + rank,
+                    "order_key",
+                    part,
+                    f"cites {cited_title}",
+                )
+                tally["order_key"] += 1
+            else:
+                out[page] = StoreAxisPlacement(None, "residue", part, "")
+                tally["residue"] += 1
+    return StoreAxis(out, tally)
 
 
 _PARENTHETICAL = re.compile(r"\(([^()]+)\)")

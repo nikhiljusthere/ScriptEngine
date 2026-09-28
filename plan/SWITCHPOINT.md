@@ -1151,3 +1151,4 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-26T21:46:00+05:30 opencode-relaunch (NO qwen switch; instant-compaction checkpointShare 0.33->0.45, plugin files outside repo): ctx=122880 (unchanged), api=off, free=8400MiB
 - 2026-09-27T11:21:46+05:30 qwen-switch: ctx=122880 (mode 122880), api=off, free=8339MiB
 - 2026-09-27T16:55:00+05:30 qwen-switch: ctx=122880 (mode 122880), api=off, free=8311MiB
+- 2026-09-28T17:00:55+05:30 qwen-switch: ctx=122880 (mode 122880), api=off, free=8312MiB
