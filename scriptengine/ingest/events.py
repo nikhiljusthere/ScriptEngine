@@ -61,6 +61,23 @@ EVENTIVE_VERBS = frozenset(
 PLACEMENT_TYPES = {"arc", "saga", "event", "battle", "story_arcs"}
 
 
+def eventive_verbs(store: FactStore) -> frozenset[str]:
+    """The closed verb set this wiki's rows may use: the shared set plus the
+    wiki's declared `events: extra_verbs` (inert default: none).
+
+    The shared set records that a fight happened, not who won; a wiki whose
+    brain answers match-ups declares the outcome verbs (`defeated`,
+    `escaped`, `captured`), 2026-09-29 schema test: 0 of 30 "who would win"
+    questions were answerable from the shared set's rows.
+    """
+    extra = {
+        str(v).strip().lower()
+        for v in _events_overrides(store).get("extra_verbs") or []
+        if str(v).strip()
+    }
+    return EVENTIVE_VERBS | frozenset(extra)
+
+
 def placement_types(store: FactStore) -> set[str]:
     """The page types an event may be placed in, for this store's wiki.
 
@@ -2013,6 +2030,7 @@ def extract_from_sections(
     known: dict[str, list[tuple[int, str, str | None]]],
     page_real: str | None = None,
     linked: set[int] | None = None,
+    verbs: frozenset[str] = EVENTIVE_VERBS,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """Events the page states, over its read passages.
 
@@ -2104,7 +2122,7 @@ def extract_from_sections(
                 page=page,
                 section=section_title,
                 passage=window,
-                verbs=", ".join(sorted(EVENTIVE_VERBS)),
+                verbs=", ".join(sorted(verbs)),
             ),
             system=SYSTEM,
             temperature=0.0,
@@ -2135,7 +2153,7 @@ def extract_from_sections(
             if not subject or not object_:
                 stats["dropped"]["incomplete"] += 1
                 continue
-            if verb not in EVENTIVE_VERBS:
+            if verb not in verbs:
                 stats["dropped"]["verb"] += 1
                 continue
             # Both ends have to be somebody or somewhere this wiki actually
@@ -2378,6 +2396,8 @@ def extract_events_series(
         # exactly one linked candidate in an ambiguous set is the wiki's
         # own answer (architect 2026-09-28). One full scan, filtered to the
         # run's pages, so a `limit` run stays small.
+        # Read on this thread (the store's), handed to the workers as a value.
+        run_verbs = eventive_verbs(store)
         linked_by_page: dict[str, set[int]] = {}
         if wanted:
             wanted_titles = set(wanted)
@@ -2420,7 +2440,7 @@ def extract_events_series(
                     found, stats = extract_from_sections(
                         client, paths.name, page,
                         passages, known, real_by_page.get(page),
-                        linked_by_page.get(page),
+                        linked_by_page.get(page), run_verbs,
                     )
                 except LLMUnavailable:
                     raise
@@ -2444,7 +2464,7 @@ def extract_events_series(
             page, _, passages = job
             return extract_from_sections(
                 client, paths.name, page, passages, known,
-                real_by_page.get(page), linked_by_page.get(page),
+                real_by_page.get(page), linked_by_page.get(page), run_verbs,
             )
 
         guarded = _guarded(run)

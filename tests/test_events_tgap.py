@@ -256,3 +256,15 @@ def test_a_reread_that_finds_nothing_clears_the_old_rows(series, monkeypatch):
         store.ensure_events()
         left = store.connection.execute("SELECT COUNT(*) FROM events").fetchone()[0]
     assert left == 0
+
+
+def test_a_wiki_declares_its_extra_verbs(tmp_path):
+    """events: extra_verbs extends the closed set for that wiki only; a wiki
+    that declares nothing keeps the shared set (JJK/CSM byte-identical)."""
+    store = FactStore(tmp_path / "facts.db")
+    store.initialise()
+    assert events.eventive_verbs(store) == events.EVENTIVE_VERBS
+    (tmp_path / "overrides.yaml").write_text(
+        "events:\n  extra_verbs: [defeated, Escaped]\n", encoding="utf-8")
+    assert events.eventive_verbs(store) == events.EVENTIVE_VERBS | {"defeated", "escaped"}
+    store.close()

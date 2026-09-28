@@ -194,6 +194,15 @@ facts_only_infoboxes:
 # `Marvel Database:Story Arc Template` name, `story_arc`, which the engine's
 # default placement set (arc/saga/event/battle/story_arcs) does not read.
 events:
+  # Council step 1 (2026-09-29, reports/marvel/SCHEMA_TEST_who_would_win_2026-09-29.md):
+  # the shared verb set records that a fight happened, not who won; 0 of 30
+  # "who would win" questions were answerable from its rows, while 8.7% of
+  # Marvel history sentences state an outcome. The outcome verbs this wiki's
+  # rows may use: `defeated` (subject beat object; "Y lost to X" is written
+  # X defeated Y), `escaped` (subject got away from object), `captured`
+  # (subject captured / subdued / imprisoned object). `fought` stays for a
+  # fight whose outcome the passage does not state.
+  extra_verbs: [defeated, escaped, captured]
   placement_types: [story_arc]
   # R3 (2026-09-28 architect steer): this wiki's declared time axis. A page
   # with a `releasedate` sits at its publication clock; a page without one

@@ -31,7 +31,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from scriptengine.ingest.events import (
-    EVENTIVE_VERBS,
+    eventive_verbs,
     events_axis_config,
     placement_pages,
 )
@@ -1063,14 +1063,15 @@ def recompute_temporal(store: FactStore) -> dict:
     """
     store.ensure_events()
     tally = backfill_event_arc_index(store)
-    marks = ",".join("?" for _ in EVENTIVE_VERBS)
+    verbs = tuple(sorted(eventive_verbs(store)))
+    marks = ",".join("?" for _ in verbs)
     before = store.connection.execute(
         "SELECT COUNT(*) FROM events WHERE temporal = 1"
     ).fetchone()[0]
     promoted = store.connection.execute(
         f"SELECT COUNT(*) FROM events WHERE temporal = 0"
         f" AND arc_index IS NOT NULL AND verb IN ({marks})",
-        tuple(EVENTIVE_VERBS),
+        verbs,
     ).fetchone()[0]
     demoted = store.connection.execute(
         "SELECT COUNT(*) FROM events WHERE temporal = 1 AND arc_index IS NULL"
@@ -1078,7 +1079,7 @@ def recompute_temporal(store: FactStore) -> dict:
     store.connection.execute(
         f"UPDATE events SET temporal = CASE"
         f" WHEN arc_index IS NOT NULL AND verb IN ({marks}) THEN 1 ELSE 0 END",
-        tuple(EVENTIVE_VERBS),
+        verbs,
     )
     store.connection.commit()
     after = store.connection.execute(
