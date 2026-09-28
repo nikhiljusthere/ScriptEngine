@@ -69,6 +69,25 @@ code, run with marvel's declaration, places its placement pages by
 real `reality` values or NULL. Re-derivation is a later step; its receipt
 records the before/after.
 
+## Recompute (after this commit, 00:2x)
+
+`recompute_temporal` (a set-only backfill re-run + the `temporal`
+re-derivation) ran after this commit, per the steer ("recompute_temporal
+only after (2) is committed"). It moved no existing placement (0 lost) and
+re-derived `temporal` from the placement.
+
+| | pre-recompute (23:59 snapshot) | post-recompute (live) |
+|---|---|---|
+| placed rows (`arc_index` set) | 6,097 / 6,326 | **6,116 / 6,326** (96.7%) |
+| `temporal` nonzero | 6,097 | 6,116 |
+| unplaced (residue) | 229 | 210 |
+
+Delta: the backfill run placed 19 of the 229 unplaced rows — the 09-28
+re-extraction cohort (the Snap, Scars and Attack on Arête event pages the
+re-extraction re-keyed) — and lost 0. `temporal` re-derived 6,097 → 6,116
+(every placed row is eventive). Pre-recompute snapshot:
+`/tmp/se_p2/mcu_bfinal/facts.db`.
+
 ## Tests
 
 Full suite at commit time: `4 failed, 1,419 passed, 2 xpassed` — the 4

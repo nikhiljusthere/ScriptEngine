@@ -87,6 +87,24 @@ Events on the four pages the declared axis does not reach (no
 | Jaspers Warp | 4 |
 | Assemblage of Avatars | 1 |
 
+## Recompute (after this commit, 00:30)
+
+`recompute_temporal` ran after this commit (the table above notes `temporal`
+is re-derived after the commit). It re-ran the backfill (idempotent: the
+1,196 placements held, 0 new, 0 lost) and re-derived `temporal` from the
+placement.
+
+| | pre-recompute | post-recompute (live) |
+|---|---|---|
+| placed rows | 1,196 / 1,220 | 1,196 / 1,220 (unchanged) |
+| `temporal` nonzero | 79 | **1,196** |
+| unplaced | 24 | 24 |
+
+`temporal` promoted 1,117 (every placed row is eventive; 0 demoted), so
+`temporal` now equals the placement set (1,196). Tally: temporal_before 79,
+temporal_after 1,196, temporal_promoted 1,117, temporal_demoted 0,
+temporal_unplaced 24.
+
 ## Tests
 
 `tests/test_timeaxis.py` green (30/30). Full suite at commit time: the
