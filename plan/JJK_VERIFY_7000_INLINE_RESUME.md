@@ -26,6 +26,16 @@ Next window: **n=346** in `series/jjk/training/opencode/mimoP1_windows.jsonl`.
 
 Write results to `series/jjk/training/opencode/mimoP1_out.jsonl` (append-only, overwrite lines as you go).
 
+### Phase 0: Blind audit sample (RUN THIS BEFORE PRODUCTION PHASES)
+
+Before committing to grinding production pools, verify **10 random windows** (mix of pools, mix of sizes, some known-empty, some dense). Confirm:
+- The model correctly applies strict rules (rejects false positives)
+- It catches missed events on dense passages
+- Output format is consistent
+- No empty-content failures
+
+If >2 out of 10 fail under strict rules, fix the rules/budget/prompt before touching production data. This costs ~10 minutes and prevents cascading uniform errors.
+
 ---
 
 ## 2. The model (already up — DO NOT restart it)
@@ -95,20 +105,25 @@ OFILE = series/jjk/training/opencode/mimoP1_out.jsonl
 **Step 4: Missed-event pass.** Re-read the whole passage once more, looking ONLY for
 events the drafts did NOT list. Add them (with Steps 2–3 applied).
 
-**Step 5: Write the line.** Append/overwrite to OFILE:
-```json
-{"n": 346, "id": "...", "page": "...", "section": "...",
- "passage": "...",
- "events": [
-   {"quote": "...", "subject": "...", "verb": "...", "object": "... or null",
-    "wiki": "from wiki_card.py output",
-    "verdict": "yes" or "no",
-    "rule": "one short sentence naming the rule that decided"}]}}
-```
-A window with no events: `{"n": 346, "id": "...", "page": "...", "section": "...",
- "passage": "...", "events": []}`
+**Step 5: Write the line.** Use the ATOMIC SAVE protocol (council P1 fix):
 
-**Step 6: Save and advance.** Confirm the write went through, increment `n`, repeat.
+```bash
+# 1. Write to .tmp first
+echo '{"n":346,...}' > /tmp/jjk100/mimoP1_out.jsonl.tmp
+
+# 2. Validate it parses
+python3 -c "import json; json.loads(open('/tmp/jjk100/mimoP1_out.jsonl.tmp').read())" && echo OK || echo INVALID
+
+# 3. If valid, atomic rename overwrites the real file
+mv /tmp/jjk100/mimoP1_out.jsonl.tmp series/jjk/training/opencode/mimoP1_out.jsonl
+
+# 4. Log completion for recovery after crash
+echo 346 >> series/jjk/training/opencode/.mimoP1_done
+```
+
+The `.done` log is your **only** post-crash recovery mechanism. After a watchdog restart, read the last line of `.done` and start from the next window. This prevents both silent data loss AND double-processing on restarts.
+
+If Step 2 validation fails: DO NOT `mv`. Fix the JSON and retry. Max 3 attempts per window.
 
 ---
 
@@ -151,11 +166,50 @@ If passage also states the fight, BOTH are correct.
 
 ---
 
-## 6. Answer budget trap
+## 6.5. ANCHOR — Ruling Card (refresh every 50 windows)
+
+Paste this into your context at the top of each batch of 50 windows. It resets the model's attention to the rules so they don't drift through repetition fatigue.
+
+```
+=== VERIFICATION RULES — REFRESH ===
+Base law: guideline A-E. Stricter rules 1-10. §5a precedents 1-6.
+KEY CONSTRAINTS:
+- Default NO. Row must be affirmatively proven by passage text.
+- Wiki card NEVER creates/confirms rows. Only catches errors.
+- If passage also states fight AND specific verb → BOTH correct.
+- No class/species/item as end (shikigami exceptions only).
+- Keep ALL rejected rows with one-sentence rule reason.
+- Missed-event pass on EVERY window mandatory.
+- Empty list [] verdict must be earned, name why in rule field.
+```
+
+---
+
+## 6. Answer budget trap + retry protocol
 
 This model reasons by default and spends small budgets entirely on reasoning, returning **empty content with `finish_reason: length`**. Measured: a one-sentence question returned empty at 2,048 tokens (1,142 spent on reasoning) and correct at 20,480.
 
-**Any wrapper must treat empty as retry-at-higher-budget, never as verdict.** In the verifiers, retries escalate budget automatically. If writing new code, use 20,480 min. **Raise it, never lower it.**
+**Any wrapper must treat empty as retry-at-higher-budget, never as verdict.** If writing new code, use 20,480 min. Raise it, never lower it.
+
+### Retry cap (council P2 fix — NEVER omit this)
+
+Max **3 attempts per window**:
+- Attempt 1: 10,000 tokens
+- Attempt 2: 20,480 tokens
+- Attempt 3: 20,480 tokens (same budget, fresh context)
+- Attempt 4: **SKIP** — mark as `"verdict": "none", "rule": "skip: max_retries_exceeded"` in output. Add window ID to `.skipped` log.
+
+Unbounded retries are the single fastest way to burn a day on zero progress. Even a 5% stubborn rate = 200 zombie sessions draining your concurrency queue. A `SKIP` is NOT data loss — it's a known gap you return to later.
+
+### Drift prevention (council blind-spot catch)
+
+Over 7,000 windows, the model can silently drift — accepting rows it would have rejected earlier, missing events it previously caught, or degrading output format. Three safeguards:
+
+**Guard 1: Ruling card refresh every 50 windows.** Before starting each batch of 50 windows, re-read the ruling-card block below. Type it into the prompt as a reference reminder. This anchors the rules so they don't fade through repetition fatigue.
+
+**Guard 2: Periodic duplicate check every 200 windows.** Take the last 10 verified results from your `.done` log, fetch them again from their input files, and verify each one inline. Compare: same verdict? Same reasoning? If >2 disagree with past rulings, re-read ALL guidelines and precedents before continuing. The model may be slipping.
+
+**Guard 3: Cross-pool consistency check after each pool completes.** Take 5 windows from that pool plus 5 from an already-verified pool. Process the 5 unverified ones. If the acceptance rate differs from the first pool's baseline by more than 15 percentage points, something structural changed — audit.
 
 ---
 
@@ -195,10 +249,11 @@ Progress tracking:
 
 ## 9. Start now
 
-1. **Read** `plan/EVENT_ANNOTATION_GUIDELINE.md` sections A–E
-2. **Read** handoff `plan/JJK_OPENCODE_HANDOFF_2026-09-29.md` section §5a (precedents)
-3. **Confirm** health: `curl -sf -m 10 http://127.0.0.1:18081/health` → `{"status":"ok"}`
-4. **Start** with Window n=346 in `mimoP1` (or whichever window comes after the last completed one). Process inline, one-at-a-time, following Steps 1–6 above. Save result. Advance.
+1. **Confirm** health: `curl -sf -m 10 http://127.0.0.1:18081/health` → `{"status":"ok"}`
+2. **Read** `plan/EVENT_ANNOTATION_GUIDELINE.md` sections A–E
+3. **Read** handoff `plan/JJK_OPENCODE_HANDOFF_2026-09-29.md` section §5a (precedents)
+4. **Run Phase 0 blind audit:** Pick 10 random windows across pools (mix of empty/dense). Verify each inline under strict rules. If >2 fail → fix rules/budget/prompt before proceeding.
+5. **For production:** Use atomic save protocol (Step 5b). Before every 50-window batch, paste the Ruling Card refresh (§6.5) into your context. Every 200 windows, re-verify 10 past results as a consistency check.
 
 Current saved git commits for context (these capture the full chain of ops):
 - `a83a90e8` — model name alignment across all surfaces
