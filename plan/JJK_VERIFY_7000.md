@@ -72,27 +72,36 @@ full re-read, not a spot check.
 
 ## 2. Execution order
 
-**Phase 1 — pool A, the 1,500 opencode windows.** These are the least-examined
-data in the repo: model-drafted by free sessions, never adjudicated by a human or
-by me. They also have the most events per window (spacebunny 842 / 500,
-teacher500 1,811 / 500), so they are the most likely to be over-generating.
-Start here as instructed. 3 × 500, in `n` order, one window per line.
+Owner directive (2026-09-30): **one window at a time, inline, no background
+LLM calls, no auto-verifiers.** For each window I do the full pipeline — read the
+passage, fetch every related wiki page, confirm every fact, write one row at a
+time under the stricter rules, save it — then move to the next. This was the
+method used to produce `gold600.jsonl`; it is correct for quality, slower for
+wall-clock, and exactly what the owner ordered.
 
-**Phase 2 — pool B, the 1,000 Qwen windows.** `gold600/` already holds 20
-adjudication files covering 333 of the 600; the remaining 267 continue from
-index 333, 12 windows at a time, per handoff §4 step 3. Re-verify the 333 done
-under the stricter rules rather than trusting the earlier pass.
+Order is still Phase 1 → 4 below, but each phase is driven by me, not by tools.
 
-**Phase 3 — import the rest of v1.** The 2,920 windows in `v1/train.jsonl` that
-pools A and B never touched. These need extraction first, then the same
-verification. `stage2_extra.jsonl` (563 windows, 707 events) and
-`stage1_extra.jsonl` (2,000 ids) are the existing extra-window work; check
-whether they already cover part of this before re-extracting.
+### Phase 1 — pool A, the 1,500 opencode windows
 
-**Phase 4 — the 2,265 `empty` windows.** Re-read for false negatives under
-stricter rules. Explicitly a separate pass: a window that produced `[]` and is
-wrong is worse than one that produced a bad row, because nothing downstream
-notices it.
+3 × 500, in `n` order, one window per line. These are the least-examined data
+in the repo: drafted by free sessions, never adjudicated by a human, and the most
+event-dense (spacebunny 842 / 500). Start here.
+
+### Phase 2 — pool B, the 1,000 Qwen windows
+
+Re-verify the 333 already-adjudicated under the stricter rules rather than
+trusting the earlier pass. Continue the remaining 267.
+
+### Phase 3 — import the rest of v1
+
+Check whether `stage2_extra.jsonl` / `stage1_extra.jsonl` already cover part of
+this before re-extracting. Then verify those windows.
+
+### Phase 4 — the 2,265 `empty` windows
+
+A separate pass: a window that produced `[]` and is wrong is worse than one that
+produced a bad row, because nothing downstream notices it. Every empty window
+gets its own reading.
 
 ## 3. The stricter rules
 
@@ -158,7 +167,37 @@ happened.
   train on anything not adjudicated — `build_trainset.py` refuses non-gold
   tiers; keep it refusing.
 
-## 5. State at the time of writing
+## 5. Drift prevention (new, addresses owner concern)
+
+Over 7,000 windows a single model can silently drift — accepting rows it would have
+rejected earlier, missing events it previously caught, or degrading output format.
+Three safeguards are built into the workflow:
+
+### Guard 1: Ruling Card refresh every 50 windows
+
+A compact "rules anchor" that gets re-pasted into context at each batch boundary to
+reset attention before repetition fatigue sets in. (§6.5 of inline resume prompt).
+
+### Guard 2: Duplicate check every 200 windows
+
+Re-verify 10 past results from the `.done` log. If >2 disagree with original verdicts,
+re-read ALL guidelines and precedents. Catches model slipping on rule interpretation.
+
+### Guard 3: Cross-pool consistency after each pool completes
+
+Compare acceptance rate of just-completed pool against the baseline from earlier pools.
+>15 pp delta triggers audit. Catches systematic shift in model behavior.
+
+### Additional measures for long campaigns
+
+- **Output schema validation:** Every atomic save validates JSON before mv. Corrupted
+  or malformed output never enters the pipeline.
+- **Atomic write pattern:** Write to `.tmp`, validate, then rename. Prevents corruption
+  from watchdog restarts, OOM spikes, or any mid-write failure.
+- **Retry cap:** Max 3 attempts per window (10k → 20k → 20k tokens). No unbounded retries.
+  After 3, mark as SKIP with metadata marker — known gaps return later.
+
+## 6. State at the time of writing
 
 - Model: **loaded and healthy** on `:18081`, pid recorded in
   `~/ninfer-work/qwen_mode.txt`. `opencode.json` (repo) and
