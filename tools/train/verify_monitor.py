@@ -298,16 +298,11 @@ def main():
     
     print("\nPress Ctrl+C to stop\n")
     
+    # Run persistent HTTP server (not single-request-per-cycle)
     try:
         while True:
-            data = collect_data()
-            html = build_html(data)
-            
             server = HTTPServer(("127.0.0.1", args.port), Handler)
-            server.handle_request()  # Handle one request then exit
-            server.server_close()
-            
-            time.sleep(2)
+            server.serve_forever(poll_interval=2)
     except KeyboardInterrupt:
         print("\nMonitor stopped.")
 
