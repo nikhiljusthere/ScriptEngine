@@ -19,10 +19,22 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Literal
 
+from dotenv import load_dotenv
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+
+# Pydantic reads `.env` for its own FIELDS only. Several call sites read their
+# settings with a bare `os.environ.get("SCRIPTENGINE_...")` instead of going
+# through Settings -- the three `_answer_budget` helpers in
+# `ingest/{events,abilities,relations}.py` among them -- and those saw nothing
+# from `.env`, silently falling back to their hardcoded defaults. That is how
+# `SCRIPTENGINE_ANSWER_TOKENS=20480` in `.env` could sit there looking correct
+# while the extractor still ran on the 8,192 default. Populate the process
+# environment once, here, so both styles agree. `load_dotenv` does not override
+# variables that are already set, so an explicit env still wins over the file.
+load_dotenv(REPO_ROOT / ".env", override=False)
 
 Device = Literal["auto", "cuda", "cpu"]
 

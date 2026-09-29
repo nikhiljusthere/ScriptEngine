@@ -82,12 +82,19 @@
 # PORT 18081, not 18080: the ninfer-27b fallback provider owns 18080 in
 # opencode.json. Sharing the port would let a "switch to the 27B" silently talk
 # to this model instead.
+#
+# MODEL ID: served as `qwen3.6-35b-a3b-ninfer`, chosen by the owner 2026-09-30.
+# It has to be set here with --model-id, because the artifact's own embedded id
+# is `qwen3.6-35b-a3b` and every client (both opencode configs, ScriptEngine's
+# SCRIPTENGINE_LLM_MODEL / SCRIPTENGINE_WRITER_MODEL, the training tools) sends
+# the name it was configured with: an id the server does not serve fails
+# `model_not_found` immediately. One name, used everywhere.
 set -euo pipefail
 cd /home/goblin/ninfer-work
 mkdir -p logs
 exec ./ninfer/build35/apps/ninfer-serve models/qwen3_6_35b_a3b.ninfer \
   --host 127.0.0.1 --port 18081 \
-  --model-id qwen3.6-35b-a3b \
+  --model-id qwen3.6-35b-a3b-ninfer \
   --max-context 262144 \
   --kv-capacity auto \
   --max-concurrency 2 \
