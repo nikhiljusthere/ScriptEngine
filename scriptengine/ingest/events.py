@@ -28,6 +28,7 @@ import json
 import logging
 import re
 import sqlite3
+import threading
 from pathlib import Path
 from typing import Any
 
@@ -659,7 +660,7 @@ def seed_phase1_rows(
 # from, and a number the model supplies is a number nobody verified.
 
 # Bump to invalidate every stored event, exactly as `relations` does.
-PROMPT_VERSION = "events-2026-09-29.7"
+PROMPT_VERSION = "events-2026-09-29.9"
 
 # What each verb means, for the model. The set a wiki may use is
 # `eventive_verbs(store)`; only the verbs in that set are described to it.
@@ -667,30 +668,59 @@ PROMPT_VERSION = "events-2026-09-29.7"
 # definitions carry the precision fixes (a place object for arrived/departed,
 # a stated encounter for met) and the outcome verbs a match-up needs.
 VERB_DEFINITIONS = {
-    "fought": "the subject fought the object, and the passage does not say who won",
+    "fought": (
+        "the subject fought or attacked the object: a clash, a blow, a "
+        "strike, a throw, a technique used on them. Every exchange whose end "
+        "the passage does not state is `fought`"
+    ),
     "defeated": (
-        "the passage says in words that the subject won: defeated, beat, "
-        "overpowered, bested, knocked out, subdued (write \"Y lost to X\" as "
-        "X defeated Y); never inferred from a plan failing, a place "
-        "collapsing or a fight merely ending"
+        "the passage says in words how the fight ENDED, with the object "
+        "beaten: defeated, beat, bested, knocked out, subdued, lost to "
+        "(write \"Y lost to X\" as X defeated Y). A hit, a wound, a throw, "
+        "a dodge, a block, a restraint, landing an attack or having the upper "
+        "hand for a moment is `fought`, never `defeated`"
     ),
-    "killed": "the subject killed the object (a stated death, not an attempt)",
+    "killed": (
+        "the passage states the object died by the subject's act. An "
+        "attempt, a wound the object survives, or being \"eliminated\" from a "
+        "game is not a kill"
+    ),
     "captured": (
-        "the passage says the subject captured, imprisoned or took the object "
-        "hostage; a passive sentence that does not say who did it (\"he was "
-        "imprisoned\") is no event"
+        "the passage says the subject took the object prisoner or hostage: "
+        "captured, abducted, kidnapped, held captive -- a person or creature, "
+        "never an item. Trapping someone in a domain, a barrier, ice or a "
+        "sealing object is `sealed`. A passive sentence that does not say "
+        "who did it (\"he was imprisoned\") is no event"
     ),
-    "escaped": "the passage says the subject escaped, fled or broke free from the object",
+    "escaped": (
+        "the subject got away from the object's captivity, trap or pursuit: "
+        "escaped, fled, broke free. Dodging or evading an attack is `fought`"
+    ),
     "saved": "the subject rescued, freed or protected the object from harm",
-    "betrayed": "the subject betrayed or turned against the object",
-    "sealed": "the subject sealed, trapped or banished the object",
-    "awakened": "the subject woke up, revived or gained a power (no object: use null)",
+    "betrayed": (
+        "the subject turned against an ally or broke faith with them: "
+        "defected, double-crossed. Deceiving, misleading, punishing, "
+        "resenting or leaving someone is not betrayal"
+    ),
+    "sealed": (
+        "the subject sealed, trapped or banished the object: inside a "
+        "domain, a barrier, ice, a sealing object or another world"
+    ),
+    "awakened": (
+        "the subject woke up, revived or gained a new power (no object: use "
+        "null); using or reactivating a technique they have is not awakening"
+    ),
     "met": (
         "the subject met the object: a stated first meeting, visit, "
-        "encounter or conversation; not merely being in the same place or sentence"
+        "encounter or conversation; not merely being in the same place or "
+        "sentence, and not noticing, sensing, helping, reporting about, "
+        "working alongside or wishing to meet someone"
     ),
-    "arrived": "the subject arrived at a PLACE (the object is the place, never a person)",
-    "departed": "the subject left a PLACE or a group (the object is the place or group)",
+    "arrived": "the subject arrived at a PLACE (the object is the place reached, never a person)",
+    "departed": (
+        "the subject left a PLACE or a group (the object is the place or "
+        "group left, never the destination)"
+    ),
 }
 
 # Verbs whose missing object means the subject itself (Mahito awakens).
@@ -718,7 +748,7 @@ Write each event's `quote` first, then read who does what in that quote, and onl
 
 Rules:
 - An event is something the passage says happened. A description of who a character is, their powers, a list of who is present, a rule of the story, a plan, an intention ("intends to", "plans to"), a hypothetical or a teaser ("a beatdown is coming") is not an event.
-- The subject does the verb and the object is the one it is done to. Both must be names the passage uses; give the fullest name the passage uses for each (its real name or codename, not a pronoun). One name per role: "Gojo and Nanami fight Mahito" is two events.
+- The subject does the verb and the object is the one it is done to. Both are characters, creatures, groups or places -- never a technique or an item: when a technique or weapon does something, its user is the subject. Both must be names the passage uses; give the fullest name the passage uses for each (its real name or codename, not a pronoun). One name per role: "Gojo and Nanami fight Mahito" is two events.
 - If a verb takes no object in the passage, set "object" to null. Never repeat the subject as the object unless the passage says the subject did it to themselves ("he shot himself").
 - Pick the most specific verb the passage states: a fight whose winner the passage names in words is `defeated`, not `fought`. An outcome the passage does not state in words is not an outcome: use `fought`, or no event.
 - Never supply a subject or an object the passage does not state. A passive sentence that does not say who did it, or a pronoun whose person the passage does not make clear, is no event: skip it rather than guess.
@@ -732,6 +762,8 @@ Examples (names invented; read the direction of each sentence carefully):
 - "Before departing to the capital, Kade said goodbye to Mira." -> no event (a journey toward a place is not an arrival there, and a goodbye is not a meeting)
 - "Vos tormented Mira in her dreams." -> no event (tormenting is not betrayal)
 - "Mira identified Vos as the culprit." -> no event (identifying is not killing, capturing or fighting)
+- "Kade dodged Vos's blade and drove a fist into his jaw." -> {{"subject": "Kade", "verb": "fought", "object": "Vos", ...}} (a dodge and a landed blow: the passage does not say the fight ended)
+- "Mira's spear, Thorn, pierced the Wraith." -> {{"subject": "Mira", "verb": "fought", "object": "the Wraith", ...}} (the weapon's user is the subject)
 - "Kade and Mira fought the Wraith, who fled." -> fought Kade/the Wraith, fought Mira/the Wraith, and {{"subject": "the Wraith", "verb": "escaped", "object": "Kade", ...}} only if the passage says whom it fled"""
 
 
@@ -873,7 +905,10 @@ def participant_candidates(
     of every pool, so a bare name that folds over a hub resolves to the
     character page, never to the hub. A wiki that declares no prefixes
     is untouched."""
-    containers = NON_PARTICIPANT_TYPES | placement_types(store) | {"disambiguation"}
+    containers = (
+        NON_PARTICIPANT_TYPES | placement_types(store) | {"disambiguation"}
+        | participant_exclude_types(store)
+    )
     excluded_prefixes = participant_excludes(store)
     placeholders = ",".join("?" * len(containers))
     container_ids = {
@@ -1033,6 +1068,42 @@ def participant_excludes(store: FactStore) -> list[str]:
     ]
 
 
+def declared_place_nodes(store: FactStore) -> set[int] | None:
+    """The nodes a movement (arrived/departed) may take as its object: those
+    whose page type is one of the wiki's declared `events: place_types:`.
+    None -- the G4 shape gate is off -- for a wiki that declares none."""
+    declared = [
+        str(name).strip()
+        for name in _events_overrides(store).get("place_types") or []
+        if str(name).strip()
+    ]
+    if not declared:
+        return None
+    marks = ",".join("?" * len(declared))
+    return {
+        int(row[0])
+        for row in store.connection.execute(
+            "SELECT n.id FROM nodes n JOIN documents d ON d.id = n.document_id"
+            f" WHERE d.page_type IN ({marks})",
+            declared,
+        )
+    }
+
+
+def participant_exclude_types(store: FactStore) -> set[str]:
+    """The wiki's declared non-participant page types: its `events:
+    participant_exclude_types:` (inert default: none). A page of one of them
+    -- a song, a volume, a disc -- is a work about the story, never an actor
+    in it, so its title never wins a name. 2026-09-29 JJK verification: the
+    ending theme "Akari" took Akari Nitta's rows on every page that links to
+    neither."""
+    return {
+        str(name).strip()
+        for name in _events_overrides(store).get("participant_exclude_types") or []
+        if str(name).strip()
+    }
+
+
 def _is_variant_of(canonical: str, name: str) -> bool:
     """`canonical` is the wiki's variant form of `name`: the same title with
     a `/subpage` or a space-then-`(` qualifier appended (`Conan/Earth-16356`,
@@ -1081,17 +1152,42 @@ def pick_candidate(
     # name names the page, never a spin-off.
     folded = (name or "").strip().casefold()
     exact = [c for c in cands if c[1].casefold() == folded]
+    self_folded = (self_page or "").strip().casefold()
     if len(exact) == 1:
-        return exact[0]
+        hit = exact[0]
+        # ...unless the page never links to the exact page and points at
+        # exactly one other entity the name reaches by alias: its own link,
+        # or the page itself (a page never links to itself; a `/subpage`
+        # points at its base). 2026-09-29 JJK verification: bare "Akari"
+        # resolved to the ending-theme song and "Ryu" to Takuma Ino's
+        # shikigami on pages that link only to Akari Nitta / Ryu Ishigori
+        # (35 misfiled rows). A variant of the name itself is never the
+        # diversion: "Sukuna" never slides to "Sukuna/Synopsis".
+        own = {self_folded, self_folded.split("/", 1)[0].strip()} - {""}
+        if hit[0] not in (linked or ()) and hit[1].casefold() not in own:
+            pointed = [
+                c for c in cands
+                if c[0] != hit[0]
+                and not _is_variant_of(c[1], name)
+                and (c[0] in (linked or ()) or c[1].casefold() in own)
+            ]
+            if len(pointed) == 1:
+                return pointed[0]
+        return hit
     # The page's own entity wins for its own names: the page is a candidate
     # for this name only because the name is one of its subject's names, and
     # a page never links to itself, so the link signal below would otherwise
     # pick a sibling. 2026-09-28 pilot: "Beast" on Henry McCoy (Earth-616)
     # resolved to Henry McCoy (Clone) (Earth-616), the page's only linked
     # namesake (review R12 fix 2).
-    self_folded = (self_page or "").strip().casefold()
     if self_folded:
         own = [c for c in cands if c[1].casefold() == self_folded]
+        # A subpage's subject is its base page, which it never links either:
+        # "Gojo" on Satoru Gojo/Synopsis went to the Sorcerer Clan page, the
+        # synopsis's only linked namesake (2026-09-29 JJK judged set).
+        if not own and "/" in self_folded:
+            base = self_folded.split("/", 1)[0].strip()
+            own = [c for c in cands if c[1].casefold() == base]
         if len(own) == 1:
             return own[0]
     # A variant form of the name is a candidate only where the passage
@@ -1126,6 +1222,15 @@ def pick_candidate(
             hits = [c for c in ambiguous if c[0] in linked]
             if len(hits) == 1:
                 return hits[0]
+        # Where no link decides, the one candidate whose own title carries
+        # the name as a word owns it; the others reach it only as an alias.
+        # 2026-09-29 JJK verification: bare "Gojo" tied Satoru Gojo with the
+        # Sorcerer Clan page (whose aliases list each clan's name), so every
+        # "Gojo" row on a page linking both was filed ambiguous.
+        word = re.compile(rf"\b{re.escape((name or '').strip())}\b", re.I)
+        titled = [c for c in ambiguous if (name or "").strip() and word.search(c[1])]
+        if len(titled) == 1:
+            return titled[0]
         return {"ambiguous": ambiguous}
 
     if page_real:
@@ -1296,7 +1401,13 @@ def re_resolve_participants(store: FactStore) -> dict:
             )
             same_args = (row["doc_title"], name, row[f"{role}_mention"])
             name_key = mention or name
-            pool = cands.get(name_key.lower(), [])
+            # The extraction's own pool (2026-09-29): a name part the page
+            # links, or the page itself, reaches its entity here too, so a
+            # repair never disagrees with the read that stored the row.
+            pool = name_pool(
+                cands, name_key, linked_by_page.get(row["doc_title"]),
+                row["doc_title"],
+            )
             # The pools refuse a name the wiki declared a non-participant
             # (`participant_excludes:` -- the mcu's `Hub:` index pages,
             # 2026-09-28): a row filed on the hub is re-resolved under the
@@ -2118,6 +2229,103 @@ def section_time_ranks(sections: list[sqlite3.Row]) -> dict[int, float]:
     return ranks
 
 
+_MOVEMENT_VERBS = {"arrived", "departed"}
+_REFLEXIVE = re.compile(
+    r"\b(himself|herself|itself|themselves|themself|oneself|own life)\b", re.I
+)
+_BY_ID: list[Any] = [None, {}, {}]
+
+# A clause can refer to a handful of people it does not name ("they", "the
+# group"); it cannot refer to a crowd. 2026-09-29 JJK pilot: "Yuji, Megumi and
+# Nobara then enter the room" became 42 `met` rows pairing them with everyone
+# the scene mentioned; the largest honest group reference in the whole .7
+# corpus ("Master Tengen ... greeting the group") has 6 unnamed ends.
+_FANOUT_UNNAMED = 6
+
+
+def _named_in(quote: str, *names: str | None) -> bool:
+    """Whether the quote names this end: its mention or its canonical name,
+    whole, or any word of them (three letters or more)."""
+    folded = quote.casefold()
+    for name in names:
+        name = (name or "").strip().casefold()
+        if not name:
+            continue
+        if name in folded:
+            return True
+        for word in re.findall(r"[\w'-]+", name):
+            if len(word) >= 3 and word not in {"the", "and"} \
+                    and re.search(rf"\b{re.escape(word)}\b", folded):
+                return True
+    return False
+
+
+def _fanout(found: list[dict[str, Any]]) -> set[int]:
+    """The ids of the rows a fanned-out clause produced: within one (quote,
+    verb), more than `_FANOUT_UNNAMED` distinct ends the quote does not name
+    means the model paired the clause with the scene, not with what the
+    clause says. Only the rows with an unnamed end go; a row whose two ends
+    the quote names stands on its own."""
+    groups: dict[tuple[str, str], list[dict[str, Any]]] = {}
+    for row in found:
+        groups.setdefault((row["quote"], row["verb"]), []).append(row)
+    out: set[int] = set()
+    for rows in groups.values():
+        unnamed = set()
+        for row in rows:
+            for role in ("subject", "object"):
+                if not _named_in(row["quote"], row[f"{role}_mention"], row[f"{role}_name"]):
+                    unnamed.add(row[f"{role}_name"])
+        if len(unnamed) > _FANOUT_UNNAMED:
+            out |= {
+                id(row) for row in rows
+                if not (_named_in(row["quote"], row["subject_mention"], row["subject_name"])
+                        and _named_in(row["quote"], row["object_mention"], row["object_name"]))
+            }
+    return out
+
+
+def name_pool(
+    known: dict[str, list[tuple[int, str, str | None]]],
+    mention: str,
+    linked: set[int] | None,
+    self_page: str | None = None,
+) -> list[tuple[int, str, str | None]]:
+    """The candidates a mention can resolve to: its folded name's pool, or --
+    where the wiki has no page and no alias under that name -- the entities
+    the page itself links whose title carries the mention as a word.
+
+    The 2026-09-29 JJK pilot dropped 32% of proposals as unknown
+    participants, and the top misses were characters the page links but
+    the prose names by one part of the name ("Kiyotaka", "Chizuru",
+    "Takako", "Itadori"). The page's link is the wiki's own answer for which
+    Kiyotaka; the pool is still resolved by `pick_candidate`, so two linked
+    Itadoris stay a counted ambiguity. The page's own entity (a subpage's
+    base) joins the linked set: a page never links to itself, and "Chizuru"
+    on Chizuru Hari's own page was the pilot's second-largest miss. Only a
+    capitalised mention qualifies: "the curse" names no page."""
+    pool = known.get(mention.lower(), [])
+    words = mention.strip()
+    if pool or len(words) < 3 or not words[0].isupper() \
+            or words.split()[0].lower() in {"the", "a", "an"}:
+        return pool
+    if _BY_ID[0] is not known:
+        _BY_ID[0] = known
+        _BY_ID[1] = {c[0]: c for cands in known.values() for c in cands}
+        _BY_ID[2] = {c[1].casefold(): c[0] for c in _BY_ID[1].values()}
+    by_id, by_name = _BY_ID[1], _BY_ID[2]
+    pointed = set(linked or ())
+    own = (self_page or "").strip().casefold()
+    # A subpage's subject is its base page: "Kiyotaka" on Kiyotaka Ijichi's
+    # Synopsis names Kiyotaka Ijichi, never the Synopsis.
+    base = own.split("/", 1)[0].strip()
+    title = base if base in by_name else own
+    if title in by_name:
+        pointed.add(by_name[title])
+    word = re.compile(rf"\b{re.escape(words)}\b", re.I)
+    return [by_id[n] for n in sorted(pointed) if n in by_id and word.search(by_id[n][1])]
+
+
 def extract_from_sections(
     client: LLMClient,
     series: str,
@@ -2127,6 +2335,7 @@ def extract_from_sections(
     page_real: str | None = None,
     linked: set[int] | None = None,
     verbs: frozenset[str] = EVENTIVE_VERBS,
+    place_nodes: set[int] | None = None,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """Events the page states, over its read passages.
 
@@ -2184,6 +2393,9 @@ def extract_from_sections(
             "unknown_participant": 0,
             "unquoted": 0,
             "dedup": 0,
+            "self_object": 0,
+            "shape": 0,
+            "fanout": 0,
         },
     }
     # The calls this page costs: one per window of each passage, or -- a page
@@ -2254,6 +2466,16 @@ def extract_from_sections(
     else:
         answers = (ask(unit) for unit in units)
     for (window, section_title, holders), answer in zip(units, answers):
+        _trace({
+            "series": series, "page": page, "section": section_title,
+            "holders": [
+                {"kind": h["kind"], "id": h["id"], "passage": h["passage"]}
+                for h in holders
+            ],
+            "window": window, "answer": answer,
+            "prompt_version": PROMPT_VERSION,
+            "model": getattr(getattr(client, "settings", None), "llm_model", None),
+        })
         for entry in parse_events_response(answer):
             subject = str(entry.get("subject") or "").strip()
             verb = str(entry.get("verb") or "").strip().lower()
@@ -2272,11 +2494,11 @@ def extract_from_sections(
             # has a page for, or a model supplies a plausible name from the
             # series it has read and nothing in the row shows it.
             sub_pick = pick_candidate(
-                known.get(subject.lower(), []), subject,
+                name_pool(known, subject, linked, page), subject,
                 page_real, linked, page,
             )
             obj_pick = pick_candidate(
-                known.get(object_.lower(), []), object_,
+                name_pool(known, object_, linked, page), object_,
                 page_real, linked, page,
             )
             if sub_pick is None or obj_pick is None:
@@ -2285,6 +2507,35 @@ def extract_from_sections(
                     "unknown participant %r/%r for %s",
                     subject, object_, page,
                 )
+                continue
+            sub_id = None if isinstance(sub_pick, dict) else sub_pick[0]
+            obj_id = None if isinstance(obj_pick, dict) else obj_pick[0]
+            # G3 (2026-09-29 JJK verification): the prompt forbids a row
+            # whose object is its own subject unless the act was
+            # self-directed; the old corpus held 807 of them (29.4%), and
+            # `.7` still writes a few ("Mei Mei captured Mei Mei"). Legal
+            # only for a self verb, or a quote that says so -- and never for
+            # a movement, whose object is a place.
+            if (
+                sub_id is not None and sub_id == obj_id
+                and verb not in _SELF_VERBS
+                and (verb in _MOVEMENT_VERBS or not _REFLEXIVE.search(quote))
+            ):
+                stats["dropped"]["self_object"] += 1
+                continue
+            # G4: a movement's object is a place or a group -- a node of one
+            # of the wiki's declared `events: place_types:` (inert when the
+            # wiki declares none). The JJK `.7` pilot: 23 of 34 movement rows
+            # named a person ("Shoko Ieiri arrived Satoru Gojo").
+            obj_ids = (
+                {c[0] for c in obj_pick["ambiguous"]} if obj_id is None
+                else {obj_id}
+            )
+            if (
+                place_nodes is not None and verb in _MOVEMENT_VERBS
+                and not obj_ids <= place_nodes
+            ):
+                stats["dropped"]["shape"] += 1
                 continue
             # Self-directed events are real: Toji kills himself, Mahito
             # awakens. The gate allows subject == object and says so.
@@ -2352,6 +2603,11 @@ def extract_from_sections(
                     "passage": label,
                 }
             )
+    dropped = _fanout(found)
+    if dropped:
+        stats["dropped"]["fanout"] += len(dropped)
+        stats["kept"] -= len(dropped)
+        found = [row for row in found if id(row) not in dropped]
     stats["read"] = sorted({p["passage"] for p in readable})
     return found, stats
 
@@ -2380,6 +2636,29 @@ def _effort_body() -> dict[str, str] | None:
     if extra:
         body.update(json.loads(extra))
     return body or None
+
+
+_TRACE_LOCK = threading.Lock()
+
+
+def _trace(record: dict[str, Any]) -> None:
+    """Append one model call -- the exact window the model read and its raw
+    answer -- to `SCRIPTENGINE_EVENTS_TRACE` (a JSONL path; inert when
+    unset, the request and the rows are unchanged either way).
+
+    The store keeps only rows that survive the gates, anchored to whole
+    sections, so it holds neither the input a row was read from (the model
+    reads overlapping windows) nor the calls that answered no events: a
+    training set built from the store alone has no exact inputs and no
+    negatives (plan/JJK_STUDENT_TRAINING.md, 2026-09-29)."""
+    import os
+
+    path = os.environ.get("SCRIPTENGINE_EVENTS_TRACE", "").strip()
+    if not path:
+        return
+    line = json.dumps(record, ensure_ascii=False)
+    with _TRACE_LOCK, open(path, "a", encoding="utf-8") as handle:
+        handle.write(line + "\n")
 
 
 def _window_workers() -> int:
@@ -2463,7 +2742,8 @@ def extract_events_series(
         "proposed": 0, "kept": 0, "ambiguous": 0, "cross_reality": 0,
         "dropped": {
             "incomplete": 0, "verb": 0, "unknown_participant": 0,
-            "unquoted": 0, "dedup": 0,
+            "unquoted": 0, "dedup": 0, "self_object": 0, "shape": 0,
+            "fanout": 0,
         },
     }
     with FactStore(paths.facts_db) as store:
@@ -2510,6 +2790,7 @@ def extract_events_series(
         # run's pages, so a `limit` run stays small.
         # Read on this thread (the store's), handed to the workers as a value.
         run_verbs = eventive_verbs(store)
+        place_nodes = declared_place_nodes(store)
         linked_by_page: dict[str, set[int]] = {}
         if wanted:
             wanted_titles = set(wanted)
@@ -2552,7 +2833,7 @@ def extract_events_series(
                     found, stats = extract_from_sections(
                         client, paths.name, page,
                         passages, known, real_by_page.get(page),
-                        linked_by_page.get(page), run_verbs,
+                        linked_by_page.get(page), run_verbs, place_nodes,
                     )
                 except LLMUnavailable:
                     raise
@@ -2577,6 +2858,7 @@ def extract_events_series(
             return extract_from_sections(
                 client, paths.name, page, passages, known,
                 real_by_page.get(page), linked_by_page.get(page), run_verbs,
+                place_nodes,
             )
 
         guarded = _guarded(run)

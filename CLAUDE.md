@@ -333,10 +333,24 @@ wiki), Bleach, Hunterpedia, One-Punch Man, Berserk, Chainsaw Man, Dragon Ball an
 One Piece. The engine serves the writer through three doors that wrap the same
 functions: the HTTP API on :8000, the Typer CLI, and an MCP server over stdio.
 
-**The JJK prose pass is complete (2026-09-07): 100% on every in-scope narrative
-page type** (characters, episodes, battles, techniques, chapters, synopses,
-story arcs, events; in-scope content remainder 0). Final record — method,
-crucial engine fixes, final state: `reports/page-campaign/PROSE_PASS_FINAL.md`.
+**The JJK PROSE/CLASSIFICATION pass is complete (2026-09-07): 100% on every
+in-scope narrative page type** (characters, episodes, battles, techniques,
+chapters, synposes, story arcs, events; in-scope content remainder 0). Final
+record — method, crucial engine fixes, final state:
+`reports/page-campaign/PROSE_PASS_FINAL.md`.
+
+That is a LAYER, not the owner's 100%. Under the governing definition
+(`franchise_kit/RUNBOOK_100.md` §0 — a franchise **brain**: every line
+understood, recallable AND traceable, plus grounded reasoning over it) the
+JJK **events** layer does not yet meet the bar, and is re-opened
+2026-09-29: all 2,748 stored rows come from the pre-council prompt
+(`events-2026-09-05.2`), carry no `verified` value, and 29.4% have
+`subject == object` (24.9% of all arrived/departed rows, which the prompt
+itself forbids — their object must be a place). Traceability is intact
+(2,748/2,748 quotes verbatim in the section they claim). Plan, gates and
+blockers: `plan/JJK_100_PLAN.md`. **JJK D1–D10 remains the baseline-exact
+reference other campaigns must not regress** — any re-extraction re-runs the
+four standing gates before and after.
 The structured layer: ~1,355 declared roster entries in
 `series/jjk/overrides.yaml` (verified against `facts.db`). Interval facts — a
 character's state *during* an arc, which the infobox's current-state read cannot
@@ -352,8 +366,11 @@ regenerated list, not a number stated here — see
 data store.** Every line understood, recallable and traceable, plus grounded
 reasoning over it: match-ups (incl. cross-Earth "who would win"),
 hypotheticals, trajectories, group/state questions, answered from served,
-cited evidence with assumptions labeled. Definition and measures:
-`franchise_kit/RUNBOOK_100.md` §0; plan: `plan/MARVEL_100_PLAN.md`.
+cited evidence with assumptions labeled. This is the governing definition for
+**every** franchise, not Marvel alone — canon text:
+`franchise_kit/RUNBOOK_100.md` §0 (also `franchise_kit/PLAN_TEMPLATE.md`,
+`franchise_kit/README.md`, `franchise_kit/prompts/WORKER_PROMPT.template.md`).
+Marvel's instance: `plan/MARVEL_100_PLAN.md`; JJK's: `plan/JJK_100_PLAN.md`.
 
 **Now active: the CSM (Chainsaw Man) 100% campaign, Phase 1 (the §9a closure
 loop).** JJK D6 is DONE (D1–D10, 2026-09-07) and is the baseline-exact

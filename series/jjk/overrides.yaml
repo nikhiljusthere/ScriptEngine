@@ -9415,3 +9415,17 @@ remainder_note: |
   release pages (volume, blu_ray_dvd, music, game, series, anime, novel,
   stage_play and the remaining `unknown` list/author/promo pages) are out of
   scope.
+
+events:
+  # JJK 100% plan v2 (2026-09-29, reports/jjk/VERIFY_2026-09-29.md). The
+  # brain definition (RUNBOOK §0) asks who won, not only who fought: the
+  # outcome verbs Marvel and the MCU declare (council step 1,
+  # reports/marvel/SCHEMA_TEST_who_would_win_2026-09-29.md). JJK's old rows
+  # hold 1,200 `fought` and no outcome at all.
+  extra_verbs: [defeated, escaped, captured]
+  # G4 (tools/events_gates.py): an arrived/departed object must be a place
+  # or a group -- this wiki's page types for those.
+  place_types: [location, organizations]
+  # Works about the story, never actors in it: the ending theme "Akari" took
+  # Akari Nitta's rows (9 of the 35 misfiled rows found 2026-09-29).
+  participant_exclude_types: [music, volume, blu_ray_dvd, anime, game, novel, stage_play, series]

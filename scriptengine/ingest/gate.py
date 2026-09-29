@@ -114,6 +114,11 @@ def cross_page_agreement(store: FactStore) -> dict:
         for row in store.connection.execute(
             "SELECT verb, subject_node, subject_name, object_node, object_name,"
             " arc_key, arc_index, temporal, time_rank, quote FROM events"
+            # An ambiguous end is stored as a NULL node with its candidate
+            # list in the name (events P1): it names no one entity, so it
+            # joins no pair. The re-extracted JJK store holds the first such
+            # row (2026-09-29) and the int() below crashed on it.
+            " WHERE subject_node IS NOT NULL AND object_node IS NOT NULL"
         )
     ]
 
@@ -223,7 +228,12 @@ def coverage_split(store: FactStore) -> dict:
         return {"beats": 0, "any": 0.0, "temporal": 0.0, "atemporal": 0.0}
 
     by_section: dict[int, list[int]] = {}
-    for row in store.connection.execute("SELECT section_id, temporal FROM events"):
+    # A lead or fact-value row carries no section (its passage is `lead` /
+    # `fact:<key>`, section_id NULL): it is no beat. The `all`-scope JJK
+    # re-extraction (2026-09-29) stored the first lead rows this read met.
+    for row in store.connection.execute(
+        "SELECT section_id, temporal FROM events WHERE section_id IS NOT NULL"
+    ):
         by_section.setdefault(int(row["section_id"]), []).append(int(row["temporal"]))
 
     any_beats = temporal_beats = atemporal_beats = 0

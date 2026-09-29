@@ -343,3 +343,78 @@ def test_an_empty_reply_is_retried_before_the_page_fails(series, monkeypatch):
     monkeypatch.setattr(events, "LLMClient", FlakyStub)
     report = events.extract_events_series(paths, settings=settings)
     assert report["failed"] == 0 and report["events"] == 1
+
+
+def _answer_stub(entries):
+    class Stub(StubLLMClient):
+        def complete(self, prompt, system="", temperature=0.2,
+                     max_tokens=1024, extra_body=None):
+            self.calls.append(prompt)
+            return json.dumps({"events": entries})
+    return Stub
+
+
+QUOTE = "Steve fights Peggy at the laboratory"
+
+
+def test_a_self_object_on_a_non_self_verb_is_a_counted_drop(series, monkeypatch):
+    # G3 (2026-09-29 JJK verification): "Mei Mei captured Mei Mei".
+    paths, settings, *_ = series
+    monkeypatch.setattr(events, "LLMClient", _answer_stub([
+        {"subject": "Steve", "verb": "fought", "object": "Steve", "quote": QUOTE},
+    ]))
+    report = events.extract_events_series(paths, settings=settings)
+    assert report["dropped"]["self_object"] == 1
+    assert report["events"] == 0
+
+
+def test_a_movement_to_a_person_is_dropped_only_where_places_are_declared(series, monkeypatch):
+    # G4: arrived/departed takes a place. Inert on a wiki that declares no
+    # `events: place_types:` -- the row is kept exactly as before.
+    paths, settings, *_ = series
+    monkeypatch.setattr(events, "LLMClient", _answer_stub([
+        {"subject": "Steve", "verb": "arrived", "object": "Peggy", "quote": QUOTE},
+    ]))
+    report = events.extract_events_series(paths, settings=settings)
+    assert report["events"] == 1 and report["dropped"]["shape"] == 0
+    (paths.root / "overrides.yaml").write_text(
+        "events:\n  place_types: [location]\n", encoding="utf-8")
+    report = events.extract_events_series(paths, settings=settings, refresh=True)
+    assert report["events"] == 0 and report["dropped"]["shape"] == 1
+
+
+def test_the_trace_records_the_window_and_the_raw_answer(series, monkeypatch, tmp_path):
+    paths, settings, *_ = series
+    trace = tmp_path / "trace.jsonl"
+    monkeypatch.setenv("SCRIPTENGINE_EVENTS_TRACE", str(trace))
+    events.extract_events_series(paths, settings=settings)
+    lines = [json.loads(line) for line in trace.read_text().splitlines()]
+    assert lines, "every model call is traced"
+    assert all(line["page"] == "Test Arc" for line in lines)
+    assert any("Steve fights Peggy" in line["window"] for line in lines)
+    assert all(json.loads(line["answer"]) == ANSWER for line in lines)
+    assert all(line["prompt_version"] == events.PROMPT_VERSION for line in lines)
+
+
+def test_no_trace_is_written_when_unset(series, monkeypatch, tmp_path):
+    paths, settings, *_ = series
+    monkeypatch.delenv("SCRIPTENGINE_EVENTS_TRACE", raising=False)
+    events.extract_events_series(paths, settings=settings)
+    assert not list(tmp_path.glob("*.jsonl"))
+
+
+def test_a_clause_fanned_out_over_a_crowd_is_a_counted_drop():
+    # 2026-09-29 JJK pilot: one "enter the room" clause became 42 `met` rows.
+    quote = "Steve and Peggy enter the room"
+    crowd = [
+        {"subject_name": "Steve", "subject_mention": "Steve", "verb": "met",
+         "object_name": f"Bystander {i}", "object_mention": f"Bystander {i}",
+         "quote": quote}
+        for i in range(8)
+    ]
+    named = {"subject_name": "Steve", "subject_mention": "Steve", "verb": "met",
+             "object_name": "Peggy", "object_mention": "Peggy", "quote": quote}
+    dropped = events._fanout(crowd + [named])
+    assert len(dropped) == 8 and id(named) not in dropped
+    # A group reference of a few people ("greets them") stands.
+    assert events._fanout(crowd[:4]) == set()
