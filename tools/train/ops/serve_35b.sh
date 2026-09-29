@@ -61,8 +61,20 @@
 #                          reasoning and never answering (see plan/SWITCHPOINT.md
 #                          ARCHITECT NOTE 02:0x). ScriptEngine's
 #                          SCRIPTENGINE_ANSWER_TOKENS should match this.
+#                          MEASURED CAVEAT, do not "fix" this by shrinking it:
+#                          this model reasons by default and will happily spend
+#                          a small budget entirely on reasoning. A one-sentence
+#                          question came back with finish_reason=length and an
+#                          EMPTY answer at max_tokens=2048 (1,142 reasoning
+#                          tokens); the same question returned "Megumi
+#                          Fushiguro" in 1.9 s at 20,480. So the budget is not
+#                          waste, it is the answer's runway. If a client ever
+#                          reports empty content with finish_reason=length,
+#                          raise the budget -- do not lower it.
 #   --preserve-thinking    returns the reasoning so a verification verdict can
-#                          be audited.
+#                          be audited. It also means content can legitimately be
+#                          empty while reasoning_tokens is high: that is the
+#                          budget case above, not a broken model.
 #
 # SAMPLING: left at the model-aware defaults on purpose. --greedy was tried on
 # the 27B and produced thinking loops and degenerate repetition. Do not add it.

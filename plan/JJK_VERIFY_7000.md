@@ -138,9 +138,14 @@ happened.
   954 tok/s aggregate at C=2 (vs 650 upstream at C=1). A third worker only
   queues.
 - **Set `SCRIPTENGINE_ANSWER_TOKENS=20480`** to match the server's
-  `--default-max-tokens`. The 8,192 default has already caused Qwen to spend a
-  whole budget on reasoning and return nothing (see ARCHITECT NOTE 02:0x in
-  `plan/SWITCHPOINT.md`).
+  `--default-max-tokens`. This is not a formality on this model: it reasons by
+  default and will spend a small budget entirely on reasoning and return **empty
+  content with `finish_reason: length`**. Measured — a one-sentence question
+  returned empty at 2,048 tokens (1,142 spent on reasoning) and
+  `Megumi Fushiguro` in 1.9 s at 20,480. **Any empty answer must be retried at a
+  higher budget, never accepted and never treated as "no events".** A wrapper
+  that reads empty content as an empty event list will silently manufacture
+  thousands of false negatives across this corpus.
 - **Retries:** all batch tools resume by themselves — a window counts as done
   only when its line has `ok: true`.
 - **Per-batch acceptance:** rebuild after each batch; it must print
