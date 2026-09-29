@@ -51,6 +51,20 @@ this exact name. If you see `model_not_found`, the server name does not match yo
 
 ---
 
+## 2.1. Live progress monitor (optional but recommended)
+
+Run `tools/train/verify_monitor.py` in a **separate terminal or backgrounded**:
+```bash
+python3 tools/train/verify_monitor.py --port 8950
+```
+
+Then open `http://127.0.0.1:8950` in any browser (Brave). It auto-refreshes every
+2 seconds, showing per-pool progress bars, overall %, v1 tier breakdowns, and
+server health. This lets you watch verification progress in real time without
+switching from your work session. Stop it with Ctrl+C when done.
+
+---
+
 ## 3. One-window process (do this for EVERY window)
 
 ```
