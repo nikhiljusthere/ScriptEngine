@@ -51,8 +51,11 @@ say "switch-q8-oc start: old_oc=$OLD_OC old_shell=$OLD_SHELL dry=$DRY"
 
 # pinned to THIS session (the one being switched from), not the
 # newest-in-directory — a sibling window can steal `-c` during the reload.
-# 2026-09-30: updated for the Q8 coding switch (windowing-builder session).
-PINNED_SES=ses_f1068adf5ffeMSj2W0jW5qGEus
+# 2026-09-30 ~06:5x: updated for the post-builder Q8 switch — the window
+# moved to session "JJK sentence-grid window builder" (created 06:31 on
+# ninfer-27b after the 06:1x Q8 unload); the old pin below is the dead
+# 06:0x "Scratch windowing fix" Q8 session.
+PINNED_SES=ses_f102b8651ffeUiOEPE6K6diaYv
 OPS=/home/goblin/ScriptEngine/tools/train/ops
 
 if [ "$DRY" -eq 1 ]; then
