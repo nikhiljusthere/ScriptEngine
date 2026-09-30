@@ -33,7 +33,7 @@ from pathlib import Path
 from typing import Any
 
 from scriptengine.config import SeriesPaths, Settings, get_settings
-from scriptengine.ingest.abilities import _windows
+from scriptengine.ingest.windows import CURRENT_GEN, Window, build_windows, quote_window
 from scriptengine.ingest.verbatim import fold as _fold, quoted_in as _quoted_in
 from scriptengine.llm.client import LLMClient, LLMRateLimited, LLMUnavailable
 from scriptengine.stores.facts import FactStore
@@ -603,8 +603,14 @@ def validate_phase1_rows(store: FactStore) -> list[str]:
                     f"{label}: {end} {str(raw[end])!r} is not named in"
                     f" section {section_id}"
                 )
-        if not _quoted_in(str(raw["quote"]), passage):
-            findings.append(f"{label}: quote is not verbatim in section {section_id}")
+        # G1 at the window level (windowing-100 council 2026-09-30): the
+        # quote must sit inside one grid window of the section -- the span
+        # a read actually carries -- not merely somewhere in the section.
+        if quote_window(PHASE1_ARC, "", passage, str(raw["quote"])) is None:
+            findings.append(
+                f"{label}: quote is not carried in one grid window of"
+                f" section {section_id}"
+            )
     return findings
 
 
@@ -660,7 +666,10 @@ def seed_phase1_rows(
 # from, and a number the model supplies is a number nobody verified.
 
 # Bump to invalidate every stored event, exactly as `relations` does.
-PROMPT_VERSION = "events-2026-09-29.9"
+# 2026-09-30.1: the passage a read carries is now a whole-sentence grid
+# window (windowing-100 council 2026-09-30); the retired packed read (the
+# `SCRIPTENGINE_EVENTS_PACK_CHARS` env) is deleted with it.
+PROMPT_VERSION = "events-2026-09-30.1"
 
 # What each verb means, for the model. The set a wiki may use is
 # `eventive_verbs(store)`; only the verbs in that set are described to it.
@@ -2398,33 +2407,31 @@ def extract_from_sections(
             "fanout": 0,
         },
     }
-    # The calls this page costs: one per window of each passage, or -- a page
-    # whose passages together fit `_pack_chars()` (owner 2026-09-29: "smaller
-    # pages can be read in whole") -- one call over all of them. Each answer
-    # row is anchored to the passage that holds its quote, so a packed read
-    # stores the same row shape as a per-passage one.
+    # The calls this page costs: one per grid window of each passage
+    # (windowing-100 council 2026-09-30: a window is a whole-sentence span
+    # of one sub-topic over the index's sentence grid, never a character
+    # slice). The retired packed read joined a page's passages into one
+    # window -- a sub-topic boundary violation by construction -- so a
+    # small page simply gets a few small windows. Each answer row is
+    # anchored to the passage that holds its quote, so the row shape is
+    # the per-passage one in every case.
     readable = [p for p in passages if (p["text"] or "").strip()]
-    pack = _pack_chars()
-    units: list[tuple[str, str, list[dict[str, Any]]]] = []
-    if (
-        pack
-        and len(readable) > 1
-        and sum(len(p["text"].strip()) for p in readable) <= pack
-    ):
-        joined = "\n\n".join(
-            f"[{(p['title'] or p['passage'] or 'lead').strip()}]\n{p['text'].strip()}"
-            for p in readable
-        )
-        units.append((joined, "", readable))
-    else:
-        for passage in readable:
-            for window in _windows(passage["text"].strip()):
-                units.append(
-                    (window, (passage["title"] or "").strip(), [passage])
-                )
+    units: list[tuple[Window, str, list[dict[str, Any]]]] = []
+    for passage in readable:
+        # The builder's `section` label: the passage's own, stable per
+        # (page, kind) -- the section title, or `lead` / `fact:<key>` for
+        # the section-like passages read from the page lead or a declared
+        # narrative fact value.
+        label = (passage["title"] or passage["passage"] or "lead").strip()
+        for window in build_windows(
+            page, label, passage["text"].strip(), gen=CURRENT_GEN
+        ):
+            units.append(
+                (window, (passage["title"] or "").strip(), [passage])
+            )
     system = system_prompt(verbs)
 
-    def ask(unit: tuple[str, str, list[dict[str, Any]]]) -> str:
+    def ask(unit: tuple[Window, str, list[dict[str, Any]]]) -> str:
         # An empty reply is intermittent under batched decoding (2026-09-29
         # MCU shard: 22/1,000 pages "returned no content"; the same windows
         # replayed alone answered normally), so it is retried twice before the
@@ -2437,14 +2444,14 @@ def extract_from_sections(
                     raise
         raise AssertionError("unreachable")
 
-    def ask_once(unit: tuple[str, str, list[dict[str, Any]]]) -> str:
+    def ask_once(unit: tuple[Window, str, list[dict[str, Any]]]) -> str:
         window, section_title, _ = unit
         return client.complete(
             _TEMPLATE.format(
                 series=series,
                 page=page,
                 section=section_title,
-                passage=window,
+                passage=window.text,
             ),
             system=system,
             temperature=0.0,
@@ -2472,7 +2479,8 @@ def extract_from_sections(
                 {"kind": h["kind"], "id": h["id"], "passage": h["passage"]}
                 for h in holders
             ],
-            "window": window, "answer": answer,
+            "window_id": window.id, "gen": window.gen,
+            "window": window.text, "answer": answer,
             "prompt_version": PROMPT_VERSION,
             "model": getattr(getattr(client, "settings", None), "llm_model", None),
         })
@@ -2539,9 +2547,12 @@ def extract_from_sections(
                 continue
             # Self-directed events are real: Toji kills himself, Mahito
             # awakens. The gate allows subject == object and says so.
+            # G1 at the window level (windowing-100 council): the quote must
+            # be verbatim in the window that was read, not just somewhere in
+            # the passage -- a quote the window did not carry cannot be
+            # attributed to the sentences that cover it.
             passage = next(
-                (h for h in holders
-                 if _quoted_in(quote, (h["text"] or "").strip())),
+                (h for h in holders if _quoted_in(quote, window.text)),
                 None,
             )
             if passage is None:
@@ -2667,16 +2678,6 @@ def _window_workers() -> int:
     import os
 
     return max(1, int(os.environ.get("SCRIPTENGINE_EVENTS_WINDOW_WORKERS", "1") or 1))
-
-
-def _pack_chars() -> int:
-    """The largest page (total passage chars) read in one call; 0 = off.
-
-    Off by default: a packed read is a different prompt, so it is adopted
-    only on a row-set diff against the per-passage read (review R11)."""
-    import os
-
-    return int(os.environ.get("SCRIPTENGINE_EVENTS_PACK_CHARS", "0") or 0)
 
 
 def _answer_budget() -> int:

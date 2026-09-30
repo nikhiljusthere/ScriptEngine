@@ -30,7 +30,7 @@ The row is correct only if ALL hold:
 4. both ends are named entities the guideline allows (never a generic class, unnamed people, a technique, a domain or an item); pronouns resolve only where the passage makes them unambiguous;
 5. it is not a duplicate of one of the other rows listed (fought and met are symmetric: one row per pair).
 
-WIKI EVIDENCE is read from the wiki's own pages. Use it to check that each end is the right kind of thing (a character page, not a technique or chapter page) and that the row does not contradict the wiki (a "killed" row whose object the wiki lists as Alive is wrong unless the passage itself states the death). The evidence never makes a row correct on its own: the passage must state it. WIKI FLAGS are warnings, not verdicts: a "species" page is a class (never an end); this wiki files named shikigami (Mahoraga, Nue, Moon Dregs) under technique pages, and a named shikigami IS an allowed end, while an attack, technique or domain is not.
+WIKI EVIDENCE is read from the wiki's own pages. Use it to check that each end is the right kind of thing (a character page, not a technique or chapter page) and that the row does not contradict the wiki (a "killed" row whose object the wiki lists as Alive is wrong unless the passage itself states the death). A `status (end of series)` fact is the character's state at the end of the series, not at the passage's moment: an early-story row about a character who is later Deceased does not contradict it. The evidence never makes a row correct on its own: the passage must state it. WIKI FLAGS are warnings, not verdicts: a "species" page is a class (never an end); this wiki files named shikigami (Mahoraga, Nue, Moon Dregs) under technique pages, and a named shikigami IS an allowed end, while an attack, technique or domain is not.
 
 Answer with JSON only: {"ok": "yes" or "no", "rule": "<the rule or guideline line that decides it, one short sentence>"}
 
@@ -77,7 +77,19 @@ class Wiki:
         out = []
         for p in pages:
             f = self.facts.get(p, {})
-            extra = "; ".join(f"{k} {f[k]}" for k in ("status", "race") if k in f)
+            # The infobox `status` is the character's END-OF-SERIES state
+            # ("Deceased" for a killer of an early-story row). The card
+            # must not assert it as the state at the passage's moment
+            # (council correction #3, 2026-09-30): label it end-of-series
+            # so the cross-check ("a killed row whose object the wiki
+            # lists as Alive") keeps working without contaminating
+            # early-story context. The chapter-scoped
+            # status-as-of-chapter-N lookup is the separate track.
+            # `race` is time-invariant and stays unscoped.
+            extra = "; ".join(
+                f"{'status (end of series)' if k == 'status' else k} {f[k]}"
+                for k in ("status", "race") if k in f
+            )
             out.append(f"{p} ({self.label[p]}{'; ' + extra if extra else ''})")
         bad = self.label[pages[0]] if len(pages) == 1 and self.label[pages[0]] in BAD_END else None
         return f'"{name}" -> ' + " | ".join(out), bad

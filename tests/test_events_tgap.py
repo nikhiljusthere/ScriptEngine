@@ -195,19 +195,38 @@ def test_cli_dry_run_lists_pages_and_calls_no_model(series, tmp_path, monkeypatc
     finally:
         get_settings.cache_clear()
 
-def test_a_small_page_is_read_in_one_packed_call(series, monkeypatch):
-    """Owner 2026-09-29: "smaller pages can be read in whole". With the pack
-    size set, the lead and the Plot section go in one call, and the row is
-    still anchored to the passage that holds its quote (the section)."""
+def test_a_small_page_is_read_per_passage_as_grid_windows(series, monkeypatch):
+    """The 2026-09-29 packed read is retired (windowing-100 council
+    2026-09-30: a joined read is a sub-topic boundary violation by
+    construction). A small page is read per passage as whole-sentence
+    grid windows -- the Plot section and the lead, one window each here --
+    and the row is still anchored to the passage that holds its quote
+    (the section)."""
+    from scriptengine.ingest.windows import build_windows
+
     paths, settings, section, steve, peggy = series
-    monkeypatch.setenv("SCRIPTENGINE_EVENTS_PACK_CHARS", "10000")
     report = events.extract_events_series(
         paths, settings=settings, scope="all"
     )
 
-    assert len(StubLLMClient.instances[0].calls) == 1
+    with FactStore(paths.facts_db) as store:
+        plot_text = store.connection.execute(
+            "SELECT text FROM sections WHERE id = ?", (section,)
+        ).fetchone()[0]
+        lead_text = store.connection.execute(
+            "SELECT lead FROM documents WHERE title = 'Test Arc' COLLATE NOCASE"
+        ).fetchone()[0]
+    expected = (
+        len(build_windows("Test Arc", "Plot", plot_text.strip(), gen=events.CURRENT_GEN))
+        + len(build_windows("Test Arc", "lead", lead_text.strip(), gen=events.CURRENT_GEN))
+    )
+    assert len(StubLLMClient.instances[0].calls) == expected == 2
     assert report["events"] == 1
-    assert report["dropped"]["unquoted"] == 0
+    # The lead's window does not carry the answer's quote ("Steve fights
+    # Peggy at the laboratory" is in the Plot section, not the lead), so
+    # the row proposed for that read is dropped as unquoted -- the
+    # window-level G1 at the extractor, working as designed.
+    assert report["dropped"]["unquoted"] == 1
     with FactStore(paths.facts_db) as store:
         store.ensure_events()
         row = store.connection.execute(
@@ -217,7 +236,10 @@ def test_a_small_page_is_read_in_one_packed_call(series, monkeypatch):
     assert (row["subject_node"], row["object_node"]) == (steve, peggy)
 
 
-def test_a_page_over_the_pack_size_is_read_per_passage(series, monkeypatch):
+def test_the_pack_env_is_retired(series, monkeypatch):
+    """`SCRIPTENGINE_EVENTS_PACK_CHARS` died with the packed read
+    (windowing-100 council 2026-09-30): setting it changes nothing -- the
+    page is read per passage either way."""
     paths, settings, _, _, _ = series
     monkeypatch.setenv("SCRIPTENGINE_EVENTS_PACK_CHARS", "50")
     events.extract_events_series(paths, settings=settings, scope="all")

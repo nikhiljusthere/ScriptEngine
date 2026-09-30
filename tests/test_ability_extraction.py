@@ -99,6 +99,82 @@ class TestWindows:
         assert windows[1].startswith(text[3700:3710])
 
 
+class TestGridWindows:
+    """The passage loop reads the section on the index's sentence grid
+    (2026-09-30 windowing council), not 4,000-character slices: each read
+    is a whole-sentence span of one sub-topic, verbatim out of the section.
+    """
+
+    @staticmethod
+    def _text() -> str:
+        # Ten paragraphs of twelve named techniques each (~6,300 chars):
+        # long enough that the old 4,000-char slice read it in two cuts
+        # while the grid reads one window per sub-topic.
+        paragraphs = []
+        for block in range(10):
+            paragraphs.append(
+                " ".join(
+                    f"In battle, Killua unleashes Godspeed {block * 12 + i}."
+                    for i in range(1, 13)
+                )
+            )
+        return "\n\n".join(paragraphs)
+
+    class _Probe:
+        """Records every prompt and answers with the names it was shown."""
+
+        def __init__(self) -> None:
+            self.prompts: list[str] = []
+
+        def available(self) -> bool:
+            return True
+
+        def complete(self, prompt: str, system: str = "", temperature: float = 0.0,
+                     max_tokens: int = 0, **_kwargs: object) -> str:
+            import json
+            import re
+
+            self.prompts.append(prompt)
+            names = sorted(set(re.findall(r"Godspeed \d+", prompt)))
+            return json.dumps(
+                {"abilities": [{"name": n, "kind": "technique"} for n in names]}
+            )
+
+    def test_a_long_section_is_read_as_grid_windows(self):
+        from scriptengine.ingest.windows import CURRENT_GEN, build_windows
+
+        section, text = "Nen", self._text()
+        probe = self._Probe()
+        found = A.extract_from_passages(
+            probe, "hxh", "Killua Zoldyck", [(section, text)], {}
+        )
+        expected = build_windows("Killua Zoldyck", section, text, gen=CURRENT_GEN)
+        # One call per grid window (10 sub-topics -> 10 windows, not the
+        # old slice's 2), each carrying its window's verbatim text.
+        assert len(probe.prompts) == len(expected) == 10
+        for prompt, window in zip(probe.prompts, expected):
+            assert window.text in prompt
+        # And no technique falls between reads: every name the section
+        # states is extracted.
+        assert {entry["name"] for entry in found} == {
+            f"Godspeed {i}" for i in range(1, 121)
+        }
+
+    def test_windows_are_verbatim_slices_of_the_section(self):
+        from scriptengine.ingest.windows import CURRENT_GEN, build_windows
+
+        section, text = "Nen", self._text()
+        probe = self._Probe()
+        A.extract_from_passages(
+            probe, "hxh", "Killua Zoldyck", [(section, text)], {}
+        )
+        expected = build_windows("Killua Zoldyck", section, text, gen=CURRENT_GEN)
+        for window in expected:
+            # The read must be the section's own characters, so a quote
+            # stated in it stays anchorable to this section.
+            assert window.text in text
+
+
 class TestGating:
     def test_a_series_declaring_no_sections_is_skipped(self):
         """Extraction is opt-in per wiki, and costs nothing where unasked.

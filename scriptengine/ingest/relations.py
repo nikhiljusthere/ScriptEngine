@@ -45,7 +45,7 @@ import re
 from typing import Any
 
 from scriptengine.config import SeriesPaths, Settings, get_settings, load_overrides
-from scriptengine.ingest.abilities import _windows
+from scriptengine.ingest.windows import CURRENT_GEN, build_windows
 from scriptengine.ingest.verbatim import quoted_in as _quoted_in
 from scriptengine.llm.client import LLMClient, LLMRateLimited, LLMUnavailable
 from scriptengine.stores.facts import FactStore
@@ -53,7 +53,9 @@ from scriptengine.stores.facts import FactStore
 logger = logging.getLogger(__name__)
 
 # Bump to invalidate every stored relation, exactly as `abilities` does.
-PROMPT_VERSION = "2026-08-15.3"
+# 2026-09-30.1: passages are now whole-sentence grid windows
+# (windowing-100 council), not 4,000-character slices.
+PROMPT_VERSION = "2026-09-30.1"
 
 # Directional, read from the subject: `(Gojo, Yuji, mentor)` is Gojo mentoring
 # Yuji. Closed on purpose -- see the module docstring.
@@ -317,10 +319,10 @@ def extract_from_passages(
     found: list[dict[str, str]] = []
     seen: set[tuple[str, str]] = set()
     for section, text in found_passages:
-        for window in _windows(text):
+        for window in build_windows(character, section, text, gen=CURRENT_GEN):
             prompt = _TEMPLATE.format(
                 series=series, character=character, section=section,
-                passage=window, relations=", ".join(RELATIONS),
+                passage=window.text, relations=", ".join(RELATIONS),
             )
             answer = client.complete(
                 prompt, system=SYSTEM, temperature=0.0, max_tokens=_answer_budget()
@@ -349,7 +351,7 @@ def extract_from_passages(
                 key = (other.lower(), relation)
                 if key in seen:
                     continue
-                if not _quoted_in(quote, window):
+                if not _quoted_in(quote, window.text):
                     logger.info("unquoted %r->%r for %s", relation, other, character)
                     continue
                 seen.add(key)

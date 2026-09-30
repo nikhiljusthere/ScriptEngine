@@ -453,7 +453,7 @@ def narrative_abilities(
     import logging
 
     from scriptengine.ingest import narrative_abilities as narrative
-    from scriptengine.ingest.abilities import _windows
+    from scriptengine.ingest.windows import CURRENT_GEN, build_windows
     from scriptengine.llm.client import LLMUnavailable
     from scriptengine.stores.facts import FactStore
 
@@ -466,7 +466,9 @@ def narrative_abilities(
     if dry_run:
         with FactStore(paths.facts_db) as store:
             found = narrative.passages(store, _load_overrides(paths))
-        windows = sum(len(_windows(t)) for _p, _s, t in found)
+        windows = sum(
+            len(build_windows(p, s, t, gen=CURRENT_GEN)) for p, s, t in found
+        )
         console.print(
             f"[dim]{len(found)} passages, {windows} windows would be read[/dim]")
         for page, section, _text in found[:20]:

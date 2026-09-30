@@ -43,6 +43,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from scriptengine.config import SeriesPaths, Settings, get_settings, load_overrides
+from scriptengine.ingest.windows import CURRENT_GEN, build_windows
 from scriptengine.llm.client import LLMClient, LLMRateLimited, LLMUnavailable
 from scriptengine.stores.facts import FactStore
 
@@ -61,7 +62,13 @@ logger = logging.getLogger(__name__)
 # name, not a description" rule read straight past them. They are named: the
 # wiki writes `Name: description` at the head of a paragraph, and that colon is
 # visible in the passage even after the bold markers are stripped.
-PROMPT_VERSION = "2026-08-15.3"
+#
+# 2026-09-30.1: the passage a read carries is now a whole-sentence grid window
+# (scriptengine/ingest/windows.py, windowing-100 council 2026-09-30), not a
+# 4,000-character slice of the section. The prompt text is unchanged; what the
+# model is asked about changed, and cached answers under the slice semantics
+# would have kept their mid-sentence reads.
+PROMPT_VERSION = "2026-09-30.1"
 
 # What an extracted ability may be called, in the vocabulary `semantics` speaks
 # so the retrieval side can filter on the same words it filters pages by.
@@ -389,12 +396,12 @@ def extract_from_passages(
     found: list[dict[str, str]] = []
     seen: set[str] = set()
     for section, text in found_passages:
-        for window in _windows(text):
+        for window in build_windows(character, section, text, gen=CURRENT_GEN):
             prompt = _TEMPLATE.format(
                 series=series,
                 character=character,
                 section=section,
-                passage=window,
+                passage=window.text,
                 kinds=", ".join(KINDS),
                 acquired=", ".join(ACQUIRED),
             )
@@ -402,7 +409,8 @@ def extract_from_passages(
             # spends about 4,000 tokens reasoning over a 4,000-character
             # passage before it writes a word of the answer; at 4,000 it hits
             # the ceiling mid-thought and returns nothing, which looks exactly
-            # like "this passage names nothing".
+            # like "this passage names nothing". Grid windows cap at 2,000
+            # characters, so the budget is headroom, not a race against it.
             answer = client.complete(
                 prompt, system=SYSTEM, temperature=0.0, max_tokens=_answer_budget()
             )
@@ -420,7 +428,7 @@ def extract_from_passages(
                 # `Cero Barrage`, `Ghostly Wolf Summoning`. Several describe
                 # something the character really does; none is what the wiki
                 # calls it, and a name the source never uses cannot be cited.
-                if not _grounded_in(entry["name"], window, section):
+                if not _grounded_in(entry["name"], window.text, section):
                     logger.info("ungrounded %r for %s", entry["name"], character)
                     continue
                 seen.add(key)
@@ -471,6 +479,12 @@ def _fold(text: str) -> str:
 
 def _windows(text: str, size: int = 4000, overlap: int = 300) -> list[str]:
     """Split a section so none of it goes unread.
+
+    Retired by the windowing-100 council (2026-09-30): the engine reads
+    whole-sentence grid windows (`scriptengine.ingest.windows.build_windows`)
+    now. Kept only because `tools/train/window_delta_report.py` still prices
+    the old 4,000/300 slicing against the new grid -- delete this and
+    `TestWindows` together once the old pools are superseded.
 
     Killua's `Abilities & Powers` runs to 17,672 characters. Sending the first
     4,000 returned Whirlwind and Speed of Lightning and missed Godspeed,

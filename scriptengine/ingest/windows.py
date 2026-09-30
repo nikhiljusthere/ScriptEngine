@@ -60,6 +60,8 @@ from __future__ import annotations
 
 import bisect
 import hashlib
+import re
+import unicodedata
 from dataclasses import dataclass
 
 from scriptengine.index.chunker import (
@@ -70,6 +72,7 @@ from scriptengine.index.chunker import (
     sentence_content_hash,
     split_sentences,
 )
+from scriptengine.ingest.verbatim import fold
 
 # The cap is derived, not guessed (council 2026-09-30): the 3B student's
 # 4,096-token sequence is not binding -- 2,000 chars is about 570 tokens.
@@ -86,6 +89,14 @@ DEFAULT_CAP_CHARS = 2000
 # and re-tuning the figure re-derives the guarantee, it does not guess
 # one.
 DEFAULT_CARRY_CHARS = 250
+
+# The builder generation the windowing-100 rebuild runs under (council
+# 2026-09-30: "this rebuild = gen 2"). The id is gen-scoped by contract:
+# stable across re-runs and re-ingests that leave a section's text
+# unchanged, and it changes when the gen (or cap, sub-topic split, or
+# text) changes -- which is correct, because the remappable invariant is
+# the window's ``hashes`` list, which survives any of those.
+CURRENT_GEN = 2
 
 
 @dataclass(frozen=True)
@@ -378,3 +389,105 @@ def quote_sentence_span(text: str, quote: str) -> tuple[int, int] | None:
     if not covering:
         return None
     return covering[0], covering[-1]
+
+
+def _tidy_positions(text: str) -> tuple[str, list[int]]:
+    """The verbatim predicate's tidy of ``text`` (``fold`` + whitespace
+    collapse, without the final strip -- a stripped query finds the same
+    span), with each tidy character's source index in ``text``.
+
+    Unicode's decomposition maps are per code point, so the per-character
+    walk below is the whole-string ``fold`` itself, not an approximation:
+    a character that ``quoted_in`` accepts is located here, and the
+    mapping never loses a match the predicate made.
+    """
+    chars: list[str] = []
+    positions: list[int] = []
+    for index, ch in enumerate(text):
+        for piece in unicodedata.normalize("NFKD", ch):
+            if unicodedata.combining(piece):
+                continue
+            piece = piece.lower()
+            if piece.isspace():
+                if chars and chars[-1] == " ":
+                    continue  # the run keeps its first character's position
+                chars.append(" ")
+                positions.append(index)
+            else:
+                chars.append(piece)
+                positions.append(index)
+    return "".join(chars), positions
+
+
+def quote_grid_span(text: str, quote: str) -> tuple[int, int] | None:
+    """The first and last grid ordinals ``quote`` covers in ``text``, or
+    ``None`` while the quote is not in the text even after the verbatim
+    predicate's own folding (diacritics, whitespace).
+
+    The search is ``quoted_in``'s search -- the same fold and whitespace
+    collapse, so a quote verbatim under the predicate (a reflowed line, a
+    folded diacritic) still maps onto the grid -- and the span is reported
+    in the section's own ordinals, the window's ``quote_span`` vocabulary.
+    ``quote_sentence_span`` is the exact-slice variant; this one is the
+    gate's, because a quote the predicate accepts must not fail to map.
+    """
+    raw = text or ""
+    spans = sentence_spans(raw)
+    query = re.sub(r"\s+", " ", fold(quote or "")).strip()
+    if not spans or not query:
+        return None
+    tidied, positions = _tidy_positions(raw)
+    at = tidied.find(query)
+    if at < 0:
+        return None
+    a = positions[at]
+    b = positions[at + len(query) - 1]
+    covering = [
+        index
+        for index, (span_a, span_b, _s) in enumerate(spans)
+        if span_a <= b and span_b > a
+    ]
+    if not covering:
+        return None
+    return covering[0], covering[-1]
+
+
+def quote_window(
+    page: str,
+    section: str,
+    text: str,
+    quote: str,
+    *,
+    gen: int = CURRENT_GEN,
+    cap_chars: int = DEFAULT_CAP_CHARS,
+    carry_chars: int = DEFAULT_CARRY_CHARS,
+    windows: list[Window] | None = None,
+) -> Window | None:
+    """The grid window whose span covers the quote's sentence span, or
+    ``None`` -- the window-level G1 (council 2026-09-30): a quote the
+    grid does not carry in one window can no longer be attributed to
+    sentences that do not cover it; the failure is loud, never silent.
+
+    A quote straddling a cut with its pre-cut depth inside the carry sits
+    in the next window and passes; a quote deeper than the carry fails --
+    the documented weakening at a single oversized sentence. ``page`` and
+    ``section`` feed the window ids only; the containment result depends
+    on the text's own grid, so the gate may label freely. Pass a caller's
+    already-built ``windows`` to skip the rebuild.
+    """
+    span = quote_grid_span(text, quote)
+    if span is None:
+        return None
+    a, b = span
+    built = (
+        windows
+        if windows is not None
+        else build_windows(
+            page, section, text,
+            gen=gen, cap_chars=cap_chars, carry_chars=carry_chars,
+        )
+    )
+    for window in built:
+        if window.s_start <= a and b <= window.s_end:
+            return window
+    return None

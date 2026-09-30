@@ -17,7 +17,9 @@ the corpus did not contain, and the corpus contained them the whole time.
 the same chapter once for everyone it mentions: on Chainsaw Man, Denji alone
 appears in 664 chapter chunks totalling 963,433 characters, and the series has
 175 characters over 1,029 such chunks. Read once per page and attributed by the
-model, the whole series is about 290 windows.
+model, the whole series is a few hundred reads (290 under the retired
+4,000-character slicing; the 2026-09-30 grid windows change the count, not the
+shape).
 
 So the model is asked a different question from the one `abilities.py` asks. It
 is given a passage with no subject and must name both the ability *and* whose it
@@ -49,9 +51,9 @@ from scriptengine.config import SeriesPaths, Settings, get_settings, load_overri
 from scriptengine.ingest.abilities import (
     KINDS,
     _grounded_in,
-    _windows,
     parse_response,
 )
+from scriptengine.ingest.windows import CURRENT_GEN, build_windows
 from scriptengine.llm.client import LLMClient, LLMRateLimited, LLMUnavailable
 from scriptengine.stores.facts import FactStore
 
@@ -59,7 +61,9 @@ logger = logging.getLogger(__name__)
 
 # Separate from `abilities.PROMPT_VERSION`: this is a different question over
 # different text, and bumping one must not invalidate the other.
-PROMPT_VERSION = "2026-08-16.1"
+# 2026-09-30.1: passages are now whole-sentence grid windows
+# (windowing-100 council), not 4,000-character slices.
+PROMPT_VERSION = "2026-09-30.1"
 
 SYSTEM = (
     "You extract named abilities, and whose they are, from fiction-wiki story "
@@ -133,10 +137,10 @@ def extract_from_passage(
     from scriptengine.ingest.abilities import _answer_budget
 
     found: list[tuple[str, dict[str, str]]] = []
-    for window in _windows(text):
+    for window in build_windows(page, section, text, gen=CURRENT_GEN):
         prompt = _TEMPLATE.format(
             series=series, page=page, section=section,
-            passage=window, kinds=", ".join(KINDS),
+            passage=window.text, kinds=", ".join(KINDS),
         )
         answer = client.complete(
             prompt, system=SYSTEM, temperature=0.0, max_tokens=_answer_budget()
@@ -154,10 +158,10 @@ def extract_from_passage(
             if not canonical:
                 logger.info("no character %r on %s", owner, page)
                 continue
-            if owner.lower() not in window.lower():
+            if owner.lower() not in window.text.lower():
                 logger.info("owner %r not in the passage on %s", owner, page)
                 continue
-            if not _grounded_in(name, window, section):
+            if not _grounded_in(name, window.text, section):
                 logger.info("ungrounded %r on %s", name, page)
                 continue
             found.append((canonical, {
@@ -209,7 +213,9 @@ def extract_series(
             return report
         characters = known_characters(store, overrides)
         stopwords = ability_stopwords(overrides)
-        report["windows"] = sum(len(_windows(t)) for _p, _s, t in found_passages)
+        report["windows"] = sum(
+            len(build_windows(p, s, t, gen=CURRENT_GEN)) for p, s, t in found_passages
+        )
 
         def run(job):
             page, section, text = job
