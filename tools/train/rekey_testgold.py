@@ -1,52 +1,63 @@
 #!/usr/bin/env python3
 """Re-key the blind TEST gold (recall_gold_v3) onto the gen-2 sentence
-grid and rebuild the drift probes (windowing-100 WP3, 2026-10-04).
+grid and rebuild the drift probes (windowing-100 WP3, 2026-10-04; the
+U-WP5 passage-unit shape, 2026-10-04).
 
-The v4 test gold's W<n> entries carry [subject, verb, object] triples for
-the 4,000-char slices of windows_100.json, and WP1's content-addressed
-ids made those slices' old window ids dead. Each entry maps onto the
-current grid the way rekey_gold.py maps a record: its passage (from
-windows_100.json by index) located on the section's (or lead's) grid,
-and the windows whose sentence spans INTERSECT it (the slice's read
-span, not a containment of the whole passage -- on the gen-2 grid
-69/100 passages span several windows) take the entry's events over.
+The v4 test gold's W<n> entries carry [subject, verb, object] triples
+for the 4,000-char slices of windows_100.json, and WP1's
+content-addressed ids made those slices' old window ids dead. Each
+entry maps onto the current grid the way rekey_gold.py maps a record:
+its passage (from windows_100.json by index) located on the section's
+(or lead's) grid.
 
-The events carry no quote (they were listed blind for the whole old
-slice), so an event's anchor in a window is a mention of its subject or
-object in the window's READ part -- the overlap of the window's
-sentence span and the passage's span: a window can extend past the
-slice (windows_100.json is not a full tiling: 10 sections carry one
-4,000-char slice of a longer section), and the slice was the only text
-the blind annotator read, so a mention in the window's unread tail
-never anchors. The mention test is the scorer's own name rule
-(tools/eval_extraction.py): any 3+ letter word of the name (STOP set
-removed), folded; a full name span in the overlap implies its tokens
-are in it, so this single rule is the union of a name-span and a token
-stage. An event no window anchors is dropped and reported (expected 0:
-an in-passage name always lands in some intersecting window).
+U-WP5 SHAPE (supersedes the per-window re-key): the gold was annotated
+as "every event in this PASSAGE" -- the blind annotator read the slice
+and listed its events, and no event of a slice was copied anywhere
+else. The per-window re-key (one entry per intersecting window, an
+event copied into EVERY window that mentioned its names) broke that:
+270 events (173 core + 97 optional) inflated to 1,165, so a window on
+"Hana Kurusu / Appearance" (her hair colour) carried "Sukuna fought
+Hana Kurusu". That file is archived as
+gold_test_v4.gen2.json.pre-u5. The re-keyed file is now one entry per
+ORIGINAL W-index:
 
-A FULLY-READ window (its span inside the passage's span) no event maps
-to is a GENUINE empty: the passage was annotated blind, so the events
-it did list are anchored elsewhere, and the window really has none
-(unlike gold600's contaminated empties, whose carry text was never
-read -- those are the `reread` status). Keep it as an empty entry. A
-window that intersects the passage but extends past its edge is flagged
-`partial`: its remaining text was never read, so its emptiness is not
-earned and it never supplies an empty probe. Flag an entry `straddle`
-when an event anchors in two of the windows (multi-window coverage of
-the passage itself is not flagged -- it is the norm, not a defect).
+    "W17": {"w": 17, "page": ..., "section": ...,
+            "passage": <the original slice text>,
+            "core": [...unchanged...], "optional": [...unchanged...],
+            "windows": [{"id": <gen-2 id>, "span": [a, b],
+                         "partial": bool}, ...ordered by position...]}
 
-Output: recall_gold_v3/gold_test_v4.gen2.json -- the old per-entry shape
-(core/optional triples), keyed by the gen-2 window id instead of W<n>
-(one entry per intersecting window), plus the per-window passage, the
-straddle and partial flags, and the source W index. The hand-annotated v4 source
-stays put (like gold600.jsonl, the old-grid annotations are the source
-of truth; only the DERIVED gen-2 file is written new), and
-windows_100.json stays put too -- emit_windows.holdout_pages unions
-its pages. NOTE: tools/eval_extraction.py load_gold still reads the
-W-indexed v4 shape (and sorted-name-wise picks it OVER the gen-2
-file); the scorer switch to the gen-2 file is a later WP's job, not
-this re-key's.
+`span` is the window's READ part as char offsets INSIDE the passage
+(the window's sentence range clipped to the passage's char range: a
+slice can start or end mid-sentence), and `partial` marks a window
+that extends past the slice -- its unread tail was never read, so it
+anchors nothing and its emptiness is not earned. The windows whose
+sentence spans INTERSECT the passage's span are its covering windows
+(the slice's read span, not a containment of the whole passage -- on
+the gen-2 grid 69/100 passages span several windows); they chain-cover
+the passage (the section's windows tile it), asserted per unit.
+
+Events are NO LONGER copied into windows (the inflation bug): the
+passage is the unit, and the scorer (tools/eval_extraction.py) runs
+the student on every covering window, UNIONs the predictions, drops
+the ones whose quote is not inside the slice, collapses duplicates,
+and matches them to the unit's core + optional with its name rule.
+The mention rule below survives only as the tie-break for which
+same-titled section a passage was cut from (rekey_gold's
+most-anchored candidate: the candidate whose windows mention the
+entry's events in their READ part -- any 3+ letter word of the
+subject/object, STOP set removed, folded; a full name span in the
+overlap implies its tokens are in it). The passage must sit in the
+winning text VERBATIM (a raw find: the unit's spans are char
+offsets, so a fold-only match cannot be located); a failure is store
+drift, unmapped.
+
+Output: recall_gold_v3/gold_test_v4.gen2.json -- the units above plus
+the v4 file's meta (version/guideline/note) and `shape: "passage"`.
+The hand-annotated v4 source stays put (like gold600.jsonl, the
+old-grid annotations are the source of truth; only the DERIVED gen-2
+file is written new), and windows_100.json stays put too --
+emit_windows.holdout_pages unions its pages.
 
 With --probes, also rebuild the drift probes (opencode/golden_probes.
 jsonl, old file -> .pre-wp3b): 24 lines, pool shape plus `expected`.
@@ -107,7 +118,8 @@ def name_tokens(name):
 
 
 def map_event(text, spans, ps, pe, covering, ev):
-    """The intersecting windows an event maps to, mechanically.
+    """The intersecting windows that MENTION an event (disambiguation
+    only, U-WP5).
 
     A hit is a mention of the subject or object in the window's READ
     part -- the overlap of the window's sentence span and the passage's
@@ -117,9 +129,10 @@ def map_event(text, spans, ps, pe, covering, ev):
     rule (tools/eval_extraction.py): any 3+ letter word of the name
     (STOP set removed), folded; a full name span in the overlap implies
     its tokens are in it, so this single rule is the union of a
-    name-span and a token stage. Returns the hit windows: [] = no
-    anchor (dropped, reported -- expected 0), 2+ = the event anchors in
-    two siblings (a straddle)."""
+    name-span and a token stage. Used only to pick WHICH same-titled
+    section a passage was cut from (the candidate whose windows
+    mention the most events); the events themselves are no longer
+    copied into windows (the 1,165-pair inflation, .pre-u5)."""
     subject = str(ev[0]).strip() if len(ev) > 0 and ev[0] else ""
     object = str(ev[2]).strip() if len(ev) > 2 and ev[2] else ""
     toks = name_tokens(subject) | name_tokens(object)
@@ -134,6 +147,107 @@ def map_event(text, spans, ps, pe, covering, ev):
     return hits
 
 
+def derive_unit(store, n, wrec, evs, grids):
+    """One W-index entry -> its U-WP5 passage unit, or (None, why).
+
+    The unit is the annotated PASSAGE (windows_100.json's slice), its
+    core + optional triples UNCHANGED, and the ordered gen-2 windows
+    covering it. Each covering window carries its READ span (char
+    offsets inside the passage: the window's sentence range clipped to
+    the passage's char range -- a slice can start or end mid-sentence)
+    and `partial` when it extends past the slice (the unread tail
+    anchors nothing; its empty is not earned). The section's windows
+    tile the text, so the clipped ranges chain-cover the passage:
+    first starts at 0, last ends at len(passage), no gaps -- asserted,
+    never assumed. Returns (unit, None) or (None, reason).
+
+    `grids` is the caller's (page, label, text) -> (windows, spans)
+    cache: the section's own window grid AND its sentence spans (the
+    read spans below slice the raw section text by span offsets)."""
+    page = (wrec.get("page") or "").strip()
+    label = (wrec.get("section") or "").strip() or "lead"
+    passage = (wrec.get("passage") or "").strip()
+    evs_all = (evs.get("core") or []) + (evs.get("optional") or [])
+
+    def grids_for(page_, label_, text):
+        key = (page_, label_, text)
+        if key not in grids:
+            grids[key] = (build_windows(page_, label_, text, gen=CURRENT_GEN),
+                          sentence_spans(text))
+        return grids[key]
+
+    # Which grid text the passage was cut from (a same-titled section
+    # can carry it too): the candidate whose windows mention the most
+    # of the entry's events -- rekey_gold's rule for the ambiguous
+    # case. Intersecting (not containing) windows: the slice was what
+    # was read, and on the gen-2 grid a slice spans several windows.
+    # The passage must also sit in the text as a RAW substring
+    # (text.find): the unit's spans are char offsets, and a fold-only
+    # match cannot be located -- that candidate is not the source.
+    best = None
+    for text in grid_texts_for(store, wrec):
+        wins_g, spans = grids_for(page, label, text)
+        span = quote_grid_span(text, passage)
+        if span is None or not spans or text.find(passage) < 0:
+            continue
+        ps, pe = span
+        covering = [w for w in wins_g
+                    if w.s_start <= pe and w.s_end >= ps]
+        if not covering:
+            continue
+        anchored = sum(1 for ev in evs_all
+                       if map_event(text, spans, ps, pe, covering, ev))
+        if best is None or anchored > best[0]:
+            best = (anchored, text, spans, covering, ps, pe)
+    if best is None:
+        return None, ("passage not verbatim in any of the store's "
+                      "(page, section) texts (store drift)")
+    _anch, text, spans, covering, ps, pe = best
+    pa = text.find(passage)
+    pb = pa + len(passage)
+
+    wins = []
+    prev_end = None
+    for w in covering:
+        lo = max(spans[w.s_start][0], pa)
+        hi = min(spans[w.s_end][1], pb)
+        if hi <= lo:
+            return None, f"window {w.id} reads nothing of the passage"
+        span_in = [lo - pa, hi - pa]
+        # A window that extends past the read slice (its sentence range
+        # outlives the passage's char range) is partial: the part
+        # beyond the slice was never read.
+        partial = not (pa <= spans[w.s_start][0]
+                       and spans[w.s_end][1] <= pb)
+        if passage[span_in[0]:span_in[1]] != text[lo:hi]:
+            return None, (f"window {w.id}'s read span is not verbatim "
+                          f"in the passage (store drift)")
+        if span_in[0] != 0 and prev_end is not None and span_in[0] > prev_end:
+            # Consecutive windows may leave ONLY the inter-sentence
+            # whitespace of a sub-topic or cap boundary uncovered (a
+            # sentence span never carries it, and a carry never crosses
+            # a sub-topic): a non-whitespace gap is store drift.
+            if passage[prev_end:span_in[0]].strip():
+                return None, (f"read spans leave a non-whitespace gap "
+                              f"before window {w.id} (store drift)")
+        wins.append({"id": w.id, "span": span_in, "partial": partial})
+        prev_end = max(prev_end or 0, span_in[1])
+    if wins[0]["span"][0] != 0 or prev_end != len(passage):
+        return None, "read spans do not tile the passage"
+    if len({w["id"] for w in wins}) != len(wins):
+        return None, "duplicate window ids in one unit"
+
+    return {
+        "w": n,
+        "page": page,
+        "section": wrec.get("section") or "",  # pool-line shape: "" = lead
+        "passage": passage,
+        "core": [list(ev) for ev in evs.get("core") or []],
+        "optional": [list(ev) for ev in evs.get("optional") or []],
+        "windows": wins,
+    }, None
+
+
 def rekey_testgold(store, gold_path, windows_path, out_path, report_path,
                    dry_run):
     gold = json.loads(gold_path.read_text(encoding="utf-8"))
@@ -146,153 +260,76 @@ def rekey_testgold(store, gold_path, windows_path, out_path, report_path,
                  f"{windows_path.name})")
 
     grids = {}
-
-    def grids_for(page, label, text):
-        key = (page, label, text)
-        if key not in grids:
-            # The section's own window grid AND its sentence spans: the
-            # overlap text below slices the raw section by span offsets.
-            grids[key] = (build_windows(page, label, text, gen=CURRENT_GEN),
-                          sentence_spans(text))
-        return grids[key]
-
     out = {}
     # Pre-seeded so the receipt names every counter even at zero (the
-    # plan's "kept vs dropped (expected 0 dropped)" must be readable).
+    # plan's kept/dropped accounting must stay readable).
     tally = Counter({
-        "multi_window_entries": 0, "unmapped_entries": 0, "shared_ids": 0,
-        "core_kept": 0, "core_dropped": 0,
-        "optional_kept": 0, "optional_dropped": 0,
-        "straddled_events": 0, "partial_window_entries": 0,
-        "empty_entries": 0, "genuine_empties": 0,
+        "multi_window_units": 0, "unmapped_entries": 0,
+        "covering_windows": 0, "shared_windows": 0, "partial_windows": 0,
+        "empty_units": 0,
     })
     dropped = []
     for n in sorted(entries):
-        wrec = wins[n]
-        page = (wrec.get("page") or "").strip()
-        label = (wrec.get("section") or "").strip() or "lead"
-        passage = (wrec.get("passage") or "").strip()
-        evs = entries[n]
-        evs_all = (evs.get("core") or []) + (evs.get("optional") or [])
-
-        # Which grid text the passage was cut from (a same-titled section
-        # can carry it too): the one whose windows anchor the most
-        # events -- rekey_gold's rule for the ambiguous case. Intersecting
-        # (not containing) windows: the slice was what was read, and on
-        # the gen-2 grid a slice spans several windows.
-        best = None
-        for text in grid_texts_for(store, wrec):
-            wins_g, spans = grids_for(page, label, text)
-            span = quote_grid_span(text, passage)
-            if span is None or not spans:
-                continue
-            ps, pe = span
-            covering = [w for w in wins_g
-                        if w.s_start <= pe and w.s_end >= ps]
-            if not covering:
-                continue
-            anchored = sum(1 for ev in evs_all
-                           if map_event(text, spans, ps, pe, covering, ev))
-            if best is None or anchored > best[0]:
-                best = (anchored, text, spans, covering, ps, pe)
-        if best is None:
+        unit, why = derive_unit(store, n, wins[n], entries[n], grids)
+        if unit is None:
             tally["unmapped_entries"] += 1
-            dropped.append({"w": n, "page": page, "section": label,
-                            "why": "passage not in the store's texts"})
+            dropped.append({"w": n, "page": wins[n].get("page"), "why": why})
             continue
-        _anch, text, spans, covering, ps, pe = best
-
-        if len(covering) > 1:
-            tally["multi_window_entries"] += 1
-        buckets = {kind: {w.id: [] for w in covering} for kind in
-                   ("core", "optional")}
-        ambiguous = set()
-        for kind in ("core", "optional"):
-            for ev in evs.get(kind) or []:
-                hits = map_event(text, spans, ps, pe, covering, ev)
-                if not hits:
-                    tally[f"{kind}_dropped"] += 1
-                    dropped.append({"w": n, "page": page, "kind": kind,
-                                    "event": ev})
-                    continue
-                tally[f"{kind}_kept"] += 1
-                if len(hits) > 1:
-                    tally["straddled_events"] += 1
-                    ambiguous.update(w.id for w in hits)
-                for w in hits:
-                    buckets[kind][w.id].append(ev)
-
-        for w in covering:
-            core = buckets["core"][w.id]
-            opt = buckets["optional"][w.id]
-            # A window that extends past the read slice (its span
-            # outlives the passage's) is partial: the part beyond the
-            # slice was never read, so an empty entry there is not an
-            # earned empty.
-            partial = not (ps <= w.s_start and w.s_end <= pe)
-            prev = out.get(w.id)
-            if prev is None:
-                out[w.id] = {
-                    "core": core,
-                    "optional": opt,
-                    "passage": w.text,
-                    "straddle": w.id in ambiguous,
-                    "partial": partial,
-                    "w": n,
-                }
-            else:
-                # Two consecutive slices' 300-char carries can share a
-                # window: both annotations are gold on that text, so
-                # union the events (deduped), never let one overwrite.
-                # OR the flags: never claim an earned empty where one of
-                # the two annotations left an unread part (conservative
-                # direction: sharing only shrinks the earned-empty set,
-                # never grows it).
-                prev["core"] += [e for e in core if e not in prev["core"]]
-                prev["optional"] += [e for e in opt if e not in prev["optional"]]
-                prev["straddle"] = prev["straddle"] or w.id in ambiguous
-                prev["partial"] = prev["partial"] or partial
-                tally["shared_ids"] += 1
-
-    n_empty = sum(1 for v in out.values() if not v["core"] and not v["optional"])
-    tally["empty_entries"] = n_empty
-    tally["genuine_empties"] = sum(
-        1 for v in out.values()
-        if not v["core"] and not v["optional"] and not v["partial"])
-    tally["partial_window_entries"] = sum(
-        1 for v in out.values() if v["partial"])
+        out[f"W{n}"] = unit
+        if len(unit["windows"]) > 1:
+            tally["multi_window_units"] += 1
+        if not (unit["core"] or unit["optional"]):
+            tally["empty_units"] += 1
+        tally["covering_windows"] += len(unit["windows"])
+        tally["partial_windows"] += sum(
+            1 for w in unit["windows"] if w["partial"])
+    # A covering window shared by two sibling units (consecutive
+    # slices' carries): reported, never a defect -- the window's text
+    # is read by both annotations.
+    claim = Counter(w["id"] for u in out.values() for w in u["windows"])
+    tally["shared_windows"] = sum(1 for c in claim.values() if c > 1)
     receipt = {
         "gold": str(gold_path), "windows": str(windows_path),
         "out": str(out_path), "gen": CURRENT_GEN,
         "entries_in": len(entries), "entries_out": len(out),
+        "core_events": sum(len(u["core"]) for u in out.values()),
+        "optional_events": sum(len(u["optional"]) for u in out.values()),
         **dict(tally),
-        "dropped_events": sum(1 for d in dropped if "event" in d),
-        "note": ("kept counts are events, not event-window pairs; an "
-                 "event anchored in two siblings counts once; events "
-                 "anchor by the scorer's token rule in the window's "
-                 "READ part (span ∩ passage span); genuine_empties = "
-                 "empty AND fully-read (probe-eligible earned empties), "
-                 "partial empties are never earned; shared_ids counts "
-                 "windows claimed by two sibling entries (unioned)"),
+        "dropped_events": 0,
+        "note": ("U-WP5 passage units: one entry per original W-index -- "
+                 "the annotated PASSAGE (the old 4,000-char slice the "
+                 "blind annotator read) with its core + optional "
+                 "triples UNCHANGED and the ordered gen-2 windows "
+                 "covering it, each with its read span (char offsets "
+                 "inside the passage; partial = the window extends past "
+                 "the slice). The superseded per-window re-key (each "
+                 "event copied into every covering window: 270 events "
+                 "-> 1,165 pairs in 269 entries) is archived as "
+                 "gold_test_v4.gen2.json.pre-u5; events are no longer "
+                 "copied into windows, the passage is the unit"),
     }
 
     data = {
         "version": gold.get("version"),
         "gen": CURRENT_GEN,
+        "shape": "passage",
         "guideline": gold.get("guideline"),
         "note": gold.get("note"),
-        "note_gen2": ("gen-2 rekey (2026-10-04, tools/train/rekey_testgold"
-                      ".py): entries keyed by gen-2 window id, one per "
-                      "intersecting window (the 4,000-char slice was what "
-                      "was read; the windows whose spans intersect it take "
-                      "its events); events anchor by the scorer's 3+ "
-                      "letter token rule in the window's READ part only "
-                      "(a window's unread tail never anchors); `partial` = "
-                      "the window extends past the read slice, so its "
-                      "empty is not earned; `straddle` = an event anchors "
-                      "in two windows; the old-grid v4 source stays put "
-                      "(annotations are the source of truth) -- this file "
-                      "is the derived re-key"),
+        "note_gen2": ("gen-2 re-key, U-WP5 shape (2026-10-04, "
+                      "tools/train/rekey_testgold.py): one entry per "
+                      "original W-index -- the passage the blind "
+                      "annotator read, its core + optional triples "
+                      "unchanged, and the ordered gen-2 windows "
+                      "covering the passage, each with its read span "
+                      "(char offsets inside the passage; `partial` = "
+                      "the window extends past the slice, so its unread "
+                      "tail never anchors and its empty is not earned). "
+                      "Supersedes the per-window re-key that copied "
+                      "each event into every covering window (1,165 "
+                      "pairs), archived as gold_test_v4.gen2.json"
+                      ".pre-u5; the old-grid v4 source stays put "
+                      "(annotations are the source of truth) -- this "
+                      "file is the derived re-key"),
         **out,
     }
 
@@ -341,8 +378,9 @@ def build_probes(store, paths_root, gold600_path, pilot_path, gold600_src,
     by_id = {w.id: w for w in windows}
 
     # The test gold's window ids: a probe on one of them would un-blind
-    # the labeler to the student's scoreboard (WP3b-1 ruling).
-    test_ids = set(test)
+    # the labeler to the student's scoreboard (WP3b-1 ruling). U-WP5
+    # passage units: the union of the units' covering windows.
+    test_ids = {w["id"] for u in test.values() for w in u["windows"]}
 
     def verbs_of(evs):
         return {(e.get("verb") or "").lower() for e in evs}

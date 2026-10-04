@@ -11,7 +11,8 @@ split instead, and this tool IS that flag: a gen-2 window is
 -- it never labels -- so the acceptance bar is RECALL on the JJK gen-2
 gold (>= 0.95 of the gold's non-empty windows flagged), measured
 against the three re-keyed golds (gold600.gen2 kept/reexpressed +
-pilot gen2 kept/reexpressed + gold_test_v4.gen2 non-empty entries) and
+pilot gen2 kept/reexpressed + the covering windows of gold_test_v4.gen2's
+non-empty passage units (U-WP5 shape)) and
 reported alongside the proxy-positive share of the gold's earned
 empties (test-gold genuine empties + the golden probes' empty probes)
 and of every wiki's universe (emit_windows.universe + build_windows
@@ -248,8 +249,9 @@ def gold_positives(series):
     """The JJK gen-2 POSITIVE windows: every window whose gold states
     >= 1 event. Sources (plan U-WP3): gold600.gen2 and the pilot gen2
     with rekey status kept/reexpressed only (the reread records are the
-    35B re-read's, not adjudicated gold) and gold_test_v4.gen2's
-    non-empty entries (core or optional events). De-duplicated by
+    35B re-read's, not adjudicated gold) and the covering windows of
+    gold_test_v4.gen2's non-empty passage units (U-WP5 shape: a unit's
+    core or optional events make its covering windows positive). De-duplicated by
     window id -- a window in two sources is one positive; the first
     source's passage/verbs win (the window's text is the window's text).
     Returns (rows, per_source_counts): rows is a list of
@@ -288,43 +290,64 @@ def gold_positives(series):
     testgold = root / "recall_gold_v3" / "gold_test_v4.gen2.json"
     data = json.loads(testgold.read_text(encoding="utf-8"))
     n = 0
-    for key, entry in data.items():
-        if not isinstance(entry, dict):
-            continue  # the meta keys (version/gen/note...) are not windows
-        core = entry.get("core") or []
-        optional = entry.get("optional") or []
+    for key, unit in data.items():
+        if not (re.fullmatch(r"W\d+", key) and isinstance(unit, dict)
+                and isinstance(unit.get("windows"), list)):
+            continue  # the meta keys are not units (U-WP5 passage shape)
+        core = unit.get("core") or []
+        optional = unit.get("optional") or []
         if not (core or optional):
-            continue  # the empty entries are the NEGATIVES (see earned_empties)
-        add("testgold", key, "", "", entry.get("passage") or "",
-            [str(e[1]) for e in core] + [str(e[1]) for e in optional])
-        n += 1
+            continue  # the empty units are the NEGATIVES (see earned_empties)
+        # A positive window is a covering window of a non-empty unit:
+        # the proxy scans the window's READ text (its read span in the
+        # passage), and a window on two sources is one positive (the
+        # first source's passage/verbs win, as before).
+        passage = unit.get("passage") or ""
+        for w in unit["windows"]:
+            a, b = w["span"]
+            add("testgold", w["id"], unit.get("page") or "",
+                unit.get("section") or "", passage[a:b],
+                [str(e[1]) for e in core] + [str(e[1]) for e in optional])
+            n += 1
     counts["testgold"] = n
     return [rows[k] for k in rows], counts
 
 
 def earned_empties(series):
     """The JJK gen-2 NEGATIVE windows: the ADJUDICATED empties only.
-    (a) the test gold's GENUINE empties -- entries with no core or
-    optional event that are not `partial` (a partial window's
-    unread tail was never read, so its emptiness is not earned and it
-    never supplies a negative); (b) the golden probes' empty probes
-    (expected == [] in series/<s>/training/opencode/golden_probes.jsonl
-    -- the drift probes rebuilt on kept/reexpressed gold). De-
-    duplicated by id (a probe that re-states a test-gold window is one
-    negative). Returns (passages_by_id, counts)."""
+    (a) the test gold's GENUINE empties -- a covering window of a
+    unit with no core or optional event that is NOT `partial` (a
+    partial window's unread tail was never read, so its emptiness is
+    not earned and it never supplies a negative; the annotator read
+    the whole slice and listed every event in it, so a fully-read
+    window of that slice with no listed event is a genuine empty);
+    (b) the golden probes' empty probes (expected == [] in
+    series/<s>/training/opencode/golden_probes.jsonl -- the drift
+    probes rebuilt on kept/reexpressed gold). De-duplicated by id (a
+    probe that re-states a test-gold window is one negative). Returns
+    (passages_by_id, counts)."""
     root = ROOT / "series" / series / "training"
     neg = {}
     data = json.loads(
         (root / "recall_gold_v3" / "gold_test_v4.gen2.json").read_text(encoding="utf-8")
     )
-    test_n = 0
-    for key, entry in data.items():
-        if not isinstance(entry, dict):
-            continue
-        if (entry.get("core") or entry.get("optional")) or entry.get("partial"):
-            continue  # non-empty, or an unread tail: not an earned empty
-        neg[key] = entry.get("passage") or ""
-        test_n += 1
+    test_neg = {}
+    for key, unit in data.items():
+        if not (re.fullmatch(r"W\d+", key) and isinstance(unit, dict)
+                and isinstance(unit.get("windows"), list)):
+            continue  # the meta keys are not units (U-WP5 passage shape)
+        if unit.get("core") or unit.get("optional"):
+            continue  # non-empty units are not negatives
+        passage = unit.get("passage") or ""
+        for w in unit["windows"]:
+            if w.get("partial"):
+                continue  # an unread tail: not an earned empty
+            a, b = w["span"]
+            test_neg[w["id"]] = passage[a:b]
+    for wid, txt in test_neg.items():
+        if wid not in neg:
+            neg[wid] = txt
+    test_n = len(test_neg)
     probe_n = 0
     probes = root / "opencode" / "golden_probes.jsonl"
     for line in probes.read_text(encoding="utf-8").splitlines():
@@ -380,8 +403,8 @@ def validate(series, recall_min=0.95):
     neg, neg_counts = earned_empties(series)
     hit_ids = {r["id"] for r in pos_rows if is_eventish(r["passage"])}
     hit_neg = sum(1 for t in neg.values() if is_eventish(t))
-    # The test gold's entries carry no page/section (id-keyed): resolve
-    # the missed windows' identity fields on the current grid.
+    # The U-WP5 test gold's rows carry page/section (the unit's); the
+    # id map is a leftover safety net for a row that lacks them.
     id_map = _universe_id_map(series)
     missed = [
         {

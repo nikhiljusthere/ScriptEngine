@@ -14,9 +14,14 @@ inputs do not exist for the series prints SKIP, never PASS on a
 missing input; a gate with partial inputs runs on what exists and says
 so). D1-D7:
 - D1 id-unique: every id unique within each file; universe ids unique.
+  (The gen-2 test gold's U-WP5 passage units: covering window ids
+  unique within each unit; a window shared by sibling units is the
+  gold's own sharing, reported, not a defect.)
 - D2 re-derivable: every record's (page, section, passage) equals the
   builder's text for that id on the CURRENT store (drift detector -- a
-  re-ingest that changes a sentence must fail here, not train silently).
+  re-ingest that changes a sentence must fail here, not train
+  silently). The test gold's units are re-derived BYTE-IDENTICAL
+  (rekey_testgold.derive_unit on the current store's texts).
 - D3 G1: every gold row's quote is verbatim (quote_grid_span non-None)
   in ITS record's passage, and >= 12 chars (under 12 is report-only).
 - D4 leakage: no train/pool page in the holdout; no test-gold id in
@@ -41,6 +46,7 @@ so). D1-D7:
 import argparse
 import json
 import sys
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -63,11 +69,12 @@ from scriptengine.stores.facts import FactStore  # noqa: E402
 
 from emit_windows import build_universe_windows, holdout_pages, universe  # noqa: E402
 from rekey_gold import passage_of  # noqa: E402
-from rekey_testgold import name_tokens  # noqa: E402
+from rekey_testgold import derive_unit, name_tokens  # noqa: E402
 
-# The test gold's derived keys: everything else in the file is a
-# window-id key (one entry per intersecting window, WP3.2).
-TEST_RESERVED = {"version", "gen", "guideline", "note", "note_gen2"}
+# The test gold's meta keys: everything else in the file is a passage
+# unit (U-WP5: one entry per original W-index, keyed W<n>; the old
+# per-window re-key's window-id keys are the .pre-u5 archive's shape).
+TEST_RESERVED = {"version", "gen", "shape", "guideline", "note", "note_gen2"}
 
 
 def load_lines(path):
@@ -82,11 +89,15 @@ def load_lines_opt(path):
 
 
 def load_test_opt(path):
-    """The re-keyed test gold's window-id-keyed entries, or None."""
+    """The re-keyed test gold's PASSAGE units (U-WP5: one entry per
+    original W-index, keyed W<n>, each carrying the annotated passage
+    and its covering windows), or None."""
     if not path.exists():
         return None
     data = json.loads(path.read_text(encoding="utf-8"))
-    return {k: v for k, v in data.items() if k not in TEST_RESERVED}
+    return {k: v for k, v in data.items()
+            if k not in TEST_RESERVED and isinstance(v, dict)
+            and isinstance(v.get("windows"), list)}
 
 
 def section_of(value):
@@ -172,7 +183,22 @@ def main():
     else:
         d1_parts.append("probes (absent, skipped)")
     if test is not None:
-        d1_parts.append(f"testgen2 {len(test)} window keys")
+        # U-WP5 passage units: the W<n> keys are dict keys (unique by
+        # construction); the strictness lives in each unit's covering
+        # window ids -- unique WITHIN the unit and present in the
+        # builder universe. A window shared by two sibling units is
+        # legitimate (the gold600 rule: the id is the window's, not
+        # the unit's) and is reported, not failed.
+        all_tids = [w["id"] for u in test.values() for w in u["windows"]]
+        dup_within = sum(
+            1 for u in test.values()
+            if len({w["id"] for w in u["windows"]}) != len(u["windows"]))
+        not_in_uni = [i for i in all_tids if i not in uni_ids]
+        d1_ok = d1_ok and dup_within == 0 and not not_in_uni
+        d1_parts.append(
+            f"testgen2 {len(test)} passage units / {len(all_tids)} "
+            f"covering windows (dup-within-unit {dup_within}, "
+            f"off-universe {len(not_in_uni)})")
     else:
         d1_parts.append("testgen2 (absent, skipped)")
     rec_notes = []
@@ -219,25 +245,63 @@ def main():
                     or w.text != passage_of(rec)):
                 rec_bad.append((src, rec["id"], "page/section/passage drift"))
     test_bad = []
+    test_partial = False
     if test is not None:
-        for wid, entry in test.items():
-            w = by_id.get(wid)
-            if w is None or w.text != entry["passage"]:
-                test_bad.append(wid)
+        rdir = sroot / "training" / "recall_gold_v3"
+        w100_path, v4_path = rdir / "windows_100.json", rdir / "gold_test_v4.json"
+        if w100_path.exists() and v4_path.exists():
+            # The strict drift detector (U-WP5 passage shape): each
+            # stored unit must re-derive BYTE-IDENTICAL on the CURRENT
+            # store -- derive_unit rebuilds the section's grid from the
+            # store's own texts and re-locates the passage, so a
+            # re-ingest that changes a sentence fails here, not in
+            # training (the gate's whole point).
+            w100 = json.loads(w100_path.read_text(encoding="utf-8"))
+            v4 = json.loads(v4_path.read_text(encoding="utf-8"))
+            grids2 = {}
+            with FactStore(db) as store2:
+                for key, unit in sorted(test.items()):
+                    n = unit.get("w")
+                    evs = v4.get(key)
+                    if n is None or n >= len(w100) or evs is None:
+                        test_bad.append((key, "no W-index source (drift)"))
+                        continue
+                    red, why = derive_unit(store2, n, w100[n], evs, grids2)
+                    if red is None:
+                        test_bad.append((key, why))
+                    elif red != unit:
+                        test_bad.append((key, "stored unit differs from re-derivation"))
+        else:
+            # The annotation sources are absent: re-derivation is
+            # impossible, so the gate runs the WEAK check (ids in the
+            # universe, page/section match) and says so -- it never
+            # PASSes a full D2 on a shape it could not verify.
+            test_partial = True
+            for key, unit in sorted(test.items()):
+                for w in unit["windows"]:
+                    bu = by_id.get(w["id"])
+                    if bu is None:
+                        test_bad.append((key, f"{w['id']} not in the builder universe"))
+                        break
+                    if (bu.page != (unit.get("page") or "")
+                            or section_of(bu.section) != (unit.get("section") or "")):
+                        test_bad.append((key, f"{w['id']} page/section drift"))
+                        break
     n_bad = (sum(len(v) for v in pool_bad.values()) + len(probe_bad)
-             + len(rec_bad) + len(test_bad))
+            + len(rec_bad) + len(test_bad))
     d2_parts = [f"pools {sum(len(v) for v in pool_bad.values())}"]
     if probes is not None:
         d2_parts.append(f"probes {len(probe_bad)}")
     if g600 is not None or pilot is not None:
         d2_parts.append(f"gold600+pilot records {len(rec_bad)}")
     if test is not None:
-        d2_parts.append(f"testgen2 {len(test_bad)}")
+        d2_parts.append(f"testgen2 {len(test_bad)}"
+                        + (" (weak check: sources absent)" if test_partial else ""))
     d2_detail = ("mismatches against the current store: "
                  + ", ".join(d2_parts) + " (expect 0)")
     if n_bad:
         examples = [b for v in pool_bad.values() for b in v] + probe_bad \
-            + [b for b in rec_bad][:2]
+            + [b for b in rec_bad][:2] + test_bad[:2]
         d2_detail += f"; e.g. {examples[:3]}"
     gate("D2", n_bad == 0, d2_detail)
 
@@ -297,7 +361,11 @@ def main():
     leak_pages = train_pages & holdout
     leak_ids = set(test_pool_ids & train_ids)
     if test is not None:
-        leak_ids |= train_ids & set(test)
+        # U-WP5 passage units: the test gold's window ids are the union
+        # of the units' covering windows (a window is test gold while
+        # any annotated passage reads it).
+        test_win_ids = {w["id"] for u in test.values() for w in u["windows"]}
+        leak_ids |= train_ids & test_win_ids
     d4_detail = (f"{len(leak_pages)} train/pool page(s) in the holdout, "
                  f"{len(leak_ids)} test-gold id(s) in train/pool files "
                  f"(expect 0)")

@@ -276,34 +276,34 @@ def main():
       f"{n(len(rr_union & rem_ids))} in the remaining set) + the {n(len(rem_empty))} empty windows of the "
       "remaining train-eligible set (section 1) |")
     A("| Test scoreboard | `recall_gold_v3/gold_test_v4.json` + `windows_100.json` (100 W-indexed entries) | "
-      "`recall_gold_v3/gold_test_v4.gen2.json` -- 269 entries keyed by gen-2 window id "
-      "(100 slice entries -> 269 intersecting windows; `straddle`/`partial` flags; 70 "
-      "genuine empties); the v4 + windows_100 files stay as the annotation source of "
-      "truth |")
+      "`recall_gold_v3/gold_test_v4.gen2.json` -- U-WP5 passage units: one "
+      "entry per original W-index (100 units), the annotated passage text "
+      "with its core + optional triples UNCHANGED (173 + 97) and the "
+      "ordered gen-2 windows covering the passage (270 covering windows; "
+      "read spans as char offsets inside the passage, `partial` = the "
+      "window extends past the slice); the superseded per-window re-key "
+      "(each event copied into every covering window: 270 events -> "
+      "1,165 pairs) is archived as gold_test_v4.gen2.json.pre-u5; the v4 "
+      "+ windows_100 files stay as the annotation source of truth |")
     A("| Gold (train labels) | `gold600/gold600.jsonl` (old ids) | `gold600/gold600.gen2.jsonl` "
       f"({n(g600_n)} records) + `gold/gold_pilot_all.gen2.jsonl` ({n(pil_n)} records) |")
     A("")
-    A("## 5. Scorer note -- `eval_extraction.load_gold` (NOT changed here)")
+    A("## 5. Scorer -- `eval_extraction.load_gold` (fixed in U-WP5)")
     A("")
-    A("`tools/eval_extraction.py` `load_gold` (line 52) does")
-    A("`sorted(Path(d).glob(\"gold_test_v*.json\"))[-1:]` -- lexicographically that")
-    A("picks `gold_test_v4.json` OVER `gold_test_v4.gen2.json` (\"v4.g\" < \"v4.j\"),")
-    A("so the scorer still reads the old W-indexed file; and the W-index indirection")
-    A("(`wins[i][\"id\"]` via the `windows` key, line 54-59) cannot represent the")
-    A("gen-2 file's shape at all (its keys ARE the window ids; it has no `windows`")
-    A("key, and 45/100 entries now span several windows). The exact fix for a later")
-    A("WP (the planner's call -- this addendum does not touch the scorer):")
-    A("")
-    A("```python")
-    A("def load_gold(d):")
-    A("    files = sorted(Path(d).glob(\"gold_test_v*.json\"),")
-    A("                    key=lambda p: (\"gen2\" not in p.name, p.name))[-1:]")
-    A("    data = json.load(open(files[0]))")
-    A("    if \"gen\" in data:  # gen-2 file: keys are the window ids")
-    A("        return {k: v for k, v in data.items()")
-    A("                if k not in (\"version\", \"gen\", \"guideline\", \"note\", \"note_gen2\")}")
-    A("    # ... old W-indexed shape: the current indirection, unchanged ...")
-    A("```")
+    A("`tools/eval_extraction.py` `load_gold` now reads the gen-2 PASSAGE file")
+    A("(`gold_test_v*.gen2.json`, `shape: \"passage\"; the *.pre-*/.old-grid")
+    A("archives do not match the pattern) BY DEFAULT, and the old W-indexed v4")
+    A("shape still loads behind `--legacy-v4`. A per-wiki window-level gold")
+    A("(JSONL records whose events carry a `quote` -- the future labeled test")
+    A("pools' shape) scores per window with the plan's event match (the names,")
+    A("AND the prediction's quote overlapping the gold quote in the window")
+    A("text). A passage unit runs the student on EVERY covering window, UNIONs")
+    A("the predictions, drops the ones whose quote is not inside the annotated")
+    A("slice, collapses duplicates (same subject, verb, object), and matches")
+    A("with the original name rule. The report carries per-wiki + per-verb")
+    A("P/R/F1, the verb confusion matrix (fought vs defeated first), the")
+    A("JSON-validity rate, and the quote-verbatim rate. Pinned in")
+    A("tests/test_eval_extraction_gen2.py.")
     A("")
     A(f"Generated {time.strftime('%Y-%m-%d %H:%M')} by tools/train/gen2_addendum.py "
       "(zero-LLM, deterministic).")

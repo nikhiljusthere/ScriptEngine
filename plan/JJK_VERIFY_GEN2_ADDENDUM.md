@@ -73,29 +73,24 @@ mapped, and re-read otherwise.
 | Phase 2 Pool B (Qwen windows) | `gold/cand_q6_train.jsonl` | same file, re-keyed by the WP3 rule on the fly (section 3: the mapped/clean records are consumable; the unmapped 600 need re-reading); `gold/cand_q6_pilot400.jsonl` likewise |
 | Phase 3 (v1 subset) | `v1/train.jsonl` | same file (4,375 records); 2,110 re-key clean, 1,990 join the re-read queue, 275 drop for re-extraction |
 | Phase 4 empty re-read | "~2,265 windows" (old-grid count) | re-read the re-read queues (section 2: 222 reread windows, 128 in the remaining set) + the 7,565 empty windows of the remaining train-eligible set (section 1) |
-| Test scoreboard | `recall_gold_v3/gold_test_v4.json` + `windows_100.json` (100 W-indexed entries) | `recall_gold_v3/gold_test_v4.gen2.json` -- 269 entries keyed by gen-2 window id (100 slice entries -> 269 intersecting windows; `straddle`/`partial` flags; 70 genuine empties); the v4 + windows_100 files stay as the annotation source of truth |
+| Test scoreboard | `recall_gold_v3/gold_test_v4.json` + `windows_100.json` (100 W-indexed entries) | `recall_gold_v3/gold_test_v4.gen2.json` -- U-WP5 passage units: one entry per original W-index (100 units), the annotated passage text with its core + optional triples UNCHANGED (173 + 97) and the ordered gen-2 windows covering the passage (270 covering windows; read spans as char offsets inside the passage, `partial` = the window extends past the slice); the superseded per-window re-key (each event copied into every covering window: 270 events -> 1,165 pairs) is archived as gold_test_v4.gen2.json.pre-u5; the v4 + windows_100 files stay as the annotation source of truth |
 | Gold (train labels) | `gold600/gold600.jsonl` (old ids) | `gold600/gold600.gen2.jsonl` (684 records) + `gold/gold_pilot_all.gen2.jsonl` (628 records) |
 
-## 5. Scorer note -- `eval_extraction.load_gold` (NOT changed here)
+## 5. Scorer -- `eval_extraction.load_gold` (fixed in U-WP5)
 
-`tools/eval_extraction.py` `load_gold` (line 52) does
-`sorted(Path(d).glob("gold_test_v*.json"))[-1:]` -- lexicographically that
-picks `gold_test_v4.json` OVER `gold_test_v4.gen2.json` ("v4.g" < "v4.j"),
-so the scorer still reads the old W-indexed file; and the W-index indirection
-(`wins[i]["id"]` via the `windows` key, line 54-59) cannot represent the
-gen-2 file's shape at all (its keys ARE the window ids; it has no `windows`
-key, and 45/100 entries now span several windows). The exact fix for a later
-WP (the planner's call -- this addendum does not touch the scorer):
+`tools/eval_extraction.py` `load_gold` now reads the gen-2 PASSAGE file
+(`gold_test_v*.gen2.json`, `shape: "passage"; the *.pre-*/.old-grid
+archives do not match the pattern) BY DEFAULT, and the old W-indexed v4
+shape still loads behind `--legacy-v4`. A per-wiki window-level gold
+(JSONL records whose events carry a `quote` -- the future labeled test
+pools' shape) scores per window with the plan's event match (the names,
+AND the prediction's quote overlapping the gold quote in the window
+text). A passage unit runs the student on EVERY covering window, UNIONs
+the predictions, drops the ones whose quote is not inside the annotated
+slice, collapses duplicates (same subject, verb, object), and matches
+with the original name rule. The report carries per-wiki + per-verb
+P/R/F1, the verb confusion matrix (fought vs defeated first), the
+JSON-validity rate, and the quote-verbatim rate. Pinned in
+tests/test_eval_extraction_gen2.py.
 
-```python
-def load_gold(d):
-    files = sorted(Path(d).glob("gold_test_v*.json"),
-                    key=lambda p: ("gen2" not in p.name, p.name))[-1:]
-    data = json.load(open(files[0]))
-    if "gen" in data:  # gen-2 file: keys are the window ids
-        return {k: v for k, v in data.items()
-                if k not in ("version", "gen", "guideline", "note", "note_gen2")}
-    # ... old W-indexed shape: the current indirection, unchanged ...
-```
-
-Generated 2026-10-04 17:20 by tools/train/gen2_addendum.py (zero-LLM, deterministic).
+Generated 2026-10-04 19:09 by tools/train/gen2_addendum.py (zero-LLM, deterministic).

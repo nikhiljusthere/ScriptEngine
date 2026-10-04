@@ -13,6 +13,14 @@ pathspecs, GPU-only, exact-PID kills, supersede-don't-delete, comments say why,
 no commits unless the WP says so). Every number in a receipt comes from a
 script, never an estimate.
 
+**Test scope (2026-10-04, after a worker ran the whole suite unasked):** a
+U-WP runs ONLY its own tests (`pytest tests/test_<its files>.py`) plus
+`tools/train/dataset_gates.py`. Never `pytest tests/` — at 262k the 27B holds
+30 of 32 GB, so the suite's CUDA model tests cannot get the card (they OOM,
+GPU-only rule forbids CPU), and tools-only changes cannot move it anyway. The
+full four-gate run is Claude's, in a 100k CUDA window, only when engine code
+(`scriptengine/`) changes.
+
 ## Decisions (taken by Claude under the owner's 2026-10-04 authorization)
 
 1. **One verb inventory everywhere: the 12 verbs.** Seven wikis (berserk,
