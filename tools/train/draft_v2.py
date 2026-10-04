@@ -74,6 +74,83 @@ THE WINDOW:
 %s"""
 
 
+# Round 2 (2026-10-05): the round-1 error review (gold_v5/errors_r1.jsonl)
+# found the misses concentrated in trigger families the model under-reads;
+# the missed pass now walks each family explicitly.
+MISSED_V2 = """Below is a window you already labeled and the rows you wrote. Do a TRIGGER CHECK: go through the window once for EACH family below, quote every phrase in the window that matches it, and write a row for every match that is NOT already in the rows. Apply guideline section G for ends, names and shape (one row per named person; name the person when the window names them).
+
+1. MEET (verb met): arrives / suddenly arrives / appears / approaches / emerges / shows up / enters the fray / makes an entry / joins up with / comes across / encounters / finds X (and they interact) / meets / visits / greets / comes to face / comes face to face / stops them / confronts — a row with EVERY named person they come to who was not already with them (e.g. "The second-year students arrive to find them" -> each named second-year met each named person in "them"; "approaches the group" -> met each named member).
+2. STATED FIGHT (verb fought): "X's battle / fight / clash / duel with Y", "the fight between X and Y", "X vs. Y" (also a bare title or list item), "in her battle with Y", "surviving his attack", "almost killed him", "a kick/punch/strike towards Y", "uses <technique> on Y", "rejoins the fight", "tries to ambush Y" (an attack made, even if it fails), "Y's attack is blocked/stopped". Never pair two ALLIES fighting on the same side.
+3. OUTCOMES: wakes up / evolves / receives a new body or full power -> awakened (no object); exorcise(s) / execute(s) / murdering / assassinated / "falls to the ground dead" -> killed; beat / bested / incapacitated / eliminate(s) / takes X out -> defeated; rescues / frees / takes X away / intercepts the blow / takes the hit for -> saved; traps in a domain or barrier / freezes -> sealed; takes hostage / drags to a cell or chamber -> captured; breaks out of a trap / escapes while X tries to stop him -> escaped (object = the trapper or pursuer).
+
+Answer with JSON only: {"events": [...]} holding ONLY the new rows (quote verbatim from the window), or {"events": []}.
+
+ROWS ALREADY WRITTEN:
+%s
+
+THE WINDOW:
+%s"""
+
+VERIFY_V2 = """You are the VERIFIER for one labeled window. Be as thorough as the annotator: re-read the whole window sentence by sentence, then judge EVERY row.
+
+A row is KEPT only if the window itself states it under the guideline (sections A-G). DROP a row when, for example:
+- the act is a capability or habit ("can strike", "could exorcise"), a plan, an intent ("to protect", "plans on"), an attempt that was never made, a threat, a hypothetical, a teaser ("Hunted down by ...", "must overcome") or a future event ("has an interview with");
+- the verb is wrong: "overpowers / overwhelms" while the fight continues is fought, not defeated; being released is not escaped; "fled with X in pursuit" then a clash is not escaped; helping is not saved;
+- the ends are wrong: two allies paired as fighting; a pronoun or description resolved to the wrong person ("his student" is the person the window means); an unnamed class; a place for arrived/departed that the clause does not name;
+- the quote does not state the event.
+Then list any event the window states that NO row covers (same trigger families as the annotator: arrivals/appearances to named people = met, stated battles = fought, outcomes).
+
+Answer with JSON only:
+{"verdicts": [{"i": <row index>, "keep": true|false, "rule": "<one short sentence>"}], "add": [{"quote": "...", "subject": "...", "verb": "...", "object": "..." or null}]}
+
+ROWS (index: row):
+%s
+
+THE WINDOW:
+%s"""
+
+
+VERIFY_V3 = """You are the VERIFIER for one labeled window. Re-read the whole window sentence by sentence, then judge EVERY row. The worked examples above show correct answers under the guideline.
+
+KEEP a row by default. DROP a row ONLY when you can name the exact guideline rule it breaks, from this list (cite the code):
+- NOT-DONE: the window states a capability/habit ("can strike"), a plan or intent ("to protect", "plans on"), a threat, a hypothetical, a teaser ("Hunted down by...", "must overcome"), or a future event — NOT an act that happened. (An attack that was MADE but blocked, dodged, missed or failed IS done: keep it as fought.)
+- WRONG-VERB: e.g. "overpowers/overwhelms" while the fight continues is fought not defeated; being released is not escaped; "fled with X in pursuit" then a clash is not escaped; helping is not saved; a fatal blow with no stated death is not killed.
+- WRONG-END: two allies on the same side paired as fighting; a pronoun or description resolved to the wrong person; an unnamed class or crowd; arrived/departed with a place the clause does not name.
+- NOT-STATED: no sentence of the window states this event at all.
+Stated fights you must KEEP: "X vs. Y", "the battle/fight/clash/duel between X and Y", "the two of them clash", "X's battle with Y", "engaged in a beam struggle", any hit/strike/blast/punch/kick/stab aimed at someone (landed or not), a technique used on someone.
+Then list any event the window states that NO row covers.
+
+Answer with JSON only:
+{"verdicts": [{"i": <row index>, "keep": true|false, "code": "NOT-DONE|WRONG-VERB|WRONG-END|NOT-STATED|", "rule": "<one short sentence>"}], "add": [{"quote": "...", "subject": "...", "verb": "...", "object": "..." or null}]}
+
+%s
+
+ROWS (index: row):
+%s
+
+THE WINDOW:
+%s"""
+
+
+def ask_json(url, model, system, user, template_kwargs, max_tokens=20480):
+    """Like ask(), for a free-form JSON object answer (the verifier)."""
+    body = {"model": model, "temperature": 0.6, "top_p": 0.95, "max_tokens": max_tokens,
+            "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]}
+    if template_kwargs:
+        body["chat_template_kwargs"] = {"enable_thinking": True}
+    for _ in range(3):
+        try:
+            req = urllib.request.Request(url, json.dumps(body).encode(), {"Content-Type": "application/json"})
+            m = json.loads(urllib.request.urlopen(req, timeout=3600).read())["choices"][0]["message"]
+            t = re.sub(r"^```[a-z]*\n?|\n?```$", "", (m.get("content") or "").strip()).strip()
+            d = json.loads(t[t.find("{"):t.rfind("}") + 1])
+            if isinstance(d, dict):
+                return d
+        except Exception:  # noqa: BLE001
+            pass
+    return None
+
+
 def tokens(s):
     return set(re.findall(r"[a-z]{3,}", s.lower()))
 
@@ -204,6 +281,14 @@ def main():
     ap.add_argument("--k", type=int, default=6)
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--no-missed-pass", action="store_true")
+    ap.add_argument("--missed-prompt", choices=("v1", "v2"), default="v1",
+                    help="v1 = round 1 (generic); v2 = round 2 trigger checklist")
+    ap.add_argument("--samples", type=int, default=1,
+                    help="independent draft samples, unioned (stability)")
+    ap.add_argument("--verify-prompt", choices=("v2", "v3"), default="v2",
+                    help="v3 = conservative verifier: drop only with a cited NO-rule, sees the examples")
+    ap.add_argument("--verify-pass", action="store_true",
+                    help="round 2: the thorough verifier pass (keep/drop every row + add)")
     ap.add_argument("--no-template-kwargs", action="store_true")
     ap.add_argument("--series", default="jjk")
     a = ap.parse_args()
@@ -228,17 +313,56 @@ def main():
         ex = bank.nearest(window, r.get("page", ""), a.k)
         prompt = ("Worked examples (correct answers under the guideline):\n\n" + render_examples(ex)
                   + "\n\nNOW LABEL THIS WINDOW:\n" + user)
-        ev, raw = ask(a.url, a.model, SYSTEM, prompt, tk)
-        ok = ev is not None
-        ev = ev or []
+        samples, raw = [], ""
+        for _s in range(max(1, a.samples)):
+            evs, raw_s = ask(a.url, a.model, SYSTEM, prompt, tk)
+            if evs is not None:
+                samples.append(evs); raw = raw or raw_s
+        ok = bool(samples)
+        ev, seen_keys = [], set()
+        for evs in samples:  # union of the samples, first occurrence wins
+            for e in evs:
+                k = (str(e.get("subject", "")).lower(), str(e.get("verb", "")).lower(),
+                     str(e.get("object", "")).lower())
+                if k not in seen_keys:
+                    seen_keys.add(k); ev.append(e)
         added = []
         if ok and not a.no_missed_pass:
             listed = json.dumps({"events": ev}, ensure_ascii=False)
-            more, _ = ask(a.url, a.model, SYSTEM, MISSED % (listed, user), tk)
+            tmpl = MISSED_V2 if a.missed_prompt == "v2" else MISSED
+            more, _ = ask(a.url, a.model, SYSTEM, tmpl % (listed, user), tk)
             added = more or []
-        kept, dropped = check_rows(ev + added, window, wiki, bad_end)
+        verdicts, v_added = [], []
+        rows_all = ev + added
+        pre_verify = list(rows_all)
+        if ok and a.verify_pass:
+            listing = "\n".join(f"{i}: {json.dumps(r, ensure_ascii=False)}" for i, r in enumerate(rows_all)) or "(no rows)"
+            if a.verify_prompt == "v3":
+                vprompt = VERIFY_V3 % ("Worked examples:\n\n" + render_examples(ex), listing, user)
+            else:
+                vprompt = VERIFY_V2 % (listing, user)
+            vd = ask_json(a.url, a.model, SYSTEM, vprompt, tk)
+            if vd is not None:
+                verdicts = vd.get("verdicts") or []
+                drop = set()
+                for x in verdicts:
+                    if not (isinstance(x, dict) and x.get("keep") is False):
+                        continue
+                    if a.verify_prompt == "v3" and not str(x.get("code") or "").strip():
+                        continue  # v3: a drop without a cited rule code is not a drop
+                    try:
+                        drop.add(int(x.get("i")))
+                    except (TypeError, ValueError):
+                        pass
+                rows_all = [r for i, r in enumerate(rows_all) if i not in drop]
+                v_added = [x for x in (vd.get("add") or []) if isinstance(x, dict)]
+                rows_all += v_added
+        kept, dropped = check_rows(rows_all, window, wiki, bad_end)
         return {"id": r["id"], "events": kept, "ok": ok, "raw": raw,
                 "n_draft": len(ev), "n_missed_pass": len(added), "dropped": dropped,
+                "verdicts": verdicts, "n_verify_added": len(v_added),
+                "stages": {"samples": samples, "missed": added, "pre_verify": pre_verify,
+                           "verify_added": v_added},
                 "examples": [b["id"] for b in ex]}
 
     with ThreadPoolExecutor(a.workers) as pool, open(a.out, "a") as f:

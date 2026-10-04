@@ -51,7 +51,12 @@ def main():
     for path in sorted(glob.glob(str(G5 / "decisions_*.jsonl"))):
         for line in open(path):
             d = json.loads(line)
-            decided[d["unit"]] = d
+            if d.get("amend") and d["unit"] in decided:
+                # an amendment (later decisions file) adds rows to a unit
+                # already adjudicated; the original log stays intact
+                decided[d["unit"]]["events"].extend(d["events"])
+            else:
+                decided[d["unit"]] = d
     missing = sorted(set(k for k in units if k.startswith("W")) - set(decided))
     if missing:
         sys.exit(f"units not adjudicated: {missing}")

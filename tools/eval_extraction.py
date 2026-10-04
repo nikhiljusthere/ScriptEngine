@@ -77,6 +77,19 @@ def words(name):
     return {w for w in re.findall(r"[a-z0-9'-]+", (name or "").lower()) if len(w) >= 3 and w not in STOP}
 
 
+# Optional alias resolver (--resolve-aliases): name -> set of wiki pages it
+# resolves to. Two names that share no word still match when they resolve to
+# the same page ("the King of Curses" / "Sukuna") -- the engine resolves
+# participants the same way, so a label it would resolve correctly is right.
+ALIAS_RESOLVER = None
+# --quote-match: "overlap" (the plan's default: the prediction's quote must
+# overlap the gold quote) or "window" (same window + same triple, the
+# prediction's quote only verbatim in the window: the guideline keeps ONE row
+# per (subject, verb, object) per window, so which valid quote was chosen is
+# not an error).
+QUOTE_MATCH = "overlap"
+
+
 def same(a, b):
     if a is None or b is None:
         return a is None and b is None
@@ -84,8 +97,13 @@ def same(a, b):
     if wa & wb:
         return True
     # A short form of a name: "Maru" for "Marulu Val Vol Yelvori".
-    return any(len(x) >= 4 and len(y) >= 4 and (x.startswith(y) or y.startswith(x))
-               for x in wa for y in wb)
+    if any(len(x) >= 4 and len(y) >= 4 and (x.startswith(y) or y.startswith(x))
+           for x in wa for y in wb):
+        return True
+    if ALIAS_RESOLVER is not None:
+        ra, rb = ALIAS_RESOLVER(a), ALIAS_RESOLVER(b)
+        return bool(ra and rb and ra & rb)
+    return False
 
 
 def match(p, g):
@@ -404,6 +422,8 @@ def score(gold, preds):
                 # The plan's event match: (subject, verb, object) with
                 # the quote overlapping the gold quote.
                 def gmatch(p, g, gspan, pspan, _t=ptext):
+                    if QUOTE_MATCH == "window":
+                        return match(p, g) and pspan is not None
                     return match(p, g) and _overlaps(pspan, gspan)
             else:
                 core = [((a, b, None if b == "awakened" else c), None)
@@ -513,7 +533,26 @@ def main():
                          "no quotes) from --gold-dir, not the gen-2 "
                          "passage file")
     ap.add_argument("--show", action="store_true")
+    ap.add_argument("--quote-match", choices=("overlap", "window"), default="overlap",
+                    help="window records: 'overlap' (quote spans overlap) or "
+                         "'window' (same window + same triple, quote verbatim)")
+    ap.add_argument("--resolve-aliases", action="store_true",
+                    help="names also match when they resolve to the same "
+                         "wiki page (series facts.db, the verifier's resolver)")
     a = ap.parse_args()
+    global QUOTE_MATCH, ALIAS_RESOLVER
+    QUOTE_MATCH = a.quote_match
+    if a.resolve_aliases:
+        sys.path.insert(0, str(ROOT / "tools" / "train"))
+        import verify_row_wiki as _vrw
+        _wiki = _vrw.Wiki(str(ROOT / "series" / a.series / "facts.db"))
+        _cache = {}
+
+        def ALIAS_RESOLVER(name):  # noqa: N802 -- module hook
+            if name not in _cache:
+                _cache[name] = set(_wiki.resolve(name)[:1])
+            return _cache[name]
+        globals()["ALIAS_RESOLVER"] = ALIAS_RESOLVER
 
     gold_path = Path(a.gold) if a.gold else \
         Path(a.gold_dir or f"series/{a.series}/training/recall_gold_v3")
