@@ -154,3 +154,44 @@ verbs (its `events: extra_verbs` in `series/<wiki>/overrides.yaml`,
 across wikis sees one inventory and never has to learn when a verb is
 forbidden; the outcome verbs carry the match-up brain goal (the shared
 set records that a fight happened, not who won).
+
+## G. Guideline v2 (2026-10-05) — phrasings decided in the gold v5 adjudication
+
+Every rule below was decided on a real window in `series/jjk/training/gold_v5/
+decisions_001.jsonl` (the reason is logged per row). Rules A–F stand; G makes the
+implicit cases explicit. Ends are written as the window writes them.
+
+### G.1 Per verb: phrasings that ARE the verb / that are NOT
+
+| verb | YES (stated in the window) | NO |
+|---|---|---|
+| `fought` | any attack MADE on someone, even when it is blocked, dodged, missed or fails ("the Infinity stops Jogo's punch", "attempted a sneak attack against Yuji but failed", "Ko-Guy lunges at Yuji ... Yuji avoids the attacks"); "entered the fray" against X; "couldn't exorcise X as quickly" (presupposes the fight); a technique/domain/cursed speech USED ON someone ("uses cursed speech on Uro", "in response to Sukuna's Malevolent Shrine ... its onslaught"); paralysis or immobilization by a technique ("immobilized with immense pressure", "paralyzed by Cursed Speech"); "almost killed him" (the attack landed); "adds physical decimation"; "rips out X's heart"; "stabbing him" | "had to face X" / "confronted" with no attack stated; a threat; "punishes him" with no blow stated; "tries to take X out" with no attack made; dodging-only with no attacker named |
+| `defeated` | bested, beat ("she beat him" — resolve the pronoun inside the window), incapacitated, knocked out, "takes X out with one shot", "eliminates X" / "eliminate her" (no death stated), "finishes the fight", "defeat an opponent of a superior rank" (name the opponent if the window names it) | "overpowers / overwhelms / dominates" while the fight continues; "nearly defeats"; "a defeated X" with no doer |
+| `killed` | a stated death with its doer: "falls to the ground dead", exorcises/exorcised (a curse), executes, murders, assassinates, "slaughters them ... until none are left", destroys a named shikigami | "fatal blow" / "fatal wounds" / "cut down" / "bisects his head" without a stated death (write `fought`); a death with no doer in the window ("succumbs to his wounds", "being exorcised") |
+| `saved` | rescued, freed, "takes X away" from the danger, flies/carries X away from the battlefield, "intercepts the finishing blow" aimed at X, "takes the hit for him", "defends X from being seized", resuscitates or heals someone who would otherwise die | "to protect him" (purpose only); helping, refilling cursed energy, encouraging; healing oneself; "go about freeing X" when the window does not say who freed X |
+| `sealed` | trapped in a domain/barrier/ice/sealing object: "trapping him midair in solid ice", "freezes everyone present" (expands to the named people present), "traps Yuji inside his Domain Expansion" | paralysis/immobilization by cursed speech or pressure (that is `fought`); casting a domain with no one trapped |
+| `captured` | hostage, kidnapped, abducted, "drags his daughters to a disciplinary chamber", held prisoner | pinning down / grabbing by the throat during a fight (that is `fought`); restraining an item ("restrains the doll") |
+| `escaped` | broke out of the object's trap ("break out of a coffin buried by a giant gravestone" -> escaped the trapper), got away while the object tried to stop him ("escapes into the sewers. Nanami attempts to stop him") — the object is the trapper/pursuer | being released ("once Sukuna lets them"); "fled with X in pursuit" followed by a clash (failed); "start to escape but X stops them"; leaving calmly; escaping a place (write nothing; the object must be a person/group) |
+| `met` | arrives / appears / approaches / emerges / shows up / enters the fray / makes a dynamic entry to people NOT already with them; "finds X" + contact; an introduction; a visit; "come face to face"; "came to face X"; "stops them" / "threatens them" as an encounter; "both sides meet" when the sides are named in the window; "declares himself X's opponent" + face-off | talk inside a meeting already in progress; companions conversing; a phone call; noticing/spotting/watching; a future interview; joining a group or allying; seeing someone off |
+| `arrived` / `departed` | reached / left a PROPER-NAMED place or group: Shibuya, the Zenin clan, Jujutsu headquarters, B5F ("was here but he already left" = departed B5F when B5F is named in the window) | definite descriptions of places: the office, the station, the gymnasium, the screen, the town, the rooftop, the street, the college; heading toward a place; a train or other item arriving |
+| `awakened` | wakes up, evolved into a new form, gained full power or a new body ("allowing Maki's heavenly restriction to be fully realized") | awakening or incarnating OTHERS ("the sorcerers he awakened"); being born (borderline: optional) |
+
+### G.2 Ends
+
+- **Name it when the window names it.** "the cockroach cursed spirit" with Kurourushi named in the same window -> `Kurourushi`; "an opponent of a superior rank" with the Smallpox Deity named -> `Smallpox Deity`; "his student" = Yuta when the window makes it unambiguous.
+- **Anaphoric definite descriptions of ONE unique individual are ends** when the window gives no name: "the curse", "the grasshopper", "Maki's mother", "Kenjaku's assassin", "the special grade disease curse", "the Judge". A class used as a name is still a class ("Cursed Spirit", "a curse user").
+- **Never an end:** unnamed classes and crowds — "the civilians", "the transfigured humans", "the higher-ups", "a lookout", "four opponents", "numerous national governments", "his best friend" (unnamed), "the two" (expand to the named people instead).
+- **Named creatures acting are subjects:** Rika, Garuda, Divine Dog: Totality, Great Serpent ("Yuta manifested Rika to fire a beam at Ryu" -> Rika fought Ryu).
+- **Groups expand to named members, one row each** — never one row with "Toge and Noritoshi" or "Panda, Hakari, and Kashimo" as the subject/object. A named group (the Hei, the Kukuru Unit, Tokyo Team) is an end only where no members are listed; when members are listed, write the member rows only.
+- **Allies in a "battle between A, B and C" are not paired** with each other: only the opposing pairs.
+
+### G.3 The window
+
+- Only the window's own text: a clause cut off at the window edge is attributed to no one; text outside a partial window's read part does not exist for the label.
+- The quote is copied verbatim from the window (wiki typos kept).
+- Each window is labeled on its own (F.1): the same event stated in two windows is written in both.
+
+### G.4 Shape
+
+- `arrived`, `departed`, `escaped` always carry an object; `awakened` never does; no row has a null object otherwise.
+- No self-rows except a stated self-directed act; no "saved self" for surviving or self-healing.
