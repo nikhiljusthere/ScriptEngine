@@ -550,7 +550,13 @@ def main():
 
         def ALIAS_RESOLVER(name):  # noqa: N802 -- module hook
             if name not in _cache:
-                _cache[name] = set(_wiki.resolve(name)[:1])
+                hit = _wiki.resolve(name)[:1]
+                if not hit:
+                    # "the King of Curses" -> "King of Curses": the leading
+                    # article is not part of the alias the wiki records
+                    bare = re.sub(r"(?i)^(the|a|an)\s+", "", name.strip())
+                    hit = _wiki.resolve(bare)[:1] if bare != name else []
+                _cache[name] = set(hit)
             return _cache[name]
         globals()["ALIAS_RESOLVER"] = ALIAS_RESOLVER
 

@@ -151,6 +151,70 @@ THE WINDOW:
 %s"""
 
 
+# Round 5 sentence pass: round 4 never drafted 25 gold rows whose wording
+# G.1 already lists ("murdering", "wakes up", "she beat him", "intercepts
+# his punch", "Sukuna stops them", "watched the fight between") -- the rule
+# was in the prompt but not applied to that sentence. This pass numbers the
+# window's sentences on the index's own grid and puts the G.1 rows for the
+# verbs each sentence's wording hints at right next to that sentence. The
+# lexicon is plain English verb stems: nothing series-specific.
+HINTS = {
+    "fought": r"fight|fought|battl|clash|duel|attack|strik|struck|punch|kick|slash|stab|bisect|chop|\bcut|blast|"
+              r"beam|onslaught|ambush|lunge|\bhits?\b|injur|wound|\bvs\b|redirect|\bon (a |the )?\w+$|immobili|"
+              r"paraly|charges|engag|\bfac(e|es|ed|ing)\b|confront|opponent|technique|assault|barrage|knocks",
+    "killed": r"kill|murder|exorcis|execut|assassin|\bdead\b|\bdies\b|\bdied\b|slaughter|destroy",
+    "defeated": r"defeat|\bbeat\b|\bbest|incapacit|knock|eliminat|\bout\b|finish",
+    "saved": r"\bsav|rescu|\bfree|intercept|protect|carr(y|ies|ied)|away|\bheal|shield|takes the hit",
+    "sealed": r"seal|\btrap|freez|froze|imprison|domain|barrier",
+    "captured": r"captur|hostage|kidnap|abduct|\bdrag|prisoner|\bheld\b",
+    "escaped": r"escap|\bfle(e|es|d)\b|break(s)? out|broke out|get(s)? away|got away",
+    "met": r"\bmeet|\bmet\b|arriv|appear|approach|emerg|show(s|ed)? up|\benter|visit|across|encounter|\bfind|"
+           r"\bfound\b|\bstops?\b|greet|harass|introduc|notic|\basks?\b|reunit",
+    "awakened": r"\bwak|awak|evolv|receiv|\bgain|realiz|incarnat|reviv",
+    "arrived": r"arriv|reach|return|\bcome(s)? (to|back)|enter",
+    "departed": r"\bleav|\bleft\b|depart|exit",
+}
+HINT_RE = {v: re.compile(rx, re.I) for v, rx in HINTS.items()}
+
+
+def g1_rows():
+    """verb -> its G.1 table row (YES | NO), read from the guideline."""
+    out = {}
+    for line in GUIDE.splitlines():
+        m = re.match(r"\| `(\w+)`( / `(\w+)`)? \| (.*) \| (.*) \|$", line)
+        if m:
+            for v in (m.group(1), m.group(3)):
+                if v:
+                    out[v] = f"{line.split('|')[1].strip()}: YES = {m.group(4)} || NO = {m.group(5)}"
+    return out
+
+
+G1 = g1_rows()
+
+SENTENCE_PROMPT = """SENTENCE PASS. Below, the window is split into numbered sentences. Under each sentence are the guideline G.1 rules for the verbs its wording hints at. For EVERY sentence decide, using those rules and the decomposition method (is an action stated as DONE? who does it to whom, resolving pronouns inside this window? which verb?), whether it states an event that is NOT already in the rows below. Hints are only hints: most hinted sentences state no new event; write a row only when the G.1 YES column covers what the sentence says.
+
+Rows already written for this window (do not repeat them):
+%s
+
+Answer with JSON only: {"sentences": [{"n": <sentence number>, "decision": "<one short clause>", "events": [<new rows, quote verbatim from that sentence>]}, ...]} with one entry per numbered sentence (empty events when nothing new).
+
+%s
+
+THE SENTENCES:
+%s"""
+
+
+def sentence_block(window):
+    sys.path.insert(0, str(ROOT))
+    from scriptengine.ingest.windows import sentence_spans
+    parts = []
+    for n, (_a, _b, sent) in enumerate(sentence_spans(window), 1):
+        verbs = [v for v, rx in HINT_RE.items() if rx.search(sent)]
+        rules = "\n".join(f"   - {G1[v]}" for v in dict.fromkeys(verbs) if v in G1)
+        parts.append(f"[{n}] {sent}" + (f"\n{rules}" if rules else ""))
+    return "\n\n".join(parts)
+
+
 def ask_json(url, model, system, user, template_kwargs, max_tokens=20480):
     """Like ask(), for a free-form JSON object answer (the verifier)."""
     body = {"model": model, "temperature": 0.6, "top_p": 0.95, "max_tokens": max_tokens,
@@ -240,6 +304,24 @@ def ask(url, model, system, user, template_kwargs, max_tokens=20480):
     return None, ""
 
 
+# Round-5 no-model rules, each replayed offline on round 4's saved rows
+# (tools/train/replay_rules.py) and kept only at ZERO true-row losses on
+# gold v5.3. A bare capability modal ("Nue can strike repeatedly") is not
+# an event; a negated one ("couldn't exorcise Dagon") or a modal beside a
+# past-tense report still is. A rejected candidate: "the arrived/departed
+# place must be in the quote" -- gold takes the place from the window
+# ("Mahito was here but he already left" -> departed B5F).
+MODAL = re.compile(r"\b(can|could|would|will)\b(?!n't| not)", re.I)
+PAST = re.compile(r"\b(\w{3,}ed|was|were|took|beat|fought|struck|met|got|had|went|came|ran|threw|"
+                  r"hit|caught|fell|began|stood|fighting|battling)\b", re.I)
+ABLE = re.compile(r"\b(was|were) (effortlessly |finally )?able to\b", re.I)
+# "defeated" needs a defeat lexeme in its quote, otherwise it is a fight
+# ("Sukuna overpowers Megumi" was read as defeated in round 4).
+DEFEAT = re.compile(r"(defeat|beat|best|incapacitat|knock(ed|s)? (him |her |them )?out|"
+                    r"(takes?|took|taking) .{0,40}?\bout\b|eliminat|finish(es|ed)? the fight|lost to|"
+                    r"outclass|dispatch|came out on top|subdu|retreat)", re.I)
+
+
 def check_rows(rows, window, wiki, bad_end):
     """Mechanical checks (no model). Returns (kept, dropped-with-reason)."""
     kept, dropped, seen = [], [], set()
@@ -258,9 +340,19 @@ def check_rows(rows, window, wiki, bad_end):
             why = f"{v} needs an object"
         elif v == "awakened" and o:
             o = None
+        elif MODAL.search(q) and not ABLE.search(q) and not PAST.search(q):
+            why = "capability/hypothetical modal, nothing stated as done"
+        if why is None and v == "defeated" and not DEFEAT.search(q):
+            v = "fought"
         if why is None:
             for end in ([s] + ([o] if o else [])):
-                if CLASS_WORDS.match(end) or not end:
+                # G.2: "the curse" / "the cursed spirit" (ONE anaphoric
+                # individual) is an end; plurals, bare/indefinite classes
+                # and pronouns are not. Round 4 dropped the gold row "Yuji
+                # killed the curse" here before this exemption.
+                definite_one = bool(re.match(r"(?i)^the (curse|cursed spirit|sorcerer|soldier|guard|"
+                                             r"lookout|player|student|opponent|enemy|member)$", end))
+                if (CLASS_WORDS.match(end) and not definite_one) or not end:
                     why = f"unnamed/class end: {end!r}"
                     break
                 if wiki is not None:
@@ -306,6 +398,8 @@ def main():
                     help="v1 = round 1 (generic); v2 = round 2 trigger checklist")
     ap.add_argument("--family-passes", action="store_true",
                     help="round 4: separate MEET / FIGHT / OUTCOME passes, each with that family's examples")
+    ap.add_argument("--sentence-pass", action="store_true",
+                    help="round 5: numbered-sentence pass with the hinted G.1 rows beside each sentence")
     ap.add_argument("--verify-votes", type=int, default=1,
                     help="verifier samples; a row is dropped only when ALL samples drop it with a code")
     ap.add_argument("--samples", type=int, default=1,
@@ -365,8 +459,18 @@ def main():
                 fexs = ("Worked examples for this family:\n\n" + render_examples(fex)) if fex else ""
                 more, _ = ask(a.url, a.model, SYSTEM, FAMILY_PROMPT % (finstr, listed, fexs, user), tk)
                 fam_added[fam] = [x for x in (more or []) if str(x.get("verb", "")).lower() in fverbs]
+        sent_added, sent_decisions = [], []
+        if ok and a.sentence_pass:
+            listed = json.dumps({"events": ev + added + [r for v in fam_added.values() for r in v]},
+                                ensure_ascii=False)
+            sexs = ("Worked examples:\n\n" + render_examples(ex)) if ex else ""
+            sd = ask_json(a.url, a.model, SYSTEM, SENTENCE_PROMPT % (listed, sexs, sentence_block(window)), tk)
+            for x in ((sd or {}).get("sentences") or []):
+                if isinstance(x, dict):
+                    sent_decisions.append({"n": x.get("n"), "decision": x.get("decision")})
+                    sent_added += [e for e in (x.get("events") or []) if isinstance(e, dict)]
         verdicts, v_added = [], []
-        rows_all = ev + added + [r for v in fam_added.values() for r in v]
+        rows_all = ev + added + [r for v in fam_added.values() for r in v] + sent_added
         pre_verify = list(rows_all)
         if ok and a.verify_pass:
             listing = "\n".join(f"{i}: {json.dumps(r, ensure_ascii=False)}" for i, r in enumerate(rows_all)) or "(no rows)"
@@ -402,7 +506,8 @@ def main():
         return {"id": r["id"], "events": kept, "ok": ok, "raw": raw,
                 "n_draft": len(ev), "n_missed_pass": len(added), "dropped": dropped,
                 "verdicts": verdicts, "n_verify_added": len(v_added),
-                "stages": {"samples": samples, "missed": added, "families": fam_added, "pre_verify": pre_verify,
+                "stages": {"samples": samples, "missed": added, "families": fam_added,
+                           "sentences": sent_added, "sentence_decisions": sent_decisions, "pre_verify": pre_verify,
                            "verify_added": v_added},
                 "examples": [b["id"] for b in ex]}
 
