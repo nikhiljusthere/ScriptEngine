@@ -132,6 +132,25 @@ THE WINDOW:
 %s"""
 
 
+FAMILY = {
+    "meet": ({"met"}, """FOCUSED PASS — MEET ONLY. Read the window and find EVERY time someone comes together with a named person they were not already with: arrives / suddenly arrives / appears / approaches / emerges / shows up / enters the fray / makes an entry / joins up with / comes across / encounters / finds X and they interact / meets / visits / greets / comes to face / comes face to face / stops them / confronts / is harassed by. Write one `met` row per (newcomer, named person) pair — expand every group: "Yuji Itadori and Aoi Todo show up and rescue the two" = Yuji met Maki, Yuji met Megumi, Aoi met Maki, Aoi met Megumi when "the two" are Maki and Megumi; "until they come across A and B" = each of "they" met A and B; "she's harassed by Naoya and her mother" = Naoya met her, her mother met her. NOT met: talk inside a meeting already in progress, a phone call, noticing/watching, a future interview, joining a group. Name people as the window names them ("The newcomer is Fumihiko Takaba" -> Fumihiko Takaba)."""),
+    "fight": ({"fought"}, """FOCUSED PASS — STATED FIGHTS ONLY. Find EVERY fight the window states, including inside descriptive text: "X vs. Y" (also a bare title or list item), "the fight/battle/clash/duel between X and Y", "watched the fight between X and Y", "his fight with Y", "X's battle with Y", "the two of them clash", "engaged in a beam struggle", "surviving his attack", "almost killed him", any hit/strike/blast/punch/kick/stab aimed at someone (landed, blocked, dodged, missed or failed — "the Infinity stops Jogo's punch" is still fought), "redirect X's kick towards Y" (X fought Y), "uses <technique> on Y", "uses Z's cursed speech on Y" (the user fought Y), a named creature acting ("a barrage from Yuta and Rika" = Rika fought Uro too), "rejoins the fight", "tries to ambush Y", "early onslaught". Write `fought` rows (one per opposing pair; never pair two allies). NOT fought: a threat, "prepares to", "tries to use" with nothing made, a face-off with no attack."""),
+    "outcome": ({"killed", "defeated", "saved", "sealed", "captured", "escaped", "awakened", "betrayed", "arrived", "departed"}, """FOCUSED PASS — OUTCOMES ONLY. Find EVERY outcome the window states: killed (exorcise(s) / exorcised it / executes / murdering / assassinated / "falls to the ground dead"); defeated (beat — "she beat him" resolves inside the window — bested, incapacitated, eliminate(s), takes X out, finishes the fight); saved (rescues, frees, takes X away from danger, intercepts the finishing blow aimed at X, takes the hit for X, heals someone who would otherwise die); sealed (traps in a domain/barrier/ice, freezes someone in place); captured (hostage, drags to a cell/chamber); escaped (breaks out of a trap, escapes while X tries to stop him -> object = the trapper/pursuer); awakened (wakes up, evolves, receives a new body/power; no object); arrived/departed (a NAMED place only). One row per named person."""),
+}
+
+FAMILY_PROMPT = """%s
+
+Rows already written for this window (do not repeat them):
+%s
+
+Answer with JSON only: {"events": [...]} holding ONLY new rows for this family (quote verbatim from the window), or {"events": []}.
+
+%s
+
+THE WINDOW:
+%s"""
+
+
 def ask_json(url, model, system, user, template_kwargs, max_tokens=20480):
     """Like ask(), for a free-form JSON object answer (the verifier)."""
     body = {"model": model, "temperature": 0.6, "top_p": 0.95, "max_tokens": max_tokens,
@@ -162,18 +181,20 @@ class Bank:
         n = len(self.items)
         self.idf = {t: math.log((n + 1) / (c + 0.5)) for t, c in df.items()}
 
-    def nearest(self, window, page, k):
+    def nearest(self, window, page, k, verbs=None):
         q = tokens(window)
         scored = []
         for b in self.items:
             if b["page"] == page:
                 continue  # leave-page-out: never the window's own page
+            if verbs is not None and not any(r["verb"] in verbs for r in b["rows"]):
+                continue  # a family pass shows only that family's examples
             common = q & set(b["tokens"])
             score = sum(self.idf.get(t, 0) for t in common) / (1 + math.sqrt(len(b["tokens"])))
             scored.append((score, b))
         scored.sort(key=lambda x: -x[0])
         picked = [b for _, b in scored[:k]]
-        if not any(not b["rows"] for b in picked):  # always show one earned empty
+        if verbs is None and picked and not any(not b["rows"] for b in picked):  # always show one earned empty
             empties = [b for s, b in scored if not b["rows"]]
             if empties:
                 picked[-1] = empties[0]
@@ -283,6 +304,10 @@ def main():
     ap.add_argument("--no-missed-pass", action="store_true")
     ap.add_argument("--missed-prompt", choices=("v1", "v2"), default="v1",
                     help="v1 = round 1 (generic); v2 = round 2 trigger checklist")
+    ap.add_argument("--family-passes", action="store_true",
+                    help="round 4: separate MEET / FIGHT / OUTCOME passes, each with that family's examples")
+    ap.add_argument("--verify-votes", type=int, default=1,
+                    help="verifier samples; a row is dropped only when ALL samples drop it with a code")
     ap.add_argument("--samples", type=int, default=1,
                     help="independent draft samples, unioned (stability)")
     ap.add_argument("--verify-prompt", choices=("v2", "v3"), default="v2",
@@ -332,8 +357,16 @@ def main():
             tmpl = MISSED_V2 if a.missed_prompt == "v2" else MISSED
             more, _ = ask(a.url, a.model, SYSTEM, tmpl % (listed, user), tk)
             added = more or []
+        fam_added = {}
+        if ok and a.family_passes:
+            for fam, (fverbs, finstr) in FAMILY.items():
+                listed = json.dumps({"events": ev + added + [r for v in fam_added.values() for r in v]}, ensure_ascii=False)
+                fex = bank.nearest(window, r.get("page", ""), 4, verbs=fverbs)
+                fexs = ("Worked examples for this family:\n\n" + render_examples(fex)) if fex else ""
+                more, _ = ask(a.url, a.model, SYSTEM, FAMILY_PROMPT % (finstr, listed, fexs, user), tk)
+                fam_added[fam] = [x for x in (more or []) if str(x.get("verb", "")).lower() in fverbs]
         verdicts, v_added = [], []
-        rows_all = ev + added
+        rows_all = ev + added + [r for v in fam_added.values() for r in v]
         pre_verify = list(rows_all)
         if ok and a.verify_pass:
             listing = "\n".join(f"{i}: {json.dumps(r, ensure_ascii=False)}" for i, r in enumerate(rows_all)) or "(no rows)"
@@ -341,27 +374,35 @@ def main():
                 vprompt = VERIFY_V3 % ("Worked examples:\n\n" + render_examples(ex), listing, user)
             else:
                 vprompt = VERIFY_V2 % (listing, user)
-            vd = ask_json(a.url, a.model, SYSTEM, vprompt, tk)
-            if vd is not None:
-                verdicts = vd.get("verdicts") or []
-                drop = set()
-                for x in verdicts:
-                    if not (isinstance(x, dict) and x.get("keep") is False):
-                        continue
-                    if a.verify_prompt == "v3" and not str(x.get("code") or "").strip():
-                        continue  # v3: a drop without a cited rule code is not a drop
-                    try:
-                        drop.add(int(x.get("i")))
-                    except (TypeError, ValueError):
-                        pass
+            votes = [ask_json(a.url, a.model, SYSTEM, vprompt, tk) for _ in range(max(1, a.verify_votes))]
+            votes = [vd for vd in votes if vd is not None]
+            if votes:
+                drops = []
+                for vd in votes:
+                    vv = vd.get("verdicts") or []
+                    verdicts.append(vv)
+                    d = set()
+                    for x in vv:
+                        if not (isinstance(x, dict) and x.get("keep") is False):
+                            continue
+                        if a.verify_prompt == "v3" and not str(x.get("code") or "").strip():
+                            continue  # v3: a drop without a cited rule code is not a drop
+                        try:
+                            d.add(int(x.get("i")))
+                        except (TypeError, ValueError):
+                            pass
+                    drops.append(d)
+                # a row goes only when EVERY verifier vote drops it (round 4:
+                # single-vote drops struck as many true rows as false ones)
+                drop = set.intersection(*drops) if drops else set()
                 rows_all = [r for i, r in enumerate(rows_all) if i not in drop]
-                v_added = [x for x in (vd.get("add") or []) if isinstance(x, dict)]
+                v_added = [x for x in (votes[0].get("add") or []) if isinstance(x, dict)]
                 rows_all += v_added
         kept, dropped = check_rows(rows_all, window, wiki, bad_end)
         return {"id": r["id"], "events": kept, "ok": ok, "raw": raw,
                 "n_draft": len(ev), "n_missed_pass": len(added), "dropped": dropped,
                 "verdicts": verdicts, "n_verify_added": len(v_added),
-                "stages": {"samples": samples, "missed": added, "pre_verify": pre_verify,
+                "stages": {"samples": samples, "missed": added, "families": fam_added, "pre_verify": pre_verify,
                            "verify_added": v_added},
                 "examples": [b["id"] for b in ex]}
 
