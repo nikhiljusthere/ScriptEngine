@@ -2428,3 +2428,9 @@ identity_fields:
   volume: "In which volume does {name} appear?"
   volumes: "Which volumes does {name} span?"
   work: "Which studio produced {name}?"
+# Universal dataset (plan/UNIVERSAL_DATASET_PLAN.md, 2026-10-04, decision 1):
+# one verb inventory for every wiki -- the shared 9 plus these outcome verbs.
+# A student trained across wikis sees one inventory and never has to learn
+# when a verb is forbidden; the outcome verbs carry the match-up brain goal.
+events:
+  extra_verbs: [defeated, captured, escaped]

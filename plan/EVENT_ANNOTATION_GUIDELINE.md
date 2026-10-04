@@ -109,3 +109,48 @@ same way.
 - **A deceased or incarnated identity** is written as the passage names it
   ("Pseudo-Geto", "Geto"); resolving who that is belongs to the engine, not to
   the label.
+
+## F. Universal amendments (2026-10-04)
+
+These amendments make this guideline universal -- every anime/Fandom wiki,
+not only JJK (`plan/UNIVERSAL_DATASET_PLAN.md`, decisions 3-4). They
+supersede the JJK-specific wording they name; all other text in this file
+stands. JJK stays the worked example.
+
+### F.1 Per-window labels (precedent 6 retired as a label)
+
+The student reads ONE window. Every window is labeled independently: a
+window that states a meeting gets its own `met` row even when an adjacent
+window states the same meeting. A label that omitted an event the window
+itself states would teach omission (a recall bug). The JJK precedent 6
+("one `met` per pair per meeting, even across different windows",
+`plan/JJK_VERIFY_7000_FINAL.md` §5a) is superseded for labeling: what one
+pair-per-meeting merging still governs is the engine, not the annotator --
+`events.py` already dedups a page's rows on (label, subject, verb,
+object) (its `dedup` drop). The verdict rules of section E (what counts
+as a `met` at all) are untouched; only the cross-window merging of labels
+is retired.
+
+### F.2 The general entity rule (replaces the JJK shikigami list)
+
+A NAMED individual creature, summon, AI or construct counts as an entity
+(a subject or object). A species, a class, a technique, an item or an
+unnamed group never does. This supersedes the JJK-only shikigami list in
+rules 5-6 (named shikigami and curses: Mahoraga, Nue, Rika): any
+fandom's named creature, named summon, named AI or named construct is an
+end, and JJK's named shikigami are one instance of the rule. Rule 6's
+user-is-the-subject carve-out stands as written: a named creature acting
+under orders may be written as the actor when the passage presents it
+with its own name.
+
+### F.3 One inventory: the 12 verbs
+
+The table in section C is the ONE verb inventory for every wiki: the nine
+shared verbs (`fought`, `killed`, `awakened`, `sealed`, `betrayed`,
+`saved`, `arrived`, `departed`, `met`) plus the three outcome verbs
+(`defeated`, `captured`, `escaped`). Every wiki now declares the outcome
+verbs (its `events: extra_verbs` in `series/<wiki>/overrides.yaml`,
+2026-10-04); no wiki runs a smaller or different set. A student trained
+across wikis sees one inventory and never has to learn when a verb is
+forbidden; the outcome verbs carry the match-up brain goal (the shared
+set records that a fight happened, not who won).
