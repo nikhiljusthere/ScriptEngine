@@ -57,6 +57,33 @@ annotated on old 4,000-char slices, so part of today's "error" is the gold's.
    35B's draft disagrees with the verified label (FN or FP), so the dev labels
    the guideline is tuned against are themselves right.
 
+## 2b. Gold v5 — built 2026-10-05 (and what it means for the test)
+
+`tools/train/build_gold_v5.py` -> `series/jjk/training/gold_v5/gold_test_v5.jsonl`:
+258 windows (11 partial windows excluded: only their read part was
+adjudicated), 266 core + 5 optional events, 132 earned empties, every quote
+verbatim (hard failure otherwise). Adjudication log with every reason, model
+FP/FN and taxonomy class: `gold_v5/decisions_001.jsonl` (100 units).
+
+Re-scored on gold v5 (window-level, quote overlap required):
+
+| run | R | P | F1 |
+|---|---|---|---|
+| CyberTiel draft / + 35B verify | 0.605 / 0.541 | 0.837 / 0.936 | 0.702 / 0.686 |
+| ninfer 27B draft / + 35B verify | 0.665 / 0.583 | 0.886 / 0.951 | 0.760 / 0.723 |
+| ninfer 35B draft / + 35B verify | 0.526 / 0.477 | 0.761 / 0.921 | 0.622 / 0.628 |
+| union of the 3 drafts | 0.763 | 0.753 | 0.758 |
+
+The row-stamping verifier now LOSES F1 (it rejects true rows on the fuller
+gold) — exactly why the verifier must be as thorough as the drafter and add
+rows, not only strike them (section 6b).
+
+**Honesty rule:** Claude read every test window while adjudicating, so gold v5
+is now DEV, not test. Guideline v2 + the example bank are tuned on it; once
+they are frozen, Claude adjudicates a FRESH, never-seen 100-window JJK test
+(holdout pages, blind to model output, same method) and the final numbers are
+reported only on that.
+
 ## 3. The error taxonomy (every FN and FP gets exactly one class)
 
 | class | example |
@@ -111,6 +138,35 @@ drafter prompt (and, if measured to help, into the verifier prompt).
 6. per-verb checklist pass for the weak verbs (met, arrived, captured, escaped).
 The combination with the best dev F1 (no per-verb regression) becomes the
 production drafter; speed is recorded for every lever.
+
+## 6b. Owner-approved method (2026-10-05 ~00:1x) — how the guideline is APPLIED
+
+Better than piling rules into one prompt:
+1. **Show, don't tell.** Worked examples teach meaning ("intercepts the
+   finishing blow" protects someone -> saved). Per window, RETRIEVE the k bank
+   examples closest to the window's own wording (BM25/embedding over the
+   example bank) instead of one static list.
+2. **Decompose.** For every event-like sentence the 35B answers, in order: is
+   an action stated as DONE (not attempted / planned / hypothetical / negated)?
+   who does it, to whom? which verb (decision order)? — the "what does this
+   sentence mean" pass, run by the 35B itself.
+3. **Mechanical checks, no model** (`tools/train/row_checks.py`): every end
+   resolves (store aliases/nodes) to a character / group / creature page, never
+   a technique / item / class page; an `arrived`/`departed` object resolves to a
+   place or group page; the quote is verbatim AND inside the window's READ part;
+   group objects are split into one row each; `awakened` has a null object and
+   no other verb does; JSON schema with the verb enum enforced at decoding.
+4. **Recall:** a separate missed-event pass, plus 2 samples keeping what agrees.
+
+**The verifier is as thorough as the drafter (owner):** it does not stamp rows.
+Per window it (a) re-reads the WHOLE window sentence by sentence with the same
+decomposition, (b) checks every drafted row against the guideline + the
+retrieved examples + the wiki card (each end's page type / status) + the
+mechanical checks, (c) runs its own missed-event pass and proposes additions,
+and (d) only then declares the window verified, with a reason per row and per
+addition. Long, explicit checks are the point; speed comes from the 35B's
+~500 tok/s, never from skipping a check. The ninfer 35B runs at full context
+(`serve_35b.sh`: --max-context 262144, kv-capacity auto = 2 lanes x 262,144).
 
 ## 7. Point 5 — manual inline verification + the residual measurement
 
