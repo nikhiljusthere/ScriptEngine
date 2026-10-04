@@ -141,6 +141,32 @@ entry unchanged -- the re-emit is byte-identical (the re-emit cmp
 proof), while the page draw itself is rolled exactly once, on the
 fresh emit.
 
+    U-WP4d (2026-10-04, plan/UNIVERSAL_DATASET_PLAN.md "U-WP4d"): the
+    CORE stratum -- the owner's "first check the biggest pages from all
+    wikis and then the links on those big pages that lead to further
+    pages -- wide variety, the most important pages covered, and you
+    learn how they are formatted". --core-stratum adds it NEXT TO the
+    random strata (never replacing them: link-snowballing concentrates on
+    the main cast, while production -- MCU's ~290k windows -- is mostly
+    small pages, and an all-core test would measure the neighbourhood,
+    not production). Per wiki, inside the production read set (U-WP4c):
+    seeds = the top `documents.word_count` pages of the universe (top 1
+    pct, 20..200), hop-1 = the read-set pages the seeds link to through
+    the store's pre-resolved links (`chunk_nodes`), ranked by how many
+    seeds link to them with no page_type above 40 pct of hop-1, split
+    80/20 train/test BEFORE any sampling (the core test pages are
+    reserved in the series' holdout, so a core page is never on both
+    sides). ~40 pct of every pool is then drawn from the core pages
+    (one window per page first, then the per-page cap), the rest from
+    the mode's own cells; every pool line carries `stratum: core|
+    random` so the scorer reports the two separately. The seeds' format
+    census lands in series/<s>/training/format_census.json (the
+    labeler's per-wiki notes) and the core set in core_pages.json. The
+    seeds' candidates are the universe's OWN pages: the WP6b read pages
+    (>= 1 event row) would leave the six teacher-less wikis with no seeds
+    at all. The split reads no holdout (a pure function of seed + store,
+    or its own record), so the same-seed re-emit stays byte-identical.
+
     python tools/train/emit_windows.py --series jjk [--pools mimo,nemotron,spacebunny]
                                         [--n 500] [--seed 20260930] [--dry-run] [--no-archive]
                                         [--out-dir DIR] [--no-holdout] [--gold FILE]
@@ -154,16 +180,19 @@ fresh emit.
     python tools/train/emit_windows.py --series mcu --pools mcu_era --n 600
                                          --era-thirds --undated-policy old
                                          --test-pool mcu_era_test --test-n 75
-    python tools/train/emit_windows.py --series csm --pools csm --n 300
-                                         --read-evidence --test-pool csm_test --test-n 50
     python tools/train/emit_windows.py --series hxh --pools none
                                          --eventish --test-pool hxh_test --test-n 150
+    python tools/train/emit_windows.py --series csm --pools csm --n 300
+                                         --read-evidence --test-pool csm_test --test-n 50
+                                         --core-stratum --archive-suffix .pre-u4d
 
 """
 import argparse
+import re
 import json
 import math
 import random
+import shutil
 import sys
 import time
 from collections import Counter
@@ -667,6 +696,422 @@ def page_types(store):
     return out
 
 
+def gold_record_pages(paths_root, *gold_paths):
+    """U-WP4d: the pages the wiki's own adjudicated labels sit on -- the
+    gold600/pilot files and the drift probes. They are TRAIN material by
+    construction (the student trains on those windows), so the core
+    stratum's split may not hand them to the test side (dataset_gates D4
+    counts a gold page as a train page and would FAIL the leak gate). One
+    cheap pass over the files' `page` fields; a missing file contributes
+    nothing, exactly like the gold exclusion itself."""
+    pages = set()
+    opencode = paths_root / "training" / "opencode" / "golden_probes.jsonl"
+    for path in [Path(p) for p in gold_paths if p] + [opencode]:
+        if not path.exists():
+            continue
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            page = (json.loads(line) or {}).get("page")
+            if page:
+                pages.add(page)
+    return pages
+
+
+def core_stratum(store, read_pages, ptypes, seed, series,
+                 seed_pct=0.01, seed_min=20, seed_max=200,
+                 hop1_per_seed=4, type_cap=0.40, train_share=0.80,
+                 record_path=None, forced_train_pages=(), forced_test_pages=()):
+    """U-WP4d (2026-10-04, plan/UNIVERSAL_DATASET_PLAN.md "U-WP4d"): the
+    CORE stratum -- the owner's "first check the biggest pages from all
+    wikis and then the links on those big pages that lead to further
+    pages". A STRATUM next to the random ones, never a replacement.
+
+    1. **Seeds** = the biggest pages of the PRODUCTION READ SET (the
+       U-WP4c universe: the pages of `scope_plan('all')`) by
+       `documents.word_count`, top 1 pct, floored at 20 and capped at
+       200 (the plan's numbers). The read set, NOT the WP6b read pages
+       (>= 1 event row): six of the ten wikis have no teacher rows at
+       all, so the WP6b sense would leave them with zero seeds.
+    2. **Hop-1** = the read-set pages the seeds LINK TO, through the
+       store's pre-resolved links (`chunk_nodes`: a seed page's chunks
+       -> the nodes they mention -> the nodes' documents), ranked by
+       how many seeds link to them, with the page-type cap of the plan
+       (no page_type above 40 pct of hop-1) and seeds themselves out
+       (a seed is core already).
+    3. **Split first, page-disjoint**: seeds + hop-1 go 80/20 train/test,
+       seeded, BEFORE any sampling -- the core test pages are recorded
+       in the series' holdout (the emit writes them), so no core page
+       ever sits on both sides. The pages the wiki's own gold/probes sit
+       on are FORCED to the train side (`forced_train_pages`): they are
+       train material already, and dataset_gates D4 counts a gold page as
+       a train page (on jjk, 61 of its 100 core pages are gold pages --
+       the biggest pages are exactly what the gold covers).
+
+    The split is a PURE function of (seed, core page set) -- it reads no
+    holdout -- so it is the same on every run and in every mode. The
+    page-level leak safety is the emit's own exclusion, not the split:
+    the core TEST pages leave the train sampling universe wholesale (the
+    whole set, not only the pages a test window happened to land on), so
+    a core test page can never train. `core_pages.json` is the record and
+    is reused when it still describes the current core set (the U-WP4c
+    "the record is a record, not an input" rule) -- otherwise a re-emit
+    could re-roll the split and move pages across the train/test line.
+    """
+    wc = {row["title"]: int(row["word_count"] or 0)
+          for row in store.connection.execute(
+              "SELECT title, word_count FROM documents")}
+    doc_id = {row["title"]: int(row["id"])
+              for row in store.connection.execute("SELECT id, title FROM documents")}
+
+    # ---- seeds: the biggest read-set pages -----------------------------
+    # U-WP4e (2026-10-05): a seed is never an index-like page. On MCU the
+    # biggest pages by word_count were year pages ("2017", "2025", "2000s")
+    # and non-narrative subpages, which made the "core" a set of indexes.
+    # Generic: bare year/decade/date titles and index-like page types.
+    # Whole tokens only: "character_updated" contains "date" (Berserk's main
+    # cast), and "Android 16" is not a date -- dates need a real month name.
+    _MONTHS = ("january|february|march|april|may|june|july|august|september|"
+               "october|november|december")
+    _INDEX_TYPE = {"list", "lists", "hub", "index", "disambiguation", "gallery",
+                   "timeline", "year", "years", "date", "dates", "category",
+                   "navigation", "credits", "trivia", "quote", "subpage"}
+
+    def _index_like(page):
+        t = page.strip()
+        if re.fullmatch(r"\d{3,4}s?", t) or re.fullmatch(
+                rf"(?i)({_MONTHS}) \d{{1,2}}(, \d{{4}})?|\d{{1,2}} ({_MONTHS}) \d{{4}}", t):
+            return True
+        if re.search(r"(?i)(^|/)(list|index)\b|\blist of\b|character index", t):
+            return True
+        ptype = str((ptypes or {}).get(page) or "").lower()
+        return bool(set(re.split(r"[^a-z]+", ptype)) & _INDEX_TYPE)
+    ranked_pages = sorted((p for p in read_pages if not _index_like(p)),
+                          key=lambda p: (-wc.get(p, 0), p))
+    n_pct = math.ceil(seed_pct * len(ranked_pages))
+    n_seed = min(len(ranked_pages), max(seed_min, min(seed_max, n_pct)))
+    seeds = ranked_pages[:n_seed]
+    seed_set = set(seeds)
+
+    # ---- hop-1: what the seeds link to (pre-resolved links) -----------
+    seed_ids = [doc_id[t] for t in seeds if t in doc_id]
+    marks = ",".join("?" * len(seed_ids))
+    linked = {
+        int(row["tid"]): int(row["nseeds"])
+        for row in store.connection.execute(
+            "SELECT n.document_id AS tid, COUNT(DISTINCT c.document_id) AS nseeds"
+            " FROM chunk_nodes cn"
+            " JOIN chunks c ON c.id = cn.chunk_id"
+            " JOIN nodes n ON n.id = cn.node_id AND n.document_id IS NOT NULL"
+            f" WHERE c.document_id IN ({marks})"
+            " GROUP BY n.document_id", seed_ids)
+    } if seed_ids else {}
+    # title <-> document_id (the link query speaks ids, the pools titles)
+    id_title = {v: k for k, v in doc_id.items()}
+    cands = []
+    for tid, nseeds in linked.items():
+        title = id_title.get(tid)
+        if title is None or title in seed_set or title not in read_pages:
+            continue  # not a read-set page (U-WP4c), or a seed already
+        cands.append((title, nseeds))
+    # rank: how many seeds link to it, then size, then title (deterministic)
+    cands.sort(key=lambda t: (-t[1], -wc.get(t[0], 0), t[0]))
+    hop1_target = hop1_per_seed * len(seeds)
+    type_cap_n = math.ceil(type_cap * hop1_target) if hop1_target else 0
+    per_type = Counter()
+    hop1, hop1_capped = [], 0
+    for title, nseeds in cands:
+        if len(hop1) >= hop1_target:
+            break
+        ptype = ptypes.get(title, "<none>")
+        if per_type[ptype] >= type_cap_n:
+            hop1_capped += 1  # over the 40 pct cap: counted, not silent
+            continue
+        per_type[ptype] += 1
+        hop1.append((title, nseeds))
+    hop1_titles = [t for t, _n in hop1]
+
+    # ---- the 80/20 split (before any sampling) -------------------------
+    core_pages = sorted(seed_set | set(hop1_titles))
+    recorded = None
+    if record_path is not None and Path(record_path).exists():
+        data = json.loads(Path(record_path).read_text(encoding="utf-8"))
+        if (isinstance(data, dict)
+                and [s["page"] for s in data.get("seeds", [])] == seeds
+                and [h["page"] for h in data.get("hop1", [])] == hop1_titles):
+            # The record is reused only if it is still a SPLIT OF THIS CORE
+            # SET: its two sides must partition the core pages exactly, and
+            # its forced-train list must be core pages (a record written by
+            # an older rule that folded non-core gold pages into the train
+            # side is superseded, not trusted -- otherwise a stale record
+            # would mark every gold page 'core').
+            rec_split = data.get("split") or {}
+            rec_train = set(rec_split.get("train") or [])
+            rec_test = set(rec_split.get("test") or [])
+            if (rec_train | rec_test == set(core_pages)
+                    and not (rec_train & rec_test)
+                    and set(rec_split.get("forced_train", [])) <= set(core_pages)):
+                recorded = data  # the record still describes this store
+    if recorded is not None:
+        split_test = list(recorded["split"]["test"])
+        split_train = list(recorded["split"]["train"])
+        split_source = "recorded"  # the record is a record, not an input
+        # The recorded FORCED-TRAIN set is re-applied on top: a page the
+        # gold owns stays a train page even if a later run sees a
+        # different draw (the union grows, it never shrinks -- a page can
+        # leave the core, but it cannot come back as test material). Only
+        # CORE pages join the split's sides -- a gold page outside the core
+        # set is not core material at all.
+        forced_train = (set(recorded["split"].get("forced_train", []))
+                        | set(forced_train_pages)) & set(core_pages)
+    else:
+        ordered = list(core_pages)
+        random.Random(f"{seed}-{series}-core-split").shuffle(ordered)
+        n_test = round((1.0 - train_share) * len(ordered))
+        split_test, split_train = ordered[:n_test], ordered[n_test:]
+        split_source = "derived"
+        forced_train = set(forced_train_pages) & set(core_pages)
+    # A page the gold/probes already own is TRAIN material (its labels are
+    # adjudicated and the student trains on them): dataset_gates D4 counts
+    # a gold page as a train page, so leaving it on the core test side
+    # would FAIL the leak gate -- jjk's gold600/pilot/probes sit on 13 of
+    # its biggest pages, exactly the pages the core stratum wants. It moves
+    # to the train side of the split instead of being dropped, so the core
+    # stratum keeps those pages in the pool.
+    moved = sorted(set(split_test) & forced_train)
+    split_test = [p for p in split_test if p not in forced_train]
+    split_train = sorted(set(split_train) | forced_train)
+    # U-WP4e (2026-10-05): a page ALREADY recorded as a test page (the sticky
+    # holdout) stays test material when a new seed rule pulls it into the
+    # core: otherwise the emit's own leak assertion fires (opm: 14 test-pool
+    # pages landed on core train). Gold pages keep winning the train side.
+    forced_test = (set(forced_test_pages) & set(core_pages)) - forced_train
+    split_train = [p for p in split_train if p not in forced_test]
+    split_test = sorted(set(split_test) | forced_test)
+    train_set, test_set = set(split_train), set(split_test)
+
+    pages = {}
+    for t in core_pages:
+        pages[t] = {
+            "role": "seed" if t in seed_set else "hop1",
+            "page_type": ptypes.get(t, "<none>"),
+            "word_count": wc.get(t, 0),
+            "split": "train" if t in train_set else "test",
+        }
+        if t not in seed_set:
+            pages[t]["linked_by_seeds"] = dict(hop1).get(t, 0)
+    return {
+        "series": series,
+        "seed": seed,
+        "read_pages": len(read_pages),
+        "seed_rule": {
+            "order": "documents.word_count desc, title asc",
+            "pct": seed_pct, "min": seed_min, "max": seed_max,
+            "target": n_seed,
+            "note": ("the production read set (U-WP4c universe), not the "
+                     "WP6b read pages (>= 1 event row): six of the ten "
+                     "wikis have no teacher rows"),
+        },
+        "hop1_rule": {
+            "source": ("the store's pre-resolved links (chunk_nodes: a "
+                       "seed page's chunks -> the nodes they name -> the "
+                       "nodes' documents)"),
+            "per_seed": hop1_per_seed, "target": hop1_target,
+            "page_type_cap": type_cap, "page_type_cap_n": type_cap_n,
+            "candidates": len(cands), "skipped_over_cap": hop1_capped,
+            "page_type_mix": dict(Counter(ptypes.get(t, "<none>")
+                                          for t in hop1_titles)),
+            "rank": "seeds-linking desc, word_count desc, title asc",
+        },
+        "seeds": [{"page": t, "word_count": wc.get(t, 0),
+                   "page_type": ptypes.get(t, "<none>")} for t in seeds],
+        "hop1": [{"page": t, "linked_by_seeds": n,
+                  "word_count": wc.get(t, 0),
+                  "page_type": ptypes.get(t, "<none>")} for t, n in hop1],
+        "split": {"train": split_train, "test": split_test,
+                  "source": split_source, "train_share": train_share,
+                  "forced_train": sorted(forced_train & set(core_pages)),
+                  "forced_train_reason": ("pages the series' gold/probes "
+                                          "already own are train material "
+                                          "(dataset_gates D4 counts a gold "
+                                          "page as a train page)")},
+        "counts": {"core_pages": len(core_pages), "seeds": len(seeds),
+                   "hop1": len(hop1), "train_pages": len(split_train),
+                   "test_pages": len(split_test)},
+        "pages": pages,
+    }
+
+
+def _pct(values, q):
+    """The q-th percentile of a SORTED value list (nearest-rank, so the
+    reported numbers are integers off the measured distribution)."""
+    if not values:
+        return None
+    idx = min(len(values) - 1, max(0, round(q * (len(values) - 1))))
+    return values[idx]
+
+
+def format_census(store, windows, uni, core, ptypes):
+    """U-WP4d: the FORMAT CENSUS of the core stratum's SEEDS -- what the
+    biggest pages look like, so the labeler's per-wiki notes can name the
+    shapes production actually reads. Measured on the seeds' READ
+    passages (the universe's own entries for those pages), never on the
+    whole store: the plan asks what the seeds are made of.
+
+    - section-heading frequency (the read passage labels, `lead` and the
+      `fact:<key>` values included -- marvel's fact passages are where 66
+      pct of its teacher rows live, U-WP4b);
+    - list-vs-prose share: on the RAW section text, because
+      `strip_markup` removes the bullet prefixes (wikitext's
+      `_LIST_PREFIX`), so the store text is the only place the list
+      structure is still visible;
+    - fact-passage share;
+    - window size distribution (chars);
+    - sub-topic counts (the builder's distinct `sub` per seed page).
+    """
+    seeds = [s["page"] for s in core["seeds"]]
+    seed_set = set(seeds)
+    passages = [(page, label, text) for page, label, text in uni
+                if page in seed_set]
+    labels = Counter(label for _p, label, _t in passages)
+    fact_n = sum(1 for _p, label, _t in passages
+                 if label.startswith("fact:"))
+    lead_n = labels.get("lead", 0)
+
+    seed_windows = [w for w in windows if w.page in seed_set]
+    sizes = sorted(len(w.text) for w in seed_windows)
+    subs = Counter()
+    seen_sub = {}
+    for w in seed_windows:
+        key = (w.page, w.sub)
+        if key in seen_sub:
+            continue
+        seen_sub[key] = True
+        subs[w.page] += 1
+
+    # The seeds' own titles come out of `documents`, so an exact BINARY
+    # IN-match resolves (no COLLATE NOCASE needed, no per-seed query).
+    marks, ids = "", []
+    if seeds:
+        marks = ",".join("?" * len(seeds))
+        ids = [int(row["id"]) for row in store.connection.execute(
+            f"SELECT id FROM documents WHERE title IN ({marks})", seeds)]
+    list_lines = prose_lines = 0
+    list_sections = 0
+    raw_sections = 0
+    if ids:
+        idmarks = ",".join("?" * len(ids))
+        for row in store.connection.execute(
+                "SELECT text FROM sections"
+                f" WHERE document_id IN ({idmarks})", ids):
+            text = row["text"] or ""
+            if not text.strip():
+                continue
+            raw_sections += 1
+            lines = [ln for ln in text.splitlines() if ln.strip()]
+            lst = [ln for ln in lines
+                   if ln.lstrip()[:1] in ("*", "#", ":", ";", "|")
+                   or ln.lstrip().startswith("{|")]
+            list_lines += len(lst)
+            prose_lines += len(lines) - len(lst)
+            if lst:
+                list_sections += 1
+    total_lines = list_lines + prose_lines
+    return {
+        "series": core["series"],
+        "seed": core["seed"],
+        "seeds": len(seeds),
+        "read_passages": len(passages),
+        "windows": len(seed_windows),
+        "section_heading_frequency": dict(labels.most_common()),
+        "distinct_headings": len(labels),
+        "lead_passages": lead_n,
+        "fact_passages": fact_n,
+        "fact_passage_share": round(fact_n / len(passages), 4)
+                              if passages else None,
+        "list_vs_prose": {
+            "raw_sections": raw_sections,
+            "sections_with_list_items": list_sections,
+            "list_lines": list_lines,
+            "prose_lines": prose_lines,
+            "list_line_share": round(list_lines / total_lines, 4)
+                              if total_lines else None,
+            "note": ("measured on the RAW sections.text (the store's "
+                     "pre-strip markup): strip_markup removes the bullet "
+                     "prefixes, so the read passages cannot show list "
+                     "structure"),
+        },
+        "window_chars": {
+            "min": sizes[0] if sizes else None,
+            "p25": _pct(sizes, 0.25), "median": _pct(sizes, 0.5),
+            "p75": _pct(sizes, 0.75), "p90": _pct(sizes, 0.9),
+            "max": sizes[-1] if sizes else None,
+            "mean": round(sum(sizes) / len(sizes), 1) if sizes else None,
+        },
+        "sub_topics_per_seed_page": {
+            "min": min(subs.values()) if subs else None,
+            "median": _pct(sorted(subs.values()), 0.5),
+            "max": max(subs.values()) if subs else None,
+            "per_page": dict(subs),
+        },
+        "page_type_mix": dict(Counter(ptypes.get(p, "<none>")
+                                      for p in seeds)),
+        "note": ("U-WP4d (2026-10-04): the census of the CORE stratum's "
+                 "seeds (the biggest pages of the production read set) -- "
+                 "the shapes the labeler's per-wiki notes must name"),
+    }
+
+
+def core_fill(rng, page_seed, cand_by_page, need, per_page_max, verbs,
+              rare_x=RARE):
+    """U-WP4d: the core stratum's window fill -- "windows spread across
+    pages, cap per page". The same two-pass spread rule the test pool
+    uses (WP6b/U-WP4c): pass 1 takes exactly ONE window per page (so N
+    windows span ~N pages), pass 2 a second only while the page is under
+    the cap. The non-empty quota is the MEASURED share of the candidates
+    (rare x3 on that side, as every other read-stratified fill here), so
+    the core stratum keeps the pool's evidence discipline instead of
+    arriving at whatever the biggest pages happen to state."""
+    if need <= 0:
+        return []
+    ne_need = round(need * (sum(1 for ws in cand_by_page.values()
+                                for w in ws if w.id in verbs)
+                            / max(1, sum(len(ws) for ws
+                                         in cand_by_page.values()))))
+    em_need = need - ne_need
+    rare_w = lambda w: 3.0 if rare_x & verbs.get(w.id, set()) else 1.0
+    picks, alloc, used = [], {}, set()
+    pages = sorted(cand_by_page)
+    random.Random(page_seed).shuffle(pages)
+    for pass_no in (1, 2):
+        for page in pages:
+            if len(picks) >= need:
+                break
+            if pass_no == 1 and alloc.get(page, 0) >= 1:
+                continue
+            if pass_no > 1 and alloc.get(page, 0) >= per_page_max:
+                continue
+            ws = [w for w in cand_by_page[page] if w.id not in used]
+            if not ws:
+                continue
+            w = None
+            if ne_need > 0:
+                ne = [x for x in ws if x.id in verbs]
+                if ne:
+                    w = es_page_pick(rng, ne, rare_w)
+                    ne_need -= 1
+            if w is None and em_need > 0:
+                em = [x for x in ws if x.id not in verbs]
+                if em:
+                    w = es_page_pick(rng, em)
+                    em_need -= 1
+            if w is not None:
+                picks.append(w)
+                used.add(w.id)
+                alloc[page] = alloc.get(page, 0) + 1
+    return picks
+
+
 def load_era_map(series):
     """U-WP4: the U-WP2 era stamp (series/<s>/training/era.json):
     {page: {year, era, source, [story_year], sections{title: year}}}.
@@ -693,7 +1138,7 @@ def window_era(w, era_map):
     return rec["era"]
 
 
-def uwp4_cells(mode, n_total):
+def uwp4_cells(mode, n_total, core_share=None):
     """U-WP4: the pool's cell list [(cell, quota, kind)] summing to
     `n_total`, in fill order (deterministic). `kind` is the cell's
     sampling rule: `read`/`evidence` stratify at the measured cell
@@ -703,7 +1148,19 @@ def uwp4_cells(mode, n_total):
     eventish: the U-WP3 proxy 50/50 (the odd window to eventish).
     evidence (csm): the read pages at 50/50 of the pool (the odd one
     to read), the never-read half the proxy 50/50 (the odd one to
-    eventish)."""
+    eventish).
+
+    U-WP4d (`core_share` set): the CORE cell leads the list and takes
+    that share of the total (the plan's ~40 pct), the mode's own cells
+    share the rest and scale from it. The core cell's `kind` is `read`
+    (it stratifies at its measured non-empty share with rare x3, like
+    every other evidence-bearing fill), so the biggest pages arrive
+    carrying the pool's evidence discipline, not whatever they happen
+    to state."""
+    if core_share is not None:
+        n_core = round(n_total * core_share)
+        return [("core", n_core, "read")] + uwp4_cells(
+            mode, n_total - n_core)
     if mode == "era":
         base, rem = divmod(n_total, 3)
         out = []
@@ -746,7 +1203,7 @@ def pool_line(i, w, extra=None):
 
 
 def write_holdout_json_merged(hj, series, pool, seed, test_pages, entry,
-                              note):
+                              note, own_unclaimed=False):
     """U-WP4: record the test pool's pages in the series' holdout,
     MERGED with earlier pools' entries (WP6b wrote one pool per file;
     a series' SECOND pool must keep the first pool's pages recorded,
@@ -780,7 +1237,21 @@ def write_holdout_json_merged(hj, series, pool, seed, test_pages, entry,
     # Canonical entry order (pool name), independent of which emit path
     # last re-merged -- the record's bytes are stable across paths.
     pools.sort(key=lambda e: e.get("pool") or "")
-    pages = sorted(old_pages | set(test_pages))
+    # U-WP4d: `own_unclaimed` = this entry's reservation is exactly the
+    # union members no OTHER entry claims (the core stratum's TEST side).
+    # The union then self-heals when the split changes: a page the new
+    # split calls core-TRAIN is released (it must be free to train, and a
+    # gold page must NOT sit in the holdout -- dataset_gates D4 counts a
+    # gold page as a train page), while every other pool's reservation
+    # stands. Deterministic: on a re-run the unclaimed set IS the current
+    # reservation, so nothing is released and the bytes are unchanged.
+    release = set()
+    if own_unclaimed:
+        claimed = set()
+        for e in pools:
+            claimed |= set(e.get("pages") or [])
+        release = (old_pages - claimed) - set(test_pages)
+    pages = sorted((old_pages - release) | set(test_pages))
     hj.parent.mkdir(parents=True, exist_ok=True)
     hj.write_text(
         json.dumps({"series": series, "count": len(pages), "pages": pages,
@@ -825,7 +1296,10 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
          stratify_read=None, stratify_unread=None,
          archive_suffix=".old-grid",
          era_thirds=False, undated_policy="exclude",
-         eventish_split=False, read_evidence=False, test_n=None):
+         eventish_split=False, read_evidence=False, test_n=None,
+         core_stratum_on=False, core_share=0.4, core_per_page_max=2,
+         core_hop1_per_seed=4, core_seed_pct=0.01, core_seed_min=20,
+         core_seed_max=200, core_type_cap=0.40, core_train_share=0.80):
     paths_root = ROOT / "series" / series
     db = paths_root / "facts.db"
     if not db.exists():
@@ -855,9 +1329,29 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
                      else ("evidence" if read_evidence
                            else ("eventish" if eventish_split else None)))
         if (test_pool or stratify_read is not None
-                or stratify_unread is not None or uwp4_mode):
+                or stratify_unread is not None or uwp4_mode
+                or core_stratum_on):
             read_pages = read_pages_set(store)
             ptypes = page_types(store)
+        # U-WP4d (2026-10-04): the CORE stratum (the biggest pages of the
+        # production read set + the pages they link to). It is computed on
+        # the U-WP4c universe's OWN pages -- the read set -- so it needs
+        # no extra scope query, and it is a pure function of (seed, store)
+        # except for the split, which is read back from its own record.
+        core, census = None, None
+        if core_stratum_on:
+            uni_pages = {p for p, _l, _t in uni}
+            core = core_stratum(
+                store, uni_pages, ptypes, seed, series,
+                seed_pct=core_seed_pct, seed_min=core_seed_min,
+                seed_max=core_seed_max, hop1_per_seed=core_hop1_per_seed,
+                type_cap=core_type_cap, train_share=core_train_share,
+                record_path=paths_root / "training" / "core_pages.json",
+                forced_train_pages=gold_record_pages(
+                    paths_root, gold_path, pilot_path),
+                forced_test_pages=holdout,
+            )
+            census = format_census(store, windows, uni, core, ptypes)
 
     holdout_windows = [w for w in windows if w.page in holdout]
     gold_windows = [w for w in windows if w.id in gold_ids]
@@ -871,6 +1365,42 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
         w for w in windows
         if w.page not in holdout and w.id not in gold_ids_all
     ]
+    # U-WP4d: the core TEST pages leave the train sampling universe as a
+    # SET, before the test pool is even drawn -- the plan's split is
+    # page-disjoint, so a core page that no test window happened to land
+    # on must still never train. The holdout json records the same set at
+    # the end of the run (so a LATER run excludes it without this line),
+    # and the exclusion here makes the current run leak-free too.
+    core_test_pages = set(core["split"]["test"]) if core else set()
+    core_train_pages = set(core["split"]["train"]) if core else set()
+    core_seed_set = {s["page"] for s in core["seeds"]} if core else set()
+    if core is not None and not holdout_json:
+        # The core TEST pages must be reserved for EVERY wiki, including
+        # one whose emit runs no test pool (jjk: its test side is the
+        # existing v1/blind holdout). The plan records them in
+        # holdout_pages.json, so the file is created here when the run has
+        # no --test-pool of its own to write it.
+        holdout_json = str(paths_root / "training" / "holdout_pages.json")
+    # The archive list is created HERE (not in the test-pool block): the
+    # core stratum archives the holdout record before this run's first
+    # write, which happens before the test pool is drawn.
+    archived = []
+    if core is not None and holdout_json:
+        # Supersede, don't salvage (the standing rule): the core stratum
+        # re-draws the test pool and re-merges the holdout with the core
+        # pages, so the pre-U-WP4d record is archived `*.pre-u4d` once,
+        # BEFORE the first write of this run.
+        hj = Path(holdout_json)
+        hj_arch = hj.with_name(hj.name + archive_suffix)
+        if hj.exists() and not hj_arch.exists():
+            shutil.copy2(hj, hj_arch)
+            archived.append(f"{hj.name} -> {hj_arch.name} (holdout record "
+                            f"before the core stratum)")
+    if core_test_pages:
+        sample_universe = [w for w in sample_universe
+                           if w.page not in core_test_pages]
+    # The core cell's share of the pools, or None (the pre-U-WP4d pools).
+    core_quota = core_share if core else None
 
     # U-WP4 (2026-10-04): the era mode reads the U-WP2 stamp once; the
     # cell assignment (both the test pool's and the train pools') is
@@ -882,11 +1412,22 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
             sys.exit(f"--era-thirds needs {paths_root / 'training' / 'era.json'} "
                      f"(run tools/train/era_stamp.py --series {series} first)")
 
-    def cell_of(w):
+    def cell_of(w, core_side=None):
         """U-WP4: the window's pool cell (the mode's stratum key), or
         None when the window is NOT samplable: marvel's undated pages
         (excluded from sampling, counted in the receipt) and any page
-        with no era stamp row (counted, never guessed)."""
+        with no era stamp row (counted, never guessed).
+
+        U-WP4d: a CORE-side page claims the `core` cell first (its own
+        split side -- train pages for a train pool, test pages for the
+        test pool), so the mode's cells below draw only the random 60 pct
+        and the core 40 pct is exactly the core pages. `core_side` is
+        "train"/"test"/None (None = no core split)."""
+        side = (core_side if core_side is not None
+                else ("train" if test_pool else None))
+        if core is not None and side and w.page in (
+                core_test_pages if side == "test" else core_train_pages):
+            return "core"
         if uwp4_mode == "era":
             era = window_era(w, era_map)
             if era is None or (era == "undated"
@@ -925,7 +1466,6 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
     test_picks, test_pages = [], set()
     test_read_picks, test_unread_picks = [], []
     read_nonempty_share = 0.0
-    archived = []
     # U-WP4 (2026-10-04, plan/UNIVERSAL_DATASET_PLAN.md): the universal
     # spread test pool -- the WP6b mechanism (seeded BEFORE the train
     # pools, recorded to --holdout-json, excluded from the train
@@ -1045,6 +1585,16 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
                 record_path.read_text(encoding="utf-8").splitlines()
                 if l.strip()
             ]
+            if core is not None and sticky_lines and not all(
+                    l.get("stratum") for l in sticky_lines):
+                # U-WP4d (2026-10-04): a PRE-core test pool is a DIFFERENT
+                # pool (no `stratum` field, no core windows), so the record
+                # is superseded -- the draw is rolled once here and the old
+                # file is archived `*.pre-u4d`. A core record re-derives
+                # below (the byte-identical re-emit). The old pages stay in
+                # the holdout union (the writer never drops a page from it),
+                # so nothing leaks back into a train pool.
+                sticky_lines = []
             if sticky_lines:
                 # The universe's own (page, label, window-text) index:
                 # the same texts + builder + gen that built the pool at
@@ -1090,8 +1640,8 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
             # The recorded strata, recomputed on the re-derived picks
             # (the receipt's numbers; the record's bytes unchanged).
             uwp4_test_strata = {
-                c: sum(1 for w in test_picks if cell_of(w) == c)
-                for c, _q, _k in uwp4_cells(uwp4_mode, test_n)
+                c: sum(1 for w in test_picks if cell_of(w, "test") == c)
+                for c, _q, _k in uwp4_cells(uwp4_mode, test_n, core_quota)
             }
             if holdout_json and not dry_run:
                 # U-WP4c: the json IS the record (the recorded entry +
@@ -1154,10 +1704,31 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
                                   if w.id not in gold_ids_all
                                   and w.page not in exclude]
 
-            cells_spec = uwp4_cells(uwp4_mode, test_n)
+            # U-WP4d: the core sides are decided by the SPLIT, not by the
+            # draw, so the candidate set is patched here rather than left
+            # to `exclude`: the core TEST pages stay candidates (they are
+            # recorded in the holdout by the end of this run, so a LATER
+            # run's `exclude` would starve the core cell) and the core
+            # TRAIN pages leave (a core page is on one side only -- the
+            # split is the page-disjoint rule, and the random cells must
+            # not draw a page the core stratum calls train).
+            if core is not None:
+                test_cand_universe = [
+                    w for w in test_cand_universe
+                    if w.page not in core_train_pages
+                    and w.page not in core_test_pages
+                ] + [w for w in windows
+                     if w.page in core_test_pages
+                     and w.id not in gold_ids_all]
+
+            # U-WP4d: the test pool's core cell draws the TEST side of the
+            # core split, at the same ~40 pct share as the train pools --
+            # the scorer reads the `stratum` field and reports the two
+            # sides separately (never one blended number).
+            cells_spec = uwp4_cells(uwp4_mode, test_n, core_quota)
             cell_windows = {c: [] for c, _q, _k in cells_spec}
             for w in test_cand_universe:
-                c = cell_of(w)
+                c = cell_of(w, "test")
                 if c is not None:
                     cell_windows[c].append(w)
             cell_by_page = {c: {} for c in cell_windows}
@@ -1190,6 +1761,15 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
             carry = 0
             for c, quota, k in cells_spec:
                 need = quota + carry
+                # U-WP4d: the core cell takes ONE window per core test page
+                # (the 80/20 split leaves few of them, and the plan's ~40 pct
+                # share cannot be met from them without doubling up pages
+                # -- which would break the pool's page-spread floor, the
+                # hard requirement the cascade below protects). Its
+                # deficit cascades to the random cells, so the pool total
+                # and the spread both hold; the receipt reports the actual
+                # core share per pool.
+                cell_max = 1 if c == "core" else test_per_page_max
                 ne_need = round(need * cell_share[c]) if k in ("read", "evidence") else 0
                 em_need = (need - ne_need) if k in ("read", "evidence") else need
                 c_pages = sorted({w.page for w in cell_windows[c]})
@@ -1215,7 +1795,7 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
                         if pass_no == 1:
                             if alloc.get(page, 0) >= 1:
                                 continue
-                        elif alloc.get(page, 0) >= test_per_page_max:
+                        elif alloc.get(page, 0) >= cell_max:
                             continue
                         w = None
                         if k in ("read", "evidence"):
@@ -1467,13 +2047,26 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
     # (mcu undated windows say `undated`) + the source documents.page_type;
     # proxy/evidence modes: the U-WP3 flag). None pre-U-WP4, so the old
     # lines stay byte-identical.
-    def line_extra(w):
+    def line_extra(w, side=None):
+        # U-WP4d: `stratum` marks the CORE side of every pool line (the
+        # plan: the scorer reads it and reports core vs random separately,
+        # never one blended number). `side` is the pool the line belongs to
+        # ("train"/"test"); it decides which side of the split counts as
+        # core, and a window on a core page of the OTHER side never lands
+        # in this pool at all.
+        extra = {}
+        if core is not None:
+            page_side = ("test" if w.page in core_test_pages
+                         else "train" if w.page in core_train_pages else None)
+            extra["stratum"] = ("core" if (page_side and page_side == side)
+                                else "random")
         if uwp4_mode == "era":
-            return {"era": window_era(w, era_map),
-                    "page_type": ptypes.get(w.page, "<none>")}
+            extra.update({"era": window_era(w, era_map),
+                          "page_type": ptypes.get(w.page, "<none>")})
+            return extra
         if uwp4_mode in ("eventish", "evidence"):
-            return {"eventish": is_eventish(w.text)}
-        return None
+            extra["eventish"] = is_eventish(w.text)
+        return extra or None
 
     taken = set()
     picks = {}
@@ -1524,14 +2117,27 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
             # same era's never-read side; the other proxy half), and a
             # deficit the chain cannot absorb fails the emit. The
             # receipt reports the nominal quotas and the actual.
-            cells_spec = uwp4_cells(uwp4_mode, n)
+            # U-WP4d: the core cell leads (the plan's ~40 pct), the mode's
+            # own cells share the rest. The core cell is filled by
+            # `core_fill` (one window per page first, then the cap) --
+            # the plan asks for "windows spread across pages, cap per
+            # page", which the weighted pool draw below does not do.
+            cells_spec = uwp4_cells(uwp4_mode, n, core_quota)
             got_cells = {}
             carry = 0
             for c, quota, k in cells_spec:
                 need = quota + carry
                 cands = [w for w in sample_universe
-                         if cell_of(w) == c and w.id not in taken]
-                if k in ("read", "evidence"):
+                         if cell_of(w, "train") == c and w.id not in taken]
+                if c == "core":
+                    by_page = {}
+                    for w in cands:
+                        by_page.setdefault(w.page, []).append(w)
+                    got = core_fill(
+                        random.Random(f"{seed}-{pool}-{c}"),
+                        f"{seed}-{pool}-{c}-pages", by_page, need,
+                        core_per_page_max, verbs)
+                elif k in ("read", "evidence"):
                     # The cell's non-empty share, measured on THIS
                     # final train universe (post test-page exclusion
                     # when a test pool ran) -- the WP6b rule.
@@ -1596,23 +2202,56 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
             # Pool k draws from what pools 1..k-1 left: the old pools
             # were disjoint (0 shared ids), and 15k windows need no
             # recycling.
-            cand_nonempty = [w for w in nonempty if w.id not in taken]
-            cand_empty = [w for w in empty if w.id not in taken]
+            # U-WP4d: with the core stratum on, this plain branch (the jjk
+            # pools run no strata mode) takes its ~40 pct core share FIRST
+            # -- the same spread/cap fill, the same evidence share -- and
+            # the random remainder is stratified at the empty share
+            # RE-measured on what is left, so the pool's total and its
+            # mix stay measured, never carried over.
+            got_core = []
+            if core is not None:
+                core_cand = {}
+                for w in sample_universe:
+                    if w.page in core_train_pages and w.id not in taken:
+                        core_cand.setdefault(w.page, []).append(w)
+                got_core = core_fill(
+                    random.Random(f"{seed}-{pool}-core"),
+                    f"{seed}-{pool}-core-pages", core_cand,
+                    round(n * core_share), core_per_page_max, verbs)
+                taken.update(w.id for w in got_core)
+            # The random remainder draws NON-core pages only (the uwp4 cells
+            # get this from `cell_of`): a window on a core page belongs to
+            # the core stratum, or the plan's ~40 pct share would drift up
+            # with the core set's size (measured 2026-10-04: 77 pct on jjk).
+            cand_nonempty = [w for w in nonempty
+                             if w.id not in taken
+                             and (core is None
+                                  or w.page not in core_train_pages)]
+            cand_empty = [w for w in empty
+                          if w.id not in taken
+                          and (core is None
+                               or w.page not in core_train_pages)]
+            n_rand = n - len(got_core)
+            share_rand = ((len(cand_empty)
+                           / (len(cand_nonempty) + len(cand_empty)))
+                          if (cand_nonempty or cand_empty) else 0.0)
             got_nonempty = sample_pool(
-                pool_rng, cand_nonempty, min(n_nonempty, len(cand_nonempty)),
+                pool_rng, cand_nonempty,
+                min(n_rand - round(n_rand * share_rand), len(cand_nonempty)),
                 weights=lambda w: 3.0 if RARE & verbs.get(w.id, set()) else 1.0,
             )
             got_empty = sample_pool(
-                pool_rng, cand_empty, min(n_empty, len(cand_empty)),
+                pool_rng, cand_empty,
+                min(n_rand - len(got_nonempty), len(cand_empty)),
             )
-            picked = (got_nonempty + got_empty)
+            picked = (got_core + got_nonempty + got_empty)
         pool_rng.shuffle(picked)  # presentation order: no empty block at the tail
         taken.update(w.id for w in picked)
         picks[pool] = picked
 
         # Display-only ordinals (the id is the identity, the n is a
         # per-file sort key -- review 4).
-        lines = [pool_line(i, w, line_extra(w))
+        lines = [pool_line(i, w, line_extra(w, "train"))
                  for i, w in enumerate(picked)]
         if not dry_run:
             pools_dir.mkdir(parents=True, exist_ok=True)
@@ -1630,7 +2269,7 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
             # rare for the read/evidence cells), the era or eventish
             # mix, the distinct pages.
             strata_rec = {}
-            for c, q_nom, k in uwp4_cells(uwp4_mode, n):
+            for c, q_nom, k in uwp4_cells(uwp4_mode, n, core_quota):
                 ws = uwp4_pool_strata[pool][c]
                 strata_rec[c] = {
                     "windows": len(ws),
@@ -1641,6 +2280,17 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
                                  if w.id in verbs and RARE & verbs[w.id])
                              if k in ("read", "evidence") else None),
                 }
+                if uwp4_mode == "era":
+                    # The era mix PER cell (the Marvel franchise): the core
+                    # cell is era-blind by design (the plan puts the
+                    # biggest pages in the pool regardless of era), so the
+                    # receipt must show which eras the core brought in.
+                    strata_rec[c]["era_mix"] = dict(Counter(
+                        window_era(w, era_map) for w in ws))
+                elif c == "core":
+                    strata_rec[c]["core_roles"] = dict(Counter(
+                        "seed" if w.page in core_seed_set else "hop1"
+                        for w in ws))
             rec = {
                 "windows": len(picked),
                 "strata": strata_rec,
@@ -1682,8 +2332,10 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
         else:
             receipt["pools"][pool] = {
                 "windows": len(picked),
-                "nonempty": len(got_nonempty),
-                "empty": len(got_empty),
+                "nonempty": len(got_nonempty) + sum(
+                    1 for w in got_core if w.id in verbs),
+                "empty": len(got_empty) + sum(
+                    1 for w in got_core if w.id not in verbs),
                 "rare_windows": sum(
                     1 for w in got_nonempty if RARE & verbs.get(w.id, set())
                 ),
@@ -1691,6 +2343,22 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
             }
 
     assert_pool_invariants(picks, holdout, gold_ids_all)
+    if core is not None:
+        # U-WP4d: the core split is page-disjoint BEFORE sampling, so a
+        # core test page in a train pool is a leak in the split itself --
+        # assert it loudly rather than let a labeled pool teach on a page
+        # the core test set owns.
+        for name, ws in picks.items():
+            leaked = {w.page for w in ws} & core_test_pages
+            if leaked:
+                sys.exit(f"assertion: train pool {name} holds {len(leaked)} "
+                         f"CORE TEST page(s) (e.g. {sorted(leaked)[:3]})")
+        if test_pool:
+            wrong_side = {w.page for w in test_picks} & core_train_pages
+            if wrong_side:
+                sys.exit(f"assertion: test pool {test_pool} holds "
+                         f"{len(wrong_side)} CORE TRAIN page(s) (e.g. "
+                         f"{sorted(wrong_side)[:3]})")
 
     # WP6: the test pool file (same line shape). It is EXEMPT from the
     # holdout/gold checks -- its pages ARE the recorded holdout -- but is
@@ -1707,7 +2375,7 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
                 sys.exit(f"assertion: test pool {test_pool} shares "
                          f"{len(shared)} window id(s) with train pool "
                          f"{name} (e.g. {sorted(shared)[:3]})")
-        t_lines = [pool_line(i, w, line_extra(w))
+        t_lines = [pool_line(i, w, line_extra(w, "test"))
              for i, w in enumerate(test_picks)]
         if not dry_run:
             pools_dir.mkdir(parents=True, exist_ok=True)
@@ -1725,10 +2393,11 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
             # rare for the read/evidence cells) + the era / eventish
             # mix + the page spread (the per-page cap is global across
             # cells).
-            t_cell_ws = {c: [w for w in test_picks if cell_of(w) == c]
-                         for c, _q, _k in uwp4_cells(uwp4_mode, test_n)}
+            t_cell_ws = {c: [w for w in test_picks if cell_of(w, "test") == c]
+                         for c, _q, _k in uwp4_cells(uwp4_mode, test_n,
+                                                      core_quota)}
             t_strata = {}
-            for c, q_nom, k in uwp4_cells(uwp4_mode, test_n):
+            for c, q_nom, k in uwp4_cells(uwp4_mode, test_n, core_quota):
                 ws = t_cell_ws[c]
                 t_strata[c] = {
                     "windows": len(ws),
@@ -1808,6 +2477,144 @@ def emit(series, pools, n, seed, dry_run, do_archive, out_dir=None,
 
     if era_receipt:
         receipt["era"] = era_receipt
+
+    # ---- U-WP4d: the core stratum's receipt ---------------------------
+    if core is not None:
+        def coverage(ws):
+            """What a set of windows covers: the pages, their page types
+            and their section headings (the plan's coverage receipt)."""
+            pages = {w.page for w in ws}
+            return {
+                "windows": len(ws),
+                "pages": len(pages),
+                "page_types": len({ptypes.get(p, "<none>") for p in pages}),
+                "section_headings": len({w.section for w in ws}),
+                "page_type_mix": dict(Counter(ptypes.get(p, "<none>")
+                                              for p in pages).most_common()),
+                "top_headings": [h for h, _n in Counter(
+                    w.section for w in ws).most_common(8)],
+            }
+        # WITH vs WITHOUT the core stratum, measured on the pools this run
+        # emitted: the random 60 pct alone is the pool without the core
+        # stratum, and the archived `*.pre-u4d` file (when present) is the
+        # pool as it stood before -- both are real numbers, never estimates.
+        cov = {}
+        for name, ws in list(picks.items()) + ([(test_pool, test_picks)]
+                                               if test_pool else []):
+            rnd = [w for w in ws
+                   if w.page not in core_train_pages
+                   and w.page not in core_test_pages]
+            cov[name] = {"with_core": coverage(ws),
+                         "without_core": coverage(rnd)}
+            pre = pools_dir / f"{name}_windows.jsonl{archive_suffix}"
+            if pre.is_file():
+                pre_rows = [json.loads(l) for l in
+                            pre.read_text(encoding="utf-8").splitlines()
+                            if l.strip()]
+                cov[name]["pre_u4d_pool"] = coverage(
+                    [w for w in windows
+                     if w.id in {r["id"] for r in pre_rows}])
+        core_rec = {
+            "counts": core["counts"],
+            "seed_rule": core["seed_rule"],
+            "hop1_rule": core["hop1_rule"],
+            "split": {"train_pages": len(core_train_pages),
+                      "test_pages": len(core_test_pages),
+                      "source": core["split"]["source"],
+                      "train_share": core["split"]["train_share"],
+                      "forced_train_gold_pages": len(
+                          core["split"].get("forced_train", [])),
+                      "core_train_pages_already_in_holdout": len(
+                          core_train_pages & holdout)},
+            "pool_share_nominal": core_quota,
+            "per_page_max": core_per_page_max,
+            "core_pages_json": str(paths_root / "training" / "core_pages.json"),
+            "format_census_json": str(paths_root / "training"
+                                      / "format_census.json"),
+            "coverage": cov,
+            "census": {
+                "read_passages": census["read_passages"],
+                "distinct_headings": census["distinct_headings"],
+                "top_headings": list(census["section_heading_frequency"]
+                                     .items())[:8],
+                "fact_passage_share": census["fact_passage_share"],
+                "list_line_share": census["list_vs_prose"]["list_line_share"],
+                "window_chars": census["window_chars"],
+                "sub_topics_per_seed_page": {
+                    k: v for k, v in
+                    census["sub_topics_per_seed_page"].items()
+                    if k != "per_page"},
+                "page_type_mix": census["page_type_mix"],
+            },
+            "top_seeds": [s["page"] for s in core["seeds"][:10]],
+            "top_hop1": [h["page"] for h in core["hop1"][:10]],
+        }
+        for name, ws in picks.items():
+            n_core = sum(1 for w in ws if w.page in core_train_pages)
+            rec = receipt["pools"].get(name)
+            if rec is not None:
+                rec["core"] = {
+                    "windows": n_core,
+                    "pages": len({w.page for w in ws
+                                  if w.page in core_train_pages}),
+                    "share": round(n_core / len(ws), 4) if ws else None,
+                    "roles": dict(Counter(
+                        "seed" if w.page in core_seed_set else "hop1"
+                        for w in ws if w.page in core_train_pages)),
+                }
+        if test_pool:
+            n_core_t = sum(1 for w in test_picks if w.page in core_test_pages)
+            rec = receipt["test_pool"]
+            if rec:
+                rec["core"] = {
+                    "windows": n_core_t,
+                    "pages": len({w.page for w in test_picks
+                                  if w.page in core_test_pages}),
+                    "share": (round(n_core_t / len(test_picks), 4)
+                              if test_picks else None),
+                }
+        receipt["core"] = core_rec
+        # The core TEST pages are reserved in the series' holdout, so every
+        # LATER run keeps them out of any pool without this rule. The merge
+        # replaces this entry only (the earlier pools' entries stay), and
+        # the same bytes come out on a re-run.
+        if holdout_json and not dry_run:
+            core_entry_name = f"{series}_core_test"
+            pages_now = write_holdout_json_merged(
+                Path(holdout_json), series, core_entry_name, seed,
+                core_test_pages,
+                {"pool": core_entry_name, "seed": seed,
+                 "stratum": "core", "role": "test split of the core stratum",
+                 "pages": sorted(core_test_pages),
+                 "windows": sum(1 for w in test_picks
+                                if w.page in core_test_pages)},
+                note=("U-WP4d (2026-10-04, tools/train/emit_windows.py): "
+                      "the core stratum's TEST pages (the 80/20 split of the "
+                      "seeds + their hop-1 links, decided before any "
+                      "sampling, with the gold/probe pages forced to the "
+                      "train side). Reserved here so no pool ever trains on "
+                      "them; the other pools' entries are kept (merged, "
+                      "never clobbered) and a superseded core reservation "
+                      "is released (own_unclaimed)."),
+                own_unclaimed=True)
+            archived.append(f"holdout pages -> {Path(holdout_json).name} "
+                            f"({len(core_test_pages)} core test pages; "
+                            f"{len(pages_now)} total)")
+        if not dry_run:
+            cdir = paths_root / "training"
+            cdir.mkdir(parents=True, exist_ok=True)
+            (cdir / "core_pages.json").write_text(
+                json.dumps(core, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8")
+            (cdir / "format_census.json").write_text(
+                json.dumps(census, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8")
+            archived.append(f"core pages -> core_pages.json "
+                            f"({core['counts']['core_pages']} pages: "
+                            f"{core['counts']['seeds']} seeds + "
+                            f"{core['counts']['hop1']} hop-1)")
+            archived.append(f"format census -> format_census.json "
+                            f"({census['read_passages']} seed passages)")
 
     if do_archive and not dry_run and archive_suffix == ".old-grid":
         # The done-logs and pilot window files of the retired grid, the way
@@ -1922,6 +2729,38 @@ def main():
                     help="U-WP4: the test pool's total window count "
                          "(its strata scale from it: era thirds x 50/50, "
                          "eventish 50/50)")
+    ap.add_argument("--core-stratum", action="store_true",
+                    help="U-WP4d: add the CORE stratum (the owner's biggest "
+                         "pages + the pages they link to) to every pool: "
+                         "seeds = top read-set pages by word_count (top "
+                         "1 pct, 20..200), hop-1 = the read-set pages the "
+                         "seeds link to (capped per page_type), split 80/20 "
+                         "train/test BEFORE sampling, ~--core-share of every "
+                         "pool drawn from the core pages, the pool lines "
+                         "carry `stratum: core|random`, and the core records "
+                         "go to series/<s>/training/{core_pages,format_"
+                         "census}.json")
+    ap.add_argument("--core-share", type=float, default=0.4,
+                    help="U-WP4d: the core stratum's share of every pool "
+                         "(default 0.4 = the plan's ~40 pct; the mode's own "
+                         "cells take the rest)")
+    ap.add_argument("--core-per-page-max", type=int, default=2,
+                    help="U-WP4d: at most this many core windows per page "
+                         "(one-per-page pass first, as the test pools do)")
+    ap.add_argument("--core-hop1-per-seed", type=int, default=4,
+                    help="U-WP4d: hop-1 target = this many linked pages per "
+                         "seed (the page_type cap then trims the mix)")
+    ap.add_argument("--core-seed-pct", type=float, default=0.01,
+                    help="U-WP4d: seeds = this share of the read-set pages "
+                         "(floored/capped by --core-seed-min/max)")
+    ap.add_argument("--core-seed-min", type=int, default=20)
+    ap.add_argument("--core-seed-max", type=int, default=200)
+    ap.add_argument("--core-type-cap", type=float, default=0.40,
+                    help="U-WP4d: no hop-1 page_type above this share of the "
+                         "hop-1 set (the plan's 40 pct)")
+    ap.add_argument("--core-train-share", type=float, default=0.80,
+                    help="U-WP4d: the core pages' train share of the "
+                         "80/20 split (the rest joins the holdout)")
     a = ap.parse_args()
     # U-WP4: the modes are mutually exclusive (the Marvel franchise era
     # thirds vs the proxy 50/50 vs csm's read-evidence).
@@ -1958,6 +2797,12 @@ def main():
         era_thirds=a.era_thirds, undated_policy=a.undated_policy,
         eventish_split=a.eventish, read_evidence=a.read_evidence,
         test_n=a.test_n,
+        core_stratum_on=a.core_stratum, core_share=a.core_share,
+        core_per_page_max=a.core_per_page_max,
+        core_hop1_per_seed=a.core_hop1_per_seed,
+        core_seed_pct=a.core_seed_pct, core_seed_min=a.core_seed_min,
+        core_seed_max=a.core_seed_max, core_type_cap=a.core_type_cap,
+        core_train_share=a.core_train_share,
     )
     print(json.dumps(receipt, indent=2, ensure_ascii=False))
     return 0
