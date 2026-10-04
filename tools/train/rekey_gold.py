@@ -45,6 +45,7 @@ from scriptengine.ingest.windows import (  # noqa: E402
     quote_grid_span,
     quote_window,
 )
+from scriptengine.ingest.wikitext import strip_markup  # noqa: E402
 from scriptengine.stores.facts import FactStore  # noqa: E402
 
 
@@ -64,26 +65,32 @@ def rows_of(record):
         return None  # unparseable: refuse, never guess
 
 
-def grid_text_for(store, record):
-    """The grid the record's passage was cut from: its section's text, or
-    the page's lead when the record carries no section. None = the
-    source no longer exists (re-crawl), the record is unmapped."""
+def grid_texts_for(store, record):
+    """The grid texts the record's passage may have been cut from: the
+    page's lead when the record carries no section, or every same-titled
+    section's text in ordinal order when it does (the wiki has pages with
+    sections sharing a title, and the record was read from one of them).
+    Cleaned exactly the way emit_windows.universe builds its grid -- lead
+    through strip_markup, sections raw (the extractor reads section text
+    as stored; only the lead is markup-cleaned), so a re-keyed window id
+    is the builder's id for the universe's text, never for a different
+    cleaning. [] = the source no longer exists (re-crawl), the record is
+    unmapped."""
     page = (record.get("page") or "").strip()
     section = (record.get("section") or "").strip()
     if not section:
         row = store.connection.execute(
             "SELECT lead FROM documents WHERE title = ? COLLATE NOCASE", (page,)
         ).fetchone()
-        lead = (row["lead"] or "").strip() if row else ""
-        return lead or None
-    row = store.connection.execute(
+        lead = strip_markup((row["lead"] or "") if row else "").strip()
+        return [lead] if lead else []
+    rows = store.connection.execute(
         "SELECT s.text FROM sections s JOIN documents d ON s.document_id = d.id"
         " WHERE d.title = ? COLLATE NOCASE AND s.title = ? COLLATE NOCASE"
         " ORDER BY s.ordinal",
         (page, section),
-    ).fetchone()
-    text = (row["text"] or "").strip() if row else ""
-    return text or None
+    ).fetchall()
+    return [t for t in ((r["text"] or "").strip() for r in rows) if t]
 
 
 def rekey_record(record, store, grids):
@@ -108,22 +115,43 @@ def rekey_record(record, store, grids):
     page = (record.get("page") or "").strip()
     label = (record.get("section") or "").strip() or "lead"
     key = (page, label)
-    text = grid_text_for(store, record)
+    texts = grid_texts_for(store, record)
     passage = passage_of(record)
-    if text is None or not passage or rows_of(record) is None:
-        return [], "unmapped", 0, 0
-    if key not in grids:
-        grids[key] = build_windows(page, label, text, gen=CURRENT_GEN)
-    windows = grids[key]
-    if not windows:
+    rows = rows_of(record)
+    if not texts or not passage or rows is None:
         return [], "unmapped", 0, 0
 
-    rows = rows_of(record)
+    # Which same-titled section the record was read from: the one(s) whose
+    # text still carries the passage (the verbatim predicate's own folding).
+    # Usually one; [] = the source no longer says what it said (re-crawl),
+    # the record is unmapped.
+    hits = []
+    for text in texts:
+        wkey = (key[0], key[1], text)
+        if wkey not in grids:
+            grids[wkey] = build_windows(page, label, text, gen=CURRENT_GEN)
+        if not grids[wkey]:
+            continue
+        if quote_grid_span(text, passage) is not None:
+            hits.append((text, grids[wkey]))
+    if not hits:
+        return [], "unmapped", 0, 0
+    # Same passage in two same-titled sections: the record's rows locate
+    # where the record actually lived -- take the hit that keeps the most.
+    def kept_count(hit):
+        text, windows = hit
+        return sum(
+            1 for row in rows
+            if quote_window(page, label, text, str(row.get("quote") or "").strip(),
+                           windows=windows) is not None
+        )
+    text, windows = max(hits, key=kept_count) if len(hits) > 1 else hits[0]
     user_prefix = record["messages"][1]["content"].split("Passage:\n", 1)[0] + "Passage:\n"
 
     # Where the record's own passage sits: the new windows whose spans
-    # cover it (usually one, or several when a 4,000-char slice spans
-    # cuts).
+    # cover it. Usually one, or NONE when a 4,000-char slice straddles
+    # sub-topic cuts -- the rows still locate per window and the record
+    # re-expresses, it is not unmapped.
     span = quote_grid_span(text, passage)
     covering = [
         w for w in windows

@@ -62,6 +62,7 @@ import bisect
 import hashlib
 import re
 import unicodedata
+from collections.abc import Sequence
 from dataclasses import dataclass
 
 from scriptengine.index.chunker import (
@@ -124,10 +125,13 @@ class Window:
     ``sentence_content_hash`` list for that span -- the re-keyable
     invariant, and the exact-sentence attribution a stored row's
     ``quote_span`` resolves onto. ``text`` is the verbatim section slice
-    the model reads. ``id`` is stable within a generation: 16 hex, the
-    same shape as the old pool's, so a done-log keyed on the id re-keys
-    by re-running the builder, and ``n`` becomes display-only (ordinals
-    shift per page, ids do not).
+    the model reads. ``id`` is content-addressed (the window's own
+    ``hashes`` list is in the key: same-titled sections with different
+    text are distinct windows, identical text collapses to one) and
+    stable within a generation: 16 hex, the same shape as the old
+    pool's, so a done-log keyed on the id re-keys by re-running the
+    builder, and ``n`` becomes display-only (ordinals shift per page,
+    ids do not).
     """
 
     id: str
@@ -257,27 +261,47 @@ def section_subtopics(text: str) -> list[Subtopic]:
 
 
 def window_id(
-    gen: int, page: str, section: str, sub: int, s_start: int, s_end: int
+    gen: int,
+    page: str,
+    section: str,
+    sub: int,
+    s_start: int,
+    s_end: int,
+    hashes: Sequence[str],
 ) -> str:
-    """A window's identity, stable within a generation.
+    """A window's identity: content-addressed, stable within a generation.
 
-    ``sha256(gen|page|section|sub|s_start:s_end)[:16]`` -- 16 hex, the
-    old pool's shape, so done-logs keyed on the id survive the
-    supersede. The cross-generation invariant is the window's
-    ``hashes`` list, not the id: a rebuilt store re-keys windows the way
-    ``FactStore.remap_derived`` re-keys rows, by the sentence hashes
-    order-preservingly.
+    ``sha256(gen|page|section|sub|s_start:s_end|h1|h2|...)[ :16]`` --
+    16 hex, the old pool's shape, so done-logs keyed on the id survive
+    the supersede. The key carries the window's ``sentence_content_hash``
+    list (2026-10-04 fix): the key without content collided id-for-id
+    on same-titled sections -- the JJK universe had 7 such ids spanning
+    13 windows (7 pages; doc 545 alone has five "Cast" sections), and
+    in every collision the texts differ, so the emitter's id-dedup and
+    ``build_trainset.py``'s were silently dropping a distinct window.
+    Content-addressed, same-titled sections with different text get
+    distinct ids, an unchanged re-ingest keeps the id (same grid, same
+    hashes), and identical text collapses to one id (identical read =
+    identical answer, so the collapse is correct). The cross-generation
+    invariant is the window's ``hashes`` list, not the id: a rebuilt
+    store re-keys windows the way ``FactStore.remap_derived`` re-keys
+    rows, by the sentence hashes order-preservingly.
     """
-    key = f"{gen}|{page}|{section}|{sub}|{s_start}:{s_end}"
+    joined = "|".join(hashes)
+    key = f"{gen}|{page}|{section}|{sub}|{s_start}:{s_end}|{joined}"
     return hashlib.sha256(key.encode("utf-8")).hexdigest()[:16]
 
 
+# The default is CURRENT_GEN, not 1 (2026-10-04): CURRENT_GEN is 2 and
+# every engine caller passes gen= explicitly, so the old default of 1
+# could only fire in new tooling -- which would then build gen-1 ids
+# against the gen-2 store.
 def build_windows(
     page: str,
     section: str,
     text: str,
     *,
-    gen: int = 1,
+    gen: int = CURRENT_GEN,
     cap_chars: int = DEFAULT_CAP_CHARS,
     carry_chars: int = DEFAULT_CARRY_CHARS,
 ) -> list[Window]:
@@ -325,7 +349,7 @@ def build_windows(
             j += 1
         windows.append(
             Window(
-                id=window_id(gen, page, section, sub, i, j),
+                id=window_id(gen, page, section, sub, i, j, hashes[i : j + 1]),
                 gen=gen,
                 page=page,
                 section=section,

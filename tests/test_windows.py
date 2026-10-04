@@ -14,7 +14,10 @@ invariants the verdict stands on:
 * the carry: the next window re-reads the previous one's tail, so a
   quote of at most cap-carry chars that straddles a cut sits wholly in
   the next window;
-* ids are stable within a generation, 16 hex like the old pool's;
+* ids are content-addressed (the window's sentence-hash list is in the
+  key: same-titled sections with different text are distinct windows,
+  identical text collapses to one) and stable within a generation,
+  16 hex like the old pool's;
 * and the council's process gate: the builder run over the whole JJK
   store at zero LLM cost, reporting the window-count delta against the
   old character-sliced windows before the 300k-page scale-out is priced.
@@ -32,6 +35,7 @@ import pytest
 
 from scriptengine.ingest.abilities import _windows
 from scriptengine.ingest.windows import (
+    CURRENT_GEN,
     DEFAULT_CAP_CHARS,
     DEFAULT_CARRY_CHARS,
     Window,
@@ -69,6 +73,16 @@ def prose(n: int) -> str:
 def section_windows(n: int, **kw) -> tuple[str, list[Window]]:
     text = prose(n)
     return text, build_windows("Page One", "Abilities", text, **kw)
+
+
+def _cast_variant(brand: str) -> str:
+    """Same shape (same sentence count and lengths), different text: the
+    doc-545 "Cast" collision in miniature -- the spans (sub, s_start,
+    s_end) are identical across brands, only the content differs."""
+    return " ".join(
+        f"Member {k} of {brand} is a sorcerer of the Tokyo jujutsu branch."
+        for k in range(1, 41)
+    )
 
 
 # ── The grid is the index's grid ──────────────────────────────────────────
@@ -367,22 +381,26 @@ def test_empty_section_has_no_windows():
 
 
 def test_id_is_sixteen_hex_and_matches_the_spec():
-    """sha256(gen|page|section|sub|s_start:s_end)[:16] -- stable within a
-    generation, 16 hex like the old pool's id, so done-logs keyed on it
-    survive the supersede."""
-    wid = window_id(1, "Tsurugi Okkotsu", "Cursed Techniques", 0, 0, 4)
+    """sha256(gen|page|section|sub|s_start:s_end|h1|h2|...)[ :16] --
+    16 hex, content-addressed (the window's sentence-hash list is in
+    the key), so done-logs keyed on the id survive the supersede."""
+    h1, h2, h3 = "a1" * 32, "b2" * 32, "c3" * 32
+    wid = window_id(1, "Tsurugi Okkotsu", "Cursed Techniques", 0, 0, 4, (h1, h2, h3))
     assert re.fullmatch(r"[0-9a-f]{16}", wid)
-    key = "1|Tsurugi Okkotsu|Cursed Techniques|0|0:4"
+    key = f"1|Tsurugi Okkotsu|Cursed Techniques|0|0:4|{h1}|{h2}|{h3}"
     assert wid == hashlib.sha256(key.encode("utf-8")).hexdigest()[:16]
-    assert window_id(1, "Tsurugi Okkotsu", "Cursed Techniques", 0, 0, 4) == wid
-    # A different generation or span is a different id.
-    assert window_id(2, "Tsurugi Okkotsu", "Cursed Techniques", 0, 0, 4) != wid
-    assert window_id(1, "Tsurugi Okkotsu", "Cursed Techniques", 0, 0, 5) != wid
+    assert window_id(1, "Tsurugi Okkotsu", "Cursed Techniques", 0, 0, 4, (h1, h2, h3)) == wid
+    # A different generation, span, or content is a different id.
+    assert window_id(2, "Tsurugi Okkotsu", "Cursed Techniques", 0, 0, 4, (h1, h2, h3)) != wid
+    assert window_id(1, "Tsurugi Okkotsu", "Cursed Techniques", 0, 0, 5, (h1, h2, h3)) != wid
+    assert window_id(1, "Tsurugi Okkotsu", "Cursed Techniques", 0, 0, 4, (h1, h2)) != wid
 
 
 def test_ids_are_deterministic_per_generation():
-    text, windows = section_windows(40)
-    again = build_windows("Page One", "Abilities", text)
+    # gen=1 pinned explicitly: the default is CURRENT_GEN now, and the
+    # point of the test is that gen 1 and gen 2 build disjoint ids.
+    text, windows = section_windows(40, gen=1)
+    again = build_windows("Page One", "Abilities", text, gen=1)
     assert [w.id for w in windows] == [w.id for w in again]
     assert len({w.id for w in windows}) == len(windows)
     gen2 = build_windows("Page One", "Abilities", text, gen=2)
@@ -393,6 +411,49 @@ def test_ids_are_deterministic_per_generation():
     assert [w.s_end - w.s_start for w in windows] == [
         w.s_end - w.s_start for w in gen2
     ]
+
+
+def test_same_titled_sections_with_different_text_get_distinct_ids():
+    """The 2026-10-04 defect (doc 545's five "Cast" sections): the key
+    without content collided id-for-id on same-titled sections of one
+    page, and build_trainset.py's id-dedup silently dropped a distinct
+    window. The key now carries the window's sentence-hash list, so the
+    same (page, section, sub, span) with different text is a distinct
+    id."""
+    cast_a = build_windows("Doc 545", "Cast", _cast_variant("Ala"))
+    cast_b = build_windows("Doc 545", "Cast", _cast_variant("Alb"))
+    ids = [w.id for w in cast_a + cast_b]
+    assert len(set(ids)) == len(ids)
+    # The old key (without the hashes) really did collide here: the
+    # variants are the same length, so their spans match window for
+    # window and only the content separates the ids.
+    assert [(w.sub, w.s_start, w.s_end) for w in cast_a] == [
+        (w.sub, w.s_start, w.s_end) for w in cast_b
+    ]
+
+
+def test_identical_text_collapses_to_one_id():
+    """Identical read = identical answer: the same (page, section) text
+    builds to the same ids -- an unchanged re-ingest keeps its ids, and
+    a duplicate same-titled same-text section is one window in the
+    universe, not a phantom pair."""
+    text = _cast_variant("Ala")
+    first = build_windows("Doc 545", "Cast", text)
+    again = build_windows("Doc 545", "Cast", text)
+    assert [w.id for w in first] == [w.id for w in again]
+    assert len({w.id for w in first}) == len(first)
+
+
+def test_build_windows_defaults_to_current_gen():
+    """The old default of gen=1 was a footgun: CURRENT_GEN is 2 and
+    every engine caller passes gen= explicitly, so only new tooling
+    could build gen-1 ids against the gen-2 store. The default is
+    CURRENT_GEN."""
+    text = prose(10)
+    defaulted = build_windows("Page One", "Abilities", text)
+    explicit = build_windows("Page One", "Abilities", text, gen=CURRENT_GEN)
+    assert [w.id for w in defaulted] == [w.id for w in explicit]
+    assert all(w.gen == CURRENT_GEN for w in defaulted)
 
 
 # ── The quote resolver (the window-level G1's lookup) ─────────────────────

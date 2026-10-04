@@ -1,0 +1,96 @@
+scoring 19 set questions over opm…
+ 100% recall    75% prec  15/15  of canon  n=20   exact     Every Saitama technique
+ 100% recall    76% prec  25/25  of canon  n=33   exact     Every technique of Genos
+ 100% recall    64% prec  29/29  of canon  n=45   exact     Every technique of Garou
+ 100% recall   100% prec  11/11  of canon  n=11   partial   Every technique of Speed-o'-Sound Sonic
+ 100% recall    57% prec  13/13  of canon  n=23   partial   Every current S-Class hero
+ 100% recall   100% prec  5/5   of canon  n=5    exact     Every member of the Dark Matter Thieves
+ 100% recall   100% prec  3/3   of canon  n=3    partial   Every disciple of Atomic Samurai
+ 100% recall   100% prec  10/10  of canon  n=10   exact     Every member of the House of Evolution
+ 100% recall    45% prec  13/13  of canon  n=29   exact     Every ability of Saitama
+ 100% recall    30% prec  16/16  of canon  n=54   exact     Every ability of Genos
+ 100% recall    41% prec  23/23  of canon  n=56   exact     Every ability of Garou
+ 100% recall    58% prec  7/7   of canon  n=12   exact     Every ability of Tatsumaki
+ 100% recall    64% prec  9/9   of canon  n=14   exact     Every ability of Bang
+ 100% recall   100% prec  10/10  of canon  n=10   declared  Every named Serious Series technique Saitama u
+ 100% recall   100% prec  9/9   of canon  n=9    declared  Every major cyborg upgrade Genos has received 
+ 100% recall   100% prec  20/20  of canon  n=20   declared  Every named martial arts style Garou has maste
+ 100% recall   100% prec  7/7   of canon  n=7    declared  Every named psychic technique Tatsumaki uses i
+ 100% recall   100% prec  7/7   of canon  n=7    declared  Every named technique of Bang's Water Stream R
+ 100% recall   100% prec  4/4   of canon  n=4    declared  How many hero classes are in the Hero Associat
+  ok    Genos                                  Who is Saitama's disciple?
+  ok    Dr. Kuseno                             Who gave Genos his cyborg body?
+  ok    Blast                                  Who is the S-Class Rank 1 hero?
+  ok    Boros                                  Who was the leader of the Dark Matter Thieves?
+  ok    Genos                                  Who is Saitama's disciple in One Punch Man?
+  ok    A-Class Rank 39                        What is Saitama's current hero rank in One Pun
+  ok    Dr. Kuseno                             Who created Genos's cyborg body in One Punch M
+  ok    S-Class Rank 14                        What is Genos's hero rank in One Punch Man?
+  ok    Bang                                   Who was Garou's martial arts master in One Pun
+  ok    Dragon-level threat/God-level threat   What disaster level is Garou classified as in 
+  ok    Fubuki                                 Who is Tatsumaki's younger sister in One Punch
+  ok    S-Class Rank 2                         What is Tatsumaki's hero rank in One Punch Man
+  ok    Bomb                                   Who is Bang's older brother in One Punch Man?
+  ok    S-Class Rank 3                         What was Bang's former hero rank in One Punch 
+  ok    17 S-Class heroes                      How many S-Class heroes were there before the 
+  ok    38 members                             How many members are in the Blizzard Group in 
+  ok    Saitama/Genos/King/Bang/Fubuki         Who are the members of the Saitama Group in On
+  ok    Orochi/Psykos/Gyoro Gyoro/Royal Ripper Who are the executive members of the Monster A
+  ok    A-City                                 Where is the Hero Association headquarters loc
+  ok    Hero Association                       What is the name of the organization that mana
+diagnosing misses…
+
+==============================================================================
+0 missing canon items
+
+wrote /home/goblin/ScriptEngine/reports/2026-10-04-1218/canon_scores_diagnosis.json
+diagnosing intruders…
+
+==============================================================================
+48 intruders over 6 closed-set questions
+  prose row         29  (60%)
+  category page      9  (19%)
+  ownership edge     6  (12%)
+  heading            4  (8%)
+
+  single-source     44  (92%)
+  corroborated       4  (8%)
+  lead-level rows    3  (6%)
+
+worst questions
+    16 intruders    64% prec  [opm] Every technique of Garou  mostly 'Abilities and Powers / Influence from "God" / Supernatural Abilities'
+    10 intruders    56% prec  [opm] Every current S-Class hero
+     7 intruders    76% prec  [opm] Every technique of Genos  mostly 'Abilities and Powers / Fighting Style'
+     5 intruders    75% prec  [opm] Every Saitama technique  mostly 'Abilities and Powers / Fighting Style'
+     5 intruders    58% prec  [opm] Every ability of Tatsumaki  mostly 'Abilities and Powers / Physical Abilities'
+     5 intruders    64% prec  [opm] Every ability of Bang  mostly 'Abilities and Powers / Physical Abilities'
+
+sections supplying the most intruders
+     7  Abilities and Powers / Fighting Style
+     6  Abilities and Powers / Physical Abilities
+     4  Abilities and Powers / Influence from "God" / Supernatural Abilities
+     3  Abilities and Powers / Influence from "God" / Fighting Style
+     2  Garou
+     2  Abilities and Powers / Human / Fighting Style
+     1  Abilities and Powers / Supernatural Abilities
+     1  Abilities and Powers / Cyborg Modifications / List of Upgrades
+     1  Abilities and Powers / Cyborg Modifications
+     1  Abilities and Powers / Influence from "God"
+     1  Bang
+
+wrote /home/goblin/ScriptEngine/reports/2026-10-04-1218/canon_scores_intruders.json
+
+wrote /home/goblin/ScriptEngine/reports/2026-10-04-1218/REPORT.md
+               Canon run: 2026-10-04-1218                
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┓
+┃                                    ┃                  ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━┩
+│ answered exactly right             │    10/16 (62.5%) │
+│ canon items recovered              │ 236/236 (100.0%) │
+│ precision, closed sets             │ 79.0% over 16/19 │
+│ questions at recall 0              │             0/19 │
+│ confident and wrong                │                0 │
+│ fact answers present in the bundle │            20/20 │
+└────────────────────────────────────┴──────────────────┘
+
+/home/goblin/ScriptEngine/reports/2026-10-04-1218/REPORT.md

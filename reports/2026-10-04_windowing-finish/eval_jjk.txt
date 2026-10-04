@@ -1,0 +1,29 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 27141.53it/s]
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 24103.08it/s]
+[3m      Retrieval eval: jjk       [0m
+┏━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓
+┃[1m [0m[1mkind       [0m[1m [0m┃[1m [0m[1mpassed[0m[1m [0m┃[1m [0m[1mscore[0m[1m [0m┃
+┡━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩
+│ alias       │    2/2 │  [32m100%[0m │
+│ appearance  │    1/1 │  [32m100%[0m │
+│ fact        │    6/6 │  [32m100%[0m │
+│ history     │    1/1 │  [32m100%[0m │
+│ lexical     │    3/3 │  [32m100%[0m │
+│ multihop    │    3/3 │  [32m100%[0m │
+│ narrative   │    2/2 │  [32m100%[0m │
+│ overview    │    1/1 │  [32m100%[0m │
+│ personality │    3/3 │  [32m100%[0m │
+│ roster      │    2/2 │  [32m100%[0m │
+│ semantic    │    5/5 │  [32m100%[0m │
+│ sourcing    │    1/1 │  [32m100%[0m │
+│ trivia      │    1/1 │  [32m100%[0m │
+└─────────────┴────────┴───────┘
+
+[1;36m31[0m[1m/[0m[1;36m31[0m [1m([0m[1;36m100[0m%[1m)[0m   report: [35m/home/goblin/ScriptEngine/series/jjk/audit/[0m[95meval.json[0m
+Exception ignored in: <function QdrantClient.__del__ at 0x7de499d45800>
+Traceback (most recent call last):
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/qdrant_client/qdrant_client.py", line 169, in __del__
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/qdrant_client/qdrant_client.py", line 178, in close
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/qdrant_client/local/qdrant_local.py", line 108, in close
+ImportError: sys.meta_path is None, Python is likely shutting down
