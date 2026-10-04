@@ -1,0 +1,253 @@
+#!/usr/bin/env python3
+"""Drafter v2 — the guideline APPLIED, not piled into one prompt
+(plan/FLAWLESS_LABELING_PLAN.md section 6b, owner-approved 2026-10-05):
+
+1. show, don't tell: the k worked examples closest to THIS window's wording
+   are retrieved from the example bank (leave-page-out: a window never sees
+   an example from its own page);
+2. decompose: the model reads the window sentence by sentence — done or only
+   attempted/planned? who? to whom? which verb? — under guideline A-G;
+3. a separate missed-event pass (recall): the listed rows are shown back and
+   only events NOT yet listed are asked for;
+4. mechanical row checks, no model: verbatim quote, verb in the inventory,
+   shape (objects), unnamed-class ends, group ends split, ends that resolve
+   to a technique/item/chapter page dropped, per-window dedup.
+
+Any OpenAI-compatible server (ninfer :18081 by default).
+
+    python tools/train/draft_v2.py --data IN.jsonl --out PRED.jsonl
+        [--url ...] [--model ...] [--k 6] [--workers 4] [--no-missed-pass]
+        [--no-template-kwargs] [--series jjk]
+"""
+import argparse
+import json
+import math
+import re
+import sys
+import urllib.request
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "tools" / "train"))
+GUIDE = (ROOT / "plan" / "EVENT_ANNOTATION_GUIDELINE.md").read_text(encoding="utf-8")
+GUIDE = GUIDE[GUIDE.index("## A."):]
+VERBS = ["fought", "defeated", "killed", "captured", "escaped", "saved", "betrayed",
+         "sealed", "awakened", "met", "arrived", "departed"]
+NEEDS_OBJECT = set(VERBS) - {"awakened"}
+# Never an end (guideline B6, G.2): unnamed people, crowds, pronouns.
+CLASS_WORDS = re.compile(
+    r"^(the |a |an |some |several |many |all |two |three |four |numerous )?"
+    r"(civilians?|people|humans?|transfigured humans?|higher-?ups|curses?|cursed spirits?|"
+    r"sorcerers?|soldiers?|members?|opponents?|enemies|guards?|lookouts?|players?|"
+    r"students?|others?|everyone|them|they|he|she|him|her|it|both sides|the two|the three|"
+    r"national governments?|allies)$", re.I)
+
+SYSTEM = """You are a meticulous event annotator for fiction-wiki passages. You label ONE window. Precision and completeness matter equally: every event the window states, and nothing it does not state.
+
+Follow the annotation guideline below exactly, especially section G (v2), which lists the phrasings that ARE and are NOT each verb, the end rules and the shape rules.
+
+METHOD — do this in your reasoning before answering:
+1. Split the window into sentences. For EVERY sentence, ask:
+   a. Is an action stated as DONE? (Not planned, intended, attempted-and-not-made, hypothetical, negated, threatened, or only asked about.) An attack that was MADE counts even if it was blocked, dodged or failed.
+   b. Who does it, and to whom? Resolve pronouns only inside this window; use the name the window gives; split groups into one row per named member.
+   c. Which verb? Use the G.1 table and the decision order (killed > defeated > fought; write fought too when the fight is stated separately).
+2. Check each candidate row against G.2 (ends), G.3 (window) and G.4 (shape). Drop any row that fails.
+3. Re-read the whole window once more looking ONLY for events you have not listed (arrivals to people = met, takes X away = saved, freezing/trapping = sealed, blocked or failed attacks = fought, pronoun defeats, named creatures acting).
+
+Allowed verbs (exactly these words): """ + ", ".join(VERBS) + """
+
+Answer with JSON only:
+{"events": [{"quote": "<verbatim from the window, at least 12 characters>", "subject": "...", "verb": "...", "object": "..." or null}]}
+If the window states no event, answer {"events": []}.
+
+GUIDELINE
+""" + GUIDE
+
+MISSED = """Below is a window you already labeled, followed by the rows you wrote. Re-read the window sentence by sentence and list ONLY events the window states that are NOT already in the rows — check especially: arrivals/appearances to people (met), "takes X away"/"intercepts"/"takes the hit" (saved), freezing or trapping (sealed), attacks that were blocked, dodged or failed (fought), pronoun defeats ("she beat him"), named creatures acting, group sentences that need one row per named member. Apply the same guideline. If nothing is missing, answer {"events": []}.
+
+ROWS ALREADY WRITTEN:
+%s
+
+THE WINDOW:
+%s"""
+
+
+def tokens(s):
+    return set(re.findall(r"[a-z]{3,}", s.lower()))
+
+
+class Bank:
+    def __init__(self, path):
+        self.items = [json.loads(l) for l in open(path)]
+        df = Counter(t for b in self.items for t in set(b["tokens"]))
+        n = len(self.items)
+        self.idf = {t: math.log((n + 1) / (c + 0.5)) for t, c in df.items()}
+
+    def nearest(self, window, page, k):
+        q = tokens(window)
+        scored = []
+        for b in self.items:
+            if b["page"] == page:
+                continue  # leave-page-out: never the window's own page
+            common = q & set(b["tokens"])
+            score = sum(self.idf.get(t, 0) for t in common) / (1 + math.sqrt(len(b["tokens"])))
+            scored.append((score, b))
+        scored.sort(key=lambda x: -x[0])
+        picked = [b for _, b in scored[:k]]
+        if not any(not b["rows"] for b in picked):  # always show one earned empty
+            empties = [b for s, b in scored if not b["rows"]]
+            if empties:
+                picked[-1] = empties[0]
+        return picked
+
+
+def render_examples(examples):
+    out = []
+    for i, b in enumerate(examples, 1):
+        rows = json.dumps({"events": b["rows"]}, ensure_ascii=False)
+        out.append(f"EXAMPLE {i} — Page: {b['page']} / Section: {b['section'] or '(lead)'}\n"
+                   f"Window:\n{b['window']}\nCorrect answer: {rows}\nWhy: {b['why']}")
+    return "\n\n".join(out)
+
+
+def parse(text):
+    body = re.sub(r"^```[a-z]*\n?|\n?```$", "", (text or "").strip()).strip()
+    s, e = body.find("{"), body.rfind("}")
+    if s < 0 or e <= s:
+        return None
+    try:
+        d = json.loads(body[s:e + 1])
+    except ValueError:
+        return None
+    ev = d.get("events") if isinstance(d, dict) else None
+    return [x for x in ev if isinstance(x, dict)] if isinstance(ev, list) else None
+
+
+def ask(url, model, system, user, template_kwargs, max_tokens=20480):
+    body = {"model": model, "temperature": 0.6, "top_p": 0.95, "max_tokens": max_tokens,
+            "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]}
+    if template_kwargs:
+        body["chat_template_kwargs"] = {"enable_thinking": True}
+    for _ in range(3):
+        try:
+            req = urllib.request.Request(url, json.dumps(body).encode(), {"Content-Type": "application/json"})
+            m = json.loads(urllib.request.urlopen(req, timeout=3600).read())["choices"][0]["message"]
+            ev = parse(m.get("content"))
+            if ev is not None:
+                return ev, m.get("content") or ""
+        except Exception:  # noqa: BLE001
+            pass
+    return None, ""
+
+
+def check_rows(rows, window, wiki, bad_end):
+    """Mechanical checks (no model). Returns (kept, dropped-with-reason)."""
+    kept, dropped, seen = [], [], set()
+    for r in rows:
+        s = str(r.get("subject") or "").strip()
+        v = str(r.get("verb") or "").strip().lower()
+        o = r.get("object")
+        o = None if o in (None, "", "null", "None") else str(o).strip()
+        q = str(r.get("quote") or "").strip()
+        why = None
+        if v not in VERBS:
+            why = "verb not in the inventory"
+        elif not q or q not in window:
+            why = "quote not verbatim in the window"
+        elif v in NEEDS_OBJECT and not o:
+            why = f"{v} needs an object"
+        elif v == "awakened" and o:
+            o = None
+        if why is None:
+            for end in ([s] + ([o] if o else [])):
+                if CLASS_WORDS.match(end) or not end:
+                    why = f"unnamed/class end: {end!r}"
+                    break
+                if wiki is not None:
+                    # Exact-name page only, and never `technique`: this wiki
+                    # files NAMED shikigami (Divine Dog: Totality, Great
+                    # Serpent) as technique pages, and those are allowed ends
+                    # (B5/G.2) -- techniques are left to the model.
+                    exact = [p for p in wiki.resolve(end) if p.lower() == end.lower()]
+                    label = wiki.label.get(exact[0]) if exact else None
+                    if label in (bad_end - {"technique"}):
+                        why = f"end is a {label} page"
+                        break
+        if why is None and v in ("arrived", "departed") and o and re.match(r"^the [a-z]", o):
+            why = "arrived/departed object is a description, not a named place"
+        if why:
+            dropped.append({**r, "why": why})
+            continue
+        # group ends: one row per named member (G.2)
+        subs = [x.strip() for x in re.split(r",\s*(?:and\s+)?|\s+and\s+", s) if x.strip()]
+        objs = [x.strip() for x in re.split(r",\s*(?:and\s+)?|\s+and\s+", o)] if o else [None]
+        for ss in subs:
+            for oo in objs:
+                key = (ss.lower(), v, (oo or "").lower())
+                sym = (( oo or "").lower(), v, ss.lower())
+                if key in seen or (v in ("fought", "met") and sym in seen):
+                    continue
+                seen.add(key)
+                kept.append({"quote": q, "subject": ss, "verb": v, "object": oo})
+    return kept, dropped
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--data", required=True)
+    ap.add_argument("--out", required=True)
+    ap.add_argument("--bank", default=str(ROOT / "series/jjk/training/gold_v5/example_bank.jsonl"))
+    ap.add_argument("--url", default="http://127.0.0.1:18081/v1/chat/completions")
+    ap.add_argument("--model", default="qwen3.6-35b-a3b-ninfer")
+    ap.add_argument("--k", type=int, default=6)
+    ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--no-missed-pass", action="store_true")
+    ap.add_argument("--no-template-kwargs", action="store_true")
+    ap.add_argument("--series", default="jjk")
+    a = ap.parse_args()
+
+    bank = Bank(a.bank)
+    try:
+        import verify_row_wiki as vrw  # the wiki resolver + BAD_END page types
+        wiki, bad_end = vrw.Wiki(str(ROOT / "series" / a.series / "facts.db")), vrw.BAD_END
+    except Exception as err:  # noqa: BLE001
+        print(f"wiki resolver unavailable ({err}); end page-type check off", file=sys.stderr)
+        wiki, bad_end = None, set()
+    rows = [json.loads(l) for l in open(a.data)]
+    done = set()
+    if Path(a.out).exists():
+        done = {json.loads(l)["id"] for l in open(a.out)}
+    rows = [r for r in rows if r["id"] not in done]
+    tk = not a.no_template_kwargs
+
+    def job(r):
+        user = r["messages"][1]["content"]
+        window = user.split("Passage:\n", 1)[1]
+        ex = bank.nearest(window, r.get("page", ""), a.k)
+        prompt = ("Worked examples (correct answers under the guideline):\n\n" + render_examples(ex)
+                  + "\n\nNOW LABEL THIS WINDOW:\n" + user)
+        ev, raw = ask(a.url, a.model, SYSTEM, prompt, tk)
+        ok = ev is not None
+        ev = ev or []
+        added = []
+        if ok and not a.no_missed_pass:
+            listed = json.dumps({"events": ev}, ensure_ascii=False)
+            more, _ = ask(a.url, a.model, SYSTEM, MISSED % (listed, user), tk)
+            added = more or []
+        kept, dropped = check_rows(ev + added, window, wiki, bad_end)
+        return {"id": r["id"], "events": kept, "ok": ok, "raw": raw,
+                "n_draft": len(ev), "n_missed_pass": len(added), "dropped": dropped,
+                "examples": [b["id"] for b in ex]}
+
+    with ThreadPoolExecutor(a.workers) as pool, open(a.out, "a") as f:
+        for n, res in enumerate(pool.map(job, rows), 1):
+            f.write(json.dumps(res, ensure_ascii=False) + "\n"); f.flush()
+            if n % 25 == 0:
+                print(f"{n}/{len(rows)}", flush=True)
+    print("done", len(rows))
+
+
+if __name__ == "__main__":
+    sys.exit(main())

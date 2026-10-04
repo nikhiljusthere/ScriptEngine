@@ -309,3 +309,22 @@ assistant-only label mask correct).
   `Ant-Man (film)`, `Avengers: Infinity War` lose `release`).
 - **MCU TV infoboxes date with a `dates` range param** (43 series) that no
   tier reads; they are dated via their episodes instead (41).
+
+### Trainer config research (2026-10-05, agent-reach; apply next session)
+- OOM root: full 248k-vocab logits. Fix options: TRL `SFTTrainer` default
+  `loss_type="chunked_nll"` (lm_head only on supervised positions, 256 at a
+  time; keep lm_head out of LoRA) — or our `completion_loss` (logits_to_keep,
+  committed fb44a123: 6 steps 500s -> 68s; residual OOM-retry warnings remain:
+  drop the `.float()` upcast / chunk the CE).
+- Load text-only: `AutoModelForCausalLM.from_pretrained(..., attn_implementation="sdpa")`
+  (qwen3_5 -> Qwen3_5ForCausalLM, skips model.visual.* and mtp.*).
+- Published LoRA: Unsloth r16/a16/lr2e-4/dropout 0; ms-swift r8/a32/lr1e-4
+  all-linear; axolotl r16-32/lr2e-4 + DeltaNet in_proj_qkv/in_proj_z/out_proj
+  (published recipes skip in_proj_a/in_proj_b). Stage A grid should include r16.
+- group_by_length, pad to a multiple of 64/128, grad checkpointing
+  use_reentrant=false, adamw_torch_fused, PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True.
+- NO packing / padding_free (GatedDeltaNet leaks state across packed samples
+  without cu_seq_lens; ms-swift #9618). Same think/nothink template at train
+  and inference. Check logs for "falling back to its reference PyTorch
+  implementation" (fla import failure = >10x slower). fla Blackwell autotune
+  hang fix (fla PR #1000) — sm_120 coverage UNVERIFIED.
