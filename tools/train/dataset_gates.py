@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Zero-LLM dataset gates over the gen-2 pools + every re-keyed gold
-(windowing-100 WP4, 2026-10-04). One PASS/FAIL line per gate D1-D7,
+(windowing-100 WP4, 2026-10-04). One PASS/FAIL line per gate D1-D9,
 exit 1 on any FAIL. These are the dataset-readiness checks the brief's
 WP4 asks for BEFORE the four standing gates (pytest / eval / span-recall
 / canon-run -- the LLM-bearing pass, a separate 100k window).
@@ -12,16 +12,24 @@ drift probes (whichever exist for the series -- pool files are
 auto-discovered as <s>/training/opencode/*_windows.jsonl; a gate whose
 inputs do not exist for the series prints SKIP, never PASS on a
 missing input; a gate with partial inputs runs on what exists and says
-so). D1-D7:
+so). D1-D9:
 - D1 id-unique: every id unique within each file; universe ids unique.
   (The gen-2 test gold's U-WP5 passage units: covering window ids
   unique within each unit; a window shared by sibling units is the
-  gold's own sharing, reported, not a defect.)
+  gold's own sharing, reported, not a defect. U-WP4c: a passage unit
+  whose (page, section) is OFF the production read set cannot re-derive
+  in the universe by construction -- the gold files are unchanged and
+  stay usable as labels, so those units are reported, not failed; only
+  units ON the read set must carry universe ids.)
 - D2 re-derivable: every record's (page, section, passage) equals the
   builder's text for that id on the CURRENT store (drift detector -- a
   re-ingest that changes a sentence must fail here, not train
   silently). The test gold's units are re-derived BYTE-IDENTICAL
-  (rekey_testgold.derive_unit on the current store's texts).
+  (rekey_testgold.derive_unit on the current store's texts). U-WP4c:
+  gold records OFF the production read set (their (page, section) is
+  not a passage the extractor reads) are reported, not failed -- the
+  gold files are unchanged and stay usable as labels; re-derivation is
+  impossible for them by construction.
 - D3 G1: every gold row's quote is verbatim (quote_grid_span non-None)
   in ITS record's passage, and >= 12 chars (under 12 is report-only).
 - D4 leakage: no train/pool page in the holdout; no test-gold id in
@@ -34,11 +42,33 @@ so). D1-D7:
   events.system_prompt(eventive_verbs(store)) and its user message ==
   events._TEMPLATE filled from the window; reports PROMPT_VERSION.
 - D6 coverage: union of universe windows' hashes == every sentence of
-  the read passages (window-level span-recall, zero-LLM; expect 0 gaps).
+  the PRODUCTION READ SET (U-WP4c: universe() IS the read set -- the
+  pages of events.scope_plan('all') and, per page, the passages of
+  events.build_passages: the read sections, the lead, the declared
+  fact values); window-level span-recall, zero-LLM; expect 0 gaps.
 - D7 entity presence (report-only): gold600 rows whose subject or object
   mention appears neither in the window text nor the page title -- listed
   to --d7-out for adjudication (these are labels the student cannot learn
   from its input). D7 never fails.
+- D8 universal holdout (U-WP4, 2026-10-04): the plan's cross-wiki check --
+  (a) no hxh window id in ANY wiki's train pool (hxh is the held-out
+  wiki; it never trains; ids are content-addressed, so a cross-wiki hit
+  is real content leakage). Cross-wiki page-TITLE collisions are
+  reported, not failed: titles are wiki-local, and a "Chapter 114"
+  exists in every anime wiki (the U-WP4 first run found 12 such
+  collisions, 0 id hits). (b) Per wiki, no test id/page in its own
+  train pools (page-disjoint by construction; the gate is the belt).
+  The pool files are auto-discovered across every series; a pool whose
+  pages sit entirely on the wiki's holdout is its test pool (D4's rule).
+  The hxh clause SKIPs while the hxh test pool does not exist yet.
+- D9 production read set (U-WP4c, 2026-10-04): every pool window's
+  (page, section label) must be a passage the production extractor
+  reads (the universe's (page, label) set); 0 violations required.
+  U-WP4 measured 5-40 pct of the U-WP4b pools' windows on sections the
+  extractor never reads or pages not in its queue; the U-WP4c re-emit
+  made the universe the read set, so the pools now carry 0 -- the gate
+  is the belt (a stale pre-U-WP4c pool file left in place fails here,
+  not in the 35B campaign).
 
     python tools/train/dataset_gates.py --series jjk
     python tools/train/dataset_gates.py --series mcu
@@ -148,6 +178,19 @@ def main():
         by_id = {w.id: w for w in windows}
         ev_verbs = eventive_verbs(store)
         sysmsg = system_prompt(ev_verbs)
+    # U-WP4c: the production read set as (page, label) pairs -- the
+    # universe IS the read set (scope_plan('all') pages + build_passages
+    # passages: the read sections, the lead, the declared fact values).
+    # D9 checks the pools against it; D1/D2 use it to separate gold
+    # records OFF the read set (reported, not failed: the gold files
+    # are unchanged and stay usable as labels) from genuine drift.
+    read_set = {(p, l) for p, l, _t in uni}
+
+    def rec_label(rec):
+        """The record's read-set label (pool/gold lines carry '' for the
+        lead, the builder's 'lead' otherwise; fact lines carry the
+        extractor's 'fact:<key>' label)."""
+        return (rec.get("section") or "") or "lead"
 
     failures, skipped = [], []
 
@@ -188,27 +231,54 @@ def main():
         # window ids -- unique WITHIN the unit and present in the
         # builder universe. A window shared by two sibling units is
         # legitimate (the gold600 rule: the id is the window's, not
-        # the unit's) and is reported, not failed.
-        all_tids = [w["id"] for u in test.values() for w in u["windows"]]
+        # the unit's) and is reported, not failed. U-WP4c: a unit
+        # whose (page, section) is OFF the production read set cannot
+        # re-derive in the universe by construction -- the gold files
+        # are unchanged and stay usable as labels, so those units are
+        # reported, not failed; only units ON the read set must carry
+        # universe ids.
         dup_within = sum(
             1 for u in test.values()
             if len({w["id"] for w in u["windows"]}) != len(u["windows"]))
-        not_in_uni = [i for i in all_tids if i not in uni_ids]
+        on_set_tids, off_units = [], 0
+        for u in test.values():
+            if (u.get("page"), rec_label(u)) not in read_set:
+                off_units += 1  # reported in the detail, never a failure
+                continue
+            on_set_tids += [w["id"] for w in u["windows"]]
+        not_in_uni = [i for i in on_set_tids if i not in uni_ids]
         d1_ok = d1_ok and dup_within == 0 and not not_in_uni
         d1_parts.append(
-            f"testgen2 {len(test)} passage units / {len(all_tids)} "
-            f"covering windows (dup-within-unit {dup_within}, "
-            f"off-universe {len(not_in_uni)})")
+            f"testgen2 {len(test)} passage units / "
+            f"{len(on_set_tids)} covering window(s) on the read set "
+            f"(dup-within-unit {dup_within}, off-universe "
+            f"{len(not_in_uni)})"
+            + (f"; {off_units} unit(s) OFF the read set (report-only, "
+               "U-WP4c: gold unchanged, still usable as labels)"
+               if off_units else ""))
     else:
         d1_parts.append("testgen2 (absent, skipped)")
     rec_notes = []
+    # U-WP4c: how many gold records sit OFF the production read set
+    # (reported, never failed -- the gold files are unchanged and stay
+    # usable as labels; only their pool-eligibility is off the universe).
+    off_gold = sum(
+        1 for r in (g600 or [])
+        if ((r.get("page") or ""), rec_label(r)) not in read_set)
+    off_pilot = sum(
+        1 for r in (pilot or [])
+        if ((r.get("page") or ""), rec_label(r)) not in read_set)
     if g600 is not None:
         g_ids = [r["id"] for r in g600]
         rec_notes.append(
-            f"gold600 {len(g_ids)} records / {len(set(g_ids))} window ids")
+            f"gold600 {len(g_ids)} records / {len(set(g_ids))} window ids"
+            + (f" ({off_gold} OFF the read set, report-only)"
+               if off_gold else ""))
     if pilot is not None:
         p_ids = [r["id"] for r in pilot]
-        rec_notes.append(f"pilot {len(p_ids)} / {len(set(p_ids))}")
+        rec_notes.append(f"pilot {len(p_ids)} / {len(set(p_ids))}"
+                         + (f" ({off_pilot} OFF the read set, report-only)"
+                            if off_pilot else ""))
     if rec_notes:
         rec_notes.append("(a window may carry more than one row set -- "
                          "legitimate, the id is the window's, not the "
@@ -232,11 +302,19 @@ def main():
 
     pool_bad = {p: line_mismatches(rows) for p, rows in pools.items()}
     probe_bad = line_mismatches(probes) if probes is not None else []
-    rec_bad = []
+    rec_bad, rec_off = [], 0
     for src, recs in (("gold600", g600), ("pilot", pilot)):
         if recs is None:
             continue
         for rec in recs:
+            if ((rec.get("page") or ""), rec_label(rec)) not in read_set:
+                # U-WP4c: the record sits OFF the production read set
+                # (its (page, section) is not a passage the extractor
+                # reads) -- the gold files are unchanged and stay usable
+                # as labels; re-derivation is impossible for them by
+                # construction, so it is reported, not failed.
+                rec_off += 1
+                continue
             w = by_id.get(rec["id"])
             if w is None:
                 rec_bad.append((src, rec["id"], "id not in the builder universe"))
@@ -244,7 +322,7 @@ def main():
                     or section_of(w.section) != section_of(rec.get("section"))
                     or w.text != passage_of(rec)):
                 rec_bad.append((src, rec["id"], "page/section/passage drift"))
-    test_bad = []
+    test_bad, test_off = [], 0
     test_partial = False
     if test is not None:
         rdir = sroot / "training" / "recall_gold_v3"
@@ -255,12 +333,19 @@ def main():
             # store -- derive_unit rebuilds the section's grid from the
             # store's own texts and re-locates the passage, so a
             # re-ingest that changes a sentence fails here, not in
-            # training (the gate's whole point).
+            # training (the gate's whole point). U-WP4c: units OFF the
+            # production read set are skipped (reported in test_off,
+            # never failed: the gold is unchanged, still usable as
+            # labels -- re-derivation is impossible for them by
+            # construction).
             w100 = json.loads(w100_path.read_text(encoding="utf-8"))
             v4 = json.loads(v4_path.read_text(encoding="utf-8"))
             grids2 = {}
             with FactStore(db) as store2:
                 for key, unit in sorted(test.items()):
+                    if ((unit.get("page") or ""), rec_label(unit)) not in read_set:
+                        test_off += 1
+                        continue
                     n = unit.get("w")
                     evs = v4.get(key)
                     if n is None or n >= len(w100) or evs is None:
@@ -278,6 +363,9 @@ def main():
             # PASSes a full D2 on a shape it could not verify.
             test_partial = True
             for key, unit in sorted(test.items()):
+                if ((unit.get("page") or ""), rec_label(unit)) not in read_set:
+                    test_off += 1
+                    continue
                 for w in unit["windows"]:
                     bu = by_id.get(w["id"])
                     if bu is None:
@@ -293,9 +381,13 @@ def main():
     if probes is not None:
         d2_parts.append(f"probes {len(probe_bad)}")
     if g600 is not None or pilot is not None:
-        d2_parts.append(f"gold600+pilot records {len(rec_bad)}")
+        d2_parts.append(f"gold600+pilot records {len(rec_bad)}"
+                        + (f" (+{rec_off} off the read set, report-only)"
+                           if rec_off else ""))
     if test is not None:
         d2_parts.append(f"testgen2 {len(test_bad)}"
+                        + (f" (+{test_off} off the read set, report-only)"
+                           if test_off else "")
                         + (" (weak check: sources absent)" if test_partial else ""))
     d2_detail = ("mismatches against the current store: "
                  + ", ".join(d2_parts) + " (expect 0)")
@@ -409,6 +501,10 @@ def main():
              f"_TEMPLATE filled from the window)")
 
     # ---- D6 coverage (window-level span-recall, zero-LLM) --------------
+    # U-WP4c: the universe IS the production read set (scope_plan('all')
+    # pages + build_passages passages: the read sections, the lead, the
+    # declared fact values), so this checks every sentence the
+    # extractor reads, exactly.
     gap_total = 0
     gap_examples = []
     for page, label, text in uni:
@@ -424,8 +520,10 @@ def main():
         gap_total += len(gaps)
         if gaps and len(gap_examples) < 3:
             gap_examples.append((page, label, len(gaps)))
-    d6_detail = (f"{gap_total} sentence hash(es) of the read passages "
-                 f"missing from the windows' union (expect 0)")
+    d6_detail = (f"{gap_total} sentence hash(es) of the production read "
+                 f"set (U-WP4c: universe() = scope_plan('all') pages + "
+                 f"build_passages passages) missing from the windows' "
+                 f"union (expect 0)")
     if gap_total:
         d6_detail += f"; e.g. {gap_examples}"
     gate("D6", gap_total == 0, d6_detail)
@@ -465,6 +563,107 @@ def main():
              f"entity presence: {n_sub} subject + {len(d7) - n_sub} object "
              f"mentions of {n_rows} gold600 rows absent from window text + "
              f"page title ({uncheckable} uncheckable names) -> {d7_out}")
+
+    # ---- D8 universal holdout (U-WP4, 2026-10-04) ---------------------
+    # The plan's cross-wiki leakage check (plan/UNIVERSAL_DATASET_PLAN.md
+    # U-WP4): (a) hxh is the HELD-OUT wiki -- it never trains: no hxh
+    # window id may sit in ANY wiki's train pool; (b) per wiki, no test
+    # id/page in its own train pools (page-disjoint by construction,
+    # the gate is the belt). The cross-wiki clause fails on window
+    # IDs only: ids are content-addressed (page + section + span +
+    # sentence hashes), so a cross-wiki id hit is genuine hxh CONTENT
+    # in another wiki's pool. Cross-wiki PAGE hits are NOT failed:
+    # page titles are wiki-local identifiers, and generic titles (a
+    # "Chapter 114" exists in every anime wiki) collide across wikis
+    # by construction of a multi-wiki dataset -- they are reported
+    # (the U-WP4 first run found 12 "Chapter N" collisions, 0 id
+    # hits), never a failure. The pool files are auto-discovered
+    # across every series (the cross-wiki clause is the point of D8);
+    # a pool whose pages sit entirely on the wiki's holdout is its
+    # TEST pool (D4's rule), everything else is train.
+    def wiki_pool_files(s):
+        d = ROOT / "series" / s / "training" / "opencode"
+        if not d.is_dir():
+            return {}
+        return {p.name[: -len("_windows.jsonl")]: p for p in
+                sorted(d.glob("*_windows.jsonl")) if p.is_file()}
+
+    wiki_pools = {}
+    for s in sorted(d.name for d in (ROOT / "series").iterdir()
+                    if (d / "training" / "opencode").is_dir()):
+        hset = holdout_pages(ROOT / "series" / s)
+        train_ids, train_pgs = set(), set()
+        test_ids, test_pgs = set(), set()
+        for _name, p in wiki_pool_files(s).items():
+            rows = load_lines(p)
+            pgs = {r["page"] for r in rows}
+            if rows and pgs <= hset:
+                test_ids |= {r["id"] for r in rows}
+                test_pgs |= pgs
+            else:
+                train_ids |= {r["id"] for r in rows}
+                train_pgs |= pgs
+        wiki_pools[s] = (train_ids, train_pgs, test_ids, test_pgs)
+
+    d8_parts, d8_fail, d8_skip = [], False, True
+    if "hxh" in wiki_pools and (wiki_pools["hxh"][2] or wiki_pools["hxh"][3]):
+        all_train_ids, all_train_pgs = set(), set()
+        for _s, (ti, tp, _x, _y) in wiki_pools.items():
+            all_train_ids |= ti
+            all_train_pgs |= tp
+        d8a_id = len(wiki_pools["hxh"][2] & all_train_ids)
+        d8a_pg = len(wiki_pools["hxh"][3] & all_train_pgs)
+        d8_skip = False
+        if d8a_id:
+            d8_fail = True
+        d8_parts.append(
+            f"hxh holdout: {len(wiki_pools['hxh'][2])} test window(s) / "
+            f"{len(wiki_pools['hxh'][3])} test page(s) vs "
+            f"{len(all_train_ids)} train window(s) / "
+            f"{len(all_train_pgs)} train page(s) across "
+            f"{len(wiki_pools)} wiki(s): {d8a_id} id hit(s) (expect 0 -- "
+            f"ids are content-addressed, a hit is real leakage) + "
+            f"{d8a_pg} page-title collision(s) (wiki-local generic "
+            f"titles, e.g. 'Chapter N', collide across wikis -- "
+            f"reported, not failed)")
+    else:
+        d8_parts.append("hxh holdout clause SKIP (no hxh test pool yet)")
+    _sti, _stpg, _tti, _ttpg = wiki_pools.get(
+        a.series, (set(), set(), set(), set()))
+    d8b_id = len(_tti & _sti)
+    d8b_pg = len(_ttpg & _stpg)
+    if _tti or _ttpg:
+        d8_skip = False
+        if d8b_id or d8b_pg:
+            d8_fail = True
+        d8_parts.append(
+            f"{a.series} per-wiki: {len(_tti)} test window(s) / "
+            f"{len(_ttpg)} test page(s) vs {len(_sti)} train window(s) / "
+            f"{len(_stpg)} train page(s): {d8b_id} id + {d8b_pg} page "
+            f"hit(s) (expect 0)")
+    else:
+        d8_parts.append(f"{a.series} per-wiki clause: no test pool file "
+                       f"(the test gold's ids are D4's)")
+    gate("D8", (None if d8_skip else (not d8_fail)), "; ".join(d8_parts))
+
+    # ---- D9 production read set (U-WP4c, 2026-10-04) ------------------
+    # Every pool window's (page, section label) must be a passage the
+    # production extractor reads (the universe's (page, label) set: the
+    # read sections, the lead, the declared fact values). U-WP4 measured
+    # 5-40 pct of the U-WP4b pools' windows off the read set (sections
+    # the extractor never selects, or pages not in its queue); the
+    # U-WP4c re-emit made the universe the read set, so 0 violations is
+    # the expectation. The gate is the belt: a stale pre-U-WP4c pool
+    # file left in place fails here, not in the 35B campaign.
+    d9_bad = []
+    for name, rows in pools.items():
+        for r in rows:
+            if (r["page"], rec_label(r)) not in read_set:
+                d9_bad.append((name, r["id"], r["page"], rec_label(r)))
+    gate("D9", not d9_bad,
+         f"{len(d9_bad)} pool window(s) on a (page, section) the "
+         f"production read set does not carry (expect 0)"
+         + (f"; e.g. {d9_bad[:3]}" if d9_bad else ""))
 
     print()
     if failures:

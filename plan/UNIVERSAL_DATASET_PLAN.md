@@ -129,6 +129,34 @@ cross-wiki check D8: no hxh window id or page in any train pool; no test id in
 any train pool, per wiki. Receipt per wiki: counts per stratum, distinct
 pages, page-type mix, era mix (Marvel franchise).
 
+## U-WP4d — core stratum: biggest pages + their links (owner idea, 2026-10-04)
+
+Owner: "first check the biggest pages from all wikis and then the links on
+those big pages that lead to further pages — wide variety, the most important
+pages covered, and you learn how they are formatted." Adopted as a STRATUM next
+to the random strata, not a replacement (link-snowballing concentrates on the
+main cast; production — e.g. MCU's ~290k windows — is mostly small pages, and
+an all-core test would measure the neighbourhood, not production).
+
+Per wiki, inside the production read set (U-WP4c):
+1. **Seeds** = top pages by `documents.word_count` (top 1% of read pages,
+   min 20, max 200), recorded in `series/<s>/training/core_pages.json`.
+2. **Hop-1** = pages the seeds link to through the store's pre-resolved links
+   (chunk_nodes / edges), ranked by how many seeds link to them, capped per
+   page_type (no type > 40% of hop-1), only read-set pages.
+3. **Split first, page-disjoint:** seeds and hop-1 pages are split train/test
+   (80/20, seeded) BEFORE any sampling; test core pages join holdout_pages.json.
+4. **Pool mix:** ~40% of each train pool is drawn from the core stratum (seeds +
+   hop-1, windows spread across pages, cap per page), ~60% from the existing
+   random strata; test pools carry a `stratum: core|random` field and the scorer
+   reports core vs random separately (never one blended number only).
+5. **Format census** of the seeds (report + `series/<s>/training/format_census.json`):
+   section-heading frequency, list-vs-prose share, fact-passage share, window
+   size distribution, sub-topic counts — feeds the per-wiki notes of the
+   labeling guideline.
+6. Coverage receipt: distinct page_types, distinct section headings and pages
+   hit by the pools WITH vs WITHOUT the core stratum.
+
 ## U-WP5 — student eval on gen 2 + multi-wiki
 
 `tools/eval_extraction.py` `load_gold` must read `gold_test_v4.gen2.json`
@@ -136,6 +164,64 @@ pages, page-type mix, era mix (Marvel franchise).
 `--series` so each wiki's test gold scores separately; report per-wiki and
 per-verb P/R/F1 + the verb confusion matrix (fought vs defeated first).
 Add a test pinning the gen-2 loader. Run its tests; commit tool + test.
+
+## Labeler choice: a bake-off, not an assumption (owner 2026-10-04)
+
+Owner: "why 35B, why not 27B — 27B is smarter; prove the 35B before using it."
+Evidence on hand: Q6-27B blind on the 100-window test gold 77.2 R / 77.1 P
+(teacher 62.8 / 73.0); the 35B has only a 75-window VERIFIER-role audit
+(1 disagreement in 91 rows) — not a labeling measurement. The Q6 GGUF was
+deleted 2026-09-29; **Qwen3.8-27B-Q8_0** (`/mnt/PROJECTS/models/qwen3.8-27b-q8/`,
+`tools/train/ops/serve_q8.sh`, llama.cpp :8090) is on disk — higher precision
+than Q6, no download. Bake-off before any labeling: 27B-Q8 vs 35B (27B-NVFP4 as
+reference), identical labeling prompt + guideline, on the blind JJK passage
+test gold (100 passages, 173 core), scored by `tools/eval_extraction.py`
+passage scoring (P/R/F1, per verb, quote-verbatim). **Default labeler =
+27B-Q8**; the 35B only if it beats it on F1 AND precision. Table shown to the
+owner before labeling starts.
+
+**Superseded the same evening (owner 2026-10-04 ~22:1x):** "we managed to make
+our verification window part robust to be using 35B for speed (if verification
+passes of 35B's work is still not robust, make it) so we should definitely use
+it only." => **the labeler is the 35B** (`tools/train/ops/serve_35b.sh`, build35,
+`:18081`). The bake-off becomes a **35B acceptance test**: 35B drafts
+(`qwen_worker.py`, same prompt/guideline) -> the verification pass
+(`verify_row_wiki.py`) -> final rows, scored per passage on the blind JJK test
+gold, raw draft and post-verification both reported, with the 27B-NVFP4 run
+as a reference number only (the Q8 arm is dropped). If post-verification
+precision or recall is weak (bar: >= the Q6-27B's blind 77 R / 77 P, and
+precision >= 0.90 after verification), the verification layer is hardened
+(e.g. two independent 35B passes with agreement, stricter row check) and
+re-measured BEFORE any pool is labeled — never a model swap.
+
+## Labeler + verification protocol (owner 2026-10-04 ~22:3x — supersedes the bake-off/acceptance text above)
+
+**Labeler model:** `Cyber-Tiel-Coder-35B-A3B-MTP-UD-Q5_K_XL.gguf`
+(peculiar-ragdoll/Cyber-Tiel-Coder-35B-A3B-GGUF-MTP @ `fa19d4f3`, MIT, 26.98 GB,
+`/mnt/PROJECTS/models/cybertiel-35b-mtp/`), served by llama.cpp
+(`~/llama.cpp/build/bin/llama-server`, build 11074 `26394b4e6`, has draft-mtp):
+`-ngl 99 -fa on -ctk q8_0 -ctv q8_0 --jinja --spec-type draft-mtp
+--spec-draft-n-max 1 --temp 0.6 --top-p 0.95 --top-k 20 --min-p 0`, context =
+the largest that keeps every layer on the GPU (measured at load; `--n-cpu-moe`
+only if it cannot fit, never above 40). Owner: "maximum speed with highest
+quality". Card caveat recorded: the model trades world knowledge for coding
+(MMLU-Pro "bird-brained") — the labels come from the passage + wiki pages, and
+the acceptance numbers decide whether that matters. NOT the ninfer 35B.
+
+**Verification = manual, inline, one window at a time, in opencode sessions
+(owner):** no automation, no loops of LLM calls. For each window: read the
+window + the 35B's draft rows; open the exact wiki page(s) for every
+character / arc / event / ability involved (local crawl, read in <=500-char
+chunks); decide keep / fix / reject per row and add missed events; log it.
+**Log doc** per pool: `series/<s>/training/verify_log/<pool>.md` (human) +
+`<pool>_verified.jsonl` (machine): window id, page/section, passage, every draft
+row with verdict + one-line reason, pages+sections consulted, added rows, final
+labels. **Claude audits** the doc and re-verifies a sample itself (~5% random +
+every hard case: direction, killed vs defeated, passive, class-vs-name) from
+the same pages, logging its verdicts beside the worker's; >3% disagreement
+stops the run until the rules are fixed. Drafting (the 35B writing candidate
+rows per window) runs as a batch, as the VERIFY-7000 drafts did — assumption
+stated to the owner.
 
 ## Later (not this brief): the labeling run
 
