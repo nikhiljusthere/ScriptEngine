@@ -10,8 +10,10 @@ Sources:
   {"events": final rows};
 * the JJK verified student set (series/jjk/training/student/{train,dev}.jsonl).
 
-Split: dev = 5% of each series' PAGES (seeded), never a page on both sides;
-JJK keeps its own train/dev. Cap: no series above 35% of the train windows
+Split: dev = 5% and test = 10% of each series' PAGES (seeded), never a page on
+two sides; dev picks the arm, test is scored once on the winner (owner
+2026-10-06: the drafted test windows are not verified, the held-out verified
+pages are the exam). JJK keeps its own train/dev (its exam is blind v6). Cap: no series above 35% of the train windows
 (the plan's mix rule) -- the overflow is sampled out (seeded), never the
 verified rows of a kept window.
 
@@ -21,7 +23,7 @@ user passage; verbs in the 12; awakened has a null object; no test window id;
 no holdout page; unique ids; page-disjoint train/dev per series.
 
     scriptengine/.venv/bin/python tools/train/build_universal_set.py
-        -> series/universal/training/student/{train,dev}.jsonl + receipt.json
+        -> series/universal/training/student/{train,dev,test}.jsonl + receipt.json
 """
 import argparse
 import json
@@ -37,7 +39,7 @@ from build_student_set import assistant_content  # noqa: E402  (same answer form
 POOLS = ["opm", "csm", "berserk", "bleach", "db", "onepiece", "marvel", "mcu"]
 VERBS = {"fought", "defeated", "killed", "captured", "escaped", "saved", "betrayed",
          "sealed", "met", "arrived", "departed", "awakened"}
-DEV_FRAC, SEED, CAP = 0.05, 20261006, 0.35
+DEV_FRAC, TEST_FRAC, SEED, CAP = 0.05, 0.10, 20261006, 0.35
 
 
 def jl(p):
@@ -51,7 +53,7 @@ def main():
     a = ap.parse_args()
     out = Path(a.out_dir)
     out.mkdir(parents=True, exist_ok=True)
-    errors, counts, train, dev = [], Counter(), [], []
+    errors, counts, train, dev, test = [], Counter(), [], [], []
     for s in POOLS:
         lab = ROOT / "series" / s / "training" / "labels"
         src = {r["id"]: r for r in jl(lab / "pool_in.jsonl")}
@@ -94,9 +96,12 @@ def main():
                                       {"role": "assistant", "content": assistant_content(events)}]})
         pages = sorted({r["page"] for r in recs})
         rnd = random.Random(f"{SEED}-{s}")
-        dev_pages = set(rnd.sample(pages, max(1, round(len(pages) * DEV_FRAC)))) if pages else set()
+        held = rnd.sample(pages, max(2, round(len(pages) * (DEV_FRAC + TEST_FRAC)))) if len(pages) > 2 else []
+        n_dev = max(1, round(len(pages) * DEV_FRAC)) if held else 0
+        dev_pages, test_pages = set(held[:n_dev]), set(held[n_dev:])
         for r in recs:
-            (dev if r["page"] in dev_pages else train).append({**r, "split": "dev" if r["page"] in dev_pages else "train"})
+            split = "dev" if r["page"] in dev_pages else "test" if r["page"] in test_pages else "train"
+            {"dev": dev, "test": test, "train": train}[split].append({**r, "split": split})
         counts[s] = len(recs)
     # the JJK verified set keeps its own split
     for split, bucket in (("train", train), ("dev", dev)):
@@ -107,30 +112,33 @@ def main():
     by = defaultdict(list)
     for r in train:
         by[r["series"]].append(r)
-    total = len(train)
     capped = []
     for s, rs in sorted(by.items()):
-        limit = int(CAP * total)
+        # the share is of the FINAL train set: x <= CAP * (x + others)
+        # (capping against the pre-cap total left JJK at 43%)
+        limit = int(CAP / (1 - CAP) * (len(train) - len(rs)))
         if len(rs) > limit:
             rs = random.Random(f"{SEED}-cap-{s}").sample(rs, limit)
         capped += rs
     train = capped
-    ids = [r["id"] for r in train + dev]
+    ids = [r["id"] for r in train + dev + test]
     if len(ids) != len(set(ids)):
         errors.append(f"duplicate ids: {len(ids) - len(set(ids))}")
     for s in set(r["series"] for r in train):
         tp = {r["page"] for r in train if r["series"] == s}
         dp = {r["page"] for r in dev if r["series"] == s}
-        if tp & dp:
-            errors.append(f"{s}: {len(tp & dp)} pages on both train and dev")
+        sp = {r["page"] for r in test if r["series"] == s}
+        if tp & dp or tp & sp or dp & sp:
+            errors.append(f"{s}: pages shared across train/dev/test")
     if errors:
         print("BUILD FAILED:\n" + "\n".join(errors[:40]) + (f"\n... {len(errors)} total" if len(errors) > 40 else ""))
         return 1
-    for name, rows in (("train", train), ("dev", dev)):
+    for name, rows in (("train", train), ("dev", dev), ("test", test)):
         with open(out / f"{name}.jsonl", "w") as f:
             for r in rows:
                 f.write(json.dumps(r, ensure_ascii=False) + "\n")
-    rec = {"train": len(train), "dev": len(dev),
+    rec = {"train": len(train), "dev": len(dev), "test": len(test),
+           "test_by_series": Counter(r["series"] for r in test),
            "train_by_series": Counter(r["series"] for r in train),
            "dev_by_series": Counter(r["series"] for r in dev),
            "train_empty_windows": sum(1 for r in train if not r["events"]),
