@@ -93,6 +93,11 @@ QUOTE_MATCH = "overlap"
 def same(a, b):
     if a is None or b is None:
         return a is None and b is None
+    # The same name written the same way: "Ui Ui" has no 3+ letter word,
+    # so the word rule below can never match it (found on the blind v6
+    # test, where "Ui Ui fought ..." scored as both a miss and an FP).
+    if " ".join(str(a).lower().split()) == " ".join(str(b).lower().split()):
+        return True
     wa, wb = words(a), words(b)
     if wa & wb:
         return True

@@ -310,3 +310,38 @@ sha256 (frozen; any later change to these files voids the blind score):
 - decisions_blind.jsonl 7b4420c5493e5512506630a24cb022a7df85e1b7ef3fece9ce9a70b4969abbc6
 
 The frozen drafter (section 11) runs on it ONCE; that score is reported as is.
+
+### 12a. Blind v6 result (2026-10-05, one run, gold hash verified unchanged)
+
+| scoring | R | P | F1 |
+|---|---|---|---|
+| window match + aliases | **.732** (52/71) | **.912** | **.812** |
+| quote overlap + aliases | .704 | .882 | .783 |
+
+**Dev .943 -> blind .812: ~13 pt of the dev number was fit to the dev
+windows** (their gold, retrieved examples drawn from them, rules written from
+their misses). Precision transfers (.96 -> .91); recall does not (.92 ->
+.73). Per verb (blind): fought R .86 / P 1.0; met R .67; saved R .63;
+defeated R .25 (1/4); awakened 0/1.
+
+The blind misses are concentrated: ONE window holds 6 of the 20 FN ("she along
+with Gojo and Geto went to check up on Mei Mei and Utahime Iori" — a visit,
+expanded to 3x2 met rows, never drafted) and one dense outcome window holds 5
+("punched her ... but was blocked by Todo" -> saved; "incapacitating them"
+-> defeated x2; "failed to defeat him within Unlimited Void" -> fought).
+FPs: an already-together pair "introduce themselves" (met), a crow as an end,
+a technique mode as subject ("Gorilla Mode defeated Mechamaru" — Panda's
+mode), healing without a stated threat to life (saved x2), "returned to a
+youthful body" (awakened).
+
+What this means for the owner's 1.0: **the drafter alone is a ~.81-F1
+labeler on unseen JJK text (high precision, recall the gap)**. Flawless
+training labels have to come from the owner's manual inline verification
+(section 7), whose measured residual (Claude's 5% blind re-annotation) is the
+number that must approach 1.0 — and the verifier's main job, per this result,
+is FINDING MISSED EVENTS (visits/encounters with groups, blocks = saves,
+incapacitations), not striking rows. The blind set is now spent: any further
+drafter round must be scored on a new blind sample.
+
+Scorer note: `same()` now also matches identical names with no 3+ letter word
+("Ui Ui"); no score above changed.
