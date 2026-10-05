@@ -126,3 +126,17 @@ Corrections are in `series/opm/training/labels/pool_audit.jsonl`.
 5. `met` and `fought` are symmetric: ONE row per pair (not "A met B" + "B met A").
 6. "X appears being defeated by Y" with X then rescued is a defeat in progress
    (G.1 defeated NO) -> `fought`.
+
+**Audit 2 (opm windows 21-40): 4/20 corrected. Claude now reviews EVERY saved
+window (100%, not 5%) — the worker's window accuracy is ~80% in both sessions.**
+
+7. **A row must be true in the window's own words.** "being injured by King
+   (unaware that it was actually Saitama who kicked him)" -> Saitama fought
+   Garou, and NO King row: a character's mistaken belief is not an event.
+8. **"finishes off X" is G.1 `defeated` YES** ("finishes the fight"); `killed`
+   only when the death is stated — check the page: if X survives, `defeated`.
+9. **Ability / Appearance descriptions** ("this light is bright enough to blind
+   both A and B", "can activate accidentally") are not attacks made on someone
+   unless the window narrates the attack as an act against them.
+10. **Attacks on a building or place** ("unleashed this attack on the Hero
+    Association headquarters") are not `fought` with the organization.

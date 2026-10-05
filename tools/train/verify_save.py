@@ -47,6 +47,13 @@ def end_errors(series, final, text):
     import draft_v2
     import verify_row_wiki as vrw
     wiki = vrw.Wiki(str(ROOT / "series" / series / "facts.db"))
+    # Only the END checks bind the verifier. The drafter's two wording
+    # heuristics (bare modal -> drop; defeated without a DEFEAT lexeme ->
+    # fought) are switched off here: a verifier who read the pages outranks
+    # them ("Drive Knight finishes off the monster" is G.1 defeated YES but
+    # has no DEFEAT lexeme -- audit 2).
+    draft_v2.MODAL = re.compile(r"(?!x)x")
+    draft_v2.DEFEAT = re.compile(r"")
     errs = []
     rows = [{k: r.get(k) for k in ("quote", "subject", "verb", "object")} for r in final]
     kept, dropped = draft_v2.check_rows(rows, text, wiki, vrw.BAD_END | SPECIES_LIKE)
