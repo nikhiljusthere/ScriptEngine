@@ -365,3 +365,17 @@ the verified set exists.
 5. Then: verify the 600 held-out test windows with the 27B (same protocol) and score the
    best student once on them + HxH + the blind JJK test; widen the grid around the winner
    (Stage B) toward ~1.0 if time allows.
+
+## Post-training serving (owner 2026-10-06: 4B confirmed; fastest speed, most workers, same quality)
+
+1. Reference = the winning BF16 student (vision tower dropped, text-only).
+2. Quantize: FP8 (W8A8) and NVFP4 (5090 native FP4). Gate: a quant ships only if its
+   F1 on dev + the 600 test windows is within 0.005 of BF16, overall AND per verb
+   (same scorer, same windows). NVFP4 -> FP8 -> BF16 fallback order.
+3. Serve as ONE SGLang/vLLM engine with continuous batching (not several model copies):
+   automatic prefix caching (the rules prompt is shared by every window), FP8 KV cache,
+   sweep max running requests (64-256) and chunked-prefill size, length-sorted queue.
+4. Speculative decoding: fine-tune the native MTP head on student outputs (vLLM
+   speculators) and/or DFlash; keep only if windows/s rises at the chosen batch size.
+5. Receipt: windows/s, tok/s, VRAM per config; the winner becomes the extraction command.
+   (ninfer is out: 27B/35B artifacts only, max 8 concurrent requests.)
