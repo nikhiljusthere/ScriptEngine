@@ -195,3 +195,18 @@ implicit cases explicit. Ends are written as the window writes them.
 
 - `arrived`, `departed`, `escaped` always carry an object; `awakened` never does; no row has a null object otherwise.
 - No self-rows except a stated self-directed act; no "saved self" for surviving or self-healing.
+
+### G.5 Time and multiplicity (round 7, from the r5/r6 residual)
+
+- **Tense never removes an event (restates A.3).** An event the window states
+  as having happened counts wherever it sits: backstory, a recap, a reason
+  clause, a character's statement of fact, a summary in passing. "turns
+  himself in for murdering the senator" -> killed the senator; "told the
+  beaten thug that she had beaten him" -> defeated; "the man who nearly killed
+  him years ago" -> fought. What does NOT count is the unrealised: a plan, an
+  intention, an attempt that was never made, a hypothetical, a negation.
+- **One sentence can state several events.** Check every verb whose G.1 YES
+  column fits, not only the first: an interception is a fight with the
+  attacker AND a save of the target; "appeared and attacked X" is met AND
+  fought; "trapped X in ice and shattered it, killing X" is sealed AND killed.
+  A row already written for the sentence does not mean the sentence is done.

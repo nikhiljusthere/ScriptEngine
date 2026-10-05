@@ -42,7 +42,12 @@ CLASS_WORDS = re.compile(
     r"(civilians?|people|humans?|transfigured humans?|higher-?ups|curses?|cursed spirits?|"
     r"sorcerers?|soldiers?|members?|opponents?|enemies|guards?|lookouts?|players?|"
     r"students?|others?|everyone|them|they|he|she|him|her|it|both sides|the two|the three|"
-    r"national governments?|allies)$", re.I)
+    r"national governments?|allies|newcomers?|rivals?|everyone present|everyone else)$", re.I)
+# A lowercase plural head is an unnamed crowd ("his bloodied daughters",
+# "their Kyoto rivals" -- round 5's verifier struck these; a mechanical
+# check now does). Never applied to arrived/departed objects: places such
+# as "Jujutsu headquarters" are ends there.
+PLURAL_DESC = re.compile(r"(^|\s)[a-z][a-z'-]*[^su\W]s$|(^|\s)[a-z]+ies$")
 
 SYSTEM = """You are a meticulous event annotator for fiction-wiki passages. You label ONE window. Precision and completeness matter equally: every event the window states, and nothing it does not state.
 
@@ -50,9 +55,9 @@ Follow the annotation guideline below exactly, especially section G (v2), which 
 
 METHOD — do this in your reasoning before answering:
 1. Split the window into sentences. For EVERY sentence, ask:
-   a. Is an action stated as DONE? (Not planned, intended, attempted-and-not-made, hypothetical, negated, threatened, or only asked about.) An attack that was MADE counts even if it was blocked, dodged or failed.
+   a. Is an action stated as DONE? (Not planned, intended, attempted-and-not-made, hypothetical, negated, threatened, or only asked about.) An attack that was MADE counts even if it was blocked, dodged or failed. Tense never removes an event: backstory, a recap, a reason clause ("for murdering X") or a statement of fact about the past counts (G.5).
    b. Who does it, and to whom? Resolve pronouns only inside this window; use the name the window gives; split groups into one row per named member.
-   c. Which verb? Use the G.1 table and the decision order (killed > defeated > fought; write fought too when the fight is stated separately).
+   c. Which verb? Use the G.1 table and the decision order (killed > defeated > fought; write fought too when the fight is stated separately). One sentence can state SEVERAL events: check every verb whose G.1 YES fits ("intercepts the blow aimed at X" = fought the attacker AND saved X; "appeared and attacked X" = met AND fought).
 2. Check each candidate row against G.2 (ends), G.3 (window) and G.4 (shape). Drop any row that fails.
 3. Re-read the whole window once more looking ONLY for events you have not listed (arrivals to people = met, takes X away = saved, freezing/trapping = sealed, blocked or failed attacks = fought, pronoun defeats, named creatures acting).
 
@@ -191,7 +196,7 @@ def g1_rows():
 
 G1 = g1_rows()
 
-SENTENCE_PROMPT = """SENTENCE PASS. Below, the window is split into numbered sentences. Under each sentence are the guideline G.1 rules for the verbs its wording hints at. For EVERY sentence decide, using those rules and the decomposition method (is an action stated as DONE? who does it to whom, resolving pronouns inside this window? which verb?), whether it states an event that is NOT already in the rows below. Hints are only hints: most hinted sentences state no new event; write a row only when the G.1 YES column covers what the sentence says.
+SENTENCE_PROMPT = """SENTENCE PASS. Below, the window is split into numbered sentences. Under each sentence are the guideline G.1 rules for the verbs its wording hints at. For EVERY sentence decide, using those rules and the decomposition method (is an action stated as DONE? who does it to whom, resolving pronouns inside this window? which verb?), whether it states an event that is NOT already in the rows below. A sentence can state several events: a row already written for it does not finish it — check every hinted verb (an interception = fought the attacker AND saved the target). Tense never removes an event: backstory, recaps, reason clauses ("for murdering X") count (G.5). Hints are only hints: most hinted sentences state no new event; write a row only when the G.1 YES column covers what the sentence says.
 
 Rows already written for this window (do not repeat them):
 %s
@@ -352,7 +357,9 @@ def check_rows(rows, window, wiki, bad_end):
                 # killed the curse" here before this exemption.
                 definite_one = bool(re.match(r"(?i)^the (curse|cursed spirit|sorcerer|soldier|guard|"
                                              r"lookout|player|student|opponent|enemy|member)$", end))
-                if (CLASS_WORDS.match(end) and not definite_one) or not end:
+                is_place = v in ("arrived", "departed") and end == o
+                if (CLASS_WORDS.match(end) and not definite_one) or not end or \
+                        (PLURAL_DESC.search(end) and not is_place):
                     why = f"unnamed/class end: {end!r}"
                     break
                 if wiki is not None:
@@ -375,13 +382,46 @@ def check_rows(rows, window, wiki, bad_end):
         objs = [x.strip() for x in re.split(r",\s*(?:and\s+)?|\s+and\s+", o)] if o else [None]
         for ss in subs:
             for oo in objs:
+                if oo and ss.lower() == oo.lower():
+                    # G.4: no self-rows ("Yuji, Todo, and Mahito fought
+                    # Mahito" splits into two true rows and this one)
+                    continue
                 key = (ss.lower(), v, (oo or "").lower())
                 sym = (( oo or "").lower(), v, ss.lower())
                 if key in seen or (v in ("fought", "met") and sym in seen):
                     continue
                 seen.add(key)
                 kept.append({"quote": q, "subject": ss, "verb": v, "object": oo})
-    return kept, dropped
+    return dedup_names(kept), dropped
+
+
+def _words(name):
+    return set(re.findall(r"[a-z0-9]{2,}", (name or "").lower()))
+
+
+def dedup_names(rows):
+    """One row per event when a window writes a name two ways ("Hanami
+    fought Yuji Itadori" + "Hanami fought Yuji", round 5): a row whose ends'
+    words are a SUBSET of an earlier row's ends (same verb, either
+    direction for fought/met) is the same event. Subset, not overlap, so
+    "Maki Zenin" and "Mai Zenin" stay two people."""
+    out = []
+    for r in rows:
+        rs, ro = _words(r["subject"]), _words(r.get("object"))
+        same = False
+        for k in out:
+            if k["verb"] != r["verb"]:
+                continue
+            ks, ko = _words(k["subject"]), _words(k.get("object"))
+            pairs = [(ks, ko)] + ([(ko, ks)] if r["verb"] in ("fought", "met") else [])
+            for a_, b_ in pairs:
+                if rs and (rs <= a_ or a_ <= rs) and ((not ro and not b_) or (ro and b_ and (ro <= b_ or b_ <= ro))):
+                    same = True
+            if same:
+                break
+        if not same:
+            out.append(r)
+    return out
 
 
 def main():
@@ -400,6 +440,12 @@ def main():
                     help="round 4: separate MEET / FIGHT / OUTCOME passes, each with that family's examples")
     ap.add_argument("--sentence-pass", action="store_true",
                     help="round 5: numbered-sentence pass with the hinted G.1 rows beside each sentence")
+    ap.add_argument("--normalize-first", action="store_true",
+                    help="round 6: run the mechanical checks before the verifier")
+    ap.add_argument("--protect-agreed", action="store_true",
+                    help="round 6: rows every draft sample wrote skip the verifier")
+    ap.add_argument("--reverify", default=None,
+                    help="re-run ONLY the verifier stage on a stored run's drafting stages (isolates verifier changes from sampling noise)")
     ap.add_argument("--verify-votes", type=int, default=1,
                     help="verifier samples; a row is dropped only when ALL samples drop it with a code")
     ap.add_argument("--samples", type=int, default=1,
@@ -426,12 +472,35 @@ def main():
     rows = [r for r in rows if r["id"] not in done]
     tk = not a.no_template_kwargs
 
+    stored = {}
+    if a.reverify:
+        stored = {json.loads(l)["id"]: json.loads(l) for l in open(a.reverify)}
+
+    def union(samples):
+        ev, seen_keys = [], set()
+        for evs in samples:  # union of the samples, first occurrence wins
+            for e in evs:
+                k = (str(e.get("subject", "")).lower(), str(e.get("verb", "")).lower(),
+                     str(e.get("object", "")).lower())
+                if k not in seen_keys:
+                    seen_keys.add(k); ev.append(e)
+        return ev
+
+    def reverify_job(r, user, window, ex):
+        p = stored[r["id"]]
+        st = p["stages"]
+        return finish(r, user, window, ex, st["samples"], p.get("raw", ""), p["ok"], union(st["samples"]),
+                      st.get("missed") or [], st.get("families") or {}, st.get("sentences") or [],
+                      st.get("sentence_decisions") or [])
+
     def job(r):
         user = r["messages"][1]["content"]
         window = user.split("Passage:\n", 1)[1]
         ex = bank.nearest(window, r.get("page", ""), a.k)
         prompt = ("Worked examples (correct answers under the guideline):\n\n" + render_examples(ex)
                   + "\n\nNOW LABEL THIS WINDOW:\n" + user)
+        if a.reverify:
+            return reverify_job(r, user, window, ex)
         samples, raw = [], ""
         for _s in range(max(1, a.samples)):
             evs, raw_s = ask(a.url, a.model, SYSTEM, prompt, tk)
@@ -469,11 +538,35 @@ def main():
                 if isinstance(x, dict):
                     sent_decisions.append({"n": x.get("n"), "decision": x.get("decision")})
                     sent_added += [e for e in (x.get("events") or []) if isinstance(e, dict)]
+        return finish(r, user, window, ex, samples, raw, ok, ev, added, fam_added, sent_added, sent_decisions)
+
+    def finish(r, user, window, ex, samples, raw, ok, ev, added, fam_added, sent_added, sent_decisions):
         verdicts, v_added = [], []
         rows_all = ev + added + [r for v in fam_added.values() for r in v] + sent_added
         pre_verify = list(rows_all)
-        if ok and a.verify_pass:
-            listing = "\n".join(f"{i}: {json.dumps(r, ensure_ascii=False)}" for i, r in enumerate(rows_all)) or "(no rows)"
+        protected = []
+        if a.normalize_first:
+            # Round 6: the mechanical checks run BEFORE the verifier, so it
+            # judges split, clean rows -- round 5's verifier struck "Yuji,
+            # Todo, and Mahito fought Mahito" whole (two true rows inside)
+            # and spent its drops on class ends a regex catches.
+            rows_all, _pre_dropped = check_rows(rows_all, window, wiki, bad_end)
+        if a.protect_agreed and len(samples) >= 2:
+            # Rows every draft sample wrote skip the verifier: in round 5
+            # they were 182 true / 1 false, and the verifier still struck 2
+            # true of them.
+            def nkey(e):
+                return (str(e.get("subject", "")).lower(), str(e.get("verb", "")).lower(),
+                        str(e.get("object") or "").lower())
+            agreed = set.intersection(*[{nkey(e) for e in check_rows(sm, window, wiki, bad_end)[0]}
+                                        for sm in samples])
+            protected = [x for x in rows_all if nkey(x) in agreed]
+            rows_all = [x for x in rows_all if nkey(x) not in agreed]
+        if ok and a.verify_pass and rows_all:
+            listing = "\n".join(f"{i}: {json.dumps(r, ensure_ascii=False)}" for i, r in enumerate(rows_all))
+            if protected:
+                listing += ("\n\nAlready confirmed (context only, not to be judged):\n"
+                            + "\n".join(json.dumps(x, ensure_ascii=False) for x in protected))
             if a.verify_prompt == "v3":
                 vprompt = VERIFY_V3 % ("Worked examples:\n\n" + render_examples(ex), listing, user)
             else:
@@ -502,6 +595,7 @@ def main():
                 rows_all = [r for i, r in enumerate(rows_all) if i not in drop]
                 v_added = [x for x in (votes[0].get("add") or []) if isinstance(x, dict)]
                 rows_all += v_added
+        rows_all = protected + rows_all
         kept, dropped = check_rows(rows_all, window, wiki, bad_end)
         return {"id": r["id"], "events": kept, "ok": ok, "raw": raw,
                 "n_draft": len(ev), "n_missed_pass": len(added), "dropped": dropped,

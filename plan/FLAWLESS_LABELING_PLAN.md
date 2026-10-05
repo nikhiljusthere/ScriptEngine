@@ -195,3 +195,52 @@ addition. Long, explicit checks are the point; speed comes from the 35B's
 4. Rounds 2..n until the stop rule; then the frozen test v5 score.
 5. Label the universal pools with the winning drafter; inline verification;
    retrain the 4B on the verified universal set.
+
+## 10. Round log (dev = gold v5.x, window match + wiki alias resolution)
+
+| round | change | R | P | F1 |
+|---|---|---|---|---|
+| r1 | guideline v2 + retrieved examples + decomposition + missed pass | .757 | .963 | .848 |
+| r2 | missed-pass v2 (trigger checklist) + verifier v2 | .761 | .972 | .854 |
+| r3 | 2 samples + verifier v3 (drop only with a cited code) | .831 | .946 | .885 |
+| r4 | MEET / FIGHT / OUTCOME family passes + 2-vote verifier | .879 | .942 | .909 |
+| r4 replay | gold v5.3 (W20 amend) + scorer article strip + zero-loss checks (2026-10-05) | .879 | .953 | .915 |
+| r5 | + numbered-sentence pass with the hinted G.1 rows beside each sentence | .896 | .959 | .926 |
+| r6v | verifier only, on r5's stored drafts: mechanical checks BEFORE the verifier, rows both samples wrote skip it, plural-crowd ends, self-row drop, name-subset dedup | .917 | .970 | .943 |
+| r7 | + G.5 (tense never removes an event; one sentence, several events) in the guideline, METHOD and sentence pass | running | | |
+
+Gold versions: v5.4 = the entry-rule consistency sweep (all 37 gold windows
+with entry wording read; "an entry to people not already present = met even
+when a fight follows", precedents W82/W97/Ch149/W20/W31; +5 core, +4
+optional); v5.5 = W55 "jumping up on debris to eliminate her" demoted to
+optional (capability frame + purpose clause), two G.2-valid alternate-name
+rows added as optional (neutral, never recall). r5 and r6v are scored on
+v5.5; r1-r4 on the gold of their day. Every amendment is logged in
+`gold_v5/decisions_00{2,3,4}.jsonl` with its reason — and because dev gold
+moves with Claude's reading, only the blind test (gold_v6_blind) gives the
+reportable number.
+
+**Noise:** the two draft samples differ run to run (r4 sample1 205 hits, r5
+193); a single full run moves ~1-2 pt by sampling alone. r6v isolates the
+verifier change by replaying r5's stored drafts (`--reverify`), so its +1.5
+pt is not sampling noise. Rows written by BOTH samples were 182 true / 1
+false in r5.
+
+**Offline rule replay** (`tools/train/replay_rules.py`, no GPU): a candidate
+no-model rule is kept only at ZERO true-row losses on dev. Kept (now in
+`check_rows`): bare capability modal ("Nue can strike repeatedly"; a negated
+modal or one beside a past-tense report stays); `defeated` without a defeat
+lexeme -> `fought` ("Sukuna overpowers Megumi"). Rejected: "arrived/departed
+place must appear in the quote" — gold takes the place from the window
+("Mahito was here but he already left" -> departed B5F). Bug found by the
+replay: `check_rows` dropped "the curse" as a class although G.2 allows a
+singular anaphoric description — pre-verify recall +0.8 pt after the fix.
+
+**r4 residual (33 FN):** 25 never drafted — mostly phrasings G.1 already lists
+(the rule was in the prompt but not applied to that sentence; r5's lever) — and
+8 struck by the verifier. Gold rows re-checked against G.1 and kept: "arrive
+in Shibuya where Yuji notices Panda" (arrival to people = met), "finds ... asks
+how old they are" (finds + contact = met), "lure the girl into disengaging her
+technique" (technique used on someone = fought), "bisects her father's head"
+(no stated death = fought; the window never names Ogi, so the end is "her
+father").

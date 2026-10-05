@@ -61,12 +61,17 @@ def main():
     if missing:
         sys.exit(f"units not adjudicated: {missing}")
 
-    rows, errors = {}, []
+    rows, errors, demoted = {}, [], set()
     for unit, d in decided.items():
         for e in d["events"]:
             wid = e["w"]
             if wid not in text:
                 errors.append(f"{unit}: window {wid} not in the bake-off inputs")
+                continue
+            if e.get("demote"):
+                # a later decision moves an earlier core row to the
+                # borderline tier (the row and its reason stay logged)
+                demoted.add((wid, e["s"].lower(), e["v"], (e["o"] or "").lower(), e["q"]))
                 continue
             if e["q"] not in text[wid]:
                 errors.append(f"{unit}: quote not verbatim in {wid}: {e['q'][:80]!r}")
@@ -76,6 +81,13 @@ def main():
             key = (row["subject"].lower(), row["verb"], (row["object"] or "").lower(), row["quote"])
             slot = rows.setdefault(wid, {"events": {}, "optional": {}})
             slot[bucket].setdefault(key, row)
+    for wid, s_, v, o, q in demoted:
+        key = (s_, v, o, q)
+        slot = rows.get(wid, {}).get("events", {})
+        if key not in slot:
+            errors.append(f"demote: no core row {key} in {wid}")
+            continue
+        rows[wid]["optional"].setdefault(key, slot.pop(key))
     if errors:
         sys.exit("\n".join(errors))
 
