@@ -8,7 +8,16 @@ decides anything, it only refuses a malformed or unfaithful record:
 * every final row's quote is VERBATIM in the window, its verb is one of the
   12, `awakened` has a null object and every other verb an object;
 * every draft row has a verdict (keep / fix / reject) and a reason;
-* pages_consulted is non-empty whenever the window has any row.
+* pages_consulted is non-empty whenever the window has any row;
+* every final row passes the drafter's own mechanical end checks
+  (draft_v2.check_rows: class / plural crowd / indefinite / pronoun ends, a
+  group row not split into members, self-rows) and no end is a species-like
+  page -- `species` on JJK, `race` on OPM (the first audit, 2026-10-05: the
+  verifier kept "Saitama met The Subterranean People", a race page) --
+  checked with the leading article stripped.
+
+Auditor mode (Claude only): --replace swaps a saved record for a corrected one
+and logs both, with --why, to <pool>_audit.jsonl.
 
     scriptengine/.venv/bin/python tools/train/verify_save.py --series opm --pool pool decision.json
 
@@ -28,11 +37,42 @@ VERBS = {"fought", "defeated", "killed", "captured", "escaped", "saved", "betray
          "sealed", "met", "arrived", "departed", "awakened"}
 
 
+SPECIES_LIKE = {"species", "race", "races"}
+
+
+def end_errors(series, final, text):
+    """The drafter's mechanical end checks, applied to the verifier's rows."""
+    sys.path.insert(0, str(ROOT / "tools" / "train"))
+    import re
+    import draft_v2
+    import verify_row_wiki as vrw
+    wiki = vrw.Wiki(str(ROOT / "series" / series / "facts.db"))
+    errs = []
+    rows = [{k: r.get(k) for k in ("quote", "subject", "verb", "object")} for r in final]
+    kept, dropped = draft_v2.check_rows(rows, text, wiki, vrw.BAD_END | SPECIES_LIKE)
+    for d in dropped:
+        errs.append(f"row {d.get('subject')!r} {d.get('verb')} {d.get('object')!r}: {d['why']}")
+    if len(kept) != len(rows) and not dropped:
+        errs.append("a row is a group end or a duplicate: write one row per named member, no repeats "
+                    f"(the checked rows would be {[(k['subject'], k['verb'], k['object']) for k in kept]})")
+    for r in rows:
+        for end in (r["subject"], r["object"]):
+            if not end:
+                continue
+            bare = re.sub(r"(?i)^(the|a|an)\s+", "", end.strip())
+            exact = [p for p in wiki.resolve(bare) if p.lower() == bare.lower()]
+            if exact and wiki.label.get(exact[0]) in SPECIES_LIKE:
+                errs.append(f"end {end!r} is a {wiki.label.get(exact[0])} page (a class, never an end; G.2)")
+    return errs
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--series", required=True)
     ap.add_argument("--pool", default="pool", help="pool (train) or test")
     ap.add_argument("decision")
+    ap.add_argument("--replace", action="store_true", help="auditor: replace the saved record")
+    ap.add_argument("--why", default="", help="auditor: the reason for the replacement")
     a = ap.parse_args()
     lab = ROOT / "series" / a.series / "training" / "labels"
     src = lab / ("pool_in.jsonl" if a.pool == "pool" else "test_in.jsonl")
@@ -46,8 +86,11 @@ def main():
     wid = d.get("id")
     if wid not in windows:
         sys.exit(f"REFUSED: window {wid!r} is not in {src}")
-    if out.exists() and any(json.loads(l)["id"] == wid for l in open(out)):
+    saved = [json.loads(l) for l in open(out)] if out.exists() else []
+    if any(r["id"] == wid for r in saved) and not a.replace:
         sys.exit(f"REFUSED: window {wid} is already saved in {out}")
+    if a.replace and not (any(r["id"] == wid for r in saved) and a.why.strip()):
+        sys.exit("REFUSED: --replace needs a saved window and --why")
     text = windows[wid]["messages"][1]["content"].split("Passage:\n", 1)[1]
     for i, r in enumerate(d.get("final") or []):
         q, v, o = r.get("quote") or "", r.get("verb"), r.get("object")
@@ -71,9 +114,19 @@ def main():
             errs.append(f"added[{i}]: no reason")
     if (d.get("final") or d.get("draft")) and not d.get("pages_consulted"):
         errs.append("pages_consulted is empty: open the pages for the window's ends")
+    errs += end_errors(a.series, d.get("final") or [], text)
     if errs:
         sys.exit("REFUSED:\n" + "\n".join(errs))
     rec = {"id": wid, "page": windows[wid]["page"], "section": windows[wid]["section"], **d}
+    if a.replace:
+        old = next(r for r in saved if r["id"] == wid)
+        with open(lab / f"{a.pool}_audit.jsonl", "a") as f:
+            f.write(json.dumps({"id": wid, "why": a.why, "before": old, "after": rec}, ensure_ascii=False) + "\n")
+        with open(out, "w") as f:
+            for r in saved:
+                f.write(json.dumps(rec if r["id"] == wid else r, ensure_ascii=False) + "\n")
+        print(f"REPLACED {wid} (logged to {a.pool}_audit.jsonl)")
+        return 0
     with open(out, "a") as f:
         f.write(json.dumps(rec, ensure_ascii=False) + "\n")
     n = sum(1 for _ in open(out))

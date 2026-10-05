@@ -99,3 +99,30 @@ never save a window you did not read, never edit `pool_verified.jsonl` by hand.
 
 opm -> csm -> berserk -> bleach -> db -> onepiece -> marvel -> mcu (pools),
 then the held-out test windows (`--pool test`, same steps) of every wiki + hxh.
+
+## Audit rulings (Claude; binding, read before every session)
+
+**Audit 1 (opm windows 1-20, 2026-10-05): 4/20 windows corrected -> run paused,
+rules below added, verify_save now refuses classes 2-4 mechanically.**
+Corrections are in `series/opm/training/labels/pool_audit.jsonl`.
+
+1. **Read possessives and pronouns against the whole sentence.** "Saitama and
+   Tatsumaki ... accidentally show up during *their* fight and defeat Big Iron":
+   "their fight" is Saitama vs Tatsumaki (they arrive mid-fight with each
+   other), so Saitama `fought` Tatsumaki — and NOT `fought` Big Iron (the
+   defeat row covers it; write `fought` beside `defeated` only when a fight
+   with that opponent is stated separately). Their entry also `met` everyone
+   present they were not already with (Feather, Big Iron).
+2. **Named group vs its members (G.2):** a group ("the private squad",
+   "Narinki's Private Squad", "the Iron Fist gang") is an end ONLY when the
+   window names none of its members. If it names members (Noria, Sanshon), write
+   one row per named member and no group row.
+3. **Species / race pages are never ends** (JJK calls them `species`, OPM
+   `race`): "The Subterranean People" -> no row. wiki_card's species warning is
+   binding, not advisory.
+4. **Indefinite descriptions are never ends** ("a monster disguised as
+   Waganma"); use the window's definite description for the same individual
+   ("the monster") or its name.
+5. `met` and `fought` are symmetric: ONE row per pair (not "A met B" + "B met A").
+6. "X appears being defeated by Y" with X then rescued is a defeat in progress
+   (G.1 defeated NO) -> `fought`.
