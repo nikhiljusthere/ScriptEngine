@@ -217,3 +217,14 @@ context, ONE window at a time, continuously:
 21. **Different characters that share a name are different ends**: Goku / Goku Black,
     Gohan / Future Gohan, Buu / Kid Buu, Zamasu / Fused Zamasu. Write the name the
     window uses; verify_save now decides "same person" by the wiki page, not by words.
+
+**Audit 49-51 (One Piece):**
+22. **A definite description of ONE individual is an end** (rule 4), not an unnamed
+    class: "a Plesiosaur attacks ... the monster carries Nami off" -> the monster
+    `fought` Luffy / Zoro, the monster `captured` Nami. Only plural or class nouns
+    ("the Marines", "the opponents", "the subordinates") are never ends.
+23. **Attacks told in passing are `fought`** (ruling 17 again, the commonest miss):
+    "hitting Vivi", "she exploded Igaram's ship", "help Luffy fight off the admiral"
+    (the helper fought too). Fainting from a trick or a fright caused by X -> X
+    `defeated` the one who fainted. "run to her aid" against a threat -> `saved`.
+    "The group docked at X" -> one `arrived` row per member the window names.
