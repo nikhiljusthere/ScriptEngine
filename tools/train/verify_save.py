@@ -124,7 +124,9 @@ def main():
     errs += end_errors(a.series, d.get("final") or [], text)
     if errs:
         sys.exit("REFUSED:\n" + "\n".join(errs))
-    rec = {"id": wid, "page": windows[wid]["page"], "section": windows[wid]["section"], **d}
+    import time
+    rec = {"id": wid, "page": windows[wid]["page"], "section": windows[wid]["section"], **d,
+           "saved_at": time.strftime("%Y-%m-%d %H:%M:%S")}  # the live monitor's feed order
     if a.replace:
         old = next(r for r in saved if r["id"] == wid)
         with open(lab / f"{a.pool}_audit.jsonl", "a") as f:
