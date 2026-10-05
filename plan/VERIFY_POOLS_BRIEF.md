@@ -150,3 +150,16 @@ opm 75 / csm 40 verified (all reviewed). Verification resumes on the local
 **ninfer 27B** (`-m ninfer-27b/qwen3.8-27b-ninfer`; owner: smarter and faster)
 once the 35B finishes the pool + test drafting; same brief, same rulings,
 Claude still reviews every saved window.
+
+**Audit 5-12 (27B sessions, ~240 windows): ~5% corrected.** Two recurring misses:
+
+11. **Never name an end from outside knowledge.** "Wyald is the first apostle that is
+    killed by another apostle" -> NO row (the window never says Zodd; "another
+    apostle" is indefinite). The page you opened tells you who someone IS; it never
+    supplies an end the window does not state.
+12. **Ruling 1 again — entries meet everyone present.** "X, Y and Z emerge from the
+    anomaly" in front of A and B -> X/Y/Z met A and B; reinforcements arriving where an
+    enemy is attacking -> met the enemy too (and fought, if they attack). Check every
+    "appears / emerges / arrives / turns up / responds to a call" sentence for it.
+13. A character's catchphrase or boast in a quote ("I've come from the depths of
+    Hell!") is not a narrated event.
