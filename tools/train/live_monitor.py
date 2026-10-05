@@ -101,7 +101,8 @@ def processes():
             ser = parts[parts.index("--series") + 1]
             kind = "test" if "test_in" in cmd else "pool"
             procs.append({"what": f"35B drafter: {ser} ({kind})", "pid": int(pid)})
-        elif "opencode run" in cmd and "--title" in cmd and "bin/opencode" in cmd:
+        elif cmd.split(" ", 1)[0].endswith("/opencode") and " run " in cmd and "--title" in cmd:
+            # the opencode binary itself, not the terminal shell that launched it
             title = cmd.split("--title", 1)[1].split(" Read ")[0].strip()
             model = cmd.split(" -m ", 1)[1].split()[0] if " -m " in cmd else "?"
             procs.append({"what": f"verifier session: {title} [{model}]", "pid": int(pid)})
