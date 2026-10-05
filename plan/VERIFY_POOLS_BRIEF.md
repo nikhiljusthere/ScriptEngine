@@ -228,3 +228,12 @@ context, ONE window at a time, continuously:
     (the helper fought too). Fainting from a trick or a fright caused by X -> X
     `defeated` the one who fainted. "run to her aid" against a threat -> `saved`.
     "The group docked at X" -> one `arrived` row per member the window names.
+
+**Audit 58 (Marvel, 8/30 windows corrected):**
+24. Marvel synopses are dense with the commonest misses — re-read every sentence for:
+    walk-ins and visits ("Fury and Quake walk in on Phobos", "Lisa visits Ralph",
+    "goes out clubbing with ... Victor") -> `met`; finding someone mid-fight -> `met`;
+    a portal / teleport that pulls named people away against their will -> `captured`;
+    "fled ... to escape the threat" -> `escaped` the named threat; "the Avengers attack X"
+    when the window names an Avenger -> member rows only (G.2); manipulating two named
+    groups "into a fight" -> the groups `fought`.
