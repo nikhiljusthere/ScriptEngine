@@ -180,3 +180,13 @@ context, ONE window at a time, continuously:
   re-read this brief before the next window.
 - Claude reviews every saved window and corrects/logs disagreements; never edit a
   saved record yourself.
+
+**Audit 23 rulings:**
+14. **Dreams, visions, hallucinations and imagined scenes are not events.** "In his
+    dream ... a small dog-like being ... its jaws kill Casca" -> no rows. A real event
+    recalled in a dream or flashback still counts (A.3); what happens only inside the
+    dream does not.
+15. **Accidental hits on allies are not fights** ("Power drives into him and Denji" —
+    she rams the enemy, Denji is collateral; "Rika's attack struck Yuta"). Write the
+    intended target only.
+16. "the rest of the squadron / team / group" is an unnamed group — never an end.
