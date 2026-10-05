@@ -411,23 +411,40 @@ def _words(name):
     return set(re.findall(r"[a-z0-9]{2,}", (name or "").lower()))
 
 
+def _toks(name):
+    return re.findall(r"[a-z0-9]{2,}", (name or "").lower())
+
+
+def _same_person(a, b):
+    """True when one name is the other's LEADING words ("Yuji" / "Yuji
+    Itadori"). Not any subset: "Gohan" / "Future Gohan", "Goku" / "Xeno
+    Goku", "Buu" / "Kid Buu" are different characters (pool verification
+    audit 43 -- the subset rule merged Gohan into Future Gohan)."""
+    ta, tb = _toks(a), _toks(b)
+    if not ta or not tb:
+        return not ta and not tb
+    short, long_ = (ta, tb) if len(ta) <= len(tb) else (tb, ta)
+    return long_[:len(short)] == short
+
+
 def dedup_names(rows):
     """One row per event when a window writes a name two ways ("Hanami
-    fought Yuji Itadori" + "Hanami fought Yuji", round 5): a row whose ends'
-    words are a SUBSET of an earlier row's ends (same verb, either
-    direction for fought/met) is the same event. Subset, not overlap, so
-    "Maki Zenin" and "Mai Zenin" stay two people."""
+    fought Yuji Itadori" + "Hanami fought Yuji", round 5): a row whose ends
+    are the same people as an earlier row's (same verb, either direction for
+    fought/met) is the same event. "Same person" = one name is the other's
+    leading words, so "Maki Zenin"/"Mai Zenin" and "Gohan"/"Future Gohan"
+    stay two people."""
     out = []
     for r in rows:
-        rs, ro = _words(r["subject"]), _words(r.get("object"))
         same = False
         for k in out:
             if k["verb"] != r["verb"]:
                 continue
-            ks, ko = _words(k["subject"]), _words(k.get("object"))
-            pairs = [(ks, ko)] + ([(ko, ks)] if r["verb"] in ("fought", "met") else [])
+            pairs = [(k["subject"], k.get("object"))]
+            if r["verb"] in ("fought", "met"):
+                pairs.append((k.get("object"), k["subject"]))
             for a_, b_ in pairs:
-                if rs and (rs <= a_ or a_ <= rs) and ((not ro and not b_) or (ro and b_ and (ro <= b_ or b_ <= ro))):
+                if _same_person(r["subject"], a_) and _same_person(r.get("object"), b_):
                     same = True
             if same:
                 break
