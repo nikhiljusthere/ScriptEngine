@@ -348,3 +348,20 @@ busy drafting/verifying now). Training data = the VERIFIED universal pools
 (+ JJK verified), rebuilt by `build_student_set.py` — the sweep's current
 TRAIN/DEV paths still point at the old JJK student set and are switched when
 the verified set exists.
+
+### Overnight 2026-10-06 (owner: "after the 3000 windows are 100% accurate, move to training; if training finishes by morning, test and fine-tune toward ~1.0/1.0/1.0")
+
+1. Pool verification continues (single interactive 27B session at 262k, one window at a
+   time; Claude reviews EVERY saved window, corrections in pool_audit.jsonl; rulings
+   in plan/VERIFY_POOLS_BRIEF.md). Done = all 8 pools 300/300 (marvel/mcu 600) AND every
+   window reviewed (`audit_next.py --status`: waiting 0 everywhere).
+2. Final accuracy pass before training: a blind re-read of a random sample per wiki by
+   Claude; anything wrong is fixed and its class swept across the wiki.
+3. Build: `build_universal_set.py` (gates: all reviewed, verbatim quotes, no test/holdout
+   leakage, page-split dev, 35% mix cap) -> series/universal/training/student/.
+4. GPU switch: stop the 27B (exact PID), train-env on the free card.
+   Stage A (reduced, ~5 arms ~30 min each): rsLoRA r16 lr1e-4, r16 lr2e-4, r64 lr1e-4,
+   full-FT lr1e-5, full-FT lr2e-5 (20-step full-FT memory smoke first). Pick on dev F1.
+5. Then: verify the 600 held-out test windows with the 27B (same protocol) and score the
+   best student once on them + HxH + the blind JJK test; widen the grid around the winner
+   (Stage B) toward ~1.0 if time allows.
