@@ -387,8 +387,11 @@ def check_rows(rows, window, wiki, bad_end):
             dropped.append({**r, "why": why})
             continue
         # group ends: one row per named member (G.2)
-        subs = [x.strip() for x in re.split(r",\s*(?:and\s+)?|\s+and\s+", s) if x.strip()]
-        objs = [x.strip() for x in re.split(r",\s*(?:and\s+)?|\s+and\s+", o)] if o else [None]
+        # A comma between digits is a thousands separator, never a list:
+        # "170,000-Year-Old Cicada Adult" (opm pool verification, audit 18)
+        # was split into "170" + "000-Year-Old Cicada Adult".
+        subs = [x.strip() for x in re.split(r"(?<!\d),(?!\d)\s*(?:and\s+)?|\s+and\s+", s) if x.strip()]
+        objs = [x.strip() for x in re.split(r"(?<!\d),(?!\d)\s*(?:and\s+)?|\s+and\s+", o)] if o else [None]
         for ss in subs:
             for oo in objs:
                 if oo and ss.lower() == oo.lower():
