@@ -106,6 +106,9 @@ def processes():
             title = cmd.split("--title", 1)[1].split(" Read ")[0].strip()
             model = cmd.split(" -m ", 1)[1].split()[0] if " -m " in cmd else "?"
             procs.append({"what": f"verifier session: {title} [{model}]", "pid": int(pid)})
+        elif cmd.split(" ", 1)[0].endswith("/opencode") and " run " not in cmd and " serve" not in cmd:
+            # the owner's interactive verifier window (opencode TUI)
+            procs.append({"what": "verifier session: interactive opencode window", "pid": int(pid)})
         elif "ninfer-serve" in cmd:
             port = cmd.split("--port", 1)[1].split()[0] if "--port" in cmd else "?"
             ctx = cmd.split("--max-context", 1)[1].split()[0] if "--max-context" in cmd else "?"
