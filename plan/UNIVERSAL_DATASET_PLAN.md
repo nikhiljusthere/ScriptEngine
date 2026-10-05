@@ -379,3 +379,14 @@ the verified set exists.
    speculators) and/or DFlash; keep only if windows/s rises at the chosen batch size.
 5. Receipt: windows/s, tok/s, VRAM per config; the winner becomes the extraction command.
    (ninfer is out: 27B/35B artifacts only, max 8 concurrent requests.)
+
+## Order revision (owner 2026-10-06 ~01:35): no test-window verification
+The 600 drafted test windows are NOT verified (that was a 27B GPU leg between training
+and results). The final exam instead = a page-disjoint TEST split carved from the
+verified pools (~5% of each series' pages, never trained on, never used for arm
+selection) + the verified JJK blind v6 (100 windows). build_universal_set.py writes
+train/dev/test. Order: finish the 3,000 review -> accuracy pass -> build -> GPU switch
+-> Stage A (pick on dev) -> score the winner once on test + blind v6 -> Stage B ->
+post-training serving. Base model stays Qwen3.5-4B (no stronger 4B exists as of
+2026-10-06: Qwen3.6/3.8 have no small sizes; Gemma 4 E4B is weaker); fallback if the
+4B misses ~.95: one bf16 LoRA run on Qwen3.5-9B on the same set.
