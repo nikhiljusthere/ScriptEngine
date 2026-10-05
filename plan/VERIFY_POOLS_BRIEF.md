@@ -190,3 +190,12 @@ context, ONE window at a time, continuously:
     she rams the enemy, Denji is collateral; "Rika's attack struck Yuta"). Write the
     intended target only.
 16. "the rest of the squadron / team / group" is an unnamed group — never an end.
+
+**Audit 28-36 (Bleach) — the recurring miss:**
+17. **Blows and contact mentioned in passing are events.** Slaps, punches, kicks,
+    clotheslines, "pins her against a pole", "thanking Isshin for hitting him", "reels
+    back with a bloody nose ... wants to be punched again", "a childish fight", "knocking
+    his mask off" -> `fought` (comedic or not). Encounters told in passing too: "is
+    confronted by her aunt", "asks him if he is a member of the Kuchiki Clan" (first
+    contact) -> `met`. Re-read every sentence of a window once more for these before
+    saving — they are most of what Claude's review still adds.
