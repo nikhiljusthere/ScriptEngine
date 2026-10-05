@@ -163,3 +163,20 @@ Claude still reviews every saved window.
     "appears / emerges / arrives / turns up / responds to a call" sentence for it.
 13. A character's catchphrase or boast in a quote ("I've come from the depths of
     Hell!") is not a narrated event.
+
+## Single interactive session mode (owner 2026-10-05 ~21:20) — SUPERSEDES "Session limits" and "Order"
+
+One opencode session (the owner's interactive window), the 27B at its full 262k
+context, ONE window at a time, continuously:
+- Do NOT stop after 20 windows. After each saved window, run verify_next.py again and
+  continue. When a series says ALL VERIFIED, move to the next one.
+- Remaining order: opm -> csm -> berserk -> bleach -> db -> onepiece -> marvel -> mcu
+  (pools), then `--pool test` for opm, csm, berserk, bleach, db, onepiece, marvel,
+  mcu, hxh.
+- Decision file: /tmp/vp_<series>_<pool>.json (one at a time, overwritten per window).
+- Every 25 windows, re-read the "Audit rulings" sections of this brief (they grow as
+  Claude reviews your saves).
+- If the context gets long, opencode compacts automatically; after a compaction,
+  re-read this brief before the next window.
+- Claude reviews every saved window and corrects/logs disagreements; never edit a
+  saved record yourself.
