@@ -404,36 +404,51 @@ def check_rows(rows, window, wiki, bad_end):
                     continue
                 seen.add(key)
                 kept.append({"quote": q, "subject": ss, "verb": v, "object": oo})
-    return dedup_names(kept), dropped
+    return dedup_names(kept, wiki), dropped
 
 
 def _words(name):
     return set(re.findall(r"[a-z0-9]{2,}", (name or "").lower()))
 
 
-def _toks(name):
-    return re.findall(r"[a-z0-9]{2,}", (name or "").lower())
+def _same_person(a, b, wiki=None):
+    """Two ends are one person when the names are identical (case/space
+    folded) or -- with the wiki -- both resolve to the same page ("Yuji" and
+    "Yuji Itadori" -> Yuji Itadori). Word heuristics are NOT used: subset
+    merged "Gohan" into "Future Gohan" and leading-words merged "Goku" into
+    "Goku Black" (pool verification audits 43-44) -- different characters."""
+    if not a or not b:
+        return not a and not b
+    na, nb = " ".join(str(a).lower().split()), " ".join(str(b).lower().split())
+    if na == nb:
+        return True
+    if wiki is not None:
+        ca, cb = _canonical(a, wiki), _canonical(b, wiki)
+        return bool(ca and cb and ca == cb)
+    return False
 
 
-def _same_person(a, b):
-    """True when one name is the other's LEADING words ("Yuji" / "Yuji
-    Itadori"). Not any subset: "Gohan" / "Future Gohan", "Goku" / "Xeno
-    Goku", "Buu" / "Kid Buu" are different characters (pool verification
-    audit 43 -- the subset rule merged Gohan into Future Gohan)."""
-    ta, tb = _toks(a), _toks(b)
-    if not ta or not tb:
-        return not ta and not tb
-    short, long_ = (ta, tb) if len(ta) <= len(tb) else (tb, ta)
-    return long_[:len(short)] == short
+def _canonical(name, wiki):
+    """The page a name certainly denotes: itself when it is an exact page
+    title, else the resolver's answer only when it is unique. The resolver's
+    first answer is not trusted ("Goku" -> Future Goku first)."""
+    # only pages that can BE a person (a battle, chapter or episode page
+    # mentioning the name is not a candidate: "Yuji" also hits "Yuji
+    # Itadori, Maki Zenin & Hana Kurusu vs. Sukuna")
+    skip = {"battle", "battles", "chapter", "episode", "volume", "story_arcs", "arc"}
+    cands = [p for p in wiki.resolve(str(name)) if str(wiki.label.get(p) or "").lower() not in skip]
+    exact = [p for p in cands if p.lower() == str(name).lower()]
+    if exact:
+        return exact[0]
+    return cands[0] if len(cands) == 1 else None
 
 
-def dedup_names(rows):
+def dedup_names(rows, wiki=None):
     """One row per event when a window writes a name two ways ("Hanami
     fought Yuji Itadori" + "Hanami fought Yuji", round 5): a row whose ends
     are the same people as an earlier row's (same verb, either direction for
-    fought/met) is the same event. "Same person" = one name is the other's
-    leading words, so "Maki Zenin"/"Mai Zenin" and "Gohan"/"Future Gohan"
-    stay two people."""
+    fought/met) is the same event -- "same person" decided by
+    _same_person (identical name, or the same wiki page)."""
     out = []
     for r in rows:
         same = False
@@ -444,7 +459,7 @@ def dedup_names(rows):
             if r["verb"] in ("fought", "met"):
                 pairs.append((k.get("object"), k["subject"]))
             for a_, b_ in pairs:
-                if _same_person(r["subject"], a_) and _same_person(r.get("object"), b_):
+                if _same_person(r["subject"], a_, wiki) and _same_person(r.get("object"), b_, wiki):
                     same = True
             if same:
                 break

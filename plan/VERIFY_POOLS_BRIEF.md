@@ -209,3 +209,11 @@ context, ONE window at a time, continuously:
     ("Piccolo revived Gohan ... heart beating again" -> Gohan awakened).
 19. "mortally wounding him", "fatal blow" without a stated death -> `fought`, not
     `killed` or `defeated`. "overpowered" mid-fight -> `fought`.
+
+**Audit 43-44 (DB):**
+20. **A battle list IS events** ("Battles Featured", "X vs. Y" lines, a "vs." title):
+    one `fought` row per opposing pair, the line as the quote; skip illusions, image
+    training (imagined) and self-fights. Never rule such a list "structural".
+21. **Different characters that share a name are different ends**: Goku / Goku Black,
+    Gohan / Future Gohan, Buu / Kid Buu, Zamasu / Fused Zamasu. Write the name the
+    window uses; verify_save now decides "same person" by the wiki page, not by words.
