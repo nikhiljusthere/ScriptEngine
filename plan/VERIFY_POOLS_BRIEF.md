@@ -199,3 +199,13 @@ context, ONE window at a time, continuously:
     confronted by her aunt", "asks him if he is a member of the Kuchiki Clan" (first
     contact) -> `met`. Re-read every sentence of a window once more for these before
     saving — they are most of what Claude's review still adds.
+
+**Audit 37-38 (DB) — transformations:**
+18. **Using a form the character already has is NOT `awakened`**: "Vegeta transforms
+    into a Great Ape", "Gohan turns Super Saiyan 2" (he already had it), "Broly takes on
+    his Legendary form", "both of them transform" (hybrids). `awakened` = a FIRST-ever
+    transformation or a newly gained power ("Goku becomes a Super Saiyan for the first
+    time", "the dragon unlocks his latent potential"), waking up, or being revived
+    ("Piccolo revived Gohan ... heart beating again" -> Gohan awakened).
+19. "mortally wounding him", "fatal blow" without a stated death -> `fought`, not
+    `killed` or `defeated`. "overpowered" mid-fight -> `fought`.
