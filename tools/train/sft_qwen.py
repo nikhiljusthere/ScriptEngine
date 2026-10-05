@@ -222,6 +222,18 @@ def main():
             print("full-FT: bitsandbytes absent -> adamw_torch_fused (VRAM note: "
                   "~64 GB optimizer+grad+weight headroom; shrink micro-batch if OOM)")
         peft_cfg = None
+        # Full FT trains the LANGUAGE layers only. The vision tower is dead
+        # weight for text extraction; the embeddings and lm_head are frozen
+        # (as in the LoRA arms) so a ~3k-window dataset cannot drift the
+        # vocabulary -- and the frozen 1.6 GB embedding/head pair keeps the
+        # 8-bit-AdamW full FT inside the 32 GB card.
+        frozen = 0
+        for name, prm in model.named_parameters():
+            if any(k in name for k in ("visual", "vision", "embed_tokens", "lm_head")):
+                prm.requires_grad_(False)
+                frozen += prm.numel()
+        trainable = sum(prm.numel() for prm in model.parameters() if prm.requires_grad)
+        print(f"full-FT: trainable {trainable/1e9:.2f}B params, frozen {frozen/1e9:.2f}B (vision/embeddings/head)")
     else:
         from peft import LoraConfig, get_peft_model
         peft_cfg = LoraConfig(r=a.rank, lora_alpha=alpha, lora_dropout=a.dropout,

@@ -4,7 +4,10 @@
     python tools/train/sweep.py [--root ~/student_runs] [--plan] [--stage A|B|C|all]
 
 Stage A: lr {3e-5,6e-5,1e-4,2e-4} x rank {16,64,128} (alpha=2r,
-dropout 0.05, 1 epoch) -> top-3 by dev F1.
+dropout 0.05, 1 epoch), plus FULL fine-tune arms at lr {1e-5,2e-5}
+(language layers only, 8-bit paged AdamW; owner 2026-10-05: "I want the
+best results" -- LoRA vs full FT is decided by dev F1, not assumed)
+-> top-3 by dev F1.
 Stage B: around each top-3, lr x{0.7,1.0,1.4}, up to 4 epochs with
 per-epoch early stop; rare-verb repeat {1,3} ONLY for the best Stage-A
 lr.
@@ -28,6 +31,7 @@ TEST = ROOT / "series/jjk/training/recall_gold_v3/gold_test_v4.gen2.json"
 RUNS = Path.home() / "student_runs"
 
 LRS_A = [3e-5, 6e-5, 1e-4, 2e-4]
+LRS_FULL_A = [1e-5, 2e-5]
 RANKS_A = [16, 64, 128]
 DROP, EPOCHS_A = 0.05, 1
 B_LR_MULT = [0.7, 1.0, 1.4]
@@ -47,7 +51,16 @@ def stage_a():
                          "alpha": 2 * r, "dropout": DROP, "epochs": EPOCHS_A,
                          "seed": 1, "rare_x": 1,
                          "name": f"A-lr{lr_tag(lr)}-r{r}"})
+    for lr in LRS_FULL_A:
+        runs.append({"stage": "A", "lr": lr, "rank": 0, "alpha": 0, "dropout": 0.0,
+                     "epochs": EPOCHS_A, "seed": 1, "rare_x": 1, "full_ft": True,
+                     "name": f"A-lr{lr_tag(lr)}-full"})
     return runs
+
+
+def arm(t):
+    """'full' for a full fine-tune, else 'r<rank>' -- run-name tag."""
+    return "full" if t.get("full_ft") else f"r{t['rank']}"
 
 
 def stage_b(top3, best_lr):
@@ -57,17 +70,18 @@ def stage_b(top3, best_lr):
             lr = t["lr"] * m
             for rx in ([1, 3] if abs(t["lr"] - best_lr) < 1e-12 else [1]):
                 runs.append({"stage": "B", "lr": lr, "rank": t["rank"],
-                             "alpha": t["alpha"], "dropout": DROP,
+                             "alpha": t["alpha"], "dropout": t.get("dropout", DROP),
                              "epochs": B_EPOCHS, "seed": 1, "rare_x": rx,
-                             "name": f"B-lr{lr_tag(lr)}-r{t['rank']}-rx{rx}"})
+                             "full_ft": bool(t.get("full_ft")),
+                             "name": f"B-lr{lr_tag(lr)}-{arm(t)}-rx{rx}"})
     return runs
 
 
 def stage_c(best):
     return [{"stage": "C", "lr": best["lr"], "rank": best["rank"],
-             "alpha": best["alpha"], "dropout": DROP, "epochs": B_EPOCHS,
-             "seed": s, "rare_x": best["rare_x"],
-             "name": f"C-lr{lr_tag(best['lr'])}-r{best['rank']}-rx{best['rare_x']}-s{s}"}
+             "alpha": best["alpha"], "dropout": best.get("dropout", DROP), "epochs": B_EPOCHS,
+             "seed": s, "rare_x": best["rare_x"], "full_ft": bool(best.get("full_ft")),
+             "name": f"C-lr{lr_tag(best['lr'])}-{arm(best)}-rx{best['rare_x']}-s{s}"}
             for s in SEEDS_C]
 
 
@@ -78,7 +92,7 @@ def cmd(run, root):
             "--lr", str(run["lr"]), "--rank", str(run["rank"]),
             "--alpha", str(run["alpha"]), "--dropout", str(run["dropout"]),
             "--epochs", str(run["epochs"]), "--seed", str(run["seed"]),
-            "--rare-x", str(run["rare_x"])]
+            "--rare-x", str(run["rare_x"])] + (["--full-ft"] if run.get("full_ft") else [])
 
 
 def final_f1(out):

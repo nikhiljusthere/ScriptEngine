@@ -334,3 +334,17 @@ assistant-only label mask correct).
   and inference. Check logs for "falling back to its reference PyTorch
   implementation" (fla import failure = >10x slower). fla Blackwell autotune
   hang fix (fla PR #1000) — sm_120 coverage UNVERIFIED.
+
+### LoRA vs full fine-tune (owner 2026-10-05: "I want the best results")
+
+Not assumed — raced. Stage A (`tools/train/sweep.py`) = the 12 LoRA arms
+(rsLoRA, lr {3e-5..2e-4} x rank {16,64,128}) + 2 FULL fine-tune arms (lr 1e-5,
+2e-5): language layers only (vision tower, embed_tokens, lm_head frozen),
+paged AdamW 8-bit (`bitsandbytes` 0.50.2 installed in ~/train-env, an
+optimizer step verified on the 5090 / CUDA 13), gradient checkpointing.
+Dev F1 picks the arm; Stage B/C carry the winner (LoRA or full) forward.
+Before Stage A: a 20-step full-FT smoke to confirm it fits in 32 GB (GPU is
+busy drafting/verifying now). Training data = the VERIFIED universal pools
+(+ JJK verified), rebuilt by `build_student_set.py` — the sweep's current
+TRAIN/DEV paths still point at the old JJK student set and are switched when
+the verified set exists.
