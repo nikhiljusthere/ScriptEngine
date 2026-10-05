@@ -293,3 +293,20 @@ how old they are" (finds + contact = met), "lure the girl into disengaging her
 technique" (technique used on someone = fought), "bisects her father's head"
 (no stated death = fought; the window never names Ogi, so the end is "her
 father").
+
+## 12. Blind test v6 — pre-registered 2026-10-05 (before any model output on it)
+
+Claude adjudicated `gold_v6_blind/blind_in.jsonl` (100 windows, 54 JJK pages,
+never read before) under the frozen guideline (A-G.4, G.5 as annotator
+policy), with no model output seen. Log with a reason per row:
+`gold_v6_blind/decisions_blind.jsonl`; gold: `gold_v6_blind/gold_blind_v6.jsonl`
+= 100 windows, **71 core / 24 optional / 63 earned empties**.
+Pre-registered conventions: a wiki typo in a name -> core under the real name,
+the typo as optional; a generic unnamed person ("the girl", "the coach") ->
+optional; a specific described individual ("the Deskunte chieftain") -> core.
+
+sha256 (frozen; any later change to these files voids the blind score):
+- gold_blind_v6.jsonl  5e3f61d1828bee2a7a89d122fcfc45bede2c573a677bf12d79ef4a3a3522fc87
+- decisions_blind.jsonl 7b4420c5493e5512506630a24cb022a7df85e1b7ef3fece9ce9a70b4969abbc6
+
+The frozen drafter (section 11) runs on it ONCE; that score is reported as is.
