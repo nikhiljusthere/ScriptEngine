@@ -140,3 +140,13 @@ window (100%, not 5%) — the worker's window accuracy is ~80% in both sessions.
    unless the window narrates the attack as an act against them.
 10. **Attacks on a building or place** ("unleashed this attack on the Hero
     Association headquarters") are not `fought` with the organization.
+
+**Audit 3-4 (opm 41-75, csm 1-40): 4/75 corrected** (take-by-surprise is not
+captured; a group's arrival meets everyone present; "not enough to stop her" =
+escaped; "kills X" stays killed even if X revives).
+
+**Worker switch (owner 2026-10-05 ~14:10):** Space Bunny sessions stopped at
+opm 75 / csm 40 verified (all reviewed). Verification resumes on the local
+**ninfer 27B** (`-m ninfer-27b/qwen3.8-27b-ninfer`; owner: smarter and faster)
+once the 35B finishes the pool + test drafting; same brief, same rulings,
+Claude still reviews every saved window.
