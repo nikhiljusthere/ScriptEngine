@@ -196,7 +196,11 @@ implicit cases explicit. Ends are written as the window writes them.
 - `arrived`, `departed`, `escaped` always carry an object; `awakened` never does; no row has a null object otherwise.
 - No self-rows except a stated self-directed act; no "saved self" for surviving or self-healing.
 
-### G.5 Time and multiplicity (round 7, from the r5/r6 residual)
+### G.5 Time and multiplicity (round 7, from the r5/r6 residual) — ANNOTATOR NOTE, not in the drafter prompt
+
+Tested in round 7 as model instructions and NOT adopted: the 35B became liberal
+(sample-origin FPs 4 -> 15, dev F1 .943 -> .911) and the targeted misses stayed
+missed. The policy still holds for human annotators and the gold.
 
 - **Tense never removes an event (restates A.3).** An event the window states
   as having happened counts wherever it sits: backstory, a recap, a reason

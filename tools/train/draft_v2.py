@@ -33,6 +33,11 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools" / "train"))
 GUIDE = (ROOT / "plan" / "EVENT_ANNOTATION_GUIDELINE.md").read_text(encoding="utf-8")
 GUIDE = GUIDE[GUIDE.index("## A."):]
+# G.5 is an annotator note tested in round 7 and NOT adopted for the model:
+# in the drafter prompt it made the samples liberal (sample-origin FPs 4 ->
+# 15, F1 .943 -> .911) without recovering the misses it targets.
+if "### G.5" in GUIDE:
+    GUIDE = GUIDE[:GUIDE.index("### G.5")].rstrip() + "\n"
 VERBS = ["fought", "defeated", "killed", "captured", "escaped", "saved", "betrayed",
          "sealed", "awakened", "met", "arrived", "departed"]
 NEEDS_OBJECT = set(VERBS) - {"awakened"}
@@ -47,6 +52,10 @@ CLASS_WORDS = re.compile(
 # "their Kyoto rivals" -- round 5's verifier struck these; a mechanical
 # check now does). Never applied to arrived/departed objects: places such
 # as "Jujutsu headquarters" are ends there.
+# Indefinite ends ("a defeated curse user"), unnamed relations ("his best
+# friend", G.2) and bare collectives ("the group", "The trio") -- round 7
+# FPs; no gold v5.5 end matches.
+UNNAMED_END = re.compile(r"(?i)^(an? \w|.*\bbest friends?$|(the |a )?(group|trio|duo|pair|team|party)$)")
 PLURAL_DESC = re.compile(r"(^|\s)[a-z][a-z'-]*[^su\W]s$|(^|\s)[a-z]+ies$")
 
 SYSTEM = """You are a meticulous event annotator for fiction-wiki passages. You label ONE window. Precision and completeness matter equally: every event the window states, and nothing it does not state.
@@ -55,9 +64,9 @@ Follow the annotation guideline below exactly, especially section G (v2), which 
 
 METHOD — do this in your reasoning before answering:
 1. Split the window into sentences. For EVERY sentence, ask:
-   a. Is an action stated as DONE? (Not planned, intended, attempted-and-not-made, hypothetical, negated, threatened, or only asked about.) An attack that was MADE counts even if it was blocked, dodged or failed. Tense never removes an event: backstory, a recap, a reason clause ("for murdering X") or a statement of fact about the past counts (G.5).
+   a. Is an action stated as DONE? (Not planned, intended, attempted-and-not-made, hypothetical, negated, threatened, or only asked about.) An attack that was MADE counts even if it was blocked, dodged or failed.
    b. Who does it, and to whom? Resolve pronouns only inside this window; use the name the window gives; split groups into one row per named member.
-   c. Which verb? Use the G.1 table and the decision order (killed > defeated > fought; write fought too when the fight is stated separately). One sentence can state SEVERAL events: check every verb whose G.1 YES fits ("intercepts the blow aimed at X" = fought the attacker AND saved X; "appeared and attacked X" = met AND fought).
+   c. Which verb? Use the G.1 table and the decision order (killed > defeated > fought; write fought too when the fight is stated separately).
 2. Check each candidate row against G.2 (ends), G.3 (window) and G.4 (shape). Drop any row that fails.
 3. Re-read the whole window once more looking ONLY for events you have not listed (arrivals to people = met, takes X away = saved, freezing/trapping = sealed, blocked or failed attacks = fought, pronoun defeats, named creatures acting).
 
@@ -196,7 +205,7 @@ def g1_rows():
 
 G1 = g1_rows()
 
-SENTENCE_PROMPT = """SENTENCE PASS. Below, the window is split into numbered sentences. Under each sentence are the guideline G.1 rules for the verbs its wording hints at. For EVERY sentence decide, using those rules and the decomposition method (is an action stated as DONE? who does it to whom, resolving pronouns inside this window? which verb?), whether it states an event that is NOT already in the rows below. A sentence can state several events: a row already written for it does not finish it — check every hinted verb (an interception = fought the attacker AND saved the target). Tense never removes an event: backstory, recaps, reason clauses ("for murdering X") count (G.5). Hints are only hints: most hinted sentences state no new event; write a row only when the G.1 YES column covers what the sentence says.
+SENTENCE_PROMPT = """SENTENCE PASS. Below, the window is split into numbered sentences. Under each sentence are the guideline G.1 rules for the verbs its wording hints at. For EVERY sentence decide, using those rules and the decomposition method (is an action stated as DONE? who does it to whom, resolving pronouns inside this window? which verb?), whether it states an event that is NOT already in the rows below. Hints are only hints: most hinted sentences state no new event; write a row only when the G.1 YES column covers what the sentence says.
 
 Rows already written for this window (do not repeat them):
 %s
@@ -359,7 +368,7 @@ def check_rows(rows, window, wiki, bad_end):
                                              r"lookout|player|student|opponent|enemy|member)$", end))
                 is_place = v in ("arrived", "departed") and end == o
                 if (CLASS_WORDS.match(end) and not definite_one) or not end or \
-                        (PLURAL_DESC.search(end) and not is_place):
+                        (PLURAL_DESC.search(end) and not is_place) or UNNAMED_END.search(end):
                     why = f"unnamed/class end: {end!r}"
                     break
                 if wiki is not None:
@@ -558,8 +567,11 @@ def main():
             def nkey(e):
                 return (str(e.get("subject", "")).lower(), str(e.get("verb", "")).lower(),
                         str(e.get("object") or "").lower())
-            agreed = set.intersection(*[{nkey(e) for e in check_rows(sm, window, wiki, bad_end)[0]}
-                                        for sm in samples])
+            # agreed = written by at least two samples (with two samples:
+            # by both)
+            votes_by_key = Counter(k for sm in samples
+                                   for k in {nkey(e) for e in check_rows(sm, window, wiki, bad_end)[0]})
+            agreed = {k for k, n in votes_by_key.items() if n >= 2}
             protected = [x for x in rows_all if nkey(x) in agreed]
             rows_all = [x for x in rows_all if nkey(x) not in agreed]
         if ok and a.verify_pass and rows_all:

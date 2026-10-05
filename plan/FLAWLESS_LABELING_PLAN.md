@@ -207,7 +207,56 @@ addition. Long, explicit checks are the point; speed comes from the 35B's
 | r4 replay | gold v5.3 (W20 amend) + scorer article strip + zero-loss checks (2026-10-05) | .879 | .953 | .915 |
 | r5 | + numbered-sentence pass with the hinted G.1 rows beside each sentence | .896 | .959 | .926 |
 | r6v | verifier only, on r5's stored drafts: mechanical checks BEFORE the verifier, rows both samples wrote skip it, plural-crowd ends, self-row drop, name-subset dedup | .917 | .970 | .943 |
-| r7 | + G.5 (tense never removes an event; one sentence, several events) in the guideline, METHOD and sentence pass | running | | |
+| r6v (end checks) | r6v + indefinite / "best friend" / bare-collective ends dropped mechanically | .917 | .974 | .945 |
+| r6v re-run | identical config, identical drafts (verifier noise measurement) | .910 | .962 | .935 |
+| r7 | + G.5 (tense never removes an event; one sentence, several events) in the model prompt — REJECTED, reverted | .906 | .934 | .920 |
+| r6x | 3rd draft sample, rows in >= 2 of 3 samples skip the verifier — not adopted | .899 | .962 | .929 |
+| **r6v3** | **r6v with 3 verifier votes (drop only when all 3 drop with a code) — FROZEN** | **.924** | **.963** | **.943** |
+
+## 11. The honest dev ceiling (stop rule met 2026-10-05: r7 and r6x both < +0.5 pt)
+
+**Frozen drafter** (`tools/train/draft_v2.py`): `--samples 2 --no-missed-pass
+--family-passes --sentence-pass --normalize-first --protect-agreed
+--verify-pass --verify-prompt v3 --verify-votes 3`, k=6 retrieved examples,
+ninfer 35B at 262,144 context, temperature 0.6. ~75 min per 269 windows
+(4 workers). Dev (gold v5.5, window match + aliases): **R .924 / P .963 /
+F1 .943, +-1 pt run to run** (the verifier alone moves F1 by ~1 pt; the
+draft samples by ~1-2 pt). 3 votes chosen over 2 at equal F1 because it
+strikes fewer true rows (4 vs 7-11): production labels pass a manual inline
+check next, where an extra row is cheap to strike and a missing one is not.
+
+**Why not 1.0 (the residual, r6v3: 22 FN, 10 FP), by class:**
+- *Oblique fight statements* (8 FN): "Up against such a fierce opponent ...
+  while fighting", "rejoins the fight", "In the heat of battle", "lure the
+  girl into disengaging her technique", "use Toge's cursed speech ... on a
+  weakened Sukuna" (the USER is Yuta; the model credits Toge), "redirect
+  Yuji's flying kick towards Sukuna", "knocks the appendage aside" (the end is
+  the curse, not the body part).
+- *Encounters judged as non-events* (8 FN): "Sukuna stops them", "both sides
+  meet", "finds himself in front of", "appeared and attacked" (met half),
+  arrival into a group then talk (Panda/Yuji, Panda/Noritoshi), "happened to
+  have met up with".
+- *Background mentions* (4 FN): "for murdering the Judge and Prosecutor",
+  "she beat him", "Choso almost killed him earlier" — G.5 as a prompt rule
+  did not recover them (r7).
+- *One sentence, two events* (1 FN): "intercepts his punch" written as fought,
+  never as saved.
+- *FPs* (10): an attempt ("tries to use ... on"), friendly fire ("Rika's
+  attack struck Yuta"), a body part as end, a future interview, "freezes
+  everyone present" credited to the wrong people, verb confusion
+  (retrial = sealed), a chapter-title fragment ("Hunted down by Okkotsu").
+
+Several FN rows are judgment calls Claude's own gold needed amending on
+(v5.3-v5.5): the line between "an arrival with talk" and "a meeting" is not
+crisp enough for any annotator to be at 1.0. The remaining gap to flawless
+is closed by the owner's MANUAL inline verification of every production
+window, not by more prompt rounds — measured by the 5% blind re-annotation
+(section 7).
+
+**Next:** guideline v2 + this config are frozen. Claude adjudicates the fresh
+blind test `gold_v6_blind/blind_in.jsonl` (100 windows, 54 pages, never read,
+no model output seen), then the frozen drafter runs on it once, and that
+score is the reportable number.
 
 Gold versions: v5.4 = the entry-rule consistency sweep (all 37 gold windows
 with entry wording read; "an entry to people not already present = met even
