@@ -25,8 +25,10 @@ import argparse, json, math, os, subprocess, sys, time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-TRAIN = ROOT / "series/jjk/training/student/train.jsonl"
-DEV = ROOT / "series/jjk/training/student/dev.jsonl"
+# The universal verified set (tools/train/build_universal_set.py): the 8
+# verified pools + the JJK verified gold, page-split dev, 35% mix cap.
+TRAIN = ROOT / "series/universal/training/student/train.jsonl"
+DEV = ROOT / "series/universal/training/student/dev.jsonl"
 TEST = ROOT / "series/jjk/training/recall_gold_v3/gold_test_v4.gen2.json"
 RUNS = Path.home() / "student_runs"
 
