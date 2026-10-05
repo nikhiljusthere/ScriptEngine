@@ -196,7 +196,13 @@ re-measured BEFORE any pool is labeled — never a model swap.
 
 ## Labeler + verification protocol (owner 2026-10-04 ~22:3x — supersedes the bake-off/acceptance text above)
 
-**Labeler model:** `Cyber-Tiel-Coder-35B-A3B-MTP-UD-Q5_K_XL.gguf`
+**Superseded 2026-10-05:** the drafter is the **ninfer 35B** with drafter v2
+(owner: "run only the 35B ninfer model as a drafter"), frozen config in
+`plan/FLAWLESS_LABELING_PLAN.md` §11 (blind F1 .812), served at 64k / 8 lanes
+(`tools/train/ops/serve_35b_64k.sh`). Pool verification brief:
+`plan/VERIFY_POOLS_BRIEF.md`. The CyberTiel text below is history.
+
+**Labeler model (2026-10-04, superseded):** `Cyber-Tiel-Coder-35B-A3B-MTP-UD-Q5_K_XL.gguf`
 (peculiar-ragdoll/Cyber-Tiel-Coder-35B-A3B-GGUF-MTP @ `fa19d4f3`, MIT, 26.98 GB,
 `/mnt/PROJECTS/models/cybertiel-35b-mtp/`), served by llama.cpp
 (`~/llama.cpp/build/bin/llama-server`, build 11074 `26394b4e6`, has draft-mtp):
