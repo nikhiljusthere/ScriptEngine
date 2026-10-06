@@ -27,7 +27,7 @@ CROWD = re.compile(r"(?<!-)\b(police|former|active|several|some|many|students|he
                    r"armada|fleet|thugs|men|agents|refugees|cultists|people|the group|the team)\b|^(a|an|the) ", re.I)
 SPECIES = re.compile(r"^(Kree|Skrulls?|Shi'ar|Inhumans|Chitauri|Brood|Builders|Frost Giants|Dwarves|Sovereign|"
                      r"Atlanteans|mutants|humans|Kami|Olympians|Asgardians|Eternals|Deviants|Sentinels|"
-                     r"Quantumnauts|Wolf-Men|Elder Gods)$")
+                     r"Quantumnauts|Wolf-Men|Elder Gods|Harpies|Frost Giants|Dark Elves|Chitauri|Kree|Skrull)$")
 VEHICLE = re.compile(r"\b(Blackbird|Quinjet|Helicarrier|Zephyr|Bus|Milano|Benatar|Starjammer|Stratojet|ship|jet|"
                      r"plane|car|truck|submarine|Ark)\b")
 RANK = re.compile(r"^(?:Dr\.|Doctor|Brigadier General|Brigadier|General|Agent|Officer|Senator|Prelate|Empress|Emperor|Mayor|Detective|Sergeant|"
@@ -143,7 +143,7 @@ def main():
                 flags.append(f"{tag}: confrontation without a stated attack -> met (R2)")
             if v in ("killed", "defeated", "captured", "escaped", "saved") and HEDGE.search(q):
                 flags.append(f"{tag}: hedged/attempt wording '{HEDGE.search(q).group(0)}'")
-            if re.search(r"\b(was|were|been) (defeated|freed|rescued|released|killed|captured|arrested)\b", q) \
+            if re.search(r"\b(was|were|been) (defeated|freed|rescued|released|killed|captured|arrested|tied|chained|locked|imprisoned|jailed|taken)\b", q) \
                     and " by " not in q:
                 flags.append(f"{tag}: passive with no 'by' -> doer stated? (R17)")
             if re.search(r"in exchange for|agreed to|promised to|offered to", q, re.I):

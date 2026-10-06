@@ -56,6 +56,8 @@ roughly one error in five through.
 | A43 | a reunion phrased as feeling ("delight at seeing his dearest friends once again") left out | met | table: met | occasional |
 | A44 | "X turned on them" (allies of the moment, e.g. after teaming up) left out or only fought | betrayed + fought (table: betrayed YES "turned on") | table: betrayed | rare |
 | A45 | arrivals the other side cannot perceive (Reyes invisible to Mackenzie and May) written as met | no met; met only those who see him ("could see him") | table: met | rare |
+| A46 | a later "they" that includes someone already out of the scene ("Hammerhead shot him point-blank" then "They were ambushed" written for Slyde) | only those still present | step 4 | rare, reading only |
+| A47 | "were tied to a post" / "chained" / "locked" with no captor written for the last attacker | no captured (R17, example 9) | step 4 | occasional |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 ## B. Confirm patterns (35B usually right; one look suffices)
