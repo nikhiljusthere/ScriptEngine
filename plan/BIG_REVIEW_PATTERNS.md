@@ -1,5 +1,8 @@
 # Big-window review: error and confirm patterns
 
+> **OWNERSHIP (owner 2026-10-07): only Claude adds new rules, and only Claude edits this file and
+> `tools/train/big_flags.py`.** The canonical make-and-verify method is `plan/WINDOW_METHOD.md`.
+
 Companion to `plan/BIG_REVIEW_HANDOFF.md` (rulings R1-R25). Built from the corrections in
 `series/universal/training/big/big_audit.jsonl` (b1-b131, 2026-10-07). `big_flags.py` turns
 most of these into automatic FLAG / MISS? / DUP lines. **Flags are prompts, not verdicts: every

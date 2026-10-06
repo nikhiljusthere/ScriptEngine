@@ -1,6 +1,9 @@
 """Window-specific guidance for the single-pass labeler, distilled from the
 hand review of the big windows (plan/BIG_REVIEW_PATTERNS.md).
 
+Part of THE method (plan/WINDOW_METHOD.md). Only Claude edits these hints, and only to mirror
+entries of the catalog (owner rule 2026-10-07).
+
 The procedure doc stays the fixed system prompt (prefix-cached). Two small,
 targeted additions instead of the whole catalog:
 

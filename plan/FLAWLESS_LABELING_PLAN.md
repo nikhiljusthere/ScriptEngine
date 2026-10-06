@@ -1,5 +1,11 @@
 # FLAWLESS LABELING — plan to drive event labels to 1.0 R / 1.0 P (2026-10-04)
 
+> **RETIRED as a way to make windows (owner, 2026-10-07).** The multi-pass drafter described
+> here (draft_v2: example-bank retrieval, sentence/missed-event passes, verifier votes) is no
+> longer used to produce labels. The only sanctioned method is `plan/WINDOW_METHOD.md`
+> (35B single pass + review-derived hints + one repair turn, then Claude reviews every window).
+> This file is kept as history and for its measurement record.
+
 Owner (2026-10-04 ~23:5x): "fix everything for ALL the windows, not just the 34
 that all 3 models missed. We should have enough examples or guidelines so that
 we don't miss anything at all or label wrong things. Make a robust plan, then

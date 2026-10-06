@@ -7,6 +7,9 @@ Prints the next N windows from the cursor like `big_review.py --next`, plus:
   OK      a row whose quote states its own verb plainly (fast confirm)
 Flags are prompts, never verdicts: every window is still read in full.
 
+OWNERSHIP (owner 2026-10-07, plan/WINDOW_METHOD.md): only Claude adds new rules, and only Claude
+edits this file and plan/BIG_REVIEW_PATTERNS.md. The 35B labeler only calls check() (repair turn).
+
 usage: python big_flags.py N [--chars 4000]   (SCRIPTENGINE_ROOT overrides the checkout)
 """
 import os

@@ -2,6 +2,10 @@
 """Single-pass labeling: ONE call per window to the ninfer 35B, with the
 labeling procedure (plan/EXTRACTION_PROCEDURE.md) as the system prompt.
 
+THE method (owner 2026-10-07, plan/WINDOW_METHOD.md): by default each window also gets the
+review-derived hints (label_hints.hints) and, when a review flag fires on the gated answer,
+ONE repair turn (big_flags.check). --baseline turns both off for re-measurement only.
+
 Owner 2026-10-06: skip draft_v2's multi-pass pipeline (samples, family and
 sentence passes, 3-vote verifier) -- its output still needed manual fixing
 on ~30% of windows. Instead the model reads the window plus the procedure
@@ -121,10 +125,13 @@ def main():
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--shuffle", action="store_true")
     ap.add_argument("--ids", default=None, help="only these ids (a JSONL with an id field)")
-    ap.add_argument("--hints", action="store_true",
-                    help="append the review-derived reminders whose triggers occur in the window (label_hints)")
-    ap.add_argument("--repair", action="store_true",
-                    help="one follow-up turn listing the review flags that fire on the answer (big_flags.check)")
+    # plan/WINDOW_METHOD.md: hints + repair are the method; --baseline exists only to re-measure
+    ap.add_argument("--hints", action="store_true", default=True,
+                    help="(default) append the review-derived reminders whose triggers occur in the window")
+    ap.add_argument("--repair", action="store_true", default=True,
+                    help="(default) one follow-up turn listing the review flags that fire on the answer")
+    ap.add_argument("--baseline", action="store_true",
+                    help="MEASUREMENT ONLY: turn hints and repair off (the retired plain single pass)")
     a = ap.parse_args()
     doc = Path(a.doc).read_text(encoding="utf-8")
     rows = [json.loads(l) for p in a.inputs for l in open(p)]
@@ -146,6 +153,8 @@ def main():
     total, lock = len(rows) + len(done), threading.Lock()
     stats = {"done": len(done), "fail": 0, "rows": 0, "dropped": 0, "t0": time.time(), "new": 0}
 
+    if a.baseline:
+        a.hints = a.repair = False
     if a.hints or a.repair:
         import label_hints
     if a.repair:

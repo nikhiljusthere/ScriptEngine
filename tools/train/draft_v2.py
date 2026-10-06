@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Drafter v2 — the guideline APPLIED, not piled into one prompt
+"""RETIRED as a window-making method (owner 2026-10-07; see plan/WINDOW_METHOD.md).
+Kept only because label_single.gate reuses check_rows(); do not run this drafter to make labels.
+
+Drafter v2 — the guideline APPLIED, not piled into one prompt
 (plan/FLAWLESS_LABELING_PLAN.md section 6b, owner-approved 2026-10-05):
 
 1. show, don't tell: the k worked examples closest to THIS window's wording

@@ -27,6 +27,13 @@ from the saved cursor, until the 12,000-window set is hand-checked**
    verify_row_wiki.py / qwen_worker.py, tools/train/infer.py, the
    `D series/{berserk,bleach,db,hxh,onepiece}/overrides.yaml` deletions).
 
+## 0a. THE method + ownership rule (owner 2026-10-07, read first)
+
+`plan/WINDOW_METHOD.md` is the only sanctioned way to make and verify windows (35B single pass +
+hints + one repair turn, then Claude reviews every window); every earlier method is retired.
+**Only Claude adds new rules, and only Claude edits `tools/train/big_flags.py` and
+`plan/BIG_REVIEW_PATTERNS.md`.**
+
 ## 0b. UPDATE 2026-10-07 ~04:50 (read first)
 
 Labeling runner is now PID 512679 running `--hints --repair` (35B + review-derived reminders + one
@@ -57,8 +64,9 @@ cat series/universal/training/big/labels.jsonl.status
 scriptengine/.venv/bin/python tools/train/big_review.py --status
 kill -0 471097 && kill -0 470864 && curl -s -m 3 localhost:18081/v1/models | head -c 80
 ```
-If the runner died: restart it with the SAME command (resumable; it waits
-and retries if the server is down, never writes failure rows):
+If the runner died: restart it with this command (resumable; it waits and retries if the
+server is down, never writes failure rows). Since 2026-10-07 `label_single.py` runs THE method
+(plan/WINDOW_METHOD.md: hints + repair are on by default); never pass `--baseline` for labels:
 ```
 setsid nohup scriptengine/.venv/bin/python tools/train/label_single.py \
   --in series/marvel/training/labels/big_in.jsonl --in series/mcu/training/labels/big_in.jsonl \
