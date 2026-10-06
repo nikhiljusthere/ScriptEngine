@@ -23,7 +23,7 @@ GROUPS = re.compile(r"^(Avengers|New Avengers|Mighty Avengers|West Coast Avenger
                     r"Thunderbolts|Starjammers|Liberators|Invaders|Revengers|Brotherhood.*|Masters of Evil|Marauders|"
                     r"Acolytes|Hellfire Club|Morlocks|Reavers|S\.H\.I\.E\.L\.D\.|Hydra|A\.I\.M\.|Wildboys|Exceptional|"
                     r"Phoenixes|.*'s team|the team|the group|.* team)$")
-CROWD = re.compile(r"\b(police|former|active|several|some|many|students|heroes|villains|guards|soldiers|forces|army|"
+CROWD = re.compile(r"(?<!-)\b(police|former|active|several|some|many|students|heroes|villains|guards|soldiers|forces|army|"
                    r"armada|fleet|thugs|men|agents|refugees|cultists|people|the group|the team)\b|^(a|an|the) ", re.I)
 SPECIES = re.compile(r"^(Kree|Skrulls?|Shi'ar|Inhumans|Chitauri|Brood|Builders|Frost Giants|Dwarves|Sovereign|"
                      r"Atlanteans|mutants|humans|Kami|Olympians|Asgardians|Eternals|Deviants|Sentinels|"

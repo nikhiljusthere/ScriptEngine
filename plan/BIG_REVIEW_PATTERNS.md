@@ -54,6 +54,8 @@ roughly one error in five through.
 | A41 | a plural referent resolved to the wrong people ("the two young heroes" = Johnny and Bobby Drake, not Doris who was also on the cruise) | re-resolve by meaning (heroes = the ones with powers) | step 4 | rare, flagged as a prompt |
 | A42 | "the ship was attacked by X" written as X fought the people aboard | no fought (an attack on a vehicle/building only) | table: fought NO | rare |
 | A43 | a reunion phrased as feeling ("delight at seeing his dearest friends once again") left out | met | table: met | occasional |
+| A44 | "X turned on them" (allies of the moment, e.g. after teaming up) left out or only fought | betrayed + fought (table: betrayed YES "turned on") | table: betrayed | rare |
+| A45 | arrivals the other side cannot perceive (Reyes invisible to Mackenzie and May) written as met | no met; met only those who see him ("could see him") | table: met | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 ## B. Confirm patterns (35B usually right; one look suffices)
