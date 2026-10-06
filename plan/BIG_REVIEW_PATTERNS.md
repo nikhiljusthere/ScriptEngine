@@ -70,6 +70,8 @@ roughly one error in five through.
 | A57 | descriptive crowd groups ("the squad", "the rest of the Guardians") as ends | the named members the window ties to the act, else no row | step 6, R11 | occasional |
 | A58 | "if not for the intervention of X" against a plot (no attack stated) written as fought | met (an encounter that stops him) | table: met "stops X" | rare |
 | A59 | composite end strings ("Dark Phoenix / Cyclops (Scott Summers)") | the real name only ("Scott Summers") | step 6 | rare |
+| A60 | "X had his men attack the house, and in the following explosion, Y got killed" written as X killed Y | no killed (an ordered killing; the table excludes the order-giver) | table: killed NO | rare |
+| A61 | "managed to escape with the help of X" flagged as R23 'helped' | saved stays (helping an escape from captivity is a release, as b21 Carol Danvers); R23 covers only help with non-danger | R23 | occasional |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 ## B. Confirm patterns (35B usually right; one look suffices)
@@ -102,7 +104,7 @@ shared)` with bK's final rows: reuse them for the shared part and read only the 
 
 ## E. Resume notes (2026-10-07 01:59)
 
-- Cursor = 416 (b7-b416 reviewed this session). b417-b431 were printed but NOT decided: start there.
+- Cursor: see series/universal/training/big/review_cursor.txt (the live value; b7-b431+ reviewed 2026-10-07).
 - Rulings R24/R25 (not yet in the handoff): "abandoned him to die" -> no betrayed; "<person> posing as <hero>"
   -> the impostor's name; "found themselves transported to <place> by X" -> X captured them + they arrived.
 - Loop: `SCRIPTENGINE_ROOT=/home/goblin/ScriptEngine python tools/train/big_flags.py 15` (from this worktree),

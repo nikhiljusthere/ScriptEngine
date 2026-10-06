@@ -187,7 +187,7 @@ def main():
                 flags.append(f"{tag}: 'stopped' -> defeated, not captured (A55)")
             if v == "saved" and re.search(r"\bdefended\b", q, re.I):
                 flags.append(f"{tag}: 'defended' -> physical protection or only words? (A36)")
-            if v == "saved" and re.search(r"\bhelp", q, re.I) and not re.search(PLAIN["saved"], q, re.I):
+            if v == "saved" and re.search(r"\bhelp", q, re.I) and not re.search(PLAIN["saved"] + r"|escap|free", q, re.I):
                 flags.append(f"{tag}: 'helped' is not a rescue (R23)")
             if v == "arrived" and re.search(r"while taking|on (?:his|her|their) way|heading|in order to|hoping", q, re.I):
                 flags.append(f"{tag}: heading/purpose, not an arrival")
