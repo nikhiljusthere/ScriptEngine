@@ -77,6 +77,10 @@ roughly one error in five through.
 | A64 | "X sent Y to attack Z" written with the sender as the doer | Y fought Z (the sender only ordered it) | table: killed NO ordering | occasional |
 | A65 | an organisation as a place ("returned to the FBI", "joined S.H.I.E.L.D.") | no arrived (not a proper-named place) | table: arrived | rare |
 | A66 | "became a mole infiltrated in <team>" left out | betrayed the team (a mole breaks faith with the team she is in) | table: betrayed | rare |
+| A67 | a remote appearance ("joined the podcast remotely and greeted host X", a call, a hologram) written as met | no met | table: met NO phone/video | rare |
+| A68 | "The latter two ..." resolved to the wrong pair (Dracula and Miles instead of the last two named, Brielle and Miles) | the last two named | step 4 | rare, reading only |
+| A69 | "destroyed Nimrod's bodies ... prevented him from transferring his consciousness" written as defeated | killed (a named robot/AI destroyed) | table: killed | rare |
+| A70 | "trapped in an impenetrable energy dome created by X" left out | X sealed the named ones trapped (a barrier); deactivating it = saved | table: sealed | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 ## B. Confirm patterns (35B usually right; one look suffices)
@@ -102,6 +106,7 @@ shared)` with bK's final rows: reuse them for the shared part and read only the 
 - symmetric met/fought pairs are deduped by the gate; a correction with both "A met B" and
   "B met A" is refused with `dropped []` and `kept n-1/n`.
 - "Rachel" and "Jude" are classed as places: refused as objects (R22).
+- "Zemo" is classed as an episode page: every Zemo row is refused (both ends).
 - item pages are refused as ends even when they act like characters: "the Destroyer" (armor), Cerebro (AI).
 - subject == object is refused (R16).
 - a place with a comma ("Washington, D.C.") is split by the gate into two rows (refused as `kept n+1/n`);

@@ -77,6 +77,28 @@ def main():
             for i in ids:
                 f.write(json.dumps({"id": i, "events": orig[i]}) + "\n")
         print("(original run) " + score(ids, tmp, g))
+    elif cmd == "compare":
+        # paired bootstrap over windows: F1(B) - F1(A), 95% interval
+        ids = [json.loads(l)["id"] for l in open(sys.argv[2])]
+        A, B = ({json.loads(l)["id"]: json.loads(l)["events"] for l in open(p)} for p in sys.argv[3:5])
+        ids = [i for i in ids if i in A and i in B]
+
+        def counts(pred):
+            out = []
+            for i in ids:
+                p, t = keys(pred[i]), keys(g[i])
+                out.append((len(p & t), len(p - t), len(t - p)))
+            return out
+        ca, cb = counts(A), counts(B)
+
+        def f1(c, idx):
+            tp = sum(c[k][0] for k in idx); fp = sum(c[k][1] for k in idx); fn = sum(c[k][2] for k in idx)
+            return 2 * tp / (2 * tp + fp + fn) if tp else 0.0
+        rng = random.Random(7)
+        n = len(ids)
+        d = sorted(f1(cb, s) - f1(ca, s) for s in ([rng.randrange(n) for _ in range(n)] for _ in range(2000)))
+        print(f"n={n} F1 {f1(ca, range(n)):.3f} -> {f1(cb, range(n)):.3f}; "
+              f"diff {f1(cb, range(n)) - f1(ca, range(n)):+.3f} [95% {d[50]:+.3f}, {d[1949]:+.3f}]")
     elif cmd == "repair-rate":
         rows, pas = br.jl(br.LABELS), br.passages()
         c = br.cursor()
