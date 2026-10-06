@@ -38,6 +38,7 @@ VERBS = {"fought", "defeated", "killed", "captured", "escaped", "saved", "betray
 
 
 SPECIES_LIKE = {"species", "race", "races"}
+PLACE_LIKE = __import__("re").compile(r"location|island|planet|city|country|realm|place")
 
 
 def end_errors(series, final, text):
@@ -70,6 +71,12 @@ def end_errors(series, final, text):
             exact = [p for p in wiki.resolve(bare) if p.lower() == bare.lower()]
             if exact and wiki.label.get(exact[0]) in SPECIES_LIKE:
                 errs.append(f"end {end!r} is a {wiki.label.get(exact[0])} page (a class, never an end; G.2)")
+            # A place is only ever the object of arrived/departed/escaped: the
+            # 27B kept "X saved the Savage Land" / "saved Rio de Janeiro".
+            if (exact and end == r["object"] and r["verb"] not in ("arrived", "departed", "escaped")
+                    and PLACE_LIKE.search(wiki.label.get(exact[0]) or "")):
+                errs.append(f"row {r['subject']!r} {r['verb']} {r['object']!r}: end {end!r} is a "
+                            f"{wiki.label.get(exact[0])} page (a place takes only arrived/departed/escaped)")
     return errs
 
 

@@ -424,7 +424,11 @@ def _same_person(a, b, wiki=None):
         return True
     if wiki is not None:
         ca, cb = _canonical(a, wiki), _canonical(b, wiki)
-        return bool(ca and cb and ca == cb)
+        # one of the names must BE the page: two names that merely point into
+        # the same page are different people ("the Bird" and "the Imp" both
+        # resolve to Berserk's group page "Mozgus' Disciples")
+        titled = ca and (" ".join(ca.lower().split()) in (na, nb))
+        return bool(ca and cb and ca == cb and titled)
     return False
 
 
