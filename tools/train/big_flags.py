@@ -47,7 +47,9 @@ ALIASES = [("Professor X", "Xavier"), ("Cap", "Captain America"), ("Ms. Marvel",
            ("Black Panther", "T'Challa"), ("Ms. Marvel", "Kamala"), ("Spider-Woman", "Jessica"), ("White Queen", "Emma Frost"),
            ("Wolverine", "Logan"), ("Cyclops", "Scott"), ("Marvel Girl", "Jean"), ("Thing", "Ben"), ("Invisible Woman", "Sue"),
            ("Hulk", "Banner"), ("She-Hulk", "Walters"), ("Hawkeye", "Clint"), ("Black Widow", "Natasha"),
-           ("Winter Soldier", "Barnes"), ("Scarlet Witch", "Wanda"), ("Quicksilver", "Pietro"), ("Vision", "Vis")]
+           ("Winter Soldier", "Barnes"), ("Scarlet Witch", "Wanda"), ("Quicksilver", "Pietro"), ("Vision", "Vis"),
+           ("Spider-Man", "Parker"), ("Songbird", "Melissa Gold"), ("Azura", "Thena"), ("Surfer", "Silver Surfer"),
+           ("Hulk", "Banner"), ("Sandman", "Flint"), ("Mysterio", "Beck"), ("Killmonger", "Erik Stevens"), ("Jackal", "Ben")]
 DISGUISE = re.compile(r"revealed (?:to be|as|himself|herself)|was (?:in fact|actually|really)|posing as|masquerad|"
                       r"in disguise|impersonat|unmasked|now named|true identity|alias", re.I)
 LEAD = ("When|After|Before|As|While|Then|Meanwhile|However|Although|Though|Once|Since|During|With|Without|"
