@@ -502,6 +502,9 @@ def main():
                     help="v3 = conservative verifier: drop only with a cited NO-rule, sees the examples")
     ap.add_argument("--verify-pass", action="store_true",
                     help="round 2: the thorough verifier pass (keep/drop every row + add)")
+    ap.add_argument("--seed-drafts", default=None,
+                    help="JSONL {id, events}: another model's draft used as the draft sample; "
+                         "the remaining passes run on --model")
     ap.add_argument("--no-template-kwargs", action="store_true")
     ap.add_argument("--series", default="jjk")
     a = ap.parse_args()
@@ -523,6 +526,9 @@ def main():
     stored = {}
     if a.reverify:
         stored = {json.loads(l)["id"]: json.loads(l) for l in open(a.reverify)}
+    seeds = {}
+    if a.seed_drafts:
+        seeds = {json.loads(l)["id"]: json.loads(l)["events"] for l in open(a.seed_drafts)}
 
     def union(samples):
         ev, seen_keys = [], set()
@@ -550,7 +556,11 @@ def main():
         if a.reverify:
             return reverify_job(r, user, window, ex)
         samples, raw = [], ""
-        for _s in range(max(1, a.samples)):
+        if a.seed_drafts:
+            # another model's draft (the trained student) replaces this model's
+            # draft samples; every later pass runs on it unchanged
+            samples.append(seeds.get(r["id"], []))
+        for _s in range(0 if a.seed_drafts else max(1, a.samples)):
             evs, raw_s = ask(a.url, a.model, SYSTEM, prompt, tk)
             if evs is not None:
                 samples.append(evs); raw = raw or raw_s

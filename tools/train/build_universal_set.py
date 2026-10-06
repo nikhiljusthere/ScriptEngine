@@ -50,6 +50,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out-dir", default=str(ROOT / "series/universal/training/student"))
     ap.add_argument("--allow-unreviewed", action="store_true")
+    # JJK "earned empties" are rule-inferred from old passage annotations,
+    # never re-read; 51% hold an event trigger word vs 20% of the reviewed
+    # pool empties (council 2026-10-06). Dropped AFTER the mix cap, so this
+    # variant differs from the default build by exactly those rows.
+    ap.add_argument("--drop-earned-empty", action="store_true")
     a = ap.parse_args()
     out = Path(a.out_dir)
     out.mkdir(parents=True, exist_ok=True)
@@ -161,6 +166,12 @@ def main():
             rs = random.Random(f"{SEED}-cap-{s}").sample(rs, limit)
         capped += rs
     train = capped
+    n_earned = 0
+    if a.drop_earned_empty:
+        before = len(train) + len(dev)
+        train = [r for r in train if not r["source"].startswith("earned_empty")]
+        dev = [r for r in dev if not r["source"].startswith("earned_empty")]
+        n_earned = before - len(train) - len(dev)
     ids = [r["id"] for r in train + dev + test]
     if len(ids) != len(set(ids)):
         errors.append(f"duplicate ids: {len(ids) - len(set(ids))}")
@@ -173,11 +184,15 @@ def main():
     if errors:
         print("BUILD FAILED:\n" + "\n".join(errors[:40]) + (f"\n... {len(errors)} total" if len(errors) > 40 else ""))
         return 1
-    for name, rows in (("train", train), ("dev", dev), ("test", test)):
+    # dev_pool = the reviewed-pool dev windows (no JJK): the checkpoint
+    # selection set (sft_qwen --select-dev); Marvel/MCU, not JJK, is the target
+    dev_pool = [r for r in dev if r["series"] != "jjk"]
+    for name, rows in (("train", train), ("dev", dev), ("dev_pool", dev_pool), ("test", test)):
         with open(out / f"{name}.jsonl", "w") as f:
             for r in rows:
                 f.write(json.dumps(r, ensure_ascii=False) + "\n")
-    rec = {"train": len(train), "dev": len(dev), "test": len(test), "duplicate_passages_dropped": n_dup,
+    rec = {"train": len(train), "dev": len(dev), "dev_pool": len(dev_pool), "test": len(test),
+           "duplicate_passages_dropped": n_dup, "earned_empties_dropped": n_earned,
            "test_by_series": Counter(r["series"] for r in test),
            "train_by_series": Counter(r["series"] for r in train),
            "dev_by_series": Counter(r["series"] for r in dev),

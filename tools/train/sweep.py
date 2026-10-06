@@ -32,6 +32,10 @@ DEV = ROOT / "series/universal/training/student/dev.jsonl"
 UTEST = ROOT / "series/universal/training/student/test.jsonl"
 TEST = ROOT / "series/jjk/training/recall_gold_v3/gold_test_v4.gen2.json"
 RUNS = Path.home() / "student_runs"
+# base model for every run + the Stage C eval; None = sft_qwen/eval_student's
+# default (the 4B). Stage C once passed no --model, so a 9B sweep would have
+# been evaluated on the 4B base (council 2026-10-06).
+MODEL = None
 
 LRS_A = [3e-5, 6e-5, 1e-4, 2e-4]
 LRS_FULL_A = [1e-5, 2e-5]
@@ -153,7 +157,8 @@ def cmd(run, root):
             "--rare-x", str(run["rare_x"]), "--patience", str(run.get("patience", 1))] + (
             # full FT at micro-batch 2 peaked at the 32 GB limit in the
             # 2026-10-06 memory smoke; micro 1 x accum 16 keeps effective 16
-            ["--full-ft", "--micro-batch", "1", "--accum", "16"] if run.get("full_ft") else [])
+            ["--full-ft", "--micro-batch", "1", "--accum", "16"] if run.get("full_ft") else []) + (
+            ["--model", MODEL] if MODEL else [])
 
 
 def final_f1(out):
@@ -179,7 +184,7 @@ def record(root, run):
          "dev_p": m.get("dev_p"), "dev_r": m.get("dev_r"),
          "json_validity": m.get("json_validity"),
          "quote_verbatim": m.get("quote_verbatim"),
-         "windows_per_s": m.get("windows_per_s"),
+         "windows_per_s": m.get("gen_tokens_per_s", m.get("windows_per_s")),  # generated tokens/s
          "out": str(out)}
     with open(root / "results.jsonl", "a") as fh:
         fh.write(json.dumps(f) + "\n")
@@ -203,7 +208,10 @@ def main():
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--stage", default="all", choices=["A", "B", "C", "all"])
     ap.add_argument("--reduced", action="store_true", help="the overnight 5+1-arm Stage A")
+    ap.add_argument("--model", default=None, help="base model path (default: the 4B)")
     a = ap.parse_args()
+    global MODEL
+    MODEL = a.model
     root = Path(a.root)
 
     root.mkdir(parents=True, exist_ok=True)
@@ -290,7 +298,7 @@ def main():
             # level, each window's own series prompt), scored once on the
             # winner; --test stays the JJK blind gold (owner 2026-10-06: the
             # held-out verified pages + blind v6 are the exam)
-            subprocess.run([sys.executable, str(ROOT / "tools/train/eval_student.py"),
+            subprocess.run([sys.executable, str(ROOT / "tools/train/eval_student.py")] + (["--model", MODEL] if MODEL else []) + [
                             "--adapter", str(adapter), "--dev", str(UTEST),
                             "--out", str(Path(r["out"]) / "test_preds.jsonl")])
 

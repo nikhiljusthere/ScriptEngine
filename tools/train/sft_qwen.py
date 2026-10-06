@@ -98,14 +98,25 @@ def collate(batch, pad_id):
             "attention_mask": torch.tensor(attn)}
 
 
-def completion_loss(model, batch, chunk=256):
-    """Mean next-token CE over the supervised (assistant) positions only.
+def supervised_tokens(batch):
+    """Next-token targets that carry loss in this micro-batch."""
+    return int((batch["labels"][:, 1:] != IGNORE).sum())
+
+
+def completion_loss(model, batch, chunk=256, norm=None):
+    """Next-token CE over the supervised (assistant) positions only.
 
     model(**batch).loss runs lm_head over EVERY position: on a ~3k-token
     window that is 3k x 248k-vocab logits (+ an fp32 copy) and it OOMed the
     32 GB card in the 2026-10-06 memory smoke, LoRA and full FT alike. Here
     lm_head sees only the positions whose next token is supervised
     (logits_to_keep), and the CE upcasts 256 positions at a time.
+
+    ``norm``: divide the summed CE by this count (the WHOLE optimizer step's
+    supervised tokens) instead of this micro-batch's own. A per-micro-batch
+    mean gave each token of a 6-token {"events": []} answer ~5x the gradient
+    of an event-row token (council 2026-10-06), pushing the student to
+    answer empty.
     """
     labels = batch["labels"]
     keep = (labels[:, 1:] != IGNORE).any(0).nonzero().squeeze(1)
@@ -120,7 +131,22 @@ def completion_loss(model, batch, chunk=256):
         total = total + torch.nn.functional.cross_entropy(
             lc.reshape(-1, lc.shape[-1]), tgt[:, s:s + chunk].reshape(-1),
             ignore_index=IGNORE, reduction="sum")
-    return total / n
+    return total / (n if norm is None else max(int(norm), 1))
+
+
+def stop_ids(tok):
+    """Every token that ends an answer. Training appends <|im_end|>
+    (sft_mask), but the Qwen3.5 snapshots ship no generation_config.json, so
+    generate() would stop only on text_config's <|endoftext|> -- text past
+    the trained stop then reaches the JSON parse (council 2026-10-06)."""
+    ids = []
+    for t in ("<|im_end|>", "<|endoftext|>"):
+        i = tok.convert_tokens_to_ids(t)
+        if isinstance(i, int) and i >= 0 and i != tok.unk_token_id:
+            ids.append(i)
+    if tok.eos_token_id is not None and tok.eos_token_id not in ids:
+        ids.append(tok.eos_token_id)
+    return ids
 
 
 @torch.no_grad()
@@ -145,7 +171,8 @@ def dev_generate(model, tok, rows, batch=8, max_new=None):
         # use_cache=True: training sets config.use_cache=False, and an uncached
         # generate re-reads the whole prefix per token (the dev eval would crawl).
         g = model.generate(**enc, max_new_tokens=max_new, do_sample=False, use_cache=True,
-                           pad_token_id=tok.pad_token_id or tok.eos_token_id)
+                           pad_token_id=tok.pad_token_id or tok.eos_token_id,
+                           eos_token_id=stop_ids(tok))
         for j, i in enumerate(idx):
             new = g[j][enc["input_ids"].shape[1]:]
             ntok += int((new != tok.pad_token_id).sum())
@@ -204,6 +231,12 @@ def main():
     # 3.7-5.2 with dips between checkpoints, so a 1-epoch patience can stop
     # at a temporary dip
     ap.add_argument("--patience", type=int, default=1)
+    ap.add_argument("--loss-norm", choices=("step", "micro"), default="step",
+                    help="step = CE averaged over the optimizer step's supervised tokens; "
+                         "micro = per-micro-batch mean (the pre-2026-10-06 behaviour)")
+    ap.add_argument("--select-dev", default=None,
+                    help="a subset of --dev (same ids) whose F1 picks the best checkpoint and "
+                         "drives early stopping; scored from the same generations")
     ap.add_argument("--max-len", type=int, default=4096)
     ap.add_argument("--micro-batch", type=int, default=2)
     ap.add_argument("--accum", type=int, default=8, help="micro x accum = effective 16")
@@ -302,34 +335,62 @@ def main():
     print(f"effective batch {a.micro_batch * a.accum}, steps/epoch {steps_per_epoch}, total {total}, warmup {int(0.04*total)}")
 
     best, bad_epochs, step = -1.0, 0, 0
+    select_ids = None
+    if a.select_dev:
+        select_ids = {json.loads(l)["id"] for l in open(a.select_dev)}
+        missing = select_ids - {r["id"] for r in dev_rows}
+        assert not missing, f"--select-dev ids not in --dev: {len(missing)}"
     metrics = open(out / "metrics.jsonl", "a")
     for epoch in range(1, int(a.epochs) + 1):
         model.train()
-        t0, losses = time.time(), []
+        t0, tok_loss, tok_n = time.time(), 0.0, 0
         opt.zero_grad(set_to_none=True)
         stop = False
-        for bi, batch in enumerate(dl):
-            batch = {k: v.to(model.device) for k, v in batch.items()}
-            loss = completion_loss(model, batch) / a.accum
-            loss.backward()
-            losses.append(loss.item() * a.accum)
-            if (bi + 1) % a.accum == 0:
-                torch.nn.utils.clip_grad_norm_([p for p in model.parameters() if p.requires_grad], 1.0)
-                opt.step(); sched.step(); opt.zero_grad(set_to_none=True)
-                step += 1
-                if a.max_steps and step >= a.max_steps:
-                    stop = True
-                    break
-        dev_preds, wps = dev_generate(model, tok, dev_rows, batch=a.dev_batch)
+        group = []
+        for batch in dl:
+            group.append(batch)
+            if len(group) < a.accum:
+                continue
+            # one optimizer step = `accum` micro-batches; the trailing partial
+            # group of an epoch is dropped (it never reached opt.step before)
+            step_n = sum(supervised_tokens(b) for b in group)
+            for b in group:
+                b = {k: v.to(model.device) for k, v in b.items()}
+                if a.loss_norm == "step":
+                    loss = completion_loss(model, b, norm=step_n)
+                else:
+                    loss = completion_loss(model, b) / a.accum
+                loss.backward()
+                n_b = supervised_tokens(b)
+                tok_loss += (loss.item() * step_n if a.loss_norm == "step"
+                             else loss.item() * a.accum * n_b)
+                tok_n += n_b
+            group = []
+            torch.nn.utils.clip_grad_norm_([p for p in model.parameters() if p.requires_grad], 1.0)
+            opt.step(); sched.step(); opt.zero_grad(set_to_none=True)
+            step += 1
+            if a.max_steps and step >= a.max_steps:
+                stop = True
+                break
+        dev_preds, tps = dev_generate(model, tok, dev_rows, batch=a.dev_batch)
+        with open(out / f"dev_preds_e{epoch}.jsonl", "w") as f:  # kept for CIs / error analysis
+            for r in dev_rows:
+                p = dev_preds[r["id"]]
+                f.write(json.dumps({"id": r["id"], "series": r.get("series"), "events": p["events"],
+                                    "raw": p["raw"]}, ensure_ascii=False) + "\n")
         scores = dev_scores(a.dev, dev_preds)
-        line = {"epoch": epoch, "step": step, "train_loss": round(sum(losses) / max(len(losses), 1), 4),
+        sel = scores
+        if select_ids is not None:
+            sel = dev_scores(a.select_dev, {k: v for k, v in dev_preds.items() if k in select_ids})
+        line = {"epoch": epoch, "step": step, "train_loss": round(tok_loss / max(tok_n, 1), 4),
                 "dev_f1": scores["f1"], "dev_p": scores["precision"], "dev_r": scores["recall"],
+                "sel_f1": sel["f1"], "sel_p": sel["precision"], "sel_r": sel["recall"],
                 "json_validity": scores["json_validity"], "quote_verbatim": scores["quote_verbatim"],
-                "windows_per_s": round(wps, 2), "seconds": round(time.time() - t0, 1)}
+                "gen_tokens_per_s": round(tps, 2), "seconds": round(time.time() - t0, 1)}
         metrics.write(json.dumps(line) + "\n"); metrics.flush()
-        print("epoch", json.dumps(line))
-        if (scores["f1"] or 0) > best:
-            best, bad_epochs = scores["f1"], 0
+        print("epoch", json.dumps(line), flush=True)
+        if (sel["f1"] or 0) > best:
+            best, bad_epochs = sel["f1"], 0
             model.save_pretrained(out / "best")
             tok.save_pretrained(out / "best")
             print(f"  new best dev F1 {best} -> saved {out/'best'}")
