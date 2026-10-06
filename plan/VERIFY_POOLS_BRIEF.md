@@ -239,7 +239,8 @@ context, ONE window at a time, continuously:
     groups "into a fight" -> the groups `fought`.
 
 **Audit 81-82 (MCU):**
-25. **A claim, lie, accusation or memory is not the event.** "Hoffman told the police that
+25. **A character's claim, lie or accusation is not the event** (a recap, flashback or memory of
+    something that did happen still is: "the memory of Thor murdering Thanos" -> killed). "Hoffman told the police that
     the vigilante was the one who killed Blake" is Hoffman's lie -> no `killed` row (the
     narrated event "got information from Blake before he died" is `met`). Label only what
     the passage narrates as happening; MCU synopses quote characters' versions constantly.
