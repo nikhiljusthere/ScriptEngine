@@ -45,6 +45,45 @@ def lr_tag(lr):
     return f"{lr:g}".replace("-", "-")
 
 
+# Owner 2026-10-06 overnight plan: a reduced Stage A (rsLoRA r16 lr1e-4 /
+# r16 lr2e-4 / r64 lr1e-4, full FT lr1e-5 / 2e-5) plus one arm on a copy of
+# the train set whose event-free windows are capped at 40% (57% of the
+# universal train set is empty, which may teach under-labeling).
+REDUCED_A = [(1e-4, 16), (2e-4, 16), (1e-4, 64)]
+EMPTY_CAP = 0.40
+
+
+def capped_train(root):
+    """A copy of TRAIN with empty windows sampled down to EMPTY_CAP (seeded)."""
+    import random
+    out = root / f"train_empty{int(EMPTY_CAP * 100)}.jsonl"
+    if out.exists():
+        return out
+    rows = [json.loads(l) for l in open(TRAIN)]
+    full = [r for r in rows if r["events"]]
+    empty = [r for r in rows if not r["events"]]
+    keep = int(EMPTY_CAP / (1 - EMPTY_CAP) * len(full))
+    empty = random.Random(20261006).sample(empty, min(keep, len(empty)))
+    mixed = full + empty
+    random.Random(20261006).shuffle(mixed)
+    with open(out, "w") as f:
+        for r in mixed:
+            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    return out
+
+
+def stage_a_reduced(root):
+    runs = [{"stage": "A", "lr": lr, "rank": r, "alpha": 2 * r, "dropout": DROP,
+             "epochs": EPOCHS_A, "seed": 1, "rare_x": 1, "name": f"A-lr{lr_tag(lr)}-r{r}"}
+            for lr, r in REDUCED_A]
+    runs += [{"stage": "A", "lr": lr, "rank": 0, "alpha": 0, "dropout": 0.0, "epochs": EPOCHS_A,
+              "seed": 1, "rare_x": 1, "full_ft": True, "name": f"A-lr{lr_tag(lr)}-full"}
+             for lr in LRS_FULL_A]
+    runs.append({**runs[0], "name": runs[0]["name"] + f"-e{int(EMPTY_CAP * 100)}",
+                 "train": str(capped_train(root))})
+    return runs
+
+
 def stage_a():
     runs = []
     for lr in LRS_A:
@@ -90,7 +129,7 @@ def stage_c(best):
 def cmd(run, root):
     out = root / run["name"]
     return [sys.executable, str(ROOT / "tools/train/sft_qwen.py"),
-            "--train", str(TRAIN), "--dev", str(DEV), "--out", str(out),
+            "--train", run.get("train", str(TRAIN)), "--dev", str(DEV), "--out", str(out),
             "--lr", str(run["lr"]), "--rank", str(run["rank"]),
             "--alpha", str(run["alpha"]), "--dropout", str(run["dropout"]),
             "--epochs", str(run["epochs"]), "--seed", str(run["seed"]),
@@ -143,6 +182,7 @@ def main():
     ap.add_argument("--root", default=str(RUNS))
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--stage", default="all", choices=["A", "B", "C", "all"])
+    ap.add_argument("--reduced", action="store_true", help="the overnight 5+1-arm Stage A")
     a = ap.parse_args()
     root = Path(a.root)
 
@@ -153,10 +193,8 @@ def main():
     def prior(stage):
         return [r for r in results if r["stage"] == stage and r["best_dev_f1"] is not None]
 
-    if a.stage == "all":
-        plans = {"A": stage_a()}
-    elif a.stage == "A":
-        plans = {"A": stage_a()}
+    if a.stage in ("all", "A"):
+        plans = {"A": stage_a_reduced(root) if a.reduced else stage_a()}
     elif a.stage == "B":
         a_recs = sorted(prior("A"), key=lambda r: r["best_dev_f1"], reverse=True)[:3]
         plans = {"B": stage_b(a_recs, a_recs[0]["lr"] if a_recs else None)}
