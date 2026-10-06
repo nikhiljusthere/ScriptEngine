@@ -26,7 +26,10 @@ GROUPS = re.compile(r"^(Avengers|New Avengers|Mighty Avengers|West Coast Avenger
 CROWD = re.compile(r"\b(police|former|active|several|some|many|students|heroes|villains|guards|soldiers|forces|army|"
                    r"armada|fleet|thugs|men|agents|refugees|cultists|people|the group|the team)\b|^(a|an|the) ", re.I)
 SPECIES = re.compile(r"^(Kree|Skrulls?|Shi'ar|Inhumans|Chitauri|Brood|Builders|Frost Giants|Dwarves|Sovereign|"
-                     r"Atlanteans|mutants|humans)$")
+                     r"Atlanteans|mutants|humans|Kami|Olympians|Asgardians|Eternals|Deviants|Sentinels|"
+                     r"Quantumnauts|Wolf-Men|Elder Gods)$")
+VEHICLE = re.compile(r"\b(Blackbird|Quinjet|Helicarrier|Zephyr|Bus|Milano|Benatar|Starjammer|Stratojet|ship|jet|"
+                     r"plane|car|truck|submarine|Ark)\b")
 RANK = re.compile(r"^(?:Dr\.|Doctor|General|Agent|Officer|Senator|Prelate|Empress|Emperor|Mayor|Detective|Sergeant|"
                   r"Colonel|Major|Lieutenant|Commander|Captain|Warlord|Professor|Chancellor|Director)\s"
                   r"(?!America\b|Marvel\b|Britain\b|Universe\b|Doom\b|Strange\b|Druid\b|Octopus\b|X\b|Xavier\b)")
@@ -38,6 +41,12 @@ ALIASES = [("Professor X", "Xavier"), ("Cap", "Captain America"), ("Ms. Marvel",
            ("Phoenix", "Jean Grey"), ("Crusader", "Z'Reg"), ("Black Queen", "Phoenix"), ("Kuurth", "Juggernaut")]
 DISGUISE = re.compile(r"revealed (?:to be|as|himself|herself)|was (?:in fact|actually|really)|posing as|masquerad|"
                       r"in disguise|impersonat|unmasked|now named|true identity|alias", re.I)
+LEAD = ("When|After|Before|As|While|Then|Meanwhile|However|Although|Though|Once|Since|During|With|Without|"
+        "Following|Upon|Using|Back|In|On|At|Later|Soon|Eventually|Finally|Despite|The|A|An|His|Her|Their|Its|"
+        "Captain America|Iron Man|Spider-Man")
+PURPOSE = re.compile(r"\b(?:to|in order to|intending to|planning to|hoping to|attempt(?:ed|ing)? to|tried to|"
+                     r"decided to|wished to|wanted to|so (?:that )?(?:he|she|they) could) (?:meet|find|rescue|save|stop|"
+                     r"kill|capture|free|defeat|fight|attack|destroy|confront|recover|retrieve)\b", re.I)
 JOIN = re.compile(r"\bjoin|teamed up|allied|alliance|rejoin", re.I)
 TRAP = re.compile(r"imprison\w* in|trapped|ensnared|Limbo|Dimension|Realm|Void|Mojoverse|pocket universe", re.I)
 HEDGE = re.compile(r"seemingly|nearly|almost|apparently|attempt|tried to|would have", re.I)
@@ -90,7 +99,10 @@ def main():
         if r.get("dropped"):
             print(" GATE-DROPPED", [(d.get("subject"), d.get("verb"), d.get("object"), d.get("why")) for d in r["dropped"]])
         flags, ok = [], []
-        names = set(re.findall(r"\b[A-Z][\w'.-]+(?: (?:[A-Z][\w'.-]+|of|the|de|von))+", text))
+        # multi-word names; a sentence-initial word ("When Loki") or a trailing "the" is not part of the name
+        names = {re.sub(r"^(?:%s) " % LEAD, "", m) for m in
+                 re.findall(r"\b[A-Z][\w'-]+(?: (?:of |the |de |von )?[A-Z][\w'-]+)+", text)}
+        names = {m for m in names if " " in m}
         for e in ev:
             s, v, o, q = e["subject"], e["verb"], e["object"], e["quote"]
             tag = f"{s}|{v}|{o}"
@@ -125,12 +137,20 @@ def main():
             if re.search(r"\b(was|were|been) (defeated|freed|rescued|released|killed|captured|arrested)\b", q) \
                     and " by " not in q:
                 flags.append(f"{tag}: passive with no 'by' -> doer stated? (R17)")
+            if re.search(r"in exchange for|agreed to|promised to|offered to", q, re.I):
+                flags.append(f"{tag}: deal/offer wording -> the promised act did not happen (A23)")
+            if v == "killed" and re.search(r"finish\w* off|survive|possess", q, re.I):
+                flags.append(f"{tag}: 'finished off'/survived/possession -> defeated or fought? (A21/A22)")
+            if PURPOSE.search(q):
+                flags.append(f"{tag}: purpose clause '{PURPOSE.search(q).group(0)}' -> did it happen? (step 3)")
             if v == "saved" and re.search(r"\bhelp", q, re.I) and not re.search(PLAIN["saved"], q, re.I):
                 flags.append(f"{tag}: 'helped' is not a rescue (R23)")
             if v == "arrived" and re.search(r"while taking|on (?:his|her|their) way|heading|in order to|hoping", q, re.I):
                 flags.append(f"{tag}: heading/purpose, not an arrival")
             if v == "betrayed" and re.search(r"abandon|left|disassembl|drove", q, re.I):
                 flags.append(f"{tag}: leaving/disbanding is not betrayal (R14/R24)")
+            if v in ("arrived", "departed") and o and VEHICLE.search(o):
+                flags.append(f"{tag}: '{o}' is a vehicle, not a place (A24)")
             if v in ("arrived", "departed") and o and (o[:1].islower() or "'s " in o):
                 flags.append(f"{tag}: description place '{o}'")
             if v in PLAIN and re.search(PLAIN[v], q, re.I) and not any(f.startswith(tag) for f in flags):

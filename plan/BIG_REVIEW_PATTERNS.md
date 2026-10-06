@@ -29,6 +29,15 @@ roughly one error in five through.
 | A15 | broken end string ("X" for Professor X) | the full name | step 6 | rare |
 | A16 | "<group> led by X" as doer | X | R21 | rare |
 | A17 | self-directed death (suicide) | no row (gate refuses subject==object) | R16 | rare |
+| A18 | two characters sharing a name merged ("the Variant" / "Variant Loki" ambushes while the TVA's Loki sits with B-15) | separate ends ("Variant" vs "Loki") | step 6 | rare, reading only |
+| A19 | purpose clause as event ("traveled to NYC to meet with X", "planning to fight") | only the part that happened (arrived), no met/fought | step 3 | occasional |
+| A21 | killing through a possessed body ("used his powers of body possession to cause Dolan to murder Craft") / a victim who "survived his own murder" | possessor fought the host and the victim; no killed when he survived | step 4, 3 | rare |
+| A22 | "finishing off X" with no stated death written as killed | defeated | table: defeated | rare |
+| A23 | deals and exchanges as events ("agreed to help in exchange for teleporting them all back") | no row for the promised act | step 3 | rare |
+| A24 | a vehicle as a place ("carried Pixie to the Blackbird") | no arrived/departed | table: arrived NO "the car" | rare |
+| A25 | a pantheon or race as an end ("the Kami", "the Olympians", "Sentinels", "Quantumnauts") | no row | step 6 | occasional |
+| A26 | a reported confirmation misread for its speaker ("Gao confirmed that she had fought beside him ... before her death and later rebirth": she = Elektra) | re-resolve by meaning | step 4 | rare, reading only |
+| A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 ## B. Confirm patterns (35B usually right; one look suffices)
 
