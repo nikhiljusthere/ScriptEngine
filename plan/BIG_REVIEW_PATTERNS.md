@@ -43,7 +43,8 @@ roughly one error in five through.
 | A30 | "terminating X" about a file/record (X alive later in the window) written as killed | no row | step 3 | rare |
 | A31 | a self-assigned task as an event ("joined Daredevil's side and worked to stop Fisk") | no row (R4 + purpose) | step 3 | occasional |
 | A32 | an abilities/powers section narrating specific hits ("shake off a punch from Gladiator", "has taken multiple punches from Namor") left empty | fought rows (step 1: one specific occurrence is an event) | step 1 | occasional |
-| A33 | "X revived him" written only as awakened | also X saved him (revived someone who would otherwise die) | table: saved | occasional |
+| A33 | "X revived him" written only as awakened | also X saved him (revived someone who would otherwise die) — only when the revival is for his sake (Merlyn); a corpse revived as a tool or a threat (the Mad Thinker's "living weapon", Cable reviving Apocalypse) is no saved | table: saved | occasional |
+| A48 | "joined" disambiguation: joining a team/side/cause ("joined the X-Men", "joined Daredevil's side") vs joining specific people where they are ("Sif joined Coulson and May when they traveled", "joined Namor at Utopia", "joined by an arriving Spider-Man") | team/side -> no met (R4); people where they are -> met | R4, table: met | common |
 | A34 | a team member's own team as "met" target after rescuing/arriving ("arrived in time to save Daisy and May") missed | met each person reached + saved | table: met | occasional |
 | A35 | a purpose clause that the next clause fulfils ("traveled to Genosha to confront Magneto ... In the resulting battle", "runs to save him ... stopping them both from falling") left out | write it (met/fought, saved): the PURPOSE flag is a prompt, check the following sentence | step 3 | occasional |
 | A36 | "defended by X" in words (X told the accuser he was wrong) written as saved | no row | table: saved | rare |
