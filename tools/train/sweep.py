@@ -29,6 +29,7 @@ ROOT = Path(__file__).resolve().parents[2]
 # verified pools + the JJK verified gold, page-split dev, 35% mix cap.
 TRAIN = ROOT / "series/universal/training/student/train.jsonl"
 DEV = ROOT / "series/universal/training/student/dev.jsonl"
+UTEST = ROOT / "series/universal/training/student/test.jsonl"
 TEST = ROOT / "series/jjk/training/recall_gold_v3/gold_test_v4.gen2.json"
 RUNS = Path.home() / "student_runs"
 
@@ -263,8 +264,13 @@ def main():
             if not adapter.exists():
                 continue
             print("eval_student:", r["name"])
+            # --dev here is the universal page-disjoint TEST split (window
+            # level, each window's own series prompt), scored once on the
+            # winner; --test stays the JJK blind gold (owner 2026-10-06: the
+            # held-out verified pages + blind v6 are the exam)
             subprocess.run([sys.executable, str(ROOT / "tools/train/eval_student.py"),
-                            "--adapter", str(adapter), "--out", str(Path(r["out"]) / "test_preds.jsonl")])
+                            "--adapter", str(adapter), "--dev", str(UTEST),
+                            "--out", str(Path(r["out"]) / "test_preds.jsonl")])
 
 
 if __name__ == "__main__":
