@@ -29,6 +29,7 @@ import re
 import sys
 import threading
 import time
+import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -113,6 +114,7 @@ def main():
     ap.add_argument("--no-thinking", action="store_true")
     ap.add_argument("--max-tokens", type=int, default=16384)
     ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--shuffle", action="store_true")
     ap.add_argument("--ids", default=None, help="only these ids (a JSONL with an id field)")
     a = ap.parse_args()
     doc = Path(a.doc).read_text(encoding="utf-8")
@@ -124,6 +126,11 @@ def main():
     out.parent.mkdir(parents=True, exist_ok=True)
     done = {json.loads(l)["id"] for l in open(out)} if out.exists() else set()
     rows = [r for r in rows if r["id"] not in done]
+    if a.shuffle:
+        # page-interleaved order: any prefix of the run is a fair sample of
+        # all selected pages, so the run can stop once the target mix exists
+        import random
+        random.Random(20261007).shuffle(rows)
     if a.limit:
         rows = rows[:a.limit]
     wikis = {s: vrw.Wiki(str(ROOT / "series" / s / "facts.db")) for s in {series_of(r) for r in rows}}
@@ -132,13 +139,22 @@ def main():
 
     def job(r):
         user, window = window_of(r)
-        events, raw, tries = None, "", 0
+        events, raw, tries, down = None, "", 0, 0
         while events is None and tries < 3:
-            tries += 1
             try:
                 raw = ask(a.url, a.model, doc, user, not a.no_thinking, a.max_tokens)
+                tries += 1
                 events = parse(raw)
+            except urllib.error.URLError as e:
+                # server down / restarting: wait, never record a failure row
+                # (2026-10-07: a dead server turned 13,896 windows into
+                # instant "connection refused" rows that a resume would skip)
+                down += 1
+                if down > 20:
+                    return None
+                time.sleep(30)
             except Exception as e:  # noqa: BLE001
+                tries += 1
                 raw = f"ERROR {e!r}"
         ok = events is not None
         kept, dropped = gate(events or [], window, wikis[series_of(r)])
@@ -157,6 +173,8 @@ def main():
 
     with ThreadPoolExecutor(a.workers) as pool, open(out, "a") as f:
         for res in pool.map(job, rows):
+            if res is None:  # left for a later resume
+                continue
             with lock:
                 f.write(json.dumps(res, ensure_ascii=False) + "\n"); f.flush()
                 stats["done"] += 1; stats["new"] += 1
