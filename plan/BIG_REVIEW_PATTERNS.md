@@ -48,6 +48,9 @@ roughly one error in five through.
 | A35 | a purpose clause that the next clause fulfils ("traveled to Genosha to confront Magneto ... In the resulting battle", "runs to save him ... stopping them both from falling") left out | write it (met/fought, saved): the PURPOSE flag is a prompt, check the following sentence | step 3 | occasional |
 | A36 | "defended by X" in words (X told the accuser he was wrong) written as saved | no row | table: saved | rare |
 | A37 | escorting a prisoner ("in charge of taking Venom to a helicarrier cell") left out | captured (brought as a prisoner) | table: captured | rare |
+| A38 | "disposed of by X" / "dispatched" with no stated death written as killed | defeated | table: defeated | rare |
+| A39 | a company or weapon as the killer ("killed by a Stark Industries missile") | no row (an item is never the doer; its user is unnamed) | step 4 | rare |
+| A40 | "jumped into action" against X written as met | fought (an attack made) | table: fought | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 ## B. Confirm patterns (35B usually right; one look suffices)

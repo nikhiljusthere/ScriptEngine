@@ -146,7 +146,10 @@ def main():
                 flags.append(f"{tag}: sedated/knocked out -> defeated (A29)")
             if v == "killed" and re.search(r"finish\w* off|survive|possess|terminat", q, re.I):
                 flags.append(f"{tag}: 'finished off'/survived/possession -> defeated or fought? (A21/A22)")
-            if PURPOSE.search(q):
+            if v == "killed" and (re.search(r"dispos\w* of|took (?:him|her) out|dispatched", q, re.I)
+                                  or re.search(r"Industries|Corporation|Corp\b|missile|bomb", s)):
+                flags.append(f"{tag}: 'disposed of' with no death -> defeated; a company/item is no doer (A38/A39)")
+            if PURPOSE.search(q) and not re.search(r"(?:managed|able|succeeded|in time|went on) to", q, re.I):
                 flags.append(f"{tag}: purpose clause '{PURPOSE.search(q).group(0)}' -> did it happen? (step 3)")
             if v == "saved" and re.search(r"\bdefended\b", q, re.I):
                 flags.append(f"{tag}: 'defended' -> physical protection or only words? (A36)")
