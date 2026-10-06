@@ -402,3 +402,12 @@ post-training serving. Base model stays Qwen3.5-4B (no stronger 4B exists as of
   content_sections [notes, references] -> 1. Remaining: per-wiki content_sections (notes,
   references) + interwiki/navigation boilerplate. The real re-index needs the GPU for vectors:
   scheduled between the end of MCU verification and the start of training.
+- 2026-10-06 ~13:10: content_sections written for berserk/opm/hxh/bleach/db/onepiece (onepiece also
+  navigation + gallery). Scratch re-index tier-0: opm/hxh/bleach 100%, berserk 99.996 (1 gallery
+  caption), db 99.999 (3 interwiki lines in Gallery = boilerplate), onepiece 100% expected.
+  Episode map (overrides episode_map, engine 470f96d4): bleach 0->496, onepiece 0->327, opm at its
+  data limit (117). OPEN: dragon ball + hxh need an anime-qualified episode (Locator has one work
+  for the whole citation; "Chapter 418, Kai Episode 97" needs an episode_work field + parser) --
+  design, then gate on JJK. Berserk has no chapter<->episode links.
+  GPU WINDOW (after MCU, before training): real `index` (with vectors) for the six -> chunk-
+  containment + audit per wiki -> four standing gates (pytest, eval jjk, span-recall jjk, canon-run opm).
