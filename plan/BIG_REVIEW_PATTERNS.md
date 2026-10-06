@@ -81,6 +81,8 @@ roughly one error in five through.
 | A68 | "The latter two ..." resolved to the wrong pair (Dracula and Miles instead of the last two named, Brielle and Miles) | the last two named | step 4 | rare, reading only |
 | A69 | "destroyed Nimrod's bodies ... prevented him from transferring his consciousness" written as defeated | killed (a named robot/AI destroyed) | table: killed | rare |
 | A70 | "trapped in an impenetrable energy dome created by X" left out | X sealed the named ones trapped (a barrier); deactivating it = saved | table: sealed | rare |
+| A71 | training sparring between allies ("tasked with training Scott Lang ... he punched van Dyne") written as fought | no row (practice, not a conflict) | table: fought NO playful/friendly contact | rare |
+| A72 | "turned on both A and B" where B was already his enemy written as betrayed B | betrayed only the ally (A) | table: betrayed | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 ## B. Confirm patterns (35B usually right; one look suffices)

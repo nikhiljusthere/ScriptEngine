@@ -53,7 +53,7 @@ ALIASES = [("Professor X", "Xavier"), ("Cap", "Captain America"), ("Ms. Marvel",
 DISGUISE = re.compile(r"revealed (?:to be|as|himself|herself)|was (?:in fact|actually|really)|posing as|masquerad|"
                       r"in disguise|impersonat|unmasked|now named|true identity|alias", re.I)
 LEAD = ("When|After|Before|As|While|Then|Meanwhile|However|Although|Though|Once|Since|During|With|Without|"
-        "Following|Upon|Using|Back|In|On|At|There|Here|Together|Both|Later|Soon|Eventually|Finally|Despite|The|A|An|His|Her|Their|Its|"
+        "Following|Upon|Using|Back|In|On|At|There|Here|Together|Both|But|And|Knowing|Alongside|Finding|Seeing|Later|Soon|Eventually|Finally|Despite|The|A|An|His|Her|Their|Its|"
         "Captain America|Iron Man|Spider-Man|I'm|I|We|You|My|Our")
 PURPOSE = re.compile(r"\b(?:to|in order to|intending to|planning to|hoping to|attempt(?:ed|ing)? to|tried to|"
                      r"decided to|wished to|wanted to|so (?:that )?(?:he|she|they) could) (?:meet|find|rescue|save|stop|"
