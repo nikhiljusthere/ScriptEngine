@@ -75,7 +75,7 @@ def audit_series(paths: SeriesPaths, sample: int = 0) -> dict[str, Any]:
 
     edges = [edge for page in pages for edge in page.edges]
     resolved = sum(1 for edge in edges if edge.target in known_titles)
-    sourcing = _citation_coverage(pages, edges)
+    sourcing = _citation_coverage(pages, edges, load_overrides(paths))
     sourcing["unknown_qualifiers"] = _unknown_qualifiers(pages, ontology)
     sourcing["refs_with_locator"] = _refs_with_locator(pages, ontology)
 
@@ -148,7 +148,7 @@ def audit_series(paths: SeriesPaths, sample: int = 0) -> dict[str, Any]:
     return report
 
 
-def _citation_coverage(pages: list[WikiPage], edges: list[Any]) -> dict[str, Any]:
+def _citation_coverage(pages: list[WikiPage], edges: list[Any], overrides: dict | None = None) -> dict[str, Any]:
     """How much of the prose a script could put a chapter and episode on.
 
     Measured the way the context builder measures it, through
@@ -157,10 +157,21 @@ def _citation_coverage(pages: list[WikiPage], edges: list[Any]) -> dict[str, Any
     this number is the one the writer will actually see, not a count of
     reference templates that may or may not have survived extraction.
     """
-    from scriptengine.retrieve.citations import EpisodeIndex, coverage
+    from scriptengine.retrieve.citations import EpisodeIndex, coverage, declared_episode_map
 
+    spec = (overrides or {}).get("episode_map")
     mapping: dict[str, str] = {}
-    for edge in edges:
+    if spec:
+        # the wiki's declared adaptation relations and number keys (see
+        # citations.declared_episode_map); the default below is JJK's shape
+        by_title = {page.title: page for page in pages}
+        mapping = declared_episode_map(
+            spec,
+            ((e.source, e.relation, e.target) for e in edges),
+            lambda name: {f.key: f.value for f in getattr(by_title.get(name), "facts", [])},
+            lambda name: getattr(by_title.get(name), "page_type", ""),
+        )
+    for edge in edges if not spec else ():
         if edge.relation == "anime episode":
             chapter, episode = edge.source, edge.target
         elif edge.relation == "adapted from":

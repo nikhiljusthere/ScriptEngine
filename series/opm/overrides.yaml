@@ -744,3 +744,14 @@ series_titles:
 # when a verb is forbidden; the outcome verbs carry the match-up brain goal.
 events:
   extra_verbs: [defeated, captured, escaped]
+
+# Chapter <-> episode adaptation (retrieve/citations.declared_episode_map).
+# Both ends state it: a chapter's infobox `anime episode`, an episode's
+# `chapters`. Numbers come from the "Chapter N" / "Episode N" titles; named
+# bonus chapters ("A New Wind Blows") carry no number and map to nothing.
+episode_map:
+  links:
+    - {relation: anime episode, from: chapter}
+    - {relation: chapters, from: episode}
+  chapter_number: [title]
+  episode_number: [title]

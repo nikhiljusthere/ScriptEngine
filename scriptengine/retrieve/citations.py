@@ -54,6 +54,64 @@ _VOLUME = re.compile(r"(?:([A-Z][A-Za-z']*)\s+)?Volume\s+([\d.\-]+)")
 
 # Instalment titles as the graph stores them: "Chapter 143", "Episode 30".
 _TITLE_NUMBER = re.compile(r"^(chapter|episode)\s+([\d.\-]+)$", re.IGNORECASE)
+# The leading number of an infobox value: "418 (DBZ 224)" -> 418, "23" -> 23.
+_LEADING_NUMBER = re.compile(r"^\s*(\d+)\b")
+
+
+def declared_episode_map(
+    spec: dict,
+    edges: Iterable[tuple[str, str, str]],
+    facts_of,
+    label_of,
+) -> dict[str, str]:
+    """Chapter number -> episode number from a wiki's own declaration.
+
+    The default adaptation relations ("anime episode" / "adapted from", the
+    JJK wiki's) are not every wiki's: One-Punch Man's episodes list their
+    `chapters`, Bleach's `chapters` too, One Piece's `chapter`, and many wikis
+    title instalments by name ("A New Wind Blows"), so the number has to come
+    from the page's infobox instead of its title. ``spec`` is
+    ``overrides.yaml: episode_map``::
+
+        links:                       # adaptation edges, and which end is the episode
+          - {relation: chapters, from: episode}
+        chapter_number: [title, chapter]       # readers tried in order: the title
+        episode_number: [title, episodenumber] #   ("Chapter N") or an infobox key
+        episode_labels: [bleach_wiki_episode]  # optional: one anime's episode pages
+
+    A number is read, never inferred: a page with no readable number maps to
+    nothing. ``edges`` yields ``(source, relation, target)``; ``facts_of(name)``
+    returns ``{key: value}``; ``label_of(name)`` the page type.
+    """
+    links = {(l["relation"], l.get("from", "episode")) for l in spec.get("links") or []}
+    labels = set(spec.get("episode_labels") or [])
+
+    def number(name: str, kind: str, readers: Sequence[str]) -> str:
+        for reader in readers:
+            if reader == "title":
+                match = _TITLE_NUMBER.match((name or "").strip())
+                if match and match.group(1).lower() == kind:
+                    return match.group(2)
+            else:
+                value = (facts_of(name) or {}).get(reader)
+                match = _LEADING_NUMBER.match(str(value or ""))
+                if match:
+                    return match.group(1)
+        return ""
+
+    mapping: dict[str, str] = {}
+    for source, relation, target in edges:
+        for rel, end in links:
+            if relation != rel:
+                continue
+            episode, chapter = (source, target) if end == "episode" else (target, source)
+            if labels and label_of(episode) not in labels:
+                continue
+            ch = number(chapter, "chapter", spec.get("chapter_number") or ["title"])
+            ep = number(episode, "episode", spec.get("episode_number") or ["title"])
+            if ch and ep:
+                mapping.setdefault(ch, ep)
+    return mapping
 
 
 @dataclass(frozen=True)
@@ -112,7 +170,10 @@ class EpisodeIndex:
         self._episodes: dict[str, str] = dict(chapter_to_episode or {})
 
     @classmethod
-    def from_store(cls, store: "FactStore") -> "EpisodeIndex":
+    def from_store(cls, store: "FactStore", overrides: dict | None = None) -> "EpisodeIndex":
+        spec = (overrides or {}).get("episode_map")
+        if spec:
+            return cls(_declared_from_store(store, spec))
         mapping: dict[str, str] = {}
 
         # Chapter -> Episode.
@@ -152,6 +213,24 @@ class EpisodeIndex:
         if not episode:
             return locator
         return Locator(chapter=locator.chapter, episode=episode, volume=locator.volume)
+
+
+def _declared_from_store(store: "FactStore", spec: dict) -> dict[str, str]:
+    """`declared_episode_map` over the fact store's graph and infobox rows."""
+    edges = []
+    for link in spec.get("links") or []:
+        rel = link["relation"]
+        edges += [(r["source"], rel, r["target"]) for r in store.edges_by_relation(rel, limit=1_000_000)]
+
+    def facts_of(name: str) -> dict[str, str]:
+        return {r["key"]: r["value"] for r in store.facts_for(name)}
+
+    def label_of(name: str) -> str:
+        row = store.connection.execute(
+            "SELECT label FROM nodes WHERE name = ? LIMIT 1", (name,)).fetchone()
+        return (row["label"] if row else "") or ""
+
+    return declared_episode_map(spec, edges, facts_of, label_of)
 
 
 def _instalment_number(title: str, kind: str) -> str:

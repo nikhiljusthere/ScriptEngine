@@ -250,6 +250,7 @@ class NarrativeRetriever:
         self.settings = settings or get_settings()
         self.store = FactStore(paths.facts_db)
         overrides = load_overrides(paths)
+        self._overrides = overrides
         self.demote, self.priority = subject_ranking(overrides)
         self.aliases = subject_aliases(overrides)
         self._episodes: cite.EpisodeIndex | None = None
@@ -258,7 +259,7 @@ class NarrativeRetriever:
     def episodes(self) -> cite.EpisodeIndex:
         """Chapter -> episode, built once per retriever."""
         if self._episodes is None:
-            self._episodes = cite.EpisodeIndex.from_store(self.store)
+            self._episodes = cite.EpisodeIndex.from_store(self.store, self._overrides)
         return self._episodes
 
     def __enter__(self) -> "NarrativeRetriever":

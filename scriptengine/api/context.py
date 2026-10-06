@@ -665,7 +665,7 @@ def _qa_context(
         retriever.release_models()
 
     with FactStore(paths.facts_db) as store:
-        episodes = cite.EpisodeIndex.from_store(store)
+        episodes = cite.EpisodeIndex.from_store(store, load_overrides(paths))
         # Entity-anchored recall floor (R6; closes the G5/G11/G13/G14 family on
         # the qa path): the page a question is authored against is fetched
         # straight from the store and leads the budget walk, so its text is

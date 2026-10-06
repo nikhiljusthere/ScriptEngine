@@ -29,7 +29,7 @@ from collections import Counter
 from dataclasses import dataclass, field
 from typing import Any
 
-from scriptengine.config import SeriesPaths, Settings, get_settings
+from scriptengine.config import SeriesPaths, Settings, get_settings, load_overrides
 from scriptengine.retrieve import citations as cite
 
 # A script is blank-line separated: a bold title, `* **Heading**` lines, and
@@ -153,7 +153,7 @@ def annotate(
     blocks = split_blocks(script)
 
     with FactStore(paths.facts_db) as store:
-        episodes = cite.EpisodeIndex.from_store(store)
+        episodes = cite.EpisodeIndex.from_store(store, load_overrides(paths))
 
     with HybridRetriever(paths, settings) as retriever:
         for block in blocks:
