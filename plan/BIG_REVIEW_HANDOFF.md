@@ -27,6 +27,16 @@ from the saved cursor, until the 12,000-window set is hand-checked**
    verify_row_wiki.py / qwen_worker.py, tools/train/infer.py, the
    `D series/{berserk,bleach,db,hxh,onepiece}/overrides.yaml` deletions).
 
+## 0b. UPDATE 2026-10-07 ~04:50 (read first)
+
+Labeling runner is now PID 512679 running `--hints --repair` (35B + review-derived reminders + one
+repair turn; F1 .535 -> .629 on 96 reviewed windows). Its code, the review tools (big_flags.py,
+big_mkfix.py, big_consistency.py, eval_hints.py, label_hints.py) and the pattern catalog live on
+branch `big-review-flags` (worktree .claude/worktrees/big-review-flags): see
+plan/BIG_REVIEW_PATTERNS.md sections E and F for the review loop and the runner resume command.
+Review cursor: series/universal/training/big/review_cursor.txt. Rulings R9-R25 were added to the
+main checkout's copy of this file (uncommitted there) and are mirrored in BIG_REVIEW_PATTERNS.md.
+
 ## 1. State at handoff
 
 | what | where / value |
