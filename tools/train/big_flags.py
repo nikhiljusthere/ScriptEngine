@@ -185,6 +185,8 @@ def main():
                 flags.append(f"{tag}: plural referent in quote -> who exactly? (A41)")
             if v == "captured" and re.search(r"\bstopped\b", q) and not re.search(PLAIN["captured"], q, re.I):
                 flags.append(f"{tag}: 'stopped' -> defeated, not captured (A55)")
+            if v == "fought" and re.search(r"for protection|to protect|shield(?:ed|s)? (?:him|her|them)", q, re.I):
+                flags.append(f"{tag}: a protective act -> saved, not fought (A62)")
             if v == "saved" and re.search(r"\bdefended\b", q, re.I):
                 flags.append(f"{tag}: 'defended' -> physical protection or only words? (A36)")
             if v == "saved" and re.search(r"\bhelp", q, re.I) and not re.search(PLAIN["saved"] + r"|escap|free", q, re.I):
