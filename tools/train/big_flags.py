@@ -30,7 +30,7 @@ SPECIES = re.compile(r"^(Kree|Skrulls?|Shi'ar|Inhumans|Chitauri|Brood|Builders|F
                      r"Quantumnauts|Wolf-Men|Elder Gods)$")
 VEHICLE = re.compile(r"\b(Blackbird|Quinjet|Helicarrier|Zephyr|Bus|Milano|Benatar|Starjammer|Stratojet|ship|jet|"
                      r"plane|car|truck|submarine|Ark)\b")
-RANK = re.compile(r"^(?:Dr\.|Doctor|General|Agent|Officer|Senator|Prelate|Empress|Emperor|Mayor|Detective|Sergeant|"
+RANK = re.compile(r"^(?:Dr\.|Doctor|Brigadier General|Brigadier|General|Agent|Officer|Senator|Prelate|Empress|Emperor|Mayor|Detective|Sergeant|"
                   r"Colonel|Major|Lieutenant|Commander|Captain|Warlord|Professor|Chancellor|Director)\s"
                   r"(?!America\b|Marvel\b|Britain\b|Universe\b|Doom\b|Strange\b|Druid\b|Octopus\b|X\b|Xavier\b)")
 # one person, two names: pairs corrected in review (extend as new ones appear)
@@ -121,7 +121,8 @@ def main():
                                 and (nm.endswith(" " + end) or nm.startswith(end + " ")))
                 if longer:
                     flags.append(f"{tag}: fuller name in window for '{end}': {longer}")
-                if end[:1].islower() or "'s " in end or "' " in end or len(end) <= 2:
+                if (end[:1].islower() and not re.match(r"(?:van|von|de|del|da|di|le|la|al|el) [A-Z]", end)) \
+                        or "'s " in end or "' " in end or len(end) <= 2 or end.startswith("version of"):
                     flags.append(f"{tag}: description/garbage end '{end}' -> a named or definite individual?")
                 for a_, b_ in ALIASES:
                     if end in (a_, b_) and re.search(rf"\b{re.escape(a_)}\b", text) and re.search(rf"\b{re.escape(b_)}\b", text):
@@ -139,7 +140,11 @@ def main():
                 flags.append(f"{tag}: passive with no 'by' -> doer stated? (R17)")
             if re.search(r"in exchange for|agreed to|promised to|offered to", q, re.I):
                 flags.append(f"{tag}: deal/offer wording -> the promised act did not happen (A23)")
-            if v == "killed" and re.search(r"finish\w* off|survive|possess", q, re.I):
+            if v == "met" and re.search(r"Watcher|Uatu", s) and re.search(r"visit|watch|observ|went to", q, re.I):
+                flags.append(f"{tag}: the Watcher observing a universe is not a meeting (A27)")
+            if v in ("fought", "captured") and re.search(r"sedat|knock\w* (?:him|her|them) out|unconscious", q, re.I):
+                flags.append(f"{tag}: sedated/knocked out -> defeated (A29)")
+            if v == "killed" and re.search(r"finish\w* off|survive|possess|terminat", q, re.I):
                 flags.append(f"{tag}: 'finished off'/survived/possession -> defeated or fought? (A21/A22)")
             if PURPOSE.search(q):
                 flags.append(f"{tag}: purpose clause '{PURPOSE.search(q).group(0)}' -> did it happen? (step 3)")
