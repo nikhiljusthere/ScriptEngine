@@ -70,6 +70,12 @@ def main():
             if key(e) not in ks:
                 uniq.append(e)
         f["events"] = uniq
+        # one name per person: warn when a window uses a name and a shorter form of it
+        ends = {x for e in uniq for x in (e["subject"], e["object"]) if x}
+        for a_ in ends:
+            for b_ in ends:
+                if a_ != b_ and (b_.endswith(" " + a_) or b_.startswith(a_ + " ")):
+                    print(f"WARN {f['id']}: both '{a_}' and '{b_}' -> one name per person?")
     json.dump(fixes, open(out, "w"), ensure_ascii=False, indent=0)
     print(f"{len(fixes)} windows -> {out}")
 
