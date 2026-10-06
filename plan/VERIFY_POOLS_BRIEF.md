@@ -237,3 +237,9 @@ context, ONE window at a time, continuously:
     "fled ... to escape the threat" -> `escaped` the named threat; "the Avengers attack X"
     when the window names an Avenger -> member rows only (G.2); manipulating two named
     groups "into a fight" -> the groups `fought`.
+
+**Audit 81-82 (MCU):**
+25. **A claim, lie, accusation or memory is not the event.** "Hoffman told the police that
+    the vigilante was the one who killed Blake" is Hoffman's lie -> no `killed` row (the
+    narrated event "got information from Blake before he died" is `met`). Label only what
+    the passage narrates as happening; MCU synopses quote characters' versions constantly.
