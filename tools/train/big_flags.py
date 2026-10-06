@@ -38,7 +38,15 @@ ALIASES = [("Professor X", "Xavier"), ("Cap", "Captain America"), ("Ms. Marvel",
            ("Captain Marvel", "Mar-Vell"), ("Shadowcat", "Kitty Pryde"), ("Iron Man", "Tony Stark"),
            ("Black Panther", "T'Challa"), ("Scarlet Witch", "Maximoff"), ("Spider-Man", "Peter"),
            ("Goliath", "Hawkeye"), ("Freedom Ring", "Curtis"), ("Virtue", "Ethan Edwards"),
-           ("Phoenix", "Jean Grey"), ("Crusader", "Z'Reg"), ("Black Queen", "Phoenix"), ("Kuurth", "Juggernaut")]
+           ("Phoenix", "Jean Grey"), ("Crusader", "Z'Reg"), ("Black Queen", "Phoenix"), ("Kuurth", "Juggernaut"),
+           ("Mole Man", "Harvey"), ("Torch", "Johnny"), ("Adam", "Warlock"), ("Abomination", "Blonsky"),
+           ("Daredevil", "Matt Murdock"), ("Daredevil", "Murdock"), ("Falcon", "Wilson"), ("U.S.Agent", "John"),
+           ("Strong Guy", "Guido"), ("Mr. Fantastic", "Richards"), ("Mr. Fantastic", "Reed"), ("Rain Boy", "Carl Aalston"),
+           ("Human Torch", "Johnny Storm"), ("Captain Britain", "Brian"), ("Iron Monger", "Stane"),
+           ("Black Panther", "T'Challa"), ("Ms. Marvel", "Kamala"), ("Spider-Woman", "Jessica"), ("White Queen", "Emma Frost"),
+           ("Wolverine", "Logan"), ("Cyclops", "Scott"), ("Marvel Girl", "Jean"), ("Thing", "Ben"), ("Invisible Woman", "Sue"),
+           ("Hulk", "Banner"), ("She-Hulk", "Walters"), ("Hawkeye", "Clint"), ("Black Widow", "Natasha"),
+           ("Winter Soldier", "Barnes"), ("Scarlet Witch", "Wanda"), ("Quicksilver", "Pietro"), ("Vision", "Vis")]
 DISGUISE = re.compile(r"revealed (?:to be|as|himself|herself)|was (?:in fact|actually|really)|posing as|masquerad|"
                       r"in disguise|impersonat|unmasked|now named|true identity|alias", re.I)
 LEAD = ("When|After|Before|As|While|Then|Meanwhile|However|Although|Though|Once|Since|During|With|Without|"
@@ -151,6 +159,11 @@ def main():
                 flags.append(f"{tag}: 'disposed of' with no death -> defeated; a company/item is no doer (A38/A39)")
             if PURPOSE.search(q) and not re.search(r"(?:managed|able|succeeded|in time|went on) to", q, re.I):
                 flags.append(f"{tag}: purpose clause '{PURPOSE.search(q).group(0)}' -> did it happen? (step 3)")
+            if v == "fought" and re.search(r"(?:ship|boat|plane|car|truck|train|building|base|city|planet)\b.{0,15}"
+                                           r"(?:was|were) attacked|attacked the (?:ship|boat|plane|base|city|planet)", q, re.I):
+                flags.append(f"{tag}: an attack on a vehicle/building/place is not fought (A42)")
+            if re.search(r"\b(?:the two|the pair|both|the duo|the trio|they|them)\b", q, re.I) and v != "met":
+                flags.append(f"{tag}: plural referent in quote -> who exactly? (A41)")
             if v == "saved" and re.search(r"\bdefended\b", q, re.I):
                 flags.append(f"{tag}: 'defended' -> physical protection or only words? (A36)")
             if v == "saved" and re.search(r"\bhelp", q, re.I) and not re.search(PLAIN["saved"], q, re.I):
