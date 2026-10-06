@@ -124,6 +124,30 @@ def main():
             bucket.append(rec)
     if len(harm) != n_harm:
         errors.append(f"jjk: {len(harm) - n_harm} harmonize.jsonl ids not found in the set")
+    # one copy of each passage: some wikis store the same text under two
+    # window ids (Marvel "Imperial" w404/w412), and a copy on another page
+    # could otherwise sit in train while its twin is in test. Test and dev
+    # keep their copy; the train twin is dropped.
+    seen_text = {(r["series"], r["passage"]) for r in test + dev}
+    deduped, n_dup = [], 0
+    for r in train:
+        key = (r["series"], r["passage"])
+        if key in seen_text:
+            n_dup += 1
+            continue
+        seen_text.add(key)
+        deduped.append(r)
+    train = deduped
+    for bucket in (dev, test):
+        kept, seen_b = [], set()
+        for r in bucket:
+            key = (r["series"], r["passage"])
+            if key in seen_b:
+                n_dup += 1
+                continue
+            seen_b.add(key)
+            kept.append(r)
+        bucket[:] = kept
     # the 35% mix cap on train windows
     by = defaultdict(list)
     for r in train:
@@ -153,7 +177,7 @@ def main():
         with open(out / f"{name}.jsonl", "w") as f:
             for r in rows:
                 f.write(json.dumps(r, ensure_ascii=False) + "\n")
-    rec = {"train": len(train), "dev": len(dev), "test": len(test),
+    rec = {"train": len(train), "dev": len(dev), "test": len(test), "duplicate_passages_dropped": n_dup,
            "test_by_series": Counter(r["series"] for r in test),
            "train_by_series": Counter(r["series"] for r in train),
            "dev_by_series": Counter(r["series"] for r in dev),
