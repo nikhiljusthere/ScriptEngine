@@ -148,6 +148,8 @@ def main():
                 flags.append(f"{tag}: 'finished off'/survived/possession -> defeated or fought? (A21/A22)")
             if PURPOSE.search(q):
                 flags.append(f"{tag}: purpose clause '{PURPOSE.search(q).group(0)}' -> did it happen? (step 3)")
+            if v == "saved" and re.search(r"\bdefended\b", q, re.I):
+                flags.append(f"{tag}: 'defended' -> physical protection or only words? (A36)")
             if v == "saved" and re.search(r"\bhelp", q, re.I) and not re.search(PLAIN["saved"], q, re.I):
                 flags.append(f"{tag}: 'helped' is not a rescue (R23)")
             if v == "arrived" and re.search(r"while taking|on (?:his|her|their) way|heading|in order to|hoping", q, re.I):
