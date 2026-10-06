@@ -203,6 +203,10 @@ def main():
             if v == "awakened" and re.search(r"\b(?:revived|resurrected|brought back)\b(?! by)", q) and \
                     not re.search(r"^(?:\w+ )?(?:was|were) ", q):
                 flags.append(f"{tag}: someone revived him -> also '<reviver> saved' (A33)")
+            if v in ("arrived", "departed") and o and re.fullmatch(r"FBI|CIA|S\.H\.I\.E\.L\.D\.|SHIELD|Hydra|A\.I\.M\.|NYPD|S\.W\.O\.R\.D\.|Interpol|TVA|Damage Control", o):
+                flags.append(f"{tag}: '{o}' is an organisation, not a place (A65)")
+            if v == "fought" and re.search(rf"{re.escape(s)} sent .{{0,80}} to attack", q):
+                flags.append(f"{tag}: the sender only ordered the attack -> the ones sent are the doers (A64)")
             if v in ("arrived", "departed") and o and VEHICLE.search(o):
                 flags.append(f"{tag}: '{o}' is a vehicle, not a place (A24)")
             if v in ("arrived", "departed") and o and (o[:1].islower() or "'s " in o):

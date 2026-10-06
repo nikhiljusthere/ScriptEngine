@@ -74,6 +74,8 @@ roughly one error in five through.
 | A61 | "managed to escape with the help of X" flagged as R23 'helped' | saved stays (helping an escape from captivity is a release, as b21 Carol Danvers); R23 covers only help with non-danger | R23 | occasional |
 | A62 | "grabs Pangan for protection" / shielding someone written as fought | saved | table: saved | rare |
 | A63 | "Rawlins' soldiers" / "X's men" attacking (possessive group with a named head) left out or as a crowd | X fought the targets (as "Luke Cage's team" -> Luke Cage) | G.2, R21 | occasional |
+| A64 | "X sent Y to attack Z" written with the sender as the doer | Y fought Z (the sender only ordered it) | table: killed NO ordering | occasional |
+| A65 | an organisation as a place ("returned to the FBI", "joined S.H.I.E.L.D.") | no arrived (not a proper-named place) | table: arrived | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 ## B. Confirm patterns (35B usually right; one look suffices)
