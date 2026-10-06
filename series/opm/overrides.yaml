@@ -755,3 +755,9 @@ episode_map:
     - {relation: chapters, from: episode}
   chapter_number: [title]
   episode_number: [title]
+
+# Sections the default boilerplate list drops that this wiki writes as content
+# (chunk-containment, scratch re-index 2026-10-06: these closed the residue).
+content_sections:
+  - notes
+  - references
