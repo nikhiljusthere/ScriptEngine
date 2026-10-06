@@ -120,3 +120,26 @@ shared)` with bK's final rows: reuse them for the shared part and read only the 
 - Loop: `SCRIPTENGINE_ROOT=/home/goblin/ScriptEngine python tools/train/big_flags.py 15` (from this worktree),
   write compact edits, `python tools/train/big_mkfix.py edits.txt bfix.json`, then
   `/home/goblin/ScriptEngine/tools/train/big_review.py --fix bfix.json` and `--mark N`.
+
+## F. Labeler recipe change (2026-10-07 ~04:50) — the 35B now gets these patterns
+
+The owner asked to give the 35B the flagger and this catalog, not as a prompt dump. Done as:
+- `--hints` (tools/train/label_hints.py): at most 5 one-line reminders whose trigger words occur in the
+  window (mean 2.6; none on 13%), appended to the user turn; the procedure doc stays the cached prefix.
+- `--repair`: big_flags.check() runs on the gated rows; only when flags fire, ONE follow-up turn lists
+  them (max 8) and asks for the complete corrected JSON (fires on ~36% of windows).
+- Measured on 96 hand-reviewed windows (eval_hints.py; gold = final reviewed rows), same server:
+  base P .694 R .436 F1 .535 exact 38 | hints .707/.503/.588 37 | hints+repair .769/.532/.629 44.
+  hints+repair vs base: +.093 F1, paired bootstrap 95% [-.008, +.196].
+- The runner was paused (owner-approved, PID 471097 stopped at 5,206 labeled) and restarted with
+  `--hints --repair` at ~04:48: PID 512679, launched from this worktree with
+  SCRIPTENGINE_ROOT=/home/goblin/ScriptEngine (gate modules + data from the main checkout, so the
+  gate is unchanged). Rows written from then on carry `"hinted": true`, `repair_note`, `first_rows`;
+  the first 5,206 rows are the plain recipe (mixed provenance; every window is still reviewed).
+- If the runner dies, resume with the same flags from this branch (label_single.py here has
+  --hints/--repair; the main checkout's copy does not):
+    cd .claude/worktrees/big-review-flags && SCRIPTENGINE_ROOT=/home/goblin/ScriptEngine \
+    setsid nohup /home/goblin/ScriptEngine/scriptengine/.venv/bin/python tools/train/label_single.py \
+      --in $R/series/marvel/training/labels/big_in.jsonl --in $R/series/mcu/training/labels/big_in.jsonl \
+      --out $R/series/universal/training/big/labels.jsonl --workers 8 --shuffle --hints --repair \
+      >> $R/series/universal/training/big/label_run.log 2>&1 < /dev/null &      (R=/home/goblin/ScriptEngine)
