@@ -127,15 +127,27 @@ def main():
     import time
     rec = {"id": wid, "page": windows[wid]["page"], "section": windows[wid]["section"], **d,
            "saved_at": time.strftime("%Y-%m-%d %H:%M:%S")}  # the live monitor's feed order
+    # One lock for appends and replaces: an auditor's --replace read the file,
+    # the verifier appended a window, and the rewrite dropped that append
+    # (2026-10-06, Marvel 628718b177328e15). Re-read under the lock.
+    import fcntl
+    import os
+    lock = open(str(out) + ".lock", "w")
+    fcntl.flock(lock, fcntl.LOCK_EX)
+    saved = [json.loads(l) for l in open(out)] if out.exists() else []
     if a.replace:
         old = next(r for r in saved if r["id"] == wid)
         with open(lab / f"{a.pool}_audit.jsonl", "a") as f:
             f.write(json.dumps({"id": wid, "why": a.why, "before": old, "after": rec}, ensure_ascii=False) + "\n")
-        with open(out, "w") as f:
+        tmp = str(out) + ".tmp"
+        with open(tmp, "w") as f:
             for r in saved:
                 f.write(json.dumps(rec if r["id"] == wid else r, ensure_ascii=False) + "\n")
+        os.replace(tmp, out)
         print(f"REPLACED {wid} (logged to {a.pool}_audit.jsonl)")
         return 0
+    if any(r["id"] == wid for r in saved):
+        sys.exit(f"REFUSED: {wid} is already saved")
     with open(out, "a") as f:
         f.write(json.dumps(rec, ensure_ascii=False) + "\n")
     n = sum(1 for _ in open(out))
