@@ -1,0 +1,157 @@
+"""Review aid for the 14k big-window review (plan/BIG_REVIEW_HANDOFF.md).
+
+Prints the next N windows from the cursor like `big_review.py --next`, plus:
+  DUP     the window text repeats an already-reviewed window -> its final rows
+  FLAG    a 35B row matching a known error pattern (BIG_REVIEW_PATTERNS.md)
+  MISS?   a sentence with an event cue that no row quote touches
+  OK      a row whose quote states its own verb plainly (fast confirm)
+Flags are prompts, never verdicts: every window is still read in full.
+
+usage: python big_flags.py N [--chars 4000]   (SCRIPTENGINE_ROOT overrides the checkout)
+"""
+import os
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(os.environ.get("SCRIPTENGINE_ROOT", Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(ROOT / "tools" / "train"))
+import big_review as br  # noqa: E402
+
+GROUPS = re.compile(r"^(Avengers|New Avengers|Mighty Avengers|West Coast Avengers|Secret Avengers|X-Men|New X-Men|"
+                    r"X-Force|X-Factor|New Mutants|Fantastic Four|Guardians of the Galaxy|Illuminati|Inhumans|Defenders|"
+                    r"Thunderbolts|Starjammers|Liberators|Invaders|Revengers|Brotherhood.*|Masters of Evil|Marauders|"
+                    r"Acolytes|Hellfire Club|Morlocks|Reavers|S\.H\.I\.E\.L\.D\.|Hydra|A\.I\.M\.|Wildboys|Exceptional|"
+                    r"Phoenixes|.*'s team|the team|the group|.* team)$")
+CROWD = re.compile(r"\b(police|former|active|several|some|many|students|heroes|villains|guards|soldiers|forces|army|"
+                   r"armada|fleet|thugs|men|agents|refugees|cultists|people|the group|the team)\b|^(a|an|the) ", re.I)
+SPECIES = re.compile(r"^(Kree|Skrulls?|Shi'ar|Inhumans|Chitauri|Brood|Builders|Frost Giants|Dwarves|Sovereign|"
+                     r"Atlanteans|mutants|humans)$")
+RANK = re.compile(r"^(?:Dr\.|Doctor|General|Agent|Officer|Senator|Prelate|Empress|Emperor|Mayor|Detective|Sergeant|"
+                  r"Colonel|Major|Lieutenant|Commander|Captain|Warlord|Professor|Chancellor|Director)\s"
+                  r"(?!America\b|Marvel\b|Britain\b|Universe\b|Doom\b|Strange\b|Druid\b|Octopus\b|X\b|Xavier\b)")
+# one person, two names: pairs corrected in review (extend as new ones appear)
+ALIASES = [("Professor X", "Xavier"), ("Cap", "Captain America"), ("Ms. Marvel", "Carol Danvers"),
+           ("Captain Marvel", "Mar-Vell"), ("Shadowcat", "Kitty Pryde"), ("Iron Man", "Tony Stark"),
+           ("Black Panther", "T'Challa"), ("Scarlet Witch", "Maximoff"), ("Spider-Man", "Peter"),
+           ("Goliath", "Hawkeye"), ("Freedom Ring", "Curtis"), ("Virtue", "Ethan Edwards"),
+           ("Phoenix", "Jean Grey"), ("Crusader", "Z'Reg"), ("Black Queen", "Phoenix"), ("Kuurth", "Juggernaut")]
+DISGUISE = re.compile(r"revealed (?:to be|as|himself|herself)|was (?:in fact|actually|really)|posing as|masquerad|"
+                      r"in disguise|impersonat|unmasked|now named|true identity|alias", re.I)
+JOIN = re.compile(r"\bjoin|teamed up|allied|alliance|rejoin", re.I)
+TRAP = re.compile(r"imprison\w* in|trapped|ensnared|Limbo|Dimension|Realm|Void|Mojoverse|pocket universe", re.I)
+HEDGE = re.compile(r"seemingly|nearly|almost|apparently|attempt|tried to|would have", re.I)
+CUES = re.compile(r"\b(rescu\w*|saved?|saving|freed|free (?:him|her|them)|releas\w*|escap\w*|fled|flee|broke (?:free|out)|"
+                  r"kidnap\w*|abduct\w*|captur\w*|arrest\w*|apprehend\w*|imprison\w*|detain\w*|prisoner|killed|slew|slain|"
+                  r"murder\w*|assassinat\w*|defeat\w*|knock\w* (?:out|unconscious)|subdu\w*|"
+                  r"overpower\w*|incapacitat\w*|attack\w*|battl\w*|fought|fight\w*|clash\w*|ambush\w*|confront\w*|"
+                  r"betray\w*|turned (?:on|against)|met|meet\w*|found|visit\w*|recruit\w*|assembl\w*|gather\w*|greeted|"
+                  r"arriv\w*|returned to|went to|traveled to|travelled to|brought (?:\w+ )?to|taken to|left the|"
+                  r"woke|awak\w*|reviv\w*|resurrect\w*|reborn|brainwash\w*|manipulat\w*|possess\w*|sealed|banish\w*|"
+                  r"trapp\w*)\b", re.I)
+PLAIN = {"fought": r"attack|fought|fight|battl|clash|ambush|struck|punch|shot|stabb|wound",
+         "defeated": r"defeat|knock|subdu|beat|overpower|incapacitat", "killed": r"kill|slew|slain|murder|assassinat",
+         "captured": r"captur|kidnap|abduct|arrest|apprehend|prisoner|captive", "saved": r"sav|rescu|freed",
+         "escaped": r"escap|fled|flee|broke free", "met": r"\bmet\b|found|visit|greeted|encounter|reunit",
+         "arrived": r"arriv|returned to|went to|travel|landed|back to|took .* to", "departed": r"\bleft\b|depart|abandon",
+         "awakened": r"woke|awak|reviv|resurrect|reborn|regain", "betrayed": r"betray|turned on", "sealed": r"seal|trap|banish"}
+
+
+def norm(t):
+    return re.sub(r"\W+", " ", t).strip().lower()
+
+
+def sentences(t):
+    return [s for s in re.split(r"(?<=[.!?])\s+|\n+", t) if len(s) > 20]
+
+
+def main():
+    n = int(sys.argv[1]) if len(sys.argv) > 1 else 15
+    chars = int(sys.argv[sys.argv.index("--chars") + 1]) if "--chars" in sys.argv else 4000
+    rows, c, pas = br.jl(br.LABELS), int(os.environ.get("BF_FROM", br.cursor())), br.passages()
+    final = {a["id"]: a["after"] for a in br.jl(br.AUDIT)}
+    seen = {}
+    for i, r in enumerate(rows[:c], 1):
+        seen.setdefault(norm(pas[r["id"]])[:400], (i, r["id"]))
+    for i, r in enumerate(rows[c:c + n], c + 1):
+        text = pas[r["id"]][:chars]
+        ev = r["events"]
+        print(f"===== b{i} {r['page']} / {r['section']}" + ("" if r["ok"] else "  [PARSE FAIL]"))
+        key = norm(pas[r["id"]])[:400]
+        dup = seen.get(key)
+        if dup:
+            prev_rows = final.get(dup[1], rows[dup[0] - 1]["events"])
+            same = norm(pas[r["id"]]) == norm(pas[dup[1]])
+            print(f" DUP of b{dup[0]} ({'identical text' if same else 'same opening, text differs: read the tail'})"
+                  f" final rows: {[(e['subject'], e['verb'], e['object']) for e in prev_rows]}")
+        seen.setdefault(key, (i, r["id"]))
+        print(text)
+        print(" ROWS", [(e["subject"], e["verb"], e["object"], e["quote"][:50]) for e in ev] or "[]")
+        if r.get("dropped"):
+            print(" GATE-DROPPED", [(d.get("subject"), d.get("verb"), d.get("object"), d.get("why")) for d in r["dropped"]])
+        flags, ok = [], []
+        names = set(re.findall(r"\b[A-Z][\w'.-]+(?: (?:[A-Z][\w'.-]+|of|the|de|von))+", text))
+        for e in ev:
+            s, v, o, q = e["subject"], e["verb"], e["object"], e["quote"]
+            tag = f"{s}|{v}|{o}"
+            for end in (s, o):
+                if not end:
+                    continue
+                if GROUPS.match(end):
+                    flags.append(f"{tag}: group end '{end}' -> named members tied to the event? (G.2/R19)")
+                if CROWD.search(end):
+                    flags.append(f"{tag}: crowd/indefinite end '{end}' (R11)")
+                if SPECIES.match(end):
+                    flags.append(f"{tag}: species end '{end}'")
+                if RANK.match(end):
+                    flags.append(f"{tag}: rank prefix in '{end}' -> strip")
+                longer = sorted(nm for nm in names if nm != end and not RANK.match(nm)
+                                and (nm.endswith(" " + end) or nm.startswith(end + " ")))
+                if longer:
+                    flags.append(f"{tag}: fuller name in window for '{end}': {longer}")
+                if end[:1].islower() or "'s " in end or "' " in end or len(end) <= 2:
+                    flags.append(f"{tag}: description/garbage end '{end}' -> a named or definite individual?")
+                for a_, b_ in ALIASES:
+                    if end in (a_, b_) and re.search(rf"\b{re.escape(a_)}\b", text) and re.search(rf"\b{re.escape(b_)}\b", text):
+                        flags.append(f"{tag}: window has both '{a_}' and '{b_}' -> one name per person")
+            if v == "met" and JOIN.search(q):
+                flags.append(f"{tag}: met from joining/allying (R4/R12)")
+            if v == "captured" and TRAP.search(q):
+                flags.append(f"{tag}: trapped in a dimension/place -> sealed? (R20)")
+            if v == "fought" and re.search(r"confront|faced", q, re.I) and not re.search(PLAIN["fought"], q, re.I):
+                flags.append(f"{tag}: confrontation without a stated attack -> met (R2)")
+            if v in ("killed", "defeated", "captured", "escaped", "saved") and HEDGE.search(q):
+                flags.append(f"{tag}: hedged/attempt wording '{HEDGE.search(q).group(0)}'")
+            if re.search(r"\b(was|were|been) (defeated|freed|rescued|released|killed|captured|arrested)\b", q) \
+                    and " by " not in q:
+                flags.append(f"{tag}: passive with no 'by' -> doer stated? (R17)")
+            if v == "saved" and re.search(r"\bhelp", q, re.I) and not re.search(PLAIN["saved"], q, re.I):
+                flags.append(f"{tag}: 'helped' is not a rescue (R23)")
+            if v == "arrived" and re.search(r"while taking|on (?:his|her|their) way|heading|in order to|hoping", q, re.I):
+                flags.append(f"{tag}: heading/purpose, not an arrival")
+            if v == "betrayed" and re.search(r"abandon|left|disassembl|drove", q, re.I):
+                flags.append(f"{tag}: leaving/disbanding is not betrayal (R14/R24)")
+            if v in ("arrived", "departed") and o and (o[:1].islower() or "'s " in o):
+                flags.append(f"{tag}: description place '{o}'")
+            if v in PLAIN and re.search(PLAIN[v], q, re.I) and not any(f.startswith(tag) for f in flags):
+                ok.append(tag)
+        if DISGUISE.search(text):
+            flags.append(f"identity reveal in window ('{DISGUISE.search(text).group(0)}') -> one name per person (R10)")
+        if re.search(r"\bled by\b", text):
+            flags.append("window has 'led by' -> a group led by a named leader acts through the leader (R21)")
+        quotes = [e["quote"] for e in ev]
+        for k, sent in enumerate(sentences(text), 1):
+            if sent.lstrip()[:1] in '"“':
+                continue
+            cues = sorted({m.group(0).lower() for m in CUES.finditer(sent)})
+            if cues and not any(q in sent or sent in q for q in quotes):
+                flags.append(f"MISS? s{k} [{', '.join(cues)}]")
+        for f in flags:
+            print("  " + ("" if f.startswith("MISS?") else "FLAG ") + f)
+        if ok:
+            print("  OK:", ok)
+    print(f"[printed b{c+1}..b{min(c + n, len(rows))} of {len(rows)}; mark with --mark {min(c + n, len(rows))}]")
+
+
+if __name__ == "__main__":
+    main()

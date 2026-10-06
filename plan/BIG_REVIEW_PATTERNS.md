@@ -1,0 +1,53 @@
+# Big-window review: error and confirm patterns
+
+Companion to `plan/BIG_REVIEW_HANDOFF.md` (rulings R1-R25). Built from the corrections in
+`series/universal/training/big/big_audit.jsonl` (b1-b131, 2026-10-07). `big_flags.py` turns
+most of these into automatic FLAG / MISS? / DUP lines. **Flags are prompts, not verdicts: every
+window is still read in full.** Measured on b7-b131: the row and window flags covered 113 of the
+114 35B rows that had to change. MISS? cues fired in 62 of the 82 windows with a missed event,
+and 13 of 98 rows marked OK still needed a change. Skipping full reads would therefore let
+roughly one error in five through.
+
+## A. Wrong-answer patterns (35B row -> correct answer)
+
+| # | pattern (how it shows) | correct | rule | freq b7-b131 |
+|---|---|---|---|---|
+| A1 | missed event in a window that has other rows: rescues, escapes, "left the team", "found X", recruits, betrayal nouns ("Magik's betrayal"), attacks in passing ("having hurt Broo"), power/mind use ("brainwashed", "possessed", "manipulated by") | add the row | step 8.1, R8, R18 | most windows (82/125 needed additions) |
+| A2 | group end ("Avengers", "X-Men", "the group") when the window ties named members to the event | one row per tied member, no group row | G.2, R19 | very common |
+| A3 | met from joining/allying ("joined the team", "joining X and Y", "teamed up", "allied", "rejoined") | no met | R4, R12 | common |
+| A4 | two names for one person in the window (codename + real name, alias pairs, disguise reveals "revealed to be", "posing as", "was really", "unmasked") | the real / revealed name in every row | step 6, R10 | common |
+| A5 | crowd, indefinite or species end ("several Avengers", "former Avengers", "a Kree armada", "the police", "a Space Phantom", "Skrulls", "Inhumans", "Builders") | drop the row (or the named member if one is tied) | step 6, R11 | common |
+| A6 | confrontation with no stated attack written as fought ("confronted Whirlwind", "confronted the robot Computo") | met | R2 | occasional |
+| A7 | trapped in a dimension / other world written as captured ("imprisoned in Limbo", "ensnared in Mojoverse", "pocket universe", "forced through a portal") | sealed | R3, R13, R20 | occasional |
+| A8 | passive with no doer filled from context ("where he was defeated", "were freed", "Moira being rescued", "arrested due to his connection to Orchis") | no row | step 4, R17 | occasional |
+| A9 | rank/title or short form as the name ("Captain Stacy", "Dr. Ellis", "Shaw" when "Sebastian Shaw" is in the window, "Gaunt", "Burch", "the Reaper", "The Crippler") | strip rank; fullest form; no article | step 6 | occasional |
+| A10 | description used as a place ("Reavers' Australian base", "the mansion" when unnamed) or heading as arrival ("while taking ... back to") | no arrived/departed | table: arrived | occasional |
+| A11 | hedged or prevented acts ("seemingly slew" -> defeated, "attack ... was prevented" -> no fought, "nearly kill" -> fought) | per hedge | step 3 | occasional |
+| A12 | "helped X when ..." written as saved | no saved | R23 | rare |
+| A13 | leaving/disbanding written as betrayed ("abandoned him to die", "the Avengers were disassembled by") | no betrayed (departed if a named place) | R14, R24 | rare |
+| A14 | wrong pronoun referent ("he had captured a Space Phantom" = Kang, not Immortus; "before he escaped the police" = Castle) | re-resolve by meaning | step 4 | rare, only reading catches it |
+| A15 | broken end string ("X" for Professor X) | the full name | step 6 | rare |
+| A16 | "<group> led by X" as doer | X | R21 | rare |
+| A17 | self-directed death (suicide) | no row (gate refuses subject==object) | R16 | rare |
+
+## B. Confirm patterns (35B usually right; one look suffices)
+
+- quote literally states subject-verb-object: "Stark defeated Bullski", "Thanos kidnapped Nebula and Starfox" (OK lines in big_flags)
+- "Back to <named place>" / "returned to <named place>" -> arrived
+- "found X" / "was greeted by X" / "visited X" / "reunited with X" -> met
+- "attacked by X" / "battled X" -> X fought the object
+- "X was murdered by Y" / "Y slew X" -> killed
+- lists, credits, trivia, dialogue windows -> empty (still skim for one narrated occurrence)
+- **The commonest residual error on OK rows is A4 (alias / disguise names) and A2 (group expansion).** Check those two even on OK rows.
+
+## C. Exact duplicates
+
+The same text appears on several sections/pages (b8=b23, b2=b33, b62=b88). big_flags prints
+`DUP of bK (identical text)` with bK's final rows: reuse them and check only the differing tail.
+
+## D. Gate quirks
+
+- symmetric met/fought pairs are deduped by the gate; a correction with both "A met B" and
+  "B met A" is refused with `dropped []` and `kept n-1/n`.
+- "Rachel" is classed as a place: refused as an object (R22).
+- subject == object is refused (R16).
