@@ -152,6 +152,8 @@ def main():
                 flags.append(f"{tag}: the Watcher observing a universe is not a meeting (A27)")
             if v in ("fought", "captured") and re.search(r"sedat|knock\w* (?:him|her|them) out|unconscious", q, re.I):
                 flags.append(f"{tag}: sedated/knocked out -> defeated (A29)")
+            if v == "killed" and re.search(r"\bkill(?:ed)? it\b|destroy(?:ed)? it\b", q, re.I):
+                flags.append(f"{tag}: killed 'it' -> the host or a thing on him? (A53)")
             if v == "killed" and re.search(r"finish\w* off|survive|possess|terminat", q, re.I):
                 flags.append(f"{tag}: 'finished off'/survived/possession -> defeated or fought? (A21/A22)")
             if v == "killed" and (re.search(r"dispos\w* of|took (?:him|her) out|dispatched", q, re.I)

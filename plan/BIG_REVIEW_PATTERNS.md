@@ -63,6 +63,8 @@ roughly one error in five through.
 | A50 | escaped with a place object although the window names the captor ("cut herself free" from Dreykov's operation, written as escaped Red Room Academy) | the captor is the object; the place only when no captor is named | table: escaped | occasional |
 | A51 | "A, B and C attended a meeting at <named place>" left out | each arrived + met per pair (a meeting held between them) | table: met/arrived | rare |
 | A52 | "an assailant", "a lesser demon", "an impostor" as ends | no row (indefinite) | step 6 | occasional |
+| A53 | "used his powers to kill it" where "it" is a symbiote/armor/item on a host who appears alive later ("Virus was arrested") written as the host killed | fought the host | step 4 | rare, reading only |
+| A54 | breaking an agreement ("abandoned his covenant with her and Xavier") | betrayed (broke faith) — unlike plain leaving (A13), which is no betrayal | table: betrayed | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 ## B. Confirm patterns (35B usually right; one look suffices)
