@@ -119,6 +119,22 @@ def stage_b(top3, best_lr):
     return runs
 
 
+def stage_b_reduced(best):
+    """The leader only, lr x{0.7, 1.0}, up to B_EPOCHS with early stop.
+
+    The full stage_b on the 2026-10-06 reduced Stage A was 15 runs (~30 h):
+    the top-3 all carry the leader's lr/rank (the e40 arm loses its train
+    file), and rare_x=3 is a no-op because no universal row is flagged
+    rare. Above-leader lrs (2e-4, r64) already overshot in Stage A.
+    """
+    return [{"stage": "B", "lr": best["lr"] * m, "rank": best["rank"],
+             "alpha": best["alpha"], "dropout": best.get("dropout", DROP),
+             "epochs": B_EPOCHS, "seed": 1, "rare_x": 1,
+             "full_ft": bool(best.get("full_ft")),
+             "name": f"B-lr{lr_tag(best['lr'] * m)}-{arm(best)}-rx1"}
+            for m in (0.7, 1.0)]
+
+
 def stage_c(best):
     return [{"stage": "C", "lr": best["lr"], "rank": best["rank"],
              "alpha": best["alpha"], "dropout": best.get("dropout", DROP), "epochs": B_EPOCHS,
@@ -201,7 +217,10 @@ def main():
         plans = {"A": stage_a_reduced(root) if a.reduced else stage_a()}
     elif a.stage == "B":
         a_recs = sorted(prior("A"), key=lambda r: r["best_dev_f1"], reverse=True)[:3]
-        plans = {"B": stage_b(a_recs, a_recs[0]["lr"] if a_recs else None)}
+        if a.reduced:
+            plans = {"B": stage_b_reduced(a_recs[0])} if a_recs else {"B": []}
+        else:
+            plans = {"B": stage_b(a_recs, a_recs[0]["lr"] if a_recs else None)}
     else:
         ranked = sorted(results, key=lambda r: (r["best_dev_f1"] or -1), reverse=True)
         plans = {"C": stage_c(ranked[0]) if ranked else []}
