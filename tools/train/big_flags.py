@@ -42,7 +42,7 @@ ALIASES = [("Professor X", "Xavier"), ("Cap", "Captain America"), ("Ms. Marvel",
 DISGUISE = re.compile(r"revealed (?:to be|as|himself|herself)|was (?:in fact|actually|really)|posing as|masquerad|"
                       r"in disguise|impersonat|unmasked|now named|true identity|alias", re.I)
 LEAD = ("When|After|Before|As|While|Then|Meanwhile|However|Although|Though|Once|Since|During|With|Without|"
-        "Following|Upon|Using|Back|In|On|At|Later|Soon|Eventually|Finally|Despite|The|A|An|His|Her|Their|Its|"
+        "Following|Upon|Using|Back|In|On|At|There|Here|Together|Both|Later|Soon|Eventually|Finally|Despite|The|A|An|His|Her|Their|Its|"
         "Captain America|Iron Man|Spider-Man")
 PURPOSE = re.compile(r"\b(?:to|in order to|intending to|planning to|hoping to|attempt(?:ed|ing)? to|tried to|"
                      r"decided to|wished to|wanted to|so (?:that )?(?:he|she|they) could) (?:meet|find|rescue|save|stop|"
@@ -154,6 +154,11 @@ def main():
                 flags.append(f"{tag}: heading/purpose, not an arrival")
             if v == "betrayed" and re.search(r"abandon|left|disassembl|drove", q, re.I):
                 flags.append(f"{tag}: leaving/disbanding is not betrayal (R14/R24)")
+            if v in ("arrived", "departed", "escaped") and o and ", " in o:
+                flags.append(f"{tag}: comma in place '{o}' -> R1 most specific part (gate splits it)")
+            if v == "awakened" and re.search(r"\b(?:revived|resurrected|brought back)\b(?! by)", q) and \
+                    not re.search(r"^(?:\w+ )?(?:was|were) ", q):
+                flags.append(f"{tag}: someone revived him -> also '<reviver> saved' (A33)")
             if v in ("arrived", "departed") and o and VEHICLE.search(o):
                 flags.append(f"{tag}: '{o}' is a vehicle, not a place (A24)")
             if v in ("arrived", "departed") and o and (o[:1].islower() or "'s " in o):

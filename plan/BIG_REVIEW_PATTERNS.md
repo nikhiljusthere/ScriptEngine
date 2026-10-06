@@ -42,6 +42,9 @@ roughly one error in five through.
 | A29 | "sedated him" / "knocked him out" written as fought | defeated | table: defeated | occasional |
 | A30 | "terminating X" about a file/record (X alive later in the window) written as killed | no row | step 3 | rare |
 | A31 | a self-assigned task as an event ("joined Daredevil's side and worked to stop Fisk") | no row (R4 + purpose) | step 3 | occasional |
+| A32 | an abilities/powers section narrating specific hits ("shake off a punch from Gladiator", "has taken multiple punches from Namor") left empty | fought rows (step 1: one specific occurrence is an event) | step 1 | occasional |
+| A33 | "X revived him" written only as awakened | also X saved him (revived someone who would otherwise die) | table: saved | occasional |
+| A34 | a team member's own team as "met" target after rescuing/arriving ("arrived in time to save Daisy and May") missed | met each person reached + saved | table: met | occasional |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 ## B. Confirm patterns (35B usually right; one look suffices)
@@ -65,3 +68,5 @@ The same text appears on several sections/pages (b8=b23, b2=b33, b62=b88). big_f
   "B met A" is refused with `dropped []` and `kept n-1/n`.
 - "Rachel" is classed as a place: refused as an object (R22).
 - subject == object is refused (R16).
+- a place with a comma ("Washington, D.C.") is split by the gate into two rows (refused as `kept n+1/n`);
+  write the most specific part ("Washington", R1).
