@@ -59,6 +59,10 @@ roughly one error in five through.
 | A45 | arrivals the other side cannot perceive (Reyes invisible to Mackenzie and May) written as met | no met; met only those who see him ("could see him") | table: met | rare |
 | A46 | a later "they" that includes someone already out of the scene ("Hammerhead shot him point-blank" then "They were ambushed" written for Slyde) | only those still present | step 4 | rare, reading only |
 | A47 | "were tied to a post" / "chained" / "locked" with no captor written for the last attacker | no captured (R17, example 9) | step 4 | occasional |
+| A49 | an unnamed attacker/kidnapper ("their mysterious kidnapper") revealed later in the window ("their real aggressor, the Stranger") left without rows | rows with the revealed name (R10) | R10 | rare |
+| A50 | escaped with a place object although the window names the captor ("cut herself free" from Dreykov's operation, written as escaped Red Room Academy) | the captor is the object; the place only when no captor is named | table: escaped | occasional |
+| A51 | "A, B and C attended a meeting at <named place>" left out | each arrived + met per pair (a meeting held between them) | table: met/arrived | rare |
+| A52 | "an assailant", "a lesser demon", "an impostor" as ends | no row (indefinite) | step 6 | occasional |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 ## B. Confirm patterns (35B usually right; one look suffices)

@@ -172,6 +172,9 @@ def main():
                 flags.append(f"{tag}: heading/purpose, not an arrival")
             if v == "betrayed" and re.search(r"abandon|left|disassembl|drove", q, re.I):
                 flags.append(f"{tag}: leaving/disbanding is not betrayal (R14/R24)")
+            if v == "escaped" and o and re.search(r"Academy|Prison|Base|Facility|Room|Dimension|Realm|Raft|Asylum|"
+                                                  r"Hospital|Mansion|Tower|Island|Limbo|Hell|Vault|Cell|Building", o):
+                flags.append(f"{tag}: escaped a place -> does the window name the captor? (A50)")
             if v in ("arrived", "departed", "escaped") and o and ", " in o:
                 flags.append(f"{tag}: comma in place '{o}' -> R1 most specific part (gate splits it)")
             if v == "awakened" and re.search(r"\b(?:revived|resurrected|brought back)\b(?! by)", q) and \
