@@ -85,6 +85,114 @@ def sentences(t):
     return [s for s in re.split(r"(?<=[.!?])\s+|\n+", t) if len(s) > 20]
 
 
+def check(ev, text):
+    """Row flags (pattern catalog) and MISS? cues for one window; used by big_flags and label_single --repair."""
+    flags, ok = [], []
+    # multi-word names; a sentence-initial word ("When Loki") or a trailing "the" is not part of the name
+    names = {re.sub(r"^(?:%s) " % LEAD, "", m) for m in
+             re.findall(r"\b[A-Z][\w'-]+(?: (?:of |the |de |von )?[A-Z][\w'-]+)+", text)}
+    names = {m for m in names if " " in m}
+    for e in ev:
+        s, v, o, q = e["subject"], e["verb"], e["object"], e["quote"]
+        tag = f"{s}|{v}|{o}"
+        for end in (s, o):
+            if not end:
+                continue
+            if GROUPS.match(end):
+                flags.append(f"{tag}: group end '{end}' -> named members tied to the event? (G.2/R19)")
+            if CROWD.search(end):
+                flags.append(f"{tag}: crowd/indefinite end '{end}' (R11)")
+            if SPECIES.match(end):
+                flags.append(f"{tag}: species end '{end}'")
+            if RANK.match(end):
+                flags.append(f"{tag}: rank prefix in '{end}' -> strip")
+            longer = sorted(nm for nm in names if nm != end and not RANK.match(nm)
+                            and (nm.endswith(" " + end) or nm.startswith(end + " ")))
+            if longer:
+                flags.append(f"{tag}: fuller name in window for '{end}': {longer}")
+            if re.search(r" / |\(|\)", end):
+                flags.append(f"{tag}: composite end '{end}' -> the real name only (A59)")
+            if (end[:1].islower() and not re.match(r"(?:van|von|de|del|da|di|le|la|al|el) [A-Z]", end)) \
+                    or "'s " in end or "' " in end or len(end) <= 2 or end.startswith("version of"):
+                flags.append(f"{tag}: description/garbage end '{end}' -> a named or definite individual?")
+            for a_, b_ in ALIASES:
+                if end in (a_, b_) and re.search(rf"\b{re.escape(a_)}\b", text) and re.search(rf"\b{re.escape(b_)}\b", text):
+                    flags.append(f"{tag}: window has both '{a_}' and '{b_}' -> one name per person")
+        if v == "met" and JOIN.search(q):
+            flags.append(f"{tag}: met from joining/allying (R4/R12)")
+        if v == "captured" and TRAP.search(q):
+            flags.append(f"{tag}: trapped in a dimension/place -> sealed? (R20)")
+        if v == "fought" and re.search(r"confront|faced", q, re.I) and not re.search(PLAIN["fought"], q, re.I):
+            flags.append(f"{tag}: confrontation without a stated attack -> met (R2)")
+        if v in ("killed", "defeated", "captured", "escaped", "saved") and HEDGE.search(q):
+            flags.append(f"{tag}: hedged/attempt wording '{HEDGE.search(q).group(0)}'")
+        if re.search(r"\b(was|were|been) (defeated|freed|rescued|released|killed|captured|arrested|tied|chained|locked|imprisoned|jailed|taken)\b", q) \
+                and " by " not in q:
+            flags.append(f"{tag}: passive with no 'by' -> doer stated? (R17)")
+        if re.search(r"in exchange for|agreed to|promised to|offered to", q, re.I):
+            flags.append(f"{tag}: deal/offer wording -> the promised act did not happen (A23)")
+        if v == "met" and re.search(r"Watcher|Uatu", s) and re.search(r"visit|watch|observ|went to", q, re.I):
+            flags.append(f"{tag}: the Watcher observing a universe is not a meeting (A27)")
+        if v in ("fought", "captured") and re.search(r"sedat|knock\w* (?:him|her|them) out|unconscious", q, re.I):
+            flags.append(f"{tag}: sedated/knocked out -> defeated (A29)")
+        if v == "killed" and re.search(r"\bkill(?:ed)? it\b|destroy(?:ed)? it\b", q, re.I):
+            flags.append(f"{tag}: killed 'it' -> the host or a thing on him? (A53)")
+        if v == "killed" and re.search(r"finish\w* off|survive|possess|terminat", q, re.I):
+            flags.append(f"{tag}: 'finished off'/survived/possession -> defeated or fought? (A21/A22)")
+        if v == "killed" and (re.search(r"dispos\w* of|took (?:him|her) out|dispatched", q, re.I)
+                              or re.search(r"Industries|Corporation|Corp\b|missile|bomb", s)):
+            flags.append(f"{tag}: 'disposed of' with no death -> defeated; a company/item is no doer (A38/A39)")
+        if PURPOSE.search(q) and not re.search(r"(?:managed|able|succeeded|in time|went on) to", q, re.I):
+            flags.append(f"{tag}: purpose clause '{PURPOSE.search(q).group(0)}' -> did it happen? (step 3)")
+        if v == "fought" and re.search(r"(?:ship|boat|plane|car|truck|train|building|base|city|planet)\b.{0,15}"
+                                       r"(?:was|were) attacked|attacked the (?:ship|boat|plane|base|city|planet)", q, re.I):
+            flags.append(f"{tag}: an attack on a vehicle/building/place is not fought (A42)")
+        if re.search(r"\b(?:the two|the pair|both|the duo|the trio|they|them)\b", q, re.I) and v != "met":
+            flags.append(f"{tag}: plural referent in quote -> who exactly? (A41)")
+        if v == "captured" and re.search(r"\bstopped\b", q) and not re.search(PLAIN["captured"], q, re.I):
+            flags.append(f"{tag}: 'stopped' -> defeated, not captured (A55)")
+        if v == "fought" and re.search(r"for protection|to protect|shield(?:ed|s)? (?:him|her|them)", q, re.I):
+            flags.append(f"{tag}: a protective act -> saved, not fought (A62)")
+        if v == "saved" and re.search(r"\bdefended\b", q, re.I):
+            flags.append(f"{tag}: 'defended' -> physical protection or only words? (A36)")
+        if v == "saved" and re.search(r"\bhelp", q, re.I) and not re.search(PLAIN["saved"] + r"|escap|free", q, re.I):
+            flags.append(f"{tag}: 'helped' is not a rescue (R23)")
+        if v == "arrived" and re.search(r"while taking|on (?:his|her|their) way|heading|in order to|hoping", q, re.I):
+            flags.append(f"{tag}: heading/purpose, not an arrival")
+        if v == "betrayed" and re.search(r"abandon|left|disassembl|drove", q, re.I):
+            flags.append(f"{tag}: leaving/disbanding is not betrayal (R14/R24)")
+        if v == "escaped" and o and re.search(r"Academy|Prison|Base|Facility|Room|Dimension|Realm|Raft|Asylum|"
+                                              r"Hospital|Mansion|Tower|Island|Limbo|Hell|Vault|Cell|Building", o):
+            flags.append(f"{tag}: escaped a place -> does the window name the captor? (A50)")
+        if v in ("arrived", "departed", "escaped") and o and ", " in o:
+            flags.append(f"{tag}: comma in place '{o}' -> R1 most specific part (gate splits it)")
+        if v == "awakened" and re.search(r"\b(?:revived|resurrected|brought back)\b(?! by)", q) and \
+                not re.search(r"^(?:\w+ )?(?:was|were) ", q):
+            flags.append(f"{tag}: someone revived him -> also '<reviver> saved' (A33)")
+        if v in ("arrived", "departed") and o and re.fullmatch(r"FBI|CIA|S\.H\.I\.E\.L\.D\.|SHIELD|Hydra|A\.I\.M\.|NYPD|S\.W\.O\.R\.D\.|Interpol|TVA|Damage Control", o):
+            flags.append(f"{tag}: '{o}' is an organisation, not a place (A65)")
+        if v == "fought" and re.search(rf"{re.escape(s)} sent .{{0,80}} to attack", q):
+            flags.append(f"{tag}: the sender only ordered the attack -> the ones sent are the doers (A64)")
+        if v in ("arrived", "departed") and o and VEHICLE.search(o):
+            flags.append(f"{tag}: '{o}' is a vehicle, not a place (A24)")
+        if v in ("arrived", "departed") and o and (o[:1].islower() or "'s " in o):
+            flags.append(f"{tag}: description place '{o}'")
+        if v in PLAIN and re.search(PLAIN[v], q, re.I) and not any(f.startswith(tag) for f in flags):
+            ok.append(tag)
+    if DISGUISE.search(text):
+        flags.append(f"identity reveal in window ('{DISGUISE.search(text).group(0)}') -> one name per person (R10)")
+    if re.search(r"\bled by\b", text):
+        flags.append("window has 'led by' -> a group led by a named leader acts through the leader (R21)")
+    quotes = [e["quote"] for e in ev]
+    for k, sent in enumerate(sentences(text), 1):
+        if sent.lstrip()[:1] in '"“':
+            continue
+        cues = sorted({m.group(0).lower() for m in CUES.finditer(sent)})
+        if cues and not any(q in sent or sent in q for q in quotes):
+            flags.append(f"MISS? s{k} [{', '.join(cues)}]")
+    return flags, ok
+
+
 def main():
     n = int(sys.argv[1]) if len(sys.argv) > 1 else 15
     chars = int(sys.argv[sys.argv.index("--chars") + 1]) if "--chars" in sys.argv else 4000
@@ -123,109 +231,7 @@ def main():
         print(" ROWS", [(e["subject"], e["verb"], e["object"], e["quote"][:50]) for e in ev] or "[]")
         if r.get("dropped"):
             print(" GATE-DROPPED", [(d.get("subject"), d.get("verb"), d.get("object"), d.get("why")) for d in r["dropped"]])
-        flags, ok = [], []
-        # multi-word names; a sentence-initial word ("When Loki") or a trailing "the" is not part of the name
-        names = {re.sub(r"^(?:%s) " % LEAD, "", m) for m in
-                 re.findall(r"\b[A-Z][\w'-]+(?: (?:of |the |de |von )?[A-Z][\w'-]+)+", text)}
-        names = {m for m in names if " " in m}
-        for e in ev:
-            s, v, o, q = e["subject"], e["verb"], e["object"], e["quote"]
-            tag = f"{s}|{v}|{o}"
-            for end in (s, o):
-                if not end:
-                    continue
-                if GROUPS.match(end):
-                    flags.append(f"{tag}: group end '{end}' -> named members tied to the event? (G.2/R19)")
-                if CROWD.search(end):
-                    flags.append(f"{tag}: crowd/indefinite end '{end}' (R11)")
-                if SPECIES.match(end):
-                    flags.append(f"{tag}: species end '{end}'")
-                if RANK.match(end):
-                    flags.append(f"{tag}: rank prefix in '{end}' -> strip")
-                longer = sorted(nm for nm in names if nm != end and not RANK.match(nm)
-                                and (nm.endswith(" " + end) or nm.startswith(end + " ")))
-                if longer:
-                    flags.append(f"{tag}: fuller name in window for '{end}': {longer}")
-                if re.search(r" / |\(|\)", end):
-                    flags.append(f"{tag}: composite end '{end}' -> the real name only (A59)")
-                if (end[:1].islower() and not re.match(r"(?:van|von|de|del|da|di|le|la|al|el) [A-Z]", end)) \
-                        or "'s " in end or "' " in end or len(end) <= 2 or end.startswith("version of"):
-                    flags.append(f"{tag}: description/garbage end '{end}' -> a named or definite individual?")
-                for a_, b_ in ALIASES:
-                    if end in (a_, b_) and re.search(rf"\b{re.escape(a_)}\b", text) and re.search(rf"\b{re.escape(b_)}\b", text):
-                        flags.append(f"{tag}: window has both '{a_}' and '{b_}' -> one name per person")
-            if v == "met" and JOIN.search(q):
-                flags.append(f"{tag}: met from joining/allying (R4/R12)")
-            if v == "captured" and TRAP.search(q):
-                flags.append(f"{tag}: trapped in a dimension/place -> sealed? (R20)")
-            if v == "fought" and re.search(r"confront|faced", q, re.I) and not re.search(PLAIN["fought"], q, re.I):
-                flags.append(f"{tag}: confrontation without a stated attack -> met (R2)")
-            if v in ("killed", "defeated", "captured", "escaped", "saved") and HEDGE.search(q):
-                flags.append(f"{tag}: hedged/attempt wording '{HEDGE.search(q).group(0)}'")
-            if re.search(r"\b(was|were|been) (defeated|freed|rescued|released|killed|captured|arrested|tied|chained|locked|imprisoned|jailed|taken)\b", q) \
-                    and " by " not in q:
-                flags.append(f"{tag}: passive with no 'by' -> doer stated? (R17)")
-            if re.search(r"in exchange for|agreed to|promised to|offered to", q, re.I):
-                flags.append(f"{tag}: deal/offer wording -> the promised act did not happen (A23)")
-            if v == "met" and re.search(r"Watcher|Uatu", s) and re.search(r"visit|watch|observ|went to", q, re.I):
-                flags.append(f"{tag}: the Watcher observing a universe is not a meeting (A27)")
-            if v in ("fought", "captured") and re.search(r"sedat|knock\w* (?:him|her|them) out|unconscious", q, re.I):
-                flags.append(f"{tag}: sedated/knocked out -> defeated (A29)")
-            if v == "killed" and re.search(r"\bkill(?:ed)? it\b|destroy(?:ed)? it\b", q, re.I):
-                flags.append(f"{tag}: killed 'it' -> the host or a thing on him? (A53)")
-            if v == "killed" and re.search(r"finish\w* off|survive|possess|terminat", q, re.I):
-                flags.append(f"{tag}: 'finished off'/survived/possession -> defeated or fought? (A21/A22)")
-            if v == "killed" and (re.search(r"dispos\w* of|took (?:him|her) out|dispatched", q, re.I)
-                                  or re.search(r"Industries|Corporation|Corp\b|missile|bomb", s)):
-                flags.append(f"{tag}: 'disposed of' with no death -> defeated; a company/item is no doer (A38/A39)")
-            if PURPOSE.search(q) and not re.search(r"(?:managed|able|succeeded|in time|went on) to", q, re.I):
-                flags.append(f"{tag}: purpose clause '{PURPOSE.search(q).group(0)}' -> did it happen? (step 3)")
-            if v == "fought" and re.search(r"(?:ship|boat|plane|car|truck|train|building|base|city|planet)\b.{0,15}"
-                                           r"(?:was|were) attacked|attacked the (?:ship|boat|plane|base|city|planet)", q, re.I):
-                flags.append(f"{tag}: an attack on a vehicle/building/place is not fought (A42)")
-            if re.search(r"\b(?:the two|the pair|both|the duo|the trio|they|them)\b", q, re.I) and v != "met":
-                flags.append(f"{tag}: plural referent in quote -> who exactly? (A41)")
-            if v == "captured" and re.search(r"\bstopped\b", q) and not re.search(PLAIN["captured"], q, re.I):
-                flags.append(f"{tag}: 'stopped' -> defeated, not captured (A55)")
-            if v == "fought" and re.search(r"for protection|to protect|shield(?:ed|s)? (?:him|her|them)", q, re.I):
-                flags.append(f"{tag}: a protective act -> saved, not fought (A62)")
-            if v == "saved" and re.search(r"\bdefended\b", q, re.I):
-                flags.append(f"{tag}: 'defended' -> physical protection or only words? (A36)")
-            if v == "saved" and re.search(r"\bhelp", q, re.I) and not re.search(PLAIN["saved"] + r"|escap|free", q, re.I):
-                flags.append(f"{tag}: 'helped' is not a rescue (R23)")
-            if v == "arrived" and re.search(r"while taking|on (?:his|her|their) way|heading|in order to|hoping", q, re.I):
-                flags.append(f"{tag}: heading/purpose, not an arrival")
-            if v == "betrayed" and re.search(r"abandon|left|disassembl|drove", q, re.I):
-                flags.append(f"{tag}: leaving/disbanding is not betrayal (R14/R24)")
-            if v == "escaped" and o and re.search(r"Academy|Prison|Base|Facility|Room|Dimension|Realm|Raft|Asylum|"
-                                                  r"Hospital|Mansion|Tower|Island|Limbo|Hell|Vault|Cell|Building", o):
-                flags.append(f"{tag}: escaped a place -> does the window name the captor? (A50)")
-            if v in ("arrived", "departed", "escaped") and o and ", " in o:
-                flags.append(f"{tag}: comma in place '{o}' -> R1 most specific part (gate splits it)")
-            if v == "awakened" and re.search(r"\b(?:revived|resurrected|brought back)\b(?! by)", q) and \
-                    not re.search(r"^(?:\w+ )?(?:was|were) ", q):
-                flags.append(f"{tag}: someone revived him -> also '<reviver> saved' (A33)")
-            if v in ("arrived", "departed") and o and re.fullmatch(r"FBI|CIA|S\.H\.I\.E\.L\.D\.|SHIELD|Hydra|A\.I\.M\.|NYPD|S\.W\.O\.R\.D\.|Interpol|TVA|Damage Control", o):
-                flags.append(f"{tag}: '{o}' is an organisation, not a place (A65)")
-            if v == "fought" and re.search(rf"{re.escape(s)} sent .{{0,80}} to attack", q):
-                flags.append(f"{tag}: the sender only ordered the attack -> the ones sent are the doers (A64)")
-            if v in ("arrived", "departed") and o and VEHICLE.search(o):
-                flags.append(f"{tag}: '{o}' is a vehicle, not a place (A24)")
-            if v in ("arrived", "departed") and o and (o[:1].islower() or "'s " in o):
-                flags.append(f"{tag}: description place '{o}'")
-            if v in PLAIN and re.search(PLAIN[v], q, re.I) and not any(f.startswith(tag) for f in flags):
-                ok.append(tag)
-        if DISGUISE.search(text):
-            flags.append(f"identity reveal in window ('{DISGUISE.search(text).group(0)}') -> one name per person (R10)")
-        if re.search(r"\bled by\b", text):
-            flags.append("window has 'led by' -> a group led by a named leader acts through the leader (R21)")
-        quotes = [e["quote"] for e in ev]
-        for k, sent in enumerate(sentences(text), 1):
-            if sent.lstrip()[:1] in '"“':
-                continue
-            cues = sorted({m.group(0).lower() for m in CUES.finditer(sent)})
-            if cues and not any(q in sent or sent in q for q in quotes):
-                flags.append(f"MISS? s{k} [{', '.join(cues)}]")
+        flags, ok = check(ev, text)
         for f in flags:
             print("  " + ("" if f.startswith("MISS?") else "FLAG ") + f)
         if ok:

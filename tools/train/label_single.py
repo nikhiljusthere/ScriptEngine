@@ -25,6 +25,7 @@ Resumable: ids already in --out are skipped. A status line is written to
 """
 import argparse
 import json
+import os
 import re
 import sys
 import threading
@@ -34,7 +35,11 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+CODE = Path(__file__).resolve().parents[2]
+# SCRIPTENGINE_ROOT: run this file from a worktree against the main checkout's
+# data AND its gate modules (so the gate stays identical to the live run)
+ROOT = Path(os.environ.get("SCRIPTENGINE_ROOT", CODE))
+sys.path.insert(0, str(CODE / "tools" / "train"))
 sys.path.insert(0, str(ROOT / "tools" / "train"))
 import draft_v2  # noqa: E402
 import verify_row_wiki as vrw  # noqa: E402
@@ -69,10 +74,10 @@ def parse(text):
     return [x for x in ev if isinstance(x, dict)] if isinstance(ev, list) else None
 
 
-def ask(url, model, doc, user, thinking, max_tokens, timeout=1800):
+def ask(url, model, doc, user, thinking, max_tokens, timeout=1800, history=()):
     body = {"model": model, "temperature": 0.6 if thinking else 0.0, "top_p": 0.95,
             "max_tokens": max_tokens,
-            "messages": [{"role": "system", "content": doc}, {"role": "user", "content": user}],
+            "messages": [{"role": "system", "content": doc}, {"role": "user", "content": user}, *history],
             "chat_template_kwargs": {"enable_thinking": bool(thinking)}}
     req = urllib.request.Request(url, json.dumps(body).encode(), {"Content-Type": "application/json"})
     m = json.loads(urllib.request.urlopen(req, timeout=timeout).read())["choices"][0]["message"]
@@ -116,6 +121,10 @@ def main():
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--shuffle", action="store_true")
     ap.add_argument("--ids", default=None, help="only these ids (a JSONL with an id field)")
+    ap.add_argument("--hints", action="store_true",
+                    help="append the review-derived reminders whose triggers occur in the window (label_hints)")
+    ap.add_argument("--repair", action="store_true",
+                    help="one follow-up turn listing the review flags that fire on the answer (big_flags.check)")
     a = ap.parse_args()
     doc = Path(a.doc).read_text(encoding="utf-8")
     rows = [json.loads(l) for p in a.inputs for l in open(p)]
@@ -137,8 +146,15 @@ def main():
     total, lock = len(rows) + len(done), threading.Lock()
     stats = {"done": len(done), "fail": 0, "rows": 0, "dropped": 0, "t0": time.time(), "new": 0}
 
+    if a.hints or a.repair:
+        import label_hints
+    if a.repair:
+        import big_flags
+
     def job(r):
         user, window = window_of(r)
+        if a.hints:
+            user = user + label_hints.hints(window, r.get("section") or "")
         events, raw, tries, down = None, "", 0, 0
         while events is None and tries < 3:
             try:
@@ -158,8 +174,25 @@ def main():
                 raw = f"ERROR {e!r}"
         ok = events is not None
         kept, dropped = gate(events or [], window, wikis[series_of(r)])
+        note, first = None, None
+        if ok and a.repair:
+            # one follow-up turn only when a review flag fires on the gated rows
+            note = label_hints.repair_note(kept, window, big_flags.check)
+            if note:
+                answer = json.dumps({"events": events}, ensure_ascii=False)
+                try:
+                    raw2 = ask(a.url, a.model, doc, user, not a.no_thinking, a.max_tokens,
+                               history=({"role": "assistant", "content": answer}, {"role": "user", "content": note}))
+                    ev2 = parse(raw2)
+                except Exception:  # noqa: BLE001 - keep the first answer
+                    ev2 = None
+                if ev2 is not None:
+                    first = [(e["subject"], e["verb"], e["object"]) for e in kept]
+                    kept, dropped = gate(ev2, window, wikis[series_of(r)])
+                    raw = raw2
         return {"id": r["id"], "series": series_of(r), "page": r.get("page"), "section": r.get("section"),
                 "kind": r.get("kind"), "ok": ok, "tries": tries, "events": kept, "dropped": dropped,
+                "hinted": bool(a.hints), "repair_note": note, "first_rows": first,
                 "answer": THINK.sub("", raw).strip()[-4000:], "think_chars": len(raw) - len(THINK.sub("", raw))}
 
     def status():
