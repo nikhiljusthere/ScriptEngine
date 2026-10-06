@@ -57,13 +57,21 @@ def main():
     ap.add_argument("--n", type=int, default=12000)
     ap.add_argument("--empty-share", type=float, default=0.30)
     ap.add_argument("--short-system", action="store_true")
+    # owner 2026-10-07: every 35B window is hand-reviewed by Claude before it
+    # trains (big_review.py); --reviewed uses ONLY the reviewed windows, with
+    # the logged corrections applied, instead of the raw labels
+    ap.add_argument("--reviewed", action="store_true")
     ap.add_argument("--out-dir", default=None)
     a = ap.parse_args()
     out = Path(a.out_dir or ROOT / ("series/universal/training/student_big" + ("_short" if a.short_system else "")))
     out.mkdir(parents=True, exist_ok=True)
     gold = {s: jl(Path(a.gold_dir) / f"{s}.jsonl") for s in ("train", "dev", "dev_pool", "test")}
     src = {r["id"]: r for s in ("marvel", "mcu") for r in jl(ROOT / "series" / s / "training/labels/big_in.jsonl")}
-    labels = [r for r in jl(a.labels) if r.get("ok")]
+    if a.reviewed:
+        import big_review
+        labels = [r for r in big_review.reviewed_labels() if r.get("ok") or r.get("reviewed_fix")]
+    else:
+        labels = [r for r in jl(a.labels) if r.get("ok")]
     errors = []
     held_pages = {(r["series"], r["page"]) for s in ("dev", "test") for r in gold[s]}
     ev = [r for r in labels if r["events"]]
@@ -114,7 +122,7 @@ def main():
            "dev": len(gold["dev"]), "dev_pool": len(gold["dev_pool"]), "test": len(gold["test"]),
            "train_by_series": Counter(r["series"] for r in train),
            "train_verbs": Counter(e["verb"] for r in train for e in r["events"]),
-           "short_system": a.short_system}
+           "short_system": a.short_system, "reviewed_only": a.reviewed}
     (out / "receipt.json").write_text(json.dumps(rec, indent=1))
     print(json.dumps(rec, indent=1))
     return 0
