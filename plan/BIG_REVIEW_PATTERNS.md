@@ -99,3 +99,12 @@ shared)` with bK's final rows: reuse them for the shared part and read only the 
 - subject == object is refused (R16).
 - a place with a comma ("Washington, D.C.") is split by the gate into two rows (refused as `kept n+1/n`);
   write the most specific part ("Washington", R1).
+
+## E. Resume notes (2026-10-07 01:59)
+
+- Cursor = 416 (b7-b416 reviewed this session). b417-b431 were printed but NOT decided: start there.
+- Rulings R24/R25 (not yet in the handoff): "abandoned him to die" -> no betrayed; "<person> posing as <hero>"
+  -> the impostor's name; "found themselves transported to <place> by X" -> X captured them + they arrived.
+- Loop: `SCRIPTENGINE_ROOT=/home/goblin/ScriptEngine python tools/train/big_flags.py 15` (from this worktree),
+  write compact edits, `python tools/train/big_mkfix.py edits.txt bfix.json`, then
+  `/home/goblin/ScriptEngine/tools/train/big_review.py --fix bfix.json` and `--mark N`.
