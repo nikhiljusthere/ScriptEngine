@@ -13,7 +13,7 @@ tests/test_sft_mask.py), completion = assistant JSON + EOS, cosine
 schedule with 4% warmup, effective batch 16, per-epoch dev evaluation
 (greedy generation -> event P/R/F1 via tools/eval_extraction.py's
 window-level quote-overlap scorer, plus JSON-validity and
-quote-verbatim), early stopping on dev F1 (patience 1), ONLY the best
+quote-verbatim), early stopping on dev F1 (--patience, default 1), ONLY the best
 adapter saved (save_total_limit 1). LoRA via peft with
 use_rslora=True; targets = every nn.Linear in the LANGUAGE model
 derived from named_modules() (the Gated-DeltaNet projections
@@ -199,6 +199,11 @@ def main():
     ap.add_argument("--max-steps", type=int, default=None)
     ap.add_argument("--full-ft", action="store_true")
     ap.add_argument("--rare-x", type=int, default=1)
+    # epochs without a dev-F1 gain before stopping (the best checkpoint is
+    # kept either way); published 4B extraction fine-tunes peak at epochs
+    # 3.7-5.2 with dips between checkpoints, so a 1-epoch patience can stop
+    # at a temporary dip
+    ap.add_argument("--patience", type=int, default=1)
     ap.add_argument("--max-len", type=int, default=4096)
     ap.add_argument("--micro-batch", type=int, default=2)
     ap.add_argument("--accum", type=int, default=8, help="micro x accum = effective 16")
@@ -330,8 +335,8 @@ def main():
             print(f"  new best dev F1 {best} -> saved {out/'best'}")
         else:
             bad_epochs += 1
-            if bad_epochs >= 1:
-                print("  early stop: dev F1 did not improve (patience 1)")
+            if bad_epochs >= a.patience:
+                print(f"  early stop: dev F1 did not improve for {a.patience} epoch(s)")
                 break
         if stop:
             break

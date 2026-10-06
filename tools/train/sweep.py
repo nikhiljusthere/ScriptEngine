@@ -120,7 +120,7 @@ def stage_b(top3, best_lr):
 
 
 def stage_b_reduced(best):
-    """The leader only, lr x{0.7, 1.0}, up to B_EPOCHS with early stop.
+    """The leader only, lr x{0.7, 1.0}, up to 5 epochs, early stop patience 2.
 
     The full stage_b on the 2026-10-06 reduced Stage A was 15 runs (~30 h):
     the top-3 all carry the leader's lr/rank (the e40 arm loses its train
@@ -129,7 +129,7 @@ def stage_b_reduced(best):
     """
     return [{"stage": "B", "lr": best["lr"] * m, "rank": best["rank"],
              "alpha": best["alpha"], "dropout": best.get("dropout", DROP),
-             "epochs": B_EPOCHS, "seed": 1, "rare_x": 1,
+             "epochs": 5, "seed": 1, "rare_x": 1, "patience": 2,
              "full_ft": bool(best.get("full_ft")),
              "name": f"B-lr{lr_tag(best['lr'] * m)}-{arm(best)}-rx1"}
             for m in (0.7, 1.0)]
@@ -150,7 +150,7 @@ def cmd(run, root):
             "--lr", str(run["lr"]), "--rank", str(run["rank"]),
             "--alpha", str(run["alpha"]), "--dropout", str(run["dropout"]),
             "--epochs", str(run["epochs"]), "--seed", str(run["seed"]),
-            "--rare-x", str(run["rare_x"])] + (
+            "--rare-x", str(run["rare_x"]), "--patience", str(run.get("patience", 1))] + (
             # full FT at micro-batch 2 peaked at the 32 GB limit in the
             # 2026-10-06 memory smoke; micro 1 x accum 16 keeps effective 16
             ["--full-ft", "--micro-batch", "1", "--accum", "16"] if run.get("full_ft") else [])
