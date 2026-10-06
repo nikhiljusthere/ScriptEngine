@@ -390,3 +390,15 @@ train/dev/test. Order: finish the 3,000 review -> accuracy pass -> build -> GPU 
 post-training serving. Base model stays Qwen3.5-4B (no stronger 4B exists as of
 2026-10-06: Qwen3.6/3.8 have no small sizes; Gemma 4 E4B is weaker); fallback if the
 4B misses ~.95: one bf16 LoRA run on Qwen3.5-9B on the same set.
+
+## JJK label harmonization + non-prose re-index (owner 2026-10-06 ~12:45)
+- JJK student labels are brought onto the pool rulings by series/jjk/training/student/harmonize.jsonl
+  (26 windows: 9 fight-restraints captured->fought per the guideline's own captured row, 12
+  description places removed, 1 heading-toward departure removed, 4 self-rows removed, 3 duplicate
+  pair rows removed); build_universal_set applies it and fails if a 'before' stops matching.
+- Tier-0 chunk containment: JJK and CSM 100%; OPM 97.7, Berserk 94.8, Bleach 99.1, DB 96.3,
+  One Piece 98.1, HxH 98.5 -- their indexes predate the September chunking fixes. Scratch
+  re-index (no-embed copy) closes it to 1 / 744 / 45 / 88 / 153 / 17 unreachable; Berserk with
+  content_sections [notes, references] -> 1. Remaining: per-wiki content_sections (notes,
+  references) + interwiki/navigation boilerplate. The real re-index needs the GPU for vectors:
+  scheduled between the end of MCU verification and the start of training.

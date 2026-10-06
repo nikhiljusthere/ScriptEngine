@@ -103,11 +103,27 @@ def main():
             split = "dev" if r["page"] in dev_pages else "test" if r["page"] in test_pages else "train"
             {"dev": dev, "test": test, "train": train}[split].append({**r, "split": split})
         counts[s] = len(recs)
-    # the JJK verified set keeps its own split
+    # the JJK verified set keeps its own split; harmonize.jsonl brings its
+    # older gold onto the pool rulings (pins are fought, no description
+    # places or self-rows, ...) -- owner 2026-10-06, each change logged there
+    harm = {h["id"]: h for h in jl(ROOT / "series/jjk/training/student/harmonize.jsonl")}
+    n_harm = 0
     for split, bucket in (("train", train), ("dev", dev)):
         for r in jl(ROOT / "series/jjk/training/student" / f"{split}.jsonl"):
-            bucket.append({**{k: r[k] for k in ("id", "page", "section", "passage", "events", "messages")},
-                           "series": "jjk", "source": r.get("source", "jjk_gold"), "split": split})
+            rec = {**{k: r[k] for k in ("id", "page", "section", "passage", "events", "messages")},
+                   "series": "jjk", "source": r.get("source", "jjk_gold"), "split": split}
+            h = harm.get(r["id"])
+            if h:
+                if h["before"] != r["events"]:
+                    errors.append(f"jjk/{r['id']}: harmonize.jsonl 'before' no longer matches the set")
+                ev = [{k: e.get(k) for k in ("quote", "subject", "verb", "object")} for e in h["after"]]
+                rec["events"] = ev
+                rec["messages"] = rec["messages"][:2] + [{"role": "assistant", "content": assistant_content(ev)}]
+                rec["source"] += "+harmonized"
+                n_harm += 1
+            bucket.append(rec)
+    if len(harm) != n_harm:
+        errors.append(f"jjk: {len(harm) - n_harm} harmonize.jsonl ids not found in the set")
     # the 35% mix cap on train windows
     by = defaultdict(list)
     for r in train:
