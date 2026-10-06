@@ -11,6 +11,7 @@ usage: python big_flags.py N [--chars 4000]   (SCRIPTENGINE_ROOT overrides the c
 """
 import os
 import re
+from collections import Counter
 import sys
 from pathlib import Path
 
@@ -87,9 +88,12 @@ def main():
     chars = int(sys.argv[sys.argv.index("--chars") + 1]) if "--chars" in sys.argv else 4000
     rows, c, pas = br.jl(br.LABELS), int(os.environ.get("BF_FROM", br.cursor())), br.passages()
     final = {a["id"]: a["after"] for a in br.jl(br.AUDIT)}
-    seen = {}
+    seen, sent_seen = {}, {}
     for i, r in enumerate(rows[:c], 1):
         seen.setdefault(norm(pas[r["id"]])[:400], (i, r["id"]))
+        for x in sentences(pas[r["id"]]):
+            if len(x) > 60:
+                sent_seen.setdefault(norm(x), (i, r["id"]))
     for i, r in enumerate(rows[c:c + n], c + 1):
         text = pas[r["id"]][:chars]
         ev = r["events"]
@@ -102,6 +106,17 @@ def main():
             print(f" DUP of b{dup[0]} ({'identical text' if same else 'same opening, text differs: read the tail'})"
                   f" final rows: {[(e['subject'], e['verb'], e['object']) for e in prev_rows]}")
         seen.setdefault(key, (i, r["id"]))
+        # partial duplicates: the same passage cut at another offset (b365 = b188's tail)
+        sents = [norm(x) for x in sentences(pas[r["id"]]) if len(x) > 60]
+        hits = Counter(sent_seen[x] for x in sents if x in sent_seen)
+        if not dup and hits:
+            (pi, pid), k = hits.most_common(1)[0]
+            if k >= max(2, len(sents) // 2):
+                prev_rows = final.get(pid, rows[pi - 1]["events"])
+                print(f" OVERLAP with b{pi} ({k}/{len(sents)} sentences shared: reuse its rows for the shared part)"
+                      f" final rows: {[(e['subject'], e['verb'], e['object']) for e in prev_rows]}")
+        for x in sents:
+            sent_seen.setdefault(x, (i, r["id"]))
         print(text)
         print(" ROWS", [(e["subject"], e["verb"], e["object"], e["quote"][:50]) for e in ev] or "[]")
         if r.get("dropped"):

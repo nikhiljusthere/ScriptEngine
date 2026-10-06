@@ -79,8 +79,11 @@ roughly one error in five through.
 
 ## C. Exact duplicates
 
-The same text appears on several sections/pages (b8=b23, b2=b33, b62=b88). big_flags prints
-`DUP of bK (identical text)` with bK's final rows: reuse them and check only the differing tail.
+The same text appears on several sections/pages (b8=b23, b2=b33, b62=b88), or cut at another offset
+(b365 = b188's tail). big_flags prints `DUP of bK` (same opening) or `OVERLAP with bK (n/m sentences
+shared)` with bK's final rows: reuse them for the shared part and read only the rest.
+`tools/train/big_consistency.py` checks every reviewed overlapping pair for diverging rows
+(b1-b371: 4 pairs, 0 inconsistent); run it before composing the training set.
 
 ## D. Gate quirks
 
