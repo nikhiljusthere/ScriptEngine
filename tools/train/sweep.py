@@ -134,7 +134,10 @@ def cmd(run, root):
             "--lr", str(run["lr"]), "--rank", str(run["rank"]),
             "--alpha", str(run["alpha"]), "--dropout", str(run["dropout"]),
             "--epochs", str(run["epochs"]), "--seed", str(run["seed"]),
-            "--rare-x", str(run["rare_x"])] + (["--full-ft"] if run.get("full_ft") else [])
+            "--rare-x", str(run["rare_x"])] + (
+            # full FT at micro-batch 2 peaked at the 32 GB limit in the
+            # 2026-10-06 memory smoke; micro 1 x accum 16 keeps effective 16
+            ["--full-ft", "--micro-batch", "1", "--accum", "16"] if run.get("full_ft") else [])
 
 
 def final_f1(out):

@@ -98,6 +98,31 @@ def collate(batch, pad_id):
             "attention_mask": torch.tensor(attn)}
 
 
+def completion_loss(model, batch, chunk=256):
+    """Mean next-token CE over the supervised (assistant) positions only.
+
+    model(**batch).loss runs lm_head over EVERY position: on a ~3k-token
+    window that is 3k x 248k-vocab logits (+ an fp32 copy) and it OOMed the
+    32 GB card in the 2026-10-06 memory smoke, LoRA and full FT alike. Here
+    lm_head sees only the positions whose next token is supervised
+    (logits_to_keep), and the CE upcasts 256 positions at a time.
+    """
+    labels = batch["labels"]
+    keep = (labels[:, 1:] != IGNORE).any(0).nonzero().squeeze(1)
+    out = model(input_ids=batch["input_ids"], attention_mask=batch["attention_mask"],
+                logits_to_keep=keep)
+    logits = out.logits                    # B x K x V (bf16)
+    tgt = labels[:, keep + 1]              # the token each kept position predicts
+    n = (tgt != IGNORE).sum().clamp(min=1)
+    total = logits.new_zeros((), dtype=torch.float32)
+    for s in range(0, logits.shape[1], chunk):
+        lc = logits[:, s:s + chunk].float()
+        total = total + torch.nn.functional.cross_entropy(
+            lc.reshape(-1, lc.shape[-1]), tgt[:, s:s + chunk].reshape(-1),
+            ignore_index=IGNORE, reduction="sum")
+    return total / n
+
+
 @torch.no_grad()
 def dev_generate(model, tok, rows, batch=8, max_new=None):
     """Greedy per-window JSON -> {id: {events, raw}} for the scorer."""
@@ -280,7 +305,7 @@ def main():
         stop = False
         for bi, batch in enumerate(dl):
             batch = {k: v.to(model.device) for k, v in batch.items()}
-            loss = model(**batch).loss / a.accum
+            loss = completion_loss(model, batch) / a.accum
             loss.backward()
             losses.append(loss.item() * a.accum)
             if (bi + 1) % a.accum == 0:
