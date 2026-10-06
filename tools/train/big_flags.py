@@ -52,7 +52,7 @@ DISGUISE = re.compile(r"revealed (?:to be|as|himself|herself)|was (?:in fact|act
                       r"in disguise|impersonat|unmasked|now named|true identity|alias", re.I)
 LEAD = ("When|After|Before|As|While|Then|Meanwhile|However|Although|Though|Once|Since|During|With|Without|"
         "Following|Upon|Using|Back|In|On|At|There|Here|Together|Both|Later|Soon|Eventually|Finally|Despite|The|A|An|His|Her|Their|Its|"
-        "Captain America|Iron Man|Spider-Man")
+        "Captain America|Iron Man|Spider-Man|I'm|I|We|You|My|Our")
 PURPOSE = re.compile(r"\b(?:to|in order to|intending to|planning to|hoping to|attempt(?:ed|ing)? to|tried to|"
                      r"decided to|wished to|wanted to|so (?:that )?(?:he|she|they) could) (?:meet|find|rescue|save|stop|"
                      r"kill|capture|free|defeat|fight|attack|destroy|confront|recover|retrieve)\b", re.I)
@@ -181,6 +181,8 @@ def main():
                 flags.append(f"{tag}: an attack on a vehicle/building/place is not fought (A42)")
             if re.search(r"\b(?:the two|the pair|both|the duo|the trio|they|them)\b", q, re.I) and v != "met":
                 flags.append(f"{tag}: plural referent in quote -> who exactly? (A41)")
+            if v == "captured" and re.search(r"\bstopped\b", q) and not re.search(PLAIN["captured"], q, re.I):
+                flags.append(f"{tag}: 'stopped' -> defeated, not captured (A55)")
             if v == "saved" and re.search(r"\bdefended\b", q, re.I):
                 flags.append(f"{tag}: 'defended' -> physical protection or only words? (A36)")
             if v == "saved" and re.search(r"\bhelp", q, re.I) and not re.search(PLAIN["saved"], q, re.I):
