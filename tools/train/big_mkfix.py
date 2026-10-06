@@ -38,6 +38,7 @@ def main():
             fixes.append(cur)
         elif s.strip() == "keep":
             cur["events"] = [dict(e) for e in cur["_src"]]
+            cur["_kept"] = True
         elif s.startswith("r "):
             old, new = s[2:].split("=>")
             for e in cur["events"]:
@@ -49,7 +50,7 @@ def main():
             k = (p[0], p[1], None if p[2] == "-" else p[2])
             before = len(cur["events"])
             cur["events"] = [e for e in cur["events"] if key(e) != k]
-            if len(cur["events"]) == before:
+            if len(cur["events"]) == before and cur.get("_kept"):
                 sys.exit(f"b{cur['_n']}: no row to drop: {k}")
         elif s.startswith("+ "):
             p = [x.strip() for x in s[2:].split("|", 3)]
@@ -60,6 +61,7 @@ def main():
     for f in fixes:
         f.pop("_src")
         f.pop("_n")
+        f.pop("_kept", None)
         uniq = []
         for e in f["events"]:
             ks = {key(u) for u in uniq}

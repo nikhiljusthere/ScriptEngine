@@ -144,6 +144,8 @@ def main():
                                 and (nm.endswith(" " + end) or nm.startswith(end + " ")))
                 if longer:
                     flags.append(f"{tag}: fuller name in window for '{end}': {longer}")
+                if re.search(r" / |\(|\)", end):
+                    flags.append(f"{tag}: composite end '{end}' -> the real name only (A59)")
                 if (end[:1].islower() and not re.match(r"(?:van|von|de|del|da|di|le|la|al|el) [A-Z]", end)) \
                         or "'s " in end or "' " in end or len(end) <= 2 or end.startswith("version of"):
                     flags.append(f"{tag}: description/garbage end '{end}' -> a named or definite individual?")

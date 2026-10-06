@@ -67,6 +67,9 @@ roughly one error in five through.
 | A54 | breaking an agreement ("abandoned his covenant with her and Xavier") | betrayed (broke faith) — unlike plain leaving (A13), which is no betrayal | table: betrayed | rare |
 | A55 | "the trio stopped Egghead" written as captured | defeated (the fight ended; no capture stated) | table: defeated | occasional |
 | A56 | "had thrown Loki and Thor out of the Bifrost" left out | defeated (thrown off ends the fight, as "pushed him off the truck") | table: defeated | rare |
+| A57 | descriptive crowd groups ("the squad", "the rest of the Guardians") as ends | the named members the window ties to the act, else no row | step 6, R11 | occasional |
+| A58 | "if not for the intervention of X" against a plot (no attack stated) written as fought | met (an encounter that stops him) | table: met "stops X" | rare |
+| A59 | composite end strings ("Dark Phoenix / Cyclops (Scott Summers)") | the real name only ("Scott Summers") | step 6 | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 ## B. Confirm patterns (35B usually right; one look suffices)
