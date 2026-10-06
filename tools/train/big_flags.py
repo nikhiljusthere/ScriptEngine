@@ -187,6 +187,9 @@ def check(ev, text):
     for k, sent in enumerate(sentences(text), 1):
         if sent.lstrip()[:1] in '"“':
             continue
+        # list entries ("Thor - Former Prisoner and Attempted Victim") are not narrative
+        if len(sent) < 90 and (" - " in sent or "†" in sent or sent.lstrip().startswith(("|", "*"))):
+            continue
         cues = sorted({m.group(0).lower() for m in CUES.finditer(sent)})
         if cues and not any(q in sent or sent in q for q in quotes):
             flags.append(f"MISS? s{k} [{', '.join(cues)}]")

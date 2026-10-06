@@ -101,7 +101,7 @@ shared)` with bK's final rows: reuse them for the shared part and read only the 
 
 - symmetric met/fought pairs are deduped by the gate; a correction with both "A met B" and
   "B met A" is refused with `dropped []` and `kept n-1/n`.
-- "Rachel" is classed as a place: refused as an object (R22).
+- "Rachel" and "Jude" are classed as places: refused as objects (R22).
 - item pages are refused as ends even when they act like characters: "the Destroyer" (armor), Cerebro (AI).
 - subject == object is refused (R16).
 - a place with a comma ("Washington, D.C.") is split by the gate into two rows (refused as `kept n+1/n`);
