@@ -245,3 +245,22 @@ b1–b806), or one more revision targeting end-canonicalization (e.g. a stronger
 name per person" reminder in the event-layer hints). The 35B stays up on :18081 for
 whichever is chosen. `--schema v2` defaults to the 35B now, so no flag changes when
 resuming.
+
+---
+
+## STEP 5+6 — launched 2026-10-07 ~15:30 on the 35B (owner directive; 27B coding is complete)
+
+No model switch per SWITCHPOINT: the 35B on :18081 (`serve_35b_64k.sh`, 8 lanes,
+`qwen3.6-35b-a3b-ninfer`) now serves windowing; the 27B on :18080 stays down until its
+provider is needed again (it was only the council/execution agent; its coding work —
+steps 1–3 — is committed and done).
+
+- STEP 5 (add-only): b1–b806, events frozen = Claude's reviewed rows (`big_audit.jsonl`
+  applied), model writes only `facts`/`tags`, provenance `claude-events+v2-facts`.
+  Output: `series/universal/training/big/labels_v2.jsonl`. PID 23833, ~7 windows/min
+  expected (add-only spends 1–2 turns instead of 3).
+- STEP 6 (full v2 from 0): b807–b5405 (4,599 windows), same v2 prompt with hints +
+  repair + coverage-repair, provenance `v2-full`, appended to the same file. ~5
+  windows/min expected → the first ~5,405-line `labels_v2` closes this phase.
+- Next phase after that: the same full v2 over the remaining selection toward the
+  12,000-window training target.
