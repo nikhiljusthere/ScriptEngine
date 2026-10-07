@@ -320,6 +320,10 @@ The event layer asks *"what act happened?"*; the fact layer asks *"what is true 
 Write a fact row for EVERY such statement, including the ones the event layer deliberately drops.
 This is the whole point of v2: a dropped fact was the owner's complaint.
 
+An event the 12 verbs express STAYS an event. Do not move it into facts, and do not write both:
+a `fought` row never gets a fact twin with relation `attacked`; an `arrived` row never gets
+`located_at` for the same move. The two layers partition the text.
+
 ## B.1 The row shape
 
 | field | required | meaning |

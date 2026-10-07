@@ -212,3 +212,36 @@ untracked but complete; this commit brings it in.
 
 **Next:** Step 4 — 60-window pilot on b7-b806 with event F1 vs Claude's reviewed rows,
 fact precision, coverage.
+
+---
+
+## STEP 4 — 60-window pilot on b7–b806 — **PARTIAL, one prompt revision in, evidence logged**
+
+Run 1 (`/tmp/opencode/pilot60.jsonl`, doc = v2 as committed):
+- event P/R/F1 vs Claude's reviewed rows: **P .658 / R .527 / F1 .585**, exact 19/60
+- original v1 35B+doc on the same 60: P .711 / R .445 / F1 .547 → v2 adds recall, loses some precision
+- coverage: 245/254 narrative sentences covered (96.5%)
+- facts/window 4.8, tags 80, `other_verb` share 40.8% (target <10%)
+- spot hand-check of ~30 fact rows: mostly usable (alias/membership/modality rows read sensibly);
+  two recurring flaws: `other_verb` targets an entity instead of the doc's verb-in-object shape,
+  and a few stretch relations (`rival_of` from "faced off once")
+
+Doc revision 1: added the partition rule to v2 SECTION B ("an event the 12 verbs express
+STAYS an event; no twin rows"), then re-ran the same 60 (`/tmp/opencode/pilot60b.jsonl`):
+- event P/R/F1: **P .614 / R .516 / F1 .561**, exact 26/60 — recall unchanged, precision down
+- coverage: 244/254 (96.1%); tags working; no event-verb row ever leaked into facts (0 rows)
+
+**Analysis (why F1 did not move):** the remaining deltas vs gold are end-canonicalization
+("Stark" vs "Tony Stark", "Monet" vs "Monet St. Croix", "Bishop" vs "Lucas Bishop",
+"hanger" as a place end) and a handful of name-form preferences — i.e. the same end-error
+class the 35B already had, not events demoted into facts (0 of those). The v2 pass itself
+beats the v1 single pass on the same windows (.561–.585 vs .547). Coverage is closed
+(~96% vs the 37% baseline).
+
+**Against the stop rule in FACT_LAYER_EXECUTION.md:** event F1 < .60 and coverage-miss < 5%
+on both runs; one of two allowed prompt revisions used. The F1 shortfall is not prompt-shape.
+Waiting on the owner for the call: accept the pilot and go to step 5 (add-only over
+b1–b806), or one more revision targeting end-canonicalization (e.g. a stronger "one
+name per person" reminder in the event-layer hints). The 35B stays up on :18081 for
+whichever is chosen. `--schema v2` defaults to the 35B now, so no flag changes when
+resuming.
