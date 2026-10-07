@@ -173,7 +173,7 @@ def _end_ok(end, relation, is_object, tag, wiki=None):
     if is_object and want is None and PLACE_LIKE.search(e) and wiki is not None:
         exact = [p for p in wiki.resolve(e) if p.lower() == e.lower()]
         lab = wiki.label.get(exact[0]) if exact else None
-        if lab and vrw.PLACE_LIKE.search(lab):
+        if lab and PLACE_LIKE.search(lab):
             return f"'{e}' is a place but '{relation}' takes a person end"
     return None
 
