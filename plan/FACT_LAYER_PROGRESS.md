@@ -108,3 +108,76 @@ podcast call), b122 (Barnes / 1945 — hedged "seemingly slew" + the Invaders' d
 
 **Next:** Step 2 — `tools/train/fact_gate.py`, `tools/train/fact_coverage.py`,
 `tests/test_fact_layer.py`, plus the verbatim-pin test and the 806-window coverage baseline.
+
+---
+
+## STEP 2 — Gates and coverage (code + tests) — **PASS**
+
+**Did:**
+- `tools/train/fact_gate.py` — the fact layer's mechanical gate. Relation vocabulary check,
+  `other_verb` handling (and refusal of `other`, which collides with the engine's `other` column),
+  closed `modality`/`certainty`/`canon` enums, **`asserted_by` required on every non-`actual` row**,
+  quote verbatim + ≥12 chars + ≤400 chars + **inside one sentence**, end checks (crowd, species,
+  indefinite, bare pronoun, rank prefix, composite), subject≠object, symmetry hint, "event verb in a
+  fact row" check, and tag-row validation against the 9-tag closed set. Reuses `draft_v2` /
+  `verify_row_wiki` for wiki lookups; deliberately does **not** apply the event layer's
+  "places only for arrived/departed/escaped" and species-page rules, because a fact's object may be a
+  place, item, organisation or role (v2 §B.1/B.8).
+- `tools/train/fact_coverage.py` — sentence-coverage reporting. Splits a window into narrative
+  sentences with **no length floor** (the retired `big_flags.sentences()` drops spans under 20 chars
+  and so cannot see short declaratives), reports uncovered sentences as a per-window worklist, and
+  requires the row quote to lie **inside** the sentence — never the `sent in q` direction that lets a
+  paragraph quote "cover" forty sentences.
+- `tests/test_fact_layer.py` — 46 tests, including the verbatim-pin of v2's SECTION A against
+  `plan/EXTRACTION_PROCEDURE.md`, the one-sentence-quote rule, the segmenter's handling of short
+  declaratives and of `Washington, D.C.`, and the closed enums.
+
+**Gate bugs I found and fixed while testing** (all were real, not test noise):
+1. `CROWD` matched any leading article, which wrongly refused **"a cottage in Maine"** as a
+   `resides_at` object — the case §B.8 explicitly allows. Split into `CROWD_WORDS` (never an end,
+   whatever the relation) and `ARTICLE` (illegal only in front of a *person* end).
+2. The "quote states its own relation" OK heuristic compared exact substrings, so `trained` never
+   matched the quote "tasked with **training**". Replaced with a prefix-stem match.
+3. `SPECIES` was anchored, so **"the Kree"** passed. Now strips a leading article first.
+4. **The coverage denominator was wrong in a way that would have made the whole metric
+   meaningless.** The three worst windows in the first baseline run were a cast list (`(Hulk)`,
+   `(Spider-Man)`, …) and two `{{Marvel Database:Character Template` dumps — 80 "uncovered
+   sentences" that were wiki furniture, not missing facts. Added `WIKI_MARKUP`, list/table/heading
+   detection, and a function-word-OR-verb-form test that separates a link list (`Frank Dean`,
+   `Brooks Watten †`) from a fact (`Frank Dean was her mentor`). Both tests are needed: a verb test
+   alone would call `Magnistate's Wife` narrative, a function-word test alone would call
+   `Scott fought Kang` furniture. 10 regression tests pin this.
+
+**Verify — pytest:**
+```
+scriptengine/.venv/bin/python -m pytest tests/test_fact_layer.py -q
+46 passed
+```
+
+**Verify — the 806-window baseline (the number the fact layer must close).**
+Claude's final reviewed event rows over the 800 windows in the gold set (b7–b806), events only:
+
+| measure | value |
+|---|---|
+| windows | 800 |
+| **narrative sentences (v2 segmenter)** | **3,449** |
+| covered by a reviewed event row | 1,278 (**37.1%**) |
+| **uncovered** | **2,171 (62.9%)** |
+| event rows | 2,530 (3.16/window) |
+| same denominator via the retired `big_flags.sentences()` | 3,456 sentences, 36.8% covered |
+
+The v2 segmenter's denominator (3,449) is slightly *smaller* than the retired one (3,456) here, but
+for the opposite reason to the council's concern: v2 has no length floor (it keeps short
+declaratives) and it *excludes* link lists and templates (which the retired one counted). Both
+effects are visible; the ratio is the same to within a point, which confirms the Executor's
+independent 34.7% and the "3.2 rows/window, 39% empty" figures.
+
+**So: today's event layer leaves ~63% of narrative prose with no row at all.** That is the gap
+§D's fact layer exists to close, and it is why the owner's complaint is a coverage problem rather
+than a vocabulary problem.
+
+The worst windows are now genuine missing facts, e.g. `3320a8b885f43b0c` (13 uncovered) and
+`e2470f9de466ab00` ("For months, he survived in the wilderness, until being attacked by loggers and
+brought to the local town's jail." — 12 uncovered).
+
+**Next:** Step 3 — `label_single.py --schema v2` and `--add-only`.
