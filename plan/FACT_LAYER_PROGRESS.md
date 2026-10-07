@@ -275,3 +275,13 @@ same command into the same file — id-level dedup means the 685 pre-crash rows 
 not re-derived. labels_v2.jsonl is therefore continuous: 387 claude-events+v2-facts and 298
 v2-full from the crashed attempt, plus the resumed files. Verified: no worker currently
 processes an id that already has a row.
+
+## Continuation past the ~5,400 mark (owner 2026-10-07, ~21:10)
+
+- Added orchestrator `chain3` (PID 34941): when the b807–b5405 run (PID 32143) exits,
+  a full-v2 pass (events + facts + tags, the same windowing and the fact layer
+  together, `provenance v2-full`) starts on the remaining **8,595** selection windows
+  (`/tmp/opencode/batchC_ids.jsonl` = big_in ids neither in `labels.jsonl` nor
+  `labels_v2.jsonl`, in input order). Both layers ride in every output row.
+- No separate v1 labelling is needed afterwards: batch C emits the event rows the
+  9B trains on AND the fact rows — one pass, both tasks.
