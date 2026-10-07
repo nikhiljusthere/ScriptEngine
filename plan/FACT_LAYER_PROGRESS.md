@@ -264,3 +264,14 @@ steps 1–3 — is committed and done).
   windows/min expected → the first ~5,405-line `labels_v2` closes this phase.
 - Next phase after that: the same full v2 over the remaining selection toward the
   12,000-window training target.
+
+## CRASH + restart (2026-10-07 ~17:10)
+
+Both v2 runs died on one bug: `fact_gate._end_ok` read `vrw.PLACE_LIKE`, which does
+not exist on `verify_row_wiki` (the gate has its own `PLACE_LIKE`; line 173 uses it).
+Crashed the add-only pass at 387/806 and the full pass at 298/4599. Fixed to the local
+`PLACE_LIKE` (commit 58c4620f, 46 pytest still green), and BOTH runs were resumed with the
+same command into the same file — id-level dedup means the 685 pre-crash rows are kept and
+not re-derived. labels_v2.jsonl is therefore continuous: 387 claude-events+v2-facts and 298
+v2-full from the crashed attempt, plus the resumed files. Verified: no worker currently
+processes an id that already has a row.
