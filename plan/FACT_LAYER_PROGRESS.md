@@ -181,3 +181,34 @@ The worst windows are now genuine missing facts, e.g. `3320a8b885f43b0c` (13 unc
 brought to the local town's jail." — 12 uncovered).
 
 **Next:** Step 3 — `label_single.py --schema v2` and `--add-only`.
+
+---
+
+## STEP 3 — Labeller v2 (`--schema v2`, `--add-only`) — **PASS** (owner override 2026-10-07: 35B, not the 27B)
+
+**Did:** finished the interrupted step-3 edit in `tools/train/label_single.py`
+(parse_v2, fact gate, coverage-repair turn, `--add-only`, provenance) and fixed two real
+bugs found by the first dry run:
+
+1. **v2 pointed at the 27B on :18080 because the execution plan made the agent the 27B.**
+   The owner flipped windowing/labelling to the 35B, so the v2 defaults now target
+   :18081 / `qwen3.6-35b-a3b-ninfer` (explicit `--url`/`--model` still win).
+2. **Tag rows were validated as fact rows** (`fact_gate_keep(tags, ...)`), so every
+   valid tag row was dropped (kept_tg was always empty and coverage could never use
+   tags). Added `tag_gate_keep` with SECTION C's own rules; tags survive now.
+
+**Verify — dry run, 5 windows, 35B on :18081, `--schema v2`:**
+- parse-fail 0, every row valid v2 JSON, `ok: true` on all 5,
+  facts/tags pass the fact gate (e.g. `revealed_as`, `recruited`, tags like `deictic`,
+  `production` survive),
+- coverage after the coverage-repair turn: 36/41 narrative sentences covered (88%),
+  vs the 37.1% event-layer baseline on the reviewed windows,
+- caveat recorded: `other_verb` share on the dry sample is 20-60% (target <10%) —
+  the fact vocabulary needs a promotion pass after the pilot (proposal logged in
+  `plan/FACT_LAYER_PROPOSALS_FOR_CLAUDE.md`), not a drop reason for a window.
+
+`FACT_LAYER_PROPOSALS_FOR_CLAUDE.md` (store round-trip defects in facts.py etc.) is
+untracked but complete; this commit brings it in.
+
+**Next:** Step 4 — 60-window pilot on b7-b806 with event F1 vs Claude's reviewed rows,
+fact precision, coverage.
