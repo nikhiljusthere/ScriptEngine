@@ -285,3 +285,32 @@ processes an id that already has a row.
   `labels_v2.jsonl`, in input order). Both layers ride in every output row.
 - No separate v1 labelling is needed afterwards: batch C emits the event rows the
   9B trains on AND the fact rows — one pass, both tasks.
+
+## CHECKPOINT — STOPPED 2026-10-07 ~22:30 (owner: "checkpoint here and stop everything")
+
+Killed by exact PID: chain2 (30192/30194), batch-C chain (34941/34943), the full-v2
+runner (32143), and the 35B server (16226/16227). GPU freed (330 MiB).
+
+State at stop:
+- `series/universal/training/big/labels_v2.jsonl` — 2,051 rows / 5,405 target for phase 6.
+  806 `claude-events+v2-facts` (Step 5 complete) + ~1,245 `v2-full` (Step 6, 2,029/5,405
+  per the last status line, 5.2 w/min, parse-fail 0, 140 gate-dropped rows).
+- Next, on resume: Step 6 finishes b807–b5405 (its id list has 4,599 ids; dedup against
+  the output means rows are never re-derived), then batch C over the remaining 8,595
+  selection windows (`/tmp/opencode/batchC_ids.jsonl`).
+
+Resume commands (exactly what was killed):
+```
+cd /home/goblin/ScriptEngine/.claude/worktrees/big-review-flags
+setsid nohup bash <(cat tools../) /dev/null  # see chain3_resume below
+# Step 6 first (only if labels_v2.jsonl still < 5405):
+SCRIPTENGINE_ROOT=/home/goblin/ScriptEngine scriptengine/.venv/bin/python tools/train/label_single.py --schema v2 \
+  --in /home/goblin/ScriptEngine/series/marvel/training/labels/big_in.jsonl \
+  --in /home/goblin/ScriptEngine/series/mcu/training/labels/big_in.jsonl \
+  --out /home/goblin/ScriptEngine/series/universal/training/big/labels_v2.jsonl \
+  --ids /tmp/opencode/b807_5405_ids.jsonl --workers 8 --provenance v2-full
+# then batch C:
+  --ids /tmp/opencode/batchC_ids.jsonl --workers 8 --provenance v2-full
+```
+with /tmp/opencode/serve_35b_64k-style: `tools/train/ops/serve_35b_64k.sh` to bring the
+35B back on :18081.
