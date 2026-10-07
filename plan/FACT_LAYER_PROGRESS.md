@@ -314,3 +314,24 @@ SCRIPTENGINE_ROOT=/home/goblin/ScriptEngine scriptengine/.venv/bin/python tools/
 ```
 with /tmp/opencode/serve_35b_64k-style: `tools/train/ops/serve_35b_64k.sh` to bring the
 35B back on :18081.
+
+## DAU-vs-35B comparison (owner ask, 2026-10-08)
+
+Model confirmed: the only live server is `qwen3.8-27b-dau-q6k` (llama.cpp PID 76786,
+`--port 18080`, MTP draft max 4, `--parallel 1`) (`/mnt/PROJECTS/models/qwen38-dau/qwen38-dau-q6k-mtp.gguf`).
+The old ninfer 27B and the 35B are not running — so the number below is the DAU, no mixing.
+
+Same 60 reviewed windows (pilot60 ids), same `--schema v2` (full v2 = events+facts+tags
++ repair turns), `--no-thinking` (with thinking ON every response burns the 16,384 cap
+inside <reasoning> and returns empty content; DAU@thinking-off is its usable mode):
+
+| run | n | event P | event R | event F1 | exact | parse-fail | gate-dropped |
+|---|---|---|---|---|---|---|---|
+| DAU Q6_K+MTP (this run) | 59 | **.475** | **.477** | **.476** | 17/59 | 0 | 14 |
+| 35B v2 (pilot60b) | 60 | .614 | .516 | .561 | 26/60 | 0 | 10 |
+| 35B v1 single-pass (original run) | 60 | .711 | .445 | .547 | 20/60 | 0 | — |
+
+Plus raw throughput: DAU 3.2–3.7 windows/min single-slot vs 35B 5.2 windows/min on 8 lanes.
+**Verdict: the DAU is materially worse on event quality (~-.08 F1) and slower per wall-clock.
+Per the owner's condition ("if it is better, take it"), do NOT adopt it; the 35B remains
+the windowing/fact-layer engine.**
