@@ -253,12 +253,8 @@ def main():
     a = ap.parse_args()
     if a.schema == "v2":
         a.doc = a.v2_doc or str(CODE / "plan/EXTRACTION_PROCEDURE_V2.md")
-        # 2026-10-07 (owner): the 35B serves windowing/labeling on :18081, not the 27B.
-        # Explicit --url/--model always win; only swap the built-in defaults.
-        if a.url.endswith("18080/v1/chat/completions"):
-            a.url = "http://127.0.0.1:18081/v1/chat/completions"
-        if a.model == "qwen3.8-27b-ninfer":
-            a.model = "qwen3.6-35b-a3b-ninfer"
+        # 2026-10-07 (owner): the 35B serves windowing/labeling by default on :18081;
+        # explicit --url/--model always win (there is no forced remap anymore).
     doc = Path(a.doc).read_text(encoding="utf-8")
     rows = [json.loads(l) for p in a.inputs for l in open(p)]
     if a.ids:
