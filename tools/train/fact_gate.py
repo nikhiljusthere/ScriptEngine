@@ -31,7 +31,12 @@ MODALITY = ("actual", "planned", "attempted", "ordered", "claimed", "dreamed", "
 CERTAINTY = ("stated", "reported", "apparent", "denied")
 CANON = ("mcu", "comics", "alternate", "anime", "production", None)
 TAGS = ("dialogue", "list_header", "production", "citation", "apposition",
-        "attire", "capability", "deictic", "below_floor")
+        "attire", "capability", "deictic", "below_floor",
+        # the council (2026-10-08): a sentence the event layer legitimately refuses must
+        # still be COVERABLE in v2, or the coverage rule is unsatisfiable for it.
+        "no_doer",      # A8/R17 passive with no 'by', A39 item-as-doer, A47 tied with no captor
+        "crowd_end",    # A5/A25/A52/A57: crowd, species, indefinite or descriptive-group ends
+        "no_relation")  # A17/A27/A30/A42/A45: stated, but no legal event and no legal fact
 
 # the closed relation vocabulary (EXTRACTION_PROCEDURE_V2.md B.2). `other_verb` is the escape
 # hatch (B.3); `other` is deliberately NOT accepted: it collides with the engine's `other` COLUMN
@@ -144,6 +149,14 @@ def sentences(text):
     return out
 
 
+def _resolves(wiki, end):
+    """Does the wiki know this end as a real page/alias? (A52's "a Space Phantom" does not.)"""
+    try:
+        return bool(wiki.resolve(end))
+    except Exception:  # noqa: BLE001 - a wiki hiccup must not fail a labelling run
+        return False
+
+
 def _end_ok(end, relation, is_object, tag, wiki=None):
     """B.6/B.7 end checks. Returns a reason string when the end is refused."""
     if end is None:
@@ -169,7 +182,17 @@ def _end_ok(end, relation, is_object, tag, wiki=None):
     # an article/possessive in front of a PLACE, ITEM, ROLE or NAME is legal (B.8: "his apartment",
     # "the Bus", "the Yellowjacket"); in front of a person end it is the R11 indefinite
     if is_object and want not in ("place", "item", "thing", "title", "name") and ARTICLE.match(e):
-        return f"indefinite end '{e}' for a person relation: use the passage's name (R11)"
+        # a NAMED group or organisation is legal with its article ("the X-Men", "the FBI",
+        # "the Avengers"): v2 B.6, and the A3/A48/A65 joined/member_of routes depend on it.
+        # The wiki decides: "a Space Phantom" / "an assailant" are indefinite (A52/R11) and
+        # must still be refused, and neither resolves.
+        tail = re.sub(r"^(?:a|an|the|his|her|their|its)\s+", "", e)
+        named = bool(tail) and tail[:1].isupper()
+        # "the X-Men" / "the Avengers" are one named thing; "a Space Phantom" is a description
+        # that merely looks capitalised, so a multi-word end must be confirmed by the wiki.
+        ok = named and (len(tail.split()) == 1 or (wiki is not None and _resolves(wiki, e)))
+        if not ok:
+            return f"indefinite end '{e}' for a person relation: use the passage's name (R11)"
     if is_object and want is None and PLACE_LIKE.search(e) and wiki is not None:
         exact = [p for p in wiki.resolve(e) if p.lower() == e.lower()]
         lab = wiki.label.get(exact[0]) if exact else None
@@ -229,7 +252,7 @@ def check(rows, window, wiki=None, tags=None):
         if q and sents and not any(q in s for s in sents):
             flags.append(f"{tag}: quote spans more than one sentence; quote the shortest clause "
                          f"that states the fact (B.1)")
-        if q and sents and not any(norm(s) in norm(q) for s in sents) and q in (window or ""):
+        if q and SENT_END.search(q):
             flags.append(f"{tag}: quote crosses a sentence boundary (B.1)")
         quotes.append(q)
         # ---- ends ----

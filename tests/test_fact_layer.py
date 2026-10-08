@@ -53,8 +53,10 @@ def test_closed_enums_and_tag_set():
     assert fg.MODALITY == ("actual", "planned", "attempted", "ordered", "claimed",
                            "dreamed", "hypothetical")
     assert fg.CERTAINTY == ("stated", "reported", "apparent", "denied")
+    # 2026-10-08 council: the three coverage tags that make a catalogued "no row" sentence legal
     assert set(fg.TAGS) == {"dialogue", "list_header", "production", "citation", "apposition",
-                            "attire", "capability", "deictic", "below_floor"}
+                            "attire", "capability", "deictic", "below_floor",
+                            "no_doer", "crowd_end", "no_relation"}
 
 
 # --------------------------------------------------------------------------- the gate

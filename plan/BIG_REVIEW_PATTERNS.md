@@ -17,7 +17,7 @@ roughly one error in five through.
 |---|---|---|---|---|
 | A1 | missed event in a window that has other rows: rescues, escapes, "left the team", "found X", recruits, betrayal nouns ("Magik's betrayal"), attacks in passing ("having hurt Broo"), power/mind use ("brainwashed", "possessed", "manipulated by") | add the row | step 8.1, R8, R18 | most windows (82/125 needed additions) |
 | A2 | group end ("Avengers", "X-Men", "the group") when the window ties named members to the event | one row per tied member, no group row | G.2, R19 | very common |
-| A3 | met from joining/allying ("joined the team", "joining X and Y", "teamed up", "allied", "rejoined") | no met | R4, R12 | common |
+| A3 | met from joining/allying ("joined the team", "joining X and Y", "teamed up", "allied", "rejoined") | no met; fact: `joined` (or `allied_with`), actual | R4, R12 | common |
 | A4 | two names for one person in the window (codename + real name, alias pairs, disguise reveals "revealed to be", "posing as", "was really", "unmasked") | the real / revealed name in every row | step 6, R10 | common |
 | A5 | crowd, indefinite or species end ("several Avengers", "former Avengers", "a Kree armada", "the police", "a Space Phantom", "Skrulls", "Inhumans", "Builders") | drop the row (or the named member if one is tied) | step 6, R11 | common |
 | A6 | confrontation with no stated attack written as fought ("confronted Whirlwind", "confronted the robot Computo") | met | R2 | occasional |
@@ -26,17 +26,17 @@ roughly one error in five through.
 | A9 | rank/title or short form as the name ("Captain Stacy", "Dr. Ellis", "Shaw" when "Sebastian Shaw" is in the window, "Gaunt", "Burch", "the Reaper", "The Crippler") | strip rank; fullest form; no article | step 6 | occasional |
 | A10 | description used as a place ("Reavers' Australian base", "the mansion" when unnamed) or heading as arrival ("while taking ... back to") | no arrived/departed | table: arrived | occasional |
 | A11 | hedged or prevented acts ("seemingly slew" -> defeated, "attack ... was prevented" -> no fought, "nearly kill" -> fought) | per hedge | step 3 | occasional |
-| A12 | "helped X when ..." written as saved | no saved | R23 | rare |
-| A13 | leaving/disbanding written as betrayed ("abandoned him to die", "the Avengers were disassembled by") | no betrayed (departed if a named place) | R14, R24 | rare |
+| A12 | "helped X when ..." written as saved | no saved; fact: `helped` (or `assisted`), actual | R23 | rare |
+| A13 | leaving/disbanding written as betrayed ("abandoned him to die", "the Avengers were disassembled by") | no betrayed (departed if a named place); fact: `left_group` when a named person leaves a named group, else `other_verb` with the passage's verb | R14, R24 | rare |
 | A14 | wrong pronoun referent ("he had captured a Space Phantom" = Kang, not Immortus; "before he escaped the police" = Castle) | re-resolve by meaning | step 4 | rare, only reading catches it |
 | A15 | broken end string ("X" for Professor X) | the full name | step 6 | rare |
 | A16 | "<group> led by X" as doer | X | R21 | rare |
 | A17 | self-directed death (suicide) | no row (gate refuses subject==object) | R16 | rare |
 | A18 | two characters sharing a name merged ("the Variant" / "Variant Loki" ambushes while the TVA's Loki sits with B-15) | separate ends ("Variant" vs "Loki") | step 6 | rare, reading only |
-| A19 | purpose clause as event ("traveled to NYC to meet with X", "planning to fight") | only the part that happened (arrived), no met/fought | step 3 | occasional |
+| A19 | purpose clause as event ("traveled to NYC to meet with X", "planning to fight") | only the part that happened (arrived), no met/fought; the purpose clause is a fact: `planned`/`claimed` with `asserted_by` when both ends are nameable | step 3 | occasional |
 | A21 | killing through a possessed body ("used his powers of body possession to cause Dolan to murder Craft") / a victim who "survived his own murder" | possessor fought the host and the victim; no killed when he survived | step 4, 3 | rare |
 | A22 | "finishing off X" with no stated death written as killed | defeated | table: defeated | rare |
-| A23 | deals and exchanges as events ("agreed to help in exchange for teleporting them all back") | no row for the promised act | step 3 | rare |
+| A23 | deals and exchanges as events ("agreed to help in exchange for teleporting them all back") | no row for the promised act; the promise itself is a fact: `planned`/`claimed` with `asserted_by` | step 3 | rare |
 | A24 | a vehicle as a place ("carried Pixie to the Blackbird") | no arrived/departed | table: arrived NO "the car" | rare |
 | A25 | a pantheon or race as an end ("the Kami", "the Olympians", "Sentinels", "Quantumnauts") | no row | step 6 | occasional |
 | A26 | a reported confirmation misread for its speaker ("Gao confirmed that she had fought beside him ... before her death and later rebirth": she = Elektra) | re-resolve by meaning | step 4 | rare, reading only |
@@ -44,13 +44,13 @@ roughly one error in five through.
 | A28 | "X had A and B abduct Z" written only for A and B | X captured Z too (the one who had it done) | table: captured | rare |
 | A29 | "sedated him" / "knocked him out" written as fought | defeated | table: defeated | occasional |
 | A30 | "terminating X" about a file/record (X alive later in the window) written as killed | no row | step 3 | rare |
-| A31 | a self-assigned task as an event ("joined Daredevil's side and worked to stop Fisk") | no row (R4 + purpose) | step 3 | occasional |
+| A31 | a self-assigned task as an event ("joined Daredevil's side and worked to stop Fisk") | no row (R4 + purpose); facts: `joined` (actual) plus the task as `planned`/`ordered` with `asserted_by` | step 3 | occasional |
 | A32 | an abilities/powers section narrating specific hits ("shake off a punch from Gladiator", "has taken multiple punches from Namor") left empty | fought rows (step 1: one specific occurrence is an event) | step 1 | occasional |
 | A33 | "X revived him" written only as awakened | also X saved him (revived someone who would otherwise die) — only when the revival is for his sake (Merlyn); a corpse revived as a tool or a threat (the Mad Thinker's "living weapon", Cable reviving Apocalypse) is no saved | table: saved | occasional |
-| A48 | "joined" disambiguation: joining a team/side/cause ("joined the X-Men", "joined Daredevil's side") vs joining specific people where they are ("Sif joined Coulson and May when they traveled", "joined Namor at Utopia", "joined by an arriving Spider-Man") | team/side -> no met (R4); people where they are -> met | R4, table: met | common |
+| A48 | "joined" disambiguation: joining a team/side/cause ("joined the X-Men", "joined Daredevil's side") vs joining specific people where they are ("Sif joined Coulson and May when they traveled", "joined Namor at Utopia", "joined by an arriving Spider-Man") | team/side -> no met (R4); people where they are -> met; team/side -> fact `joined`; people where they are -> `met` event AND `joined` fact | R4, table: met | common |
 | A34 | a team member's own team as "met" target after rescuing/arriving ("arrived in time to save Daisy and May") missed | met each person reached + saved | table: met | occasional |
 | A35 | a purpose clause that the next clause fulfils ("traveled to Genosha to confront Magneto ... In the resulting battle", "runs to save him ... stopping them both from falling") left out | write it (met/fought, saved): the PURPOSE flag is a prompt, check the following sentence | step 3 | occasional |
-| A36 | "defended by X" in words (X told the accuser he was wrong) written as saved | no row | table: saved | rare |
+| A36 | "defended by X" in words (X told the accuser he was wrong) written as saved | no row; fact: `warned` or `persuaded`, actual | table: saved | rare |
 | A37 | escorting a prisoner ("in charge of taking Venom to a helicarrier cell") left out | captured (brought as a prisoner) | table: captured | rare |
 | A38 | "disposed of by X" / "dispatched" with no stated death written as killed | defeated | table: defeated | rare |
 | A39 | a company or weapon as the killer ("killed by a Stark Industries missile") | no row (an item is never the doer; its user is unnamed) | step 4 | rare |
@@ -73,20 +73,28 @@ roughly one error in five through.
 | A57 | descriptive crowd groups ("the squad", "the rest of the Guardians") as ends | the named members the window ties to the act, else no row | step 6, R11 | occasional |
 | A58 | "if not for the intervention of X" against a plot (no attack stated) written as fought | met (an encounter that stops him) | table: met "stops X" | rare |
 | A59 | composite end strings ("Dark Phoenix / Cyclops (Scott Summers)") | the real name only ("Scott Summers") | step 6 | rare |
-| A60 | "X had his men attack the house, and in the following explosion, Y got killed" written as X killed Y | no killed (an ordered killing; the table excludes the order-giver) | table: killed NO | rare |
+| A60 | "X had his men attack the house, and in the following explosion, Y got killed" written as X killed Y | no killed (an ordered killing; the table excludes the order-giver); fact: `ordered` + `asserted_by` (order-giver and intended victim) | table: killed NO | rare |
 | A61 | "managed to escape with the help of X" flagged as R23 'helped' | saved stays (helping an escape from captivity is a release, as b21 Carol Danvers); R23 covers only help with non-danger | R23 | occasional |
 | A62 | "grabs Pangan for protection" / shielding someone written as fought | saved | table: saved | rare |
 | A63 | "Rawlins' soldiers" / "X's men" attacking (possessive group with a named head) left out or as a crowd | X fought the targets (as "Luke Cage's team" -> Luke Cage) | G.2, R21 | occasional |
-| A64 | "X sent Y to attack Z" written with the sender as the doer | Y fought Z (the sender only ordered it) | table: killed NO ordering | occasional |
-| A65 | an organisation as a place ("returned to the FBI", "joined S.H.I.E.L.D.") | no arrived (not a proper-named place) | table: arrived | rare |
+| A64 | "X sent Y to attack Z" written with the sender as the doer | Y fought Z (the sender only ordered it); fact: the sender `ordered` + `asserted_by` | table: killed NO ordering | occasional |
+| A65 | an organisation as a place ("returned to the FBI", "joined S.H.I.E.L.D.") | no arrived (not a proper-named place); fact: `member_of` (or `joined`) when a named person joins it | table: arrived | rare |
 | A66 | "became a mole infiltrated in <team>" left out | betrayed the team (a mole breaks faith with the team she is in) | table: betrayed | rare |
-| A67 | a remote appearance ("joined the podcast remotely and greeted host X", a call, a hologram) written as met | no met | table: met NO phone/video | rare |
+| A67 | a remote appearance ("joined the podcast remotely and greeted host X", a call, a hologram) written as met | no met; fact: `contacted` and/or `greeted` | table: met NO phone/video | rare |
 | A68 | "The latter two ..." resolved to the wrong pair (Dracula and Miles instead of the last two named, Brielle and Miles) | the last two named | step 4 | rare, reading only |
 | A69 | "destroyed Nimrod's bodies ... prevented him from transferring his consciousness" written as defeated | killed (a named robot/AI destroyed) | table: killed | rare |
 | A70 | "trapped in an impenetrable energy dome created by X" left out | X sealed the named ones trapped (a barrier); deactivating it = saved | table: sealed | rare |
-| A71 | training sparring between allies ("tasked with training Scott Lang ... he punched van Dyne") written as fought | no row (practice, not a conflict) | table: fought NO playful/friendly contact | rare |
+| A71 | training sparring between allies ("tasked with training Scott Lang ... he punched van Dyne") written as fought | no row (practice, not a conflict); fact: `trained`/`mentored` — a real punch inside the lesson still gets its `fought` event | table: fought NO playful/friendly contact | rare |
 | A72 | "turned on both A and B" where B was already his enemy written as betrayed B | betrayed only the ally (A) | table: betrayed | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
+
+> **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",
+> it means no **event** row. The sentence is still covered by v2: a `facts` row when both ends
+> are nameable, otherwise a `tags` row from this closed set —
+> `no_doer` (A8, A39, A47: passive with no 'by', item as doer, tied with no captor),
+> `crowd_end` (A5, A25, A52, A57: crowd/species/indefinite/descriptive-group ends),
+> `no_relation` (A17, A27, A30, A42, A45: stated, but no legal event AND no legal fact).
+> An event-layer flag never justifies deleting a fact or tag row.
 
 ## B. Confirm patterns (35B usually right; one look suffices)
 

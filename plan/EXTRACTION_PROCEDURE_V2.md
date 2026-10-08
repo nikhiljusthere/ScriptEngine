@@ -408,6 +408,12 @@ is `defeated` (event) with `certainty: apparent`, not `killed`.
 name, a proper-named place, an organisation, a title/role ("the President", "Ronan the Accuser"), a
 definite description of one specific individual ("Hope's mother").
 
+A **named group or organisation is written as the passage writes it, article included**: "the
+X-Men", "the Avengers", "the FBI" are legal ends for `joined` / `member_of` / `left_group`. What
+makes an end an indefinite is that it names nobody — "a Space Phantom", "an assailant", "the
+squad" — and those stay refused. (The gate accepts an article-prefixed end only when the wiki
+knows it as a real page.)
+
 **Not allowed** (same rule as the event layer, R11): crowds ("the guards", "several Avengers",
 "his men"), species/races ("the Kree", "Skrulls", "mutants"), indefinite descriptions ("a man",
 "an assailant"), bare pronouns ("she", "they", "him") — see B.7.
@@ -471,13 +477,18 @@ Allowed tags (closed set — nothing else is accepted):
 | `capability` | a general ability/power description, not a specific occurrence |
 | `deictic` | transitional text with no claim ("the next morning", "meanwhile") |
 | `below_floor` | shorter than 6 words and naming no entity |
+| `no_doer` | a passive with no "by" ("where he was defeated", "were freed"), an item as the doer ("killed by a Stark missile"), someone tied up with no captor |
+| `crowd_end` | every end is a crowd, species, indefinite or descriptive group ("the squad", "several Avengers", "the Inhumans", "an assailant") |
+| `no_relation` | the sentence states something real, but no event verb and no fact relation can say it (the Watcher observing a universe, "terminated the record", an attack on a building) |
 
 **Write the `quote` of a tag row as the exact sentence (or the exact list entry) you did not cover.**
 
 Two rules that keep this honest:
 
 1. **A tag is never a way to avoid work.** If you can state the fact, state it. A window full of tags
-   is a failed window, and coverage is checked per window.
+   is a failed window, and coverage is checked per window. The three new tags exist for the
+   sentences the catalog names (`plan/BIG_REVIEW_PATTERNS.md`): use `no_relation` only for a ruling
+   the catalog names — if you simply cannot think of a relation, keep looking or use `other_verb`.
 2. **One sentence may carry several rows.** "Hope trained Scott and later fought him" = one `trained`
    fact, one `fought` event, one `met` event. Covering a sentence with one row does not license
    dropping the others.
@@ -540,16 +551,19 @@ slew Arnim Zola and destroyed his rocket containing the virus. Realizing the vil
 infected and they could spread the virus all over town, the Invaders made the tough decision to kill
 all the villagers."
 
-Reasoning: "seemingly slew" → the fight ended, no stated death → `defeated` with `certainty: apparent`
-(A11). "made the tough decision to kill" is an intention, so the killing is `planned` with
-`asserted_by` the Invaders — v1 dropped it entirely, which is exactly the loss the owner objected to.
+Reasoning: "seemingly slew" → the fight ended, no stated death → `defeated` (A11). "made the tough
+decision to kill" is an intention, so it is a `planned` fact with `asserted_by` — v1 dropped it
+entirely, which is exactly the loss the owner objected to. Two ends here are **not** legal:
+"the team" and "the villagers" are crowds (B.6), and `killed` is not a fact relation — it is an
+EVENT verb (B.2). So both extra statements use `other_verb`, whose `object` is the passage's own
+verb (B.3), with the named Invader the window ties the act to as the subject.
 
 Answer:
 ```
-{"events": [{"quote": "After a clash with Iron Cross, U-Man, Master Man, and Warrior Woman", "subject": "Bucky", "verb": "fought", "object": "Iron Cross"},
+{"events": [{"quote": "After a clash with Iron Cross", "subject": "Bucky", "verb": "fought", "object": "Iron Cross"},
             {"quote": "the team seemingly slew Arnim Zola", "subject": "Bucky", "verb": "defeated", "object": "Arnim Zola"}],
- "facts":  [{"quote": "the team seemingly slew Arnim Zola", "subject": "the team", "relation": "killed", "object": "Arnim Zola", "modality": "actual", "certainty": "apparent"},
-            {"quote": "the Invaders made the tough decision to kill all the villagers", "subject": "the Invaders", "relation": "killed", "object": "the villagers", "modality": "planned", "certainty": "stated", "asserted_by": "the Invaders"}],
+ "facts":  [{"quote": "the team seemingly slew Arnim Zola", "subject": "Bucky", "relation": "other_verb", "object": "slew", "modality": "actual", "certainty": "apparent"},
+            {"quote": "the Invaders made the tough decision to kill all the villagers", "subject": "Bucky", "relation": "other_verb", "object": "kill", "modality": "planned", "certainty": "stated", "asserted_by": "Bucky"}],
  "tags":   []}
 ```
 
@@ -604,3 +618,101 @@ covers it:
 8. **Did I avoid stretching the 12 verbs?** `fought` is still only a real attack (not a lesson, not
    friendly contact); `met` is still only people coming together (not joining a team, not a call).
 9. **Are `other_verb` rows under 10%** of my facts, and does their verb appear in the quote?
+
+---
+
+<!-- F:BEGIN (generated by tools/train/build_prompt.py) -->
+
+---
+
+# SECTION F — THE REVIEW PATTERN CATALOG (served to every window)
+
+These are the settled rulings from Claude's hand review of the big windows
+(`plan/BIG_REVIEW_PATTERNS.md`). Roughly a quarter of them are also checked mechanically on your
+repair turn (`big_flags.check()` fires on about 19 of the 72 codes); the rest are read by you,
+and a ruling you break is corrected, so treat every line as binding.
+
+**"no row" always means no row in `events`.** The sentence is still yours to record: write a
+`facts` row when both ends are nameable, and when no end is nameable write a `tags` row from
+this closed set — `no_doer` (a passive with no "by", an item as the doer, someone tied up with
+no captor), `crowd_end` (crowd, species, indefinite or descriptive-group ends), `no_relation`
+(stated, but with no legal event AND no legal fact). Where a ruling names a fact route, that
+route IS the answer: e.g. A71 sparring -> no `fought`, but `trained` as a fact. An event-layer
+ruling never justifies deleting a fact or tag row.
+
+A-patterns: what your row must have been. G/R: structural rules for every row you write.
+
+- **A1** — add the row
+- **A2** — one row per tied member, no group row
+- **A3** — no met; fact: `joined` (or `allied_with`), actual
+- **A4** — the real / revealed name in every row
+- **A5** — drop the row (or the named member if one is tied)
+- **A6** — met
+- **A7** — sealed
+- **A8** — no row
+- **A9** — strip rank; fullest form; no article
+- **A10** — no arrived/departed
+- **A11** — per hedge
+- **A12** — no saved; fact: `helped` (or `assisted`), actual
+- **A13** — no betrayed (departed if a named place); fact: `left_group` when a named person leaves a named group, else `other_verb` with the passage's verb
+- **A14** — re-resolve by meaning
+- **A15** — the full name
+- **A16** — X
+- **A17** — no row (gate refuses subject==object)
+- **A18** — separate ends ("Variant" vs "Loki")
+- **A19** — only the part that happened (arrived), no met/fought; the purpose clause is a fact: `planned`/`claimed` with `asserted_by` when both ends are nameable
+- **A21** — possessor fought the host and the victim; no killed when he survived
+- **A22** — defeated
+- **A23** — no row for the promised act; the promise itself is a fact: `planned`/`claimed` with `asserted_by`
+- **A24** — no arrived/departed
+- **A25** — no row
+- **A26** — re-resolve by meaning
+- **A27** — no met
+- **A28** — X captured Z too (the one who had it done)
+- **A29** — defeated
+- **A30** — no row
+- **A31** — no row (R4 + purpose); facts: `joined` (actual) plus the task as `planned`/`ordered` with `asserted_by`
+- **A32** — fought rows (step 1: one specific occurrence is an event)
+- **A33** — also X saved him (revived someone who would otherwise die) — only when the revival is for his sake (Merlyn); a corpse revived as a tool or a threat (the Mad Thinker's "living weapon", Cable reviving Apocalypse) is no saved
+- **A48** — team/side -> no met (R4); people where they are -> met; team/side -> fact `joined`; people where they are -> `met` event AND `joined` fact
+- **A34** — met each person reached + saved
+- **A35** — write it (met/fought, saved): the PURPOSE flag is a prompt, check the following sentence
+- **A36** — no row; fact: `warned` or `persuaded`, actual
+- **A37** — captured (brought as a prisoner)
+- **A38** — defeated
+- **A39** — no row (an item is never the doer; its user is unnamed)
+- **A40** — fought (an attack made)
+- **A41** — re-resolve by meaning (heroes = the ones with powers)
+- **A42** — no fought (an attack on a vehicle/building only)
+- **A43** — met
+- **A44** — betrayed + fought (table: betrayed YES "turned on")
+- **A45** — no met; met only those who see him ("could see him")
+- **A46** — only those still present
+- **A47** — no captured (R17, example 9)
+- **A49** — rows with the revealed name (R10)
+- **A50** — the captor is the object; the place only when no captor is named
+- **A51** — each arrived + met per pair (a meeting held between them)
+- **A52** — no row (indefinite)
+- **A53** — fought the host
+- **A54** — betrayed (broke faith) — unlike plain leaving (A13), which is no betrayal
+- **A55** — defeated (the fight ended; no capture stated)
+- **A56** — defeated (thrown off ends the fight, as "pushed him off the truck")
+- **A57** — the named members the window ties to the act, else no row
+- **A58** — met (an encounter that stops him)
+- **A59** — the real name only ("Scott Summers")
+- **A60** — no killed (an ordered killing; the table excludes the order-giver); fact: `ordered` + `asserted_by` (order-giver and intended victim)
+- **A61** — saved stays (helping an escape from captivity is a release, as b21 Carol Danvers); R23 covers only help with non-danger
+- **A62** — saved
+- **A63** — X fought the targets (as "Luke Cage's team" -> Luke Cage)
+- **A64** — Y fought Z (the sender only ordered it); fact: the sender `ordered` + `asserted_by`
+- **A65** — no arrived (not a proper-named place); fact: `member_of` (or `joined`) when a named person joins it
+- **A66** — betrayed the team (a mole breaks faith with the team she is in)
+- **A67** — no met; fact: `contacted` and/or `greeted`
+- **A68** — the last two named
+- **A69** — killed (a named robot/AI destroyed)
+- **A70** — X sealed the named ones trapped (a barrier); deactivating it = saved
+- **A71** — no row (practice, not a conflict); fact: `trained`/`mentored` — a real punch inside the lesson still gets its `fought` event
+- **A72** — betrayed only the ally (A)
+- **A20** — the definite description ("Lang's father")
+
+<!-- F:END -->

@@ -9,6 +9,10 @@ Flags are prompts, never verdicts: every window is still read in full.
 
 OWNERSHIP (owner 2026-10-07, plan/WINDOW_METHOD.md): only Claude adds new rules, and only Claude
 edits this file and plan/BIG_REVIEW_PATTERNS.md. The 35B labeler only calls check() (repair turn).
+Owner-authorised revision 2026-10-08: the catalog's 13 "no event row" rulings now carry a fact
+route, so this file's strings were NOT reworded — check() runs on EVENT rows only, and the
+fact-layer flags come from fact_gate.check() on the same repair turn. A flag here never justifies
+deleting a fact or tag row.
 
 usage: python big_flags.py N [--chars 4000]   (SCRIPTENGINE_ROOT overrides the checkout)
 """
