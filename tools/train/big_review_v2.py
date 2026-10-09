@@ -160,11 +160,12 @@ def view(n, start):
         print(f"===== b{b} {r.get('page')} / {r.get('section')}")
         print(text[:4000])
         print(" EVENTS" + (" [reviewed]" if rev else ""),
-              [(e["subject"], e["verb"], e["object"], (e.get("quote") or "")[:45]) for e in ev] or "[]")
+              [(e["subject"], e["verb"], e["object"]) + (() if rev else ((e.get("quote") or "")[:45],))
+               for e in ev] or "[]")
         print(" FACTS", [(f.get("subject"), f.get("relation"), f.get("object"),
                           "" if f.get("modality", "actual") == "actual" else f"{f['modality']}/{f.get('asserted_by')}",
                           "" if f.get("certainty", "stated") == "stated" else f["certainty"],
-                          (f.get("quote") or "")[:45]) for f in fa] or "[]")
+                          (f.get("quote") or "")[:32]) for f in fa] or "[]")
         if tg:
             print(" TAGS", [(t.get("tag"), (t.get("quote") or "")[:40]) for t in tg])
         for k in ("dropped", "fact_dropped", "tag_dropped"):
@@ -177,7 +178,8 @@ def view(n, start):
                 print("  " + ("" if f.startswith("MISS?") else "FLAG ") + f)
         ff, _ = fact_gate.check(fa, text, tags=tg)
         for f in ff:
-            if "is symmetric" not in f:
+            if "is symmetric" not in f and "object is null" not in f and "sentence boundary" not in f \
+                    and "more than one sentence" not in f:
                 print("  FFLAG " + f)
         cov = fact_coverage.report(text, ev, fa, tg)
         for s in cov["uncovered"]:
