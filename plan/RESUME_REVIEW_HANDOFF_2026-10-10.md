@@ -66,6 +66,13 @@ nvidia-smi --query-gpu=memory.used --format=csv; ps -eo pid,etime,cmd | grep -E 
 curl -s -m3 localhost:18080/v1/models; curl -s -m3 localhost:18081/v1/models
 ```
 
+Known already (seen 2026-10-10 without running anything): `tools/train/label_hints.py` now carries
+fact-layer wording the previous Claude session did not write ("it IS a fact: joined / allied_with",
+"planned/claimed/attempted with asserted_by", "cover the sentence with a no_doer tag row"). This is
+very likely the 27B's work. Run `git log -p -- tools/train/label_hints.py` and treat any non-Claude
+hunk as a proposal: keep it only if it matches the adopted v2 procedure, otherwise revert it.
+Re-check `big_flags.py` and `BIG_REVIEW_PATTERNS.md` the same way.
+
 Decide from what you find:
 - **Is the opencode run finished or idle?** Do not stop the 27B while it is mid-step; ask the owner if
   unclear. If finished/idle, the owner said "fire up the qwen": the labeller Qwen is the ninfer 35B.
