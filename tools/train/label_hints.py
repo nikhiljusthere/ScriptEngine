@@ -95,6 +95,9 @@ HINTS = [
      "Destroying a body the character survives (Ultron's consciousness escapes) -> defeated, not killed."),
     (r"(?i)\bgrabbed \w+(?: \w+)?, threatening\b",
      "Grabbing someone and threatening to hurt them = taking a hostage -> captured (plus fought)."),
+    (r"(?i)\b(?:knock\w* \w+(?: \w+)? aside|manhandl\w*|ran away|got (?:his|her|their) powers back)\b",
+     "'knocked them aside' mid-fight -> fought (not defeated). An opponent who 'ran away' escaped, not defeated. "
+     "Getting one's own powers back is not awakened."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),

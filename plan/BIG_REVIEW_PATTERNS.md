@@ -93,9 +93,11 @@ roughly one error in five through.
 | A77 | a numbered name with its word stripped as a rank ("Agent 33" -> "33", b912) | the whole name ("Agent 33") | step 6 | rare |
 | A78 | a time as a place ("Earth-691's 31st Century", b932) | arrived the proper place only ("Earth-691") | table: arrived | rare |
 | A79 | "they made it out into the streets of Hala" (escaping within Hala) written as arrived Hala (b955) | no arrived (not a new place reached) | table: arrived | rare |
-| A80 | "the Mole Man was restored to human form" written as awakened (b940) | no row (a form he already had) | table: awakened NO | rare |
+| A80 | "the Mole Man was restored to human form" / "he got his powers back" (b1021) / "the Techno-Troid hatched" (b1034) written as awakened (b940) | no row (a form he already had) | table: awakened NO | rare |
 | A81 | "learning how to psychically defeat Ahab for good" written as defeated (b971) | no row (knowledge of how, not the act) | step 3 | rare |
-| A84 | "Faustus grabbed Peggy, threatening to break her spine if Cap came closer" written only as fought (b1003) | captured too (a hostage taken) | table: captured "hostage" | rare |
+| A82 | "Faustus grabbed Peggy, threatening to break her spine if Cap came closer" written only as fought (b1003) | captured too (a hostage taken) | table: captured "hostage" | rare |
+| A83 | "manhandled them and knocked them all aside" during an encounter written as defeated (b1029) | fought (+ met for the encounter); defeated only when the fight ends | table: defeated NO | occasional |
+| A84 | "defeated all his opponents. The Chameleon ran away" written as defeated the Chameleon (b1021) | the one who ran: escaped, not defeated | table: escaped | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",
