@@ -35,6 +35,10 @@ import big_review as br  # noqa: E402  (main checkout: passages, v1 audit, v1 cu
 # the v2 code (label_single v2, fact_gate, fact_coverage, big_flags) lives on this branch: it must win
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import big_flags  # noqa: E402
+# big_flags pushes the main checkout's tools/train back to the front: re-pin this branch's copy
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+for _m in ("label_single", "fact_gate", "fact_coverage"):
+    sys.modules.pop(_m, None)
 import fact_coverage  # noqa: E402
 import fact_gate  # noqa: E402
 
@@ -209,7 +213,10 @@ def apply_edits(path):
 
 
 def fix(path):
-    import label_single
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("label_single", Path(__file__).resolve().parent / "label_single.py")
+    label_single = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(label_single)  # this branch's v2 labeller (fact/tag gates), never main's v1
     import verify_row_wiki as vrw
     pas, wikis = br.passages(), {}
     v2 = {r["id"]: r for r in jl(V2)}

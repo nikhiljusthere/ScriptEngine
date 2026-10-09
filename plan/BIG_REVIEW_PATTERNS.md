@@ -174,3 +174,9 @@ The owner asked to give the 35B the flagger and this catalog, not as a prompt du
       --in $R/series/marvel/training/labels/big_in.jsonl --in $R/series/mcu/training/labels/big_in.jsonl \
       --out $R/series/universal/training/big/labels.jsonl --workers 8 --shuffle --hints --repair \
       >> $R/series/universal/training/big/label_run.log 2>&1 < /dev/null &      (R=/home/goblin/ScriptEngine)
+
+## G. Fact-layer gate quirks (big_review_v2, 2026-10-10) — fact_gate._end_ok bugs to fix in one tested change
+- "President of the United States" is stripped as a rank prefix and refused (b4).
+- "Guardians of the Galaxy" is refused as a crowd end (the crowd regex matches inside the name; b16).
+- "Beast" is refused as a species/race end (b17).
+Until fixed: drop the row and tag the sentence `no_relation` (a gate limit, not a ruling).
