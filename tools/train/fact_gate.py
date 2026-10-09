@@ -104,7 +104,7 @@ RANK = re.compile(
     r"^(?:Dr\.|Doctor|Brigadier General|Brigadier|General|Agent|Officer|Senator|Prelate|Empress|"
     r"Emperor|Mayor|Detective|Sergeant|Colonel|Major|Lieutenant|Commander|Captain|Warlord|"
     r"Professor|Chancellor|Director|Lord|Lady|King|Queen|Sir|Dame|Madam|President)\s"
-    r"(?!of\b|America\b|Marvel\b|Britain\b|Universe\b|Doom\b|Strange\b|Druid\b|Octopus\b|X\b|Xavier\b)")
+    r"(?!of\b|Deathstrike\b|America\b|Marvel\b|Britain\b|Universe\b|Doom\b|Strange\b|Druid\b|Octopus\b|X\b|Xavier\b)")
 COMPOSITE = re.compile(r"\s/|\(|\)|\[|\]")
 # a quote must lie inside ONE sentence: the anti-loophole rule the council required, because
 # big_flags.py:197 accepts `sent in q` with no quote-length cap and one paragraph quote would
