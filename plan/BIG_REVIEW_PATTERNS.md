@@ -66,12 +66,12 @@ roughly one error in five through.
 | A50 | escaped with a place object although the window names the captor ("cut herself free" from Dreykov's operation, written as escaped Red Room Academy) | the captor is the object; the place only when no captor is named | table: escaped | occasional |
 | A51 | "A, B and C attended a meeting at <named place>" left out | each arrived + met per pair (a meeting held between them) | table: met/arrived | rare |
 | A52 | "an assailant", "a lesser demon", "an impostor" as ends | no row (indefinite) | step 6 | occasional |
-| A53 | "used his powers to kill it" where "it" is a symbiote/armor/item on a host who appears alive later ("Virus was arrested") written as the host killed | fought the host | step 4 | rare, reading only |
+| A53 | "used his powers to kill it" where "it" is a symbiote/armor/item on a host who appears alive later ("Virus was arrested") written as the host killed; also "Thor destroyed Ultron's first body" while his consciousness escapes (b966) | fought the host; a body destroyed with the character surviving -> defeated | step 4 | rare, reading only |
 | A54 | breaking an agreement ("abandoned his covenant with her and Xavier") | betrayed (broke faith) — unlike plain leaving (A13), which is no betrayal | table: betrayed | rare |
 | A55 | "the trio stopped Egghead" written as captured | defeated (the fight ended; no capture stated) | table: defeated | occasional |
 | A56 | "had thrown Loki and Thor out of the Bifrost" left out | defeated (thrown off ends the fight, as "pushed him off the truck") | table: defeated | rare |
 | A57 | descriptive crowd groups ("the squad", "the rest of the Guardians") as ends | the named members the window ties to the act, else no row | step 6, R11 | occasional |
-| A58 | "if not for the intervention of X" against a plot (no attack stated) written as fought | met (an encounter that stops him) | table: met "stops X" | rare |
+| A58 | "if not for the intervention of X" against a plot (no attack stated) written as fought; "Iron Man stopped Attuma's plot" written as defeated (b978) | met (an encounter that stops him) | table: met "stops X" | rare |
 | A59 | composite end strings ("Dark Phoenix / Cyclops (Scott Summers)") | the real name only ("Scott Summers") | step 6 | rare |
 | A60 | "X had his men attack the house, and in the following explosion, Y got killed" written as X killed Y | no killed (an ordered killing; the table excludes the order-giver); fact: `ordered` + `asserted_by` (order-giver and intended victim) | table: killed NO | rare |
 | A61 | "managed to escape with the help of X" flagged as R23 'helped' | saved stays (helping an escape from captivity is a release, as b21 Carol Danvers); R23 covers only help with non-danger | R23 | occasional |
@@ -94,6 +94,7 @@ roughly one error in five through.
 | A78 | a time as a place ("Earth-691's 31st Century", b932) | arrived the proper place only ("Earth-691") | table: arrived | rare |
 | A79 | "they made it out into the streets of Hala" (escaping within Hala) written as arrived Hala (b955) | no arrived (not a new place reached) | table: arrived | rare |
 | A80 | "the Mole Man was restored to human form" written as awakened (b940) | no row (a form he already had) | table: awakened NO | rare |
+| A81 | "learning how to psychically defeat Ahab for good" written as defeated (b971) | no row (knowledge of how, not the act) | step 3 | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",

@@ -89,6 +89,10 @@ HINTS = [
      "Going back to a form the character already had ('restored to human form') is NOT awakened."),
     (r"(?i)\b(?:made (?:it|their way) out into|out into the streets)\b",
      "'made it out into the streets of Hala' while already on Hala is no arrived row (only a new place reached)."),
+    (r"(?i)\b(?:learn\w*|knew|figur\w* out|discover\w*) how to\b",
+     "'learning how to defeat X' is knowledge, not the act -> no row unless the window says it was done."),
+    (r"(?i)\b(?:destroyed \w+'s (?:first |old )?body|consciousness escaped)\b",
+     "Destroying a body the character survives (Ultron's consciousness escapes) -> defeated, not killed."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),

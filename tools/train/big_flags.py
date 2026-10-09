@@ -185,6 +185,8 @@ def check(ev, text):
             flags.append(f"{tag}: '{o}' is a vehicle, not a place (A24)")
         if v in ("arrived", "departed") and o and EVENT_NAME.search(o):
             flags.append(f"{tag}: '{o}' names an event/battle, not a place (A73)")
+        if re.search(r"(?i)\b(?:learn\w*|knew|know\w*|figur\w* out|discover\w*) how to\b", q):
+            flags.append(f"{tag}: 'learning how to <act>' is knowledge, not the act (A81)")
         if v == "awakened" and re.search(r"(?i)restored to (?:his|her|their)? ?(?:human|normal|original)|revert\w* to|changed back", q):
             flags.append(f"{tag}: back to a form already had is not awakened (A80)")
         if v == "arrived" and re.search(r"(?i)made (?:it|their way) out into|out into the streets", q):
