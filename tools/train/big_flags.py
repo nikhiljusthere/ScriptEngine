@@ -189,6 +189,10 @@ def check(ev, text):
             flags.append(f"{tag}: 'learning how to <act>' is knowledge, not the act (A81)")
         if v == "defeated" and re.search(r"(?i)knock\w* (?:\w+ )*aside|manhandl\w*|tossed (?:\w+ )?aside", q):
             flags.append(f"{tag}: knocked aside while the fight goes on -> fought (A83)")
+        if v == "betrayed" and re.search(r"(?i)into betray", q):
+            flags.append(f"{tag}: 'X manipulated Y into betraying' -> Y is the betrayer, not X (A85)")
+        if v == "awakened" and re.search(r"(?i)\b(?:restor|reactivat|rebuil|repair)\w*", q) and s and s not in q.split(" restor")[-1]:
+            flags.append(f"{tag}: the restored/reactivated one is the awakened subject, not the restorer (A86)")
         if v == "defeated" and o and re.search(rf"{re.escape(o)} (?:ran away|fled|escaped|got away)", text):
             flags.append(f"{tag}: '{o}' ran away/fled -> escaped, not defeated (A84)")
         if v == "awakened" and re.search(r"(?i)got (?:his|her|their) powers back|regain\w* (?:his|her|their) powers|hatched", q):

@@ -98,6 +98,8 @@ roughly one error in five through.
 | A82 | "Faustus grabbed Peggy, threatening to break her spine if Cap came closer" written only as fought (b1003) | captured too (a hostage taken) | table: captured "hostage" | rare |
 | A83 | "manhandled them and knocked them all aside" during an encounter written as defeated (b1029) | fought (+ met for the encounter); defeated only when the fight ends | table: defeated NO | occasional |
 | A84 | "defeated all his opponents. The Chameleon ran away" written as defeated the Chameleon (b1021) | the one who ran: escaped, not defeated | table: escaped | rare |
+| A85 | "Gideon manipulated her into betraying her friends" written as Gideon betrayed Karma (b1042) | the one manipulated is the betrayer (object = the friends; none if unnamed); the manipulator gets no betrayed | table: betrayed | rare |
+| A86 | "scientists ... restore a Sentinel robot" written as the scientists awakened (b1042) | the restored machine is the awakened one; the restorers get no awakened | table: awakened (machine reactivated) | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",

@@ -98,6 +98,9 @@ HINTS = [
     (r"(?i)\b(?:knock\w* \w+(?: \w+)? aside|manhandl\w*|ran away|got (?:his|her|their) powers back)\b",
      "'knocked them aside' mid-fight -> fought (not defeated). An opponent who 'ran away' escaped, not defeated. "
      "Getting one's own powers back is not awakened."),
+    (r"(?i)\b(?:into betray\w*|restor\w* (?:a|the) \w+ (?:robot|android|Sentinel|machine))\b",
+     "'X manipulated Y into betraying Z' -> Y betrayed Z (not X). 'scientists restored the robot' -> the robot "
+     "awakened (not the scientists)."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),
