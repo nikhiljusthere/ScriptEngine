@@ -26,6 +26,7 @@ EDITS format, one block per corrected window (unmentioned windows are accepted a
 """
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -80,6 +81,58 @@ def state():
     return v2, a2, a1, v1, br.cursor()
 
 
+EVENT_STEMS = ("captur", "escap", "saved", "save", "rescu", "freed", "kill", "slain", "slew", "murder",
+               "defeat", "fought", "fight", "battl", "met", "meet", "arriv", "depart", "sealed", "betray",
+               "awak", "reviv", "imprison", "arrest", "kidnap")
+STOP = {"was", "were", "had", "has", "have", "been", "being", "the", "and", "with", "from", "for",
+        "his", "her", "their", "its", "into", "that", "this", "who", "which"}
+TWINS = {"helped": "saved", "assisted": "saved", "protected": "saved", "attacked": "fought",
+         "kidnapped": "captured", "dies": "killed"}
+
+
+def normalize_facts(facts, events, text):
+    """Deterministic clean-up of the 35B's fact rows before Claude reads them (2026-10-10).
+
+    Only what a rule can decide: (1) `other_verb` whose object is a phrase -> the quote's own word
+    sharing a stem with it (B.3); unresolvable rows stay for review; (2) `other_verb` that is a
+    disguised event verb ("captured", "escape") -> dropped: the event layer or a tag owns it;
+    (3) a leading "The " on a capitalised end; (4) a fact twin of an event with the same ends
+    ("helped" next to "saved", "dies" next to "killed"): B says no twin rows.
+    """
+    evk = {(e["subject"], e["verb"], e["object"]) for e in events}
+    out = []
+    for f in facts:
+        f = dict(f)
+        for k in ("subject", "object", "asserted_by"):
+            v = f.get(k)
+            if isinstance(v, str) and v.startswith("The ") and v[4:5].isupper():
+                f[k] = v[4:]
+        rel, o, q = f.get("relation"), f.get("object"), f.get("quote") or ""
+        if rel == "other_verb" and o:
+            low = q.lower()
+            if o.lower() not in low:
+                words = re.findall(r"[A-Za-z']+", q)
+                hit = None
+                for w in re.findall(r"[A-Za-z']+", o):
+                    if len(w) < 3 or w.lower() in STOP:
+                        continue
+                    stem = w.lower()[:max(4, len(w) - 3)]
+                    hit = next((x for x in words if x.lower().startswith(stem)), None)
+                    if hit:
+                        break
+                if hit:
+                    f["object"] = hit
+            if any(f["object"].lower().startswith(s) for s in EVENT_STEMS):
+                continue
+        tw = TWINS.get(rel)
+        if tw and (f.get("subject"), tw, o) in evk:
+            continue
+        if rel == "dies" and any(e["verb"] == "killed" and e["object"] == f.get("subject") for e in events):
+            continue
+        out.append(f)
+    return out
+
+
 def base(wid, b, v2, a2, a1, v1, c1):
     """(events, facts, tags, events_reviewed, row) for one window."""
     r = v2.get(wid) or v1.get(wid) or {}
@@ -90,7 +143,7 @@ def base(wid, b, v2, a2, a1, v1, c1):
         ev, rev = a1.get(wid, (v1.get(wid) or {}).get("events", [])), True
     else:
         ev, rev = r.get("events", []), False
-    return ev, r.get("facts", []) or [], r.get("tags", []) or [], rev, r
+    return ev, normalize_facts(r.get("facts", []) or [], ev, ""), r.get("tags", []) or [], rev, r
 
 
 def view(n, start):
@@ -255,8 +308,18 @@ def main():
     elif a[0] == "fix":
         fix(a[1])
     elif a[0] == "mark":
+        # accepted windows are recorded too, so big_audit_v2 alone is the reviewed truth (the shown,
+        # normalised rows, gated exactly like a fix; anything the gate drops is reported)
+        import tempfile
+        ids, (v2, a2, a1, v1, c1) = order(), state()
+        lo, hi = cursor2(), int(a[1])
+        todo = [b for b in range(lo + 1, hi + 1) if ids[b - 1] not in a2 and ids[b - 1] in v2]
+        if todo:
+            with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False) as fh:
+                fh.write("".join(f"@{b} accepted as shown\nkeep\n" for b in todo))
+            fix(fh.name)
         CURSOR2.write_text(a[1])
-        print(f"v2 reviewed through {a[1]}")
+        print(f"v2 reviewed through {a[1]} ({len(todo)} accepted as shown)")
 
 
 if __name__ == "__main__":
