@@ -141,3 +141,64 @@ $P $R/tools/train/big_review.py --mark <last b>
   plain `cat >> ... <<EOF` append, which worked).
 - Sending a prompt into an opencode session with `opencode run -s ... --auto` was blocked by the
   permission classifier; if the owner wants the 27B instructed, give them the text to paste.
+
+## 8. Owner-requested test: can Haiku or Sonnet do the review instead of Opus? (added 2026-10-10)
+
+Owner: "I want to test all 3 of your models, new haiku, sonnet and opus [which] has already been
+writing windows. I want to see if haiku/opus is fit for job or not." Opus has done every review so far
+(b7-b806). Test whether **Haiku 4.5** (`claude-haiku-4-5-20251001`) and **Sonnet 5.5** can review
+windows to the same standard. A fresh **Opus** subagent runs as the control, because two Opus
+reviewers will not agree 100% either; that agreement level is the ceiling a cheaper model is measured
+against. Run this test after the §3 checks, before resuming the main review.
+
+**Mechanics.** One subagent per model (Agent tool, `model: haiku | sonnet | opus`). Every candidate
+gets identical input and the identical prompt:
+- the rendered view file;
+- `plan/EXTRACTION_PROCEDURE.md` (plus V2 if adopted);
+- `plan/BIG_REVIEW_PATTERNS.md`;
+- the `big_mkfix.py` edit format.
+
+Each candidate returns ONLY an edits.txt. Candidates must NOT run `big_review.py --fix/--mark`, must
+NOT read `big_audit.jsonl` or `review_cursor.txt`, and must not edit any file. The main session turns
+each edits.txt into a candidate file with
+`SCRIPTENGINE_ROOT=$R $P tools/train/big_mkfix.py edits_<model>.txt $T/bfix_<model>.json`; nothing
+goes into big_audit. A small adapter in `$T` writes `{id, events}` per window:
+- the window's fix `after` rows if it has one;
+- else the 35B rows when the window is kept;
+- run each window through `label_single.gate` and count refusals.
+
+**Set A (reference-scored, 60 windows):** already-reviewed windows, rendered with
+`SCRIPTENGINE_ROOT=$R BF_FROM=<start-1> $P tools/train/big_flags.py 60` (BF_FROM only moves the view,
+not the cursor).
+- Pick the range so it includes catalog-heavy cases: group expansion, missed meetings, identity
+  reveals, passives with no doer, gate quirks.
+- Score each candidate with `eval_hints.py score ids.jsonl cand_<model>.jsonl` against the reviewed
+  reference; compare pairs with `eval_hints.py compare` (paired bootstrap).
+- Caveat: the catalog cites some of these b-numbers, so Set A leaks in the candidates' favour.
+  Strip `bNNN` mentions from the catalog copy you hand them, and treat Set A as secondary.
+
+**Set B (blind, 30 fresh windows, b807 onward):** the primary verdict, since no reference exists yet.
+- All three candidates review the same windows.
+- The main session adjudicates every disagreement blind: shuffle the candidates' rows as A/B/C, judge
+  against the window text and procedure, and only then unmask.
+- The adjudicated rows become the reference for scoring and are submitted through the normal
+  `--fix/--mark` loop (so Set B is real progress).
+
+**Report per model** in `plan/MODEL_FIT_TEST.md`, with a short table + verdict, committed:
+- row P / R / F1 and exact-window rate (Set B primary, Set A secondary);
+- recall on rows the reviewer ADDED: missed events are the dominant 35B error, so a reviewer that only
+  confirms looks good on precision while failing the job;
+- gate refusals and mkfix warnings (name/short-form mixes);
+- errors broken down by catalog class (A-numbers);
+- wall time and tokens.
+
+**Fit bar (proposed; the owner may change it):** a model is fit for the job when, on Set B:
+- F1 vs the adjudicated reference is ≥ 0.95;
+- added-row recall is ≥ 0.90;
+- exact-window rate is within 5 points of the Opus control;
+- it shows no systematic blind spot (no catalog class with more than 2 misses).
+
+Partial fitness is still useful: e.g. Haiku as a pre-pass, with Opus checking only its flagged or
+changed windows. Re-measure on a second set before relying on that.
+Subagents need no GPU, so this does not conflict with the Qwen run. Run them one at a time anyway:
+each reviewer starts cold, and sequential runs keep the comparison clean.
