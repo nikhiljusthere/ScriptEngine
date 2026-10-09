@@ -693,7 +693,7 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A50** — the captor is the object; the place only when no captor is named
 - **A51** — each arrived + met per pair (a meeting held between them)
 - **A52** — no row (indefinite)
-- **A53** — fought the host
+- **A53** — fought the host; a body destroyed with the character surviving -> defeated
 - **A54** — betrayed (broke faith) — unlike plain leaving (A13), which is no betrayal
 - **A55** — defeated (the fight ended; no capture stated)
 - **A56** — defeated (thrown off ends the fight, as "pushed him off the truck")
@@ -713,6 +713,21 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A70** — X sealed the named ones trapped (a barrier); deactivating it = saved
 - **A71** — no row (practice, not a conflict); fact: `trained`/`mentored` — a real punch inside the lesson still gets its `fought` event
 - **A72** — betrayed only the ally (A)
+- **A73** — no arrived (an event is not a place); arrived only when the named place itself is stated
+- **A74** — defeated (the fight ended with X beaten, as A55 "stopped"); plus X escaped the one who forced it
+- **A75** — fought the attacker AND saved the one protected (an intercepted attack)
+- **A76** — fought the intended target (an attack made); no row for the ally hit by accident
+- **A77** — the whole name ("Agent 33")
+- **A78** — arrived the proper place only ("Earth-691")
+- **A79** — no arrived (not a new place reached)
+- **A80** — no row (a form he already had)
+- **A81** — no row (knowledge of how, not the act)
+- **A82** — captured too (a hostage taken)
+- **A83** — fought (+ met for the encounter); defeated only when the fight ends
+- **A84** — the one who ran: escaped, not defeated
+- **A85** — the one manipulated is the betrayer (object = the friends; none if unnamed); the manipulator gets no betrayed
+- **A86** — the restored machine is the awakened one; the restorers get no awakened
+- **A87** — "fought with X" next to a common enemy = alongside X: rows against the enemy, none between allies
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->

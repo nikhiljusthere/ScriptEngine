@@ -87,12 +87,14 @@ CROWD_WORDS = re.compile(
     r"soldiers|forces|army|armada|fleet|thugs|men|women|agents|allies|others|troops|civilians|"
     r"villagers|crowd|soldier|guard|people|staff|crew|staff)\b"
     r"|\b(?:men|women|ones|rest)\s+of\b"
-    r"|\s+of the\b|\bs'\s", re.I)
+    # "X of the Y" is a crowd only after a quantity word ("members of the Hand"); a named team or title
+    # that contains "of the" ("Guardians of the Galaxy", "Masters of Evil") is a name (fixed 2026-10-10)
+    r"|^(?:members?|some|many|most|all|one|two|three|several|rest|remnants?)\s+of the\b|\bs'\s", re.I)
 ARTICLE = re.compile(r"^(?:a|an|the|his|her|their|its)\s", re.I)
 SPECIES = re.compile(
     r"^(?:Kree|Skrulls?|Shi'ar|Inhumans|Chitauri|Brood|Builders|Frost Giants|Dwarves|Sovereign|"
     r"Atlanteans|mutants|humans|Kami|Olympians|Asgardians|Eternals|Deviants|Sentinels|"
-    r"Quantumnauts|Wolf-Men|Elder Gods|Harpies|Asgardian|Mutant|Alien|Monster|Beast|"
+    r"Quantumnauts|Wolf-Men|Elder Gods|Harpies|Asgardian|Mutant|Alien|Monster|"
     r"Demons?|Gods?|Gods|Elves|Dwarves|Orcs?)$", re.I)
 PRONOUN = re.compile(
     r"^(?:he|she|it|they|him|her|them|his|hers|their|theirs|this|that|these|those|one|both|"
@@ -102,7 +104,7 @@ RANK = re.compile(
     r"^(?:Dr\.|Doctor|Brigadier General|Brigadier|General|Agent|Officer|Senator|Prelate|Empress|"
     r"Emperor|Mayor|Detective|Sergeant|Colonel|Major|Lieutenant|Commander|Captain|Warlord|"
     r"Professor|Chancellor|Director|Lord|Lady|King|Queen|Sir|Dame|Madam|President)\s"
-    r"(?!America\b|Marvel\b|Britain\b|Universe\b|Doom\b|Strange\b|Druid\b|Octopus\b|X\b|Xavier\b)")
+    r"(?!of\b|America\b|Marvel\b|Britain\b|Universe\b|Doom\b|Strange\b|Druid\b|Octopus\b|X\b|Xavier\b)")
 COMPOSITE = re.compile(r"\s/|\(|\)|\[|\]")
 # a quote must lie inside ONE sentence: the anti-loophole rule the council required, because
 # big_flags.py:197 accepts `sent in q` with no quote-length cap and one paragraph quote would

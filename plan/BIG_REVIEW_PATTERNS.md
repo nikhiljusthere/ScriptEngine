@@ -179,4 +179,4 @@ The owner asked to give the 35B the flagger and this catalog, not as a prompt du
 - "President of the United States" is stripped as a rank prefix and refused (b4).
 - "Guardians of the Galaxy" is refused as a crowd end (the crowd regex matches inside the name; b16).
 - "Beast" is refused as a species/race end (b17).
-Until fixed: drop the row and tag the sentence `no_relation` (a gate limit, not a ruling).
+FIXED 2026-10-10 in fact_gate.py (crowd 'of the' only after a quantity word; Beast removed from SPECIES; RANK skips 'X of ...'); 54 fact tests pass. b4/b16/b17 were submitted with the tag workaround before the fix.
