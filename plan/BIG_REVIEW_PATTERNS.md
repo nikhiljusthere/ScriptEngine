@@ -17,7 +17,7 @@ roughly one error in five through.
 |---|---|---|---|---|
 | A1 | missed event in a window that has other rows: rescues, escapes, "left the team", "found X", recruits, betrayal nouns ("Magik's betrayal"), attacks in passing ("having hurt Broo"), power/mind use ("brainwashed", "possessed", "manipulated by") | add the row | step 8.1, R8, R18 | most windows (82/125 needed additions) |
 | A2 | group end ("Avengers", "X-Men", "the group") when the window ties named members to the event | one row per tied member, no group row | G.2, R19 | very common |
-| A3 | met from joining/allying ("joined the team", "joining X and Y", "teamed up", "allied", "rejoined") | no met; fact: `joined` (or `allied_with`), actual | R4, R12 | common |
+| A3 | met from joining/allying ("joined the team", "joining X and Y", "teamed up", "allied", "rejoined", "united with the Runaways" b941) | no met; fact: `joined` (or `allied_with`), actual | R4, R12 | common |
 | A4 | two names for one person in the window (codename + real name, alias pairs, disguise reveals "revealed to be", "posing as", "was really", "unmasked") | the real / revealed name in every row | step 6, R10 | common |
 | A5 | crowd, indefinite or species end ("several Avengers", "former Avengers", "a Kree armada", "the police", "a Space Phantom", "Skrulls", "Inhumans", "Builders") | drop the row (or the named member if one is tied) | step 6, R11 | common |
 | A6 | confrontation with no stated attack written as fought ("confronted Whirlwind", "confronted the robot Computo") | met | R2 | occasional |
@@ -92,6 +92,8 @@ roughly one error in five through.
 | A76 | "firing wildly, Bishop missed Cable, instead managing to hit Professor Xavier" written as fought Xavier (b925) | fought the intended target (an attack made); no row for the ally hit by accident | table: fought NO accidental | rare |
 | A77 | a numbered name with its word stripped as a rank ("Agent 33" -> "33", b912) | the whole name ("Agent 33") | step 6 | rare |
 | A78 | a time as a place ("Earth-691's 31st Century", b932) | arrived the proper place only ("Earth-691") | table: arrived | rare |
+| A79 | "they made it out into the streets of Hala" (escaping within Hala) written as arrived Hala (b955) | no arrived (not a new place reached) | table: arrived | rare |
+| A80 | "the Mole Man was restored to human form" written as awakened (b940) | no row (a form he already had) | table: awakened NO | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",

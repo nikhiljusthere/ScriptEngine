@@ -66,7 +66,7 @@ LEAD = ("When|After|Before|As|While|Then|Meanwhile|However|Although|Though|Once|
 PURPOSE = re.compile(r"\b(?:to|in order to|intending to|planning to|hoping to|attempt(?:ed|ing)? to|tried to|"
                      r"decided to|wished to|wanted to|so (?:that )?(?:he|she|they) could) (?:meet|find|rescue|save|stop|"
                      r"kill|capture|free|defeat|fight|attack|destroy|confront|recover|retrieve)\b", re.I)
-JOIN = re.compile(r"\bjoin|teamed up|allied|alliance|rejoin", re.I)
+JOIN = re.compile(r"\bjoin|teamed up|allied|alliance|rejoin|united with", re.I)
 TRAP = re.compile(r"imprison\w* in|trapped|ensnared|Limbo|Dimension|Realm|Void|Mojoverse|pocket universe", re.I)
 HEDGE = re.compile(r"seemingly|nearly|almost|apparently|attempt|tried to|would have", re.I)
 CUES = re.compile(r"\b(rescu\w*|saved?|saving|freed|free (?:him|her|them)|releas\w*|escap\w*|fled|flee|broke (?:free|out)|"
@@ -185,6 +185,10 @@ def check(ev, text):
             flags.append(f"{tag}: '{o}' is a vehicle, not a place (A24)")
         if v in ("arrived", "departed") and o and EVENT_NAME.search(o):
             flags.append(f"{tag}: '{o}' names an event/battle, not a place (A73)")
+        if v == "awakened" and re.search(r"(?i)restored to (?:his|her|their)? ?(?:human|normal|original)|revert\w* to|changed back", q):
+            flags.append(f"{tag}: back to a form already had is not awakened (A80)")
+        if v == "arrived" and re.search(r"(?i)made (?:it|their way) out into|out into the streets", q):
+            flags.append(f"{tag}: getting out into a place they were already in is not an arrival (A79)")
         if v in ("arrived", "departed") and o and re.search(r"\b(?:[Cc]entury|[Ee]ra|[Aa]ge|[Yy]ear|\d{3,4}s?)\b", o):
             flags.append(f"{tag}: '{o}' is a time, not a place -> the proper place only (A78)")
         for end in (s, o):

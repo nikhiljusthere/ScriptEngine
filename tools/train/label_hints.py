@@ -29,7 +29,7 @@ HINTS = [
     (r"\b(?:revealed (?:to be|as)|was (?:in fact|actually|really)|posing as|in disguise|impersonat\w*|unmasked|"
      r"now named|real name|whose real name|alias|also known as|aka)\b",
      "Identity reveal or codename + real name: use the one real/revealed name in EVERY row (no codename rows)."),
-    (r"\b(?:join(?:ed|ing|s)?|rejoin\w*|teamed up|allied|alliance)\b",
+    (r"\b(?:join(?:ed|ing|s)?|rejoin\w*|teamed up|allied|alliance|united with)\b",
      "'joined the team/side', 'teamed up', 'allied' -> no met. Joining specific people where they are "
      "('joined Namor at Utopia', 'was joined by an arriving X') -> met."),
     (r"\b(?:found|discovered|reunited|visited|approached|confronted|greeted|recruited|summoned|gathered|"
@@ -85,6 +85,10 @@ HINTS = [
      "'Agent 33' / 'Subject 0' is the whole name: keep the word with the number (never just '33')."),
     (r"(?i)\b\d+(?:st|nd|rd|th) [Cc]entury\b",
      "A century/era is a time, not a place: 'traveled to Earth-691's 31st Century' -> arrived Earth-691."),
+    (r"(?i)\b(?:restored to (?:his|her|their) (?:human|normal)|reverted to|changed back)\b",
+     "Going back to a form the character already had ('restored to human form') is NOT awakened."),
+    (r"(?i)\b(?:made (?:it|their way) out into|out into the streets)\b",
+     "'made it out into the streets of Hala' while already on Hala is no arrived row (only a new place reached)."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),
