@@ -87,7 +87,7 @@ roughly one error in five through.
 | A71 | training sparring between allies ("tasked with training Scott Lang ... he punched van Dyne") written as fought | no row (practice, not a conflict); fact: `trained`/`mentored` — a real punch inside the lesson still gets its `fought` event | table: fought NO playful/friendly contact | rare |
 | A72 | "turned on both A and B" where B was already his enemy written as betrayed B | betrayed only the ally (A) | table: betrayed | rare |
 | A73 | a battle/war/incident name as an arrived place ("joins the Battle of Wakanda, arriving with Groot and Rocket", b850) | no arrived (an event is not a place); arrived only when the named place itself is stated | table: arrived | rare |
-| A74 | "forced Mordo to retreat" / "repelled" / "drove X off" left out (b858) | defeated (the fight ended with X beaten, as A55 "stopped") | table: defeated | occasional |
+| A74 | "forced Mordo to retreat" / "repelled" / "drove X off" / "force Pilgrim to escape the scene" (b1002) left out (b858) | defeated (the fight ended with X beaten, as A55 "stopped"); plus X escaped the one who forced it | table: defeated | occasional |
 | A75 | "restrained the demon from attacking her" written only as fought (b869) | fought the attacker AND saved the one protected (an intercepted attack) | table: saved | rare |
 | A76 | "firing wildly, Bishop missed Cable, instead managing to hit Professor Xavier" written as fought Xavier (b925) | fought the intended target (an attack made); no row for the ally hit by accident | table: fought NO accidental | rare |
 | A77 | a numbered name with its word stripped as a rank ("Agent 33" -> "33", b912) | the whole name ("Agent 33") | step 6 | rare |
@@ -95,6 +95,7 @@ roughly one error in five through.
 | A79 | "they made it out into the streets of Hala" (escaping within Hala) written as arrived Hala (b955) | no arrived (not a new place reached) | table: arrived | rare |
 | A80 | "the Mole Man was restored to human form" written as awakened (b940) | no row (a form he already had) | table: awakened NO | rare |
 | A81 | "learning how to psychically defeat Ahab for good" written as defeated (b971) | no row (knowledge of how, not the act) | step 3 | rare |
+| A84 | "Faustus grabbed Peggy, threatening to break her spine if Cap came closer" written only as fought (b1003) | captured too (a hostage taken) | table: captured "hostage" | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",

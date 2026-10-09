@@ -76,7 +76,7 @@ HINTS = [
     (r"\b(?:Battle|Siege|War|Invasion|Incident) (?:of|at|in)\b",
      "A battle/war/incident name is an event, not a place: 'joins the Battle of Wakanda' -> no arrived row "
      "(arrived only at the named place itself)."),
-    (r"(?i)\b(?:retreat\w*|repel\w*|drove \w+ off|restrain\w* .{0,30}from attacking|prevented \w+ from)\b",
+    (r"(?i)\b(?:retreat\w*|repel\w*|drove \w+ off|forc\w* \w+ to (?:escape|flee)|restrain\w* .{0,30}from attacking|prevented \w+ from)\b",
      "'forced X to retreat' / 'repelled X' -> defeated X (the fight ended with X beaten). 'restrained X from "
      "attacking her' -> fought X AND saved her. 'prevented X from <doing>' (an encounter that stops X) -> met."),
     (r"(?i)\b(?:missed|instead managing to hit|accidentally (?:hit|shot|struck)|by mistake)\b",
@@ -93,6 +93,8 @@ HINTS = [
      "'learning how to defeat X' is knowledge, not the act -> no row unless the window says it was done."),
     (r"(?i)\b(?:destroyed \w+'s (?:first |old )?body|consciousness escaped)\b",
      "Destroying a body the character survives (Ultron's consciousness escapes) -> defeated, not killed."),
+    (r"(?i)\bgrabbed \w+(?: \w+)?, threatening\b",
+     "Grabbing someone and threatening to hurt them = taking a hostage -> captured (plus fought)."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),
