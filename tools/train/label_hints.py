@@ -76,6 +76,9 @@ HINTS = [
     (r"\b(?:Battle|Siege|War|Invasion|Incident) (?:of|at|in)\b",
      "A battle/war/incident name is an event, not a place: 'joins the Battle of Wakanda' -> no arrived row "
      "(arrived only at the named place itself)."),
+    (r"(?i)\b(?:retreat\w*|repel\w*|drove \w+ off|restrain\w* .{0,30}from attacking|prevented \w+ from)\b",
+     "'forced X to retreat' / 'repelled X' -> defeated X (the fight ended with X beaten). 'restrained X from "
+     "attacking her' -> fought X AND saved her. 'prevented X from <doing>' (an encounter that stops X) -> met."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),

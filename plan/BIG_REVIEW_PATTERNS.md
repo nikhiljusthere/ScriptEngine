@@ -87,6 +87,8 @@ roughly one error in five through.
 | A71 | training sparring between allies ("tasked with training Scott Lang ... he punched van Dyne") written as fought | no row (practice, not a conflict); fact: `trained`/`mentored` — a real punch inside the lesson still gets its `fought` event | table: fought NO playful/friendly contact | rare |
 | A72 | "turned on both A and B" where B was already his enemy written as betrayed B | betrayed only the ally (A) | table: betrayed | rare |
 | A73 | a battle/war/incident name as an arrived place ("joins the Battle of Wakanda, arriving with Groot and Rocket", b850) | no arrived (an event is not a place); arrived only when the named place itself is stated | table: arrived | rare |
+| A74 | "forced Mordo to retreat" / "repelled" / "drove X off" left out (b858) | defeated (the fight ended with X beaten, as A55 "stopped") | table: defeated | occasional |
+| A75 | "restrained the demon from attacking her" written only as fought (b869) | fought the attacker AND saved the one protected (an intercepted attack) | table: saved | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",

@@ -76,7 +76,7 @@ CUES = re.compile(r"\b(rescu\w*|saved?|saving|freed|free (?:him|her|them)|releas
                   r"betray\w*|turned (?:on|against)|met|meet\w*|found|visit\w*|recruit\w*|assembl\w*|gather\w*|greeted|"
                   r"arriv\w*|returned to|went to|traveled to|travelled to|brought (?:\w+ )?to|taken to|left the|"
                   r"woke|awak\w*|reviv\w*|resurrect\w*|reborn|brainwash\w*|manipulat\w*|possess\w*|sealed|banish\w*|"
-                  r"trapp\w*)\b", re.I)
+                  r"trapp\w*|retreat\w*|repel\w*|drove (?:\w+ )?off|prevent\w*|restrain\w*)\b", re.I)
 PLAIN = {"fought": r"attack|fought|fight|battl|clash|ambush|struck|punch|shot|stabb|wound",
          "defeated": r"defeat|knock|subdu|beat|overpower|incapacitat", "killed": r"kill|slew|slain|murder|assassinat",
          "captured": r"captur|kidnap|abduct|arrest|apprehend|prisoner|captive", "saved": r"sav|rescu|freed",
