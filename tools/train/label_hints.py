@@ -73,6 +73,9 @@ HINTS = [
      r"Harpies|Eternals|Deviants|several|some of|the rest of|a group of|the squad|troops|guards|agents)\b",
      "Never an end: species/races, crowds ('several X', 'the rest of the team', 'the squad'), indefinites "
      "('a guard', 'an assailant'), items, vehicles, organisations as places."),
+    (r"\b(?:Battle|Siege|War|Invasion|Incident) (?:of|at|in)\b",
+     "A battle/war/incident name is an event, not a place: 'joins the Battle of Wakanda' -> no arrived row "
+     "(arrived only at the named place itself)."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),

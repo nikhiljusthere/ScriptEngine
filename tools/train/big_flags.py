@@ -38,6 +38,7 @@ SPECIES = re.compile(r"^(Kree|Skrulls?|Shi'ar|Inhumans|Chitauri|Brood|Builders|F
                      r"Quantumnauts|Wolf-Men|Elder Gods|Harpies|Frost Giants|Dark Elves|Chitauri|Kree|Skrull)$")
 VEHICLE = re.compile(r"\b(Blackbird|Quinjet|Helicarrier|Zephyr|Bus|Milano|Benatar|Starjammer|Stratojet|ship|jet|"
                      r"plane|car|truck|submarine|Ark)\b")
+EVENT_NAME = re.compile(r"\b(Battle|War|Siege|Invasion|Incident|Ambush|Showdown|Skirmish|Duel)\b")
 RANK = re.compile(r"^(?:Dr\.|Doctor|Brigadier General|Brigadier|General|Agent|Officer|Senator|Prelate|Empress|Emperor|Mayor|Detective|Sergeant|"
                   r"Colonel|Major|Lieutenant|Commander|Captain|Warlord|Professor|Chancellor|Director)\s"
                   r"(?!America\b|Marvel\b|Britain\b|Universe\b|Doom\b|Strange\b|Druid\b|Octopus\b|X\b|Xavier\b)")
@@ -182,6 +183,8 @@ def check(ev, text):
             flags.append(f"{tag}: the sender only ordered the attack -> the ones sent are the doers (A64)")
         if v in ("arrived", "departed") and o and VEHICLE.search(o):
             flags.append(f"{tag}: '{o}' is a vehicle, not a place (A24)")
+        if v in ("arrived", "departed") and o and EVENT_NAME.search(o):
+            flags.append(f"{tag}: '{o}' names an event/battle, not a place (A73)")
         if v in ("arrived", "departed") and o and (o[:1].islower() or "'s " in o):
             flags.append(f"{tag}: description place '{o}'")
         if v in PLAIN and re.search(PLAIN[v], q, re.I) and not any(f.startswith(tag) for f in flags):
