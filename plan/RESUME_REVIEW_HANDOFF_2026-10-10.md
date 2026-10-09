@@ -203,3 +203,17 @@ changed windows. Re-measure on a second set before relying on that.
 Subagents need no GPU, so this does not conflict with the Qwen run. **Launch all three subagents at
 once** (owner, 2026-10-10). Each one starts cold and never sees the others' output, so running them in
 parallel does not affect the comparison.
+
+## 9. State at pause (2026-10-10 ~03:50, owner: "stop for now, keep 35B working, start again at 7:40")
+
+- Owner 2026-10-10: the fact layer is reviewed TOGETHER with the event layer (one pass per window).
+  The v2 run (events + facts + tags) is THE labeller; v1 labeller stopped.
+- Labeller: `labels_v2.jsonl` resume chain (step 6 b807-b5405 gaps, then batch C 8,595 ids) launched by
+  `$SCRATCH/label_v2.sh` (id lists rebuilt in the scratchpad), PID 25655 at pause. 1,070 NUL bytes at the
+  file end (10-08 kill) were stripped first; backup `labels_v2.jsonl.bak-nul-2026-10-10`.
+- Review tool: `tools/train/big_review_v2.py` (view/fix/mark; deterministic fact normaliser; writes
+  `big_audit_v2.jsonl`; `mark` records accepted windows too). Cursors: `review_cursor_v2_backfill.txt`
+  = 260 (facts backfill over b1-b1186, events frozen = Claude's v1 review; `BV2_CURSOR=backfill`),
+  `review_cursor_v2.txt` = 1161 (forward one-pass review; b1162+ waits for v2 rows, view stops at gaps).
+- Resume: backfill from b261 (b261-b280 were read but not submitted), then continue forward review.
+- Fact-gate fixes this session: named teams with "of the", Beast, "President of", Lady Deathstrike/Mastermind.
