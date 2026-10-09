@@ -30,9 +30,8 @@ HINTS = [
      r"now named|real name|whose real name|alias|also known as|aka)\b",
      "Identity reveal or codename + real name: use the one real/revealed name in EVERY row (no codename rows)."),
     (r"\b(?:join(?:ed|ing|s)?|rejoin\w*|teamed up|allied|alliance)\b",
-     "'joined the team/side', 'teamed up', 'allied' -> no met event; it IS a fact: joined / allied_with. "
-     "Joining specific people where they are ('joined Namor at Utopia', 'was joined by an arriving X') "
-     "-> met."),
+     "'joined the team/side', 'teamed up', 'allied' -> no met. Joining specific people where they are "
+     "('joined Namor at Utopia', 'was joined by an arriving X') -> met."),
     (r"\b(?:found|discovered|reunited|visited|approached|confronted|greeted|recruited|summoned|gathered|"
      r"assembled|arriv\w+|burst into|walked in|appeared)\b",
      "Meetings are the commonest miss: an arrival/finding/visit/reunion/recruitment/confrontation where people "
@@ -45,12 +44,11 @@ HINTS = [
      "done for his sake."),
     (r"\b(?:seemingly|apparently|presumably|possibly|nearly|almost|tried to|attempted to|in order to|so that|"
      r"intending|planned|decided to|wished to|to save|to rescue|to stop|to kill|to capture|to meet|in exchange for)\b",
-     "Hedges/plans/attempts: 'seemingly killed' -> defeated; a plan, purpose, deal or attempt never carried out "
-     "-> no EVENT row, but it is a fact: planned/claimed/attempted with asserted_by."),
+     "Hedges/plans/attempts: 'seemingly killed' -> defeated; plans, purposes, deals and attempts never made -> "
+     "no row, unless the next clause says it happened ('to save him ... saving him')."),
     (r"\b(?:was|were|been) (?:freed|rescued|released|defeated|killed|captured|arrested|tied|chained|imprisoned|"
      r"jailed|taken|knocked out)\b(?! by)",
-     "A passive with no 'by X' names no doer -> no event row for that act (never supply the doer from "
-     "context); cover the sentence with a no_doer tag row."),
+     "A passive with no 'by X' names no doer -> no row for that act (never supply the doer from context)."),
     (r"\b(?:trapped|imprisoned in|banish\w*|sealed|portal|pocket (?:universe|dimension)|Limbo|Dark Dimension|"
      r"Mirror Dimension|Quantum Realm|Negative Zone|Void|other dimension)\b",
      "Trapped in a dimension/other world, banished, forced through a portal -> sealed (not captured)."),
