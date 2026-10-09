@@ -185,6 +185,13 @@ def check(ev, text):
             flags.append(f"{tag}: '{o}' is a vehicle, not a place (A24)")
         if v in ("arrived", "departed") and o and EVENT_NAME.search(o):
             flags.append(f"{tag}: '{o}' names an event/battle, not a place (A73)")
+        if v in ("arrived", "departed") and o and re.search(r"\b(?:[Cc]entury|[Ee]ra|[Aa]ge|[Yy]ear|\d{3,4}s?)\b", o):
+            flags.append(f"{tag}: '{o}' is a time, not a place -> the proper place only (A78)")
+        for end in (s, o):
+            if end and re.fullmatch(r"\d+", end):
+                flags.append(f"{tag}: bare number end '{end}' -> rank stripped from a numbered name ('Agent 33')? (A77)")
+        if v == "fought" and re.search(r"\b(?:missed|instead|accidental\w*|by mistake|friendly fire)\b", q):
+            flags.append(f"{tag}: miss/accident -> the intended target is the fought row; an ally hit by accident is none (A76)")
         if v in ("arrived", "departed") and o and (o[:1].islower() or "'s " in o):
             flags.append(f"{tag}: description place '{o}'")
         if v in PLAIN and re.search(PLAIN[v], q, re.I) and not any(f.startswith(tag) for f in flags):

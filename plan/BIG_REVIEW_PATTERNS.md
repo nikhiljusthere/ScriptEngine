@@ -89,6 +89,9 @@ roughly one error in five through.
 | A73 | a battle/war/incident name as an arrived place ("joins the Battle of Wakanda, arriving with Groot and Rocket", b850) | no arrived (an event is not a place); arrived only when the named place itself is stated | table: arrived | rare |
 | A74 | "forced Mordo to retreat" / "repelled" / "drove X off" left out (b858) | defeated (the fight ended with X beaten, as A55 "stopped") | table: defeated | occasional |
 | A75 | "restrained the demon from attacking her" written only as fought (b869) | fought the attacker AND saved the one protected (an intercepted attack) | table: saved | rare |
+| A76 | "firing wildly, Bishop missed Cable, instead managing to hit Professor Xavier" written as fought Xavier (b925) | fought the intended target (an attack made); no row for the ally hit by accident | table: fought NO accidental | rare |
+| A77 | a numbered name with its word stripped as a rank ("Agent 33" -> "33", b912) | the whole name ("Agent 33") | step 6 | rare |
+| A78 | a time as a place ("Earth-691's 31st Century", b932) | arrived the proper place only ("Earth-691") | table: arrived | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",

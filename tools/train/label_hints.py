@@ -79,6 +79,12 @@ HINTS = [
     (r"(?i)\b(?:retreat\w*|repel\w*|drove \w+ off|restrain\w* .{0,30}from attacking|prevented \w+ from)\b",
      "'forced X to retreat' / 'repelled X' -> defeated X (the fight ended with X beaten). 'restrained X from "
      "attacking her' -> fought X AND saved her. 'prevented X from <doing>' (an encounter that stops X) -> met."),
+    (r"(?i)\b(?:missed|instead managing to hit|accidentally (?:hit|shot|struck)|by mistake)\b",
+     "Shooting/attacking X and missing -> fought X (an attack made). An ally hit by accident instead -> no row."),
+    (r"\b(?:Agent|Subject|Unit|Experiment) \d+\b",
+     "'Agent 33' / 'Subject 0' is the whole name: keep the word with the number (never just '33')."),
+    (r"(?i)\b\d+(?:st|nd|rd|th) [Cc]entury\b",
+     "A century/era is a time, not a place: 'traveled to Earth-691's 31st Century' -> arrived Earth-691."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),
