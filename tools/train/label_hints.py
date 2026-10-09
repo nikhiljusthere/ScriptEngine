@@ -101,6 +101,8 @@ HINTS = [
     (r"(?i)\b(?:into betray\w*|restor\w* (?:a|the) \w+ (?:robot|android|Sentinel|machine))\b",
      "'X manipulated Y into betraying Z' -> Y betrayed Z (not X). 'scientists restored the robot' -> the robot "
      "awakened (not the scientists)."),
+    (r"(?i)\bfought (?:with|alongside|beside)\b",
+     "'X fought with/alongside Y' against a common enemy -> X and Y each fought the enemy; no row between X and Y."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),

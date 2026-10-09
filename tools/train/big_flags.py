@@ -191,6 +191,8 @@ def check(ev, text):
             flags.append(f"{tag}: knocked aside while the fight goes on -> fought (A83)")
         if v == "betrayed" and re.search(r"(?i)into betray", q):
             flags.append(f"{tag}: 'X manipulated Y into betraying' -> Y is the betrayer, not X (A85)")
+        if v == "fought" and o and re.search(rf"fought (?:alongside|beside|with) (?:the )?{re.escape(o)}", q):
+            flags.append(f"{tag}: 'fought with/alongside {o}' = allies -> rows against the common enemy (A87)")
         if v == "awakened" and re.search(r"(?i)\b(?:restor|reactivat|rebuil|repair)\w*", q) and s and s not in q.split(" restor")[-1]:
             flags.append(f"{tag}: the restored/reactivated one is the awakened subject, not the restorer (A86)")
         if v == "defeated" and o and re.search(rf"{re.escape(o)} (?:ran away|fled|escaped|got away)", text):

@@ -100,6 +100,7 @@ roughly one error in five through.
 | A84 | "defeated all his opponents. The Chameleon ran away" written as defeated the Chameleon (b1021) | the one who ran: escaped, not defeated | table: escaped | rare |
 | A85 | "Gideon manipulated her into betraying her friends" written as Gideon betrayed Karma (b1042) | the one manipulated is the betrayer (object = the friends; none if unnamed); the manipulator gets no betrayed | table: betrayed | rare |
 | A86 | "scientists ... restore a Sentinel robot" written as the scientists awakened (b1042) | the restored machine is the awakened one; the restorers get no awakened | table: awakened (machine reactivated) | rare |
+| A87 | "Stick fought with the Defenders as Elektra easily bested them all" written as Stick fought the Defenders (b1131) | "fought with X" next to a common enemy = alongside X: rows against the enemy, none between allies | table: fought | occasional |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",
@@ -136,6 +137,7 @@ shared)` with bK's final rows: reuse them for the shared part and read only the 
 - "Zemo" is classed as an episode page: every Zemo row is refused (both ends).
 - "Donovan" is classed as a music page: refused as an end (b880).
 - a place name containing "and" ("El Monte Junk and Salvage") is split by the gate like a comma place (refused as `kept n+1/n`); keep the first named part and drop the fragment (b1080).
+- "the Other" (Chthon's demon) is refused as a class word ("Other"); no legal row (b1133).
 - item pages are refused as ends even when they act like characters: "the Destroyer" (armor), Cerebro (AI).
 - subject == object is refused (R16).
 - a place with a comma ("Washington, D.C.") is split by the gate into two rows (refused as `kept n+1/n`);
