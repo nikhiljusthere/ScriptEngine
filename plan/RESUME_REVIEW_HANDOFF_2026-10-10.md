@@ -151,7 +151,7 @@ windows to the same standard. A fresh **Opus** subagent runs as the control, bec
 reviewers will not agree 100% either; that agreement level is the ceiling a cheaper model is measured
 against. Run this test after the §3 checks, before resuming the main review.
 
-**Mechanics.** One subagent per model (Agent tool, `model: haiku | sonnet | opus`). Every candidate
+**Mechanics.** One subagent per model, using the latest of each: Haiku 4.5, Sonnet 5.5 and Opus 5.5 (Agent tool `model: haiku | sonnet | opus`). All three run at **`effort: medium`** (owner, 2026-10-10), so the comparison measures the model, not the effort level; record the effort in the report. Every candidate
 gets identical input and the identical prompt:
 - the rendered view file;
 - `plan/EXTRACTION_PROCEDURE.md` (plus V2 if adopted);
