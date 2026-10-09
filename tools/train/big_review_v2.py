@@ -85,7 +85,8 @@ EVENT_STEMS = ("captur", "escap", "saved", "save", "rescu", "freed", "kill", "sl
                "defeat", "fought", "fight", "battl", "met", "meet", "arriv", "depart", "sealed", "betray",
                "awak", "reviv", "imprison", "arrest", "kidnap")
 STOP = {"was", "were", "had", "has", "have", "been", "being", "the", "and", "with", "from", "for",
-        "his", "her", "their", "its", "into", "that", "this", "who", "which"}
+        "his", "her", "their", "its", "into", "that", "this", "who", "which", "as", "they", "them",
+        "would", "could", "should", "there", "it's", "not", "a", "an", "to", "of", "on", "in", "be"}
 TWINS = {"helped": "saved", "assisted": "saved", "protected": "saved", "attacked": "fought",
          "kidnapped": "captured", "dies": "killed"}
 
@@ -122,6 +123,10 @@ def normalize_facts(facts, events, text):
                         break
                 if hit:
                     f["object"] = hit
+            # a literal multi-word phrase ("asked him to turn around") -> its first content word (B.3)
+            ws = [w for w in re.findall(r"[A-Za-z'-]+", f["object"]) if w.lower() not in STOP]
+            if len(f["object"].split()) >= 2 and ws and ws[0].lower() in low:
+                f["object"] = ws[0]
             if any(f["object"].lower().startswith(s) for s in EVENT_STEMS):
                 continue
         tw = TWINS.get(rel)
