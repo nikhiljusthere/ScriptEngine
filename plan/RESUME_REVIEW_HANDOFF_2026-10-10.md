@@ -200,5 +200,6 @@ not the cursor).
 
 Partial fitness is still useful: e.g. Haiku as a pre-pass, with Opus checking only its flagged or
 changed windows. Re-measure on a second set before relying on that.
-Subagents need no GPU, so this does not conflict with the Qwen run. Run them one at a time anyway:
-each reviewer starts cold, and sequential runs keep the comparison clean.
+Subagents need no GPU, so this does not conflict with the Qwen run. **Launch all three subagents at
+once** (owner, 2026-10-10). Each one starts cold and never sees the others' output, so running them in
+parallel does not affect the comparison.
