@@ -123,6 +123,7 @@ shared)` with bK's final rows: reuse them for the shared part and read only the 
   "B met A" is refused with `dropped []` and `kept n-1/n`.
 - "Rachel" and "Jude" are classed as places: refused as objects (R22).
 - "Zemo" is classed as an episode page: every Zemo row is refused (both ends).
+- "Donovan" is classed as a music page: refused as an end (b880).
 - item pages are refused as ends even when they act like characters: "the Destroyer" (armor), Cerebro (AI).
 - subject == object is refused (R16).
 - a place with a comma ("Washington, D.C.") is split by the gate into two rows (refused as `kept n+1/n`);
