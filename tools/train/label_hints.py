@@ -157,6 +157,9 @@ HINTS = [
      "Check WHO does the verb of an infinitive or relative clause: 'X, who was trying to kill Y' makes X the "
      "attacker; 'at the behest of Z to monitor' is the worker's act, not Z's; whoever flees 'after losing the "
      "battle' is the OBJECT of defeated, never its subject."),
+    (r"(?i)\b(?:Ant-Man|Wasp|Hulk|her father|his father|her mother|his mother)\b",
+     "Use only names the passage gives: never turn a codename into a real name from outside knowledge "
+     "('Ant-Man' stays Ant-Man, not Scott Lang or Hank Pym); an unnamed parent stays unnamed."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),

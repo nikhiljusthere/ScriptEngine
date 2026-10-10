@@ -752,6 +752,7 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A109** — no `arrived` row until the passage says they got there
 - **A110** — other_verb
 - **A111** — destroy, it is Ward; "at the behest of Professor X to monitor" -> Professor X
+- **A112** — keep the name the window uses (Ant-Man, Wasp, Hulk); an unnamed relative stays a tag (A20)
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->
