@@ -178,7 +178,11 @@ def _end_ok(end, relation, is_object, tag, wiki=None):
         return f"rank prefix in '{e}': strip it (step 6)"
     if SPECIES.match(re.sub(r"(?i)^(?:the|a|an)\s+", "", e)):
         return f"species/race end '{e}' (A25/R11)"
-    if CROWD_WORDS.search(e):
+    m = CROWD_WORDS.search(e)
+    # a capitalised crowd word inside a capitalised name is part of the name ("Young Allies",
+    # "Avengers Academy Students"); "Hydra agents" / "the guards" stay crowds (fixed 2026-10-10)
+    if m and not (e[:1].isupper() and m.group(0)[:1].isupper() and m.group(0).lower() not in
+                  ("former", "active", "several", "some", "many", "various", "others")):
         return f"crowd/indefinite end '{e}' (R11)"
     want = NON_PERSON_OBJECT.get(relation)
     # an article/possessive in front of a PLACE, ITEM, ROLE or NAME is legal (B.8: "his apartment",
