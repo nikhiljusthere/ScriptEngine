@@ -106,7 +106,7 @@ def normalize_facts(facts, events, text):
     for f in facts:
         for k in ("subject", "object"):
             v = f.get(k)
-            parts = re.split(r",\s*(?:and\s+)?|\s+and\s+", v) if isinstance(v, str) and (" and " in v or ", " in v) else []
+            parts = re.split(r",\s*(?:and\s+)?|\s+and\s+", v) if isinstance(v, str) and " and " in v else []
             if len(parts) > 1 and all(p[:1].isupper() for p in parts if p) and all(parts):
                 split += [{**f, k: p} for p in parts]
                 break
