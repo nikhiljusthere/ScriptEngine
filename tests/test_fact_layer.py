@@ -267,3 +267,20 @@ def test_uncovered_worklist_prints_the_sentence_text():
     text = "Van Dyne had been tasked with training Scott Lang. Nobody ever mentioned the suit."
     rep = fc.report(text, [], [F()], [])
     assert rep["uncovered"] and "Nobody ever mentioned" in rep["uncovered"][0]
+
+
+def test_review_hint_flags_a97_a99():
+    w = ("Koenig gave him a S.H.I.E.L.D. Lanyard. Octopus assumed the alias of 'Elliot Tolliver'. "
+         "Black Bolt's son Ahura was there. Tony decided to accept an offer Star-Lord made to him.")
+    rows = [F("Koenig", "gave", "S.H.I.E.L.D. Lanyard", quote="Koenig gave him a S.H.I.E.L.D. Lanyard"),
+            F("Otto", "alias_of", "Elliot Tolliver", quote="Octopus assumed the alias of 'Elliot Tolliver'"),
+            F("Ahura", "child_of", "Black Bolt", quote="Black Bolt's son Ahura"),
+            F("Black Bolt", "parent_of", "Ahura", quote="Black Bolt's son Ahura"),
+            F("Tony", "other_verb", "accept", quote="Tony decided to accept an offer Star-Lord made to him",
+              modality="planned", asserted_by="Tony")]
+    flags, _ = fg.check(rows, w)
+    text = "\n".join(flags)
+    assert "(A97)" in text and "(A99)" in text
+    assert sum("(A99)" in f for f in flags) == 2
+    good, _ = fg.check([F("Koenig", "gave", "Ward", quote="Koenig gave him a S.H.I.E.L.D. Lanyard")], w)
+    assert not any("(A97)" in f for f in good)

@@ -736,6 +736,11 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A93** — the doer of the passive "by X" is the subject
 - **A94** — no fact row; tag the sentence `crowd_end`
 - **A95** — resolve by meaning (who speaks to whom)
+- **A96** — `actual`: only an act the passage says did not (yet) happen is planned/attempted
+- **A97** — `gave` takes the recipient ("Koenig gave Ward"); `handed` takes what was handed (the person/item), never the receiving body
+- **A98** — no fact; tag `production` (release-date lists `list_header`)
+- **A99** — one row; `alias_of` subject = the alias/codename, object = the real person
+- **A100** — one name per person in every row (A4/A9), plus one `alias_of` row when the window states the alias
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->

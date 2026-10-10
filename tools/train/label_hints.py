@@ -115,6 +115,18 @@ HINTS = [
      "row that repeats an event (helped next to saved, contacted next to met)."),
     (r"(?i)\b(?:was|were) \w+ by\b",
      "Facts too: in \"X was trained/recruited/contacted by Y\", Y is the subject (do not reverse)."),
+    (r"(?i)\b(?:decided to|proposed|made the \w+ decision|staying to)\b",
+     "Facts: a decision/proposal that was then carried out is `actual`; planned/attempted only for an act "
+     "the passage says did not (yet) happen."),
+    (r"(?i)\b(?:gave|given|handed|provided)\b",
+     "Facts: `gave` takes the RECIPIENT as object ('Koenig gave Ward'), never the item; 'handed him to the "
+     "CIA' -> handed takes him."),
+    (r"(?i)\b(?:alias|calling (?:him|her)self|under the name|a\.k\.a|son|daughter|father|mother)\b",
+     "Facts: `alias_of` subject = the alias/codename, object = the real person; one kinship = ONE row "
+     "(not child_of plus parent_of); one name per person in every row."),
+    (r"(?i)\b(?:added to|designed|voiced|released|first appearance)\b",
+     "Real-world/production notes (game additions, creators, voice actors, release dates) -> a `production` "
+     "tag, never a story fact."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),

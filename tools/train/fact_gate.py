@@ -278,8 +278,23 @@ def check(rows, window, wiki=None, tags=None):
                    "betrayed", "sealed", "arrived", "departed", "awakened"):
             flags.append(f"{tag}: '{rel}' is an EVENT verb; it belongs in `events`, not `facts` "
                          f"(use a fact relation for what the event cannot say)")
+        # review classes A97/A99 (plan/BIG_REVIEW_PATTERNS.md, b501-b700): repair hints only,
+        # the keep-gate (validate/_end_ok) never drops a row for them
+        if rel == "gave" and isinstance(o, str) and o and (
+                o[:1].islower() or re.search(r"\b(?:a|an|the|his|her|their|its)\s+" + re.escape(o.split()[0]), q)):
+            flags.append(f"{tag}: `gave` takes the RECIPIENT as object ('Koenig gave Ward', not the item) (A97)")
+        if rel in ("alias_of", "real_name_of") and isinstance(o, str) and o and re.search(
+                r"(?:alias(?: of)?|calling (?:him|her|them)sel(?:f|ves)|under the name|known as|a\.k\.a\.?|"
+                r"assumed the (?:name|alias) of)\s+(?:the\s+)?\W?" + re.escape(o), q):
+            flags.append(f"{tag}: the quote names '{o}' as the alias; `alias_of` subject = the alias, "
+                         f"object = the real person (A99)")
         if q and rel and rel != "other_verb" and _quote_states(q, rel):
             ok.append(tag)
+    # A99: one kinship, two rows (child_of + the inverse parent_of)
+    kin = {(r.get("subject"), r.get("relation"), r.get("object")) for r in rows or [] if isinstance(r, dict)}
+    for a, rel, b in kin:
+        if rel == "child_of" and (b, "parent_of", a) in kin:
+            flags.append(f"{a}|child_of|{b}: the same kinship is also written as {b}|parent_of|{a}; keep one row (A99)")
     # ---- tag rows ----
     seen_tags = set()
     for i, t in enumerate(tags or [], 1):
