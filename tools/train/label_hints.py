@@ -160,6 +160,12 @@ HINTS = [
     (r"(?i)\b(?:Ant-Man|Wasp|Hulk|her father|his father|her mother|his mother)\b",
      "Use only names the passage gives: never turn a codename into a real name from outside knowledge "
      "('Ant-Man' stays Ant-Man, not Scott Lang or Hank Pym); an unnamed parent stays unnamed."),
+    (r"(?i)\b(?:has since claimed|claimed that (?:he|she|they)|allegedly|recounted|according to (?:him|her))\b",
+     "An episode only known from a character's claim or recounting is not an event: write it as a fact with "
+     "claimed modality, reported certainty and the claimant as asserted_by."),
+    (r"(?i)\b(?:enough to (?:overpower|defeat|lift|crush)|capable of (?:trading blows|defeating|lifting))\b",
+     "Ability wording ('strong enough to overpower Thor') is a capability tag, not a defeated/fought event; "
+     "only a narrated occurrence is an event."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),
