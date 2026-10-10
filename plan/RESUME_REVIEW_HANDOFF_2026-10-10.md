@@ -217,3 +217,15 @@ parallel does not affect the comparison.
   `review_cursor_v2.txt` = 1161 (forward one-pass review; b1162+ waits for v2 rows, view stops at gaps).
 - Resume: backfill from b261 (b261-b280 were read but not submitted), then continue forward review.
 - Fact-gate fixes this session: named teams with "of the", Beast, "President of", Lady Deathstrike/Mastermind.
+
+## 10. Progress after resume (2026-10-10 07:41 - 08:40)
+
+- Facts backfill DONE b261-b1161 (`review_cursor_v2_backfill.txt` = 1161). b1162+ have no Claude v1 event
+  review, so they belong to the forward one-pass review (events + facts + tags), not the backfill.
+- Forward review resumed at b1162 (`review_cursor_v2.txt` advances with `mark`); v2 rows exist for every
+  b <= 5405, then batch C as the labeller writes it.
+- Edit blocks MUST start with `keep` (or keepe/keepf): a block without one replaced the base rows for
+  b501-b540; `fix` now refuses such blocks. The 29 bad records were withdrawn by appended
+  `{"id", "void": true}` lines (`audit2()` pops them; the file stays append-only) and resubmitted.
+- New catalog classes A96-A102 (fact layer), fact_gate repair hints A97/A99/A101, She-Hulk pronoun fix.
+- Labeller restarted twice for new hints/SECTION F (current chain PID 53514 / worker 53516).
