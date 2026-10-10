@@ -741,6 +741,8 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A98** — no fact; tag `production` (release-date lists `list_header`)
 - **A99** — one row; `alias_of` subject = the alias/codename, object = the real person
 - **A100** — one name per person in every row (A4/A9), plus one `alias_of` row when the window states the alias
+- **A101** — a fact row with the passage's own verb (`other_verb watches`); tags only when no nameable doer exists
+- **A102** — the event row only (A89)
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->

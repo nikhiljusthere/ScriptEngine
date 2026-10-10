@@ -114,6 +114,8 @@ roughly one error in five through.
 | A98 | a facts row for a production/game/real-world note ("Captain America was added to Fortnite", "John Byrne designed a new costume", release dates per country) (b651, b678, b636) | no fact; tag `production` (release-date lists `list_header`) | B.7 | occasional (fact layer) |
 | A99 | both directions of one kinship as two rows (`Ahura child_of Black Bolt` + `Black Bolt parent_of Ahura`) or alias direction reversed (`Otto alias_of Elliot Tolliver`, `Cal'syee alias_of Deathbird`, `Sentry real_name_of Bob`) (b679, b563, b595, b557) | one row; `alias_of` subject = the alias/codename, object = the real person | B.2 | common (fact layer) |
 | A100 | an identity name kept beside the real name in facts (Dark Phoenix/Lightchilde/Darkchylde/Mysterio/"Ultron iteration"/"Professor X" next to Jean Grey/Illyana/Beck/Ultron/Xavier) (b521, b671, b639, b554, b560) | one name per person in every row (A4/A9), plus one `alias_of` row when the window states the alias | A4, A9 | common (fact layer) |
+| A101 | a narration line with a named doer tagged `no_relation`/`deictic`/`no_doer`/`dialogue` instead of written as a fact ("Masaryk watches the news report", "Johnny believed it was too good to be true", "Stane tells Stark he is being naive", "Walker deduced ...") (b821-b900, very frequent on the v2-labelled windows b807+) | a fact row with the passage's own verb (`other_verb watches`); tags only when no nameable doer exists | B.3, SECTION C | very common (v2 labeller) |
+| A102 | `left_group` twinned with a `betrayed`/`departed` event for the same defection ("Jade Dragon defected from China Force", "Venompool defecting") (b861, b726) | the event row only (A89) | B intro | common (fact layer) |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",
@@ -193,4 +195,5 @@ The owner asked to give the 35B the flagger and this catalog, not as a prompt du
 - "Guardians of the Galaxy" is refused as a crowd end (the crowd regex matches inside the name; b16).
 - "Beast" is refused as a species/race end (b17).
 FIXED 2026-10-10 in fact_gate.py (crowd 'of the' only after a quantity word; Beast removed from SPECIES; RANK skips 'X of ...'); 54 fact tests pass. b4/b16/b17 were submitted with the tag workaround before the fix.
+OPEN: "Agent Venom" (a codename) is stripped as a rank prefix and refused (b726); dropped.
 OPEN: "The Others" (a cult's proper name) is refused as a crowd end (R11 crowd word "others"; b573) — sentence tagged `no_relation` as a workaround.

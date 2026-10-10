@@ -284,3 +284,14 @@ def test_review_hint_flags_a97_a99():
     assert sum("(A99)" in f for f in flags) == 2
     good, _ = fg.check([F("Koenig", "gave", "Ward", quote="Koenig gave him a S.H.I.E.L.D. Lanyard")], w)
     assert not any("(A97)" in f for f in good)
+
+
+def test_a101_named_narration_tagged_is_flagged():
+    w = "Masaryk watches the news report on her friends' arrest. The authorities arrive and declare it a fire."
+    tags = [{"tag": "no_relation", "quote": "Masaryk watches the news report on her friends' arrest."},
+            {"tag": "crowd_end", "quote": "The authorities arrive and declare it a fire."}]
+    flags, _ = fg.check([], w, tags=tags)
+    assert sum("(A101)" in f for f in flags) == 1
+    ok = [{"tag": "no_relation", "quote": "The authorities arrive and declare it a fire."}]
+    flags, _ = fg.check([], w, tags=ok)
+    assert not any("(A101)" in f for f in flags)

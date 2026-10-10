@@ -115,6 +115,9 @@ HINTS = [
      "row that repeats an event (helped next to saved, contacted next to met)."),
     (r"(?i)\b(?:was|were) \w+ by\b",
      "Facts too: in \"X was trained/recruited/contacted by Y\", Y is the subject (do not reverse)."),
+    (r"\b[A-Z][a-z]+ (?:watches|says|tells|asks|explains|believed|felt|realized|deduced|noted|saw|looks|walks)\b",
+     "Tags are only for lines with NO nameable doer: 'Masaryk watches the news', 'Johnny believed ...', "
+     "'Stane tells Stark ...' are FACT rows (other_verb with the passage's verb), never no_relation/deictic/dialogue."),
     (r"(?i)\b(?:decided to|proposed|made the \w+ decision|staying to)\b",
      "Facts: a decision/proposal that was then carried out is `actual`; planned/attempted only for an act "
      "the passage says did not (yet) happen."),

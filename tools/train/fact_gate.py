@@ -207,6 +207,12 @@ def _end_ok(end, relation, is_object, tag, wiki=None):
     return None
 
 
+_STARTERS = {"The", "A", "An", "When", "After", "While", "As", "However", "Then", "But", "And", "Once",
+             "Before", "During", "Following", "This", "That", "These", "Those", "It", "They", "He", "She",
+             "His", "Her", "Their", "Its", "In", "On", "At", "With", "Without", "Despite", "Although",
+             "Meanwhile", "Later", "Eventually", "Soon", "Suddenly", "Unbeknownst", "Due", "Since", "If"}
+
+
 def check(rows, window, wiki=None, tags=None):
     """Return (flags, ok) for one window's fact rows + tag rows.
 
@@ -310,6 +316,12 @@ def check(rows, window, wiki=None, tags=None):
             flags.append(f"tag{i}: tag quote is not verbatim in the window")
         elif q and sents and not any(q in s for s in sents) and "\n" not in q:
             flags.append(f"tag{i}: tag quote crosses a sentence boundary")
+        # A101 (b807+ review): a narration line whose subject is a named person ("Masaryk watches the
+        # news", "Johnny believed ...") tagged no_relation/deictic/no_doer instead of written as a fact
+        m = re.match(r"(?:[A-Z][\w'.-]+ ){0,2}?([A-Z][\w'.-]+) (?:\w+(?:ed|es|s)|was|had|began)\b", q)
+        if tg in ("no_relation", "deictic", "no_doer") and m and m.group(0).split()[0] not in _STARTERS:
+            flags.append(f"tag{i}: '{q[:40]}' names its doer ({m.group(1)}): write it as a fact row with the "
+                         f"passage's verb, not a {tg} tag (A101)")
         seen_tags.add(tg)
         quotes.append(q)
     if tags and not seen_tags:
