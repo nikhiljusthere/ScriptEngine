@@ -750,6 +750,7 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A107** — no event or fact for the person; the impostor gets the row under its own name or a `no_doer` tag
 - **A108** — `ordered` takes the PERSON told to act; otherwise `other_verb` with the passage's verb ("authorized", "demanded")
 - **A109** — no `arrived` row until the passage says they got there
+- **A110** — other_verb
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->

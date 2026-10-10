@@ -149,6 +149,10 @@ HINTS = [
      "burn the village'); otherwise other_verb with the passage's verb."),
     (r"(?i)\b(?:on (?:his|her|their) way|flew to|headed (?:for|to)|heading (?:for|to))\b",
      "Heading toward a place is not `arrived`; write arrived only when the passage says they got there."),
+    (r"(?i)\b(?:was|were|been|being) (?:\w+ly )?(?:hurled|reprogrammed|resurrected|cancelled|brought down|blocked|restored|calmed)\b",
+     "A passive with no 'by X' has no doer: never make the PATIENT the subject ('Luke was hurled' is not "
+     "Luke|other_verb|hurled); write the doer from 'by X', else a no_doer tag. Things, forces and abstractions "
+     "(a quote, a hurricane, 'the incident', energies, circuitry) are not doers either."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),
