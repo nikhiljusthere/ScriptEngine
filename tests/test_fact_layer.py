@@ -295,3 +295,8 @@ def test_a101_named_narration_tagged_is_flagged():
     ok = [{"tag": "no_relation", "quote": "The authorities arrive and declare it a fire."}]
     flags, _ = fg.check([], w, tags=ok)
     assert not any("(A101)" in f for f in flags)
+
+
+def test_hyphenated_name_is_not_a_pronoun():
+    assert fg._end_ok("She-Hulk", "member_of", False, "t") is None
+    assert fg._end_ok("she", "member_of", False, "t")

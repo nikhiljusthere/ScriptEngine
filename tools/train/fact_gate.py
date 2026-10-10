@@ -98,7 +98,8 @@ SPECIES = re.compile(
     r"Demons?|Gods?|Gods|Elves|Dwarves|Orcs?)$", re.I)
 PRONOUN = re.compile(
     r"^(?:he|she|it|they|him|her|them|his|hers|their|theirs|this|that|these|those|one|both|"
-    r"the other|the other two|the two|the pair|everyone|someone|somebody|anyone|nobody)\b", re.I)
+    r"the other|the other two|the two|the pair|everyone|someone|somebody|anyone|nobody)(?![\w'-])", re.I)
+# (?![\w'-]) not \b: "She-Hulk" / "It-the-Living-Colossus" are names, not pronouns (b1029)
 PLACE_LIKE = re.compile(r"\b(?:City|Town|Planet|Island|Mountain|Forest|Desert|River|Lake|Sea)\b")
 RANK = re.compile(
     r"^(?:Dr\.|Doctor|Brigadier General|Brigadier|General|Agent|Officer|Senator|Prelate|Empress|"
@@ -210,7 +211,8 @@ def _end_ok(end, relation, is_object, tag, wiki=None):
 _STARTERS = {"The", "A", "An", "When", "After", "While", "As", "However", "Then", "But", "And", "Once",
              "Before", "During", "Following", "This", "That", "These", "Those", "It", "They", "He", "She",
              "His", "Her", "Their", "Its", "In", "On", "At", "With", "Without", "Despite", "Although",
-             "Meanwhile", "Later", "Eventually", "Soon", "Suddenly", "Unbeknownst", "Due", "Since", "If"}
+             "Meanwhile", "Later", "Eventually", "Soon", "Suddenly", "Unbeknownst", "Due", "Since", "If",
+             "Few", "Just", "Now", "Once", "Some", "Many", "Most", "All", "Every", "Each", "No", "Not"}
 
 
 def check(rows, window, wiki=None, tags=None):
