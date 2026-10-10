@@ -116,6 +116,10 @@ roughly one error in five through.
 | A100 | an identity name kept beside the real name in facts (Dark Phoenix/Lightchilde/Darkchylde/Mysterio/"Ultron iteration"/"Professor X" next to Jean Grey/Illyana/Beck/Ultron/Xavier) (b521, b671, b639, b554, b560) | one name per person in every row (A4/A9), plus one `alias_of` row when the window states the alias | A4, A9 | common (fact layer) |
 | A101 | a narration line with a named doer tagged `no_relation`/`deictic`/`no_doer`/`dialogue` instead of written as a fact ("Masaryk watches the news report", "Johnny believed it was too good to be true", "Stane tells Stark he is being naive", "Walker deduced ...") (b821-b900, very frequent on the v2-labelled windows b807+) | a fact row with the passage's own verb (`other_verb watches`); tags only when no nameable doer exists | B.3, SECTION C | very common (v2 labeller) |
 | A102 | `left_group` twinned with a `betrayed`/`departed` event for the same defection ("Jade Dragon defected from China Force", "Venompool defecting") (b861, b726) | the event row only (A89) | B intro | common (fact layer) |
+| A103 | a passive with "thanks to"/"by" read with the wrong doer ("the Frightful Four was defeated thanks to the combined efforts of the Fantastic Four" -> Frightful Four defeated Fantastic Four; "broken out of Seagate by Jackson Norriss" -> Slattery escaped Norriss) (b1456, b1461) | the "thanks to/by" party is the subject: Fantastic Four defeated Frightful Four; Norriss saved Slattery | A93, R17 | occasional |
+| A104 | helping someone in a fight read as fighting them ("he helped the Korbinite and Skurge in a bar fight" -> Pip fought Beta Ray Bill) (b1518) | helped/allied_with only; a fought row needs a named opponent | R2 | occasional |
+| A105 | `wounded` with a body part or "injury" as object, or subject == object ("Cable wounded bicep/ear/hip bone", "Gamora wounded Gamora", "Torch wounded Hulk" for the Torch's own injuries) (b1488, b1479, b1545) | `victim|wounded|-` (or attacker->victim); one row for a list of old injuries | A90 | common (fact layer) |
+| A106 | waking from sleep/dream/machine labelled `awakened` ("Strange was awoken by Morbius' nightmare", "Fitz and Simmons awoke in the Cerebral Fusion Machine") (b1453, b1490) | no event; `awakened` is a return from death or stasis | R-verbs | occasional |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",
@@ -199,3 +203,6 @@ FIXED 2026-10-10: "She-Hulk" (b1029) and "He Who Remains" (b1286) were refused a
 OPEN: "King Arthur" is stripped as a rank prefix in facts (the event layer keeps it; b921).
 OPEN: "Agent Venom" (a codename) is stripped as a rank prefix and refused (b726); dropped.
 OPEN: "The Others" (a cult's proper name) is refused as a crowd end (R11 crowd word "others"; b573) — sentence tagged `no_relation` as a workaround.
+OPEN: the event gate splits "Washington, D.C." into two places (Washington / D.C.) so a merged `arrived` row is refused as "kept 4/3" (b1445); the split rows were left in place.
+OPEN: "MJ" is refused as too short to be a name (b1407); the row was dropped.
+OPEN: the A101 flag still fires on passives with a named patient and no doer ("Slattery was arrested", "Morbius was fooled by a demon", "Hill had her injuries treated") — those `no_doer` tags are correct.

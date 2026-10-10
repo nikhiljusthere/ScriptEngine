@@ -130,6 +130,17 @@ HINTS = [
     (r"(?i)\b(?:added to|designed|voiced|released|first appearance)\b",
      "Real-world/production notes (game additions, creators, voice actors, release dates) -> a `production` "
      "tag, never a story fact."),
+    (r"(?i)\b(?:defeated|stopped|broken out|freed) (?:thanks to|by)\b",
+     "Passive with 'thanks to/by Y': Y is the doer ('the Frightful Four was defeated thanks to the Fantastic "
+     "Four' -> Fantastic Four defeated Frightful Four; 'broken out of prison by Y' -> Y saved X, not X escaped Y)."),
+    (r"(?i)\bhelped \w+(?: and [\w ]+)? in a (?:bar )?fight\b",
+     "'helped X in a fight' -> X is an ally (helped/allied_with), never a fought row against X."),
+    (r"(?i)\b(?:injur|wound|severed|fractured|pierced)\w*\b",
+     "`wounded` takes the attacker->victim pair or (victim|wounded|-); a body part or the word 'injury' is never "
+     "an end, and subject never equals object."),
+    (r"(?i)\b(?:awoke|woke|was awoken)\b",
+     "Waking from sleep, a dream or a machine is not `awakened` (that is a return from death/stasis); "
+     "leave it out or use other_verb."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),

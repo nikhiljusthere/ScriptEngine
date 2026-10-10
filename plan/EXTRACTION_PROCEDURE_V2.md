@@ -743,6 +743,10 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A100** — one name per person in every row (A4/A9), plus one `alias_of` row when the window states the alias
 - **A101** — a fact row with the passage's own verb (`other_verb watches`); tags only when no nameable doer exists
 - **A102** — the event row only (A89)
+- **A103** — the "thanks to/by" party is the subject: Fantastic Four defeated Frightful Four; Norriss saved Slattery
+- **A104** — helped/allied_with only; a fought row needs a named opponent
+- **A105** — `victim
+- **A106** — no event; `awakened` is a return from death or stasis
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->
