@@ -755,6 +755,8 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A112** — keep the name the window uses (Ant-Man, Wasp, Hulk); an unnamed relative stays a tag (A20)
 - **A113** — no event; a fact with `claimed`, `reported` and the claimant as asserted_by
 - **A114** — no row (a `capability` tag); only a narrated occurrence ("Ultron punched Thor hard enough to make him bleed") is an event
+- **A115** — object `-` (`revealed
+- **A116** — fought
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->

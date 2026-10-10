@@ -166,6 +166,12 @@ HINTS = [
     (r"(?i)\b(?:enough to (?:overpower|defeat|lift|crush)|capable of (?:trading blows|defeating|lifting))\b",
      "Ability wording ('strong enough to overpower Thor') is a capability tag, not a defeated/fought event; "
      "only a narrated occurrence is an event."),
+    (r"(?i)\b(?:revealed (?:to \w+ )?that|found out that|learned that|realized that|explained that)\b",
+     "When someone reveals or learns THAT something is true, the object is '-' (revealed|-, learned|-); "
+     "never put the listener or a whole clause in the object slot."),
+    (r"(?i)\b(?:possessed by|possessing|under the control of|took control of)\b",
+     "Possession or mind control is not a fight: write other_verb 'possessed' with the possessor as subject; "
+     "use fought only for a stated attack."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),
