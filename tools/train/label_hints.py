@@ -153,6 +153,10 @@ HINTS = [
      "A passive with no 'by X' has no doer: never make the PATIENT the subject ('Luke was hurled' is not "
      "Luke|other_verb|hurled); write the doer from 'by X', else a no_doer tag. Things, forces and abstractions "
      "(a quote, a hurricane, 'the incident', energies, circuitry) are not doers either."),
+    (r"(?i)\b(?:who was trying to|at the behest of|forced to flee|after losing|so he would|in order to)\b",
+     "Check WHO does the verb of an infinitive or relative clause: 'X, who was trying to kill Y' makes X the "
+     "attacker; 'at the behest of Z to monitor' is the worker's act, not Z's; whoever flees 'after losing the "
+     "battle' is the OBJECT of defeated, never its subject."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),

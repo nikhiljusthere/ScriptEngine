@@ -751,6 +751,7 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A108** — `ordered` takes the PERSON told to act; otherwise `other_verb` with the passage's verb ("authorized", "demanded")
 - **A109** — no `arrived` row until the passage says they got there
 - **A110** — other_verb
+- **A111** — destroy, it is Ward; "at the behest of Professor X to monitor" -> Professor X
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->

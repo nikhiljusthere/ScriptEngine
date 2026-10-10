@@ -242,5 +242,5 @@ parallel does not affect the comparison.
   being written (labels_v2 about 9100 rows at 13:35).
 
 ## 12. Progress (2026-10-10, after the usage reset)
-- Forward review b2147–b2406 done (review_cursor_v2 = 2406); A110 added (a doer-less passive's patient or a non-agent thing written as the subject).
-- Labeller still running: chain PID 65648, worker PID 65650. The hint change takes effect at its next restart.
+- Forward review b2147–b2646 done (review_cursor_v2 = 2646); A110 (b2406: a doer-less passive's patient or a non-agent thing as the subject) and A111 (b2646: an infinitive/relative clause pinned on the wrong actor) added.
+- Labeller restarted after each hint change; current chain PID and worker PID are in the commit message.
