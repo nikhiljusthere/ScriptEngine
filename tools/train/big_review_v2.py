@@ -73,9 +73,23 @@ def order():
     return v1 + [r["id"] for r in jl(V2) if r["id"] not in seen and not seen.add(r["id"])]
 
 
+def audit2():
+    """Latest audit record per id. The file is append-only; a {"id", "void": true} line withdraws
+    that id's previous record (2026-10-10: b501-b540 fact edits were submitted without `keep` and
+    wiped the base rows; voiding restores the record before them instead of editing the file)."""
+    st = {}
+    for a in jl(AUDIT2):
+        if a.get("void"):
+            if st.get(a["id"]):
+                st[a["id"]].pop()
+        else:
+            st.setdefault(a["id"], []).append(a)
+    return {k: v[-1] for k, v in st.items() if v}
+
+
 def state():
     v2 = {r["id"]: r for r in jl(V2)}
-    a2 = {a["id"]: a for a in jl(AUDIT2)}
+    a2 = audit2()
     a1 = {a["id"]: a["after"] for a in br.jl(br.AUDIT)}
     v1 = {r["id"]: r for r in br.jl(br.LABELS)}
     return v2, a2, a1, v1, br.cursor()
@@ -223,11 +237,13 @@ def apply_edits(path):
             b = int(head)
             wid = ids[b - 1]
             ev, fa, tg, _, _ = base(wid, b, v2, a2, a1, v1, c1)
-            cur = {"b": b, "id": wid, "why": why.strip(), "base": (ev, fa, tg), "events": [], "facts": [], "tags": []}
+            cur = {"b": b, "id": wid, "why": why.strip(), "base": (ev, fa, tg), "events": [], "facts": [], "tags": [], "kept": False}
             out.append(cur)
             continue
         op, _, rest = line.strip().partition(" ")
         ev, fa, tg = cur["base"]
+        if op in ("keep", "keepe", "keepf"):
+            cur["kept"] = True
         if op in ("keep", "keepe"):
             cur["events"] = [dict(e) for e in ev]
         if op in ("keep", "keepf"):
@@ -303,6 +319,8 @@ def fix(path):
         fk, fd = label_single.fact_gate_keep(c["facts"], w, wiki)
         tk, td = label_single.tag_gate_keep(c["tags"], w)
         bad = []
+        if not c["kept"] and any(c["base"]):
+            bad.append("no keep/keepe/keepf: the block would replace every base row")
         if ed or len(ek) != len(c["events"]):
             bad.append(f"events {[(d.get('subject'), d.get('verb'), d.get('object'), d['why']) for d in ed]} kept {len(ek)}/{len(c['events'])}")
         if fd:
@@ -322,7 +340,7 @@ def main():
     a = sys.argv[1:]
     if not a or a[0] == "status":
         ids = order()
-        print(f"v2 windows {len(ids)} | reviewed (v2 cursor) {cursor2()} | corrected {len({x['id'] for x in jl(AUDIT2)})}")
+        print(f"v2 windows {len(ids)} | reviewed (v2 cursor) {cursor2()} | corrected {len(audit2())}")
     elif a[0] == "view":
         start = int(a[a.index("--from") + 1]) if "--from" in a else cursor2()
         view(int(a[1]), start)
