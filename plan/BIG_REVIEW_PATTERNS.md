@@ -221,3 +221,4 @@ OPEN: the edit-file parser splits on "|", so an infobox quote like "{{m|Champion
 OPEN: "Rachel" resolves to a place page ("place 'Rachel' as the object of killed", b2612); "Him" (the Enclave's creation) is refused as a bare pronoun (b2627); "King Arthur" is refused as a rank prefix in facts (b2470). The rows were dropped or rewritten with the stripped name.
 OPEN: races are refused as `created` objects too ("Celestials created Deviants/Eternals", b2419); the capability tags were kept.
 OPEN: "Karolina" alone resolves to a music page (b2789, b2785); rows with it were dropped.
+OPEN: "Jude" as an end resolves to a place (b3420: Amanda|killed|Jude refused); write `Jude|dies|-` instead.
