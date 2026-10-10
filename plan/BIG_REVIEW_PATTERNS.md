@@ -210,3 +210,5 @@ OPEN: the event gate splits "Washington, D.C." into two places (Washington / D.C
 OPEN: "MJ" is refused as too short to be a name (b1407); the row was dropped.
 OPEN: the A101 flag still fires on passives with a named patient and no doer ("Slattery was arrested", "Morbius was fooled by a demon", "Hill had her injuries treated") — those `no_doer` tags are correct.
 OPEN: "Lady Torch" is stripped as a rank prefix in facts (b1549); "Destroyer" alone resolves to an item page so "The Destroyer" keeps its article (b1761); "Curse", "Demon" and "Inhumans" are refused as class/race ends (b1632, b1805, b1668).
+OPEN: the event gate splits any place name with " and " or ", " ("Land Between Night and Day", b2001; "Washington, D.C.", b1445) and refuses the merged row as "kept 3/2".
+OPEN: "guard" as an other_verb object is refused as a crowd word (b2010); a different literal verb was used.

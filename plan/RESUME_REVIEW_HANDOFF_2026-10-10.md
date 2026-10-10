@@ -229,3 +229,14 @@ parallel does not affect the comparison.
   `{"id", "void": true}` lines (`audit2()` pops them; the file stays append-only) and resubmitted.
 - New catalog classes A96-A102 (fact layer), fact_gate repair hints A97/A99/A101, She-Hulk pronoun fix.
 - Labeller restarted twice for new hints/SECTION F (current chain PID 53514 / worker 53516).
+
+## 11. Progress (2026-10-10 12:30 - 13:35)
+
+- Forward one-pass review b1427-b2146 done (`review_cursor_v2.txt` = 2146), about 20 windows per edit file
+  (`g14`-`g49` in the session scratchpad); every block passed `fix` (refusals were re-sent without the
+  refused row, see §G of BIG_REVIEW_PATTERNS.md for the gate quirks met).
+- New catalog classes A103-A109 (passive "thanks to/by" doer, helping-in-a-fight, wounded body parts,
+  waking is no revival, implanted memories/fantasy/impostor, ordered takes a person, heading is no arrival),
+  hints added, SECTION F regenerated (commits 7e6839f3, 27b6d460).
+- Labeller restarted twice by PID for the new prompt (current chain PID 65648 / worker 65650); batch C is
+  being written (labels_v2 about 9100 rows at 13:35).
