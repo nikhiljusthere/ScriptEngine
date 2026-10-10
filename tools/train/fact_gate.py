@@ -169,7 +169,8 @@ def _end_ok(end, relation, is_object, tag, wiki=None):
     e = end.strip()
     if not e:
         return "empty end"
-    if PRONOUN.match(e):
+    if PRONOUN.match(e) and not (len(e.split()) > 1 and all(w[:1].isupper() for w in e.split())):
+        # a multi-word capitalised name that starts like a pronoun is a name ("He Who Remains", b1286)
         return f"bare pronoun '{e}': resolve it to a named entity (B.7)"
     if COMPOSITE.search(e):
         return f"composite end '{e}': one entity, one name (A59)"

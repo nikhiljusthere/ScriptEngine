@@ -195,7 +195,7 @@ The owner asked to give the 35B the flagger and this catalog, not as a prompt du
 - "Guardians of the Galaxy" is refused as a crowd end (the crowd regex matches inside the name; b16).
 - "Beast" is refused as a species/race end (b17).
 FIXED 2026-10-10 in fact_gate.py (crowd 'of the' only after a quantity word; Beast removed from SPECIES; RANK skips 'X of ...'); 54 fact tests pass. b4/b16/b17 were submitted with the tag workaround before the fix.
-FIXED 2026-10-10: "She-Hulk" was refused as the pronoun "she" (PRONOUN used \b; b1029).
+FIXED 2026-10-10: "She-Hulk" (b1029) and "He Who Remains" (b1286) were refused as pronouns.
 OPEN: "King Arthur" is stripped as a rank prefix in facts (the event layer keeps it; b921).
 OPEN: "Agent Venom" (a codename) is stripped as a rank prefix and refused (b726); dropped.
 OPEN: "The Others" (a cult's proper name) is refused as a crowd end (R11 crowd word "others"; b573) — sentence tagged `no_relation` as a workaround.

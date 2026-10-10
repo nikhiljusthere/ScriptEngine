@@ -300,3 +300,5 @@ def test_a101_named_narration_tagged_is_flagged():
 def test_hyphenated_name_is_not_a_pronoun():
     assert fg._end_ok("She-Hulk", "member_of", False, "t") is None
     assert fg._end_ok("she", "member_of", False, "t")
+    assert fg._end_ok("He Who Remains", "revealed", False, "t") is None
+    assert fg._end_ok("the other two", "met", False, "t")
