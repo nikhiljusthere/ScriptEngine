@@ -120,6 +120,9 @@ roughly one error in five through.
 | A104 | helping someone in a fight read as fighting them ("he helped the Korbinite and Skurge in a bar fight" -> Pip fought Beta Ray Bill) (b1518) | helped/allied_with only; a fought row needs a named opponent | R2 | occasional |
 | A105 | `wounded` with a body part or "injury" as object, or subject == object ("Cable wounded bicep/ear/hip bone", "Gamora wounded Gamora", "Torch wounded Hulk" for the Torch's own injuries) (b1488, b1479, b1545) | `victim|wounded|-` (or attacker->victim); one row for a list of old injuries | A90 | common (fact layer) |
 | A106 | waking from sleep/dream/machine labelled `awakened` ("Strange was awoken by Morbius' nightmare", "Fitz and Simmons awoke in the Cerebral Fusion Machine") (b1453, b1490) | no event; `awakened` is a return from death or stasis | R-verbs | occasional |
+| A107 | events from implanted memories, dreams, fantasy sequences or an impostor read as real ("implanted with new memories that they had received injuries during their escape" -> escaped/wounded; "defeat Deadpool in a fantasy fight"; the Skrull "Phoenix" dying as Jean Grey) (b1834, b1566, b1573) | no event or fact for the person; the impostor gets the row under its own name or a `no_doer` tag | R10 | occasional |
+| A108 | `ordered` with a noun/gerund/clause as object ("ordered imprisonment", "ordered burn the village down", "ordered passage to the Dark Gate", "Sitwell ordered Triskelion/Quinjet") (b1505, b1748, b1783) | `ordered` takes the PERSON told to act; otherwise `other_verb` with the passage's verb ("authorized", "demanded") | B.3 | common (fact layer) |
+| A109 | heading toward a place read as arrival ("On his way back to America", "As they flew to the Cybertek Manufacturing Facility") (b1728, b1758) | no `arrived` row until the passage says they got there | step 3 | occasional |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",
@@ -206,3 +209,4 @@ OPEN: "The Others" (a cult's proper name) is refused as a crowd end (R11 crowd w
 OPEN: the event gate splits "Washington, D.C." into two places (Washington / D.C.) so a merged `arrived` row is refused as "kept 4/3" (b1445); the split rows were left in place.
 OPEN: "MJ" is refused as too short to be a name (b1407); the row was dropped.
 OPEN: the A101 flag still fires on passives with a named patient and no doer ("Slattery was arrested", "Morbius was fooled by a demon", "Hill had her injuries treated") — those `no_doer` tags are correct.
+OPEN: "Lady Torch" is stripped as a rank prefix in facts (b1549); "Destroyer" alone resolves to an item page so "The Destroyer" keeps its article (b1761); "Curse", "Demon" and "Inhumans" are refused as class/race ends (b1632, b1805, b1668).

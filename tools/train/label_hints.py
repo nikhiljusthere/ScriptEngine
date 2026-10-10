@@ -141,6 +141,14 @@ HINTS = [
     (r"(?i)\b(?:awoke|woke|was awoken)\b",
      "Waking from sleep, a dream or a machine is not `awakened` (that is a return from death/stasis); "
      "leave it out or use other_verb."),
+    (r"(?i)\b(?:implanted|false memor|dream|fantasy|illusion|impostor|posing as)\w*\b",
+     "Implanted memories, dreams, illusions, fantasy fights and impostors are not real events for the person "
+     "named: no row for what only happened in them (the impostor gets the row under its own name)."),
+    (r"(?i)\b(?:ordered|had \w+ (?:sent|taken|kidnapped))\b",
+     "Facts: `ordered` takes the PERSON told to act, never a noun or clause ('ordered imprisonment', 'ordered "
+     "burn the village'); otherwise other_verb with the passage's verb."),
+    (r"(?i)\b(?:on (?:his|her|their) way|flew to|headed (?:for|to)|heading (?:for|to))\b",
+     "Heading toward a place is not `arrived`; write arrived only when the passage says they got there."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),
