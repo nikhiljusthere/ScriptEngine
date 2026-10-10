@@ -728,6 +728,14 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A85** — the one manipulated is the betrayer (object = the friends; none if unnamed); the manipulator gets no betrayed
 - **A86** — the restored machine is the awakened one; the restorers get no awakened
 - **A87** — "fought with X" next to a common enemy = alongside X: rows against the enemy, none between allies
+- **A88** — the passage's own verb word, literally in the quote ("hostilized", "told", "thanked")
+- **A89** — the event row only; no twin fact row
+- **A90** — one row per named part
+- **A91** — `contacted` only for calls, messages and remote links; in person = the met event (or no row)
+- **A92** — `allied_with` (joined is for a group/team/organisation)
+- **A93** — the doer of the passive "by X" is the subject
+- **A94** — no fact row; tag the sentence `crowd_end`
+- **A95** — resolve by meaning (who speaks to whom)
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->

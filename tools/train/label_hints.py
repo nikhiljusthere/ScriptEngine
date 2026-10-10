@@ -105,6 +105,16 @@ HINTS = [
      "awakened (not the scientists)."),
     (r"(?i)\bfought (?:with|alongside|beside)\b",
      "'X fought with/alongside Y' against a common enemy -> X and Y each fought the enemy; no row between X and Y."),
+    (r"(?i)\b(?:told|asked|said|spoke|informed|explained)\b",
+     "Facts: talking in person is NOT `contacted` (that is for calls/messages); `other_verb` takes the "
+     "passage's own verb word (\"told\", \"asked\"), never a phrase or a name."),
+    (r"(?i)\b(?:joined|teamed up with|sided with)\b",
+     "Facts: `joined` takes a team/group/organisation; joining a PERSON is `allied_with`."),
+    (r"\b[A-Z][a-z]+ and [A-Z][a-z]+\b",
+     "Facts: one row per named person, never a composite end (\"Fitz and Simmons\" -> two rows). No fact "
+     "row that repeats an event (helped next to saved, contacted next to met)."),
+    (r"(?i)\b(?:was|were) \w+ by\b",
+     "Facts too: in \"X was trained/recruited/contacted by Y\", Y is the subject (do not reverse)."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),
