@@ -118,8 +118,10 @@ def normalize_facts(facts, events, text):
         f = dict(f)
         for k in ("subject", "object", "asserted_by"):
             v = f.get(k)
-            if isinstance(v, str) and v.startswith("The ") and v[4:5].isupper():
+            if isinstance(v, str) and v[:4].lower() == "the " and v[4:5].isupper():
                 f[k] = v[4:]
+            if v in ("null", "None", "none"):
+                f[k] = None
         rel, o, q = f.get("relation"), f.get("object"), f.get("quote") or ""
         if rel == "other_verb" and o:
             low = q.lower()
