@@ -172,8 +172,8 @@ HINTS = [
     (r"(?i)\b(?:possessed by|possessing|under the control of|took control of)\b",
      "Possession or mind control is not a fight: write other_verb 'possessed' with the possessor as subject; "
      "use fought only for a stated attack."),
-    (r"(?i)\bbreak\w* (?:\w+ ){1,3}out of (?:jail|prison|his cell|her cell|the cell|custody)|\bbroke (?:\w+ ){1,3}out of\b",
-     "Breaking someone OUT of jail/prison is a saved event (a release from imprisonment), not a helped fact."),
+    (r"(?i)\bbreak\w* (?:\w+ ){1,3}out of (?:jail|prison|his cell|her cell|the cell|custody)|\bbroke (?:\w+ ){1,3}out of\b|\barranged (?:the|his|her) escape of\b",
+     "Breaking someone OUT of jail/prison, or arranging their escape, is a saved event (a release from imprisonment), not a helped fact."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),
