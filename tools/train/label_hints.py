@@ -54,9 +54,10 @@ HINTS = [
     (r"\b(?:trapped|imprisoned in|banish\w*|sealed|portal|pocket (?:universe|dimension)|Limbo|Dark Dimension|"
      r"Mirror Dimension|Quantum Realm|Negative Zone|Void|other dimension)\b",
      "Trapped in a dimension/other world, banished, forced through a portal -> sealed (not captured)."),
-    (r"\b(?:brainwash\w*|manipulat\w*|possess\w*|mind control\w*|hypnoti\w*|controlled|telepathically|"
+    (r"\b(?:brainwash\w*|manipulat\w*|possess\w*|mind control\w*|hypnoti\w*|controlled|"
      r"stripped .{0,20}powers?|tortur\w*)\b",
-     "A power used ON someone (mind control, possession, hypnosis, stripping powers, torture) -> fought."),
+     "A power used ON someone as an attack (stripping powers, torture, a blast) -> fought; mind control, "
+     "possession, brainwashing or hypnosis -> other_verb fact with the controller as subject (A116), not fought."),
     (r"\b(?:fled|escap\w*|broke (?:free|out)|got away|freed (?:him|her)self|retreat\w*)\b",
      "escaped: the object is the named captor/pursuer; the place only when no captor is named. "
      "Helping someone escape captivity -> saved."),
@@ -175,7 +176,7 @@ HINTS = [
      "use fought only for a stated attack."),
     (r"(?i)\bbreak\w* (?:\w+ ){1,3}out of (?:jail|prison|his cell|her cell|the cell|custody)|\bbroke (?:\w+ ){1,3}out of\b|\barranged (?:the|his|her) escape of\b",
      "Breaking someone OUT of jail/prison, or arranging their escape, is a saved event (a release from imprisonment), not a helped fact."),
-    (r"\b(?:killed|struck|wounded|defeated|hit|disintegrated|dusted) (?:down )?by [A-Z][\w'-]+(?: [A-Z][\w'-]+)*'s? [a-z]",
+    (r"\b(?:killed|struck|wounded|defeated|hit|disintegrated|dusted) (?:down )?by [A-Z][\w'-]+(?: [A-Z][\w'-]+)*'s? [A-Za-z]",
      "'killed by Thanos' Snap' / 'struck by Thor's lightning': a named character's power or attack -> that "
      "character is the doer (Thanos|killed|X); no_doer only for an item or weapon whose user is unnamed."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",

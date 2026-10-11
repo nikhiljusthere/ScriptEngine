@@ -15,7 +15,7 @@ roughly one error in five through.
 
 | # | pattern (how it shows) | correct | rule | freq b7-b131 |
 |---|---|---|---|---|
-| A1 | missed event in a window that has other rows: rescues, escapes, "left the team", "found X", recruits, betrayal nouns ("Magik's betrayal"), attacks in passing ("having hurt Broo"), power/mind use ("brainwashed", "possessed", "manipulated by") | add the row | step 8.1, R8, R18 | most windows (82/125 needed additions) |
+| A1 | missed event in a window that has other rows: rescues, escapes, "left the team", "found X", recruits, betrayal nouns ("Magik's betrayal"), attacks in passing ("having hurt Broo"), powers used on someone as an attack (mind control, possession and brainwashing are facts, not fought: A116, 2026-10-12) | add the row | step 8.1, R8, R18 | most windows (82/125 needed additions) |
 | A2 | group end ("Avengers", "X-Men", "the group") when the window ties named members to the event | one row per tied member, no group row | G.2, R19 | very common |
 | A3 | met from joining/allying ("joined the team", "joining X and Y", "teamed up", "allied", "rejoined", "united with the Runaways" b941) | no met; fact: `joined` (or `allied_with`), actual | R4, R12 | common |
 | A4 | two names for one person in the window (codename + real name, alias pairs, disguise reveals "revealed to be", "posing as", "was really", "unmasked") | the real / revealed name in every row | step 6, R10 | common |
