@@ -764,6 +764,7 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A121** — sealed
 - **A122** — the event (A32) or an `other_verb` fact with the doer; `capability` only for general ability wording ("can", "is able to", no specific occasion)
 - **A123** — one row with the most specific named place (R1); the gate splits a merged string, so the 35B splits it too
+- **A124** — no fought/defeated rows; an other_verb fact for the participants (fantasy and illusion fights are no events either)
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->

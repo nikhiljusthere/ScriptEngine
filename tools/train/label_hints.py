@@ -142,6 +142,8 @@ HINTS = [
     (r"(?i)\b(?:awoke|woke|was awoken)\b",
      "Waking from sleep, a dream or a machine is not `awakened` (that is a return from death/stasis); "
      "leave it out or use other_verb."),
+    (r"(?i)\b(?:staged|mock|sham)\s+(?:battle|fight|attack)|was staged\b",
+     "A staged or mock battle is not a real fight: no fought/defeated rows, only an other_verb fact (A124)."),
     (r"(?i)\b(?:implanted|false memor|dream|fantasy|illusion|impostor|posing as)\w*\b",
      "Implanted memories, dreams, illusions, fantasy fights and impostors are not real events for the person "
      "named: no row for what only happened in them (the impostor gets the row under its own name)."),

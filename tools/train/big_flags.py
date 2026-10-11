@@ -137,6 +137,9 @@ def check(ev, text):
                 and re.search(r"nightmare|dream|sleep|asleep|trance|bed|woke (?:her|him|them) up", text, re.I) \
                 and not re.search(r"reviv|resurrect|back to life|coma|unconscious|knocked out|came around|regain", text, re.I):
             flags.append(f"{tag}: waking from sleep/a dream/a trance is no awakened (A106)")
+        # a staged / mock battle written as a real fight (b4652, b4661)
+        if v in ("fought", "defeated") and re.search(r"\b(?:staged|mock|sham|fake|pretend\w*)\s+(?:battle|fight|attack|duel)|battle\s+(?:that\s+)?was\s+staged", text, re.I):
+            flags.append(f"{tag}: a staged/mock battle is no real fight -> other_verb fact (A124)")
         if v == "sealed" and o and re.search(r"\b(?:World|Dimension|Realm|Zone|Void|Limbo|Universe|Verse|Prison|Space)\b|verse$", o):
             flags.append(f"{tag}: sealed takes the person sealed away, not the place (A121)")
         if v == "captured" and TRAP.search(q):
