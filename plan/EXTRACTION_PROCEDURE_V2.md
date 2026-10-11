@@ -762,6 +762,7 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A119** — defeated
 - **A120** — the owner of the power is the doer (Thanos
 - **A121** — sealed
+- **A122** — the event (A32) or an `other_verb` fact with the doer; `capability` only for general ability wording ("can", "is able to", no specific occasion)
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->

@@ -182,6 +182,9 @@ HINTS = [
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),
+    (r"\b(?:was|were) able to (?:plan|execute|stay|land|lift|withstand|absorb|send|run|catapult|sprint|create|find)\b",
+     "'X was able to <do> <a specific named thing>' narrates an occurrence: write the event or an other_verb fact "
+     "with X as subject; the capability tag is only for general ability wording ('can', 'is able to')."),
 ]
 _COMPILED = [(re.compile(t), h) for t, h in HINTS]
 
