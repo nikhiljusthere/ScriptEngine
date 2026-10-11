@@ -128,6 +128,15 @@ def check(ev, text):
                     flags.append(f"{tag}: window has both '{a_}' and '{b_}' -> one name per person")
         if v == "met" and JOIN.search(q):
             flags.append(f"{tag}: met from joining/allying (R4/R12)")
+        # mind control / possession / hypnosis written as an attack (b4491, b4494, b4524)
+        if v == "fought" and re.search(r"brainwash|hypnoti|mind[- ]control|possess|subliminal|manipulat|under the control", q, re.I) \
+                and not re.search(r"attack|punch|shot|stab|blast|struck|kick|beat", q, re.I):
+            flags.append(f"{tag}: mind control/possession is no fight -> other_verb fact with the controller (A116)")
+        # waking from sleep, a dream or a trance written as awakened (b4407, b4493, b4526)
+        if v == "awakened" and re.search(r"\b(?:woke|wakes|awoke|awakened|woken)\b", q, re.I) \
+                and re.search(r"nightmare|dream|sleep|asleep|trance|bed|woke (?:her|him|them) up", text, re.I) \
+                and not re.search(r"reviv|resurrect|back to life|coma|unconscious|knocked out|came around|regain", text, re.I):
+            flags.append(f"{tag}: waking from sleep/a dream/a trance is no awakened (A106)")
         if v == "sealed" and o and re.search(r"\b(?:World|Dimension|Realm|Zone|Void|Limbo|Universe|Verse|Prison|Space)\b|verse$", o):
             flags.append(f"{tag}: sealed takes the person sealed away, not the place (A121)")
         if v == "captured" and TRAP.search(q):

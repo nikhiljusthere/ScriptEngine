@@ -242,3 +242,4 @@ OPEN: "Captain U.K." is stripped as a rank prefix in facts (b4286), like King Co
 NOTE 2026-10-12: a wiki-resolution exception for rank-prefixed codenames does NOT work: "General Ross" resolves exactly like "King Cobra"/"Captain U.K."/"Agent Venom"; a fix needs an explicit codename allow-list (fact_gate.RANK lookahead, like Deathstrike/Mastermind).
 FIXED 2026-10-12 in fact_gate.RANK: codenames King Cobra, Captain U.K., Agent Venom, Lady Torch, King Arthur, Captain Hydra are no longer stripped as rank prefixes (explicit allow-list; General Ross / Agent Coulson still are). 64 fact tests pass.
 FIXED 2026-10-12 in fact_gate.RANK: numbered names ("Agent 33", "Agent 13") keep their word (A77), as the event layer does.
+FLAGS 2026-10-12: big_flags now flags A116 (mind control/possession/hypnosis written as fought) and A106 (waking from sleep/a dream/a trance written as awakened) for the repair turn; both were still common in b4400-b4526.
