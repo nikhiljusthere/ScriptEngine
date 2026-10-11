@@ -224,3 +224,4 @@ OPEN: "Rachel" resolves to a place page ("place 'Rachel' as the object of killed
 OPEN: races are refused as `created` objects too ("Celestials created Deviants/Eternals", b2419); the capability tags were kept.
 OPEN: "Karolina" alone resolves to a music page (b2789, b2785); rows with it were dropped.
 OPEN: "Jude" as an end resolves to a place (b3420: Amanda|killed|Jude refused); write `Jude|dies|-` instead.
+OPEN: "King Cobra" is refused as a rank-prefixed name (b3878); the gate strips "King" though it is part of the codename.
