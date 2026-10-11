@@ -237,3 +237,4 @@ OPEN: a surname that is a quantity word is refused as a crowd end ("Jennifer Man
 OPEN: "US" is refused as too short to be a name (b4105), like "MJ" (b1407); the US declaration sentence stays covered by the Germany row.
 FIXED 2026-10-12: a firm named after partners ("the law firm Landman and Zack", b4195) is no longer split when the quote says firm/company/corporation.
 OPEN: "Taloa" resolves to an episode page ("end is a episode page", b4255); her met row is refused, the visit is an other_verb fact.
+OPEN: "Captain U.K." is stripped as a rank prefix in facts (b4286), like King Cobra / Agent Venom / Lady Torch; the sentence was tagged no_relation.
