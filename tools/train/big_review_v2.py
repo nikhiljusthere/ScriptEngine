@@ -120,7 +120,10 @@ def normalize_facts(facts, events, text):
     for f in facts:
         for k in ("subject", "object"):
             v = f.get(k)
-            parts = re.split(r",\s*(?:and\s+)?|\s+and\s+", v) if isinstance(v, str) and " and " in v else []
+            # a company/institution name with "and" is ONE end ("Republic Oil and Gas Company", b3972)
+            one = isinstance(v, str) and re.search(r"\b(Company|Corporation|Industries|Inc\.?|Enterprises|"
+                                                   r"Laboratories|Labs|Institute|Society|Bank|Agency)$", v)
+            parts = re.split(r",\s*(?:and\s+)?|\s+and\s+", v) if isinstance(v, str) and " and " in v and not one else []
             if len(parts) > 1 and all(p[:1].isupper() for p in parts if p) and all(parts):
                 split += [{**f, k: p} for p in parts]
                 break

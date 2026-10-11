@@ -757,6 +757,7 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A114** — no row (a `capability` tag); only a narrated occurrence ("Ultron punched Thor hard enough to make him bleed") is an event
 - **A115** — object `-` (`revealed
 - **A116** — fought
+- **A117** — helped
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->

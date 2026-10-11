@@ -130,6 +130,7 @@ roughly one error in five through.
 | A114 | capability wording in a powers section written as an event ("enough to overpower even Thor and Vision", "capable of trading blows with Juggernaut") (b3267, b3164) | no row (a `capability` tag); only a narrated occurrence ("Ultron punched Thor hard enough to make him bleed") is an event | step 1 | occasional |
 | A115 | `revealed`/`learned`/`discovered` with the listener or a clause as the object ("Wilkes revealed Carter" for "revealed that Frost wanted a bomb"; "Moira revealed Xavier"; "Harry discovered Spider-Man's secret identity"; "Rogue learned government agent") (b3836, b3731, b3371, b3675) | object `-` (`revealed|-`, `learned|-`); a named object only when that named thing is what is revealed or found | B.3 | common (fact layer) |
 | A116 | possession or mind control written as `fought` ("Fisk was possessed by the entity of Greed" -> Greed|fought|Fisk; "the Demon God, which possessed Xaltana" -> fought) (b3218, b3323, b3517) | fact `other_verb|possessed` with the possessor as subject; `fought` only for a stated attack | R2 | occasional |
+| A117 | breaking someone OUT of jail/prison/a cell written as a `helped` fact or left out ("Toomes then proceeded to break Drago out of jail" -> Toomes|helped|Drago, b3981) | `saved` event (a release from imprisonment, whoever the prisoner is); the one who breaks out alone gets `escaped` only when a captor or named place is stated, else `other_verb broke` | table: saved | occasional |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",
@@ -225,3 +226,4 @@ OPEN: races are refused as `created` objects too ("Celestials created Deviants/E
 OPEN: "Karolina" alone resolves to a music page (b2789, b2785); rows with it were dropped.
 OPEN: "Jude" as an end resolves to a place (b3420: Amanda|killed|Jude refused); write `Jude|dies|-` instead.
 OPEN: "King Cobra" is refused as a rank-prefixed name (b3878); the gate strips "King" though it is part of the codename.
+FIXED 2026-10-12 in big_review_v2.normalize_facts: a company/institution name with "and" ("Republic Oil and Gas Company", b3972) was split into two ends; names ending in Company/Corporation/Industries/Inc/Institute/... stay whole.
