@@ -132,6 +132,10 @@ def check(ev, text):
             flags.append(f"{tag}: trapped in a dimension/place -> sealed? (R20)")
         if v == "fought" and re.search(r"confront|faced", q, re.I) and not re.search(PLAIN["fought"], q, re.I):
             flags.append(f"{tag}: confrontation without a stated attack -> met (R2)")
+        if v == "fought" and re.search(r"telepathic|psychic(?:ally)? (?:contact|link|message)|mental(?:ly)? (?:contact|link)|"
+                                       r"interrupted|informed|communicat", q, re.I) \
+                and not re.search(PLAIN["fought"] + r"|assault|blast|probe|attack", q, re.I):
+            flags.append(f"{tag}: telepathic contact/message, not an attack -> contacted fact (A118)")
         if v in ("killed", "defeated", "captured", "escaped", "saved") and HEDGE.search(q):
             flags.append(f"{tag}: hedged/attempt wording '{HEDGE.search(q).group(0)}'")
         if re.search(r"\b(was|were|been) (defeated|freed|rescued|released|killed|captured|arrested|tied|chained|locked|imprisoned|jailed|taken)\b", q) \

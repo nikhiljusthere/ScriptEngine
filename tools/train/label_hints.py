@@ -169,8 +169,9 @@ HINTS = [
     (r"(?i)\b(?:revealed (?:to \w+ )?that|found out that|learned that|realized that|explained that)\b",
      "When someone reveals or learns THAT something is true, the object is '-' (revealed|-, learned|-); "
      "never put the listener or a whole clause in the object slot."),
-    (r"(?i)\b(?:possessed by|possessing|under the control of|took control of)\b",
+    (r"(?i)\b(?:possessed by|possessing|under the control of|took control of|telepathic\w*)\b",
      "Possession or mind control is not a fight: write other_verb 'possessed' with the possessor as subject; "
+     "a telepathic message or link is a contacted fact, not fought; "
      "use fought only for a stated attack."),
     (r"(?i)\bbreak\w* (?:\w+ ){1,3}out of (?:jail|prison|his cell|her cell|the cell|custody)|\bbroke (?:\w+ ){1,3}out of\b|\barranged (?:the|his|her) escape of\b",
      "Breaking someone OUT of jail/prison, or arranging their escape, is a saved event (a release from imprisonment), not a helped fact."),

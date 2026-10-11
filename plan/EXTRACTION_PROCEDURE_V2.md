@@ -758,6 +758,7 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A115** — object `-` (`revealed
 - **A116** — fought
 - **A117** — helped
+- **A118** — fought
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->
