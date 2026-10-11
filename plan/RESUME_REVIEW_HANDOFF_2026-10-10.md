@@ -245,3 +245,15 @@ parallel does not affect the comparison.
 - Forward review b2147–b3846 done (review_cursor_v2 = 3846); A115 (b3836: reveal/learn objects are - for clauses) and A116 (b3218: possession is no fight); A113 (b3339: claimed/recounted episodes are claimed facts, not events) and A114 (b3267: capability wording is no event); A112 (b2886: no real names from outside knowledge); A110 (b2406: a doer-less passive's patient or a non-agent thing as the subject) and A111 (b2646: an infinitive/relative clause pinned on the wrong actor) added.
 - Labeller restarted after each hint change; current chain PID and worker PID are in the commit message.
 - Owner asked (2026-10-10) to commit all progress incl. data and push: branch big-review-flags is pushed to origin with data snapshots under series/universal/training/big (force-added; gitignored dir). Refresh the snapshot and push at each checkpoint.
+
+## 13. Progress (2026-10-11 23:30 - 2026-10-12, after a reboot)
+- The machine rebooted into kernel 7.0.0-38 without an NVIDIA module (nvidia-smi failed). Fixed with the owner's
+  sudo: `linux-modules-nvidia-595-open-7.0.0-38-generic` + the hwe meta package (keeps future kernels in step).
+  After a reboot `/mnt/PROJECTS` mounts late: the 35B model file is a symlink into it, so wait for the mount
+  before `serve_35b_64k.sh` (first start failed with "open: No such file").
+- /tmp is wiped by a reboot: the labeller id list is now rebuilt on every start by the launcher
+  (`$CLAUDE_JOB_DIR/tmp/label_v2.sh`: big_in ids not yet in labels_v2.jsonl, then label_single --schema v2).
+- Forward review b3967-b4126 done (review_cursor_v2 = 4126). New classes A117-A121 (jail break-out = saved; telepathic
+  contact is no fight; an illusion/drone defeated is no defeat of its controller; a named character's power is
+  no item; sealed takes the person). A1 and the power-use hint were aligned with A116 (mind control is a fact).
+- Normaliser: company names with "and" stay whole. New gate quirks: "Gao", "Jennifer Many", "US".
