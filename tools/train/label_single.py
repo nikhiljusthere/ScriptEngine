@@ -151,7 +151,7 @@ def fact_gate_keep(rows, window, wiki=None):
         for end, is_obj in ((r.get("subject"), False), (r.get("object"), True)):
             if not end:
                 continue
-            why = fact_gate._end_ok(end, rel, is_obj, "fact", wiki)
+            why = fact_gate._end_ok(end, rel, is_obj, "fact", wiki, window)
             if why:
                 probs.append(why)
         if probs:

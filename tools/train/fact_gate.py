@@ -160,7 +160,7 @@ def _resolves(wiki, end):
         return False
 
 
-def _end_ok(end, relation, is_object, tag, wiki=None):
+def _end_ok(end, relation, is_object, tag, wiki=None, window=None):
     """B.6/B.7 end checks. Returns a reason string when the end is refused."""
     if end is None:
         if is_object and relation not in NON_PERSON_OBJECT:
@@ -174,7 +174,9 @@ def _end_ok(end, relation, is_object, tag, wiki=None):
         return f"bare pronoun '{e}': resolve it to a named entity (B.7)"
     if COMPOSITE.search(e):
         return f"composite end '{e}': one entity, one name (A59)"
-    if len(e) <= 2:
+    # a short name the window itself introduces ("a young girl named Po", b5450) is a name
+    if len(e) <= 2 and not (window and re.search(r"\b(?:named|called|known as|nicknamed)\s+\"?"
+                                                 + re.escape(e) + r"\b", window)):
         return f"end '{e}' is too short to be a name"
     if RANK.match(e):
         return f"rank prefix in '{e}': strip it (step 6)"
@@ -271,10 +273,10 @@ def check(rows, window, wiki=None, tags=None):
             flags.append(f"{tag}: quote crosses a sentence boundary (B.1)")
         quotes.append(q)
         # ---- ends ----
-        why = _end_ok(s, rel, False, tag, wiki)
+        why = _end_ok(s, rel, False, tag, wiki, window)
         if why:
             flags.append(f"{tag}: subject: {why}")
-        why = _end_ok(o, rel, True, tag, wiki)
+        why = _end_ok(o, rel, True, tag, wiki, window)
         if why:
             flags.append(f"{tag}: object: {why}")
         if s and o and norm(s) == norm(o):
