@@ -759,6 +759,7 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A116** — fought
 - **A117** — helped
 - **A118** — fought
+- **A119** — defeated
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->
