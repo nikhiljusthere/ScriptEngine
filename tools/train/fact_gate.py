@@ -299,13 +299,42 @@ def check(rows, window, wiki=None, tags=None):
         # review classes A97/A99 (plan/BIG_REVIEW_PATTERNS.md, b501-b700): repair hints only,
         # the keep-gate (validate/_end_ok) never drops a row for them
         if rel == "gave" and isinstance(o, str) and o and (
-                o[:1].islower() or re.search(r"\b(?:a|an|the|his|her|their|its)\s+" + re.escape(o.split()[0]), q)):
+                o[:1].islower() or re.search(r"\b(?:a|an|the|his|her|their|its)\s+" + re.escape(o.split()[0]), q)) \
+                and not re.search(r"\b(?:gave|give|gives|giving|provided|handed|offered|lent|sent)\s+(?:the\s+)?"
+                                  + re.escape(o) + r"\s+\w", q) \
+                and not re.search(r"\bto\s+(?:the\s+)?" + re.escape(o) + r"\b", q):
+            # the object IS the recipient in "gave the Surfer his freedom" / "delivered the Tablet to Fisk"
             flags.append(f"{tag}: `gave` takes the RECIPIENT as object ('Koenig gave Ward', not the item) (A97)")
         if rel in ("alias_of", "real_name_of") and isinstance(o, str) and o and re.search(
                 r"(?:alias(?: of)?|calling (?:him|her|them)sel(?:f|ves)|under the name|known as|a\.k\.a\.?|"
                 r"assumed the (?:name|alias) of)\s+(?:the\s+)?\W?" + re.escape(o), q):
             flags.append(f"{tag}: the quote names '{o}' as the alias; `alias_of` subject = the alias, "
                          f"object = the real person (A99)")
+        # review classes A125-A133 (b4747-b5466, three parallel reviewers): repair hints only
+        if rel == "other_verb" and isinstance(o, str) and o and (
+                o.lower() in ("was", "were", "is", "are", "be", "been", "being", "should", "would", "could",
+                              "had", "has", "have", "did", "does", "do", "will", "can", "might", "must")
+                or o[:1].isupper()):
+            flags.append(f"{tag}: other_verb object '{o}' is a copula/modal or a name, not the act: use the "
+                         f"quote's real verb, or a no_relation tag if nothing is done (A125)")
+        if rel == "transformed_into" and isinstance(o, str) and o and (o[:1].islower() or len(o.split()) > 3):
+            flags.append(f"{tag}: transformed_into object '{o}' is a description: a first new form is "
+                         f"`awakened`, a named alter ego is `alias_of`, the transformer is other_verb (A126)")
+        if f_mod := r.get("modality"):
+            if f_mod == rel or (f_mod in ("planned", "claimed") and rel == "other_verb" and isinstance(o, str)
+                                and re.match(r"(?i)(?:insist|suggest|offer|promis|swore|said|told|decid|agreed|"
+                                             r"threaten|explain|admit|announc|demand|refus)", o)):
+                flags.append(f"{tag}: the act itself happened -> modality actual (a done speech act or "
+                             f"order is not a plan/claim) (A128/A96)")
+        if rel in ("learned", "discovered", "suspected", "remembered", "revealed") and isinstance(o, str) and o \
+                and ("_" in o or len(o.split()) >= 4):
+            flags.append(f"{tag}: '{rel}' with a clause object: `learned|-` / `revealed|-`, or other_verb with "
+                         f"the quote's verb (A133/A115)")
+        if isinstance(s, str) and re.search(r"(?i)^(?:the |a |an )?(?:\w+'s )?(?:spell|curse|hologram|computer|"
+                                            r"elevator|war|explosion|fire|blast|storm|device|machine|virus|"
+                                            r"serum|ship|program|system|book|weapon|city|country|planet)$", s):
+            flags.append(f"{tag}: subject '{s}' is no agent: name its user/caster as subject, or tag no_doer "
+                         f"(A131/A110)")
         if q and rel and rel != "other_verb" and _quote_states(q, rel):
             ok.append(tag)
     # A99: one kinship, two rows (child_of + the inverse parent_of)

@@ -138,6 +138,15 @@ roughly one error in five through.
 | A122 | a specific narrated occurrence in an abilities/powers/equipment section tagged `capability` ("Toomes was able to plan and execute the Attack on the Damage Control truck", "Rogers played ... Captain America in live shows", "Kahhori sprinted to her village") (b4184, b3990, b4083) | the event (A32) or an `other_verb` fact with the doer; `capability` only for general ability wording ("can", "is able to", no specific occasion) | A32, SECTION C | common (fact layer) |
 | A123 | a comma place written as TWO movement rows ("went to Cairo, Egypt" -> arrived Cairo + arrived Egypt; "surfaced in Newell, California") (b4314, b4326, b4137) | one row with the most specific named place (R1); the gate splits a merged string, so the 35B splits it too | R1 | common |
 | A124 | a staged or mock battle labelled `fought` ("Johnny joined the Thing, Medusa and Thundra in a staged battle against the rehabilitated Namor", "these was merely a mock battle that was staged") (b4652, b4661) | no fought/defeated rows; an other_verb fact for the participants (fantasy and illusion fights are no events either) | R-verbs | occasional |
+| A125 | other_verb object is a copula/modal or a proper noun lifted from the quote ("Medusa|other_verb|was", "total|other_verb|should", "Amy Minoru|other_verb|Wizard" from "Wizard Computers") (b5249, b5334, b5094, b5119) | the quote's real verb (hacked, absorbed); nothing done -> no_relation tag (fact_gate flags it) | B.3 | frequent |
+| A126 | `transformed_into` with the transformer as subject or a description as object ("Odin|transformed_into|Loki", "Arachne|...|creature with a spider body", "Steve Rogers|...|Captain America") (b5047, b5134, b5137, b5146) | transformer -> other_verb; first new form -> `awakened`; named alter ego -> `alias_of`; drop description objects (flagged) | R-verbs, A99 | frequent |
+| A127 | "the two teams fought" expanded as a cross product with the wrong sides (Hawkeye given fights against his own teammates) (b5044) | pair only opponents the window sets against each other | G.2 | occasional |
+| A128 | a done order or speech act carried as a plan/claim modality ("Coulson|ordered|Ward" modality ordered; insisted/suggested/offered/promised/decided as planned/claimed) (b4792, b4811, b4901, b5244, b5288) | modality actual; `ordered` lives in the relation, plans only for what was not done (flagged; A96) | B.4 | frequent |
+| A129 | infobox lines that narrate events tagged list_header only (CauseOfDeath "Killed by ...", "(while possessed by Varnae)", "homeschooled by Jamal Afari") (b4821, b4840) | rows for the narrated acts (killed, awakened/saved, possessed fact); the tag stays on the field name | B.1 | occasional |
+| A130 | the page-title name written for a window that uses another name ("Harvey Elder" for "Mole Man", "Bentley Wittman" for "the Wizard") (b4820, b4839, b4868) | the window's own name (A112 extended to page titles) | step 6 | occasional |
+| A131 | non-agent subjects: spell, curse, hologram, computer, elevator, war, city, country ("The spell allowed", "Computer contacted Fury") (b4814, b4841, b4852, b4879) | the named user/caster as subject, else a no_doer tag (flagged; A110) | A110 | frequent |
+| A132 | "found / tracked / spotted X in <place>" labelled `arrived` (b5179, b5284, b5326) | `located_at` the place (+ `met` for the finder); no arrival unless the window says they got there | R-verbs, A109 | occasional |
+| A133 | knowledge relations with a clause or snake_case object ("Reed|discovered|creature_power_source", "Rocket|suspected|being released") (b5262, b5284, b5314) | `learned|-` / `revealed|-`, or other_verb with the quote's verb (flagged; A115) | A115 | frequent |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",
@@ -244,3 +253,19 @@ NOTE 2026-10-12: a wiki-resolution exception for rank-prefixed codenames does NO
 FIXED 2026-10-12 in fact_gate.RANK: codenames King Cobra, Captain U.K., Agent Venom, Lady Torch, King Arthur, Captain Hydra are no longer stripped as rank prefixes (explicit allow-list; General Ross / Agent Coulson still are). 64 fact tests pass.
 FIXED 2026-10-12 in fact_gate.RANK: numbered names ("Agent 33", "Agent 13") keep their word (A77), as the event layer does.
 FLAGS 2026-10-12: big_flags now flags A116 (mind control/possession/hypnosis written as fought) and A106 (waking from sleep/a dream/a trance written as awakened) for the repair turn; both were still common in b4400-b4526.
+
+GATE AUDIT 2026-10-12 (owner: "some rules could be legit and you are missing facts/events"): every row
+the gates ever dropped over all 14,000 windows was re-counted. Fixed in fact_gate/label_single:
+normalise() repairs shape instead of dropping (201 `died` deaths -> dies; ~690 plans with no asserted_by
+-> the subject; certainty words in the modality slot; rank prefix stripped, not refused);
+split_event_facts() moves event-verb facts into events; codename allow-list (Captain Carter, Lord Dark
+Wind, Lady Lotus, Queen Goblin, Doctor Sun, Lord Chaos, King in Black...); "The Thing"/"The Other";
+names the window uses mid-sentence pass crowd/pronoun/length rules (Him, Former Thrall, MJ, Li, Po);
+other_verb objects skip name rules ("go"); music/episode/item pages no longer refuse event ends
+(Karolina, Zemo, Miss Minutes, K.E.V.I.N., Destroyer); a place page refuses an object only with no
+character namesake (Madame Gao, Lincoln Campbell). The review view printed `fact_dropped`/`tag_dropped`
+but the labeller writes `dropped_facts`/`dropped_tags`: dropped facts were never shown -- fixed.
+Still refused by design: races/species (R11/A25), countries as fight ends, unnamed crowds, escapes
+with no pursuer (needs an object). Recovery of the dropped rows: tmp recover.py (base rows for
+unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a hand pass).
+

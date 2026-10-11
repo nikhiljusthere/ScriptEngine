@@ -765,6 +765,15 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A122** — the event (A32) or an `other_verb` fact with the doer; `capability` only for general ability wording ("can", "is able to", no specific occasion)
 - **A123** — one row with the most specific named place (R1); the gate splits a merged string, so the 35B splits it too
 - **A124** — no fought/defeated rows; an other_verb fact for the participants (fantasy and illusion fights are no events either)
+- **A125** — other_verb
+- **A126** — transformed_into
+- **A127** — pair only opponents the window sets against each other
+- **A128** — ordered
+- **A129** — rows for the narrated acts (killed, awakened/saved, possessed fact); the tag stays on the field name
+- **A130** — the window's own name (A112 extended to page titles)
+- **A131** — the named user/caster as subject, else a no_doer tag (flagged; A110)
+- **A132** — `located_at` the place (+ `met` for the finder); no arrival unless the window says they got there
+- **A133** — discovered
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->

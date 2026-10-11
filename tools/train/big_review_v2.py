@@ -207,7 +207,7 @@ def view(n, start):
                           (f.get("quote") or "")[:32]) for f in fa] or "[]")
         if tg:
             print(" TAGS", [(t.get("tag"), (t.get("quote") or "")[:40]) for t in tg])
-        for k in ("dropped", "fact_dropped", "tag_dropped"):
+        for k in ("dropped", "dropped_facts", "dropped_tags"):  # the labeller's keys (were never shown, fixed 2026-10-12)
             if r.get(k) and wid not in a2:
                 print(f" {k.upper()}", [(d.get("subject"), d.get("verb") or d.get("relation") or d.get("tag"),
                                          d.get("object"), d.get("why")) for d in r[k]][:8])
