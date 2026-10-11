@@ -253,7 +253,7 @@ parallel does not affect the comparison.
   before `serve_35b_64k.sh` (first start failed with "open: No such file").
 - /tmp is wiped by a reboot: the labeller id list is now rebuilt on every start by the launcher
   (`tools/train/ops/label_v2_resume.sh` on this branch, run with setsid nohup: big_in ids not yet in labels_v2.jsonl, then label_single --schema v2).
-- Forward review b3967-b4126 done (review_cursor_v2 = 4126). New classes A117-A121 (jail break-out = saved; telepathic
+- Forward review b3967-b4506 done (review_cursor_v2 = 4506; resume with `big_review_v2.py view 20` from the cursor). New classes A117-A123 (jail break-out = saved; telepathic
   contact is no fight; an illusion/drone defeated is no defeat of its controller; a named character's power is
-  no item; sealed takes the person). A1 and the power-use hint were aligned with A116 (mind control is a fact).
+  no item; sealed takes the person; abilities-section occurrences are no capability; a comma place split into two rows). A1 and the power-use hint were aligned with A116 (mind control is a fact).
 - Normaliser: company names with "and" stay whole. New gate quirks: "Gao", "Jennifer Many", "US".
