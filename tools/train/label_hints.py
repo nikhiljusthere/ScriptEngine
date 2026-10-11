@@ -175,6 +175,9 @@ HINTS = [
      "use fought only for a stated attack."),
     (r"(?i)\bbreak\w* (?:\w+ ){1,3}out of (?:jail|prison|his cell|her cell|the cell|custody)|\bbroke (?:\w+ ){1,3}out of\b|\barranged (?:the|his|her) escape of\b",
      "Breaking someone OUT of jail/prison, or arranging their escape, is a saved event (a release from imprisonment), not a helped fact."),
+    (r"\b(?:killed|struck|wounded|defeated|hit|disintegrated|dusted) (?:down )?by [A-Z][\w'-]+(?: [A-Z][\w'-]+)*'s? [a-z]",
+     "'killed by Thanos' Snap' / 'struck by Thor's lightning': a named character's power or attack -> that "
+     "character is the doer (Thanos|killed|X); no_doer only for an item or weapon whose user is unnamed."),
     (r"(?i)\b(?:abilities|powers|equipment|weapons|facilities)\b",
      "Descriptive sections still narrate events: one specific occurrence ('he was able to shake off a punch "
      "from Gladiator') is an event; a general ability is not."),
