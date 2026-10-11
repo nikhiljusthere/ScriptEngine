@@ -761,6 +761,7 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A118** — fought
 - **A119** — defeated
 - **A120** — the owner of the power is the doer (Thanos
+- **A121** — sealed
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->

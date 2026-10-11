@@ -128,6 +128,8 @@ def check(ev, text):
                     flags.append(f"{tag}: window has both '{a_}' and '{b_}' -> one name per person")
         if v == "met" and JOIN.search(q):
             flags.append(f"{tag}: met from joining/allying (R4/R12)")
+        if v == "sealed" and o and re.search(r"\b(?:World|Dimension|Realm|Zone|Void|Limbo|Universe|Verse|Prison|Space)\b|verse$", o):
+            flags.append(f"{tag}: sealed takes the person sealed away, not the place (A121)")
         if v == "captured" and TRAP.search(q):
             flags.append(f"{tag}: trapped in a dimension/place -> sealed? (R20)")
         if v == "fought" and re.search(r"confront|faced", q, re.I) and not re.search(PLAIN["fought"], q, re.I):

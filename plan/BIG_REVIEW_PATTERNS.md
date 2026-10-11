@@ -134,6 +134,7 @@ roughly one error in five through.
 | A118 | a telepathic interruption, message or link written as `fought` ("He was interrupted telepathically by Xavier, who informed Franklin of the discovery" -> Xavier|fought|Franklin, b4018) | no event; fact `contacted` (a remote link) plus `revealed|-` for what was told; `fought` only for a mental ATTACK (a blast, a probe, an assault) | table: fought / met NO phone | rare |
 | A119 | defeating an illusion, projection, drone swarm or construct written as defeating the one who controls it ("order all the projector drones to self-destruct, thereby defeating the so-called Elemental" -> Peter|defeated|Beck, b4046) | no `defeated` for the controller (fought stays if he is attacked); a named robot/AI body counts as the character itself (A53/A69) | table: defeated | rare |
 | A120 | a passive whose "by" names a POWER or ATTACK of a named character ("killed by Thanos' Snap", "struck down by Thor's lightning") tagged `no_doer` like an item (A39) (b4064) | the owner of the power is the doer (Thanos|killed|Yelena Belova); A39 stays for an item, company or weapon whose user is unnamed | step 4 | occasional |
+| A121 | `sealed` with the PLACE as object ("Warlock banished the Magus into Soul World" -> Warlock|sealed|Soul World, b4097) | the one sealed away is the object (Warlock|sealed|Magus); the place goes nowhere in the event (an `arrived` only if the window says the sealed one reached it) | table: sealed | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",
@@ -232,3 +233,4 @@ OPEN: "King Cobra" is refused as a rank-prefixed name (b3878); the gate strips "
 FIXED 2026-10-12 in big_review_v2.normalize_facts: a company/institution name with "and" ("Republic Oil and Gas Company", b3972) was split into two ends; names ending in Company/Corporation/Industries/Inc/Institute/... stay whole.
 OPEN: "Gao" alone resolves to a place ("place 'Gao' as the object of fought", b4013); the page name "Madame Gao" passes.
 OPEN: a surname that is a quantity word is refused as a crowd end ("Jennifer Many", b4082); the sentence was tagged no_relation.
+OPEN: "US" is refused as too short to be a name (b4105), like "MJ" (b1407); the US declaration sentence stays covered by the Germany row.
