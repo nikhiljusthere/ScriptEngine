@@ -139,6 +139,7 @@ def fact_gate_keep(rows, window, wiki=None):
     import fact_gate
     kept, dropped = [], []
     for r in rows or []:
+        r = fact_gate.normalise(r) if isinstance(r, dict) else r  # repair shape before judging (2026-10-12)
         probs = list(fact_gate.validate(r))
         q = r.get("quote") or ""
         if len(q) < 12:
@@ -194,7 +195,11 @@ def ask(url, model, doc, user, thinking, max_tokens, timeout=1800, history=()):
 
 def gate(rows, window, wiki):
     """The mechanical end/shape checks; returns (kept, dropped)."""
-    kept, dropped = draft_v2.check_rows(rows, window, wiki, vrw.BAD_END | SPECIES_LIKE)
+    # music/episode/item pages are name collisions in narrative text ("Karolina" the song, "Zemo" the
+    # episode, Miss Minutes/K.E.V.I.N./the Destroyer filed as items): the 2026-10-12 audit found the
+    # 160 such drops were real characters, so only non-narrative page types stay refused
+    kept, dropped = draft_v2.check_rows(rows, window, wiki,
+                                        (vrw.BAD_END - {"music", "episode", "item"}) | SPECIES_LIKE)
     out = []
     for r in kept:
         why = None
@@ -207,7 +212,9 @@ def gate(rows, window, wiki):
             if lab in SPECIES_LIKE:
                 why = f"end {end!r} is a {lab} page"
             elif (lab and end == r["object"] and r["verb"] not in ("arrived", "departed", "escaped")
-                  and PLACE_LIKE.search(lab)):
+                  and PLACE_LIKE.search(lab)
+                  # a person whose bare name is also a place page ("Gao", "Lincoln", "Rachel")
+                  and not any(wiki.label.get(p) == "character" for p in wiki.resolve(bare))):
                 why = f"place {end!r} as the object of {r['verb']}"
         if why:
             dropped.append({**r, "why": why})
@@ -409,6 +416,9 @@ def main():
                             events = e2
                         facts, tags = f2, t2
                         raw = raw2
+        facts, moved = fact_gate.split_event_facts(facts)  # event verbs written as facts (2026-10-12)
+        if not add_only:
+            events = (events or []) + moved
         kept_ev = events if add_only else gate(events or [], window, wiki)[0]
         dropped_ev = [] if add_only else gate(events or [], window, wiki)[1]
         kept_fa, dropped_fa = fact_gate_keep(facts, window, wiki)
@@ -440,6 +450,9 @@ def main():
                     events = e3 if not add_only else fixed_events
                     facts, tags = f3, t3
                     raw = raw3
+                    facts, moved = fact_gate.split_event_facts(facts)
+                    if not add_only:
+                        events = (events or []) + moved
                     kept_ev = gate(events or [], window, wiki)[0] if not add_only else kept_ev
                     dropped_ev = gate(events or [], window, wiki)[1] if not add_only else []
                     kept_fa, dropped_fa = fact_gate_keep(facts, window, wiki)

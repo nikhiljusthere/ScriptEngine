@@ -105,7 +105,9 @@ RANK = re.compile(
     r"^(?:Dr\.|Doctor|Brigadier General|Brigadier|General|Agent|Officer|Senator|Prelate|Empress|"
     r"Emperor|Mayor|Detective|Sergeant|Colonel|Major|Lieutenant|Commander|Captain|Warlord|"
     r"Professor|Chancellor|Director|Lord|Lady|King|Queen|Sir|Dame|Madam|President)\s"
-    r"(?!of\b|Deathstrike\b|Mastermind\b|America\b|Marvel\b|Britain\b|Universe\b|Doom\b|Strange\b|Druid\b|Octopus\b|X\b|Xavier\b|Cobra\b|U\.K\.|Venom\b|Arthur\b|Hydra\b|Torch\b|\d)")
+    r"(?!of\b|in\b|Chaos\b|Carter\b|Lotus\b|Dark Wind\b|Loki\b|Goblin\b|Anti-Venom\b|Commander\b|Sun\b|Bad Vibes\b|"
+    r"Dazzler\b|Cutlass\b|Nemesis\b|Spectrum\b|Stilt-Man\b|Hawkman\b|Avalon\b|Americat\b|Minerva\b|Valkyrie\b|"
+    r"Thor\b|Raptor\b|Ogun\b|Voodoo\b|Deathstrike\b|Mastermind\b|America\b|Marvel\b|Britain\b|Universe\b|Doom\b|Strange\b|Druid\b|Octopus\b|X\b|Xavier\b|Cobra\b|U\.K\.|Venom\b|Arthur\b|Hydra\b|Torch\b|\d)")
 COMPOSITE = re.compile(r"\s/|\(|\)|\[|\]")
 # a quote must lie inside ONE sentence: the anti-loophole rule the council required, because
 # big_flags.py:197 accepts `sent in q` with no quote-length cap and one paragraph quote would
@@ -169,14 +171,19 @@ def _end_ok(end, relation, is_object, tag, wiki=None, window=None):
     e = end.strip()
     if not e:
         return "empty end"
-    if PRONOUN.match(e) and not (len(e.split()) > 1 and all(w[:1].isupper() for w in e.split())):
+    if is_object and relation == "other_verb":
+        return None  # the object is the passage's verb ("go", b5306); B.3 checks it, not the name rules
+    # a capitalised end the window itself uses as a name mid-sentence ("the being known as Him",
+    # "the Former Thrall", "Po", "MJ") is a name, whatever crowd/pronoun/length rule it trips (2026-10-12)
+    named_here = bool(window) and e[:1].isupper() and bool(
+        re.search(r"(?:[a-z,;:]|\b(?:named|called|as))\s+(?:\"|')?" + re.escape(e) + r"(?![\w-])", window))
+    if PRONOUN.match(e) and not named_here and not (len(e.split()) > 1 and all(w[:1].isupper() for w in e.split())):
         # a multi-word capitalised name that starts like a pronoun is a name ("He Who Remains", b1286)
         return f"bare pronoun '{e}': resolve it to a named entity (B.7)"
     if COMPOSITE.search(e):
         return f"composite end '{e}': one entity, one name (A59)"
     # a short name the window itself introduces ("a young girl named Po", b5450) is a name
-    if len(e) <= 2 and not (window and re.search(r"\b(?:named|called|known as|nicknamed)\s+\"?"
-                                                 + re.escape(e) + r"\b", window)):
+    if len(e) <= 2 and not (e[:1].isupper() and window and re.search(r"(?<![\w-])" + re.escape(e) + r"(?![\w-])", window)):
         return f"end '{e}' is too short to be a name"
     if RANK.match(e):
         return f"rank prefix in '{e}': strip it (step 6)"
@@ -185,7 +192,7 @@ def _end_ok(end, relation, is_object, tag, wiki=None, window=None):
     m = CROWD_WORDS.search(e)
     # a capitalised crowd word inside a capitalised name is part of the name ("Young Allies",
     # "Avengers Academy Students"); "Hydra agents" / "the guards" stay crowds (fixed 2026-10-10)
-    if m and not (e[:1].isupper() and m.group(0)[:1].isupper() and m.group(0).lower() not in
+    if m and not named_here and not (e[:1].isupper() and m.group(0)[:1].isupper() and m.group(0).lower() not in
                   ("former", "active", "several", "some", "many", "various", "others")):
         return f"crowd/indefinite end '{e}' (R11)"
     want = NON_PERSON_OBJECT.get(relation)
@@ -196,11 +203,11 @@ def _end_ok(end, relation, is_object, tag, wiki=None, window=None):
         # "the Avengers"): v2 B.6, and the A3/A48/A65 joined/member_of routes depend on it.
         # The wiki decides: "a Space Phantom" / "an assailant" are indefinite (A52/R11) and
         # must still be refused, and neither resolves.
-        tail = re.sub(r"^(?:a|an|the|his|her|their|its)\s+", "", e)
+        tail = re.sub(r"(?i)^(?:a|an|the|his|her|their|its)\s+", "", e)
         named = bool(tail) and tail[:1].isupper()
         # "the X-Men" / "the Avengers" are one named thing; "a Space Phantom" is a description
         # that merely looks capitalised, so a multi-word end must be confirmed by the wiki.
-        ok = named and (len(tail.split()) == 1 or (wiki is not None and _resolves(wiki, e)))
+        ok = named and (len(tail.split()) == 1 or named_here or (wiki is not None and _resolves(wiki, e)))
         if not ok:
             return f"indefinite end '{e}' for a person relation: use the passage's name (R11)"
     if is_object and want is None and PLACE_LIKE.search(e) and wiki is not None:
@@ -354,6 +361,57 @@ def validate(row):
         problems.append(f"canon '{row['canon']}' not in the allowed set (B.1)")
     return problems
 
+
+
+# Fact rows the 35B wrote with a fixable shape were DROPPED by validate() (2026-10-12 audit of all
+# 14,000 windows: 201 'died' deaths, ~690 plans with no asserted_by, 134 certainty words in the
+# modality slot, 226 rank-prefixed ends). normalise() repairs the shape; the gate still judges content.
+EVENT_VERBS = {"saved", "captured", "killed", "defeated", "escaped", "betrayed", "sealed", "met", "arrived",
+               "departed", "awakened", "fought", "rescued"}
+REL_FIX = {"died": "dies", "rescued": None, "uses": "used", "planned": None, "claimed": None}
+
+
+def strip_rank(end):
+    if isinstance(end, str) and RANK.match(end.strip()):
+        rest = RANK.sub("", end.strip(), count=1).strip()
+        if rest and not re.match(r"(?i)of\b", rest):
+            return rest
+    return end
+
+
+def normalise(row):
+    """Return a repaired copy of one fact row (shape only)."""
+    r = dict(row)
+    rel = r.get("relation")
+    if rel in REL_FIX and REL_FIX[rel]:
+        r["relation"] = REL_FIX[rel]
+    mod, cert = r.get("modality"), r.get("certainty")
+    if mod in CERTAINTY and mod not in MODALITY:
+        r["certainty"], r["modality"] = mod, "actual"
+    if r.get("modality") in (None, "", "None"):
+        r["modality"] = "actual"
+    if r.get("certainty") in (None, "", "None") or r.get("certainty") not in CERTAINTY:
+        r["certainty"] = "stated"
+    if r.get("modality") != "actual" and not (r.get("asserted_by") or "").strip():
+        r["asserted_by"] = r.get("subject")
+    for k in ("subject", "object", "asserted_by"):
+        if r.get(k):
+            r[k] = strip_rank(r[k])
+    return r
+
+
+def split_event_facts(facts):
+    """Facts written with an event verb belong in the event layer: (facts, events)."""
+    keep, moved = [], []
+    for f in facts or []:
+        rel = f.get("relation") if isinstance(f, dict) else None
+        if rel in EVENT_VERBS:
+            v = "saved" if rel == "rescued" else rel
+            moved.append({"quote": f.get("quote"), "subject": f.get("subject"), "verb": v,
+                          "object": None if v == "awakened" else f.get("object")})
+        else:
+            keep.append(f)
+    return keep, moved
 
 def other_share(rows):
     """B.3 vocabulary-failure metric: share of fact rows using other_verb (target < 10%)."""
