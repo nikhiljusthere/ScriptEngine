@@ -235,3 +235,4 @@ FIXED 2026-10-12 in big_review_v2.normalize_facts: a company/institution name wi
 OPEN: "Gao" alone resolves to a place ("place 'Gao' as the object of fought", b4013); the page name "Madame Gao" passes.
 OPEN: a surname that is a quantity word is refused as a crowd end ("Jennifer Many", b4082); the sentence was tagged no_relation.
 OPEN: "US" is refused as too short to be a name (b4105), like "MJ" (b1407); the US declaration sentence stays covered by the Germany row.
+FIXED 2026-10-12: a firm named after partners ("the law firm Landman and Zack", b4195) is no longer split when the quote says firm/company/corporation.

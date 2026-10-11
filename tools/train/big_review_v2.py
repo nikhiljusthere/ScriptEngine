@@ -123,6 +123,9 @@ def normalize_facts(facts, events, text):
             # a company/institution name with "and" is ONE end ("Republic Oil and Gas Company", b3972)
             one = isinstance(v, str) and re.search(r"\b(Company|Corporation|Industries|Inc\.?|Enterprises|"
                                                    r"Laboratories|Labs|Institute|Society|Bank|Agency)$", v)
+            # ... and a firm named after its partners ("the law firm Landman and Zack", b4195)
+            one = one or (isinstance(v, str) and re.search(r"\b(?:firm|company|corporation|partnership)\s+"
+                                                           + re.escape(v), f.get("quote") or "", re.I))
             parts = re.split(r",\s*(?:and\s+)?|\s+and\s+", v) if isinstance(v, str) and " and " in v and not one else []
             if len(parts) > 1 and all(p[:1].isupper() for p in parts if p) and all(parts):
                 split += [{**f, k: p} for p in parts]
