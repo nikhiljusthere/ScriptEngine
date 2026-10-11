@@ -231,3 +231,4 @@ OPEN: "Jude" as an end resolves to a place (b3420: Amanda|killed|Jude refused); 
 OPEN: "King Cobra" is refused as a rank-prefixed name (b3878); the gate strips "King" though it is part of the codename.
 FIXED 2026-10-12 in big_review_v2.normalize_facts: a company/institution name with "and" ("Republic Oil and Gas Company", b3972) was split into two ends; names ending in Company/Corporation/Industries/Inc/Institute/... stay whole.
 OPEN: "Gao" alone resolves to a place ("place 'Gao' as the object of fought", b4013); the page name "Madame Gao" passes.
+OPEN: a surname that is a quantity word is refused as a crowd end ("Jennifer Many", b4082); the sentence was tagged no_relation.
