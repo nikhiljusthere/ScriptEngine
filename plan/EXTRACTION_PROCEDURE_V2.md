@@ -763,6 +763,7 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A120** — the owner of the power is the doer (Thanos
 - **A121** — sealed
 - **A122** — the event (A32) or an `other_verb` fact with the doer; `capability` only for general ability wording ("can", "is able to", no specific occasion)
+- **A123** — one row with the most specific named place (R1); the gate splits a merged string, so the 35B splits it too
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->

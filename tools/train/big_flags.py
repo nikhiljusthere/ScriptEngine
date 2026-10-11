@@ -180,6 +180,11 @@ def check(ev, text):
             flags.append(f"{tag}: escaped a place -> does the window name the captor? (A50)")
         if v in ("arrived", "departed", "escaped") and o and ", " in o:
             flags.append(f"{tag}: comma in place '{o}' -> R1 most specific part (gate splits it)")
+        # "went to Cairo, Egypt" written as TWO rows (Cairo + Egypt): keep only the specific one (b4314, b4326)
+        if v in ("arrived", "departed") and o and any(
+                x is not e and x["verb"] == v and x["subject"] == s and x["object"] and
+                re.search(re.escape(x["object"]) + r",\s+" + re.escape(o) + r"\b", text) for x in ev):
+            flags.append(f"{tag}: '{o}' is the wider part of a comma place -> drop it, keep the specific place (R1)")
         if v == "awakened" and re.search(r"\b(?:revived|resurrected|brought back)\b(?! by)", q) and \
                 not re.search(r"^(?:\w+ )?(?:was|were) ", q):
             flags.append(f"{tag}: someone revived him -> also '<reviver> saved' (A33)")
