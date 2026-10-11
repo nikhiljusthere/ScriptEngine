@@ -241,3 +241,4 @@ OPEN: "Taloa" resolves to an episode page ("end is a episode page", b4255); her 
 OPEN: "Captain U.K." is stripped as a rank prefix in facts (b4286), like King Cobra / Agent Venom / Lady Torch; the sentence was tagged no_relation.
 NOTE 2026-10-12: a wiki-resolution exception for rank-prefixed codenames does NOT work: "General Ross" resolves exactly like "King Cobra"/"Captain U.K."/"Agent Venom"; a fix needs an explicit codename allow-list (fact_gate.RANK lookahead, like Deathstrike/Mastermind).
 FIXED 2026-10-12 in fact_gate.RANK: codenames King Cobra, Captain U.K., Agent Venom, Lady Torch, King Arthur, Captain Hydra are no longer stripped as rank prefixes (explicit allow-list; General Ross / Agent Coulson still are). 64 fact tests pass.
+FIXED 2026-10-12 in fact_gate.RANK: numbered names ("Agent 33", "Agent 13") keep their word (A77), as the event layer does.
