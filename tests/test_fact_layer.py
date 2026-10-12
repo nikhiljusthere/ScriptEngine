@@ -336,3 +336,13 @@ def test_modality_written_as_relation_becomes_other_verb():
     r = fg.normalise({"subject": "Pythagoras Dupree", "relation": "claimed", "object": "6th_Smartest_Man",
                       "quote": "Pythagoras, by his own claim, was the 6th"})
     assert r["relation"] != "other_verb"
+
+
+def test_race_as_classifying_object_and_god_as_name():
+    # gate audit 2026-10-13 (27B): races classify an individual; "God" is a named deity
+    assert fg._end_ok("Inhumans", "leader_of", True, "t") is None
+    assert fg._end_ok("Skrull", "revealed_as", True, "t") is None
+    assert fg._end_ok("God", "contacted", True, "t") is None
+    # a race is still no actor or person end
+    assert fg._end_ok("Skrulls", "attacked", False, "t")
+    assert fg._end_ok("Kree", "contacted", True, "t")

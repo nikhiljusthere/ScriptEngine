@@ -354,3 +354,9 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
   dropped by REL_FIX; normalise() now keeps it as other_verb + that modality + asserted_by, the object being the
   planned verb (only "to <verb>" or a gerund in the quote) or the claim/plan word as a verb. 39 of 94 repaired, the
   rest have no verb in the quote. Test: test_modality_written_as_relation_becomes_other_verb.
+- FIXED 2026-10-13 (27B gate audit, stage 2 verdicts "WRONG_REFUSAL"): (1) a race/kind as the OBJECT of a classifying
+  relation is a fact about the individual ("Black Bolt leader_of Inhumans", "Gorgon member_of Inhumans", "Craddock
+  revealed_as Skrull", "Illyana transformed_into demon", "Athena member_of Olympians"); races stay refused as actors
+  ("Skrulls invaded", 27B: correct refusal) and as person ends. (2) SPECIES matches only the plural "Gods": "God" is
+  a named deity ("to ask God forgiveness"). Measured: 29 of the 242 still-refused race fact rows pass, all
+  classifications or God. Test: test_race_as_classifying_object_and_god_as_name.

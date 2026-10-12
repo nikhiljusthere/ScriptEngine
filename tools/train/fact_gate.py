@@ -95,7 +95,7 @@ SPECIES = re.compile(
     r"^(?:Kree|Skrulls?|Shi'ar|Inhumans|Chitauri|Brood|Builders|Frost Giants|Dwarves|Sovereign|"
     r"Atlanteans|mutants|humans|Kami|Olympians|Asgardians|Eternals|Deviants|Sentinels|"
     r"Quantumnauts|Wolf-Men|Elder Gods|Harpies|Asgardian|Mutant|Alien|Monster|"
-    r"Demons?|Gods?|Gods|Elves|Dwarves|Orcs?)$", re.I)
+    r"Demons?|Gods|Elves|Dwarves|Orcs?)$", re.I)  # plural "Gods" only: the singular "God" is a named deity (gate audit, 27B)
 PRONOUN = re.compile(
     r"^(?:he|she|it|they|him|her|them|his|hers|their|theirs|this|that|these|those|one|both|"
     r"the other|the other two|the two|the pair|everyone|someone|somebody|anyone|nobody)(?![\w'-])", re.I)
@@ -192,7 +192,11 @@ def _end_ok(end, relation, is_object, tag, wiki=None, window=None):
         return f"end '{e}' is too short to be a name"
     if RANK.match(e) and not (window and re.search(NAMED_AS.format(full=re.escape(e)), window, re.I)):
         return f"rank prefix in '{e}': strip it (step 6)"
-    if SPECIES.match(re.sub(r"(?i)^(?:the|a|an)\s+", "", e)):
+    # a race/kind as the OBJECT of a classifying relation is a fact about the individual, no crowd actor
+    # ("Black Bolt leader_of Inhumans", "Gorgon member_of Inhumans", "Craddock revealed_as Skrull":
+    # 26 historical refusals, gate audit 2026-10-13); races stay refused as actors and person ends
+    if SPECIES.match(re.sub(r"(?i)^(?:the|a|an)\s+", "", e)) and not (
+            is_object and relation in ("member_of", "leader_of", "revealed_as", "transformed_into")):
         return f"species/race end '{e}' (A25/R11)"
     # an item/thing/power/form object is no person, so a crowd word inside it is part of a description
     # ("powers of the Scarlet Witch", "Book of the Darkhold", "ability to entrance others with music": b8055,
