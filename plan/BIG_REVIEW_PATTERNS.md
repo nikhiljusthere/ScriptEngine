@@ -374,3 +374,9 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
   Measured: 245 of 306 still-refused knowledge rows pass; the rest fail on race/crowd/pronoun subjects (correct).
   Test: test_knowledge_relation_with_clause_object_becomes_dash. 27B verdicts so far (89): races as actors, crowds and
   indefinite person ends are confirmed correct refusals; the wrong ones were God, Olympians (fixed) and these.
+- RECOVERY 2026-10-13: rows the old gates dropped that today's gates pass were put back into labels_v2 (tmp recover2.py,
+  rows marked `recovered_2026_10_13`; backup labels_v2.jsonl.bak-pre-recovery-2026-10-13): unviewed windows (b>8164)
+  got 4 events, 78 facts, 4 tags in their base rows, so the forward pass reviews them like any labeller row. Reviewed
+  windows are NOT changed: their 202 events + 826 facts that the final rows lack are queued in
+  big/recovered_reviewed_2026-10-13.jsonl (710 windows); many were removed on purpose, so the 27B screens each against
+  the window and the reviewed rows (tmp screen_recovered.py, ACCEPT/REJECT) and Claude hand-checks the ACCEPTs.
