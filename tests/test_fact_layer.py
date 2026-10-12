@@ -388,3 +388,10 @@ def test_short_quote_whole_list_line_passes():
     kept, dropped = ls.fact_gate_keep([{"subject": "Happy Hogan", "relation": "lost_power", "object": None,
                                         "quote": "lost"}], w)
     assert dropped and "shorter than 12" in dropped[0]["why"]
+
+
+def test_possessive_thing_object_is_no_bare_pronoun():
+    assert fg._end_ok("his father's cufflinks", "wore", True, "fact") is None
+    assert fg._end_ok("his apartment", "located_at", True, "fact") is None
+    assert "pronoun" in (fg._end_ok("his abusive father", "resides_at", True, "fact") or "")
+    assert "pronoun" in (fg._end_ok("his son", "helped", True, "fact") or "")

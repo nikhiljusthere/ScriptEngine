@@ -186,7 +186,13 @@ def _end_ok(end, relation, is_object, tag, wiki=None, window=None):
     # "the Former Thrall", "Po", "MJ") is a name, whatever crowd/pronoun/length rule it trips (2026-10-12)
     named_here = bool(window) and e[:1].isupper() and bool(
         re.search(r"(?:[a-z,;:]|\b(?:named|called|as))\s+(?:\"|')?" + re.escape(e) + r"(?![\w-])", window))
-    if PRONOUN.match(e) and not named_here and not (len(e.split()) > 1 and all(w[:1].isupper() for w in e.split())):
+    # a possessive before a PLACE/ITEM/THING object is legal (B.8: "his father's cufflinks", "her apartment"); only
+    # a person end must be resolved (gate audit 2026-10-13)
+    poss_thing = (is_object and len(e.split()) > 1 and re.match(r"(?i)(?:his|her|their|its)\s", e)
+                  and NON_PERSON_OBJECT.get(relation) in ("place", "item", "thing", "form")
+                  and not re.search(r"(?i)\b(?:father|mother|son|daughter|wife|husband|brother|sister|friend|boss|"
+                                    r"partner|uncle|aunt|parents?)$", e))
+    if PRONOUN.match(e) and not named_here and not poss_thing and not (len(e.split()) > 1 and all(w[:1].isupper() for w in e.split())):
         # a multi-word capitalised name that starts like a pronoun is a name ("He Who Remains", b1286)
         return f"bare pronoun '{e}': resolve it to a named entity (B.7)"
     if COMPOSITE.search(e):

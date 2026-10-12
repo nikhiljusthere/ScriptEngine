@@ -406,3 +406,15 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
   it is a whole line or a whole sentence of the window and names one of the row's ends; other_verb rows excluded
   (an occupation line "teacher" is no act). Measured: 7 of 24 historical refusals pass, all list lines; fragments
   ("lost", "he was next", "to kill him") stay refused. Test: test_short_quote_whole_list_line_passes.
+- FIXED 2026-10-13 (fact gate, 27B stage 2): a possessive before a PLACE/ITEM/THING/FORM object was refused as a bare
+  pronoun ("Kingpin|wore|his father's cufflinks", "Matt|located_at|his apartment", "Winter Soldier|destroyed|her
+  ship"); B.8 already allows it. Now legal for those object types only (not titles: "their deadliest assassin"; not a
+  person tail: "his abusive father"). Measured: the bare-pronoun class goes 95 -> ~145 of 285 passing; the 55
+  possessive rows spot-read as places/items. Test: test_possessive_thing_object_is_no_bare_pronoun.
+- 27B STAGE 2 FINAL (401 judged): CORRECT_REFUSAL 197, WRONG_REFUSAL 98, ROW_WRONG_ANYWAY 33, unparsed 73. The wrong
+  refusals fell into: places as ends (prompt artifact, schema kept), intransitive escaped/arrived/departed (schema
+  kept), `-` objects (fixed), knowledge clause objects (fixed), possessive thing objects (fixed), short list-line
+  quotes (fixed), China/Danvers/Carteret people named like places (fixed), God/Olympians (fixed).
+- RECOVERY 3 (2026-10-13, cursor 8494): 18 more facts into unviewed windows (backup ...-2026-10-13.3); reviewed-window
+  queue rebuilt (732 windows). recover2 did not dedupe tags, so its re-runs re-added 3 tags each time: 6 duplicate
+  tags removed, and the script now skips a tag the window already has.
