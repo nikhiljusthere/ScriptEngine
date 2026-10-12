@@ -274,3 +274,23 @@ parallel does not affect the comparison.
 - Flags are measured on all approved windows before they stay: A125/A131/A133 kept (fixed), A126/A128
   withdrawn. A128 note: "X insisted that ..." as claimed + asserted_by is a legal claim row; orders stay
   `ordered` + modality ordered + asserted_by (A60/A64).
+
+## 15. Handoff 2026-10-12 22:00 IST
+
+- **Cursor (`mark`) = 6786.**
+- **Reviewed and submitted, not yet marked:** b6787–6846 (H), b6987–7086 (I), b7187–7266 (coordinator).
+- **NOT reviewed:** b6847–6986 and b7087–7186.
+  - `$T/I_h6.txt` holds a drafted but UNSUBMITTED edit file for b7087–7106; check it, then `fix` it.
+- **Next steps:**
+  1. Review the two gaps.
+  2. `mark 7266`.
+  3. Continue forward from b7267.
+- **New since §14 (all committed):**
+  - A134 attempt-word flag; 68 approved rows cleaned.
+  - A135–A142 catalog rows.
+  - A101 participle-doer fix.
+  - Event gate: capitalised class-word names (Him, The Other, the Guard) pass. This is a label_single override; the main checkout's draft_v2 is untouched.
+  - The view shows asserted_by on actual rows.
+  - **A106 CLARIFIED:** waking from ordinary sleep or a dream is no event, but regaining consciousness (coma, knockout, blackout) IS awakened (procedure B.1). 36 wrongly removed rows were restored.
+  - A comma inside a group name ("Avengers, Inc.") splits the event end; write "Avengers Inc.".
+- **Subagent prompt template:** `$T/agent_prompt.txt` (A106 wording updated). Edit files: h58–h75 (coordinator), F_/G_/H_/I_ (subagents).
