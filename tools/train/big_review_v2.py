@@ -126,7 +126,17 @@ def normalize_facts(facts, events, text):
             # ... and a firm named after its partners ("the law firm Landman and Zack", b4195)
             one = one or (isinstance(v, str) and re.search(r"\b(?:firm|company|corporation|partnership)\s+"
                                                            + re.escape(v), f.get("quote") or "", re.I))
-            parts = re.split(r",\s*(?:and\s+)?|\s+and\s+", v) if isinstance(v, str) and " and " in v and not one else []
+            one = one or (isinstance(v, str) and "&" in v)  # "Goodman, Lieber, Kurtzberg & Holliway"
+            # a comma place in a place relation keeps its specific part (A123): "Portland, Oregon"
+            if isinstance(v, str) and k == "object" and f.get("relation") in ("located_at", "resides_at", "born") \
+                    and re.fullmatch(r"[A-Z][^,]+(?:, [A-Z][^,]+)+", v):
+                split.append({**f, k: v.split(", ")[0]})
+                break
+            # a pure comma list ("Magneto, Charles Xavier, Doctor Strange", b5596) splits like "A and B"
+            listy = isinstance(v, str) and (" and " in v or v.count(", ") >= 2 or (
+                v.count(", ") == 1 and f.get("relation") not in ("located_at", "resides_at", "born", "other_verb")
+                and not re.search(r", (?:Sr|Jr|I{1,3}|IV|V)\.?$", v)))  # "Howard the Duck, Squirrel Girl"
+            parts = re.split(r",\s*(?:and\s+)?|\s+and\s+", v) if listy and not one else []
             if len(parts) > 1 and all(p[:1].isupper() for p in parts if p) and all(parts):
                 split += [{**f, k: p} for p in parts]
                 break
