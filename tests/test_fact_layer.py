@@ -427,3 +427,12 @@ def test_comma_before_two_letter_initialism_is_one_place():
     kept, _ = ls.gate([{"subject": "Hydra, A.I.M. and Viper", "verb": "fought", "object": "John",
                         "quote": "Hydra, A.I.M. and Viper fought them"}], w, wiki)
     assert sorted(r["subject"] for r in kept) == ["A.I.M.", "Hydra", "Viper"]
+
+
+def test_reunited_is_no_joining_flag():
+    """'reunited with X' is a meeting; 'united with' matched inside it (131 approved met rows flagged)."""
+    import big_flags as bf
+    ev = [{"subject": "Brian", "verb": "met", "object": "Psylocke", "quote": "Brian reunited with Psylocke"}]
+    assert not [f for f in bf.check(ev, "Brian reunited with Psylocke.")[0] if "R4" in f]
+    ev = [{"subject": "Thor", "verb": "met", "object": "Loki", "quote": "Thor united with Loki"}]
+    assert [f for f in bf.check(ev, "Thor united with Loki.")[0] if "R4" in f]

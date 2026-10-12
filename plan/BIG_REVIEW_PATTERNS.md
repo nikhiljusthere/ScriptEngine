@@ -448,3 +448,7 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
   Done in label_single (this branch), not draft_v2, which label_single loads from the main checkout on purpose.
   Reviewed windows: b5507 re-pointed to "Washington, D.C."; b2550/b2744/b2929 were already corrected; unreviewed
   b10889/b12584/b13350 carry "D.C." rows to fix on arrival. Test: test_comma_before_two_letter_initialism_is_one_place.
+- FIXED 2026-10-13 (row flag R4/R12, big_flags.JOIN): "united with" matched inside "reunited with", so every
+  "X reunited with Y" met row was flagged as met-from-joining, though the catalog rules "reunited with X" -> met.
+  Measured on approved rows: 266 met rows flagged, 131 only by "reunited" (all kept as met in review); the regex now
+  skips "reunited". Test: test_reunited_is_no_joining_flag.

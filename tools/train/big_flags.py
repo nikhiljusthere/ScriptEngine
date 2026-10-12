@@ -66,7 +66,9 @@ LEAD = ("When|After|Before|As|While|Then|Meanwhile|However|Although|Though|Once|
 PURPOSE = re.compile(r"\b(?:to|in order to|intending to|planning to|hoping to|attempt(?:ed|ing)? to|tried to|"
                      r"decided to|wished to|wanted to|so (?:that )?(?:he|she|they) could) (?:meet|find|rescue|save|stop|"
                      r"kill|capture|free|defeat|fight|attack|destroy|confront|recover|retrieve)\b", re.I)
-JOIN = re.compile(r"\bjoin|teamed up|allied|alliance|rejoin|united with", re.I)
+# "reunited with X" is a meeting (catalog: -> met); "united with" matched inside it and flagged 131
+# approved met rows as joining (2026-10-13, all false)
+JOIN = re.compile(r"\bjoin|teamed up|allied|alliance|rejoin|(?<!re)united with", re.I)
 TRAP = re.compile(r"imprison\w* in|trapped|ensnared|Limbo|Dimension|Realm|Void|Mojoverse|pocket universe", re.I)
 HEDGE = re.compile(r"seemingly|nearly|almost|apparently|attempt|tried to|would have", re.I)
 CUES = re.compile(r"\b(rescu\w*|saved?|saving|freed|free (?:him|her|them)|releas\w*|escap\w*|fled|flee|broke (?:free|out)|"
