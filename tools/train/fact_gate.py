@@ -317,6 +317,14 @@ def check(rows, window, wiki=None, tags=None):
                 or (o[:1].isupper() and not re.search(r"(?:ing|ed|s)$", o))):  # "Believing" is a verb
             flags.append(f"{tag}: other_verb object '{o}' is a copula/modal or a name, not the act: use the "
                          f"quote's real verb, or a no_relation tag if nothing is done (A125)")
+        # A134 (b5747-b5846 reviewer; measured 2026-10-12: 80 of 92 approved attempt-word objects had a
+        # "tried to <verb>" in the quote): the attempt word is the modality, the object is the verb tried
+        if rel == "other_verb" and isinstance(o, str) and o.lower() in (
+                "attempted", "tried", "attempt", "attempts", "trying", "tries"):
+            m_try = re.search(r"\b(?:tried|attempted|attempts?|trying|tries)\s+(?:\w+ly\s+)?to\s+(\w+)", q, re.I)
+            if m_try:
+                flags.append(f"{tag}: other_verb object '{o}' is the attempt, not the act: object "
+                             f"'{m_try.group(1)}' with modality attempted (A134)")
         # (A126 flag withdrawn 2026-10-12: forms are descriptions by nature, "being of solid sound")
         # (A128 "done speech act as claimed" was measured on 5,526 approved windows and dropped:
         #  "X insisted that ..." as claimed + asserted_by is the procedure's claim row, B.4)
