@@ -471,6 +471,14 @@ def normalise(row, window=None):
             r.update(relation="other_verb", object=m.group(1), modality=rel,
                      asserted_by=r.get("asserted_by") or r.get("subject"))
             rel = "other_verb"
+    # a knowledge relation with a described/clause object ("learned the X-Mansion had been attacked", "discovered
+    # a cure", "the truth") is the A115/A133 route `learned|-`: drop the object instead of the row (gate audit
+    # 2026-10-13, 27B: 186 such rows were refused as indefinite/crowd ends)
+    if rel in ("learned", "discovered", "revealed", "suspected", "remembered", "forgot") and \
+            isinstance(r.get("object"), str) and r["object"].strip() and (
+            r["object"][:1].islower() or len(r["object"].split()) >= 4 or
+            re.match(r"(?i)(?:the|a|an|that|how|what|why|where|who|his|her|their|its)\b", r["object"].strip())):
+        r["object"] = None
     if rel in REL_FIX and REL_FIX[rel]:
         r["relation"] = REL_FIX[rel]
     mod, cert = r.get("modality"), r.get("certainty")

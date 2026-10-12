@@ -346,3 +346,13 @@ def test_race_as_classifying_object_and_god_as_name():
     # a race is still no actor or person end
     assert fg._end_ok("Skrulls", "attacked", False, "t")
     assert fg._end_ok("Kree", "contacted", True, "t")
+
+
+def test_knowledge_relation_with_clause_object_becomes_dash():
+    # gate audit 2026-10-13 (27B): the A115/A133 route `learned|-` instead of dropping the row
+    r = fg.normalise({"subject": "Avengers", "relation": "learned", "object": "the X-Men's X-Mansion had been attacked",
+                      "quote": "the Avengers learned that the X-Men's X-Mansion had been attacked"})
+    assert r["object"] is None
+    r = fg.normalise({"subject": "Ghost Rider", "relation": "discovered", "object": "Zarathos",
+                      "quote": "Ghost Rider discovered Zarathos"})
+    assert r["object"] == "Zarathos"  # a proper name stays

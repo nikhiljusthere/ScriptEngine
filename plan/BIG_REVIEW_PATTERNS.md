@@ -368,3 +368,9 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
   (Whitehall without a first name in its window is still missed).
 - NOTE (A33, b8142): a resurrection done to use the revived ("the Legion took Frank's body and Morbius resurrected him
   ... to help them against the Hunter") written as saved -> awakened only (A33 tool revival), as Mandarin/Killmonger.
+- FIXED 2026-10-13 (27B gate audit): knowledge relations (learned/discovered/revealed/suspected/remembered/forgot)
+  with a described or clause object were dropped as indefinite/crowd ends ("Avengers learned the X-Mansion had been
+  attacked", "discovered a cure", "the truth"); normalise() now applies the A115/A133 route itself (object -).
+  Measured: 245 of 306 still-refused knowledge rows pass; the rest fail on race/crowd/pronoun subjects (correct).
+  Test: test_knowledge_relation_with_clause_object_becomes_dash. 27B verdicts so far (89): races as actors, crowds and
+  indefinite person ends are confirmed correct refusals; the wrong ones were God, Olympians (fixed) and these.
