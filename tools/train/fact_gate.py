@@ -108,12 +108,16 @@ RANK = re.compile(
     r"(?!of\b|in\b|Chaos\b|Carter\b|Lotus\b|Dark Wind\b|Loki\b|Goblin\b|Anti-Venom\b|Commander\b|Sun\b|Bad Vibes\b|"
     r"Dazzler\b|Cutlass\b|Nemesis\b|Spectrum\b|Stilt-Man\b|Hawkman\b|Avalon\b|Americat\b|Minerva\b|Valkyrie\b|"
     r"Thor\b|Raptor\b|Ogun\b|Voodoo\b|Deathstrike\b|Mastermind\b|America\b|Marvel\b|Britain\b|Universe\b|Doom\b|Strange\b|Druid\b|Octopus\b|X\b|Xavier\b|Cobra\b|U\.K\.|Venom\b|Arthur\b|Hydra\b|Torch\b|Brood\b|\d)")
+# the bare rank words of RANK ("Agent", "Dr."): "Agent 33" is a codename RANK never strips (it stops at a digit),
+# but rows stripped by older code carry the bare "33" (gate audit 2026-10-13)
+RANK_WORD = re.compile(RANK.pattern[1:RANK.pattern.index(r")\s") + 1])
 NON_VERB_WORDS = {"some", "certain", "similar", "many", "much", "several", "more", "most", "very", "also",
                   "only", "even", "still", "new", "old", "own", "other", "another", "such", "same",
                   "various", "both", "all", "each", "every"}
 VERBS_IN_LY = {"rely", "apply", "reply", "fly", "ally", "tally", "bully", "rally", "supply", "multiply",
                "imply", "comply", "dally", "sully"}
 COMPOSITE = re.compile(r"\s/|\(|\)|\[|\]")
+LIST_END = re.compile(r",\s.*\band\s|^[^,]+,\s[^,]+,\s")
 # a quote must lie inside ONE sentence: the anti-loophole rule the council required, because
 # big_flags.py:197 accepts `sent in q` with no quote-length cap and one paragraph quote would
 # "cover" forty sentences. Sentence spans come from fact_coverage.segments().
@@ -187,6 +191,12 @@ def _end_ok(end, relation, is_object, tag, wiki=None, window=None):
         return f"bare pronoun '{e}': resolve it to a named entity (B.7)"
     if COMPOSITE.search(e):
         return f"composite end '{e}': one entity, one name (A59)"
+    # a list of people is one row per person ("Reed, Ben and Johnny", "May, Rodriguez, and Mackenzie": 84 kept
+    # label rows, 0 approved ones, 2026-10-13); a company name with "&" and a place chain stay legal
+    if LIST_END.search(e) and "&" not in e and not (is_object and (
+            NON_PERSON_OBJECT.get(relation) in ("place", "item", "thing", "form")
+            or relation in ("born", "gained_power", "lost_power"))):
+        return f"list end '{e}': one row per person (A59)"
     # a short name the window itself introduces ("a young girl named Po", b5450) is a name
     if len(e) <= 2 and not (e[:1].isupper() and window and re.search(r"(?<![\w-])" + re.escape(e) + r"(?![\w-])", window)):
         return f"end '{e}' is too short to be a name"
@@ -464,6 +474,10 @@ def normalise(row, window=None):
     a codename anywhere ("the mantle of \"Captain Krakoa\"") keep its rank word in every row."""
     r = dict(row)
     rel = r.get("relation")
+    # the labeller's written "no object" ("-", "none") is no end: 48 rows were refused as "end '-' is too short
+    # to be a name" (gate audit 2026-10-13, "Stark|remembered|-", "Ward|wounded|-")
+    if isinstance(r.get("object"), str) and r["object"].strip().lower() in ("-", "none", "null", "n/a"):
+        r["object"] = None
     # the modality written as the relation ("Strange|planned|learn magic", "Nadia|claimed|Pym's daughter"):
     # REL_FIX dropped these (69 planned + 23 claimed still refused, gate audit 2026-10-13). Keep the row as
     # other_verb with that modality; the object is the planned verb, else the claim word, found in the quote.
@@ -502,6 +516,11 @@ def normalise(row, window=None):
     for k in ("subject", "object", "asserted_by"):
         if r.get(k):
             r[k] = strip_rank(r[k], window or r.get("quote"))
+            # an earlier strip left the bare number of "Agent 33" / "Agent 13": put the rank back
+            if re.fullmatch(r"\d+", str(r[k]).strip()) and (window or r.get("quote")):
+                m = re.search(r"\b([A-Z][a-z]+\.?)\s+" + re.escape(str(r[k]).strip()) + r"\b", window or r["quote"])
+                if m and RANK_WORD.fullmatch(m.group(1)):
+                    r[k] = m.group(0)
     return r
 
 

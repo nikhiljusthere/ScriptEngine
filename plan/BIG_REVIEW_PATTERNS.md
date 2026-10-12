@@ -384,3 +384,20 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
   was flagged as naming its doer; the name is the patient. The flag now skips "X was/were <participle>" on no_doer
   tags. Measured: 135 approved no_doer tags carried the false flag, all passives; no_relation/deictic still flagged
   ("Gao was forced to watch" stays a hint). Test: test_a101_doerless_passive_on_no_doer_tag_is_no_flag.
+- 27B AUDIT STAGE 2 READING (2026-10-13, 289/391 judged): most "WRONG_REFUSAL" verdicts are artifacts of the audit
+  prompt, which told the 27B that proper places are legal ends: `escaped`/`arrived` with no object (our schema needs
+  the pursuer / the place), a city or planet `saved` (a `protected` fact here, b8145) and nation-vs-nation `fought`.
+  Not changed. Real misses: Whitehall/Danvers/Lord Carteret as places (fixed earlier by _personal_use, Whitehall
+  without a first name still missed), God/Olympians (fixed), clause objects of knowledge relations (fixed).
+- FIXED 2026-10-13 (fact gate normalise): the labeller's literal "no object" `-` was refused as "end '-' is too
+  short to be a name" (Stark|remembered|-, Ward|wounded|-); `-`/none/null now mean no object. Measured: 47 of 56
+  historical refusals of that class pass; all spot-read correct learned|-/revealed|-/wounded|- rows.
+- FIXED 2026-10-13: "Agent 33"/"Agent 13" stripped by older code to the bare "33"; normalise puts the rank back
+  when the window writes "<rank word> <number>" (RANK never strips before a digit now). 6 more rows pass (53/56).
+- NEW GATE 2026-10-13 (A59): a comma list of people as one end ("Reed, Ben and Johnny", "May, Rodriguez, and
+  Mackenzie") passed the fact gate; now refused ("one row per person"). Measured: 80 kept label rows refused (all
+  lists), 0 approved rows; a company with "&", number commas ("1,000,000 BC") and place/thing/power objects and
+  born places stay legal. Test: test_dash_object_list_end_and_agent_number.
+- RECOVERY 2 (2026-10-13, after the `-`/Agent-number fixes): 49 more facts + 3 tags put into unviewed windows
+  (b>8344, marker counts accumulate; backup labels_v2.jsonl.bak-pre-recovery-2026-10-13.2); the reviewed-window
+  queue was rebuilt at cursor 8344 (708 windows, 202 events + 824 facts).

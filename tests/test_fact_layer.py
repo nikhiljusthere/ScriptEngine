@@ -305,6 +305,19 @@ def test_a101_doerless_passive_on_no_doer_tag_is_no_flag():
     assert any("(A101)" in f for f in flags)
 
 
+def test_dash_object_list_end_and_agent_number():
+    w = "Stark remembered it. Agent 33 revealed that Phil Coulson had killed him. Reed, Ben and Johnny fought."
+    r = fg.normalise({"subject": "Stark", "relation": "remembered", "object": "-", "quote": "Stark remembered it."}, w)
+    assert r["object"] is None
+    r = fg.normalise({"subject": "33", "relation": "revealed", "object": None,
+                      "quote": "Agent 33 revealed that Phil Coulson had killed him."}, w)
+    assert r["subject"] == "Agent 33"
+    assert "list end" in (fg._end_ok("Reed, Ben and Johnny", "allied_with", False, "fact") or "")
+    assert fg._end_ok("Goodman, Lieber, Kurtzberg & Holliway", "member_of", True, "fact") is None
+    assert fg._end_ok("Oracle, Inc.", "owns", True, "fact") is None
+    assert fg._end_ok("Avengers of 1,000,000 BC", "member_of", True, "fact") is None
+
+
 def test_hyphenated_name_is_not_a_pronoun():
     assert fg._end_ok("She-Hulk", "member_of", False, "t") is None
     assert fg._end_ok("she", "member_of", False, "t")
