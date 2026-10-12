@@ -452,3 +452,10 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
   "X reunited with Y" met row was flagged as met-from-joining, though the catalog rules "reunited with X" -> met.
   Measured on approved rows: 266 met rows flagged, 131 only by "reunited" (all kept as met in review); the regex now
   skips "reunited". Test: test_reunited_is_no_joining_flag.
+- FIXED 2026-10-13 (row flag "description/garbage end", big_flags.check): any end of <= 2 characters was flagged as
+  garbage, the Po mistake again: "MJ" (b8989/b8990/b8991). Measured on approved rows: 26 short ends, all kept in
+  review (MJ 17, Ox 3, Wu 2, US 2, Li 1, M 1). A short end that starts with a capital is now read as a name; only
+  short non-capitalised ends stay flagged. Test: test_short_capitalised_end_is_a_name.
+- TOOL 2026-10-13 (big_review_v2 fix): a "-"/"f-"/"t-" line that matched nothing passed silently, so after
+  "r Toomes=>Adrian Toomes" the possessive end "Toomes' lair" survived a removal written against the renamed form
+  (b8992, also b8988, b8980). Such lines now print UNMATCHED.

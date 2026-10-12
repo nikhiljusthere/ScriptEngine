@@ -126,7 +126,10 @@ def check(ev, text):
             if re.search(r" / |\(|\)", end):
                 flags.append(f"{tag}: composite end '{end}' -> the real name only (A59)")
             if (end[:1].islower() and not re.match(r"(?:van|von|de|del|da|di|le|la|al|el) [A-Z]", end)) \
-                    or "'s " in end or "' " in end or len(end) <= 2 or end.startswith("version of"):
+                    or "'s " in end or "' " in end or (len(end) <= 2 and not end[:1].isupper()) \
+                    or end.startswith("version of"):
+                # a short capitalised end is a name, not garbage: MJ, Ox, Wu, Li, M (the Po mistake);
+                # all 26 short ends on approved rows were kept (2026-10-13)
                 flags.append(f"{tag}: description/garbage end '{end}' -> a named or definite individual?")
             for a_, b_ in ALIASES:
                 if end in (a_, b_) and re.search(rf"\b{re.escape(a_)}\b", text) and re.search(rf"\b{re.escape(b_)}\b", text):

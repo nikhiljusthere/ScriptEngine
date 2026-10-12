@@ -242,6 +242,13 @@ def parse_row(spec, n):
     return p
 
 
+def _unmatched(cur, line, none_removed):
+    # a removal that matches nothing used to pass silently: after "r Toomes=>Adrian Toomes" the row
+    # "arrived Toomes' lair" kept its old end, "- ...Adrian Toomes' lair" removed nothing (b8992)
+    if none_removed:
+        print(f"UNMATCHED b{cur['b']}: {line.strip()}")
+
+
 def apply_edits(path):
     ids, (v2, a2, a1, v1, c1) = order(), state()
     out, cur = [], None
@@ -281,7 +288,9 @@ def apply_edits(path):
         elif op == "-":
             s, v, o = parse_row(rest, 0)[:3]
             o = None if o == "-" else o
+            n = len(cur["events"])
             cur["events"] = [e for e in cur["events"] if (e["subject"], e["verb"], e["object"]) != (s, v, o)]
+            _unmatched(cur, line, n == len(cur["events"]))
         elif op == "f+":
             p = parse_row(rest, 0)
             s, rel, o, q = p[:4]
@@ -292,14 +301,18 @@ def apply_edits(path):
         elif op == "f-":
             s, rel, o = parse_row(rest, 0)[:3]
             o = None if o == "-" else o
+            n = len(cur["facts"])
             cur["facts"] = [f for f in cur["facts"] if (f.get("subject"), f.get("relation"), f.get("object")) != (s, rel, o)]
+            _unmatched(cur, line, n == len(cur["facts"]))
         elif op == "t+":
             t, q = parse_row(rest, 2)
             cur["tags"].append({"tag": t, "quote": q})
         elif op == "t-":
             p = parse_row(rest, 2)
+            n = len(cur["tags"])
             cur["tags"] = [t for t in cur["tags"]
                            if not (t.get("tag") == p[0] and (len(p) == 1 or (t.get("quote") or "").startswith(p[1])))]
+            _unmatched(cur, line, n == len(cur["tags"]))
     for c in out:
         # the gate refuses exact and symmetric duplicates: drop them here (mkfix did the same)
         seen, ev = set(), []

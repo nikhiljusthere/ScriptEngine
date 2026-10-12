@@ -436,3 +436,10 @@ def test_reunited_is_no_joining_flag():
     assert not [f for f in bf.check(ev, "Brian reunited with Psylocke.")[0] if "R4" in f]
     ev = [{"subject": "Thor", "verb": "met", "object": "Loki", "quote": "Thor united with Loki"}]
     assert [f for f in bf.check(ev, "Thor united with Loki.")[0] if "R4" in f]
+
+
+def test_short_capitalised_end_is_a_name():
+    """MJ, Ox, Wu, Li (and Po) are names: the <=2-char 'garbage end' flag hit 26 approved rows, all kept."""
+    import big_flags as bf
+    ev = [{"subject": "Peter", "verb": "met", "object": "MJ", "quote": "Peter later sought out MJ"}]
+    assert not [f for f in bf.check(ev, "Peter later sought out MJ.")[0] if "garbage" in f]
