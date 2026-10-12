@@ -792,6 +792,7 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A149** — subject = the name shown before, object = the true identity, both named; a disguise is `disguise_as` from the impostor's side
 - **A150** — `arrived` only at a named place reached; `escaped` takes the captor or place left, never the destination
 - **A151** — `located_at` the place; `arrived` only when the passage says X went or came there (A109, A132)
+- **A152** — the page's own entry form ("Deadpool Dupe", "Hulk Dupe", as "Bartender Dupe"); never the bare name of the other hero
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->

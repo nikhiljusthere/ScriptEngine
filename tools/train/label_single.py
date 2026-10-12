@@ -77,6 +77,16 @@ def window_of(row):
     return user, user.split("Passage:\n", 1)[1]
 
 
+def _exact_quote(q, window):
+    """The window's own substring for a quote that differs only in whitespace: linked names in some windows are
+    joined by non-breaking spaces ("sons\xa0Billy\xa0and\xa0Tommy"), so a plain-space quote never matched
+    (measured 2026-10-13: 24 windows, 21 dropped rows). Same helper as big_review_v2.exact_quote."""
+    if not q or not window or q in window:
+        return q
+    m = re.search(r"\s+".join(map(re.escape, q.split())), window)
+    return window[m.start():m.end()] if m else q
+
+
 def series_of(row):
     m = re.match(r"Series:\s*(\S+)", row["messages"][1]["content"])
     return m.group(1) if m else row.get("series")
@@ -133,7 +143,7 @@ def tag_gate_keep(rows, window):
         if not isinstance(r, dict):
             dropped.append({**r, "why": "not an object"} if isinstance(r, dict) else {"row": str(r), "why": "not an object"})
             continue
-        tg, q = r.get("tag"), r.get("quote") or ""
+        tg, q = r.get("tag"), _exact_quote(r.get("quote") or "", window)
         if tg not in fact_gate.TAGS:
             probs.append(f"tag '{tg}' not in the allowed set")
         if len(q) < 3:
@@ -158,6 +168,8 @@ def fact_gate_keep(rows, window, wiki=None):
     kept, dropped = [], []
     for r in rows or []:
         r = fact_gate.normalise(r, window) if isinstance(r, dict) else r  # repair shape before judging (2026-10-12)
+        if isinstance(r, dict):
+            r["quote"] = _exact_quote(r.get("quote"), window)
         probs = list(fact_gate.validate(r))
         q = r.get("quote") or ""
         if len(q) < 12:
@@ -217,6 +229,7 @@ def gate(rows, window, wiki):
     # episode, Miss Minutes/K.E.V.I.N./the Destroyer filed as items): the 2026-10-12 audit found the
     # 160 such drops were real characters, so only non-narrative page types stay refused
     _CLASS_WORDS.window = window or ""
+    rows = [{**r, "quote": _exact_quote(r.get("quote"), window)} if isinstance(r, dict) else r for r in rows or []]
     kept, dropped = draft_v2.check_rows(rows, window, wiki,
                                         (vrw.BAD_END - {"music", "episode", "item"}) | SPECIES_LIKE)
     out = []

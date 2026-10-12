@@ -319,6 +319,17 @@ def apply_edits(path):
     return out
 
 
+def exact_quote(q, window):
+    """The window's own substring for a quote typed with plain spaces. Linked names in some windows are
+    joined by non-breaking spaces ("sons\xa0Billy\xa0and\xa0Tommy", b8083): a reviewer's quote can never be
+    verbatim there, and the measured 24 windows / 21 labeller rows lost rows that way (2026-10-13). The stored
+    quote is the window's exact text, so downstream verbatim checks still hold."""
+    if not q or not window or q in window:
+        return q
+    m = re.search(r"\s+".join(map(re.escape, q.split())), window)
+    return window[m.start():m.end()] if m else q
+
+
 def fix(path):
     import importlib.util
     spec = importlib.util.spec_from_file_location("label_single", Path(__file__).resolve().parent / "label_single.py")
@@ -332,6 +343,8 @@ def fix(path):
         series = r.get("series", "marvel")
         wiki = wikis.setdefault(series, vrw.Wiki(str(ROOT / "series" / series / "facts.db")))
         w = pas[c["id"]]
+        for row in c["events"] + c["facts"] + c["tags"]:
+            row["quote"] = exact_quote(row.get("quote"), w)
         ek, ed = label_single.gate([{k: e.get(k) for k in ("quote", "subject", "verb", "object")} for e in c["events"]], w, wiki)
         fk, fd = label_single.fact_gate_keep(c["facts"], w, wiki)
         tk, td = label_single.tag_gate_keep(c["tags"], w)

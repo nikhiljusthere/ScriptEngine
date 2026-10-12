@@ -165,6 +165,7 @@ roughly one error in five through.
 | A149 | `revealed_as` with a description subject, the wrong person, or for a disguise unmasked ("witch\|revealed_as\|Baba Yaga", "Billy\|revealed_as\|physical manifestation of the Demiurge", "Teddy\|revealed_as\|Morgan Le Fay") (b6916, b6917, b6922) | subject = the name shown before, object = the true identity, both named; a disguise is `disguise_as` from the impostor's side | A4, A99 | occasional |
 | A150 | a portal, gem or realm boundary as an arrival or escape end ("arrived Siege Perilous", "Cletus\|escaped\|regular universe" for "escape to the regular universe") (b6943, b6969) | `arrived` only at a named place reached; `escaped` takes the captor or place left, never the destination | A24, A50 | rare |
 | A151 | "In <place>, X did Y" or "X was next seen in <place>" written as `arrived` (Rome, Tarnington, India, Timbuktu) (b7545, b7567, b7572) | `located_at` the place; `arrived` only when the passage says X went or came there (A109, A132) | A132 | occasional |
+| A152 | a list entry that names a duplicate or variant after another hero ("Deadpool - One of a group of dupes", "Hulk - ...") written with the bare famous name, so its acts land on that hero (b8068, b8069) | the page's own entry form ("Deadpool Dupe", "Hulk Dupe", as "Bartender Dupe"); never the bare name of the other hero | A18, A141 | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",
@@ -302,7 +303,10 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
 - FLAG widened (A125): an other_verb object that is an adverb ("gravely", "increasingly"), a determiner/adjective
   ("some", "certain", "similar") or a possessive ("Coulson's") is flagged. Measured on 7,503 approved windows:
   7 raw 35B hits in reviewed windows, all 7 removed by review; 1 left in an approved row (b139 "certain").
-- OPEN: a non-breaking space in the window text makes a typed quote fail the verbatim check (b6933 "sons of the
+- FIXED (was OPEN, below): quotes are repaired to the window's exact substring when they differ only in whitespace
+  (big_review_v2.exact_quote, label_single._exact_quote, all three gates). Measured: 45 of the 629 historical
+  "not verbatim" drops pass (7 events, 16 facts, 22 tags); the other 584 are paraphrases and stay refused. b8083.
+- (superseded) OPEN: a non-breaking space in the window text makes a typed quote fail the verbatim check (b6933 "sons of the
   Scarlet Witch"). Measured: 24 of 14,000 windows contain one; 21 rows (9 facts, 5 tags, 7 events) were dropped for
   that reason alone. Left as is (a whitespace-tolerant check would change every downstream quote lookup); a
   reviewer quotes the part without the space.
@@ -339,3 +343,6 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
   Test: test_crowd_word_inside_a_thing_object_is_no_crowd.
 - NOTE (A141/A18): on a duplicating-character page "Emperor Prime" (the Bunker Dupe) is not "Jamie Prime" (the
   original, dead in that window); the 35B wrote "Prime Jamie" for the Emperor (b8054).
+- NEW A152 (b8068, b8069): a list entry that names a duplicate/variant after another hero ("Deadpool - One of a group of
+  dupes", "Hulk - ...") written with the bare famous name -> the rows land on Wade Wilson / Bruce Banner. Write the
+  page's own entry form ("Deadpool Dupe", "Hulk Dupe", like "Bartender Dupe"); never the bare name of the other hero.
