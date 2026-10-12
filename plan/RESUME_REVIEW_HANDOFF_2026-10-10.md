@@ -294,3 +294,16 @@ parallel does not affect the comparison.
   - **A106 CLARIFIED:** waking from ordinary sleep or a dream is no event, but regaining consciousness (coma, knockout, blackout) IS awakened (procedure B.1). 36 wrongly removed rows were restored.
   - A comma inside a group name ("Avengers, Inc.") splits the event end; write "Avengers Inc.".
 - **Subagent prompt template:** `$T/agent_prompt.txt` (A106 wording updated). Edit files: h58–h75 (coordinator), F_/G_/H_/I_ (subagents).
+
+## 16. Progress 2026-10-13 (session after §15)
+
+- **Cursor (`mark`) = 7984.** Everything b6787–b7984 is reviewed and marked; nothing reviewed-but-unmarked.
+- Gaps from §15 closed: b6847–6926 (J), b6927–6986 (K), b7107–7186 (L), b7087–7106 (`I_h6.txt` checked, 7 fixes added, submitted).
+- Forward: M b7267–7346, N b7427–7506, O b7507–7586, P b7587–7626, Q b7667–7746, R b7827–7846, S b7907–7924;
+  coordinator b7347–7426, b7627–7666, b7747–7826, b7830 (refused R block, 12-char quote), b7847–7906, b7925–7984
+  (edit files h76–h94 in `$T`). P/Q/R/S stopped at the account session limit; the owner then asked to continue
+  inline with no subagents.
+- New catalog rows A143–A151; A125 flag widened (adverb/determiner/possessive objects, measured 7/7);
+  `Empress Brood` codename; big_review_v2 view prints whole windows (was cut at 4000 chars); build_prompt
+  SECTION F splitter fixed (rules were cut at their first pipe). NBSP verbatim issue measured (21 rows) and left OPEN.
+- Next: `bash $T/rv.sh view 20 --from 7984`, continue forward; mark after each contiguous stretch; `ckpt.sh`.
