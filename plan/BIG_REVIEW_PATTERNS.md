@@ -418,3 +418,15 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
 - RECOVERY 3 (2026-10-13, cursor 8494): 18 more facts into unviewed windows (backup ...-2026-10-13.3); reviewed-window
   queue rebuilt (732 windows). recover2 did not dedupe tags, so its re-runs re-added 3 tags each time: 6 duplicate
   tags removed, and the script now skips a tag the window already has.
+- 27B STAGE 3 (name changes, 118 approved windows with a stated rename/mantle; 49 OK, 26 LOST_ALIAS, 43 unparsed):
+  most LOST_ALIAS verdicts are the one-name rule working (Peter Parker/Spider-Man, Kate/Hawkeye, Brian/Captain Britain
+  keep the window's one name; the alias lives on the infobox/overview windows). 9 were real misses: a rename the
+  window states with "rechristened", "later X", "went under the name of", "reform ... as", "took on the guise of",
+  "transformed into the X", "became known as", "As <title>" and no alias_of/disguise_as row. Added (b7303, b7307,
+  b1159, b566, b3884, b6511, b5422, b1875, b4810, b5423). No rule refused these rows; the reviewer (me) skipped them,
+  so the rule is a review habit: every stated rename gets its alias row even when the window's rows use one name (A146).
+- RECOVERED ROWS IN REVIEWED WINDOWS (27B stage 4 + hand check, 2026-10-13): 1,026 queued rows screened: 303 ACCEPT,
+  708 REJECT, 15 unparsed. Hand check of the 303: ~150 added (learned|-/revealed|-/suspected|- knowledge rows,
+  race/group membership, reigns as leader_of, attempts as verbs, a few events), normalised to the catalog forms;
+  ~150 refused: machines/cities/documents as doers, saved places (protected instead), crowds, production notes,
+  hypothetical plans, garbage objects. 27B precision on ACCEPT ~50%: its screen narrows, it does not decide.
