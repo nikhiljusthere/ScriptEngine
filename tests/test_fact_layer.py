@@ -302,3 +302,13 @@ def test_hyphenated_name_is_not_a_pronoun():
     assert fg._end_ok("she", "member_of", False, "t")
     assert fg._end_ok("He Who Remains", "revealed", False, "t") is None
     assert fg._end_ok("the other two", "met", False, "t")
+
+
+def test_rank_word_kept_when_the_window_names_the_codename():
+    # b8007 (2026-10-13): 'the mantle of "Captain Krakoa"' was cut to "Krakoa", the island nation
+    w = 'Steve Rogers was recruited and equipped with the mantle of "Captain Krakoa".'
+    assert fg.strip_rank("Captain Krakoa", w) == "Captain Krakoa"
+    assert fg._end_ok("Captain Krakoa", "alias_of", False, "t", None, w) is None
+    # an ordinary title is still stripped / refused
+    assert fg.strip_rank("General Ross", "General Ross ordered the strike.") == "Ross"
+    assert fg._end_ok("General Ross", "ordered", False, "t", None, "General Ross ordered the strike.")

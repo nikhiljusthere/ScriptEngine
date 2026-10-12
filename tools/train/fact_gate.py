@@ -190,7 +190,7 @@ def _end_ok(end, relation, is_object, tag, wiki=None, window=None):
     # a short name the window itself introduces ("a young girl named Po", b5450) is a name
     if len(e) <= 2 and not (e[:1].isupper() and window and re.search(r"(?<![\w-])" + re.escape(e) + r"(?![\w-])", window)):
         return f"end '{e}' is too short to be a name"
-    if RANK.match(e):
+    if RANK.match(e) and not (window and re.search(NAMED_AS.format(full=re.escape(e)), window, re.I)):
         return f"rank prefix in '{e}': strip it (step 6)"
     if SPECIES.match(re.sub(r"(?i)^(?:the|a|an)\s+", "", e)):
         return f"species/race end '{e}' (A25/R11)"
@@ -420,7 +420,18 @@ EVENT_VERBS = {"saved", "captured", "killed", "defeated", "escaped", "betrayed",
 REL_FIX = {"died": "dies", "rescued": None, "uses": "used", "planned": None, "claimed": None}
 
 
-def strip_rank(end):
+# A rank word is kept when the quote presents the whole string as a name: quoted, or as a mantle/codename/alias
+# ('equipped with the mantle of "Captain Krakoa"' was cut to "Krakoa", the island nation: b8007, 2026-10-13).
+# Measured on all 14,000 labelled windows: 1 of 61 rank-prefixed fact ends is such a name ("Agent McGuffin"),
+# the 60 titles (Senator Kelly, Doctor Midas, General Ross) are still stripped.
+NAMED_AS = (r'(?:["\u201c]{full}["\u201d]|(?:mantle|codename|identity|name|alias|title) of (?:the )?["\u201c]?{full}|'
+            r'call(?:ed|ing)? (?:him|her|them)sel(?:f|ves) (?:the )?["\u201c]?{full}|known as (?:the )?["\u201c]?{full}|'
+            r'as ["\u201c]{full})')
+
+
+def strip_rank(end, quote=None):
+    if isinstance(end, str) and quote and re.search(NAMED_AS.format(full=re.escape(end.strip())), quote, re.I):
+        return end
     if isinstance(end, str) and RANK.match(end.strip()):
         rest = RANK.sub("", end.strip(), count=1).strip()
         if rest and not re.match(r"(?i)of\b", rest):
@@ -428,8 +439,9 @@ def strip_rank(end):
     return end
 
 
-def normalise(row):
-    """Return a repaired copy of one fact row (shape only)."""
+def normalise(row, window=None):
+    """Return a repaired copy of one fact row (shape only). `window` lets a rank+name the window presents as
+    a codename anywhere ("the mantle of \"Captain Krakoa\"") keep its rank word in every row."""
     r = dict(row)
     rel = r.get("relation")
     if rel in REL_FIX and REL_FIX[rel]:
@@ -445,7 +457,7 @@ def normalise(row):
         r["asserted_by"] = r.get("subject")
     for k in ("subject", "object", "asserted_by"):
         if r.get(k):
-            r[k] = strip_rank(r[k])
+            r[k] = strip_rank(r[k], window or r.get("quote"))
     return r
 
 

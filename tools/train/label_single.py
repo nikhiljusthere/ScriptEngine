@@ -157,7 +157,7 @@ def fact_gate_keep(rows, window, wiki=None):
     import fact_gate
     kept, dropped = [], []
     for r in rows or []:
-        r = fact_gate.normalise(r) if isinstance(r, dict) else r  # repair shape before judging (2026-10-12)
+        r = fact_gate.normalise(r, window) if isinstance(r, dict) else r  # repair shape before judging (2026-10-12)
         probs = list(fact_gate.validate(r))
         q = r.get("quote") or ""
         if len(q) < 12:

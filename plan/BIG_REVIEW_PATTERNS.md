@@ -321,3 +321,10 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
   now split on spaced pipes only.
 - 2026-10-13 later: reviewers P/Q/R/S stopped at the account's session limit; P b7627-7666, R's refused b7830
   and the rest were finished inline by the coordinator. Cursor 7846.
+- FIXED 2026-10-13 (owner: "check if you are rejecting events/facts based on prior rules"): the fact layer cut a
+  rank word off a codename the window presents as a name ('equipped with the mantle of "Captain Krakoa"' became
+  "Krakoa", the island nation: a silent wrong entity, not a refusal; b8007). strip_rank() and _end_ok() now keep the
+  rank when the window shows the full string quoted or as a mantle/codename/alias/"calling himself"/"known as";
+  normalise() gets the window from label_single.fact_gate_keep. Measured on 14,000 windows: 1 of 61 rank-prefixed
+  fact ends is kept ("Agent McGuffin"), the 60 titles (Senator Kelly, Doctor Midas, General Ross) are still stripped;
+  approved rows damaged before the fix: 1 (b8007, resubmitted). Test: test_rank_word_kept_when_the_window_names_the_codename.
