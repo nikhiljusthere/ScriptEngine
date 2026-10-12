@@ -274,3 +274,8 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
 - 2026-10-12 A101 flag: a leading participle phrase ("Having his memories erased, Nightcrawler returned",
   "Mastering genetics, they…") was reported as the doer. The flag now matches the doer after the phrase's
   comma (15/281 approved hits were affected; the real doer is reported, phrase-only lines no longer flag).
+- 2026-10-12 event gate: draft_v2.CLASS_WORDS is case-insensitive, so names spelled like class words
+  ("known only as Him", "The Other", "the Guard", "The Allies") were refused as unnamed ends. label_single
+  now overrides it: a capitalised class word the window uses mid-sentence, or "The <Capital>", passes;
+  "He" opening a sentence and "The two" stay refused (measured: 13 of 16 refused capitalised class ends
+  were names). The main checkout's draft_v2 is untouched.
