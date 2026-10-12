@@ -380,3 +380,7 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
   windows are NOT changed: their 202 events + 826 facts that the final rows lack are queued in
   big/recovered_reviewed_2026-10-13.jsonl (710 windows); many were removed on purpose, so the 27B screens each against
   the window and the reviewed rows (tmp screen_recovered.py, ACCEPT/REJECT) and Claude hand-checks the ACCEPTs.
+- FIXED 2026-10-13 (A101 flag): a doer-less passive on a no_doer tag ("Lorna was calmed", b8170; "Lang was captured")
+  was flagged as naming its doer; the name is the patient. The flag now skips "X was/were <participle>" on no_doer
+  tags. Measured: 135 approved no_doer tags carried the false flag, all passives; no_relation/deictic still flagged
+  ("Gao was forced to watch" stays a hint). Test: test_a101_doerless_passive_on_no_doer_tag_is_no_flag.

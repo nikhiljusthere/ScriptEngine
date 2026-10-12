@@ -297,6 +297,14 @@ def test_a101_named_narration_tagged_is_flagged():
     assert not any("(A101)" in f for f in flags)
 
 
+def test_a101_doerless_passive_on_no_doer_tag_is_no_flag():
+    w = "Finally, Lorna was calmed, though she blew Annie off. Lang was captured. Lorna freaked."
+    flags, _ = fg.check([], w, tags=[{"tag": "no_doer", "quote": "Lang was captured."}])
+    assert not any("(A101)" in f for f in flags)
+    flags, _ = fg.check([], w, tags=[{"tag": "no_relation", "quote": "Lorna freaked."}])
+    assert any("(A101)" in f for f in flags)
+
+
 def test_hyphenated_name_is_not_a_pronoun():
     assert fg._end_ok("She-Hulk", "member_of", False, "t") is None
     assert fg._end_ok("she", "member_of", False, "t")

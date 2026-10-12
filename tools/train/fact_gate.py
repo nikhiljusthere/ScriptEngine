@@ -241,6 +241,10 @@ _STARTERS = {"The", "A", "An", "When", "After", "While", "As", "However", "Then"
              "Few", "Just", "Now", "Once", "Some", "Many", "Most", "All", "Every", "Each", "No", "Not"}
 
 
+_PARTICIPLE = (r"(ed|en)$|^(brought|caught|left|sent|made|held|kept|thrown|shot|hit|put|found|told|bound|struck|"
+               r"taken|cast|led|sold|torn|born)$")
+
+
 def check(rows, window, wiki=None, tags=None):
     """Return (flags, ok) for one window's fact rows + tag rows.
 
@@ -391,6 +395,11 @@ def check(rows, window, wiki=None, tags=None):
         if lead and lead.group(1).lower() not in ("king", "sting", "viking"):
             q_d = q[lead.end():]
         m = re.match(r"(?:[A-Z][\w'.-]+ ){0,2}?([A-Z][\w'.-]+) (?:\w+(?:ed|es|s)|was|had|began)\b", q_d)
+        # a doer-less passive ("Lorna was calmed", "Lang was captured") names its patient, not its doer: on a
+        # no_doer tag that is the right tag (measured 2026-10-13: 135 approved no_doer tags flagged, all passives)
+        pas = re.match(r"(?:[A-Z][\w'.-]+ ){0,2}?[A-Z][\w'.-]+ (?:was|were) (?:\w+ly )?(\w+)", q_d)
+        if tg == "no_doer" and pas and re.search(_PARTICIPLE, pas.group(1)):
+            m = None
         if tg in ("no_relation", "deictic", "no_doer") and m and m.group(0).split()[0] not in _STARTERS:
             flags.append(f"tag{i}: '{q[:40]}' names its doer ({m.group(1)}): write it as a fact row with the "
                          f"passage's verb, not a {tg} tag (A101)")
