@@ -166,6 +166,7 @@ roughly one error in five through.
 | A150 | a portal, gem or realm boundary as an arrival or escape end ("arrived Siege Perilous", "Cletus\|escaped\|regular universe" for "escape to the regular universe") (b6943, b6969) | `arrived` only at a named place reached; `escaped` takes the captor or place left, never the destination | A24, A50 | rare |
 | A151 | "In <place>, X did Y" or "X was next seen in <place>" written as `arrived` (Rome, Tarnington, India, Timbuktu) (b7545, b7567, b7572) | `located_at` the place; `arrived` only when the passage says X went or came there (A109, A132) | A132 | occasional |
 | A152 | a list entry that names a duplicate or variant after another hero ("Deadpool - One of a group of dupes", "Hulk - ...") written with the bare famous name, so its acts land on that hero (b8068, b8069) | the page's own entry form ("Deadpool Dupe", "Hulk Dupe", as "Bartender Dupe"); never the bare name of the other hero | A18, A141 | rare |
+| A153 | a person whose name is also a wiki place page refused or dropped as a place ("CIA agents China and Barrett", "Lord Carteret", "Carol Danvers") (b8137, b8141) | the person: the event gate now spares a name the window introduces with a first name, title or "agents" | R22, step 6 | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",
@@ -360,3 +361,10 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
   ("Skrulls invaded", 27B: correct refusal) and as person ends. (2) SPECIES matches only the plural "Gods": "God" is
   a named deity ("to ask God forgiveness"). Measured: 29 of the 242 still-refused race fact rows pass, all
   classifications or God. Test: test_race_as_classifying_object_and_god_as_name.
+- FIXED 2026-10-13 (event gate, label_single._personal_use): a person whose name is also a place page was refused as
+  "place X as the object of" ("CIA agents China and Barrett", "Lord Carteret", "Carol Danvers"; b8137/b8141). The
+  place refusal now spares an end the window introduces with a first name, title or "agents". Measured on the 52
+  still-refused place-object rows: the 6 passing rows are all people; countries/cities/realms stay refused
+  (Whitehall without a first name in its window is still missed).
+- NOTE (A33, b8142): a resurrection done to use the revived ("the Legion took Frank's body and Morbius resurrected him
+  ... to help them against the Hunter") written as saved -> awakened only (A33 tool revival), as Mandarin/Killmonger.

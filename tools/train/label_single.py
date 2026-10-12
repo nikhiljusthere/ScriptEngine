@@ -223,6 +223,21 @@ def ask(url, model, doc, user, thinking, max_tokens, timeout=1800, history=()):
     return m.get("content") or ""
 
 
+def _personal_use(end, window):
+    """True when the window uses a place-page name as a person: a first name, title or "agents" right before it
+    ("CIA agents China and Barrett", "Lord Carteret", "Carol Danvers"). Gate audit 2026-10-13: of 52 place-object
+    refusals, the 6 rows this passes are all people; countries and cities stay refused."""
+    import fact_gate
+    for m in re.finditer(r"(?:(?<=\s)|^)([A-Z][a-z]+\.?|agents?|named|called)\s+" + re.escape(end) + r"(?![\w-])",
+                         window or ""):
+        w = m.group(1)
+        if w in fact_gate._STARTERS or w.rstrip(".") in ("North", "South", "East", "West", "New", "Old", "Upper",
+                                                          "Lower", "Great", "Little", "Saint", "St"):
+            continue
+        return True
+    return False
+
+
 def gate(rows, window, wiki):
     """The mechanical end/shape checks; returns (kept, dropped)."""
     # music/episode/item pages are name collisions in narrative text ("Karolina" the song, "Zemo" the
@@ -246,7 +261,8 @@ def gate(rows, window, wiki):
             elif (lab and end == r["object"] and r["verb"] not in ("arrived", "departed", "escaped")
                   and PLACE_LIKE.search(lab)
                   # a person whose bare name is also a place page ("Gao", "Lincoln", "Rachel")
-                  and not any(wiki.label.get(p) == "character" for p in wiki.resolve(bare))):
+                  and not any(wiki.label.get(p) == "character" for p in wiki.resolve(bare))
+                  and not _personal_use(end, window)):
                 why = f"place {end!r} as the object of {r['verb']}"
         if why:
             dropped.append({**r, "why": why})
