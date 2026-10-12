@@ -377,3 +377,14 @@ def test_knowledge_relation_with_clause_object_becomes_dash():
     r = fg.normalise({"subject": "Ghost Rider", "relation": "discovered", "object": "Zarathos",
                       "quote": "Ghost Rider discovered Zarathos"})
     assert r["object"] == "Zarathos"  # a proper name stays
+
+
+def test_short_quote_whole_list_line_passes():
+    import label_single as ls
+    w = "| Affiliation =\nAvengers\nNed Leeds\nHe was lost. Tai died."
+    kept, dropped = ls.fact_gate_keep([{"subject": "Happy Hogan", "relation": "member_of", "object": "Avengers",
+                                        "quote": "Avengers"}], w)
+    assert kept and not dropped
+    kept, dropped = ls.fact_gate_keep([{"subject": "Happy Hogan", "relation": "lost_power", "object": None,
+                                        "quote": "lost"}], w)
+    assert dropped and "shorter than 12" in dropped[0]["why"]

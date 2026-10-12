@@ -401,3 +401,8 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
 - RECOVERY 2 (2026-10-13, after the `-`/Agent-number fixes): 49 more facts + 3 tags put into unviewed windows
   (b>8344, marker counts accumulate; backup labels_v2.jsonl.bak-pre-recovery-2026-10-13.2); the reviewed-window
   queue was rebuilt at cursor 8344 (708 windows, 202 events + 824 facts).
+- FIXED 2026-10-13 (fact gate, label_single._whole_short_unit): the 12-char quote floor refused infobox list lines
+  ("Avengers", "Ned Leeds", "Vision †", "{{M|Hydra}}", "Sokovia"; "Pizza Dog" at b8359). A short quote now passes when
+  it is a whole line or a whole sentence of the window and names one of the row's ends; other_verb rows excluded
+  (an occupation line "teacher" is no act). Measured: 7 of 24 historical refusals pass, all list lines; fragments
+  ("lost", "he was next", "to kill him") stay refused. Test: test_short_quote_whole_list_line_passes.

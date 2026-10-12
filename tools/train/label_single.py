@@ -157,6 +157,21 @@ def tag_gate_keep(rows, window):
     return kept, dropped
 
 
+def _whole_short_unit(q, window, row):
+    """A short quote that is a whole infobox list line ("Avengers", "Ned Leeds", "Vision †") or a whole sentence
+    ("Tai died.") and names one of the row's ends is no fragment: 24 such rows were refused by the 12-char floor
+    (27B gate audit 2026-10-13). A fragment like "lost" or "he was next" stays refused."""
+    import fact_gate
+    q = (q or "").strip()
+    # an other_verb object is a word of the quote, no end ("teacher" on an occupation line would pass)
+    if len(q) < 4 or not window or not isinstance(row, dict) or row.get("relation") == "other_verb":
+        return False
+    if not any(isinstance(e, str) and e and e.split()[-1] in q for e in (row.get("subject"), row.get("object"))):
+        return False
+    lines = {re.sub(r"^[\s*#:|]+", "", ln).strip() for ln in window.splitlines()}
+    return q in lines or any(q.rstrip(".") == s.strip().rstrip(".") for s in fact_gate.sentences(window))
+
+
 def fact_gate_keep(rows, window, wiki=None):
     """The fact layer's gate. Returns (kept, dropped); dropped carry a `why`.
 
@@ -172,7 +187,7 @@ def fact_gate_keep(rows, window, wiki=None):
             r["quote"] = _exact_quote(r.get("quote"), window)
         probs = list(fact_gate.validate(r))
         q = r.get("quote") or ""
-        if len(q) < 12:
+        if len(q) < 12 and not _whole_short_unit(q, window, r):
             probs.append(f"quote shorter than 12 chars ({q[:30]!r})")
         elif window and q not in window:
             probs.append("quote is not verbatim in the window")
