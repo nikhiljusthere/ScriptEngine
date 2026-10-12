@@ -322,3 +322,17 @@ def test_crowd_word_inside_a_thing_object_is_no_crowd():
     assert fg._end_ok("many deities", "created", True, "t")
     assert fg._end_ok("army", "gave", True, "t")
     assert fg._end_ok("heroes", "disguise_as", True, "t")
+
+
+def test_modality_written_as_relation_becomes_other_verb():
+    # gate audit 2026-10-13: "Strange|planned|learn magic" was dropped; 39 of 94 such rows are repaired
+    r = fg.normalise({"subject": "Strange", "relation": "planned", "object": "learn magic",
+                      "quote": "the only way to stop Mordo was to learn magic himself"})
+    assert (r["relation"], r["object"], r["modality"], r["asserted_by"]) == ("other_verb", "learn", "planned", "Strange")
+    r = fg.normalise({"subject": "Peter Parker", "relation": "claimed", "object": "knife",
+                      "quote": "Peter claimed ownership of the knife with a concocted story"})
+    assert (r["object"], r["modality"]) == ("claimed", "claimed")
+    # a noun is no verb: "his own claim" stays unrepaired
+    r = fg.normalise({"subject": "Pythagoras Dupree", "relation": "claimed", "object": "6th_Smartest_Man",
+                      "quote": "Pythagoras, by his own claim, was the 6th"})
+    assert r["relation"] != "other_verb"

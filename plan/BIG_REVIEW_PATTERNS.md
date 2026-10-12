@@ -346,3 +346,11 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
 - NEW A152 (b8068, b8069): a list entry that names a duplicate/variant after another hero ("Deadpool - One of a group of
   dupes", "Hulk - ...") written with the bare famous name -> the rows land on Wade Wilson / Bruce Banner. Write the
   page's own entry form ("Deadpool Dupe", "Hulk Dupe", like "Bartender Dupe"); never the bare name of the other hero.
+- GATE AUDIT 2026-10-13 (27B, stage 1 deterministic): re-gating every row dropped in labels_v2 with today's gates:
+  1,099 recovered by the 2026-10-12/13 fixes (989 facts, 88 events, 22 tags); 2,681 still refused in 88 reason
+  classes (largest: relation not in vocabulary 435, of which ~290 are event verbs that split_event_facts moves;
+  not verbatim 579; bare pronoun 248; unnamed/class 235; race page 235+211; escaped needs an object 133).
+- FIXED 2026-10-13: the modality written as the relation ("Strange|planned|learn magic", "Peter|claimed|...") was
+  dropped by REL_FIX; normalise() now keeps it as other_verb + that modality + asserted_by, the object being the
+  planned verb (only "to <verb>" or a gerund in the quote) or the claim/plan word as a verb. 39 of 94 repaired, the
+  rest have no verb in the quote. Test: test_modality_written_as_relation_becomes_other_verb.

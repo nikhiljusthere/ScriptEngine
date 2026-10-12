@@ -451,6 +451,22 @@ def normalise(row, window=None):
     a codename anywhere ("the mantle of \"Captain Krakoa\"") keep its rank word in every row."""
     r = dict(row)
     rel = r.get("relation")
+    # the modality written as the relation ("Strange|planned|learn magic", "Nadia|claimed|Pym's daughter"):
+    # REL_FIX dropped these (69 planned + 23 claimed still refused, gate audit 2026-10-13). Keep the row as
+    # other_verb with that modality; the object is the planned verb, else the claim word, found in the quote.
+    if rel in ("planned", "claimed", "attempted") and r.get("quote"):
+        q = r["quote"]
+        first = re.split(r"[\s_]+", (r.get("object") or "").strip())[0] if r.get("object") else ""
+        # the planned act only as an infinitive/gerund in the quote ("to stop Ultron", "hunting down"); else the
+        # claim/plan word only as a verb ("claimed", "planning"), never a noun ("his own claim", "a plan")
+        m = ((re.search(r"(?i)\bto\s+(" + re.escape(first) + r")\b", q)
+              or re.search(r"(?i)\b(" + re.escape(first) + r")\b", q) if first.lower().endswith("ing") else
+              re.search(r"(?i)\bto\s+(" + re.escape(first) + r")\b", q)) if len(first) > 2 and first[:1].islower() else None) \
+            or re.search(r"(?i)\b(" + {"planned": "plann", "claimed": "claim", "attempted": "attempt"}[rel] + r"(?:ed|ing))\b", q)
+        if m:
+            r.update(relation="other_verb", object=m.group(1), modality=rel,
+                     asserted_by=r.get("asserted_by") or r.get("subject"))
+            rel = "other_verb"
     if rel in REL_FIX and REL_FIX[rel]:
         r["relation"] = REL_FIX[rel]
     mod, cert = r.get("modality"), r.get("certainty")
