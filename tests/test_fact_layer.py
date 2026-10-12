@@ -312,3 +312,13 @@ def test_rank_word_kept_when_the_window_names_the_codename():
     # an ordinary title is still stripped / refused
     assert fg.strip_rank("General Ross", "General Ross ordered the strike.") == "Ross"
     assert fg._end_ok("General Ross", "ordered", False, "t", None, "General Ross ordered the strike.")
+
+
+def test_crowd_word_inside_a_thing_object_is_no_crowd():
+    # b8055 (2026-10-13): a power/item description is no person end; measured 57 historical drops recovered
+    assert fg._end_ok("ability to entrance others with music", "gained_power", True, "t") is None
+    assert fg._end_ok("Book of the Darkhold", "used", True, "t") is None
+    # people stay crowds: quantity-led objects, gave's recipient, person relations
+    assert fg._end_ok("many deities", "created", True, "t")
+    assert fg._end_ok("army", "gave", True, "t")
+    assert fg._end_ok("heroes", "disguise_as", True, "t")

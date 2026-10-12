@@ -194,7 +194,14 @@ def _end_ok(end, relation, is_object, tag, wiki=None, window=None):
         return f"rank prefix in '{e}': strip it (step 6)"
     if SPECIES.match(re.sub(r"(?i)^(?:the|a|an)\s+", "", e)):
         return f"species/race end '{e}' (A25/R11)"
-    m = CROWD_WORDS.search(e)
+    # an item/thing/power/form object is no person, so a crowd word inside it is part of a description
+    # ("powers of the Scarlet Witch", "Book of the Darkhold", "ability to entrance others with music": b8055,
+    # 2026-10-13); a quantity-led object ("many deities", "several of them") is still a crowd
+    thing_obj = (is_object and relation != "gave"  # gave takes the RECIPIENT (A97): "gave the army" is a crowd
+                 and (NON_PERSON_OBJECT.get(relation) in ("item", "thing", "form") or relation in ("gained_power", "lost_power"))
+                 and not re.match(r"(?i)(?:many|several|some|various|most|all|both|few|numerous|countless|"
+                                  r"multiple|dozens|hundreds|thousands)\b|(?:them|those|these)$", e))
+    m = None if thing_obj else CROWD_WORDS.search(e)
     # a capitalised crowd word inside a capitalised name is part of the name ("Young Allies",
     # "Avengers Academy Students"); "Hydra agents" / "the guards" stay crowds (fixed 2026-10-10)
     if m and not named_here and not (e[:1].isupper() and m.group(0)[:1].isupper() and m.group(0).lower() not in
@@ -426,7 +433,7 @@ REL_FIX = {"died": "dies", "rescued": None, "uses": "used", "planned": None, "cl
 # the 60 titles (Senator Kelly, Doctor Midas, General Ross) are still stripped.
 NAMED_AS = (r'(?:["\u201c]{full}["\u201d]|(?:mantle|codename|identity|name|alias|title) of (?:the )?["\u201c]?{full}|'
             r'call(?:ed|ing)? (?:him|her|them)sel(?:f|ves) (?:the )?["\u201c]?{full}|known as (?:the )?["\u201c]?{full}|'
-            r'as ["\u201c]{full})')
+            r'as ["\u201c]{full}|(?m:^\s*\*?\s*{full}\s+[-\u2013\u2014:]\s))')  # a list entry "Lieutenant Madrox - ..." (b8054)
 
 
 def strip_rank(end, quote=None):

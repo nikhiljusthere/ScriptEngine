@@ -328,3 +328,14 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
   normalise() gets the window from label_single.fact_gate_keep. Measured on 14,000 windows: 1 of 61 rank-prefixed
   fact ends is kept ("Agent McGuffin"), the 60 titles (Senator Kelly, Doctor Midas, General Ross) are still stripped;
   approved rows damaged before the fix: 1 (b8007, resubmitted). Test: test_rank_word_kept_when_the_window_names_the_codename.
+- FIXED 2026-10-13: a list-entry heading is a name too ("Lieutenant Madrox - Emperor Prime's second-in-command",
+  b8054): NAMED_AS also matches a line that starts with the rank+name and a dash/colon. Re-measured: still 60/61
+  titles stripped. Before, the dupe's empire and invasion facts were pinned on "Madrox" (silent wrong entity).
+- FIXED 2026-10-13: the crowd-word rule refused item/thing/form/power OBJECTS that merely contain a crowd word
+  ("ability to entrance others with music", b8055; "powers of the Scarlet Witch", "Book of the Darkhold",
+  "Staff of One", "army of Dragon Men"). Thing-type objects (NON_PERSON_OBJECT item/thing/form, gained/lost_power)
+  skip it, except `gave` (its object is the recipient, A97) and quantity-led objects ("many deities", "several of
+  them"). Measured: 57 of the historical crowd drops on such objects now pass; spot-read they are things.
+  Test: test_crowd_word_inside_a_thing_object_is_no_crowd.
+- NOTE (A141/A18): on a duplicating-character page "Emperor Prime" (the Bunker Dupe) is not "Jamie Prime" (the
+  original, dead in that window); the 35B wrote "Prime Jamie" for the Emperor (b8054).
