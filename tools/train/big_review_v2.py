@@ -297,7 +297,7 @@ def apply_edits(path):
             mod, cert, ab, canon = (p[4:] + ["actual", "stated", "", ""][len(p) - 4:])[:4]
             cur["facts"].append({"quote": q, "subject": s, "relation": rel, "object": None if o == "-" else o,
                                  "modality": mod or "actual", "certainty": cert or "stated",
-                                 "asserted_by": ab or None, "canon": canon or None})
+                                 "asserted_by": None if ab in ("", "-") else ab, "canon": canon or None})
         elif op == "f-":
             s, rel, o = parse_row(rest, 0)[:3]
             o = None if o == "-" else o
