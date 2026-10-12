@@ -164,6 +164,7 @@ roughly one error in five through.
 | A148 | a nickname for a group or a description filed as an alias ("Cletus\|also_known_as\|Axis of Evil" for "dubbing them the 'Axis of Evil'"; "Mother\|alias_of\|interdimensional parasite") (b6973, b6932) | `alias_of` only for a name a person goes by; a dubbing is `other_verb dubbing`; a description is no alias | A99, A100 | rare |
 | A149 | `revealed_as` with a description subject, the wrong person, or for a disguise unmasked ("witch\|revealed_as\|Baba Yaga", "Billy\|revealed_as\|physical manifestation of the Demiurge", "Teddy\|revealed_as\|Morgan Le Fay") (b6916, b6917, b6922) | subject = the name shown before, object = the true identity, both named; a disguise is `disguise_as` from the impostor's side | A4, A99 | occasional |
 | A150 | a portal, gem or realm boundary as an arrival or escape end ("arrived Siege Perilous", "Cletus\|escaped\|regular universe" for "escape to the regular universe") (b6943, b6969) | `arrived` only at a named place reached; `escaped` takes the captor or place left, never the destination | A24, A50 | rare |
+| A151 | "In <place>, X did Y" or "X was next seen in <place>" written as `arrived` (Rome, Tarnington, India, Timbuktu) (b7545, b7567, b7572) | `located_at` the place; `arrived` only when the passage says X went or came there (A109, A132) | A132 | occasional |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",
@@ -311,3 +312,12 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
 - NOTE (A130/A141): on the Nova page the 35B wrote "Richard Rider" in windows that only say "Nova"/"Rider"
   (b7109-b7124); a group led by a named head ("B'rute's hive", "the forces of Apocalypse", "Phraug's Deviants",
   b7144/b7147/b7157) was tagged crowd_end instead of acting through the head (R21/A63).
+- NOTE (A53): a vampire "destroyed" and revived later in the window is `defeated`, not `killed` (b7573, b7580).
+- FIXED big_review_v2 view: it printed only the first 4000 characters of a window (b7569 reviewer). 4 of 14,000
+  windows are longer; the two already reviewed (b4531 credits list, b6909 infobox relatives) had no narrated
+  row past the cut. The view now prints the whole window.
+- FIXED build_prompt.py: SECTION F cut every rule at its first pipe (an inline row "Medusa|other_verb|was",
+  `victim|wounded|-`, or an escaped \|), so the 35B was served half-rules (A105, A125, A134, A136...). Cells are
+  now split on spaced pipes only.
+- 2026-10-13 later: reviewers P/Q/R/S stopped at the account's session limit; P b7627-7666, R's refused b7830
+  and the rest were finished inline by the coordinator. Cursor 7846.

@@ -207,7 +207,7 @@ def view(n, start):
         ev, fa, tg, rev, r = base(wid, b, v2, a2, a1, v1, c1)
         text = pas[wid]
         print(f"===== b{b} {r.get('page')} / {r.get('section')}")
-        print(text[:4000])
+        print(text)  # whole window: a [:4000] cut hid the tail of 4 long infobox windows (b7569 reviewer, 2026-10-13)
         print(" EVENTS" + (" [reviewed]" if rev else ""),
               [(e["subject"], e["verb"], e["object"]) + (() if rev else ((e.get("quote") or "")[:45],))
                for e in ev] or "[]")
