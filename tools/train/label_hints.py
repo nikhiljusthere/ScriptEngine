@@ -147,8 +147,6 @@ HINTS = [
      "another is other_verb; a first new form is also awakened; a named alter ego is alias_of (A126)."),
     (r"(?i)\b(?:found|tracked|spotted|located)\b[^.]*\bin\s+[A-Z]",
      "'found X in <place>' is located_at the place (and met for the finder), not arrived (A132)."),
-    (r"(?i)\b(?:insisted|suggested|offered|promised|swore|decided|agreed|ordered|threatened)\b",
-     "A speech act or order that WAS made is modality actual; planned/claimed only for what was not done (A128)."),
     (r"(?i)\b(?:staged|mock|sham)\s+(?:battle|fight|attack)|was staged\b",
      "A staged or mock battle is not a real fight: no fought/defeated rows, only an other_verb fact (A124)."),
     (r"(?i)\b(?:implanted|false memor|dream|fantasy|illusion|impostor|posing as)\w*\b",

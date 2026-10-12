@@ -768,7 +768,7 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A125** — other_verb
 - **A126** — transformed_into
 - **A127** — pair only opponents the window sets against each other
-- **A128** — ordered
+- **A128** — keep claimed rows; actual only when the row states the act itself, not its content
 - **A129** — rows for the narrated acts (killed, awakened/saved, possessed fact); the tag stays on the field name
 - **A130** — the window's own name (A112 extended to page titles)
 - **A131** — the named user/caster as subject, else a no_doer tag (flagged; A110)

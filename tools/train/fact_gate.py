@@ -314,23 +314,17 @@ def check(rows, window, wiki=None, tags=None):
         if rel == "other_verb" and isinstance(o, str) and o and (
                 o.lower() in ("was", "were", "is", "are", "be", "been", "being", "should", "would", "could",
                               "had", "has", "have", "did", "does", "do", "will", "can", "might", "must")
-                or o[:1].isupper()):
+                or (o[:1].isupper() and not re.search(r"(?:ing|ed|s)$", o))):  # "Believing" is a verb
             flags.append(f"{tag}: other_verb object '{o}' is a copula/modal or a name, not the act: use the "
                          f"quote's real verb, or a no_relation tag if nothing is done (A125)")
-        if rel == "transformed_into" and isinstance(o, str) and o and (o[:1].islower() or len(o.split()) > 3):
-            flags.append(f"{tag}: transformed_into object '{o}' is a description: a first new form is "
-                         f"`awakened`, a named alter ego is `alias_of`, the transformer is other_verb (A126)")
-        if f_mod := r.get("modality"):
-            if f_mod == rel or (f_mod in ("planned", "claimed") and rel == "other_verb" and isinstance(o, str)
-                                and re.match(r"(?i)(?:insist|suggest|offer|promis|swore|said|told|decid|agreed|"
-                                             r"threaten|explain|admit|announc|demand|refus)", o)):
-                flags.append(f"{tag}: the act itself happened -> modality actual (a done speech act or "
-                             f"order is not a plan/claim) (A128/A96)")
+        # (A126 flag withdrawn 2026-10-12: forms are descriptions by nature, "being of solid sound")
+        # (A128 "done speech act as claimed" was measured on 5,526 approved windows and dropped:
+        #  "X insisted that ..." as claimed + asserted_by is the procedure's claim row, B.4)
         if rel in ("learned", "discovered", "suspected", "remembered", "revealed") and isinstance(o, str) and o \
                 and ("_" in o or len(o.split()) >= 4):
             flags.append(f"{tag}: '{rel}' with a clause object: `learned|-` / `revealed|-`, or other_verb with "
                          f"the quote's verb (A133/A115)")
-        if isinstance(s, str) and re.search(r"(?i)^(?:the |a |an )?(?:\w+'s )?(?:spell|curse|hologram|computer|"
+        if isinstance(s, str) and re.search(r"^(?:[Tt]he |[Aa] |[Aa]n )?(?:\w+'s )?(?:spell|curse|hologram|computer|"
                                             r"elevator|war|explosion|fire|blast|storm|device|machine|virus|"
                                             r"serum|ship|program|system|book|weapon|city|country|planet)$", s):
             flags.append(f"{tag}: subject '{s}' is no agent: name its user/caster as subject, or tag no_doer "
