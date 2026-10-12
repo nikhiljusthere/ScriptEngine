@@ -269,3 +269,6 @@ Still refused by design: races/species (R11/A25), countries as fight ends, unnam
 with no pursuer (needs an object). Recovery of the dropped rows: tmp recover.py (base rows for
 unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a hand pass).
 
+- 2026-10-12 A101 flag: a leading participle phrase ("Having his memories erased, Nightcrawler returned",
+  "Mastering genetics, they…") was reported as the doer. The flag now matches the doer after the phrase's
+  comma (15/281 approved hits were affected; the real doer is reported, phrase-only lines no longer flag).
