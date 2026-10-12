@@ -130,7 +130,9 @@ def check(ev, text):
             flags.append(f"{tag}: met from joining/allying (R4/R12)")
         # mind control / possession / hypnosis written as an attack (b4491, b4494, b4524)
         if v == "fought" and re.search(r"brainwash|hypnoti|mind[- ]control|possess|subliminal|manipulat|under the control", q, re.I) \
-                and not re.search(r"attack|punch|shot|stab|blast|struck|kick|beat", q, re.I):
+                and not re.search(r"attack|punch|shot|stab|blast|struck|kick|beat|fight|fought|battl|clash", q, re.I):
+            # fight words excluded 2026-10-12: "fighting off an Ultron-possessed Hank Pym" is a real fight
+            # (measured on approved rows: 16 hits dropped, all real fights; 65 kept, all true A116)
             flags.append(f"{tag}: mind control/possession is no fight -> other_verb fact with the controller (A116)")
         # waking from sleep, a dream or a trance written as awakened (b4407, b4493, b4526)
         if v == "awakened" and re.search(r"\b(?:woke|wakes|awoke|awakened|woken)\b", q, re.I) \
