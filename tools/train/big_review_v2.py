@@ -212,7 +212,8 @@ def view(n, start):
               [(e["subject"], e["verb"], e["object"]) + (() if rev else ((e.get("quote") or "")[:45],))
                for e in ev] or "[]")
         print(" FACTS", [(f.get("subject"), f.get("relation"), f.get("object"),
-                          "" if f.get("modality", "actual") == "actual" else f"{f['modality']}/{f.get('asserted_by')}",
+                          (f"actual/{f['asserted_by']}" if f.get("asserted_by") else "")
+                          if f.get("modality", "actual") == "actual" else f"{f['modality']}/{f.get('asserted_by')}",
                           "" if f.get("certainty", "stated") == "stated" else f["certainty"],
                           (f.get("quote") or "")[:32]) for f in fa] or "[]")
         if tg:
