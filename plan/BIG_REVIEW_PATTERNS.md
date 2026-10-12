@@ -156,6 +156,14 @@ roughly one error in five through.
 | A140 | `gained_power` with a null object for regained powers or ability prose ("regain his lost powers", "gained the following abilities") (b6428, b6476, b6499, b6533, b6544, b6610, b6619) | name the new power when a first one is gained; otherwise no row | B.2 | common (fact layer) |
 | A141 | a page subject's name given to another character on that page (Sleeper's acts as "Eddie Brock"; "Carnage" = Norman vs "Dark Carnage" = Kasady) (b6438, b6455, b6522) | the actor named in the sentence; never the page subject by default | A130 | occasional |
 | A142 | plural asserted_by ("Kitty, Storm, and Marvel Girl", "Gwen and MJ") (b6557, b6577, b6596) | one row per asserter | B.4 | occasional |
+| A143 | a title, reign name or spelling variant written as `became` ("Karl Haasen\|became\|Baron Karl Hassen", "Rudolfo Haasen\|became\|Rudolfo I", "Vladimir\|became\|king") (b7302, b7316, b7327) | `leader_of` the realm for a reign, `alias_of` for a codename, otherwise no row; `became` is for a new state or form only | A126 | occasional |
+| A144 | two acts told side by side, one given to the other's subject ("Cyclops' optic blast" as Dracula\|defeated\|Blade; "Werner had Boris promise" as Werner promised; Captain America\|disguise_as\|Yellowjacket when Teddy posed as him in Cap's plan) (b7280, b7282, b7288, b7323, b7326, b6912, b6913) | each act to its own grammatical subject; the planner of an impersonation gets no disguise_as | A111 | occasional |
+| A145 | one stated act written as several events ("overthrew the King, killing him" -> fought + defeated + killed; group-vs-group fights next to the named leaders' rows) (b7323, b7315, b7324) | the most specific verb only (`killed` over `defeated`); `fought` too only when the fight is stated separately (procedure step 5); no group rows when members are tied (A2) | step 5, A2 | occasional |
+| A146 | a death written as `other_verb died/perished` ("Zuras\|other_verb\|died", Makkari's death missing) (b7163, b7167, b7172) | `dies\|-` (actual); a feared or hypothetical death stays other_verb with its modality (measured 2026-10-13: 40 of 52 raw rows removed by review, the 12 kept were mostly "would die"; no flag, no auto-repair) | B.2 | occasional |
+| A147 | a revival written as `X\|other_verb\|resurrected` with the revived person as subject, or as the reviver "saving" (b7116, b7169, b7176) | `awakened` for the revived; `saved` too when a named reviver does it for the person's sake (A33) | A33 | occasional |
+| A148 | a nickname for a group or a description filed as an alias ("Cletus\|also_known_as\|Axis of Evil" for "dubbing them the 'Axis of Evil'"; "Mother\|alias_of\|interdimensional parasite") (b6973, b6932) | `alias_of` only for a name a person goes by; a dubbing is `other_verb dubbing`; a description is no alias | A99, A100 | rare |
+| A149 | `revealed_as` with a description subject, the wrong person, or for a disguise unmasked ("witch\|revealed_as\|Baba Yaga", "Billy\|revealed_as\|physical manifestation of the Demiurge", "Teddy\|revealed_as\|Morgan Le Fay") (b6916, b6917, b6922) | subject = the name shown before, object = the true identity, both named; a disguise is `disguise_as` from the impostor's side | A4, A99 | occasional |
+| A150 | a portal, gem or realm boundary as an arrival or escape end ("arrived Siege Perilous", "Cletus\|escaped\|regular universe" for "escape to the regular universe") (b6943, b6969) | `arrived` only at a named place reached; `escaped` takes the captor or place left, never the destination | A24, A50 | rare |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",
@@ -286,3 +294,20 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
   now overrides it: a capitalised class word the window uses mid-sentence, or "The <Capital>", passes;
   "He" opening a sentence and "The two" stay refused (measured: 13 of 16 refused capitalised class ends
   were names). The main checkout's draft_v2 is untouched.
+
+2026-10-13 (b6847-b7426: gaps closed by reviewers J/K/L/M, coordinator b7087-7106 + b7347-7426; cursor 7426):
+- FIXED fact_gate.RANK: "Empress Brood" / "Queen Brood" were stripped to the race word "Brood" and refused (b7136;
+  2 refused rows over all 14,000 windows, both the character); `Brood` joins the codename allow-list.
+- FLAG widened (A125): an other_verb object that is an adverb ("gravely", "increasingly"), a determiner/adjective
+  ("some", "certain", "similar") or a possessive ("Coulson's") is flagged. Measured on 7,503 approved windows:
+  7 raw 35B hits in reviewed windows, all 7 removed by review; 1 left in an approved row (b139 "certain").
+- OPEN: a non-breaking space in the window text makes a typed quote fail the verbatim check (b6933 "sons of the
+  Scarlet Witch"). Measured: 24 of 14,000 windows contain one; 21 rows (9 facts, 5 tags, 7 events) were dropped for
+  that reason alone. Left as is (a whitespace-tolerant check would change every downstream quote lookup); a
+  reviewer quotes the part without the space.
+- OPEN by design: "the Asgardian" as Billy Kaplan's codename is refused as a race end (b6919); the alias row was dropped.
+- NOTE: "Nur" ("the alien race, the Nur", b7143) passes the event gate as a fight end; the race list cannot know
+  every race, so races are removed by hand (A25).
+- NOTE (A130/A141): on the Nova page the 35B wrote "Richard Rider" in windows that only say "Nova"/"Rider"
+  (b7109-b7124); a group led by a named head ("B'rute's hive", "the forces of Apocalypse", "Phraug's Deviants",
+  b7144/b7147/b7157) was tagged crowd_end instead of acting through the head (R21/A63).

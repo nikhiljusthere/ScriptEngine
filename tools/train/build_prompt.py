@@ -38,6 +38,14 @@ ruling never justifies deleting a fact or tag row.
 A-patterns: what your row must have been. G/R: structural rules for every row you write."""
 
 
+def _cells(rest):
+    """Split a table row on its cell separators only: a pipe with whitespace on both sides. A plain
+    split cut every rule that shows a row inline ("Medusa|other_verb|was" A125, `victim|wounded|-`
+    A105, an escaped \\| A143-A149) at its first pipe, so the 35B was served half-rules
+    ("A134 — other_verb") — found 2026-10-13."""
+    return re.split(r"\s\|\s", " " + rest + " ")
+
+
 def rows():
     out = []
     for line in CATALOG.read_text().splitlines():
@@ -45,9 +53,9 @@ def rows():
         if not m:
             continue
         code, rest = m.group(1), m.group(2)
-        cells = [c.strip() for c in rest.split("|")]
+        cells = [c.strip() for c in _cells(rest)]
         rule = cells[0] if code[0] in "GR" else (cells[1] if len(cells) > 1 else "")
-        rule = re.sub(r"\s+", " ", rule).replace("|", "/").strip()
+        rule = re.sub(r"\s+", " ", rule).replace("\\|", "|").replace("|", "/").strip()
         if rule:
             out.append(f"- **{code}** — {rule}")
     return out

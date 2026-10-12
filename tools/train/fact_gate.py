@@ -107,7 +107,12 @@ RANK = re.compile(
     r"Professor|Chancellor|Director|Lord|Lady|King|Queen|Sir|Dame|Madam|President)\s"
     r"(?!of\b|in\b|Chaos\b|Carter\b|Lotus\b|Dark Wind\b|Loki\b|Goblin\b|Anti-Venom\b|Commander\b|Sun\b|Bad Vibes\b|"
     r"Dazzler\b|Cutlass\b|Nemesis\b|Spectrum\b|Stilt-Man\b|Hawkman\b|Avalon\b|Americat\b|Minerva\b|Valkyrie\b|"
-    r"Thor\b|Raptor\b|Ogun\b|Voodoo\b|Deathstrike\b|Mastermind\b|America\b|Marvel\b|Britain\b|Universe\b|Doom\b|Strange\b|Druid\b|Octopus\b|X\b|Xavier\b|Cobra\b|U\.K\.|Venom\b|Arthur\b|Hydra\b|Torch\b|\d)")
+    r"Thor\b|Raptor\b|Ogun\b|Voodoo\b|Deathstrike\b|Mastermind\b|America\b|Marvel\b|Britain\b|Universe\b|Doom\b|Strange\b|Druid\b|Octopus\b|X\b|Xavier\b|Cobra\b|U\.K\.|Venom\b|Arthur\b|Hydra\b|Torch\b|Brood\b|\d)")
+NON_VERB_WORDS = {"some", "certain", "similar", "many", "much", "several", "more", "most", "very", "also",
+                  "only", "even", "still", "new", "old", "own", "other", "another", "such", "same",
+                  "various", "both", "all", "each", "every"}
+VERBS_IN_LY = {"rely", "apply", "reply", "fly", "ally", "tally", "bully", "rally", "supply", "multiply",
+               "imply", "comply", "dally", "sully"}
 COMPOSITE = re.compile(r"\s/|\(|\)|\[|\]")
 # a quote must lie inside ONE sentence: the anti-loophole rule the council required, because
 # big_flags.py:197 accepts `sent in q` with no quote-length cap and one paragraph quote would
@@ -317,6 +322,13 @@ def check(rows, window, wiki=None, tags=None):
                 or (o[:1].isupper() and not re.search(r"(?:ing|ed|s)$", o))):  # "Believing" is a verb
             flags.append(f"{tag}: other_verb object '{o}' is a copula/modal or a name, not the act: use the "
                          f"quote's real verb, or a no_relation tag if nothing is done (A125)")
+        # A125 widened (b6847-b6926 reviewer: "gravely", "increasingly", "some", "Coulson's"; measured
+        # 2026-10-13 on 7,503 approved windows: 7 raw 35B hits, all 7 removed by review, 1 left in b139)
+        elif rel == "other_verb" and isinstance(o, str) and re.fullmatch(r"[a-z][\w'’-]*", o or "") and (
+                re.search(r"['’]s$", o) or o in NON_VERB_WORDS
+                or (o.endswith("ly") and o not in VERBS_IN_LY)):
+            flags.append(f"{tag}: other_verb object '{o}' is an adverb/adjective/possessive, not the act: use "
+                         f"the quote's real verb (A125)")
         # A134 (b5747-b5846 reviewer; measured 2026-10-12: 80 of 92 approved attempt-word objects had a
         # "tried to <verb>" in the quote): the attempt word is the modality, the object is the verb tried
         if rel == "other_verb" and isinstance(o, str) and o.lower() in (

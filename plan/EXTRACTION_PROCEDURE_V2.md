@@ -745,35 +745,52 @@ A-patterns: what your row must have been. G/R: structural rules for every row yo
 - **A102** — the event row only (A89)
 - **A103** — the "thanks to/by" party is the subject: Fantastic Four defeated Frightful Four; Norriss saved Slattery
 - **A104** — helped/allied_with only; a fought row needs a named opponent
-- **A105** — `victim
-- **A106** — no event; `awakened` is a return from death or stasis
+- **A105** — `victim/wounded/-` (or attacker->victim); one row for a list of old injuries
+- **A106** — no event for ordinary sleep, a dream or a machine session; `awakened` is a return from death or stasis AND regaining consciousness (coma, knockout, blackout, tranquilizer: procedure B.1 "woke up, regained consciousness") — the 2026-10-12 audit restored 36 rows reviewers had removed by over-reading this row
 - **A107** — no event or fact for the person; the impostor gets the row under its own name or a `no_doer` tag
 - **A108** — `ordered` takes the PERSON told to act; otherwise `other_verb` with the passage's verb ("authorized", "demanded")
 - **A109** — no `arrived` row until the passage says they got there
-- **A110** — other_verb
-- **A111** — destroy, it is Ward; "at the behest of Professor X to monitor" -> Professor X
+- **A110** — the doer from "by X" (A93/A103); with no named agent, no row (a `no_doer` tag)
+- **A111** — find the grammatical subject of that verb; the one who loses/flees is the object of `defeated`
 - **A112** — keep the name the window uses (Ant-Man, Wasp, Hulk); an unnamed relative stays a tag (A20)
 - **A113** — no event; a fact with `claimed`, `reported` and the claimant as asserted_by
 - **A114** — no row (a `capability` tag); only a narrated occurrence ("Ultron punched Thor hard enough to make him bleed") is an event
-- **A115** — object `-` (`revealed
-- **A116** — fought
-- **A117** — helped
-- **A118** — fought
-- **A119** — defeated
-- **A120** — the owner of the power is the doer (Thanos
-- **A121** — sealed
+- **A115** — object `-` (`revealed/-`, `learned/-`); a named object only when that named thing is what is revealed or found
+- **A116** — fact `other_verb/possessed` with the possessor as subject; `fought` only for a stated attack
+- **A117** — `saved` event (a release from imprisonment, whoever the prisoner is); the one who breaks out alone gets `escaped` only when a captor or named place is stated, else `other_verb broke`
+- **A118** — no event; fact `contacted` (a remote link) plus `revealed/-` for what was told; `fought` only for a mental ATTACK (a blast, a probe, an assault)
+- **A119** — no `defeated` for the controller (fought stays if he is attacked); a named robot/AI body counts as the character itself (A53/A69)
+- **A120** — the owner of the power is the doer (Thanos/killed/Yelena Belova); A39 stays for an item, company or weapon whose user is unnamed
+- **A121** — the one sealed away is the object (Warlock/sealed/Magus); the place goes nowhere in the event (an `arrived` only if the window says the sealed one reached it)
 - **A122** — the event (A32) or an `other_verb` fact with the doer; `capability` only for general ability wording ("can", "is able to", no specific occasion)
 - **A123** — one row with the most specific named place (R1); the gate splits a merged string, so the 35B splits it too
 - **A124** — no fought/defeated rows; an other_verb fact for the participants (fantasy and illusion fights are no events either)
-- **A125** — other_verb
-- **A126** — transformed_into
+- **A125** — the quote's real verb (hacked, absorbed); nothing done -> no_relation tag (fact_gate flags it)
+- **A126** — transformer -> other_verb; first new form -> `awakened`; named alter ego -> `alias_of`; a described form ("steel form", "being of solid sound") is a legal object; judged by hand, no flag (a flag was measured and withdrawn)
 - **A127** — pair only opponents the window sets against each other
 - **A128** — keep claimed rows; actual only when the row states the act itself, not its content
 - **A129** — rows for the narrated acts (killed, awakened/saved, possessed fact); the tag stays on the field name
 - **A130** — the window's own name (A112 extended to page titles)
 - **A131** — the named user/caster as subject, else a no_doer tag (flagged; A110)
 - **A132** — `located_at` the place (+ `met` for the finder); no arrival unless the window says they got there
-- **A133** — discovered
+- **A133** — `learned/-` / `revealed/-`, or other_verb with the quote's verb (flagged; A115)
+- **A134** — object = the verb tried (keep, kill, escape) with modality attempted; "an attempt on X's life" with no verb stays (flagged; measured 80/92 approved rows)
+- **A135** — no met (only one party is present); keep the saved / awakened rows
+- **A136** — subject = the one who recruits / helps / tricks, object = the one recruited / helped / tricked
+- **A137** — no joined / member_of; allied_with for a shared fight, nothing for a trip
+- **A138** — the one carried arrives; a thing is no arriver (A131); the sender gets no arrived row
+- **A139** — no transformed_into; other_verb reverted, or nothing
+- **A140** — name the new power when a first one is gained; otherwise no row
+- **A141** — the actor named in the sentence; never the page subject by default
+- **A142** — one row per asserter
+- **A143** — `leader_of` the realm for a reign, `alias_of` for a codename, otherwise no row; `became` is for a new state or form only
+- **A144** — each act to its own grammatical subject; the planner of an impersonation gets no disguise_as
+- **A145** — the most specific verb only (`killed` over `defeated`); `fought` too only when the fight is stated separately (procedure step 5); no group rows when members are tied (A2)
+- **A146** — `dies/-` (actual); a feared or hypothetical death stays other_verb with its modality (measured 2026-10-13: 40 of 52 raw rows removed by review, the 12 kept were mostly "would die"; no flag, no auto-repair)
+- **A147** — `awakened` for the revived; `saved` too when a named reviver does it for the person's sake (A33)
+- **A148** — `alias_of` only for a name a person goes by; a dubbing is `other_verb dubbing`; a description is no alias
+- **A149** — subject = the name shown before, object = the true identity, both named; a disguise is `disguise_as` from the impostor's side
+- **A150** — `arrived` only at a named place reached; `escaped` takes the captor or place left, never the destination
 - **A20** — the definite description ("Lang's father")
 
 <!-- F:END -->
