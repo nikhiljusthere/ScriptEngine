@@ -440,3 +440,11 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
   Keep the title when the window never gives the bare name; the flag stays a hint, not a rule.
 - RULE CHECK 2026-10-13 (A106, Fin Fang Foom b8838/b8842): a dragon kept dormant for centuries by a herb is not
   ordinary sleep; his waking stays `awakened` and the flag is overridden (ruling: A106 = ordinary sleep only).
+- FIXED 2026-10-13 (event gate, label_single.gate): draft_v2.check_rows splits every comma end as a list (G.2), so
+  "Washington, D.C." became "arrived Washington" + "arrived D.C." (b8951 refused the hand row as 13 -> 15). Measured
+  over big v2: 13 rows in 8 windows carried a bare "D.C." end, all splits of "Washington, D.C."; in window text the
+  comma-initialism forms are D.C. (39) but also S.H.I.E.L.D. (24), A.I.M. (11), M.O.D.O.K. (9) in real lists. So
+  only a comma before a trailing TWO-letter initialism (D.C., N.Y., U.S.) joins one place; longer ones still split.
+  Done in label_single (this branch), not draft_v2, which label_single loads from the main checkout on purpose.
+  Reviewed windows: b5507 re-pointed to "Washington, D.C."; b2550/b2744/b2929 were already corrected; unreviewed
+  b10889/b12584/b13350 carry "D.C." rows to fix on arrival. Test: test_comma_before_two_letter_initialism_is_one_place.

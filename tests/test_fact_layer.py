@@ -406,3 +406,24 @@ def test_citation_titles_raise_no_name_flags():
     ev = [{"subject": "Felicia Hardy", "verb": "met", "object": "Spider-Man", "quote": "First crossing paths with Spider-Man"}]
     flags = bf.check(ev, text)[0]
     assert not [f for f in flags if "window has both" in f or "fuller name" in f]
+
+
+def test_comma_before_two_letter_initialism_is_one_place():
+    """b8951: "Washington, D.C." split into "Washington" + "D.C." arrivals; "Hydra, A.I.M." is still a list."""
+    import importlib.util
+    import verify_row_wiki as vrw
+    # series/ is gitignored: a worktree reads the main checkout's corpus
+    dbs = [p for p in (CODE / "series/marvel/facts.db", CODE.parents[2] / "series/marvel/facts.db") if p.exists()]
+    if not dbs:
+        pytest.skip("no marvel facts.db on disk")
+    spec = importlib.util.spec_from_file_location("label_single", CODE / "tools/train/label_single.py")
+    ls = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(ls)
+    wiki = vrw.Wiki(str(dbs[0]))
+    w = "John and Lemar had to head to Washington, D.C. because Hydra, A.I.M. and Viper fought them."
+    kept, dropped = ls.gate([{"subject": "John", "verb": "arrived", "object": "Washington, D.C.",
+                              "quote": "John and Lemar had to head to Washington, D.C."}], w, wiki)
+    assert [r["object"] for r in kept] == ["Washington, D.C."], dropped
+    kept, _ = ls.gate([{"subject": "Hydra, A.I.M. and Viper", "verb": "fought", "object": "John",
+                        "quote": "Hydra, A.I.M. and Viper fought them"}], w, wiki)
+    assert sorted(r["subject"] for r in kept) == ["A.I.M.", "Hydra", "Viper"]

@@ -253,6 +253,10 @@ def _personal_use(end, window):
     return False
 
 
+_INITIALISM = re.compile(r",\s*((?:[A-Z]\.){2})$")
+_JOIN = "\u2063"  # invisible separator: no list split happens on it
+
+
 def gate(rows, window, wiki):
     """The mechanical end/shape checks; returns (kept, dropped)."""
     # music/episode/item pages are name collisions in narrative text ("Karolina" the song, "Zemo" the
@@ -260,8 +264,17 @@ def gate(rows, window, wiki):
     # 160 such drops were real characters, so only non-narrative page types stay refused
     _CLASS_WORDS.window = window or ""
     rows = [{**r, "quote": _exact_quote(r.get("quote"), window)} if isinstance(r, dict) else r for r in rows or []]
+    # check_rows splits every comma end as a list (G.2): "Washington, D.C." became "arrived Washington" +
+    # "arrived D.C." (13 rows in big v2, b8951). A comma before a trailing two-letter initialism joins one
+    # place; longer initialisms stay list items ("Hydra, A.I.M.", "..., S.H.I.E.L.D." are real lists).
+    rows = [{**r, **{k: _INITIALISM.sub(_JOIN + r"\1", r[k]) for k in ("subject", "object")
+                     if isinstance(r.get(k), str)}} if isinstance(r, dict) else r for r in rows]
     kept, dropped = draft_v2.check_rows(rows, window, wiki,
                                         (vrw.BAD_END - {"music", "episode", "item"}) | SPECIES_LIKE)
+    kept = [{**r, **{k: r[k].replace(_JOIN, ", ") for k in ("subject", "object") if isinstance(r.get(k), str)}}
+            for r in kept]
+    dropped = [{**r, **{k: r[k].replace(_JOIN, ", ") for k in ("subject", "object") if isinstance(r.get(k), str)}}
+               for r in dropped]
     out = []
     for r in kept:
         why = None
