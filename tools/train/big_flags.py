@@ -96,6 +96,9 @@ def sentences(t):
 def check(ev, text):
     """Row flags (pattern catalog) and MISS? cues for one window; used by big_flags and label_single --repair."""
     flags, ok = [], []
+    # {{r|Amazing Spider-Man Vol 1 194}} citations are not narrative: their titles raised "fuller name
+    # 'Ares Vol'" and "both 'Spider-Man' and 'Peter'" flags (b8933; 17 flags on approved rows, all false)
+    text = re.sub(r"\{\{r\|[^{}]*\}\}", "", text)
     # multi-word names; a sentence-initial word ("When Loki") or a trailing "the" is not part of the name
     names = {re.sub(r"^(?:%s) " % LEAD, "", m) for m in
              re.findall(r"\b[A-Z][\w'-]+(?: (?:of |the |de |von )?[A-Z][\w'-]+)+", text)}

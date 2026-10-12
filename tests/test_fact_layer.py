@@ -395,3 +395,14 @@ def test_possessive_thing_object_is_no_bare_pronoun():
     assert fg._end_ok("his apartment", "located_at", True, "fact") is None
     assert "pronoun" in (fg._end_ok("his abusive father", "resides_at", True, "fact") or "")
     assert "pronoun" in (fg._end_ok("his son", "helped", True, "fact") or "")
+
+
+def test_citation_titles_raise_no_name_flags():
+    """b8933: {{r|Peter Parker, The Spectacular Spider-Man Vol 1 100}} is a citation, not a second name."""
+    import big_flags as bf
+    text = ("First crossing paths with Spider-Man while attempting to free her father,"
+            "{{r|Amazing Spider-Man Vol 1 194}} a romance blossomed."
+            "{{r|Peter Parker, The Spectacular Spider-Man Vol 1 100}}")
+    ev = [{"subject": "Felicia Hardy", "verb": "met", "object": "Spider-Man", "quote": "First crossing paths with Spider-Man"}]
+    flags = bf.check(ev, text)[0]
+    assert not [f for f in flags if "window has both" in f or "fuller name" in f]

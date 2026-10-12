@@ -430,3 +430,13 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
   race/group membership, reigns as leader_of, attempts as verbs, a few events), normalised to the catalog forms;
   ~150 refused: machines/cities/documents as doers, saved places (protected instead), crowds, production notes,
   hypothetical plans, garbage objects. 27B precision on ACCEPT ~50%: its screen narrows, it does not decide.
+- FIXED 2026-10-13 (row flags, big_flags.check): `{{r|...}}` citation templates were read as narrative, so citation
+  titles raised "fuller name in window for 'Ares': ['Ares Vol']" and "window has both 'Spider-Man' and 'Peter'"
+  (b8933: "Peter Parker, The Spectacular Spider-Man Vol 1 100" is a source, not a second name). Measured on all 97
+  citation windows: 17 name flags disappear, all false (titles only); no flag on narrative text is lost; MISS? cues
+  only renumber. check() now strips citations first. Test: test_citation_titles_raise_no_name_flags.
+- RULE CHECK 2026-10-13 (rank prefix, flag only): "Dr. Steve" (b8927) and "Emperor Yan"/"Emperor Huang" (b8850) are
+  the names those characters go by; stripping the rank would leave "Steve"/"Yan", which is the Po mistake again.
+  Keep the title when the window never gives the bare name; the flag stays a hint, not a rule.
+- RULE CHECK 2026-10-13 (A106, Fin Fang Foom b8838/b8842): a dragon kept dormant for centuries by a herb is not
+  ordinary sleep; his waking stays `awakened` and the flag is overridden (ruling: A106 = ordinary sleep only).
