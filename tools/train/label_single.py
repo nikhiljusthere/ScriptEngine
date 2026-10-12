@@ -51,6 +51,24 @@ from verify_save import PLACE_LIKE, SPECIES_LIKE  # noqa: E402
 
 draft_v2.MODAL = re.compile(r"(?!x)x")  # the procedure decides modals
 draft_v2.DEFEAT = re.compile(r"")       # ... and what counts as a defeat
+
+
+class _ClassWords:
+    """draft_v2.CLASS_WORDS, except a capitalised class word the window uses as a NAME ("known only as
+    Him", "The Other", "the Guard", "The Allies") is an end; "He" opening a sentence still is not.
+    Measured 2026-10-12: 13 of 16 refused capitalised class ends were names."""
+    def __init__(self, rx):
+        self.rx, self.window = rx, ""
+
+    def match(self, end):
+        if end and end[:1].isupper() and (re.match(r"The [A-Z]", end) or re.search(
+                r"[a-z,;] (?:the )?" + re.escape(end) + r"\b", self.window)):
+            return None
+        return self.rx.match(end)
+
+
+_CLASS_WORDS = _ClassWords(getattr(draft_v2.CLASS_WORDS, "rx", draft_v2.CLASS_WORDS))
+draft_v2.CLASS_WORDS = _CLASS_WORDS
 THINK = re.compile(r"^.*?</think>\s*", re.S)
 
 
@@ -198,6 +216,7 @@ def gate(rows, window, wiki):
     # music/episode/item pages are name collisions in narrative text ("Karolina" the song, "Zemo" the
     # episode, Miss Minutes/K.E.V.I.N./the Destroyer filed as items): the 2026-10-12 audit found the
     # 160 such drops were real characters, so only non-narrative page types stay refused
+    _CLASS_WORDS.window = window or ""
     kept, dropped = draft_v2.check_rows(rows, window, wiki,
                                         (vrw.BAD_END - {"music", "episode", "item"}) | SPECIES_LIKE)
     out = []
