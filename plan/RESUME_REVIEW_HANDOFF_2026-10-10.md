@@ -257,3 +257,20 @@ parallel does not affect the comparison.
   contact is no fight; an illusion/drone defeated is no defeat of its controller; a named character's power is
   no item; sealed takes the person; abilities-section occurrences are no capability; a comma place split into two rows). A1 and the power-use hint were aligned with A116 (mind control is a fact).
 - Normaliser: company names with "and" stay whole. New gate quirks: "Gao", "Jennifer Many", "US".
+
+## 14. Progress 2026-10-12 (03:00-06:30)
+- Labeller DONE: labels_v2.jsonl = 14,000/14,000 (03:14, 0 parse fails). The 35B stays loaded but idle.
+  A 200-window re-label test with today's hints scored WORSE than the old labels against reviewed rows
+  (events F1 .70 -> .56, facts .54 -> .38; tmp relab/rl.py), so no full re-label was run.
+- Review cursor: review_cursor_v2 = 5566. b4747-b5346 were reviewed by three parallel Opus subagents
+  (disjoint ranges, `view 20 --from B` + `fix`, never `mark`), the rest by Claude; Claude marks and commits.
+- GATE AUDIT (owner: rules were rejecting real facts/events): see BIG_REVIEW_PATTERNS.md "GATE AUDIT
+  2026-10-12". fact_gate.normalise()/split_event_facts(), codename allow-list, window-named short names,
+  music/episode/item pages and place pages with a character namesake no longer refuse ends; the review view
+  now prints dropped_facts/dropped_tags (a key mismatch hid them). Recovery: 481 events + 1,668 facts
+  re-passed the fixed gates -> written into the base rows of unviewed windows (b>5466; labels_v2.jsonl
+  backup `.bak-pre-recovery`), and for the 777 already-reviewed windows a hand pass by three subagents
+  accepted ~430 rows (about a third; the rest were twins, phrase objects, crowds, near-miss events).
+- Flags are measured on all approved windows before they stay: A125/A131/A133 kept (fixed), A126/A128
+  withdrawn. A128 note: "X insisted that ..." as claimed + asserted_by is a legal claim row; orders stay
+  `ordered` + modality ordered + asserted_by (A60/A64).
