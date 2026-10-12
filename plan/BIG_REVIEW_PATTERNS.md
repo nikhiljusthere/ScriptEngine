@@ -148,6 +148,7 @@ roughly one error in five through.
 | A132 | "found / tracked / spotted X in <place>" labelled `arrived` (b5179, b5284, b5326) | `located_at` the place (+ `met` for the finder); no arrival unless the window says they got there | R-verbs, A109 | occasional |
 | A133 | knowledge relations with a clause or snake_case object ("Reed|discovered|creature_power_source", "Rocket|suspected|being released") (b5262, b5284, b5314) | `learned|-` / `revealed|-`, or other_verb with the quote's verb (flagged; A115) | A115 | frequent |
 | A134 | other_verb object is the attempt word itself ("Thor|other_verb|attempted" for "attempted to keep peace", "Mephisto|other_verb|tried") (b5761, b5819, b5845) | object = the verb tried (keep, kill, escape) with modality attempted; "an attempt on X's life" with no verb stays (flagged; measured 80/92 approved rows) | A125 | frequent |
+| A135 | an unconscious, frozen or dead body that is "found" or "happened upon" written as met ("Namor and the Avengers met Captain America" while he was still frozen) (b5755, b5835) | no met (only one party is present); keep the saved / awakened rows | R2 | occasional |
 | A20 | an unnamed relative resolved to a named one by outside knowledge ("saved by her father" -> Paxton, who is the stepfather) | the definite description ("Lang's father") | step 4/6 | rare, reading only |
 
 > **FACT-LAYER ROUTES (2026-10-08, owner-authorised council).** When a ruling here says "no row",
