@@ -467,3 +467,11 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
   pipe-free verbatim stretch of the window (e.g. "abducted by the mercenaries [[Anthony Masters (Earth-616)").
 - NOTE 2026-10-13 (GPU): the 27B Qwen server was unloaded at the owner's request after the stage 2-4 audits
   (ninfer-stop.sh, mode=off); review work needs no model.
+- MEASURED, NOT CHANGED 2026-10-13 (event gate, " and " inside a place name; was OPEN since b2001): draft_v2.check_rows
+  splits every end on " and " (G.2 lists), so "Land Between Night and Day" became "arrived Land Between Night" +
+  "arrived Day" (b9565). Measured over all 14,000 windows (linear scan of the 3,862 wiki titles with " and "): 109
+  windows name such a one-page title, but most are real pairs of people that must split ("Cloak and Dagger" 16,
+  "Nelson and Murdock" 16, "Ant-Man and the Wasp" 12, "Percy and Barton Grimes"); location pages occur in 11 windows
+  and only ~4 event rows carry a broken fragment (Land Between Night and Day x2, Bethesda Terrace and Fountain,
+  Heavy Hitters Hotel and Casino). A general join would merge pairs of people; a location-only join would fix ~4
+  rows. Left as is: on review keep the specific named part or record the whole name as a `located_at` fact (b9565).
