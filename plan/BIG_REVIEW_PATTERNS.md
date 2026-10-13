@@ -459,3 +459,9 @@ unviewed windows; viewed windows listed in big/recovered_reviewed.jsonl for a ha
 - TOOL 2026-10-13 (big_review_v2 fix): a "-"/"f-"/"t-" line that matched nothing passed silently, so after
   "r Toomes=>Adrian Toomes" the possessive end "Toomes' lair" survived a removal written against the renamed form
   (b8992, also b8988, b8980). Such lines now print UNMATCHED.
+- MEASURED, NOT CHANGED 2026-10-13 (quote gate, raw wiki links): 16 windows keep raw "[[Page (Earth-616)|Name]]"
+  markup (Adrian Toomes, b2865/b2866, b9179-b9184). The labeller quoted the rendered text, so 11 rows fail "quote is
+  not verbatim" (3 in reviewed windows). Too few for a link-tolerant matcher; on review, re-add the row with a
+  pipe-free verbatim stretch of the window (e.g. "abducted by the mercenaries [[Anthony Masters (Earth-616)").
+- NOTE 2026-10-13 (GPU): the 27B Qwen server was unloaded at the owner's request after the stage 2-4 audits
+  (ninfer-stop.sh, mode=off); review work needs no model.
