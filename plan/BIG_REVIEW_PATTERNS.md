@@ -528,3 +528,25 @@ are for the peer to measure and adopt or reject.
   Normal marks cover 15–20 windows.
 - Order-modality normalisation (576/1271 approved `X|ordered|Y` facts carry "ordered"): left to the owner as a
   one-shot normalisation plus a gate flag. It has not been run.
+
+### Error found and measured 2026-10-13 (terminal session): named groups dropped, banishing un-sealed
+- The terminal session's working rule list (rebuilt at a context compaction) said "no rows for groups or
+  organisations" and "banishing through a portal is not sealed". Both contradict the procedure:
+  - EXTRACTION_PROCEDURE_V2 step 6 / B.6: a named group (Avengers, S.H.I.E.L.D., Hydra, PRIDE, the Runaways)
+    IS an end when the window names none of its members taking part (A2 expands to members only when
+    members are tied). Only unnamed crowds, races and companies-as-doers are refused (A5, A94, handoff §5).
+  - Verb table + A7: trapped or banished into a dimension or another world (or "forced through a portal")
+    IS `sealed`.
+- Measured against labels_v2 (latest audit vs base): 1,597 named-group rows removed corpus-wide, of which
+  1,056 had no member row put back (726 below b9246 from all earlier reviews and recon, 274 in b9246-b12003
+  (170 windows), 56 above b12003). Many are correct removals (garbage relations, member expansion), so each
+  needs a reading. 197 `sealed` events were removed corpus-wide (136 / 42 / 19).
+- Repair: the terminal session re-reads its own range (b9246-b12003) and its recon components and restores
+  the valid group and sealed rows, keeping overlap pairs identical.
+- REPAIRED 2026-10-13 (terminal session): every recon component C2-C196 re-read; 33 of them carried wrongly
+  dropped group or un-sealed rows and are restored on both sides (0 inconsistent after; one new A2 exception,
+  C185). The 130 b9246-b12003 windows outside any recon component were read with their base rows: restored
+  where a named group had no tied member, kept out for partitives ("the rest of PRIDE", "a group of
+  Minutemen"), crowds, A107 timelines and rows already present in another form. Unreplaced named-group
+  removals in b9246-b12003: 274 -> 169 (the 169 are deliberate). 40 range windows that sit in recon
+  components are handled inside recon (16 app, 24 term).
