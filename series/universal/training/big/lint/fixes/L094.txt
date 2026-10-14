@@ -1,0 +1,69 @@
+@5915 lint: Kid Gladiator's real name is Kubark (window); Gladiator and Kid Gladiator are two people
+keep
+f- Gladiator|parent_of|Kid Gladiator
+f+ Gladiator|parent_of|Kubark|Son of Emperor Gladiator.
+f+ Kid Gladiator|alias_of|Kubark|Kid Gladiator
+
+@5921 lint: one act fight+defeat; one name (Frost) per person (partner b5932)
+keep
+r Emma=>Frost
+- Looper|fought|Frost
+
+@5932 lint: as b5921; Frost helped Doom break him out (Doom saved, Frost helped)
+keep
+- Looper|fought|Frost
+- Frost|saved|Mysterio
+
+@5933 lint: battling, killed one sentence; had her student = ordered act
+keep
+- New Mutants|fought|Beyonder
+f- Empath|other_verb|affect
+f+ Empath|other_verb|affect|Frost also had her student Empath affect Magneto's fears|ordered|stated|Frost
+
+@5968 lint: after a brutal fight defeated one sentence; real name Logan
+keep
+r Wolverine=>Logan
+- Logan|fought|Sabretooth
+f+ Wolverine|alias_of|Logan|Wolverine faced his rival, and after a brutal fight Logan defeated his foe
+
+@6024 lint: fought, the war ending with defeat one sentence; was free to = capability
+keep
+- Sublime|fought|Arkea
+f- Sublime|other_verb|infect
+t+ capability|Sublime was free to infect and control the then-rising multi-cellular organisms.
+
+@6060 lint: fought back and subdued one act; herald is a role
+keep
+- Zaraxians|fought|Silver Surfer
+f- Zoloz|became|a herald of Galactus
+t+ no_relation|Zoloz, inspired by the Surfer, also became a herald of Galactus, allowing his planet to be spared.
+
+@6070 lint: duel, overpowered one sentence; stopped by Uatu = defeated
+keep
+- Knull|fought|Silver Surfer
+f- Uatu the Watcher|other_verb|stopped
++ Uatu the Watcher|defeated|Silver Surfer|but was stopped by Uatu the Watcher,
+
+@6075 lint: mantle -> alias_of; fended off one act; Zenn-Lavians a race
+keep
+- Shalla-Bal|fought|Norrin Radd
+f- Shalla-Bal|became|Keeper of the Great Truth
+f+ Keeper of the Great Truth|alias_of|Shalla-Bal|who had become the successor of the mantle of the Keeper of the Great Truth
+f- Zenn-Lavians|other_verb|replace
+t+ crowd_end|the invading aliens attempted to replace all of Earth's culture with Zenn-La's
+
+@6098 lint: General Ross and Betty Ross are two people
+keep
+
+@6100 lint: spotted then attacked, no met; real name Flint; attacked sentence has its row
+keep
+r Sandman=>Flint
+- Flint|met|Spider-Man
+f+ Sandman|alias_of|Flint|Flint soon discovered that the accident that granted him his powers also gave him terminal cancer
+t- no_relation|Unaware that Spider-Man's costume was really a living organism
+
+@6104 lint: met kept (convinced the Hulk); Ross distinct; real name Marko; turned on his ally
+keep
+r Sandman=>Marko
++ Hulk|betrayed|Marko|The Hulk soon turned on the Sandman when the life of Betty Ross was threatened.
+f+ Sandman|alias_of|Marko|Marko attempted to steal the ship
