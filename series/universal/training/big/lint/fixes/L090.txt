@@ -1,0 +1,91 @@
+@5447 lint: firefight killing Lua one act; wound victim subject
+keep
+- Khruul|fought|Lua
+f- Khruul|wounded|Gustav
+f+ Gustav|wounded|-|during a firefight, Gustav lost his sight
+
+@5450 lint: became very close copula, unnamed ends
+keep
+f- Banner|other_verb|became
+
+@5453 lint: codename -> alias_of; ordered rescue act
+keep
+f- Iceman|codename_of|Robert Drake
+f+ Iceman|alias_of|Robert Drake|he became the second X-Man, codenamed Iceman
+f+ Cyclops|other_verb|rescue|Xavier sent Cyclops to rescue the boy|ordered|stated|Xavier
+
+@5459 lint: Amelia not short for "Charles and Amelia"; Columbia = Columbia University (window); one asserter per row; citation is a legal tag; "John Grey" is not window text
+keep
+r Columbia=>Columbia University
+f- Xavier|other_verb|transform
+f+ Xavier|other_verb|transform|Charles and Amelia made preparations to transform the mansion into a school for mutants|planned|stated|Xavier
+f- Amelia|other_verb|transform
+f+ Amelia|other_verb|transform|Charles and Amelia made preparations to transform the mansion into a school for mutants|planned|stated|Amelia
+
+@5469 lint: incapacitated by stings one act; the fourth Vulture spat acid
+keep
+- Swarm|fought|Spider-Man
++ Vulture|fought|Spider-Man|Spider-Man was able to recover completely from acid being spat into his eyes by the fourth Vulture
+
+@5471 lint: Spider-Goblin alias; met kept (revelation talk); battle of minds and elimination one act; brought back to his senses = saved
+keep
+f- Peter|became|Spider-Goblin
+f+ Spider-Goblin|alias_of|Peter|Peter became the super villain the "Spider-Goblin"
+- Peter|fought|Green Goblin
+f- Peter|other_verb|eliminate
+f- Ben Reilly|helped|Peter
++ Ben Reilly|saved|Peter|Ben Reilly came along and managed to bring him back to his senses
+
+@5484 lint: re-encountering = the fight
+keep
+- Peter Parker|met|Burglar
+
+@5487 lint: no saved Peter->Norman event, no twin
+keep
+
+@5497 lint: attempted -> get; ordered attack acts (the rescue is the police trap, kept as came)
+keep
+f- Namor|other_verb|attempted
+f+ Namor|other_verb|get|Chased by the authorities, he attempted to get the audience of a wealthy woman, Ms. Drayson|attempted|stated|Namor
+f+ Namor|other_verb|attack|to attack the surface dwellers in an act of war|ordered|stated|Thakorr
+f+ Dorma|other_verb|attack|to attack the surface dwellers in an act of war|ordered|stated|Thakorr
+
+@5507 lint: ICON operatives a crowd; "in Sweden" is a scene-setter (A151); impostors unnamed; Spider Queen alias
+keep
+f- ICON operatives|other_verb|pillage
+- Nick Fury|arrived|Sweden
+- Dum Dum Dugan|arrived|Sweden
+- Sabretooth|arrived|Sweden
+- Dominic Fortune|arrived|Sweden
+- Namora|arrived|Sweden
+- Kraven the Hunter|arrived|Sweden
+- Silver Sable|arrived|Sweden
+- Ulysses Bloodstone|arrived|Sweden
+f+ Nick Fury|located_at|Sweden|and they killed both impostors in Sweden
+f+ Dum Dum Dugan|located_at|Sweden|and they killed both impostors in Sweden
+f+ Sabretooth|located_at|Sweden|and they killed both impostors in Sweden
+f+ Dominic Fortune|located_at|Sweden|and they killed both impostors in Sweden
+f+ Namora|located_at|Sweden|and they killed both impostors in Sweden
+f+ Kraven the Hunter|located_at|Sweden|and they killed both impostors in Sweden
+f+ Silver Sable|located_at|Sweden|and they killed both impostors in Sweden
+f+ Ulysses Bloodstone|located_at|Sweden|and they killed both impostors in Sweden
+f- Nick Fury|other_verb|killed
+f- Dum Dum Dugan|other_verb|killed
+f- Sabretooth|other_verb|killed
+f- Dominic Fortune|other_verb|killed
+f- Namora|other_verb|killed
+f- Kraven the Hunter|other_verb|killed
+f- Silver Sable|other_verb|killed
+f- Ulysses Bloodstone|other_verb|killed
+f+ Spider Queen|alias_of|Shannon Kane|the Spider Queen (Shannon Kane)
+
+@5539 lint: window writes only "Tony"; revealed object is a clause
+keep
+r Tony Stark=>Tony
+f- Arno|revealed|Tony
+
+@5541 lint: Stark = Tony Stark (window form; Stark Solutions is the company); replaced has no doer
+keep
+r Stark=>Tony Stark
+f- Tony Stark|other_verb|replaced
+t+ no_doer|Stark was temporarily replaced by a younger version of himself from another timeline
