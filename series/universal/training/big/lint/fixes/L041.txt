@@ -1,0 +1,100 @@
+@1727 lint: hit and knocked out = one act each (defeated); believing = suspected; Jones awoke (A106)
+keep
+- Jones|fought|Kilgrave
+- Robyn|fought|Jones
+f- Robyn|other_verb|believing
+f+ Robyn|suspected|-|believing him to be a hostage
++ Jones|awakened|-|while Jones awoke in her apartment
+
+@1733 lint: he found Loki and gave a stated warning before the fight (met kept)
+keep
+
+@1734 lint: crossing paths precedes the team-up (met kept); the Foggy encounter is a met with no fight; thwarting the Kingpin's plans = defeated; Kingpin alias; knowledge rows; the ordered act; both hunted Stick
+keep
++ Matt Murdock|defeated|Wilson Fisk|Matt stopped her and thwarted the Kingpin's plans.
+f- Matt Murdock|other_verb|thwarted
+f+ Kingpin|alias_of|Wilson Fisk|Wilson Fisk, the Kingpin of Crime, hired Elektra
+f+ Elektra|other_verb|kill|Kingpin ordered her to kill Matt's best friend and law partner, Foggy Nelson.|ordered|stated|Wilson Fisk
+f+ Elektra|learned|-|whom she learned to be Matt Murdock
+f+ Elektra|learned|-|Elektra realized she could not carry out the contract
+f+ Matt Murdock|other_verb|hunt|They tried to hunt down Stick|attempted|stated|Matt Murdock
+
+@1738 lint: Hela's confrontation becomes the fight; the banisher of Thor is not stated; regain no row; clause object; things and copulas are no subjects; the knot is no attire
+keep
+- Thor|met|Hela
+- Odin|sealed|Thor
+f- Thor|gained_power|-
+f- Thor|other_verb|learned
+f+ Thor|learned|-|Thor later learned that he was able to channel the powers of Mjolnir
+f- Mjolnir|other_verb|forged
+t+ no_doer|which was forged in the heart of a dying star
+f- Mjolnir|other_verb|restricted
+f- Hulk|other_verb|unable
+f- Thor|other_verb|unable
+f- Mjolnir|other_verb|unable
+t- attire|The enchantment is represented
+t+ no_relation|The enchantment is represented by the appearance of a Celtic trefoil knot on the side of the hammer's head.
+
+@1743 lint: A156 - the acts the window names under the Hulk; the confrontation is a talk (met kept); the kidnapping; the alias link
+keep
+- Rick|met|Banner
++ Rick|met|Hulk|Rick confronted the Hulk to ask for his help
+- Banner|met|Betty
++ Hulk|met|Betty|only to find Betty there
+- Rick|defeated|Banner
++ Rick|defeated|Hulk|Going on a rampage, he was quickly stopped by Rick.
+- Banner|escaped|Rick
++ Hulk|escaped|Rick|the Hulk fought them off and fled with Betty back to his lab
++ Tribbitites|captured|Banner|they kidnapped Banner and Rick
++ Tribbitites|captured|Rick|they kidnapped Banner and Rick
+f+ Hulk|alias_of|Banner|Banner transformed into the Hulk once again
+
+@1744 lint: Stark is Tony Stark here (Howard is the father); the ordered kidnapping; the planned betrayal; Tony's armor
+keep
+r Stark=>Tony Stark
+f+ Ten Rings|other_verb|kidnap|getting the Ten Rings to kidnap Stark and kill him|ordered|stated|Stane
+f+ Stane|other_verb|betray|so that he could betray the Ten Rings|planned|stated|Stane
+f+ Tony Stark|used|Iron Man Armor|Stark would break out using Iron Man Armor.
+
+@1781 lint: the tried verbs; doer-less passives (the symbiote god is unnamed here)
+keep
+f- Eddie|other_verb|attempting
+f+ Eddie|other_verb|figure|spending several months attempting to figure out what was wrong with it.|attempted|stated|Eddie
+f- Venom symbiote|other_verb|attempting
+f+ Venom symbiote|other_verb|explain|attempting to explain what was going on|attempted|stated|Venom symbiote
+f- Venom symbiote|other_verb|inflicted
+t+ no_doer|the Venom symbiote was inflicted with increasingly frequent and intense bouts of insanity and bloodlust.
+f- Venom symbiote|other_verb|controlled
+t+ no_doer|was controlled by the symbiote god and forced to separate from him.
+
+@1788 lint: approach and a stated talk precede the gun (met kept); told is already actual
+keep
+
+@1802 lint: same quote - finding him is the start of the fight
+keep
+- Spider-Man|met|Vulture
+
+@1811 lint: the stab attempt and the repulsion are one sentence (defeated)
+keep
+- Laufey|fought|Odin
+
+@1812 lint: "fought Ajax, but lost" = one act; the first power named
+keep
+- Wilson|fought|Ajax
+f- Wilson|gained_power|-
+f+ Wilson|gained_power|regenerative healing factor|granting him a regenerative healing factor
+
+@1831 lint: an attempt on his life = attempted kill; alerting is a speech act; the launch line is no act; believed = suspected; Dale too; the husband tag overlaps the married fact
+keep
+f- Yorkes|other_verb|attempt
+f+ Yorkes|other_verb|kill|their attempt on Jonah's life|attempted|stated|Yorkes
+f- Dale|other_verb|attempt
+f+ Dale|other_verb|kill|their attempt on Jonah's life|attempted|stated|Dale
+f- Leslie Dean|other_verb|alerting
+f+ Leslie Dean|other_verb|alerting|alerting her that Jonah was on his way to the PRIDE Construction Site
+f- Jonah|other_verb|launch
+f- Yorkes|other_verb|believed
+f+ Yorkes|suspected|-|Although Yorkes believed that they were not ready
+f+ Dale|other_verb|took|she and her husband took their serum with them
+f+ Dale|other_verb|returned|returned to their lab to perfect their Anti-Gibborim Serum
+t- deictic|although she found confidence
