@@ -1,0 +1,71 @@
+@4110 lint: facing off is the fight (no met; a vow stays planned); Kingpin alias
+keep
+- Elektra|met|Kraven The Hunter
+f+ Kingpin|alias_of|Fisk|had supposedly been killed by the Kingpin
+
+@4112 lint: tracking Logan turns into the fight; the injured is Gabby; one verb word; the ordered acts; Captain America alias
+keep
+- Laura|met|Logan
+f- Logan|wounded|Gabby
+f+ Gabby|wounded|-|Gabby was impaled on his claws
+f- Ulysses Cain|other_verb|had a vision
+f+ Ulysses Cain|other_verb|had|Ulysses had a vision that Logan would kill Gabby
+f+ Rogers|other_verb|detain|Captain America was dispatched by S.H.I.E.L.D. to detain Logan|ordered|stated|S.H.I.E.L.D.
+f+ Logan|other_verb|leave|demanding he leave them alone and never approach them again|ordered|stated|Laura
+f+ Captain America|alias_of|Rogers|Captain America was dispatched by S.H.I.E.L.D. to detain Logan
+
+@4114 lint: the battle and the stop are separate sentences (both kept); below_floor is a legal tag
+keep
+
+@9501 lint partner: both kept
+keep
+
+@4127 lint: encountered and staked = the killing; a return to a prior form is no became (A139); the passage's verb; a thing as subject
+keep
+- Blade|met|Taj Nital
+f- King|became|vampire
+f- Varnae|created|vampires
+f+ Varnae|other_verb|visited|the one who had first visited the Hellish curse of vampirism upon men
+f- Blade|other_verb|strengthened
+t+ no_relation|The loss of his compatriots only strengthened Blade's resolve to rid the world of vampires
+
+@4130 lint: challenged and triumphed = one act; a civilization is no end
+keep
+- Black Bolt|fought|Ronan the Accuser
+f- Inhuman civilization|other_verb|transformed
+t+ crowd_end|Inhuman civilization transformed drastically
+
+@4132 lint: a rank designation is no became; Xandarian Worldmind; a media dubbing is no alias
+keep
+r Worldmind=>Xandarian Worldmind
+f- Richard Rider|became|Centurion: 11249-44396
+f- Kid Nova|alias_of|Richard Rider
+
+@4137 lint: seeking him out to recruit him is recruitment (R4, no met); the Mighty Avengers
+keep
+- Iron Man|met|Ares
+- Ms. Marvel|met|Ares
+r Avengers=>Mighty Avengers
+
+@4138 lint partner of b4903: codename_of retired; the power named
+keep
+f- Ms. Marvel|codename_of|Danvers
+f+ Ms. Marvel|alias_of|Danvers|Danvers later became the first costumed adventurer known as Ms. Marvel
+f- Danvers|gained_power|-
+f+ Danvers|gained_power|half-Kree physiology|which caused her to develop a half-Kree physiology
+
+@4903 lint: the confrontation is the fight (no met); the power named
+keep
+- Mar-Vell|met|Yon-Rogg
+f- Carol Danvers|gained_power|-
+f+ Carol Danvers|gained_power|half-Kree physiology|caused her to develop a half-Kree physiology
+
+@4148 lint: X-Factor vs Government X-Factor distinct; returned powers no row; Polaris alias
+keep
+f- Lorna|gained_power|-
+f+ Polaris|alias_of|Lorna|The Shadow King used Polaris as a gateway
+
+@4153 lint: Silvermane talks to Parker before ordering the attack (met kept); Marko attacks at once (no met); the ordered kill
+keep
+- Parker|met|Marko
+f+ Enforcers|other_verb|kill|so that they can legally kill him, ordering the Enforcers to do so|ordered|stated|Silvermane
