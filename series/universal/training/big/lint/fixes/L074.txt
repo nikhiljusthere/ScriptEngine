@@ -1,0 +1,69 @@
+@4001 lint: copula; a relative-clause verb; the return was decided (planned); using the virus is a legal used row (kept)
+keep
+f- Ultron|other_verb|became
+t+ no_relation|Ultron's personality and the side that simulated Pym became one and the same
+f- Ultron|other_verb|assimilated
+f- Ultron|other_verb|decided
+f+ Ultron|other_verb|return|Ultron decided to return to Earth|planned|stated|Ultron
+
+@4004 lint: an attempt on his life = attempted kill
+keep
+f- Vanko|other_verb|attempt
+f+ Vanko|other_verb|kill|was using the drones and Rhodes' War Machine armor in an attempt on Stark's life|attempted|stated|Vanko
+
+@4020 lint: getting in his way is the killing (no mets); realized = learned
+keep
+- Helstrom|met|Magoth
+- Yen|met|Magoth
+f- Daimon|other_verb|realized
+f+ Daimon|learned|-|realized that she was in a state of mental distress
+
+@4021 lint: also_known_as retired; finding shelter twins the met
+keep
+f- Tara|also_known_as|Vanessa Brooks
+f+ Vanessa Brooks|alias_of|Tara|she took the name "Vanessa Brooks"
+f- Tara|other_verb|found
+
+@4025 lint partner of b10076: the Trapster was beaten (the no_doer tag stays beside the fact)
+keep
+f+ Trapster|wounded|-|here the Trapster was beaten
+
+@10076 lint: the subway meeting is separate from the earlier fight (met kept); Batroc met him too; the Trapster was beaten
+keep
++ Batroc|met|Deadpool|He was riding the subway with Batroc when he crossed paths with Deadpool
+f+ Trapster|wounded|-|here the Trapster was beaten
+
+@4042 lint: the tried verb (her own account); a belief takes no object ("never attempted to contact" = attempted/denied, kept)
+keep
+f- Romanoff|other_verb|attempt
+f+ Romanoff|other_verb|do|during her attempt to do some good,|attempted|stated|Romanoff
+f- Belova|suspected|Romanoff
+f+ Belova|suspected|-|as she saw it as Romanoff just not wanting to her to tag along
+
+@4055 lint: Page's help is no twin; the overpowering; the attempt to stop the bleeding
+keep
++ Poindexter|defeated|Murdock|Poindexter managed to overpower Murdock
+f- Page|helped|Lantom
+f+ Page|helped|Lantom|Page held Lantom in her arms and desperately attempted to stop his bleeding|attempted|stated|Page
+
+@4062 lint: confronting him is the fight; aliases
+keep
+- Beck|met|Parker
+f+ Mysterio|alias_of|Beck|Mysterio confronted Spider-Man and used his projection to drop her into the ground
+f+ Spider-Man|alias_of|Parker|to strip Parker into his homemade suit
+
+@4072 lint: confronted by May turns into the fight
+keep
+- Sinara|met|Melinda May
+
+@4087 lint: stopping Walker is the act (no met)
+keep
+- Jessica Jones|met|Trish Walker
+
+@4107 lint: fighting her way to him is the attack (no met); the impaling under the Harrower's control is the killing (no dies twin, no wound row); Lady Deathstrike alias
+keep
+- Yuriko|met|Deadpool
+- Harrower|fought|Yuriko
++ Harrower|killed|Yuriko|Deadpool's symbiote succumbed to Harrower's control, grabbing Yuriko and fatally impaling her
+f- Harrower|wounded|Yuriko
+f+ Lady Deathstrike|alias_of|Yuriko|Lady Deathstrike possesses various superhuman attributes
