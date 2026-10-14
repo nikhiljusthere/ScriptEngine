@@ -1,0 +1,65 @@
+@4424 lint: false positive Hellfire/Hellfire Chain; A156 Ghost Rider acts; ordered find acts
+keep
+- Robbie Reyes|defeated|Hellfire
++ Ghost Rider|defeated|Hellfire|throw him against the wall
+f- Robbie Reyes|used|Hellfire Chain
+f+ Ghost Rider|used|Hellfire Chain|proceeded to use the Hellfire Chain to attack Hellfire
+f+ Johnson|other_verb|find|Reyes ordered Johnson and Simmons to go find Agent Phil Coulson for protection|ordered|stated|Robbie Reyes
+f+ Simmons|other_verb|find|Reyes ordered Johnson and Simmons to go find Agent Phil Coulson for protection|ordered|stated|Robbie Reyes
+
+@4439 lint: beat = one act (defeated); met kept (separate snap-out reunion)
+keep
+- Jean-Paul|fought|Anole
+
+@4447 lint: stab seemingly killing = one act; drop fought
+keep
+- Minoru|fought|Jonah
+
+@4448 lint: went against = fight, no met; became catatonic dropped (sentence covered by dies); Legion escape
+keep
+- Rogers|met|Bravo
+- Rogers|met|Hydra Queen
+f- Hydra Queen|became|catatonic
+f+ Lethal Legion|other_verb|escaped|after they escaped from prison
+
+@4451 lint: mutant messiah is an epithet; X-Men vs X-Treme X-Men distinct
+keep
+f- Hope|also_known_as|mutant messiah
+
+@4452 lint: confronted turns straight into subdue; fought twins
+keep
+- Gregory Stark|met|Ultimates
+- Gregory Stark|fought|Thor
+- Gregory Stark|fought|Captain America
+
+@4456 lint: met kept (talk before fight); hunt happened
+keep
+f- Morbius|other_verb|hunt
+f+ Morbius|other_verb|hunt|The Nightstalkers (minus Blade) and Morbius teamed up to hunt down Slaughter
+
+@4457 lint: sword fight and kill one sentence
+keep
+- May|fought|Izel
+
+@4487 lint: did not die stays denied other_verb; decided = planned
+keep
+f- Kang the Conqueror|other_verb|make
+f+ Kang the Conqueror|other_verb|make|decided to make him into a living weapon|planned|stated|Kang the Conqueror
+
+@4496 lint: attempted to stop turns into defeat, no met; learned/discovered; Peter removing
+keep
+- Peter|met|Toomes
+f- Peter|other_verb|learned
+f- Peter|learned|-
+f+ Peter|learned|-|in the process learned that the power core he and Ned had taken with them was in fact an unstable Chitauri grenade.
+f+ Peter|discovered|-|Peter discovered the gang had moved to Maryland
+f+ Peter|other_verb|removing|removing its power core
+
+@4512 lint: met kept (peaceful at first); Mandarin alias
+keep
+f+ Mandarin|alias_of|Wenwu|After the Mandarin sacrifices himself for his son
+
+@4534 lint: overpower and defeat / impale kill one act each
+keep
+- Thanos|fought|Hulk
+- Thanos|fought|Heimdall
