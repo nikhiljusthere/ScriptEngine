@@ -1,0 +1,92 @@
+@1601 lint partner of b2623: below_floor is a legal tag (the "Mrs." split tail); rows hold
+keep
+
+@1644 lint: behead and kill = one act
+keep
+- Sentry|fought|Attuma
+
+@1647 lint: Lord Kinross is the father (window form), not Moira; doer-less passive; the first power
+keep
+r Kinross=>Lord Kinross
+f- Moira Kinross|other_verb|brought
+t+ no_doer|Moira was brought back to the moment she'd appeared in the womb.
+f+ Moira Kinross|gained_power|reincarnation|Moira's mutant powers activated
+
+@1649 lint: finding his ally and agreeing to work together precedes the betrayal (met kept); the Puppet Master knocked him out, Spider-Man helped (A12); both planned it
+keep
+- Spider-Man|defeated|Mad Thinker
+f+ Mad Thinker|other_verb|destroy|to destroy both the Thing and Spider-Man|planned|stated|Mad Thinker
+
+@1651 lint: the secret was stolen with the doll, not learned
+keep
+f- Dolly|learned|magical secret
+f+ Dolly|stole|magical secret|along with the magical secret to use it
+
+@1666 lint: targeted + foiled in one sentence -> defeated; the full challenge quote; Torch alias
+keep
+- Mad Thinker|fought|Johnny
+- Mad Thinker|fought|Ben
+f- Johnny|other_verb|challenge
+f+ Johnny|other_verb|challenge|Johnny foolishly attempted to challenge Dr. Doom|attempted|stated|Johnny
+f+ Torch|alias_of|Johnny|The Torch stopped employing Parker shortly thereafter
+
+@6758 lint partner of b1666 (the window never ties Spider-Man to Peter Parker: no rename)
+keep
+- Mad Thinker|fought|Johnny
+- Mad Thinker|fought|Ben
+f- Johnny|other_verb|challenge
+f+ Johnny|other_verb|challenge|Johnny foolishly attempted to challenge Dr. Doom|attempted|stated|Johnny
+f+ Torch|alias_of|Johnny|The Torch stopped employing Parker shortly thereafter
+
+@1684 lint: Kidder confronted him about the missing employees before he killed her - a stated talk (met kept); the cooperation was an appearance (actual/apparent); a newspaper is no doer
+keep
+f- Osborn|other_verb|cooperating
+f+ Osborn|other_verb|cooperating|appeared to be fully cooperating with police|actual|apparent|-
+
+@1688 lint: Hess helping them escape is a different act from their protecting him (A89 false); discovered is a relation
+keep
+f- Bowen|other_verb|discovered
+f- Johnson|other_verb|discovered
+f+ Bowen|discovered|-|They discovered that he was reliving the moment the oil rig exploded
+f+ Johnson|discovered|-|They discovered that he was reliving the moment the oil rig exploded
+
+@1694 lint: the confrontation becomes the fight; "Carnage was captured" (captured, not defeated); revealed; the transformation (A156)
+keep
+- Spider-Man|met|Kasady
+- Spider-Man|defeated|Kasady
++ Spider-Man|captured|Kasady|Facing the combined might of Spider-Man and Venom, Carnage was captured
+- Venom|defeated|Kasady
++ Venom|captured|Kasady|Facing the combined might of Spider-Man and Venom, Carnage was captured
+f- Spider-Man|other_verb|reveal
+f+ Spider-Man|revealed|-|reveal his continued survival to Venom
+f+ Kasady|transformed_into|Carnage|enabling Kasady to transform into Carnage
+
+@1706 lint: Xavier's restraint is mind control (A116, no fight; met kept); the crown is a one-sided act; clause object; non-agent subjects; coming across the mutant = met with Genus; Genus dies ("denied" and "Princess Fen" are legal as written)
+keep
+- Paul Destine|fought|Namor
+- Charles Xavier|fought|Namor
+f+ Charles Xavier|other_verb|restrained|Charles restrained him and tried to force him to face his trauma
+f- Namor|learned|Genus
+f+ Namor|learned|-|learning that the mutant Genus could change the species of living things
+f- Charles Xavier|other_verb|weakening
+f- Namor|other_verb|coming
++ Namor|met|Genus|before coming across a mutant surrounded by police
++ Charles Xavier|met|Genus|before coming across a mutant surrounded by police
+f- Namor|other_verb|returned
+f+ Genus|dies|-|one of which shot and killed the mutant
+
+@1707 lint: copula; learned is a relation; narrative sentences are no capability; Miss Flint's engagement
+keep
+f- William Baker|other_verb|became
+t+ no_relation|young William became a bully in his own right
+f- William Baker|other_verb|learned
+f+ William Baker|learned|-|he learned how to steal
+f+ William Baker|learned|-|was heartbroken when he learned that she was engaged to a stockbroker
+t- capability|Young William loved going
+t+ no_relation|Young William loved going to the beach and building sand castles
+t- capability|This made William believe
+t+ no_relation|This made William believe that the only way to attract a beautiful woman was with money.
+t- capability|When he got in trouble
+t+ no_relation|When he got in trouble with the school principal
+t- capability|For the first time
+t+ no_relation|For the first time in his miserable life, William felt joy.
