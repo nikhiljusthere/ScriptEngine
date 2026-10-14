@@ -1,0 +1,79 @@
+@6991 lint: found her already mortally wounded and finished her (A135 no met); locate was fulfilled; drove him away = defeated, no escape twin (partner b7007)
+keep
+- Merlyn|met|Roma
+- Merlyn|escaped|Psylocke
+f- Merlyn|other_verb|locate
+f+ Merlyn|other_verb|locate|to locate his daughter
+
+@6993 lint: sought to reclaim = attempted (partner b7007; "them" unnamed here, other_verb allied kept)
+keep
+f- Merlyn|other_verb|reclaim
+f+ Merlyn|other_verb|reclaim|sought to reclaim the authority that he believed Roma had taken from him|attempted|stated|Merlyn
+
+@7007 lint: as partners b6991 and b6993; allied twin of the named allied_with rows
+keep
+- Merlyn|met|Roma
+- Merlyn|escaped|Psylocke
+f- Merlyn|other_verb|locate
+f+ Merlyn|other_verb|locate|to locate his daughter
+f- Merlyn|other_verb|reclaim
+f+ Merlyn|other_verb|reclaim|sought to reclaim the authority that he believed Roma had taken from him|attempted|stated|Merlyn
+f- Merlyn|other_verb|allied
+
+@7005 lint: found him already defeated on his knees and beheaded him (no meeting)
+keep
+- Betsy|met|Merlyn
+
+@7020 lint: attacked, who managed to subdue them one sentence; intelligence director of X-Force -> leader_of; the separation succeeded (partner b7033)
+keep
+- Simon|fought|Tony Stark
+- Vision|fought|Tony Stark
+f- Hank McCoy|became|intelligence director of X-Force
+f+ Hank McCoy|leader_of|X-Force|Hank McCoy would become infamous as the intelligence director of X-Force
+f- Tony Stark|other_verb|separate
+f+ Tony Stark|other_verb|separate|attempted to separate them both
+f- Tony Stark|other_verb|succeeded
+
+@7033 lint: as partner b7020
+keep
+- Simon|fought|Tony Stark
+- Vision|fought|Tony Stark
+f- Tony Stark|other_verb|separate
+f+ Tony Stark|other_verb|separate|attempted to separate them both
+f- Tony Stark|other_verb|succeeded
+
+@7026 lint: pacifist is a state; Avengers vs West Coast Avengers distinct; Force Works and the Revengers founded too
+keep
+f- Simon Williams|became|pacificist
+f+ Simon Williams|created|Force Works|and Force Works
+f+ Simon Williams|created|Revengers|and the Revengers to put an end to the destruction
+
+@7031 lint: fought and bested one clause
+keep
+- Simon|fought|Thaddeus Ross
+
+@7034 lint: fought ... and defeated him one sentence; attempt -> kill; subdued the Avengers (no member tied) = defeated; got free
+keep
+- Simon Williams|fought|Grim Reaper
+f- Grim Reaper|other_verb|attempt
+f+ Grim Reaper|other_verb|kill|The Reaper made another attempt on the two|attempted|stated|Grim Reaper
+t- crowd_end|subdued the Avengers
++ Grim Reaper|defeated|Avengers|subdued the Avengers
+t- no_relation|he eventually got free
+f+ Grim Reaper|other_verb|escaped|he eventually got free
+
+@7051 lint: met kept (the request to train Ahura); A2 the named member Ahura defeated Kang; time-travelers are a crowd
+keep
+- Inhuman Royal Family|fought|Kang
+t- deictic|and all time-travelers left
+t+ crowd_end|and all time-travelers left
+
+@7079 lint: an offered help is planned; discovered
+keep
+f- Johnny|helped|Alejandra
+f+ Johnny|helped|Alejandra|Johnny again offered Alejandra his help and this time, she accepted it.|planned|stated|Johnny
+f+ Alejandra|discovered|-|Alejandra discovered that Hawkeye believed Johnny to be responsible for the situation in Nicaragua
+
+@7087 lint: threw him off the bridge one act
+keep
+- Johnny|fought|Danny
