@@ -1,0 +1,75 @@
+@5229 lint: met kept (threatening to return him to Wakanda = talk before the fight); attempted to kill with an attack keeps fought (A11)
+keep
+
+@5238 lint: impaled and stabbed one act
+keep
+- Garrett|fought|Jacobs
+
+@5239 lint: appeared and attacked, no met
+keep
+- Byrdie|met|Infinity Ultron
+- Kahhori|met|Infinity Ultron
+- Storm|met|Infinity Ultron
+
+@5262 lint: false positive, Rocket's sacrifice helping them and their freeing him are two acts in opposite directions
+keep
+
+@5269 lint: found and knocked out, no met for Daimon
+keep
+- Daimon|met|Yen
+
+@5277 lint: met kept (asked, ordered, threatened before the attack)
+keep
+
+@5280 lint: two separate messages, one each way; keep both
+keep
+
+@5297 lint: landed to taunt after the throw, no separate meeting; Vision's death is not stated
+keep
+- Thor|met|Thanos
+- Thanos|killed|Vision
++ Thanos|fought|Vision|he was able to rip out the Mind Stone from Vision's forehead
+
+@5299 lint: conflict = the fight, no met; retreat escapes the Scarlet Witch (kept); sentence has the lured fact
+keep
+- Dian|met|Scarlet Witch
+t- no_relation|Initially fought in Cernunnos's realm
+
+@5306 lint: crossed paths = first clash, no met; A156 Hulk acts under Hulk; separate battle sentence; Rhino seemingly died
+keep
+- Banner|met|Missing Link
+- Banner|saved|Betty
++ Hulk|saved|Betty|Getting Betty to safety
+- Banner|defeated|Rhino
++ Hulk|defeated|Rhino|when the Hulk made a fuel tanker explode on him
++ Hulk|fought|Rhino|the Hulk then battled the Rhino one-on-one
+- Banner|fought|Missing Link
++ Hulk|fought|Missing Link|As the Hulk fought the Missing Link
+- Talbot|met|Banner
++ Talbot|met|Hulk|Talbot and Rick arrived on the scene
+- Rick|met|Banner
++ Rick|met|Hulk|Talbot and Rick arrived on the scene
+f- Betty|persuaded|Banner
+f+ Betty|persuaded|Hulk|Betty convinced the Hulk
+f- Banner|other_verb|grabbed
+f+ Hulk|other_verb|grabbed|so he grabbed her and bounded off
+f- Banner|other_verb|proceeded
+f+ Hulk|other_verb|proceeded|The Hulk then proceeded to go on a rampage through the city
+f- Banner|other_verb|flee
+f+ Hulk|other_verb|flee|The Hulk continued to flee the authorities across the city
+f+ Hulk|suspected|-|the Hulk assumed that she was still in danger
+t- deictic|the Hulk assumed that she was still in danger
+f+ Rhino|dies|-|the Rhino seemingly died due to injuries sustained|actual|apparent|-
+
+@5314 lint: no fought row for Gormuu, met kept; assumed -> suspected
+keep
+f- Ben|other_verb|assumed
+f- Sue|other_verb|assumed
+f+ Ben|suspected|-|Ben and Sue assumed Reed was trying to help Gormuu
+f+ Sue|suspected|-|Ben and Sue assumed Reed was trying to help Gormuu
+
+@5317 lint: joined the fight and helped defeat one act
+keep
+- Yoshiie Minamoto|fought|Kappa
+- Druig|fought|Kappa
+- Makkari|fought|Kappa
