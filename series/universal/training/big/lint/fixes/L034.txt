@@ -1,0 +1,83 @@
+@1146 lint: Avengers vs Avengers Compound distinct; the Raft line names its orderer (Ross), the team is no end
+keep
+t- no_doer|whose team was locked up at the Raft
+t+ crowd_end|whose team was locked up at the Raft
+
+@1170 lint: regrouping is the shooting (met dropped); shot then died later = fought + killed (step 5); tried to assure = attempted
+keep
+- Gravik|met|Hill
+f- Fury|other_verb|assure
+f+ Fury|other_verb|assure|he tried to assure her it wasn't him|attempted|stated|Fury
+
+@1173 lint: turning against is no fight; Shard helped her brother defeat her (A12)
+keep
+- Shard|fought|Flamequake
+- Shard|defeated|Flamequake
+f+ Shard|helped|Bishop|helped her brother defeat her
+
+@1175 lint: met in battle = the fight (no met); the battle and its loss are separate sentences (fought + defeated); copula; Rhodes injured
+keep
+- Obadiah Stane|met|Stark
+f- Obadiah Stane|other_verb|became
+t+ no_relation|Obadiah Stane became alarmed at Stark's steps toward recovery
+f+ Rhodes|wounded|-|Circuits Maximus was bombed, injuring Rhodes and killing Morley Erwin.
+
+@1180 lint: A145 same sentence fought+killed
+keep
+- Gamora|fought|Warlock
+
+@1181 lint: confronted and fought = one encounter; controlling an existing power is no gained_power (A140)
+keep
+- Human Torch|met|Anthony Sardo
+f- Human Torch|gained_power|-
+
+@1223 lint: A145 same sentence; making amends is a separate meeting (kept); mantles as alias_of; knowledge objects; deaths and killings
+keep
+- Ben Reilly|fought|Norman Osborn
+- Ben Reilly|fought|Jennix
++ Miles Warren|killed|Ben Reilly|spent years being constantly killed and resurrected by him
+f- Ben Reilly|became|Spider-Man
+f- Ben Reilly|became|Jackal
+f- Ben Reilly|became|Scarlet Spider
+f+ Spider-Man|alias_of|Ben Reilly|leaving Ben to pick up the mantle of Spider-Man.
+f+ Jackal|alias_of|Ben Reilly|becoming the new Jackal.
+f- Ben Reilly|forgot|formative memories
+f+ Ben Reilly|forgot|-|erased his formative memories
+f- Ben Reilly|other_verb|left
+f- Ben Reilly|discovered|Peter Parker
+f+ Ben Reilly|discovered|-|discovering that Peter being the clone was a fabrication.
+f- Ben Reilly|learned|Aunt May
+f+ Ben Reilly|learned|-|after learning that Parker's Aunt May was sick
+f+ Ben Reilly|dies|-|seemingly died in their first encounter|actual|apparent|-
+
+@1237 lint: also_known_as retired; "the King of Hell" is a rule -> leader_of
+keep
+f- Doctor Doom|also_known_as|King of Hell
+f+ Doctor Doom|leader_of|Hell|Doctor Doom, the King of Hell
+
+@1256 lint: Hank Pym; "Cassie" is not in the window (Lang kept); clause object; Scott's daughter
+keep
+r Pym=>Hank Pym
+f- Scott|learned|Lang
+f+ Scott|learned|-|This then led Scott to learn about Lang working with Pym and Hope
+f+ Scott|parent_of|Lang|Scott decided to address his daughter's desire to make a difference
+
+@1267 lint: A145 same sentence fought+defeated
+keep
+- Fantastic Four|fought|Salem's Seven
+
+@1273 lint: Stark (Tony) and Howard Stark are father and son (flag false)
+keep
+
+@1277 lint: the rescue did not meet Doom; facing Super-Skrull becomes the fight; fought+defeated one sentence; planting a jammer is no fight; clause object
+keep
+- Sue|met|Doom
+- Reed|met|Doom
+- Thing|met|Doom
+- Sue|met|Super-Skrull
+- Reed|met|Super-Skrull
+- Thing|met|Super-Skrull
+- Super-Skrull|fought|Thing
+- Sue|fought|Super-Skrull
+f- Reed|discovered|Super-Skrull
+f+ Reed|discovered|-|Reed discovered that the Super-Skrull's power source was beamed to him from the Skrull homeworld
