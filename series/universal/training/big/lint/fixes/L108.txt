@@ -1,0 +1,65 @@
+@7077 lint: confronted and battled, no met; reunite with Zarathos IS met; ordered kill act; Ghost Rider alias
+keep
+- Johnny Blaze|met|Hood
++ Johnny Blaze|met|Zarathos|allowed Johnny to reunite with Zarathos
+f+ Hood|other_verb|kill|He demanded the Hood to kill his family for him|ordered|stated|Mephisto
+f+ Ghost Rider|alias_of|Johnny Blaze|Becoming the Ghost Rider once again, Johnny and Zarathos resumed their path of vengeance against evil
+
+@7089 lint: King of Hell -> leader_of Hell; confronted then killed, no met; Ghost Rider alias
+keep
+- Johnny|met|Mephisto
+f- Johnny|became|King of Hell
+f+ Johnny|leader_of|Hell|Johnny usurped it and became the new King of Hell
+f+ Ghost Rider|alias_of|Johnny|the Ghost Rider confronted him head-on. Just as they expected, Mephisto lifted Zarathos' curse from Johnny
+
+@7098 lint: two names of a power are no alias
+keep
+f- Sin Eating|also_known_as|Sin Removal
+t+ list_header|Sin Eating: Also known as Sin Removal.
+
+@7120 lint: after a brief fight, defeated one sentence; real name Rider
+keep
+r Nova=>Rider
+- Dark Guardians|fought|Guardians of the Galaxy
+f+ Nova|alias_of|Rider|Nova became the target of the Dark Guardians
+t- deictic|Nova became the target
+t+ no_relation|Nova became the target of the Dark Guardians, a team dedicated to preventing Thanos from resurrecting.
+
+@7140 lint: tracked down and distracted, no meeting; the Brood are a race
+keep
+- Punisher|met|Brood Queen
+t- no_relation|The Brood led by the Brood Queen.
+t+ crowd_end|The Brood led by the Brood Queen.
+
+@7200 lint: during the battle ... leaving him incapacitated one sentence (partner b7213)
+keep
+- Sentry|fought|Iron Man
+
+@7213 lint: as partner b7200
+keep
+- Sentry|fought|Iron Man
+
+@7221 lint: Sitwell = Jasper Sitwell
+keep
+r Sitwell=>Jasper Sitwell
+
+@7234 lint: hold off, but incapacitated one sentence; window writes Glaive
+keep
+r Corvus Glaive=>Glaive
+- Rogers|fought|Thanos
+
+@7275 lint: met kept for all (Blade's offer; Dracula met the associates before the trap was sprung in a later sentence)
+keep
+
+@7292 lint: met kept (Blade's warning before the shot); vampires are a crowd
+keep
+t- no_relation|the vampires thought it was the thugs
+t+ crowd_end|the vampires thought it was the thugs and tried to drink their blood,
+
+@7303 lint: U.N. vs Security Council distinct; renamed place is no alias; New America is a government (no doer)
+keep
+f- New America|alias_of|Latveria
+f- New America|attacked|Aniana
+f- New America|other_verb|setting
+f- New America|other_verb|moved
+t+ crowd_end|New America attacked at north of Aniana, setting their course to the capital
