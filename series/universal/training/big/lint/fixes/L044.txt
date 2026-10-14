@@ -1,0 +1,83 @@
+@1876 lint: the attack opens the scene but a long stated talk follows (truce, questions, threats) - met kept; a threat is a speech act; "he needed her" is her claim
+keep
+f- Laufeydottir|other_verb|threatened
+f+ Laufeydottir|other_verb|threatened|so she threatened to cut it out
+f- Loki|other_verb|needed
+f+ Loki|other_verb|needed|as he needed her to figure out how to recharge it|claimed|stated|Laufeydottir
+
+@1904 lint: catching up turns into the car fight (Pilgrim met dropped); the NYPD is a named organisation - fought and beaten down
+keep
+- Castle|met|Pilgrim
++ Castle|fought|New York City Police Department|leaving Castle to fight the New York City Police Department
++ Castle|defeated|New York City Police Department|having beaten down the police and caught up with them
+t- no_relation|leaving Castle to fight
+t- crowd_end|having beaten down the police
+
+@1921 lint: copula became
+keep
+f- Gideon|other_verb|became
+t+ no_relation|he became quite wealthy
+
+@1924 lint: appearing before her turns into the consuming (no met); the preparation is a named-doer act
+keep
+- Phoenix Force|met|Jean Grey
+t- deictic|Sensing its arrival
+f+ Jean Grey|other_verb|prepared|Sensing its arrival, the time-displaced Jean Grey prepared her body and soul to resist the imminent possession.
+
+@5555 lint partner of b1924
+keep
+- Phoenix Force|met|Jean Grey
+t- deictic|Sensing its arrival
+f+ Jean Grey|other_verb|prepared|Sensing its arrival, the time-displaced Jean Grey prepared her body and soul to resist the imminent possession.
+
+@1930 lint: Rick's approach is struck down at once (no met; struck down = defeated); Namor's offer is a stated talk (met kept); mind control (A116); Namor sent him crashing ("Not recognizing" = actual/denied, kept)
+keep
+- Rick|met|Hulk
+- Hulk|fought|Rick
++ Hulk|defeated|Rick|he struck down his staunchest ally
+- Puppet Master|fought|Hulk
+f+ Puppet Master|other_verb|take|used his radioactive clay to take control of the Hulk
+f- Hulk|other_verb|crashing
+f+ Namor|other_verb|sent|sent the Hulk crashing on a nearby island
+
+@1931 lint: Ultimate Nullifier; titles of the Proemial Gods and "the Mad Titan" are epithets (no alias/residence); appearing and stealing is no attack (met kept); Mister Fantastic alias
+keep
+r Nullifier=>Ultimate Nullifier
+f- Tenebrous|resides_at|Darkness Between
+f- Mad Titan|alias_of|Thanos
+f- Lady of All Sorrows|alias_of|Aegis
+f+ Mister Fantastic|alias_of|Reed Richards|the son of two of the Fantastic Four's members Mister Fantastic and the Invisible Woman
+
+@6285 lint partner: rows hold
+keep
+
+@6289 lint partner of b1931
+keep
+r Nullifier=>Ultimate Nullifier
+f+ Mister Fantastic|alias_of|Reed Richards|the son of two of the Fantastic Four's members Mister Fantastic and the Invisible Woman
+
+@1937 lint: the approach turns into the attack (no met); both were attacked; universes are no places (A78); clause object; "the portal" -> portal
+keep
+- Reed|met|Valeria Richards
+- Miles Morales|met|Valeria Richards
++ Valeria Richards|fought|Miles Morales|activated an override protocol of an army of H.E.R.B.I.E.s to attack the intruders
+f- Reed|other_verb|discovered
+f+ Reed|discovered|-|Reed discovered that his counterpart had a happy life along with Sue
+f- Reed|used|the portal
+f- Miles Morales|used|the portal
+f+ Reed|used|portal|Both him and Miles used the portal
+f+ Miles Morales|used|portal|Both him and Miles used the portal
+
+@1940 lint: finding him at Yorkton is after the defeat (met kept); invading his kingdom is no fight with him (A42); transported twins sealed; stray tag
+keep
+- Terminus|fought|Mole Man
+t+ no_relation|The Mole Man's kingdom was soon invaded
+f- Franklin Richards|other_verb|transported
+t- deictic|The rebirth of Terminus attracted
+
+@8761 lint partner of b1940
+keep
+- Terminus|fought|Mole Man
+t+ no_relation|The Mole Man's kingdom was soon invaded
+f- Franklin Richards|other_verb|transported
+t- deictic|The rebirth of Terminus attracted
