@@ -1,0 +1,88 @@
+@2710 lint: Guido is the real name (rename + alias); the tried verb (reported); the call to Tryp happened; Tryp's confrontation is a talk (mets kept)
+keep
+r Strong Guy=>Guido
+f+ Strong Guy|alias_of|Guido|Strong Guy killed him and called Tryp to report it. Guido tried to tell the team
+f- Tryp|other_verb|attempting
+f+ Tryp|other_verb|create|revealed that Tryp was attempting to create a modern version of the Legacy Virus|attempted|reported|Tryp
+f- Guido|other_verb|report
+f+ Guido|contacted|Tryp|called Tryp to report it
+
+@2794 lint: no fuller names in the window; inviting in person is no contacted; one asserter per row
+keep
+f- Sunspot|contacted|New Mutants
+f- Moonstar|contacted|New Mutants
+f+ Sunspot|other_verb|invited|Sunspot and Moonstar invited a group of New Mutants
+f+ Moonstar|other_verb|invited|Sunspot and Moonstar invited a group of New Mutants
+f- Sunspot|recruited|Cannonball
+f- Moonstar|recruited|Cannonball
+f+ Sunspot|recruited|Cannonball|under the premise of recruiting Cannonball from the Shi'ar space|planned|stated|Sunspot
+f+ Moonstar|recruited|Cannonball|under the premise of recruiting Cannonball from the Shi'ar space|planned|stated|Moonstar
+
+@2798 lint: copula; Simon is Wonder Man (rows kept, alias); member of the Avengers
+keep
+f- Simon|other_verb|became
+f+ Simon|member_of|Avengers|alongside fellow Avengers The Vision, Living Lightning, Scarlet Witch
+f+ Wonder Man|alias_of|Simon|leaving The Vision and Wonder Man to attempt to sabotage the bomb
+
+@2800 lint: occupation became; appearance is no attire
+keep
+f- Harvey Elder|other_verb|became
+t+ no_relation|As an adult, he became a scientist.
+t- attire|A bizarre physical appearance
+t+ no_relation|A bizarre physical appearance and poor eyesight caused him to be shunned and ridiculed since childhood.
+
+@2829 lint: arriving to stop her is the act (no met; stopping = defeated); the collapse is a narrated act; the aside tag repeats the asked fact
+keep
+- X-23|met|Leper Queen
+- X-23|fought|Leper Queen
++ X-23|defeated|Leper Queen|She arrived just in time to stop the Leper Queen
+t- deictic|X-23 then collapsed
+f+ X-23|other_verb|collapsed|X-23 then collapsed in exhaustion.
+t- deictic|(Kiden herself
+
+@2835 lint: the first confrontation is the grenade attack
+keep
+- Blonsky|met|Hulk
+
+@2839 lint: managed to defeat = one act; the ordered act
+keep
+- Thor|fought|Marauders
+- Sif|fought|Marauders
+- Warriors Three|fought|Marauders
+f+ Thor|other_verb|lead|Odin had to send Thor to lead the armies of Asgard against them|ordered|stated|Odin
+
+@2847 lint: the fatal strike is the killing; his escape; Spider-Man is Parker
+keep
+- Green Goblin|fought|May Parker
++ Green Goblin|escaped|Spider-Man|Before making his escape, Green Goblin threw Pumpkin Bombs
+f+ Spider-Man|alias_of|Parker|used his Goblin Glider to fatally strike Parker's aunt, and told Spider-Man
+
+@2851 lint: the throw is the defeat; Johnson's part of the confrontation is her attack (no met for her); the injured is Madame Hydra; an unnamed first power no row (A140)
+keep
+- Johnson|fought|Madame Hydra
+f- Johnson|wounded|Madame Hydra
+f+ Madame Hydra|wounded|-|Madame Hydra fell from the building, which broke her spine.
+f- Johnson|gained_power|-
+
+@2852 lint: Ultron informs Cho before the mind control (met kept); mind control is no fight (A116)
+keep
+- Ultron|fought|Helen Cho
+f+ Ultron|other_verb|take|Ultron used the Scepter to take over control of her mind
+
+@8151 lint: stopped by beating = one act; Morbius is one of the rescuers (saved kept); the formula was made; the formula is no doer; the place
+keep
+- Morbius|fought|Melter
+f- Morbius|other_verb|create
+f+ Morbius|other_verb|create|deciding to use their stolen resources to create a formula
+f- Morbius|other_verb|cure
+f+ Morbius|located_at|Greenpoint, Brooklyn|In Greenpoint, Brooklyn, Morbius stopped Melter and his henchmen
+
+@2860 lint: finding the Crew turns into the fight; the window gives John and Pointer (renames + aliases for the codename and mantle); Sasquatch alias
+keep
+r U.S.Agent=>John
+r Guardian=>Pointer
+- John|met|Wrecking Crew
+f- Pointer|became|Guardian
+f+ Guardian|alias_of|Pointer|convinced by Rachel to took up the mantle of Guardian
+f+ U.S.Agent|alias_of|John|U.S.Agent saved her from being crushed by the possessed Sasquatch. John not wanting to hurt Walter
+f+ Sasquatch|alias_of|Walter|Tanaraq possessed Sasquatch/Walter arrived
