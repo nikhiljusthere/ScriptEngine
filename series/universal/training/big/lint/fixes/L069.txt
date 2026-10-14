@@ -1,0 +1,87 @@
+@3753 lint: the mantle and codename as aliases; Steve Rogers; leader of Avengers teams
+keep
+r Rogers=>Steve Rogers
+f- John Walker|became|Captain America
+f+ Captain America|alias_of|John Walker|He was later chosen to take up the mantle of Captain America
+f- John Walker|codename_of|U.S.Agent
+f+ U.S.Agent|alias_of|John Walker|Walker established himself as the U.S.Agent
+f+ John Walker|leader_of|Avengers|serve as a member, and even leader, of various Avengers teams
+
+@3758 lint: attacked + incapacitated in one sentence
+keep
+- Jonah|fought|Geoffrey Wilder
+
+@3765 lint: Loki and Classic Loki are two variants; the enchantment is no fight (A116); both enchanted
+keep
+- Laufeydottir|fought|Alioth
+f+ Loki|other_verb|enchant|Together, they were able to enchant Alioth
+
+@3804 lint: Thanosi vs Higher-Powered Thanosi distinct
+keep
+
+@3807 lint: catching up with Frost is the kill (no mets); attacked + fought off in one sentence; the battle with the resurrected Dracula
+keep
+- Blade|met|Deacon Frost
+- Hannibal King|met|Deacon Frost
+- Doppelgänger|fought|Hannibal King
++ Blade|fought|Dracula|after a battle with a temporarily resurrected Dracula
+
+@7288 lint partner: the Doppelgänger reveals its purpose before the fight (mets kept); the Frost meeting is the kill; one-sentence attack
+keep
+- Blade|met|Deacon Frost
+- Hannibal King|met|Deacon Frost
+- Doppelgänger|fought|Hannibal King
+
+@3810 lint: defeat after a brief fight = one act; the taunting is Vanko's; Vanko nearly hit Hogan too; "the" dropped from things
+keep
+- Stark|fought|Vanko
++ Vanko|fought|Hogan|attacked the car with his whips, ripping it apart and nearly hitting Hogan and Potts
+f- Stark|used|the armor
+f+ Stark|used|armor|he was able to use it to defeat Vanko
+f- Vanko|destroyed|the car
+f+ Vanko|destroyed|car|attacked the car with his whips, ripping it apart
+
+@3814 lint: impaled/staked are the acts (no met, no fought); staked and found as a body = killed; clause object; unnamed finders
+keep
+- Apocalypse|met|Dracula
+- Apocalypse|fought|Dracula
+- van Helsing|met|Dracula
+- van Helsing|fought|Dracula
+- van Helsing|defeated|Dracula
++ van Helsing|killed|Dracula|was tracked down and staked by van Helsing in Castle Dracula
+f- van Helsing|discovered|Dracula
+f+ van Helsing|learned|-|before van Helsing determined he was involved.
+t- deictic|Persons unknown
+t+ no_doer|Persons unknown eventually discovered the body
+
+@3818 lint: one asserter per row; Reid's death
+keep
+f- Bakuto|other_verb|vowed
+f- Murakami|other_verb|vowed
+f- Bakuto|other_verb|threatening
+f- Murakami|other_verb|threatening
+f+ Bakuto|other_verb|vowed|Bakuto and Murakami vowed to do what needed to be done to protect the Hand|planned|stated|Bakuto
+f+ Murakami|other_verb|vowed|Bakuto and Murakami vowed to do what needed to be done to protect the Hand|planned|stated|Murakami
+f+ Bakuto|other_verb|threatening|threatening to destroy Elektra|planned|stated|Bakuto
+f+ Murakami|other_verb|threatening|threatening to destroy Elektra|planned|stated|Murakami
+f+ Reid|dies|-|Having watched Reid's corpse being taken away
+
+@3820 lint: Infinity (the entity) vs Infinity Watch distinct; thwarted = defeated
+keep
+- Eternity|fought|Magus
++ Eternity|defeated|Magus|the Magus was then thwarted by Eternity and Infinity
+- Infinity|fought|Magus
++ Infinity|defeated|Magus|the Magus was then thwarted by Eternity and Infinity
+
+@3826 lint: battle + forced retreat = one act; the casket use was planned
+keep
+- Odin|fought|Laufey
+f- Laufey|used|Casket of Ancient Winters
+f+ Laufey|used|Casket of Ancient Winters|using the Casket of Ancient Winters to plunge the world into a new ice age|planned|stated|Laufey
+
+@3833 lint: Wonder Man convinces the Mole Man before the blasts (a stated talk, met kept; believed stays suspected); Ben is the window's real name; the full quote
+keep
+r Thing=>Ben
+f+ Thing|alias_of|Ben|sometime later the Thing (now the leader of the Fantastic Four) returned to Subterranea
+f- Ben|other_verb|restoring
+f+ Ben|other_verb|restoring|to seek the Mole Man's aid in restoring his teammate Ms. Marvel back to human form|planned|stated|Ben
