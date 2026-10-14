@@ -1,0 +1,66 @@
+@7480 lint: attacked, but defeated one sentence; Jackal and Scarlet Spider mantles
+keep
+- Miles Warren|fought|Ben
+f+ Jackal|alias_of|Miles Warren|the real Miles Warren in his original Jackal costume
+f- Ben|other_verb|returning
+f+ Scarlet Spider|alias_of|Ben|returning to mantle of Scarlet Spider
+
+@7493 lint: won after a grueling battle one act; A156 Hulk/Banner link
+keep
+- Hulk|fought|Fenris
+f+ Hulk|alias_of|Banner|Banner chose to resume the Hulk's form once more
+
+@7501 lint: after a pitched battle, he defeated one sentence
+keep
+- Banner|fought|Blonsky
+
+@7507 lint: also_known_as -> alias_of; the window writes Banner/Bruce, never "Bruce Banner"
+keep
+r Bruce Banner=>Banner
+f- Steve Rogers|also_known_as|Captain America
+f+ Captain America|alias_of|Steve Rogers|Steve Rogers, (a.k.a. Captain America)
+f- Tony Stark|also_known_as|Iron Man
+f+ Iron Man|alias_of|Tony Stark|the industrialist also known as "Iron Man"
+
+@7522 lint: interrupted his meeting, guards overpowered him (no separate meeting)
+keep
+- Spider-Man|met|Magnum
+
+@7524 lint: self-pair; Magnum vs Magnum Shells distinct
+keep
+f- Maria de Guadalupe Santiago|alias_of|Maria de Guadalupe Santiago
+
+@7527 lint: helped is no met twin (A89 pairs helped with saved); Magnum shot in the stomach
+keep
+f+ Magnum|wounded|-|the Punisher shot Magnum in the stomach
+
+@7528 lint: Magnum vs Magnum Munitions; beliefs -> suspected; prioritizing is no capability
+keep
+f- Deathlok|other_verb|viewed
+f+ Deathlok|suspected|-|he viewed Magnum's position as a way to demand priorities for black people only at the expense of other groups
+f- Deathlok|other_verb|believed
+f+ Deathlok|suspected|-|while Deathlok believed that any people could and should thrive through their own effort and collaboratively
+t- capability|Deathlok, unwilling to participate in a war
+t+ no_relation|Deathlok, unwilling to participate in a war, initially prioritized the protection of just his family
+
+@7537 lint: met kept (gloating, champagne offer before the slap); beliefs -> suspected
+keep
+f- Spider-Man|other_verb|believed
+f- Punisher|other_verb|believed
+f+ Spider-Man|suspected|-|Spider-Man and the Punisher believed that Magnum would be killed by the gas
+f+ Punisher|suspected|-|Spider-Man and the Punisher believed that Magnum would be killed by the gas
+
+@7559 lint: encountered; when he attacked one sentence, no met
+keep
+- Dracula|met|Captain Cutlass
+- Dracula|met|Marianne Cutlass
+
+@7562 lint: known as the Blood Countess -> alias_of (Kane fled Dracula: escape kept)
+keep
+f- Elizabeth Bathory|also_known_as|Blood Countess
+f+ Blood Countess|alias_of|Elizabeth Bathory|now known as the Blood Countess
+
+@7563 lint: attacked, but forced to flee one sentence; flee is the defeat (no escape twin); Eisner and Marie Eisner are two people
+keep
+- Dracula|fought|Marie Eisner
+- Dracula|escaped|Marie Eisner
