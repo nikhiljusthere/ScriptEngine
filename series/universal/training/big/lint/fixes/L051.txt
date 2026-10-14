@@ -1,0 +1,88 @@
+@2523 lint: Belova's surprise and the thrown bottle are one moment (no met)
+keep
+- Bishop|met|Belova
+
+@2525 lint: Kree (race) vs Kree Sentry distinct; the ordered act
+keep
+f+ Ronan the Accuser|other_verb|punish|sent his agent Ronan the Accuser to punish the Fantastic Four|ordered|stated|Supreme Intelligence
+
+@2539 lint: battled to the death = killed; Halloway is the window's real name (rename + alias); knowledge rows
+keep
+r Angel=>Halloway
+- Halloway|fought|Singa
+f+ Angel|alias_of|Halloway|As the Angel, Halloway discovered that the werewolf killer was Robert Harrison
+f+ Halloway|learned|-|learning that the Cat's Paw was murdering leading members of American industry
+f+ Halloway|discovered|-|the Angel found that she had the major shareholder of American Aircraft Inc. as her prisoner
+
+@2545 lint: confronting Necrom and leading against him are the fight (no mets); clause object; Kylun met them too
+keep
+- Excalibur|met|Necrom
+- Nightcrawler|met|Necrom
+f- Nightcrawler|learned|Merlyn
+f+ Nightcrawler|learned|-|Nightcrawler learned that Merlyn had meticulously orchestrated the catastrophe
++ Kylun|met|Cerise|surprised by Cerise of the Ghrand Jahr
++ Kylun|met|Special Executive|arrival of the Special Executive in a ridiculous gathering
+
+@2781 lint partner of b2545: Kylun met them too; the victim is wounded
+keep
++ Kylun|met|Cerise|surprised by Cerise of the Ghrand Jahr
++ Kylun|met|Special Executive|arrival of the Special Executive in a ridiculous gathering
+f- Captain Britain|wounded|Nightcrawler
+f+ Nightcrawler|wounded|-|Nightcrawler suffered a broken femur
+
+@2554 lint: confronting Daisy turns into the fight; the killing of Kora's mother is Malick's own claim
+keep
+- Kora|met|Daisy Johnson
+f- Nathaniel Malick|other_verb|killed
+f+ Nathaniel Malick|other_verb|killed|Malick told Kora that he killed her mother|claimed|stated|Nathaniel Malick
+
+@2556 lint: Mar-Vell and Black Bolt interrupt the Council and hold off the Skrulls' strike - the mets stand, the Council is no opponent; went after twins fought; "a single Skrull" is no end; detecting his presence = discovered
+keep
+- Mar-Vell|fought|Kree Science Council
+- Black Bolt|fought|Kree Science Council
+f- Boss Barker|other_verb|went
+t- no_doer|A single Skrull
+t+ crowd_end|A single Skrull infiltrated the Kree Empire posing as
+f- Mar-Vell|discovered|Boss Barker
+f+ Mar-Vell|discovered|-|Captain Mar-Vell detected Boss Barker's presence
+
+@2560 lint partner: attacked is a relation (Avalon)
+keep
+f- X-Men|other_verb|attacked
+f+ X-Men|attacked|Avalon|when the X-Men attacked Avalon
+
+@6939 lint: two different helps (no symmetric pair); attacked is a relation; a government is no doer
+keep
+f- X-Men|other_verb|attacked
+f+ X-Men|attacked|Avalon|when the X-Men attacked Avalon
+- Russian government|captured|Illyana
+f- Russian government|other_verb|evolve
+f- Russian government|other_verb|defeat
+t+ no_relation|she was kidnapped by the Russian government, who hoped to genetically evolve Illyana
+
+@2572 lint: Mandarin costume is a thing; narrative lines are no capability; the realization; insisting is a speech act; the arrest has no doer
+keep
+t- capability|His acting style was so believable
+t- capability|Slattery acted as himself
+t+ no_relation|Slattery acted as himself but with the priority of tricking Williams.
+t- capability|Eventually, the truth came out
+f+ Simon Williams|learned|-|leading Williams to realize Slattery was acting the whole time
+t- capability|However, as he grew older
+t+ no_relation|However, as he grew older, he struggled to find jobs
+f- Slattery|other_verb|insisting
+f+ Slattery|other_verb|insisting|insisting that the Mandarin had returned
+t+ no_doer|only to be arrested for not serving his full sentence
+
+@2576 lint: "a fight that he barely won" = one act; Spider-Man alias
+keep
+- Peter Parker|fought|Morlun
+f+ Spider-Man|alias_of|Peter Parker|explaining to Parker how much good he did as Spider-Man
+
+@2581 lint: the window writes "Tony"; a rank is no became; racing in Monte Carlo is no arrival (A151)
+keep
+r Tony Stark=>Tony
+f- Tony|other_verb|became
+- Tony|arrived|Monte Carlo
+- Tiberius|arrived|Monte Carlo
+f+ Tony|located_at|Monte Carlo|drag raced in Monte Carlo
+f+ Tiberius|located_at|Monte Carlo|drag raced in Monte Carlo

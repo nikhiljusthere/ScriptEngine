@@ -1,0 +1,11 @@
+@6120 lint partner of b2781: the victim is wounded
+keep
+f- Captain Britain|wounded|Nightcrawler
+f+ Nightcrawler|wounded|-|Nightcrawler suffered a broken femur
+
+@6942 lint partner of b6939: a government is no doer
+keep
+- Russian government|captured|Illyana
+f- Russian government|other_verb|evolve
+f- Russian government|other_verb|defeat
+t+ no_relation|she was kidnapped by the Russian government, who hoped to genetically evolve Illyana
