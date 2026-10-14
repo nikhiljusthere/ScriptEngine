@@ -1,0 +1,66 @@
+@3466 lint: crossing paths with Hercules turns into the knockout; A156 alias link; the Avengers learned
+keep
+- Hulk|met|Hercules
+f+ Hulk|alias_of|Banner|but soon passed out and reverted back into Banner
+f+ Avengers|learned|-|Although the Avengers eventually learned the truth
+
+@3480 lint: assisting the spell is no twin of the rescue (A89 false)
+keep
+
+@3492 lint: clause object
+keep
+f- Avengers|remembered|original identities
+f+ Avengers|remembered|-|other Avengers began to remember their original identities
+
+@3496 lint: codename_of retired
+keep
+f- Kate|codename_of|Hawkeye
+f+ Hawkeye|alias_of|Kate|Kate officially took on the mantle of "Hawkeye" when formally given it by Captain America
+
+@3499 lint: the bash and the obliteration are separate sentences (both kept); an existing enhancement is no gain; about to kill = attempted
+keep
+f- Pepper|gained_power|Extremis
+f- Aldrich Killian|other_verb|kill
+f+ Aldrich Killian|other_verb|kill|when he was about to kill Stark|attempted|stated|Aldrich Killian
+
+@3506 lint: hammer strike + knocked unconscious = one act
+keep
+- Mari|fought|Odd John
+
+@3513 lint: the tried verb; Ultimates vs Dark Ultimates distinct; Iron Man and the Maker aliases
+keep
+f- Reed Richards|other_verb|try
+f+ Reed Richards|other_verb|put|and try to put differences aside with the Ultimates|planned|stated|Reed Richards
+f+ Iron Man|alias_of|Tony Stark|During a furious battle, Iron Man managed to get the Gems
+r Maker=>Reed Richards
+f+ Maker|alias_of|Reed Richards|The Maker performed a surgery on Stark's brain
+
+@3523 lint: Avengers vs Avengers Compound distinct
+keep
+
+@3545 lint: Tony tried to reason with Steve before the fight (met kept); the tag repeats the fought row; Rhodey hit; Iron Man alias
+keep
+t- deictic|a fight soon broke out
+t- deictic|Rhodey flew after them
+f+ Rhodey|wounded|-|when a blast meant for Falcon hit Rhodey instead, Rhodey plummeted to the ground
+f+ Iron Man|alias_of|Tony Stark|With Iron Man's team momentarily shocked and distracted
+
+@3549 lint: fought + defeated in one sentence; "professing" is Reed's speech act (actual); the Maker is Reed
+keep
+- da Costa|fought|Reed
+f- Reed|other_verb|professing
+f+ Reed|other_verb|professing|while professing his subordinates would come for him
+f+ Maker|alias_of|Reed|the surveillance had granted him the knowledge of every aspect of the Maker's plan
+
+@7924 lint partner of b3549
+keep
+- da Costa|fought|Reed
+f- Reed|other_verb|professing
+f+ Reed|other_verb|professing|while professing his subordinates would come for him
+f+ Maker|alias_of|Reed|the surveillance had granted him the knowledge of every aspect of the Maker's plan
+
+@3561 lint: copula; "they" includes named Elixir (no crowd end)
+keep
+f- Elixir|other_verb|became
+t- crowd_end|Once they arrived there
+t+ no_relation|Once they arrived there Elixir became hysterical over being unable to save his friends from the Leper Queen.
