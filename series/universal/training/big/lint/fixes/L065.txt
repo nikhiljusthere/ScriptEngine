@@ -1,0 +1,94 @@
+@3337 lint: the station confrontation is a later moment with no fight stated after it (mets kept)
+keep
+
+@3347 lint: clashed + slay in one sentence = killed; became involved -> involved; twins of events; doer-less passive; the Cadaver's foiled plot; the Young Allies too
+keep
+- Toro|fought|Killer Bane
+- Toro|defeated|Killer Bane
++ Toro|killed|Killer Bane|Toro and the Young Allies clashed with resurrected criminal Killer Bane and his Walking Dead, finding a means to slay the seemingly immortal killers
++ Young Allies|killed|Killer Bane|Toro and the Young Allies clashed with resurrected criminal Killer Bane and his Walking Dead, finding a means to slay the seemingly immortal killers
+f- Human Torch|other_verb|became
+f+ Human Torch|other_verb|involved|the pair became involved in a Hollywood film titled the "History of Fire"
+f- Toro|other_verb|became
+f+ Toro|other_verb|involved|the pair became involved in a Hollywood film titled the "History of Fire"
+f- Toro|other_verb|returned
+f- Human Torch|other_verb|stopped
+f- Toro|other_verb|stopped
+f- Human Torch|other_verb|foiled
+f- Toro|other_verb|foiled
+f- Snowball|other_verb|fired
++ Human Torch|defeated|Cadaver|foiled the ransom plot of the Cadaver
++ Toro|defeated|Cadaver|foiled the ransom plot of the Cadaver
+
+@3349 lint partner: the injured is Forge
+keep
+f- Serafina|wounded|Forge
+f+ Forge|wounded|-|After being tracked down by one of the Children, Serafina, Forge was wounded
+
+@4157 lint: Caliban vs the Caliban simulacrum distinct; the injured is Forge
+keep
+f- Serafina|wounded|Forge
+f+ Forge|wounded|-|After being tracked down by one of the Children, Serafina, Forge was wounded
+
+@3379 lint: the Tinkerer's help is no twin; Johnny is the window's real name; he helped all three; a universe is no place (A78)
+keep
+r Human Torch=>Johnny
+f+ Human Torch|alias_of|Johnny|The Human Torch and the Thing, as well as Franklin and Valeria Richards, found themselves trapped
+f+ Tinkerer|helped|Lyja|who agreed to help them return home out of sympathy for Franklin and Valeria
+f+ Tinkerer|helped|Thing|who agreed to help them return home out of sympathy for Franklin and Valeria
+- Johnny|arrived|Positive Matter Universe
+- Thing|arrived|Positive Matter Universe
+- Franklin|arrived|Positive Matter Universe
+- Valeria Richards|arrived|Positive Matter Universe
+
+@3383 lint: the confrontation is the fight
+keep
+- Bucky Barnes|met|Sentry
+- Red Guardian|met|Sentry
+- Yelena|met|Sentry
+
+@3401 lint: the chance encounter is the battle; real names (renames + aliases); the pair fled; a government is no doer
+keep
+r Iron Man=>Tony
+r Sub-Mariner=>Namor
+- Tony|met|Krang
+- Tony|met|Dorma
+f+ Iron Man|alias_of|Tony|Tony managed to slip away and change into Iron Man to fly to Washington himself
+f+ Sub-Mariner|alias_of|Namor|The battle raged on soon after until Namor spotted Krang's ship and abandoned the fight
++ Krang|escaped|Tony|The pair fled, and with his armor heavily damaged
++ Dorma|escaped|Tony|The pair fled, and with his armor heavily damaged
+f- Russian government|other_verb|prevent
+f- Russian government|other_verb|sent
+f- Titanium Man|other_verb|stop
+t+ no_relation|Meanwhile the Russian government sought to prevent the secrets of Iron Man's armor from becoming known to the United States
+
+@3420 lint: getting to know each other is no meeting; copula; the reveal happened (kept actual); the killing is the event (no dies twin); a near-death line is no capability
+keep
+- Jude|met|Amanda Armstrong
+f- Amanda Armstrong|other_verb|became
+t+ no_relation|Two years later, Amanda became pregnant.
+f- Jude|dies|-
+t- capability|He was almost responsible
+t+ no_relation|He was almost responsible for Amanda's own death at the hands of an assassin.
+
+@3427 lint: blasted + killing = one act; the ordered acts
+keep
+- Kahhori|fought|Gonzolo
+f+ Wáhta|other_verb|watch|telling him to watch the Sky Worlders|ordered|stated|Kahhori
+f+ Wáhta|other_verb|remember|told Wáhta to remember their faces|ordered|stated|Kahhori
+
+@3432 lint: Toomes and Doris Toomes are two people; Vulture alias
+keep
+f+ Vulture|alias_of|Toomes|Vulture eventually successfully landed back in his base
+
+@3436 lint: stunned = one act
+keep
+- Mad Thinker|fought|Hood
+
+@3463 lint: confronting Nico turns into the fight; defeat + wounding one act; Robert wounded; the LAPD is a named end
+keep
+- Tina Minoru|met|Nico
+- Robert Minoru|met|Nico
+- Nico|fought|Robert Minoru
+f+ Robert Minoru|wounded|-|heavily wounding her father in the process
+t- crowd_end|ended up arrested by the LAPD
