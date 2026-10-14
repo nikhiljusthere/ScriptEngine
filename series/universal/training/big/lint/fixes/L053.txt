@@ -1,0 +1,94 @@
+@2591 lint: the encounter precedes the later petrifying (met kept); the symbiote taking over the Surfer is possession (A116); both were petrified; Carnage alias
+keep
+- Carnage symbiote|fought|Silver Surfer
+f+ Carnage symbiote|other_verb|took|While the Carnage symbiote took over the Surfer and rampaged
++ Silver Surfer|defeated|Carnage symbiote|they were both petrified by the Silver Surfer
+f- Silver Surfer|other_verb|petrified
+f+ Carnage|alias_of|Cletus|Carnage promptly escaped and went on another killing spree
+
+@2593 lint: seeking the FF's help precedes the clash (mets kept); attacked + defeated in one sentence; they followed him to the Microverse; the ordered search; deduced/find out = learned
+keep
+- Psycho-Man|fought|Ben
+- Psycho-Man|fought|Reed
+- Psycho-Man|fought|Johnny
++ Reed|arrived|Microverse|they followed after him in Reed's newly constructed Reducta-Craft
++ Ben|arrived|Microverse|they followed after him in Reed's newly constructed Reducta-Craft
++ Johnny|arrived|Microverse|they followed after him in Reed's newly constructed Reducta-Craft
+f- Fantastic Four|other_verb|find
+f+ Fantastic Four|other_verb|find|demanded that the Fantastic Four find the Surfer|ordered|stated|Galactus
+f+ Fantastic Four|learned|-|they were surprised to find that Galactus had been defeated in their absence
+f- Reed|other_verb|deduced
+f+ Reed|learned|-|Reed deduced that the Surfer fled to the Microverse
+
+@2595 lint: copula became
+keep
+f- Nyx|other_verb|became
+t+ no_relation|With the expansion of the Olympians, Nyx became an outcast within her people
+
+@2599 lint: the bar conversation precedes the brawl (met kept); brawl + incapacitated in one sentence; the New York return did not happen; chasing through LA is no arrival (A151); aliases
+keep
+- Murdock|fought|Jennifer Walters
+- Murdock|arrived|New York
+- Murdock|arrived|Los Angeles
+f+ Murdock|located_at|Los Angeles|Murdock chased Patilio through the streets of Los Angeles
+t- deictic|The next day, Murdock left
+f+ Murdock|other_verb|left|The next day, Murdock left for New York.
+f+ She-Hulk|alias_of|Jennifer Walters|but was intercepted by Walters as She-Hulk at a parking garage
+f+ Leapfrog|alias_of|Eugene Patilio|the two teamed up to stop Leapfrog. They tracked Patilio down
+
+@2616 lint: the fight is stated separately ("Abby being overpowered by the Beast"); a broken arm is no defeat - the killing is the outcome
+keep
+- Beast|fought|Abby
++ Beast|fought|Abby|With Abby being overpowered by the Beast
+- Abby|defeated|Beast
+
+@2621 lint: battled + overpowered in one sentence; unnamed new power no row (A140); feared = suspected
+keep
+- Doctor Strange|fought|Loki
+f- Doctor Strange|gained_power|-
+f- Loki|gained_power|-
+f- Doctor Strange|other_verb|feared
+f+ Doctor Strange|suspected|-|not only feared Loki would use the spell for sinister motives
+
+@2627 lint: superior fighters + forced to flee in one sentence (defeated); fleeing the Four is escaped (kept); clause object; the ordered trial
+keep
+- Ronan the Accuser|fought|Fantastic Four
+f- Fantastic Four|other_verb|learned
+f+ Fantastic Four|learned|-|The Fantastic Four soon learned that Alicia went missing
+f+ Ronan the Accuser|other_verb|try|sent Ronan the Accuser to try the Fantastic Four for crimes against the Kree Empire|ordered|stated|Kree Supreme Intelligence
+
+@2633 lint: taken out = one act; the ordered touch; unable to read is no capability
+keep
+- Ghost Rider|fought|Hugo
+- Ghost Rider|fought|Vincent
+f- Eli Morrow|other_verb|touch
+f+ Eli Morrow|other_verb|touch|Lucy had Eli touch the Darkhold|ordered|stated|Lucy
+t- capability|Upon heading back
+t+ no_relation|Upon heading back to where the Darkhold was found by her and Joseph, Lucy found herself unable to read it in her current state.
+
+@2635 lint: X-Force vs Strike Team X-Force distinct; torture in captivity is no fight; he escaped all three; Bishop is the one injured
+keep
+- Apocalypse|fought|Stryfe
+t+ no_relation|and was experimented on and tortured for years
++ Stryfe|escaped|X-Force|Stryfe was eventually defeated by Cable and both X-Force teams, but escaped
++ Stryfe|escaped|Strike Team X-Force|Stryfe was eventually defeated by Cable and both X-Force teams, but escaped
+f- Hope Summers|wounded|Bishop
+f+ Bishop|wounded|-|but did severely injure him.
+
+@9849 lint partner of b2635
+keep
++ Stryfe|escaped|X-Force|Stryfe was eventually defeated by Cable and both X-Force teams, but escaped
++ Stryfe|escaped|Strike Team X-Force|Stryfe was eventually defeated by Cable and both X-Force teams, but escaped
+f- Hope Summers|wounded|Bishop
+f+ Bishop|wounded|-|but did severely injure him
+
+@2646 lint: becoming Peter's boss = hired; Ben's meeting turns into the beatdown he set up (no met); Spider-Man alias
+keep
+f- Norman|other_verb|became
+f+ Norman|hired|Peter|Norman later became Peter's boss
+f+ Spider-Man|alias_of|Peter|Watching Peter get brutalized from a screen, Norman decided to use a work-in-progress Spider-Suit to save him
+
+@2656 lint: the visit is followed by a stated talk (Wyatt tells him where the money is) - met kept; he escaped from the bank, not from Wyatt
+keep
+- Brother Grimm|escaped|James T. Wyatt
+f+ Brother Grimm|other_verb|escaped|escaped with the loot, leaving Wyatt locked in the vault
