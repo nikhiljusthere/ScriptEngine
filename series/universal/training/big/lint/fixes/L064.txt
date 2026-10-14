@@ -1,0 +1,66 @@
+@4552 lint: the visit precedes the rat attack (met kept); vowed duplicates the planned take; unleashing her power is no order
+keep
+f- Kyle|other_verb|vowed
+f- August Masters|ordered|Mindy Williams
+f+ August Masters|other_verb|unleashed|their administrator August Masters unleashed Mindy's full power on Kyle
+
+@3248 lint: two people, one asserter each
+keep
+f- Dani|other_verb|follow
+f+ Dani|other_verb|follow|They then decided to follow Logan's advice|planned|stated|Dani
+f- Bruce Jr.|other_verb|follow
+f+ Bruce Jr.|other_verb|follow|They then decided to follow Logan's advice|planned|stated|Bruce Jr.
+
+@3251 lint: the full name of the Core; joining Ant-Man and Wasp where they are = met
+keep
+r Core=>Multiversal Engine Core
++ van Dyne|met|Ant-Man|Van Dyne then rushed to Ant-Man and Wasp's location and told them
++ van Dyne|met|Wasp|Van Dyne then rushed to Ant-Man and Wasp's location and told them
+
+@3288 lint: fought well but overtaken = one act
+keep
+- Ares|fought|Chaos King
+
+@4859 lint partner of b3288 (bringing him back to fight him is no twin: no saved row)
+keep
+- Ares|fought|Chaos King
+
+@3292 lint: clause object; Juggernaut alias
+keep
+f- Laurie|discovered|shape-shifting ability
+f+ Laurie|discovered|-|those tests showing her shape-shifting ability.
+f+ Juggernaut|alias_of|Kuurth|When the Juggernaut/Kuurth came to San Francisco
+
+@3301 lint: Askani vs Askani elders distinct; Stryfe leads the Scions (no separate fight stated); his armor
+keep
+- Nathan|fought|Stryfe
+f+ Stryfe|leader_of|Scions of the High Lord|the Scions of the High Lord, led by Stryfe
+t- attire|Stryfe began wearing
+f+ Stryfe|wore|trademark armor|Stryfe began wearing his trademark armor and very rarely took off his mask.
+
+@3311 lint: fought and killed = one act; the Utopia attack thwarted by X-Force = defeated; twins of events (leading the Reavers' attack stays leader_of; the tasking keeps its planned row, the orderer is unnamed)
+keep
+- Deathstrike|fought|Kangaroo
+- Deathstrike|fought|X-Force
++ X-Force|defeated|Deathstrike|She led a Reaver attack on Utopia that was thwarted by X-Force
+f- Sisterhood of Mutants|other_verb|resurrected
+f- Deathstrike|other_verb|kept
+f- X-Force|other_verb|thwarted
+
+@3313 lint partner of b7453: the brief confrontation is the only stated encounter (met kept)
+keep
+
+@7453 lint: met kept
+keep
+
+@3327 lint: codename_of retired; wrong-subject and noun rows; the school's full name
+keep
+f- Mole Man|codename_of|Mandarin Six
+f+ Mandarin Six|alias_of|Mole Man|its host, "Mandarin Six,"
+f- Mole Man|other_verb|revenge
+f- Reed Richards|other_verb|going
+f- Wolverine|leader_of|Jean Grey School
+f+ Wolverine|leader_of|Jean Grey School for mutants|Wolverine -- the school's headmaster
+
+@3329 lint: Pym vs Pym Technologies distinct; the fight and the kill are separate sentences
+keep
