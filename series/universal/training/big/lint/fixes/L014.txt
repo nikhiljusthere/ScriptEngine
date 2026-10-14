@@ -1,0 +1,52 @@
+@239 lint: a missile and a home are no doers or ends; the unnamed sister is no end; revealing a clause is revealed -
+keep
+- Pietro's sister|arrived|Hydra Research Base
+f- Stark Industries missile|other_verb|hit
+f- home|located_at|Sokovia
+f- Stark Industries missile|other_verb|causing
+f- Ultron|revealed|preparations
+f+ Ultron|revealed|-|revealed that he had begun preparations to carry out his plan of destroying the Avengers by building an army of Ultron Sentries.
+@250 lint: one sentence, one act (A145); realizing is learned -
+keep
+- Moon Knight|fought|Loki
+f- Kahhori|discovered|Sky World powers
+f+ Kahhori|learned|-|Kahhori realized that there was more to the Sky World powers than what was given.
+@258 lint: slapping a hand away is no fight, so the introduction is the meeting; the demand is the interrogation
+keep
+- Rhodes|fought|Slattery
+f+ Rhodes|other_verb|slapping|with Rhodes slapping his hand away
+- Iron Man|met|Slattery
+@260 lint: "told her to try not to die" is a speech act (no attempt word); leaving and refusing happened; her need is her claim; Hastings' reply is a warning
+keep
+f- Helstrom|other_verb|try
+f+ Helstrom|other_verb|told|Helstrom told her to try not to die before walking off
+f- Helstrom|other_verb|left
+f+ Helstrom|other_verb|left|then left to find Magoth
+f- Helstrom|other_verb|refusing
+f+ Helstrom|other_verb|refusing|refusing to let Hastings go with her
+f- Helstrom|other_verb|needed
+f+ Helstrom|other_verb|needed|Helstrom said that they needed the skull to use on her father|claimed|stated|Helstrom
+f- Hastings|other_verb|saying
+f+ Hastings|warned|Helstrom|Hastings responded, saying that she might die
+@271 lint: the encounter is the fight (A145); the attempted arrest; the unnamed President is no end; the Sentry's ordered act; the Void's control; armor is no doer
+keep
+- Osborn|met|Rogers
+- Osborn|met|Stark
+f- Rogers|other_verb|place
+f+ Rogers|other_verb|arrest|Before Rogers could place Osborn under arrest|attempted|stated|Rogers
+f- President|ordered|H.A.M.M.E.R.
+f- President|ordered|Osborn
+t+ crowd_end|the President gave the order to dissolve H.A.M.M.E.R. and arrest Osborn for treason
+f+ Sentry|other_verb|destroy|ordered the Sentry, unaware that the Void had taken control after Osborn had sent the Sentry to defeat Thor, to destroy Asgard completely|ordered|stated|Osborn
+f+ Void|other_verb|taken|unaware that the Void had taken control
+f- Iron Patriot armor|other_verb|disintegrated
+@285 lint: revealing a clause is revealed -
+keep
+f- Peterson|revealed|son's life
+f+ Peterson|revealed|-|Peterson revealed his son's life was at stake
+@288 lint: one sentence, one act (A145)
+keep
+- M-Plate|fought|Jubilee
+@2308 lint: helping the X-Men battle is fighting too (Monet's fights stay, as in b284); the X-Men subdued Weapon XII with Professor X
+keep
++ X-Men|defeated|Weapon XII|were able to subdue him

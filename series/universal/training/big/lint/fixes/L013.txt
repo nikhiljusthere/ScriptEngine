@@ -1,0 +1,30 @@
+@220 lint: Hulk fought the Abomination form (A156); the crash leads straight into the fight (A145) and is no meeting with Walters; Titania's entrance is no meeting; the swatting is Abomination's fight with the named group (A2); an assumption is suspected -; Walters watching names its doer
+keep
+- Hulk|fought|Blonsky
++ Hulk|fought|Abomination|the two of them began to fight
+- Titania|met|Walters
+f+ Titania|other_verb|bursting|it got messier, with Titania bursting into the lodge
+- Blonsky|fought|Intelligencia
++ Abomination|fought|Intelligencia|swatted away members of Intelligencia that were coming after her
+- Hulk|met|Blonsky
+- Hulk|met|Walters
+f- Hulk|suspected|Abomination
+f+ Hulk|suspected|-|assumed Abomination was attacking his cousin|actual|apparent
+t- deictic|Walters watched on
+f+ Walters|other_verb|watched|Walters watched on in confusion as the connecting storylines did not work.
+@231 lint: the reaching quote names no Maker; powering Doom down is no fight; the act is "powered"
+keep
+- Maker|met|Molecule Man
+- Molecule Man|fought|Doom
+f- Molecule Man|other_verb|make
+f+ Molecule Man|other_verb|powered|Molecule Man powered Doom down to make the ensuing fight against Mr. Fantastic fair
+@7827 lint partner of b231: same edits; the purpose clause is no separate act
+keep
+- Maker|met|Molecule Man
+- Molecule Man|fought|Doom
+f- Molecule Man|other_verb|make
+f+ Molecule Man|other_verb|powered|Molecule Man powered Doom down to make the ensuing fight against Mr. Fantastic fair.
+f- Maker|other_verb|further
+@232 lint: one sentence, one act (A145)
+keep
+- Steven|fought|Red Skull

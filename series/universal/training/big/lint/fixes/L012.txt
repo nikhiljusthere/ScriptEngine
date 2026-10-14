@@ -1,0 +1,44 @@
+@202 lint: deflecting, dispatching and banishing are one act, the banishing (sealed); the tried blast; speech acts are actual
+keep
+- Watcher|fought|Ultron
+- Watcher|defeated|Ultron
+f+ Ultron|other_verb|blast|Ultron attempted to blast Watcher with the power of the Infinity Stones|attempted|stated|Ultron
+f- Ultron|other_verb|saying
+f+ Ultron|other_verb|saying|saying that anything was possible in a Multiverse
+@210 lint: revealing a clause is revealed -; asking is a speech act; beliefs are suspected -; hearing is learned -
+keep
+f- Maya Hansen|revealed|biological DNA coder
+f+ Maya Hansen|revealed|-|Hansen revealed that she was not a simply botanist as Stark considered her, but biological DNA coder
+f- Potts|other_verb|asking
+f+ Potts|other_verb|asking|asking her why she come to the mansion precisely that night
+f- Stark|other_verb|considered
+f+ Stark|suspected|-|as Stark considered her
+f- Maya Hansen|suspected|Aldrich Killian
+f+ Maya Hansen|suspected|-|she thought her boss was working for the Mandarin
+f- Potts|discovered|Aldrich Killian
+f+ Potts|learned|-|Potts was shocked to hear that her boss was Aldrich Killian
+@217 lint: the confrontation is the burn (A145); a team is no place: left_group; the exoneration names no doer
+keep
+- Scott|met|Logan
+- Logan|departed|X-Men
+f+ Logan|left_group|X-Men|Wolverine was kicked out of the team
+f- X-Men|other_verb|exonerated
+t+ no_doer|the X-Men were exonerated of all charges
+@218 lint: the codename is the alias; finding out is learned -; hoping is the verb; a store and a team with no name are no ends
+keep
+f- Peter|also_known_as|Spider-Man
+f+ Spider-Man|alias_of|Peter|As Spider-Man, Peter accepted the offer
+f- Peter|learned|Brooklyn Avengers
+f+ Peter|learned|-|soon learned that they were not the real deal
+f- George Stacy|suspected|Scorcher's employer
+f+ George Stacy|other_verb|hoped|that Stacy had hoped would lead them to the Scorcher's employer|planned|stated|George Stacy
+f- Batwing|other_verb|mutated
+f+ Peter|learned|-|Peter learned that Batwing was a mutated child
+f+ Peter|learned|-|discovered that Tiny McKeever had stolen his notes
+f- Mrs. Fong|owns|local convenience store
+f- Tiny McKeever|left_group|football team
+@219 lint: the codename is the alias; "a bomb" is no named item
+keep
+f- Harry Osborn|codename_of|Green Goblin
+f+ Green Goblin|alias_of|Harry Osborn|flying around as the second Green Goblin
+f- Harry Osborn|used|a bomb

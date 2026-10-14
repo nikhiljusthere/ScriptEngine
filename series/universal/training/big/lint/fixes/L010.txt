@@ -1,0 +1,57 @@
+@159 lint: revealing a clause is revealed -; the verb word; the phone call
+keep
+f- Coulson|revealed|unidentified female agent
+f+ Coulson|revealed|-|revealed that her parents' file was actually about an unidentified female agent
+f- Coulson|revealed|truth
+f+ Coulson|revealed|-|explained he had told the truth to Skye
+f- Coulson|other_verb|request
+f+ Coulson|other_verb|put|he had put in a request to learn more
+f+ Coulson|other_verb|made|Later, Coulson made a phone call to gain information about his recovery
+@173 lint: codenames as alias_of (Terrax is Tyros' former codename); the Tribunal acted on the named members, no group row (A2)
+keep
+f- Tyros|also_known_as|Terrax
+f+ Terrax|alias_of|Tyros|cosmic-powered Tyros (formerly Galactus' herald Terrax)
+f- Nova|also_known_as|Frankie Raye
+f+ Nova|alias_of|Frankie Raye|current herald Nova (Frankie Raye)
+f- Tribunal|tricked|Defenders
+f+ Tribunal|tricked|Surfer|the Surfer and his fellow senior Defenders Hulk, Namor and Strange were hoaxed into disbanding after the alien Tribunal
+f+ Tribunal|tricked|Hulk|the Surfer and his fellow senior Defenders Hulk, Namor and Strange were hoaxed into disbanding after the alien Tribunal
+f+ Tribunal|tricked|Namor|the Surfer and his fellow senior Defenders Hulk, Namor and Strange were hoaxed into disbanding after the alien Tribunal
+f+ Tribunal|tricked|Strange|the Surfer and his fellow senior Defenders Hulk, Namor and Strange were hoaxed into disbanding after the alien Tribunal
+f- Tribunal|persuaded|Defenders
+f+ Tribunal|persuaded|Surfer|after the alien Tribunal convinced them their continued teamwork was fated to cause Earth's doom
+f+ Tribunal|persuaded|Hulk|after the alien Tribunal convinced them their continued teamwork was fated to cause Earth's doom
+f+ Tribunal|persuaded|Namor|after the alien Tribunal convinced them their continued teamwork was fated to cause Earth's doom
+f+ Tribunal|persuaded|Strange|after the alien Tribunal convinced them their continued teamwork was fated to cause Earth's doom
+@176 lint: Murakami's report of a past love is his claim; the literal "-" asserter goes
+keep
+f- Elektra|other_verb|loved
+f+ Elektra|other_verb|loved|Elektra had also loved Daredevil in her past life|claimed|reported|Murakami
+f- Elektra|allied_with|Daredevil
+f+ Elektra|allied_with|Daredevil|she had fought beside him in their battle against Nobu Yoshioka|actual|reported
+@180 lint: going to his house and knocking him out is the attack (A145); the phone call
+keep
+- van Dyne|met|Scott Lang
+f+ Scott Lang|contacted|van Dyne|they were called by Scott Lang, who said he had a dream about seeing her mother
+@189 lint: displaying information is revealed -; a video is no doer (A131)
+keep
+f- Intelligencia|revealed|personal information
+f+ Intelligencia|revealed|-|displaying personal information from Walters' phone on the screen
+f- video|other_verb|remained
+t+ no_relation|it remained on for everyone to see
+@194 lint: the hammer copies are a description, the spell row covers the act
+keep
+f- Strange|created|Mjølnir duplicates
+@197 lint: one name (Tony Stark); a planned liaison role is no becoming; his serving only Uncle Sam is his own claim
+keep
+r Tony=>Tony Stark
+f- John|became|America's liaison of Omega Flight
+f- John|other_verb|serves
+f+ John|other_verb|serves|and only serves Uncle Sam|claimed|stated|John
+@201 lint: codename as alias_of; escaping Hell is escaped; Captain Britain is his codename (the visit stays an arrival, the granted powers a gain)
+keep
+f- Meggan|codename_of|Gloriana
+f+ Gloriana|alias_of|Meggan|who had adopted the codename Gloriana
+- Meggan|departed|Hell
++ Meggan|escaped|Hell|after escaping from Hell
+f+ Captain Britain|alias_of|Brian Braddock|Captain Britain continued to serve with MI-13
