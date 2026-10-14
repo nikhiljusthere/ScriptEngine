@@ -1,0 +1,45 @@
+@629 lint: one name (Natasha Romanoff); grabbing the chord is no fight, the handover is the defeat; a belief is suspected -; S.H.I.E.L.D.'s line is a speech act; distrust is no act; Captain America is Rogers
+keep
+r Romanoff=>Natasha Romanoff
+- Rogers|fought|Baker
+f- Rogers|other_verb|thought
+f+ Rogers|suspected|-|he thought the Zodiac was destroyed
+f- S.H.I.E.L.D.|other_verb|said
+f+ S.H.I.E.L.D.|other_verb|said|S.H.I.E.L.D. said that to keep its availability a secret
+f- Rogers|other_verb|trust
+t+ no_relation|This caused Rogers to not trust S.H.I.E.L.D. even more.
+f+ Captain America|alias_of|Rogers|Captain America eventually defeated them
+@632 lint: finding her coffin becomes the fight (A145); a wish is actual
+keep
+- Jones|met|Walker
+f- Walker|other_verb|wanted
+f+ Walker|other_verb|wanted|She simply wanted Jones to let her go.
+@637 lint: the questioning is a meeting (met stays); "became enraged" has no verb; Carol only confirmed, no asserter; a lie is a narrated act; the friendship is Matt's claim like the alliance; a phone line is no doer
+keep
+f- Jessica|other_verb|became
+t+ no_relation|Jessica became enraged at the accusation.
+f- LWS Enterprises|owns|phone number
+f+ LWS Enterprises|owns|phone number|the phone number was owned by LWS Enterprises.|actual|reported
+f- Jessica|other_verb|lied
+f+ Jessica|other_verb|lied|She lied about knowing that Miranda was murdered,
+f- Carol Danvers|revealed|-
+f+ Carol Danvers|other_verb|confirmed|Carol confirmed the phone number was owned by LWS Enterprises.
+f- Matt Murdock|friend_of|Luke Cage
+f+ Matt Murdock|friend_of|Luke Cage|He told her he was an ally and a friend of Luke Cage.|claimed|stated|Matt Murdock
+f- LWS's main phone line|other_verb|went
+t+ no_doer|The email included LWS's main phone line, which, when called, went to the committee to elect the Democratic presidential candidate Steven Keaton.
+@658 lint: the two who dealt the damage were confronting in the fight (A145); a power gain is no awakening (the exorcism stays a defeat of Varnae, distinct from saving Blade)
+keep
+- Brielle|met|Varnae
+- Miles|met|Varnae
+- Varnae|awakened|-
+@666 lint: Okoye's confrontation ends the fight she is in (A145); the Jabari beat W'Kabi with M'Baku (the forced surrender stays a defeat)
+keep
+- Okoye|met|W'Kabi
++ Jabari|defeated|W'Kabi|they defeat W'Kabi
+@4208 lint: one name (Doctor Strange); the trap is Verna's capture, the team's kill stays (as in b674)
+keep
+r Strange=>Doctor Strange
+@682 lint: the attempt word with no tried verb is no act
+keep
+f- Toomes|other_verb|attempted

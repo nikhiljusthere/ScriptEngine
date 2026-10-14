@@ -561,3 +561,10 @@ are for the peer to measure and adopt or reject.
   for the same pair ("John Garrett|kidnapped|Skye", "Namor|kidnapped|Sue"): a kidnapping by a named doer is the
   event captured (A89 twin, events own the act); victim-only passives ("Truman|kidnapped|-") get a no_doer tag.
   Read, not auto-fixed: the quote must show the doer.
+- LINT M6 2026-10-14 (lint_fix, rule-decided): a speech act written as other_verb (told/said/claimed/insisted/asked/
+  explained/noted/...) is actual with no asserted_by (recon convention). Measured on the final corpus: 4,163 such rows
+  actual vs ~670 `claimed` in 560 windows, asserted by the speaker; the 27B queue kept re-raising them. Applied to
+  554 windows (rows asserted by someone else, and `planned` speech like "vowed to", are left for reading). M6+M4
+  can collapse two quotes of one triple into one row (b2421, recon C252 logged as an exception).
+- FIXED 2026-10-14 (lint_fix M2): the A89 event-twin drop ignored modality, so it removed an `attempted` attack next
+  to the fight (b3695, restored twice); M2 now requires an actual fact, as lint_v2's check already did.

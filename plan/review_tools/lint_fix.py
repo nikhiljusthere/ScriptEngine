@@ -8,6 +8,7 @@ Each transform is one the catalog already decides without reading the window:
   M3 asserted_by on an actual row when the asserter IS the subject (speech acts are actual, no asserted_by);
      other asserters are left for reading
   M4 duplicate facts/tags; a truly symmetric fact (friend/rival/married/dated/sibling/allied) in both directions -> the first row
+  M6 a speech act (other_verb told/said/claimed/...) is actual with no asserter, when the asserter is the speaker
   M5 kinship one direction (`A|child_of|B` -> `B|parent_of|A`); `married_to` -> `married` (both symmetric)
 The new record goes through the same three gates as `rv.sh fix`; a window whose gate refuses anything is
 NOT written and is printed (it belongs to the reading list). Append-only, latest record wins.
@@ -26,6 +27,9 @@ TWIN = {"helped": "saved", "assisted": "saved", "protected": "saved", "attacked"
         "kidnapped": "captured", "greeted": "met", "contacted": "met"}
 
 
+SPEECH = {"told", "said", "says", "asked", "asking", "explained", "noted", "stated", "stating", "replied", "responded",
+          "claimed", "claiming", "insisted", "declared", "announced", "informed", "admitted", "confessed", "suggested",
+          "accused", "telling", "saying", "explaining", "noting", "boasted", "bragged", "mentioned"}
 # fact_gate.SYMMETRIC also lists helped/assisted/protected/contacted/warned, which have a direction (A136)
 TRUE_SYM = {"friend_of", "rival_of", "married", "dated", "sibling_of", "allied_with"}
 
@@ -42,9 +46,17 @@ def transform(rec):
             notes.add("M1")
         tw = TWIN.get(rel)
         # met/fought are symmetric events, so their twins match either direction; saved/captured keep direction
-        if tw and ((f["subject"], tw, f["object"]) in evk or (tw in bv.SYM and (f["object"], tw, f["subject"]) in evk)):
+        # only an ACTUAL fact twins an event: an attempted attack next to the fight is a separate, later act (b3695,
+        # recon C403; lint_v2's A89 check has the same condition)
+        if tw and mod == "actual" and ((f["subject"], tw, f["object"]) in evk or (tw in bv.SYM and (f["object"], tw, f["subject"]) in evk)):
             notes.add("M2")
             continue
+        # M6 (2026-10-14): a speech act is actual with no asserter (recon convention); 4,163 speech-verb other_verb
+        # rows were actual, ~670 in 560 windows were `claimed` asserted by the speaker. Rows asserted by someone else stay.
+        if rel == "other_verb" and (f.get("object") or "").lower() in SPEECH and mod == "claimed" \
+                and f.get("asserted_by") in (None, f["subject"]):
+            f["modality"], f["certainty"], f["asserted_by"] = "actual", "stated", None
+            notes.add("M6")
         if (f.get("modality") or "actual") == "actual" and f.get("asserted_by") and f["asserted_by"] == f["subject"]:
             f["asserted_by"] = None
             notes.add("M3")

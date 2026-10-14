@@ -1,0 +1,56 @@
+@681 lint: meeting the foe is the attack (A145); the Black Knight helped, he did not defeat (Whirlwind's fight and the victory are separate sentences, both stay); the Vision led them
+keep
+- Avengers|met|Ultron
+- Van Dyne|met|Ultron
+- Black Knight|defeated|Whirlwind
+f+ Vision|helped|Avengers|led the Avengers to his former master's hideout
+@685 lint: one name (Ben Mankiewicz); speech acts are actual
+keep
+r Mankiewicz=>Ben Mankiewicz
+f- Slattery|other_verb|cited
+f+ Slattery|other_verb|cited|Slattery said that prison was not an experience for everyone and cited some of the positives he experienced as an actor
+f- Slattery|other_verb|insisted
+f+ Slattery|other_verb|insisted|insisted that, while there were methamphetamines in the prison, he stayed away from them
+@686 lint: "come for her" is inside his speech, no meeting; the renewed attack and the slash are one sentence (A145; the wound fact stays)
+keep
+- Bakuto|met|Wing
+- Wing|fought|Bakuto
+@692 lint: being hired is no meeting; "expressed" is the verb, a speech act
+keep
+- Grill|met|May
+f- May|other_verb|desire
+f+ May|other_verb|expressed|May expressed her desire to go home and rest
+@698 lint: "became a target" has no verb
+keep
+f- Lady Deathstrike|other_verb|became
+t+ no_relation|More recently, Lady Deathstrike became a target of a rebranded Weapon X Project, which was particularly interested in seizing control of augmented subjects to serve as living weapons.
+@699 lint: running into Russo is the fatal confrontation (A145); the shootout and the kill are one sentence (A145)
+keep
+- Stein|met|Billy Russo
+- Stein|fought|Mike Bashille
+@707 lint: he arrived into the attack (A145); finding out is learned -
+keep
+- Spider-Man|met|Doctor Octopus
+f- Lizard|learned|Norman Osborn
+f+ Lizard|learned|-|found out that Norman Osborn is not the father
+@711 lint: the encounter is the battle (A145)
+keep
+- Monster Android|met|Reed Richards
+- Monster Android|met|Annihilus
+@713 lint: "Monet/Emplate" is one person: the real name Monet (A59) with the codename as alias; her assault on Anole is the fight
+keep
+- Emplate|fought|Anole
++ Monet|fought|Anole|she was one of the first to be assaulted and drained, along with Anole
+f- Emplate|also_known_as|Monet
+f- Emplate|attacked|School
+f+ Monet|attacked|School|Monet/Emplate assaulted the School
+f+ Emplate|alias_of|Monet|Monet/Emplate assaulted
+f- Anole|wounded|-
+@717 lint: recalling is remembered -; Rand's joining is narrated, no asserter; promising is a speech act
+keep
+f- Bakuto|remembered|last battle
+f+ Bakuto|remembered|-|Bakuto claimed that he recalled their last battle|claimed|reported|Bakuto
+f- Rand|joined|Defenders
+f+ Rand|joined|Defenders|Rand had joined the Defenders
+f- Bakuto|other_verb|promising
+f+ Bakuto|other_verb|promising|promising that the Hand would show him his true destiny
