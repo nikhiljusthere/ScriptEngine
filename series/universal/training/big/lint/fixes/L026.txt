@@ -1,0 +1,67 @@
+@758 lint: one name (Pepper Potts); noting is the verb
+keep
+r Potts=>Pepper Potts
+f- Stark|revealed|-
+f+ Stark|other_verb|noted|Stark noted that they did not have a power source like Stark's
+@763 lint: one name (Trish Walker); learning a clause is learned - (the hotel and introduction meetings precede the attack, they stay)
+keep
+r Walker=>Trish Walker
+f- Simpson|learned|Kilgrave
+f+ Simpson|learned|-|Upon learning Thompson was Kilgrave's father
+@765 lint: appearing and firing is the attack (A145); the explosion gave power, the transfusion revived her (a tool revival: awakened only); an assignment is no help; the passive transfusion is no gift; the ordered acts; finding a location is learned -
+keep
+- Yon-Rogg|met|Mar-Vell
+- Yon-Rogg|met|Carol Danvers
+- Carol Danvers|awakened|-
++ Carol Danvers|awakened|-|Vers was transfused with Yon-Rogg's blood and resurrected without memory of her life as a human
+f+ Carol Danvers|gained_power|-|causing an explosion which imbued her with power
+f- Carol Danvers|helped|Mar-Vell
+f- Maria Rambeau|helped|Mar-Vell
+f- Carol Danvers|healed|-
+f- Yon-Rogg|gave|Carol Danvers
+f+ Yon-Rogg|other_verb|kill|sent Starforce fighters Yon-Rogg and Minn-Erva to kill Mar-Vell|ordered|stated|Kree Empire
+f+ Minn-Erva|other_verb|kill|sent Starforce fighters Yon-Rogg and Minn-Erva to kill Mar-Vell|ordered|stated|Kree Empire
+f+ Carol Danvers|other_verb|destroy|ordered Danvers to destroy the engine|ordered|stated|Mar-Vell
+f- Kree Empire|discovered|Mar-Vell
+f+ Kree Empire|learned|-|The Kree Empire discovered Mar-Vell's location on Earth
+@767 lint: discovering a database is learned - (a description, no name); "tempted" is a state (the destroying stays a decision)
+keep
+f- All-New Wolverine|discovered|massive genetic database
+f+ All-New Wolverine|learned|-|who in turn discovered his massive genetic database.
+f- New Avengers|discovered|massive genetic database
+f+ New Avengers|learned|-|who in turn discovered his massive genetic database.
+f- Iron Man|other_verb|tempted
+t+ no_relation|Iron Man was initially tempted to preserve such a rich collection of information
+@774 lint: a renamed place is no alias
+keep
+f- Saigon|also_known_as|Ho Chi Minh City
+@6241 lint partner of b774: a renamed place is no alias
+keep
+f- Saigon|also_known_as|Ho Chi Minh City
+@775 lint: a mental bombardment is control, no fight (A116); detecting and switching is no fight; reliving takes -; one name (Chondu the Mystic); detecting is learned -; Nighthawk is Kyle
+keep
+r Chondu=>Chondu the Mystic
+- Headmen|fought|Kyle
+- Defenders|fought|Chondu the Mystic
+f- Kyle|remembered|painful moments
+f+ Kyle|remembered|-|Kyle was forced to relive the more painful moments of his life
+f- Defenders|discovered|Chondu the Mystic
+f+ Defenders|learned|-|the Defenders detected Chondu's presence in their ranks
+f+ Nighthawk|alias_of|Kyle|Nighthawk was targeted by the Headmen, who easily captured him
+@780 lint: an empowering gift is no awakening; a team is no place (A65); "fugitive" is no becoming; the Protector is a planned title (alias)
+keep
+- Noh-Varr|awakened|-
+- Noh-Varr|departed|Avengers
+f+ Noh-Varr|left_group|Avengers|but left the team in disgrace
+f- Noh-Varr|became|fugitive
+f- Noh-Varr|became|Protector
+f+ Protector|alias_of|Noh-Varr|in order to empower him into becoming the Protector|planned|stated|Kree Supreme Intelligence
+@781 lint: remembering takes -; iterations of reality are no named thing
+keep
+f- Silver Surfer|remembered|original reality
+f+ Silver Surfer|remembered|-|who still remembered the original reality
+f- Tyrant|created|iterations of reality
+@800 lint: the club meeting is Morbius', before the later defeat (met stays); Mandy only brought him; the blackmailed date
+keep
+- Mandy Tyler|met|DeWolff
+f+ Mandy Tyler|dated|Morbius|His colleague Mandy Tyler blackmailed him into a date
