@@ -1,0 +1,58 @@
+@4697 lint: false positive, the patched-up Wilder is not Alex (Alex walks in later); le Fay arrival fact
+keep
+f+ le Fay|other_verb|arrived|Suddenly, le Fay arrived.
+t- deictic|Suddenly, le Fay arrived.
+
+@4698 lint: Askani = Clan Askani (window form; partner b9853)
+keep
+r Askani=>Clan Askani
+
+@9853 lint: Askani = Clan Askani (partner b4698)
+keep
+r Askani=>Clan Askani
+
+@4699 lint: codename_of -> alias_of
+keep
+f- el Hombre Araña|codename_of|Peter Parker
+f+ el Hombre Araña|alias_of|Peter Parker|Peter Parker, el Hombre Araña
+
+@4700 lint: the encounter is the shield throw, no met; fighting + incapacitated one sentence
+keep
+- Kahhori|met|Captain Carter
+- Conquistadores|fought|Kahhori
+
+@4712 lint: became superhero / first Union Jack -> alias_of
+keep
+f- Peter Hunter|became|Albion
+f- Montgomery Falsworth|became|Union Jack
+f- Albion|codename_of|Peter Hunter
+f+ Albion|alias_of|Peter Hunter|became the superhero Albion during World War I
+f+ Union Jack|alias_of|Montgomery Falsworth|became the first Union Jack
+
+@4731 lint: confronted turns into attack, no met; ordered return act
+keep
+- Moon Knight|met|Count Nefaria
+f+ Moon Knight|other_verb|return|Count Nefaria ordered him to return the Ultron head and work for him|ordered|stated|Count Nefaria
+
+@4732 lint: met kept (introduces himself, talk); Hulk and Red Hulk distinct
+keep
+
+@7458 lint: as partner b4732
+keep
+
+@4787 lint: attempted rescue is other_verb rescue, not helped (partner b9251)
+keep
+f- New Mutants|helped|Kitty Pryde
+f- New Mutants|helped|Doug Ramsey
+f+ New Mutants|other_verb|rescue|In an attempt to rescue Pryde and Ramsey|attempted|stated|New Mutants
+
+@9251 lint: as partner b4787
+keep
+f- New Mutants|helped|Kitty Pryde
+f- New Mutants|helped|Doug Ramsey
+f+ New Mutants|other_verb|rescue|In an attempt to rescue Pryde and Ramsey|attempted|stated|New Mutants
+
+@4801 lint: tried -> attempted get
+keep
+f- Stark|other_verb|tried
+f+ Stark|other_verb|get|Stark tried to get Rhodes not to mention it in front of Potts.|attempted|stated|Stark
