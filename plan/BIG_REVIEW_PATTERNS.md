@@ -550,3 +550,14 @@ are for the peer to measure and adopt or reject.
   Minutemen"), crowds, A107 timelines and rows already present in another form. Unreplaced named-group
   removals in b9246-b12003: 274 -> 169 (the 169 are deliberate). 40 range windows that sit in recon
   components are handled inside recon (16 app, 24 term).
+- LINT CLASS 2026-10-14 (F_became, lint_v2 + lint_work READ): `became` was never read as a class. 337 rows in
+  304 windows on the final corpus; a 25-row sample mixed codenames ("became the superhero Albion", "reclaimed the
+  mantle of Daredevil", "As the new Wasp" -> alias_of, A143), offices/reigns ("became the Sorcerer Supreme",
+  "crowned the new Emperor of the Skrulls", "CEO" -> leader_of of the named group/place, else no row),
+  transformations ("returned to life as a Horsemen of Death" -> transformed_into) and plain occupations ("a
+  well-known surgeon", "a noted mercenary", "a three-star general" -> no row). All 304 go to the reading list
+  (27B pre-review + Claude); the rule text is in lint27_system.md.
+- LINT CLASS 2026-10-14 (F_kidnapped_fact): 21 actual `kidnapped` facts in 16 windows have no `captured` event
+  for the same pair ("John Garrett|kidnapped|Skye", "Namor|kidnapped|Sue"): a kidnapping by a named doer is the
+  event captured (A89 twin, events own the act); victim-only passives ("Truman|kidnapped|-") get a no_doer tag.
+  Read, not auto-fixed: the quote must show the doer.

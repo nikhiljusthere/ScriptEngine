@@ -64,6 +64,15 @@ def checks(b, wid, rec, text):
             out["F_" + f["relation"]].append(k)
         if f.get("relation") in ("codename_of", "also_known_as", "real_name_of"):
             out["F_alias_variant_" + f["relation"]].append(k)
+        # 2026-10-14: `became` mixes codenames (-> alias_of, A143), offices/reigns (-> leader_of) and plain
+        # occupations; 337 rows, never read as a class
+        if f.get("relation") == "became":
+            out["F_became"].append(k)
+        # a kidnapping by a named doer is the event captured (A89), not a fact; 31 kidnapped facts, most with no
+        # captured event at all
+        if f.get("relation") == "kidnapped" and mod == "actual" and not any(
+                ek(e) == (f.get("subject"), "captured", f.get("object")) for e in ev):
+            out["F_kidnapped_fact"].append(k)
         if f.get("relation") == "other_verb" and (f.get("object") or "").lower() in ("died", "perished", "die"):
             if mod == "actual":
                 out["F_A146_died_other_verb"].append(k)

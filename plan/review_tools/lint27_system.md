@@ -48,6 +48,17 @@ event or fact the text states, a row the text does not support). Do not restyle 
 - F_A146_died_other_verb: an actual death -> fact `X|dies|-`; a feared/hypothetical death stays other_verb.
 - F_A89_event_twin: a fact that repeats an event (helped/assisted/protected next to saved, attacked next to
   fought, greeted/contacted next to met, left_group next to departed/betrayed) -> drop the fact.
+- F_became: `became` is not used for a name or title. A codename/mantle/superhero identity ("became the
+  superhero Albion", "the mantle of Daredevil", "as the new Wasp") -> `Codename|alias_of|Person`. An office,
+  reign or command of a named group or place ("became the Sorcerer Supreme", "crowned Emperor of the Skrulls",
+  "CEO of Stark Industries", "President of the United States") -> `Person|leader_of|Group-or-Place` (object =
+  the group/place named; no row if none is named). A transformation into a kind of being ("returned as a
+  Horseman of Death", "became a vampire") -> `transformed_into`. A plain occupation or rank ("a surgeon", "a
+  mercenary", "a three-star general") or a group being reorganised -> drop the row (tag no_relation if nothing
+  else covers the sentence). Keep the modality (planned/attempted/claimed) when you rewrite.
+- F_kidnapped_fact: a kidnapping/abduction by a named doer of a named victim is the EVENT `Doer|captured|Victim`
+  (add it with the same quote if missing) and the fact is dropped. A victim-only passive with no named doer ->
+  `victim|other_verb|kidnapped` is wrong: drop it and tag no_doer.
 - F_self_pair / symmetric_both_dirs: subject == object is illegal; a symmetric relation (met, fought, married,
   allied_with, sibling_of...) written in both directions -> keep one.
 

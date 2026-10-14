@@ -22,7 +22,8 @@ READ = {"E_met_and_fight_same_pair", "F_A115_clause_object", "F_A125_copula", "F
         "F_alias_variant_real_name_of", "F_actual_with_asserter", "F_self_pair", "E_self_pair",
         "F_kinship_both_dirs", "F_married_twins", "F_symmetric_both_dirs", "E_symmetric_both_dirs",
         "E_quote_not_verbatim", "F_quote_not_verbatim", "T_quote_not_verbatim", "F_A89_event_twin",
-        "F_duplicate", "E_duplicate", "F_ordered_rel_nonactual", "name_short_and_full", "E_A145_same_sentence"}
+        "F_duplicate", "E_duplicate", "F_ordered_rel_nonactual", "name_short_and_full", "E_A145_same_sentence",
+        "F_became", "F_kidnapped_fact"}
 PLACEISH = re.compile(r"\b(?:Residence|Tower|Mansion|Headquarters|HQ|Industries|Building|Castle|Island|City|Base|"
                       r"Academy|School|Prison|Platoon|Corps|Labs?|Enterprises|Foundation|Hall|House|Street|"
                       r"Avenue|Park|Station|Planet|World|Realm|Dimension|construct|armor|of)\b|^(?:Earth|New|Fort)\b")
