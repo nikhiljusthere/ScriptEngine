@@ -1,0 +1,57 @@
+@8079 lint: confronted, then tried to crush her head; the white Vision and Wanda's Vision are two people
+keep
+- Wanda|met|Vision
+
+@8085 lint: traded blows before killing her = fight then outcome (keep); engaging Proxima Midnight is a narrated fight (keep; partner b8099)
+keep
+
+@8099 lint: as partner b8085
+keep
+
+@8087 lint: Avengers vs Avengers Compound, Vision vs Soul Vision distinct
+keep
+
+@8112 lint: lured her to his lair and incapacitated her, no met
+keep
+- Eddie|met|Scream
+
+@8115 lint: met kept (an earlier encounter); attacking the bar is no stated arrival; the defeat clause has its row
+keep
+- Venom|arrived|Bar with No Name
+f+ Venom|attacked|Bar with No Name|Venom attacked the Bar with No Name
+t- no_doer|While Venom was defeated,
+
+@8119 lint: tracked down and killed them, no met; Venom shocked too; mutated has no doer
+keep
+- Eddie Brock|met|Stalkers
+- Spirit of Vengeance|met|Stalkers
+f+ Eddie Brock|learned|-|were shocked to discover he was delusional and otherwise harmless
+t- crowd_end|who were mutated
+t+ no_doer|who were mutated into techno-organic monsters
+
+@8144 lint: met kept (he disbelieved Morbius and argued before they fought); no meeting with Andrea stated; the first sentence has its rows
+keep
+- Spider-Man|met|Andrea
+t- below_floor|Morbius arrived at Dr.
+t- no_doer|Andrea's office in the science building
+
+@8146 lint: confronted, the two battled
+keep
+- Spider-Man|met|Morbius
+
+@8148 lint: encountered, then attacked, no met; Spider-Man in the second battle; Lizard link (partner b8160)
+keep
+- Morbius|met|Spider-Man
++ Spider-Man|fought|Morbius|after another battle
+f+ Lizard|alias_of|Connors|who transformed into the Lizard
+
+@8160 lint: as partner b8148
+keep
+- Morbius|met|Spider-Man
+f+ Lizard|alias_of|Connors|who transformed into the Lizard
+
+@8157 lint: fought off, whom finally immobilized him one sentence; the arm blasted off
+keep
+- Morbius|fought|Misty Knight
+- Morbius|fought|Colleen Wing
+f+ Morbius|wounded|-|where the security systems there attacked him and blasted one of his arms off
