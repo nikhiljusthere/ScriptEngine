@@ -1,0 +1,59 @@
+@6488 lint: held his own ... until = fight then outcome (keep); the X-Men clash is a group end (Professor X was controlled); Sub-Mariner alias
+keep
+f+ Sub-Mariner|alias_of|Namor|When the Sub-Mariner once again kidnapped Sue to force her to be with him, Reed went after Namor alone.
+
+@6496 lint: self-pair; manifesting powers is a power gain, not an awakening
+keep
+f- Bennet du Paris|also_known_as|Bennet du Paris
+- Bennet du Paris|awakened|-
+f+ Bennet du Paris|gained_power|-|before manifesting his own powers
+
+@6501 lint: thriving society is a description; becoming the island is a transformation; perished = dies
+keep
+f- Threshold|became|thriving society
+t+ no_relation|The Threshold became a thriving society governed by two houses
+f- Okkara|became|living island of Okkara
+f+ Okkara|transformed_into|living island of Okkara|with the former becoming the living island of Okkara
+f- Threshold|other_verb|perished
+f+ Threshold|dies|-|Threshold eventually perished
+
+@6505 lint: Phoenix = Phoenix Force (window)
+keep
+r Phoenix=>Phoenix Force
+
+@6528 lint: seemingly kill one act
+keep
+- Norman|fought|Ashley
+
+@6534 lint: caught up to him and cleansed him, no separate meeting
+keep
+- Sin-Eater|met|Norman Osborn
+
+@6539 lint: overwhelmed, stopped, defeated one sentence (Carnage and the Carnage symbiote piece are not shown to be one end, no rename)
+keep
+- Norman|fought|Spider-Man
+
+@6543 lint: confronted and attacked one act
+keep
+- Norman Osborn|met|Ben Urich
+
+@6545 lint: assaulted ... defeated all four one sentence; cut him down; infecting is no fight
+keep
+- Norman|fought|Human Torch
+- Norman|fought|Clash
+- Norman|fought|Silk
+- Norman|fought|Spider-Man
+- Norman|fought|Agent Anti-Venom
+- Norman|fought|Normie Osborn
+
+@6575 lint: met kept (she demanded their attention before they engaged her); ordered phase act
+keep
+f+ Kitty|other_verb|phase|Scott had Kitty phase through the lower layers of the murder site to find any possible forensic evidence|ordered|stated|Scott
+
+@6589 lint: the possessing Cotati is the Cotati Hulk
+keep
+r Cotati=>Cotati Hulk
+
+@6598 lint: realized and overloaded one act (Reed, Sue's husband, is family: saved kept)
+keep
+- Reed|fought|Super-Skrull
