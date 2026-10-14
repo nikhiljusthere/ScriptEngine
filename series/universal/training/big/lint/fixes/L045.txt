@@ -1,0 +1,75 @@
+@1971 lint partner of b9347: Darkchylde is the one stabbed by her own Soulsword (wielder unnamed) - the no_doer tag stands
+keep
+
+@9347 lint: seeking him out for revenge turns into the battle (no met)
+keep
+- Forge|met|Magik
+
+@1975 lint partner of b8885: a psychic attack is no physical fight - attacked fact
+keep
+- Damian Tryp|fought|Rahne
+f+ Damian Tryp|attacked|Rahne|Rahne came under mental attack from Damian Tryp, who tormented her with visions
+
+@8885 lint: X-Factor Investigations; the psychic attack (as b1975)
+keep
+r X-Factor=>X-Factor Investigations
+- Damian Tryp|fought|Rahne
+f+ Damian Tryp|attacked|Rahne|Rahne came under mental attack from Damian Tryp, who tormented her with visions
+
+@1989 lint: encountered and defeated Doonan = one encounter; clause objects; suspected is a relation
+keep
+- Peter Petruski|met|Vincent Doonan
+f- Gwenpool|discovered|Peter Petruski
+f+ Gwenpool|discovered|-|Gwen discovered that Petruski had returned to the real world
+f- Gwenpool|other_verb|suspected
+f+ Gwenpool|suspected|-|She suspected a "higher force" opposed her defeating him.
+
+@1992 lint: Frost's help is no twin (A89 false); the Void's possession attempt is no fight (A116); the window names Scott; ordered act; knowledge rows; stopped twins saved
+keep
+r Cyclops=>Scott
+f+ Cyclops|alias_of|Scott|Scott stepped in and kept her safe in this low moment.
+- Void|fought|Scott
+f+ Void|other_verb|take|shifting into Cyclops's mind to take control of it|attempted|stated|Void
+f+ X-Force|other_verb|kill|she ordered X-Force to travel to Necrosha and kill them all, even Wither.|ordered|stated|Frost
+f- Frost|other_verb|believed
+f+ Frost|suspected|-|Frost believed that the transfer into Cyclops's mind might not have been something the Void came up with
+f- Frost|other_verb|recognized
+f+ Frost|learned|-|Frost recognized that the threat would not end until Selene and her inner circle were permanently stopped.
+f- Frost|other_verb|stopped
+
+@1995 lint: tripped and electrocuted = one act (defeated)
+keep
+- Wolverine|fought|Red Skull
+
+@2009 lint: confronted by Frisco turns into the fight (no met); Roberta caught up too; drugging them to pass out = defeated; they helped her defeat him (A12); found out = discovered (below_floor is a legal tag)
+keep
+- Sonny Frisco|met|Elektra
++ Roberta Mendez|met|Elektra|When Spider-Man (Miguel O'Hara) and Captain America (Roberta Mendez) caught up,
+- Elektra|fought|Roberta Mendez
++ Elektra|defeated|Roberta Mendez|Miguel and Roberta Mendez passed out due to Elektra drugging their drinks
++ Elektra|defeated|Miguel O'Hara|Miguel and Roberta Mendez passed out due to Elektra drugging their drinks
+- Miguel O'Hara|defeated|Sonny Frisco
+- Roberta Mendez|defeated|Sonny Frisco
+f- Elektra|other_verb|found
+f+ Elektra|discovered|-|when she found out that Miguel O'Hara was involved
+
+@2010 lint: "Strange" (the kinder self, absorbed) and Strange Supreme are two variants - no rename; wrong subject; Watcher's refusal; the fight line is covered
+keep
+f- Strange Supreme|other_verb|resulted
+f+ Watcher|other_verb|refused|Watcher refused to help
+t- deictic|in which Arnim Zola and Erik Killmonger
+
+@2040 lint: "webwaze strands" is a named thing (discovered object kept); a second place name is no alias
+keep
+f- Insect Dimension|alias_of|Insect Realms
+
+@2045 lint: Stark weapon stock is a thing; found out = learned; the cover-up
+keep
+f- James Rhodes|other_verb|found
+f+ James Rhodes|learned|-|he found out that Stark was piloting the armor
+f+ James Rhodes|other_verb|covered|Rhodes covered up the incident
+
+@2055 lint: held their own before being overwhelmed = one sentence (defeated)
+keep
+- Luke Cage|fought|Revengers
+- Jessica Jones|fought|Revengers
