@@ -1,0 +1,68 @@
+@6720 lint: confronted her, then incapacitated during the conflict; window writes only Kamala
+keep
+r Kamala Khan=>Kamala
+- Kamala|met|Lockdown
+
+@6722 lint: confronted by the Inventor = the fight; Ms. Marvel alias
+keep
+- Kamala|met|Inventor
+f+ Ms. Marvel|alias_of|Kamala|As Ms. Marvel, she combatted the creatures
+
+@6737 lint: went after and subdued one act; Reed wounded
+keep
+- Johnny|fought|Mole Man
+f+ Reed|wounded|-|a stray shot seriously wounded Reed
+t- no_doer|a stray shot seriously wounded Reed
+t+ no_doer|destroyed the device making them blind
+
+@6738 lint: fought with Spider-Man until Sue stopped them (keep); accidental knockout of an ally gets no row; A2 the named members captured Electro
+keep
+- Spider-Man|defeated|Sue
+- Fantastic Four|captured|Electro
++ Johnny|captured|Electro|they all worked together to bring Electro to justice
++ Sue|captured|Electro|they all worked together to bring Electro to justice
++ Ben|captured|Electro|they all worked together to bring Electro to justice
++ Reed|captured|Electro|they all worked together to bring Electro to justice
+
+@6749 lint: clashing and managed to defeat one sentence
+keep
+- Johnny|fought|Super-Skrull
+
+@6752 lint: clash led to their defeat one sentence; found themselves captured has no doer
+keep
+- Frightful Four|fought|Fantastic Four
+- Frightful Four|captured|Fantastic Four
+t+ no_doer|but found themselves captured.
+
+@6755 lint: Johnny = Johnny Storm (window)
+keep
+r Johnny=>Johnny Storm
+
+@6775 lint: met kept (met in their quest for help, defeat later); holding twin; return to normal size
+keep
+f- Doctor Nemesis|other_verb|holding
+f- Ant-Man|other_verb|returned
+f- Wasp|other_verb|returned
+
+@6780 lint: Pym Particles is a thing; real name Van Dyne
+keep
+r Wasp=>Van Dyne
+f+ Wasp|alias_of|Van Dyne|Yellowjacket and the Wasp stayed active together as Avengers for sporadic missions.
+
+@6781 lint: attacked but easily defeated one sentence; turned over to both; trying = attempted; absconded
+keep
+- Living Laser|fought|Goliath
++ Living Laser|escaped|Hawkeye|The Living Laser broke free
+f- Goliath|gained_power|shrinking powers
+f- Living Laser|other_verb|overthrow
+f+ Living Laser|other_verb|overthrow|trying to overthrow the nation of Costa Verde|attempted|stated|Living Laser
+t- deictic|However, by the time he arrived
+f+ Living Laser|other_verb|absconded|However, by the time he arrived the Living Laser had already absconded with the Wasp
+
+@6789 lint: bringing the fight and causing her rule to fall one clause
+keep
+- Kang the Conqueror|fought|Eimin
+
+@6805 lint: theater teacher is an occupation; helped is no twin; baby May vs May Parker distinct
+keep
+f- Mary Jane Watson|became|theater teacher
