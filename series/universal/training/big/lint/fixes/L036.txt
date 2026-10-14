@@ -1,0 +1,79 @@
+@1375 lint: the chase becomes the capture; plummet, subdued and stabbed are one sentence -> killed only
+keep
+- Norman Osborn|met|Alan Aardman
+- Norman Osborn|fought|Alan Aardman
+- Norman Osborn|defeated|Alan Aardman
+
+@1383 lint: subdued by slashing = one act; the mantle as alias_of (as b873); first power named; Nakia wounded
+keep
+- Killmonger|fought|Nakia
+f- Killmonger|became|Black Panther
+f+ Black Panther|alias_of|Killmonger|As the Black Panther, Killmonger was able to challenge both T'Challa
+f- Killmonger|gained_power|-
+f+ Killmonger|gained_power|strength|The herb endowed Killmonger with strength proportionate to that of his cousin.
+f+ Nakia|wounded|-|slashing her leg with his vibranium claws
+
+@1391 lint: same sentence as the apparent slaying; sinking a vessel is no fight with those aboard (A42); jettisoned twins defeated; a boast is a speech act
+keep
+- Deadpool|fought|Trapster
+- Deadpool|fought|Wizard
+- Deadpool|fought|MODOK
+f- Doctor Octopus|other_verb|jettisoned
+f- Trapster|other_verb|boasts
+f+ Trapster|other_verb|boasts|the Trapster's boasts that he had killed Deadpool
+
+@8290 lint partner of b1391
+keep
+- Deadpool|fought|Trapster
+- Deadpool|fought|Wizard
+- Deadpool|fought|MODOK
+f- Doctor Octopus|other_verb|jettisoned
+f- Trapster|other_verb|boasts
+f+ Trapster|other_verb|boasts|Trapster's boasts that he had killed Deadpool
+
+@1392 lint: "met up with" is an arranged meeting before the discovery and the attack (met kept); clause object
+keep
+f- Enoch|discovered|Isaiah
+f+ Enoch|discovered|-|that Isaiah was also now a Hunter
+
+@1404 lint partner of b3553: rows hold
+keep
+
+@3553 lint: caught up with = the foiling (same sentence); the no_doer tag stays beside the dies fact (event vs fact layer)
+keep
+- Human Torch|met|Snowball
+- Toro|met|Snowball
+
+@1405 lint: confronting becomes the destruction; Paul and MJ talk (met kept); destroyed twins defeated; Jackpot alias
+keep
+- Spider-Man|met|Arachniote
+f- Spider-Man|destroyed|Arachniote
+f+ Jackpot|alias_of|Mary Jane|He plunged inside the monstrosity to get hold of Jackpot
+
+@1407 lint: the editor is "Jameson" in the window; the tried verb is go; Spider-Man alias
+keep
+r J. Jonah Jameson=>Jameson
+f- Peter|other_verb|tried
+f+ Peter|other_verb|go|Peter tried to go back to university|attempted|stated|Peter
+f+ Spider-Man|alias_of|Peter|Man-Wolf attacked Spider-Man, but escaped again after a brief battle
+
+@1408 lint: Apocalypse's arrival is a stated talk (they learn his plans, Candra and Nicodemus speak out) before the attacks - mets kept; Absalom hurt; "newly enhanced" names no power
+keep
++ Apocalypse|arrived|Eternal Caldera of Krakoa|When Apocalypse arrived not wanting to play his games
+f+ Absalom|wounded|-|Absalom though weakened and hurt survived
+f- Rictor|gained_power|-
+
+@8817 lint partner of b1408: separate talk, mets kept
+keep
+f+ Absalom|wounded|-|Absalom though weakened and hurt survived
+f- Rictor|gained_power|-
+
+@1415 lint: Deadpool gets a stated offer (met kept), Machine Man's interruption becomes the capture attempt; same-sentence fought; mind control is no fight (A116); attempted offer; second apparent death; alias
+keep
+- Machine Man|met|Phillip Masters
+- Machine Man|fought|Phillip Masters
+- Phillip Masters|fought|Deadpool
+f- Phillip Masters|other_verb|offer
+f+ Phillip Masters|other_verb|offer|The Puppet Master attempt to offer Deadpool even more money|attempted|stated|Phillip Masters
+f+ Phillip Masters|dies|-|Phillip fell down after it, seemingly to his death once again|actual|apparent|-
+f+ Puppet Master|alias_of|Phillip Masters|Machine Man fashioned a puppet out of the Puppet Master himself
