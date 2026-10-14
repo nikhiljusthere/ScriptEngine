@@ -1,0 +1,75 @@
+@348 lint: she lands in the fight (A145); a transport is no capture; speech acts and the placing are actual; the assassination names no doer; the recruitment is no meeting (R4)
+keep
+- Black Widow|met|Loki
+- Watcher|captured|Black Widow
+f+ Watcher|other_verb|transporting|The Watcher said that the door was more of a metaphor before transporting Black Widow to the universe where the Avengers were assassinated
+f- Black Widow|other_verb|accused
+f+ Black Widow|other_verb|accused|accused the Watcher of not caring about them and that they were just stories to him
+f- Watcher|other_verb|told
+f+ Watcher|other_verb|told|told her that was far from the truth and that he is inspired by their stories
+f- Black Widow|other_verb|told
+f+ Black Widow|other_verb|told|told the Watcher she wasn't leaving
+f- Watcher|other_verb|said
+f+ Watcher|other_verb|said|The Watcher said that the door was more of a metaphor
+f- Watcher|other_verb|put
+f+ Watcher|other_verb|put|he put her in a universe that had lost their Black Widow
+f- Avengers|other_verb|assassinated
+t+ no_doer|where the Avengers were assassinated
+- Black Widow|met|Nick Fury
+@358 lint: the Space God is the Celestial (one name); the meeting; the unnamed disciple is no recipient; speech acts are actual
+keep
+r Space God=>Celestial
++ Zhang Heng|met|Celestial|Zhang Heng met with a Celestial
+f- Zhang Heng|gave|Spear
+f- Zhang Heng|other_verb|replied
+f+ Zhang Heng|other_verb|replied|to which Zhang replied that it would not be disturbed
+f- Celestial|other_verb|asked
+f+ Celestial|other_verb|asked|She then asked him to choose if the energy she needed to proceed the delivery should come from the destruction of Earth or of the Moon
+f- Zhang Heng|other_verb|suggested
+f+ Zhang Heng|other_verb|suggested|Zhang instead suggested that the gestation would occur within the Sun
+f- Zhang Heng|other_verb|asking
+f+ Zhang Heng|other_verb|asking|asking him to slay the Celestial if the talk failed
+@369 lint: one sentence, one act (A145); the recognized codenames; Apocalypse only seemed killed; recognizing is learned -; "the dream" is no end; the promise names Slym; realizing is learned -
+keep
+- Nathan|fought|Apocalypse
+f+ Cable|alias_of|Nathan|recognized them as his ancient adversaries Cable, Jean Grey, and Cyclops
+f+ Redd|alias_of|Jean Grey|recognized them as his ancient adversaries Cable, Jean Grey, and Cyclops
+f+ Cyclops|alias_of|Slym|recognized them as his ancient adversaries Cable, Jean Grey, and Cyclops
+f+ Apocalypse|dies|-|seemingly killing Apocalypse|actual|apparent
+f- Apocalypse|discovered|Nathan
+f+ Apocalypse|learned|-|recognized them as his ancient adversaries Cable, Jean Grey, and Cyclops
+f- Apocalypse|destroyed|the dream
+t- deictic|Wanting to say so much
+f+ Slym|other_verb|promise|could only promise Nathan that he would never be alone
+f- Slym|other_verb|realized
+f+ Slym|learned|-|Slym realized that he too would be sent back to his time
+@371 lint: one sentence, one act (A145)
+keep
+- Vision|fought|Corvus Glaive
+@374 lint: coming across Electro leads into the fight (A145); the codename is the alias; encounters in a city and a bank are no residence or named place
+keep
+- Spider-Man|met|Electro
+f- Sue|alias_of|Invisible Girl
+f+ Invisible Girl|alias_of|Sue|Also at the bank was the Fantastic Four's member the Invisible Girl.
+f- Spider-Man|resides_at|New York City
+f- Sue|located_at|bank
+@385 lint: the interruption leads into the arrest (A145); defeating by arresting is one act, the capture; Captain Marvel is Carol; bringing down a city is the planned act
+keep
+- Magnitron|met|Steven
+- Magnitron|met|Carol
+- Steven|defeated|Magnitron
+- Carol|defeated|Magnitron
+f+ Captain Marvel|alias_of|Carol|Steven helped Captain Marvel fight her
+f- Magnitron|destroyed|a city over New York
+f+ Magnitron|other_verb|bring|who would bring down a city over New York|planned|stated|Magnitron
+@386 lint: she appeared and attacked: no meeting (A145)
+keep
+- Hela|met|Volstagg
+- Hela|met|Fandral
+@389 lint: the arrival is the fight (A145); the escape from Knowhere
+keep
+- S.H.I.E.L.D.|met|Zealots
++ Byrdie's parents|escaped|Knowhere|using an Inter-Dimensional Portal to return back to their ship and escape Knowhere
+@395 lint: Avengers and Secret Avengers are two teams; Bucky as Captain America
+keep
+f+ Captain America|alias_of|Bucky Barnes|Iron Man and Thor were assigned to Avengers along with Bucky Barnes as Captain America

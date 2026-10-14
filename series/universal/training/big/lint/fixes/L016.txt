@@ -1,0 +1,93 @@
+@290 lint: the bonding was a control attempt, no fight (A116); the met is the earlier rescue at sea; attempts as verbs; Carnage is Kasady; she joined the task force; the literal "-" asserter goes
+keep
+- Kasady|fought|Jubulile van Scotter
+f- Kasady|other_verb|attempt
+f+ Kasady|other_verb|control|in a failed attempt by Carnage to control her|attempted|stated|Kasady
+f- Brock|other_verb|tried
+f+ Brock|other_verb|become|and tried to become a better man|attempted|stated|Brock
+f+ Carnage|alias_of|Kasady|who had assisted Kasady on her boat when she found him adrift, unaware he was a serial killer, and who had also been bonded to a Darkhold-altered symbiote in a failed attempt by Carnage to control her
+f+ Jubulile van Scotter|joined|Anti-Symbiote Task Force|Soon afterwards, they were joined by Jubulile van Scotter
+f- Jubulile van Scotter|other_verb|share
+f+ Jubulile van Scotter|other_verb|share|who had been discovered to share a psychic bond with Carnage|actual|reported
+@291 lint: the codename is the alias; a career summary of foes is no fight (the dimensional battles stay)
+keep
+f- Brian|codename_of|Captain Britain
+f+ Captain Britain|alias_of|Brian|As Captain Britain, Brian faced a range of foes
+- Brian|fought|Slaymaster
+- Brian|fought|Necrom
+@304 lint: New Berlin is the specific place in South America (A123)
+keep
+- Hammond|arrived|South America
+- Toro|arrived|South America
+@8279 lint partner of b304: same place fix; the window says "the Thinker" (A4)
+keep
+f- Mad Thinker|created|Horton Cells
+f+ Thinker|created|Horton Cells|rogue Horton Cells developed by the Thinker
+- Torch|arrived|South America
+- Toro|arrived|South America
+@312 lint: the leader Gabriel is the meeting, no group row (A2); learning, discovering and recalling a clause take -; the offer is a speech act
+keep
+- Ben|met|Diogenes Initiative
+f- Ben|discovered|sociopathic state
+f+ Ben|discovered|-|Ben quickly discovered that he had been driven sociopathic due to the damage to his soul
+f- Ben|learned|deception
+f+ Ben|learned|-|After learning of the Mephisto-lookalike's deception
+f- Ben|remembered|Death's warning
+f+ Ben|remembered|-|recalling Death's words that his soul would be shattered if he came back to life once again
+f- Mephisto|other_verb|offered
+f+ Mephisto|other_verb|offered|offered him to save Abigail's life and purify his soul
+@321 lint: the charge and the stop are one sentence, one act (A145); her claim is a speech act; "her powers" is no named item
+keep
+- Kingpin|fought|Echo
+f- Echo|other_verb|claiming
+f+ Echo|other_verb|claiming|claiming that he was still her uncle
+f- Echo|used|her powers
+@330 lint: Yondu and his clan are two ends; gave takes the recipient (A97); the opening happened
+keep
+f- Yondu|other_verb|open
+f+ Yondu|other_verb|open|decided to open the Orb given to him by Quill
+f- Yondu|gave|Zune
+f+ Yondu|gave|Quill|which he would give to Quill if he rejoined the Ravagers|planned|stated|Yondu
+@342 lint: the window's name stays "Peter" (A4); Fury's introduction is Peter's meeting; the codename is the alias; Beck's origin story is his claim; a snap and a race are no ends; the tranquilizing has no doer; Fury's failed contact
+keep
+- Nick Fury|met|Quentin Beck
+f- Quentin Beck|codename_of|Mysterio
+f+ Mysterio|alias_of|Quentin Beck|Mysterio, whose real name was Quentin Beck
+f- Quentin Beck|other_verb|from
+f+ Quentin Beck|revealed|-|Beck revealed he was from a different Earth|claimed|reported|Quentin Beck
+f- Thanos' first snap|other_verb|tore
+f- Elementals|destroyed|Quentin Beck's universe's Earth
+t+ no_doer|Ned was tranquilized
+f+ Nick Fury|contacted|Peter|who had previously tried to contact him, but had failed|attempted|stated|Nick Fury
+@344 lint: crossing paths and tracking down lead into the fights (A145); the Sandman is Flint
+keep
+- Flint|met|Spider-Man
+- Spider-Man|met|Enforcers
+f+ Sandman|alias_of|Flint|send the Sandman fleeing. Flint was quickly apprehended
+@347 lint (27B answer cut off, written by Claude): the Avengers arrested Virus (Mac Gargan); Dylan killed the Scorpion symbiote; the reveals point from the shown name to the true one (A149); the other world's Eddie Brock is another person; her report is reported, not asserted; a mantle is an alias; universes are no places (A78); the coma is the defeat already
+keep
+- Captain America|captured|Mac Gargan
++ Avengers|captured|Mac Gargan|only to be arrested by the Avengers because of his anti-symbiote tech
+- Dylan|fought|Mac Gargan
++ Dylan|killed|Scorpion symbiote|Dylan used his powers to kill it, revealing his identity as Mac Gargan
+f- Mac Gargan|revealed_as|Virus
+f+ Virus|revealed_as|Mac Gargan|Dylan used his powers to kill it, revealing his identity as Mac Gargan
+f- Anne Weying|revealed_as|Agent Venom
+f+ Agent Venom|revealed_as|Anne Weying|Agent Venom revealed to be that world's Anne Weying
+f+ Eddie|revealed|-|Eddie revealed his identity
+f- Eddie|suspected|Flash Thompson
+f+ Eddie|suspected|-|Believing one of them to be Flash Thompson
+f- Eddie Brock|dies|-
+f+ Eddie Brock|dies|-|her Eddie Brock had killed himself in that world|actual|reported
+f- Anne Weying|became|Venom
+f+ Venom|alias_of|Anne Weying|thus she became Venom instead of him
+f- Mac Gargan|gained_power|Scorpion symbiote
+f+ Mac Gargan|gained_power|-|now empowered by the Scorpion symbiote
+f+ Anne Weying|parent_of|Codex|Anne revealed that her son Dylan, now dubbing himself Codex, was the leader of the Hive
+f- Dylan|other_verb|putting
+f- Earth-1051|other_verb|returned
+f- Venom symbiote|located_at|Earth-1051
+- Venom symbiote|arrived|Earth-616
+@353 lint: spotting him arrive leads straight into the duel (A145)
+keep
+- Shang-Chi|met|Death Dealer
