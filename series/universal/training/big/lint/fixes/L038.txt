@@ -1,0 +1,78 @@
+@1447 lint: companies and governments are no doers; clause object; Iron Man alias
+keep
+f- Republic Oil and Gas Company|other_verb|attempting
+f- Republic Oil and Gas Company|hired|Saboteur
+f- United States government|other_verb|cease
+t+ no_relation|the Republic Oil and Gas Company was also attempting to discredit the company
+t+ no_relation|They hired the Saboteur to infiltrate the company.
+t+ no_relation|the United States government decided to cease hiring the company
+f- Tony|discovered|Baxu
+f+ Tony|learned|-|Stark learned that Kala's military commander General Baxu had no interest in conquering the surface world
+f+ Iron Man|alias_of|Tony|Stark had to stop the misfired missiles as Iron Man.
+
+@1501 lint partner of b9614: rows hold (Khn'nr conscious, met kept)
+keep
+
+@9614 lint: copula became (no legal end); "lay dying" stays stated as in b1501
+keep
+f- Norman Osborn|other_verb|became
+t+ no_relation|reformed super villain Norman Osborn became a national hero
+
+@1504 lint: Ultron Sentries is a thing; "they discussed" includes the twins
+keep
+f+ Pietro Maximoff|other_verb|discussed|they discussed their own motivations to defeat the Avengers
+f+ Wanda Maximoff|other_verb|discussed|they discussed their own motivations to defeat the Avengers
+
+@1507 lint: Senator Ward is Grant Ward's brother (no rename); the asserter's window form; sibling
+keep
+f- Grant Ward|other_verb|tortured
+f+ Grant Ward|other_verb|tortured|especially if he had been tortured in exchange for information|hypothetical|apparent|Senator Ward
+f+ Senator Ward|sibling_of|Grant Ward|Senator Ward was concerned for his brother's well-being
+t- no_relation|Senator Ward was concerned
+
+@1522 lint: the Avengers she leads are the Mighty Avengers
+keep
+r Avengers=>Mighty Avengers
+
+@1556 lint: copula; stopping him = defeated (as "stopped Pulaski")
+keep
+f- Haldier|other_verb|became
+t+ no_relation|The blacksmith became enthralled by the cup
++ Thor|defeated|Haldier|Thor was able to stop him
+f- Thor|other_verb|stop
+
+@1557 lint: A145 same sentence battled+destroyed
+keep
+- Banner|fought|Cull Obsidian
+
+@1571 lint: A145 same sentence; the sowing is inside Coulson's claim (Chronicoms is a race page, no end); insist is a speech act
+keep
+- Kora|fought|Durant
+f- Malick|other_verb|sow
+f+ Malick|other_verb|sow|Malick and the Chronicoms sow chaos|claimed|stated|Coulson
+f- Coulson|other_verb|insist
+f+ Coulson|other_verb|insist|Coulson went on to insist that Malick was interested in saving assassins
+
+@1582 lint: the friendship precedes the stop (met kept); same sentence stop+hit; "Peter Parker" is not in the window; knowledge rows; Spider-Man alias
+keep
+- Peter|fought|Bobby Grillo
+f- Peter|learned|Maxie Shiffman
+f+ Peter|learned|-|upon learning that Maxie Shiffman had set up the entire incident
+f- Peter|other_verb|realized
+f+ Peter|learned|-|he realized that his spider-strength could really hurt Flash
+f+ Peter|discovered|-|Spider-Man soon found that she was purposely sabotaging a building project
+f+ Spider-Man|alias_of|Peter|Spider-Man soon found that she was purposely sabotaging a building project
+
+@1589 lint: Wilder is Alex, not Geoffrey; the plan's verb; realized = learned; the call was Geoffrey's (no Tamar contact)
+keep
+r Wilder=>Alex Wilder
+f- Alex Wilder|other_verb|thought
+f+ Alex Wilder|other_verb|break|Wilder then thought of the idea to break into the Minoru Mansion|planned|stated|Alex Wilder
+f- Alex Wilder|other_verb|realized
+f+ Alex Wilder|learned|-|he realized it was his IP address
+f+ Catherine|other_verb|wanted|Geoffrey said that Catherine wanted him to say a special code|claimed|reported|Geoffrey Wilder
+f- Tamar|contacted|Alex Wilder
+
+@2623 lint: Johnny Storm
+keep
+r Johnny=>Johnny Storm
