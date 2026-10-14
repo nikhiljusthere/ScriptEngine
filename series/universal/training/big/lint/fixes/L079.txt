@@ -1,0 +1,60 @@
+@4327 lint: Quentin is Beck's first name (no alias); working alongside Fury and Parker
+keep
+f- Beck|also_known_as|Quentin
+f+ Beck|allied_with|Peter Parker|where Mysterio was working alongside them
+
+@4329 lint: clashed + destroyed in one sentence; beat + destroying in one sentence (killed)
+keep
+- Sentry|fought|Molecule Man
+- Sentry|defeated|Molecule Man
+
+@4343 lint: Stark weapons is a product
+keep
+
+@4347 lint: the Cybertek fight is the defeat; the draw is the separate fight; twins; a noun is no verb; circumventing mind-reading is no fight
+keep
+- May|fought|Grant Ward
++ May|fought|Grant Ward|fought to a draw when he was under the influence of Lorelei
+f- May|other_verb|beat
+f- Lorelei|other_verb|influence
+- May|fought|Ben
+
+@4354 lint: Hela's arrival precedes the later defeat (met kept); a participle is no act; the pretending is a fact Rogue found
+keep
+f- Mephisto|other_verb|Realizing
+f- Mephisto|other_verb|pretending
+f+ Mephisto|other_verb|pretending|Mephisto had been pretending that her powers could affect him
+
+@4357 lint: countered + defeating = one act
+keep
+- Frenzy|fought|Cable
+
+@4379 lint: the reunion is a met; the help is no twin; drowned then resurrected = apparent death
+keep
+f- Octavius|dies|-
+f+ Octavius|dies|-|until eventually Doctor Octopus drowned with his reactor|actual|apparent|-
+
+@4380 lint: battled but lost = one act
+keep
+- Sentry|fought|Hulk
+
+@4389 lint: appeared and attacked (no met)
+keep
+- Ultron|met|Strange
+
+@4393 lint: following and finding him turns into the duel (no met)
+keep
+- Samuel|met|Rider
+
+@7110 lint partner of b4393 (no met); one tag for the sentence
+keep
+- Samuel|met|Rider
+t- no_relation|Nova became the target
+t- capability|a team dedicated to preventing
+t+ no_relation|Nova became the target of the Dark Guardians, a team dedicated to preventing Thanos from resurrecting
+
+@4398 lint: found and shot at once (no met with Belova; the order's giver is unstated, no_doer stays); the split-up group is a crowd
+keep
+- Walker|met|Belova
+t- deictic|Starr left to find a vehicle
+t+ crowd_end|while the rest of the group split up
