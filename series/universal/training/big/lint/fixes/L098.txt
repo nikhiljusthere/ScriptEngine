@@ -1,0 +1,68 @@
+@6312 lint: Thor vs Thor Corp distinct
+keep
+
+@6315 lint: All-Black = All-Black symbiote (window's fuller form)
+keep
+r All-Black=>All-Black symbiote
+
+@6345 lint: real-world phase naming is a production note
+keep
+f- Phases Four to Six|also_known_as|Multiverse Saga
+t+ production|Phases Four to Six of the Marvel Cinematic Universe has been collectively known as The Multiverse Saga.
+
+@6351 lint: battled in its own clause, defeated later (keep both); real name Peter
+keep
+r Spider-Man=>Peter
+f+ Spider-Man|alias_of|Peter|While Spider-Man battled the Scorpion at the Daily Bugle Building, Peter was further upset
+t- deictic|Ned's return spelled the beginning
+t+ no_relation|Ned's return spelled the beginning of the end of Peter's relationship with Betty Brant.
+
+@6353 lint: clashing, knocked out and taken prisoner one sentence for the Goblin; window writes only Peter
+keep
+r Peter Parker=>Peter
+- Peter|fought|Green Goblin
+f+ Spider-Man|alias_of|Peter|Spider-Man stumbled upon a conflict
+
+@6355 lint: met kept (meeting spot after the reconciliation); attacked, fought him off one sentence; A156 Lizard acts under Lizard; transformation is no awakening
+keep
+- Curt Connors|fought|Peter Parker
+- Peter Parker|defeated|Curt Connors
++ Peter Parker|defeated|Lizard|managed to fight him off
+- Curt Connors|awakened|-
+f+ Curt Connors|transformed_into|Lizard|but transformed him into the Lizard instead
+
+@6358 lint: tracked down and defeated one act; both foes defeated has no stated doer; exposed
+keep
+- Kraven the Hunter|fought|Spider-Man
+- Spider-Man|defeated|Chameleon
+f+ Spider-Man|revealed|-|Spider-Man not only defeated Kraven, but exposed that the hunter was hired by the Chameleon to take him down
+t+ no_doer|With both foes defeated
+
+@6359 lint: met kept (appeal to stand down during the battle); window writes only Peter
+keep
+r Peter Parker=>Peter
+f+ Spider-Man|alias_of|Peter|Peter quickly discovered that the impostor was really an android
+
+@6364 lint: ring match and winning one act; winning twin; clothing is attire, no disguise end; window writes only Peter
+keep
+r Peter Parker=>Peter
+- Peter|fought|Crusher Hogan
+f- Peter|other_verb|winning
+f- Peter|disguise_as|ragged clothing
+t+ attire|putting on some ragged clothing and a stocking around his head to disguise himself
+
+@6366 lint: crossed paths = the defeat; belief -> suspected; window writes only Peter
+keep
+r Peter Parker=>Peter
+- Peter|met|Paste-Pot Pete
+f- Human Torch|other_verb|thought
+f+ Human Torch|suspected|-|the Torch thought that Spider-Man was trying to steal his fame by intervening
+
+@6401 lint: met kept (summoned, illusion, then defeat)
+keep
+
+@6408 lint: revolt that saw him flee one act; taking twin of captured
+keep
+- Sue|fought|Rama-Tut
+- Reed|fought|Rama-Tut
+f- Rama-Tut|other_verb|taking
