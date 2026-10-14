@@ -1,0 +1,90 @@
+@2260 lint: "Venom" is the symbiote here ("it and Mary Jane"); confronting Dylan is a talk after the attack (met kept); being told at home is no meeting; stopping the assassination = defeated; the request keeps ordered + the act; Dylan's attacker
+keep
+r Venom symbiote=>Venom
+- Paul|met|Mary Jane
+- Venom|fought|A.I.M.
++ Venom|defeated|A.I.M.|Venom intervened to stop A.I.M. from assassinating her
+f+ Mary Jane|other_verb|go|Paul asked Mary Jane to go after him|ordered|stated|Paul
++ Dr. Fortissimo|fought|Dylan|When Dylan was injured by Dr. Fortissimo
+
+@2305 lint: the encounter turns into the beating; the tried verb; Him/Her names; tags
+keep
+- Warlock|met|Thor
+f- Warlock|other_verb|attempted
+f+ Warlock|other_verb|abduct|attempted the abduction of the Lady Sif in order to mate with her|attempted|stated|Warlock
+f+ Him|alias_of|Warlock|"Him" was renamed as Warlock by the High Evolutionary
+f+ Her|alias_of|Kismet|by his gene-sister "Her," now known as Kismet
+t- capability|Unfortunately for "Him,"
+t+ no_relation|Unfortunately for "Him," he was a being with no life experience due to his unique conception.
+t- deictic|(This act would be repeated
+
+@2310 lint: confronting Quinn is answered by the shots (no met); Skye injured
+keep
+- Skye|met|Quinn
+f+ Skye|wounded|-|leaving a badly injured Skye crawling to the door
+
+@2337 lint: Strange arrives and Parker learns the fate of the displaced from him before the theft and the fight - a stated exchange (met kept)
+keep
+
+@2366 lint: the window names "Steve" and "Tony" (renames + aliases); confronting Killian and Mandarin becomes the rooftop fight; Loki leaves before any fight (met kept)
+keep
+r Steve Rogers=>Steve
+r Tony Stark=>Tony
+- Steve|met|Killian
+- Tony|met|Killian
+- Steve|met|Mandarin
+- Tony|met|Mandarin
+f+ Iron Man|alias_of|Tony|Iron Man & Captain America were able to disable the Hulkbuster suit
+f+ Captain America|alias_of|Steve|Iron Man & Captain America were able to disable the Hulkbuster suit
+
+@2367 lint: catching up turns into the fights for those pairs; the smokescreen crash = defeated
+keep
+- Lopez|met|Bishop
+- Tomas|met|Barton
++ Bishop|defeated|Lopez|Blinded by the smokescreen, Lopez lost control of the vehicle and crashed it into the side of the bridge
+
+@2408 lint: codename_of retired; learned is a relation
+keep
+f- Tattletale|codename_of|Franklin Richards
+f+ Tattletale|alias_of|Franklin Richards|He then took the "super-hero" name Tattletale
+f- Nathaniel|other_verb|learned
+f+ Nathaniel|learned|-|Nathaniel had learned about the Fantastic Four's forthcoming disappearance
+
+@2414 lint: beat up = one act; other_verb takes one verb word; the impostor is unnamed (crowd_end); king of Hell = leader_of
+keep
+- Gwenpool|fought|Mephisto
+- Squirrel Girl|fought|Mephisto
+f- Mephisto|other_verb|took possession
+f+ Mephisto|other_verb|took|Mephisto, or someone claiming to be him, took possession of Teddy Poole
+t- no_doer|Another Mephisto imposter
+t+ crowd_end|Another Mephisto imposter manipulated Otto Octavius
+f+ Johnny Blaze|leader_of|Hell|When the new king of Hell Johnny Blaze began capturing the various demons
+
+@2420 lint: attacked and defeated in one sentence; clause object; the victim is wounded
+keep
+- Ogun|fought|Yuriko
+f- Yuriko|other_verb|discovered
+f+ Yuriko|discovered|-|she then discovered that Wolverine didn't have any healing factor anymore
+f- Ogun|wounded|Yuriko
+f+ Yuriko|wounded|-|destroyed her hand with the phasing powers of Kitty Pryde
+
+@2446 lint: confronting Stark turns into the fight; realized = learned
+keep
+- James Rhodes|met|Tony Stark
+f+ Tony Stark|learned|-|when he realized that Hogan was working for Potts now
+
+@2448 lint: copula; codename_of retired; Spider-Man alias; a heart attack is no wound; the belief Ben was dead
+keep
+f- Mary Jane|other_verb|became
+t+ no_relation|Mary Jane became pregnant
+f- Scarlet Spider|codename_of|Ben Reilly
+f+ Scarlet Spider|alias_of|Ben Reilly|was named the Scarlet Spider by the Daily Bugle
+f+ Spider-Man|alias_of|Peter Parker|prompted Peter to retire from Spider-Man
+f- Aunt May|wounded|-
+f+ Aunt May|other_verb|suffered|Aunt May supposedly suffered a debilitating heart attack|actual|apparent|-
+f+ Peter Parker|suspected|-|whom Peter had thought to be dead years earlier
+
+@2452 lint: the confrontation is answered by restraining spells in the same sentence (no met); "was well aware" is no act of learning
+keep
+- Strange|met|Baron Mordo
+f- Ancient One|learned|-
