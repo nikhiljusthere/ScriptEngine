@@ -1,0 +1,83 @@
+@3635 lint: confronted and forced to flee in one sentence (no met); the ordered act
+keep
+- Hulk|met|M.O.D.O.K.
+f+ Betty Talbot|other_verb|kill|orders her to kill the Hulk the next time she sees him.|ordered|stated|M.O.D.O.K.
+
+@3643 lint: encountering Rhino turns into Thing's fight; Grimm is the window's real name (rename + alias); "a" dropped from the stolen thing
+keep
+- Thing|met|Rhino
+r Thing=>Grimm
+f+ Thing|alias_of|Grimm|while Thing smashed into the island's surface, burying him in sand. Helping Grimm out of the sand
+f- Magneto|stole|a Roxxon nucelar source
+f+ Magneto|stole|Roxxon nucelar source|Upon Magneto stealing a Roxxon nucelar source
+
+@3650 lint: "to confront Gorr" ends in his trap and the battle (no met); defending the village is no help to Thor; a wish is no plan; she was injured
+keep
+- Valkyrie|met|Gorr the God Butcher
+f- Valkyrie|helped|Thor
+f- Valkyrie|helped|Mighty Thor
+f- Valkyrie|other_verb|wishing
+f+ Valkyrie|other_verb|wishing|she found herself wishing to return to the battlefield
+f+ Valkyrie|wounded|-|Valkyrie was badly injured in the ensuing battle
+
+@3659 lint: fought + knocked out one sentence; the return to Las Vegas; Superior Octopus alias
+keep
+- Ben|fought|Conan
+- Ben|fought|Nyla Skin
++ Ben|arrived|Las Vegas|Ben returned to Las Vegas
+f+ Superior Octopus|alias_of|Octavius|When the Superior Octopus, Octavius' latest costumed identity
+
+@3662 lint: Deke and Owen Shaw are two people; killed in the struggle = one act; the killing is the event (no dies twin)
+keep
+- Owen Shaw|fought|Samuel Voss
+f- Owen Shaw|dies|-
+
+@3672 lint: Mighty Thor is Foster (rename + alias); the stated beliefs
+keep
+r Mighty Thor=>Foster
+f+ Mighty Thor|alias_of|Foster|Thor and Mighty Thor kissed, and discussed how having a child was not in the future for them due to Foster's cancer
+f+ Valkyrie|suspected|-|which made her think they were going to die
+f+ Korg|suspected|-|which Korg surmised was because she had lost her girlfriend in battle
+
+@3678 lint: codename_of retired; Hellstrom's ambush is a possession (A116, no fight)
+keep
+f- Andi Benton|codename_of|Mania
+f+ Mania|alias_of|Andi Benton|Calling herself Mania, Andi set out to avenge her father
+- Daimon Hellstrom|fought|Flash
+
+@3711 lint: two separate signals (both contacts kept); the coded order to kill Carter
+keep
+f+ Fennhoff|ordered|Dottie Underwood|Fennhoff secretly sent back a coded message
+f+ Dottie Underwood|other_verb|kill|Peggy Carter was to be killed immediately|ordered|stated|Fennhoff
+
+@3723 lint: the I.C.E.R. shot that knocks her out is one act
+keep
+- Coulson|fought|Kora
+
+@3736 lint: Avengers vs Dark Avengers distinct; rejoining a team is no meeting; facing the Dark Avengers turns into the attack; the ordered Ultimo attack
+keep
+- Norman Osborn|met|Superia
+- Norman Osborn|met|Madame Hydra
+- Norman Osborn|met|Gorgon
+- Luke Cage|met|Skaar
+- Luke Cage|met|Trickshot
+- Luke Cage|met|Ai Apaec
+- Luke Cage|met|Gorgon
+- Luke Cage|met|Toxic Doxie
+- Luke Cage|met|Superia
+- Luke Cage|met|Ragnarok
+f+ Ultimo|other_verb|attack|They later sent out Ultimo to attack the Avengers|ordered|stated|H.A.M.M.E.R.
+
+@3741 lint: appeared and attacked; attack + knocked over in one sentence; Rogers is the window's name (rename + alias)
+keep
+r Captain America=>Rogers
+- Winter Soldier|met|Rogers
+- Winter Soldier|fought|Rogers
+f+ Captain America|alias_of|Rogers|Falcon took Rogers, whom he caught in the air
+
+@3742 lint: Night Thrasher later explains his team plan to Rider (a stated talk, met kept); lunged + subdued = one act; reactivated powers no row; Nova alias
+keep
+- Richard Rider|fought|Night Thrasher
+f- Richard Rider|gained_power|-
+f+ Nova|alias_of|Richard Rider|Rider eventually agreed to join his team. Nova proved to be a valuable asset for the Warriors.
+f+ Richard Rider|other_verb|flew|his powers were reactivated and he flew up, avoiding harm
