@@ -1,0 +1,77 @@
+@5687 lint: met kept (sought shelter, a separate visit); overtaken/taken rows already have the doer as subject; knowledge clause is no capability
+keep
+t- capability|not knowing that he was Spider-Man
+
+@5695 lint: confronted and attempted to destroy, no met; God of the Symbiotes names a race (no end); attempting -> attack
+keep
+- Knull|met|Eddie
+f- Eddie|became|God of the Symbiotes
+f- Venom symbiote|other_verb|attempting
+f+ Venom symbiote|other_verb|attack|attempting to attack Knull directly|attempted|stated|Venom symbiote
+
+@5711 lint: ok (partner of b5716)
+keep
+
+@5716 lint: showed up then the misunderstanding fight; introductions came after
+keep
+- Guardians 1000|met|Rocket
+- Guardians 1000|met|Groot
+- Guardians 1000|met|Drax
+
+@5713 lint: appeared then short fight; verb word broken
+keep
+- Angela|met|Rocket
+f- Ultron|other_verb|broke
+f+ Ultron|other_verb|broken|the fabric of spacetime was broken by Ultron
+
+@5718 lint: faced Nyx then fought her, no met ("The Vision" is the same name with the article, no rename)
+keep
+- Rocket|met|Nyx
+- Hercules|met|Nyx
+- Hawkeye|met|Nyx
+- Scarlet Witch|met|Nyx
+- Spectrum|met|Nyx
+- Vision|met|Nyx
+- Voyager|met|Nyx
+- Hulk|met|Nyx
+
+@5719 lint: ok (partner of b5728)
+keep
+
+@5728 lint: met kept (Korvac explained before the killing); made is the defeated twin
+keep
+f- Gamora|other_verb|made
+
+@5726 lint: arrived to find a fight in progress, no met; fought and beat one sentence; headed to is no arrival
+keep
+- Spider-Man|met|Mister E
+- Spider-Man|met|Ulik
+- Captain Marvel|met|Mister E
+- Captain Marvel|met|Ulik
+- Kang The Conqueror|fought|Ulik
+- Black Knight|fought|Ulik
+- Spider-Man|fought|Ulik
+- Captain Marvel|fought|Ulik
+- Rocket|fought|Ulik
+- Mister E|arrived|Knowhere
+- Rocket|arrived|Knowhere
+- Kang The Conqueror|arrived|Knowhere
+- Black Knight|arrived|Knowhere
++ Rocket|arrived|Knowhere|The heroes arrived
++ Kang The Conqueror|arrived|Knowhere|The heroes arrived
++ Black Knight|arrived|Knowhere|The heroes arrived
+f+ Mister E|located_at|Knowhere|The heroes arrived to find Mister E in a fight with Ulik
+
+@5777 lint: tried -> the attempted teleportation
+keep
+f- Nico|other_verb|tried
+f+ Nico|other_verb|teleportation|she tried multiple teleportation spells that did not work|attempted|reported|Nico
+
+@5819 lint: confronted, stripped and killed one sentence; king of Hell -> leader_of
+keep
+- Mephisto|fought|Blaze
+f- Blaze|became|king of Hell
+f+ Blaze|leader_of|Hell|therefore making him the new king of Hell.
+
+@5835 lint: offer of membership is a separate meeting; attack and repulse in separate clauses
+keep
