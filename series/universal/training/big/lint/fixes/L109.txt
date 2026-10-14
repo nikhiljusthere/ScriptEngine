@@ -1,0 +1,54 @@
+@7311 lint: renamed place is no alias; Uncle Ben's death
+keep
+f- Latvania|also_known_as|Latveria
+f+ Uncle Ben|dies|-|after the death of his Uncle Ben
+t+ no_relation|Known as Latvania in this reality
+
+@7318 lint: "the Good Doctor" is a dubbing by the citizens, no alias (crowd_end tag kept)
+keep
+f- Victor Van Damme|also_known_as|Good Doctor
+
+@7367 lint: Iron Man and Black Widow aliases (partners b7373, b7380)
+keep
+f+ Iron Man|alias_of|Tony Stark|Tony Stark, the original Iron Man
+f+ Black Widow|alias_of|Natasha|The Black Widow and Hawkeye next clashed against the novice super-hero Spider-Man
+
+@7373 lint: captured by her masters (unnamed group) = crowd_end; Black Widow alias
+keep
+t- no_doer|Captured by her masters again and brainwashed,
+t+ crowd_end|Captured by her masters again and brainwashed,
+f+ Black Widow|alias_of|Natasha|the Black Widow was forced to hire the Swordsman and Power Man to destroy the Avengers.
+
+@7380 lint: helped Hawkeye is no event twin (A89 pairs helped with saved); aliases as partners
+keep
+f+ Iron Man|alias_of|Tony Stark|Tony Stark, the original Iron Man
+f+ Black Widow|alias_of|Natasha|The Black Widow and Hawkeye next clashed against the novice super-hero Spider-Man
+
+@7383 lint: caught up and killed one act; most-wanted is a status
+keep
+- Natasha|met|Vassily Ilyich Ulyanov
+- Natasha|met|Ian McMasters
+f- Natasha|became|number one most wanted criminal
+
+@7386 lint: helped is the opposite direction and a separate act; returning with him is no stated rescue
+keep
+- Romanoff|saved|Petrovitch
+t+ no_relation|The Black Widow returned with her mentor safe and sound
+
+@7401 lint: burn and knock out one act
+keep
+- Quicksilver|fought|Wolfsbahne
+
+@7410 lint: Spot = The Spot
+keep
+r Spot=>The Spot
+
+@7415 lint: attacked ... but easily defeated one sentence
+keep
+- Michael "Man Mountain" Marko|fought|Jessica
+
+@7450 lint: Peter vs Peter Porker distinct (partner b7455)
+keep
+
+@7455 lint: as partner b7450
+keep
