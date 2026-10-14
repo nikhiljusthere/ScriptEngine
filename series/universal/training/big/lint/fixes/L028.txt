@@ -1,0 +1,76 @@
+@796 lint: A145 met dropped (confront becomes fight); locked twin of captured; clause object
+keep
+- May|met|Lorelei
+f- Fitz|other_verb|locked
+f- May|discovered|Ward
+f+ May|discovered|-|May realized that Ward had returned to the Bus
+
+@805 lint: party meeting is a separate encounter (kept); stopping the robbery = defeated; aliases; knowledge objects
+keep
+- Peter|met|Doctor Octopus
++ Peter|defeated|Doctor Octopus|Spider-Man later prevented Doctor Octopus from succeeding in a bank robbery
+f- Peter|learned|Wasp
+f- Peter|learned|Yellowjacket
+f- Peter|learned|Norman Osborn
+f+ Peter|learned|-|When Spider-Man learned that the Wasp and Yellowjacket were to be married
+f+ Peter|learned|-|Peter quickly realized that Norman's Green Goblin persona was back
+f+ Green Goblin|alias_of|Norman Osborn|Norman's Green Goblin persona was back
+f+ Spider-Man|alias_of|Peter|Changing into Spider-Man, Peter battled the Green Goblin again
+
+@808 lint: A145 same sentence (attacked+defeated); redundant no_relation tag
+keep
+- Skippingstone|fought|Bishop
+- Skippingstone|fought|Shard
+t- no_relation|Their reunion nevertheless became strained
+
+@813 lint: A145 same sentence fought+killed; main verb agreed
+keep
+- Garrett|fought|Beta
+f- Garrett|other_verb|stay
+f+ Garrett|other_verb|agreed|Garrett and Grant Ward agreed to stay behind
+f- Grant Ward|other_verb|stay
+f+ Grant Ward|other_verb|agreed|Garrett and Grant Ward agreed to stay behind
+
+@828 lint: Xavier full form; power drain no fight; twins; attempted purchase; Phoenix alias
+keep
+r Xavier=>Professor Xavier
+- Shadow King|fought|Jean Grey
+f- Jean Grey|other_verb|stopped
+f- Cyclops|other_verb|stopped
+f- Shadow King|other_verb|invaded
+f- Cyclops|other_verb|purchase
+f- Jean Grey|other_verb|purchase
+f- X-Men|discovered|Jean Grey
+f+ Cyclops|other_verb|purchase|they were unable to purchase the house they lived in|attempted|stated|Cyclops
+f+ Jean Grey|other_verb|purchase|they were unable to purchase the house they lived in|attempted|stated|Jean Grey
+f+ Phoenix|alias_of|Jean Grey|On a flight to Alaska, Phoenix and Cyclops turbulently stopped
+
+@838 lint: the visit (entering, trying to talk) precedes the fight - mets kept; tag conflicts with met
+keep
+t- no_relation|The two entered Kthara's room
+f+ Louise Hastings|other_verb|refused|met with Louise Hastings, who refused to allow her to visit her mother alone
+
+@839 lint: encountered becomes the attack - met dropped; Skye met kept (awake when freed, asked to hack)
+keep
+- Mackenzie|met|Alisha Whitley
+
+@873 lint: A145 fought+defeated+killed -> killed; Black Panther mantle; unleashed not stated as done; deaths
+keep
+- T'Challa|fought|Killmonger
+- T'Challa|defeated|Killmonger
+f- Killmonger|other_verb|unleashed
+f- Killmonger|became|Black Panther
+f+ Black Panther|alias_of|Killmonger|claimed the throne, becoming Black Panther
+f+ Killmonger|leader_of|Wakanda|claimed the throne, becoming Black Panther
+f- Killmonger|other_verb|gain
+f+ T'Challa|dies|-|seemingly killed T'Challa during their ritual combat|actual|apparent|-
+f+ T'Chaka|dies|-|following T'Chaka's death|actual|stated|-
+t- no_relation|though his death inspired
+
+@897 lint: A145 same sentence fought+defeated
+keep
+- Dillard|fought|Cottonmouth
+
+@899 lint: Rodriguez full form
+keep
+r Rodriguez=>Yo-Yo Rodriguez

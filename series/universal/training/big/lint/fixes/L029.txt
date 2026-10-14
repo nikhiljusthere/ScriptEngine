@@ -1,0 +1,57 @@
+@900 lint: A146 death as dies fact
+keep
+f- Proteus|other_verb|die
+f+ Proteus|dies|-|Proteus chose to die again
+
+@920 lint: telekinetic lift is no fight; met is the reunion
+keep
+- Galactus|fought|Silver Surfer
+
+@921 lint: King Arthur full form
+keep
+r Arthur=>King Arthur
+
+@924 lint: Belasco's approach is a separate earlier meeting (kept)
+keep
+
+@5037 lint: partner of b924; separate meeting kept
+keep
+
+@927 lint: found again after the fight (separate meeting); S.H.I.E.L.D. file is a thing
+keep
+
+@939 lint: contacted symmetric (one row); the ordered act; speech claimed stays actual (M6)
+keep
+f- Underwood|contacted|Johann Fennhoff
+f+ Johann Fennhoff|other_verb|step|Roger Dooley asked Fennhoff to step away from the window|ordered|stated|Roger Dooley
+
+@957 lint: also_known_as retired -> title as alias_of; capability tag on a narrated instance
+keep
+f- Mjolnir|also_known_as|God of Hammers
+f+ God of Hammers|alias_of|Mjolnir|As the "God of Hammers," Mjolnir created a feminine avatar
+t- capability|In later years, Mjolnir demonstrated
+
+@960 lint: Avengers vs Avengers Compound are distinct (flag false)
+keep
+
+@966 lint: the address becomes Thor's attack; escaped the Avengers; scene-setter arrival; twin fact
+keep
+- Ultron|met|Thor
+- Ultron|escaped|Thor
++ Ultron|escaped|Avengers|Ultron's consciousness escaped via the internet so the Avengers could not track him
+- Ultron|arrived|Hydra Research Base
+f- Thor|other_verb|throwing
+
+@971 lint: X-Men (the team Jean joins) and original X-Men are different groups - no rename; returned-from-death twins awakened
+keep
+f- Xavier|other_verb|returned
+
+@978 lint: Tony Stark full form; stopping the plot = defeated (A145 drops the came-across met); Iron Man alias; test was done
+keep
+r Stark=>Tony Stark
+- Tony Stark|met|Attuma
++ Tony Stark|defeated|Attuma|Iron Man stopped Attuma's plot
+f+ Iron Man|alias_of|Tony Stark|Iron Man stopped Attuma's plot
+t- no_relation|Byrd was further unimpressed
+f- Tony Stark|other_verb|test
+f+ Tony Stark|other_verb|test|to put on a test for Senator Harrington Byrd of a new test submarine
