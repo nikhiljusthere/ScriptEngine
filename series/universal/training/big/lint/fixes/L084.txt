@@ -1,0 +1,71 @@
+@4802 lint: arms dealer is an occupation; met kept (finding him, takeover, then the attack); decided = planned
+keep
+f- Willis Harold Stryker|became|arms dealer
+f- Noah Burstein|other_verb|use
+f+ Noah Burstein|other_verb|use|decided to use Diamondback as a test subject|planned|stated|Noah Burstein
+
+@4844 lint: assaulted, killing one act; Eternity vs Eternity Watch distinct; gathering a team is recruitment, no met
+keep
+- Master Order|fought|Living Tribunal
+- Lord Chaos|fought|Living Tribunal
+- Galactus|met|Ego-Prime
+- Galactus|met|Psi-Hawk
+- Galactus|met|Infinaut
+- Galactus|met|Shaper of Worlds
+f+ Galactus|recruited|Ego-Prime|Galactus gathered Ego-Prime, the Psi-Hawk, the Infinaut, and the ghost of the Shaper of Worlds
+f+ Galactus|recruited|Psi-Hawk|Galactus gathered Ego-Prime, the Psi-Hawk, the Infinaut, and the ghost of the Shaper of Worlds
+f+ Galactus|recruited|Infinaut|Galactus gathered Ego-Prime, the Psi-Hawk, the Infinaut, and the ghost of the Shaper of Worlds
+f+ Galactus|recruited|Shaper of Worlds|Galactus gathered Ego-Prime, the Psi-Hawk, the Infinaut, and the ghost of the Shaper of Worlds
+
+@6278 lint: as partner b4844
+keep
+- Master Order|fought|Living Tribunal
+- Lord Chaos|fought|Living Tribunal
+
+@4855 lint: attempted assassination supposedly by Cable (Cable is the appositive, not an ally)
+keep
+f- Cable|other_verb|attempted
+f+ Cable|other_verb|assassinate|Following an attempted assassination of Xavier supposedly by the mutant soldier from the future, Cable|attempted|reported|Cable
+
+@4856 lint: confronted turns into attack, no met; became assistant copula
+keep
+- Stark|met|Peter Parker
+f- Peter Parker|other_verb|became
+
+@4861 lint: same quote met; stopped him = defeated
+keep
+- Rand|met|Bakuto
+- Rand|fought|Bakuto
++ Rand|defeated|Bakuto|Rand arrived just in time and stopped him
+
+@4865 lint: fight stated in its own clause before the conditional defeat, keep both; alias quote that ties the names
+keep
+f- Puppet Master|alias_of|Phillip
+f+ Puppet Master|alias_of|Phillip|Ben fought the Puppet Master in his mind, but was only able to to defeat Phillip
+
+@4896 lint: fought ... until -> keep both; awakened twin; targeted plot is no met
+keep
+f- Diablo|other_verb|brought
+- Terrible Trio|met|Johnny
+- Terrible Trio|met|Ben
+
+@4907 lint: became very fat copula
+keep
+f- Rahne|other_verb|became
+t+ no_relation|Rahne became very fat alongside her captive teammates
+
+@4910 lint: knocked out one act; capture of Lucio not narrated
+keep
+- Mackenzie|fought|Victor Ramon
+- Mackenzie|captured|Lucio
+- Morse|captured|Lucio
+- Hunter|captured|Lucio
+
+@4918 lint: arrived and shootout, no met
+keep
+- Raza Hamidmi al-Wazar|met|Stark
+
+@4926 lint: equal Ward in combat, who defeated her: one combat; head of security is a rank
+keep
+- Bobbi Morse|fought|Grant Ward
+f- Bobbi Morse|became|head of security
