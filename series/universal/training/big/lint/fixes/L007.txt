@@ -1,0 +1,33 @@
+@100 lint: the convincing is the confrontation (A145); a title is an alias (A143), not an epithet to drop; the order went to the Shi'ar (race, no end); the acquittal has no named doer (A110); being transported is no capture
+keep
+- Professor X|met|Galactus
+f- Galactus|also_known_as|Devourer of Worlds
+f+ Devourer of Worlds|alias_of|Galactus|the Devourer of Worlds succeeded in consuming the Skrull throneworld
+f- Karant Kiar|ordered|Reed Richards
+f- Reed Richards|other_verb|acquitted
+t+ no_doer|so Richards was acquitted of all charges and released
+- Ejulp|captured|Professor X
+f+ Ejulp|other_verb|transported|found themselves transported to the Skrull homeworld by the other-dimensional being known as Ejulp
+@105 lint: one name for the team; the defeat names no doer, the stated fights stay (step 5); realizing is learned -; a revealing is revealed -; the unnamed clone is no end; the dead one was a clone, Sinister's death only apparent
+keep
+r Exceptional team=>Exceptional
+f- Exceptional|discovered|Sinister
+f+ Exceptional|learned|-|realized who they were up against
+f- Sinister|other_verb|revealed
+f+ Sinister|revealed|-|Sinister revealed his true self
+f- clone Axos|other_verb|avoid
+f- clone Axos|other_verb|replaced
+f- Sinister|revealed_as|clone
+f+ Sinister|dies|-|and "died" but he was revealed to have been a clone all along|actual|apparent
+@109 lint: a stated identity takes no asserter; finding out is learned -; a bell is no doer (A131); the corruption guess has no asserter
+keep
+f- Hood|revealed_as|Xialing
+f+ Hood|revealed_as|Xialing|Shang-Chi found out that Hood was really Xialing
+f+ Shang-Chi|learned|-|Shang-Chi found out that Hood was really Xialing
+f- bell|other_verb|inspired
+t+ no_doer|Meanwhile the bell, inspired Shang-Chi to try to reach out to Xialing
+f- Xialing|other_verb|corrupted
+f+ Xialing|other_verb|corrupted|had been corrupted presumably by the Hood's cloak|actual|apparent
+@110 lint: one name for the Gauntlet
+keep
+r Gauntlet=>Infinity Gauntlet

@@ -68,7 +68,7 @@ def checks(b, wid, rec, text):
             if mod == "actual":
                 out["F_A146_died_other_verb"].append(k)
         tw = TWIN.get(f.get("relation"))
-        if tw and any(ek(e) in ((f.get("subject"), tw, f.get("object")), (f.get("object"), tw, f.get("subject")))
+        if tw and mod == "actual" and any(ek(e) in ((f.get("subject"), tw, f.get("object")), (f.get("object"), tw, f.get("subject")))
                       for e in ev):
             out["F_A89_event_twin"].append(k)
         if "\xa0" in q:

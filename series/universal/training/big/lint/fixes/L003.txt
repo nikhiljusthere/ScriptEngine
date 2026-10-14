@@ -1,0 +1,56 @@
+@32 lint: Grandmaster appearing is a meeting, stripping power is no fight; A145 same sentence; copula; accepted -> joined; patient of passive
+keep
+- Grandmaster|fought|Kang
+- Kang|fought|Black Knight
+f- Black Knight|other_verb|was not officially a member
+f- Black Knight|other_verb|accepted
+f+ Black Knight|joined|Avengers|the Avengers unanimously agreed to make the Black Knight an member of their team, an offer the Knight accepted
+f- Yellowjacket|other_verb|brought back
+f- Black Panther|other_verb|brought back
+f- Vision|other_verb|brought back
+t+ no_doer|were brought back to their own era
+@35 lint A145 led to her and a fight broke out; crowd arrival; garbage objects; realised -> learned
+keep
+- Doctor Strange|met|Scarlet Witch
+- Avengers|met|Scarlet Witch
+- Hawkeye|arrived|Avengers Mansion
+f- Scarlet Witch|other_verb|surrendered to Magneto
+f+ Scarlet Witch|other_verb|surrendered|surrendered to Magneto
+f- Mansion|became|memorial site
+t+ no_doer|The damaged Mansion was turned into a memorial site
+f- Scarlet Witch|other_verb|breakdown
+t+ no_doer|caused a nervous breakdown and the loss of her grasp on reality
+f- Scarlet Witch|gained_power|-
+f- Thor|other_verb|disappearance
+f- Scarlet Witch|other_verb|put
+f- Avengers|discovered|Scarlet Witch
+f+ Avengers|learned|-|The Avengers realized that the mastermind behind the attacks was the Scarlet Witch
+f- Tony Stark|other_verb|sponsoring
+f+ Tony Stark|other_verb|announcing|announcing he no longer had the financial means to keep sponsoring the team
+@39 lint: one item name; recruiting is no met; torture fights and the later confrontation kept
+keep
+r Gauntlet=>Infinity Gauntlet
+- Adam Warlock|met|Captain America
+@42 lint: epithet is no alias; an embarked mission is actual; verb word
+keep
+f- Quoi|also_known_as|Celestial Messiah
+f- Avengers|other_verb|look
+f+ Avengers|other_verb|look|embarked on a mission to look for Earth's new protector
+f- Heralds of Galactus|other_verb|looking for
+f+ Heralds of Galactus|other_verb|looking|who were also looking for the Starbrand power
+@46 lint A115; phenomenon and artifact as doers
+keep
+f- Captain America|forgot|knowledge of incursions
+f+ Captain America|forgot|-|wipe from his memory his knowledge about their secret cabal, as well as any knowledge of incursions
+f- incursions|destroyed|respective universes
+t+ no_relation|which caused the collision between planets Earth of two different realities, extinguishing their respective universes
+f- Infinity Gauntlet|other_verb|broke
+t+ no_doer|the artifact broke down outside its native reality
+@54 lint A145 same sentence; paralysed is a wound, not a transformation; figurative blow; tragedy as doer
+keep
+- Nightcrawler|fought|Marauders
+f- Colossus|transformed_into|steel form
+f+ Colossus|wounded|-|Colossus paralyzed in his steel form
+f- X-Men|wounded|-
+f- X-Men|other_verb|radicalized
+t+ no_doer|The tragedy radicalized the X-Men's perception on violence

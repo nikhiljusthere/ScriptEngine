@@ -1,0 +1,56 @@
+@19 lint: document as doer (A131), belief -> suspected, patient of passive (A110)
+keep
+f- Avengers Charter|other_verb|annulled
+t+ no_doer|the Avengers Charter was annulled
+f- Black Widow|other_verb|Believing
+f+ Black Widow|suspected|-|Believing the Avengers to be dead
+f- Avengers|other_verb|restored
+t+ no_doer|being restored to their original selves
+@20 lint: renamed place is no alias (A148); crowd object
+keep
+f- Hydrobase|alias_of|Avengers Island
+t+ crowd_end|Captain America hired a team of specialists
+@22 lint: visit at the house is a separate meeting (met kept); A115; perceiving -> learned; order convention; alias direction
+keep
+f- Carina|suspected|Korvac's intentions
+f+ Carina|suspected|-|realizing Carina doubted his intentions
+f- Moondragon|suspected|Korvac's intentions
+f+ Moondragon|learned|-|Moondragon psychically felt Korvac's noble intentions
+f- Gyrich|other_verb|targeted
+f+ Gyrich|other_verb|targeted|Gyrich targeted their unstable roster under the National Security Council's orders|ordered|stated|National Security Council
+f- Thor|alias_of|Donald Blake
+f+ Donald Blake|alias_of|Thor|Thor, in his Donald Blake physician persona
+@25 lint: planned verb, systems as doer (A131), A89 scatter twin of defeated, A115
+keep
+f- High Evolutionary|other_verb|wished
+f+ High Evolutionary|other_verb|evaluate|who wished to evaluate the Children of the Sun's potential in reawakening Terminus.|planned|stated|High Evolutionary
+f- Ex Nihilo's systems|other_verb|cause
+t+ no_doer|Ex Nihilo's systems started to cause more frequent calamities around the world.
+t+ no_doer|The Avengers were brutally beaten by the mysterious mechanism
+f- Manifold|other_verb|scatter
+f- Avengers|learned|A.I.M.
+f+ Avengers|learned|-|the Avengers also learned A.I.M. had been expanding their power and resources as an army
+@28 lint: A102 left_group twin; recruiting is no met (R4); invited = patient of passive
+keep
+f- Black Widow|left_group|Avengers
+- Black Panther|met|Black Widow
+- Black Panther|met|Daredevil
+- Thor|met|Black Widow
+- Thor|met|Daredevil
+- Vision|met|Black Widow
+- Vision|met|Daredevil
+f- Black Widow|other_verb|invited
+f- Daredevil|other_verb|invited
+t+ no_doer|Black Widow and Daredevil were invited to officially join the Avengers
+@30 lint: one name (Cotati Swordsman); A115; verb word; the battle with Kang
+keep
+r Swordsman=>Cotati Swordsman
+f- Libra|revealed|destiny
+f+ Libra|revealed|-|Libra and the Cotati Swordsman told Mantis about her destiny to fulfill as the Celestial Madonna
+f- Cotati Swordsman|revealed|destiny
+f+ Cotati Swordsman|revealed|-|Libra and the Cotati Swordsman told Mantis about her destiny to fulfill as the Celestial Madonna
+f- Mantis|other_verb|agreed to marry
+f+ Mantis|other_verb|agreed|she agreed to marry Swordsman.
+f- Avengers|learned|Titanic Three
+f+ Avengers|learned|-|When the Avengers learned that Kang had attacked the Titanic Three
++ Kang|fought|Avengers|a battle ensued to guarantee Mantis' safety

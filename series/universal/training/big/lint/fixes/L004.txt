@@ -1,0 +1,64 @@
+@36 lint A145 found then fought; a wrecked robot who returns is defeated (A53); boosted to godhood = gained_power
+keep
+- Avengers|met|Ultron
+- Ms. Marvel|met|Ultron
+- Jocasta|killed|Ultron
+- Avengers|killed|Ultron
++ Avengers|defeated|Ultron|helped the Avengers wreck Ultron once again
++ Jocasta|defeated|Ultron|helped the Avengers wreck Ultron once again
+- Korvac|awakened|-
+f- Korvac|became|godhood
+f+ Korvac|gained_power|Power Cosmic|Korvac, who had been boosted by the Power Cosmic to godhood
+@38 lint: one name; mind tampering is no fight (A116); description object; things as doers
+keep
+r Ghaur=>Lord Ghaur
+- Proctor|fought|Sersi
+f- Proctor|revealed_as|alternate version of Black Knight
+f+ Proctor|other_verb|revealed|Proctor revealed to be an alternate version of Black Knight
+f- Gann Josin|other_verb|corrupted
+f- Proctor|other_verb|put
+@50 lint A145 same sentence; a family is no place; noun/copula objects; verb words
+keep
+- Sauron|fought|Magneto
+f- Xavier|resides_at|the Martins
+f+ Xavier|other_verb|stay|Xavier chose to stay with the Martins to tend to Ashley
+f- Dazzler|other_verb|uncle
+f- Ashley Martin|other_verb|had control over
+f- Cyclops|other_verb|searched for
+f+ Cyclops|other_verb|searched|Cyclops and Jean Grey searched for Angel
+f- Jean Grey|other_verb|searched for
+f+ Jean Grey|other_verb|searched|Cyclops and Jean Grey searched for Angel
+f+ X-Men|other_verb|intervened|The X-Men intervened, but could not prevent Angel's mother from dying
+@55 lint A115; the X-Men met him; a purpose clause is planned
+keep
+- Wolverine|met|Ozymandias
++ X-Men|met|Ozymandias|also met one of Apocalypse's servants, the scribe known as Ozymandias
+f- Sabretooth|revealed|true intentions
+f+ Sabretooth|revealed|-|he revealed his true intentions
+f- Archangel|other_verb|retrieve
+f+ Archangel|other_verb|retrieve|Archangel and Wolverine went on an adventure to retrieve the mystical Crimson Dawn elixir|planned|stated|Archangel
+f- Wolverine|other_verb|retrieve
+f+ Wolverine|other_verb|retrieve|Archangel and Wolverine went on an adventure to retrieve the mystical Crimson Dawn elixir|planned|stated|Wolverine
+@66 lint A115 x2; hijacked thing (A110); unnamed baby is no end (Gambit, then a Marauder, met Wolverine: kept)
+keep
+f- Gambit|revealed|messiah baby's whereabouts
+f+ Gambit|revealed|-|Gambit revealed to Wolverine the messiah baby's whereabouts
+f- Rictor|discovered|Purifiers
+f+ Rictor|discovered|-|discovered the Purifiers were working with
+f- O*N*E Sentinels|other_verb|hijacked
+f- Cable|owns|messiah baby
+f- mutant child|born|-
+t- deictic|and cutting off telepathic communication.
+t+ no_doer|the O*N*E Sentinels were hijacked by an unknown assailant, destroying the X-Mansion and cutting off telepathic communication.
+@78 lint: forming a team is no met; memory erasure is no fight (A116); belief -> suspected; ordered act; noun objects
+keep
+- Xavier|met|Petra
+- Xavier|met|Sway
+- Xavier|met|Darwin
+- Xavier|met|Kid Vulcan
+- Xavier|fought|Cyclops
+f- Cyclops|other_verb|believed
+f+ Cyclops|suspected|-|Cyclops believed he had escaped on his own.
+f- Darwin|other_verb|sacrifice
+f- Kid Vulcan|other_verb|sacrifice
+f+ X-Men|other_verb|investigate|The X-Men were dispatched by Professor X to investigate|ordered|stated|Xavier

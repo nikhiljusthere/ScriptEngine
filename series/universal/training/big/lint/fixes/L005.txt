@@ -1,0 +1,28 @@
+@83 lint A145 crossing paths became the fight; mind control is no fight (A116); staying on is no capture
+keep
+- Cyclops|met|Rogue
+- Scurvy|fought|Trustees
+- Ellis|captured|Xavier
+@86 lint: description is no alias; book as doer (A131); patient of passive (A110)
+keep
+f- Viceroy|also_known_as|Australian crime-lord
+f- Destiny's Diaries|other_verb|directed
+t+ no_doer|the X-Treme X-Men kept having their fates directed by Destiny's Diaries.
+f- Gambit|other_verb|framed
+t+ no_doer|When Gambit was framed for having murdered Viceroy
+@89 lint: verb words (A88); a disguise unmasked is disguise_as only (A149)
+keep
+f- Magneto|other_verb|put Gambit on trial
+f+ Magneto|other_verb|put|who put Gambit on trial for past crimes.
+f- Gambit|other_verb|led the Marauders to the Morlocks
+f+ Gambit|other_verb|led|Erik revealed Gambit led the Marauders to the Morlocks during the massacre in the Alley.
+f- Magneto|revealed_as|Erik the Red
+@93 lint false positive; verb word
+keep
+f- original X-Men|other_verb|deal with the crisis
+f+ original X-Men|other_verb|deal|the time-displaced original X-Men decided to deal with the crisis by themselves on a road trip|planned|stated|original X-Men
+@95 lint: renamed place is no alias; a decision acted on is actual with its verb (A96)
+keep
+f- X-Mansion|also_known_as|Xavier Institute for Mutant Education and Outreach
+f- Pryde|other_verb|take advantage
+f+ Pryde|other_verb|take|Pryde decided to take advantage of the doors to the future opened for mutantkind

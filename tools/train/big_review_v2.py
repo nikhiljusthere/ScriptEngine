@@ -47,6 +47,23 @@ BIG = br.BIG
 V2, AUDIT2 = BIG / "labels_v2.jsonl", BIG / "big_audit_v2.jsonl"
 # BV2_CURSOR=backfill -> the facts backfill over b1-b1161 (events already reviewed) keeps its own cursor
 CURSOR2 = BIG / ("review_cursor_v2%s.txt" % ("_" + os.environ["BV2_CURSOR"] if os.environ.get("BV2_CURSOR") else ""))
+# BV2_SET=gold -> the gold v2 review (2026-10-14, owner: gold set to v2): the 3,822 unique gold windows of all
+# nine series, b = line number in gold_v2/gold_in.jsonl; base rows = the 35B --add-only labels (gold events +
+# new facts/tags); its own audit file and cursor. Passages come from gold_in's user message.
+GOLD = os.environ.get("BV2_SET") == "gold"
+if GOLD:
+    GOLD_IN = BIG / "gold_v2" / "gold_in.jsonl"
+    V2, AUDIT2 = BIG / "gold_v2" / "gold_labels_v2.jsonl", BIG / "gold_v2" / "gold_audit_v2.jsonl"
+    CURSOR2 = BIG / "gold_v2" / ("review_cursor_gold%s.txt" % ("_" + os.environ["BV2_CURSOR"] if os.environ.get("BV2_CURSOR") else ""))
+    _GOLD_PAS = {}
+
+    def _gold_passages():
+        if not _GOLD_PAS:
+            for l in open(GOLD_IN):
+                r = json.loads(l)
+                _GOLD_PAS[r["id"]] = r["messages"][1]["content"].split("Passage:\n", 1)[1]
+        return _GOLD_PAS
+    br.passages = _gold_passages  # every caller (view, fix, lint_v2, pre27) reads windows through br.passages
 SYM = ("fought", "met")
 
 
@@ -68,6 +85,8 @@ def cursor2():
 
 
 def order():
+    if GOLD:
+        return [json.loads(l)["id"] for l in open(GOLD_IN)]
     v1 = [r["id"] for r in br.jl(br.LABELS)][:5405]
     seen = set(v1)
     return v1 + [r["id"] for r in jl(V2) if r["id"] not in seen and not seen.add(r["id"])]
@@ -90,6 +109,8 @@ def audit2():
 def state():
     v2 = {r["id"]: r for r in jl(V2)}
     a2 = audit2()
+    if GOLD:
+        return v2, a2, {}, {}, 0
     a1 = {a["id"]: a["after"] for a in br.jl(br.AUDIT)}
     v1 = {r["id"]: r for r in br.jl(br.LABELS)}
     return v2, a2, a1, v1, br.cursor()

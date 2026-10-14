@@ -1,0 +1,20 @@
+@1 lint: city saved -> protected (b8145 convention); created thing object is legal
+keep
+f- Hulk|helped|Kalkhimithia
+f+ Hulk|protected|Kalkhimithia|with the real Hulk's help, Kalkhimithia was saved
+@9 lint A145 approach became the fight; A116 enchanting no fought; A149 disguise unmasked = disguise_as only
+keep
+- Enchantress|fought|Black Knight
+- Enchantress|met|Avengers
+- Wasp|met|Avengers
+f- Enchantress|revealed_as|Valkyrie
+@13 lint A145 same sentence; invited is no remote contact
+keep
+- Necrodamus|fought|Scarlet Witch
+f- Gorgon|contacted|Avengers
+f+ Gorgon|other_verb|invited|the Avengers were invited by the Inhuman Gorgon
+@14 lint A102 left_group twin of betrayed; other_verb verb word
+keep
+f- Scarlet Witch|left_group|inverted Avengers
+f- Scarlet Witch|other_verb|revenge
+f+ Scarlet Witch|other_verb|seeking|seeking revenge against Doctor Doom for their previous conflicts|planned|stated|Scarlet Witch

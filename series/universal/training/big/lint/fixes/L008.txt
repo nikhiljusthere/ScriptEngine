@@ -1,0 +1,49 @@
+@111 lint: the base meeting is separate from the later overpowering (met stays); the Jackal is Ben; Captain Stacy's name; the resurrecting was Ben's; "use" is the verb; outing as an impostor names no doer; the offer was turned down; the unmasking
+keep
+r Stacy=>Captain Stacy
+f+ Jackal|alias_of|Ben|Ben unmasked and revealed his identity to Peter
+f- Gwen Stacy|other_verb|resurrected
+f- Ben|other_verb|combined
+f+ Ben|other_verb|use|in order to use the combined power of New U and Parker Industries to help the world|planned|stated|Ben
+f- Gwen Stacy|revealed_as|impostor
+t+ no_doer|When Gwen Stacy was outed as an impostor
+f- Ben|recruited|Peter
+f+ Ben|recruited|Peter|Ben offered Peter a chance to join him|attempted|stated|Ben
+f+ Ben|revealed|-|Ben unmasked and revealed his identity to Peter
+@113 lint: breaking up the fight is no separate meeting (A145); realizing is learned -
+keep
+- Captain America|met|Thor
+- Captain America|met|Iron Man
+f- Thor|discovered|-
+f+ Thor|learned|-|Thor realized, upon seeing all the destruction he had helped to cause, that they had the same goal to stop Loki's plan and protect Earth
+@135 lint: the waitress is unnamed (crowd_end); a belief takes -
+keep
+- waitress|met|Creel
+f- waitress|apologised_to|Creel
+f- waitress|suspected|static electricity
+f- Creel|suspected|sickness
+f+ Creel|suspected|-|with Creel knowing she probably would suffer the same effects he witnessed on Isabelle Hartley|actual|apparent
+t+ crowd_end|The waitress friendly approached Creel
+t+ crowd_end|She apologized to Creel for letting the glasses fall
+@140 lint: one sentence, one act (A145); revealing a clause is revealed -; the ordered act
+keep
+- Stark|fought|A.I.M.
+f- Rhodes|revealed|A.I.M.
+f+ Rhodes|revealed|-|Rhodes revealed that A.I.M. were searching for power sources.
+f+ J.A.R.V.I.S.|other_verb|activate|Stark told J.A.R.V.I.S. to activate his radiation field|ordered|stated|Stark
+@141 lint: the merge is the act, no fight is stated; with no fight the confrontation is a meeting (met stays)
+keep
+- Emplate|fought|Monet
+f- Sabretooth|other_verb|promise
+f+ Sabretooth|other_verb|promised|Sabretooth promised to keep her secret
+f- Sabretooth|other_verb|offer
+f+ Sabretooth|other_verb|offered|offered to let her feed on him
+@142 lint: one sentence, one act (A145); speech acts are actual; the motive is a planned avenging
+keep
+- Thor|fought|Malekith
+f- Malekith|other_verb|told
+f+ Malekith|other_verb|told|Malekith told Thor that he now could not be stopped, and the Aether could not be destroyed
+f- Thor|other_verb|note
+f+ Thor|other_verb|note|only for Thor to note that Malekith himself could be destroyed
+f- Thor|other_verb|desire
+f+ Thor|other_verb|avenge|Powered by a desire to avenge the Sacking of Asgard and the death of Frigga as well as Loki|planned|stated|Thor
