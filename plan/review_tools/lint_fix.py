@@ -95,9 +95,15 @@ def main():
     import verify_row_wiki as vrw
     ids, a2, pas, wikis = bv.order(), bv.audit2(), bv.br.passages(), {}
     n, refused, counts = 0, [], {}
-    out = [] if dry else open(bv.AUDIT2, "a")
+    # gold v2 (2026-10-14): the gold windows are not reviewed yet, and a gold audit record means "Claude reviewed"
+    # (compose_big_set_v2 requires one per window), so the mechanical fixes rewrite the 35B label base instead
+    # (backup gold_labels_v2.jsonl.bak-<time>); windows that already have an audit record are left alone
+    gold_base = {r["id"]: r for r in bv.jl(bv.V2)} if bv.GOLD else None
+    out = [] if dry or bv.GOLD else open(bv.AUDIT2, "a")
     for b, wid in enumerate(ids, 1):
-        rec = a2[wid]
+        if bv.GOLD and wid in a2:
+            continue
+        rec = gold_base[wid] if bv.GOLD else a2[wid]
         facts, tags, notes = transform(rec)
         if not notes:
             continue
@@ -113,10 +119,21 @@ def main():
         for x in notes:
             counts[x] = counts.get(x, 0) + 1
         n += 1
-        if not dry:
+        if bv.GOLD:
+            gold_base[wid] = {**rec, "facts": fk, "tags": tk,
+                              "lint_fix": (rec.get("lint_fix") or []) + notes}
+        elif not dry:
             out.write(json.dumps({"id": wid, "b": b, "series": series, "page": rec.get("page"),
                                   "events": rec["events"], "facts": fk, "tags": tk,
                                   "why": "lint " + "+".join(notes)}, ensure_ascii=False) + "\n")
+    if bv.GOLD and not dry and n:
+        import shutil
+        import time
+        shutil.copy(bv.V2, f"{bv.V2}.bak-{time.strftime('%Y%m%d-%H%M%S')}")
+        with open(f"{bv.V2}.tmp", "w") as f:
+            for wid in ids:
+                f.write(json.dumps(gold_base[wid], ensure_ascii=False) + "\n")
+        Path(f"{bv.V2}.tmp").replace(bv.V2)
     print(f"{'would write' if dry else 'wrote'} {n} records; windows per transform {counts}; refused {len(refused)}")
     for r in refused:
         print("REFUSED", r)

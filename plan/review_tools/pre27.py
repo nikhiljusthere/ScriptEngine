@@ -12,6 +12,8 @@ import concurrent.futures as cf
 import json
 import re
 import sys
+import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -20,14 +22,16 @@ sys.path.insert(0, str(HERE))
 import lint_work  # noqa: E402
 
 bv = lint_work.bv
-OUT = bv.BIG / "lint" / "pre27"
+# BV2_SET=gold (2026-10-14): the gold v2 pre-review of all 3,822 gold windows (full review, gold27_system.md)
+WORK = bv.BIG / ("gold_v2" if bv.GOLD else "lint")
+OUT = WORK / "pre27"
 URL = "http://127.0.0.1:18080/v1/chat/completions"
 
 
 def system_prompt():
     cat = (HERE.parent / "BIG_REVIEW_PATTERNS.md").read_text().split("\n")
     a, z = next(i for i, l in enumerate(cat) if l.startswith("## A.")), next(i for i, l in enumerate(cat) if l.startswith("## C."))
-    return (HERE / "lint27_system.md").read_text() + "\n".join(cat[a:z]) + "\n"
+    return (HERE / ("gold27_system.md" if bv.GOLD else "lint27_system.md")).read_text() + "\n".join(cat[a:z]) + "\n"
 
 
 def rows(rec):
@@ -49,6 +53,8 @@ _CACHE = {}
 def ctx():
     if not _CACHE:
         _CACHE["ids"], _CACHE["a2"], _CACHE["pas"] = bv.order(), bv.audit2(), bv.br.passages()
+        if bv.GOLD:  # unreviewed gold windows show their (lint-fixed) 35B label rows
+            _CACHE["a2"] = {**{r["id"]: r for r in bv.jl(bv.V2)}, **_CACHE["a2"]}
     return _CACHE["ids"], _CACHE["a2"], _CACHE["pas"]
 
 
@@ -57,9 +63,10 @@ def render(b, full_quotes=True):
     wid = ids[b - 1]
     rec, text = a2[wid], pas[wid]
     lint = lint_work.window_classes(b, rec, text)
-    head = f"===== b{b} {rec.get('page')}"
+    head = f"===== b{b} {rec.get('page')}" + (f" [{rec.get('series')}]" if bv.GOLD else "")
     body = [head, text, "ROWS:"] + ["  " + r for r in rows(rec)]
-    body += [f"LINT {k}: {v}" for k, v in lint.items()] or ["LINT (none: overlap partner of a flagged window)"]
+    body += [f"LINT {k}: {v}" for k, v in lint.items()] or [
+        "LINT (none)" if bv.GOLD else "LINT (none: overlap partner of a flagged window)"]
     return "\n".join(body)
 
 
@@ -69,8 +76,18 @@ def ask(sysmsg, user, url, model):
                                                          "prompt_cache_breakpoint": {"mode": "explicit"}}]},
                          {"role": "user", "content": user}]}
     req = urllib.request.Request(url, json.dumps(body).encode(), {"Content-Type": "application/json"})
-    m = json.loads(urllib.request.urlopen(req, timeout=3600).read())["choices"][0]["message"]
-    return m.get("content") or ""
+    # a 503 (no free slot within the server's pending timeout: another client shares :18080) killed the
+    # whole run at b1589 on 2026-10-14; wait and retry instead
+    for i in range(60):
+        try:
+            m = json.loads(urllib.request.urlopen(req, timeout=3600).read())["choices"][0]["message"]
+            return m.get("content") or ""
+        except (urllib.error.HTTPError, urllib.error.URLError, ConnectionError) as e:
+            if isinstance(e, urllib.error.HTTPError) and e.code not in (429, 500, 502, 503, 504):
+                raise
+            print(f"retry {i + 1} after {e}", flush=True)
+            time.sleep(30)
+    raise RuntimeError("server unavailable for 30 min")
 
 
 def run(listfile, workers, url):
@@ -99,9 +116,9 @@ def run(listfile, workers, url):
 def reviewed():
     """b's Claude has decided: an @-block in big/lint/fixes/*.txt or a line in big/lint/ok.txt (no change)."""
     done = set()
-    for p in (bv.BIG / "lint" / "fixes").glob("*.txt"):
+    for p in (WORK / "fixes").glob("*.txt"):
         done |= {int(m) for m in re.findall(r"^@(\d+)", p.read_text(), re.M)}
-    ok = bv.BIG / "lint" / "ok.txt"
+    ok = WORK / "ok.txt"
     if ok.exists():
         done |= {int(m) for m in re.findall(r"\d+", ok.read_text())}
     return done

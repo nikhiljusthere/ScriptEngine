@@ -568,3 +568,16 @@ are for the peer to measure and adopt or reject.
   can collapse two quotes of one triple into one row (b2421, recon C252 logged as an exception).
 - FIXED 2026-10-14 (lint_fix M2): the A89 event-twin drop ignored modality, so it removed an `attempted` attack next
   to the fight (b3695, restored twice); M2 now requires an actual fact, as lint_v2's check already did.
+
+**2026-10-14 GOLD v2 MECHANICAL LINT (measured).** `BV2_SET=gold lint_fix.sh` on the 3,822 35B-labelled gold
+windows (lint-only, no reading): 620 windows changed (M1 100, M2 62, M3 124, M4 282, M5 39, M6 122), 0 gate
+refusals. Gold mode rewrites `gold_v2/gold_labels_v2.jsonl` (backup `.bak-20261014-101521`), never the gold audit:
+a gold audit record means Claude reviewed the window (compose requires one per window). Remaining gold lint after
+it: met+fight pair 184 rows/129 windows, A145 same act 221/174, became 83/74, also_known_as 64/57,
+name_short_and_full 275/238, copula 72/67 - all read in the gold review.
+**2026-10-14 RULE CHECK (27B lint answers, L026-L039).** The 27B's recurring wrong edits, now listed in
+`lint27_system.md`/`gold27_system.md` "Corrections": dropping a met when a stated talk precedes the fight (b981,
+b1022, b1313, b1369, b1408, b1424, b1438); dropping a separately stated fought (b1022, b1175); renaming to a
+page-title name absent from the window (b1256 Cassie, b1582 Peter Parker, b9662 Steven Rogers); merging different
+groups (X-Men/original X-Men b971, Avengers/Avengers Unity Division b1423); `escaped -` (b1451); calling legal tags
+(apposition, attire) illegal (b1082, b1420, b1423); `attacker|wounded|victim` (b1383).

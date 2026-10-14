@@ -131,6 +131,8 @@ def main():
     show = a[a.index("--show") + 1] if "--show" in a else None
     ids = bv.order()
     a2 = bv.audit2()
+    if bv.GOLD:  # gold v2 (2026-10-14): lint the 35B labels of windows not yet reviewed, the audit record otherwise
+        a2 = {**{r["id"]: r for r in bv.jl(bv.V2)}, **a2}
     pas = br.passages()
     total, hits = Counter(), defaultdict(list)
     missing = [b for b, i in enumerate(ids, 1) if i not in a2]

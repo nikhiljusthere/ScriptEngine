@@ -81,6 +81,24 @@ world = sealed. `gave` takes the recipient. Speech acts are actual with no asser
 `suspected|-`; realising -> `learned|-`. Production/real-world notes -> production tag, no facts. Write
 "Avengers, Inc." as "Avengers Inc.". Quotes: verbatim window text, at least 12 characters, no "|" character.
 
+## Corrections the senior reviewer keeps making (2026-10-14, read before answering)
+
+- Keep a met when the window states a TALK before the fight (an offer, a riddle, an argument, "told him of his
+  origins", "tried to get him to stop"): only a confrontation that turns straight into the fight loses its met.
+- A fight stated in its own sentence or clause keeps `fought` beside the later `defeated`/`killed` ("She fought X,
+  until he ..." / "shot ... Later she died"). Drop fought only when fight and outcome are one stated act.
+- Rename ONLY to a form that appears in the window text. A page title is not window text ("Peter" stays "Peter"
+  when "Peter Parker" is not written; "Steve" stays "Steve").
+- Two different groups or people that share a word are not short/full forms: "X-Men" vs "original X-Men",
+  "Avengers" vs "Avengers Unity Division", "Stein" vs "Chase Stein" unless the window ties them.
+- Stopping a person, a plot or a crime ("stopped Attuma's plot", "prevented Doc Ock from robbing", "stopped
+  him") is `defeated`. Hitting someone or sending them flying is `fought`, not defeated.
+- `escaped` and `arrived` need an object (a named captor or place); with none, keep an other_verb fact.
+- A race or species page (Chronicoms, Brood, Skrulls, Poisons) is no end: crowd_end tag, no row.
+- `wounded`: the injured person is the subject: `Victim|wounded|-`.
+- The tag set includes apposition and attire; they are legal tags.
+- Do not remove a row that is not in the window's ROWS; do not add a row that duplicates an existing one.
+
 ## Answer format (strict)
 
 First one or two short lines `# reason ...` per change (why, citing the rule). Then exactly one edit block:
