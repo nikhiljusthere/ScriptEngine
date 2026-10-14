@@ -1,0 +1,91 @@
+@1301 lint: confronting Ultron becomes the fight; Tommy is the real name (A4), Speed his codename; analyzed is no discovered; Teddy invited too
+keep
+- Billy|met|Ultron
+- Tommy|met|Ultron
+f+ Speed|alias_of|Tommy|Billy and Speed ended in the set of the "Grocery Gauntlet" reality TV show
+f- Ultron|discovered|Billy
+f+ Ultron|other_verb|analyzed|Ultron analyzed the former and his relationship with Teddy
+f+ Teddy|other_verb|invited|They invited almost all of their family members
+
+@1303 lint: the meeting precedes the discovery and the attempt (met kept); clause object
+keep
+f- Stalyenko|discovered|Natasha
+f+ Stalyenko|discovered|-|Stalyenko figured out that it was not really her
+
+@1307 lint: A145 same sentence punched+knocked down
+keep
+- B-15|fought|Laufeydottir
+
+@1313 lint: Koenig's attempt to talk Malick out of it is a stated talk before the shot (met kept); the ordered act
+keep
+f+ Enoch|other_verb|return|Phil Coulson then told Enoch to return to Zephyr One|ordered|stated|Phil Coulson
+
+@1318 lint: confronting = the defeat (same sentence); a heist transport is no sealing; noticing powers is no met; clause object; both left the sword; Black Cat alias
+keep
+- Mary Jane|met|Belasco
+- Felicia|met|Belasco
+- Belasco|sealed|Felicia
+- Belasco|sealed|Mary Jane
+- Felicia|met|Mary Jane
+f- Felicia|discovered|Mary Jane
+f+ Felicia|discovered|-|Black Cat discovered Mary Jane's secret Slot Device superpowers
+f+ Felicia|gave|S'ym|left the Soulsword with S'ym as thanks for his help
+f+ Black Cat|alias_of|Felicia|Black Cat discovered Mary Jane's secret Slot Device superpowers
+
+@1330 lint: "May Parker" is not in the window (May); the request is the ordered fact (no met); apparent death; Spider-Man alias
+keep
+- Parker|met|Doctor Strange
+- Green Goblin|killed|May Parker
++ Green Goblin|killed|May|who murdered Parker's aunt May in cold blood
+f+ Mysterio|dies|-|Mysterio's apparent murder at Spider-Man's hands|actual|apparent|-
+f+ Spider-Man|alias_of|Parker|Mysterio's apparent murder at Spider-Man's hands
+f+ Doctor Strange|other_verb|cast|he attempted to have Doctor Strange cast a memory-wiping spell|ordered|stated|Parker
+t- no_relation|Mysterio's apparent murder
+
+@1332 lint: became suspicious -> suspected; clause object; turned twins the met; Scott Summers is the window's name
+keep
+r Cyclops=>Scott Summers
+f+ Cyclops|alias_of|Scott Summers|the young Jean Grey and Scott Summers went on a run
+f- Jean Grey|other_verb|became
+f+ Jean Grey|suspected|-|Jean Grey immediately became suspicious
+f- Jean Grey|learned|Beast
+f+ Jean Grey|learned|-|accidentally learning from his future self about his hidden love for her
+f- Jean Grey|other_verb|turned
+f+ Scott Summers|other_verb|went|the young Jean Grey and Scott Summers went on a run
+
+@1344 lint: S.H.I.E.L.D. badge is a thing; an organisation is no place (left_group); clause object
+keep
+- Mackenzie|departed|S.H.I.E.L.D.
+f+ Mackenzie|left_group|S.H.I.E.L.D.|informed him that he was leaving S.H.I.E.L.D.
+f- Mackenzie|learned|Phil Coulson
+f+ Mackenzie|learned|-|after learning of his experiences with being brought back from the dead
+
+@1345 lint: actual rows carry no asserter
+keep
+f- Darcy|other_verb|interrupt
+f+ Darcy|other_verb|interrupt|Darcy and Howard interrupt
+f- Howard|other_verb|interrupt
+f+ Howard|other_verb|interrupt|Darcy and Howard interrupt
+f- Darcy|other_verb|confusing
+f+ Darcy|other_verb|confusing|confusing Kaecilius
+f- Howard|other_verb|confusing
+f+ Howard|other_verb|confusing|confusing Kaecilius
+
+@1351 lint: contacted symmetric (one row); the ordered acts
+keep
+f- Hill|contacted|Phil Coulson
+f+ Hill|other_verb|start|Coulson ordered Hill to start the Theta Protocol|ordered|stated|Phil Coulson
+f+ Hill|other_verb|send|send in the Avengers to capture the Scepter and arrest von Strucker|ordered|stated|Phil Coulson
+
+@1369 lint: Wolverine later talks with X-23 (separate stated talk, met kept); copula; Gambit's call
+keep
+f- X-23|other_verb|became
+t+ no_relation|X-23 became affected by it.
+f+ Gambit|contacted|Wolverine|Her friend and partner, Gambit, contacted Wolverine for support.
+
+@1374 lint: Strange meeting them is the blast; passage verb
+keep
+- Strange|met|Kahhori
+- Strange|met|Carter
+f- Carter|other_verb|control
+f+ Carter|other_verb|gained|Carter gained control over the Shadow Snakes
