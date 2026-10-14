@@ -1,0 +1,66 @@
+@6604 lint: fought ... until he disabled it = fight then outcome (keep); window forms Professor Xavier and Dr. Strange; recruiting his aid is no met; the track was carried out
+keep
+r Professor X=>Professor Xavier
+r Doctor Strange=>Dr. Strange
+f- Professor Xavier|other_verb|disabled
+f+ Professor X|alias_of|Professor Xavier|allowing Professor X to regain control of his own mind
+f+ Sub-Mariner|alias_of|Namor|In a fit of rage, Reed raced off alone to rescue her from Namor
+- Ben|met|Dr. Strange
+- Johnny|met|Dr. Strange
+f- Ben|other_verb|track
+f+ Ben|other_verb|track|The pair then recruited the aid of Dr. Strange to track their missing friends
+f- Johnny|other_verb|track
+f+ Johnny|other_verb|track|The pair then recruited the aid of Dr. Strange to track their missing friends
+
+@6610 lint: confronted by the Thing = the fight he won; Franklin defeated the aliens (Ruin and his forces)
+keep
+- Ben|met|Rapture
++ Franklin|defeated|Ruin|Franklin was able to regain his lost powers and managed to defeat the aliens
+
+@6618 lint: attack, but defeated him one sentence
+keep
+- Maxam|fought|Warlock
+
+@6619 lint: confronted and defeated
+keep
+- Adam|met|Ultron
+
+@6626 lint: no fight row; the encounter is guidance
+keep
+
+@6650 lint: confronted but killed one act
+keep
+- Dani|fought|Sinister
+- Sinister|met|Logan
+
+@6661 lint: attacked, though defeated one sentence
+keep
+- Logan|fought|Steve
+
+@6673 lint: went after and defeated one sentence
+keep
+- Logan|fought|Bullseye
+
+@6692 lint: Moira vs Moira Engine distinct
+keep
+
+@6693 lint: battled and apparently killed one sentence; next move to trick = planned tricked; wound victim subject
+keep
+- Mister Sinister|fought|Ogun
+f- Mister Sinister|other_verb|trick
+f+ Mister Sinister|tricked|Wolverines|Sinister's next move was to trick the Wolverines into trying to rescue the Weapon X Project subjects|planned|stated|Mister Sinister
+f- Mister Sinister|wounded|Daken
+f+ Daken|wounded|-|tearing Daken's left arm and eye out
+
+@6716 lint: actual row has no asserter; Ms. Marvel alias
+keep
+f- Empath|recruited|Sophie
+f+ Empath|recruited|Sophie|Empath chose her out of her sisters to befriend Kamala
+f+ Ms. Marvel|alias_of|Kamala|Ms. Marvel made an impassioned speech, revealing her mutant status
+
+@6717 lint: Avengers vs Unity Division distinct; the investigation happened; remembering a clause
+keep
+f- Kamala|other_verb|investigate
+f+ Kamala|other_verb|investigate|in order to investigate the disappearance of Nova's father
+f- Kamala|other_verb|remembering
+f+ Kamala|remembered|-|Remembering Rogue had been responsible for assaulting Danvers years in the past
