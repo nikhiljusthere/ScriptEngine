@@ -1,0 +1,52 @@
+@8652 lint: sister Elizabeth and mother Elizabeth Braddock are two people; Betsy nickname ("Jamie" is the window's own form for the brother)
+keep
+f+ Betsy|alias_of|Elizabeth|Elizabeth "Betsy"
+
+@8802 lint: met kept (she confronts Candra and is threatened); tries to attack, easily overwhelmed one clause; Bella goes (actual)
+keep
+- Gambit|fought|Candra
+f- Bella|other_verb|goes
+f+ Bella|other_verb|goes|Well Bella goes to deal with Rogue,
+
+@8804 lint: attacked, but thrown off one sentence
+keep
+- Candra|fought|Rhiannon
+
+@8862 lint: two separate contacts, one each way
+keep
+
+@8927 lint: Steve = Dr. Steve; ordered rescue act; Black Cat alias; the wild magic is an item doer
+keep
+r Steve=>Dr. Steve
+f+ Felicia|other_verb|rescue|he told Black Cat to rescue Doctor Strange|ordered|stated|Captain America
+f+ Black Cat|alias_of|Felicia|he told Black Cat to rescue Doctor Strange
+f- wild magic|other_verb|tempt
+t+ no_doer|The wild magic from Yggdrasil attempted to tempt Felicia
+
+@8928 lint: met kept (a later meeting, after the throat-slitting)
+keep
+
+@8966 lint: became enraged copula
+keep
+f- Walker|other_verb|became
+t+ no_relation|became enraged when he saw the conditions of the camp they were held in.
+
+@8978 lint: DODC vs the detention center distinct
+keep
+
+@8982 lint: Stark vs the arc reactor; Doc Ock alias
+keep
+f+ Doc Ock|alias_of|Otto Octavius|successfully reverted Doc Ock to Doctor Otto Octavius
+
+@8983 lint: DODC vs the DODC building; wound victim subject
+keep
+f- Castle|wounded|Peter
+f+ Peter|wounded|-|leaving him gravely injured
+
+@8990 lint: met kept (she found him at home and threatened MJ before the fight)
+keep
+
+@9031 lint: self-pair; a distraction is no stated trick
+keep
+f- Stark|alias_of|Stark
+f- Ho Yinsen|tricked|Wong-Chu
