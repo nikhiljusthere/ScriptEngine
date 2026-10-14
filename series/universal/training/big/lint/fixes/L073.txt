@@ -1,0 +1,82 @@
+@3931 lint: finding Vox turns into the throat-slitting (no met); a common noun object
+keep
+- Black Bolt|met|Vox
+f- Vox|wielded|Dagger
+f+ Vox|wielded|dagger|slitting his throat with a dagger
+
+@3948 lint: meeting Annihilus face to face is the ensuing battle; Rider is the window's name (rename + alias)
+keep
+r Nova=>Rider
+- Rider|met|Annihilus
+- Quasar|met|Annihilus
+f+ Nova|alias_of|Rider|Nova and Quasar punched through the Annihilation Wave to meet Annihilus face to face
+
+@3958 lint: copula became
+keep
+f- Gambit|other_verb|became
+
+@3962 lint: thrown and overpowered in one sentence; the Guardians saved are the named ones knocked out (A2); the turn happened
+keep
+- Thanos|fought|Mantis
+- Thanos|fought|Strange
+- Spider-Man|saved|Guardians
++ Spider-Man|saved|Star-Lord|Spider-Man successfully saved the unconscious Guardians
++ Spider-Man|saved|Drax|Spider-Man successfully saved the unconscious Guardians
++ Spider-Man|saved|Nebula|Spider-Man successfully saved the unconscious Guardians
+f- Thanos|other_verb|turned
+f+ Thanos|other_verb|turned|Thanos then turned to Titan's nearby moon
+
+@3972 lint: the tried verb; a company is no doer; copula adjective; realize = learned; the terrorists of a named group were defeated
+keep
+f- Tony Stark|other_verb|try
+f+ Tony Stark|other_verb|market|attempted to try and market his Iron Man armor|attempted|stated|Tony Stark
+f- Republic Oil and Gas Company|other_verb|attempting
+f- Republic Oil and Gas Company|other_verb|seeking
+t+ no_relation|the Republic Oil and Gas Company were secretly attempting a hostile takeover of Stark Industries
+f- Tony Stark|other_verb|distant
+t+ no_relation|Stark was very distant in his business dealings with Pepper
+f- Joanna|other_verb|realize
+f+ Joanna|learned|-|this made Joanna realize that Tony could never be the husband that she wanted
++ Tony Stark|defeated|American Freedom Front|he used it to incapacitate the terrorists and turn them over to the authorities
+
+@3978 lint: the first encounter is the subdual (no met); "almost accidentally reset" is no attempt; "the sword" -> sword
+keep
+- B-15|met|Loki
+f- B-15|other_verb|reset
+f- B-15|took|the sword
+f+ B-15|took|sword|B-15 snatched the sword out of Ravonna Renslayer's office
+
+@3980 lint: approaching her turns into the subduing; the ordered stand-down
+keep
+- Fisk|met|Maya Lopez
+f+ Zane|other_verb|stand|ordered him and his men to stand down|ordered|stated|Fisk
+
+@3981 lint: the full name; the mantle as alias; aerial battle + knocked out in one sentence; the injured is Toomes; his prison escape
+keep
+r Drago=>Raniero "Blackie" Drago
+- Toomes|fought|Raniero "Blackie" Drago
+f- Raniero "Blackie" Drago|became|new Vulture
+f+ Vulture|alias_of|Raniero "Blackie" Drago|Drago broke out of prison and became the new Vulture
+f- Raniero "Blackie" Drago|wounded|Toomes
+f+ Toomes|wounded|-|to seriously injure Toomes
+f+ Toomes|other_verb|escaped|Toomes recovered from his injuries and escaped from prison
+
+@3984 lint: the virus wipe is the defeat; Iron Man alias
+keep
+- Ares|fought|Ultron
+f+ Iron Man|alias_of|Stark|wipe Ultron's program from Iron Man's armor and freeing Stark
+
+@3987 lint: tracking him down turns into the ambush
+keep
+- Belova|met|Clint Barton
+
+@3991 lint: fought but beaten = one act; "his aunt" is unnamed (no end)
+keep
+- Green Goblin|fought|Spider-Man
+- Green Goblin|killed|Spider-Man's aunt
+t+ crowd_end|Delighted to have sent Spider-Man over the edge by killing his aunt
+
+@3998 lint: also_known_as retired; helping him track the gang down is a meeting (kept)
+keep
+f- Logan|also_known_as|Man From Up North
+f+ Man From Up North|alias_of|Logan|was known as the unkillable "Man From Up North"
