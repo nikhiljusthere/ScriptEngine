@@ -1,0 +1,72 @@
+@2455 lint: the first sentence states the fight separately (Carter and Kahhori blasting the tentacles) - fought kept on that quote; Kahhori fought too
+keep
+- Carter|fought|Champion
++ Carter|fought|Champion|Captain Carter and Kahhori worked their way up toward its head, blasting several tentacles
++ Kahhori|fought|Champion|Captain Carter and Kahhori worked their way up toward its head, blasting several tentacles
+
+@2461 lint: the confrontation becomes the fight (mets dropped); shot down = one act; the Runaways' members are tied to the rescue (A2)
+keep
+- Geoffrey|met|Karolina Dean
+- Geoffrey|met|Chase Stein
+- Geoffrey|met|Nico Minoru
+- Chase Stein|fought|Geoffrey
+- Runaways|saved|Alex
++ Karolina Dean|saved|Alex|enabling the Runaways to take Alex
++ Chase Stein|saved|Alex|enabling the Runaways to take Alex
++ Nico Minoru|saved|Alex|enabling the Runaways to take Alex
+
+@2462 lint partner of b2605: the offered role is no act
+keep
+f- Forge|other_verb|become
+
+@2605 lint: restoring the X-Men's mansion is help, not a twin of their rescue (kept)
+keep
+
+@2484 lint: claiming to be Mobius is a disguise, not an alias; remembered takes no object here; Doug's explanation is a narrated act
+keep
+f- Loki|also_known_as|Mobius
+f+ Loki|disguise_as|Mobius|Loki told Don that his name was Mobius
+f- Loki|remembered|Mobius M. Mobius
+f+ Loki|remembered|-|Loki remembered Mobius M. Mobius' admiration of the watercraft
+t- dialogue|Doug explained
+f+ A.D. Doug|other_verb|explained|Doug explained that for him it had been nineteen months since Loki left
+
+@2492 lint: meeting the Ronin precedes the later defeat (met kept)
+keep
+
+@2495 lint: Avengers and Cosmic Avengers are two groups (flag false)
+keep
+
+@2500 lint: the Avengers find a frozen body (A135, no met); battled + calmed down in one sentence; Namor is the window's real name; the lost battle and flight
+keep
+- Avengers|met|Captain America
+- Captain America|fought|Avengers
+r Sub-Mariner=>Namor
+f+ Sub-Mariner|alias_of|Namor|While Namor was distracted
++ Iron Man|defeated|Namor|With the battle lost the Sub-Mariner fled into the ocean.
++ Namor|escaped|Iron Man|With the battle lost the Sub-Mariner fled into the ocean.
+f- Namor|other_verb|fled
+
+@2504 lint: cellmates (met kept); the arrival is followed by a stated talk (Spider-Man explains, Venom agrees) - mets kept; Venom attacked both; purpose clause; realized = learned; the Carnage defeat
+keep
++ Eddie|fought|Spider-Man|Venom attacked them
+f- Eddie|other_verb|resume
+f- Eddie|other_verb|realized
+f+ Eddie|learned|-|who Venom realized were behind this plan all along
++ Eddie|defeated|Cletus Kasady|they managed to exploit the symbiotes' weakness to loud sounds using the Madison Square Garden's sound system
++ Spider-Man|defeated|Cletus Kasady|they managed to exploit the symbiotes' weakness to loud sounds using the Madison Square Garden's sound system
+
+@2505 lint: Johnson tried to calm her before the throw (met kept); fleeing from him is escaped (kept)
+keep
+
+@2507 lint: Moon Girl's met is the poisoning; the revival serves Sinister's plan (A33, no saved); the Warriors' confrontation is a talk (kept)
+keep
+- Moon Girl|met|Mister Sinister
+- Mister Sinister|saved|Dark Beast
+
+@2513 lint: encountering Ultron precedes the later fight (met kept); control is no fight (A116); clause object; Norrin is the Silver Surfer
+keep
+- Ultron|fought|Norrin
+f- Warlock|other_verb|discovered
+f+ Warlock|discovered|-|Warlock discovered that Soul World was being progressively corrupted
+f+ Silver Surfer|alias_of|Norrin|had also gotten his hands on the Silver Surfer. Warlock was able to free Norrin
