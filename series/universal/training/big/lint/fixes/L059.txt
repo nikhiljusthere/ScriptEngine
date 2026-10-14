@@ -1,0 +1,127 @@
+@2960 lint: the confrontation turns into the throw (no met); one act (defeated)
+keep
+- Thor|met|Hela
+- Thor|fought|Hela
+
+@2995 lint: tortured and executed = killed; an ongoing conversation is no meeting; believed = suspected; narrated speech acts are facts, not tags
+keep
+- US military|fought|Ahmad Zubair
+- Madani|met|Stein
+f- Madani|other_verb|believed
+f+ Madani|suspected|-|she believed that Zubair had been killed by the US military
+t- dialogue|Stein then questioned
+f+ Stein|other_verb|questioned|Stein then questioned why she believed that Zubair had been killed by the US military
+t- dialogue|which horrified Stein
+f+ Stein|other_verb|asked|which horrified Stein who asked why she had not shown Carson Wolf that video file
+t- deictic|Madani then noted
+f+ Madani|other_verb|noted|Madani then noted that she knew the easiest thing for her would be to forget about Ahmad Zubair
+
+@3004 lint: helped/assisted are no twins (A89 false); being in the Red Skull's hands is a capture (kept); learned is a relation; "In X, they did Y" is no arrival (A151); Cap stopped the Red Skull's attempt
+keep
+f- Bucky|other_verb|learned
+f+ Bucky|learned|-|Bucky and Captain America learned that supposed Chinese traitor Mother Wong
+f- Captain America|other_verb|learned
+f+ Captain America|learned|-|Bucky and Captain America learned that supposed Chinese traitor Mother Wong
+- Bucky|arrived|New York City
+- Captain America|arrived|New York City
+- Bucky|arrived|India
+- Captain America|arrived|India
+- Bucky|arrived|Florida
+- Captain America|arrived|Florida
+- Bucky|arrived|Mexico
+- Captain America|arrived|Mexico
+- Bucky|arrived|Washington D.C.
+- Captain America|arrived|Washington D.C.
+- Bucky|arrived|Australia
+- Captain America|arrived|Australia
+f+ Bucky|located_at|New York City|In New York City, Bucky helped Captain America expose a Japanese spy
+f+ Captain America|located_at|New York City|In New York City, Bucky helped Captain America expose a Japanese spy
+f+ Bucky|located_at|India|in India the pair put a stop to a Japanese spy
+f+ Captain America|located_at|India|in India the pair put a stop to a Japanese spy
+f+ Bucky|located_at|Mexico|Bucky and Cap clashed with the Man in the Steel Mask in Mexico
+f+ Captain America|located_at|Mexico|Bucky and Cap clashed with the Man in the Steel Mask in Mexico
+f+ Bucky|located_at|Australia|Bucky and Cap next stopped Dr. Necrosis' tainted blood scheme in Australia
+f+ Captain America|located_at|Australia|Bucky and Cap next stopped Dr. Necrosis' tainted blood scheme in Australia
++ Captain America|defeated|Red Skull|assisting Cap in stopping the Red Skull's attempt to convert America into a fascist state
+
+@3044 lint: disarmed and killed = one act
+keep
+- Underwood|fought|Corcoran
+
+@3046 lint: found at the Art Institute well before the lash-out (met kept); "faced off with" is a fight, with Psylocke and Storm of X-Force and Stryfe
+keep
+- Colossus|met|Psylocke
+- Colossus|met|Stryfe
++ Colossus|fought|Psylocke|faced off with Psylocke and Storm's X-Force team and Stryfe.
++ Colossus|fought|Storm|faced off with Psylocke and Storm's X-Force team and Stryfe.
++ Colossus|fought|Stryfe|faced off with Psylocke and Storm's X-Force team and Stryfe.
+
+@3048 lint: John threatens to shoot him before the contest (a stated exchange, met kept); winning the contest of wills = defeated; occupation; forgot; the gather plan
+keep
+- Madrox|fought|John Maddox
++ Madrox|defeated|John Maddox|Jamie won a resulting contest of wills, and John finally submitted to absorption
+f- John Maddox|other_verb|become
+f- Madrox|other_verb|gather
+f+ Madrox|other_verb|gather|Madrox decided to go on a quest to gather his lost dupes|planned|stated|Madrox
+f+ Madrox|forgot|-|whose existence he had forgotten about
+
+@3052 lint: the shot is the killing; the possible change has no asserter (tag); Hulk link; the ordered act
+keep
+- Clint Barton|fought|Bruce Banner
+f- Bruce Banner|other_verb|become
+t+ no_relation|so there was a chance that he could become the Hulk again
+f+ Hulk|alias_of|Bruce Banner|so there was a chance that he could become the Hulk again
+f+ Clint Barton|other_verb|kill|on orders from Banner to kill him if he ever became the Hulk again|ordered|stated|Bruce Banner
+
+@3056 lint: finding Loki is the start of the fight (no mets); teleporting away from the four is escaped (kept); the window says Steve (rename + alias); the Destroyer is a named end
+keep
+- Thor|met|Loki
+- Human Torch|met|Loki
+- Captain America|met|Loki
+- Wolverine|met|Loki
+r Captain America=>Steve
+f+ Captain America|alias_of|Steve|Human Torch, Captain America and Wolverine rendezvoused with Thor.
++ Thor|defeated|Destroyer|After the four were able to pull the Destroyer apart
++ Human Torch|defeated|Destroyer|After the four were able to pull the Destroyer apart
++ Steve|defeated|Destroyer|After the four were able to pull the Destroyer apart
++ Wolverine|defeated|Destroyer|After the four were able to pull the Destroyer apart
+t- crowd_end|After the four were able to pull the Destroyer apart
+
+@3072 lint: the tried verb; clause objects; discovered is a relation
+keep
+f- Piper|other_verb|try
+f+ Piper|other_verb|contact|Piper then went to try and contact the others to check on them.|attempted|stated|Piper
+f- Piper|discovered|Leo Fitz
+f+ Piper|discovered|-|Piper discovered that Leo Fitz was on Kitson.
+f- Piper|other_verb|discovered
+f+ Piper|discovered|-|Piper discovered him to be acting weird
+
+@3080 lint: the tried verb; being stuck in Klee's body is no fight; preventing Templar's catastrophe = defeated
+keep
+- Apollo|fought|Marvin Klee
+f- Apollo|other_verb|try
+f+ Apollo|other_verb|win|to try and win the heart of Venus|attempted|stated|Apollo
+f- Venus|other_verb|prevented
++ Venus|defeated|Michael Templar|Venus once more prevented this catastrophic event
+
+@3088 lint: finding Torment turns into the fight (no mets); Venom is MJ bonded (alias, the symbiote stays itself); Eddie awoke; MJ accused and called (Venom rows were twins); restricting them = defeated; Torment got away from both; knowledge rows
+keep
+- Venom|met|Torment
+- Spider-Man|met|Torment
+- Carnage|fought|Venom
+- Carnage|fought|Spider-Man
++ Carnage|defeated|Venom|restricted both Venom and Spider-Man to allow Torment to get away
++ Carnage|defeated|Spider-Man|restricted both Venom and Spider-Man to allow Torment to get away
++ Torment|escaped|Spider-Man|allow Torment to get away.
+- Venom|awakened|-
++ Eddie|awakened|-|Eddie awoke just in time
+f- Venom|other_verb|accusing
+f- Venom|contacted|Flash
+f- Spider-Man|other_verb|discovered
+f+ Spider-Man|discovered|-|he discovered that he was now at MJ's apartment to kill Dylan
+f- Venom symbiote|other_verb|believing
+f+ Venom symbiote|suspected|-|with the Venom symbiote believing that Eddie had been bonded to the Carnage symbiote against his will
+
+@4066 lint: U.S.Agent uniform is a thing; Hawkeye is tied to the defeat (A2, no group row)
+keep
+- Thunderbolts|defeated|Jury
