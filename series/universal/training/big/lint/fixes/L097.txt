@@ -1,0 +1,66 @@
+@6199 lint: met kept (brushed aside, no fight with her); finding him there is no arrival; wound victim subject
+keep
+- Thanos|arrived|Mount Hood National Forest
+f+ Worldmind|located_at|Mount Hood National Forest|Thanos found him in the Mount Hood National Forest
+f- Thanos|wounded|Worldmind
+f+ Worldmind|wounded|-|ultimately punched the Mind Stone wielder through the chest
+
+@6207 lint: holds his own ... until = fight then outcome (keep); disabled = defeated; subdues and abducted = captured; suspected
+keep
+- Iron Man|fought|Jocasta
++ Iron Man|defeated|Jocasta|he disabled Jocasta
+- Iron Man|defeated|Scarlet Witch
+f- Iron Man|learned|-
+f+ Iron Man|suspected|-|Iron Man, however, correctly suspected that he himself, under a post-hypnotic command, is responsible
+
+@6212 lint: dented, blasted and knocked down one sentence ("Dooms'" is a typo, no rename)
+keep
+- Hulk|fought|Ultron
+
+@6219 lint: Thor has no fuller form; Ultron is the one to be buried, planned by Iron Man and Thor
+keep
+f- Iron Man|other_verb|buried
+f- Thor|other_verb|buried
+f+ Ultron|other_verb|buried|Iron Man and Thor settled on having Ultron sent to the Microverse, buried in a grain of sand in an endless desert|planned|stated|Iron Man
+
+@6226 lint: Ultron Virus is a thing
+keep
+
+@6227 lint: try has no deeper verb; a place cannot succumb as a doer
+keep
+f- Ultron|other_verb|try
+f- Earth|other_verb|succumbed
+
+@6228 lint: attacked and ripped out, collapsed one sentence; the blast (item) is the doer
+keep
+- Machine Man|fought|Ultron
+- Thing|fought|Ultron
+f- Jocasta|other_verb|released
+t+ no_doer|The blast released Thing from Ultron's control
+
+@6258 lint: renamed place is no alias
+keep
+f- United States|also_known_as|United Simians of America
+t+ no_relation|the United States goes by the name the United Simians of America
+
+@6264 lint: Eternity vs Eternity Watch distinct; A2 named members confront Logos
+keep
+- Eternity Watch|met|Logos
++ Ego-Prime|met|Logos|The Eternity Watch subsequently confronted Logos
++ Psi-Hawk|met|Logos|The Eternity Watch subsequently confronted Logos
++ Infinaut|met|Logos|The Eternity Watch subsequently confronted Logos
++ Shaper of Worlds|met|Logos|The Eternity Watch subsequently confronted Logos
+
+@6280 lint: helped is no twin of met (A89 pairs helped with saved); Eternity's confirming
+keep
+f+ Eternity|other_verb|confirming|confirming to all present the importance and necessity of Galactus in the universe as the balance between Eternity himself and Death
+t- no_relation|confirming to all present the importance
+
+@6306 lint: battled for 99 years, emerging victorious one sentence; discovering a clause
+keep
+- Thor|fought|Doom
+f- Mjolnir|other_verb|discovering
+f+ Mjolnir|discovered|-|Thor send Mjolnir to scout the universe, discovering it was dying.
+
+@6309 lint: Thor vs Thor Corp distinct
+keep
