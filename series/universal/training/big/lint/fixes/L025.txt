@@ -1,0 +1,11 @@
+@726 lint: Agent Venom and Venom, Spider-Man and Poison Spider-Man are distinct; one name (Doctor Strange); the Poisons are a race, no ends (crowd_end); Carnage is Cletus; taking charge is leadership
+keep
+r Strange=>Doctor Strange
+f- Spider-Man|other_verb|consumed
+t+ no_doer|Spider-Man and Captain Venom consumed
+f- Poisons|other_verb|located
+t+ crowd_end|However, they were surprised by an attack by the Poisons, who had located them thanks to the new Poisoned Deadpool.
+t+ crowd_end|The Poisons took Doctor Strange and consumed Host Rider
+f+ Carnage|alias_of|Cletus|Venom persuaded Carnage to agree to a truce, but Cletus said
+f- Venom|other_verb|Taking
+f+ Venom|leader_of|Resistance|Taking charge of the team

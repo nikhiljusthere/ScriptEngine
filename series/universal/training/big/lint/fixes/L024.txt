@@ -1,0 +1,57 @@
+@718 lint: fought off and killed in one sentence (A145)
+keep
+- Banner|fought|Obsidian
+@719 lint: hiring is no meeting; the hire covers the order; an occupation and a form already covered by transformed_into are no becoming (the planned escape stays)
+keep
+- Johnny|met|Gunmetal Gray
+f- Johnny|ordered|Gunmetal Gray
+f- Johnny|became|accountant
+f- Johnny|became|Ghost Rider
+@726 lint: Agent Venom and Venom, Spider-Man and Poison Spider-Man are distinct; one name (Doctor Strange); the Poisons' capture, attack and consuming; the consuming of Spider-Man names no doer; Carnage is Cletus; taking charge is leadership
+keep
+r Strange=>Doctor Strange
+f- Spider-Man|other_verb|consumed
+t+ no_doer|Spider-Man and Captain Venom consumed
++ Poisons|captured|Doctor Strange|The Poisons took Doctor Strange
++ Poisons|fought|Venom|they were surprised by an attack by the Poisons
++ Poisons|fought|Cletus|they were surprised by an attack by the Poisons
+f+ Poisons|other_verb|consumed|The Poisons took Doctor Strange and consumed Host Rider
+f+ Carnage|alias_of|Cletus|Venom persuaded Carnage to agree to a truce, but Cletus said
+f- Venom|other_verb|Taking
+f+ Venom|leader_of|Resistance|Taking charge of the team
+@734 lint: one name (Jessica Jones); waking from sleep is no awakening (A106)
+keep
+r Jones=>Jessica Jones
+- Walker|awakened|-
+f+ Walker|other_verb|awoke|Walker awoke to a noise outside her door
+@739 lint: the codename is the alias; a belief is suspected -; the ties are inside Tayler's belief
+keep
+f- Tayler|also_known_as|Night Thrasher
+f+ Night Thrasher|alias_of|Tayler|Tayler, the Night Thrasher, had begun investigating criminal activities within the Taylor Foundation
+f- Tayler|suspected|Gideon
+f+ Tayler|suspected|-|believing that if Gideon was the primary backer
+f- Gideon|allied_with|Taylor Foundation
+f+ Gideon|allied_with|Taylor Foundation|with him still having ties to the Taylor Foundation.|claimed|stated|Tayler
+@755 lint: the confrontation becomes the fight (A145); revealing a captive is revealed -; his announcement is his claim; the reclaiming was interrupted
+keep
+- Candra|met|Storm
+f- Candra|revealed|Karima
+f+ Candra|revealed|-|Candra not only revealed a captured Karima but her ward Jamil.
+f- Shadow King|used|Candra
+f+ Shadow King|used|Candra|While the Shadow King announces he had been using Candra|claimed|stated|Shadow King
+f- Candra|took|Heartgem
+f+ Candra|took|Heartgem|goes to reclaim the Heartgem|attempted|stated|Candra
+@5508 lint (Toro group): the Alexanders saw him (as b756); his immunity is an existing power, no gain (the derailment kills stay)
+keep
++ Tom Alexander|met|Thomas|were driving by and saw Thomas rushing into the flames unharmed
++ Ellie Alexander|met|Thomas|were driving by and saw Thomas rushing into the flames unharmed
+t- no_relation|A married team of circus fire-eaters
+f- Thomas|gained_power|immunity to flame
+@7884 lint (Toro group): the helping is no twin; his immunity is an existing power; the sentence has rows, no tag
+keep
+f- Toro|gained_power|immunity to flame
+t- deictic|Weeks later, news reports began
+@7891 lint (Toro group): as b7884
+keep
+f- Toro|gained_power|immunity to flame
+t- deictic|Weeks later, news reports began
