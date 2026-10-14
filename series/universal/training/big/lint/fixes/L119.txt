@@ -1,0 +1,70 @@
+@8147 lint: a battle that seemingly destroyed him one clause; helped strike the fatal blows one act
+keep
+- Zarathos|fought|Ghost Rider
+- Morbius|fought|Metarchus
+
+@8153 lint: fought the two and was brutally beaten one sentence; the Summer House is the named place; his discovery
+keep
+- Melter|fought|Morbius
+- Elizabeth Nikos|fought|Morbius
+- Morbius|arrived|Long Island
++ Morbius|arrived|Curtis Connors' Summer House|The two then went to Curtis Connors' Summer House in Long Island
+- Spider-Man|arrived|Long Island
++ Spider-Man|arrived|Curtis Connors' Summer House|The two then went to Curtis Connors' Summer House in Long Island
+t- no_relation|With his affliction made stronger
+f+ Morbius|discovered|-|looking into his microscope how his cells have mutated and started to consume him
+
+@8164 lint: real Morbius vs zombie Morbius are two people; snuck behind and staked him one act
+keep
+- Morbius|fought|zombie Morbius
+
+@8168 lint: Limbo vs Limbo Embassy distinct (the reunion repeats the existing Lorna/Alex met pair)
+keep
+
+@8170 lint: ok (partner of b8180)
+keep
+
+@8180 lint: a "shoot-first" fighter is a description; revealed takes a clause object; Magneto helmet is a thing
+keep
+f- Lorna|became|fighter
+f- Lorna|revealed|Magneto
+f+ Lorna|revealed|-|revealed to them the truth about her relationship to Magneto
+t+ no_relation|her attitude drastically changed from a sweet loving woman into a more "shoot-first, ask questions later" fighter
+
+@8173 lint: the young X-Men and the X-Men Nate erased are different teams; mentoring; Polaris alias
+keep
+f- Magneto|trained|young X-Men
+f+ Magneto|mentored|young X-Men|When Magneto began mentoring the time-displaced young X-Men
+f+ Polaris|alias_of|Lorna|Polaris was one of the mutants that confronted Nate Grey
+
+@8183 lint: Guard duplicates Imperial Guard rows; held their own then overcome one sentence (Marvel Girl is not tied to Polaris here)
+keep
+- Guard|defeated|Polaris
+- Guard|defeated|Raza
+- Guard|defeated|Ch'od
+- Polaris|fought|Imperial Guard
+- Raza|fought|Imperial Guard
+- Ch'od|fought|Imperial Guard
+
+@8186 lint: adopted the name Polaris -> alias_of; the power is named; decided = planned
+keep
+f- Lorna Dane|also_known_as|Polaris
+f+ Polaris|alias_of|Lorna Dane|she adopted the name Polaris.
+f- Lorna Dane|gained_power|-
+f+ Lorna Dane|gained_power|magnetism|Inheriting her father's mutant abilities of magnetism
+f- Lorna Dane|other_verb|abandon
+f+ Lorna Dane|other_verb|abandon|she soon decided to abandon the eccentric life of a mutant super hero|planned|stated|Lorna Dane
+
+@8208 lint: destroying her ship is the destroyed fact, not a fight; Mummudrai names a kind of being, no alias
+keep
+- Cassandra Nova|fought|Lilandra
+f- Cassandra Nova|also_known_as|Mummudrai
+
+@8238 lint: self-pair was the Lady Danu title
+keep
+f- Danu|alias_of|Danu
+f+ Lady Danu|alias_of|Danu|titles such as Mother Danu and Lady Danu attributed to her
+
+@8267 lint: Torch = Human Torch (the android)
+keep
+r Torch=>Human Torch
