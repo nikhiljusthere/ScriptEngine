@@ -1,0 +1,59 @@
+@8439 lint: attempting -> sting; she sought a solution (named doer)
+keep
+f- Speedball|other_verb|attempting
+f+ Speedball|other_verb|sting|attempting a sting operation against Haynes|attempted|stated|Speedball
+t- deictic|sought a permanent solution
+f+ Jessica Drew|other_verb|sought|sought a permanent solution to her fluctuating powers
+
+@8544 lint: ok (partner of b8549)
+keep
+
+@8549 lint: George Washington vs the city Washington distinct
+keep
+
+@8562 lint: met kept (Talbot's offer and Coulson's agreement before the fight); ordered kill act (partner b8570)
+keep
+f+ May|other_verb|kill|Coulson ordered her to kill him when the time came|ordered|stated|Coulson
+
+@8570 lint: as partner b8562 (posing as Talbot stays disguise_as)
+keep
+f+ May|other_verb|kill|Coulson ordered her to kill him when the time came|ordered|stated|Coulson
+
+@8578 lint: the window writes Whitehall only; intervened twin of defeated; the shot saved Cal (partner b8581)
+keep
+r Daniel Whitehall=>Whitehall
+f- Skye|other_verb|intervened
++ Coulson|saved|Cal|Coulson shot Whitehall from behind before he could shoot Cal
+
+@8581 lint: as partner b8578
+keep
+r Daniel Whitehall=>Whitehall
+f- Skye|other_verb|intervened
++ Coulson|saved|Cal|Coulson shot Whitehall from behind before he could shoot Cal
+
+@8582 lint: subdued him one statement
+keep
+- Sebastian Derik|fought|Coulson
+
+@8611 lint: Parker vs Parker clone distinct; Spider-Man alias; Parker realized
+keep
+f+ Spider-Man|alias_of|Parker|Spider-Man eventually learned that Professor Miles Warren had created her, along with a clone of Parker himself
+f+ Parker|learned|-|Parker realized, however, that the clone could not have his recent memories
+
+@8635 lint: forced to battle, killed during their fight one sentence
+keep
+- Brian|fought|Betsy
+
+@8752 lint: Cube = Cosmic Cube; real name Harvey; struggle and battle stated in their own sentences before the outcomes
+keep
+r Mole Man=>Harvey
+f- Cube|located_at|Subterranea
+f+ Cosmic Cube|located_at|Subterranea|ended up in Subterranea where it was found by the Mole Man
+f+ Mole Man|alias_of|Harvey|Not realizing it's power Harvey dismissed it as junk and tossed it away
++ Hulk|fought|Octo-Sapien|The Hulk smashed his way through the Mole Man's barriers and struggled with his Octo-Sapien robot
++ Avengers|fought|Sub-Mariner|the Avengers got into a battle with the Sub-Mariner
+
+@8795 lint: Victor = Victor Creed; Zero = Agent Zero (window form); "alongside" names teammates, not recruits
+keep
+r Victor=>Victor Creed
+r Zero=>Agent Zero

@@ -203,6 +203,8 @@ shared)` with bK's final rows: reuse them for the shared part and read only the 
 - symmetric met/fought pairs are deduped by the gate; a correction with both "A met B" and
   "B met A" is refused with `dropped []` and `kept n-1/n`.
 - "Rachel" and "Jude" are classed as places: refused as objects (R22).
+- "Whitehall" (the Hydra leader) is classed as a place: a window-form rename "Daniel Whitehall" -> "Whitehall" is refused as the object of fought, so the end keeps the page form "Daniel Whitehall" (b8578, b8581, lint pass 2026-10-14; gate quirk beats the window-form rule).
+- a group name containing " and " ("Defenders of Light and Dark") is split into two ends by the gate and refused as `kept n+1/n`; write the window's short form ("Defenders") (b7658).
 - "Zemo" is classed as an episode page: every Zemo row is refused (both ends).
 - "Donovan" is classed as a music page: refused as an end (b880).
 - a place name containing "and" ("El Monte Junk and Salvage") is split by the gate like a comma place (refused as `kept n+1/n`); keep the first named part and drop the fragment (b1080).
