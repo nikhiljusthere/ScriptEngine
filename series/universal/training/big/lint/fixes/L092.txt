@@ -1,0 +1,13 @@
+@5667 lint: resubmit without race-page ends (Predator X is a species page -> crowd_end)
+keep
+r Wolverine=>Logan
+- X-23|fought|Lady Deathstrike
+f+ Lady Deathstrike|dies|-|X-23 attacked Lady Deathstrike, seemingly killing her|actual|apparent|-
+f- Logan|other_verb|kill
+f+ Wolverine|alias_of|Logan|When Predator X swallowed Logan, X-23 became angry and attacked, but Wolverine managed to kill it
+f- Predator X|other_verb|swallowed
+t+ crowd_end|When Predator X swallowed Logan, X-23 became angry and attacked, but Wolverine managed to kill it from the inside and surprise everyone.
+
+@5701 lint: as partner b5682, ambushed, dying one act for Eddie
+keep
+- Absent Throne|fought|Eddie Brock

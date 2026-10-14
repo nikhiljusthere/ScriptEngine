@@ -1,0 +1,76 @@
+@5557 lint: confronted then attacked, the discovery is no talk; group end kept (no member tied); corrupted has no doer; hold is a noun
+keep
+- Jean Grey|met|Mastermind
+f- Jean Grey|other_verb|corrupted
+f- Mastermind|other_verb|hold
+t+ no_doer|Phoenix had been irrevocably corrupted
+
+@5562 lint: future self Xorn -> alias_of; the gained power is named
+keep
+f- Xorn|codename_of|Jean Grey
+f+ Xorn|alias_of|Jean Grey|Xorn (her future self)
+f- Jean Grey|gained_power|-
+f+ Jean Grey|gained_power|Psylocke's specialized telepathy|After her absorption of Psylocke's specialized telepathy
+
+@5566 lint: subdue one act; followed is no escape from a captor; below_floor is legal; ordered follow act
+keep
+- Phoenix|fought|Firelord
+- Erik the Red|escaped|Phoenix
+f+ Phoenix|other_verb|followed|being followed by Phoenix under Xavier's orders|ordered|stated|Professor Xavier
+
+@5568 lint: happened upon and attacked Sara, no met with her (Jean met kept: his claims to her); entities a crowd
+keep
+- Cable|met|Sara Grey
+t+ crowd_end|The abstract entities manifested themselves in sequence
+
+@5585 lint: faced the return = the conflict; guided a surgeon = assisted; reduced back is passive with no doer
+keep
+- Strange|met|Yandroth
+- Strange|saved|Topaz
+f+ Strange|assisted|Topaz|magically guided another surgeon to save Topaz from Dormammu's attack
+f- Yandroth|transformed_into|human form
+t+ no_doer|Yandroth was reduced back to his human form, defeated, and imprisoned.
+
+@5588 lint: met kept (Stephen's accusation before the kill); sheriff of Battleworld -> leader_of
+keep
+f- Doctor Strange|became|Battleworld's sheriff
+f+ Doctor Strange|leader_of|Battleworld|who became Battleworld's sheriff
+
+@5593 lint: find and attacked, killed one act; Sorcerer Supreme names no group; all three finders
+keep
+- Strange|met|Kaecilius
+- Kaecilius|fought|Strange
+f- Clea|became|Sorcerer Supreme
+f+ Wong|other_verb|found|Strange's body was later found by Zelma Stanton, Wong, and Doctor Voodoo
+f+ Doctor Voodoo|other_verb|found|Strange's body was later found by Zelma Stanton, Wong, and Doctor Voodoo
+
+@5646 lint: codename_of -> alias_of
+keep
+f- Iron Fist|codename_of|Danny Rand
+f+ Iron Fist|alias_of|Danny Rand|vigilante known as Iron Fist
+
+@5666 lint: real name Remy for Gambit; met after the fight kept
+keep
+r Gambit=>Remy
+f+ Gambit|alias_of|Remy|Gambit had to explode Laura in order to stop her completely. Laura woke up to see Gabby, young Warren, and Remy
+
+@5667 lint: attacked seemingly killing one act (+ apparent death); real name Logan; killed Predator X; X-23 attacked it
+keep
+r Wolverine=>Logan
+- X-23|fought|Lady Deathstrike
+f+ Lady Deathstrike|dies|-|X-23 attacked Lady Deathstrike, seemingly killing her|actual|apparent|-
++ Logan|killed|Predator X|Wolverine managed to kill it from the inside and surprise everyone
+f- Logan|other_verb|kill
+f+ Wolverine|alias_of|Logan|When Predator X swallowed Logan, X-23 became angry and attacked, but Wolverine managed to kill it
+f- X-23|other_verb|attacked
++ X-23|fought|Predator X|X-23 became angry and attacked
+
+@5671 lint: met kept (a planned peaceful meeting that spilled over); A2 the tied member, no group row
+keep
+- X-Men|fought|Nate
+f- X-Men|other_verb|plan
+f+ Laura Kinney|other_verb|plan|the assembled X-Men began to plan how to confront their teammate
+
+@5682 lint: ambushed, dying one act for Eddie
+keep
+- Absent Throne|fought|Eddie Brock
