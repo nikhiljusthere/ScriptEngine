@@ -1,0 +1,35 @@
+@9271 lint: met kept (the Hangman got information from Looie before killing him); confronted and fled, no fight
+keep
+
+@9419 lint: met kept (the confrontation is no fight; the defeat is later at his base); the President is Pres. Clinton; ordered acts (partner b9426)
+keep
+r President=>Clinton
+f+ Kevin|other_verb|break|sent him to break up a group of terrorists taking over the Los Verdes nuclear base|ordered|stated|Samuels
+f+ Clinton|other_verb|give|Samuels had the President give Prime further instructions over a radio transmission|ordered|stated|Samuels
+
+@9426 lint: as partner b9419 (the ambush is by Samuels' unnamed men)
+keep
+r President=>Clinton
+f+ Kevin|other_verb|break|sent him to break up a group of terrorists taking over the Los Verdes nuclear base|ordered|stated|Samuels
+f+ Clinton|other_verb|give|Samuels had the President give Prime further instructions|ordered|stated|Samuels
+
+@9421 lint: met kept (the entity shared memories with him after the confrontation); A156 the acts are narrated under Prime until he reverts to Kevin Green
+keep
+r Kevin Green=>Prime
+f- Prime|other_verb|told
+f+ Kevin Green|other_verb|told|he then told Mantra what he knew of the entity.
+f- Prime|other_verb|sought
+f+ Kevin Green|other_verb|sought|Kevin sought his Prime power to be returned from Mantra
+f- Prime|alias_of|Prime
+f+ Prime|alias_of|Kevin Green|reverting back to Kevin Green
+
+@9432 lint: try -> ascend; helping him defeat them is Da Costa's defeat (helped kept); she was an A.I.M. agent, no alliance row
+keep
+f- Monica Rappaccini|other_verb|try
+f+ Monica Rappaccini|other_verb|ascend|try to ascend to power.|planned|stated|Monica Rappaccini
+- Songbird|defeated|Monica Rappaccini
+f- Songbird|allied_with|A.I.M.
+
+@9446 lint: the promotion sentence has its fact rows
+keep
+t- no_relation|His performance led to a promotion
