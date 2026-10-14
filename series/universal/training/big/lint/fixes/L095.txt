@@ -1,0 +1,88 @@
+@6107 lint: the anti-gravity attack was carried out and failed (attempted); a past near-death is no capability; passive return has no doer (partner b10079)
+keep
+f- Wizard|other_verb|end
+f+ Wizard|other_verb|end|the Frightful Four used anti-gravity disks to end the Fantastic Four|attempted|stated|Wizard
+f- Madame Medusa|other_verb|end
+f+ Madame Medusa|other_verb|end|the Frightful Four used anti-gravity disks to end the Fantastic Four|attempted|stated|Madame Medusa
+t- capability|in the same way the Wizard almost perished,
+t+ no_relation|in the same way the Wizard almost perished,
+t+ no_doer|all were returned to their appropriate time and place with no memory of what happened
+
+@10079 lint: as partner b6107; defeated quotes must name all three victims
+keep
+- Wizard|defeated|Mister Fantastic
++ Wizard|defeated|Mister Fantastic|they incapacitated the Thing, Mister Fantastic, and the Invisible Girl
+- Wizard|defeated|Invisible Girl
++ Wizard|defeated|Invisible Girl|they incapacitated the Thing, Mister Fantastic, and the Invisible Girl
+- Madame Medusa|defeated|Mister Fantastic
++ Madame Medusa|defeated|Mister Fantastic|they incapacitated the Thing, Mister Fantastic, and the Invisible Girl
+- Madame Medusa|defeated|Invisible Girl
++ Madame Medusa|defeated|Invisible Girl|they incapacitated the Thing, Mister Fantastic, and the Invisible Girl
+f- Wizard|other_verb|end
+f+ Wizard|other_verb|end|the Frightful Four used anti-gravity disks to end the Fantastic Four|attempted|stated|Wizard
+f- Madame Medusa|other_verb|end
+f+ Madame Medusa|other_verb|end|the Frightful Four used anti-gravity disks to end the Fantastic Four|attempted|stated|Madame Medusa
+t- capability|in the same way the Wizard almost perished,
+t+ no_relation|in the same way the Wizard almost perished,
+
+@10097 lint: her force-field protecting them is a separate act from their rescue of her
+keep
+
+@6115 lint: helped is not the reverse saved; real name Kurt Wagner (the kiss keeps dated)
+keep
+r Nightcrawler=>Kurt Wagner
+f+ Nightcrawler|alias_of|Kurt Wagner|During his birthday, Kurt Wagner was received by the X-Men
+
+@6118 lint: confronted then battled, no met; battled, who defeated her one sentence; unnamed priest
+keep
+- Nightcrawler|met|Bastion
+- Rogue|met|Bastion
+- Rogue|fought|Bastion
+t+ crowd_end|The local priest, who had been a colleague of Nightcrawler, taught Wolverine a lesson of faith
+
+@6129 lint: struck back and stunned one act; granted control of Genosha
+keep
+- Astra|fought|Nightcrawler
+f+ Magneto|leader_of|Genosha|Although defeated, Magneto was granted control of Genosha
+
+@6140 lint: confronted then defeated, no met; attested is a speech act
+keep
+- Legion|met|Mother Righteous
+f- Mister Sinister|suspected|-
+f+ Mister Sinister|other_verb|attested|Mister Sinister attested his mutation had been tampered by magical influence
+
+@6172 lint: real_name_of -> alias_of with a quote naming both
+keep
+f- Wipple|real_name_of|Octopus
+f+ Octopus|alias_of|Wipple|Wipple, the Octopus is a criminal scientist
+
+@6174 lint: Superior Spider-Man alias; Peter Parker is window text; both discovered; realized
+keep
+r Peter=>Peter Parker
+f- Otto Octavius|became|Superior Spider-Man
+f+ Superior Spider-Man|alias_of|Otto Octavius|Otto Octavius became the new "Superior" Spider-Man
+t- capability|Both then discovered that the Octobot
+f+ Peter Parker|discovered|-|Both then discovered that the Octobot managed to connect their minds although it could not swap them
+f+ Otto Octavius|discovered|-|Both then discovered that the Octobot managed to connect their minds although it could not swap them
+f+ Otto Octavius|learned|-|he not only realized he could become a better Spider-Man
+f+ Doctor Octopus|alias_of|Otto Octavius|than who he once was as Doctor Octopus
+f+ Spider-Man|alias_of|Peter Parker|Otto promised Peter to continue his legacy both as Spider-Man and Peter Parker
+
+@6181 lint: clause object; King Thanos is a different person and the one who needed help and confirmed
+keep
+f- Thanos|suspected|Thanos
+f+ Thanos|suspected|-|thinking he was a pretender
+f- Thanos|other_verb|needed
+f+ King Thanos|other_verb|needed|needed his younger self's help to kill the one being whose death he believed would bring her back, the Fallen One.|planned|stated|King Thanos
+f- Thanos|revealed|-
+f+ King Thanos|revealed|-|his older self-confirmed his identity
+
+@6185 lint: attacked but soon subdued one sentence; thinking = belief
+keep
+- Thanos|fought|Guardians of the Galaxy
+f- Universal Church of Truth|other_verb|thinking
+f+ Universal Church of Truth|suspected|-|Thinking it was housing their messiah, the Magus
+
+@6190 lint: two distinct teams (no rename, "present day" is no name); recruitment is no met
+keep
+- Doom Supreme|met|Thanos
