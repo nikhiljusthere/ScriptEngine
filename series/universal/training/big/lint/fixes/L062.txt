@@ -1,0 +1,81 @@
+@3157 lint: Xavier vs Xavier Institute distinct; reacquired powers no row (A140); Phoenix alias
+keep
+f- Jean Grey|gained_power|telekinetic powers
+f+ Phoenix|alias_of|Jean Grey|as part of this phenomenon, Phoenix reacquired her telekinetic powers
+
+@3191 lint: Jarvis and his wife Ana Jarvis are two people; their marriage
+keep
+f+ Jarvis|married|Ana Jarvis|Frost shooting his wife Ana Jarvis
+
+@3195 lint: codename_of retired
+keep
+f- Mimi|codename_of|Songbird
+f+ Songbird|alias_of|Mimi|Mimi was given the identity of Songbird
+
+@3202 lint: clause object; Stark hired her
+keep
+f- Natasha Romanoff|learned|palladium poisoning
+f+ Natasha Romanoff|learned|-|after learning of his palladium poisoning
+f- Stark|other_verb|hire
+f+ Stark|other_verb|hire|who wanted to hire her as her new assistant|planned|stated|Stark
+f+ Stark|hired|Natasha Romanoff|Stark hired "Rushman" as his new assistant
+
+@3203 lint partner of b7935: "Lady Deathstrike" is the window's form; she joined the assault; the wounded cyborgs are the subjects
+keep
+r Deathstrike=>Lady Deathstrike
++ Lady Deathstrike|fought|Wolverine|Wolverine was brutally assaulted by Deathstrike and her associates
+f- Wolverine|wounded|Cole
+f- Wolverine|wounded|Macon
+f- Wolverine|wounded|Reese
+f+ Cole|wounded|-|three other cyborgs who had been wounded by Wolverine in the past
+f+ Macon|wounded|-|three other cyborgs who had been wounded by Wolverine in the past
+f+ Reese|wounded|-|three other cyborgs who had been wounded by Wolverine in the past
+
+@7935 lint: locating Wolverine turns into the confrontation (no met); she joined the assault; the wounded cyborgs are the subjects
+keep
+- Yuriko Oyama|met|Wolverine
++ Yuriko Oyama|fought|Wolverine|Wolverine was brutally assaulted by Deathstrike and her associates
+f- Wolverine|wounded|Cole
+f- Wolverine|wounded|Macon
+f- Wolverine|wounded|Reese
+f+ Cole|wounded|-|three other cyborgs who had been wounded by Wolverine in the past
+f+ Macon|wounded|-|three other cyborgs who had been wounded by Wolverine in the past
+f+ Reese|wounded|-|three other cyborgs who had been wounded by Wolverine in the past
+
+@3210 lint: codename_of retired; the window names Billy (rename + aliases); stab + seemingly killing = one act; apparent death; unnamed power no row; Billy hurt
+keep
+r Wiccan=>Billy
+f- Billy|codename_of|Demiurge
+f+ Demiurge|alias_of|Billy|Billy decided it was time to change his codename and chose Demiurge as his new one
+f+ Wiccan|alias_of|Billy|Wiccan tried to use his powers to defeat Moridun
+- Hulkling|fought|Moridun
+f+ Moridun|dies|-|seemingly killing the creature|actual|apparent|-
+f- Moridun|gained_power|-
+f+ Billy|wounded|-|but failed and ended up hurt
+t- no_doer|but failed and ended up hurt
+
+@3220 lint: Phil Coulson; May learned
+keep
+r Coulson=>Phil Coulson
+f+ May|learned|-|witnessed his conversation with Raina to learn that the Obelisk could be tracked
+
+@3231 lint: battled + defeat in one sentence
+keep
+- Super-Skrull|fought|Fantastic Four
+
+@3234 lint: knocking them down = one act
+keep
+- Kamala|fought|Damage Control
+
+@3238 lint: clause object; trap twins captured; Black Widow alias
+keep
+f- Natasha|discovered|cloning program
+f+ Natasha|discovered|-|found out about their cloning program
+f- Natasha|other_verb|trap
+f+ Black Widow|alias_of|Natasha|the Black Widow delved into the secrets of the Red Room
+
+@3244 lint partner: vowed duplicates the planned take; unleashing her power is no order
+keep
+f- Kyle|other_verb|vowed
+f- August Masters|ordered|Mindy
+f+ August Masters|other_verb|unleashed|their administrator August Masters unleashed Mindy's full power on Kyle
