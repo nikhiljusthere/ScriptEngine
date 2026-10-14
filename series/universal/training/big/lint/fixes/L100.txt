@@ -1,0 +1,59 @@
+@6427 lint: met kept (found him at the prison, he escaped; the fight is the later ambush)
+keep
+
+@6440 lint: came across and nearly beat her, no met
+keep
+- Venom|met|Black Cat
+
+@6446 lint: Venom vs Agent Venom distinct; defected leaves the Resistance; the Resistance was aided; ordered summon act
+keep
+- Venompool|betrayed|Venom
+f+ Venompool|left_group|Resistance|Venompool defected
+f- Poison Deadpool|helped|Venom
+f+ Poison Deadpool|helped|Resistance|who were aided by Poison Deadpool
+f+ Doctor Strange|other_verb|summon|Venom had Doctor Strange summon an incarnation of Carnage|ordered|stated|Venom
+
+@6466 lint: challenged, Angrir emerged victorious one sentence; outsmarting is no stated defeat; wound victim subject
+keep
+- Red Hulk|fought|Angrir
+- Spider-Man|defeated|Angrir
+f- Thor|wounded|Angrir
+f+ Angrir|wounded|-|engaged Thor and was mortally wounded in the fight
+
+@6470 lint: being followed is no meeting; pitting, a battle the Four won one sentence
+keep
+- Red Ghost|met|Ben
+- Red Ghost|met|Reed
+- Ben|fought|Red Ghost
+- Reed|fought|Red Ghost
+
+@6473 lint: Richards = Reed Richards (window)
+keep
+r Richards=>Reed Richards
+
+@6474 lint: stopping Big Joe = defeated; ordered lure act
+keep
+- Ben|met|Big Joe
++ Ben|defeated|Big Joe|stopping mobster Big Joe from manipulating the creature
+f+ Bull Brogin|other_verb|lure|Doom sent Bull Brogin to lure Ben to Yancy Street|ordered|stated|Doom
+
+@6744 lint: clashed and defeated one act; trapping twin of captured
+keep
+- Wizard|fought|Johnny Storm
+f- Yogi Dakor|other_verb|trapping
+
+@6481 lint: fought, forcing him to retreat one sentence; the others taken prisoner by Rama-Tut; discovered (Doom's machine as doer keeps no_doer)
+keep
+- Reed|fought|Rama-Tut
++ Rama-Tut|captured|Ben|Sue was made Rama-Tut's slave while the others were taken prisoner.
++ Rama-Tut|captured|Reed|Sue was made Rama-Tut's slave while the others were taken prisoner.
+t- no_doer|while the others were taken prisoner.
+f- Reed|learned|-
+f+ Reed|discovered|-|discovered that an ancient Pharaoh Rama-Tut had managed to cure himself
+
+@6487 lint: the window writes Johnny, Reed, Sue and Ben only
+keep
+r Johnny Storm=>Johnny
+r Reed Richards=>Reed
+r Sue Storm=>Sue
+r Ben Grimm=>Ben
