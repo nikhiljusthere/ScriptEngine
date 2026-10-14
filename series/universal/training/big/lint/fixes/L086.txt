@@ -1,0 +1,77 @@
+@4962 lint: engaged in combat and forced down one act
+keep
+- Silver Surfer|fought|Nova
+
+@5084 lint: X-Men vs X-Treme X-Men distinct groups
+keep
+
+@5085 lint: empires are governments (no ends); the 1860 Iron Fist is not Kwai Jun-Fan; became active copula; mantle alias
+keep
+- British Empire|met|Iron Fist
+- French Empire|met|Iron Fist
+f- British Empire|allied_with|French Empire
+t+ crowd_end|In 1860 AD, the British Empire and the French Empire allied together to fight China during the Second Opium War.
+t+ crowd_end|They faced the Iron Fist at the Forts of Taku.
+f- Kwai Jun-Fan|other_verb|became
+t+ no_relation|He became active in the Wild West, especially Texas.
+f+ Iron Fist|alias_of|Kwai Jun-Fan|Kwai Jun-Fan the latest incarnation of the Iron Fist
+
+@5127 lint: met kept (visit for a cure); hope is a noun; window writes only "the Legion"; wound victim subject; Ronson werewolf (partner b8143)
+keep
+f- Morbius|other_verb|hope
+f- Starseed|healed|Legion of Monsters
+f+ Starseed|healed|Legion|The dying Starseed attempted to cure the Legion of their monstrous forms|attempted|stated|Starseed
+f- Man-Thing|wounded|Starseed
+f+ Starseed|wounded|-|suffered severe burns at his touch
+f+ Ronson Slade|transformed_into|werewolf|Ronson, however had become a werewolf
+
+@8143 lint: as partner b5127 (Legion of Monsters is window text here)
+keep
+f- Morbius|other_verb|hope
+f- Man-Thing|wounded|Starseed
+f+ Starseed|wounded|-|suffered severe burns at his touch
+f+ Ronson Slade|transformed_into|werewolf|Ronson, however had become a werewolf
+
+@5147 lint: Avenger codename and Orphan -> alias_of; Nadia's investigation
+keep
+f- Janet|became|Avenger
+f+ Avenger|alias_of|Janet|becoming the super-agent known as the Avenger
+f- Orphan|codename_of|Nadia Trovaya
+f+ Orphan|alias_of|Nadia Trovaya|As the Orphan, Nadia Trovaya
+f+ Nadia Trovaya|discovered|-|Nadia's investigation identified the use of formic acid
+
+@5150 lint: tracked down and tied up, no met
+keep
+- Black Cat|met|Arcade
+- Wolverine|met|Arcade
+
+@5171 lint: met kept (greeting, talk before the punch); asking to leave is no order
+keep
+f- Danvers|ordered|Thor
+f+ Danvers|other_verb|asks|Danvers asks Thor to leave
+f- Thor|ordered|Danvers
+f+ Thor|other_verb|ask|Thor attempts to ask Danvers to leave|attempted|stated|Thor
+
+@5176 lint: face to face mid-fight; attempting -> remove; stabbed arm
+keep
+- Luke Cage|met|Diamondback
+f- Claire Temple|other_verb|attempting
+f+ Claire Temple|other_verb|remove|Temple was attempting to remove the Judas Bullet from his stomach|attempted|stated|Claire Temple
+f+ Diamondback|wounded|-|tried to grab Temple only to get stabbed in the arm
+
+@5178 lint: sentries appeared and fought, no met; duel which Thor won one act
+keep
+- Ultron|met|Thor
+- Captain Marvel|fought|Thor
+
+@5220 lint: self-pair; codename_of -> alias_of; the stint happened
+keep
+f- Eddie|codename_of|Eddie
+f- Venom|codename_of|Eddie
+f+ Venom|alias_of|Eddie|Eddie, using the name Venom again
+f- Nightmare|other_verb|torment
+f+ Nightmare|other_verb|torment|to torment Wolverine inside a dream zone.
+
+@5222 lint: shot twice, killing one act
+keep
+- Stokes|fought|Pistol Pete
