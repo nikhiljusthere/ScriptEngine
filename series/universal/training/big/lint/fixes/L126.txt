@@ -1,0 +1,64 @@
+@9196 lint: self-pair; this Spider-Man IS Otto (he recalls "his own childhood"), alias kept; the attack is its own sentence before the crash
+keep
+f- Otto Octavius|alias_of|Otto Octavius
++ Otto Octavius|fought|Toomes|These memories lead him into a rage, and he attacks Toomes.
+t- no_doer|Sometime later, the Vulture sent his henchmen
+t+ crowd_end|Sometime later, the Vulture sent his henchmen to retrieve some documents he left behind at MJ's, formerly his hideout, The Wake.
+
+@9269 lint: met kept (formal introduction before the fight); belief -> suspected; concluded -> learned; Brother Grimm alias
+keep
+f- Jessica|other_verb|believing
+f+ Jessica|suspected|-|believing that William was hiding information from her
+f- Jessica|other_verb|concluded
+f+ Jessica|learned|-|Spider-Woman concluded that Brother Grimm, not William, had tried to kill her with the wind tunnel
+f+ Brother Grimm|alias_of|Jacob|but was attacked by Brother Grimm (clearly Jacob)
+
+@9294 lint: X-Factor vs X-Factor Complex distinct
+keep
+
+@9297 lint: became co-headmasters names no school (the window writes "the school"); departed keeps other_verb (partner b9301)
+keep
+f- Cyclops|other_verb|became
+f- Emma Frost|other_verb|became
+
+@9301 lint: as partner b9297
+keep
+f- Cyclops|other_verb|became
+f- Emma Frost|other_verb|became
+
+@9361 lint: support technician is an occupation
+keep
+f- Forge|other_verb|became
+
+@9378 lint: tried to stop him, quickly overwhelmed one sentence; ordered release act (partner b9394)
+keep
+- Josh|fought|Siphon
+f+ Sharp|other_verb|release|Creed refused and demanded Sharp release them.|ordered|stated|Creed
+
+@9394 lint: as partner b9378
+keep
+- Josh|fought|Siphon
+f+ Sharp|other_verb|release|Creed refused and demanded Sharp release them|ordered|stated|Creed
+
+@9379 lint: met kept (a bar conversation before the slash); scared away = defeated; wound victim subject
+keep
+- Laurie|fought|Rahne Sinclair
++ Laurie|defeated|Rahne Sinclair|managed to control her power to scare Rahne away
+f- Rahne Sinclair|wounded|Josh
+f+ Josh|wounded|-|slashing him open
+
+@9388 lint: became sentient and exhausted are states (partner b9390)
+keep
+f- Danger Room|other_verb|became
+f- Josh|other_verb|exhausted
+t+ no_relation|He was visibly exhausted by his efforts
+
+@9390 lint: as partner b9388
+keep
+f- Danger Room|other_verb|became
+f- Josh|other_verb|exhausted
+t+ no_relation|He was visibly exhausted by his efforts
+
+@9399 lint: sought her out to recruit her (R4) and was blasted, no met
+keep
+- Prime|met|Mantra
