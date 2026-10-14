@@ -1,0 +1,76 @@
+@4541 lint: trying -> the speech act explained (actual)
+keep
+f- Walker|other_verb|trying
+f+ Walker|other_verb|explained|Walker furthermore explained that he was not trying to be a direct copy of Steve Rogers
+
+@4549 lint: shoot kneecap one act; met kept (found trapped, raving first); ordered meet act
+keep
+- Romanoff|fought|Samuel Sterns
+f- Samuel Sterns|other_verb|deformed
+f+ Samuel Sterns|wounded|-|His head had become grotesquely deformed
+f+ Romanoff|other_verb|meet|Fury sent her to meet Dr. Samuel Sterns|ordered|stated|Fury
+
+@4560 lint: shot making him fall one act; parent_of right (his = Ward's father, the latter)
+keep
+- Ward Meachum|fought|Harold Meachum
+
+@4561 lint: codename_of -> alias_of
+keep
+f- Black Sky|codename_of|Elektra
+f+ Black Sky|alias_of|Elektra|Stick secretly knew this power meant she was the Black Sky
+
+@4572 lint: confronted turns into brief fight
+keep
+- Spider-Man|met|Vulture
+
+@4577 lint: skull crush / staking one act each (defeated); resurrection awakened; title Vampire Lord names no group
+keep
+- Dracula|fought|Anton Lupeski
+- Quincy Harker|fought|Dracula
++ Janus|awakened|-|Domini magically resurrected the child
+f- Dracula|leader_of|Vampire Lords
+
+@4587 lint: met kept (found her, separate sentence); confronted Phoenix for all three
+keep
++ Wolverine|met|Jean|Wolverine, Storm, Beast and the younger X-Men later confronted the Brotherhood and Phoenix
++ Storm|met|Jean|Wolverine, Storm, Beast and the younger X-Men later confronted the Brotherhood and Phoenix
+
+@4589 lint: confronted -> fought, no met; Iron Man alias; requested acts
+keep
+- Barnes|met|Tony Stark
+f+ Iron Man|alias_of|Tony Stark|current S.H.I.E.L.D. Director Tony Stark (Iron Man)
+f+ Tony Stark|other_verb|rescue|to rescue Barnes from his descent into violence and insanity|ordered|stated|Captain America
+f+ Tony Stark|other_verb|pass|to pass the Captain America identity to a successor|ordered|stated|Captain America
+
+@4593 lint: alias_of + attempted get
+keep
+f- Black Widow|codename_of|Belova
+f+ Black Widow|alias_of|Belova|By 2028, Belova was publicly known by the Black Widow codename
+f- Spider-Man|other_verb|tried
+f+ Spider-Man|other_verb|get|Spider-Man tried to get her help|attempted|stated|Spider-Man
+
+@4594 lint: Cloak and Dagger are two people; corrupted doers; one asserter per row
+keep
+f- Sunspot|other_verb|corrupted
+f- Wolfsbane|other_verb|corrupted
+f+ Cloak|other_verb|corrupted|Sunspot and Wolfsbane were inadvertently corrupted by the powers of Cloak and Dagger respectively
+f+ Dagger|other_verb|corrupted|Sunspot and Wolfsbane were inadvertently corrupted by the powers of Cloak and Dagger respectively
+f- Cloak|other_verb|purge
+f+ Cloak|other_verb|purge|Cloak and Dagger offered to purge the young mutants of their curse|planned|stated|Cloak
+f- Dagger|other_verb|purge
+f+ Dagger|other_verb|purge|Cloak and Dagger offered to purge the young mutants of their curse|planned|stated|Dagger
+
+@4608 lint: met kept (told him of unfinished business = talk); fought twin; Mistress of Limbo -> leader_of; reverted
+keep
+- Colossus|fought|Magik
+f- Magik|became|Mistress of Limbo
+f+ Magik|leader_of|Limbo|as Mistress of Limbo
+f- Colossus|transformed_into|demon form
+f+ Colossus|other_verb|reverted|reverted to his demon form
+
+@4612 lint: window writes only Gao (Madame Gao is the page title); Wing met unsupported; threat -> cutting
+keep
+r Madame Gao=>Gao
+- Colleen Wing|met|Gao
+f- Colleen Wing|other_verb|threat
+f+ Colleen Wing|other_verb|cutting|Under the threat of Colleen Wing cutting off her head|planned|stated|Colleen Wing
