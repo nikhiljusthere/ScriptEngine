@@ -1,0 +1,71 @@
+@8256 lint: arrived to recruit him (R4 no met); turning against his plan states no attack; descriptive ends; learning was the purpose
+keep
+- Korvac|met|Jim Hammond
+- Jim Hammond|fought|Korvac
+f- Korvac|built|android form
+f- Controller|member_of|Korvac's acolytes
+f- Jim Hammond|learned|-
+
+@8292 lint: stage name -> alias_of (partner b8308)
+keep
+f- Wizard|codename_of|Bentley Wittman
+f+ Wizard|alias_of|Bentley Wittman|He first took the title The Wizard as a stage name
+
+@8308 lint: as partner b8292
+keep
+f- Wizard|codename_of|Bentley Wittman
+f+ Wizard|alias_of|Bentley Wittman|He first took the title The Wizard as a stage name
+
+@8294 lint: Carnage symbiote = Carnage; obsession is a noun; perception with a clause object
+keep
+r Carnage symbiote=>Carnage
+f- Quiet Man|other_verb|obsession
+f- Quiet Man|suspected|Mister Fantastic
+f+ Quiet Man|suspected|-|the perception that Mister Fantastic stole her from him during their college years|actual|reported|-
+
+@8301 lint: met kept (Thundra warned them before she was subdued)
+keep
+
+@8307 lint: calling themselves the Future Foundation -> alias_of
+keep
+f- Fantastic Four|also_known_as|Future Foundation
+f+ Future Foundation|alias_of|Fantastic Four|who were calling themselves the Future Foundation at the time
+
+@8314 lint: met kept (tracked him down as he fled; the earlier subduing is a different moment); plotting happened; presuming = belief
+keep
+f- Wizard|other_verb|plotting
+f+ Wizard|other_verb|plotting|While the Wizard began plotting his next step
+f- Human Torch|other_verb|presuming
+f+ Human Torch|suspected|-|presuming his foe would suffocate in the upper atmosphere
+
+@8322 lint: codename_of -> alias_of
+keep
+f- Wizard|codename_of|Bentley Wittman
+f+ Wizard|alias_of|Bentley Wittman|Bentley Wittman is the Wizard
+
+@8355 lint: codename_of -> alias_of
+keep
+f- Hawkeye|codename_of|Kate Bishop
+f+ Hawkeye|alias_of|Kate Bishop|assumed the codename Hawkeye in honor of her hero Clint Barton
+
+@8358 lint: codename_of -> alias_of; Secret Avengers too; Patriot injured (partner b8364)
+keep
+f- Hawkeye|codename_of|Kate Bishop
+f+ Hawkeye|alias_of|Kate Bishop|officially became the new Hawkeye
+f+ Kate Bishop|allied_with|Secret Avengers|Hawkeye sided with Captain America and the Secret Avengers
+f+ Patriot|wounded|-|Patriot was injured
+t- no_doer|After Patriot was injured
+
+@8364 lint: as partner b8358
+keep
+f- Hawkeye|codename_of|Kate Bishop
+f+ Hawkeye|alias_of|Kate Bishop|Kate did and officially became the new Hawkeye.
+f+ Patriot|wounded|-|Patriot was injured
+t- no_doer|After Patriot was injured,
+
+@8360 lint: died in a conflict one sentence; lashed out at both; Kate's suggestion
+keep
+- James Rhodes|fought|Thanos
++ Logan|fought|Kate|lashed out at Steve and Kate
+t- deictic|After noticing that Logan had seen a few differences
+f+ Kate|other_verb|suggested|Kate suggested that maybe this wasn't his past after all
