@@ -1,0 +1,69 @@
+@2644 lint: the first meeting in Paris precedes the capture and the later duel (met kept); believed = suspected
+keep
+t- deictic|The Skull believed
+f+ Red Skull|suspected|-|The Skull believed he and Cap were the first of a new breed of men
+
+@2668 lint: the Thor mantle as alias; the new power named; Logan's surrender offer is a talk before the shot (mets kept); Bruce Jr.'s help is no twin
+keep
+f- Dani|became|Thor
+f+ Thor|alias_of|Dani|Dani then managed to lift Mjolnir and became the new Thor.
+f- Dani|gained_power|-
+f+ Dani|gained_power|power of Thor|Dani now possessing the power of Thor
+
+@2676 lint: hit, withstood and defeated in one sentence
+keep
+- Rumlow|fought|Rogers
+
+@2685 lint: finding Matt is subdued at once (no met); fleeing the raiding ESU is escaped (kept); revealed keeps no object; the ordered act; Fisk's accountant
+keep
+- ESU|met|Matt
+f+ Matt|other_verb|let|demanded for Matt to let him behind|ordered|stated|Vladimir
+f+ Fisk|hired|Leland Owlsley|the name of Fisk's accountant, Leland Owlsley
+
+@2698 lint: became suspicious = suspected
+keep
+f- Bruce Banner|other_verb|became
+f+ Bruce Banner|suspected|-|he became suspicious that his father might be trying to kill him
+
+@2709 lint: confronting Schmidt is the fight; Zola captured in their assault
+keep
+- Rogers|met|Schmidt
++ Rogers|captured|Arnim Zola|Zola was captured during the assault
++ Howling Commandos|captured|Arnim Zola|Zola was captured during the assault
+t- deictic|Zola was captured during the assault
+
+@2715 lint: Stane's arrival is the taser attack (no met)
+keep
+- Obadiah Stane|met|Stark
+
+@2744 lint: pointing the sword at Timely becomes the stab (no met); Loki gets a stated exchange ("demanded he stay out of it", "told him to get out of her way") before pushing her (met kept); the ordered act
+keep
+- Laufeydottir|met|Victor Timely
+f+ Loki|other_verb|stay|she demanded he stay out of it|ordered|stated|Laufeydottir
+
+@2753 lint: "Carnage" is the symbiote here; the injured one is Cletus
+keep
+r Carnage symbiote=>Carnage
+f- Avengers|wounded|Cletus
+f- Scorn|wounded|Cletus
+f+ Cletus|wounded|-|destroy Cletus' cybernetic legs using a sonic weapon
+
+@2761 lint: copula became
+keep
+f- Mole Man|other_verb|became
+
+@2764 lint: a brutal beating = one act; realized = learned
+keep
+- Thanos|fought|Namor
+f- Namor|other_verb|realized
+f+ Namor|learned|-|Namor realized he was powerless to act alone
+
+@2791 lint: the arranged meeting precedes the EMP fight (met kept); short-circuited + forced to retreat = one act; the window names Octavius and Peter Parker (renames + aliases); the ordered blast
+keep
+r Superior Octopus=>Octavius
+r Spider-Man=>Peter Parker
+- Peter Parker|fought|Octavius
+f+ Superior Octopus|alias_of|Octavius|Superior Octopus made plans to also destroy the Shanghai branch of Parker Industries, but Octavius was ultimately foiled
+f+ Spider-Man|alias_of|Peter Parker|arranged a meeting with Spider-Man where he revealed his new identity to him
+f- Octavius|other_verb|blow
+f+ Hydra|other_verb|blow|had Hydra agents blow up the London branch of Parker Industries|ordered|stated|Octavius
