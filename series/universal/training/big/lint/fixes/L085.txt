@@ -1,0 +1,54 @@
+@4930 lint: confronted and defeated one act; crowned ruler -> leader_of
+keep
+- Brian|met|Mastermind
+f- Brian|became|ruler of Otherworld
+f+ Brian|leader_of|Otherworld|being crowned the new ruler of Otherworld
+
+@4933 lint: became lost copula; snapped out of the trance = saved; failed spell-break for both
+keep
++ Loki|saved|Sif|Loki then talked to her about courage, which snapped her out of the trance
+f- Sif|other_verb|became
+t+ no_relation|During the challenge, she became lost in the fog.
+f+ Loki|other_verb|break|they were unable to break the spell|attempted|stated|Loki
+
+@4947 lint: tracked down and fought, no met
+keep
+- Logan|met|Victor
+
+@4958 lint: All-Father is an epithet
+keep
+f- Odin|also_known_as|All-Father
+
+@4973 lint: helped both ways = two acts; personality line is no capability
+keep
+t- capability|Victor was a brash and arrogant student
+t+ no_relation|Victor was a brash and arrogant student, known for his enmity toward his fellow students.
+
+@5044 lint: met kept (offer to surrender, argument before the fight)
+keep
+
+@5055 lint: belief -> suspected (partner b7572); opposed kept as fought
+keep
+f- Tartoff|other_verb|believed
+f+ Tartoff|suspected|-|Tartoff also believed that if Dracula could not feed on his blood
+
+@7572 lint: met kept (a night of talk before the killing); belief -> suspected as in b5055
+keep
+f- Tartoff|other_verb|believed
+f+ Tartoff|suspected|-|Tartoff also believed that if Dracula could not feed on his blood
+
+@5059 lint: codename_of -> alias_of; transformation is no awakening
+keep
+f- Cyclops|codename_of|Scott Summers
+f+ Cyclops|alias_of|Scott Summers|giving him the code name Cyclops
+f- Living Diamond|codename_of|Jack Winters
+f+ Living Diamond|alias_of|Jack Winters|Now calling himself the Living Diamond, Winters
+- Jack Winters|awakened|-
+f+ Jack Winters|transformed_into|Living Diamond|transform himself into pure diamond
+
+@5073 lint: false positive, Spider-Man and Friendly Neighborhood Spider-Man are two different Peters
+keep
+
+@5075 lint: met in the raid = the fight; Mother Askani IS Rachel (alias right, Rachel explained right)
+keep
+- Nathan|met|Stryfe
