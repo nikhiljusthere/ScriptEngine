@@ -1,0 +1,81 @@
+@463 lint (27B answer empty, written by Claude): the Hulk form does the crashing, swatting and battling and Banner the deactivating (A156); finding his body later is a separate meeting; the change is a transformation, no alias; mistaking, learning and the robot reveal
+keep
+- Banner|arrived|Savage Land
++ Hulk|arrived|Savage Land|sending the Hulk crashing into the prehistoric realm known as the Savage Land,
+- Banner|defeated|Ka-Zar
++ Hulk|defeated|Ka-Zar|the brute swatted Ka-Zar away, knocking him out.
+- Banner|fought|Ka-Zar
++ Hulk|fought|Ka-Zar|As the Hulk battled with Ka-Zar and Zabu,
+- Banner|fought|Zabu
++ Hulk|fought|Zabu|As the Hulk battled with Ka-Zar and Zabu,
+- Umbu the Unliving|fought|Banner
++ Umbu the Unliving|fought|Hulk|Umbu crossed paths with the Hulk and a battle began,
+f- Banner|located_at|Asia
+f+ Hulk|located_at|Asia|The Hulk continued to travel through Asia
+f- Banner|suspected|missile
+f+ Hulk|suspected|-|the Hulk mistook a missile for a rocket leaving Earth
+f- Ka-Zar|learned|Banner
+f+ Ka-Zar|learned|-|Upon learning that Banner was a scientist
+f- Banner|discovered|device
+f+ Banner|learned|-|Banner was horrified to learn that it was causing Earth's axis to shift
+f- Umbu the Unliving|revealed_as|giant robot
+f- Banner|alias_of|Hulk
+f+ Banner|transformed_into|Hulk|triggering another transformation into the Hulk
+@539 lint: the blast is the defeat (A145); pinpointing is learned -; Carter is his friend
+keep
+- Bloodstone|fought|Shrike
+f- Bloodstone|discovered|Shrike
+f+ Bloodstone|learned|-|Bloodstone pinpointed Shirke
+f+ Bloodstone|friend_of|Carter|Bloodstone was not particularly worried about his friend's safety
+@546 lint: one quote, one act (A145); the blast and the explosion are no acts of Octavius (A110/A131); changing into costume is no transformation: the codename
+keep
+- Peter Parker|fought|Otto Octavius
+f- Otto Octavius|other_verb|fused
+f- Otto Octavius|other_verb|caught
+f- Peter Parker|transformed_into|Spider-Man
+f+ Spider-Man|alias_of|Peter Parker|Peter slipped away, changed into Spider-Man again
+@557 lint: an actor anecdote is a production note, no facts (the comics real name is part of it)
+keep
+f- Pullman|other_verb|played
+f- Pullman|other_verb|ask
+f- Bob|real_name_of|Sentry
+t- no_doer|However, the idea was shot down
+t+ production|Interestingly, Pullman played a character named Bob in Top Gun: Maverick.
+t+ production|This prompted him to ask director Jake Schreier to change the character's name around for the film as he didn't want to play another "Bob."
+t+ production|However, the idea was shot down and Pullman was told that Bob had been established as Sentry's real name in the comics.
+@580 lint: skirmish and restraint in one sentence (A145; Moneta's fight stays)
+keep
+- Iceman|fought|Bishop
+- Psylocke|fought|Bishop
+@585 lint: one name (Billy Russo); the ordered act
+keep
+r Russo=>Billy Russo
+f+ Billy Russo|other_verb|take|Rawlins ordered Billy Russo to take Bennett to any cheap motel|ordered|stated|Rawlins
+@593 lint: a continuity note comparing two publications: citation tags only, no rows
+keep
+f- Brother Grimm|also_known_as|Jacob
+f- Brother Grimm|other_verb|bait
+f- Spider-Woman|located_at|Playhouse
+f- Jerry Hunt|located_at|Playhouse
+t+ citation|In , we see that one Brother Grimm (possibly Jacob) was the bait for both Spider-Woman and Hunt, and defeated Spider-Woman, while his brother knocked Hunt down
+t+ citation|a single Brother led Spider-Woman and Jerry Hunt to the Playhouse, where he captured and restrained them both.
+@597 lint: one name (Ben Reilly); his past is no doer; the wanted kill; the Jackal is Ben Reilly; agreeing to investigate is a plan
+keep
+r Ben=>Ben Reilly
+f- Ben Reilly|other_verb|haunted
+t+ no_relation|Ben's past still haunted him, seemingly in the form of Dissociative Identity Disorder
+f- Kaine|other_verb|wanted
+f+ Kaine|other_verb|kill|who wanted to kill Reilly for his actions as the Jackal.|planned|stated|Kaine
+f- Jackal|other_verb|replaced
+f+ Ben Reilly|other_verb|replaced|replaced with healthy clones by the Jackal
+f+ Jackal|alias_of|Ben Reilly|who wanted to kill Reilly for his actions as the Jackal.
+f- Ben Reilly|other_verb|investigate
+f+ Ben Reilly|other_verb|investigate|Reilly reluctantly agreed to investigate Abigail's disease and find a cure for her condition.|planned|stated|Ben Reilly
+@614 lint: the approach becomes the strike (A145); the escort
+keep
+- Alexander Pierce|met|Winter Soldier
+f+ Brock Rumlow|other_verb|escorted|Alexander Pierce arrived to the facility escorted by Brock Rumlow
+@615 lint: "became petrified" has no verb
+keep
+f- Sersi|other_verb|became
+t+ no_relation|though Sersi became petrified and unable to move except for her eyes

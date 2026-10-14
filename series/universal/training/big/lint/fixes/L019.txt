@@ -1,0 +1,94 @@
+@367 lint: birth name and nickname as alias_of; a mantle is an alias (A143); Strange is the bringer, not an arriver; Erik is a named member of the team that beat Ultron (A2, his row stays); recruiting is no meeting (R4); returning him is no meeting; earning trust is no persuasion
+keep
+f- Erik Stevens|real_name_of|N'Jadaka
+f+ N'Jadaka|alias_of|Erik Stevens|born N'Jadaka
+f- Erik Stevens|also_known_as|Erik Killmonger
+f+ Erik Killmonger|alias_of|Erik Stevens|earned the nickname Erik Killmonger
+f- Erik Stevens|became|Black Panther
+f+ Black Panther|alias_of|Erik Stevens|taking over his mantle as Black Panther
+- Strange Supreme|arrived|Sanctum Infinitum
+- Watcher|met|Erik Stevens
+- Kahhori|met|Erik Stevens
+f- Erik Stevens|persuaded|Tony Stark
+@406 lint: the Devil of Hell's Kitchen is a name he went by (alias); telling the press is a speech act; a sentence term is no act
+keep
+f- Daredevil|also_known_as|Devil of Hell's Kitchen
+f+ Devil of Hell's Kitchen|alias_of|Daredevil|the Devil of Hell's Kitchen was officially dubbed as "Daredevil" by the media
+f- Mahoney|contacted|press
+f+ Mahoney|other_verb|told|Mahoney told his story to the press.
+f- Fisk|other_verb|sentence
+t+ no_relation|to begin his sentence for his many crimes against New York
+@414 lint: the waiting heroes are the battle (A145); fight and defeat in one sentence (A145); the Badoon are a race, no end; the reported location takes no asserter; the thwarting fact twins the defeat
+keep
+- Captain Marvel|met|Thanos
+- Thanos|fought|Ultimates
++ Ultimates|defeated|Thanos|Thanos fought the Ultimates, but was eventually defeated
+f- Cosmic Cube|located_at|Project P.E.G.A.S.U.S. Facility
+f+ Cosmic Cube|located_at|Project P.E.G.A.S.U.S. Facility|supposed Cosmic Cube being held at the Project P.E.G.A.S.U.S. Facility|actual|reported
+f- Guardians of the Galaxy|other_verb|thwarted
+@442 lint: "Wilder's father" is an unnamed relative, no end (all his rows go); the met with Wilder stays
+keep
+- Dean|met|Wilder's father
+- Dean|fought|Wilder's father
+- Stein|fought|Wilder's father
+- Nico|fought|Wilder's father
+- Dean|escaped|Wilder's father
+- Stein|escaped|Wilder's father
+- Hernandez|escaped|Wilder's father
+- Nico|escaped|Wilder's father
+- Wilder|escaped|Wilder's father
+t+ crowd_end|emitting a strong light above them to blind his father
+t+ crowd_end|This enabled Stein to attack him with the Fistigons
+t+ crowd_end|Dean then returned into the car with the other Runaways, who escaped after Nico used the Staff of One to stop Wilder's father from chasing them.
+@460 lint: Avengers and West Coast Avengers are two teams; the protocol was given by the unnamed "she"
+keep
+f- Santron|other_verb|giving
+t+ no_doer|Having been giving a "Saint Nick protocol" to act like depictions of Santa Claus
+@469 lint: learning a clause is learned -; colleagues are a crowd; helping separate the suit is no stated fight; recruiting unnamed members; Spider-Man did the separating; becoming Venom is an alias
+keep
+f- Eddie|learned|orbital facility
+f+ Eddie|learned|-|learning that the symbiote was going to be imprisoned in an orbital facility
+f- Eddie|other_verb|mistreated
+t+ crowd_end|being mistreated by his colleagues
+- Eddie|fought|Lee Price
+- Spider-Man|fought|Lee Price
+f- Eddie|recruited|Anti-Symbiote Task Force
+f+ Eddie|other_verb|recruit|seeking to recruit new replacement members into the Anti-Symbiote Task Force|planned|stated|Eddie
+f- Eddie|other_verb|separate
+f+ Spider-Man|other_verb|separate|Eddie tricked Spider-Man into helping separate the suit from its host, Lee Price
+f- Eddie|became|Venom
+f+ Venom|alias_of|Eddie|bonded to it to become Venom once again
+@480 lint: the codenames are aliases; discovering and hearing take -; the news is no doer; Octavius is his friend
+keep
+f- Osborn|codename_of|Green Goblin
+f+ Green Goblin|alias_of|Osborn|outing him as Green Goblin
+f- Osborn|discovered|Spider-Man's identity
+f+ Osborn|discovered|-|Both alters eventually discovered that Spider-Man's identity was Parker
+f- Octavius|learned|Osborn's demise
+f+ Octavius|learned|-|which was heard by his friend Octavius
+f- Flint Marko|learned|Osborn's demise
+f+ Flint Marko|learned|-|which was heard by his friend Octavius, and Flint Marko
+f- Osborn|other_verb|informed
+f+ Spider-Man|alias_of|Parker|Both alters eventually discovered that Spider-Man's identity was Parker
+f+ Octavius|friend_of|Osborn|which was heard by his friend Octavius
+@495 lint: besting and tossing Piledriver are one sentence (A145); plain narration is no capability
+keep
+- She-Hulk|fought|Piledriver
+t- capability|She-Hulk collected her belongings
+t+ no_relation|She-Hulk collected her belongings and looked at her reflection in a car mirror, processing what had happened.
+@519 lint: the X-Men and the original X-Men are two teams; "her approached" is Mesmero (he is the one escaping); his illusion is mind control, no fight (A116); an organisation is no doer; a team is no place (A65)
+keep
+- Mesmero|fought|X-Men
+f- Heritage Initiative|other_verb|holding
+t+ no_relation|Nance's Heritage Initiative was holding a fundraising gala
+- Pyro|departed|Brotherhood
+f+ Pyro|left_group|Brotherhood|Pyro walked away disgusted by the treachery
+@535 lint: learning a process is learned -; the guard is unnamed; the new power is the gain, no awakening; his older selves are no end (breaking into the Cavern stays an arrival)
+keep
+f- Quicksilver|learned|process of Terrigenesis
+f+ Quicksilver|learned|-|from whom he learned much about the process of Terrigenesis
+- Quicksilver|killed|assigned guard
+t+ crowd_end|in the process killing his assigned guard
+- Quicksilver|awakened|-
+f- Quicksilver|allied_with|older versions of himself
+t+ crowd_end|he began working with older versions of himself
