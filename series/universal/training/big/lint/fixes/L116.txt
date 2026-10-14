@@ -1,0 +1,76 @@
+@7877 lint: trounced them / confronted then captured, no mets; the window writes "the Torch"; belief with a clause object
+keep
+r Human Torch=>Torch
+- Toro|met|Thunderbolts
+- Torch|met|Thunderbolts
+- Captain America|met|Thunderbolts
+- Bucky|met|Thunderbolts
+- Sub-Mariner|met|Thunderbolts
+- Paul Anselm|met|Thunderbolts
+- Toro|met|Iron Man
+- Torch|met|Iron Man
+- Captain America|met|Iron Man
+- Bucky|met|Iron Man
+- Paul Anselm|met|Iron Man
+- Sub-Mariner|met|Iron Man
+f- Toro|suspected|Thunderbolts
+f+ Toro|suspected|-|Thinking the Thunderbolts to be Nazi operatives
+
+@7879 lint: no match, easily defeated one act; the escape clause is covered by captured
+keep
+- Toro|fought|U-Man
+t- no_relation|failed to stop U-Man from escaping
+
+@7886 lint: confronted and drugged, no met (he escaped Toro's attack: escape kept); the collar force is a capability; Toro alias
+keep
+- Mad Thinker|met|Thomas Raymond
+f- Mad Thinker|ordered|Thomas Raymond
+f+ Mad Thinker|other_verb|force|through which he could induce enough pain to force Toro to act as his servant|hypothetical|stated|Mad Thinker
+f+ Toro|alias_of|Thomas Raymond|When Toro awoke, the drug had given him partial amnesia
+
+@7907 lint: confronted, then cut into slices, no Maker met; seemingly killing = apparent death (both are Reeds: no rename; partner b7908)
+keep
+- Maker|met|Molecule Man
+f+ Maker|dies|-|cut the Maker into slices, seemingly killing him|actual|apparent|-
+
+@7908 lint: as partner b7907
+keep
+- Maker|met|Molecule Man
+f+ Maker|dies|-|cut the Maker into slices, seemingly killing him|actual|apparent|-
+
+@7919 lint: Venom vs Venom symbiote distinct; belief with a clause object
+keep
+f- Maker|suspected|Eddie Brock
+f+ Maker|suspected|-|Believing Eddie to either be responsible for the theft or know the thief's identity
+
+@7928 lint: confronted, then defeated all of them, no mets
+keep
+- Sabretooth|met|Mystique
+- X-23|met|Mystique
+- Lady Deathstrike|met|Mystique
+- Sharp|met|Mystique
+
+@7939 lint: attacked by Namor who took them down one act; Bullseye mocked too (partner b7940)
+keep
+- Namor|fought|Yuriko
+- Namor|fought|Bullseye
+f+ Bullseye|other_verb|mocking|As Yuriko and Bullseye were mocking Captain America
+
+@7940 lint: as partner b7939 (Cloak teleported everyone, himself included: arrived kept)
+keep
+- Namor|fought|Yuriko
+- Namor|fought|Bullseye
+f+ Bullseye|other_verb|mocking|As Yuriko and Bullseye were mocking Captain America
+
+@7949 lint: encountered and fought, no met; attacked, who killed Elixir one sentence; wound victim subject
+keep
+- Daken|met|Wrecking Crew
+- X-23|met|Wrecking Crew
+- Siphon|fought|Elixir
+f- Mister Sinister|wounded|Daken
+f+ Daken|wounded|-|ripped an eye and arm from Daken
+
+@7956 lint: confronted then the bomb; detonated a bomb that destroyed her body one act
+keep
+- Domino|met|Deathstrike
+- Domino|fought|Deathstrike
