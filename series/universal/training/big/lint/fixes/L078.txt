@@ -1,0 +1,76 @@
+@4275 lint: Stark (the son) and Howard Stark are two people
+keep
+
+@4276 lint: "try" is the trial verb, not an attempt (the planned row keeps its asserter: a non-actual row needs one); bringing him in custody is no new capture; stopping the escape with the Time Twister = defeated
+keep
+- B-15|captured|Loki
+- B-15|fought|Loki
++ B-15|defeated|Loki|but B-15 used a Time Twister to bring him back to his original position
+
+@4277 lint partner of b6962: "Venom" here is Eddie bonded, not the symbiote (no rename); God of Symbiotes = leader of the Symbiote Hive
+keep
+f- Eddie|became|God of Symbiotes
+f+ Eddie|leader_of|Symbiote Hive|become the new God of Symbiotes
+
+@6962 lint: no rename (as b4277); leader of the Hive; the nightmare torment is a mental attack, no fight
+keep
+f- Eddie Brock|became|God of Symbiotes
+f+ Eddie Brock|leader_of|Symbiote Hive|become the new God of Symbiotes
+- Cletus|fought|Eddie Brock
+f+ Cletus|other_verb|tormented|Cletus dragged Eddie's consciousness into the Hive-Mind and tormented him with nightmares
+
+@4283 lint: accepting the challenge is the battle (no met); Bucky helped Cap rescue Bedoin (A12); Bucky is the tied member (A2); Captain America alias
+keep
+- Bucky|met|Torso
+- Bucky|saved|Bedoin
+- Young Allies|fought|Young Nippon Society
+f+ Captain America|alias_of|Steve|Bucky helped Captain America rescue General Bedoin from Nazi spies,
+
+@4288 lint: the throw is the killing; the ordered act; a noun is no verb
+keep
+- Cottonmouth|fought|Tone
+f+ Barrett|other_verb|collect|ordered Barrett to collect his money from Tone's corpse|ordered|stated|Cottonmouth
+f- Cottonmouth|other_verb|regret
+
+@4296 lint: finding Gambit precedes the later knockout (met kept)
+keep
+
+@4313 lint: Sentry vs Golden Sentry Serum distinct; a wish is no plan; unnamed powers no row (A140)
+keep
+f- Robert Reynolds|other_verb|wanted
+f+ Robert Reynolds|other_verb|wanted|Reynolds subconsciously wanted someone to reveal the Void's existence to the world
+f- Robert Reynolds|gained_power|-
+
+@4318 lint: hunted then taken down in one sentence; the escape is a named act; the injured is Wolverine; a team is no place (left_group)
+keep
+- Sabretooth|fought|Jubilee
+t- deictic|One night, her nightmares almost came true
+f+ Sabretooth|other_verb|escaped|the mansion's security system went down, and Sabretooth escaped from his cell.
+f- Magneto|wounded|Wolverine
+f+ Wolverine|wounded|-|Wolverine had the Adamantium from his skeleton violently removed from his body
+- Wolverine|departed|X-Men
+f+ Wolverine|left_group|X-Men|Wolverine chose to leave the X-Men
+
+@7596 lint partner: rows hold
+keep
+
+@7608 lint partner: rows hold
+keep
+
+@4325 lint: X-Men vs Dark X-Men distinct; Frost is Emma (her betrayal kept), Namor only helped (A12); leaving a team is left_group (A65); the ordered acts
+keep
+- Namor|betrayed|Dark X-Men
+- Namor|betrayed|Osborn
+f+ Namor|helped|Emma|after helping Frost betray the Dark X-Men and Osborn
+- Namor|departed|Cabal
+- Namor|departed|Dark X-Men
+- Emma|departed|Dark X-Men
+- Cloak|departed|Dark X-Men
+- Dagger|departed|Dark X-Men
+f+ Namor|left_group|Cabal|Namor vehemently refused and walked out on the Cabal
+f+ Namor|left_group|Dark X-Men|Along with Emma, Cloak, and Dagger, Namor left the Dark X-Men
+f+ Emma|left_group|Dark X-Men|Along with Emma, Cloak, and Dagger, Namor left the Dark X-Men
+f+ Cloak|left_group|Dark X-Men|Along with Emma, Cloak, and Dagger, Namor left the Dark X-Men
+f+ Dagger|left_group|Dark X-Men|Along with Emma, Cloak, and Dagger, Namor left the Dark X-Men
+f+ Namor|other_verb|denounce|Osborn ordered Namor to publicly denounce the rogues|ordered|stated|Osborn
+f+ Namor|other_verb|execute|Osborn ordered Namor to publicly denounce the rogues and execute them|ordered|stated|Osborn

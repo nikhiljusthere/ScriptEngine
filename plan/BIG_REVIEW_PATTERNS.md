@@ -581,3 +581,17 @@ b1022, b1313, b1369, b1408, b1424, b1438); dropping a separately stated fought (
 page-title name absent from the window (b1256 Cassie, b1582 Peter Parker, b9662 Steven Rogers); merging different
 groups (X-Men/original X-Men b971, Avengers/Avengers Unity Division b1423); `escaped -` (b1451); calling legal tags
 (apposition, attire) illegal (b1082, b1420, b1423); `attacker|wounded|victim` (b1383).
+**2026-10-14 RULE CHECK (lint answers L040-L078, conventions applied, no gate change).**
+- A2 nuance: when a team acts as "the group / the four" and a member is not named in the window (the Thing in
+  b4256), the named group IS the end; per-member rows would drop the unnamed member (b4256/b4877/b6587).
+- Renames go only to a form in the window text; a page title never counts (b2366 Steve/Tony, b2581 Tony, b2116
+  Stark, b1582 Peter). The real name the window gives wins (Halloway, Billy, Guido, Pointer, Ben, Grimm, Rogers).
+- Governments are country-like (no doer: "Russian government", "United States government"); militaries, police
+  departments and agencies are organisations (NYPD, US military, CIB stay ends).
+- A media dubbing is no alias (Kid Nova b4132/b4221); a sham marriage under an undercover alias is no `married`
+  (b3881); a role title without rule over a named group is no row (Voice of the Dark Gods b3606/b9808).
+- Fleeing from a person (not a captor) is `escaped` with that person (b2505, b2627, b3056, b2685); an escape with
+  no named captor/place stays an other_verb fact.
+- A long stated talk that follows the opening attack keeps the met (b1876, b2504, b3742); "met" stays when only a
+  confrontation with no fight follows (b3864, b3337).
+- Stopping someone's temptation or a mental torment is no `defeated`/`fought` (b3577, b6962).
