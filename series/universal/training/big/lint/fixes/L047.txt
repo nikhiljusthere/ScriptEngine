@@ -1,0 +1,73 @@
+@2160 lint: meeting the boys precedes the exorcism (met kept); ability prose; became aware = learned; the arrival sentence carries a row
+keep
+f- Adam Warlock|gained_power|-
+f- Adam Warlock|other_verb|aware
+f+ Adam Warlock|learned|-|Adam soon became aware of Gemini
+t- deictic|Adam's cocoon was eventually located
+
+@2166 lint: fought + turned to stone in one sentence; "Their Overmaster slain" = killed; the dies fact covers Howard's line
+keep
+- Man-Thing|fought|Thog the Nether-Spawn
+- Man-Thing|defeated|Thog the Nether-Spawn
++ Man-Thing|killed|Thog the Nether-Spawn|ultimately managed to throw him into the simon-pure water of Therea, and the holy water turned the demon to stone.
+t- no_relation|The group travelled Outside of reality
+
+@2175 lint: Cull Obsidian; the severed arm is the armor's (no wound on Banner)
+keep
+r Obsidian=>Cull Obsidian
+
+@2178 lint partner of b5324: the Wasp's help in the fight is no twin of the rescue (A89 false)
+keep
+
+@5324 lint: A89 false (as b2178)
+keep
+
+@2191 lint: "Reed Richards" is not in the window (Reed); stumbling into Kang becomes the attack; enlisting help is no met; the victim is wounded; assumed = suspected; Maker alias
+keep
+r Reed Richards=>Reed
+- Reed|met|Kang
+- Reed|met|Howard Stark
+f- Kang|wounded|Reed
+f+ Reed|wounded|-|his memory impaired due to a major injury sustained from Kang's attack
+f- Reed|other_verb|assumed
+f+ Reed|suspected|-|Reed assumed that Stark was going to be responsible for building it in the future
+f+ Maker|alias_of|Reed|With his kingdom built, the Maker used the Immortus Engine
+
+@2239 lint: Stark tried to talk him down before the duel (met kept); found out = learned; Iron Man alias
+keep
+f- Stark|other_verb|found
+f+ Stark|learned|-|found that she was safe, but not for long
+f+ Iron Man|alias_of|Stark|As Iron Man got to the ground, he saw Stane in his own bulky armor
+t- no_relation|As Iron Man got to the ground
+
+@2248 lint: the tried verb is get
+keep
+f- Darcy|other_verb|attempt
+f- Howard|other_verb|attempt
+f+ Darcy|other_verb|get|Darcy and Howard attempt to get their daughter Byrdie the Duck to sleep in her crib.|attempted|stated|Darcy
+f+ Howard|other_verb|get|Darcy and Howard attempt to get their daughter Byrdie the Duck to sleep in her crib.|attempted|stated|Howard
+
+@2251 lint: approaching and shooting her is one act; arriving and knocking them out is one act; saw that = learned
+keep
+- Jarvis|met|Whitney Frost
+- Joseph Manfredi|met|Jarvis
+- Joseph Manfredi|met|Peggy Carter
+f- Jarvis|other_verb|saw
+f+ Jarvis|learned|-|Jarvis looked down at Frost and saw that she was healing
+
+@2280 lint: Reed Richards is in the window (same Reed)
+keep
+r Reed=>Reed Richards
+
+@2286 lint: "enough power to fight" is a purpose; the killing is the stated act
+keep
+- Spider-Man|fought|Callix
+
+@2301 lint: copula; learned/found that = learned
+keep
+f- Kyle|other_verb|became
+t+ no_relation|Kyle became a pawn of the Grandmaster yet again
+f- Kyle|other_verb|learned
+f+ Kyle|learned|-|He learned that this was due to the manipulations of August Masters
+f- Kyle|other_verb|found
+f+ Kyle|learned|-|Kyle found that his legal troubles were sorted out
