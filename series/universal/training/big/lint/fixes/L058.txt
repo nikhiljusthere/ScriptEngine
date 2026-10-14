@@ -1,0 +1,82 @@
+@2859 lint partner: rows hold (Morbius is one of the rescuers)
+keep
+
+@2876 lint: Murdock and his father Jack Murdock are two people; the father's care
+keep
+f+ Jack Murdock|parent_of|Murdock|leaving Murdock in his father's care
+t- no_relation|leaving Murdock in his father's care
+
+@2881 lint: finding him turns into the drone attack (no met); assumed = suspected (wrongly: denied); Spider-Man alias
+keep
+- Beck|met|Spider-Man
+f- Beck|other_verb|assumed
+f+ Beck|suspected|-|Beck assumed that he was finally dead|actual|denied|-
+f+ Spider-Man|alias_of|Parker|While Hogan and Parker's friends hide inside the vault
+
+@2904 lint: occupation became; the nanite test is mind control (A116); turning the Avengers is control, not a trick; Marvel Girl helped the heroes defeat them (A12); an unnamed new trait no row
+keep
+f- Awesome Android|other_verb|became
+f- Awesome Android|gained_power|-
+- Mad Thinker|fought|Thing
+- Mad Thinker|fought|She-Hulk
+- Red Skull|fought|Thing
+- Red Skull|fought|She-Hulk
+f+ Mad Thinker|other_verb|tested|They tested these nanites out on both the Thing and She-Hulk with successful results.
+f+ Red Skull|other_verb|tested|They tested these nanites out on both the Thing and She-Hulk with successful results.
+f- Mad Thinker|tricked|Avengers
+f+ Mad Thinker|other_verb|turn|used these nanites to turn the Avengers against the FF
+- Marvel Girl|defeated|Red Skull
+- Marvel Girl|defeated|Mad Thinker
++ Fantastic Four|defeated|Red Skull|Marvel Girl of Earth-99315 who helped defeat them and forced them to retreat.
++ Fantastic Four|defeated|Mad Thinker|Marvel Girl of Earth-99315 who helped defeat them and forced them to retreat.
+f+ Marvel Girl|helped|Fantastic Four|Marvel Girl of Earth-99315 who helped defeat them and forced them to retreat.
+t- no_relation|Marvel Girl of Earth-99315
+
+@2928 lint: one phone call (contacted once); realize = learned; the conditional threat is hypothetical; the launch system is a thing found (kept)
+keep
+f- Stark|contacted|Potts
+f- Stark|other_verb|realize
+f+ Stark|learned|-|which made Stark realize that Potts was in there
+f- Stark|other_verb|kill
+f+ Stark|other_verb|kill|Stark simply said that he would kill all of them if anything happened to Potts|hypothetical|stated|Stark
+
+@2932 lint: confronting Titania turns into the knockout
+keep
+- Jennifer Walters|met|Titania
+
+@2933 lint: impaled and killed = one act; discovered is a relation
+keep
+- Sinara|fought|Maston-Dar
+f- Sinara|other_verb|discovered
+f+ Sinara|discovered|-|where they then discovered that all the Humans had already been able to escape
+
+@2934 lint: the private talk precedes the knock-down (met kept); knocking him down before the swap is the defeat (kept); the transfer has no named doer; torture is no fight; Black Bolt and the Absorbing Man fought the Jailer too
+keep
+- Maximus|captured|Black Bolt
+t+ no_doer|Thus, Black Bolt was sent to the deep space detention facility meant for Maximus.
+- Jailer|fought|Black Bolt
+f+ Jailer|other_verb|tortured|Black Bolt was subjected to psychological and physical torture by the Jailer
++ Black Bolt|fought|Jailer|Black Bolt and his friends fought their way through the prison until they confronted the Jailer once again
++ Absorbing Man|fought|Jailer|Black Bolt and his friends fought their way through the prison until they confronted the Jailer once again
+
+@4337 lint partner of b2934
+keep
+- Maximus|captured|Black Bolt
+t+ no_doer|Thus, Black Bolt was sent to the deep space detention facility meant for Maximus.
+- Jailer|fought|Black Bolt
+f+ Jailer|other_verb|tortured|Black Bolt was subjected to psychological and physical torture by the Jailer
+
+@2947 lint: made short work = one act; carrying him to recuperate is help, not a rescue
+keep
+- Fantastic Four|fought|Magneto
+- Namor|fought|Magneto
+- Namor|saved|Magneto
+f+ Namor|helped|Magneto|He picked Magneto up and brought him to Atlantis to recuperate
+
+@2950 lint: assaulted + depowered in one sentence; leading Constrictor in is no meeting
+keep
+- Komodo|fought|Hardball
+- Hardball|met|Constrictor
+
+@2982 lint: Bloodbath and his dupe are two entities
+keep
