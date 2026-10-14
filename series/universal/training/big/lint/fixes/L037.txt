@@ -1,0 +1,96 @@
+@1411 lint: Shades talks to him first (met kept, quote moved); shot and killed one sentence; spoke twins the met; the denied set-up is Dillard's act claimed by Shades
+keep
+- Shades|met|Rey III
++ Shades|met|Rey III|Shades spoke to him, claiming that Dillard would not have set him up
+- Shades|fought|Rey III
+f- Shades|other_verb|spoke
+f- Shades|other_verb|set
+f+ Dillard|other_verb|set|Dillard would not have set him up as he was a customer|claimed|denied|Shades
+
+@1420 lint: real_name_of retired - "Melinda May" kept (the full-name line is no alias); apposition is a legal tag
+keep
+f- Melinda Qiaolian May|real_name_of|Melinda May
+
+@1423 lint: Avengers and Avengers Unity Division are different teams (no rename); a rescue states no departure; the warning
+keep
+- Avengers|departed|Microverse
+- Simon Williams|departed|Microverse
+f+ Simon Williams|warned|Beast|After talking with Beast, warning them
+
+@1424 lint: Rey III confronted Shades in an argument before the killing - a stated talk (met kept)
+keep
+
+@1438 lint: Gross tells Prime of his origins - a stated talk (met kept); Duey transforms into Organism 8
+keep
+f- Organism 8|alias_of|Duey
+f+ Duey|transformed_into|Organism 8|Gross' lab assistant, Duey, transformed into Organism 8
+
+@1439 lint: confronting the creature is no fight (met kept); A156 - acts after the change are the Man-Thing's; the base attack per member; the A.I.M. ambush
+keep
+- Ted Sallis|fought|Ellen Brandt
++ Man-Thing|fought|Ellen Brandt|He grabbed Ellen by the face and secreted a corrosive substance from his pores, burning Ellen badly.
+- Bobbi Morse|met|Ted Sallis
++ Bobbi Morse|met|Man-Thing|As they confronted the creature
+- Paul Allen|met|Ted Sallis
++ Paul Allen|met|Man-Thing|As they confronted the creature
+- Ted Sallis|fought|Paul Allen
++ Man-Thing|fought|Paul Allen|the Man-Thing burst through the wall and went after Paul.
+- Ted Sallis|saved|Bobbi Morse
++ Man-Thing|saved|Bobbi Morse|Paul let go of Barbara in fear of the Man-Thing
++ A.I.M.|fought|Ka-Zar|they were all attacked again by A.I.M.
++ A.I.M.|fought|Man-Thing|they were all attacked again by A.I.M.
++ Bobbi Morse|fought|A.I.M.|Now working with the Man-Thing, they attacked an A.I.M. base.
++ Paul Allen|fought|A.I.M.|Now working with the Man-Thing, they attacked an A.I.M. base.
++ Ka-Zar|fought|A.I.M.|Now working with the Man-Thing, they attacked an A.I.M. base.
++ Man-Thing|fought|A.I.M.|Now working with the Man-Thing, they attacked an A.I.M. base.
+t- no_relation|Now working with the Man-Thing, they attacked an A.I.M. base.
+f- Ted Sallis|wounded|Ellen Brandt
+f+ Ellen Brandt|wounded|-|burning Ellen badly.
+f- Ted Sallis|other_verb|fell
+f+ Man-Thing|other_verb|fell|fell into a pit dug by A.I.M..
+f- Bobbi Morse|allied_with|Ted Sallis
+f+ Bobbi Morse|allied_with|Man-Thing|Now working with the Man-Thing
+f- Paul Allen|allied_with|Ted Sallis
+f+ Paul Allen|allied_with|Man-Thing|Now working with the Man-Thing
+f+ Man-Thing|discovered|-|The Man-Thing discovered his empathic connection to all humans
+f- Ted Sallis|other_verb|keep
+f+ Ted Sallis|other_verb|keep|If nothing else, he would succeed in keeping it out of criminal hands|hypothetical|stated|Ted Sallis
+
+@3760 lint partner of b1439: A156 Man-Thing acts; Ellen wounded; discovered; hypothetical
+keep
+- Ted Sallis|fought|Ellen Brandt
++ Man-Thing|fought|Ellen Brandt|He grabbed Ellen by the face and secreted a corrosive substance from his pores, burning Ellen badly
+f- Ted Sallis|wounded|Ellen Brandt
+f+ Ellen Brandt|wounded|-|burning Ellen badly
+f+ Man-Thing|discovered|-|The Man-Thing discovered his empathic connection to all humans
+f- Ted Sallis|other_verb|keep
+f+ Ted Sallis|other_verb|keep|If nothing else, he would succeed in keeping it out of criminal hands|hypothetical|stated|Ted Sallis
+
+@1451 lint: meeting the Grandmaster is a separate earlier encounter (met kept); escaped needs an object, the captors are unnamed (fact kept); tried to make = attempted
+keep
+f- Grandmaster|other_verb|make
+f+ Grandmaster|other_verb|make|tried to make it seem that he won|attempted|stated|Grandmaster
+
+@1479 lint partner: the escape from Annihilus' ambush; doer-less capture
+keep
++ Pip|escaped|Annihilus|The Guardians escaped to Starlin's Bar.
++ Thanos|escaped|Annihilus|The Guardians escaped to Starlin's Bar.
++ Rocket|escaped|Annihilus|The Guardians escaped to Starlin's Bar.
++ Gamora|escaped|Annihilus|The Guardians escaped to Starlin's Bar.
+t+ no_doer|Warlock was captured
+
+@1489 lint: finding Anole precedes a talk (met kept); deciding to accept = planned join (A96)
+keep
+f- Victor|joined|Young X-Men
+f+ Victor|joined|Young X-Men|Victor decided to accept Dani Moonstar's offer to join the Young X-Men|planned|stated|Victor
+
+@4084 lint partner of b1489: met kept
+keep
+
+@1492 lint: Xavier vs Xavier Institute distinct; turning to a teammate is no meeting; headmistress is an office (leader_of); ability prose; Phoenix alias
+keep
+- Jean Grey|met|Wolverine
+f- Jean Grey|became|headmistress
+f+ Jean Grey|leader_of|Xavier Institute|Jean Grey assumed the role of headmistress.
+f- Jean Grey|gained_power|-
+f+ Phoenix|alias_of|Jean Grey|Phoenix experienced vivid confidence like never before
