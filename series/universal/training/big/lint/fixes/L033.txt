@@ -1,0 +1,19 @@
+@1082 lint: recruitment no met; Chronicoms is a race page (refused) -> crowd_end; clause objects; look-alike is no attire
+keep
+- Izel|met|Simmons
+- Izel|met|Fitz
+t+ crowd_end|which resulted in them being captured by the Chronicoms
+f- Simmons|learned|Izel
+f+ Simmons|learned|-|they learnt that Izel was intending to unleash her forces upon Earth
+f- Fitz|learned|Izel
+f+ Fitz|learned|-|they learnt that Izel was intending to unleash her forces upon Earth
+t- attire|who looked exactly like Coulson.
+t+ no_relation|who looked exactly like Coulson.
+
+@3568 lint partner of b1099: alias; capability clause
+keep
+f+ Scarlet Witch|alias_of|Wanda|Her true target was Scarlet Witch
+f- Morgan Le Fay|other_verb|bridge
+t- no_relation|Her true target was Scarlet Witch, whose powers allowed Morgan
+t+ no_relation|Her true target was Scarlet Witch
+t+ capability|whose powers allowed Morgan to bridge her magic with the Twilight Sword

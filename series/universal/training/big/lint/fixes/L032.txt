@@ -1,0 +1,128 @@
+@1082 lint: recruitment no met; missed capture/escape; clause objects; look-alike is no attire
+keep
+- Izel|met|Simmons
+- Izel|met|Fitz
++ Chronicoms|captured|Simmons|which resulted in them being captured by the Chronicoms
++ Chronicoms|captured|Fitz|which resulted in them being captured by the Chronicoms
++ Simmons|escaped|Chronicoms|but they were able to escape and were recruited by Izel
++ Fitz|escaped|Chronicoms|but they were able to escape and were recruited by Izel
+f- Simmons|learned|Izel
+f+ Simmons|learned|-|they learnt that Izel was intending to unleash her forces upon Earth
+f- Fitz|learned|Izel
+f+ Fitz|learned|-|they learnt that Izel was intending to unleash her forces upon Earth
+t- attire|who looked exactly like Coulson.
+t+ no_relation|who looked exactly like Coulson.
+
+@1087 lint partner: Uhari/Mala/Chordai are clans (no person "Mala"); the A.I.M. defeat; Old Atlantis is a nation, no doer
+keep
+- Fantastic Four|met|Mala
++ Fantastic Four|defeated|A.I.M.|helped defeat an A.I.M. group
+t- crowd_end|helped defeat an A.I.M. group
+f- Old Atlantis|other_verb|asked
+f- Old Atlantis|other_verb|plotting
+t+ no_relation|Old Atlantis asked for Skarka
+
+@7254 lint: Atlantis (continent) vs Old Atlantis distinct; Old Atlantis no doer (as b1087)
+keep
+f- Old Atlantis|other_verb|asked
+f- Old Atlantis|other_verb|plotting
+t+ no_relation|Old Atlantis asked for Skarka
+
+@7259 lint partner of b1087: Mala is a clan; the A.I.M. defeat; doer-less passive
+keep
+- Fantastic Four|met|Mala
++ Fantastic Four|defeated|A.I.M.|helped defeat an A.I.M. group
+t- crowd_end|helped defeat an A.I.M. group
+t- no_relation|The Inhumans' city of Attilan was relocated here
+t+ no_doer|The Inhumans' city of Attilan was relocated here
+
+@1099 lint partner: Scarlet Witch alias; capability clause
+keep
+f+ Scarlet Witch|alias_of|Wanda|Her true target was Scarlet Witch
+f- Morgan Le Fay|other_verb|bridge
+t- no_relation|Her true target was Scarlet Witch, whose powers allowed Morgan
+t+ no_relation|Her true target was Scarlet Witch
+t+ capability|whose powers allowed Morgan to bridge her magic with the Twilight Sword
+
+@3376 lint: confronted with no fight = met (kept); Wanda was Morgan's captive, not in the guard - group rows kept; alias
+keep
+f+ Scarlet Witch|alias_of|Wanda|Kelsey Leigh and Scarlet Witch follow the villainous Black Knight into the Otherworld
+
+@1100 lint: Ultron vs a Sentry distinct; "one of Ultron Sentries" is no end, the Helicarrier a thing
+keep
+f- Ultron Sentry|attacked|Helicarrier
+t+ crowd_end|One of Ultron Sentries attacked the Helicarrier during the battle
+
+@1109 lint: A145 same sentence; apparent death; doer-less killings; "his first iteration" is a description
+keep
+- Carnage|fought|Meridius
+- Carnage|fought|Space Venom
+- Eddie|fought|first iteration
+t+ crowd_end|Eddie immediately attacked his first iteration
+f+ Meridius|dies|-|seemingly killing him|actual|apparent|-
+f+ Finnegan|dies|-|Finnegan and Bedlam's duplicate were killed
+t+ no_doer|Finnegan and Bedlam's duplicate were killed
+
+@1116 lint: storming the stage becomes the fight; fight+defeat one sentence; revealed takes no object
+keep
+- Hector|met|John
+- Hector|met|Lemar
+- Jerome|met|John
+- Jerome|met|Lemar
+- John|fought|Hector
+- John|fought|Jerome
+- Lemar|fought|Hector
+- Lemar|fought|Jerome
+t- deictic|A fight broke out
+f- Hector|revealed|John
+f- Jerome|revealed|John
+f- Hector|revealed|Lemar
+f- Jerome|revealed|Lemar
+f+ Hector|revealed|-|publicly revealed John's civilian qidentity
+f+ Jerome|revealed|-|publicly revealed John's civilian qidentity
+f+ Hector|revealed|-|before they could also reveal Lemar's|attempted|stated|Hector
+f+ Jerome|revealed|-|before they could also reveal Lemar's|attempted|stated|Jerome
+
+@1121 lint: Phillip Masters; the pair plotted; aliases
+keep
+r Phillip=>Phillip Masters
+f+ Mad Thinker|other_verb|plotting|The pair began plotting to kill|planned|stated|Mad Thinker
+f+ Puppet Master|alias_of|Phillip Masters|The Puppet Master took over S.H.I.E.L.D. operatives
+f+ Thing|alias_of|Ben Grimm|the Thing who stopped the bomb
+
+@1126 lint: reported death no event; Bucky helped Cap (no saved); clause object; the Hydra capture has a doer; Madame Hydra; aliases; Maggia round-up
+keep
+- Captain America|fought|Hydra
+- Hydra|defeated|Captain America
+- Rick Jones|saved|Tony
+- Rick Jones|saved|Thor
+- Rick Jones|saved|Hawkeye
+- Rick Jones|saved|Black Panther
+- Rick Jones|saved|Vision
+- Rick Jones|saved|Nick Fury
++ Hydra|captured|Tony|were gassed and taken prisoner by Hydra agents
++ Hydra|captured|Thor|were gassed and taken prisoner by Hydra agents
++ Hydra|captured|Hawkeye|were gassed and taken prisoner by Hydra agents
++ Hydra|captured|Black Panther|were gassed and taken prisoner by Hydra agents
++ Hydra|captured|Vision|were gassed and taken prisoner by Hydra agents
++ Hydra|captured|Nick Fury|were gassed and taken prisoner by Hydra agents
+t- no_doer|While attending a funeral for Cap
++ Tony|captured|Maggia|Iron Man helped round up all the Maggia invaders
+t- crowd_end|Iron Man helped round up all the Maggia invaders
+f- Tony|helped|Rick Jones
+f- Tony|learned|Captain America
+f+ Tony|learned|-|he heard that Captain America was seemingly slain battling the Hydra organization|actual|reported|-
+f+ Iron Man|alias_of|Tony|Tony managed to flee and change into Iron Man
+f+ Madame Hydra|leader_of|Hydra|seemingly slaying Hydra's leader Madame Hydra
+f+ Madame Hydra|dies|-|seemingly slaying Hydra's leader Madame Hydra|actual|apparent|-
+
+@1131 lint: joined-and-attacked is no met; the Defenders' fight is the defeat (fought dropped); knowledge rows
+keep
+- Murakami|met|Stick
+- Murakami|met|Danny Rand
+- Danny Rand|fought|Elektra
+- Stick|fought|Elektra
+t- crowd_end|members of the Hand were surrounding
+f- Stick|other_verb|discovering
+f+ Stick|discovered|-|discovering she had become an even more formidable fighter
+f+ Stick|learned|-|Stick realized members of the Hand were surrounding the Royal Dragon Chinese Restaurant
