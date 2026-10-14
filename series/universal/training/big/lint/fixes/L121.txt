@@ -1,0 +1,68 @@
+@8375 lint: met kept ("met again", then the attack in a later sentence); the Secret Invasion Hawkeye is Kate (Young Avengers), no rename
+keep
+
+@8417 lint: codename_of -> alias_of
+keep
+f- Arachne|codename_of|Jessica Drew
+f+ Arachne|alias_of|Jessica Drew|Codenames = Arachne
+
+@8418 lint: ok (partner of b8437)
+keep
+
+@8436 lint: met kept (reunion and talk before the brawl); "a clone" is a description, revealed|- (partner b8437)
+keep
+f- Miriam|revealed_as|clone
+f+ Miriam|revealed|-|revealing herself a clone
+
+@8437 lint: met kept; helped is no twin; revealed|-; the deictic sentence has its rows
+keep
+f- Miriam|revealed_as|clone
+f+ Miriam|revealed|-|revealing herself a clone
+t- deictic|Working for Michael Marchand protecting his daughter, Rebecca
+
+@8419 lint: Spider-Man vs Spider-Man Noir distinct; Noir wounded
+keep
+t- no_doer|Spider-Man Noir was wounded in the fight
+f+ Spider-Man Noir|wounded|-|Spider-Man Noir was wounded in the fight
+
+@8422 lint: Osborn = Norman Osborn; the Skrulls are a race
+keep
+r Osborn=>Norman Osborn
+f- Veranke|leader_of|Skrulls
+
+@8427 lint: ok (partner of b8434)
+keep
+
+@8433 lint: the jail visit is the scene of the fight; A2 the brothers are named; wound victim subject; Ray broke in and tried (attempted) (partner b8434)
+keep
+- Jess|met|Luis
+- Jess|fought|Los Espadas Gemelas De Toledo
++ Jess|fought|Luis|She later used this new suit against criminal brothers, Los Espadas Gemelas De Toledo
++ Jess|fought|Ray|She later used this new suit against criminal brothers, Los Espadas Gemelas De Toledo
+f- Luis|wounded|Ray
+f+ Ray|wounded|-|Luis had to cut Ray's hand off
+f- Ray|other_verb|free
+f+ Ray|other_verb|free|Ray broke in to free him and kill Jess|attempted|stated|Ray
+f- Ray|other_verb|kill
+f+ Ray|other_verb|kill|Ray broke in to free him and kill Jess|attempted|stated|Ray
+
+@8434 lint: as partner b8433
+keep
+- Jess|met|Luis
+- Jess|fought|Los Espadas Gemelas De Toledo
++ Jess|fought|Luis|used this new suit against criminal brothers, Los Espadas Gemelas De Toledo
++ Jess|fought|Ray|used this new suit against criminal brothers, Los Espadas Gemelas De Toledo
+f- Luis|wounded|Ray
+f+ Ray|wounded|-|Luis had to cut Ray's hand off
+f- Ray|other_verb|free
+f+ Ray|other_verb|free|Ray broke in to free him and kill Jess|attempted|stated|Ray
+f- Ray|other_verb|kill
+f+ Ray|other_verb|kill|Ray broke in to free him and kill Jess|attempted|stated|Ray
+
+@8464 lint: mets kept (he told them to raze the country before the blast)
+keep
+
+@8503 lint: U.N. vs Security Council distinct; New America is a government (no doer, as b7303)
+keep
+f- New America|other_verb|attacked
+t+ crowd_end|New America attacked at north of Aniana, setting their course to the capital
