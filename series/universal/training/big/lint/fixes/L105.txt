@@ -1,0 +1,70 @@
+@6810 lint: upon confronting her she shot, no met; the lashing-out clause has its fought row
+keep
+- Andrew Forson|met|Madame Masque
+t- no_doer|angered at his plan failing, began lashing out
+
+@6812 lint: helped is no twin; the window writes MJ, never Mary Jane Watson (partner b6805 renamed too)
+keep
+r Mary Jane Watson=>MJ
+
+@6805 lint: as partner b6812, the window writes MJ only
+keep
+r Mary Jane Watson=>MJ
+
+@6816 lint: found and attacked, no met; Carnage = the Carnage symbiote; Torment was about to kill Paul, Paul passed away later; drove away = defeated (no escape twin); the rejoin happened
+keep
+r Carnage=>Carnage symbiote
+- MJ|met|Dylan
+- Torment|killed|Paul
+f+ Torment|other_verb|kill|Torment had already arrived and was about to kill a mortally injured Paul|attempted|stated|Torment
+f+ Paul|dies|-|as Venom held Paul in their arms he passed away
+- Torment|escaped|MJ
+f- MJ|other_verb|rejoin
+f+ MJ|other_verb|rejoin|Before Venom went to rejoin Spider-Man
+
+@6870 lint: a rematch which he won one clause
+keep
+- Ulysses Bloodstone|fought|Fin Fang Foom
+
+@6879 lint: an unnamed new element -> object -
+keep
+f- Howard Stark|discovered|new element
+f+ Howard Stark|discovered|-|a new element discovered by Howard
+
+@6882 lint: engaged in combat and destroyed its body one sentence
+keep
+- Iron Man|fought|Ultron
+
+@6890 lint: team vs headquarters building distinct
+keep
+
+@6935 lint: also_known_as -> alias_of
+keep
+f- Piotr|also_known_as|Peter
+f+ Peter|alias_of|Piotr|known as Peter in America
+
+@6938 lint: started fighting and took each other out one act
+keep
+- Colossus|fought|Magik
+
+@6956 lint: trade blows before being defeated one sentence (arm wrestling is a contest, capability tag kept)
+keep
+- Colossus|fought|Gladiator
+
+@6973 lint: Avengers vs Astonishing Avengers distinct; the distracting team is the Astonishing Avengers in this battle
+keep
+f- Avengers|other_verb|distracting
+f+ Astonishing Avengers|other_verb|distracting|while the Avengers were distracting the X-Men
+
+@6977 lint: confronted, threatened, ripped = the fight; A156 Dark Carnage acts under Dark Carnage
+keep
+- Lee Price|met|Kasady
+- Kasady|arrived|Manhattan
++ Dark Carnage|arrived|Manhattan|Upon arriving in Manhattan
+f- Kasady|other_verb|break
+f+ Dark Carnage|other_verb|break|attempted to break into the old Avengers Tower|attempted|stated|Dark Carnage
+f- Kasady|other_verb|allowing
+f+ Dark Carnage|other_verb|allowing|allowing himself to be arrested
+f- Kasady|disguise_as|Eddie Brock
+f+ Dark Carnage|disguise_as|Eddie Brock|impersonating Eddie Brock
+f+ Dark Carnage|alias_of|Kasady|Transforming into Dark Carnage, Kasady
