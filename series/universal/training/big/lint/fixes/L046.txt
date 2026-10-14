@@ -1,0 +1,81 @@
+@2061 lint: Giyera's arrival and his finding them turn into the fight Hunter ends (mets dropped); the tagged sentence carries the revealed fact; the ordered help
+keep
+- R. Giyera|met|Hunter
+- R. Giyera|met|Morse
+t- no_relation|Just when they were together
+f+ Luther Banks|other_verb|helped|by orders of Rosalind Price, helped the duo escape|ordered|stated|Rosalind Price
+
+@2068 lint: Ray Nadeem and Seema Nadeem are two people; Poindexter contacted too; realized = learned; the ordered cooperation; the arrest names Poindexter; a newspaper is no doer
+keep
+f+ Poindexter|contacted|Nelson|They contacted Nelson
+f- Nelson|other_verb|realized
+f- Karen Page|other_verb|realized
+f+ Nelson|learned|-|Nelson and Karen Page realized that his declaration would be able to take down Fisk
+f+ Karen Page|learned|-|Nelson and Karen Page realized that his declaration would be able to take down Fisk
+f+ Seema Nadeem|other_verb|cooperate|went to the New York City FBI Office to cooperate with Hattley and Poindexter|ordered|stated|Nadeem
+- NYPD|captured|Poindexter
++ NYPD|captured|Poindexter|allowed the NYPD to arrest Fisk and Poindexter
+f- New York Bulletin|other_verb|uploaded
+t+ no_relation|The New York Bulletin uploaded Nadeem's confession online
+
+@2087 lint: a reported actual act carries no asserter; they ran together
+keep
+f- Fitz|other_verb|taken
+f- Ward|other_verb|taken
+f+ Fitz|other_verb|taken|both Fitz and Ward had already taken the drug to Skye|actual|reported|-
+f+ Ward|other_verb|taken|both Fitz and Ward had already taken the drug to Skye|actual|reported|-
+f+ Coulson|other_verb|ran|Together they ran through the facility's corridors and up the escape stairway
+
+@2097 lint: a stated de-escalation precedes the shove (met kept); Herman did return (kept)
+keep
+
+@2111 lint: the claim is reported by Ares (claimed); Athena bringing Arachne to Ares for judgement is a meeting and a capture (kept)
+keep
+f- Arachne|other_verb|claimed
+f+ Arachne|other_verb|claimed|who according to him claimed to be a better weaver then her|claimed|reported|Ares
+
+@2116 lint: "Howard" is not in the window (Stark); confronting Carson becomes the altercation; the tag overlaps the fought row
+keep
+r Howard Stark=>Stark
+- Hank Pym|met|Mitchell Carson
+t- no_relation|leading to an altercation
+
+@2125 lint: fighting, pulling and stomping in one sentence (defeated)
+keep
+- Ghost Rider|fought|Sergei Mishkin
+
+@2128 lint: finding him turns into the fight (no met); A156 alias link; burning eyes are no attire
+keep
+- Reyes|met|Frederick
+f+ Ghost Rider|alias_of|Reyes|he gave out a roar and transformed himself into Ghost Rider
+t- attire|with his own eyes burning
+t+ no_relation|with his own eyes burning red with fire.
+
+@2135 lint: Ori begs for his life before the shots - a stated talk (Wilson-Ori met kept); Castle's burst-in is the fight; Page and Ori were already together; Wilson fired at Page too
+keep
+- Frank Castle|met|Lewis Wilson
+- Karen Page|met|Ori
++ Lewis Wilson|fought|Karen Page|just before Wilson could kill both Ori and Page
+
+@2138 lint: crossing him precedes the confrontations (met kept); Giuseppe Montesi; destroying Sun together = defeated
+keep
+r Montesi=>Giuseppe Montesi
+- Blade|fought|Doctor Sun
++ Blade|defeated|Doctor Sun|Dracula and Blade then worked together to destroy Sun
++ Dracula|defeated|Doctor Sun|Dracula and Blade then worked together to destroy Sun
+
+@2153 lint: the mantle as alias (planned, Beyond's offer); Beyond Corporation; Korvac too; the Space Friends team
+keep
+r Beyond=>Beyond Corporation
+f- Ben Reilly|became|Spider-Man
+f+ Spider-Man|alias_of|Ben Reilly|Ben was approached by the Beyond Corporation to become Spider-Man once again|planned|stated|Beyond Corporation
+f+ Korvac|gained_power|Power Cosmic|both Iron Man and Korvac imbued themselves with the Power Cosmic
+f+ Korvac|other_verb|ascended|ascended to godhood
+f+ Ben Reilly|member_of|Space Friends|The team, which would earn the sobriquet of the "Space Friends"
+
+@2162 lint: the first fight and the killing are separate sentences (fought kept); clause object; regained powers no row
+keep
+f- Ms. Marvel|discovered|Brood Queen
+f+ Ms. Marvel|discovered|-|Ms. Marvel then discovered that the Brood Queen who ruled over the Brood of Sleazeworld had survived
+f- Cur|gained_power|-
+f- Ms. Marvel|gained_power|-
