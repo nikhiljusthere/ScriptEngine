@@ -1,0 +1,71 @@
+@4820 lint partner of b3833: Wonder Man convinces the Mole Man before the blasts (met kept)
+keep
+
+@3864 lint: facing the Hulk-Killer again has no fight stated after it (met kept); the injured is Logan
+keep
+f- Hulk-Killer|wounded|Logan
+f+ Logan|wounded|-|which easily overpowered him and pulled out both of his lungs
+
+@3874 lint: blast + burning alive = the killing; Krakoa is the island's mutant intelligence (met kept); twin fact; the flying is a named act
+keep
+- Human Torch|fought|Hitler
+f- Human Torch|other_verb|burning
+t- deictic|In the summer, Fury and his Howling Commandos
+f+ Nick Fury|other_verb|flying|In the summer, Fury and his Howling Commandos were flying near the island of Krakoa
+
+@3875 lint: learn takes no object here
+keep
+f- Simmons|learned|alien languages
+f+ Simmons|learned|-|Simmons decided to learn alien languages|planned|stated|Simmons
+
+@3880 lint: Avengers vs Young Avengers distinct; the full quote
+keep
+f- Ms. Marvel|contacted|Kate
+f+ Ms. Marvel|contacted|Kate|Kate was called in by Ms. Marvel to the Avengers Mansion
+
+@3881 lint: the ramming and the beatdown are one sentence (defeated); a sham wedding under an alias is no marriage; Iron Man alias
+keep
+- Feilong|fought|Tony Stark
+f+ Iron Man|alias_of|Tony Stark|Iron Man delivered him a decisive beatdown
+
+@3894 lint: the domination is a capability clause beside the killing
+keep
+- Ancient One|fought|Kaecilius
+
+@3898 lint: Eugene Thompson; a participle is no act
+keep
+r Eugene=>Eugene Thompson
+f- Peter|other_verb|Remembering
+
+@3902 lint: Virus's interruption is an attack (no met); another reality is no place (A78)
+keep
+- Virus|met|Eddie
+- Eddie|arrived|Earth-1051
+- Dylan|arrived|Earth-1051
+
+@3909 lint: A156 - the acts the window gives to Eddie are Eddie's; the Venom symbiote stays its own end; alias link
+keep
+f- Venom|allied_with|Spider-Man
+f+ Eddie|allied_with|Spider-Man|Eddie was reluctantly forced to ally with Spider-Man
+f- Venom|allied_with|Scarlet Spider
+f+ Eddie|allied_with|Scarlet Spider|Eddie was reluctantly forced to ally with Spider-Man and the Scarlet Spider
+f- Venom|learned|-
+f+ Eddie|learned|-|Learning the symbiotes were building a stargate to a planet they'd previously conquered
+f- Venom|other_verb|destroy
+f+ Eddie|other_verb|destroy|Eddie reluctantly rebonded to the Venom symbiote in an attempt to destroy it|attempted|stated|Eddie
+f- Venom|other_verb|rejected
+f+ Eddie|other_verb|rejected|Eddie rejected it - worried
+f+ Venom|alias_of|Eddie|Venom, Spider-Man, and the Scarlet Spider formulated a plan
+
+@3917 lint partner: the passage's verb is "taking" (trained stays other_verb: the trained relation names a trainer)
+keep
+f- Visis|other_verb|revenge
+f+ Visis|other_verb|taking|taking revenge upon the Hulk|planned|stated|Visis
+
+@9812 lint: attacked + retreated in one sentence (defeated); "taking"; the Monstroid's death (the no_doer tag stays with the fact)
+keep
+- Z'gma|fought|Hulk
+- Z'gma|fought|Jarella
+f- Visis|other_verb|revenge
+f+ Visis|other_verb|taking|taking revenge upon the Hulk|planned|stated|Visis
+f+ Monstroid|dies|-|when their Monstroid was slain
