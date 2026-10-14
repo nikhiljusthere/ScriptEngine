@@ -1,0 +1,69 @@
+@1804 lint: harassed and beaten = one act; ruler of Limbo = leader_of; sent twins the captures; the stated betrayal; ripping out memories is mind manipulation (A116); clause object; King in Black alias
+keep
+- Gus|fought|Ben
+f- Madelyne|became|ruler
+f+ Madelyne|leader_of|Limbo|the regalia of her status as Limbo's ruler
+f- Ben|other_verb|sent
++ Madelyne|betrayed|Ben|Furious at this betrayal
+- Ben|fought|Eddie Brock
+f+ Ben|other_verb|ripped|Ben ripped out Eddie's memories of his son and development into a hero
+f- Ben|other_verb|discovered
+f+ Ben|discovered|-|discovered the demonic fruit tree was dying
+f+ King in Black|alias_of|Eddie Brock|Eddie Brock -- now the King in Black
+
+@1837 lint: the window ties Peter to Spider-Man (rename + alias); the suit was used to defeat the Vulture (kept); realized = learned
+keep
+r Spider-Man=>Peter
+f+ Spider-Man|alias_of|Peter|After Peter resumed his personal life, Spider-Man's interloping triggered a gang war
+f- Peter|other_verb|realized
+f+ Peter|learned|-|Spider-Man realized the deception too late
+
+@1842 lint: Brood (race) vs Brood Queen distinct; a race is a legal leader_of object (kept)
+keep
+
+@9872 lint partner of b1842: rows hold
+keep
+
+@9860 lint: fight + "which he succeeded in defeating" one sentence
+keep
+- Mar-Vell|fought|Kree Sentry #459
+
+@9862 lint partner: rows hold
+keep
+
+@9886 lint partner of b9860
+keep
+- Mar-Vell|fought|Kree Sentry #459
+
+@1854 lint: the continued fight and the beating are one sentence (defeated); the ordered act
+keep
+- Zabo|fought|Coulson
+f+ Zabo|other_verb|stop|ordering him to stop|ordered|stated|Skye
+
+@1861 lint: beat in a fist fight = one act; reconnected twins met; alias; the new power; doer-less passives about Peter
+keep
+- Peter Parker|fought|Rhino
+f- Peter Parker|other_verb|reconnected
+f+ Spider-Man|alias_of|Peter Parker|As Spider-Man, Peter managed to beat the Rhino
+f- John Jameson|gained_power|-
+f+ John Jameson|gained_power|enhanced strength|endowing him with enhanced strength
+f- Peter Parker|other_verb|accused
+t+ no_doer|Spider-Man was instantly accused of robbing a bank.
+f- Peter Parker|other_verb|cleared
+t+ no_doer|he was cleared of any wrongdoing
+f- John Jameson|other_verb|exposed
+
+@1869 lint: Stick tells Star, they argue, Star insists, Stick promises - a stated talk before the killing (met kept); the ordered act
+keep
+f+ Star|other_verb|stop|Stick ordered him to stop|ordered|stated|Stick
+
+@1875 lint: same quote "She and Johnny fought"; the invasion line has a named doer and a crowd
+keep
+- Skin-Bender|met|Johnny
+t- deictic|The village was invaded by demons
+t+ crowd_end|The village was invaded by demons and its people transformed by a female creature calling herself the Skin-Bender.
+
+@1885 lint: cornered and stabbed = the killing; Russo arrived too
+keep
+- Billy Russo|fought|Morty Bennett
++ Billy Russo|arrived|CIA Safe House|Billy Russo delivers Colonel Bennett to a CIA Safe House
