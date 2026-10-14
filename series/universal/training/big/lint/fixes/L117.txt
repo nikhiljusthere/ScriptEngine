@@ -1,0 +1,69 @@
+@7954 lint: met kept (told her to end the feud with honor before the fight); Wolverine alias; wound victims as subjects; the Nicopetti sentence has its met row
+keep
+f+ Wolverine|alias_of|Logan|Wolverine gained the upper hand
+t- deictic|just as Nicopetti and his men arrived
+f- Lady Deathstrike|wounded|Logan
+f+ Logan|wounded|-|impaled Wolverine on her sword
+f- Logan|wounded|Lady Deathstrike
+f+ Lady Deathstrike|wounded|-|cutting her claws
+
+@7955 lint: located and found him, then the violent fight
+keep
+- Lady Deathstrike|met|Wolverine
+
+@7999 lint: confronted, beat him down, no met; Unus died (the one stopped by his daughter is Quicksilver, tag kept)
+keep
+- Magneto|met|Pietro Maximoff
+f+ Unus|dies|-|later killing Unus.
+t- no_doer|This promptly restored their powers
+
+@8021 lint: attacked the Thinker, who was defeated one sentence
+keep
+- Richards|fought|Mad Thinker
+- Thing|fought|Mad Thinker
+- Franklin|fought|Mad Thinker
+- Valeria|fought|Mad Thinker
+
+@8027 lint: a belief with a clause object is actual suspected|-
+keep
+f- Intelligencia|suspected|alien technology
+f+ Intelligencia|suspected|-|what they thought was alien technology
+
+@8029 lint: ordered locate act (partner b8034)
+keep
+f+ Gammadroid|other_verb|locate|the Mad Thinker sent his Gammadroid to locate the secret location|ordered|stated|Mad Thinker
+
+@8034 lint: Hulk vs Red Hulk distinct; the window writes Dr. Doom; ordered locate act
+keep
+r Doctor Doom=>Dr. Doom
+f+ Gammadroid|other_verb|locate|the Mad Thinker sent his Gammadroid to locate the secret location|ordered|stated|Mad Thinker
+
+@8030 lint: came seeking revenge, easily subdued, no met; hired to build = AIM's order
+keep
+- Toro|met|Mad Thinker
+f- Mad Thinker|built|weapon
+f+ Mad Thinker|built|weapon|to build a weapon that could destroy the town of Vretik, Estonia.|ordered|stated|AIM
+
+@8033 lint: seemingly slain battling one clause
+keep
+- Fantastic Four|fought|Onslaught
+- Avengers|fought|Onslaught
+
+@8036 lint: bested battling Iron Man one sentence; real name Tony Stark
+keep
+r Iron Man=>Tony Stark
+- Mad Thinker|fought|Tony Stark
+- Awesome Android|fought|Tony Stark
+f+ Iron Man|alias_of|Tony Stark|to learn the secret identity of Iron Man, as part of a means to forcing Stark Industries owner Tony Stark
+
+@8063 lint: ambushed and incapacitated one act
+keep
+- Erik the Red|fought|Jamie
+- Havok|fought|Jamie
+- Polaris|fought|Jamie
+
+@8075 lint: the original Madrox is Jamie; the Five revived him (saved + awakened)
+keep
+r Jamie Prime=>Jamie
+f- Five|other_verb|resurrected
++ Five|saved|Jamie|Jamie was presumably resurrected by the Five
