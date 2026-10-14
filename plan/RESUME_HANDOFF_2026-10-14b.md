@@ -73,3 +73,15 @@ reviews and submits. Then lint the gold set with the same checks.
 three layers), gold dev/dev_pool/test from the gold audit. Extend the scorer for facts/tags. Train Qwen3.5-9B
 short prompt, seeds 1 and 2 (§4 of BIG_REVIEW_HANDOFF); ship bar ≥ .602 events F1 on the Marvel+MCU TEST, scored
 once at the end, plus the old teacher re-scored on the revised test.
+
+## 6. State update 2026-10-14 ~07:50 (an interim terminal tab session "c1" was stopped; its work is on disk)
+
+- Gold labelling is DONE: `gold_v2/gold_labels_v2.jsonl` = 3,822/3,822 (35B stopped; the 27B is loaded,
+  ninfer-serve PID 722093 on :18080, ctx 100k, SWITCHPOINT entry written).
+- c1 built (uncommitted, in the worktree): `plan/review_tools/pre27.py` + `pre27.sh` (27B pre-review of the
+  reading list; `pre27.sh next big/lint/work_all.txt N`, skips done windows), `lint27_system.md` (its system prompt
+  with the catalog rules), a 21-line change in `tools/train/big_review_v2.py`, an A89 tweak in `lint_v2.py`
+  (twins only when the fact is actual). Reading lists: `big/lint/work_all.txt` (+ app/term halves).
+  It submitted a first few lint fixes (audit now 17,708 lines, `why: "lint ..."`).
+- Measured by c1: the 27B takes ~75 s/window → ~28 h for the whole lint list. It was measuring where the time goes
+  (prompt size / thinking length) when it was stopped. Check `git diff` of those files before relying on them.
