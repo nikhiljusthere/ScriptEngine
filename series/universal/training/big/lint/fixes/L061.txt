@@ -1,0 +1,93 @@
+@3087 lint: "the two talked" precedes the attack (met kept); pushed down and tased = one act; the ordered act
+keep
+- Stane|fought|Stark
+f- Stark|other_verb|shut
+f+ Stark|other_verb|shut|while Stark shut off J.A.R.V.I.S. at Stane’s request|ordered|stated|Stane
+
+@3091 lint: Halloway and Simon Halloway are two people
+keep
+
+@3101 lint: Avengers vs Avengers Compound distinct; they escaped the Compound; the ordered act
+keep
+- Clint Barton|escaped|Vision
++ Clint Barton|escaped|Avengers Compound|before they escaped from the Compound
+- Wanda Maximoff|escaped|Vision
++ Wanda Maximoff|escaped|Avengers Compound|before they escaped from the Compound
+f+ Vision|other_verb|watch|Vision was tasked by Tony Stark to watch over Wanda Maximoff|ordered|stated|Tony Stark
+
+@3108 lint: copula became
+keep
+f- Kylus|other_verb|became
+t+ no_relation|while Kylus became a wiser King
+
+@3115 lint: encountering the prisoners turns into the battle with the Maker; battled + shut down in one clause; clause objects; no dating is stated
+keep
+- Thanos|met|Maker
+- Thanos|fought|Maker
+f- Thanos|learned|Galactus
+f+ Thanos|learned|-|Thanos later learned Galactus was being manipulated
+f- Thanos|other_verb|learned
+f+ Thanos|learned|-|Thanos learned Galactus was collecting the Infinity Gems
+f- Thanos|other_verb|discovered
+f+ Thanos|discovered|-|He discovered, however, that the destruction wrought by the battle with the Maker freed the last prisoner
+f- Thanos|dated|Death
+
+@3136 lint: punching him into space = the defeat; revealed takes no object; the tagged sentences have named or plural doers (no no_doer); the asteroid's destruction was Loki's ordered act
+keep
+- Thing|fought|Doctor Doom
+f- Loki|revealed|master plan
+f+ Loki|revealed|-|Loki revealed his master plan
+t- no_doer|They decided to help Spider-Man
+t+ deictic|They decided to help Spider-Man, prompting the two to retreat to the upper levels.
+t- no_doer|Fighting Magneto Acolytes
+t+ crowd_end|Fighting Magneto Acolytes and Doombots along the way, the four were able to activate an elevator
+t- no_doer|Opening a door
+t+ crowd_end|Opening a door to a joining connection bridge despite the securities' systems warnings, the quartet were sucked out into space
+t- no_doer|With Doom channeling
+t+ crowd_end|the team fought a wave of standard Doombots, V-Series Doombots and Magneto Acolytes
+t- no_doer|After working through
+t+ crowd_end|After working through the rest of his defences, the heroes were finally able to defeat Doom
+f- Galactus|destroyed|Asteroid M
+f+ Galactus|destroyed|Asteroid M|having Galactus destroy Asteroid M|ordered|stated|Loki
+
+@3140 lint: Avengers vs Avengers Unity Division distinct; the members are tied (A2, no group row)
+keep
+f- Fantastic Four|member_of|Avengers
+
+@3141 lint: Xavier vs Xavier Institute distinct; "In X, she did Y" is no arrival (A151); knowledge rows; the supervisory role is an act, no capability
+keep
+- Jean Grey|arrived|Europe
+- Jean Grey|arrived|Mumbai
+f+ Jean Grey|located_at|Europe|In Europe, Jean Grey teamed up with the unscrupulous thief Fantomex against Weapon II
+f+ Jean Grey|located_at|Mumbai|In Mumbai, she helped a young Afghan mutant baptized Dust
+f- Jean Grey|discovered|Fantomex
+f+ Jean Grey|discovered|-|she dismantled a web of lies and learned that Fantomex was one of the project's engineered subjects
+f- Jean Grey|learned|Weapon Plus program
+f+ Jean Grey|learned|-|getting an insight into the activities of the Weapon Plus program
+t- capability|Xavier's mutant operation gained global scope
+f+ Jean Grey|other_verb|assuming|with Jean Grey assuming a supervisory role over worldwide missions alongside her mentor
+
+@3143 lint: became separated -> separated; codename_of retired; Yelena assigned too (the kill mission keeps its planned row: an ordered row needs a named orderer)
+keep
+f- Natasha|other_verb|became
+f+ Natasha|other_verb|separated|they became separated early on
+f- Natasha|codename_of|Black Widow
+f+ Black Widow|alias_of|Natasha|earned her the codename, "Black Widow."
+f+ Dreykov|ordered|Yelena|were assigned by General Dreykov to the Red Room Program
+
+@3150 lint: finding the remains of Avalon - arrived at Avalon, discovered without object
+keep
+f- Acolytes|discovered|remains of Avalon
+f+ Acolytes|discovered|-|The Acolytes escaped prison and found the remains of Avalon
++ Acolytes|arrived|Avalon|The Acolytes escaped prison and found the remains of Avalon
+
+@3153 lint: finding Sofia and her talk precede the killing (met kept); an indefinite doer is a crowd end; "the missile" -> missile
+keep
+t- no_doer|but Fjodorov was killed
+t+ crowd_end|but Fjodorov was killed by another assassin.
+f- Natasha Romanoff|destroyed|the missile
+f+ Natasha Romanoff|destroyed|missile|Romanoff reached the missile and destroyed it
+
+@3154 lint: "During their fight Namor decapitated Hammonds" = one act; the android survives as a head (defeated, no death)
+keep
+- Namor|fought|Jim Hammond
