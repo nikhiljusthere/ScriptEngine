@@ -1,0 +1,78 @@
+@3564 lint: walking in and choking her is one act (no met; killed only); "the file" -> file; the tagged PRIDE sentence carries the revealed rows
+keep
+- Tina Minoru|met|Graciela Aguirre
+- Tina Minoru|fought|Graciela Aguirre
+f- Tina Minoru|took|the file
+f- Dale Yorkes|took|the file
+f- Stacey Yorkes|took|the file
+f+ Tina Minoru|took|file|They took the file
+f+ Dale Yorkes|took|file|They took the file
+f+ Stacey Yorkes|took|file|They took the file
+t- no_relation|PRIDE then went to a PRIDE building
+
+@3571 lint: one asserter per row; empowered prose no row (A140); Carnage alias
+keep
+f- Calderon|other_verb|deliver
+f+ Calderon|other_verb|deliver|Calderon and Jameson deciding to deliver Kasady to the FBI|planned|stated|Calderon
+f- Jameson|other_verb|deliver
+f+ Jameson|other_verb|deliver|Calderon and Jameson deciding to deliver Kasady to the FBI|planned|stated|Jameson
+f- Jubulile|gained_power|-
+f+ Carnage|alias_of|Kasady|Carnage delved deeper into its territory until he found the Chthonic temple
+
+@3577 lint: the tried verb; Patel left too; the three in space met Eros; knowledge rows (Blade stopping Dane's temptation is no defeat)
+keep
+f- Druig|other_verb|tried
+f+ Druig|other_verb|put|Druig tried and failed to put Tiamut to sleep|attempted|stated|Druig
+f+ Patel|other_verb|left|Kingo and Patel left
+t- crowd_end|Meanwhile, the Eternals in space
++ Thena|met|Eros|the Eternals in space came across Eros
++ Makkari|met|Eros|the Eternals in space came across Eros
++ Druig|met|Eros|the Eternals in space came across Eros
+f- Druig|other_verb|figured
+f+ Druig|learned|-|Druig figured out that Ikaris killed Makkari
+f- Makkari|other_verb|found
+f+ Makkari|discovered|-|Makkari found its location
+
+@3583 lint: telling his father at home is no remote contact
+keep
+f- Turbocharge|contacted|Hardaway
+
+@9422 lint partner of b3583 (Kevin Green is Prime; Turbocharge is Hardaway's son - no rename)
+keep
+f- Turbocharge|contacted|Hardaway
+
+@3585 lint: Vision and White Vision are two; the sacrifice is a death; an unnamed Skrull is no end
+keep
+f- Vision|other_verb|sacrificed
+f+ Vision|dies|-|who had sacrificed himself attempting to prevent the Snap.
+t- no_doer|Meanwhile, S.W.O.R.D. agent Monica Rambeau
+t+ crowd_end|Meanwhile, S.W.O.R.D. agent Monica Rambeau was recruited by a Skrull to work with Nick Fury.
+
+@3593 lint: the enchantment attempt is mind control (A116), no meeting, no fight
+keep
+- Laufeydottir|met|Minuteman 75068293466
+- Laufeydottir|fought|Minuteman 75068293466
+f+ Laufeydottir|other_verb|enchant|she tried to enchant him, but her powers were unable to work within the TVA|attempted|stated|Laufeydottir
+
+@3606 lint: "Voice of the Dark Gods" is a role (no row); Visis reveals the plot before the construct attack (met kept)
+keep
+f- Visis|became|Voice of the Dark Gods
+
+@9808 lint partner of b3606
+keep
+f- Visis|became|Voice of the Dark Gods
+
+@3610 lint: Phoenix is the Phoenix Force here; the gathering happened; the return is only a purpose
+keep
+r Phoenix=>Phoenix Force
+f- Jean Grey|other_verb|gather
+f+ Jean Grey|other_verb|gather|The young Jean Grey took the opportunity to gather information for her quest
+f- Jean Grey|other_verb|return
+
+@3614 lint: the attempt and the defeat are one sentence
+keep
+- Blade|fought|Adana
+
+@3619 lint: torturing and killing = one act
+keep
+- Rawlins|fought|Ahmad Zubair
