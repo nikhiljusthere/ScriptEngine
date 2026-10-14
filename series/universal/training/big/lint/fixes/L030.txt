@@ -1,0 +1,58 @@
+@981 lint: the demon's claim and offer and Rahne's refusal are a stated talk before the fight - mets kept; Wolfsbane alias
+keep
+f+ Wolfsbane|alias_of|Rahne|The Demon offered Wolfsbane the chance to transfer all her sins to her child
+
+@984 lint: Venom (the bonded hero) and Venom symbiote are different forms here - no rename; Agent Anti-Venom alias
+keep
+f+ Agent Anti-Venom|alias_of|Flash|reunited with Tyrannosaurus and Agent Anti-Venom
+
+@993 lint: recruitment is no met (R4)
+keep
+- Dr. Strange|met|Black Bolt
+
+@8686 lint: A145 same sentence stagger+crushed to death -> killed
+keep
+- Black Bolt|fought|Galactus
+
+@8687 lint: A145 same sentence -> killed
+keep
+- Black Bolt|fought|Galactus
+
+@8701 lint: partner of b993; "met with Triton" runs straight into the kill - no met
+keep
+
+@998 lint: Adrian Toomes full form; occupation became dropped; clause object
+keep
+r Toomes=>Adrian Toomes
+f- Adrian Toomes|became|electrical engineer
+f- Adrian Toomes|discovered|Gregory Bestman
+f+ Adrian Toomes|discovered|-|he discovered Bestman was embezzling money from the company
+
+@1002 lint: A145 same sentence fought+defeated; rammed twins fought
+keep
+- Madani|fought|Pilgrim
+f- Pilgrim|other_verb|rammed
+
+@1013 lint partner b9332: finding the boy is covered by the visit met
+keep
+
+@9332 lint: Mount Athena is a place; the met quote moved to the visit (as b1013)
+keep
+- Athena|met|Pythagoras Dupree
++ Athena|met|Pythagoras Dupree|she visited him in her true form asking up to become her champion
+
+@1017 lint: the gates are no doer; notice is no discovered; helped once
+keep
+f- Gates of Osiris|healed|Spector
+f- Gates of Osiris|healed|Grant
+f- Spector|discovered|Gates of Osiris
+f- Grant|discovered|Gates of Osiris
+f- Grant|helped|Spector
+t+ no_doer|The Gates of Osiris open, healing Spector and Grant.
+f+ Spector|other_verb|noticed|The two notice the open gates.
+f+ Grant|other_verb|noticed|The two notice the open gates.
+
+@1022 lint: the riddle test is a stated talk before the fight (met kept); fought stated in its own sentence (kept); twin facts
+keep
+f- Durisphinx|other_verb|propel
+f- Candra|other_verb|free

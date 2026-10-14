@@ -1,0 +1,97 @@
+@1021 lint: tracking down becomes the fight (Felicia met dropped); the earlier request to "Turner" is a separate talk (Peter met kept); recruitment no met; Turner is Chameleon's disguise; regain no row; missed defeat
+keep
+- Felicia|met|Chameleon
+- Peter|met|Felicia
++ Peter|defeated|Chameleon|he entered the scene and defeated all his opponents
+f- Peter|ordered|Turner
+f+ Peter|other_verb|asked|had asked the mysterious Doctor Turner to remove his powers
+f+ Chameleon|disguise_as|Doctor Turner|only to find out he was in fact The Chameleon
+f+ Black Cat|alias_of|Felicia|he enlisted Black Cat to aid him in restoring them
+f+ Spider-Man|alias_of|Peter|Peter had decided to stop being Spider-Man
+f- Peter|gained_power|-
+f- Peter|discovered|Chameleon
+f+ Peter|discovered|-|only to find out he was in fact The Chameleon
+f- Felicia|other_verb|realized
+f+ Felicia|learned|-|Felicia realized the machine had actually suppressed her own abilities
+t- no_relation|With Chameleon and his allies
+t- no_relation|Just as Felicia couldn't
+t- deictic|he entered the scene
+
+@1028 lint: "came for him" becomes the kill; Ghost Rider is Reyes here
+keep
+r Ghost Rider=>Reyes
+- Aida|met|Phil Coulson
+f+ Ghost Rider|alias_of|Reyes|Ghost Rider managed to steal the Darkhold
+
+@1029 lint: the encounter is the fight
+keep
+- Sentry|met|Thor
+- Sentry|met|Captain Marvel
+- Sentry|met|She-Hulk
+
+@1032 lint: A145 same sentence; recruitment no met; apparent death; full name; aliases
+keep
+r Griever=>Griever at the End of All Things
+- Pietro|fought|Griever at the End of All Things
+- Pietro|met|Lorna
++ Wanda|escaped|Land of the Dead|Wanda fought her way back from the Land of the Dead
+t- no_doer|Wanda fought her way back
+f+ Wanda|dies|-|the Griever at the End of All Things apparently killed Scarlet Witch|actual|apparent|-
+f+ Quicksilver|alias_of|Pietro|Quicksilver recruited Polaris to defend Lotkill
+f+ Polaris|alias_of|Lorna|Quicksilver recruited Polaris to defend Lotkill
+f+ Scarlet Witch|alias_of|Wanda|the Griever at the End of All Things apparently killed Scarlet Witch
+
+@1036 lint: the return becomes the punch; clause object; the ordered act (berated is a separate spoken act, kept)
+keep
+- Carter|met|Stark
+f- Carter|discovered|Stark
+f+ Carter|discovered|-|she had already opened it and discovered Stark's lie
+f+ Stark|other_verb|leave|ordered him to leave|ordered|stated|Carter
+
+@1053 lint: one name (page name) for "she"
+keep
+r Sylvie=>Sylvie Laufeydottir
+
+@1057 lint: finding him stealing becomes the chase and fight; joining people where they are = met + joined (A48); Mister Fantastic alias
+keep
+- Reed|met|Doctor Octopus
+- Captain America|met|Doctor Octopus
+f- Spider-Man|helped|Reed
+f+ Spider-Man|joined|Reed|caused Spider-Man to take accompany Mr Fantastic and Cap.
+f- Spider-Man|helped|Captain America
+f+ Spider-Man|joined|Captain America|caused Spider-Man to take accompany Mr Fantastic and Cap.
+f+ Mister Fantastic|alias_of|Reed|Captain America was assigned to help Mister Fantastic
+
+@9662 lint partner of b1057 ("Steven Rogers" is not in the window: Steve kept)
+keep
+- Reed|met|Doctor Octopus
+- Steve|met|Doctor Octopus
+f- Spider-Man|helped|Reed
+f+ Spider-Man|joined|Reed|caused Spider-Man to take accompany Mr Fantastic and Cap.
+f- Spider-Man|helped|Steve
+f+ Spider-Man|joined|Steve|caused Spider-Man to take accompany Mr Fantastic and Cap.
+f+ Mister Fantastic|alias_of|Reed|caused Spider-Man to take accompany Mr Fantastic and Cap
+
+@1063 lint: copula became; attacked and imprisoned is one act -> captured
+keep
+- X-Men|fought|Shaw
+f- Trance|other_verb|became
+t+ no_relation|She also became concerned for Gabriel
+
+@1066 lint: A145 same sentence; teleporting away is no capture; the theft purpose
+keep
+- B-15|fought|Loki
+- Loki|captured|B-15
+f+ B-15|stole|TemPad|She fought another skilled hunter in Brad Wolfe to steal his TemPad.|planned|stated|B-15
+
+@1067 lint: Daniel Sousa; commented is a speech act (actual)
+keep
+r Sousa=>Daniel Sousa
+f- Daniel Sousa|other_verb|hate
+f+ Daniel Sousa|other_verb|commented|Sousa commented that he would hate what would have happened with the carrot
+
+@1079 lint: clause object; "the crystal creature" is a description, no end
+keep
+- Bloodstone|met|gem creature
+f- Bloodstone|remembered|confusing memories
+f+ Bloodstone|remembered|-|have confusing memories of his later adventures
