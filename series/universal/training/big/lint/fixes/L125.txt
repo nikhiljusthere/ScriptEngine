@@ -1,0 +1,69 @@
+@8820 lint: ok overall; "Assassins Guild" is not window text ("the guilds")
+keep
+f- Candra|ordered|Assassins Guild
+
+@9036 lint: Stark = Tony Stark; the confront happened; no one named is told to execute (ordered row -> the Mandarin's order); belief -> suspected; Iron Man alias
+keep
+r Stark=>Tony Stark
+f- Mandarin|other_verb|confront
+f+ Mandarin|other_verb|confront|the Mandarin went to confront his foe
+f- Mandarin|ordered|Tony Stark
+f+ Mandarin|other_verb|ordered|the Mandarin ordered Stark to be executed
+f- Tony Stark|other_verb|prevented
+f+ Tony Stark|suspected|-|believing that his injured heart and life as Iron Man prevented him from falling in love
+f+ Iron Man|alias_of|Tony Stark|life as Iron Man
+
+@9075 lint: met kept (waiting for him day one; the attack the day after); decided to kill = planned; offered = planned; aliases
+keep
+- Roger|killed|Woodman
+f+ Roger|other_verb|kill|he decided to kill Woodman|planned|stated|Roger
+f- Melati|other_verb|isolate
+f+ Melati|other_verb|isolate|Melati offered to isolate the formula for him|planned|stated|Melati
+f+ Hardball|alias_of|Roger|Hardball infiltrated California State University
+f+ Komodo|alias_of|Melati|where Komodo was waiting for him
+
+@9148 lint: Stark's belief is actual; the deictic sentence has its row
+keep
+f- Stark|suspected|-
+f+ Stark|suspected|-|where Stark believed that a substantial quantity of the rare metal might be stored
+t- deictic|When reports of robots attacking sources of Vibranium
+
+@9157 lint: Hydra (no member tied) is the group end, fought kept; Hulk link (partner b9165)
+keep
+f+ Hulk|alias_of|Bruce Banner|calm the Hulk down after the immediate mission had been concluded so that he could return to Bruce Banner
+
+@9165 lint: Banner = Bruce Banner (window); Hulk link; develop = created, recovered = took
+keep
+r Banner=>Bruce Banner
+f+ Hulk|alias_of|Bruce Banner|calm the Hulk down after the immediate mission had been concluded so that he could return to Bruce Banner
+
+@9151 lint: Stark vs Stark Expo distinct
+keep
+
+@9153 lint: Avengers vs Avengers base distinct
+keep
+
+@9167 lint: Avengers vs Avengers Compound; the Wakandans are a people
+keep
+f- Natalia Romanoff|allied_with|Wakandans
+t+ crowd_end|ally of the Wakandans
+
+@9247 lint: finding him caged is no meeting; resisted, subdued one sentence; restrained = captured; the stop was carried out
+keep
+- Magik|met|Legion
+- Magma|met|Legion
+- Magik|fought|Legion
+- X-Men|fought|Legion
++ X-Men|captured|Legion|The X-Men arrived on the scene and restrained Legion
+f- Magik|other_verb|stop
+f+ Magik|other_verb|stop|choosing to enter Legion's psyche to stop him
+
+@9248 lint: preventing the earthquake turns into the knock-out, no met (Cypher is a tied member: defeated kept)
+keep
+- Magma|met|Diskhord
+
+@9266 lint: challenged him and was controlled, no met; to be destroyed = planned
+keep
+- Stark|met|Mr. Doll
+f- Stark|destroyed|doll
+f+ Stark|destroyed|doll|apparently to be then destroyed by Iron Man|planned|apparent|Stark
