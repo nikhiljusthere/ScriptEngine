@@ -1,0 +1,174 @@
+@4181 lint: entering the fray is the defeat and capture (no mets); the ordered hunt
+keep
+- Magnum|met|Power Man
+- Magnum|met|Sam Sheridan
+f+ Power Man|other_verb|track|She wanted hero-for-hire Power Man to track and murder Magnum|ordered|stated|Amanda Sheridan
+
+@4221 lint: codename_of retired; a media-given name is no alias (as b4132)
+keep
+f- Nova|codename_of|Rider
+f+ Nova|alias_of|Rider|operate unchallenged as Nova again
+f- Kid Nova|alias_of|Rider
+
+@4228 lint: a status is no became; Lyja's reunion is after the fight (met kept); "seemingly sacrificed her life" = apparent death
+keep
+f- Johnny|became|fugitive
+t+ no_relation|Johnny briefly became a fugitive
+f- Lyja|other_verb|sacrificed
+f+ Lyja|dies|-|Lyja seemingly sacrificed her life to protect Johnny|actual|apparent|-
+
+@4237 lint: the window says Tony; the armor description is no alias; a pod is no doer; A156 - the fight is with the Hulk; aliases
+keep
+r Tony Stark=>Tony
+f- MK XLIV armor|also_known_as|Hulkbuster armor
+f- Veronica|other_verb|sent
+- Tony|fought|Bruce
++ Tony|fought|Hulk|A furious fight throughout Johannesburg between Iron Man and Hulk ensued.
+- Tony|defeated|Bruce
++ Tony|defeated|Hulk|After pushing the Hulk through a collapsing skyscraper, Iron Man was finally able to stop him.
+f+ Hulk|alias_of|Bruce|a contingency plan created by Tony and Bruce in case Hulk had to be stopped
+f+ Iron Man|alias_of|Tony|A furious fight throughout Johannesburg between Iron Man and Hulk ensued.
+
+@4249 lint: punching until the skull cracked = the killing
+keep
+- Bucky Barnes|fought|Stark
+
+@4256 lint: "the group", "the four", "the Fantastic Four" act as a team and the Thing is never named - the group end, not per-member rows (A2); the meeting with Namor is separate (kept); group verbs; the attempted kill; aliases (the attempted kidnapped row stays)
+keep
+- Reed|captured|Fin Fang Foom
+- Reed|captured|Gruto
+- Reed|captured|Klagg
+- Reed|captured|Googam
+- Sue|captured|Fin Fang Foom
+- Sue|captured|Gruto
+- Sue|captured|Klagg
+- Sue|captured|Googam
+- Johnny|captured|Fin Fang Foom
+- Johnny|captured|Gruto
+- Johnny|captured|Klagg
+- Johnny|captured|Googam
++ Fantastic Four|captured|Fin Fang Foom|apprehending monsters such as Fin Fang Foom, Gruto, Klagg and Googam
++ Fantastic Four|captured|Gruto|apprehending monsters such as Fin Fang Foom, Gruto, Klagg and Googam
++ Fantastic Four|captured|Klagg|apprehending monsters such as Fin Fang Foom, Gruto, Klagg and Googam
++ Fantastic Four|captured|Googam|apprehending monsters such as Fin Fang Foom, Gruto, Klagg and Googam
+- Reed|fought|Miracle Man
+- Reed|defeated|Miracle Man
+- Sue|fought|Miracle Man
+- Sue|defeated|Miracle Man
+- Johnny|fought|Miracle Man
+- Johnny|defeated|Miracle Man
++ Fantastic Four|fought|Miracle Man|The four next clashed with the hypnotist Miracle Man
++ Fantastic Four|defeated|Miracle Man|the group managed to defeat the Miracle Man
+- Reed|killed|Giganto
+- Sue|killed|Giganto
+- Johnny|killed|Giganto
++ Fantastic Four|killed|Giganto|The Fantastic Four slew Giganto
+- Reed|defeated|Namor
+- Sue|defeated|Namor
+- Johnny|defeated|Namor
++ Fantastic Four|defeated|Namor|defeated Namor who fled
+- Namor|escaped|Reed
+- Namor|escaped|Sue
+- Namor|escaped|Johnny
++ Namor|escaped|Fantastic Four|defeated Namor who fled
+- Victor von Doom|fought|Reed
+- Victor von Doom|fought|Sue
+- Victor von Doom|fought|Johnny
++ Victor von Doom|fought|Fantastic Four|The group was next attacked by Reed's old college rival Victor von Doom
+- Reed|defeated|Victor von Doom
+- Sue|defeated|Victor von Doom
+- Johnny|defeated|Victor von Doom
++ Fantastic Four|defeated|Victor von Doom|he and the FF put aside their differences to defeat Doom
+f- Reed|other_verb|replaced
+f+ Fantastic Four|other_verb|replaced|they recovered the chest, but replaced the gems with chains
+f- Reed|other_verb|recovered
+f+ Fantastic Four|other_verb|recovered|they recovered the chest
+f- Sue|other_verb|putting
+f+ Victor von Doom|other_verb|kill|Doom attempted to kill them in an airtight room|attempted|stated|Victor von Doom
+f+ Human Torch|alias_of|Johnny|infighting between the team prompted the Human Torch to leave the group
+f+ Sub-Mariner|alias_of|Namor|the young member discovered the long lost Sub-Mariner
+
+@4877 lint partner of b4256: the group end; aliases
+keep
+- Reed|fought|Miracle Man
+- Sue|fought|Miracle Man
+- Johnny|fought|Miracle Man
+- Reed|defeated|Miracle Man
+- Sue|defeated|Miracle Man
+- Johnny|defeated|Miracle Man
++ Fantastic Four|fought|Miracle Man|The four next clashed with the hypnotist Miracle Man
++ Fantastic Four|defeated|Miracle Man|While the group managed to defeat the Miracle Man
+- Reed|killed|Giganto
+- Sue|killed|Giganto
+- Johnny|killed|Giganto
++ Fantastic Four|killed|Giganto|The Fantastic Four slew Giganto
+- Reed|defeated|Namor
+- Sue|defeated|Namor
+- Johnny|defeated|Namor
++ Fantastic Four|defeated|Namor|and defeated Namor who fled,
+- Namor|escaped|Reed
+- Namor|escaped|Sue
+- Namor|escaped|Johnny
++ Namor|escaped|Fantastic Four|and defeated Namor who fled,
+f- Sue|other_verb|putting
+f+ Sub-Mariner|alias_of|Namor|the young member discovered the long lost Sub-Mariner
+
+@6587 lint partner of b4256: the group end; the attempted kill; the Puppet Master battle is the group's, ending in his seeming demise
+keep
+- Victor von Doom|fought|Reed
+- Victor von Doom|fought|Sue
++ Victor von Doom|fought|Fantastic Four|The group was next attacked by Reed's old college rival Victor von Doom
+- Sue|defeated|Victor von Doom
+- Reed|defeated|Victor von Doom
++ Fantastic Four|defeated|Victor von Doom|he and the FF put aside their differences to defeat Doom
+- Reed|fought|Puppet Master
+- Sue|fought|Puppet Master
+- Reed|defeated|Puppet Master
+- Sue|defeated|Puppet Master
++ Fantastic Four|defeated|Puppet Master|a battle that ended with the Puppet Master's seeming demise
+f+ Puppet Master|dies|-|a battle that ended with the Puppet Master's seeming demise|actual|apparent|-
+f- Reed|other_verb|recovered
+f+ Fantastic Four|other_verb|recovered|they recovered the chest
+f- Reed|other_verb|replaced
+f+ Fantastic Four|other_verb|replaced|they recovered the chest, but replaced the gems with chains
+f- Kurrgo|tricked|Reed
+f+ Kurrgo|tricked|Fantastic Four|He then tricked the team
+f+ Victor von Doom|other_verb|kill|Doom attempted to kill them in an airtight room|attempted|stated|Victor von Doom
+
+@4263 lint: the hostage attempt turns into the fight (no Pepper mets); gathering a team is recruitment (no mets); the passage's verbs; Pepper stopped them with Spymaster's help
+keep
+- Pepper Potts|met|Sandman
+- Pepper Potts|met|Electro
+- Doctor Octopus|met|Sandman
+- Doctor Octopus|met|Chameleon
+- Doctor Octopus|met|Electro
+- Doctor Octopus|met|Mysterio
+- Doctor Octopus|met|Rhino
+f- Doctor Octopus|destroyed|bomb
+f+ Doctor Octopus|other_verb|disabled|he teleported his minions away, disabled his bomb, and let Iron Man go free
+f- Pepper Potts|other_verb|bay
+f+ Pepper Potts|other_verb|hold|she used the powers granted by her Arc Reactor to hold them at bay
+- Spymaster|fought|Sandman
+- Spymaster|fought|Electro
++ Pepper Potts|defeated|Sandman|She was assisted in stopping Sandman and Electro by Spymaster.
++ Pepper Potts|defeated|Electro|She was assisted in stopping Sandman and Electro by Spymaster.
+
+@4269 lint: Bucky's help is no twin; thwarting = defeated
+keep
+- Bucky|fought|Wax Man
++ Bucky|defeated|Wax Man|had a close call with death when thwarting the Wax Man
+
+@4273 lint: a description found takes no object; the escape names no captor
+keep
+- Tony Stark|escaped|Ten Rings
+f- Ten Rings|discovered|prototype armor
+f+ Ten Rings|discovered|-|Due to the Ten Rings finding all the remnants of the prototype armor
+
+@4274 lint: stopped when forced to fight = one act; doubts = suspected; the Hulk escaped both groups; Steve is the window's real name (rename + alias)
+keep
+- Iron Man|fought|Captain America
+f- Iron Man|other_verb|doubts
+f+ Iron Man|suspected|-|he had his doubts that Cap could hack it in this era
++ Hulk|escaped|Fantastic Four|the gamma spawned brute managed to escape capture
+r Captain America=>Steve
+f+ Captain America|alias_of|Steve|the public was also not ready to accept that Steve was the original Captain America
