@@ -1,0 +1,57 @@
+@7735 lint: confront and punish one act, no met
+keep
+- Kate|met|Sebastian Shaw
+- Emma Frost|met|Sebastian Shaw
+
+@7755 lint: false positive, Bran is the god and Bran Murphy the host it leaves for Monique
+keep
+
+@7756 lint: defeated after a battle one sentence
+keep
+- Thor|fought|Bres
+- She-Hulk|fought|Bres
+
+@7764 lint: later known as Crom Cruach -> alias_of (the window's main name is Crom)
+keep
+f- Crom|also_known_as|Crom Cruach
+f+ Crom Cruach|alias_of|Crom|Crom, later known as Crom Cruach
+
+@7769 lint: possibly another name -> alias_of with apparent certainty; Lord of the Great Mountain is an epithet
+keep
+f- Nuadens Argatlam|also_known_as|Nuada
+f+ Nuadens Argatlam|alias_of|Nuada|Nuadens Argatlam of the Silver Hand—possibly another name for Nuada|actual|apparent|-
+f- Lord of the Great Mountain|alias_of|Crom
+
+@7811 lint: confronted, the two fought, no met
+keep
+- Steve|met|Tony
+
+@7812 lint: met kept (summoned to dissect the body before the attack); Mister Fantastic alias
+keep
+f+ Mister Fantastic|alias_of|Reed Richards|Just as Mister Fantastic ingeniously discovered the method of concealment the Skrulls had been utilizing to become virtually undetectable, Criti Noll acted, using a special, Skrull-designed gun to subdue Reed Richards
+
+@7844 lint: Old Loki distinct; using Willis; belief -> suspected; escaped with no captor -> other_verb
+keep
+f- Thor|other_verb|using
+f+ Thor|used|Willis|using Willis to see which traps were real
+f- Doctor Doom|other_verb|believed
+f+ Doctor Doom|suspected|-|who believed Loki would one day bring about the end of Latveria
+t- no_relation|Sigurd and Lorelei escaped together
+f+ Sigurd|other_verb|escaped|Sigurd and Lorelei escaped together
+f+ Lorelei|other_verb|escaped|Sigurd and Lorelei escaped together
+
+@7847 lint: the visit is the attack that drove him mad (partner b7854)
+keep
+- Loki|met|Gardener
+
+@7854 lint: as partner b7847
+keep
+- Loki|met|Gardener
+
+@7859 lint: Loki and King Loki are two versions; both reconciled (two subjects, keep both); belief -> suspected
+keep
+f- Loki|other_verb|believed
+f+ Loki|suspected|-|they believed would threaten the Eighth Cosmos
+
+@7861 lint: Loki and Kid Loki are two incarnations
+keep
