@@ -1,0 +1,64 @@
+@5328 lint: drive her off one act
+keep
+- Danielle Moonstar|fought|Hela
+
+@5332 lint: met kept (charm attempt and her answer before she sends him flying)
+keep
+
+@5340 lint: shot down one act
+keep
+- Jack Wayne|fought|Storm
+
+@5357 lint: attempted -> re-match; range increase is no new power
+keep
+f- Doctor Octopus|other_verb|attempted
+f+ Doctor Octopus|other_verb|re-match|Doctor Octopus attempted a re-match against Spider-Man shortly after|attempted|stated|Doctor Octopus
+f- Doctor Octopus|gained_power|-
+t+ capability|the range of his psionic control over the tentacles had increased to a far greater distance than previously believed
+
+@5368 lint: defeated him fairly one statement
+keep
+- Silver Sable|fought|Crippler
+
+@5372 lint: found and brought to justice = one capture by the pair; Spider-Man alias
+keep
+- Peter Parker|met|Wizard
+- Human Torch|met|Wizard
+- Peter Parker|defeated|Wizard
+- Human Torch|defeated|Wizard
++ Human Torch|captured|Wizard|the pair eventually found the Wizard operating out of a mobile broadcasting station and brought him to justice
+f+ Spider-Man|alias_of|Peter Parker|As Spider-Man, Peter Parker began trying to prevent
+
+@5379 lint: became copula; ordered robbing act
+keep
+f- Lopez|other_verb|became
+t+ no_relation|Lopez then became one of Fisk's most trusted subordinates
+f+ Tracksuit Mafia|other_verb|robbing|so she tasked the Tracksuit Mafia with robbing the event|ordered|stated|Lopez
+
+@5383 lint: helped both ways = two acts; become corrupted copula
+keep
+f- Kaecilius|other_verb|become
+
+@5391 lint: Ultron vs Ultron Program distinct; rebelling twin of betrayed
+keep
+f- Ultron|other_verb|rebelling
+
+@5419 lint: met kept (swayed by her words); Kree are a race
+keep
+t- no_relation|deciding to betray their Kree compatriots
+t+ crowd_end|deciding to betray their Kree compatriots
+
+@5422 lint: tracked down into the battle, no met; trapping has no doer; the Rat Pack slaughtered
+keep
+- Red Wolf|met|Super-Skrull
+- Tigra|met|Super-Skrull
+f- Super-Skrull|other_verb|trapping
+f- Super-Skrull|destroyed|Cheyenne reservation
+f+ Rat Pack|other_verb|slaughtered|when they slaughtered a Cheyenne reservation
+
+@5442 lint: forgot clause object; escaping from the Workshop
+keep
+- Deadpool|departed|Workshop
++ Deadpool|escaped|Workshop|After escaping from the Workshop
+f- Deadpool|forgot|past before the Workshop
+f+ Deadpool|forgot|-|Wilson had no reliable memories about his past before the Workshop
