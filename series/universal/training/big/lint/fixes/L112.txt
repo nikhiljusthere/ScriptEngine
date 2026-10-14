@@ -1,0 +1,77 @@
+@7549 lint: High-Tech alias; Cybertek = Cybertek Systems, Inc.; Magnum vs Magnum Munitions; intended kill
+keep
+r Cybertek=>Cybertek Systems, Inc.
+f- Curtis Carr|also_known_as|High-Tech
+f+ High-Tech|alias_of|Curtis Carr|High-Tech (Curtis Carr)
+f+ Lawson|other_verb|kill|as he intended to kill Carr no matter what|planned|stated|Lawson
+
+@7578 lint: confront and kill one act; the emissaries are an unnamed group
+keep
+- Dracula|met|Vlad Tepulus
+- Dracula|fought|Vlad Tepulus
+t- no_relation|In 1496, Dracula was approached
+t+ crowd_end|In 1496, Dracula was approached by emissaries of Bologna, Spain, and Prussia, requesting that he remain out of their respective countries.
+
+@7580 lint: confronted and forced to flee one act (no met, no escape twin); Captain Cutlass met is the 1903 crossing; revived
+keep
+- Golden Angel|met|Dracula
+- Dracula|escaped|Golden Angel
++ Dracula|awakened|-|Though he was later revived
+
+@7600 lint: Deathstike = Lord Deathstike; dueled, besting him one sentence; decided to join = planned; wound victim subject
+keep
+r Deathstike=>Lord Deathstike
+- Jubilee|fought|Lord Deathstike
+f- Jubilee|joined|Forgiven
+f+ Jubilee|joined|Forgiven|Jubilee decided to stay with the Forgiven and join their mission|planned|stated|Jubilee
+f- Lord Deathstike|wounded|Kodo
+f+ Kodo|wounded|-|Lord Deathstike managed to mortally wound Kodo
+
+@7610 lint: Frost and Adrienne Frost are sisters; obliterate to defeat him = defeated; Jubilee is the tied member of the Brawn clash (kept); accepting students is no capability
+keep
+- Jubilee|fought|Emplate
++ Jubilee|defeated|Emplate|which caused an infuriated Jubilee to obliterate a section of the school to defeat him
+t- capability|who started to accept human students
+t+ no_relation|who started to accept human students
+
+@7635 lint: defeats and injures one sentence; speech acts are actual; Wolverine injured
+keep
+- Vergil|fought|Wolverine
+f+ Wolverine|wounded|-|which he uses to seriously injure Wolverine
+f- Vergil|other_verb|declares
+f+ Vergil|other_verb|declares|He declares that neither humans nor mutants are capable of wielding the sword's true power.
+f- Vergil|other_verb|states
+f+ Vergil|other_verb|states|he states that both his and the sword's soul still hunger for more power.
+
+@7658 lint: stabbed, but she prevailed one sentence; the Defenders of Light and Dark are one group; regaining is no new power
+keep
+- Knull|fought|Hela
+- Defenders of Light|fought|Hela
+- Dark|fought|Hela
++ Defenders of Light and Dark|fought|Hela|the Defenders launched a full assault on Hela
+f- Knull|gained_power|-
+
+@7662 lint: All-Mother is a title naming no group; the unleash is the deal's purpose; giants and trolls are crowds
+keep
+f- Freyja|also_known_as|All-Mother
+f- King Loki|other_verb|unleash
+f+ King Loki|other_verb|unleash|King Loki made a deal with Hela and Tyr to unleash the resurrected Midgard Serpent|planned|stated|King Loki
+t- deictic|Reinforced by the Frost Giants
+t+ crowd_end|Reinforced by the Frost Giants of Jotunheim and the Kingdom of Rock Trolls, Hela continued to press the attack,
+
+@7664 lint: Guardians vs Dark Guardians distinct; deflecting the missile is no fight with Thanos
+keep
+- Beta Ray Bill|fought|Thanos
+f+ Beta Ray Bill|other_verb|knocked|the missile was knocked off course by Beta Ray Bill, causing it to hit Thanos
+
+@7669 lint: had is a causative; Bor created the stone
+keep
+f- Bor Burison|other_verb|had
+f+ Bor Burison|created|Death Stone|Hela was originally the artificial Death Stone created by the then-All-Father Bor Burison
+
+@7674 lint: Hell vs Hell Lords distinct
+keep
+
+@7728 lint: attacked, whom he easily dispatched one sentence
+keep
+- Los Angeles Police Department|fought|Lucas Bishop
