@@ -1,0 +1,68 @@
+@4633 lint: codename_of -> alias_of
+keep
+f- Mystique|codename_of|Raven Darkhölme
+f+ Mystique|alias_of|Raven Darkhölme|Raven Darkhölme, the untrustworthy Mystique
+
+@4635 lint: copula became dropped (sentence covered by set out)
+keep
+f- Galactus|other_verb|became
+
+@4639 lint: helped Norman is a distinct act; real name Harry for Kindred
+keep
+r Kindred=>Harry
+f- Harry|alias_of|Harry
+f+ Kindred|alias_of|Harry|explained that Kindred was Harry
+
+@4655 lint: confronted turns into blast, no met; blast incapacitating one act; real name Darren Cross
+keep
+r M.O.D.O.K.=>Darren Cross
+- Cassie|met|Darren Cross
+- Ant-Man|met|Darren Cross
+- Darren Cross|fought|Cassie
+- Darren Cross|fought|Ant-Man
+f- Darren Cross|alias_of|Darren Cross
+f+ M.O.D.O.K.|alias_of|Darren Cross|who had become a giant head, now going by M.O.D.O.K.
+
+@4656 lint: approached turns into spear throw, no met; Romanoff entered the fight; Glaive injured; relieved copula
+keep
+- Steve Rogers|met|Midnight
++ Natasha Romanoff|fought|Midnight|soon Sam Wilson and Natasha Romanoff entered the fight
+f- Maximoff|other_verb|relieved
+f+ Corvus Glaive|wounded|-|Romanoff managed to injure Glaive
+
+@4670 lint: came across, immediately beating = fight, no met
+keep
+- Deadpool|met|Weapon X
+
+@4671 lint: also_known_as -> alias_of; editorial epithet dropped
+keep
+f- Lucas Bishop|also_known_as|Bishop
+f- Lucas Bishop|also_known_as|Archbishop
+f- Lucas Bishop|also_known_as|Bish
+f- Lucas Bishop|also_known_as|Red Bishop
+f- Lucas Bishop|also_known_as|Lucas the Lawyer
+f- Lucas Bishop|also_known_as|Bishop the Last X-Man
+f+ Bishop|alias_of|Lucas Bishop|CurrentAlias = Bishop
+f+ Archbishop|alias_of|Lucas Bishop|Archbishop,{{Citation}}
+f+ Bish|alias_of|Lucas Bishop|Bish{{Citation}}
+f+ Red Bishop|alias_of|Lucas Bishop|Red Bishop{{r
+f+ Lucas the Lawyer|alias_of|Lucas Bishop|Lucas the Lawyer
+
+@4677 lint: met kept (sanctuary, training before the fight); tag duplicates forgot
+keep
+t- no_relation|Her mind already in a state of shock
+
+@4679 lint: met kept (talk first); throw then pin one sentence -> defeated
+keep
+- Peggy Carter|fought|Edwin
+
+@4684 lint: ok (royal family met kept, partner b9714)
+keep
+
+@9714 lint: Imperium = Kree Imperium (window form); royal family met kept as in b4684
+keep
+r Imperium=>Kree Imperium
+
+@4688 lint: drive off = one act, defeated
+keep
+- Cap|fought|Machete
