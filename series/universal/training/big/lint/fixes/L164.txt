@@ -1,0 +1,58 @@
+@10571 lint: Eleanor = Eleanor Bishop; approached in person by Derek = met, not contacted; "he came into contact" is Fisk (no Derek row); Derek's death and marriage are stated
+keep
+r Eleanor=>Eleanor Bishop
+f- Fisk|contacted|Derek Bishop
++ Derek Bishop|met|Fisk|Fisk was approached by Derek Bishop
+f- Derek Bishop|other_verb|among
+f+ Derek Bishop|dies|-|the loss of Derek
+f- Derek Bishop|contacted|Eleanor Bishop
+f+ Derek Bishop|married|Eleanor Bishop|Eleanor Bishop, Derek's wife
+
+@10578 lint: became his champion = copula (tagged); "Banner remained in Hulk form" ties the two forms (A156 link)
+keep
+f- Hulk|other_verb|became
+f+ Hulk|alias_of|Banner|Banner remained in Hulk form.
+t+ no_relation|became his champion
+
+@10639 lint: met kept (stumbling into the gang is a separate moment from the later quest that defeats the Vulture)
+keep
+
+@10649 lint: Avengers (team) vs Avengers Compound (place)
+keep
+
+@10661 lint: joining Barton and Maximoff where they are = met; their own arrival is not stated; Lang accepted: the recruiting is actual (Wilson already met Lang earlier)
+keep
+- Barton|arrived|Leipzig-Halle Airport
+- Maximoff|arrived|Leipzig-Halle Airport
++ Rogers|met|Barton|joined up with Barton and Maximoff at Leipzig-Halle Airport
++ Rogers|met|Maximoff|joined up with Barton and Maximoff at Leipzig-Halle Airport
++ Wilson|met|Barton|joined up with Barton and Maximoff at Leipzig-Halle Airport
++ Wilson|met|Maximoff|joined up with Barton and Maximoff at Leipzig-Halle Airport
++ Barnes|met|Barton|joined up with Barton and Maximoff at Leipzig-Halle Airport
++ Barnes|met|Maximoff|joined up with Barton and Maximoff at Leipzig-Halle Airport
+f- Barton|recruited|Scott Lang
+f- Maximoff|recruited|Scott Lang
+f+ Barton|recruited|Scott Lang|went to recruit Scott Lang
+f+ Maximoff|recruited|Scott Lang|went to recruit Scott Lang
+
+@10670 lint: Carter's gun-pointing is a stated act; the agents are a crowd (partner b12610)
+keep
+f+ Sharon Carter|other_verb|pointing|Sharon Carter approached Rumlow, pointing her gun at his head
+t- no_relation|All the S.H.I.E.L.D. agents in the room drew their weapons
+t+ crowd_end|All the S.H.I.E.L.D. agents in the room drew their weapons, pointing them at Rumlow and the rest of the STRIKE operatives.
+
+@12610 lint: met kept (Carter tells him those are Captain America's orders and Rumlow answers before the knife attack); as partner b10670
+keep
+f+ Sharon Carter|other_verb|pointing|Sharon Carter approached Rumlow, pointing her gun at his head
+t- no_relation|All the S.H.I.E.L.D. agents in the room drew their weapons
+t+ crowd_end|All the S.H.I.E.L.D. agents in the room drew their weapons, pointing them at Rumlow and the rest of the STRIKE operatives.
+
+@10719 lint: met kept (a different pair from the fight); going back to his plan is an act he did: actual
+keep
+f- Loki|other_verb|went
+f+ Loki|other_verb|went|Loki went back to his original plan
+
+@10725 lint: Osborn is Norman, not Harry; helps him up and greets him in person = met (greeted twin dropped, A89)
+keep
++ Harry Osborn|met|Parker|Harry Osborn helps him up and greets him.
+f- Harry Osborn|greeted|Parker

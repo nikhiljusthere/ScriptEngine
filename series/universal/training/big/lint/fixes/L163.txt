@@ -1,0 +1,36 @@
+@10485 lint: face to face with the possessed "mother", who grabs him at once: no met (the demand comes mid-fight)
+keep
+- Daimon|met|"Victoria Helstrom"
+
+@10507 lint: Simmons = Jemma Simmons; "Johnson and Simmons tried to protect" ties Simmons too
+keep
+r Simmons=>Jemma Simmons
+f+ Jemma Simmons|protected|JT James|Johnson and Simmons tried to protect JT James|attempted|stated|Jemma Simmons
+
+@10510 lint: "The group fought hard" is its own clause before "but Drax and Gamora were nearly killed": fought kept
+keep
+
+@10515 lint: kidnapped by the named pair = captured; Obfonteri = Kraglin Obfonteri; the ordered act (orders convention)
+keep
+r Obfonteri=>Kraglin Obfonteri
+f- Mantis|kidnapped|Kevin Bacon
+f- Drax|kidnapped|Kevin Bacon
++ Mantis|captured|Kevin Bacon|until he realized they had kidnapped Bacon
++ Drax|captured|Kevin Bacon|until he realized they had kidnapped Bacon
+f+ Mantis|other_verb|free|Quill made Mantis free him from her influence|ordered|stated|Quill
+
+@10517 lint: Deschaine = Andre Deschaine
+keep
+r Deschaine=>Andre Deschaine
+
+@10524 lint: Simmons = Jemma Simmons
+keep
+r Simmons=>Jemma Simmons
+
+@10535 lint: Fitz = Leo Fitz
+keep
+r Fitz=>Leo Fitz
+
+@10570 lint: met kept (Fisk tells Marianna to run while Daredevil states his verdict: talk before the charge); knocking him through a wall is fought, not defeated
+keep
+- Daredevil|defeated|Fisk

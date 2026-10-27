@@ -1,0 +1,51 @@
+@10747 lint: Sanders = James Sanders; other_verb takes the verb word (assures/puts/embraces); "The contact" is unnamed (no_doer); gets worried = copula
+keep
+r Sanders=>James Sanders
+f- The contact|contacted|James Sanders
+t+ no_doer|The contact texts them to put the money they had gotten in a dumpster.
+f- Maria Vasquez|other_verb|gets
+t+ no_relation|Vasquez gets worried as there is nothing in the dumpster,
+f- James Sanders|other_verb|Maria Vasquez
+f+ James Sanders|other_verb|assures|Sanders assures her that it is safe.
+f- Maria Vasquez|other_verb|money
+f+ Maria Vasquez|other_verb|puts|Vasquez puts the money in
+f- Maria Vasquez|other_verb|James Sanders
+f+ Maria Vasquez|other_verb|embraces|Vasquez embraces Sanders
+
+@10749 lint: Lincoln = Lonnie Lincoln
+keep
+r Lincoln=>Lonnie Lincoln
+
+@10769 lint: finding Pilgrim holding Hoyle at gunpoint turns into the shot: no met (the Hoyle met stays)
+keep
+- Bendix|met|John Pilgrim
+
+@10779 lint: the Cavalry is May's epithet-codename: alias_of; yelling is no defeat; sedating a patient is no fight
+keep
+f- May|also_known_as|Cavalry
+f+ Cavalry|alias_of|May|as she was the Cavalry
+- Fitz|defeated|Skye
+- May|defeated|Hutchins
+f+ May|other_verb|sedated|May sedated Hutchins
+
+@10784 lint: Reyes = Camilla Reyes
+keep
+r Reyes=>Camilla Reyes
+
+@10793 lint: May = Melinda May
+keep
+r May=>Melinda May
+
+@10796 lint: met kept (Hunter came to talk and insisted before Mackenzie choked him out)
+keep
+
+@10810 lint: became estranged = copula: no row
+keep
+f- Walker|other_verb|became
+t+ no_relation|Walker became estranged from Dorothy
+
+@10823 lint: held in Kilgrave's captivity = captured; Jones = Jessica Jones
+keep
+r Jones=>Jessica Jones
+f- Kilgrave|kidnapped|Jessica Jones
++ Kilgrave|captured|Jessica Jones|under Kilgrave's captivity
