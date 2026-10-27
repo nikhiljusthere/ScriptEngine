@@ -1,0 +1,49 @@
+@13959 lint: met kept (Kang speaks with them and answers Cassie's question before he hurts her)
+keep
+
+@13934 lint: Quill = Peter Quill
+keep
+r Quill=>Peter Quill
+
+@13933 lint: Kraglin = Kraglin Obfonteri
+keep
+r Kraglin=>Kraglin Obfonteri
+
+@13702 lint: Johnson = Daisy Johnson, Simmons = Jemma Simmons
+keep
+r Johnson=>Daisy Johnson
+r Simmons=>Jemma Simmons
+
+@13692 lint: S.H.I.E.L.D. (group) vs S.H.I.E.L.D. wristband (thing)
+keep
+
+@13673 lint: met kept (the Casey encounter ends in his teleport, no fight; the fight is a later scene); Loki struck her: his attack is an event too
+keep
++ Loki|fought|B-15|B-15 asked Loki what was so funny, but Loki struck her.
+
+@13667 lint: Mobius = Mobius M. Mobius
+keep
+r Mobius=>Mobius M. Mobius
+
+@13630 lint: Harrow = Arthur Harrow
+keep
+r Harrow=>Arthur Harrow
+
+@13527 lint: the window writes only "Osborn": no "Norman Osborn" end (a page title is no window text); the Green Goblin alter is tied to Osborn (A156)
+keep
+r Norman Osborn=>Osborn
+f+ Green Goblin|alias_of|Osborn|removing the Green Goblin alter from Osborn's psyche for good
+
+@13484 lint: Killmonger approached and was stopped before he could attack, with no talk: no met with Kahhori
+keep
+- Erik Killmonger|met|Kahhori
+
+@13382 lint: putting him to sleep is one act: defeated only
+keep
+- Mantis|fought|Thanos
+
+@13334 lint: A134 "Ant-Man tried" names no verb: no row (tagged); the ordered act (orders convention)
+keep
+f- Hank Pym|other_verb|tried
+t+ no_relation|Ant-Man tried, but his regulator was damaged,
+f+ Hank Pym|other_verb|tell|She told Ant-Man to tell Hope she loved her|ordered|stated|Janet van Dyne

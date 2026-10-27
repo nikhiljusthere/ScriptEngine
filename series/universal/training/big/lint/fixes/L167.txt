@@ -1,0 +1,48 @@
+@10897 lint: Murdock = Matt Murdock
+keep
+r Murdock=>Matt Murdock
+
+@10971 lint: A134 trying -> hold
+keep
+f- Corrupted Strange|other_verb|trying
+f+ Corrupted Strange|other_verb|hold|While Strange was trying to hold the universe together|attempted|stated|Corrupted Strange
+
+@11016 lint: Blonsky = Emil Blonsky
+keep
+r Blonsky=>Emil Blonsky
+
+@11040 lint: met kept (Houston tried to warn her before the fight); her escape names no captor or place: other_verb fact
+keep
+f+ Belova|other_verb|escaped|As she escaped from the building
+
+@11057 lint: Belova's attack and Barton overpowering her are two acts by different doers: fought kept
+keep
+
+@11083 lint: A134 trying -> find; revealed/discovered with a clause = object - (A115); "rendered her" has no doer of hers
+keep
+f- Ava Starr|other_verb|trying
+f+ Ava Starr|other_verb|find|Since then, Starr and Foster had been trying to find a cure|attempted|stated|Ava Starr
+f- Foster|other_verb|trying
+f+ Foster|other_verb|find|Since then, Starr and Foster had been trying to find a cure|attempted|stated|Foster
+f- Ava Starr|other_verb|rendered
+f- Ava Starr|revealed|Van Dyne
+f- Ava Starr|revealed|Pym
+f+ Ava Starr|revealed|-|Starr revealed that Pym had fired her father
+f+ Van Dyne|discovered|-|they discovered that Foster was working with her
+f+ Pym|discovered|-|they discovered that Foster was working with her
+
+@11108 lint: met kept (Wong freed him for an arranged cage match: the meeting precedes the bout); the gigs' transformation is habitual fact: actual; Intelligencia caught him; A156 link
+keep
+f- Blonsky|other_verb|turn
+f+ Blonsky|other_verb|turn|where he would turn into Abomination
+f+ Intelligencia|discovered|Blonsky|who caught him in the act
+f+ Abomination|alias_of|Blonsky|where he would turn into Abomination
+
+@11115 lint: A134 attempted -> get
+keep
+f- Blonsky|other_verb|attempted
+f+ Blonsky|other_verb|get|Blonsky attempted to get a clean shot|attempted|stated|Blonsky
+
+@11131 lint: she found Mayhem and punched her at once: no met (the Connors met stays)
+keep
+- Bowen|met|Mayhem

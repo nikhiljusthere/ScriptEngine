@@ -1,0 +1,48 @@
+@12728 lint: Strange and the Other Strange are two versions
+keep
+
+@12725 lint: Strange and the other Strange are two versions
+keep
+
+@12697 lint: met kept (Zabo interrupted and begged them to stop before he killed her)
+keep
+
+@12682 lint: Ultron (person) vs Ultron Sentries (robots)
+keep
+
+@12654 lint: Ultron found the team and Thor blasted him at once: no met with Thor (the other Guardians' met rows stay)
+keep
+- Ultron|met|Thor
+
+@12619 lint: Pierce = Alexander Pierce; a recommendation is a speech act (M6)
+keep
+r Pierce=>Alexander Pierce
+f- Alexander Pierce|other_verb|recommended
+f+ Alexander Pierce|other_verb|recommended|Pierce, tired of the council questioning S.H.I.E.L.D.'s work, recommended that maybe the council itself should need to be overseen.
+
+@12598 lint: Hydra (group) vs Madame Hydra (person); "throw her through a window, making her fall" is one act: defeated only; Terrigenesis is no revival
+keep
+- Daisy Johnson|fought|Madame Hydra
+- Daisy Johnson|awakened|-
+
+@12581 lint: became well-acquainted = copula: no row; Fury = Nick Fury
+keep
+f- Carter|other_verb|became
+r Fury=>Nick Fury
+
+@12580 lint: Rogers = Steve Rogers
+keep
+r Rogers=>Steve Rogers
+
+@12563 lint: also_known_as is not in use: alias_of (alias as subject)
+keep
+f- Hyperspace|also_known_as|sub-space
+f- Hyperspace|also_known_as|warp-space
+f+ sub-space|alias_of|Hyperspace|Hyperspace is also known as sub-space and warp-space.
+f+ warp-space|alias_of|Hyperspace|Hyperspace is also known as sub-space and warp-space.
+
+@12542 lint: Meachum and his son Ward Meachum are two people
+keep
+
+@12532 lint: Hand (group) vs Hand Compound (place)
+keep
