@@ -1,0 +1,52 @@
+@11922 lint: they found Deschaine playing and Johnson had the dagger thrown at once, no talk: no met for Johnson
+keep
+- Johnson|met|Andre Deschaine
+
+@11921 lint: Minoru = Nico Minoru
+keep
+r Minoru=>Nico Minoru
+
+@11919 lint: Johnson (Tyrone) and Adina Johnson (his mother) are two people
+keep
+
+@11910 lint: Bowen = Tandy Bowen
+keep
+r Bowen=>Tandy Bowen
+
+@11896 lint: "able to fight briefly against Melinda May, being defeated by the latter": the fight and May's win are different doers' acts: fought kept
+keep
+
+@11891 lint: Rodriguez = Yo-Yo Rodriguez
+keep
+r Rodriguez=>Yo-Yo Rodriguez
+
+@11885 lint: Malick = Nathaniel Malick; the two "helped" rows are two different acts; A140 name the power
+keep
+r Malick=>Nathaniel Malick
+f- Kora|gained_power|-
+f+ Kora|gained_power|energy manipulation|gained the power to manipulate energy
+
+@11872 lint: Wilder (Geoffrey) and Catherine Wilder are husband and wife
+keep
+
+@11867 lint: what Molly "probably did know" is Catherine's claim, not an actual fact
+keep
+f- Molly Hernandez|other_verb|know
+f+ Molly Hernandez|other_verb|know|Geoffrey was told by Catherine that Molly Hernandez probably did know about the sacrifices perpetrated by PRIDE.|claimed|reported|Catherine
+
+@11859 lint: A134 "Minoru's attempt failed" names no verb: no row (tagged); the threat is a speech act (M6)
+keep
+f- Minoru|other_verb|attempt
+t+ no_relation|Minoru's attempt failed, however,
+f- Jonah|other_verb|threatening
+f+ Jonah|other_verb|threatening|threatening to kill the Runaways if they did not comply.
+
+@11851 lint: A134 attempt -> find; "their daughter" is unnamed: no gave row
+keep
+f- Geoffrey|other_verb|attempt
+f+ Geoffrey|other_verb|find|his secret attempt to find his son|attempted|stated|Geoffrey
+f- Tina|gave|daughter
+
+@11846 lint: Minoru here is Tina = Tina Minoru
+keep
+r Minoru=>Tina Minoru

@@ -1,0 +1,73 @@
+@11121 lint: became eligible = copula: no row (tagged)
+keep
+f- Blonsky|other_verb|became
+t+ no_relation|Blonsky became eligible for parole
+
+@11147 lint: "making her wake up" is Dagger waking from the spell; A134 trying -> follow
+keep
+- Johnson|awakened|-
++ Dagger|awakened|-|She yelled for Johnson, making her wake up
+f- Dagger|other_verb|trying
+f+ Dagger|other_verb|follow|trying to follow his voice.|attempted|stated|Dagger
+
+@11153 lint: Bowen (Tandy) and Melissa Bowen (her mother) are two people; found playing and stabbed, no talk: no met; Bowen threw the dagger at Johnson, not at Deschaine; the stab that drops him is one act: defeated; a quote stays inside one sentence; a warning is a speech act (M6)
+keep
+- Tyrone Johnson|met|Andre Deschaine
+- Bowen|fought|Andre Deschaine
+- Tyrone Johnson|fought|Andre Deschaine
++ Tyrone Johnson|defeated|Andre Deschaine|Deschaine was stabbed and fell to the ground.
+f- Tyrone Johnson|wounded|Andre Deschaine
+f+ Tyrone Johnson|wounded|Andre Deschaine|Johnson absorbed the dagger and teleported to Deschaine, sending it at him.
+f- Bowen|warned|Tyrone Johnson
+f+ Bowen|warned|Tyrone Johnson|She told Johnson not to scare her
+
+@11212 lint: Reyes (Robbie) and his brother Gabe Reyes are two people
+keep
+
+@11220 lint: Aida's resistance and Coulson's kill are acts of different doers: fought kept
+keep
+
+@11222 lint: Bauer and Joseph Bauer are two people
+keep
+
+@11235 lint: Stein = Chase Stein
+keep
+r Stein=>Chase Stein
+
+@11252 lint: A134 try -> sent (he did send it); the sentence now carries a fact, no crowd tag
+keep
+f- Wilder|other_verb|try
+f+ Wilder|other_verb|sent|However, he decided to try one last thing and sent his former friends a picture of their old group.
+t- crowd_end|However, he decided to try one last thing and sent his former friends a picture of their old group.
+
+@11307 lint: codename_of -> alias_of; knocking them to the ground is fought, not defeated; smoke bombs at the site are no attack on the heroes; Carter sent the word; "suggested" is the speech act
+keep
+f- Wilson|codename_of|Captain America
+f+ Captain America|alias_of|Wilson|having accepted that Wilson was the new Captain America
+- Wilson|defeated|Flag Smashers
++ Wilson|fought|Flag Smashers|knock the Flag Smashers to the ground
+- Georges Batroc|fought|Walker
+- Georges Batroc|fought|Barnes
+- Georges Batroc|fought|Wilson
+f- Wilson|contacted|Sharon Carter
+f+ Sharon Carter|contacted|Wilson|After Wilson received word from Sharon Carter
+f- Wilson|other_verb|split
+f+ Wilson|other_verb|suggested|he suggested they split up
+
+@11309 lint: the Morgenthau and Falcon/Winter Soldier fights are stated before being overpowered or the incapacitations (fought kept); "fought Taskmaster ... and managed to defeat her" is one coordinated act: defeated only; A140 name the abilities
+keep
+- Walker|fought|Taskmaster
+f- Walker|gained_power|-
+f+ Walker|gained_power|enhanced physical abilities|gaining enhanced physical abilities
+
+@11314 lint: "fought with the assassin and defeated her" and "engaged in a fight with Taskmaster and was able to quickly fend her off" are each one coordinated act: defeated only
+keep
+- Walker|fought|Yelena Belova
+- Walker|fought|Taskmaster
+
+@11352 lint: "wished to try" the plantains is tasting, not an attempt word: kept
+keep
+
+@11360 lint: Quinn = Ian Quinn
+keep
+r Quinn=>Ian Quinn

@@ -1,0 +1,41 @@
+@8238 lint residual: "Danu|alias_of|Danu" is a self pair; the second title is Lady Danu
+keep
+f- Danu|alias_of|Danu
+f+ Lady Danu|alias_of|Danu|titles such as Mother Danu and Lady Danu attributed to her
+
+@2928 lint residual: two discovered|- rows; each names the thing found (missiles / the launch system)
+keep
+f- J.A.R.V.I.S.|discovered|-
+f+ J.A.R.V.I.S.|discovered|missiles|J.A.R.V.I.S. detected missiles targeting the main reactor
+f+ J.A.R.V.I.S.|discovered|missile launch system|J.A.R.V.I.S. eventually found the missile launch system
+
+@4487 lint residual: "he did not die" = dies with certainty denied (A146), not other_verb
+keep
+f- Cross|other_verb|die
+f+ Cross|dies|-|Despite Cross' violent shrinking, he did not die|actual|denied|-
+
+@4112 lint residual: "had a vision" = copula, no relation row (tagged)
+keep
+f- Ulysses Cain|other_verb|had
+t+ no_relation|when Ulysses had a vision that Logan would kill Gabby
+
+@2627 lint residual: "to try the Fantastic Four for crimes" = put on trial, not an attempt word: kept
+keep
+
+@4276 lint residual: "was to try Loki" = judge him, not an attempt word: kept
+keep
+
+@39 lint residual: F_became: becoming the embodiment of existence = transformed_into; met kept (Nebula's confrontation is a later moment than the torture)
+keep
+f- Thanos|became|embodiment of existence
+f+ Thanos|transformed_into|embodiment of existence|occupying Eternity's place as the embodiment of existence
+
+@8238 lint residual: the gate strips the "Lady" title (rank prefix), recreating the self pair: no second alias row
+keep
+f- Danu|alias_of|Danu
+
+@2928 lint residual: the gate keeps discovered objectless; the second finding is written with its own verb
+keep
+f- J.A.R.V.I.S.|discovered|-
+f+ J.A.R.V.I.S.|discovered|-|J.A.R.V.I.S. detected missiles targeting the main reactor
+f+ J.A.R.V.I.S.|other_verb|found|J.A.R.V.I.S. eventually found the missile launch system
