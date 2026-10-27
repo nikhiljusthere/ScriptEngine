@@ -1,0 +1,81 @@
+@257 lint: F_became: "became king" names no realm: no row (as b1450)
+keep
+f- Edward VIII|became|king
+
+@182 lint: F_became: emboldened and a tyrant are states: no rows
+keep
+f- Thanos|became|emboldened
+f- Hela|became|tyrant
+
+@158 lint: F_became: "declaring himself king" names no realm: no row
+keep
+f- Maximus|became|king
+
+@124 lint: F_became: a vigilante is a status: no row
+keep
+f- Clint|became|vigilante
+
+@102 lint: F_became: a world becoming the Throneworld is no row; crowned Emperor = leader_of the Skrull Empire the sentence names
+keep
+f- Tarnax II|became|new Throneworld
+f- Super-Skrull|became|Emperor of the Skrulls
+f+ Super-Skrull|leader_of|Skrull Empire|the Skrull Empire reformed with Tarnax II becoming the new Throneworld and the Super-Skrull being crowned the new Emperor of the Skrulls
+
+@90 lint: F_became: "defenders of a world" is a role: no row
+keep
+f- X-Men|became|defenders
+
+@79 lint: F_became: the Black Queen role she is named by afterwards = alias_of; the devolution into Dark Phoenix is no revival (no awakened)
+keep
+f- Phoenix|became|Black Queen
+f+ Black Queen|alias_of|Phoenix|corrupting her to embrace the role of the Black Queen within the Hellfire Club
+- Phoenix|awakened|-
+
+@59 lint: F_became: a martyr is a status: no row
+keep
+f- Cyclops|became|martyr
+
+@57 lint: F_became: resurrected as the soulless Darkchylde = transformed_into
+keep
+f- Illyana Rasputin|became|Darkchylde
+f+ Illyana Rasputin|transformed_into|Darkchylde|Illyana, resurrected as the soulless Darkchylde by Belasco,
+
+@53 lint: F_became: "headmaster of his school" names no school in its sentence: no row; a sensed arrival is learned|- (A115)
+keep
+f- Magneto|became|headmaster
+f- Xavier|learned|Beyonder
+f+ Xavier|learned|-|Xavier psychically sensed his arrival
+
+@27 lint: F_became: the sole host as Dark Phoenix = transformed_into; it is no revival (no awakened)
+keep
+f- Cyclops|became|Dark Phoenix
+f+ Cyclops|transformed_into|Dark Phoenix|making him the sole host as Dark Phoenix
+- Cyclops|awakened|-
+
+@21 lint: F_became: "traitors" and "a subject of investigation" are states: no rows
+keep
+f- Avengers|became|traitors
+f- Captain Marvel|became|subject of investigation
+
+@18 lint: F_became: the new Avengers chairman = leader_of the Avengers
+keep
+f- Doctor Druid|became|Avengers chairman
+f+ Doctor Druid|leader_of|Avengers|appointing him as the new Avengers chairman
+
+@10 lint: F_became: the new supremor of the Kree Empire = leader_of it
+keep
+f- Ronan the Accuser|became|supremor
+f+ Ronan the Accuser|leader_of|Kree Empire|As the new supremor of the Kree Empire
+
+@7 lint: F_became: the Phoenix's host is no group or codename: no row (the shards row stays)
+keep
+f- Echo|became|host
+
+@5 lint: F_became: the new Wasp = the mantle: alias_of
+keep
+f- Nadia|became|Wasp
+f+ Wasp|alias_of|Nadia|As the new and unstoppable Wasp, she proved her worth in helping the Vision overcome problems related to Kang's tampering.
+
+@4 lint: F_became: "founding member" status (joined Avengers stays): no row
+keep
+f- Captain America|became|founding member

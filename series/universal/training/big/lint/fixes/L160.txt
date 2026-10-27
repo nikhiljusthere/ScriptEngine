@@ -1,0 +1,67 @@
+@732 lint: F_became: Great Captain, Captain Commander and Red Bishop are ranks: no rows
+keep
+f- Lucas Bishop|became|Great Captain
+f- Lucas Bishop|became|Red Bishop
+f- Lucas Bishop|became|Captain Commander
+
+@693 lint: F_became: academy instructor is an occupation: no row (partner b7448 has no such row)
+keep
+f- Peter Parker|became|S.H.I.E.L.D. Academy instructor
+
+@7448 lint: partner of b693: shared rows unchanged
+keep
+
+@689 lint: F_became: reclaiming the mantle of Daredevil = alias_of (as b3218)
+keep
+f- Matt|became|Daredevil
+f+ Daredevil|alias_of|Matt|he officially reclaimed the mantle of Daredevil
+
+@667 lint: F_became: "a solo criminal" is a status: no row
+keep
+f- Trapster|became|solo criminal
+
+@619 lint: F_became: changing to Ant-Man = the codename: alias_of
+keep
+f- Scott Lang|became|Ant-Man
+f+ Ant-Man|alias_of|Scott Lang|He changed to Ant-Man
+
+@611 lint: F_became: becoming the Phantom Rider = alias_of; it is no revival (no awakened)
+keep
+f- Lincoln Slade|became|Phantom Rider
+f+ Phantom Rider|alias_of|Lincoln Slade|Lincoln Slade, who became the Phantom Rider
+- Lincoln Slade|awakened|-
+
+@605 lint: F_became: barmaid is an occupation: no row (partner b8416 has no such row)
+keep
+f- Jessica|became|barmaid
+
+@8416 lint: partner of b605: shared rows unchanged
+keep
+
+@590 lint: F_became: the assumed mantles of Captain America and Bucky = alias_of (Mace's authorisation stays apparent); F_kidnapped: victim-only passive = no_doer tag
+keep
+f- William Nasland|became|Captain America
+f+ Captain America|alias_of|William Nasland|In 1950, Truman later authorized William Nasland and Fred Davis to assume the mantle of Captain America and Bucky,
+f- Fred Davis|became|Bucky
+f+ Bucky|alias_of|Fred Davis|In 1950, Truman later authorized William Nasland and Fred Davis to assume the mantle of Captain America and Bucky,
+f- Jeff Mace|became|Captain America
+f+ Captain America|alias_of|Jeff Mace|Truman also appeared to authorize Jeff Mace to also assume the role of Captain America.|actual|apparent|-
+f- Truman|kidnapped|-
+t+ no_doer|that were kidnapped to the two-dimensional reality of Flatula
+
+@573 lint: F_became: "the first mass killer" is a status: no row
+keep
+f- Cortland Kasady|became|first mass killer
+
+@563 lint: F_became: becoming the Red Goblin by bonding with the symbiote = alias_of
+keep
+f- Norman Osborn|became|Red Goblin
+f+ Red Goblin|alias_of|Norman Osborn|After Norman Osborn became the Red Goblin
+
+@561 lint: F_became: reverting to normal is a state: no row
+keep
+f- Bug|became|normal
+
+@534 lint: F_became: Sorcerer Supreme names no group: no row
+keep
+f- Strange Supreme|became|Sorcerer Supreme

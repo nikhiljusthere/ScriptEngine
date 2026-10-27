@@ -1,0 +1,58 @@
+@522 lint: F_became: "gone insane" is a state: no row
+keep
+f- Miller|became|insane
+
+@520 lint: F_became: "the last surviving Titan" is a status: no row
+keep
+f- Thanos|became|last surviving Titan
+
+@450 lint: F_became: the planet's new Protector = his codename (reported): alias_of; the bands are no revival; gave takes the recipient
+keep
+f- Noh-Varr|became|Protector
+f+ Protector|alias_of|Noh-Varr|that he was the planet's new Protector|actual|reported|-
+- Noh-Varr|awakened|-
+f- Supreme Intelligence|gave|Nega-Bands
+f+ Supreme Intelligence|gave|Noh-Varr|The Supreme Intelligence then granted him the power needed to carry out his mission in the form a set of Nega-Bands
+
+@392 lint: F_became: President of the United States = leader_of
+keep
+f- Martin Van Buren|became|President of the United States
+f+ Martin Van Buren|leader_of|United States|Martin Van Buren became the 8th President of the United States
+
+@381 lint: F_became: returning as Deadpool = the codename: alias_of
+keep
+f- Wade|became|Deadpool
+f+ Deadpool|alias_of|Wade|returned as Deadpool
+
+@368 lint: F_became: her destiny as the Scarlet Witch = alias_of
+keep
+f- Wanda Maximoff|became|Scarlet Witch
+f+ Scarlet Witch|alias_of|Wanda Maximoff|embraced her destiny as the Scarlet Witch
+
+@361 lint: F_became: "a high-level official" in an unnamed society: no row
+keep
+f- Janet van Dyne|became|high-level official
+
+@346 lint: F_became: his reign as the King of Hell = leader_of Hell
+keep
+f- Johnny|became|King of Hell
+f+ Johnny|leader_of|Hell|During his reign as the King of Hell
+
+@341 lint: F_became: becoming the Mandarin again = the persona: alias_of
+keep
+f- Slattery|became|Mandarin
+f+ Mandarin|alias_of|Slattery|Slattery became the Mandarin again
+
+@339 lint: F_became: Sergeant is a rank (no row); the promotion places him in the NYPD
+keep
+f- Cole North|became|Sergeant
+f+ Cole North|member_of|New York City Police Department|Cole North is promoted to Sergeant within the New York City Police Department.
+
+@310 lint: F_became: herald of Galactus is a role over no group: no row
+keep
+f- Silver Surfer|became|herald of Galactus
+
+@301 lint: F_became: becoming Thor once more = the mantle: alias_of
+keep
+f- Jane Foster|became|Thor
+f+ Thor|alias_of|Jane Foster|to become Thor once more
