@@ -1,0 +1,63 @@
+@1432 lint: F_became: taking Fury's place as the Man on the Wall = the mantle: alias_of
+keep
+f- Winter Soldier|became|Man on the Wall
+f+ Man on the Wall|alias_of|Winter Soldier|the Winter Soldier took his place as the Man on the Wall
+
+@1387 lint: F_became: the new Quasar = the mantle (alias_of); the revival is "a second chance on life", not the mantle line
+keep
+f- Richard Rider|became|Quasar
+f+ Quasar|alias_of|Richard Rider|became the new Quasar
+- Richard Rider|awakened|-
++ Richard Rider|awakened|-|Richard was given a second chance on life
+f- Richard Rider|other_verb|given
+
+@1356 lint: F_became: becoming Agent Anti-Venom = the codename: alias_of
+keep
+f- Flash Thompson|became|Agent Anti-Venom
+f+ Agent Anti-Venom|alias_of|Flash Thompson|due to Flash becoming Agent Anti-Venom
+
+@1321 lint: F_became: Fitz's Framework identity "Doctor" = alias_of (reported by Madame Hydra)
+keep
+f- Leo Fitz|became|Doctor
+f+ Doctor|alias_of|Leo Fitz|Leo Fitz became Doctor|claimed|reported|Madame Hydra
+
+@1293 lint: F_became: Sorcerer Supreme names no group: no row
+keep
+f- Karl Mordo|became|Sorcerer Supreme
+
+@1282 lint: F_became: succeeding as Captain America = the mantle: alias_of
+keep
+f- Walker|became|Captain America
+f+ Captain America|alias_of|Walker|succeeding Steve Rogers as Captain America
+
+@1274 lint: F_became: becoming Spider-Man again = alias_of
+keep
+f- Peter|became|Spider-Man
+f+ Spider-Man|alias_of|Peter|Peter became Spider-Man again behind Mary Jane's back
+
+@1163 lint: F_became: a vegetative state is a condition: no row
+keep
+f- David|became|vegetative state
+
+@1138 lint: F_became: Master of the New York Sanctum = leader_of it; clause objects are learned|- (A115)
+keep
+f- Stephen Strange|became|Master
+f+ Stephen Strange|leader_of|New York Sanctum|became the Master of the New York Sanctum
+f- Stephen Strange|learned|Ancient One
+f+ Stephen Strange|learned|-|learned about the Ancient One taking power from the Dark Dimension
+f- Kaecilius|learned|Ancient One
+f+ Kaecilius|learned|-|learned that she was drawing power from the Dark Dimension
+
+@1104 lint: F_became: ambassador is a role: no row
+keep
+f- Cargill|became|Genoshan ambassador
+
+@1102 lint: F_became: becoming a Godlike-entity is a transformation; it is no revival (no awakened)
+keep
+f- Randac|became|Godlike-entity
+f+ Randac|transformed_into|Godlike-entity|Exposing himself to the Mists, Randac became a Godlike-entity
+- Randac|awakened|-
+
+@1092 lint: F_became: "the emergence of the super hero" is no relation
+keep
+f- Daredevil|became|superhero

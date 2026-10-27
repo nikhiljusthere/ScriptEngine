@@ -1,0 +1,55 @@
+@1871 lint: F_became: the mantle of Ant-Man = alias_of
+keep
+f- Hank Pym|became|Ant-Man
+f+ Ant-Man|alias_of|Hank Pym|donned the mantle of Ant-Man
+
+@1835 lint: F_became: the leader_of Atlanteans row already states the chieftainship
+keep
+f- Lhok-Nor|became|chieftain
+
+@1801 lint: F_became: turned into Captain America = the codename: alias_of
+keep
+f- Steve Rogers|became|Captain America
+f+ Captain America|alias_of|Steve Rogers|turned Steve Rogers into Captain America
+
+@1778 lint: F_became: the mantle of Spider-Man = alias_of
+keep
+f- Ben|became|Spider-Man
+f+ Spider-Man|alias_of|Ben|leaving Ben to pick up the mantle of Spider-Man
+
+@1777 lint: F_became: reborn as another person = transformed_into
+keep
+f- Forever Man|became|Morgan Hardy
+f+ Forever Man|transformed_into|Morgan Hardy|The Forever Man was reborn as Morgan Hardy during a fire following the earthquake.
+
+@1752 lint: F_became: the Kingpin title each man takes = alias_of
+keep
+f- Fisk|became|Kingpin
+f+ Kingpin|alias_of|Fisk|helped him become the Kingpin in New York
+f- Victor Creed|became|Kingpin
+f+ Kingpin|alias_of|Victor Creed|she convinced him to become the Kingpin himself
+
+@1664 lint: F_became: interim CEO of an unnamed company: no row
+keep
+f- Stane|became|interim CEO
+
+@1613 lint: F_became: acting as the buyer is a role: no row
+keep
+f- Sampson|became|buyer
+
+@1588 lint: F_became: a drug addict is a status: no row
+keep
+f- Orson Randall|became|drug addict
+
+@1527 lint: F_became: ascending as Apocalypse = the title name: alias_of
+keep
+f- Kelby Tak|became|Apocalypse
+f+ Apocalypse|alias_of|Kelby Tak|Kelby Tak ascended as Apocalypse
+
+@1450 lint: F_became: "became king" names no realm: no row
+keep
+f- Edward VIII|became|king
+
+@1433 lint: F_became: two Stranges share the name Doctor Strange in these rows; an alias would merge them: no row
+keep
+f- Doctor Strange|became|Strange Supreme

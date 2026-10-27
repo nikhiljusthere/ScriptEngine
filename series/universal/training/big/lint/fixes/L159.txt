@@ -1,0 +1,60 @@
+@1073 lint: F_became: the new Man on the Wall = the mantle: alias_of
+keep
+f- Winter Soldier|became|Man on the Wall
+f+ Man on the Wall|alias_of|Winter Soldier|Winter Soldier became the new Man on the Wall
+
+@1055 lint: F_became: warden of the Raft = leader_of the named prison
+keep
+f- John Walker|became|warden
+f+ John Walker|leader_of|Raft|Walker became the warden of the super villain prison the Raft
+
+@1033 lint: F_became: mercenary is an occupation: no row
+keep
+f- James|became|mercenary
+
+@1031 lint: F_became: a renamed school is no alias (A148): no row
+keep
+f- the school|became|Jean Grey School
+
+@1016 lint: F_became: the Mysterio alias_of row already ties the name
+keep
+f- Quentin Beck|became|Mysterio
+
+@963 lint: F_became: the alter known as Green Goblin = alias_of (A156 link)
+keep
+f- Norman Virgil Osborn|became|Green Goblin
+f+ Green Goblin|alias_of|Norman Virgil Osborn|causing Osborn to develop an alter known as Green Goblin
+
+@931 lint: F_became: the mantle of Captain America and the name Super-Patriot = alias_of
+keep
+f- Jonathan Walker|became|Captain America
+f+ Captain America|alias_of|Jonathan Walker|He was later chosen to take up the mantle of Captain America
+f- Jonathan Walker|became|Super-Patriot
+f+ Super-Patriot|alias_of|Jonathan Walker|become the super hero named Super-Patriot instead
+
+@911 lint: F_became: the superhero Albion and the first Union Jack = alias_of; A140 name the power given
+keep
+f- Peter Hunter|became|Albion
+f+ Albion|alias_of|Peter Hunter|Peter Hunter was given some of the power of the Green Knight and became the superhero Albion during World War I
+f- Montgomery Falsworth|became|Union Jack
+f+ Union Jack|alias_of|Montgomery Falsworth|around the same time, Montgomery Falsworth became the first Union Jack and helped found the WWI era super team Freedom's Five
+f- Peter Hunter|gained_power|-
+f+ Peter Hunter|gained_power|power of the Green Knight|Peter Hunter was given some of the power of the Green Knight and became the superhero Albion during World War I
+
+@909 lint: F_became: secretary is an occupation: no row
+keep
+f- Sun Girl|became|secretary
+
+@908 lint: F_became: a group reorganised as a division: no row
+keep
+f- SSR|became|scientific division of S.H.I.E.L.D.
+
+@905 lint: F_became: the new Captain America = the mantle: alias_of
+keep
+f- Wilson|became|Captain America
+f+ Captain America|alias_of|Wilson|Wilson, who announced himself as the new Captain America to the public
+
+@867 lint: F_became: CEO of X-Corporation = leader_of it
+keep
+f- Monet|became|CEO of X-Corporation
+f+ Monet|leader_of|X-Corporation|She also took a role as a C.E.O. for a revived iteration of X-Corporation

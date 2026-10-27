@@ -1,0 +1,56 @@
+@2340 lint: F_became: becoming the Green Goblin again = the codename: alias_of
+keep
+f- Norman|became|Green Goblin
+f+ Green Goblin|alias_of|Norman|became the Green Goblin again
+
+@2265 lint: F_became: governess is an occupation: no row
+keep
+f- Agatha Harkness|became|governess
+
+@2262 lint: F_became: All-Father is a title over no named realm: no row
+keep
+f- Thor|became|All-Father
+
+@2246 lint: F_became: "public celebrities" is a status: no row
+keep
+f- Fantastic Four|became|public celebrities
+
+@2167 lint: F_became: corrupted into the Spider-Goblin = transformed_into; escaping a named place is the event escaped (A89)
+keep
+f- Peter|became|Spider-Goblin
+f+ Peter|transformed_into|Spider-Goblin|After Peter was corrupted and became the "Spider-Goblin"
+f- Reilly|other_verb|escaped
++ Reilly|escaped|Limbo Embassy|Reilly escaped the Limbo Embassy
+
+@2073 lint: F_became: becoming Meridius = his later name: alias_of
+keep
+f- Bedlam|became|Meridius
+f+ Meridius|alias_of|Bedlam|eventually becoming Meridius
+
+@2066 lint: F_became: Cyttorak's new Juggernaut = the mantle: alias_of
+keep
+f- Colossus|became|Juggernaut
+f+ Juggernaut|alias_of|Colossus|she manipulated him into becoming Cyttorak's new Juggernaut
+
+@1986 lint: F_became: S.H.I.E.L.D. Director = leader_of S.H.I.E.L.D.
+keep
+f- Maria Hill|became|S.H.I.E.L.D. Director
+f+ Maria Hill|leader_of|S.H.I.E.L.D.|The new S.H.I.E.L.D. Director, Maria Hill
+
+@1960 lint: F_became: the identity of the Angel = alias_of
+keep
+f- Halloway|became|Angel
+f+ Angel|alias_of|Halloway|Halloway then developed the identity of the Angel
+
+@1914 lint: F_became: the identity as Codex = alias_of
+keep
+f- Venom|became|Codex
+f+ Codex|alias_of|Venom|adopting his Earth-1051's counterpart identity as Codex
+
+@1890 lint: F_became: the Nighthawk alias_of row already ties the identity
+keep
+f- Kyle Richmond|became|Nighthawk
+
+@1881 lint: F_became: "the new Weapon X" team name collides with the person Weapon X in this window: no row
+keep
+f- Sabretooth|became|new Weapon X
