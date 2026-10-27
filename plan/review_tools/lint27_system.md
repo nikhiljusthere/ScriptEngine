@@ -96,7 +96,8 @@ world = sealed. `gave` takes the recipient. Speech acts are actual with no asser
   him") is `defeated`. Hitting someone or sending them flying is `fought`, not defeated.
 - `escaped` and `arrived` need an object (a named captor or place); with none, keep an other_verb fact.
 - A race or species page (Chronicoms, Brood, Skrulls, Poisons) is no end: crowd_end tag, no row.
-- `wounded`: the injured person is the subject: `Victim|wounded|-`.
+- `wounded`: both `Attacker|wounded|Victim` and `Victim|wounded|-` are legal (A105); never rewrite one into the other. The
+  only wrong form is a reversed row (the victim written as the attacker).
 - The tag set includes apposition and attire; they are legal tags.
 - Do not remove a row that is not in the window's ROWS; do not add a row that duplicates an existing one.
 

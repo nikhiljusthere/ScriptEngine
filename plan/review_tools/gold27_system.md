@@ -100,7 +100,8 @@ world = sealed. `gave` takes the recipient. Speech acts are actual with no asser
   him") is `defeated`. Hitting someone or sending them flying is `fought`, not defeated.
 - `escaped` and `arrived` need an object (a named captor or place); with none, keep an other_verb fact.
 - A race or species page (Chronicoms, Brood, Skrulls, Poisons) is no end: crowd_end tag, no row.
-- `wounded`: the injured person is the subject: `Victim|wounded|-`.
+- `wounded`: both `Attacker|wounded|Victim` and `Victim|wounded|-` are legal (A105); never rewrite one into the other. The
+  only wrong form is a reversed row (the victim written as the attacker).
 - The tag set includes apposition and attire; they are legal tags.
 - Do not remove a row that is not in the window's ROWS; do not add a row that duplicates an existing one.
 
@@ -123,3 +124,18 @@ answer `@B gold: ok` and `keep` only. Use the exact strings shown in the window'
 
 # CATALOG (authoritative error patterns)
 
+
+## Rulings from the 2026-10-28 lint pass (apply them here too)
+
+- One act vs two: drop `fought` when the fight and its outcome are one coordinated act of the same doer ("attacked X ... and
+  defeated him", "fought with X and defeated her", "subdued after X used ...", "overpowered by X"). Keep `fought` when the
+  fight is its own clause followed by a turn ("until", "though eventually", "but", "however", "In the resulting clash"),
+  or when the attack and the outcome are acts of different doers ("X attacked Y, but Y beat him").
+- Knocking someone through a wall or sending them flying is `fought`; a blow that knocks out or breaks them is `defeated`.
+- `became` rows: a codename or mantle -> `Codename|alias_of|Person`; an office over a group or place named in the same
+  sentence -> `leader_of` (President of the United States, CEO of Stark Industries, director of the CIA, warden of the Raft);
+  a transformation into a kind of being -> `transformed_into`; titles with no named group (Sorcerer Supreme, herald of
+  Galactus, Protector of the Universe, an Avatar), occupations, ranks, deputies and states -> no row.
+- A kidnapping by a named doer is the event `captured`; a hedged one ("supposedly abducted") stays a fact with certainty
+  apparent; a victim-only passive gets a no_doer tag.
+- Gate quirks: a "Lady"/"Lord"/rank prefix is stripped from ends; `discovered` keeps no object.

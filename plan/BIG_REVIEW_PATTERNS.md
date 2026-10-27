@@ -597,3 +597,29 @@ groups (X-Men/original X-Men b971, Avengers/Avengers Unity Division b1423); `esc
 - A long stated talk that follows the opening attack keeps the met (b1876, b2504, b3742); "met" stays when only a
   confrontation with no fight follows (b3864, b3337).
 - Stopping someone's temptation or a mental torment is no `defeated`/`fought` (b3577, b6962).
+
+**2026-10-28 LINT PASS COMPLETE (L129-L181, terminal session).** All 1,655 work_all windows read and decided (555 remaining
+at resume: 316 G-group + 239 late-added X-group F_became/F_kidnapped_fact). The 27B pre-review was ~1-2 windows/min, so the
+X class and the tail of the G class were read directly (no 27B answer); every 27B answer was checked before submission.
+Rulings applied (now also in gold27_system.md):
+- A145 one act vs two: drop `fought` only when fight and outcome are one coordinated act of the same doer ("attacked
+  Apocalypse ... and defeated him" b9829, "fought with the assassin and defeated her" b11314, "subdued after Glaive used
+  his glaive" b12109, "overpowered by Ursa Major" b12850). Keep it when the fight is its own clause before a turn
+  ("until", "though eventually", "but", "In the resulting clash": b9608, b9855, b10078, b12468) or when attack and
+  outcome are different doers' acts (b9996, b10002, b10187, b10857, b11057).
+- Sending flying / knocking through a wall = fought, not defeated (b10175, b10570); a blow that breaks every bone = defeated.
+- F_became: mantles/codenames -> `alias_of` (Captain America x8, Spider-Man, Wasp, Ant-Man, Kingpin, Man on the Wall,
+  Black Queen, Juggernaut, Star Brand); offices over a group/place named in the same sentence -> `leader_of` (Presidents of
+  the United States, CEO of Stark Industries/X-Corporation/Pym Technologies, director of the CIA/S.H.I.E.L.D., warden of
+  the Raft/Graymalkin Prison, King of Wakanda/New Asgard/Hell, Master of the New York Sanctum, supremor of the Kree Empire);
+  transformations -> `transformed_into` (vampire, Celestial, godhood, Dark Phoenix, cyborg, Horseman, "reborn as");
+  no row for titles without a named group (Sorcerer Supreme, herald of Galactus, Protector of the Universe, Avatar,
+  King/President with no realm in the sentence), occupations, ranks, deputies and states.
+- F_kidnapped_fact: named doer -> event `captured`; "supposedly abducted" (b4007) stays a fact with certainty apparent.
+- `wounded`: both attacker|wounded|victim and victim|wounded|- are legal (A105); the 27B prompt line that said otherwise
+  was wrong and is fixed (it had made the 27B rewrite legal rows: b9910, b10099, b10504).
+- Prompt bug fixed: the 27B tag list lacked the legal `below_floor`, `citation`, `apposition`, `attire` tags.
+- Gate quirks: "Lady Danu" is stripped to "Danu" (b8238 self-pair); `discovered` keeps no object (b2928).
+Verified after: lint_work flags no unreviewed window; residual raw-lint rows are decided keeps (directional
+helped/contacted pairs, `try` = put on trial/taste, hedged kidnapping); recon `check all` = only logged exceptions
+(C809 fixed by L181).
