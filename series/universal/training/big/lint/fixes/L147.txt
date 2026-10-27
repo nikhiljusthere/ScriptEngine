@@ -1,0 +1,63 @@
+@6253 lint: F_became: President of the United States = leader_of the named country
+keep
+f- Benjamin Harrison|became|President of the United States
+f+ Benjamin Harrison|leader_of|United States|In 1889 Benjamin Harrison became the 23rd President of the United States.
+
+@6250 lint: F_became: Presidents of the United States = leader_of
+keep
+f- Andrew Johnson|became|17th President of the United States
+f+ Andrew Johnson|leader_of|United States|He was succeeded by Andrew Johnson becoming the 17th President of the United States.
+f- Ulysses S. Grant|became|18th President of the United States
+f+ Ulysses S. Grant|leader_of|United States|In 1869, Ulysses S. Grant became the 18th President of the United States.
+
+@6246 lint: F_became: "elected President" names no country: no row (partner b6238 has no such row)
+keep
+f- Ronald Reagan|became|President
+
+@6238 lint: partner of b6246: shared rows already identical
+keep
+
+@6198 lint: F_became: "an interplanetary dictator" is a status: no row; "Frank killed the future Thanos" is the event killed
+keep
+f- Thanos|became|interplanetary dictator
+f- Punisher|other_verb|killed
++ Punisher|killed|Thanos|Frank killed the future Thanos
+
+@6188 lint: F_became: Prime Eternal names no group in the window: no row
+keep
+f- Thanos|became|Prime Eternal
+
+@6169 lint: F_became: Karn takes the Master Weaver role, the Weaver being his own future self: alias_of
+keep
+f- Karn|became|Master Weaver
+f+ Master Weaver|alias_of|Karn|Karn agreeing to act as the Master Weaver- with the
+
+@6167 lint: F_became: became Doctor Octopus again = the codename: alias_of
+keep
+f- Otto|became|Doctor Octopus
+f+ Doctor Octopus|alias_of|Otto|became Doctor Octopus once again
+
+@6153 lint: F_became: his new role as Spider-Man = the mantle: alias_of
+keep
+f- Otto Octavius|became|Spider-Man
+f+ Spider-Man|alias_of|Otto Octavius|embraced his new role as Spider-Man
+
+@6074 lint: F_became: herald of Galactus is a role over no group: no row (partner b6081 has no such row)
+keep
+f- Silver Surfer|became|herald of Galactus
+
+@6081 lint: partner of b6074: shared rows already identical
+keep
+
+@6065 lint: F_became: Protector of the Universe is a title: no row
+keep
+f- Gravity|became|Protector of the Universe
+
+@6048 lint: F_became: patron god of a people is no leadership of a named group: no row
+keep
+f- Neptune|became|patron god of the Atlanteans
+
+@6023 lint: F_became: ambassador is a role: no row; sent to Earth = arrived
+keep
+f- Marvel Boy|became|ambassador
++ Marvel Boy|arrived|Earth|sent Marvel Boy to Earth as their ambassador

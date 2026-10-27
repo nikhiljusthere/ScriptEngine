@@ -1,0 +1,59 @@
+@6585 lint: F_became: ruler of the Negative Zone = leader_of the named place
+keep
+f- Johnny|became|ruler of the Negative Zone
+f+ Johnny|leader_of|Negative Zone|while the Human Torch, using the Cosmic Control Rod became the new ruler of the Negative Zone.
+
+@6529 lint: F_became: a separate entity in his brain is no kind of being: no row (partner b6536 has no such row)
+keep
+f- Green Goblin|became|separate entity
+
+@6536 lint: partner of b6529: shared rows already identical
+keep
+
+@6510 lint: F_became: achieving godhood is a transformation
+keep
+f- Selene|became|godhood
+f+ Selene|transformed_into|godhood|Selene succeeded in sacrificing the resurrected mutants and achieving godhood
+
+@6450 lint: F_became: "the Lethal Protector" is an epithet (A148): no row
+keep
+f- Eddie Brock|became|Lethal Protector
+
+@6445 lint: F_became: protector of the Underground City = protected it
+keep
+f- Venom|became|protector
+f+ Venom|protected|Underground City|Venom became the protector of an Underground City
+
+@6439 lint: F_became: leader of his alters names no group: no row
+keep
+f- Eddie|became|leader
+
+@6334 lint: F_became: "a hateful extremist" is a status: no row
+keep
+f- N'Jadaka|became|hateful extremist
+
+@6288 lint: F_became: merging into the Destruction is a transformation
+keep
+f- Destroyer|became|Destruction
+f+ Destroyer|transformed_into|Destruction|merged with Galactus, becoming the Destruction
+
+@6263 lint: F_became: President of the United States = leader_of the named country
+keep
+f- James Buchanan|became|15th President of the United States
+f+ James Buchanan|leader_of|United States|James Buchanan became the 15th President of the United States
+
+@6260 lint: F_became: places becoming states is no row; the ordered act (orders convention)
+keep
+f- Alaska|became|49th U.S. state
+f- Hawaii|became|50th U.S. state
+t+ no_relation|In the same year Alaska and Hawaii became the 49th and 50th U.S. states.
+f+ Nick Fury|other_verb|gather|President Eisenhower order Nick Fury to gather operatives for a mission called the Avengers Initiative.|ordered|stated|Eisenhower
+
+@6259 lint: F_became: "became president" names no country in the sentence: no row
+keep
+f- Lyndon B. Johnson|became|president
+
+@6257 lint: F_became: a festival's success is no relation
+keep
+f- Woodstock Festival|became|enormously successful musical and cultural gathering
+t+ no_relation|The Woodstock Festival in Woodstock, New York became an enormously successful musical and cultural gathering.

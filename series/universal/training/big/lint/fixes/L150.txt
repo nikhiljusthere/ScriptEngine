@@ -1,0 +1,50 @@
+@5206 lint: F_became: Wilkes being a ghost now is a transformation (reported by Underwood)
+keep
+f- Jason Wilkes|became|ghost
+f+ Jason Wilkes|transformed_into|ghost|Wilkes was now a ghost|actual|reported|-
+
+@5200 lint: F_became: "a powerful criminal businessman" is an occupation: no row
+keep
+f- Fisk|became|criminal businessman
+
+@5197 lint: F_became: a place becoming a sanctuary is no relation row
+keep
+f- Utopia|became|a sanctuary to all mutants
+
+@5193 lint: F_became: Knight of Wundagore is a rank: no row
+keep
+f- Quicksilver|became|Knight of Wundagore
+
+@5179 lint: F_became: "the perfect assassin" is an occupation: no row
+keep
+f- Barnes|became|assassin
+
+@5158 lint: F_became: history professor is an occupation: no row
+keep
+f- Sersi|became|history professor
+
+@4989 lint: F_became: CEO of Stark Industries (named in the sentence) = leader_of
+keep
+f- Pepper Potts|became|CEO
+f+ Pepper Potts|leader_of|Stark Industries|Natalie Rushman, a legal representative from Stark Industries as Pepper Potts had been promoted to CEO
+
+@4936 lint: F_became: King in Black is a title over no named realm: no row
+keep
+f- Eddie|became|King in Black
+
+@4906 lint: F_became: the Yellowjacket alias_of row already ties the codename
+keep
+f- Pym|became|Yellowjacket
+
+@4892 lint: F_became: "infernal lord" is a title: no row
+keep
+f- Mephisto|became|infernal lord
+
+@4840 lint: F_became: vampire hunter is an occupation: no row
+keep
+f- Blade|became|vampire hunter
+
+@4827 lint: F_became: serving as Captain America = the mantle: alias_of
+keep
+f- John Walker|became|Captain America
+f+ Captain America|alias_of|John Walker|John served as Captain America

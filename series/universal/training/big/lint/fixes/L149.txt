@@ -1,0 +1,61 @@
+@5478 lint: F_became: the Spider-Man alias_of row already ties the codename; A140 name the powers
+keep
+f- Peter Parker|became|Spider-Man
+f- Peter Parker|gained_power|-
+f+ Peter Parker|gained_power|arachnid-based powers|which granted him an array of arachnid-based powers
+
+@5472 lint: F_became: director of S.H.I.E.L.D. and the Initiative = leader_of both
+keep
+f- Norman Osborn|became|director of S.H.I.E.L.D.
+f+ Norman Osborn|leader_of|S.H.I.E.L.D.|was given Stark's position as director of S.H.I.E.L.D. and the Initiative
+f+ Norman Osborn|leader_of|Initiative|was given Stark's position as director of S.H.I.E.L.D. and the Initiative
+
+@5470 lint: F_became: becoming Spider-Man again = the codename: alias_of
+keep
+f- Peter|became|Spider-Man
+f+ Spider-Man|alias_of|Peter|Peter once again became Spider-Man
+
+@5456 lint: F_became: astronaut is an occupation: no row
+keep
+f- Peter|became|astronaut
+
+@5296 lint: F_became: the new Carnage = the codename (alias_of); a goblin/symbiote hybrid = a planned transformation
+keep
+f- Osborn|became|Carnage
+f+ Carnage|alias_of|Osborn|to become the new Carnage
+f- Osborn|became|goblin/symbiote hybrid
+f+ Osborn|transformed_into|goblin/symbiote hybrid|to become a goblin/symbiote hybrid|planned|stated|Osborn
+
+@5293 lint: F_became: an addiction is no relation; the fight is with the Lizard form the window names (A156)
+keep
+f- Harry|became|addicted to LSD
+- Peter|fought|Curt Connors
++ Peter|fought|Lizard|and Connors' alter ego the Lizard
+
+@5289 lint: F_became: becoming an Inhuman is a transformation
+keep
+f- Toro|became|Inhuman
+f+ Toro|transformed_into|Inhuman|who now become an Inhuman
+
+@5286 lint: F_became: a fugitive is a status: no row
+keep
+f- Tony Stark|became|fugitive
+
+@5278 lint: F_became: the firm's secretary is an occupation: no row
+keep
+f- Awesome Android|became|secretary
+
+@5246 lint: F_became: "a lifetime as Ikol" is his new name: alias_of; reduced into a magpie = transformed_into
+keep
+f- Loki|became|Ikol
+f+ Ikol|alias_of|Loki|condemned to a lifetime as "Ikol," his minion and his opposite.
+f+ Loki|transformed_into|magpie|Kid Loki reduced his elder self into the form of a magpie
+
+@5232 lint: F_became: warden of the Raft = leader_of the named prison
+keep
+f- Walker|became|warden
+f+ Walker|leader_of|Raft|Walker became the warden of the super villain prison the Raft
+
+@5212 lint: F_became: a country under Hydra's control is no relation row
+keep
+f- United States|became|Hydra-controlled

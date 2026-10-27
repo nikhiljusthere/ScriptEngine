@@ -1,0 +1,53 @@
+@5875 lint: F_became: Hydra Supreme = leader_of Hydra
+keep
+f- Alternate Captain America|became|Hydra Supreme
+f+ Alternate Captain America|leader_of|Hydra|the alternate Captain America ascended to being the Hydra Supreme
+
+@5840 lint: F_became: the Logomancer is a role: no row
+keep
+f- Abira|became|Logomancer
+
+@5739 lint: F_became: becoming the Star Brand = the mantle: alias_of
+keep
+f- Rocket|became|Star Brand
+f+ Star Brand|alias_of|Rocket|becoming the Star Brand
+
+@5731 lint: F_became: homeless is a status: no row
+keep
+f- Rocket|became|homeless
+
+@5720 lint: F_became: bounty hunter is an occupation: no row
+keep
+f- Rocket|became|bounty hunter
+
+@5620 lint: F_became: becoming Cable = the codename (planned by his parents): alias_of
+keep
+f- Nathan|became|Cable
+f+ Cable|alias_of|Nathan|in the hope he would become Cable and eventual fulfill his destiny by overthrowing Apocalypse|planned|stated|Jean
+
+@5581 lint: F_became: Galactus' herald is a role over no group: no row
+keep
+f- Strange|became|Galactus' herald
+
+@5547 lint: F_became: "a guardian of creation" is a role: no row
+keep
+f- Jean Grey|became|guardian of creation
+
+@5532 lint: F_became: CEO of Stark Industries = leader_of it
+keep
+f- Amanda Armstrong|became|CEO
+f+ Amanda Armstrong|leader_of|Stark Industries|Amanda Armstrong became the CEO of Stark Industries
+
+@5524 lint: F_became: assuming the mantle of Captain America: alias_of
+keep
+f- Bucky Barnes|became|Captain America
+f+ Captain America|alias_of|Bucky Barnes|getting Bucky to assume the mantle of Captain America
+
+@5516 lint: F_became: "his place as CEO" names no company: no row
+keep
+f- James Rhodes|became|CEO
+
+@5502 lint: F_became: surgeon is an occupation: no row
+keep
+f- Stephen|became|well-known surgeon
+f- Stephen|became|highly skilled surgeon
