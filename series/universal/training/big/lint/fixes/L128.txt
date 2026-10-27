@@ -1,0 +1,70 @@
+@9456 lint: became antagonistic copula; field leader of the Thunderbolts
+keep
+f- Songbird|other_verb|became
+f+ Songbird|leader_of|Thunderbolts|As field leader of the Thunderbolts
+
+@9471 lint: X-Men vs Dark X-Men distinct (partner b9475)
+keep
+
+@9475 lint: as partner b9471
+keep
+
+@9487 lint: Hulk vs Red Hulk distinct (the window does not tie Red Hulk to Ross: no rename)
+keep
+
+@9489 lint: met kept (M.O.D.O.K. explained A.I.M.'s plan before the fight); Kate = Katherine Waynesboro; A156 her acts as Ms. M.O.D.O.K. stay under that form
+keep
+r Kate Waynesboro=>Katherine Waynesboro
+- Katherine Waynesboro|betrayed|A.I.M.
++ Ms. M.O.D.O.K.|betrayed|A.I.M.|Ms. M.O.D.O.K. rebelled against her A.I.M. creators
+- Katherine Waynesboro|betrayed|M.O.D.O.K.
++ Ms. M.O.D.O.K.|betrayed|M.O.D.O.K.|Ms. M.O.D.O.K. was repulsed by M.O.D.O.K.'s cruelty and turned against him.
+- Katherine Waynesboro|fought|M.O.D.O.K.
++ Ms. M.O.D.O.K.|fought|M.O.D.O.K.|The two began fighting one another
+f- Katherine Waynesboro|allied_with|M.O.D.O.K.
+f+ Ms. M.O.D.O.K.|allied_with|M.O.D.O.K.|sided with M.O.D.O.K.
+f+ Ms. M.O.D.O.K.|alias_of|Katherine Waynesboro|reverted back to her human form of Katherine Waynesboro
+
+@9495 lint: A.I.M. vs its base distinct; the drain is Iron Man's conclusion; the funneling is happening
+keep
+f- M.O.D.O.K.|other_verb|drain
+f+ M.O.D.O.K.|other_verb|drain|would drain energy from the West Coast|claimed|stated|Iron Man
+f- M.O.D.O.K.|other_verb|amplify
+f+ M.O.D.O.K.|other_verb|amplify|funneling all the stolen energy into his Doomsday Chair to amplify his mental powers
+
+@9520 lint: became attracted copula
+keep
+f- Cho|other_verb|became
+t+ no_relation|Cho became attracted to the Amazon Delphyne Gorgon
+
+@9521 lint: became champion copula; A156 acts narrated under Hulk; Hulk persona link
+keep
+f- Amadeus|other_verb|became
+f- Doka'abi Clan|recruited|Amadeus
+f+ Doka'abi Clan|recruited|Hulk|Hulk was called by the Doka'abi Clan
+f- Amadeus|other_verb|declaring
+f+ Hulk|other_verb|declaring|declaring war on his enemies
+f+ Hulk|alias_of|Amadeus|allowing his Hulk persona to take control of his body
+
+@9528 lint: met kept (joined them after the train, the attack on Ran was earlier); MI6 director is an unnamed title (designated by an unnamed orderer stays planned)
+keep
+- Bucky|killed|MI6 director
+t+ crowd_end|In 1960, the Winter Soldier killed MI6 director in London.
+
+@9531 lint: confronted against him, defeated later with Falcon's help (no separate meeting)
+keep
+- Barnes|met|Grand Director
+
+@9533 lint: Bucky vs Old Bucky distinct; the smuggler is unnamed; the Daisy sentence has its row
+keep
+f- smuggler|other_verb|admitted
+t+ crowd_end|the smuggler admitted that Loki was the mediator
+t- no_relation|Daisy examined the bullet
+
+@9544 lint: helped is no twin; locating him there is no arrival; A2 Bucky is the tied member; he helped Cap expose
+keep
+- Bucky|arrived|New America
+f+ Martin|located_at|New America|Locating him on an island dubbed New America
+- Black Talon|fought|Young Allies
+f- Bucky|revealed|-
+f+ Bucky|helped|Captain America|helped Cap expose the true identity of the Hound of Cardiff Moor
