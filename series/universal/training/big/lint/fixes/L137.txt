@@ -1,0 +1,35 @@
+@10072 lint: met kept (he confronted the lawyers and issued his challenge, a separate talk before the fight)
+keep
+
+@10074 lint: led to Annihilus, then subdued him: no met; the search was carried out: actual
+keep
+- Trapster|met|Annihilus
+f- Trapster|other_verb|search
+f+ Trapster|other_verb|search|to search for a powerful energy source they detected there
+
+@10078 lint: "the two battled it out, and ... eventually defeated": the battle is its own clause: fought kept; met kept (he came for help first); A134 attempting -> reform; Trapster suit is a thing
+keep
+f- Trapster|other_verb|attempting
+f+ Trapster|other_verb|reform|under the false pretense that he was attempting to reform|claimed|denied|Trapster
+
+@10090 lint: Zodiac Key is a thing; the Clown is tied to both acts; the heroes are a crowd doer
+keep
+f+ Clown|other_verb|rigged|the Trapster and the Clown rigged the hospital where the Torch was admitted with explosives
+f+ Clown|other_verb|robbed|the Trapster and Clown robbed a bank
+t- no_doer|Although the hospital was destroyed, the Torch was saved by heroes that were visiting him there.
+t+ crowd_end|Although the hospital was destroyed, the Torch was saved by heroes that were visiting him there.
+
+@10099 lint: met kept (he tried to make Walker stop first); attacker|wounded|victim is legal (A105)
+keep
+
+@10149 lint: met kept (the talk about Bakuto and K'un-Lun precedes the attack)
+keep
+
+@10155 lint: met kept (Maximus asks his question and the answer offends her: a talk before the attack); A140 the named power
+keep
+f- Bronaja|gained_power|-
+f+ Bronaja|gained_power|precognition|the boy has obtained powers of precognition.
+
+@10175 lint: breaking his club and sending him flying is fought, not defeated
+keep
+- Namor|defeated|M'Baku

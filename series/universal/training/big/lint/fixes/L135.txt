@@ -1,0 +1,51 @@
+@9947 lint: he found the Mad Doctor and the clash followed: no met; the clash is stated, the death has no doer: fought + dies stay; preventing the mind transfer = defeated; the window never ties Halloway to the Angel: no rename
+keep
+- Angel|met|Mad Doctor
++ Angel|defeated|Mad Doctor|the Angel prevented the Mad Doctor from transferring her mind into the body of an ape
+
+@9952 lint: "broke free and beat Howards into submission" is one act: defeated only
+keep
+- Angel|fought|Howards
+
+@9970 lint: crossing paths turned into the battle: no met
+keep
+- Hulk|met|Glob
+
+@9971 lint: "Banner attacked Khotto and ... defeated Khotto" is one coordinated act of one subject: defeated only
+keep
+- Banner|fought|Khotto
+
+@9975 lint: met kept (the alliance offer is a talk before the fight); the helping clause is the quote; determined to stick = planned
+keep
+f- Rick|helped|Banner
+f+ Rick|helped|Banner|who quickly helped him change into some fresh clothes and report in
+f- Talbot|other_verb|stick
+f+ Talbot|other_verb|stick|stick to Banner like glue|planned|stated|Talbot
+
+@9981 lint: the battle is its own clause before "however": fought kept; nearly beat to death = defeated (A11); hostage by a named doer = captured; no_relation tags on sentences that carry rows removed
+keep
+f- Abomination|kidnapped|Betty
++ Abomination|captured|Betty|The Abomination then fled with Betty as a hostage
+t- no_relation|The Abomination then fled with Betty as a hostage
+t- no_relation|Forcing Banner to change into the Hulk
+t- no_relation|His arrival on the base coincided
+t- no_relation|When Banner set up the machine
+t- no_relation|Blonsky then foolishly activated
+t- no_relation|The Hulk was revived thanks to the help of Rick
+t- no_relation|Banner then used the military's Infinite Weapon Ray
+t- no_relation|After significantly weakening the Abomination
+
+@9984 lint: Arrkam = King Arrkam; attacked and taken prisoner = one act (captured); Ross only ordered the blast (no doer); "Evil One" is an epithet
+keep
+r Arrkam=>King Arrkam
+- King Arrkam|fought|Hulk
+f- Ross|attacked|Hulk
+t+ no_doer|When the Hulk was blasted with it
+f- Evil One|alias_of|Executioner
+
+@9990 lint: met kept (the Sandman sought his alliance first); the attack on Betty is an event like the Hulk's (A89)
+keep
+f- Mandarin|attacked|Betty
+f- Sandman|attacked|Betty
++ Mandarin|fought|Betty|both were attacked by the Mandarin and the Sandman
++ Sandman|fought|Betty|both were attacked by the Mandarin and the Sandman

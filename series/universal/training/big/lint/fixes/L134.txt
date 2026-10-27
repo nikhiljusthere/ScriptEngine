@@ -1,0 +1,54 @@
+@9910 lint: Pip stumbled upon Thanos, who attacked at once: no met; attacker|wounded|victim is legal (A105)
+keep
+- Pip|met|Thanos
+
+@9921 lint: the Raiders caught up and the fight followed: no met; repel = drove off = defeated (R23)
+keep
+- Chargazel's Raiders|met|Asgardians of the Galaxy
+- Chargazel's Raiders|met|Ravagers
+- Asgardians of the Galaxy|fought|Chargazel's Raiders
++ Asgardians of the Galaxy|defeated|Chargazel's Raiders|Both teams worked together to repel the Raiders
+- Ravagers|fought|Chargazel's Raiders
++ Ravagers|defeated|Chargazel's Raiders|Both teams worked together to repel the Raiders
+
+@9924 lint: Surtur appeared and the fight began: no met for Bill, Pip, Skurge; Skuttlebutt never fights him: met kept; helped is no twin (partner b9928)
+keep
+- Surtur|met|Bill
+- Surtur|met|Pip
+- Surtur|met|Skurge
+
+@9928 lint: as partner b9924
+keep
+- Surtur|met|Bill
+- Surtur|met|Skurge
+- Surtur|met|Pip
+
+@9932 lint: the invitation quote names no Kraust and the only encounter is the fatal confrontation: no met; slain names no doer: fought + dies stay; stopping a plot / preventing the attempt = defeated
+keep
+- Angel|met|Kraust
+f- Angel|other_verb|stopped
++ Angel|defeated|Count Lust|The Angel stopped the plot
+f- Angel|other_verb|prevented
++ Angel|defeated|Felix von Tont|The Angel prevented the attempt to destroy the evidence
+
+@9934 lint: Halloway (person) vs Halloway estate (place); Halloway explained his organization to him: met
+keep
++ US Agent|met|Halloway|Halloway explained his whole organization to the hero
+
+@9937 lint: Hyde = Dr. Hyde; named-doer lines are facts (A101); turning over / bringing to justice = twins of captured (A89)
+keep
+r Hyde=>Dr. Hyde
+t- no_relation|The Angel then began investigating Dr. Hyde
+f+ Angel|other_verb|investigating|The Angel then began investigating Dr. Hyde
+t- no_doer|when his painter friend Keene was blinded and blackmailed to pay for the cure.
+f+ Keene|wounded|-|when his painter friend Keene was blinded and blackmailed to pay for the cure.
+t- no_relation|Later, the Angel attends the execution of his old foe the Python.
+f+ Angel|other_verb|attends|Later, the Angel attends the execution of his old foe the Python.
+f- Angel|other_verb|turning
+f- Angel|other_verb|bringing
+
+@9945 lint: "clashed with ..., imprisoning ... thus killing it" is one act: no fought; Poll had walked into the gunfire: the round-up is the gang's
+keep
+- Angel|fought|Count Vicaro
+- Angel|captured|Danny Poll
++ Angel|captured|Firing Squad|rounded the gang up

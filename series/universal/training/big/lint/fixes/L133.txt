@@ -1,0 +1,47 @@
+@9829 lint: "attacked Apocalypse while he slept ... and defeated him" is one act: defeated only (partner b9851)
+keep
+- Stryfe|fought|Apocalypse
+- Bishop|fought|Apocalypse
+
+@9851 lint: as partner b9829
+keep
+- Stryfe|fought|Apocalypse
+- Bishop|fought|Apocalypse
+
+@9830 lint: "had never met" states no meeting; "defeated him, stabbing him" is one act; awoke from his rejuvenation chamber = awakened (fact twin dropped); infected = twin of wounded; tortured = fought (R18)
+keep
+- Stryfe|met|Apocalypse
+- Stryfe|fought|Apocalypse
+f- Stryfe|other_verb|infected
+f- Stryfe|other_verb|awoke
++ Apocalypse|awakened|-|awoke Apocalypse, who had never met Stryfe at this point, from his rejuvenation chamber
+f- Stryfe|attacked|Cyclops
+f- Stryfe|attacked|Jean Grey
++ Stryfe|fought|Cyclops|Stryfe tortured Cyclops and Jean Grey
++ Stryfe|fought|Jean Grey|Stryfe tortured Cyclops and Jean Grey
+
+@9855 lint: "combats both Cable and his younger self, though he is eventually outmatched": the fight is its own clause: fought kept
+keep
+
+@9861 lint: Ronan accused him before the fight (a stated talk): met kept; A140 name the gained powers
+keep
+f- Mar-Vell|gained_power|-
+f+ Mar-Vell|gained_power|sensory illusions|he gained the ability to cast sensory illusions and to teleport himself across even intergalactic distances.
+f+ Mar-Vell|gained_power|teleportation|he gained the ability to cast sensory illusions and to teleport himself across even intergalactic distances.
+
+@9881 lint: the battle is stated as its own phrase: fought kept; dispatched to the Negative Zone = sealed; terminal cancer is no wound
+keep
+- Mar-Vell|defeated|Super-Adaptoid
++ Mar-Vell|sealed|Super-Adaptoid|which dispatched the Adaptoid to the Negative Zone
+f- Mar-Vell|wounded|-
+t+ no_relation|The lung cancer ("Blackend" in Kree medical terminology)
+
+@9893 lint: "a brief scuffle with and eventually be subdued by" is one clause: defeated only; A140 repowered = regained, no row (partner b9900)
+keep
+- Monet|fought|Enchantress
+f- Enchantress|gained_power|-
+
+@9900 lint: as partner b9893
+keep
+- Monet|fought|Enchantress
+f- Enchantress|gained_power|-

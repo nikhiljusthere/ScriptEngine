@@ -1,0 +1,47 @@
+@9699 lint: Kree (race) vs Kree empire (polity): the leadership object is the polity the window names; exposed as a Skrull = species end, no row (partner b9704)
+keep
+f- Clumsy Foulup|leader_of|Kree
+f+ Clumsy Foulup|leader_of|Kree empire|Leadership of the Kree was assumed for a time by an alien named Clumsy Foulup.
+f- Nenora|revealed_as|Skrull
+t+ crowd_end|The war ended with Nenora being exposed as a Skrull.
+
+@9704 lint: as partner b9699
+keep
+f- Clumsy Foulup|leader_of|Kree
+f+ Clumsy Foulup|leader_of|Kree empire|Leadership of the Kree was assumed for a time by an alien named Clumsy Foulup.
+f- Nenora|revealed_as|Skrull
+t+ crowd_end|The war ended with Nenora being exposed as a Skrull.
+
+@9723 lint: met kept (she warned them before the Wizard attacked: a stated talk); the attack moments later is its own clause: fought kept; turned into rock = sealed (R3)
+keep
+- Agatha Harkness|defeated|Sandman
++ Agatha Harkness|sealed|Sandman|Agatha turned the Sandman's body into rock
+f- Agatha Harkness|other_verb|turned
+
+@9725 lint: the confrontation is the killing: no met; resurfaced is a named-doer line (A101); her return as a ghost (partner b9728)
+keep
+- Wanda|met|Agatha Harkness
+t- deictic|Later, Harkness resurfaced, avoiding explanations for her return.
+f+ Agatha Harkness|other_verb|resurfaced|Later, Harkness resurfaced, avoiding explanations for her return.
+f+ Agatha Harkness|other_verb|returned|Agatha returned as a ghost to help her build a new life for herself.
+
+@9728 lint: as partner b9725; the corpse line is covered by the discovered facts
+keep
+- Wanda|met|Agatha Harkness
+t- deictic|Later, Harkness resurfaced, avoiding explanations for her return.
+f+ Agatha Harkness|other_verb|resurfaced|Later, Harkness resurfaced, avoiding explanations for her return.
+t- no_relation|Later, Nick Fury and S.H.I.E.L.D. found Agatha's corpse in her home.
+
+@9737 lint: the Astral Plane encounter turns into the battle: no met; Sorcerer Supreme names no group or place: no row; the debt is Agatha's (the Vishanti shielded her): protected stays (partner b9738)
+keep
+- Clea|met|Agatha Harkness
+f- Scarlet Witch|became|Sorcerer Supreme
+
+@9738 lint: as partner b9737
+keep
+- Clea|met|Agatha Harkness
+
+@9749 lint: confronted by Castle and the Hand turns into the battle: no met; the "first fight" is a separately stated earlier fight: fought kept
+keep
+- Ares|met|Punisher
+- Ares|met|Hand
