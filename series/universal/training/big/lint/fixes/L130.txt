@@ -1,0 +1,45 @@
+@9608 lint: became a sentient corporation = transformed_into; the clash "until he succeeded in destroying it" is stated as its own clause: fought kept
+keep
+f- Hexus|became|sentient corporation
+f+ Hexus|transformed_into|sentient corporation|During the shipwreck, a social parasite called Hexus had been unleashed upon the Earth and became a sentient corporation bent on taking over the entire world as a conglomerate.
+
+@9612 lint: became a fugitive = copula; gifted = gave (recipient); decided to join = planned, then the stated joining; Avengers vs Young Avengers distinct
+keep
+f- Noh-Varr|other_verb|became
+f- Kree Supreme Intelligence|handed|Nega-Gauntlets
+f+ Kree Supreme Intelligence|gave|Noh-Varr|gifted him with the Nega-Gauntlets
+f- Noh-Varr|joined|Avengers
+f+ Noh-Varr|joined|Avengers|Noh-Varr decided to join their mightiest heroes, the Avengers, as the new Captain Marvel|planned|stated|Noh-Varr
+f+ Noh-Varr|joined|Avengers|Following Osborn's fall, Noh-Varr joined the Avengers
+t+ no_relation|Noh-Varr became a fugitive
+
+@9623 lint: Hulk (the real one, controlled) vs Hulk puppet (the clay figure) are two ends: no rename
+keep
+
+@9633 lint: Reed = Reed Richards; the robots do the chasing, Phillip only set them (partner b9642); A140 regained powers no row
+keep
+r Reed=>Reed Richards
+f- Phillip|other_verb|chasing
+f- Fantastic Four|gained_power|-
+
+@9642 lint: as partner b9633
+keep
+r Reed=>Reed Richards
+f- Fantastic Four|gained_power|-
+f- Phillip|other_verb|chasing
+
+@9644 lint: "during the fight" is its own clause: fought kept; knocked = twin of killed; became a sculptor = occupation
+keep
+f- Phillip|other_verb|knocked
+f- Alicia|other_verb|became
+t+ no_relation|Alicia grew to adulthood and became a noted sculptor
+
+@9657 lint: met kept (they found him and agreed to help him before the reveal); Percy is a disguise (the real Percy is freed): revealed_as stays; "He" is ambiguous (Steve or Percy): tag stays
+keep
+
+@9674 lint: "faced by an army" is the army's confrontation: no met; below_floor is no tag: the escape is an other_verb fact; the X-Men distraction helped him
+keep
+- Skull|met|Captain America
+t- below_floor|narrowly escaped death
+f+ Captain America|other_verb|escaped|Captain America narrowly escaped death
+f+ X-Men|helped|Captain America|as well as a distraction by the new X-Men

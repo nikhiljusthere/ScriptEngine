@@ -15,7 +15,8 @@ Each window has three row layers, all quoting the window verbatim:
   learned, revealed, discovered, forgot, remembered, suspected, other_verb (use parent_of, never child_of; married,
   never married_to). `other_verb` facts take the passage's own verb word as object ("Enchantress|other_verb|enchanting").
 - TAGS `tag|quote` for sentences with no legal row: no_doer, crowd_end, no_relation, capability, production,
-  list_header, deictic, dialogue.
+  list_header, deictic, dialogue, apposition, attire, citation (a footnote or source line), below_floor (a fragment
+  under 6 words naming no entity).
 
 This is a GOLD window (dev/test/train of the student model): it must be exact. Its EVENTS come from an earlier
 human-checked pass, but the rules changed since, so re-check every event against the rules below. Its FACTS and

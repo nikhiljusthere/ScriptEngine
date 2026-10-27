@@ -1,0 +1,40 @@
+@9546 lint: stopping a plot or a person = defeated (both: "the pair", "They"); strapped to a bomb by Mole-Man stays captured; A137 joined for one battle; assisted/helped are two acts (no twin)
+keep
+- Bucky|met|General Nikki
++ Bucky|defeated|General Nikki|prevent General Nikki from invading America
++ Captain America|defeated|General Nikki|prevent General Nikki from invading America
+- Bucky|fought|Coughing Killer
++ Bucky|defeated|Coughing Killer|stop the Nazi assassin known as the Coughing Killer
++ Captain America|defeated|Coughing Killer|stop the Nazi assassin known as the Coughing Killer
++ Captain America|defeated|Vulture|Bucky helped Captain America to put a stop to the Vulture
+f- Bucky|other_verb|prevented
++ Bucky|defeated|Von Broot|prevented Nazi agent Von Broot from creating tensions
++ Captain America|defeated|Von Broot|prevented Nazi agent Von Broot from creating tensions
+f- Bucky|other_verb|prevent
+f- Bucky|joined|Invaders
+
+@9581 lint: met kept (she returns to Le Fay after the Werewolf, a separate moment); "they send" stays Le Fay's order
+keep
+
+@9588 lint: the challenge turns into the knights' battle: no met; the dissection is torture = fought (R18) (partner b9594)
+keep
+- Apocalypse|met|Morgan Le Fay
+
+@9594 lint: as partner b9588 (torture stays fought, R18)
+keep
+- Apocalypse|met|Morgan Le Fay
+
+@9603 lint: one name: Captain Glory
+keep
+r Glory=>Captain Glory
+
+@9605 lint: became a fan = copula; assisting against Mother is no saved (R23); joined the team; decided = planned
+keep
+- Noh-Varr|saved|Young Avengers
+f- Noh-Varr|other_verb|became
+f- Noh-Varr|allied_with|Young Avengers
+f- Young Avengers|other_verb|leave
+f+ Noh-Varr|assisted|Young Avengers|assisting her former teammates from the Young Avengers from the inter-dimensional parasite known as Mother
+f+ Noh-Varr|joined|Young Avengers|Marvel Boy joined the team in their subsequent journey across the universe
+f+ Young Avengers|other_verb|leave|the Young Avengers decided to leave Earth in order to prevent the parasite from returning|planned|stated|Young Avengers
+t+ no_relation|During this time, he became a fan of Earth's culture, particularly its music.

@@ -14,7 +14,8 @@ Each window has three row layers, all quoting the window verbatim:
   learned, revealed, discovered, forgot, remembered, suspected, other_verb (use parent_of, never child_of; married,
   never married_to). `other_verb` facts take the passage's own verb word as object ("Enchantress|other_verb|enchanting").
 - TAGS `tag|quote` for sentences with no legal row: no_doer, crowd_end, no_relation, capability, production,
-  list_header, deictic, dialogue.
+  list_header, deictic, dialogue, apposition, attire, citation (a footnote or source line), below_floor (a fragment
+  under 6 words naming no entity).
 
 The window was already reviewed once. A corpus lint flagged it (LINT lines). Your job: decide each flagged row,
 and while reading the whole window fix any other clear error you see (wrong direction, wrong person, a missed
