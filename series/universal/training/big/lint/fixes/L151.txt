@@ -1,0 +1,67 @@
+@4815 lint: F_became: President of the United States = leader_of
+keep
+f- Warren Harding|became|29th President of the United States
+f+ Warren Harding|leader_of|United States|In 1921, Warren Harding became the 29th President of the United States.
+
+@4725 lint: F_became: "the new ruler" names no place in its sentence: no row
+keep
+f- Hulk|became|ruler
+
+@4704 lint: F_became: spy is an occupation: no row
+keep
+f- Natalia Romanova|became|spy
+
+@4643 lint: F_became: "the USA's top cop" is a title: no row
+keep
+f- Norman Osborn|became|USA's top cop
+
+@4621 lint: F_became: ballerina is an occupation: no row; abducted by a named doer = captured (partner b7375)
+keep
+f- Natasha|became|ballerina
+f- Baron Strucker|other_verb|abducted
++ Baron Strucker|captured|Natasha|Baron Strucker abducted Natasha
+
+@7375 lint: as partner b4621 (the abduction)
+keep
+f- Baron Strucker|other_verb|abducted
++ Baron Strucker|captured|Natasha|Baron Strucker abducted Natasha
+
+@4592 lint: F_became: resuming the Spider-Man identity = alias_of
+keep
+f- Parker|became|Spider-Man
+f+ Spider-Man|alias_of|Parker|resumed his Spider-Man identity
+
+@4555 lint: F_became: wielding Mjolnir he became Thor = the mantle (alias_of); reverting and becoming unworthy are states: no row (partner b7841 has none of these rows)
+keep
+f- Loki|became|Thor
+f+ Thor|alias_of|Loki|Using Mjolnir, Loki became Thor
+f- Loki|became|old self
+f- Loki|became|unworthy
+
+@7841 lint: partner of b4555: shared rows unchanged
+keep
+
+@4516 lint: F_became: warden of the Graymalkin Prison = leader_of the named prison (partner b9295 cannot name "She")
+keep
+f- Corina Ellis|became|warden
+f+ Corina Ellis|leader_of|Graymalkin Prison|She became the warden of the Graymalkin Prison
+
+@9295 lint: partner of b4516: "She" is unnamed in this window, the tag stays
+keep
+
+@4498 lint: F_became: becoming a Dark Phoenix is a transformation
+keep
+f- Jean|became|Dark Phoenix
+f+ Jean|transformed_into|Dark Phoenix|Jean becoming a Dark Phoenix, culminating with her presumed death
+
+@4425 lint: F_became: Prime Eternal names no group in its sentence: no row
+keep
+f- Sersi|became|Prime Eternal
+
+@4404 lint: F_became: millionaire is a status: no row
+keep
+f- Van Dyne|became|millionaire
+
+@4388 lint: F_became: taking the Supreme Intelligence's place names no group: no row
+keep
+f- Reed Richards|became|Supreme Intelligence

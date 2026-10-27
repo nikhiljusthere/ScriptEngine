@@ -1,0 +1,64 @@
+@3453 lint: F_became: "make him king" names no realm: no row
+keep
+f- Erik Killmonger|became|king
+
+@3387 lint: F_became: captain of a ship is no leadership of a group or place: no row
+keep
+f- Bloodstone|became|captain of the Pequod
+
+@3353 lint: F_became: places becoming states and "elected president" (no country named): no rows; the ordered act (orders convention)
+keep
+f- Alaska|became|49th U.S. state
+f- Hawaii|became|50th U.S. state
+f- John F Kennedy|became|president
+t+ no_relation|In the same year Alaska and Hawaii became the 49th and 50th U.S. states.
+f+ Nick Fury|other_verb|gather|President Eisenhower order Nick Fury to gather operatives|ordered|stated|Eisenhower
+
+@3245 lint: F_became: "patient zero" is no relation
+keep
+f- Garrett|became|patient zero
+t+ no_relation|He was patient zero.
+
+@3235 lint: F_became: the new Captain America = the mantle: alias_of (the tagged line states it)
+keep
+f- John|became|Captain America
+t- no_relation|he got the all clear to be the new Captain America.
+f+ Captain America|alias_of|John|he got the all clear to be the new Captain America.
+
+@3232 lint: F_became: President of the United States = leader_of; Vice President is no leadership: no row
+keep
+f- Mike Haggar|became|President of the United States
+f+ Mike Haggar|leader_of|United States|is elected the President of the United States
+f- Tony Stark|became|Vice President
+
+@3218 lint: F_became: reclaiming the mantle of Daredevil = alias_of
+keep
+f- Matt|became|Daredevil
+f+ Daredevil|alias_of|Matt|he officially reclaimed the mantle of Daredevil
+
+@3212 lint: F_became: becoming Iron Man = alias_of
+keep
+f- Tony Stark|became|Iron Man
+f+ Iron Man|alias_of|Tony Stark|to become Iron Man
+
+@3206 lint: F_became: becoming young again is a state: no row
+keep
+f- Adrian Toomes|became|a young man
+
+@3189 lint: F_became: his claim to be King of Wakanda = leader_of (claimed); T'Challa's demand is a speech act (M6)
+keep
+f- Killmonger|became|King of Wakanda
+f+ Killmonger|leader_of|Wakanda|said that he was now the King of Wakanda|claimed|stated|Killmonger
+f- T'Challa|other_verb|demanded
+f+ T'Challa|other_verb|demanded|he demanded that he never yielded and was not killed
+
+@3168 lint: F_kidnapped: kidnapped by Project Centipede (no member tied) = captured; a clause is learned|- (A115)
+keep
+f- Project Centipede|kidnapped|Ace Peterson
++ Project Centipede|captured|Ace Peterson|he has been kidnapped by Project Centipede.
+f- Mike Peterson|learned|Ace Peterson
+f+ Mike Peterson|learned|-|learned that he has been kidnapped by Project Centipede.
+
+@3152 lint: F_became: "a galactic world-conqueror" is a status: no row
+keep
+f- Thanos|became|galactic world-conqueror

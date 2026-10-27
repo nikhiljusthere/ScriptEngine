@@ -1,0 +1,56 @@
+@4373 lint: F_became: "a melancholy global wanderer" is a status: no row
+keep
+f- Radd|became|melancholy global wanderer
+
+@4341 lint: F_became: Doom's right hand and sheriff are offices under a ruler, not leadership: no row
+keep
+f- Dr. Strange|became|God Emperor Doom's right hand
+f- Dr. Strange|became|sheriff of Battleworld
+
+@4336 lint: F_became: "indestructible" is a state: no row
+keep
+f- Deadpool|became|indestructible
+f- Wolverine|became|indestructible
+
+@4217 lint: F_became: the bestowed mantle of Captain Marvel: alias_of
+keep
+f- Kamala|became|Captain Marvel
+f+ Captain Marvel|alias_of|Kamala|bestowed the mantle of Captain Marvel to Kamala
+
+@4204 lint: F_became: "the central mover" is no relation (partner b4059 has no such row)
+keep
+f- Tier Sinclair|became|central mover
+
+@4059 lint: partner of b4204: shared rows unchanged
+keep
+
+@4190 lint: F_became: "elected president" names no country in its sentence: no row
+keep
+f- John F Kennedy|became|president
+
+@4187 lint: F_became: weapons manufacturer and dealer is an occupation: no row
+keep
+f- Magnum|became|weapons manufacturer and dealer
+
+@4173 lint: F_became: the birth of the Hulk from Banner's test = transformed_into
+keep
+f- Banner|became|Hulk
+f+ Banner|transformed_into|Hulk|resulting in the birth of Hulk
+
+@4123 lint: F_became: Blonsky now the Abomination = transformed_into
+keep
+f- Blonsky|became|Abomination
+f+ Blonsky|transformed_into|Abomination|With Blonsky now the Abomination
+
+@4097 lint: F_became: ascending into godhood is a transformation
+keep
+f- Warlock|became|godhood
+f+ Warlock|transformed_into|godhood|when Warlock had ascended into godhood via the Infinity Gauntlet
+
+@4049 lint: F_became: "a more confident killer" is a status: no row
+keep
+f- Lopez|became|a more confident killer
+
+@4041 lint: F_became: history teacher is an occupation: no row
+keep
+f- Burnside|became|teacher of American history

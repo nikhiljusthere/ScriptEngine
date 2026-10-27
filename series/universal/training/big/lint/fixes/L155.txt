@@ -1,0 +1,55 @@
+@3134 lint: F_became: "the first superhero" is a status: no row
+keep
+f- Warlock|became|superhero
+
+@3073 lint: F_became: Sorcerer Supreme names no group (her leadership of the Masters stays)
+keep
+f- Ancient One|became|Sorcerer Supreme
+
+@3065 lint: F_became: Sorcerer Supreme names no group: no rows
+keep
+f- Stephen Strange|became|Sorcerer Supreme
+f- Nicodemus|became|Sorcerer Supreme
+
+@3064 lint: F_became: her role as Scarlet Scarab = the codename: alias_of
+keep
+f- El-Faouly|became|Scarlet Scarab
+f+ Scarlet Scarab|alias_of|El-Faouly|embracing her role as Scarlet Scarab
+
+@2871 lint: F_became: becoming the Wasp = the codename: alias_of
+keep
+f- Janet Van Dyne|became|Wasp
+f+ Wasp|alias_of|Janet Van Dyne|lead Janet to become the winsome Wasp
+
+@2708 lint: F_became: her destiny as the Scarlet Witch = the codename: alias_of
+keep
+f- Wanda|became|Scarlet Witch
+f+ Scarlet Witch|alias_of|Wanda|embracing her destiny as the Scarlet Witch
+
+@2632 lint: F_became: the Jewel alias_of row already ties the codename
+keep
+f- Jessica Jones|became|Jewel
+
+@2586 lint: F_became: the new Captain America = the mantle: alias_of
+keep
+f- Barnes|became|Captain America
+f+ Captain America|alias_of|Barnes|now being the new Captain America
+
+@2573 lint: F_became: Vampire Lord is a title over no named group: no row
+keep
+f- Nimrod|became|Vampire Lord
+
+@2429 lint: F_became: becoming Scarlet Scarab = the codename: alias_of
+keep
+f- El-Faouly|became|Scarlet Scarab
+f+ Scarlet Scarab|alias_of|El-Faouly|becoming Scarlet Scarab
+
+@2422 lint: F_became: becoming the creature Monopoly = transformed_into
+keep
+f- Uncle Brett|became|Monopoly
+f+ Uncle Brett|transformed_into|Monopoly|who had become the creature Monopoly
+
+@2342 lint: F_became: becoming the Morrigan, an ancient god (she succeeded) = transformed_into
+keep
+f- Theresa|became|Morrigan
+f+ Theresa|transformed_into|Morrigan|Theresa made a deal to become the Morrigan

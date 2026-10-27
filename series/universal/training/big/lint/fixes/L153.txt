@@ -1,0 +1,55 @@
+@4034 lint: F_became: "yet another tormentor" is a status: no row (partner b5441 has no such row)
+keep
+f- Flash Thompson|became|tormentor
+
+@5441 lint: partner of b4034: shared rows unchanged
+keep
+
+@4023 lint: F_became: "the life of being a superhero" is a status: no row
+keep
+f- Kitty|became|superhero
+
+@4007 lint: F_kidnapped: "supposedly abducted" is hedged: the facts keep certainty apparent (an event cannot carry the hedge)
+keep
+
+@3974 lint: F_became: "a grimmer crime fighter" is a status: no row
+keep
+f- Black Fox|became|grimmer crime fighter
+
+@3927 lint: F_became: Omniversal Guardian is a title over no named group: no row
+keep
+f- Saturnyne|became|Omniversal Guardian
+
+@3908 lint: F_became: elevated to a cosmic being = transformed_into
+keep
+f- Infinity Ultron|became|cosmic being
+f+ Infinity Ultron|transformed_into|cosmic being|A synthezoid elevated to a cosmic being by the power of his universe's Infinity Stones.
+
+@3800 lint: F_became: celebrity superheroes is a status (no row); taking up the mantle of Captain America (planned) = alias_of
+keep
+f- Walker|became|celebrity superhero
+f- Lemar Hoskins|became|celebrity superhero
+f- Walker|became|Captain America
+f+ Captain America|alias_of|Walker|he wanted to take up the mantle of Captain America|planned|stated|Walker
+
+@3757 lint: F_became: "a dirty cop" is a status: no row
+keep
+f- Scarfe|became|dirty cop
+
+@3684 lint: F_became: monster hunter is an occupation: no row
+keep
+f- Elsa|became|monster hunter
+
+@3683 lint: F_became: "an outcast" is a status: no row
+keep
+f- Felicia Hardy|became|an outcast
+
+@3573 lint: F_became: now an artificial intelligence = transformed_into
+keep
+f- Janet Stein|became|artificial intelligence
+f+ Janet Stein|transformed_into|artificial intelligence|the should be dead Janet Stein now an artificial intelligence on a screen.
+
+@3458 lint: F_became: raised as a vampire = transformed_into
+keep
+f- Thakorr|became|vampire
+f+ Thakorr|transformed_into|vampire|who had been raised as a vampire
