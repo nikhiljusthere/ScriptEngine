@@ -1,0 +1,70 @@
+@10268 lint: F_kidnapped: "Glenn Talbot that took her" = captured; the found line carries the met row
+keep
+f- Glenn Talbot|kidnapped|Robin Hinton
++ Glenn Talbot|captured|Robin Hinton|it was Glenn Talbot that took her
+t- no_relation|They found Talbot trying to leave with Robin,
+
+@10264 lint: F_kidnapped: held by Hydra (no member tied) = Hydra captured; "Coulson said" is a speech act (M6)
+keep
+f- Hydra|kidnapped|Hinton
++ Hydra|captured|Hinton|where Hinton was being held by Hydra
+f- Coulson|other_verb|wished
+f+ Coulson|other_verb|wished|Coulson said he wished they could practice for every battle like that
+
+@10114 lint: F_kidnapped: her named kidnappers = captured; tortured and hit = fought (R18, A89)
+keep
+f- Sergei|kidnapped|Claire Temple
+f- Dmitry|kidnapped|Claire Temple
++ Sergei|captured|Claire Temple|Her kidnappers, Sergei and Dmitry
++ Dmitry|captured|Claire Temple|Her kidnappers, Sergei and Dmitry
+f- Sergei|attacked|Claire Temple
+f- Dmitry|attacked|Claire Temple
++ Sergei|fought|Claire Temple|Her kidnappers, Sergei and Dmitry, tortured and hit her
++ Dmitry|fought|Claire Temple|Her kidnappers, Sergei and Dmitry, tortured and hit her
+
+@10040 lint: F_kidnapped: freed from Sinister's clutches = Sinister had captured them
+keep
+f- Sinister|kidnapped|Scott
+f- Sinister|kidnapped|Jean
++ Sinister|captured|Scott|freed Scott and Jean from Sinister's clutches
++ Sinister|captured|Jean|freed Scott and Jean from Sinister's clutches
+
+@9887 lint: F_became: Protector of the Universe is a title (Eon's recruiting stays); A140 name the granted powers
+keep
+f- Mar-Vell|became|Protector of the Universe
+f- Mar-Vell|gained_power|-
+f+ Mar-Vell|gained_power|enhanced strength|which granted him enhanced strength, flight
+f+ Mar-Vell|gained_power|flight|which granted him enhanced strength, flight
+
+@8852 lint: F_became: a mercenary is an occupation: no row
+keep
+f- Jong Tsak|became|mercenary
+
+@8026 lint: F_kidnapped: his android took Knopfler on his orders: the Mad Thinker captured him (the named sender, R21)
+keep
+f- Mad Thinker|kidnapped|Alfred Knopfler
++ Mad Thinker|captured|Alfred Knopfler|One of his victims was Alfred Knopfler
+
+@7791 lint: F_became: a team reorganised: no row (partner b7787)
+keep
+f- Fantastic Four|became|Future Foundation
+
+@7787 lint: as partner b7791
+keep
+f- Fantastic Four|became|Future Foundation
+
+@7684 lint: F_became: the new Daredevil = a mantle: alias_of
+keep
+f- Elektra|became|new Daredevil
+f+ Daredevil|alias_of|Elektra|Elektra became the new Daredevil in his absence.
+
+@7576 lint: F_became: a recluse is a status: no row (partner b7574 has no such row)
+keep
+f- Dracula|became|recluse
+
+@7574 lint: partner of b7576: shared rows already identical
+keep
+
+@7541 lint: F_became: American citizen is a status: no row
+keep
+f- Moses Magnum|became|American citizen

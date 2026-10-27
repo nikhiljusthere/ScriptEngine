@@ -1,0 +1,32 @@
+@10187 lint: Fisk's charge and Lopez's takedown are two acts by different doers: fought kept
+keep
+
+@10199 lint: met kept (the bus encounter and his mocking come before the alley fight)
+keep
+
+@10221 lint: May = Melinda May
+keep
+r May=>Melinda May
+
+@10235 lint: Kasius's attack and Mackenzie's kill are different doers: fought kept; "disabled him by inserting ..." is one act: defeated only; Rodriguez = Yo-Yo Rodriguez; joining the two where they are (a reunion) = met
+keep
+r Rodriguez=>Yo-Yo Rodriguez
+- Simmons|fought|Kasius
++ Yo-Yo Rodriguez|met|Simmons|The two were then joined by Rodriguez
++ Yo-Yo Rodriguez|met|Mackenzie|The two were then joined by Rodriguez
+
+@10250 lint: he found Ward and attacked at once: no met; "wounded Ward and handcuffed him" is one act: captured (the wound stays a fact)
+keep
+- Coulson|met|Grant Ward
+- Coulson|fought|Grant Ward
+
+@10274 lint: "Coulson fought Garrett at the Hub" is its own clause before "finally defeated him": fought kept
+keep
+
+@10295 lint: Ying fights and is killed by the gang (two doers' acts): fought kept; the approach is a named-doer line (A101)
+keep
+f+ Ying|other_verb|approaches|Ying approaches the gang
+
+@10337 lint: "dispatched Iron Man by striking him with Mjolnir" is one act: defeated only
+keep
+- Thor|fought|Iron Man

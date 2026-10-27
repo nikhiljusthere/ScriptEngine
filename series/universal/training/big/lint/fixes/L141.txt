@@ -1,0 +1,48 @@
+@13770 lint: F_became: a god's Avatar is a role over no named group: no row
+keep
+f- Arthur Harrow|became|Ammit's Avatar
+
+@13763 lint: F_became: chosen as Khonshu's Avatar is a role: no row (the Moon Knight alias stays)
+keep
+f- Arthur Harrow|became|Khonshu's Avatar
+
+@13756 lint: F_became: her Avatar is a role: no row
+keep
+f- Arthur Harrow|became|Avatar
+
+@13472 lint: F_became: appointed the new Black Panther = a mantle: alias_of
+keep
+f- Erik Killmonger|became|Black Panther
+f+ Black Panther|alias_of|Erik Killmonger|where T'Chaka appointed him as the new Black Panther
+
+@13408 lint: F_became: a U.S. black ops soldier is an occupation: no row
+keep
+f- Erik|became|U.S. black ops soldier
+
+@13403 lint: F_became: "the king" names no realm: no row; the ritual combat is its own clause before "manages to best him"; he wakes from the herb's deep sleep
+keep
+f- T'Challa|became|King
++ T'Challa|fought|M'Baku|The two engage in ritual combat
++ T'Challa|awakened|-|T'Challa wakes up from his dream
+
+@13242 lint: F_became: the rank of Ultra is a rank: no row; Magistrate told Chase in person, Frank joined the conversation: met
+keep
+f- Frank|became|Ultra
++ Magistrate|met|Chase|Magistrate arrived in Victor's room and told Victor's son Chase that he would cure his father
++ Frank|met|Magistrate|As Frank joined the conversation
+
+@12971 lint: F_kidnapped: Frost escapes with the kidnapped Wilkes = captured
+keep
+f- Whitney Frost|kidnapped|Wilkes
++ Whitney Frost|captured|Wilkes|was escaping with Joseph Manfredi and the kidnapped Wilkes
+
+@12950 lint: F_kidnapped: taken hostage by a named doer = captured; a speech act is actual (M6)
+keep
+f- Obadiah Stane|kidnapped|Pepper Potts
++ Obadiah Stane|captured|Pepper Potts|he had taken Pepper Potts hostage
+f- Obadiah Stane|other_verb|told
+f+ Obadiah Stane|other_verb|told|Stane told Stark not to force him to hurt her
+
+@12904 lint: F_became: a bioengineer is an occupation: no row
+keep
+f- Stacey Yorkes|became|bioengineer

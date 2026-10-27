@@ -1,0 +1,61 @@
+@7520 lint: F_became: research scientist is an occupation: no row
+keep
+f- Bruce Banner|became|research scientist
+
+@7517 lint: F_became: physics professor is an occupation: no row
+keep
+f- Banner|became|physics professor
+
+@7208 lint: F_became: taking his place as the Sentry = the mantle (planned): alias_of
+keep
+f- Billy Turner|became|Sentry
+f+ Sentry|alias_of|Billy Turner|wanting to take his place as the Sentry with help from Cranio|planned|stated|Billy Turner
+
+@7193 lint: F_became: returned to life as a Horseman of Death = transformed_into; Osborn drafted the Sentry, not the Avengers
+keep
+f- Sentry|became|Horsemen of Death
+f+ Sentry|transformed_into|Horseman of Death|Bob would later be returned to life as a Horsemen of Death by the Apocalypse Twins.
+f- Norman Osborn|recruited|Avengers
+f+ Norman Osborn|recruited|Sentry|he drafted the Sentry into his own twisted Avengers.
+
+@7148 lint: F_became: consuming a King Egg made him a Brood King: transformed_into
+keep
+f- Broo|became|Brood King
+f+ Broo|transformed_into|Brood King|After consuming a King Egg, Broo became the first Brood King
+
+@7121 lint: F_became: the last Nova = the mantle (alias_of); Nova Prime is the Corps' lead, already leader_of Nova Corps
+keep
+f- Rider|became|Nova
+f+ Nova|alias_of|Rider|Rider became the last Nova and vessel for both the full Nova Force and the Xandarian Worldmind
+f- Rider|became|Nova Prime
+
+@7023 lint: F_became: a pacifist is a stance: no row
+keep
+f- Simon Williams|became|pacifist
+
+@7002 lint: F_became: Omniversal Guardian is a title over no named group: no row
+keep
+f- Roma|became|Omniversal Guardian
+
+@6945 lint: F_became: converted into the Horseman of War = transformed_into
+keep
+f- Colossus|became|Horseman of War
+f+ Colossus|transformed_into|Horseman of War|was consequently converted into the Horseman of War
+
+@6928 lint: F_became: reborn as another person = transformed_into
+keep
+f- Billy Maximoff|became|Billy Kaplan
+f+ Billy Maximoff|transformed_into|Billy Kaplan|The soul of Billy Maximoff was reborn as Billy Kaplan
+f- Tommy Maximoff|became|Tommy Shepherd
+f+ Tommy Maximoff|transformed_into|Tommy Shepherd|His twin Tommy Maximoff was reborn as Tommy Shepherd
+
+@6880 lint: F_became: CEO after inheriting Stark Industries = leader_of it
+keep
+f- Tony|became|youngest CEO of a Fortune 500 company
+f+ Tony|leader_of|Stark Industries|Tony became the youngest CEO of a Fortune 500 company after the inheritance of Stark Industries
+
+@6774 lint: F_became: the Wasp alias_of row already ties the name; Pym = Hank Pym; As Ant-Man = his alias
+keep
+f- Janet Van Dyne|became|Wasp
+r Pym=>Hank Pym
+f+ Ant-Man|alias_of|Hank Pym|As Ant-Man, Pym investigated the murder

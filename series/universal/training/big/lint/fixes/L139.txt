@@ -1,0 +1,39 @@
+@10347 lint: Thor and Mighty Thor are two people here
+keep
+
+@10348 lint: A134 attempt -> dominate; "Loki's defeat" names no doer: no row
+keep
+f- Loki|other_verb|attempt
+f+ Loki|other_verb|dominate|he had begun his attempt at world domination with the Tesseract|attempted|stated|Loki
+
+@10374 lint: Hydra (group) vs Madame Hydra (person); left_group = twin of betrayed (A89); the stationing line carries member_of, no capability
+keep
+f- May|left_group|Hydra
+t- capability|As a high-ranking Hydra operative
+
+@10378 lint: Simmons = Jemma Simmons, Coulson = Phil Coulson
+keep
+r Simmons=>Jemma Simmons
+r Coulson=>Phil Coulson
+
+@10381 lint: "After a prolonged fight, May electrocuted ..." states the fight, then a further act: fought kept; a threat is an actual speech act; the ordered act (orders convention)
+keep
+f- Bakshi|other_verb|threatening
+f+ Bakshi|other_verb|threatening|with Bakshi threatening to torture her
+f+ May|other_verb|put|Coulson ordered her to put him down instead.|ordered|stated|Coulson
+
+@10390 lint: May and William May are two people
+keep
+
+@10401 lint: "They fight" is its own clause before the kick: fought kept
+keep
+
+@10434 lint: Coulson = Phil Coulson; the group's plan ties all three; speech act (A101); a tasing is the event fought (A89)
+keep
+r Coulson=>Phil Coulson
+t- dialogue|Grill told Mackenzie that it would not work and that he did not like people slacking off work.
+f+ Grill|other_verb|told|Grill told Mackenzie that it would not work and that he did not like people slacking off work
+f+ Phil Coulson|other_verb|steal|the group planned to steal it|planned|stated|Phil Coulson
+f+ Yo-Yo Rodriguez|other_verb|steal|the group planned to steal it|planned|stated|Yo-Yo Rodriguez
+f- Zev|attacked|Yo-Yo Rodriguez
++ Zev|fought|Yo-Yo Rodriguez|Rodriguez being tased by Zev

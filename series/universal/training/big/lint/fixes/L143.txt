@@ -1,0 +1,59 @@
+@11626 lint: F_kidnapped: keeping the real May prisoner by a named doer = captured; the arrest line carries its event (no tag)
+keep
+f- Aida|kidnapped|Melinda May
++ Aida|captured|Melinda May|keeping the real May prisoner in the residence.
+t- no_relation|Holden Radcliffe was arrested by S.H.I.E.L.D.
+
+@11604 lint: F_became: King of New Asgard = leader_of the named place
+keep
+f- Valkyrie|became|King of New Asgard
+f+ Valkyrie|leader_of|New Asgard|allowed her to become the King of New Asgard as appointed by Thor
+
+@11530 lint: F_became: chief engineer is no leadership; the appointment makes him part of Project Rebirth
+keep
+f- Howard Stark|became|chief engineer of Project Rebirth
+f+ Howard Stark|member_of|Project Rebirth|being appointed chief engineer of Project Rebirth
+
+@11297 lint: F_became: director of the CIA = leader_of the named group
+keep
+f- de Fontaine|became|director of the CIA
+f+ de Fontaine|leader_of|CIA|she became the director of the CIA
+
+@11090 lint: F_became: chairperson of the board of Pym Technologies = leader_of it; her father Hank Pym
+keep
+f- van Dyne|became|chairperson of the board of directors at Pym Technologies
+f+ van Dyne|leader_of|Pym Technologies|van Dyne worked her way up to becoming chairperson of the board of directors at Pym Technologies
+f+ Hank Pym|parent_of|van Dyne|van Dyne contacted her father
+
+@10965 lint: F_became: becoming a Celestial is a transformation
+keep
+f- Harkness|became|Celestial
+f+ Harkness|transformed_into|Celestial|Agatha was able to succeed in absorbing Tiamut's power and becoming a Celestial
+
+@10884 lint: F_became: Secretary of State is a cabinet office, not the country's leader: no row
+keep
+f- Ross|became|United States' Secretary of State
+
+@10875 lint: F_became: three-star general is a rank: no row
+keep
+f- Thaddeus Ross|became|three-star general
+
+@10836 lint: F_became: private investigator is an occupation: no row
+keep
+f- Jones|became|private investigator
+
+@10809 lint: F_became: talk-show host is an occupation: no row
+keep
+f- Walker|became|host of Trish Talk
+
+@10653 lint: F_became: made into a cyborg = transformed_into; torturing = fought (R18)
+keep
+f- Nebula|became|cyborg
+f+ Nebula|transformed_into|cyborg|making her a cyborg
+f- Thanos|attacked|Nebula
++ Thanos|fought|Nebula|frequently torturing her to find out where the Soul Stone was
+
+@10590 lint: F_became: Champion of Sakaar is a title over no group: no row; he met Thor as his opponent and Thor pleaded before the duel: met
+keep
+f- Hulk|became|Champion of Sakaar
++ Hulk|met|Thor|Hulk met his newest opponent, who turned out to be none other than his former teammate and fellow Avenger, Thor

@@ -1,0 +1,48 @@
+@12727 lint: F_became: Sorcerer Supreme names no group or place: no row
+keep
+f- Doctor Strange|became|Sorcerer Supreme
+
+@12722 lint: F_became: becoming a living universe is a transformation
+keep
+f- Strange|became|living universe
+f+ Strange|transformed_into|living universe|Watcher explained to Eminence that Strange had become a living universe, one in which he had absolute power
+
+@12579 lint: F_became: "an enemy of the state" is a status: no row
+keep
+f- Carter|became|enemy of the state
+
+@12575 lint: F_became: a fugitive is a status: no row
+keep
+f- Carter|became|fugitive
+
+@12322 lint: F_became: becoming a Keeper Demon is a transformation (reported by the Caretaker); "her father" is unnamed: the escape stays a fact
+keep
+f- Chris Yen|became|Keeper Demon
+f+ Chris Yen|transformed_into|Keeper Demon|he had become a Keeper Demon|actual|reported|-
+- Ana Helstrom|escaped|Ana Helstrom's father
+f+ Ana Helstrom|other_verb|escaped|She told her mother about how she escaped her father
+
+@12057 lint: F_became: fighter pilot is an occupation: no row
+keep
+f- Carol Danvers|became|fighter pilot
+f- Maria Rambeau|became|fighter pilot
+
+@12023 lint: F_became: "a corrupted cop" is an occupation/status: no row
+keep
+f- Rafael Scarfe|became|corrupted cop
+
+@11971 lint: F_became: Deputy Director is a second-in-command, not the group's leader: no row
+keep
+f- Maria Hill|became|Deputy Director
+
+@11952 lint: F_became: ruler of Earth = leader_of the named place (the promised reward keeps planned)
+keep
+f- Loki|became|ruler of Earth
+f+ Loki|leader_of|Earth|in return for making him the ruler of Earth|planned|stated|Thanos
+
+@11687 lint: F_became: King of Wakanda = leader_of Wakanda; a speech act is actual (M6)
+keep
+f- Stevens|became|King of Wakanda
+f+ Stevens|leader_of|Wakanda|Killmonger became the King of Wakanda, as he always wanted
+f- Stevens|other_verb|state
+f+ Stevens|other_verb|state|Killmonger stated that they cannot stay dark anymore and Wakanda needs to go offensive against the outside world.
