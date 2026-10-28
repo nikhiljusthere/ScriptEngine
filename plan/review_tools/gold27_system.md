@@ -169,3 +169,16 @@ answer `@B gold: ok` and `keep` only. Use the exact strings shown in the window'
 - Traits and habits (bragging, loyal, spoke his mind, acts as the military force) are no_relation, not capability.
   `capability` is for abilities and general mechanics.
 - A stated past act inside a recollection ("recalls fighting Senbonzakura", "came to visit him before his death") is kept.
+- (b289-b748) A chapter/episode/volume title line ("X is the 55th chapter of ...", "... is the seventh episode") and a
+  character's story role ("serves as a supporting character", "is the titular antagonist") are production.
+- One list line = one tag: never one tag quote spanning several lines; a bare number line ("85.") is its own list_header.
+  No `|` inside any quote (split table cells).
+- Cutting/slicing/tearing someone to pieces or in half, dismembering, restraining, knocking out = `defeated` (and per
+  A145 the same act drops `fought`). A hostile arrival that turns into the attack ("arrive to stop/kill X") is no `met`.
+- In-person calling/asking/informing is never `contacted` (remote only): use other_verb with the passage's verb.
+- "X wants/decides/promises/vows/offers to V" = the speech/decision act actual + `V` planned (asserted_by X).
+- Possessive or lower-case descriptions ("Denji's father", "the man", "a man", "the devil" when never named, "the
+  creature", "the Arrancar clone", "the mayor", "surgeons", "the group", "the Yakuza", "Devil Hunters") are no ends.
+- "Devil embodies the concept of X" is the fact `Devil|other_verb|embodies` (not a capability tag).
+- An epithet ("the Primal Fear", "Great King of Terror", "the Violence Fiend" used once) is no alias; a hero identity tied
+  in the window ("Denji ... his identity as Chainsaw Man") is `Chainsaw Man|alias_of|Denji`.
