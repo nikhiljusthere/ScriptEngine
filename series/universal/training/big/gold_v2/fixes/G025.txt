@@ -1,0 +1,83 @@
+@239 gold: proclaiming/saying/declaring are speech acts, not reveals
+keep
+f- Farnese|revealed|-
+f+ Farnese|other_verb|proclaims|Farnese proclaims to Guts that she has witnessed a miracle.|actual|stated|
+f- Guts|revealed|-
+f+ Guts|other_verb|saying|with Guts saying that faith equals death.|actual|stated|
+f- Mozgus|revealed|Casca
+f+ Mozgus|other_verb|declares|Mozgus declares Casca to be a witch.|actual|stated|
+f- Mozgus|other_verb|declares
+f+ Mozgus|other_verb|declares|Mozgus declares that they will all atone for their sins in blood.|actual|stated|
+t- no_doer|The mysterious creature watches
+f+ Mozgus|other_verb|chastises|as Mozgus chastises someone for rebelling against God.|actual|stated|
+t+ crowd_end|The mysterious creature watches from atop the Tower
+
+@240 gold: "the mayor" is an unnamed end; the torture is doer-less
+keep
+- the mayor|met|the Black Swordsman
+f- the mayor|ordered|Black Swordsman
+f- Black Swordsman|other_verb|tortured
+f- the mayor|ordered|torturer
+f- the mayor|interrogated|Black Swordsman
+f- the mayor|warned|Black Swordsman
+f- the mayor|other_verb|fear
+t+ crowd_end|Following the killing of the Snake Lord's thugs by the Black Swordsman, word passes to the mayor, who orders for the Black Swordsman's capture.
+t+ crowd_end|Later on, while the Black Swordsman is being tortured in the town's dungeon, the mayor enters with his guards to observe.
+t+ crowd_end|He commands the torturer to stop and notices the stockpile of weapons confiscated from the swordsman.
+t+ crowd_end|In shock, he asks if he is a mercenary and begins to explain to him what a terrible thing he has done by killing several of the Snake Lord's bandits.
+t+ crowd_end|It is his fear that by doing this, the Snake Lord would take out his rage on the town and utterly destroy it and the mayor himself.
+
+@241 gold: publishing history is production
+keep
+f- Hakusensha|became|publisher of Berserk
+f- Berserk|other_verb|appeared
+f- Monthly Animal House|other_verb|renamed
+f- Berserk|other_verb|gained
+f- Berserk|other_verb|centering
+t+ production|In 1989, Hakusensha became the publisher of Berserk, which first appeared in the now-defunct magazine Monthly Animal House, which was later renamed Young Animal.
+t+ production|Berserk quickly gained a cult following due to its dark narrative and complex character development, centering on the tragic and brutal journey of its protagonist, Guts.
+
+@242 gold: author note is production
+keep
+f- Kentarou Miura|other_verb|based
+t+ production|Kentarou Miura based the members of the Band of the Falcon peripheral to Guts, Griffith, and Casca on his high school manga friends.
+
+@243 gold: realizing = learned; the running happened; a mood is no verb
+keep
+f- Peekaf|revealed|-
+f+ Peekaf|learned|-|realizing his true family is the very one he left behind|actual|stated|
+f- Peekaf|other_verb|run
+f+ Peekaf|other_verb|run|propels him to run away in search of his true family|actual|stated|
+f- Peekaf|other_verb|depressed
+
+@244 gold: ok
+keep
+
+@245 gold: ok
+keep
+
+@246 gold: article; the King ordered, unnamed men did it; the Band rescued too
+keep
+r the King=>King
+- King|captured|Griffith
++ Band of the Falcon|saved|Griffith|his rescue by Guts, Casca and the Band of the Falcon
+f- another mysterious element|revealed|-
+t+ no_doer|Another mysterious element is revealed
+t+ no_relation|everyone learns the tale of Emperor Gaiseric
+
+@247 gold: astral bodies are a crowd; Schierke's own verbs
+keep
+f- Astral bodies of the other dead men|other_verb|float
+f- Astral bodies of the other dead men|other_verb|begging
+f+ Schierke|other_verb|falls|She falls onto her behind, stunned|actual|stated|
+f+ Schierke|other_verb|stares|stares up into the sky|actual|stated|
+t+ crowd_end|the Astral bodies of the other dead men now float, all of them begging to be cut loose from where they hang
+
+@248 gold: captured woman unnamed; cover protects both; crowds
+keep
+f- captured woman|other_verb|plead
+f+ Guts|protected|Casca|stays behind to cover the group as the captive women|actual|stated|
+f+ Farnese|other_verb|screams|Farnese screams as the sight is to much for her to bear.|actual|stated|
+t+ crowd_end|One of the captured women notice Farnese and plead for her help
+t+ no_relation|However, the women ended up in a chamber of the trolls' den
+t+ crowd_end|The group fight their way through pursuers and Qliphoth's predators

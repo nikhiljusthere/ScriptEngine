@@ -1,0 +1,62 @@
+@219 gold: a look is no doer; Griffith's own verbs
+keep
+f- Griffith|other_verb|possessed
+f+ Griffith|other_verb|holds|Griffith holds her tightly and kisses her.|actual|stated|
+f+ Griffith|other_verb|kisses|Griffith holds her tightly and kisses her.|actual|stated|
+
+@220 gold: ok
+keep
+
+@221 gold: quote's verb; a described city is no end
+keep
+f- Foss|other_verb|noted
+f+ Foss|other_verb|noting|noting that Falconia is too large and majestic in nature to be within the scope of human construction|actual|stated|
+f- Gaiseric's legendary city|other_verb|man-made
+t+ no_relation|whereas Gaiseric's legendary city is said to have specifically been man-made.
+
+@222 gold: ok
+keep
+
+@223 gold: article; adjectives are no verbs; the watching is narrated
+keep
+r the Minister=>Minister
+f- Aide|other_verb|loyal
+f- Aide|other_verb|caring
+f- Minister|other_verb|intends
+t+ no_relation|Little is known of his personality, though he appears to be very loyal to the Minister and the town of Koka.
+t+ no_relation|He is also shown to be caring in his final moments,
+t- no_relation|as he watches on
+f+ Aide|other_verb|watches|as he watches on when the Minister has been slain by the Snake Lord.|actual|stated|
+
+@224 gold: ok
+keep
+
+@225 gold: ok
+keep
+
+@226 gold: leading is no help row; narrated acts are no capability
+keep
+f- Sonia|helped|Mule
+f+ Sonia|other_verb|leads|Sonia leads Mule into a dark forest|actual|stated|
+t- capability|In the pitch-black wood
+f+ Mule|other_verb|loses|In the pitch-black wood, Mule loses all sense of direction|actual|stated|
+t- capability|including roots
+f+ Mule|other_verb|stumbles|including roots which he stumbles and trips over|actual|stated|
+t- deictic|When he listens
+f+ Mule|other_verb|listens|When he listens to Sonia's footsteps, he finds that they are smooth and regular|actual|stated|
+t- deictic|Mule is amazed
+t+ no_relation|Mule is amazed at the girl a few feet ahead of him
+f+ Sonia|other_verb|offers|She promptly turns around and offers her hand to him|actual|stated|
+
+@227 gold: ok
+keep
+
+@228 gold: copula; a described place is no location; named runners
+keep
+f- Puck|other_verb|is
+f- Jill|located_at|cave-like place
+f- Puck|located_at|cave-like place
+t+ no_relation|They're in a cave-like place, where the ceiling is covered in bulbous masses.
+t- no_relation|Together, Jill and Puck
+f+ Jill|other_verb|run|Together, Jill and Puck have run to where the fog meets the ground|actual|stated|
+f+ Puck|other_verb|run|Together, Jill and Puck have run to where the fog meets the ground|actual|stated|

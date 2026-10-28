@@ -1,0 +1,71 @@
+@109 gold: ok
+keep
+
+@110 gold: met kept (Zodd states his wish before the battle); "advising" is the passage's verb
+keep
+f- Zodd|persuaded|Guts
+f+ Zodd|other_verb|advising|advising Guts to save his woman.
+
+@111 gold: Griffith is the named speaker (A101)
+keep
+t- crowd_end|He acknowledges his band members
+t- crowd_end|His friend, Griffith says
+f+ Griffith|other_verb|acknowledges|He acknowledges his band members as excellent troops and comrades who devote themselves to the dream he envisions
+f+ Griffith|other_verb|says|His friend, Griffith says, is his "equal"
+
+@112 gold: a name etymology is production
+keep
+t- no_relation|His name may come from
+t+ production|His name may come from the Sanskrit term "daiva" (दैव), meaning "divine".
+
+@113 gold: the army attacked the Band as a whole (no member tied); thwarting Silat's raid = defeated; "a rescue squad" is no named group (the members' planned act stays)
+keep
+- Midland army|fought|Casca
+- Midland army|fought|Judeau
++ Midland army|fought|Band of the Falcon|the Band of the Falcon is attacked by the Midland army
+- Guts|fought|Silat
++ Guts|defeated|Silat|help the remnants of the Band of the Falcon thwart a raid lead by Silat
+f- Guts|member_of|rescue squad
+f- Casca|member_of|rescue squad
+f- Judeau|member_of|rescue squad
+f- Pippin|member_of|rescue squad
+f- Princess Charlotte|assisted|rescue squad
+f- rescue squad|other_verb|free
+f+ Guts|other_verb|free|a rescue squad, consisting of Guts, Casca, Judeau and Pippin, is later on assembled in order to free an imprisoned Griffith from the Tower of Rebirth|planned|stated|Guts
+f+ Casca|other_verb|free|a rescue squad, consisting of Guts, Casca, Judeau and Pippin, is later on assembled in order to free an imprisoned Griffith from the Tower of Rebirth|planned|stated|Casca
+f+ Judeau|other_verb|free|a rescue squad, consisting of Guts, Casca, Judeau and Pippin, is later on assembled in order to free an imprisoned Griffith from the Tower of Rebirth|planned|stated|Judeau
+f+ Pippin|other_verb|free|a rescue squad, consisting of Guts, Casca, Judeau and Pippin, is later on assembled in order to free an imprisoned Griffith from the Tower of Rebirth|planned|stated|Pippin
+
+@114 gold: the patrol is the Knights' act (A101); the pilgrims are a crowd; personality is no capability
+keep
+t- no_relation|A large, very regal-looking force
+f+ Holy Iron Chain Knights|other_verb|patrol|A large, very regal-looking force of soldiers known as the Holy Iron Chain Knights patrol Midland's border.
+t- no_relation|The pilgrims they pass by
+t+ crowd_end|The pilgrims they pass by kneel in prayer, signifying the Holy Iron Chain Knights' religious significance
+t- attire|one of whom is an attractive woman.
+t+ crowd_end|one of whom is an attractive woman.
+t- capability|Serpico is a young man
+t+ no_relation|Serpico is a young man with a sprightly disposition
+t- capability|the older, bigger, mustachioed Azan
+t+ no_relation|the older, bigger, mustachioed Azan is much more serious.
+
+@115 gold: the jailer is unnamed
+keep
+f- Jailer|other_verb|tortured
+
+@116 gold: ok
+keep
+
+@117 gold: production credits, no facts
+keep
+f- LIDENFILMS|other_verb|produced
+f- GEMBA|other_verb|produced
+f- Millepensee|other_verb|produced
+t+ production|Berserk is a 2016 anime adaptation of the Conviction and Millennium Falcon arcs of Berserk produced by LIDENFILMS, GEMBA and Millepensee.
+
+@118 gold: "cares for" is no stated friendship; the allowing is Charlotte's act
+keep
+f- Anna|friend_of|Princess Charlotte
+f+ Anna|other_verb|cares|She cares very deeply for the princess and has an overly worried almost mother-like personality toward her.
+f- Anna|other_verb|allows
+f+ Princess Charlotte|other_verb|allows|She is one of the few people that Princess Charlotte allows into her room after the incident with her father.

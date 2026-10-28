@@ -1,0 +1,81 @@
+@89 gold: ok
+keep
+
+@90 gold: a world rule about a species is no capability
+keep
+t- capability|Humans who leave the Physical World
+t+ no_relation|Humans who leave the Physical World unaware of their demise or with regret linger in the Interstice until coming to terms with their deaths.
+
+@91 gold: "is jealous" = copula, the realising is learned|-; the snatch and Casca's urging are her acts; the group is a crowd
+keep
+f- Casca|other_verb|jealous
+f+ Casca|learned|-|Realizing that she's still jealous of the princess
+f+ Casca|other_verb|snatches|but snatches it away when Charlotte turns to speak with her
+f+ Casca|other_verb|urging|At Casca's urging, the entire group begins to move in search of Griffith.
+t- below_floor|the entire group begins to move
+t+ crowd_end|the entire group begins to move in search of Griffith
+
+@92 gold: Griffith takes Charlotte away from the Kushan = saved (kept); daka, Kushan, harashada are races/crowds (no ends); the Beherit's maker is unstated; the plan fact twins the saved event; storming Wyndham = the Band arrived
+keep
+f- Daiba|created|Man-Made Beherit
+f- daka|other_verb|raised
+f- Kushan|took|young women
+f- daka|attacked|Band of the Falcon
+f- Griffith|other_verb|spirit
+f- daka|allied_with|pishacha
+f- daka|allied_with|makara
+f- daka|other_verb|devastate
+f- Daiba|ordered|harashada
+f- harashada|other_verb|force
+f- harashada|other_verb|fall
++ Band of the Falcon|arrived|Wyndham|when they stormed Wyndham
+t+ crowd_end|The newborn daka is then kept in a cage with its kind, fed on the meat of their dead mothers and raised to serve Ganishka.
+t+ crowd_end|When the man-made beherit was put to use in Wyndham, the Kushan took many of the young women to be impregnated with what would become daka.
+t+ crowd_end|The daka that were already matured were used against the reborn Band of the Falcon
+t+ crowd_end|The surviving daka were later deployed alongside the pishacha and the makara as a vanguard army to devastate Vritannis so the main army can conquer the ruined city the following morning.
+t+ crowd_end|In the morning, Daiba ordered the harashada to force both daka and pishacha to commit suicide so that they did not fall into the hands of the enemy alive.
+
+@93 gold: ok
+keep
+
+@94 gold: the unnamed members are a crowd
+keep
+t- no_relation|Some of the uninjured members
+t- no_relation|They marvel at his titanic body
+t- no_relation|As they leave, however
+t- no_relation|He decides to make nothing of it.
+t+ crowd_end|Some of the uninjured members have crowded around Wyald's body.
+t+ crowd_end|They marvel at his titanic body before turning away to go about their duties.
+t+ crowd_end|As they leave, however, the attention of one of them is drawn to Wyald's hand, which lies motionless.
+t+ crowd_end|He decides to make nothing of it.
+
+@95 gold: game-design notes are production, no facts
+keep
+f- Makara|other_verb|appear
+f- four makaras|other_verb|appear
+t+ production|Makara appear as a late-game boss in the 2016 game Berserk and the Band of the Hawk.
+t+ production|Makara appear only in the very last two chapters.
+t+ production|Only four makaras will appear in the game, and two of these can be skipped without a skilled player even realizing they were there.
+t+ production|One will appear as the boss for the beaches outside Vritannis in the chapter "Familiars".
+t+ production|One will appear in Vritannis to block access to the harbor; once it is defeated, should a player fall too far behind the party in making it to the harbor, two more Makara will appear to further block access.
+t+ production|However, these will not appear if the player leads the party.
+
+@96 gold: the planned act is "depart"; the departure itself and "the two lovers" are stated
+keep
+f- Guts|other_verb|decided
+f+ Guts|other_verb|depart|Guts has decided to depart Godot's home later in the day|planned|stated|Guts
+f+ Guts|other_verb|depart|the two lovers and Puck depart for the elf's mysterious home.
+f+ Casca|other_verb|depart|the two lovers and Puck depart for the elf's mysterious home.
+f+ Puck|other_verb|depart|the two lovers and Puck depart for the elf's mysterious home.
+f+ Guts|dated|Casca|the two lovers and Puck depart for the elf's mysterious home.
+
+@97 gold: the priest and the villagers are unnamed; other_verb takes the passage's verb ("lying")
+keep
+- Guts|met|the priest
+- Casca|met|the priest
+t+ crowd_end|the party is met by the villagers and priest, who express doubt in their ability to alleviate the troll problem.
+f- Guts|other_verb|lie
+f+ Guts|other_verb|lying|by lying that Casca is a journeying pilgrim in need of the church's charity
+
+@98 gold: ok
+keep

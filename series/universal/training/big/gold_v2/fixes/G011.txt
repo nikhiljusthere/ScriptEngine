@@ -1,0 +1,72 @@
+@99 gold: blocking one attack is fought (Guts is not beaten); the Rosine fight quote must name Rosine; Farnese only orders the volley (ordered act); speech verb "telling"; a belief is actual
+keep
+- Guts|fought|Rosine
++ Guts|fought|Rosine|Guts was about to kill two small innocent girls, not the monster that Rosine is
+- Farnese|fought|Guts
+f+ Holy Iron Chain Knights|other_verb|fired|Farnese orders more bolts be fired at Guts|ordered|stated|Farnese
+f- Zepek|other_verb|told
+f+ Zepek|other_verb|telling|telling them that he's stopped Guts' attack
+f- Zepek|suspected|-
+f+ Zepek|suspected|-|from Zepek and the Holy Iron Chain Knights' perspective, Guts was about to kill two small innocent girls|actual|apparent|-
+t- capability|He is ecstatic
+t+ no_relation|He is ecstatic at being able to once again be in battle.
+
+@100 gold: ok
+keep
+
+@101 gold: ok
+keep
+
+@102 gold: a castle "said to be" is no act; the general and the foot soldier are unnamed
+keep
+f- The castle|other_verb|said
+t+ no_relation|The castle is said to be impregnable.
+t+ no_doer|One of Midland's generals is informed by a foot soldier that Midland is suffering heavy losses
+
+@103 gold: ok
+keep
+
+@104 gold: met kept (their first meeting three years prior is a separate moment); "the White Falcon" is an epithet (no alias); fight narration is no capability
+keep
+f- Griffith|codename_of|White Falcon
+t- capability|The two swordsmen begin their fight anew
+t+ no_relation|The two swordsmen begin their fight anew, battling with strength and speed greatly oustripping the average human's.
+t- capability|Guts is surprised at how he is able to keep up
+t- capability|He fights even more ferociously
+t+ no_relation|He fights even more ferociously, more determined than ever to win.
+
+@105 gold: Jerome's decapitation is the kill (no defeated, no twin fact); being turned into pseudo-apostles is no revival; the chapel is in the named Tower of Conviction; the spearhead line carries its fought rows
+keep
+r the Tower of Conviction chapel=>Tower of Conviction
+- Jerome|defeated|Twins
+- Bubblehead|awakened|-
+- Imp|awakened|-
+- Angel Face|awakened|-
+- Crow|awakened|-
+- Twins|awakened|-
+f- Jerome|other_verb|decapitating
+t- no_relation|The Bubblehead and the Imp spearhead the attack
+
+@106 gold: a group growing is no capability
+keep
+t- capability|gradually increases in size
+t+ no_relation|gradually increases in size as his journey takes him to various lands.
+
+@107 gold: the serpents are unnamed creatures (no ends); inhabiting a bird is no residence; the flight happened (actual)
+keep
+- the first serpent|fought|Schierke
+f- giant water serpent|attacked|Schierke
+f- even larger serpent|destroyed|first serpent
+f- Schierke|resides_at|small bird
+f- Schierke|other_verb|investigate
+f+ Schierke|other_verb|investigate|It flies in to investigate,
+t+ crowd_end|but is nearly eaten by a giant water serpent, the source of the ripples.
+t+ crowd_end|The bird is saved when an even larger serpent eats the first serpent.
+t+ no_relation|The next morning, a small bird (inhabited by Schierke) flies over the vast expanse of sea
+
+@108 gold: "the troll" is unnamed; realising = learned|-
+keep
+- the troll|met|Isidro
+t+ crowd_end|As it advances
+f- Isidro|discovered|-
+f+ Isidro|learned|-|realizes that the creature is not in itself all that big: it is only about the Isidro's size in terms of height

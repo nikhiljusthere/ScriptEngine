@@ -1,0 +1,82 @@
+@189 gold: Elaine is a name she was given, not a disguise or a person remembered
+keep
+f- Casca|remembered|Elaine
+f- Casca|disguise_as|Elaine
+f+ Elaine|alias_of|Casca|and the time as Elaine
+
+@190 gold: the tapasa are a crowd; attempts take the tried verb; stopping = defeated
+keep
+- the tapasa|fought|Rakshas
+f- the tapasa|used|Rickert's modified water-spraying machine
+t+ crowd_end|Rakshas is doused in flames by the tapasa using Rickert's modified water-spraying machine.
+f- Rakshas|other_verb|tries
+f+ Rakshas|other_verb|fly|Rakshas tries to fly after Rickert and the others as they escape using Daiba's garudas.|attempted|stated|Rakshas
+f- Rakshas|other_verb|attempts
+f+ Rakshas|other_verb|catch|when he attempts to catch up to them.|attempted|stated|Rakshas
++ Rickert|defeated|Rakshas|This stops the assassin from his pursuit, allowing them to escape.
+t- no_relation|This stops the assassin
+t- no_relation|True to his word
+f+ Rakshas|other_verb|resumes|True to his word, Rakshas resumes his hunt with a new mask,|actual|stated|
+
+@191 gold: soundtrack note is production
+keep
+f- Gats|other_verb|resemblance
+t+ production|"Gats" bears some resemblance to the Susumu Hirasawa track "Echoes" from the Sim City album from 1995.
+
+@192 gold: article and rank; cannon volleys are no doer
+keep
+r the Captain Sharkrider=>Sharkrider
+f- volleys|other_verb|inflict
+t+ no_doer|They hardly inflict any damage against the soft-skinned sea slugs, but the volleys continue.
+
+@193 gold: ok
+keep
+
+@194 gold: etymology is production
+keep
+f- Gambino|other_verb|derived
+f- Gambino|other_verb|used
+t+ production|Gambino is an Italian word derived from 'gamba', meaning 'leg'.
+t+ production|It is used as a nickname for someone who has short legs.
+
+@195 gold: "the mayor" is an unnamed end
+keep
+- Snake Lord|met|the mayor
+f- the mayor|apologised_to|Snake Lord
+f- the mayor|other_verb|proposes
+f- Snake Lord|revealed|-
+f- the mayor|other_verb|dismissed
+f+ Snake Lord|other_verb|welcomes|When he arrives, the Snake Lord welcomes him in a manner that elicits more fear from the mayor|actual|stated|
+f+ Snake Lord|other_verb|reiterates|the Snake Lord reiterates that the frightened man is only interested in his own safety despite his position as mayor.|actual|stated|
+f+ Snake Lord|other_verb|flicks|With that, the Snake Lord flicks the food he was eating at the mayor, revealing that it was, in fact, human flesh.|actual|stated|
+t+ crowd_end|He then proposes to double the output of gold and prisoners for the Snake Lord's desires.
+t+ crowd_end|The mayor is then dismissed and taken away.
+
+@196 gold: named doer; band members are a crowd
+keep
+f+ Griffith|other_verb|tells|Everyone's attention is drawn back to Griffith, who tells everyone to remain calm|actual|stated|
+t- crowd_end|who tells everyone to remain calm
+t- no_relation|The band members all marvel
+t+ crowd_end|The band members all marvel at Griffith's amazing luck
+
+@197 gold: speech acts actual; intents take the intended verb; Luca is saved, not dead; unnamed disciple
+keep
+f- Mozgus|other_verb|proclaims
+f+ Mozgus|other_verb|proclaims|Mozgus proclaims that God has chosen him to wipe out all heathens|actual|stated|
+f- Mozgus|other_verb|expresses
+f+ Mozgus|other_verb|expresses|expresses his intention to burn Casca|actual|stated|
+f+ Mozgus|other_verb|burn|expresses his intention to burn Casca|planned|stated|Mozgus
+f+ Mozgus|other_verb|hand|Isidro demands that Mozgus hand over Casca|ordered|stated|Isidro
+f- disciple|other_verb|having
+f- disciple|other_verb|damages
+f- Luca|dies|-
+f+ Luca|other_verb|falling|which results in Luca falling to her death|actual|stated|
+t+ crowd_end|The disciple, having two odd growths on his shoulders, displays strength that easily damages a wall
+t+ crowd_end|the inquisitor orders his clamp-wielding disciple to deal with the interlopers
+f- Skull Knight|other_verb|intended
+f+ Skull Knight|other_verb|attack|having intended to attack the mysterious observer|planned|stated|Skull Knight
+t- deictic|which serves as the burial ground
+t+ no_relation|which serves as the burial ground for the refugees who died of starvation and disease
+
+@198 gold: ok
+keep

@@ -1,0 +1,74 @@
+@169 gold: spawn are unnamed creatures; divine state is a transformation
+keep
+- Band of the Falcon|fought|Ganishka's Spawn
+- Ganishka|awakened|-
+f- Ganishka|became|divine state
+f+ Ganishka|transformed_into|divine state|assuming a divine state
+f- crushed corpses|transformed_into|monstrous creatures
+f- Ganishka's Spawn|other_verb|devour
+f- Ganishka's Spawn|dies|-
+t- no_relation|resembling the emperor's visage
+t+ crowd_end|The crushed corpses mutate into monstrous, multi-tentacled creatures resembling the emperor's visage, but with sharp fangs and distorted mouths
+t+ crowd_end|These spawn devour the remaining survivors of the Kushan invasion army before they are attacked by the Band of the Falcon
+t+ crowd_end|After the Great Wave of the Astral World, they cease to be
+
+@170 gold: villagers and children are crowds
+keep
+t- no_relation|Back in Jill's village
+t+ crowd_end|Back in Jill's village, the villagers have begun the somber process of burying their incinerated children, whose bodies have been contorted by the fire into clutching themselves.
+t- no_relation|The villagers cannot identify
+t+ crowd_end|The villagers cannot identify the burnt bodies and are using one mass grave to bury all the children.
+
+@171 gold: a body part is no place
+keep
+f- Brand|located_at|right side of his neck near his jugular vein
+t+ no_relation|Guts's Brand is on the right side of his neck near his jugular vein.
+
+@172 gold: attempt takes the tried verb; the ask carries its ordered act
+keep
+f- Schierke|other_verb|tries
+f+ Schierke|other_verb|feed|She tries to feed him spoonfuls of soup|attempted|stated|Schierke
+f+ Isidro|other_verb|see|Schierke asks Isidro to see to Casca's meal|ordered|stated|Schierke
+
+@173 gold: surmise = suspected
+keep
+f- Schierke|other_verb|surmises
+f+ Schierke|suspected|-|Schierke surmises that the boy is an emissary from Skellig|actual|stated|
+
+@174 gold: ok
+keep
+
+@175 gold: the announcement is actual, the beating planned
+keep
+f- Ganishka|other_verb|announces
+f+ Ganishka|other_verb|announces|announces his intention to beat Griffith|actual|stated|
+f+ Ganishka|defeated|Griffith|announces his intention to beat Griffith|planned|stated|Ganishka
+
+@176 gold: design notes are production
+keep
+f- Kentarou Miura|created|character concept
+f- Kentarou Miura|created|Dragon Slayer
+f- Kentarou Miura|created|prosthetic cannon arm
+f- Kentarou Miura|other_verb|admitted
+f- Guts|wielded|katana
+f- Dragon Slayer|other_verb|bears
+f- Guts|wielded|Dragon Slayer
+t+ production|Kentarou Miura originally had the idea for an Asian male with a Japanese sword and a gimmick on his left hand to run around in a setting like medieval Europe
+t+ production|Miura has admitted that he originally hit upon the idea of a massive sword merely as a gimmick to attract readers.
+t+ production|Moreover, he has noted that though large swords were featured before Berserk
+t+ production|With the Dragon Slayer, Miura wanted to give the impression
+t+ production|In an original design of Guts, his signature weapon was a katana rather than the massive Dragon Slayer.
+t+ production|In The Prototype, the Dragon Slayer bears a slightly different design
+t+ production|Additionally, Guts only wields the Dragon Slayer with his right hand
+
+@177 gold: self-view is claimed; bragging is a trait, not a capability
+keep
+f- Puck|mentored|Isidro
+f+ Puck|mentored|Isidro|Puck often sits on the young boy's head, seeing himself as a mentor of such to the boy|claimed|stated|Puck
+t- capability|When receiving compliments
+t+ no_relation|When receiving compliments individually or as part of the group Isidro and Puck normally brag about how they can manage things themselves.
+t- capability|However, both vastly exaggerate
+t+ no_relation|However, both vastly exaggerate their own aptitude for combat.
+
+@178 gold: ok
+keep

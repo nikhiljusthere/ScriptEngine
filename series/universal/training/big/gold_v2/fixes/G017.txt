@@ -1,0 +1,54 @@
+@159 gold: ok
+keep
+
+@160 gold: ok
+keep
+
+@161 gold: ok
+keep
+
+@162 gold: loyal copula; told is actual + ordered act
+keep
+f- Daiba|other_verb|loyal
+f- Daiba|other_verb|told
+f+ Daiba|other_verb|told|Daiba told him to at least try it on someone else before he tried it on himself.|actual|stated|
+f+ Ganishka|other_verb|try|Daiba told him to at least try it on someone else|ordered|stated|Daiba
+t- capability|but spoke his mind when the situation demanded it
+t+ no_relation|Daiba was loyal to Ganishka and always by his side
+t+ no_relation|but spoke his mind when the situation demanded it
+
+@163 gold: ok
+keep
+
+@164 gold: rope is a thing end
+keep
+f- Isidro|used|rope
+f+ Isidro|other_verb|tying|tying the rope around Casca's waist|actual|stated|
+
+@165 gold: unnamed lead archer
+keep
+f- lead archer|wore|lighter hunting attire
+f- lead archer|owns|largest bow and quiver
+t+ attire|he is not dressed in armor, but rather in lighter hunting attire
+t+ no_relation|he possesses the largest bow and quiver of any of his allies
+
+@166 gold: beherit is a kind, not an alias; revealed is stated
+keep
+f- Niko’s pendant|also_known_as|beherit
+f- Mandragoran Tree|other_verb|spawned
+f+ Mandragoran Tree|other_verb|spawned|revealed to be spawned from Niko's body|actual|stated|
+
+@167 gold: ok
+keep
+
+@168 gold: article; unnamed reveal; doer of terrifying
+keep
+- Guts|fought|the Apostle
++ Guts|fought|Apostle|deals a quick slash to the Apostle
+f- Apostle|revealed_as|-
+f- Rickert|other_verb|terrifying
+f- Erica|other_verb|terrifying
+f- Godot|other_verb|terrifying
+f+ Apostle|other_verb|terrifying|terrifying Rickert, Erica and Godot|actual|stated|
+f- Apostle|other_verb|threw
+f+ Apostle|other_verb|throws|throws him into the armory|actual|stated|

@@ -1,0 +1,46 @@
+@149 gold: "appears dejected" = copula; the villagers and trolls are crowds
+keep
+f- Isidro|other_verb|appears
+t- no_relation|The villagers begin to celebrate
+t+ crowd_end|The villagers begin to celebrate as the trolls are washed away in the raging torrent.
+
+@150 gold: ok
+keep
+
+@151 gold: ok
+keep
+
+@152 gold: ok
+keep
+
+@153 gold: ok
+keep
+
+@154 gold: ok
+keep
+
+@155 gold: Zepek leading is a named-doer act (A101); the ordered act (orders convention); pseudo-apostles are a race and "the bodies" a thing
+keep
+t- no_relation|Zepek leads them
+f+ Zepek|other_verb|leads|Zepek leads them to the alleged location of the Misty Valley.
+f+ Knights|other_verb|dismount|Farnese orders the Knights to dismount|ordered|stated|Farnese
+f- pseudo-apostles|other_verb|reverted
+f- bodies|other_verb|are
+t+ crowd_end|Unbeknownst to them, the bodies are those of the adult pseudo-apostles that Guts killed, having reverted back to their human forms in death.
+
+@156 gold: "was an elf child" = copula; "the land of elves" is no named place
+keep
+f- Peekaf|other_verb|was
+f- Peekaf|resides_at|land of elves
+t+ no_relation|According to Rosine, in the real story, Peekaf was an elf child who lived happily ever after with his real mother and father in the land of elves.
+
+@157 gold: "have a footing in" is ability wording, not a location
+keep
+f- Guts|located_at|Interstice
+f- Casca|located_at|Interstice
+t+ capability|those bearing the Brand of Sacrifice (like Guts and Casca) have a footing in the Interstice
+
+@158 gold: a release note about the author's request is production
+keep
+f- Kentarou Miura|other_verb|request
+t+ production|This episode was intentionally excluded from volume format at the request of Kentarou Miura.

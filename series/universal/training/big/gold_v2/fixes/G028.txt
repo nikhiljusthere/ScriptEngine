@@ -1,0 +1,57 @@
+@269 gold: manga/anime difference is production
+keep
+f- Ichigo|wore|shirt
+t+ production|In the manga, when attending the fireworks festival, Ichigo wears a shirt emblazoned with the letter "A" surrounded by a dark oval; here, he instead wears a shirt inscribed with the phrase "NICE VIBE".
+
+@270 gold: ok
+keep
+
+@271 gold: "unable to control" is denied
+keep
+f- Quilge Opie|other_verb|control
+f+ Quilge Opie|other_verb|control|Quilge Opie was unable to fully control the power of Ayon|actual|denied|
+
+@272 gold: the clan is not named in the window
+keep
+f- Tsunayashiro Clan|other_verb|documenting
+t+ no_relation|One of the Four Noble Families and the most influential and powerful of them.
+t+ deictic|It is said to be responsible for documenting the history of Soul Society.
+
+@273 gold: the Quincy are a kind
+keep
+t- capability|(Chapter 490) are the primary
+t+ crowd_end|(Chapter 490) are the primary Spirit Weapons formed and used by the Quincy.(Chapter 258)
+
+@274 gold: a technique is no doer; clause objects; the tried verb; the wrapping
+keep
+f- Kyōka Suigetsu|other_verb|Tokinada
+f- Tokinada|suspected|Kyōka Suigetsu
+f+ Tokinada|suspected|-|as Tokinada was certain that he used Kyōka Suigetsu to hide the cloak|actual|stated|
+f- Shinji|revealed|Tokinada
+f+ Shinji|revealed|-|Shinji simply grins at him and reveals that he used a technique he had planned out|actual|stated|
+f- Aizen|other_verb|tried
+f+ Aizen|other_verb|hypnotize|in case Aizen tried to hypnotize Ichigo|hypothetical|stated|Shinji
+f+ Hisagi|other_verb|wrapped|Seeing that Hisagi had wrapped Kazeshini into the Reiatsu-Concealing Cloak so he could catch Tokinada by surprise|actual|stated|
+
+@275 gold: the uniform earned her the post; touting is a speech act
+keep
+f- Senjumaru|other_verb|earned
+f+ Senjumaru|member_of|Royal Guard|earned the former her position in the Royal Guard|actual|stated|
+f- Yhwach|other_verb|touted
+f+ Yhwach|other_verb|touted|that even Yhwach had touted as the greatest clothing a Shinigami can wear|actual|stated|
+
+@276 gold: the recalled fight is stated (kept); the walk, the meeting and the ask
+keep
+t- deictic|Meanwhile, in the Seireitei
+f+ Ichigo|other_verb|walks|Meanwhile, in the Seireitei, Ichigo walks toward a hot spring before stopping.|actual|stated|
++ Ichigo|met|Shunsui Kyōraku|As Ichigo turns around to see Shunsui and 13th Division Captain Jūshirō Ukitake standing before her
++ Ichigo|met|Jūshirō Ukitake|As Ichigo turns around to see Shunsui and 13th Division Captain Jūshirō Ukitake standing before her
+f+ Yoruichi Shihōin|other_verb|tell|asks her to tell them|ordered|stated|Shunsui Kyōraku
+
+@277 gold: food is no stolen thing; Hisagi eats
+keep
+f- Shūhei Hisagi|stole|extra food
+f+ Shūhei Hisagi|other_verb|eats|who often comes and eats Marechiyo's extra food when he is low on cash|actual|stated|
+
+@278 gold: ok
+keep

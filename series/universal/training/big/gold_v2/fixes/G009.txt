@@ -1,0 +1,48 @@
+@79 gold: ok
+keep
+
+@80 gold: "the spirit of the spring blossom flower" is a description, no alias; a belief = suspected|-
+keep
+f- Chitch|also_known_as|spirit of the spring blossom flower
+f- Guts|other_verb|believing
+f+ Guts|suspected|-|now believing her to be a hallucination
+
+@81 gold: ok
+keep
+
+@82 gold: Guts trailing is a named-doer line (A101)
+keep
+t- no_relation|Guts is commonly seen trailing
+f+ Guts|other_verb|trailing|Guts is commonly seen trailing behind his party members
+
+@83 gold: ok
+keep
+
+@84 gold: poison is no victim end (victim|wounded|-); "preparation" is no verb (tries); the spirits are a crowd
+keep
+f- Guts|wounded|poison
+f+ Guts|wounded|-|Guts starts campfire and vomits as the poison continues to set in.
+f- Guts|other_verb|preparation
+f+ Guts|other_verb|tries|He tries to make himself as comfortable as possible in preparation for the long night ahead|attempted|stated|Guts
+f- spirits|other_verb|manifest
+t+ crowd_end|when the spirits will manifest and attack him.
+
+@85 gold: "is qualified" = copula
+keep
+f- Griffith|other_verb|qualified
+
+@86 gold: a series description is no capability; the mythology line needs its tag
+keep
+t- capability|It is a fantasy action series
+t+ no_relation|It is a fantasy action series in which "Saints," clad in sacred garments representing each constellation, fight to protect the world from evil.
+t+ no_relation|It is based on Greek mythology.
+
+@87 gold: a statue is no place; the stare is the act
+keep
+f- Rakshas|located_at|large falcon-shaped statue
+f+ Rakshas|other_verb|stares|a still-maskless Rakshas, silhouetted by the full moon, stares down at Falconia from a large falcon-shaped statue.
+
+@88 gold: "a remote area near Midland" is not Midland (no resides_at)
+keep
+f- Godot|resides_at|Midland
+f+ Godot|other_verb|lived|was a blacksmith who lived in a remote mountainous area near Midland.

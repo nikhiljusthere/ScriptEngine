@@ -1,0 +1,38 @@
+@139 gold: ok
+keep
+
+@140 gold: deserting a group is the event departed (R15); a left_group fact would be its twin (A89)
+keep
+
+@141 gold: ok
+keep
+
+@142 gold: ok
+keep
+
+@143 gold: ok
+keep
+
+@144 gold: a body part is no wounded object; elves are a race; "the lake below" and "her cedar tree headquarters" are description places
+keep
+f- Rosine|wounded|left arm
+f+ Rosine|wounded|-|She lays on her back, in her most human form once again, left arm gone.
+f- Puck|member_of|Elf
+t+ crowd_end|saying that he is a real elf, and that elves really did live in the Misty Valley long before Rosine made it her home
+f- Guts|located_at|Lake
+f- Rosine|resides_at|Cedar Tree Headquarters
+t+ no_relation|Guts has fallen into the lake below while Rosine has fluttered back to her cedar tree headquarters.
+
+@145 gold: coming to a realisation = learned|-
+keep
+f- Guts|other_verb|realisation
+f+ Guts|learned|-|He comes to a realisation about himself and the interstice
+
+@146 gold: ok
+keep
+
+@147 gold: ok
+keep
+
+@148 gold: ok
+keep

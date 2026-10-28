@@ -1,0 +1,63 @@
+@208 gold: guiding once is no leadership; purpose = planned save (saved is event-only)
+keep
+f- Casca|leader_of|Band of the Falcon
+f+ Casca|other_verb|leads|she leads the Band of the Falcon to his location in an effort to save him.|actual|stated|
+f+ Casca|other_verb|save|she leads the Band of the Falcon to his location in an effort to save him.|planned|stated|Casca
+
+@209 gold: ok
+keep
+
+@210 gold: copulas; negated act is denied; attempt takes the tried verb
+keep
+f- Guts|other_verb|had
+f+ Guts|other_verb|dwell|Guts' thoughts dwell on the nightmare he had of the Beast of Darkness|actual|stated|
+f- Guts|other_verb|spoken
+f+ Guts|other_verb|spoken|He has not spoken of it to anyone else.|actual|denied|
+f- Guts|other_verb|trying
+f+ Guts|other_verb|slice|trying to slice through all the spirits|attempted|stated|Guts
+f- Guts|other_verb|is
+
+@211 gold: the party and one witch are crowds; the ask carries its ordered act
+keep
+f- the party|other_verb|recounting
+t- no_doer|which makes one witch say
+t+ crowd_end|When asked, the party begins recounting their expedition to Elfhelm
+t+ crowd_end|which makes one witch say that the outside world sounds terrifying
+f+ Gedfring|other_verb|elaborate|which Guts asks him to elaborate on.|ordered|stated|Guts
+
+@212 gold: ok
+keep
+
+@213 gold: an incarnation and an emergence are no doers
+keep
+f- Griffith's incarnation|other_verb|causes
+f- Qliphoth|other_verb|emergence
+f- Interstice of Fantasia|other_verb|emergence
+t+ no_doer|Griffith's incarnation causes the increasing overlap of the astral and physical worlds
+t+ no_relation|the emergence of the Qliphoth
+t+ no_relation|causing the emergence of the effective global Interstice of Fantasia
+
+@214 gold: golems are a kind; the seal is a thing; description objects
+keep
+f- Mud golems|protected|sanctuary
+t+ crowd_end|Mud golems guarded her sanctuary
+f- Grunbeld|other_verb|sway
+t+ no_relation|not even the "Flame Dragon Knight" Grunbeld had sway over
+f- seal|protected|Guts' ego
+f- Flora|owns|powerful magical weapons
+f+ Flora|other_verb|kept|kept many powerful magical weapons in her spirit tree mansion|actual|stated|
+f- Flora|created|massive wall of fire
+f+ Flora|other_verb|conjured|she conjured a massive wall of fire to stop the apostles|actual|stated|
+
+@215 gold: ok
+keep
+
+@216 gold: ok
+keep
+
+@217 gold: ok
+keep
+
+@218 gold: the decoy squad is a crowd
+keep
+f- Guts|joined|decoy squad

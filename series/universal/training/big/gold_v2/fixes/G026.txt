@@ -1,0 +1,59 @@
+@249 gold: a described room is no place; the ask and the reply are narrated
+keep
+f- Casca|located_at|Guts' old room
+f+ Casca|other_verb|makes|Casca makes her way to Guts' old room|actual|stated|
+f+ Casca|other_verb|asks|and asks if they know where Griffith has gone.|actual|stated|
+t+ deictic|They reply that they haven't seen Griffith since Guts' departure earlier in the day.
+
+@250 gold: ok
+keep
+
+@251 gold: a kind page: golems are no ends
+keep
+f- Flora's golems|other_verb|created
+f- smaller entity|located_at|chest
+f- smaller entity|other_verb|acts
+f- golem|other_verb|reform
+f- golem|became|indestructible
+f- Flora's golems|other_verb|stop
+t+ crowd_end|Flora's golems are creatures composed of water and earth that are created to protect the Mansion of the Spirit Tree.
+t+ no_relation|Their bodies are each powered by a smaller entity located in the chest that acts as a brain/heart.
+t+ capability|As long as this entity is in place, a golem will simply reform itself after it is struck, rendering it seemingly indestructible.
+t+ crowd_end|Though not threatening, they were difficult to stop.
+
+@252 gold: a rank is no became
+keep
+f- Guts|became|raid captain
+t+ no_relation|Guts has been promoted to raid captain
+
+@253 gold: ok
+keep
+
+@254 gold: says nothing = denied; the stated visit is a met; leaving to save = planned save
+keep
+f- Guts|other_verb|says
+f+ Guts|other_verb|says|Guts says nothing.|actual|denied|
++ Guts|met|Godot|Guts came to visit him before his death
+f+ Guts|other_verb|save|Guts left to save Casca from the Holy See at the Tower of Conviction|planned|stated|Guts
+
+@255 gold: ok
+keep
+
+@256 gold: the second Q&A sentence is production too
+keep
+t+ production|It is a specific type of housing for students, granted to them almost free of charge, without any significant cost, as long as they are enrolled.
+
+@257 gold: unnamed father and wife; the quote's verb; realizing twice
+keep
+f- father|dies|-
+f- Giriko|other_verb|lose
+f+ Giriko|other_verb|lost|Giriko lost his eye|actual|stated|
+f- Giriko|revealed|-
+f+ Giriko|other_verb|realized|he realized that what happened is that he had made not a prayer, but a contract with a god.|actual|stated|
+f- Giriko|other_verb|contract
+f+ Giriko|other_verb|killing|Giriko decided to test its power by killing his wife by just looking at her.|planned|stated|Giriko
+f+ Giriko|other_verb|succeeded|He succeeded in doing that without using any other means to kill her|actual|stated|
+
+@258 gold: the second sentence's own act
+keep
+f+ Ichigo|other_verb|hand|When he does not immediately hand it over|actual|denied|
