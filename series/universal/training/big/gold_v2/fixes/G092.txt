@@ -1,0 +1,97 @@
+@899 gold: a music cue is production
+keep
+t- list_header|"An Unknown Menace"
+t+ production|"An Unknown Menace" - When the dust clears on a transformed Gohan.
+
+@900 gold: a claim made is a speech act
+keep
+f- Goku|other_verb|claims
+f+ Goku|other_verb|claims|although Goku claims in the Piccolo Jr. Saga that growing like that does not increase the Namekian's power level|actual|stated|
+
+@901 gold: a game move is production
+keep
+t- capability|Body Change Special
+t+ production|Body Change Special – Used in Supersonic Warriors 2.
+
+@902 gold: ok
+keep
+
+@903 gold: a game name is production
+keep
+f- Chaos Shot|other_verb|named
+t+ production|In Xenoverse 2, it is named Chaos Shot where it appears as one of Frost's Super Skills.
+
+@904 gold: a video game's NPCs are production
+keep
+f- West City Mayor|located_at|West City
+f- Anna|married|Merv
+f- Anna|located_at|West City
+f- Anna|parent_of|Fernando
+f- Fernando|located_at|West City
+f- Fernando|gave|Golden Capsule
+f- Thomas|located_at|West City
+f- Cristina|located_at|West City
+f- Special|located_at|West City
+f- Charlie|other_verb|neighbor
+f- Maude|located_at|West City
+f- Alisa|located_at|West City
+f- Donimo|located_at|West City
+f- Rob Howard|member_of|ZZTV
+f- Rob Howard|located_at|West City
+t- list_header|There are seven SNES games
+t+ production|There are seven SNES games in Circuit Shack, including Super Metroid and The Legend of Zelda: A Link to the Past.
+t+ production|Other people encountered in West City in this video game are the West City Mayor
+t- crowd_end|Squirrels are also shown
+t+ production|Squirrels are also shown to live here, and two lost Namekians are found here (one in the Mayor's house, and the other in the B Building).
+
+@905 gold: the challenge is a meeting before the fight; informing of drawbacks is a warning; a reversion is no transformation
+keep
++ Caulifla|met|Goku|In the anime, Caulifla first demonstrates this form while challenging Goku to a fight in the Tournament of Power.
+t- capability|In the anime, Caulifla first demonstrates
+f- Goku|helped|Caulifla
+f+ Goku|warned|Caulifla|he informs her about the drawbacks of the form, thus reverting to regular Super Saiyan.|actual|stated|
+f- Caulifla|transformed_into|regular Super Saiyan
+
+@906 gold: a game's story is production
+keep
+f- Beat|revealed|-
+f- Goku|parent_of|Beat
+f- Beat's Mother|other_verb|resembles
+t- apposition|the main protagonist Beat
+t- apposition|his wife Chi-Chi
+t+ production|In World Mission, it is revealed that the main protagonist Beat is a descendant of Goku and by extension his wife Chi-Chi as she is the mother of his only children.
+t+ production|Additionally, this is somewhat supported by the appearance and personality of Beat's Mother who strongly resembles Chi-Chi in Victory Mission.
+
+@907 gold: a transformation and a timeline are no doers; a dub note is production; Yamcha carried Goku; speech actual; the advice carries its act
+keep
+f- Vegeta|other_verb|hastens
+t+ no_relation|According to Vegeta, turning into a Super Saiyan also hastens the virus' detrimental effects.
+f- Future Trunks' timeline|other_verb|developed
+t+ no_doer|The only known way to cure this virus is with the Heart Medicine which was developed in Future Trunks' timeline
+f- Goku|dies|-
+t+ production|In the Japanese version, the disease was considered incurable at the time it killed Goku in the original timeline.
+f- Piccolo|suspected|-
+f+ Piccolo|suspected|-|Piccolo speculates that the virus might be contagious|actual|stated|
+f- Piccolo|helped|Goku
+f+ Yamcha|other_verb|carrying|after carrying Goku back to his house.|actual|stated|
+f+ Yamcha|other_verb|take|advises Yamcha to take some of the medicine himself|ordered|stated|Piccolo
+
+@908 gold: a team name is no alias; reminding is speech; speech actual; the order carries its act; named narrated acts
+keep
+f- Bota Magetta|alias_of|Botamo
+f- Bota Magetta|alias_of|Magetta
+t- no_relation|Botamo sits on Magetta's shoulders,
+f+ Botamo|other_verb|sits|Botamo sits on Magetta's shoulders, calling themselves Bota Magetta with Botamo's invincible body and Magetta's mental strength.|actual|stated|
+t- no_relation|Beerus reminds Vegeta
+f+ Beerus|other_verb|reminds|Beerus reminds Vegeta that Magetta's weakness is verbal assaults|actual|stated|
+f+ Vegeta|other_verb|using|leading to Vegeta using several sardonic insults towards the metal man.|actual|stated|
+f- Botamo|other_verb|calling
+f+ Botamo|other_verb|calling|but Botamo absorbs the damage, calling himself and Magetta invincible.|actual|stated|
+f+ Krillin|other_verb|run|despite Beerus telling him to just run|ordered|stated|Beerus
+t- no_relation|but Gohan counters the attack
+t- no_relation|Piccolo takes off his weights,
+f+ Piccolo|other_verb|takes|Piccolo takes off his weights|actual|stated|
+t- no_relation|But an annoyed Vegeta points out
+f+ Vegeta|other_verb|points|But an annoyed Vegeta points out that Botamo is covering Magetta's ears to counter the insults.|actual|stated|
+t- no_relation|Vegeta scoffs
+f+ Vegeta|other_verb|scoffs|Vegeta scoffs at the duo's laughable tactics while avoiding being grabbed by Magetta.|actual|stated|

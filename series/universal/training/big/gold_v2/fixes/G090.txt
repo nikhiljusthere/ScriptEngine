@@ -1,0 +1,75 @@
+@879 gold: ok
+keep
+
+@880 gold: credits are production
+keep
+t- list_header|Nyoron!
+t+ production|Nyoron!
+
+@881 gold: ok
+keep
+
+@882 gold: game appearances are production; a former place name is no alias
+keep
+f- Satan City|other_verb|appears
+f- Satan City|other_verb|mentioned
+f- Satan City|also_known_as|Orange Star City
+t+ production|The city also appears/gets mentioned in Budokai 3 and Budokai Tenkaichi 2.
+t+ production|It is mentioned with its former name Orange Star City in The Legacy of Goku II.
+
+@883 gold: a race is no end; Giblet's naming
+keep
+f- Super Saiyan Gods|also_known_as|"the defeated"
+f- Super Saiyan Gods|dies|-
+t+ crowd_end|The Super Saiyan Gods fought a long battle with the wicked Saiyans
+t+ crowd_end|They were eventually wiped out by the evil Ancient Saiyans.
+t+ citation|(Chapter 6)
+f+ Giblet|other_verb|referred|and thus were eventually referred to as "the defeated" by their descendant Giblet.|actual|stated|
+
+@884 gold: a body is no place
+keep
+f- Goku|located_at|Super Buu's body
+f- Vegeta|located_at|Super Buu's body
+
+@885 gold: a game costume is production
+keep
+f- Red Costume|other_verb|based
+t- capability|which can only be equipped
+t+ production|In Dragon Ball Xenoverse, the Commander Red Costume is based on the suit worn by Commander Red which can only be equipped by the Future Warrior if they are male.
+
+@886 gold: a game story is production
+keep
+f- Fu|other_verb|turn
+f- Goku|other_verb|mistook
+f- Vegeta|other_verb|mistook
+f- Goku|other_verb|obtaining
+f- Vegeta|other_verb|obtaining
+f- Fu|other_verb|meddling
+f- Fu|other_verb|absorbed
+f- occurrence|other_verb|affect
+t+ production|In Xenoverse 2, Fu possesses an unknown ability to turn the tailless Saiyan beyond Gods Goku and Vegeta into Super Saiyan 4
+t+ production|They mistook the form for a new godly Saiyan form as they had been in the process of obtaining Super Saiyan Blue but didn't due to Fu's meddling.
+t+ production|Though fortunately it occurred in a time rift which was later absorbed by Fu, thus it did not affect the official history.
+
+@887 gold: a game story arc is production
+keep
+t- no_relation|She is surprised
+t+ production|18 returns to the room, only to have 17 comment about her attire.
+t+ production|She is surprised, for it has been a very long time since she has heard anything from her twin.
+t+ production|17 asks the soul if 18 can assume control so they can talk.
+t+ production|Once accomplished, 17 reveals that 16 brought him there and that his link failed to work.
+t+ production|He decided to stay to team up with 18.
+
+@888 gold: an anime/manga comparison is production
+keep
+f- Goku|member_of|Team Universe 7
+f- Gohan|member_of|Team Universe 7
+f- Good Buu|member_of|Team Universe 7
+f- Bergamo|member_of|Team Universe 9
+f- Lavender|member_of|Team Universe 9
+f- Basil|member_of|Team Universe 9
+t+ production|In the anime the participants of the Zeno Expo are three members of Team Universe 7
+t- no_relation|The losers of the Zeno Expo
+t+ production|The losers of the Zeno Expo will have their universe wiped out if Zeno is not pleased with the fight.
+t- no_relation|In the manga, the Zeno Expo
+t+ production|In the manga, the Zeno Expo is a battle between all twelve Gods of Destruction to show who is strongest.
