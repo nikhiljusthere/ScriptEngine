@@ -1,0 +1,61 @@
+@1020 gold: an anime/manga comparison is production
+keep
+- Gamisalas|defeated|Xiangca
+- Kale|defeated|Xiangca
+
+@1021 gold: ok
+keep
+
+@1022 gold: ok
+keep
+
+@1023 gold: a knockout chop is a defeat; speech actual; described worlds; the vow's planned act; the order carries its act
+keep
+- Whis|fought|Beerus
++ Whis|defeated|Beerus|Whis rushes over and karate chops Beerus in order to make him stop.
+f- Beerus|other_verb|states
+f+ Beerus|other_verb|states|Beerus then states that Goku and Vegeta might soon actually become fearsome foes.|actual|stated|
+f- Beerus|destroyed|worlds around his temple
+f+ Beerus|other_verb|destroying|and he shoots up into the air in extreme pain, destroying the worlds around his temple.|actual|stated|
+f- Beerus|other_verb|vows
+f+ Beerus|other_verb|vows|and vows to destroy them.|actual|stated|
+f+ Beerus|other_verb|destroy|and vows to destroy them.|planned|stated|Beerus
+f+ Whis|other_verb|wake|He then orders Whis to wake him in 3 years as he goes to bed|ordered|stated|Beerus
+
+@1024 gold: a dub header is production
+keep
+t- list_header|In the French dub
+t+ production|In the French dub (Dragon Ball Z)
+
+@1025 gold: a game look is production
+keep
+t- attire|In Dragon Ball Online
+t+ production|In Dragon Ball Online, she is more elderly, and her hair is longer by Age 1000.
+
+@1026 gold: ok
+keep
+
+@1027 gold: game DLC content is production
+keep
+f- Zamasu|other_verb|performs
+f- Toki Toki City Hero|other_verb|appear
+f- Toki Toki City Hero|owns|Ultimate Awoken Skill
+f- Toki Toki City Hero|other_verb|represents
+f- Piccolo|revealed|-
+t+ production|As part of the Masters Pack DLC, it is implied that Zamasu performs the dance when he grants them the honor of becoming his Disciple
+t- capability|However even if he did perform
+t+ production|However even if he did perform the dance, it like Emote 39 has no effect.
+t+ production|As part of the 1.15.00 Update DLC during Conton City Tournament 06: "The Fated Finale"
+t+ production|Performing Elder Kai's dance around any Icarus type CC Mascots
+
+@1028 gold: a desire is actual; a description is no capability
+keep
+f- Myuu|other_verb|desires
+f+ Myuu|other_verb|desires|who desires nothing more than absolute control of the universe.|actual|stated|
+t- capability|He is a brilliant
+t+ no_relation|He is a brilliant, yet mad scientist
+
+@1029 gold: a game naming is production
+keep
+t- citation|Named in Dokkan Battle.
+t+ production|Named in Dokkan Battle.

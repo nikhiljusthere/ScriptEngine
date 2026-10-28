@@ -1,0 +1,91 @@
+@1030 gold: ok
+keep
+
+@1031 gold: staff credits are production, one tag per line
+keep
+f- Megumi Yamashita|other_verb|Finish
+f- Megumi Yamashita|other_verb|Key
+f- Megumi Yamashita|other_verb|Animation
+f- Megumi Yamashita|other_verb|Color
+f- Megumi Yamashita|other_verb|Character
+f- Megumi Yamashita|other_verb|nd
+t+ production|Kanetsugu to Keiji - Finish Animation (Studio Hibari)
+t+ production|Kabaneri of the Iron Fortress - Key Animation (ep 5)
+t+ production|Kedama no Gonjiro - Animation Director (5 episodes)
+t+ production|Kino's Journey - the Beautiful World- - Finish Animation (Lerche; ep 9)
+t+ production|Konohana Kitan - Color Coordination (eps 3, 6, 10), Finish Animation (8 episodes)
+t+ production|Monster Musume: Everyday Life with Monster Girls - Color setting (eps 1, 7), Paint (eps 2-4, 6, 11), Paint Check (eps 1, 7)
+t+ production|One Piece - Animation Director (16 episodes), Key Animation (26 episodes)
+t+ production|Phantom in the Twilight - Character Design
+t+ production|Pokémon - Key Animation
+t+ production|Pokémon Advance - Animation Director (11 episodes), Assistant Chief Animation Director (eps 183-192), Key Animation
+t+ production|School-Live! - Color Check (eps 2, 6, 8, 11), Color setting (eps 2, 6, 8, 11)
+t+ production|Scum's Wish - Color Check (eps 4, 9), Color setting (eps 4, 9), Paint (Lerche; eps 1-3, 5, 7-12)
+t+ production|Suicide Squad ISEKAI - Animation Director (ep 4), Key Animation (ep 4), Monster Design (ep 10), Prop Design (eps 4, 7), Sub-Character Design (eps 3-4)
+t+ production|The Asterisk War - Key Animation (ep 24)
+t+ production|The Millionaire Detective - Balance: UNLIMITED - Animation Director (eps 3, 8), Assistant Animation Director (ep 11), Key Animation (ep 3)
+t+ production|Unbreakable Machine-Doll - Finish Animation (eps 1-8)
+t+ production|Uta no Prince-sama - 2nd Key Animation (ep 29), Key Animation (5 episodes), Animation Director (ep 52), Assistant Animation Director (eps 45, 47)
+t+ production|Vivy -Fluorite Eye's Song- - Animation Director (ep 3), Assistant Animation Director (eps 4, 7), Key Animation (ep 1)
+t+ production|World Trigger - Animation Director (eps 35, 42), Key Animation (OP2-3; eps 35, 42, 45)
+t+ production|Your Lie in April - Animation Director (eps 11, 15)
+
+@1032 gold: the quote's verb; Round Deer's negation
+keep
+f- Sukuna|other_verb|possessed
+f+ Sukuna|other_verb|took|after he took control of Megumi Fushiguro's body.|actual|stated|
+f+ Round Deer|other_verb|negated|The positive energy outputted by Round Deer negated the cursed energy within Yorozu's liquid metal and dissipated the attack in an instant.|actual|stated|
+
+@1033 gold: clause object; the ask carries its act; described weapons; a sword is no doer; learning; named runners
+keep
+f- Nobara Kugisaki|suspected|Ijichi
+f+ Nobara Kugisaki|suspected|-|Nobara believes that Shigemo is the one who attacked Ijichi|actual|stated|
+f+ Akari Nitta|other_verb|pretend|she asks Nitta to pretend to hide in the subway entrance while escaping through another.|ordered|stated|Nobara Kugisaki
+f- Haruta Shigemo|used|sword
+f+ Haruta Shigemo|other_verb|throwing|Shigemo interrupts their whispering by throwing his sword at Nobara.|actual|stated|
+f- Nobara Kugisaki|used|hammer
+f+ Nobara Kugisaki|other_verb|deflects|She deflects it with her hammer and charges at him while Akari runs.|actual|stated|
+f- Haruta Shigemo|other_verb|chases
+f- Haruta Shigemo|discovered|-
+f+ Haruta Shigemo|learned|-|Through this attack, Shigemo learns that Akari is not hiding|actual|stated|
+t- deictic|while Akari runs.
+t- deictic|and runs after her
+f+ Haruta Shigemo|other_verb|runs|and runs after her, with Nobara giving chase.|actual|stated|
+
+@1034 gold: a noun
+keep
+f- Satoru|other_verb|displeasure
+t+ no_relation|All the humans in the immediate area around Satoru are slaughtered, much to his displeasure.
+
+@1035 gold: ok
+keep
+
+@1036 gold: ok
+keep
+
+@1037 gold: setting a plan in motion is actual
+keep
+f- Mahito|other_verb|sets
+f+ Mahito|other_verb|sets|Mahito sets in motion a devious plan involving Junpei|actual|stated|
+
+@1038 gold: the quote's verb
+keep
+f- Sukuna|other_verb|possessed
+f+ Sukuna|other_verb|took|after he took control of Megumi Fushiguro's body.|actual|stated|
+
+@1039 gold: quote's verbs; the tried verb; a described ground; both fighters throw
+keep
+f- Sukuna|other_verb|threw
+f+ Sukuna|other_verb|throws|Sukuna throws a right kick but Gojo halts it with the Infinity|actual|stated|
+f- Gojo|other_verb|threw
+f+ Gojo|other_verb|throw|At the same time, both fighters throw left hands at body level|actual|stated|
+f+ Sukuna|other_verb|throw|At the same time, both fighters throw left hands at body level|actual|stated|
+f- Sukuna|other_verb|attempted
+f+ Sukuna|other_verb|follow|Sukuna tries to follow up with a right uppercut|attempted|stated|Sukuna
+f- Gojo|other_verb|sent
+f+ Gojo|other_verb|send|Gojo uses Blue to send him crashing through a building|actual|stated|
+f- Gojo|destroyed|ground
+f+ Gojo|other_verb|destroying|destroying the ground with every consecutive step in pursuit|actual|stated|
+f- Sukuna|other_verb|fell
+f+ Sukuna|other_verb|falls|He levitates in the air as Sukuna falls with the structure.|actual|stated|
+f+ Gojo|other_verb|uses|Before it hits the ground, Gojo uses Blue to send it and Sukuna into another building.|actual|stated|

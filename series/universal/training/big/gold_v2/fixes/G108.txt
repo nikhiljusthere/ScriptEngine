@@ -1,0 +1,83 @@
+@1040 gold: an unstated place; a want is actual; asks carry their acts
+keep
+- Niji Ebina|arrived|Harujuku
+f- Mei Mei|other_verb|ignore
+f+ Mei Mei|other_verb|wants|Mei Mei wants to ignore the curse user and confirm this sealing for themselves|actual|stated|
+f+ Mei Mei|other_verb|follow|Mechamaru asks that they follow his directions instead.|ordered|stated|Mechamaru
+f+ Mei Mei|other_verb|clear|Mechamaru asks Mei Mei to clear a path for Yuji|ordered|stated|Mechamaru
+
+@1041 gold: Cross met Usami too; a noun; the assigned are the ordered
+keep
++ Cross|met|Usami|Jabaloma and Cross met with Usami, Yuka, and Tsurugi
+f- Jabaloma|other_verb|exile
+f- Cross|other_verb|exile
+f- Yuka|other_verb|assigned
+f- Tsurugi|other_verb|assigned
+f+ Yuka|other_verb|preparing|Usami assigned Yuka and Tsurugi to the task of preparing the meal for the party,|ordered|stated|Usami
+f+ Tsurugi|other_verb|preparing|Usami assigned Yuka and Tsurugi to the task of preparing the meal for the party,|ordered|stated|Usami
+
+@1042 gold: the manipulation is inside Kenjaku's explanation
+keep
+f- Kenjaku|other_verb|manipulated
+
+@1043 gold: Nanami attacks too; speech actual; Naobito's narrated acts
+keep
++ Nanami|fought|Dagon|Naobito, Nanami, and Maki pour on the pressure, attacking Dagon's water shield
+f+ Naobito|other_verb|says|Naobito suddenly appears behind Dagon and says he foresaw the curse attempting to flee up high.|actual|stated|
+f- Dagon|other_verb|admits
+f+ Dagon|other_verb|admits|He admits the old man is the main problem in this jujutsu battle|actual|stated|
+t- no_relation|However, Naobito suddenly appears
+t- no_relation|He kicks Dagon onto the ground
+f+ Naobito|other_verb|kicks|He kicks Dagon onto the ground and follows up with a barrage of brutal blows that overwhelms Dagon with pure speed.|actual|stated|
+
+@1044 gold: an unnamed group; the statement is actual with a planned use
+keep
+f- Juzo|joined|Kenjaku's group
+f+ Juzo|other_verb|joined|Juzo met Kenjaku and joined his group.|actual|stated|
+f- Kenjaku|other_verb|use
+f+ Kenjaku|other_verb|said|he said that they will use Juzo since he was disposable.|actual|stated|
+f+ Kenjaku|other_verb|use|they will use Juzo since he was disposable.|planned|stated|Kenjaku
+
+@1045 gold: tellings carry their acts; Megumi discusses too
+keep
+f+ Takuma|other_verb|stop|and to stop trying to impress Megumi.|ordered|stated|Nanami
+f+ Megumi Fushiguro|other_verb|discuss|While heading into the screen, Nanami and Megumi discuss why mutated humans are attacking now|actual|stated|
+f+ Takuma|other_verb|explain|they should explain the situation to Naobito Zenin and Atsuya Kusakabe if they meet with them.|ordered|stated|Nanami
+
+@1046 gold: the patch-face curse is Mahito; the decision is actual; Mahito's realisation
+keep
+r patch face curse=>Mahito
+f- Choso|other_verb|join
+f+ Choso|other_verb|decides|Choso decides to join the game before the spirits split up.|actual|stated|
+f+ Choso|other_verb|join|Choso decides to join the game|planned|stated|Choso
+f+ Mahito|learned|-|realizing their chances at victory are good enough without Sukuna.|actual|stated|
+
+@1047 gold: a mode and a technique are no doers; the pummelling is Kokichi's fight; the soul-shaping
+keep
+f- Mode: Absolute|attacked|Mahito
++ Kokichi|fought|Mahito|Kokichi commanded Mode: Absolute to relentlessly pummel Mahito
+f- Pigeon Viola|other_verb|consumed
+f- Pigeon Viola|other_verb|pursue
+t+ no_relation|This devastating technique consumed five years' worth of cursed energy, launching tracking cursed energy beams to pursue Mahito relentlessly.
+f- Mahito|other_verb|conceal
+f+ Mahito|other_verb|shaped|Observing that Mahito shaped his soul to conceal his injury|actual|stated|
+f- Mechamaru|attacked|Mahito
++ Mechamaru|fought|Mahito|Mechamaru's subsequent punches sent him crashing into a nearby forest.
+
+@1048 gold: Playful Cloud is the wielders' weapon, no doer; Maki fought Hanami
+keep
+f- Playful Cloud|attacked|Maki Zenin
+f- Playful Cloud|attacked|Megumi Fushiguro
+f- Playful Cloud|helped|Maki Zenin
++ Maki Zenin|fought|Hanami|Playful Cloud's equalizing power allowed Maki to contend with Hanami despite her injuries.
+
+@1049 gold: a self pair; belief = suspected; a truck; Eso's collapse
+keep
+f- Yuji|wounded|Yuji
+f+ Yuji|wounded|-|Yuji notices his hand burning from Eso's blood.|actual|stated|
+f- Eso|other_verb|believes
+f+ Eso|suspected|-|The Death Painting believes he will heal and return to get revenge on Nobara|actual|stated|
+t- deictic|Suddenly a pickup truck
+t+ no_relation|Suddenly a pickup truck comes driving out of the tunnel and speeds through the road where the battle is taking place.
+t- deictic|He collapses and falls
+f+ Eso|other_verb|collapses|He collapses and falls forward from the truck as Yuji rushes toward him.|actual|stated|
