@@ -1,0 +1,87 @@
+@569 gold: ok
+keep
+
+@570 gold: a stated past encounter is kept; article; states are no deictics
+keep
+r the Darkness Devil=>Darkness Devil
+t- deictic|Denji, Power and Aki are
+t+ no_relation|Denji, Power and Aki are at their apartment following the battle beforehand.
+t- deictic|Power is distressed
+t+ no_relation|Power is distressed about her encounter with the Darkness Devil in Hell.
+
+@571 gold: a state is no act; source line
+keep
+f- Fox Devil|other_verb|has
+t+ no_relation|The Fox Devil has no conflicted feelings over killing and eating other devils
+t+ citation|(Chapter 10)
+
+@572 gold: the other men are a crowd; a location state
+keep
+t- no_doer|They wonder what she means
+t+ crowd_end|They wonder what she means
+t- deictic|Katana Man and Akane Sawatari are
+t+ no_relation|Katana Man and Akane Sawatari are in their hideout with other men.
+
+@573 gold: no pipes in tag quotes; a footnote mark
+keep
+t- list_header|Manga
+t- list_header|Number of Chapters
+t+ list_header|Manga
+t+ list_header|Anime
+t+ list_header|Number of Chapters
+t+ list_header|Number of Episodes
+t- list_header|*191.
+t+ citation|*191.
+
+@574 gold: the wife is unnamed; decapitation kills; the request; unresolved "she"; crowds
+keep
+- Takagi's Pseudo-Chainsaw wife|killed|Takagi
+f+ Takagi|dies|-|who proceeds to kill and devour him|actual|stated|
+- Yoru|fought|Quanxi
++ Yoru|killed|Quanxi|Yoru then decapitates Quanxi at her request
+f- Takagi|married|Pseudo-Chainsaw wife
+f- Takagi|assisted|Pseudo-Chainsaw wife
+f- Pseudo-Chainsaw wife|ordered|Yoru
+f+ Quanxi|ordered|Yoru|Yoru then decapitates Quanxi at her request|actual|stated|
+t+ deictic|She manages to overwhelm the group but spares them upon seeing Denji's disembodied head.
+t+ crowd_end|is also dealt with by his Pseudo-Chainsaw wife
+t+ crowd_end|and the group resumes reassembling Denji
+t+ crowd_end|Upon putting him back together, they leave the facility with Denji in tow
+
+@575 gold: devil hunters are a crowd; realizing = learned; the ask carries its act
+keep
+f- devil hunters|other_verb|realize
+t+ crowd_end|As Hirokazu comes from upstairs, while going downstairs, the devil hunters realize that something is wrong.
+f- Aki|other_verb|realizes
+f+ Aki|learned|-|Aki then realizes they are stuck on the 8th floor.|actual|stated|
+f+ Kobeni|other_verb|make|Himeno asks Kobeni to make the peace sign and not move|ordered|stated|Himeno
+
+@576 gold: waking is no awakening; one name; speech acts; non-verb objects; the War Devil's claim and plan
+keep
+r Yoshida=>Hirofumi Yoshida
+- Asa|awakened|-
+t+ no_relation|The next morning, Asa wakes up next to the War Devil, thinking it was all a dream.
+- Hirofumi Yoshida|arrived|the Fourth East High School
+f- War Devil|revealed|Asa
+f+ War Devil|other_verb|tells|the War Devil tells Asa that Chainsaw Man's going to the same school as her|actual|stated|
+f- Chainsaw Man|located_at|Fourth East High School
+f+ Chainsaw Man|located_at|Fourth East High School|Chainsaw Man's going to the same school as her|claimed|stated|War Devil
+f- War Devil|other_verb|Asa
+f+ War Devil|other_verb|takes|The War Devil then takes control of Asa's body|actual|stated|
+f+ War Devil|other_verb|threatens|She threatens Asa but says that if she helps her beat Chainsaw Man she'll return her body.|actual|stated|
+f- War Devil|other_verb|Chainsaw
+f+ War Devil|other_verb|says|says she wants to go to war with Chainsaw Man|actual|stated|
+f+ War Devil|other_verb|go|she wants to go to war with Chainsaw Man|planned|stated|War Devil
+f+ Hirofumi Yoshida|other_verb|asks|Yoshida asks Asa if she wants him to take her to the nurse's office|actual|stated|
+f+ War Devil|other_verb|asks|The War Devil then asks him if he wants to be her boyfriend|actual|stated|
+
+@577 gold: the planned decision; orders carry their acts
+keep
+f+ Future Devil|other_verb|decide|He wants to see Aki's future and then will decide if he wants to form a contract.|planned|stated|Future Devil
+f+ Aki|other_verb|stick|He tells Aki to stick his head into the hole in his gut.|ordered|stated|Future Devil
+f+ Future Devil|other_verb|enter|and tells him to enter his eye.|ordered|stated|Aki
+
+@578 gold: a chapter title line is production
+keep
+t- list_header|Secrets & Lies
+t+ production|Secrets & Lies 秘密と嘘 Himitsu to Uso is the 28th chapter of the Chainsaw Man manga series.

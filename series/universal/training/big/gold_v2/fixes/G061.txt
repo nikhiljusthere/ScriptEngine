@@ -1,0 +1,73 @@
+@589 gold: the organisation is Public Safety (as b588)
+keep
+f- Tamaoki|member_of|Public Safety Devil Hunters
+f+ Tamaoki|member_of|Public Safety|Tamaoki 玉置 was a Public Safety Devil Hunter.|actual|stated|
+
+@590 gold: the stated death and disbanding; Reze's membership
+keep
+t- no_relation|Due to their defeat
+f+ Special Division 5|other_verb|disbanded|Due to their defeat, as well as Makima's demise, Special Division 5 disbanded.|actual|stated|
+f+ Makima|dies|-|Due to their defeat, as well as Makima's demise, Special Division 5 disbanded.|actual|stated|
+t- no_relation|Reze is the only member
+f+ Reze|member_of|Special Division 5|Reze is the only member whose whereabouts is currently unknown.|actual|stated|
+
+@591 gold: a trait is no capability
+keep
+t- capability|Overall, Aldo acts
+t+ no_relation|Overall, Aldo acts as a coward and acts only when he thinks the situation is safe, or will decide to step back temporally until then.
+
+@592 gold: a volume cover description is production
+keep
+t- attire|The volume cover depicts
+t+ production|The volume cover depicts a distressed Famine Devil clutching a bouquet of roses with her wide eyes brimming with panic as tears stream down her face.
+t- attire|Dressed in her Fourth East High School uniform
+t+ production|Dressed in her Fourth East High School uniform with a shaken expression, Famine stands frozen against a surreal backdrop of twisted red tree branches and a large bush covering most of the scenery.
+t- list_header|The series title is bold
+t+ production|The series title is bold crimson and navy, while the romanized title is deep teal.
+t- list_header|The volume number, title
+t+ production|The volume number, title, and romanized author name are all soft beige.
+
+@593 gold: protecting is protected; in-person is no contact; noticing/telling are no discover/reveal; orders carry their acts; named acts
+keep
+- Denji|saved|Power
+f+ Denji|protected|Power|but Denji protects Power.|actual|stated|
+f+ Power|other_verb|live|Makima makes Power live with Aki and Denji|ordered|stated|Makima
+f- Power|contacted|Denji
+f+ Power|other_verb|calls|Power then calls Denji to fulfill her promise for saving her cat.|actual|stated|
+f- Makima|discovered|Denji
+f+ Makima|other_verb|notices|Makima notices he is feeling down|actual|stated|
+f- Makima|revealed|-
+f+ Makima|other_verb|tells|she tells him that naughty things feel better when you know your partner.|actual|stated|
+f+ Denji|other_verb|kill|she requests from Denji to kill the Gun Devil.|ordered|stated|Makima
+f- Makima|other_verb|will
+f+ Makima|other_verb|grant|In return, she will grant him one wish.|planned|stated|Makima
+f+ Makima|other_verb|explains|Makima then explains who the Gun Devil is and what he has done|actual|stated|
+t- deictic|and their daily roommate troubles appear.
+t+ no_relation|and their daily roommate troubles appear.
+t- deictic|After squeezing them
+t+ no_relation|After squeezing them, Denji feels unsatisfied and troubled for a while.
+t- deictic|She proceeds to touch his hands
+f+ Makima|other_verb|touch|She proceeds to touch his hands, letting him touch her ear, biting his finger, and then letting him touch her breasts, which really excites Denji.|actual|stated|
+t- deictic|Then they receive a request
+t+ crowd_end|Then they receive a request for devil-extermination for an unknown devil at the Morin Hotel and Makima's squad is dispatched for the task.
+
+@594 gold: ok
+keep
+
+@595 gold: a name's etymology is production
+keep
+f- Tamaoki|other_verb|means
+t+ production|The name Tamaoki means
+
+@596 gold: the vow is actual, the return planned; the ask carries its act
+keep
+f- Asa|other_verb|vows
+f+ Asa|other_verb|vows|but Asa vows to return his life back to normal|actual|stated|
+f+ Asa|other_verb|return|but Asa vows to return his life back to normal|planned|stated|Asa
+f+ Denji|other_verb|tell|and she asks him to tell it to her straight|ordered|stated|Asa
+
+@597 gold: ok
+keep
+
+@598 gold: ok
+keep

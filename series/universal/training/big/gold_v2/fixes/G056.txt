@@ -1,0 +1,57 @@
+@539 gold: cutting in half breaks the target (defeated); the revival line is capability
+keep
+- Denji|fought|Zombie Devil
++ Denji|defeated|Zombie Devil|After being cut in half by Denji
+t+ capability|During the final fight against the Control Devil, it is shown this power can revive corpses.
+
+@540 gold: a chapter title line is production
+keep
+t- list_header|Let's Go
+t+ production|Let's Go レッツゴー Rettsu Gō is the 55th chapter of the Chainsaw Man manga series.
+
+@541 gold: the seeing; the contract's purpose is planned
+keep
+f- Aki Hayakawa|other_verb|see
+f+ Aki Hayakawa|other_verb|see|so he can see that future himself|planned|stated|Future Devil
+f+ Future Devil|other_verb|seeing|After seeing Aki Hayakawa's future|actual|stated|
+
+@542 gold: a stated contract is content, not a header
+keep
+t- list_header|Doll Devil Contract
+t+ no_relation|Doll Devil Contract: Santa Claus had a contract with the Doll Devil for an unknown price.(Chapter 59)(Chapter 70)
+
+@543 gold: "the devil/Fiend" is unnamed; the order carries its act; both live together
+keep
+- Denji|met|the devil
+- Aki|met|the devil
+- Denji|killed|the devil
+f+ Denji|other_verb|kill|Aki orders Denji to kill the Fiend|ordered|stated|Aki
+f+ Denji|other_verb|kills|Denji decapitates and kills the devil|actual|stated|
+f+ Aki|other_verb|live|Denji and Aki start to live together|actual|stated|
+t+ no_relation|Aki gets angry and explains that Fiends are Devils too and he shouldn't sympathize with them.
+
+@544 gold: ok
+keep
+
+@545 gold: ok
+keep
+
+@546 gold: a narrative role is production
+keep
+f- Eternity Devil|other_verb|is
+t+ production|It is the titular main antagonist of the Eternity Devil arc and the Dating Denji arc.
+
+@547 gold: supervision of a named group = leader_of
+keep
+t- no_relation|under the supervision of Makima.
+f+ Makima|leader_of|Special Division 5|were members of the first iteration of Special Division 5 under the supervision of Makima|actual|stated|
+t- no_relation|under the supervision of Fami,
+f+ Fami|leader_of|Chainsaw Man Church|are members of the Chainsaw Man Church under the supervision of Fami|actual|stated|
+t+ no_relation|Currently, Flamethrower, Longsword, Spear and Whip refer to themselves as The Weapons
+
+@548 gold: one name; Michiko decides too; decisions are actual
+keep
+r Kurose=>Yutaro
+f- Yutaro|other_verb|decide
+f+ Yutaro|other_verb|decide|him and Michiko decide to leave and come back the next day|actual|stated|
+f+ Michiko|other_verb|decide|him and Michiko decide to leave and come back the next day|actual|stated|

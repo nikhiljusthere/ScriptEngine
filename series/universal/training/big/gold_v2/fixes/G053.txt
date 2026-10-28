@@ -1,0 +1,88 @@
+@509 gold: a process is no doer; the in-universe clause has no legal row
+keep
+f- Zombification|other_verb|reduced
+t+ no_relation|Mayuri's prediction that the Zombification reduced Rangiku's lifespan is correct
+
+@510 gold: an animation error note is production
+keep
+f- Ichigo Kurosaki's Reiatsu|other_verb|portrayed
+t+ production|Ichigo Kurosaki's Reiatsu when using his Bankai is portrayed as light-blue here, identical to his Reiatsu when using his Shikai, instead of black with a red outline.
+
+@511 gold: a name she gives herself is an alias
+keep
+f+ Fami|alias_of|Famine Devil|Please call me Fami!|actual|stated|
+t- dialogue|Please call me Fami!
+
+@512 gold: a chapter number is production
+keep
+f- Shi Fukkatsu Chensō|other_verb|is
+t+ production|Shi Fukkatsu Chensō is the 83rd chapter of the Chainsaw Man manga series
+
+@513 gold: an unnamed sword is a description object
+keep
+f- Asa|created|sword
+f+ Asa|other_verb|created|Asa created a sword to hunt Devils|actual|stated|
+f- Asa|used|the sword
+
+@514 gold: one tag per list line
+keep
+t- list_header|Hirokazu Arai
+t+ list_header|Hirokazu Arai
+t+ list_header|Power
+t+ list_header|Denji
+t+ list_header|Kobeni Higashiyama
+t+ list_header|Himeno
+t+ list_header|Aki Hayakawa
+t+ list_header|Kishibe
+t+ list_header|Fox Devil
+t+ list_header|Eternity Devil
+t+ list_header|Pochita
+t+ list_header|Ghost Devil
+t+ list_header|Gun Devil
+
+@515 gold: "the current yakuza boss" is unnamed: no end; Makima's own acts stay
+keep
+- Makima|met|the current yakuza boss
+f+ Makima|other_verb|meets|Makima meets with the current yakuza boss that Katana Man belongs to.|actual|stated|
+f- the current yakuza boss|other_verb|explains
+f- the current yakuza boss|other_verb|assures
+f- the current yakuza boss|other_verb|shows
+f- the current yakuza boss|other_verb|agrees
+f- the current yakuza boss|other_verb|thinking
+f- the current yakuza boss|other_verb|states
+f- the current yakuza boss|other_verb|asks
+f- the current yakuza boss|other_verb|jokes
+f- the current yakuza boss|other_verb|checks
+f- Makima|other_verb|explains
+f+ Makima|other_verb|explains|Makima explains it's not money, but things belonging to the families of all the men in the room|actual|stated|
+f+ Makima|other_verb|introduce|if he cooperates she will introduce him to that person|planned|stated|Makima
+t+ crowd_end|He explains that he heard they got into a fight with some of the younger members of his group, but assures her it wasn't on his orders.
+t+ crowd_end|He shows a picture of Akane and explains he heard she was behind it and got them into deals with the Gun Devil.
+t+ crowd_end|Makima then asks him to write the names of everyone in his organization that has a contract with the Gun Devil.
+t+ crowd_end|The man agrees, thinking that she will just throw them in jail for some time.
+t+ crowd_end|The man states that is stupid as if the other families find out, it will mean war between the families.
+t+ crowd_end|The man asks Makima if she had hear of the term "necessary evil"
+t+ crowd_end|The man checks the bag and is shocked to see it full of eyes.
+t+ crowd_end|One of the men grabs Makima by the shoulder, wanting to punch her
+
+@516 gold: ok
+keep
+
+@517 gold: speech acts actual; source line
+keep
+f- Galgali|other_verb|attributes
+f+ Galgali|other_verb|attributes|Galgali attributes this to him still possessing a lot of his human's brain which is unusual for a fiend.|actual|stated|
+f- Galgali|other_verb|states
+f+ Galgali|other_verb|states|He somewhat ironically states that he loves peace and love|actual|stated|
+t+ citation|(Chapter 56)
+
+@518 gold: one name; telling is a speech act; orders carry their acts; crowd
+keep
+r Tendo=>Michiko
+f- Michiko|revealed|Yutaro
+f+ Michiko|other_verb|tells|Tendo tells him that ordinary devil hunters aren't authorized to know which devils she is contracted with|actual|stated|
+f- Makima|other_verb|assist
+f+ Michiko|other_verb|rent|Makima tells Michiko to rent out a nearby shrine with the highest possible altitude|ordered|stated|Makima
+f+ Michiko|other_verb|remove|she tells them to remove their blindfolds|ordered|stated|Makima
+f+ Yutaro|other_verb|remove|she tells them to remove their blindfolds|ordered|stated|Makima
+t+ crowd_end|They travel to a nearby shrine and are both blindfolded while Makima carries out her attack on the terrorists

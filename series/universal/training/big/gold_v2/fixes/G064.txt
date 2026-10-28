@@ -1,0 +1,84 @@
+@619 gold: ok
+keep
+
+@620 gold: a cover description is production
+keep
+f- Power|wielded|Blood Scythe
+t+ production|The cover depicts Power with her Blood Scythe.
+
+@621 gold: met and fight on one pair; the warning carries its act
+keep
+- Galgali|met|Reze
+f+ Kobeni Higashiyama|other_verb|retreat|he shouts a warning at Kobeni to retreat|ordered|stated|Galgali
+
+@622 gold: article; the planned verb; no pipe in a tag quote
+keep
+r The Death Devil=>Death Devil
+f- Death Devil|other_verb|about
+f+ Death Devil|other_verb|bring|ready to bring about an new era of Devils to reality|planned|stated|Death Devil
+t- list_header|| War Devil arc
+t+ list_header|War Devil arc Chapters 191 - 232 Episodes: N/A Synopsis:
+
+@623 gold: "the creature" is unnamed; the named doers' acts
+keep
+- the creature|fought|Kobeni
+- Power|fought|the creature
+- Himeno|fought|the creature
+f+ Power|other_verb|slices|Power slices the creature in half|actual|stated|
+f+ Himeno|other_verb|locked|but is locked in place by Himeno and the power of the Ghost Devil.|actual|stated|
+t+ crowd_end|The small fleshy creature leaps at Kobeni
+
+@624 gold: the telling carries its act; clause object; explaining is speech
+keep
+f+ Denji|other_verb|quit|telling him to quit|ordered|stated|Aki
+f- Aki|suspected|Denji
+f+ Aki|suspected|-|guesses correctly that Denji only became Devil Hunter as he is interested in Makima|actual|stated|
+f+ Aki|other_verb|explains|He explains that people who became Devil Hunters for weak reasons are the first to die|actual|stated|
+f- Denji|revealed|-
+f+ Denji|other_verb|explains|he explains that he hits guys only in the crotch|actual|stated|
+
+@625 gold: speech acts actual; a modal is no verb; "can't" is covered
+keep
+f- Power|other_verb|offers
+f+ Power|other_verb|offers|Power offers Denji three squeezes, in exchange for saving Meowy, killing the Bat Devil and covering for her in front of Aki.|actual|stated|
+f- Power|other_verb|states
+f+ Power|other_verb|states|She states that there is no reason for her to be a devil hunter|actual|stated|
+f- Power|other_verb|will do
+f+ Power|other_verb|do|she'll do Denji a favor and stick around|planned|stated|Power
+f- Power|other_verb|can't
+
+@626 gold: the throw and the shockwave
+keep
+f+ Denji|other_verb|throws|and throws the car back at the devil, hitting him in the face.|actual|stated|
+f+ Bat Devil|other_verb|shoots|The Bat Devil then shoots out a shockwave from its mouth, blowing Denji away.|actual|stated|
+
+@627 gold: A145 cut-in-half; met and fight on one pair; the grandfather is unnamed; orders carry their acts; quote's verbs; named riders
+keep
+- Denji|fought|Katana Man
+- Aki|met|Katana Man
+- Denji|killed|Katana Man's grandfather
+f+ Katana Man|transformed_into|-|as the both of them transform|actual|stated|
+f- Makima|revealed|Sawatari
+f+ Makima|other_verb|informs|informs them of the death of Sawatari at the hands of the Snake Devil|actual|stated|
+f- Power|other_verb|told
+f+ Power|other_verb|telling|while telling Denji to watch and admire her|actual|stated|
+f+ Denji|other_verb|watch|while telling Denji to watch and admire her|ordered|stated|Power
+f+ Denji|other_verb|apologize|Katana Man tells him to apologize for killing his grandfather|ordered|stated|Katana Man
+f- Makima|other_verb|said
+f+ Makima|other_verb|says|She then says that the gun pieces have finally begun moving towards the main body|actual|stated|
+t- no_relation|Power and Denji take the elevator
+f+ Power|other_verb|take|Power and Denji take the elevator to the upper floor of the building|actual|stated|
+f+ Denji|other_verb|take|Power and Denji take the elevator to the upper floor of the building|actual|stated|
+t- no_doer|After getting captured
+
+@628 gold: a brain and a body are no doers; non-verb objects
+keep
+f- Asa|other_verb|tied
+f- Asa|other_verb|fear
+f- Asa|other_verb|rewired
+f- Asa|other_verb|integrated
+f- Asa|other_verb|forces
+t+ no_doer|Asa's chronic tripping is a manifestation of profound subconscious self-sabotage and guilt
+t+ no_relation|To cope with the overwhelming guilt of wanting her father dead and aiding in his demise, Asa's brain rewired the memory.
+t+ no_relation|Because her brain integrated "clumsiness" as a core identity trait to hide her malicious intent, she developed a literal somatic trauma response.
+t+ no_relation|Her body physically forces her to trip during pivotal, high-stakes moments where success and happiness are close.

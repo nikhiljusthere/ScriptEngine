@@ -1,0 +1,108 @@
+@519 gold: ok
+keep
+
+@520 gold: expelling Yoru is no fight; clause object; the turn happened; Yoru's plan is Asa's claim; narrated speech gets rows; the teacher is unnamed
+keep
+- Asa|fought|Yoru
+f- Asa|revealed|Denji
+f+ Asa|revealed|-|Asa reveals to Denji that she was able to kick Yoru out of her body|actual|stated|
+f- Asa|other_verb|turn
+f+ Asa|other_verb|turn|before turning her finger on herself|actual|stated|
+f- Yoru|other_verb|planning
+f+ Yoru|other_verb|planning|Yoru is planning a fate worse than extinction for humanity|claimed|stated|Asa
+f+ Asa|other_verb|breaks|She quickly breaks down into tears, repeating to herself that she can’t do it|actual|stated|
+f+ Denji|other_verb|kill|She tells him to kill her|ordered|stated|Asa
+f+ Denji|other_verb|asks|Denji asks her why she’s threatening him|actual|stated|
+f+ Denji|other_verb|says|When he says he reckons the two of them can still be friends|actual|stated|
+f+ Denji|other_verb|breaks|but he breaks her spirit by saying that since even someone immortal like him can never be ready to come back to life|actual|stated|
+f+ Asa|other_verb|tells|Slumping to the floor, Asa tells Denji that she feels guilty for all of the people Yoru killed because she couldn’t speak up.|actual|stated|
+f+ Denji|other_verb|tells|Denji tells her not to worry about that right now|actual|stated|
+t- deictic|Over at Fourth East High School
+t+ crowd_end|Over at Fourth East High School, a teacher working with the festival planning committee is telling a new transferee that not that many people are staying in Tokyo currently.
+t+ crowd_end|He continues by stating that over half of the classroom next door to their planning room is empty seats, before stopping to introduce the transfer student to the rest of the class.
+
+@521 gold: a takeover is no awakening; becoming the Chainsaw Devil is a transformation
+keep
+- Pochita|awakened|-
+f- Pochita|alias_of|Chainsaw Devil
+f+ Pochita|transformed_into|Chainsaw Devil|fully transformed into the Chainsaw Devil|actual|stated|
+
+@522 gold: the ask carries its act
+keep
+f+ Denji|other_verb|elaborate|Makima asks Denji to elaborate on his desire|ordered|stated|Makima
+
+@523 gold: ok
+keep
+
+@524 gold: "a man" is never named here: no end; named characters' acts stay
+keep
+- the man|met|Denji
+- the man|fought|Denji
+- the man|fought|Himeno
+- the man|fought|Aki
+- Power|fought|the man
+- Fox Devil|fought|the man
+- the man|escaped|Fox Devil
+- the man|awakened|-
+f- the man|other_verb|speaks
+f- the man|other_verb|adds
+f- the man|other_verb|supposes
+f- the man|hired|Denji
+f- the man|other_verb|explains
+f- the man|wielded|gun
+f- the man|wounded|-
+f- the man|wounded|Himeno
+f- the man|other_verb|cuts
+f- the man|other_verb|revealing
+f- Fox Devil|other_verb|put
+f+ Aki|other_verb|put|he put something monstrous in her mouth|claimed|stated|Fox Devil
+f+ Denji|wounded|-|then pulls out a gun and shoots Denji in the head|actual|stated|
+f+ Himeno|wounded|-|with Himeno shot in the chest|actual|stated|
+f+ Power|other_verb|punches|but Power punches him|actual|stated|
+f- Power|other_verb|states
+f+ Power|other_verb|states|Power states it was drums|actual|stated|
+f- Denji|other_verb|states
+f+ Denji|other_verb|states|Denji states it tastes fine to him|actual|stated|
+t- deictic|Across Tokyo
+t+ crowd_end|Across Tokyo, all Division 4 members are out on different missions and suddenly are ambushed.
+t- deictic|Denji, Himeno, Aki and Power
+f+ Denji|other_verb|eating|Denji, Himeno, Aki and Power are eating at a ramen shop.|actual|stated|
+f+ Himeno|other_verb|eating|Denji, Himeno, Aki and Power are eating at a ramen shop.|actual|stated|
+f+ Aki|other_verb|eating|Denji, Himeno, Aki and Power are eating at a ramen shop.|actual|stated|
+f+ Power|other_verb|eating|Denji, Himeno, Aki and Power are eating at a ramen shop.|actual|stated|
+t+ crowd_end|A man speaks to Denji in disbelief that he can eat ramen that tastes terrible.
+t+ crowd_end|He supposes it is understandable as Denji only ate the same thing as a child.
+t+ crowd_end|The man adds that his grandpa was the nicest person and brought him to fancy restaurants all the time.
+t+ crowd_end|While a yakuza, he was a necessary evil and only killed a few women and children.
+t+ crowd_end|The man then pulls out a picture of him and his grandpa, the yakuza that hired Denji as devil hunter.
+t+ crowd_end|The man cuts open the Fox Devil's head and emerges, revealing a transformation similar to Denji, but with swords instead of chainsaws.
+
+@525 gold: the stranger is Sword Man (one name); a self pair
+keep
+r the stranger=>Sword Man
+f- Sword Man|revealed_as|Sword Man
+
+@526 gold: the tried verb; realizing = learned; the offer is actual, the finding planned; Denji's seat-work
+keep
+f- Denji|other_verb|tries
+f+ Denji|other_verb|back|Denji tries to back away|attempted|stated|Denji
+f- Yoshida|other_verb|realizes
+f+ Yoshida|learned|-|Thinking for a moment, Yoshida realizes he knows a girl who seemingly fits that exact description.|actual|stated|
+f- Yoshida|other_verb|offers
+f+ Yoshida|other_verb|offers|Yoshida then offers to find him a girlfriend if he promises not to expose his identity to the public|actual|stated|
+f+ Yoshida|other_verb|find|Yoshida then offers to find him a girlfriend|planned|stated|Yoshida
+t- no_relation|Denji is shown to be acting
+f+ Denji|other_verb|acting|Denji is shown to be acting as a seat to a girl, only to be called away by Yoshida.|actual|stated|
+
+@527 gold: one tag per line
+keep
+t- list_header|Hero Of Hell
+t+ list_header|Hero Of Hell
+t+ list_header|85.
+
+@528 gold: the planning happened; the ask is narrated
+keep
+f- Makima|other_verb|planned
+f+ Makima|other_verb|planned|she planned a way to break Denji's contract|actual|stated|
+t- dialogue|he asks Makima
+f+ Denji|other_verb|asks|he asks Makima if it was all a dream|actual|stated|

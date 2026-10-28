@@ -1,0 +1,62 @@
+@559 gold: ok
+keep
+
+@560 gold: orders carry their acts; Kobeni's narrated acts; an indefinite group
+keep
+f+ Kobeni|other_verb|report|Himeno orders Kobeni and Hirokazu to report the incident to Public Safety.|ordered|stated|Himeno
+f+ Hirokazu|other_verb|report|Himeno orders Kobeni and Hirokazu to report the incident to Public Safety.|ordered|stated|Himeno
+t- no_relation|Kobeni later attends
+f+ Kobeni|other_verb|attends|Kobeni later attends a newbie welcome party for Division 4.|actual|stated|
+t- no_relation|She introduces herself
+f+ Kobeni|other_verb|introduces|She introduces herself, revealing her age and hobby but keeps the identity of the devil she's contracted with a secret.|actual|stated|
+t- no_relation|A few other devil hunters
+t+ crowd_end|A few other devil hunters comment that her dress is cute.
+
+@561 gold: "the Devil Hunters" is a description, not a group; the composite's other members
+keep
+f- Denji|member_of|Devil Hunters
+f- Asa Mitaka|member_of|Devil Hunters
+f- Yoru|member_of|Devil Hunters
+f+ Asa Mitaka|other_verb|negotiate|then they negotiate its return to Hell|actual|stated|
+f+ Yoru|other_verb|negotiate|then they negotiate its return to Hell|actual|stated|
+f+ Asa Mitaka|other_verb|leaving|while leaving Tadashi Hasegawa behind.|actual|stated|
+f+ Yoru|other_verb|leaving|while leaving Tadashi Hasegawa behind.|actual|stated|
+
+@562 gold: a window is a description object; uncovered headers and sources
+keep
+f- Reze|destroyed|glass window
+t+ capability|throw her own head with enough force to break a glass window.
+t+ list_header|Enhanced Strength:
+t+ citation|(Chapter 46)
+
+@563 gold: ok
+keep
+
+@564 gold: ok
+keep
+
+@565 gold: Denji's father is unnamed; a debt is no doer
+keep
+f- Denji's father|parent_of|Denji
+f- the debt|other_verb|passed
+t+ crowd_end|Denji's father sustained an enormous debt to the Yakuza for unknown reasons, which was passed to his son post-mortem.
+
+@566 gold: a transliteration is no alias; embodying a concept is the Devil's stated nature (as other Devil pages)
+keep
+f- Pig Devil|alias_of|Buta no Akuma
+t- capability|The Pig Devil
+f+ Pig Devil|other_verb|embodies|The Pig Devil 豚の悪魔 Buta no Akuma is a devil that embodies the concept of pigs.|actual|stated|
+
+@567 gold: claiming a body is no awakening
+keep
+- Yoru|awakened|-
+
+@568 gold: article; "the Primal Fear" is the Aging Devil's epithet; belief = suspected; the telling carries its act
+keep
+r the Aging Devil=>Aging Devil
+f- Primal Fear|other_verb|regenerate
+f+ Aging Devil|other_verb|regenerate|it continues to regenerate due to its immortality|actual|stated|
+f- Aging Devil|other_verb|believing
+f+ Aging Devil|suspected|-|believing he has no other means of killing them|actual|stated|
+f+ Pochita|other_verb|eat|the Aging Devil bluntly tells Pochita to just eat them already|ordered|stated|Aging Devil
+t+ citation|(Chapter 187)
