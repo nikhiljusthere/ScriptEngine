@@ -139,3 +139,31 @@ answer `@B gold: ok` and `keep` only. Use the exact strings shown in the window'
 - A kidnapping by a named doer is the event `captured`; a hedged one ("supposedly abducted") stays a fact with certainty
   apparent; a victim-only passive gets a no_doer tag.
 - Gate quirks: a "Lady"/"Lord"/rank prefix is stripped from ends; `discovered` keeps no object.
+
+## Rulings from the gold review (2026-10-28, b1-b288)
+
+- The rows you see are already normalised (other_verb objects are the quote's word). Remove a row with the exact
+  string shown; never with a past-tense or phrase form that is not in the row (it will not match).
+- `saved` and `defeated` are EVENT relations: write them with `+`, never `f+`. A planned rescue or a planned beating is
+  a fact `X|other_verb|save` / `X|other_verb|beat` with modality planned.
+- A negated act ("does not comply", "says nothing", "has not spoken", "unable to control") keeps its verb with
+  certainty `denied` (`f+ X|other_verb|spoken|quote|actual|denied|`).
+- Speech acts (says, tells, proclaims, declares, claims, calls, promises, asserts, touted) are actual with no asserter,
+  even when what is said is a claim. "expresses his intention to burn X" = `expresses` actual + `burn` planned.
+- An order or request ("tells/asks/commands Y to do Z", "had Y stop") gets the ordered-act fact
+  `Y|other_verb|Z|quote|ordered|stated|X` unless Y is a crowd.
+- `tries/attempts to V` -> the object is V with modality attempted; `realizes` -> `learned|-`; `surmises/assumes` ->
+  `suspected|-` (clause object `-`).
+- A species noun used for one unnamed individual ("the Apostle", "the Hollow", "a Space Phantom") is no end: drop its
+  rows, keep the named doer's own acts as other_verb, crowd_end the sentences it leads.
+- A lower-case title for an unnamed person ("the mayor", "the priest", "the lead archer") is no end; a capitalised
+  title the window uses as the person's name ("the Count", "the Minister") is renamed without its article.
+- A body part, a described room/cave/city ("Guts' old room", "a cave-like place", "the city") and a description object
+  ("rope", "massive wall of fire", "powerful magical weapons") are no ends: use the doer's other_verb instead.
+- A name given to someone ("the time as Elaine") is `Elaine|alias_of|Casca`, not disguise_as; a name given to a thing
+  ("refers to this beherit as Becchi") is `other_verb|refers`.
+- Interviews, Q&A, guidebook design notes, adaptation comparisons, game descriptions, voice credits and etymology are
+  production (no rows); interview lines spoken by the interviewee/interviewer are dialogue.
+- Traits and habits (bragging, loyal, spoke his mind, acts as the military force) are no_relation, not capability.
+  `capability` is for abilities and general mechanics.
+- A stated past act inside a recollection ("recalls fighting Senbonzakura", "came to visit him before his death") is kept.
