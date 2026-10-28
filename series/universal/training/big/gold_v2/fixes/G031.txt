@@ -1,0 +1,73 @@
+@299 gold: in-person is no contact; speech acts by their verbs; orders carry their acts
+keep
+f- Urahara|contacted|Ichigo
+f- Rukia|warned|Ichigo
+f+ Rukia|other_verb|asserts|Rukia asserts that it is not the time to be quarreling|actual|stated|
+f+ Rukia|other_verb|suggests|and suggests they go after Uryū and the others|actual|stated|
+f- Noba|revealed|-
+f+ Noba|other_verb|confirms|questioning if Noba knows where they are heading, which he confirms.|actual|stated|
+f+ Ichigo|other_verb|move|meaning that Ichigo and Renji should move ahead of the rest of the group with Shunpo while they catch up.|ordered|stated|Urahara
+f+ Renji|other_verb|move|meaning that Ichigo and Renji should move ahead of the rest of the group with Shunpo while they catch up.|ordered|stated|Urahara
+f- Urahara|warned|Ichigo
+f+ Urahara|other_verb|reminds|Urahara reminds them their goal is to retrieve Uryū and avoid a fight if possible.|actual|stated|
+
+@300 gold: the cashier is unnamed; gave takes a recipient
+keep
+f- Rangiku|gave|10,000 yen bill
+f+ Rangiku|other_verb|hands|Rangiku hands him a 10,000 yen bill|actual|stated|
+f- cashier|other_verb|thanks
+f- cashier|other_verb|rushes
+t+ crowd_end|which the cashier thanks her for
+t+ crowd_end|which he rushes out of the store to get change for
+
+@301 gold: a Fullbring is no doer; copula; obligation
+keep
+f- Giriko Kutsuzawa|other_verb|has
+f- Time Tells No Lies|other_verb|puts
+f- Ichigo Kurosaki|other_verb|must
+t+ no_doer|Giriko Kutsuzawa's Fullbring, Time Tells No Lies, puts Ichigo Kurosaki in a tight spot.
+t+ no_relation|He must survive 15 more minutes against Mr. Pork in "Full Beast Mode".
+
+@302 gold: met and fight on one pair; a concluding is actual; crowds; the expressed verb
+keep
+- Ichigo|met|Kon
+f- Kurōdo|other_verb|concluding
+f+ Kurōdo|other_verb|concluding|With Kurōdo concluding that they do not take up space in this form|actual|stated|
+f- Kon|attacked|Mod-Souls
+t+ crowd_end|since the outdated Kon keeps attacking them
+f- Ichigo|other_verb|look
+f+ Ichigo|other_verb|expresses|expresses exasperation at being forced to look after the Mod-Souls|actual|stated|
+
+@303 gold: ok
+keep
+
+@304 gold: "the Hollow" is Yosuke; in-person is no contact; a return is no transformation; the order carries its act
+keep
+f- Tōshirō|attacked|Hollow
+f+ Tōshirō|attacked|Yosuke|Tōshirō saves Karin and tries to attack the Hollow|attempted|stated|Tōshirō
+f- Karin|contacted|Tōshirō
+f+ Karin|other_verb|asks|Karin then asks Tōshirō if there is anything he can do to save Yosuke|actual|stated|
+f+ Tōshirō|other_verb|replies|but Tōshirō replies that there is not.|actual|stated|
+f+ Yosuke|other_verb|hold|She tells Yosuke to hold on a little while longer so that he can see snow.|ordered|stated|Karin
+f- Yosuke|transformed_into|Plus form
+f+ Yosuke|other_verb|returns|Yosuke returns to his Plus form long enough to see it begin to snow.|actual|stated|
+t- dialogue|Karin asks if it is okay
+f+ Karin|other_verb|wonders|and wonders if Yosuke stopped because of Haru or if he was battling inside himself.|actual|stated|
+
+@305 gold: one name; Ginjō plans; a Garganta is no doer
+keep
+r Meninas=>Meninas McAllon
+f- Tsukishima|other_verb|use
+f+ Tsukishima|other_verb|use|Ginjō plans to give Tsukishima an opening to use Book of the End on the Quincy|planned|stated|Ginjō
+f- Garganta|other_verb|opens
+
+@306 gold: ok
+keep
+
+@307 gold: ok
+keep
+
+@308 gold: the "dad" is the officer's mistaken belief, not parenthood
+keep
+f- Giriko|parent_of|Riruka
+t+ crowd_end|As the police officer and crowd start breaking down, the police officer, saying what wonderful father-daughter love is shown, asks Riruka to forgive her "dad".

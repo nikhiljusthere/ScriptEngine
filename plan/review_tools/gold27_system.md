@@ -162,8 +162,10 @@ answer `@B gold: ok` and `keep` only. Use the exact strings shown in the window'
   ("rope", "massive wall of fire", "powerful magical weapons") are no ends: use the doer's other_verb instead.
 - A name given to someone ("the time as Elaine") is `Elaine|alias_of|Casca`, not disguise_as; a name given to a thing
   ("refers to this beherit as Becchi") is `other_verb|refers`.
-- Interviews, Q&A, guidebook design notes, adaptation comparisons, game descriptions, voice credits and etymology are
-  production (no rows); interview lines spoken by the interviewee/interviewer are dialogue.
+- Interviews, guidebook design notes, adaptation comparisons (manga vs anime, "Removed/Changed Content"), game descriptions,
+  voice credits, episode numbering and etymology are
+  production (no rows); interview lines are dialogue. An author Q&A that states an in-universe fact keeps the fact
+  (tag only the "According to Q&A ..." framing).
 - Traits and habits (bragging, loyal, spoke his mind, acts as the military force) are no_relation, not capability.
   `capability` is for abilities and general mechanics.
 - A stated past act inside a recollection ("recalls fighting Senbonzakura", "came to visit him before his death") is kept.

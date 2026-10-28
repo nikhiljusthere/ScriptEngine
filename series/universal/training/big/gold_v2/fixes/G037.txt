@@ -1,0 +1,69 @@
+@359 gold: ok
+keep
+
+@360 gold: ok
+keep
+
+@361 gold: a belief takes a clause object and is actual
+keep
+f- Liltotto Lamperd|suspected|Uryū
+f+ Liltotto Lamperd|suspected|-|Liltotto Lamperd expresses her belief that Uryū is the only remaining Quincy who still has access to his Vollständig after Yhwach's defeat.|actual|stated|
+
+@362 gold: an episode line is production
+keep
+t- list_header|' is the seventy-sixth episode
+t+ production|' is the seventy-sixth episode of the Bleach anime.
+
+@363 gold: Ichigo charged; the assertion is actual; Yoshino is named
+keep
+f- Renji|other_verb|charged
+f+ Ichigo|other_verb|charged|when he charged into Soul Society|actual|stated|
+f+ Uryū|other_verb|asserts|Uryū asserts that he will fulfill his heavenly duty with pride as a Quincy|actual|stated|
+t- no_relation|leaving Yoshino to muse
+f+ Yoshino|other_verb|muse|leaving Yoshino to muse on how nice the concept of pride sounds|actual|stated|
+
+@364 gold: unnamed aunt and mother; clause objects; took her = other_verb; speech act actual
+keep
+- Masaki's aunt|met|Masaki
+f- Masaki's aunt|other_verb|scolding
+t+ crowd_end|Later that evening, she was confronted by her aunt, who began scolding her for going against Quincy traditions.
+f- Ryūken|discovered|Hollow hole
+f+ Ryūken|discovered|-|Ryūken and his mother then noticed what appeared to be a Hollow hole forming on her chest.|actual|apparent|
+f- Ryūken's mother|discovered|Hollow hole
+f- Ryūken|took|Masaki
+f+ Ryūken|other_verb|took|Ryūken immediately took her and left the house.|actual|stated|
+f- Isshin|other_verb|argument
+f+ Isshin|other_verb|got|who got into an argument with Ryūken|actual|stated|
+f- Urahara|other_verb|claimed
+f+ Urahara|other_verb|claimed|Urahara, who claimed he had a solution.|actual|stated|
+
+@365 gold: ok
+keep
+
+@366 gold: narrated speech by named doers gets rows, not dialogue tags; the order carries its act
+keep
+f- Giselle|suspected|Candice
+f+ Giselle|suspected|-|Giselle assumes Candice wants to be fraternizing with the men instead.|actual|stated|
+f- Bambietta|other_verb|worried
+f+ Bambietta|other_verb|states|Bambietta states she is worried about the future of the Wandenreich.|actual|stated|
+t- dialogue|Though Bambietta brushes this off
+f+ Bambietta|other_verb|brushes|Though Bambietta brushes this off since they make messes too|actual|stated|
+f+ Liltotto|other_verb|counters|Liltotto counters that cookie crumbs and blood splatters are not the same thing|actual|stated|
+f+ Meninas|other_verb|asserts|Meninas asserts Bambietta could at least do it outside|actual|stated|
+f+ Candice|other_verb|insists|Candice insists this does not matter and Bambietta needs to do something about her urge to kill attractive men every time she is angry|actual|stated|
+t- no_relation|With Candice confronting Giselle
+f+ Candice|other_verb|confronting|With Candice confronting Giselle over this|actual|stated|
+f+ Bambietta|other_verb|blowing|the two of them are interrupted by Bambietta blowing a square-shaped hole through the wall nearby|actual|stated|
+t- dialogue|and when a worried Candice responds
+f+ Candice|other_verb|responds|and when a worried Candice responds to her telling them to keep it down because she has a lot on her mind by asking about what is bothering her|actual|stated|
+f+ Candice|other_verb|keep|her telling them to keep it down|ordered|stated|Bambietta
+f+ Giselle|other_verb|keep|her telling them to keep it down|ordered|stated|Bambietta
+t+ citation|(Chapter 544)
+
+@367 gold: a designation is no verb
+keep
+f- Jerome Guizbatt|other_verb|designation
+t+ citation|(Chapter 503)
+
+@368 gold: ok
+keep

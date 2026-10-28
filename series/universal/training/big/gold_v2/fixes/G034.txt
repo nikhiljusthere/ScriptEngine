@@ -1,0 +1,68 @@
+@329 gold: source line
+keep
+t+ citation|(Chapter 403)
+
+@330 gold: opponents are a crowd
+keep
+t- no_doer|being injured by their opponents
+t+ crowd_end|being injured by their opponents
+
+@331 gold: a manga/anime comparison is production
+keep
+- Orihime|saved|Ichigo
+- Ichigo|fought|Acidwire
+f- Ichigo|other_verb|declares
+f- Acidwire|other_verb|attack
+f- Ichigo|other_verb|hesitates
+f- Acidwire|other_verb|force
+f- Acidwire|attacked|Ichigo
+t- deictic|the remainder of the conflict
+t+ production|In the manga, after Ichigo declares that Orihime does not belong to anyone, Acidwire moves to attack her instead; here, he is forced out of the apartment by Ichigo
+
+@332 gold: ok
+keep
+
+@333 gold: removed-content items are adaptation notes
+keep
+f- Ichigo Kurosaki|suspected|Kenpachi Zaraki
+t+ list_header|Removed Content=
+t+ production|Ichigo Kurosaki noting that he can tell Kenpachi Zaraki is a captain due to his intense Reiatsu.
+
+@334 gold: quote's verb; the landing
+keep
+f- Yamamoto|other_verb|told
+f+ Yamamoto|other_verb|telling|before telling Aizen this was cruel of him|actual|stated|
+f+ Yamamoto|other_verb|lands|and lands in front of him before proclaiming that this will all be over very soon|actual|stated|
+
+@335 gold: one tag per list line
+keep
+t- list_header|Isshin Kurosaki
+t+ list_header|Isshin Kurosaki
+t+ list_header|Ichigo Kurosaki
+t+ list_header|Karin Kurosaki
+t+ list_header|Yuzu Kurosaki
+t+ list_header|Kon
+t+ list_header|Orihime Inoue
+t+ list_header|Kazui Kurosaki
+
+@336 gold: a game note is production
+keep
+f- Dangai|other_verb|appeared
+f- Kōtotsu|other_verb|appeared
+f- Kōtotsu|other_verb|hit
+t+ production|In the game Blade Battlers 2nd, the Dangai appeared as one of the stages.
+t+ production|The Kōtotsu also appeared as a distraction to the fighters.
+t+ production|Every once in a while it appears from the wall
+
+@337 gold: a game note is production
+keep
+f- Yasutora Sado|used|Brazo Derecha de Gigante
+f- Yasutora Sado|used|Brazo Izquierda del Diablo
+t+ production|In The 3rd Phantom, Versus Crusade, and Heat the Soul 5, 6, and 7, he is playable
+
+@338 gold: a sensor is no doer; Jinta holds the case; a stunned state
+keep
+f- sensor|other_verb|work
+f- Ururu Tsumugiya|other_verb|holding
+f+ Jinta Hanakari|other_verb|holding|who runs up to them with Ururu Tsumugiya while holding the small case|actual|stated|
+f- Ichigo|other_verb|stunned

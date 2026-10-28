@@ -1,0 +1,64 @@
+@469 gold: named doers; a blade is a description object; the sworn defeat is planned
+keep
+t- no_doer|Ichigo flies after him
+f+ Ichigo|other_verb|flies|Ichigo flies after him|actual|stated|
+t- no_relation|Orihime whispers
+f+ Orihime|other_verb|whispers|Orihime whispers Ichigo's name|actual|stated|
+f- Ichigo|used|blade
+f+ Ichigo|other_verb|slams|Ichigo slams his blade against it|actual|stated|
+f+ Ichigo|other_verb|defeat|swearing to defeat Cifer|planned|stated|Ichigo
+
+@470 gold: ok
+keep
+
+@471 gold: no pipes in a tag quote
+keep
+t- list_header|7px
+t+ list_header|text-align:center; font-size:13.5px; font-weight:bold;
+
+@472 gold: ok
+keep
+
+@473 gold: a game stat block is production
+keep
+f- Tōsen|other_verb|is
+f- Tōsen|other_verb|has
+f- Tōsen|other_verb|are
+f- Tōsen|other_verb|creates
+t+ production|Additionally, Tōsen is playable in a form drawing from his appearance during The Hollowfication Incident.
+t+ production|In this form, Tōsen is a melee normal attack character
+t+ production|He has three Innate Skills built in at ★5
+t+ production|Tōsen's special is , where he creates a world without sight or sound, inflicting immense damage and Weaken.
+
+@474 gold: ok
+keep
+
+@475 gold: ok
+keep
+
+@476 gold: noble clans are a crowd; doer-less passive
+keep
+f- Dangai|other_verb|served
+f- Noble clans|other_verb|lost
+f- Noble clans|other_verb|accused
+f- Nobles|other_verb|sent
+t+ crowd_end|The Dangai served as a place of exile for Noble clans who lost a power struggle
+t+ no_doer|They would be sent there without a Jigokuchō.
+
+@477 gold: game mechanics (Burst Reverse, Soul Drive gauge) are production
+keep
+t- capability|Zangetsu will also take over
+t+ production|Zangetsu will also take over Ichigo's body if Burst Reverse is used while in his Awakened State, enhancing his speed and strength
+t- capability|Zangetsu also appears as
+t+ production|Zangetsu also appears as Ichigo (Bankai)'s Hollowfied form as his Reawakened form if Ichigo's Konpaku is depleted with a full Soul Drive gauge.
+
+@478 gold: Ichigo's question; the ask carries its act; wondering and acknowledging are stated
+keep
+f+ Ichigo|other_verb|questions|Ichigo questions if she is capable of doing that while they are running|actual|stated|
+f+ Ichigo|other_verb|run|She then asks Ichigo to run in front|ordered|stated|Unohana
+f+ Unohana|other_verb|restores|while she restores his Reiatsu to full strength as they travel.|planned|stated|Unohana
+f- Unohana|suspected|-
+f+ Unohana|suspected|-|causing her to wonder if his Reiatsu is only at half.|actual|stated|
+f- Unohana|other_verb|acknowledges
+f+ Unohana|other_verb|acknowledges|Unohana then acknowledges to herself that if Ichigo's Reiatsu is only at half strength|actual|stated|
+t+ citation|(Chapter 382)

@@ -1,0 +1,87 @@
+@339 gold: realizing = learned; wondering = suspected
+keep
+f- Charlotte|other_verb|realize
+f- Dordoni|other_verb|realize
+f- Cirucci|other_verb|realize
+f+ Charlotte|learned|-|Charlotte, Dordoni, and Cirucci realize that Luppi wants nothing more than to satiate his desire for revenge|actual|stated|
+f+ Dordoni|learned|-|Charlotte, Dordoni, and Cirucci realize that Luppi wants nothing more than to satiate his desire for revenge|actual|stated|
+f+ Cirucci|learned|-|Charlotte, Dordoni, and Cirucci realize that Luppi wants nothing more than to satiate his desire for revenge|actual|stated|
+f+ Charlotte|suspected|-|but wonder if he can actually win|actual|stated|
+f+ Dordoni|suspected|-|but wonder if he can actually win|actual|stated|
+f+ Cirucci|suspected|-|but wonder if he can actually win|actual|stated|
+
+@340 gold: Dordoni's attack grazed Nel; speech acts actual; "his purpose" is Ichigo's
+keep
+f- Ichigo|wounded|Nel
+f+ Dordoni|wounded|Nel|leaving Nel with a graze on her cheek|actual|stated|
+f- Dordoni|other_verb|observes
+f+ Dordoni|other_verb|observes|who observes that there is no reason for Ichigo to be angry|actual|stated|
+f- Dordoni|other_verb|protect
+f+ Ichigo|other_verb|protect|since his purpose is to protect his friends|claimed|stated|Dordoni
+f+ Dordoni|other_verb|defeat|Dordoni's is to defeat Ichigo at his best|planned|stated|Dordoni
+f- Dordoni|other_verb|suffer
+f+ Dordoni|other_verb|proclaims|Dordoni proclaims that he would suffer great shame if he were unable to fight Ichigo at the latter's best|actual|stated|
+f+ Ichigo|other_verb|questions|When Ichigo questions if he has any shame|actual|stated|
+
+@341 gold: non-verb objects; an unnamed Hollow; the passage's verbs
+keep
+f- Katagiri|other_verb|mother
+f+ Katagiri|other_verb|told|when he realized she told his mother about Masaki's fight|actual|stated|
+f- Hollow|other_verb|infection
+f- Hollow|other_verb|Ryūken
+f- Isshin|other_verb|Hollow
+f+ Isshin|other_verb|slain|but was slain by Isshin who had returned|actual|stated|
+f- Ryūken|other_verb|Shinigami
+f+ Ryūken|other_verb|accused|Ryūken accused the Shinigami of causing Masaki's condition|actual|stated|
+t+ crowd_end|A Hollow immediately confronted him
+t+ crowd_end|his mother immediately began to scold her for her actions
+t+ citation|(Chapter 534)
+
+@342 gold: ok (each sentence is covered; a second asks/says would duplicate a row)
+keep
+
+@343 gold: proclaiming is actual, the crushing planned; traits are no capability
+keep
+f- Ichibe'e|other_verb|proclaimed
+f+ Ichibe'e|other_verb|proclaimed|proclaimed he would crush him beyond the possibility of rebirth|actual|stated|
+f+ Ichibe'e|other_verb|crush|proclaimed he would crush him beyond the possibility of rebirth|planned|stated|Ichibe'e
+t- capability|He has little patience
+t+ no_relation|He has little patience for disrespect and will not tolerate anyone addressing him by his given name without permission
+t- capability|He is confident
+t+ no_relation|He is confident in his abilities
+
+@344 gold: ok
+keep
+
+@345 gold: "in between" is no location
+keep
+f- Hueco Mundo|located_at|Human World
+f- Hueco Mundo|located_at|Soul Society
+t+ no_relation|It lies in between the Human World and Soul Society, being one of the three planes of existence collectively referred to as the Three Worlds.
+
+@346 gold: source line
+keep
+t+ citation|(Chapter 541)
+
+@347 gold: telling/informing/explaining are speech acts, not reveals; Nozomi's own acts; the kick
+keep
+f- Reigai-Kyōraku|revealed|-
+f- Reigai-Kyōraku|revealed|Zanpakutō abilities
+f- Reigai-Kyōraku|revealed|Takaoni technique
+f+ Reigai-Kyōraku|other_verb|states|Reigai-Kyōraku states that her observation is correct and tells her the name of the technique.|actual|stated|
+f+ Reigai-Kyōraku|other_verb|informs|but informs her that his Zanpakutō has a range of abilities involving games that he can use on her.|actual|stated|
+f+ Reigai-Kyōraku|other_verb|explains|He jumps above her and explains about his Takaoni technique|actual|stated|
+f+ Reigai-Kyōraku|other_verb|kicks|He kicks her to the ground instead, causing a small crater.|actual|stated|
+f- Reigai-Kyōraku|other_verb|wonders
+f+ Reigai-Kyōraku|other_verb|wonders|He then wonders if he hit her too hard|actual|stated|
+f+ Nozomi|other_verb|skids|Elsewhere, Nozomi skids backwards along the ground amidst the flames of Ryūjin Jakka.|actual|stated|
+f+ Nozomi|other_verb|glares|Grimacing, she glares about herself as she loses sight of her opponent|actual|stated|
+f+ Nozomi|other_verb|jumps|She then jumps into the air as to not create a shadow.|actual|stated|
+
+@348 gold: succumbing names no killer; doer-less passives
+keep
+- Driscoll Berci|killed|Sasakibe
+f+ Sasakibe|dies|-|Soon after, he succumbs to his wounds.|actual|stated|
+f- Sasakibe|other_verb|cremated
+t+ no_doer|Sasakibe is then propelled across Yamamoto's office and pinned to the wall, impaled by an arrow several times larger than his own body.
+t+ no_doer|He is later cremated atop a large funeral pyre as Yamamoto and other Gotei 13 officers pay their last respects to him.

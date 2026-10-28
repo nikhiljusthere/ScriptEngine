@@ -1,0 +1,63 @@
+@449 gold: a bare number is below the floor
+keep
+t+ below_floor|60.
+
+@450 gold: a single's release is production
+keep
+f- Orange|other_verb|is
+f- title track|used|fifteenth ending theme song
+f- Orange|other_verb|featured
+t+ production|Orange is Lil'B's first single.
+t+ production|The title track was used as fifteenth ending theme song for the Bleach anime.
+t+ production|It is featured from Episode 168 through 179.
+
+@451 gold: ok
+keep
+
+@452 gold: a manga/anime comparison is production, rows and all
+keep
+- Sado|killed|Bulbous G
+f- Sado|attacked|Bulbous G's face
+f- Sado|used|energy blast
+f- Sado|destroyed|Bulbous G's head
+f- Sado|attacked|Bulbous G
+f- Sado|destroyed|Bulbous G's body
+t+ production|In the manga, Sado defeats Bulbous G by landing a punch to his face that releases an energy blast
+
+@453 gold: ok
+keep
+
+@454 gold: Äs's freeing; described ice; Iba is named
+keep
+f+ Äs|other_verb|freeing|With Äs freeing himself from Zabimaru|actual|stated|
+f- Hitsugaya|created|Ice Wall
+f- Cang|destroyed|Ice Wall
+f+ Cang|other_verb|shatters|Simultaneously, Cang shatters a wall of ice created by Hitsugaya with his Reishi Claws.|actual|stated|
+t- no_relation|Emerging unharmed
+f+ Tetsuzaemon Iba|other_verb|expresses|while his lieutenant, Tetsuzaemon Iba, expresses concern for him|actual|stated|
+
+@455 gold: ok
+keep
+
+@456 gold: a bare number is below the floor
+keep
+t+ below_floor|31.
+
+@457 gold: an anime/manga depiction note is production
+keep
+- Metastacia|fought|Kaien
+t- citation|When Kaien was hit
+t+ production|When Kaien was hit by one of Metastacia's tentacles, he wasn't bleeding profusely from his right side in the anime, as he was in the manga.(Chapter 135)
+
+@458 gold: "he" with The Almighty is Yhwach; the hand forms the eye; a presence is no act; uncovered speech and realisation; the advice carries its act
+keep
+f- Ichibe'e|other_verb|activated
+f+ Yhwach|other_verb|activated|he activated The Almighty and declared that he could see everything.|actual|stated|
+f- Ichibe'e|other_verb|forming
+f+ Ichibe'e|other_verb|held|In response, Ichibe'e held out his left hand, which began forming a large eye.|actual|stated|
+f- Ichibe'e|other_verb|present
+f+ Ichibe'e|other_verb|reaffirmed|Yhwach listened as Ichibe'e reaffirmed that he knew nothing and stated that the Balancers maintained the fragile world.|actual|stated|
+f+ Ichibe'e|other_verb|asserted|However, he asserted that Yhwach's eyes could not see through the Soul King|actual|stated|
+t+ no_doer|As Ichibe'e's hand exploded, a large phantom of the hand with its eye appeared and engulfed Yhwach.
+f+ Yhwach|learned|-|Shocked, Yhwach realized that the two pupils in each of his eyes were merging back into one.|actual|stated|
+f+ Yhwach|other_verb|lead|He advised Yhwach to lead a modest life|ordered|stated|Ichibe'e

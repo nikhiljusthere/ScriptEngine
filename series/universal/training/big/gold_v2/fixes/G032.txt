@@ -1,0 +1,98 @@
+@309 gold: every list line gets its tag
+keep
+t+ list_header|Summary:
+t+ list_header|Kon
+t+ list_header|Ichigo Kurosaki
+t+ list_header|Isshin Kurosaki
+t+ list_header|Yuzu Kurosaki
+t+ list_header|Keigo Asano
+t+ list_header|Mizuiro Kojima
+t+ list_header|Orihime Inoue
+t+ list_header|Yasutora Sado
+t+ list_header|Uryū Ishida
+t+ list_header|Chizuru Honshō
+t+ list_header|Tatsuki Arisawa
+t+ list_header|Terunari Toda
+t+ list_header|Shunya Asō
+t+ list_header|Misato Ochi
+t+ list_header|Shinji Hirako
+t+ list_header|Episode 64: New School Term, Renji has Come to the Human World?!
+
+@310 gold: "the Arrancar clone" is an unnamed creature; Shōta's demand and his claim about her
+keep
+- the Arrancar clone|fought|Rangiku
+- Rangiku|fought|the Arrancar clone
+f- Arrancar clone|other_verb|roars
+f- Arrancar clone|other_verb|leap
+f- Arrancar clone|other_verb|land
+f+ Rangiku|other_verb|comes|Rangiku comes down on it with a slash while holding her Zanpakutō in a reverse grip|actual|stated|
+t+ crowd_end|When the Arrancar clone roars at an approaching Shōta
+t+ crowd_end|only for the Arrancar clone to leap out of the way at the last second and land on a nearby hill.
+f- Shōta|other_verb|getting
+f+ Rangiku|other_verb|getting|since she is getting in the way as an old lady|claimed|stated|Shōta
+f+ Rangiku|other_verb|let|Shōta demands that she let go|ordered|stated|Shōta
+
+@311 gold: ok
+keep
+
+@312 gold: buckle and Reiatsu are no doers
+keep
+f- Mask|other_verb|use
+t+ capability|After powering up from James' cheering, Mask can use the Quincy: Vollständig.
+f- Mask|other_verb|turns
+t+ no_relation|Mask's Reiatsu also turns crimson.
+t- no_relation|The buckle on his belt
+t+ no_doer|The buckle on his belt glows and envelopes Mask in light.
+
+@313 gold: "the Captain-Commander" names Yamamoto
+keep
+t- no_relation|The Captain-Commander decides
+f+ Yamamoto|other_verb|decides|The Captain-Commander decides to show his respect for them through only giving them "a light toasting."|actual|stated|
+
+@314 gold: one name; reminding is no reveal; speech acts actual; glare and distortion
+keep
+r Mask=>Mask De Masculine
+f- Shinji|revealed|Bambietta
+f+ Shinji|other_verb|reminds|reminds Bambietta of everything being reversed|actual|stated|
+f+ Bambietta|other_verb|glares|when Bambietta glares at him in turn|actual|stated|
+f- Shinji|other_verb|asserts
+f+ Shinji|other_verb|asserts|Shinji asserts that it is useless|actual|stated|
+f+ Shinji|other_verb|distorts|and distorts into a spiral before a shaking Bambietta's eyes|actual|stated|
+f- Bambietta|other_verb|promising
+f+ Bambietta|other_verb|promising|Bambietta promising to blow the smirk off Shinji's face|actual|stated|
+f+ Bambietta|other_verb|blow|Bambietta promising to blow the smirk off Shinji's face|planned|stated|Bambietta
+
+@315 gold: quote's verb; the order carries its act; grabbing a handle; a mood
+keep
+f- Ulquiorra|other_verb|noted
+f+ Ulquiorra|other_verb|noting|prior to noting that Ichigo managed to slice through Yammy's Hierro|actual|stated|
+f- Yammy|other_verb|told
+f+ Yammy|other_verb|tells|Yammy tells Ulquiorra to shut up|actual|stated|
+f+ Ulquiorra|other_verb|shut|Yammy tells Ulquiorra to shut up|ordered|stated|Yammy
+f- Yammy|took|Zanpakutō
+f+ Yammy|other_verb|grabs|and grabs the handle of his Zanpakutō|actual|stated|
+f- Ulquiorra|other_verb|bemused
+
+@316 gold: one name per person; returning to a form is no transformation; the telling carries its act
+keep
+r Tessai=>Tessai Tsukabishi
+r Urahara=>Kisuke Urahara
+r Sado=>Yasutora Sado
+f- Shun'ō|transformed_into|hairpin forms
+f+ Shun'ō|other_verb|return|as he and the other Shun Shun Rikka return to their hairpin forms|actual|stated|
+f+ Orihime|other_verb|hang|before telling Orihime to hang in there|ordered|stated|Shun'ō
+
+@317 gold: ok
+keep
+
+@318 gold: a game description is production
+keep
+- Grimmjow|fought|Ichigo
+f- Grimmjow|other_verb|playable
+f- Grimmjow|other_verb|is
+f- Grimmjow|other_verb|are
+f- Grimmjow|other_verb|unleashes
+t+ production|Grimmjow is also playable in his base form, drawing from his first confrontation with Ichigo Kurosaki in Karakura Town.
+t+ production|In this form, Grimmjow is a melee strong attack character
+t+ production|His unlockable skills are "Party Technique Attribute Arrancar Strong Attack Damage +20%"
+t+ production|Grimmjow's special is , where he unleashes a blisteringly fast piercing hand strike that inflicts immense damage.

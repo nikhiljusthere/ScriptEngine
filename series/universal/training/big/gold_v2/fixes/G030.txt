@@ -1,0 +1,53 @@
+@289 gold: Reiatsu is no doer
+keep
+f- Yui|other_verb|stops
+
+@290 gold: named doers get rows
+keep
+t- no_relation|As 13th Division Captain
+f+ Jūshirō Ukitake|other_verb|wins|As 13th Division Captain Jūshirō Ukitake and 8th Division Captain Shunsui Kyōraku play a board game together, Ukitake wins.|actual|stated|
+t- no_relation|When Shunsui goes outside
+f+ Shunsui Kyōraku|other_verb|goes|When Shunsui goes outside to find someone to help, no one is there.|actual|stated|
+t- deictic|As he and Shunsui decide
+
+@291 gold: a narrated transfer is a gave fact, not a citation
+keep
+t- citation|A flashback to Rukia
+f+ Rukia|gave|Ichigo|A flashback to Rukia transferring her Shinigami powers to Ichigo.|actual|stated|
+
+@292 gold: ok
+keep
+
+@293 gold: a specific narrated stop
+keep
+f+ Kokutō|other_verb|stopped|He effortlessly stopped Ichigo's Getsuga Tenshō-infused Tensa Zangetsu with his own blade using a single hand.|actual|stated|
+
+@294 gold: retreat from the confronting Shinigami; inform; captain = leader_of; unnamed twin; invasion = arrived
+keep
+- Seigen|escaped|Aizen
++ Seigen|escaped|Byakuya Kuchiki|They defeat Seigen's forces, but Seigen and the twin he's with retreats.
++ Seigen|awakened|-|When Seigen awakens
+f- Aizen|revealed|-
+f+ Aizen|other_verb|inform|who goes on to inform Seigen that Konoka died during their battle with Arturo in the past|actual|stated|
+f- Byakuya Kuchiki|member_of|6th Division
+f+ Byakuya Kuchiki|leader_of|6th Division|the current 6th Division captain Byakuya Kuchiki|actual|stated|
+f- Kudō twin|member_of|Shinigami
+f- Seigen|attacked|Soul Society
+
+@295 gold: no pipe in a tag quote
+keep
+t- list_header|Afternoon Uryū Ishida vs. Senbonzakura |
+t+ list_header|Afternoon Uryū Ishida vs. Senbonzakura
+
+@296 gold: ok
+keep
+
+@297 gold: the telling carries its ordered act; source line
+keep
+f+ Karin|other_verb|stop|Yuzu tells her she needs to stop|ordered|stated|Yuzu
+t+ citation|(Chapter 545)
+
+@298 gold: the earlier telling carries its ordered act; source line
+keep
+f+ Rukia|other_verb|stay|he told her to stay out of it|ordered|stated|Ichigo
+t+ citation|(Chapter 24)
