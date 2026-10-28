@@ -34,3 +34,19 @@ Read first: `plan/RESUME_HANDOFF_2026-10-14b.md` (owner decisions, method), `pla
 - Then lint the gold set (`BV2_SET=gold lint.sh`), compose (`compose_big_set.py` v2: events+facts+tags, 30% empty,
   `--short-system`), extend the scorer for facts/tags, train Qwen3.5-9B seeds 1+2 (BIG_REVIEW_HANDOFF §4).
 - Commit data the same way: copy `big_audit_v2.jsonl`/gold audit + fix files into the worktree, `git add -f`, explicit pathspecs.
+
+## Update 2026-10-28 (later): gold review at b1059/3822
+
+- Gold fix files G001-G109 in `big/gold_v2/fixes/` (committed through 9ab81464). Reviewed: b1-b1059.
+- The 27B runner was restarted twice; it now runs `pre27.sh run big/gold_v2/gold_rest1150.txt --workers 3`
+  (PID 246063 at the time of writing; list = b1150 onward). For b1060-b1149 there are no 27B answers: review them
+  directly with `BV2_SET=gold bash plan/review_tools/pre27.sh show 1060 1061 ...` (from the worktree; the script sets
+  SCRIPTENGINE_ROOT; launching pre27.py by hand without it fails on gold_in.jsonl).
+- Fix-file headers are `@<b> gold: reason` (no "B" prefix). Long list windows: generate one tag per line from
+  `gold_in.jsonl` (messages[1].content after "Passage:\n").
+- New rulings are appended to `plan/review_tools/gold27_system.md` (sections "Rulings from the gold review"); key ones:
+  production = interviews/design notes/adaptation comparisons (manga vs anime, filler, edits, dubs)/game content/
+  credits/episode+chapter title lines/story-role lines/etymology; unnamed or species-noun individuals are no ends;
+  saved/defeated are event-only; negation = certainty denied; speech acts actual; orders/asks carry the ordered act;
+  cutting/slicing to pieces, restraining, knocking out = defeated; in-person calls are never `contacted`;
+  "Devil embodies X" = other_verb embodies; the gate refuses "Kami" as a species end.
