@@ -1,0 +1,81 @@
+@699 gold: a general statement is no capability
+keep
+t- capability|Sane people fear
+t+ no_relation|Sane people fear the devil's attack, and that fear makes the devil stronger.
+
+@700 gold: ok
+keep
+
+@701 gold: orders carry their acts; the ruin is Haruka's claim; decisions actual; the informed are no informers; the planned rescue; a redundant tag
+keep
+t- no_relation|Once Asa and Fami manage
+f+ Nobana|other_verb|get|Haruka tells Nobana and Seigi to get behind him.|ordered|stated|Haruka
+f+ Seigi|other_verb|get|Haruka tells Nobana and Seigi to get behind him.|ordered|stated|Haruka
+f+ Fami|other_verb|stay|Haruka tells Fami to stay away from his group|ordered|stated|Haruka
+f- Fami|other_verb|ruined
+f+ Fami|other_verb|ruined|as their family's lives have been ruined thanks to her machinations.|claimed|stated|Haruka
+f- Nobana|other_verb|decide
+f- Haruka|other_verb|decide
+f- Seigi|other_verb|decide
+f+ Nobana|other_verb|decide|However, the trio decide to accompany Fami's group|actual|stated|
+f+ Haruka|other_verb|decide|However, the trio decide to accompany Fami's group|actual|stated|
+f+ Seigi|other_verb|decide|However, the trio decide to accompany Fami's group|actual|stated|
+f- Nobana|other_verb|informs
+f- Haruka|other_verb|informs
+f- Seigi|other_verb|informs
+f- Asa|other_verb|plan
+f- Fami|other_verb|plan
+f+ Asa|other_verb|rescue|she and Fami plan to rescue Chainsaw Man, who is held captive.|planned|stated|Asa
+f+ Fami|other_verb|rescue|she and Fami plan to rescue Chainsaw Man, who is held captive.|planned|stated|Fami
+
+@702 gold: preparing is actual
+keep
+f- Tolka|other_verb|prepares
+f+ Tolka|other_verb|prepares|as he prepares to enter the battle|actual|stated|
+
+@703 gold: an opening theme is production
+keep
+f- Kick Back|other_verb|is
+f- Kenshi Yonezu|other_verb|composed
+f- Kenshi Yonezu|other_verb|performed
+t+ production|Kick Back is the first opening theme song of the anime adaptation.
+t+ production|It was composed and performed by Kenshi Yonezu.
+
+@704 gold: one name; the demand carries its act; the organisation is Public Safety
+keep
+r Hayakawa=>Aki Hayakawa
+f+ Denji|other_verb|quit|demands that he "quit this job"|ordered|stated|Aki Hayakawa
+f- Makima|member_of|Public Safety Devil Hunters
+f+ Makima|member_of|Public Safety|Makima, one of the Public Safety Devil Hunters|actual|stated|
+
+@705 gold: ok
+keep
+
+@706 gold: one name for the copycat; the quoted "Fami" is the Death Devil, "the real Fami" is Fami; the copycat's guess is no alias; the order carries its act
+keep
+r Chainsaw Man Copycat=>Fake Chainsaw Man
+f- Fake Chainsaw Man|alias_of|Death Devil
+f- Fake Chainsaw Man|other_verb|explain
+f- Fami|ordered|Falling Devil
+f+ Death Devil|ordered|Falling Devil|"Fami" orders the Falling Devil to weigh down on them both.|actual|stated|
+f+ Falling Devil|other_verb|weigh|"Fami" orders the Falling Devil to weigh down on them both.|ordered|stated|Death Devil
++ Falling Devil|fought|Fami|"Fami" orders the Falling Devil to weigh down on them both.
+f- Fami|other_verb|lets
+f+ Death Devil|other_verb|lets|She lets the chef prepare whatever "dish" she had in mind|actual|stated|
+f- Fami|other_verb|reveal
+f+ Death Devil|other_verb|takes|Solemnly, "Fami" takes off her school uniform to reveal that even after she removed all of her organs she still couldn't die.|actual|stated|
+
+@707 gold: one name; quote's verbs; in-person is no contact; the yell and the plea carry their acts
+keep
+r Whip=>Whip Hybrid
+f- Whip Hybrid|other_verb|caring
+f+ Whip Hybrid|other_verb|display|the Whip Hybrid does display emotional vulnerability and some level of care for her teammates|actual|stated|
+f- Whip Hybrid|other_verb|begging
+f+ Whip Hybrid|other_verb|begs|begs him to save her.|actual|stated|
+f+ Denji|other_verb|spit|Whip yells at Denji to spit him out.|ordered|stated|Whip Hybrid
+f- Whip Hybrid|contacted|Sugo
+f+ Whip Hybrid|other_verb|calls|she calls for Sugo in her distress|actual|stated|
+f+ Sugo|other_verb|save|begs him to save her.|ordered|stated|Whip Hybrid
+
+@708 gold: ok
+keep

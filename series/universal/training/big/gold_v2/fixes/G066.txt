@@ -1,0 +1,120 @@
+@639 gold: a train is a described place and no doer; the shot victim; crowds
+keep
+f- Makima|located_at|train
+f+ Makima|other_verb|heading|Elsewhere, Makima is on the train heading to Kyoto to meet with her bosses.|actual|stated|
+f- train|other_verb|enters
+f+ Makima|wounded|-|the men sitting in the front and behind Makima pull out guns and shoot her along with her assistant|actual|stated|
+t+ crowd_end|A bit before Kyoto, the train enters a tunnel, and the men sitting in the front and behind Makima pull out guns and shoot her along with her assistant.
+t+ crowd_end|The men then make a call and state they can start the operation.
+
+@640 gold: A145 swallow-decapitate; in-person is no contact; the command carries its act
+keep
+- Snake Devil|fought|Ghost Devil
+f- Katana Man|contacted|Sawatari
+f+ Katana Man|other_verb|calls|he calls out to Sawatari for help.|actual|stated|
+f+ Snake Devil|other_verb|swallow|commanding it to swallow the Ghost Devil whole.|ordered|stated|Sawatari
+
+@641 gold: the group is a crowd; the decision is actual, the finding planned
+keep
+f- The group|other_verb|head
+t+ crowd_end|The group head over to the charred remains of Denji's apartment
+t+ crowd_end|The group then head over to a budget sushi restaurant
+f- Denji|other_verb|decides
+f+ Denji|other_verb|decides|Denji then awakens and decides to find Nayuta first before doing anything else|actual|stated|
+f+ Denji|other_verb|find|decides to find Nayuta first before doing anything else|planned|stated|Denji
+
+@642 gold: alias direction; an unnamed father; "the Yakuza" is a generic organisation; powers are capability; an indefinite group
+keep
+f- Denji|alias_of|Chainsaw Man
+f+ Chainsaw Man|alias_of|Denji|He is now a Chainsaw Man!|actual|stated|
+f- Pochita|wielded|chainsaw powers
+t+ capability|Pochita's chainsaw powers come in handy against these powerful demons.
+f- Denji's father|dies|-
+t+ no_relation|When his father died, Denji was stuck with a huge debt and no way to pay it back.
+f- Denji|assisted|Yakuza
+- Yakuza|betrayed|Denji
+t+ crowd_end|he's able to survive through odd jobs and killing Devils for the Yakuza
+t+ crowd_end|When the Yakuza betrays him
+f- Denji|allied_with|Devil Hunters
+t+ crowd_end|Denji struggles to determine his dreams and form meaningful relationships while killing Devils and working alongside other eccentric Devil Hunters.
+
+@643 gold: a belief = suspected; "a Primal Fear" is indefinite
+keep
+f- Public Safety|other_verb|believes
+f+ Public Safety|suspected|-|Public Safety believes she is involved with the prophecy|actual|stated|
+f- Primal Fear|other_verb|appeared
+t+ crowd_end|a Primal Fear appeared 40 seconds ago at East District's Tamano Apartments
+
+@644 gold: beliefs = suspected with clause objects; the slice is the kill's twin; the ask carries its act
+keep
+f- Eternity Devil|other_verb|believes
+f+ Eternity Devil|suspected|-|The Eternity Devil knocks Denji and believes it won.|actual|stated|
+f- Himeno|suspected|Gun Devil
+f+ Himeno|suspected|-|Himeno starts to believe he may be able to kill the Gun Devil.|actual|stated|
+f- Denji|other_verb|slices
+f+ Denji|other_verb|kill|asks Denji to kill it as it cannot bear the pain any longer.|ordered|stated|Eternity Devil
+t+ no_relation|Three days later, Denji is still fighting the Eternity Devil.
+
+@645 gold: embodying is a fact (as other Devil pages); the division's name
+keep
+t- capability|The Stag Beetle Devil
+f+ Stag Beetle Devil|other_verb|embodies|The Stag Beetle Devil クワガタの悪魔 Kuwagata no Akuma is a Devil who embodies the concept of stag beetles|actual|stated|
+f- Stag Beetle Devil|member_of|Public Safety's Tokyo Special Division 6
+f+ Stag Beetle Devil|member_of|Tokyo Special Division 6|worked as a member of Public Safety's Tokyo Special Division 6.|actual|stated|
+
+@646 gold: gave takes the recipient; quote's verb; a described apartment; the Gun Devil's defeat is a planned reward, not an event
+keep
+f- Makima|gave|tea and a dessert
+f+ Makima|gave|Denji|Makima gives Denji tea and a dessert|actual|stated|
+f- Denji|other_verb|says
+f+ Denji|other_verb|saying|Denji responds by saying that this is the best place in the world|actual|stated|
+f- Power|resides_at|new apartment
+f- Meowy|resides_at|new apartment
+- Denji|defeated|Gun Devil
+f+ Denji|other_verb|defeating|Makima asks Denji what he wants in exchange for defeating the Gun Devil|planned|stated|Makima
+
+@647 gold: speech acts actual; the tried verb; a self pair; in-person is no contact; orders carry their acts; explaining is speech
+keep
+f- Aki|other_verb|states
+f+ Aki|other_verb|states|Aki states that if necessary, he will use his sword|actual|stated|
+f- Himeno|other_verb|states
+f+ Himeno|other_verb|states|Himeno states that if it comes to it, she will rather kill Denji than letting Aki use his sword.|actual|stated|
+f- Power|other_verb|denies
+f+ Power|other_verb|denies|she denies it, lying that Denji ate it all.|actual|stated|
+f- Hirokazu|other_verb|tries
+f+ Hirokazu|other_verb|calm|Hirokazu tries to calm her|attempted|stated|Hirokazu
+f- Kobeni|suspected|-
+f+ Kobeni|suspected|-|she guesses he must be a spy|actual|stated|
+f- Hirokazu|other_verb|denies
+f+ Hirokazu|other_verb|denies|Hirokazu denies being a spy.|actual|stated|
+f- Eternity Devil|revealed|-
+f+ Eternity Devil|other_verb|telling|wanting Denji and telling them it expands from fear.|actual|stated|
+f- Eternity Devil|revealed_as|Eternity Devil
+f+ Eternity Devil|other_verb|states|The devil states only he can kill the Chainsaw and that he is Eternity Devil.|actual|stated|
+f+ Aki|other_verb|kill|Hirokazu and Kobeni yell at Aki and Himeno to kill Denji.|ordered|stated|Hirokazu
+f+ Himeno|other_verb|kill|Hirokazu and Kobeni yell at Aki and Himeno to kill Denji.|ordered|stated|Hirokazu
+f- Aki|other_verb|decides
+f+ Aki|other_verb|decides|Aki decides to use his sword|actual|stated|
+f- Himeno|revealed|-
+f+ Himeno|other_verb|explains|She explains that if he uses his sword, they will get out|actual|stated|
+f- Aki|other_verb|yells
+f+ Aki|other_verb|yells|Aki yells that he doesn't care if Denji gets killed|actual|stated|
+f- Denji|other_verb|wants
+f+ Denji|other_verb|wants|Denji wants to kill the Gun Devil too|actual|stated|
+f- Denji|contacted|Power
+f+ Denji|other_verb|asks|Denji asks Power if she can stop Aki's bleeding.|actual|stated|
+f- Power|revealed|-
+f+ Power|other_verb|explains|Power explains she can control her own blood|actual|stated|
+f- Himeno|suspected|-
+f+ Himeno|suspected|-|Guessing that Aki can die|actual|stated|
+t- deictic|The group spends
+t+ crowd_end|The group spends some more time thinking.
+
+@648 gold: the storming; the purpose is a planned rescue
+keep
+f+ Asa|other_verb|storm|Asa, Yoru, and Fami storm the building to rescue Chainsaw Man.|actual|stated|
+f+ Yoru|other_verb|storm|Asa, Yoru, and Fami storm the building to rescue Chainsaw Man.|actual|stated|
+f+ Fami|other_verb|storm|Asa, Yoru, and Fami storm the building to rescue Chainsaw Man.|actual|stated|
+f+ Asa|other_verb|rescue|Asa, Yoru, and Fami storm the building to rescue Chainsaw Man.|planned|stated|Asa
+f+ Yoru|other_verb|rescue|Asa, Yoru, and Fami storm the building to rescue Chainsaw Man.|planned|stated|Yoru
+f+ Fami|other_verb|rescue|Asa, Yoru, and Fami storm the building to rescue Chainsaw Man.|planned|stated|Fami

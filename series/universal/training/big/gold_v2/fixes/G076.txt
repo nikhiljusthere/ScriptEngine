@@ -1,0 +1,74 @@
+@739 gold: a setting role is production
+keep
+t- no_relation|It is the overarching setting
+t+ production|It is the overarching setting of the Academy Saga.
+
+@740 gold: the raid's target is the named group; an unnamed leader; the tried verb; source line
+keep
+- Public Safety|fought|Haruka
++ Public Safety|fought|Chainsaw Man Church|On the day Public Safety raids the Chainsaw Man Church's forces
+f- elderly cult leader|other_verb|informed
+f- elderly cult leader|other_verb|say
+f- Haruka|other_verb|try
+f+ Haruka|other_verb|get|Haruka tries to get the man to explain what's happening|attempted|stated|Haruka
+t+ crowd_end|Haruka is informed by the elderly cult leader to send all combat-trained followers to meet outside the prayer room.
+t+ crowd_end|only for him to say that he doesn't know a thing, and he knows Haruka doesn't know a thing about it as well.
+t+ citation|(Chapter 143)
+
+@741 gold: ok
+keep
+
+@742 gold: a return is no became; telling and asking are speech; Power's claim; the exchange is planned
+keep
+f- Denji|became|-
+f- Denji|revealed|-
+f+ Denji|other_verb|tells|where he tells her that he can't live without her.|actual|stated|
+f+ Power|other_verb|revive|tells him that she will revive in Hell but she won't be herself anymore.|claimed|stated|Power
+f+ Denji|other_verb|finding|in exhange for finding her and making her Power again.|planned|stated|Power
+f- Kishibe|interrogated|Denji
+f+ Kishibe|other_verb|asks|asks him if he's Denji or the Chainsaw Devil|actual|stated|
+
+@743 gold: an explosion is no doer; speech is stated; an epithet is no alias; the eldest sister; realizing = learned
+keep
+f- Denji|other_verb|shocking
+f- Fumiko|other_verb|shocking
+t+ no_doer|Meanwhile, the top floor of a building in the distance explodes, shocking Denji and Fumiko.
+f- Barem|other_verb|saying
+f+ Barem|other_verb|saying|Barem continues, saying that in half a year, the prophetic "Great King of Terror" will descend onto Earth|actual|stated|
+f- King of Terror|revealed_as|Death Devil
+f+ Nayuta|other_verb|explains|Nayuta explains that the King of Terror in the prophecy is, in fact, their eldest sister, the Death Devil.|actual|stated|
+f+ Death Devil|sibling_of|Nayuta|their eldest sister, the Death Devil.|actual|stated|
+f+ Death Devil|sibling_of|Fami|their eldest sister, the Death Devil.|actual|stated|
+f- Nayuta|other_verb|realizes
+f+ Nayuta|learned|-|Nayuta states that she finally realizes Fami's plan to slay the Death Devil|actual|stated|
+
+@744 gold: recognizing and acknowledging are Himeno's acts; a noun is no verb
+keep
+f+ Himeno|other_verb|recognizes|and recognizes her manipulative nature|actual|stated|
+f- Makima|other_verb|control
+f+ Himeno|other_verb|acknowledges|She also acknowledges Makima's control over others, including Aki|actual|stated|
+
+@745 gold: ok
+keep
+
+@746 gold: ok
+keep
+
+@747 gold: a chapter title line is production
+keep
+t- list_header|Chainsaw Man Puzzle
+t+ production|Chainsaw Man Puzzle チェンソーマンパズル Chensōman Pazuru is the 161st Chapter of the Chainsaw Man manga.
+
+@748 gold: one name with the alias tie; a symmetric duplicate; the swallowing is a capture; the tried verb; Pochita's narrated acts
+keep
+r Chainsaw Devil=>Pochita
+f+ Chainsaw Devil|alias_of|Pochita|Eventually, the Chainsaw Devil directly confronts the Aging Devil|actual|stated|
+- Aging Devil|fought|Pochita
++ Pochita|captured|Yoshida|who is revealed to have been swallowed whole by Pochita during his rampage against Public Safety.
+f- Yoshida|other_verb|swallowed
+f- Pochita|other_verb|unable
+f+ Pochita|other_verb|kill|but is unable to kill them due to their immortality.|attempted|stated|Pochita
+t- no_relation|Pochita proceeds to move
+f+ Pochita|other_verb|move|Pochita proceeds to move towards the Aging Devil and Public Safety.|actual|stated|
+t- no_relation|Even when receiving heavy damage
+f+ Pochita|other_verb|regenerating|he continues regenerating thanks to Denji's constant feasting in the Aging's World.|actual|stated|

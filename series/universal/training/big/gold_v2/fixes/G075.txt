@@ -1,0 +1,98 @@
+@729 gold: restraining is the outcome of the same act (defeated); an unnamed leader; guns are a description object; no deictic
+keep
+- Nail Fiend|fought|Nobana
+- Katana Man|fought|Nobana
++ Nail Fiend|defeated|Nobana|the members end up getting restrained by the Nail Fiend and Katana Man.
++ Katana Man|defeated|Nobana|the members end up getting restrained by the Nail Fiend and Katana Man.
+f- elderly cult leader|other_verb|informed
+t+ crowd_end|Haruka and Nobana are informed by the elderly cult leader to send all combat-trained followers to meet outside the prayer room.
+f- Nobana|used|guns
+f+ Nobana|other_verb|arm|Nobana and the other members arm themselves with guns to fight back.|actual|stated|
+t- deictic|When various Chainsaw Man Church members
+t+ no_relation|When various Chainsaw Man Church members have transformed into Pseudo-Chainsaw Devils due to their contracts with the Fire Devil, Nobana is not seen among the group charging at an enraged Katana Man.
+
+@730 gold: the command is a future arrangement in the delivered message
+keep
+f- Makima|leader_of|Special Division 4
+f+ Makima|leader_of|Special Division 4|and that Public Safety Devil Extermination Special Division 4 would be placed under Makima's command.|planned|stated|Madoka
+
+@731 gold: a modal; the asks carry their acts; the Eternity Devil's attack; a state
+keep
+f- Haruka|other_verb|would've
+f+ Haruka|other_verb|confirm|asks him to confirm that he isn't the actual Chainsaw man|ordered|stated|Asa
+f+ Chainsaw Man|other_verb|save|begging Chainsaw Man to save him|ordered|stated|Haruka
+t- deictic|It has been roughly three days
+f+ Eternity Devil|other_verb|started|It has been roughly three days since the Eternity Devil started its attack;|actual|stated|
+t- deictic|the fish have all started
+t+ no_relation|the fish have all started to rot and the toilets are unusable.
+
+@732 gold: in-person is no contact; the trip is planned
+keep
+f- Aki|contacted|Denji
+f- Aki|contacted|Power
+f+ Aki|other_verb|informs|Aki informs both of them that he's going to Hokkaido tomorrow to his family's grave.|actual|stated|
+f- Aki|other_verb|going
+f+ Aki|other_verb|going|he's going to Hokkaido tomorrow to his family's grave.|planned|stated|Aki
+
+@733 gold: one tag per line
+keep
+t- list_header|School Attacker
+t+ list_header|School Attacker
+t+ list_header|108.
+
+@734 gold: a chapter title line is production
+keep
+t- list_header|Cuz I'm a Devil
+t+ production|Cuz I'm a Devil だって悪魔だから Datte Akuma Dakara is the 191st Chapter of the Chainsaw Man manga.
+
+@735 gold: one tag per line
+keep
+t- list_header|Kishibe
+t+ list_header|Kishibe
+t+ list_header|Makima
+t+ list_header|Pochita
+t+ list_header|Hell Devil
+t+ list_header|AIDS Devil
+t+ list_header|Arnolone Syndrome Devil
+t+ list_header|Light of a Star That Breaks Children's Minds Devil
+t+ list_header|Mount Hio Eruption Devil
+t+ list_header|Nazi Devil
+t+ list_header|Sixth Sense Devil
+t+ list_header|SOA Devil
+t+ list_header|World War II Devil
+t+ list_header|Nuclear Weapons Devil
+t+ list_header|Death Devil
+t+ list_header|Yoru
+t+ list_header|Famine Devil
+
+@736 gold: ok
+keep
+
+@737 gold: a hostile arrival is no meeting; the window's name; the yell carries its act; deducing = learned; an unnamed grunt
+keep
+- Katana Man|met|Haruka
+- Katana Man|met|Nobana
+- Katana Man|met|Yoru
+- Nail Fiend|met|Haruka
+- Nail Fiend|met|Nobana
+- Nail Fiend|met|Yoru
+r Haruka Iseumi=>Haruka
+f+ Nobana|other_verb|step|Haruka yells at Nobana to step away from the man.|ordered|stated|Haruka
+f- Yoru|suspected|-
+f+ Yoru|learned|-|Yoru deduces that the grunt was actually distracting them|actual|stated|
+t- no_relation|The group eventually runs into
+t+ crowd_end|The group eventually runs into a Public Safety grunt who questions them the origins of the Pseudo-Chainsaw People locked inside a nearby room.
+
+@738 gold: decisions/preparing actual with their planned acts; the tried verb; tearing to shreds is the outcome (defeated); the Fire Devil's question
+keep
+f- Yoru|other_verb|decides
+f+ Yoru|other_verb|decides|Yoru decides to handle the Falling Devil by herself.|actual|stated|
+f+ Yoru|other_verb|handle|Yoru decides to handle the Falling Devil by herself.|planned|stated|Yoru
+f- Denji|other_verb|attempts
+f+ Denji|other_verb|negotiate|Denji attempts to negotiate with the Fake Chainsaw Man|attempted|stated|Denji
+f- Fake Chainsaw Man|other_verb|prepares
+f+ Fake Chainsaw Man|other_verb|prepares|but the latter prepares to attack him again.|actual|stated|
+f+ Fake Chainsaw Man|other_verb|attack|but the latter prepares to attack him again.|planned|stated|Fake Chainsaw Man
+- Denji|fought|Fake Chainsaw Man
++ Denji|defeated|Fake Chainsaw Man|Denji proceeds to tear the Fake Chainsaw Man to shreds, freeing most of the captive civilians.
+f+ Fire Devil|other_verb|questions|and questions Denji if he remembers what the imposter looked like before.|actual|stated|

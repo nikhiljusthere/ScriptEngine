@@ -1,0 +1,75 @@
+@669 gold: ok
+keep
+
+@670 gold: article; the near-bite is Beam's and did not happen; the realisation; the warning carries its act
+keep
+r the Shark Fiend=>Shark Fiend
+f- Galgali|other_verb|bitten
+f+ Beam|other_verb|bitten|is almost accidentally bitten by Beam.|actual|denied|
+f+ Galgali|learned|-|before realizing his mistake.|actual|stated|
+f+ Spider Devil|other_verb|leave|warns her to leave the area|ordered|stated|Galgali
+
+@671 gold: "they" (the church) is no end; speech acts actual; Haruka's teachings are his claim; crowd members are crowds; named acts
+keep
+f- Haruka|other_verb|inform
+f- the church|other_verb|recruit
+f+ Haruka|other_verb|responds|Haruka responds by telling him that not only do they inform the city and ministry of defense prior to their activities, but they also only recruit experienced hunters.|actual|stated|
+f+ Haruka|other_verb|say|He then goes on to say that the members must follow Chainsaw Man’s tenets in order to be a member|actual|stated|
+f- Haruka|other_verb|received
+f+ Haruka|other_verb|received|Haruka replies that he received the teachings from Chainsaw Man directly|claimed|stated|Haruka
+f- Haruka|other_verb|offering
+f+ Haruka|other_verb|offering|before offering to let him speak to the public himself.|actual|stated|
+f+ Haruka|other_verb|gets|As Haruka gets the crowd into a chant|actual|stated|
+f+ Denji|other_verb|rushes|Denji rushes to the phone, eager to speak to the masses|actual|stated|
+t- no_doer|A member of the crowd
+t+ crowd_end|A member of the crowd raises numerous concerns regarding both the recruitment demographics and collateral damage caused by the church.
+t- no_doer|The crowd member asks
+t+ crowd_end|The crowd member asks what these tenets are, before questioning their validity.
+t- no_doer|a random hunter claims
+t+ crowd_end|only to look back in shock as a random hunter claims to be Chainsaw Man.
+
+@672 gold: surgeons are a crowd; a doer-less passive; the group is a crowd
+keep
+f- Katana Man|interrogated|surgeons
+f- Yoru|interrogated|surgeons
+f+ Katana Man|other_verb|threaten|where Katana Man and Yoru threaten the surgeons to reveal where Chainsaw Man is hidden.|actual|stated|
+f+ Yoru|other_verb|threaten|where Katana Man and Yoru threaten the surgeons to reveal where Chainsaw Man is hidden.|actual|stated|
+f- Chainsaw Man|other_verb|dismembered
+t+ no_doer|They reveal that Chainsaw Man has already been dismembered with his parts placed into several boxes.
+t+ crowd_end|The group eventually arrives on third floor of the basement
+
+@673 gold: the telling is speech with its ordered act; a personality is no capability
+keep
+f- Division 4 Male Member|ordered|Denji
+f+ Division 4 Male Member|other_verb|tell|He is also shown to tell Denji to eat more because he's young during the party.|actual|stated|
+f+ Denji|other_verb|eat|to tell Denji to eat more because he's young|ordered|stated|Division 4 Male Member
+t- capability|He is shown to have a mature
+t+ no_relation|He is shown to have a mature and caring personality during the "newbie welcome party".
+
+@674 gold: ok
+keep
+
+@675 gold: the loading
+keep
+f+ Yoru|other_verb|loads|Yoru harnesses the Tank Devil's power and loads her Gun Devil Right Gauntlet with her entire stockpiled arsenal up to this point.|actual|stated|
+
+@676 gold: Aki's refusal; quote's verb; Power's scoff; the hypothetical line
+keep
+f+ Aki|other_verb|refuses|Aki refuses, however, arguing that the Devil likely has an ulterior motive behind Denji's death.|actual|stated|
+f- Power|other_verb|asks
+f+ Power|other_verb|asking|before cheerily asking an annoyed Denji to play a game of 'sumo'.|actual|stated|
+f+ Power|other_verb|scoffs|Power scoffs, before cheerily asking an annoyed Denji to play a game of 'sumo'.|actual|stated|
+t+ no_relation|As such, allowing Denji to die would guarantee the other's safety.
+
+@677 gold: the school's location; descriptions are no capability
+keep
+t- capability|This high school is large
+f+ Fourth East High School|located_at|Tokyo|This high school is large and sprawling, located in a heavily populated area of Tokyo.|actual|stated|
+t- capability|At least five stories tall
+t+ no_relation|At least five stories tall, it provides a wide view of the city from the rooftop, allowing a person to see the decrepit cityscape of apartments, buildings, and factories.
+t- capability|Its hallways are comparable
+t+ no_relation|Its hallways are comparable to that of any other school, seeming to mostly be polished and well-built.
+
+@678 gold: the assignment carries its act
+keep
+f+ Aki|other_verb|take|assigning him to take care of Denji and Power in his apartment|ordered|stated|Makima
