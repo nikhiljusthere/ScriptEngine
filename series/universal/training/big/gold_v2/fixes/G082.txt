@@ -1,0 +1,65 @@
+@799 gold: ok
+keep
+
+@800 gold: game options are production
+keep
+f- Android 14|other_verb|appears
+f- Android 14|other_verb|appear
+f- Android 14|other_verb|unlocked
+t+ production|In Dragon Ball Xenoverse 2, his hairstyle appears as Male Hair Option Type 19.
+t+ production|As part of the Super Pack 2 DLC, Android 14's Clothes appear as clothing options for the Future Warrior.
+t+ production|Pieces of Android 14's Clothes can be unlocked as rewards in New Parallel Quest 104: "Vados the Talent Scout".
+
+@801 gold: the anime/manga comparison is production; the shared outcome stays
+keep
+- Zamasu|killed|Gowasu
+f- Whis|other_verb|rewinds
+f- Shin|used|Time Ring
+f- Shin|other_verb|go
+f- Shin|other_verb|sees
+t+ production|In the anime, Whis, Beerus, Shin and Goku watch as Zamasu kill Gowasu, and right afterward, Whis rewinds time.
+t+ production|In the manga, Shin uses the Time Ring to go ahead in time and sees the atrocities committed by Zamasu.
+
+@802 gold: one name; a power unlock is no awakening; gave takes a recipient; described objects; Dende's report
+keep
+r Guru=>Grand Elder Guru
+- Piccolo|awakened|-
+f+ Shenron|other_verb|unlocks|Piccolo takes the first wish and the dragon unlocks his latent potential, even noting that he also threw in a bonus.|actual|stated|
+f- Shenron|gave|bonus
+f- Dende|revealed|-
+f+ Dende|revealed|-|and reveals that Bulma has been collecting them to prevent their misuse again.|actual|stated|
+f- Bulma|other_verb|collecting
+f+ Bulma|other_verb|collecting|Bulma has been collecting them to prevent their misuse again.|claimed|stated|Dende
+f- Piccolo|took|first wish
+f+ Piccolo|other_verb|takes|Piccolo takes the first wish|actual|stated|
+f- Bulma|used|two remaining wishes
+f+ Bulma|other_verb|uses|Bulma then uses the two remaining wishes to ask for a butt lift and longer eyelashes.|actual|stated|
+
+@803 gold: ok
+keep
+
+@804 gold: ok
+keep
+
+@805 gold: ok
+keep
+
+@806 gold: ok
+keep
+
+@807 gold: game versions are production
+keep
+f- Future Trunks|gained_power|Super Saiyan 2
+f- game developer|other_verb|made
+t+ production|In Budokai 2, Budokai 3, Infinite World, and Budokai HD Collection, Future Trunks is given the Super Saiyan 2 form.
+t+ production|This might be a mistake made by the game developer, originally has his Super Saiyan Third Grade form instead of Super Saiyan 2 in Budokai.
+t- capability|The form is virtually no different
+t+ production|The form is virtually no different to his previous form in the game in terms of looks and techniques.
+t- attire|his hair straightens up
+t+ production|However, in Dragon Ball Heroes and Dokkan Battle, he attains the form, and his hair straightens up and becomes spikier compared to his regular Super Saiyan form.
+
+@808 gold: who uses a technique is capability wording
+keep
+f- Cooler|used|Psycho Barrier
+f- Bojack|used|Psycho Barrier
+t+ capability|It is used by Cooler and Bojack.

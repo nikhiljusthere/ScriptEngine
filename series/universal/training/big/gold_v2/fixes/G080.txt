@@ -1,0 +1,47 @@
+@779 gold: ok
+keep
+
+@780 gold: ok
+keep
+
+@781 gold: a game level is production
+keep
+t- list_header|Cretaceous is the ninth level
+t+ production|Cretaceous is the ninth level in Transformation.
+t- list_header|Enemies encountered here
+t+ production|Enemies encountered here are Raptormen, Pikemen, Archers, Tinysaurus, Pterodactyls, and the boss is an Inflatasaurus Rex (with its weak spot being inside his stomach).
+
+@782 gold: "later Vegeta" is Vegeta's battle with Frieza; the first sentence's fight
+keep
++ Vegeta|fought|Frieza|Piccolo then witnesses the battle between Goku and Frieza, later Vegeta.
+f+ Piccolo|other_verb|fighting|Piccolo has a difficult time fighting him.|actual|stated|
+
+@783 gold: Kami's stated death
+keep
+f+ Kami|dies|-|because Piccolo's death caused Kami's death too|actual|stated|
+
+@784 gold: a game name is production
+keep
+t- no_relation|In Kakarot
+t+ production|In Kakarot, it is named Evil Buster and is one of Super Buu's attacks.
+
+@785 gold: clause object; the identity tie
+keep
+f- Videl|discovered|Great Saiyaman
+f+ Videl|discovered|-|Videl finds out that Gohan is the Great Saiyaman|actual|stated|
+f+ Great Saiyaman|alias_of|Gohan|Videl finds out that Gohan is the Great Saiyaman|actual|stated|
+
+@786 gold: ok
+keep
+
+@787 gold: Shu's fire burned; realizing = learned; the tried verb
+keep
+f- Pilaf|other_verb|burned
+f+ Shu|other_verb|burned|which they hope will expose his tail as they have burned his pants off.|actual|stated|
+f- Pilaf|discovered|-
+f+ Pilaf|learned|-|realizing that Goku no longer has a tail|actual|stated|
+f- Pilaf|other_verb|reaches
+f+ Pilaf|other_verb|grab|Pilaf reaches to grab Goku's tail|attempted|stated|Pilaf
+
+@788 gold: ok
+keep

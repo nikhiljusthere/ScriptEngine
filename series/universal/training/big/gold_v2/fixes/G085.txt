@@ -1,0 +1,78 @@
+@829 gold: ok
+keep
+
+@830 gold: one name; the window does not tie Mecha Frieza to Frieza; backup is the arrival's purpose
+keep
+r Cold=>King Cold
+f- Mecha Frieza|alias_of|Frieza
+f- Kuriza|helped|Mecha Frieza
+f+ Kuriza|helped|Mecha Frieza|Frieza's son Kuriza arrives with Abo and Cado as backup.|planned|stated|Kuriza
+f- Kuriza|helped|King Cold
+f+ Kuriza|helped|King Cold|Frieza's son Kuriza arrives with Abo and Cado as backup.|planned|stated|Kuriza
+f- Abo|helped|Mecha Frieza
+f+ Abo|helped|Mecha Frieza|Frieza's son Kuriza arrives with Abo and Cado as backup.|planned|stated|Abo
+f- Abo|helped|King Cold
+f+ Abo|helped|King Cold|Frieza's son Kuriza arrives with Abo and Cado as backup.|planned|stated|Abo
+f- Cado|helped|Mecha Frieza
+f+ Cado|helped|Mecha Frieza|Frieza's son Kuriza arrives with Abo and Cado as backup.|planned|stated|Cado
+f- Cado|helped|King Cold
+f+ Cado|helped|King Cold|Frieza's son Kuriza arrives with Abo and Cado as backup.|planned|stated|Cado
+
+@831 gold: ok
+keep
+
+@832 gold: becoming Super Saiyan God is a transformation; Tien enjoyed the party
+keep
+- Goku|awakened|-
+f+ Goku|transformed_into|Super Saiyan God|He later watched Goku become a Super Saiyan God to fight Beerus|actual|stated|
+t- no_relation|then afterwards he later enjoyed
+f+ Tien|other_verb|enjoyed|then afterwards he later enjoyed the rest of Bulma's party.|actual|stated|
+
+@833 gold: a music cue listing is production
+keep
+t- list_header|"Fate"
+t+ production|"Fate" - When King Kai believes Goku can master his techniques.
+
+@834 gold: a game move is production; no pipe in a tag quote
+keep
+t- capability|Nappa's Rampage
+t+ production|Nappa's Rampage - Nappa's special attack in Extreme Butōden.
+t- list_header||-|Forms and Transformations=
+t+ list_header|Forms and Transformations=
+
+@835 gold: a staff credit is production
+keep
+t- list_header|Kindaichi Shōnen
+t+ production|Kindaichi Shōnen no Jikenbo: Kuro Majutsu Satsujin Jiken-hen - Production manager (eps 1-2)
+
+@836 gold: ok
+keep
+
+@837 gold: one name; clause objects; speech by its verbs; the recommendation carries its act; the escape; the plan; a situation is no capability
+keep
+r Roshi=>Master Roshi
+f- Beerus|learned|Quitela's trick
+f+ Beerus|learned|-|Beerus realizes this must be another one of his tricks.|actual|stated|
+f- Master Roshi|suspected|-
+f+ Master Roshi|suspected|-|Master Roshi wonders if they might be dealing with an invisible person|actual|stated|
+f- Quitela|revealed|-
+f+ Quitela|other_verb|confirms|Quitela confirms that this is indeed the case.|actual|stated|
+f- Quitela|other_verb|plan
+f+ Quitela|other_verb|wear|an Quitela's plan is to wear them down like this and then ring them out.|planned|stated|Quitela
+f+ Gohan|other_verb|cover|Roshi recommends that Gohan cover the enemy in blood.|ordered|stated|Master Roshi
+f+ Master Roshi|remembered|-|Remembering the last time he encountered an invisible man|actual|stated|
+f- Gohan|revealed|Gamisalas
+f+ Gohan|revealed|-|thus revealing the vaguely lizard-like outline of their opponent, Gamisalas.|actual|stated|
+f- Quitela|other_verb|thought
+f+ Quitela|other_verb|thinks|but Quitela thinks to himself that they are just getting started.|actual|stated|
+f+ Gamisalas|other_verb|get|However, the invisible enemy still manages to get away|actual|stated|
+f+ Beerus|other_verb|brags|and Beerus brags that such tricks won't work against Universe 7|actual|stated|
+t- capability|she is unable to attack or defend
+t+ no_relation|Still, knowing this doesn't help 18 as she is unable to attack or defend.
+
+@838 gold: staff credits are production
+keep
+t- list_header|Vanguard G
+t+ production|Vanguard G - Kenji Mitsusada (ep 19)
+t- list_header|Cardfight!!
+t+ production|Cardfight!!

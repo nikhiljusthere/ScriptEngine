@@ -1,0 +1,74 @@
+@749 gold: ok
+keep
+
+@750 gold: ok
+keep
+
+@751 gold: associated Devils are a crowd; the eating is a narrated act
+keep
+f- associated Devils|gained_power|-
+t+ crowd_end|This fear, pain and despair from humanity being eaten alive yet being unable to die by these swarms vastly empowered these associated Devils
+f+ Pochita|other_verb|eating|Pochita eating the Death Devil resulted in the empowerment of various Devils embodying pest species like insects, bats and cockroaches|actual|stated|
+
+@752 gold: the planned verbs; the identity tie; descriptive groups
+keep
+f- Yoru|other_verb|wanted
+f+ Yoru|other_verb|fight|despite being by both Yoru and Katana Man to fight them.|planned|stated|Yoru
+f- Katana Man|other_verb|wanted
+f+ Katana Man|other_verb|fight|despite being by both Yoru and Katana Man to fight them.|planned|stated|Katana Man
+f- Denji|other_verb|wants
+f+ Denji|other_verb|find|Denji wants to find Nayuta first|planned|stated|Denji
+f+ Chainsaw Man|alias_of|Denji|When Denji wakes up, Haruka informs Fami of Chainsaw Man being awake.|actual|stated|
+t- deictic|As the ragtag group recovers
+t+ crowd_end|As the ragtag group recovers at her apartment in the aftermath,
+t- deictic|while the others wait
+t+ crowd_end|while the others wait for Denji to awaken.
+t- deictic|This leads to the group
+t+ crowd_end|This leads to the group going to the charred remains of Denji's apartment.
+
+@753 gold: struck down = defeated; met on the same pair; the attempted kill; no deictic
+keep
+- Power|met|Zombie Devil
+- Power|met|Debt Collector
+- Power|fought|Zombie Devil
+- Power|fought|Debt Collector
++ Power|defeated|Zombie Devil|the two are swiftly struck down by the arrival of Power.
++ Power|defeated|Debt Collector|the two are swiftly struck down by the arrival of Power.
+f+ Zombie Devil|other_verb|kill|the Zombie Devil and the Debt Collector attempt to kill Denji|attempted|stated|Zombie Devil
+f+ Debt Collector|other_verb|kill|the Zombie Devil and the Debt Collector attempt to kill Denji|attempted|stated|Debt Collector
+t- deictic|In a new reality
+t+ no_relation|In a new reality where Pochita never existed
+
+@754 gold: "they" are Aki and Galgali; preparing is actual; Aki's refusal
+keep
+f- Galgali|other_verb|prepare
+f+ Aki|other_verb|prepare|When they prepare to fight Reze together|actual|stated|
+f+ Galgali|other_verb|prepare|When they prepare to fight Reze together|actual|stated|
+f+ Aki|other_verb|engage|Before they can engage her|planned|stated|Aki
+f+ Aki|other_verb|refuses|When Aki refuses, Galgali apologizes to Reze.|actual|stated|
+
+@755 gold: the proposal is an actual act; the planned and hypothetical verbs
+keep
+f- Yoru|other_verb|proposal
+f+ Yoru|other_verb|makes|Yoru makes a proposal that if Denji manages to defeat the Death Devil, then he can have sex with her.|actual|stated|
+f+ Denji|other_verb|defeat|if Denji manages to defeat the Death Devil|hypothetical|stated|Yoru
+f+ Yoru|other_verb|confront|Yoru will instead turn him into a weapon and confront Death by herself.|planned|stated|Yoru
+
+@756 gold: ok
+keep
+
+@757 gold: "they state" is speech by both; leaving is narrated; a state
+keep
+f- Michiko|other_verb|state
+f+ Michiko|other_verb|state|they state that they would be back the next day with the necessary paperwork.|actual|stated|
+f+ Kurose|other_verb|state|they state that they would be back the next day with the necessary paperwork.|actual|stated|
+t- deictic|she leaves with Kurose
+f+ Michiko|other_verb|leaves|she leaves with Kurose|actual|stated|
+f+ Kurose|other_verb|leaves|she leaves with Kurose|actual|stated|
+t+ no_relation|After Aki shows his determination
+
+@758 gold: the name without kanji; a story role is production
+keep
+r Nomo 野茂=>Nomo
+t- no_relation|and a minor character
+t+ production|and a minor character during the Bomb Girl arc.
