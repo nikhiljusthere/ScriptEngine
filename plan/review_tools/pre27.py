@@ -54,7 +54,10 @@ def ctx():
     if not _CACHE:
         _CACHE["ids"], _CACHE["a2"], _CACHE["pas"] = bv.order(), bv.audit2(), bv.br.passages()
         if bv.GOLD:  # unreviewed gold windows show their (lint-fixed) 35B label rows
-            _CACHE["a2"] = {**{r["id"]: r for r in bv.jl(bv.V2)}, **_CACHE["a2"]}
+            # 2026-10-28: show the facts as big_review_v2.base() normalises them (other_verb -> the quote's word, twins
+            # dropped), so removals written from the display match what `fix` applies them to
+            _CACHE["a2"] = {**{r["id"]: {**r, "facts": bv.normalize_facts(r.get("facts") or [], r.get("events") or [], "")}
+                               for r in bv.jl(bv.V2)}, **_CACHE["a2"]}
     return _CACHE["ids"], _CACHE["a2"], _CACHE["pas"]
 
 

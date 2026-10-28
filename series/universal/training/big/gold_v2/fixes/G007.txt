@@ -1,0 +1,70 @@
+@59 gold: ok
+keep
+
+@60 gold: the author's real biography is production, no facts
+keep
+f- Kentarou Miura|created|Berserk
+f- Kentarou Miura|other_verb|debut
+f- Kentarou Miura|other_verb|began
+t+ production|Kentarou Miura was a Japanese and the creator of Berserk.
+t+ production|He made his debut in 1976 with his first short series Miuranger and began his professional career with the short series Ken e No Michi, Futatabi, and Noa.
+
+@61 gold: appearing in a work is production
+keep
+f- Frikka|other_verb|appears
+t+ production|Frikka is a young girl that appears in The Prototype.
+
+@62 gold: adaptation notes are production, no facts
+keep
+f- 1997 anime|other_verb|condensed
+f- 1997 anime|other_verb|taking
+f- 1997 anime|other_verb|omitted
+f- 2016 anime|other_verb|based
+f- 2016 anime|other_verb|takes
+f- Isidro|other_verb|added
+f- Count|other_verb|referenced
+f- Count|other_verb|cut
+f- Snake Lord|other_verb|shown
+t+ production|The first episode of the 1997 anime is a condensed version of the arc
+t+ production|Puck is omitted from this adaption.
+t+ production|The first episode of the 2016 anime is based on first two episodes of the manga
+t+ production|While Isidro did not make an appearance in the manga's respective Black Swordsman bar scene
+t+ production|The Count, meanwhile, is referenced in the anime adaptation
+t+ production|The Snake Lord is not shown in this adaptation.
+
+@63 gold: ok
+keep
+
+@64 gold: ok
+keep
+
+@65 gold: the apostles are unnamed (crowd_end)
+keep
+- Guts|fought|the second apostle
+- Guts|killed|the second apostle
+t- no_relation|He turns to see Serpico
+t+ crowd_end|He turns to see Serpico and Isidro struggling against two apostles.
+t- no_relation|Guts leaps through the plume
+t+ crowd_end|Guts leaps through the plume of flame, sparing Grunbeld only a single look before turning his attention to the apostles accosting Serpico and Isidro.
+t+ crowd_end|Guts throws the Dragon Slayer, beheading one of the apostles and getting stuck in the next one's head.
+t+ crowd_end|grab the Dragon Slayer and fully decapitate the second apostle
+
+@66 gold: "the Kushan leader" is unnamed (no end); the Moonlight Knight is another character, no alias; "claims" is no verb of the text; the archers are a crowd; the Knight's reference is his act
+keep
+- the Kushan leader|met|Griffith
+- Griffith|fought|the Kushan leader
+t+ crowd_end|As Griffith stabs the Kushan leader in the eye after he questioned him
+f- Griffith|also_known_as|Moonlight Knight
+f- Sonia|other_verb|claims
+t+ crowd_end|She is then amazed to see Kushan archers' arrows fail to hit Griffith.
+f+ Moonlight Knight|other_verb|refer|hearing him refer to Griffith as the Falcon of Light
+
+@67 gold: "Emperor" is a rank prefix; "the top floor" and "the bottommost level" are description places
+keep
+r Emperor Ganishka=>Ganishka
+f- Charlotte|located_at|top floor of the tower
+f- Griffith|located_at|bottommost level
+t+ no_relation|Interestingly, it is directly opposite Griffith's position in the tower at the bottommost level.
+
+@68 gold: ok
+keep

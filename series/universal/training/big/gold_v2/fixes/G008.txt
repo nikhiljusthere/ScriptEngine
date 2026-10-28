@@ -1,0 +1,72 @@
+@69 gold: the revenge sought is Zondark's (planned by the Count); "can see and speak" is capability; the destroyed head has no doer
+keep
+f- Count|other_verb|seek
+f+ Zondark|other_verb|seek|so that he can seek his revenge on Guts|planned|stated|Count
+f- Count|other_verb|sees
+t+ capability|he can see and speak through his offshoot even after the host's head is destroyed
+f- Zondark|other_verb|destroyed
+
+@70 gold: a release note is production
+keep
+t- no_relation|They were later placed
+t+ production|They were later placed at the end of volume 22.
+
+@71 gold: a prosthetic hand is no place (design description)
+keep
+f- Cannon Arm|located_at|prosthetic hand
+t+ attire|The weapon is hidden behind the prosthetic hand
+
+@72 gold: no article in ends; the old man, the wagon, the eyes, the bandits and the cultists are unnamed (tags); other_verb takes the passage's verb
+keep
+r the Black Swordsman=>Black Swordsman
+- the old man|met|Black Swordsman
+f- passing wagon|other_verb|Black Swordsman
+t+ no_doer|a passing wagon spots him.
+f- Black Swordsman|other_verb|-
+f+ Black Swordsman|other_verb|refuses|which he refuses for the driver's safety.
+f- the old man|other_verb|he'll
+t+ crowd_end|The old man driving offers to give the Swordsman a lift
+t+ crowd_end|the old man insists he'll be alright due to his own faith in God.
+f- Black Swordsman|other_verb|wagon
+f+ Black Swordsman|other_verb|boards|the latter boards the wagon
+f- red, glaring eyes|other_verb|Black Swordsman
+t+ no_doer|several red, glaring eyes gaze at him from the shadows.
+f- the bandits|other_verb|incident
+f- the bandits|other_verb|strength
+t+ crowd_end|The bandits from earlier, now reporting the incident at the tavern to the others, marvel at the mysterious Black Swordsman's inhuman strength.
+t+ crowd_end|One of the bandits remarks that he set up an ambush for the Swordsman.
+f- cultists|other_verb|performed
+f- cultists|located_at|location
+t+ crowd_end|He then tells the other bandits the tale of a group of cultists that performed sacrifices to appease forest spirits, the location where they currently reside at, in an attempt to frighten them.
+
+@73 gold: F_became: a refugee escort is a role (tagged); Farnese's explanation and leaving are named-doer acts (A101)
+keep
+f- Farnese|became|refugee escort
+t+ no_relation|her being made a refugee escort
+t- no_doer|She explained that the Holy Iron Chain Knights
+f+ Farnese|other_verb|explained|She explained that the Holy Iron Chain Knights are not yet suited to take on so mighty a foe as Guts
+t- no_doer|As Farnese left the amphitheater
+f+ Farnese|other_verb|left|As Farnese left the amphitheater, she heared the officials converse about the dream they all experienced with the Falcon of Light and how best to interpret it.
+
+@74 gold: ok
+keep
+
+@75 gold: the second ability sentence needs its tag
+keep
+t+ capability|She can also paralyse them or change their behaviour.
+
+@76 gold: ok
+keep
+
+@77 gold: "an entity" is no name; "a massive void" is a description place; the bidden act (orders convention)
+keep
+f- Entity|revealed_as|Idea of Evil
+f+ Idea of Evil|other_verb|corrects|but corrects Griffith's initial assessment of its identity; it is the Idea of Evil
+f- Idea of Evil|located_at|void
+f- Griffith|located_at|void
+t+ no_relation|both it and Griffith are floating in a massive void
+f+ Griffith|other_verb|look|It bids Griffith to look around|ordered|stated|Idea of Evil
+
+@78 gold: "the town mayor" is unnamed
+keep
+f- town mayor|other_verb|makes

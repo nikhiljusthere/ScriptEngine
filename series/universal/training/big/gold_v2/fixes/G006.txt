@@ -1,0 +1,55 @@
+@49 gold: ok
+keep
+
+@50 gold: "flower spirit" is a description, not an alias; non-verb other_verb rows go; suspecting a clause = suspected|-
+keep
+f- Chitch|alias_of|flower spirit
+f- Guts|other_verb|prisoner
+f- Guts|other_verb|encounter
+f- Guts|other_verb|suspected
+f+ Guts|suspected|-|who he initially suspected to be a hallucination.
+
+@51 gold: ok
+keep
+
+@52 gold: ok
+keep
+
+@53 gold: the artbook line is production
+keep
+t+ production|War Cry (1998) &ndash; The artbook features a collection of artwork from the manga.
+
+@54 gold: other_verb takes the passage's verb ("asks"); "Frikka's father" is unnamed (no end); the old woman is a crowd end; Guts declining is a named-doer act
+keep
+f- Guts|other_verb|asked
+f+ Guts|other_verb|asks|insensitively asks for more drink from Frikka's mother
+f- Frikka's father|other_verb|explains
+t+ no_relation|Frikka's father explains that the granddaughter was one of the girls Tepes made into a maidservant
+t- no_doer|An old woman begs Guts
+t+ crowd_end|An old woman begs Guts to avenge her granddaughter;
+t- deictic|Guts still declines and leaves.
+f+ Guts|other_verb|declines|Guts still declines and leaves.
+
+@55 gold: ok
+keep
+
+@56 gold: a cross-media design note is production
+keep
+f- Gien|other_verb|differs
+t+ production|His appearance in The Egg of the King and Memorial Edition differs from the one he has in the manga and first anime series.
+
+@57 gold: ok
+keep
+
+@58 gold: reporting in person is no contacted; the heretics are a crowd; the abbot (unnamed) is not Azan; "frightening events" are no doer
+keep
+f- Holy Iron Chain Knights|contacted|Azan
+f+ Holy Iron Chain Knights|other_verb|report|Several Holy Iron Chain Knights report to Azan at the foot of the Tower of Conviction
+f- heretics|other_verb|inhabit
+f- heretics|other_verb|apprehended
+f- heretics|other_verb|speaking
+t+ crowd_end|the few heretics left who inhabit the nearby cave have been apprehended
+t+ crowd_end|Apparently, the heretics had been speaking of the appearance of monsters.
+f- Azan|other_verb|break
+f- frightening events|other_verb|pervade
+t+ no_relation|The abbot begins to break down, fearful of all the frightening events which now pervade throughout Albion.

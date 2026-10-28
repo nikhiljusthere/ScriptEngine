@@ -1,0 +1,44 @@
+@9 gold: Casca is brought as a prisoner to her trial: captured stays; "the Black Swordsman" is an epithet (A148): no alias
+keep
+f- Guts|alias_of|Black Swordsman
+
+@10 gold: a description sentence is no list header
+keep
+t- list_header|Rosine was a female apostle
+t+ no_relation|Rosine was a female apostle and a major antagonist in the Conviction Arc.
+
+@11 gold: ok
+keep
+
+@12 gold: ok
+keep
+
+@13 gold: Mule is a named doer (A101); the force's banner line has no relation
+keep
+t- no_relation|Both he and Mule gaze up
+f+ Mule|other_verb|gaze|Both he and Mule gaze up at a new force of soldiers.
+t+ no_relation|This one is by far the largest to have appeared, and it flies under a slightly modified version of the emblem of the Band of the Falcon.
+
+@14 gold: "west of the continent" and "an interstice" are no named places (the quote did not state the first)
+keep
+f- Skellig|located_at|west of the continent
+f- Elfhelm|located_at|an interstice
+t+ no_relation|To the far west of the continent, far across the western sea from the port city of Vritannis, lies the island of Skellig.
+
+@15 gold: the other ritual clauses are named-doer acts (A101)
+keep
+f+ Mozgus|other_verb|raises|raises his arms to shoulder level at his sides as though to bask in the sun which beams down on him through the circular hole in the roof
+f+ Mozgus|other_verb|slams|slams his whole torso and face down onto the floor with a furious passion
+
+@16 gold: "the bandit leader" is unnamed: no rows with him (crowd_end)
+keep
+- Isidro|fought|the bandit leader
+- Isidro|met|the bandit leader
+f- bandit leader|other_verb|tries
+t+ crowd_end|Angered, the bandit leader tries to kill the boy, but the youth is too quick; he uses sausage links to stun the man before striking him with a sheathed sword.
+
+@17 gold: selling his own ward breaks faith: betrayed stays; the traits line is a capability tag
+keep
+
+@18 gold: ok (a group's war on a place is no event)
+keep

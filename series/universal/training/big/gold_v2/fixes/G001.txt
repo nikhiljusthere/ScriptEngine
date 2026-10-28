@@ -1,0 +1,65 @@
+@1 gold: a war is no group (member_of); the unnamed noble is no end (tagged); the mask is legal attire
+keep
+f- Valancia|member_of|Hundred-Year War
+f- noble|other_verb|claimed_fame
+t+ no_relation|According to the noble, his combat tournaments have gained a legendary amount of fame across many countries.
+
+@2 gold: "the leader" is unnamed; the heretics' belief is a crowd's; Isidro's acts are named-doer lines (A101)
+keep
+f- leader|ordered|Casca
+f- Casca|suspected|-
+f+ Isidro|other_verb|followed|Isidro has followed the heretics who kidnapped Casca into their cavern hideout
+f+ Isidro|other_verb|hides|He hides among the rocks that surround the perimeter of the cavern's bowels and watches as the leader addresses his naked followers.
+t- no_relation|Isidro has followed the heretics
+t- no_relation|He hides among the rocks
+t- no_relation|He proclaims that the Holy See
+t+ no_doer|He proclaims that the Holy See has lost sight of the true meaning of the dream of the Falcon of Light, but says that he and his followers know the truth: those who possess power are the true victors.
+t+ no_doer|To showcase his point, he has Casca brought out
+t+ crowd_end|whom all the heretics believe is a powerful witch
+
+@3 gold: Guts stepping forward is a named-doer line (A101)
+keep
+t- no_relation|Just then, Guts steps forward
+f+ Guts|other_verb|walks|Guts steps forward and casually walks toward the sea of trolls, despite protests from the priest.
+
+@4 gold: ok
+keep
+
+@5 gold: ok
+keep
+
+@6 gold: he walks up and chops her before she can speak: no met; the chop that knocks her out is one act: defeated; other_verb takes the passage's verb; the healed wounds are Guts's; realizing = learned|-; taking her = twin of captured; "not in top form" = copula
+keep
+- Guts|fought|Farnese
+- Guts|met|Farnese
+f- Farnese|other_verb|prayed
+f+ Farnese|other_verb|pray|begins to pray
+f- Guts|other_verb|gears_up
+f+ Guts|other_verb|gears|He quickly gears up
+f- the wounds on his arm|healed|-
+f+ Guts|healed|-|the wounds on his arm have healed somewhat
+f- Guts|other_verb|realizes
+f+ Guts|learned|-|he realizes that while the wounds on his arm have healed somewhat
+f- Guts|other_verb|is_not_in_top_form
+f- Guts|other_verb|take
+f+ Guts|other_verb|startling|Guts walks up behind her, startling her
+
+@7 gold: ok
+keep
+
+@8 gold: other_verb takes the passage's own verb word; Luca is the named watcher (A101)
+keep
+f- Nina|other_verb|invites
+f+ Nina|other_verb|inviting|inviting Joachim to "run away together".
+f- Luca|other_verb|follows
+f+ Luca|other_verb|follow|who has snuck into the cave to follow Nina.
+t- no_doer|The entire scene is discreetly watched
+f+ Luca|other_verb|watched|The entire scene is discreetly watched by both the mysterious being previously seen at the Tower of Conviction, and Luca,
+
+@1 gold: the gate turned claimed_fame into "fame"; the unnamed noble's row goes
+keep
+f- noble|other_verb|fame
+
+@6 gold: the gate turned is_not_in_top_form into "top"; copula row goes
+keep
+f- Guts|other_verb|top

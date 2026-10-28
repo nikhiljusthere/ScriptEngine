@@ -1,0 +1,55 @@
+@29 gold: "the goat-man" is an unnamed creature (no end); "the Black Swordsman" is an epithet (as b9)
+keep
+- the goat-man|fought|Guts
+t+ crowd_end|the goat-man charges once more, ramming Guts with its enormous horns
+
+@30 gold: the urging happened (actual); Corkus's two murder attempts are stated
+keep
+f- Corkus|other_verb|urges
+f+ Corkus|other_verb|urges|He urges some crossbowmen to kill the newcomer
+f+ Corkus|other_verb|kill|Corkus leads a group of mercenaries to kill Guts and take his earnings|attempted|stated|Corkus
+f+ Corkus|other_verb|kill|Corkus leads six swordsmen to Guts' tent to kill him in his sleep|attempted|stated|Corkus
+
+@31 gold: a body part is no place
+keep
+f- Sigur's Brand|located_at|abdomen
+t+ no_relation|Sigur's Brand was on her abdomen.
+
+@32 gold: the exiled Bakiraka closing in is Rakshas; "the Bakiraka member" is not tied to Daiba; Rakshas's leaving is a named-doer act; "the dark" jail is a description place
+keep
+f- Silat|other_verb|closes
+f+ Rakshas|other_verb|closes|the shadow of the exiled Bakiraka closes in.
+f- Daiba|learned|-
+t+ crowd_end|Alarmed, the Bakiraka member realizes where Rakshas is heading to.
+t- no_relation|Swiftly, the apostle blends
+f+ Rakshas|other_verb|leaves|Swiftly, the apostle blends into the shadows and leaves the place.
+f- Guts|located_at|jail
+
+@33 gold: the Western Sea and the elves' ruler are stated
+keep
+f+ Elfhelm|located_at|Western Sea|kingdom located on the island of Skellig in the Western Sea
+f+ Flower Storm Monarch|leader_of|Elfhelm|their ruler, the Flower Storm Monarch
+
+@34 gold: ok
+keep
+
+@35 gold: ok
+keep
+
+@36 gold: F_became description: no row; "his younger brother, mother, and father" are unnamed: no killed rows (the act stays a fact)
+keep
+f- Ganishka|became|callous, calculated prince
+- Ganishka|killed|Ganishka's younger brother
+- Ganishka|killed|Ganishka's father
+- Ganishka|killed|Ganishka's mother
+f+ Ganishka|other_verb|brought|one who brought about the deaths of his younger brother, mother, and father
+
+@37 gold: ok
+keep
+
+@38 gold: the order was given (actual); "notices that ..." takes object - (A115)
+keep
+f- Azan|other_verb|orders
+f+ Azan|other_verb|orders|Azan orders the rampaging horses be rounded up to pursue.
+f- Azan|discovered|Serpico
+f+ Azan|discovered|-|He notices that Serpico is the first and only knight to have mounted and given chase

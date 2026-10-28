@@ -1,0 +1,41 @@
+@19 gold: ok
+keep
+
+@20 gold: ok
+keep
+
+@21 gold: "the cardinals" are an unnamed crowd: no row (crowd_end); the convoy is a crowd too
+keep
+f- cardinals|other_verb|elect
+t+ crowd_end|While the Pontiff sleeps in his tent, the cardinals consider the possibility that he may die
+t- no_relation|A ways away from Vritannis
+t+ crowd_end|A ways away from Vritannis, a convoy of clergymen of the Holy See on their way to Vritannis have stopped to allow the Pontiff to rest, as he's fallen ill.
+
+@22 gold: Casca, Judeau and Pippin join the general battle, not a fight with Wyald; the purpose clause is Casca's
+keep
+- Casca|fought|Wyald
+- Judeau|fought|Wyald
+- Pippin|fought|Wyald
+f- Judeau|other_verb|join
+f- Pippin|other_verb|join
+
+@23 gold: ok
+keep
+
+@24 gold: ok
+keep
+
+@25 gold: ok
+keep
+
+@26 gold: Daiba flees on the garuda after Guts defeats him: escaped
+keep
++ Daiba|escaped|Guts|being mounted by Daiba to escape after being defeated by Guts
+
+@27 gold: ok
+keep
+
+@28 gold: a card-game rule is production, not capability
+keep
+t- capability|Effect cards are removed
+t+ production|Effect cards are removed from the field after reading their ability, unless they have the Eternal subtype.
