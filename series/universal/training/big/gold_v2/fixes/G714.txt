@@ -1,0 +1,141 @@
+@3589 gold: ok
+keep
+
+@3590 gold: Tudor is a country, no captor
+keep
+- Tudor|captured|Sigur
+- Tudor|captured|Grunbeld
+t+ no_doer|during their imprisonment by Tudor.
+
+@3591 gold: a copula; a belief is actual suspected
+keep
+f- Flora|other_verb|is
+t+ no_relation|According to Flora, causality is a spiral, not a circle
+f- Flora|other_verb|believes
+f+ Flora|suspected|-|She also believes that fate is bestowed by "God"|actual|stated|
+
+@3592 gold: a garment is no doer
+keep
+f- silver surcoat|other_verb|confers
+t+ capability|Made from the same silver as her dagger, the silver surcoat Farnese wears confers upon her protection from evil forces.
+
+@3593 gold: siblings; an adjective; a denied grudge; a trait
+keep
+f+ Magnifico|sibling_of|Farnese|as part of her brother Magnifico's scheme|actual|stated|
+f- Roderick|other_verb|aware
+f- Roderick|other_verb|hold
+f+ Roderick|other_verb|hold|he does not hold anything against her|actual|denied|
+t- capability|Roderick is
+t+ no_relation|Roderick is a quick-witted, aware, decisive, and capable captain.
+
+@3594 gold: the army is the knights' group; one stated defeat (A145); full name; countries and passives; possessive groups act through the head; the order's act
+keep
+r Adon=>Adon Coborlwitz
+- Griffith|fought|Boscogn
++ Griffith|fought|Purple Rhino Knights|As Griffith and his 2,000 men attack the Purple Rhino Knights' seemingly overwhelming army
+- Guts|fought|Boscogn
+f- Midland|other_verb|sees
+t+ no_doer|Midland sees a chance to win the Hundred-Year War by removing Tudor's foothold in Doldrey.
+f+ White Tiger Knights|other_verb|capture|the White Tiger Knights, fails miserably in an attempt to capture it.|attempted|stated|White Tiger Knights
+f- King of Midland|other_verb|attempt
+t+ no_doer|a meeting with the King of Midland and his generals is appointed as a determination in a second attempt to capture Doldrey.
+f+ Griffith|other_verb|speaks|Griffith speaks up to use his Band of the Falcon at the King's disposal|actual|stated|
+f+ Griffith|leader_of|Band of the Falcon|Griffith speaks up to use his Band of the Falcon at the King's disposal|actual|stated|
+f- Band of the Falcon|other_verb|split
+t+ no_doer|The Band of the Falcon is split into two
+f- Casca's party|other_verb|awaiting
+f+ Casca|other_verb|capture|and Casca's party awaiting to capture Doldrey from the back.|planned|stated|Casca
+f+ Casca|other_verb|capture|This allows Casca's party the perfect opportunity to capture Doldrey unnoticed and kill the few left behind|actual|stated|
+f+ Boscogn|other_verb|send|but is soon ordered by Gennon to send all of his armies out of the fortress to attack the remaining forces.|ordered|stated|Gennon
+f- Tudor army|other_verb|retreat
+t+ crowd_end|with the Tudor army losing morale and no choice but to retreat
+f- King of Midland|contacted|envoy from Tudor
+f+ King of Midland|other_verb|receives|the King of Midland receives an envoy from Tudor with a proposition of an armistice which he agrees|actual|stated|
+
+@3595 gold: interview lines are dialogue (one line, one tag)
+keep
+t- no_relation
+t+ dialogue|Especially in modern times, with social networks and messaging services like LINE becoming popular, the young are always in contact with each other. They never learn to confront their own selves. So I don’t know if they’re getting a head-start, or if it’s something else entirely.
+
+@3596 gold: the quote line is dialogue; the alias direction; ruling a place is leader_of
+keep
+f- Danan|also_known_as|Flower Storm Monarch
+t- dialogue|But please
+t+ dialogue|As ruler of this island's elves, I am formally known as the Flower Storm Monarch. But please, call me Danan.
+f- Danan|alias_of|Flower Storm Monarch
+f+ Flower Storm Monarch|alias_of|Danan|The Flower Storm Monarch (real name Danan)|actual|stated|
+f- Danan|located_at|Elfhelm
+f+ Danan|leader_of|Elfhelm|ruling over Elfhelm on the island of Skellig.|actual|stated|
+f+ Elfhelm|located_at|Skellig|ruling over Elfhelm on the island of Skellig.|actual|stated|
+
+@3597 gold: a clan is no member; Silat's statement; the group's acts
+keep
+f- Bākiraka|member_of|Kushan clan
+t+ no_relation|The Bākiraka are a Kushan clan living in a hidden village in impregnable lands.
+t- capability|As stated by Silat
+f+ Silat|other_verb|stated|As stated by Silat, the villagers are all warriors trained in killing arts.|actual|stated|
+t- capability|There was a time
+t+ no_relation|There was a time when no one outside the clan would be allowed in.
+t- no_relation|During the Hundred-Year War
+f+ Bākiraka|other_verb|dispatched|During the Hundred-Year War, they dispatched a hundred rulers and vassals from assorted countries.|actual|stated|
+
+@3598 gold: wanting is actual + the planned act; Luca's own acts
+keep
+f- Luca|other_verb|wants
+f+ Luca|other_verb|wants|but she wants the gifts to stop altogether.|actual|stated|
+f+ Luca|other_verb|returned|Luca, Nina and Casca have all returned to their tent|actual|stated|
+f+ Nina|other_verb|returned|Luca, Nina and Casca have all returned to their tent|actual|stated|
+f+ Casca|other_verb|returned|Luca, Nina and Casca have all returned to their tent|actual|stated|
+t- no_relation|The situation worries
+f+ Luca|other_verb|knows|The situation worries Luca, as she knows that suddenly living a much more luxurious life than the neighboring refugees will quickly get her and the other girls who live with her reported to the Holy See.|actual|stated|
+t- crowd_end|orders the girls
+f+ Luca|other_verb|orders|She quickly orders the girls to distribute the gifts around camp so as to maintain good relations|actual|stated|
+
+@3599 gold: narrated speech; crowds of astral beings; a doer-less surrounding
+keep
+f- Danan|revealed|-
+f+ Danan|other_verb|telling|telling of an "overflowing tide from the depths of the earth".|actual|stated|
+f- group|other_verb|surrounded
+t+ no_doer|Shortly afterward, the group is surrounded by a mass coming from the foundations of the island
+f- individuals of an astral nature|located_at|shore
+f- individuals of an astral nature|other_verb|fade
+t+ crowd_end|Now close to the shore, individuals of an astral nature begin to fade away
+f- astral creatures native to Elfhelm|resides_at|Elfhelm
+f- astral creatures native to Elfhelm|other_verb|fade
+
+@3600 gold: mental acts are actual, their content planned; "he" is the Imp; entering the room
+keep
+f- Nina|other_verb|considering
+f+ Nina|other_verb|considering|disgusted with herself for even considering abandoning Casca.|actual|stated|
+f+ Nina|other_verb|abandoning|disgusted with herself for even considering abandoning Casca.|planned|stated|Nina
+f- the leader|other_verb|knows
+f+ Imp|other_verb|knows|and that he knows that either her or Casca is the witch|actual|stated|
+f- Nina|other_verb|consider
+f+ Nina|other_verb|consider|This makes Nina once again consider telling the torturers that Casca is the witch|actual|stated|
+f+ Nina|other_verb|telling|This makes Nina once again consider telling the torturers that Casca is the witch|planned|stated|Nina
+f- Nina|other_verb|thinking
+f+ Nina|other_verb|thinking|thinking that if she admits the truth, she may delay if not cancel her own execution.|actual|stated|
+f- Nina|other_verb|decides
+f+ Nina|other_verb|decides|Nina decides not to say anything|actual|stated|
+f- Nina|other_verb|willing
+f+ Nina|other_verb|willing|willing herself to be courageous for Luca's sake.|actual|stated|
+f- Nina|other_verb|pleads
+f+ Nina|other_verb|pleads|Nina mentally pleads for Luca to save her.|actual|stated|
+f+ Luca|other_verb|save|Nina mentally pleads for Luca to save her.|planned|stated|Nina
+t- deictic|What little mettle
+f+ Nina|other_verb|enters|What little mettle Nina has is immediately lost when she enters the torture room.|actual|stated|
+
+@3601 gold: ok
+keep
+
+@3602 gold: deciding is actual
+keep
+f- Roderick|other_verb|decides
+f+ Roderick|other_verb|decides|As Roderick decides against entering the cargo hold|actual|stated|
+
+@3603 gold: ok
+keep
+
+@3604 gold: ok
+keep
+

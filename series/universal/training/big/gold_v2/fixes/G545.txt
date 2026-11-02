@@ -1,0 +1,126 @@
+@3146 gold: ok (short per-line tags not checked; record kept)
+keep
+
+@3181 gold: a thing description; Bofoi designed it (in-universe, not production); citations
+keep
+t- capability|The Gotz Okkie
+t+ no_relation|The Gotz Okkie (ゴッツオッキー, Gottsu Okkī) is an aircraft carrier.
+t- production|It was designed by Bofoi
+f+ Bofoi|created|Gotz Okkie|It was designed by Bofoi.|actual|stated|
+t+ citation|(Chapter 155 (Online))
+t+ citation|(Chapter 169 (Online))
+
+@3182 gold: restraining is defeated; the tackle is Tanktop Master's attack
+keep
+- Forest King|fought|Tanktop Master
++ Forest King|defeated|Tanktop Master|He even managed to restrain Tanktop Master, an S-Class hero who possesses great physical strength, using only one of his numerous branches.
++ Tanktop Master|fought|Forest King|being durable enough to withstand a powerful tackle from Tanktop Master without sustaining visible damage.
+
+@3183 gold: a drama-CD line holds no event
+keep
+- Genos|met|Saitama
+
+@3184 gold: the call came from the Association with an ordered trip; a class is no group; an order of a noun; a doer-less task; the advice's ordered act; the reply and planned protection; the citation
+keep
+f- Genos|contacted|Hero Association
+f+ Hero Association|contacted|Genos|Genos receives a call to go to the Hero Association for unknown reasons.|actual|stated|
+f+ Genos|other_verb|go|Genos receives a call to go to the Hero Association for unknown reasons.|ordered|stated|Hero Association
+f- Bang|member_of|S-Class heroes
+f- Hero Association|ordered|mass evacuation
+f+ Hero Association|other_verb|ordered|who reveals that the Hero Association ordered a mass evacuation|actual|stated|
+f- Bang|gave|Bang
+f- Bang|gave|Genos
+f+ Bang|other_verb|explains|He explains that they were given an impossible task|actual|stated|
+t+ no_doer|He explains that they were given an impossible task
+f- Dragon Level Disaster|located_at|Z-City
+t+ no_relation|a Dragon Level Disaster is coming to Z-City in the form of a giant meteor.
+f+ Genos|other_verb|evacuate|Genos is advised by Bang to evacuate before the meteor impacts.|ordered|stated|Bang
+f+ Bang|other_verb|replies|which he replies that he decided to protect his dojo|actual|stated|
+f+ Bang|other_verb|protect|which he replies that he decided to protect his dojo|planned|stated|Bang
+t+ citation|(Chapter 21)
+
+@3185 gold: a copula is the denied recall; realizing is learning; a fragment tag
+keep
+f- Tanktop Master|other_verb|is
+f+ Tanktop Master|other_verb|recall|but is unable to recall where he has heard it before.|actual|denied|
+f- Tanktop Master|other_verb|realizing
+f+ Tanktop Master|learned|-|but fails after realizing that he is no match for her psychic powers.|actual|stated|
+t- deictic|During the Dark Matter Thieves
+
+@3186 gold: a graduate is a member
+keep
+f- Rumbling Thunder|other_verb|graduate
+f+ Rumbling Thunder|member_of|Ninja Village|As a graduate of the Ninja Village and a member of the Heavenly Ninja Party|actual|stated|
+
+@3187 gold: a surprise attack is no met; getting ready is planned; the planned fight; the jaws hold; carrying and dropping off
+keep
+- Genos|met|Gums
+- Bang|met|Gums
+f- Genos|other_verb|defibrillate
+f+ Genos|other_verb|defibrillate|He then gets ready to defibrillate Tanktop Master|planned|stated|Genos
+f+ Genos|other_verb|fight|As Genos and Bang prepare to fight Fuhrer Ugly|planned|stated|Genos
+f+ Bang|other_verb|fight|As Genos and Bang prepare to fight Fuhrer Ugly|planned|stated|Bang
++ Gums|captured|Genos|Gums attacks Genos from behind, clamping him in its jaws
+f+ Genos|other_verb|carrying|they begin leaving the monsters and carrying Tatsumaki and Tanktop Master towards Fubuki|actual|stated|
+f+ Bang|other_verb|carrying|they begin leaving the monsters and carrying Tatsumaki and Tanktop Master towards Fubuki|actual|stated|
+f+ Genos|other_verb|drops|He drops Tanktop Master off and immediately heads back into the battle|actual|stated|
+
+@3188 gold: Okame-chan is the one who determined
+keep
+f- Child Emperor|other_verb|determined
+f+ Okame-chan|other_verb|determined|Okame-chan determined his physical strength to be greater than Stinger, an A-Class hero.|actual|stated|
+
+@3189 gold: King's arrival home and games
+keep
+f+ King|other_verb|arrived|When King has finally arrived at his home, he immediately prepared his console games.|actual|stated|
+f+ King|other_verb|prepared|he immediately prepared his console games.|actual|stated|
+
+@3190 gold: ok
+keep
+
+@3191 gold: the jaw slice is a wound; the ordered stop; Garou's disappearance
+keep
+f+ Garou|wounded|Zombieman|but Garou appears behind him, faster than he can react, slicing across his jaw.|actual|stated|
+f+ Garou|other_verb|stop|Zombieman then yells at Garou to stop|ordered|stated|Zombieman
+f+ Garou|other_verb|disappears|but once again, Garou instantly disappears|actual|stated|
+
+@3192 gold: belief is suspicion; Bomb points out; the ordered cool-off and departure; opting is actual; the visits; the brothers; Bang's ruffian past
+keep
+f- Bang|other_verb|believed
+f+ Bang|suspected|-|while Bang believed he had gained significant strength|actual|stated|
+f+ Bomb|other_verb|pointed|Before their clash, Bomb pointed out that while Bang believed he had gained significant strength|actual|stated|
+f+ Bang|other_verb|cool|Bomb advised him to cool off before departing.|ordered|stated|Bomb
+f+ Bomb|other_verb|departing|Bomb advised him to cool off before departing.|actual|stated|
+f- Bang|other_verb|develop
+f+ Bang|other_verb|develop|He opted to develop a new defensive fighting style|actual|stated|
+f+ Bomb|other_verb|visiting|visiting his dojo and taking pride in his brother's transformation.|actual|stated|
+f+ Bomb|sibling_of|Bang|Disturbed by his brother's violence, Bomb confronted Bang|actual|stated|
+t- no_doer|As Bang's backstory
+f+ Bang|other_verb|challenging|it's revealed that he was once a reckless ruffian, challenging strong opponents and frequently sending them to the hospital.|actual|stated|
+
+@3193 gold: an author note is production
+keep
+t- citation|Note: ONE
+t+ production|Note: ONE slightly rigged this third poll
+
+@3194 gold: ok
+keep
+
+@3195 gold: ok
+keep
+
+@3196 gold: ok
+keep
+
+@3197 gold: the citation is its own tag
+keep
+t- dialogue|(To Saitama
+t+ dialogue|(To Saitama and the Blizzard Group) "Even if we won like this... we wouldn't get any stronger. We'll be weak for the rest of our lives. Exactly like Miss Tornado said... Don't you think so, everyone...?"
+t+ citation|(Webcomic Chapter 105)
+
+@3198 gold: video-game lines are production
+keep
+t- list_header|LEGO Fortnite - A
+t- list_header|LEGO Fortnite: Odyssey
+t+ production|LEGO Fortnite - A collection of LEGO-themed game experiences:
+t+ production|LEGO Fortnite: Odyssey - A survival and crafting open-world game.

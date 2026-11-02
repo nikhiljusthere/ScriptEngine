@@ -1,0 +1,154 @@
+@3073 gold: an unnamed monster is no end; thinking is suspicion; the denied want; the assassins are a crowd
+keep
+- King|killed|the monster
+- King|met|the monster
+t- no_relation|a monster disguised as Waganma
+t+ crowd_end|King stumbled upon a monster disguised as Waganma and stopped his own assassination by intimidating the monster into having a heart attack and melting.
+f+ King|other_verb|stumbled|While wandering in the Monster Association Headquarters, King stumbled upon a monster disguised as Waganma|actual|stated|
+f+ King|other_verb|stopped|and stopped his own assassination by intimidating the monster into having a heart attack and melting.|actual|stated|
+t+ crowd_end|King was beset upon by six elite assassins
+f- King|other_verb|thought
+f+ King|suspected|-|In reality, King thought they were civilian fans of his and didn't want to be bothered with them|actual|stated|
+f+ King|other_verb|using|using the hunting of monsters as an excuse to get them out of his hair.|actual|stated|
+f- King|other_verb|didn't
+f+ King|other_verb|want|In reality, he just didn't want to be responsible for the child|actual|denied|
+f+ King|other_verb|phrased|and phrased his attempts at dissuading him in an intimidating way.|actual|stated|
+
+@3074 gold: a copula; Genus sends the squad; the squad is a crowd; learning keeps no object; heading is no arrival
+keep
+f- Genus|other_verb|becomes
+f+ Genus|other_verb|sends|Dr. Genus becomes interested in Saitama and sends a special squad of mutants to his home to capture him and bring him to his base.|actual|stated|
+f+ Genus|other_verb|capture|sends a special squad of mutants to his home to capture him and bring him to his base.|planned|stated|Genus
+t+ crowd_end|Saitama and Genos defeat the squad
+f- Saitama|learned|House of Evolution
+f- Genos|learned|House of Evolution
+f+ Saitama|learned|-|having obtained information about the location of the House of Evolution|actual|stated|
+f+ Genos|learned|-|having obtained information about the location of the House of Evolution|actual|stated|
+t- deictic|head straight for it.
+f+ Saitama|other_verb|head|head straight for it.|actual|stated|
+f+ Genos|other_verb|head|head straight for it.|actual|stated|
+
+@3075 gold: ok
+keep
+
+@3076 gold: ok
+keep
+
+@3077 gold: ok
+keep
+
+@3078 gold: a people is no end (an alias, home, plan and extinction of a race); Saitama stops them
+keep
+f- Subterranean People|also_known_as|True People of the Earth
+f- Subterranean People|resides_at|earth's crust
+f- Subterranean People|other_verb|take
+f- Subterranean People|dies|-
+t+ crowd_end|The Subterranean People (地底人, Chitējin) are the self-proclaimed True People of the Earth (真の地球人, Shin no Chikyūjin).
+t+ crowd_end|and live under the earth's crust, but grew too numerous in numbers and planned to take over the surface.
+f+ Saitama|other_verb|stopped|They were stopped and chased back into the ground by Saitama.|actual|stated|
+t+ crowd_end|Some time after that, they were driven to extinction.
+
+@3079 gold: general mechanics are capability; deeming is suspicion; shielding a building is protection; a technique is no doer; Saitama intercepts; a noting is actual
+keep
+f- Void|located_at|hyperspace
+f- Void|discovered|-
+t+ capability|To use it, he forms a hand seal with both hands, which transports him to hyperspace, a higher-dimensional space outside the causality of the universe.
+t+ capability|In this transdimensional space, he perceives endless floating "bubbles" representing parallel worlds, which he can interact with using a special jutsu.
+t+ capability|The blade then materializes in the physical realm, enlarged, and moves toward the target, cutting through the very fabric of space
+f- Void|other_verb|deems
+f+ Void|suspected|-|which Void deems unstoppable.|actual|stated|
+f- Blast|helped|Hero Association headquarters
+f+ Blast|protected|Hero Association headquarters|which would have destroyed it had Blast not intervened by teleporting it away.|actual|stated|
+f- Dimension Slash|other_verb|destroyed
+f- Saitama|discovered|Dimension Slash
+f+ Saitama|other_verb|intercepted|The only instance it was seen (by Saitama) was when he intercepted it|actual|stated|
+f- Void|other_verb|shock
+f- Blast|other_verb|noted
+f+ Blast|other_verb|noted|as noted by Blast.|actual|stated|
+
+@3080 gold: ok
+keep
+
+@3081 gold: ok
+keep
+
+@3082 gold: ok
+keep
+
+@3083 gold: the planned candy apples; the engine roar
+keep
+f+ Saitama|other_verb|get|Saitama says he wants to get some candy apples to eat|planned|stated|Saitama
+t+ no_relation|The King Engine starts roaring
+
+@3084 gold: the citizens and the robot are crowds; Genos' leaps, notes, throws and landing; the decision; a suitcase is no transformer; wondering is stated
+keep
+t- no_relation|The warning signal
+t+ crowd_end|The warning signal to evacuate, shocked the citizens and are left without hope.
+t- no_relation|Genos leaps
+f+ Genos|other_verb|leaps|Genos leaps from the rooftops and notes that the meteor will also destroy the outskirts of Z-City.|actual|stated|
+f+ Genos|other_verb|notes|Genos leaps from the rooftops and notes that the meteor will also destroy the outskirts of Z-City.|actual|stated|
+f+ Genos|other_verb|decides|He decides to test his prototype|actual|stated|
+f- suitcase|transformed_into|pair of arms
+t- no_relation|He throws the suitcase
+f+ Genos|other_verb|throws|He throws the suitcase in the air, which forms into a set pair of arms|actual|stated|
+f+ Genos|other_verb|lands|and lands on a rooftop nearby the point of impact.|actual|stated|
+f- Genos|suspected|-
+f+ Genos|suspected|-|Genos wonders if he can do some damage with his incineration cannons|actual|stated|
+t- no_relation|As he prepares himself
+t+ crowd_end|As he prepares himself, a huge robot flies above him towards the point of impact of the meteor.
+
+@3085 gold: ok
+keep
+
+@3086 gold: a narrative sentence is no citation; a rank is no became row
+keep
+t- citation|He was a top contender
+t+ no_relation|He was a top contender in the 22nd Super Fight and a five-time champion of the tournament.
+t+ citation|(Chapter 53)
+f- Suiryu|became|Neo Leader
+
+@3087 gold: a copula; thinking is suspicion; acknowledging is actual; the seeing
+keep
+f- Sweet Mask|other_verb|being
+f- Atomic Samurai|other_verb|thinks
+f+ Atomic Samurai|suspected|-|Atomic Samurai thinks Sweet Mask is just a pompous blowhard|actual|stated|
+f- Atomic Samurai|other_verb|acknowledges
+f+ Atomic Samurai|other_verb|acknowledges|but acknowledges his strength after seeing him fight Black Sperm.|actual|stated|
+f+ Atomic Samurai|other_verb|seeing|after seeing him fight Black Sperm.|actual|stated|
+
+@3088 gold: "the doctor" is an unnamed title; the shop partners; the defeated warriors are a crowd
+keep
+f- The doctor|owns|Takoyaki shop
+f- The doctor|allied_with|Armored Gorilla
+f- The doctor|allied_with|Mosquito Girl
+f- The doctor|other_verb|survive
+f- The doctor|other_verb|decides
+f- The doctor|other_verb|witnessing
+t+ crowd_end|Although the doctor and some of his clones survive, he decides to give up his experiments
+f+ Armored Gorilla|other_verb|runs|He now runs a Takoyaki shop alongside Armored Gorilla and Mosquito Girl.|actual|stated|
+f+ Mosquito Girl|other_verb|runs|He now runs a Takoyaki shop alongside Armored Gorilla and Mosquito Girl.|actual|stated|
+t- deictic|Following the partial destruction
+t+ crowd_end|Following the partial destruction of its headquarters and the defeat or death of its strongest warriors at the hands of Saitama and Genos, the organization appears to be effectively defunct.
+
+@3089 gold: interview lines are dialogue
+keep
+t- capability|Human brain
+t- no_relation|I said it before
+t- deictic|Hmm...but manga
+t- no_relation|If someone gives up
+t- no_relation|If you've been drawing
+t- no_relation|I started out
+t- deictic|Let's not talk
+t+ dialogue|Human brain can only draw what you have in it, like if you ask me to draw a color I never seen before, no way I can do it.
+t+ dialogue|I said it before, you can see one's personality through the manga.
+t+ dialogue|Hmm...but manga is not something to have such a big talk on.
+t+ dialogue|If someone gives up everything to draw manga, it doesn't seem right too.
+t+ dialogue|If you've been drawing for 5 years without achieving anything, the 5 years cannot be considered into the working experience.
+t+ dialogue|I started out with becoming an assistant , and I thought I could become mangaka at anytime, but time just flies by.
+t+ dialogue|Let's not talk about such heavy topic alright...pardon me, I was a bit sleepy and didn't explain it good enough.
+
+@3090 gold: the citation is its own tag
+keep
+t- capability|This light is bright
+t+ capability|This light is bright enough to blind both Saitama and Flash.
+t+ citation|(Chapter 135)

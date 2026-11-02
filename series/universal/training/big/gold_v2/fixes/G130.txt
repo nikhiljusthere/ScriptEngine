@@ -1,0 +1,65 @@
+@1403 gold: a described armor is no end; recovering is no healing; Yorozu's punch
+keep
+f- Yorozu|wore|insect armor
+f- Piercing Ox|healed|-
+f+ Piercing Ox|other_verb|recovered|The shikigami quickly recovered and was ready to make a second attack.|actual|stated|
+f+ Yorozu|other_verb|hit|Yorozu hit it with a straight punch reinforced with cursed energy before it could.|actual|stated|
+
+@1404 gold: the attempted kill; an unnamed caller is a crowd; Mei Mei receives, shares and advises
+keep
+f+ Pseudo-Geto|other_verb|killed|she was almost killed by Pseudo-Geto and had to escape with Ui Ui's cursed technique|attempted|stated|Pseudo-Geto
+f- the caller|other_verb|thanks
+t+ crowd_end|As the person on the other end thanks her
+t- no_doer|Suddenly, Mei Mei receives
+f+ Mei Mei|other_verb|receives|Suddenly, Mei Mei receives a phone call, causing her to leave the bed and answer it.|actual|stated|
+f+ Mei Mei|other_verb|shares|Mei Mei shares a bed with Ui Ui in a hotel room.|actual|stated|
+f+ Mei Mei|other_verb|advises|Mei Mei then advises them to sell all their Japanese stock and Tokyo real estate immediately|actual|stated|
+
+@1405 gold: one name; an item is no doer or ordered end; the stated past kill; Satoru turns
+keep
+r Geto=>Suguru Geto
+f- Suguru Geto|ordered|Prison Realm
+f+ Suguru Geto|other_verb|telling|Geto's voice echoes through the area, telling Prison Realm to activate with the command: "gate open".|actual|stated|
+f- Prison Realm|transformed_into|mass of flesh
+t+ no_doer|Prison Realm opens and spreads out into a mass of flesh with a single eye
+t- deictic|He turns back around to see Geto,
+f+ Satoru|other_verb|turns|He turns back around to see Geto, someone he killed himself a year ago.|actual|stated|
++ Satoru|killed|Suguru Geto|He turns back around to see Geto, someone he killed himself a year ago.
+
+@1406 gold: deciding is actual with the planned attack; the parry; traits; citations
+keep
+f- Hakari|other_verb|decided
+f+ Hakari|other_verb|decided|decided to attack Charles's blind spots with relentless pressure|actual|stated|
+f+ Hakari|other_verb|attack|decided to attack Charles's blind spots with relentless pressure|planned|stated|Hakari
+f+ Hakari|other_verb|parrying|acted accordingly by parrying his attempts.|actual|stated|
+t- capability|High Tactical Intellect
+t+ no_relation|High Tactical Intellect: Hakari doesn't present himself as a fighter with a plan because he's fearless and straightforward.
+t+ citation|(Chapter 182)
+t+ citation|(Chapter 183)
+
+@1407 gold: the asked acts; points are no owned thing
+keep
+f+ Ryu|other_verb|give|Yuta asked them individually to give him their points, to which they agreed.|ordered|stated|Yuta
+f+ Uro|other_verb|give|Yuta asked them individually to give him their points, to which they agreed.|ordered|stated|Yuta
+f- Yuta|owns|190 points
+f+ Yuta|other_verb|had|Yuta had a total 190 points after the ordeal.|actual|stated|
+
+@1408 gold: one name; a report is no remote contact here; clause objects; described places; a barrier is no thing end; expecting is belief; the tried verb; realizing = learned
+keep
+r Geto=>Suguru Geto
+f- Satoru|contacted|Ijichi
+f+ Satoru|other_verb|receives|In Shinjuku during the Night Parade, Satoru receives a report from Ijichi on Yuta's background.|actual|stated|
+f- Satoru|learned|Yuta's background
+f- Satoru|learned|Geto's scheme
+f+ Satoru|learned|-|This makes him wise to Geto's scheme|actual|stated|
+f- Toge|located_at|school
+f- Panda|located_at|school
+f- Panda|destroyed|the curtain
+f+ Panda|other_verb|breaks|They're transported above the curtain, which Panda breaks|actual|stated|
+f- Suguru Geto|other_verb|expects
+f+ Suguru Geto|suspected|-|and expects his adversaries to take five minutes to reach him.|actual|stated|
+f- Suguru Geto|other_verb|tries
+f+ Suguru Geto|other_verb|decide|While Geto tries to decide whether to deal with the newcomers or not|attempted|stated|Suguru Geto
+f- Suguru Geto|other_verb|realizes
+f+ Suguru Geto|learned|-|Getoquickly realizes that Panda took the shortest route to him|actual|stated|
+

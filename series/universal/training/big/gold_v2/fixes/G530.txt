@@ -1,0 +1,94 @@
+@2911 gold: an episode title line is production
+keep
+t+ production|499 — The Battle against the Big Tiger! Who is Going to be Captain?!
+
+@2912 gold: ok
+keep
+
+@2913 gold: the window says Lily; a possessive father is no end; trusting and the plan
+keep
+r Lily Enstomach=>Lily
+f- Dorry|friend_of|Lily's father
+f- Brogy|friend_of|Lily's father
+t- no_relation|Lily put her trust
+f+ Lily|other_verb|put|Lily put her trust in Nami|actual|stated|
+f+ Nami|other_verb|organized|when she organized a plan to help rescue her father|actual|stated|
+
+@2914 gold: ok
+keep
+
+@2915 gold: asking is a request with the ordered stay, not persuading; the perplexing and collapsing
+keep
+f- Dragon|persuaded|Kuma
+f- Ivankov|persuaded|Kuma
+f+ Dragon|other_verb|ask|This causes Dragon and Ivankov to ask him to stay|actual|stated|
+f+ Ivankov|other_verb|ask|This causes Dragon and Ivankov to ask him to stay|actual|stated|
+f+ Kuma|other_verb|stay|This causes Dragon and Ivankov to ask him to stay|ordered|stated|Dragon
+f+ Kuma|other_verb|perplexing|Kuma starts moving, perplexing the Revolutionary Army|actual|stated|
+f+ Kuma|other_verb|collapsing|collapsing and getting back up multiple times|actual|stated|
+
+@2916 gold: a copula; helping in a fight is help only (A104)
+keep
+f- Billy|other_verb|became
+- Billy|fought|Shiki
+f+ Billy|helped|Luffy|gathered the courage to help Luffy fight off the deranged admiral|actual|stated|
+
+@2917 gold: the Oniwabanshu members are a crowd
+keep
+f- Kurozumi Orochi's Oniwabanshu members|other_verb|mistake
+t+ crowd_end|as Kurozumi Orochi's Oniwabanshu members mistake him for a gasha-dokuro
+
+@2918 gold: Hyougoro watches
+keep
+f+ Hyougoro|other_verb|watched|Hyougoro watched as Luffy instantly knocked them out with Supreme King Haki|actual|stated|
+
+@2919 gold: one tag per line; an episode title is production
+keep
+t- list_header|Episodi 74
+t+ list_header|Episodi 74
+t+ production|Ma no Candle! Munen no Namida to Ikari no Namida
+
+@2920 gold: the quote's verb; the forfeited captaincy
+keep
+f- Bellamy|other_verb|brought
+f+ Bellamy|other_verb|bring|After Bellamy managed to bring this back to Doflamingo|actual|stated|
+f+ Bellamy|other_verb|forfeited|forfeited his captaincy to join the Donquixote Pirates|actual|stated|
+
+@2921 gold: ok
+keep
+
+@2922 gold: an SBS line is dialogue
+keep
+t- list_header|N: Of course
+t+ dialogue|N: Of course. The "(S)orry, (B)ut I'm too (S)tupid" corner.
+
+@2923 gold: ok
+keep
+
+@2924 gold: ok
+keep
+
+@2925 gold: a described cabin is no place; the distress call came from Chopper
+keep
+- Gan Fall|departed|Gan Fall's Home
+- Conis|departed|Gan Fall's Home
+- Pagaya|departed|Gan Fall's Home
+f+ Gan Fall|other_verb|left|However, it would not be long before all three left|actual|stated|
+f+ Conis|other_verb|left|However, it would not be long before all three left|actual|stated|
+f+ Pagaya|other_verb|left|However, it would not be long before all three left|actual|stated|
+f- Gan Fall|contacted|Tony Tony Chopper
+f+ Tony Tony Chopper|contacted|Gan Fall|Gan Fall to answer a distress call from Tony Tony Chopper|actual|stated|
+
+@2926 gold: Kureha's comment and Zoro's observation are their acts
+keep
+t- capability|Kureha even commented
+f+ Kureha|other_verb|commented|Kureha even commented on this form being that of a true monster, a danger to friend, foe, and even Chopper himself.|actual|stated|
+f+ Zoro|other_verb|observed|as Zoro observed, this transformation was potentially lethal to Chopper|actual|stated|
+
+@2927 gold: discovered keeps no object
+keep
+f- Franky|discovered|Vegapunk's abandoned laboratory
+f+ Franky|discovered|-|ended up finding Vegapunk's abandoned laboratory|actual|stated|
+
+@2928 gold: ok
+keep

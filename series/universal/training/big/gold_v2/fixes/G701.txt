@@ -1,0 +1,241 @@
+@3367 gold: ok (a bare "7." line is too short for a tag)
+keep
+
+@3403 gold: a kind's habits are no capability; homies are a crowd
+keep
+t- capability|All non-animal homies
+t+ crowd_end|All non-animal homies shown seem to have a fondness for singing and many are completely loyal to Big Mom and will gratefully obey her or her children's commands; however, stronger homies will be more defiant and independent towards her children and most homies are not above questioning Big Mom when she does something out of hand, such as when she goes on a rampage, but they dare not try to physically stop her as homies are frightened of Big Mom's powerful soul, and even a piece of her Vivre Card is enough to make them freeze in their tracks with fear.
+
+@3404 gold: the tribe's access is capability; Linlin's implication
+keep
+t+ capability|Three-Eye Tribe: The members of the Three-Eye Tribe are rumored to have access to this ability through utilizing the power of their third eye.
+f+ Charlotte Linlin|other_verb|implied|(or at least, implied by Charlotte Linlin, it could awaken later in life)|actual|stated|
+
+@3405 gold: a capitalised title used as the name loses its article; the unnamed mother
+keep
+r the Survivor=>Survivor
+r the Mothers=>Mothers
+t+ crowd_end|Except for the Survivor who was saved by the sacrifice of her adoptive mother
+
+@3406 gold: immobilizing is restraining = defeated
+keep
+- Magneto of Earth-41578|fought|Wolverine
++ Magneto of Earth-41578|defeated|Wolverine|as used this to immobilize Wolverine a number of times
+
+@3407 gold: a rank is no became; Thanos breaks free
+keep
+f- Carol Danvers|became|Centurion
+f+ Thanos|other_verb|broke|When the Mad Titan broke free from his chains|actual|stated|
+
+@3408 gold: the unnamed warrior is no end; the group's own name; a request is no persuasion; Angela's death
+keep
+r the Nova Corps=>Nova Corps
+- the mysterious warrior|defeated|Angela
+- the mysterious warrior|defeated|Gamora
+- the mysterious warrior|fought|Angela
+- the mysterious warrior|fought|Gamora
+- the mysterious warrior|killed|Angela
+- the mysterious warrior|defeated|Nova Corps
+- Nova Corps|fought|the mysterious warrior
+- Nova Corps|met|the mysterious warrior
+- Nova Corps|met|Captain Marvel
+- Angela|met|the mysterious warrior
+- Gamora|met|the mysterious warrior
+- Gamora|defeated|the mysterious warrior
+f- the mysterious warrior|discovered|-
+f+ Angela|other_verb|communicate|Angela and Gamora tried to communicate with her|attempted|stated|Angela
+f+ Gamora|other_verb|communicate|Angela and Gamora tried to communicate with her|attempted|stated|Gamora
+f- Gamora|persuaded|Angela
+f+ Gamora|other_verb|saying|Despite Gamora saying to Angela to disarm herself|actual|stated|
+f+ Angela|other_verb|disarm|Despite Gamora saying to Angela to disarm herself|ordered|stated|Gamora
+f+ Angela|other_verb|listen|Angela didn't listen|actual|denied|
+t+ crowd_end|they were attacked and defeated by her.
+f+ Nova Corps|other_verb|take|The Nova Corps showed up soon afterwards and tried to take her down|attempted|stated|Nova Corps
+t+ crowd_end|but she overcame them, killing many of them in the process before recognizing the Kree symbol on Captain Marvel's chest.
+f+ Angela|other_verb|back-stabbed|Angela and Gamora back-stabbed her with their swords, seemingly killing her.|actual|stated|
+f+ Gamora|other_verb|back-stabbed|Angela and Gamora back-stabbed her with their swords, seemingly killing her.|actual|stated|
+f- Angela|resides_at|Knowhere
+f+ Gamora|other_verb|stay|Angela tried to convince Gamora to stay in Knowhere and obey the laws created by Doom|ordered|stated|Angela
+f+ Gamora|other_verb|do|but Gamora couldn't do it.|actual|denied|
+f+ Angela|dies|-|the believed dead mysterious woman back-stabbed Angela and killed her.|actual|stated|
+f+ Gamora|other_verb|attacked|Furious, Gamora attacked her and was almost killed|actual|stated|
+t+ crowd_end|but was saved by her teammates.
+t+ crowd_end|Together, the Guardians managed to finally defeat the warrior.
+
+@3409 gold: ok
+keep
+
+@3410 gold: the window's spelling; the changer is Colossus; deciding is actual
+keep
+r Kitty Pryde=>Kitty Pride
+f- X-Men|other_verb|change
+f+ Colossus|other_verb|change|as a plan of the X-Men to make Colossus change his mind|planned|stated|X-Men
+f+ Colossus|other_verb|decided|Colossus finally decided to stay with the Acolytes and take care of Magneto.|actual|stated|
+
+@3411 gold: no pipe in a quote; the trivia states in-universe knowledge
+keep
+t- production|| Trivia
+f+ Taskmaster|learned|-|Taskmaster seemed to know that both Stan Lee and Peter Parker were S.H.I.E.L.D. agents|actual|apparent|
+f+ Stan Lee|member_of|S.H.I.E.L.D.|Taskmaster seemed to know that both Stan Lee and Peter Parker were S.H.I.E.L.D. agents|actual|stated|
+f+ Peter Parker|member_of|S.H.I.E.L.D.|Taskmaster seemed to know that both Stan Lee and Peter Parker were S.H.I.E.L.D. agents|actual|stated|
+f+ Taskmaster|other_verb|know|but he didn't know that Peter Parker was Spider-Man.|actual|denied|
+f+ Spider-Man|alias_of|Peter Parker|but he didn't know that Peter Parker was Spider-Man.|actual|stated|
+
+@3412 gold: development notes are production
+keep
+f- Jon Bernthal|other_verb|conceived
+f- One Last Kill|other_verb|developed
+t+ production|The idea of the special was first conceived by Punisher actor Jon Bernthal during the filming of {{sl
+t+ production|Daredevil: Born Again}} season 1, and the one-shot special was later revealed to be developed in February 2025 under the "Marvel Special Presentation" banner.
+
+@3413 gold: one name per person (Peter); deciding is actual
+keep
+r Spider-Man=>Peter
+f+ Peter|other_verb|decides|Peter decides to move to Plan B|actual|stated|
+
+@3414 gold: ok
+keep
+
+@3415 gold: no pipe in a quote
+keep
+t- list_header|| Equipment
+t+ list_header|Equipment = S.H.I.E.L.D.
+
+@3416 gold: ok
+keep
+
+@3417 gold: a story-role note is production
+keep
+t- list_header|* Taskmaster
+t+ production|* Taskmaster appears in Spider-Man's imagination throughout the series.
+
+@3418 gold: ok
+keep
+
+@3419 gold: cast credits are production; no pipe in a quote
+keep
+t- list_header
+t+ production|Moore}} as Curtis Hoyle
+t+ production|Keili Barrett}} as Maria Castle
+t+ production|Andre Royo}} as Dre
+t+ production|John Douglas Thompson as Johnny
+t+ production|Colton Hill as a fictionalized version of himself
+t+ production|Nick Koumalatsos as a fictionalized version of himself
+t+ production|Mila Jaymes as Charli
+t+ production|Jamal Lloyd Johnson as Barry
+t+ production|Adeline Bernthal as Lisa Castle
+t+ production|Eduardo Campirano as Frank Castle Jr.
+t+ production|Roe Rancell as Dennis
+t+ production|Mugga as Debbie
+t+ production|Rafael R.
+
+@3420 gold: a confrontation that turns into the fight is no met; being held is the capture; the tried escape
+keep
+- Red She-Hulk|met|She-Hulk
+f- She-Hulk|other_verb|held
+f+ She-Hulk|other_verb|escape|They watch footage of the She-Hulk trying to escape from the AIM facility|attempted|stated|She-Hulk
+
+@3421 gold: garbage and thing subjects; healing damage is no healed; membership; departing
+keep
+f- Warbound|other_verb|S.H.I.E.L.D
+f- Manhattan Island|other_verb|breaking
+f- Hiroim|healed|damage
+f+ Hiroim|other_verb|heal|Hiroim was able to heal the damage|actual|stated|
+f+ Hiroim|other_verb|departed|before he and the others departed, escaping into the sewers.|actual|stated|
+f+ Korg|member_of|Warbound|Channeling the rock-based powers of his fellow Warbound Korg|actual|stated|
+f+ Hiroim|member_of|Warbound|Channeling the rock-based powers of his fellow Warbound Korg|actual|stated|
+
+@3422 gold: the unnamed scientist is no end; a raid is no group; stopping Sky Shark; the Legion acts as a group; a failed prevention
+keep
+f- American scientist|created|gyroscope device
+f- American scientist|resides_at|farmhouse
+f- Sky Shark|attacked|American scientist
+f+ Sky Shark|other_verb|gunning|They arrived too late to prevent Skyshark from gunning the scientist down.|actual|stated|
+f- Patriot|other_verb|prevent
+f+ Patriot|other_verb|prevent|They arrived too late to prevent Skyshark from gunning the scientist down.|actual|denied|
+f+ Thin Man|other_verb|prevent|They arrived too late to prevent Skyshark from gunning the scientist down.|actual|denied|
+f+ Patriot|other_verb|rushed|The Patriot and Thin Man rushed to the farmhouse of an American scientist|actual|stated|
+f+ Thin Man|other_verb|rushed|The Patriot and Thin Man rushed to the farmhouse of an American scientist|actual|stated|
+f- Sky Shark|leader_of|Nazi air raid
+f+ Sky Shark|other_verb|led|from a Nazi air raid led by Sky Shark|actual|stated|
++ Liberty Legion|defeated|Sky Shark|After stopping the Sky Shark, the Legion members dismissed the Thing's mission
+f- Patriot|other_verb|dismissed
+f+ Liberty Legion|other_verb|dismissed|the Legion members dismissed the Thing's mission to recover a lost cylinder of Vibranium as science fiction|actual|stated|
+f- Brain Drain|built|Swastika-shaped air dreadnought
+f+ Brain Drain|other_verb|launch|the Nazi's scientist Brain Drain managed to launch his new Swastika-shaped air dreadnought.|actual|stated|
+
+@3423 gold: ok
+keep
+
+@3424 gold: governments are no doers; one coordinated attack-and-defeat; the real name + alias; gave takes a recipient; realizing; self pairs; attempts
+keep
+r Wonder Man=>Simon Williams
+r the Fantastic Four=>Fantastic Four
+- Thor|fought|Kang
+f- United States government|ordered|Avengers
+f- Thor|helped|United States government
+t+ no_doer|The United States government responded by deploying the Avengers
+f+ Thor|other_verb|accompanying|with Thor accompanying.|actual|stated|
+f+ Kang|other_verb|ordered|arrived in the modern age and ordered the surrender of the world.|actual|stated|
+f- Baron Zemo|gave|ionic powers
+f+ Baron Zemo|other_verb|empowering|this time ionically empowering financially ruined inventor Simon Williams into the superhuman known as Wonder Man.|actual|stated|
+f- Simon Williams|also_known_as|Simon Williams
+f+ Wonder Man|alias_of|Simon Williams|financially ruined inventor Simon Williams into the superhuman known as Wonder Man.|actual|stated|
+f+ Simon Williams|other_verb|infiltrate|Wonder Man was then sent to infiltrate the Avengers|ordered|stated|Baron Zemo
+f- Baron Zemo|ordered|Avengers
+f+ Avengers|other_verb|seek|and have them seek a cure for the ionic powers that were actually killing him.|planned|stated|Baron Zemo
+f- Simon Williams|wounded|ionic powers
+f+ Simon Williams|wounded|-|the ionic powers that were actually killing him.|actual|stated|
+f- Simon Williams|discovered|-
+f+ Simon Williams|learned|-|Wonder Man realized where his true allegiances were|actual|stated|
+f+ Simon Williams|dies|-|appeared to sacrifice his life to save the Avengers|actual|apparent|
+f+ Mole Man|other_verb|destroy|When the Mole Man threatened to destroy New York City|planned|stated|Mole Man
+f- Thor|other_verb|try
+f+ Thor|other_verb|go|Thor and the Avengers tried to go into battle against him|attempted|stated|Thor
+f- Thor|persuaded|Thor
+f- Avengers|persuaded|Avengers
+f+ Fantastic Four|persuaded|Thor|but were convinced to step aside by the Fantastic Four who defeated their oldest foe.|actual|stated|
+f+ Fantastic Four|persuaded|Avengers|but were convinced to step aside by the Fantastic Four who defeated their oldest foe.|actual|stated|
+
+@3425 gold: the planned sorting
+keep
+f+ Ben|other_verb|sort|Ben tells him that he's tired and wants to sort out the details in the morning.|planned|stated|Ben
+
+@3426 gold: the window's name Helen; peoples and a pantheon are no ends
+keep
+r Helen of Troy=>Helen
+f- Poseidon|helped|Greeks
+f- Hera|helped|Greeks
+f- Athena|helped|Greeks
+f- Aphrodite|helped|Trojans
+f- Ares|helped|Trojans
+t+ crowd_end|Poseidon, Hera, and Athena aided the Greeks, while Aphrodite and Ares favored the Trojans.
+t- no_relation|The Olympians took
+t+ crowd_end|The Olympians took great interest in the war.
+
+@3427 gold: a narrated occurrence is no capability-free tag; the alias tie
+keep
+t- no_relation|When the Devil Dinosaur
+f+ Devil Dinosaur|other_verb|swallowed|When the Devil Dinosaur swallowed him|actual|stated|
+f+ Jones|other_verb|assumed|he assumed his spherical form to avoid being digested|actual|stated|
+f+ Jones|other_verb|stop|and he was able to stop Sauron's giant drill from spinning.|actual|stated|
+f+ A-Bomb|alias_of|Jones|As A-Bomb, Jones' superhuman body is much tougher and more resistant to injury than that of an ordinary human.|actual|stated|
+
+@3428 gold: the Dire Wraiths are a race
+keep
+t+ crowd_end|The Dire Wraiths later launched a devastating attack on the S.H.I.E.L.D. Helicarrier.
+t- no_relation|In the aftermath
+t+ crowd_end|In the aftermath the world experienced a wave of attacks by the Dire Wraiths.
+t- no_relation|Every nation
+t+ crowd_end|Every nation in the world experienced Wraith terror attacks via land, sea, or air.
+
+@3429 gold: ok
+keep
+
+@3430 gold: the Sphinx title is ambiguous here (her husband is the Sphinx); a thing subject; the failed control
+keep
+f- Meryet Karim|became|Sphinx
+f- universe|other_verb|reverted
+t+ no_doer|and the universe reverted back to its original condition.
+f+ Meryet Karim|other_verb|control|Meryet reconstituted the Ka Stone but was unable to control the power.|actual|denied|
+

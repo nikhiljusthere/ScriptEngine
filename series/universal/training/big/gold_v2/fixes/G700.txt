@@ -1,0 +1,324 @@
+@3355 gold: a royal family is a description group
+keep
+f- royal family of Midland|built|Wyndham
+t+ crowd_end|Wyndham was founded on the same site by Gaiseric's (supposed) indirect descendants, the royal family of Midland, centuries later.
+
+@3356 gold: witnessing an appearance is no met; Puck's own acts; the forgotten one is Rickert
+keep
+- Griffith|met|Puck
+- Zodd|met|Puck
+f- Rickert|member_of|Kushan soldiers
+f+ Puck|other_verb|sees|Puck then sees that one of the soldiers is Rickert.|actual|stated|
+t- no_relation|Puck talks to Isidro
+f+ Puck|other_verb|talks|Puck talks to Isidro about their situation|actual|stated|
+f+ Rickert|other_verb|asking|where Rickert interjects asking about Casca's status|actual|stated|
+f+ Puck|other_verb|answer|but the elf does not answer|actual|denied|
+f- Puck|other_verb|forgot
+f+ Puck|forgot|Rickert|seemingly not remembering the former|actual|apparent|
+f+ Puck|other_verb|tell|Puck is able to tell the nature of these creatures due to their od|actual|stated|
+t- no_relation|the elf worries about the swordsman
+f+ Puck|other_verb|worries|the elf worries about the swordsman|actual|stated|
+t- no_relation|flies toward the building
+f+ Puck|other_verb|flies|and flies toward the building.|actual|stated|
+
+@3357 gold: ok
+keep
+
+@3358 gold: the no_doer tag covers only the doer-less parts
+keep
+t- no_doer|Griffith is then dropped
+t+ no_doer|Griffith is then dropped from a great height
+t+ no_doer|before Wyald's body is removed from Zodd's horns and cast to the ground.
+
+@3359 gold: a sparring match is practice, no defeated event (A71)
+keep
+- Puck|defeated|Guts
+- Puck|defeated|Isidro
+f+ Puck|other_verb|defeat|Puck has actually managed to defeat both Guts and Isidro with this technique in a sparring match.|actual|stated|
+
+@3360 gold: the voice is unnamed; noun objects; the denial
+keep
+f- Farnese|other_verb|defense
+f- Farnese|other_verb|feeling
+f+ Farnese|other_verb|denies|Farnese's conscience denies the accusations|actual|stated|
+t+ crowd_end|but the other voice in her head continues on, saying that during the time she was whipping herself
+t+ crowd_end|It then suggests that she is using her religion as a defense against her baser desires
+
+@3361 gold: a promise is speech + the planned act; the request carries its act; named doers
+keep
+f- Ichigo|other_verb|promises
+f+ Ichigo|other_verb|promises|As Ichigo promises to beat Ganju quickly|actual|stated|
+f+ Ichigo|other_verb|beat|As Ichigo promises to beat Ganju quickly and catch up to them|planned|stated|Ichigo
+f+ Orihime|other_verb|dragging|prompting Uryū to request her help in dragging Ichigo out|ordered|stated|Uryū
+f- Yoruichi|other_verb|asserting
+f+ Yoruichi|other_verb|asserting|before asserting that he cannot waste time just to see who is more stubborn|actual|stated|
+t- no_relation|Orihime sticks her head
+f+ Orihime|other_verb|asks|Orihime sticks her head through the door and asks them if they are not leaving soon|actual|stated|
+t- deictic|causing Ichigo to scream
+f+ Ichigo|other_verb|scream|causing Ichigo to scream in pain.|actual|stated|
+t- deictic|as Ichigo slowly sits up
+f+ Ichigo|other_verb|sits|as Ichigo slowly sits up with a solemn look on his face.|actual|stated|
+
+@3362 gold: noun and pronoun objects; realizing is learned; the tried hold; Iba's stated plan; citations
+keep
+f- Komamura|other_verb|vengeance
+f+ Komamura|other_verb|swearing|while swearing vengeance upon Yhwach.|actual|stated|
+f+ Komamura|other_verb|hold|He tries to hold on as he begins to revert back from his human form into a wolf|attempted|stated|Komamura
+f- Komamura|other_verb|realizes
+f+ Komamura|learned|-|he realizes that it is the price he must pay for revenge|actual|stated|
+f+ Komamura|other_verb|reflects|and reflects on his choice and what it has cost him.|actual|stated|
+f- Iba|other_verb|him
+f+ Iba|other_verb|tells|who tells him that he is not wrong|actual|stated|
+f+ Iba|other_verb|beat|they will fight and beat Yhwach for Yamamoto|planned|stated|Iba
+f+ Komamura|other_verb|beat|they will fight and beat Yhwach for Yamamoto|planned|stated|Iba
+t+ no_doer|His Bankai begins to lose cohesion as his Humanization Technique begins to wear off.
+t+ citation|(Chapter 558)
+t+ citation|(Chapter 612)
+
+@3363 gold: pinning someone down is restraining = defeated; Rukia's demand carries its act
+keep
+- Renji|fought|Rukia
++ Renji|defeated|Rukia|Renji angrily intercepts her and pins Rukia against a sign pole with his free hand.
+f+ Renji|other_verb|let|When Rukia tearfully demands that he let her go so she can tend to Ichigo|ordered|stated|Rukia
+
+@3364 gold: assuming is suspected
+keep
+f- Riruka|other_verb|assumes
+f+ Riruka|suspected|-|She assumes that Rukia now understands that the Fullbringers are not ordinary humans.|actual|stated|
+
+@3365 gold: ok
+keep
+
+@3366 gold: ok
+keep
+
+@3367 gold: a bare number line
+keep
+t+ list_header|7.
+
+@3368 gold: named doers; a promise is speech + the planned act
+keep
+t- no_relation|Ignoring Orihime's request
+f+ Ulquiorra|other_verb|Ignoring|Ignoring Orihime's request for him to stop|actual|stated|
+f+ Ulquiorra|other_verb|stop|Ignoring Orihime's request for him to stop|ordered|stated|Orihime
+f+ Ulquiorra|other_verb|states|Ulquiorra states that she should have known this was coming|actual|stated|
+f+ Ulquiorra|other_verb|calls|calls her friends idiots whom she should be disgusted with|actual|stated|
+f+ Ulquiorra|other_verb|departs|Ulquiorra departs and promises to be back in an hour|actual|stated|
+f+ Ulquiorra|other_verb|promises|Ulquiorra departs and promises to be back in an hour|actual|stated|
+t- no_relation|Once Ulquiorra leaves
+f+ Orihime|other_verb|sobbing|Orihime stands in place with tears streaming down her cheeks and begins sobbing quietly in the empty room.|actual|stated|
+
+@3369 gold: ok
+keep
+
+@3370 gold: ok
+keep
+
+@3371 gold: ok
+keep
+
+@3372 gold: remembering is a relation; the thanks
+keep
+f- Ichigo|other_verb|remembered
+f+ Ichigo|remembered|-|states he remembered that it made him feel a lot better|actual|stated|
+f+ Ichigo|other_verb|thanking|before thanking Isshin for hitting him because it feels like he has come home|actual|stated|
+
+@3373 gold: a childish squabble between allies is no fight (A71)
+keep
+- Shinji|fought|Hiyori
+f+ Shinji|other_verb|engaged|Shinji once again engaged in a childish fight and argument with Hiyori|actual|stated|
+
+@3374 gold: a dialogue line
+keep
+t+ dialogue|I have merely gambled it. Genryūsai-dono gambled his own life on this battle. I see no reason why I should not do the same. From the moment I set foot on this battlefield, I had already left my life behind!"(Chapter 557)
+
+@3375 gold: battling and being overpowered is one act (A145); the patient is no subject
+keep
+- Piccolo|fought|Goku
++ Piccolo|defeated|Goku|Goku battles and is utterly overpowered by Piccolo.
+f- Goku|other_verb|overpowered
+
+@3376 gold: split garbage subjects; lower-case gods and a partitive group are no ends; an adjective
+keep
+f- All Universe Hide|other_verb|cancelled
+f- Seek Tournament|other_verb|cancelled
+t+ no_doer|But when Beerus hid and fell asleep for fifty years during the tournament, it had to be cancelled.
+f- Gods of Destruction|other_verb|calm
+f- Gods of Destruction|other_verb|felt
+f- Zeno|other_verb|furious
+
+@3377 gold: a race is no end; the planet is Namek; an apposition; Guru releases
+keep
+f- Frieza|hired|Saiyans
+f- Vegeta|located_at|the planet
+f+ Vegeta|located_at|Namek|To make matters worse, Vegeta is on the planet as well.|actual|stated|
+f- Grand Elder Guru|other_verb|guardian
+t+ apposition|guardian of Namek
+f+ Grand Elder Guru|other_verb|release|who is able to release the hidden ki potential inside them|actual|stated|
+t+ no_relation|Both are also after the Dragon Balls for immortality
+
+@3378 gold: ok
+keep
+
+@3379 gold: game content is production
+keep
+f- Sealas|created|anomaly
+f- Froze|suspected|-
+f- Nuova Shenron|other_verb|begs
+t+ production|In World Mission, the anomaly created by Sealas causes the Shadow Dragons to appear from the Namekian Dragon Balls, though they are identical to their regular selves.
+t+ production|Froze speculates that they are being compelled to destroy Namek by an outside source, after Nuova Shenron begs Froze to stop them.
+
+@3380 gold: an adaptation edit is production
+keep
+f- Master Roshi|other_verb|changed
+t+ production|Master Roshi's drink has infamously been changed from beer to water.
+
+@3381 gold: the attempt word (A134)
+keep
+f- Slug|other_verb|attempt
+f+ Slug|other_verb|conquer|By the time Slug made his attempt to conquer Earth|attempted|stated|Slug
+
+@3382 gold: a real-world director is production
+keep
+f- Tatsuya Nagamine|member_of|Toei Animation
+t+ production|Tatsuya Nagamine was a Japanese anime director working for Toei Animation.
+
+@3383 gold: ok
+keep
+
+@3384 gold: ok
+keep
+
+@3385 gold: an anime-vs-manga comparison is production
+keep
+- Gohan|defeated|Obni
+- Kale|defeated|Obni
+
+@3386 gold: the universe is the subject, not Roh
+keep
+f- Roh|other_verb|tolerate
+t+ no_relation|According to Roh, Universe 9 did not tolerate weakness or failure, albeit it could have merely been Roh's own personal and selfish views.
+
+@3387 gold: game content is production
+keep
+t- capability|In Gekishin Squadra
+t+ production|In Gekishin Squadra, it is used during Legendary Super Saiyan Broly's Gigantic Break legendary finisher emote.
+
+@3388 gold: sparring is practice; the sleeping attacks; waking from sleep; wanting is the planned act; Whis tells
+keep
+- Goku|fought|Vegeta
+f+ Goku|other_verb|sparring|Beerus eventually wakes up when Goku and Vegeta were sparring|actual|stated|
+f+ Vegeta|other_verb|sparring|Beerus eventually wakes up when Goku and Vegeta were sparring|actual|stated|
+t- no_relation|Beerus attacks Goku
+f+ Beerus|other_verb|attacks|Beerus attacks Goku several times while he's sleeping.|actual|stated|
+t- deictic|After Beerus fought with Goku
+f+ Beerus|other_verb|wakes|Four months later, Beerus eventually wakes up|actual|stated|
+f+ Beerus|other_verb|sneezed|sneezed a ki blast when a butterfly was fluttering past his nose|actual|stated|
+f- Goku|other_verb|want
+f- Vegeta|other_verb|want
+f+ Goku|other_verb|train|why they want to train with Whis|planned|stated|Goku
+f+ Vegeta|other_verb|train|why they want to train with Whis|planned|stated|Vegeta
+f+ Beerus|other_verb|wonders|Beerus wonders how Goku and Vegeta came to his home|actual|stated|
+f- Whis|other_verb|food
+f+ Whis|other_verb|visiting|Beerus then figures out that Whis has been visiting Earth|actual|stated|
+f+ Whis|other_verb|tells|but he tells him that he only went to Earth to be a food taster for Beerus|actual|stated|
+t- no_relation|there are delicious foods
+
+@3389 gold: a technique's generic use is capability
+keep
+t- crowd_end|Goku Black snares the foe
+t+ capability|Goku Black snares the foe with a pink lightning blast, paralyzing them and allowing him to hurl them to the side.
+
+@3390 gold: an invasion in progress is no stated arrival; names as verbs; Hancock's petrifying power; a noun object
+keep
+- Koby|arrived|Amazon Lily
+f+ Koby|located_at|Amazon Lily|During the Marines' invasion of Amazon Lily to arrest the former Warlord, Boa Hancock, Koby was one of the few people to not get petrified by her powers|actual|stated|
+f- Boa Hancock|other_verb|Yamakaji
+f- Boa Hancock|other_verb|Catarina
+f- Boa Hancock|other_verb|Vasco
+f+ Koby|other_verb|petrified|Koby was one of the few people to not get petrified by her powers|actual|denied|
+f+ Boa Hancock|other_verb|petrified|Vice Admiral Yamakaji and the Titanic Captains Catarina Devon and Vasco Shot were among the Marines and pirates to be petrified.|actual|stated|
+f- Koby|other_verb|bounties
+
+@3391 gold: ok
+keep
+
+@3392 gold: ok
+keep
+
+@3393 gold: ok
+keep
+
+@3394 gold: the window only writes Vivi; garbage and attempt words; the failed reaction
+keep
+r Nefertari Vivi=>Vivi
+f- Cobra|other_verb|at
+f- Wapol|other_verb|attempted
+f+ Wapol|other_verb|provoke|Wapol attempted to provoke a war by hitting Vivi|attempted|stated|Wapol
+f+ Vivi|other_verb|get|did not get upset as he had hoped|actual|denied|
+f- Wapol|other_verb|hoped
+f+ Wapol|other_verb|hoped|did not get upset as he had hoped|actual|stated|
+
+@3395 gold: listeners are no revealed objects; a copula; a thing subject; crowds; the request's act
+keep
+f- Enishida|revealed|Hancock
+f+ Enishida|revealed|-|Enishida tells the two that Hancock had suddenly been struck sick|actual|stated|
+f- Nyon|revealed|Hancock
+f+ Nyon|revealed|-|She tells Hancock that Luffy has come to see her|actual|stated|
+f- Nyon|other_verb|had
+f+ Belladonna|learned|-|Belladonna has no clue what's causing it|actual|denied|
+f+ Hancock|other_verb|answer|Luffy asks Hancock if she could answer the call for the Seven Warlords of the Sea|ordered|stated|Luffy
+t+ crowd_end|her sisters are against the idea (thinking Luffy is trying to take advantage of her)
+f+ Hancock|other_verb|resist|she cannot resist her desire to fulfill Luffy's wish|actual|denied|
+f- Hancock|other_verb|love
+f+ Hancock|other_verb|fallen|Hancock has fallen in love with Luffy|actual|stated|
+f- illness|other_verb|called
+t+ no_relation|As it turns out, the illness is called Love Sickness
+f- previous empresses|dies|-
+t+ crowd_end|as it was this sickness that killed the previous empresses, who tried to suppress their affections rather than admit them and died of broken hearts.
+
+@3396 gold: ok
+keep
+
+@3397 gold: "his son" is Bege's, not Pound's; the wedding is a marriage; Bege takes part
+keep
+f- Pound|parent_of|Gotti
+f+ Bege|other_verb|holding|He stood by holding his son|actual|stated|
+t- no_relation|Bege later participated
+f+ Bege|other_verb|participated|Bege later participated in Lola and Gotti's wedding.|actual|stated|
+f+ Lola|married|Gotti|Bege later participated in Lola and Gotti's wedding.|actual|stated|
+
+@3398 gold: translation and dub notes are production
+keep
+f- Raftel|alias_of|the island
+f- the island|other_verb|spelled
+f- Funimation dub|used|Laugh Tale
+t+ production|Before the release of Stampede, the name of the island was commonly known as "Raftel" in both official and unofficial translations.
+t+ production|In the movie, however, the name is spelled as "Laugh Tale" on an Eternal Pose.
+t+ production|The Funimation dub opted to start using Laugh Tale, though the subbed version did not.
+
+@3399 gold: a merchandise collaboration is production
+keep
+f- Lilith|other_verb|added
+f- Lilith|other_verb|previewed
+t+ production|As part of a collaboration between One Piece and the character summoning device Gatebox, a 3D hologram-like depiction of Lilith was added as a summonable character.
+t+ production|It was previewed for the first time at a special exhibition during the One Piece Day '24 event.
+
+@3400 gold: a subtitle's etymology is production
+keep
+f- Two Piece in a Pod|other_verb|subtitle
+f- Two Piece in a Pod|other_verb|is
+f- the great hito-tsunagi treasure|other_verb|accompanies
+t+ production|The series' subtitle, "Two Piece in a Pod", is a portmanteau of "two peas in a pod" and "the great hito-tsunagi treasure", text that commonly accompanies the One Piece in the main story.
+
+@3401 gold: ok
+keep
+
+@3402 gold: a noun object; an editorial note is production
+keep
+f- Usopp|other_verb|mastery
+f+ Usopp|other_verb|gained|Usopp gained mastery of the Pop Green as a new type of powerful weapon.|actual|stated|
+f- Usopp|other_verb|name
+t- citation|It should be noted
+t+ production|It should be noted that the names given are not confirmed to be the plant's actual name, but rather the name Usopp has given to each attack.
+

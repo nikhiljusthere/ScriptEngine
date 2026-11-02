@@ -1,0 +1,191 @@
+@2067 gold: ok
+keep
+
+@2068 gold: ok
+keep
+
+@2069 gold: ok
+keep
+
+@2070 gold: one name; realizing is learned; attempt verb; declarations and sayings are speech with planned contents; doer-less threat; the Void's and Fisk's narrated acts
+keep
+r the Void=>Void
+f- Fisk|other_verb|was to have
+t+ no_doer|The man's cousin, who worked at a fish store, was to have her feet cut off.
+f- Fisk|other_verb|realized
+f+ Fisk|learned|-|Fisk immediately realized who it was, asking to confirm.|actual|stated|
+f- Void|other_verb|counterpart
+t+ no_relation|It was the Void, the immensely powerful evil entity that was the counterpart to the superhero Sentry.
+f- Fisk|other_verb|tried
+f+ Fisk|other_verb|bargain|Terrified and defenseless, Fisk tried to bargain, reminding the Void that he was a man of considerable means.|attempted|stated|Fisk
+f- Void|other_verb|declared
+f+ Void|other_verb|declared|The Void declared that he would destroy everything Fisk owned, slowly and painfully, and that he hated him.|actual|stated|
+f+ Void|other_verb|destroy|The Void declared that he would destroy everything Fisk owned, slowly and painfully|planned|stated|Void
+f- Void|other_verb|said
+f+ Void|other_verb|said|He pleaded, but the Void said that changed nothing and that he would torture him simply to watch him suffer.|actual|stated|
+f+ Void|other_verb|torture|and that he would torture him simply to watch him suffer.|planned|stated|Void
+f+ Fisk|other_verb|pleaded|He pleaded, but the Void said that changed nothing|actual|stated|
+t- crowd_end|Fisk spoke menacingly
+f+ Fisk|other_verb|spoke|Fisk spoke menacingly while his henchmen aimed their pistols at the man.|actual|stated|
+t- crowd_end|To Fisk's horror
+f+ Void|other_verb|sent|To Fisk's horror, the shadowy figure sent his henchmen to die in the vacuum of space.|actual|stated|
+f+ Fisk|other_verb|asked|As the shadowy being departed, Fisk asked why he had been chosen, but the Void did not answer the question.|actual|stated|
+f+ Void|other_verb|answer|but the Void did not answer the question.|actual|denied|
+
+@2071 gold: membership; the hired capture; a defection is betrayal (no left_group twin)
+keep
+f+ Lasher|member_of|Cell-12|Lasher was a mercenary and a member of Cell-12.|actual|stated|
+f+ Lasher|other_verb|capture|They were hired by Hobgoblin to capture Peter Parker, but failed.|attempted|stated|Lasher
++ Lasher|betrayed|Spider-Men|Lasher defected and was enlisted by Thanos to steal the Mind Stone
+f- Lasher|left_group|Spider-Men
+
+@2072 gold: a doer-less radicalising; the decision is actual
+keep
+f- Super-Skrull|other_verb|radicalized
+t+ no_doer|but Super-Skrull has already been radicalized
+f- Super-Skrull|other_verb|decides
+f+ Super-Skrull|other_verb|decides|and decides to continue the crusade in the real Veranke's honor.|actual|stated|
+f+ Super-Skrull|other_verb|continue|and decides to continue the crusade in the real Veranke's honor.|planned|stated|Super-Skrull
+
+@2073 gold: ok
+keep
+
+@2074 gold: a suit is no doer
+keep
+f- suit|other_verb|had
+t+ attire|It also had a white webbing pattern.
+
+@2075 gold: his people are a crowd
+keep
+f- Mool|other_verb|conquer
+t+ crowd_end|without that signal his people would hopefully never attempt to conquer Earth.
+
+@2076 gold: a collection line is production
+keep
+t- list_header|Volume 25
+t+ production|Volume 25 of the Thor Epic Collection — Years Covered: 1998-1999.
+
+@2077 gold: Kasady's infecting has a doer; he resurfaces in New York
+keep
+t- crowd_end|wreaking havoc
+f+ Cletus Kasady|other_verb|infected|wreaking havoc as he infected citizens via the internet|actual|stated|
+f+ Cletus Kasady|located_at|New York City|when Kasady resurfaced in New York City|actual|stated|
+
+@2078 gold: a telepathic projection is no meeting (remote contact); the date; descriptions are no objects; gave takes the recipient; no surname the window lacks; the offer
+keep
+- Tony Stark|met|Emma Frost
+f+ Emma Frost|contacted|Tony Stark|she disappears, revealing she had been a telepathic projection all along.|actual|stated|
+f+ Tony Stark|dated|Emma Frost|Tony rushes to the restaurant Pensiero for a date with Emma Frost|actual|stated|
+f- Emma Frost|revealed_as|telepathic projection
+f+ Emma Frost|other_verb|disappears|When Tony reaches out to Emma, she disappears, revealing she had been a telepathic projection all along.|actual|stated|
+f- Emma Frost|located_at|park bench
+f+ Emma Frost|other_verb|wipes|Sitting on a park bench nearby, Frost wipes tears from her eyes and walks away.|actual|stated|
+f- Bats|gave|Stepford Cuckoos' memory book
+f+ Bats|gave|Emma Frost|who gives Emma the Stepford Cuckoos' memory book.|actual|stated|
+r Riri Williams=>Riri
+f- Tony Stark|built|wooden ring
+f+ Tony Stark|other_verb|mount|Iron Man works with Ironheart to mount a wooden ring at the foot of the X-Men's former headquarters|actual|stated|
+f+ Riri|other_verb|mount|Iron Man works with Ironheart to mount a wooden ring at the foot of the X-Men's former headquarters|actual|stated|
+f- Tony Stark|created|memorial for Orchis' victims
+f+ Tony Stark|other_verb|turn|They turn it on to display a message in the center of the ring, a memorial for Orchis' victims.|actual|stated|
+f+ Riri|other_verb|join|Tony offers Riri to join him on the West Coast.|planned|stated|Tony Stark
+
+@2079 gold: realms and descriptive enemies are no ends; the suggestion is the Angels' act
+keep
+f- Jotunheim|paid|Angels of Heven
+f- Angels of Heven|allied_with|Asgardians' enemies
+f- Asgardians' enemies|other_verb|prepared
+f- Vanaheim|joined|Asgardians' enemies
+f+ Angels of Heven|other_verb|suggested|they suggested an alliance of all of the Asgardians' enemies|actual|stated|
+t+ crowd_end|After Jotunheim paid the Angels of Heven for devising strategy
+t+ crowd_end|who consequently prepared war against Asgard, including Vanaheim.
+
+@2080 gold: ok
+keep
+
+@2081 gold: a woman taken as a prize is captured; Priam's kingdom
+keep
+f- Agamemnon|took|Cassandra
++ Agamemnon|captured|Cassandra|that Agamemnon had taken for himself as the end of the war
+f+ Priam|leader_of|Troy|Cassandra, king of Troy Priam's daughter|actual|stated|
+
+@2082 gold: an occupation is no row
+keep
+f- Ulik|other_verb|forger
+
+@2083 gold: an attempt is attempted
+keep
+f- Mole Man|other_verb|force
+f+ Mole Man|other_verb|force|in an attempt to force Squirrel Girl to date him.|attempted|stated|Mole Man
+
+@2084 gold: unnamed teams are a crowd
+keep
+f- foreign superpowered teams|helped|rebels
+t+ crowd_end|Those assists from foreign superpowered teams helped the rebels into gaining the upper hand
+
+@2085 gold: a race's looks are no attire (crowd_end)
+keep
+t- attire|The Flb'Dbi are 3'8"
+t+ crowd_end|The Flb'Dbi are 3'8"-tall creatures with brown skin fur that is covered around their faces and in the rears with tufts of red hair.
+t- attire|Their faces are dominated
+t+ crowd_end|Their faces are dominated by two huge, reflective, red gloves that look like the eyes, and a very similar globe in the place of the mouth, the latter surrounded by for more tentacles.
+
+@2086 gold: stopping Parker's ritual is his defeat
+keep
++ Elsa Bloodstone|defeated|Parker|Elsa Bloodstone and Talia Warroad prevented it from being able to fully manifest by stopping the summoning ritual that was being performed by Parker.
++ Talia Warroad|defeated|Parker|Elsa Bloodstone and Talia Warroad prevented it from being able to fully manifest by stopping the summoning ritual that was being performed by Parker.
+f- Elsa Bloodstone|other_verb|stopping
+f- Talia Warroad|other_verb|stopping
+
+@2087 gold: no pipe in quotes; the speaker line ties the codename
+keep
+t- list_header|| 
+t- citation|| 
+f+ Eel|alias_of|Leopold Stryke|Speaker = Eel (Leopold Stryke)|actual|stated|
+t+ citation|QuoteSource = Strange Tales Vol 1 117
+t+ list_header|History =
+
+@2088 gold: the most specific place; stopping the plot is a defeat; the ordered help; a self pair; the slip-away; the Americans leave him
+keep
+- Captain America|arrived|Africa
+- Bucky|arrived|Africa
+- Logan|arrived|Africa
+- Nick Fury|arrived|Africa
++ Captain America|arrived|Djbera|arrival of Captain America, Bucky, Nick Fury (leading the British S.A.S.), and Logan who came to the area
++ Bucky|arrived|Djbera|arrival of Captain America, Bucky, Nick Fury (leading the British S.A.S.), and Logan who came to the area
++ Logan|arrived|Djbera|arrival of Captain America, Bucky, Nick Fury (leading the British S.A.S.), and Logan who came to the area
++ Nick Fury|arrived|Djbera|arrival of Captain America, Bucky, Nick Fury (leading the British S.A.S.), and Logan who came to the area
+- Captain America|fought|Fifth Columnists
++ Captain America|defeated|Fifth Columnists|this plan was stopped by Captain America and Bucky.
++ Bucky|defeated|Fifth Columnists|this plan was stopped by Captain America and Bucky.
+f- Captain America|other_verb|stopped
+f- Bucky|other_verb|stopped
+f+ Logan|other_verb|help|Logan got new orders from his employer, the mysterious Romulus to help Strucker escape|ordered|stated|Romulus
+f- Logan|healed|Logan
+f+ Logan|healed|-|but his mutant healing factor insured his survivial.|actual|stated|
+f+ Bucky|other_verb|slipped|While the heroes were caught in a Nazi fire fight, Bucky slipped away to eliminate Strucker|actual|stated|
+t+ crowd_end|The Americans left Logan to die in the desert
+
+@2089 gold: the scene is a dream (A107): no rows for it; the waking realization is real
+keep
+f- Eddie|other_verb|tries
+f- doctor|other_verb|says
+f- Eddie|other_verb|begs
+f- doctor|other_verb|sticking
+f- Eddie|other_verb|asks
+f- Carnage symbiote|other_verb|engulfs
+t+ no_relation|Dylan tells Eddie that Knull had appeared to him in his dreams
+t+ no_relation|As Eddie protests and tries to apologize, the doctor steps into the room with an IV blood-bag and says that it's time for Eddie to take his medicine.
+t+ no_relation|As Captain America leaves with Dylan, Eddie begs them not to go; the doctor sticking the IV needle into his arm.
+t+ no_relation|Seeing the IV line is full of a viscous red-and-black ooze, Eddie turns to his doctor and asks what it is
+f+ Eddie|learned|-|Eddie realizes this has all been a dream and berates himself|actual|stated|
+t+ no_relation|ripping out the IV line too late, as the Carnage symbiote bursts from the bag and engulfs him.
+
+@2090 gold: becoming a team or a stunt is no row; the human Mother is no named maker of a team
+keep
+f- World|became|Super-Sentinels
+f- Mother|created|Super-Sentinels
+f- Super-Sentinels|became|publicity stunt
+t+ no_relation|The result was to be a team called the "Super-Sentinels", products of a "mating" between their human "Mother" and a machine.
+t+ no_relation|This team was intended to be a publicity stunt that would commercialize the genocide of mutants as part of a reality show.
+t+ no_relation|This was supposed to make it more palatable to the public.

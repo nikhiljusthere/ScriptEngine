@@ -1,0 +1,145 @@
+@3431 gold: one name (Clinton Barton); a victim-only kidnapping is no_doer; deictic tags inside covered sentences
+keep
+r Clint=>Clinton Barton
+f- Project Communion|kidnapped|-
+t- deictic|until after Project Communion
+t+ no_doer|until after Project Communion were kidnapped
+t- deictic|over a disagreement
+t- deictic|30 years had passed
+t- deictic|to allow the pair
+
+@3432 gold: one name each (Marc, Maya); a confrontation that becomes the fight is no met; a personality is no form
+keep
+r Moon Knight=>Marc
+r Echo=>Maya
+- Count Nefaria|met|Maya
+- Count Nefaria|met|Marc
+f- Maya|discovered|-
+f+ Marc|learned|-|to help Marc find out who was the Kingpin of L.A.|planned|stated|Maya
+f- Marc|transformed_into|Wolverine personality
+f+ Marc|other_verb|submitting|submitting to his Wolverine personality, Moon Knight then brutally attacked Nefaria in revenge.|actual|stated|
+
+@3433 gold: a continuation note is production
+keep
+t- list_header|This story
+t+ production|This story is continued in ...
+
+@3434 gold: one name (Jean); repelling sent attackers is defeated and Attuma was not there; the Beast frees Jean; ordered acts; self pair; crowds
+keep
+r Marvel Girl=>Jean
+- Avengers|fought|Attuma
+- Fantastic Four|fought|Tyrak
+- Fantastic Four|fought|Warlord Krang
+- Fantastic Four|fought|Lord Arno
+- Fantastic Four|fought|Orka
+- Fantastic Four|fought|U-Man
+- Avengers|fought|Tyrak
+- Avengers|fought|Warlord Krang
+- Avengers|fought|Lord Arno
+- Avengers|fought|Orka
+- Avengers|fought|U-Man
++ Fantastic Four|defeated|Tyrak|These attacks were opposed and repelled by the combined efforts of the Fantastic Four and both the east and west coast branches of the Avengers
++ Fantastic Four|defeated|Warlord Krang|These attacks were opposed and repelled by the combined efforts of the Fantastic Four and both the east and west coast branches of the Avengers
++ Fantastic Four|defeated|Lord Arno|These attacks were opposed and repelled by the combined efforts of the Fantastic Four and both the east and west coast branches of the Avengers
++ Fantastic Four|defeated|Orka|These attacks were opposed and repelled by the combined efforts of the Fantastic Four and both the east and west coast branches of the Avengers
++ Fantastic Four|defeated|U-Man|These attacks were opposed and repelled by the combined efforts of the Fantastic Four and both the east and west coast branches of the Avengers
++ Avengers|defeated|Tyrak|These attacks were opposed and repelled by the combined efforts of the Fantastic Four and both the east and west coast branches of the Avengers
++ Avengers|defeated|Warlord Krang|These attacks were opposed and repelled by the combined efforts of the Fantastic Four and both the east and west coast branches of the Avengers
++ Avengers|defeated|Lord Arno|These attacks were opposed and repelled by the combined efforts of the Fantastic Four and both the east and west coast branches of the Avengers
++ Avengers|defeated|Orka|These attacks were opposed and repelled by the combined efforts of the Fantastic Four and both the east and west coast branches of the Avengers
++ Avengers|defeated|U-Man|These attacks were opposed and repelled by the combined efforts of the Fantastic Four and both the east and west coast branches of the Avengers
++ Beast|saved|Jean|and during the battle the Beast escaped with Marvel Girl.
+f+ Attuma|other_verb|send|he assigned Attuma to send his armies to attack various American facilities.|ordered|stated|Ghaur
+f+ Tyrak|other_verb|attack|Attuma then sent Tyrak, Warlord Krang, Lord Arno, Orka and U-Man to attack Cape Canaveral|ordered|stated|Attuma
+f+ Krang|other_verb|attack|Attuma then sent Tyrak, Warlord Krang, Lord Arno, Orka and U-Man to attack Cape Canaveral|ordered|stated|Attuma
+f+ Arno|other_verb|attack|Attuma then sent Tyrak, Warlord Krang, Lord Arno, Orka and U-Man to attack Cape Canaveral|ordered|stated|Attuma
+f+ Orka|other_verb|attack|Attuma then sent Tyrak, Warlord Krang, Lord Arno, Orka and U-Man to attack Cape Canaveral|ordered|stated|Attuma
+f+ U-Man|other_verb|attack|Attuma then sent Tyrak, Warlord Krang, Lord Arno, Orka and U-Man to attack Cape Canaveral|ordered|stated|Attuma
+f- Attuma|attacked|water filtration plant
+f+ Attuma|other_verb|launched|Attuma later launched an attack on a water filtration plant.|actual|stated|
+f- Jean|other_verb|pulled
+t+ no_doer|the former of which was being pulled from her home to become one of Set's seven brides.
+f+ Andromeda|other_verb|tracked|Attuma was tracked down by the Beast and Andromeda|actual|stated|
+f- Beast|other_verb|forced
+f+ Beast|other_verb|save|However, in order to save Jean's life, the Beast was forced to turn her over to Ghaur.|planned|stated|Beast
+f- Attuma|other_verb|anger
+f- Atlantis|destroyed|Atlantis
+f+ Ghaur|destroyed|Atlantis|During the course of the battle Ghaur launched a nuclear attack on Atlantis, decimating the kingdom.|actual|stated|
+f- Earth's heroes|other_verb|foiled
+t+ crowd_end|Ultimately an army of Earth's heroes foiled Ghaur's plot to bring Set to Earth.
+f- Ghaur|other_verb|plot
+f+ Ghaur|other_verb|bring|Ghaur's plot to bring Set to Earth.|planned|stated|Ghaur
+
+@3435 gold: a defeat by one stated act (A145); the group is the end when its other members are unnamed; Mad Thinker's own act
+keep
+- Namor|fought|Mad Thinker
+- Namor|defeated|Mad Thinker
++ Fantastic Five|defeated|Mad Thinker|he was easily defeated in his first encounter by a version of Fantastic Five which had Namor as a member.
+t- no_relation|Mad Thinker shared
+f+ Mad Thinker|other_verb|shared|Mad Thinker shared a similar history to his Earth-616 counterpart|actual|stated|
+
+@3436 gold: both mothers; a bee is no doer; the fall
+keep
+f+ Amalia|parent_of|America|Elena and her wife, Amalia, lived peacefully with their daughter, America|actual|stated|
+f- America|other_verb|startled
+t+ no_doer|after she was startled by a bee.
+f+ Elena|other_verb|fell|Elena and Amalia fell in first, followed by America.|actual|stated|
+f+ Amalia|other_verb|fell|Elena and Amalia fell in first, followed by America.|actual|stated|
+f+ America|other_verb|followed|Elena and Amalia fell in first, followed by America.|actual|stated|
+
+@3437 gold: ok
+keep
+
+@3438 gold: the team is a crowd; the weapon falls with no doer
+keep
+t+ crowd_end|The team became surrounded
+t- no_relation|The team escaped
+t+ crowd_end|The team escaped in time
+t+ no_doer|and the weapon fell into the sea
+
+@3439 gold: ok
+keep
+
+@3440 gold: the attempt word (A134)
+keep
+f- A.I.M.|other_verb|attempt
+f+ A.I.M.|other_verb|get|The Robbery of the Russian Nuclear Facility was an attempt by A.I.M. to get new power sources for their Stark Industries weapons.|attempted|stated|A.I.M.
+
+@3441 gold: a belief is actual suspected; a clause object; the planned containment; the unnamed victim
+keep
+f- Ana|suspected|-
+f- Daimon Helstrom|suspected|-
+f+ Ana|suspected|-|a demon who they believed to be their father|actual|stated|
+f+ Daimon Helstrom|suspected|-|a demon who they believed to be their father|actual|stated|
+f+ Ana|other_verb|contain|in order to contain a demon who they believed to be their father|planned|stated|Ana
+f+ Daimon Helstrom|other_verb|contain|in order to contain a demon who they believed to be their father|planned|stated|Daimon Helstrom
+f- Ana|discovered|Chris Yen
+f- Daimon Helstrom|discovered|Chris Yen
+f+ Ana|discovered|-|when the Helstrom siblings discovered that he had murdered a man|actual|stated|
+f+ Daimon Helstrom|discovered|-|when the Helstrom siblings discovered that he had murdered a man|actual|stated|
+t+ crowd_end|that he had murdered a man and taken the skull
+
+@3442 gold: an infiltration is no joining (A137); the plan's verb
+keep
+f- Enoch|joined|Chronicom Hunters
+f- Chronicom Hunters|other_verb|plan
+f+ Chronicom Hunters|other_verb|prepared|the Chronicom Hunters prepared for the final phase of their plan|actual|stated|
+f+ Chronicom Hunters|other_verb|turning|turning Earth into their new home planet, Chronyca-3|planned|stated|Chronicom Hunters
+f+ Chronicom Hunters|other_verb|taken|Having taken control of the Lighthouse and close to uncovering S.H.I.E.L.D.'s secrets|actual|stated|
+
+@3443 gold: ok
+keep
+
+@3444 gold: the window's name Gao; training is no learned; wanting is the planned act; realizing
+keep
+r Madame Gao=>Gao
+f- Danny Rand|learned|-
+f- Danny Rand|other_verb|wanted
+f+ Danny Rand|other_verb|take|In order to take down the Hand, he joined forces with Meachum|planned|stated|Danny Rand
+f- Meachum|other_verb|wanted
+f+ Meachum|other_verb|wanted|who wanted to get rid of the Hand too|actual|stated|
+f+ Meachum|other_verb|get|who wanted to get rid of the Hand too|planned|stated|Meachum
+f- Danny Rand|discovered|-
+f+ Danny Rand|learned|-|Realizing that the Hand infiltrated into the Rand Enterprises|actual|stated|
+f+ Hand|other_verb|infiltrated|Realizing that the Hand infiltrated into the Rand Enterprises|actual|stated|
+

@@ -1,0 +1,164 @@
+@2950 gold: ok (a bare "3" tag is refused as unexcused text)
+keep
+
+@2965 gold: one name for Shakuyaku/Shakky; an empress rules the Kuja; speech with the planned hide-out; the crowd builds; the decision and win; the note's order; deducing is suspicion; a doer-less prohibition; tried = pursue
+keep
+r Shakky=>Shakuyaku
+f+ Shakky|alias_of|Shakuyaku|However, it was her first mate Shakuyaku who was the top idol of the sea, and though Gloriosa was in love with Roger, he and his crew only had eyes for Shakky.|actual|stated|
+f- Roger|other_verb|eyes
+f- Shakuyaku|became|Kuja empress
+f+ Shakuyaku|leader_of|Kuja|Eventually Shakky became the Kuja empress|actual|stated|
+f- Shakuyaku|other_verb|wanted
+f+ Shakuyaku|other_verb|saying|saying she wanted to hide out and open her own business|actual|stated|
+f+ Shakuyaku|other_verb|hide|saying she wanted to hide out and open her own business|planned|stated|Shakuyaku
+f- pirates|built|Shakky's Rip-off Bar
+t+ crowd_end|Enthralled by her beauty, the pirates wasted no time in cleaning up the island and constructing what would become Shakky's Rip-off Bar
+f- Rocks|other_verb|willing
+f+ Rocks|other_verb|attend|and even Rocks himself was willing to attend to her every want.|actual|stated|
+f- Roger|other_verb|decided
+f+ Roger|other_verb|decided|Two years later, Roger decided to go to the bar to try and win her|actual|stated|
+f+ Roger|other_verb|win|Roger decided to go to the bar to try and win her|planned|stated|Roger
+f+ Silvers Rayleigh|other_verb|come|telling him to come and get her|ordered|stated|Shakuyaku
+f+ Shakuyaku|other_verb|noted|At the bar, Shakky noted that Rocks was no longer as infatuated with her|actual|stated|
+f- Buckin|other_verb|deducing
+f+ Buckin|suspected|-|with Buckin deducing that he had met someone and become a father|actual|stated|
+f- Roger|other_verb|prohibited
+t+ no_doer|but they were prohibited from fighting in the bar
+f- Gloriosa|other_verb|try
+f+ Gloriosa|other_verb|pursue|who had joined the Rocks Pirates to try and pursue him|attempted|stated|Gloriosa
+
+@2966 gold: an organisation is no place; "once part of" is membership; a story role is production
+keep
+- Hajrudin|departed|Buggy's Delivery
+f- New Giant Warrior Pirates|joined|Buggy's Delivery
+f+ New Giant Warrior Pirates|member_of|Buggy's Delivery|They were once part of Buggy's Delivery|actual|stated|
+f+ New Giant Warrior Pirates|left_group|Buggy's Delivery|They were once part of Buggy's Delivery, before leaving to become the sixth ship of the Straw Hat Grand Fleet|actual|stated|
+f- New Giant Warrior Pirates|other_verb|feature_in
+t+ production|They are one of the central characters from The Stories of the Self-Proclaimed Straw Hat Grand Fleet Cover Page Serial and are major allies in the Elbaph Arc.
+
+@2967 gold: the ordered act; the citizens are a crowd; the noticing is named
+keep
+f+ Jack|other_verb|lead|Kaidou commands Jack to lead him to Luffy.|ordered|stated|Kaidou
+t- no_relation|the citizens immediately
+t+ crowd_end|the citizens immediately recognize, to their shock, that Kaidou has decided to appear in person
+t- no_relation|Jack and Shutenmaru notice
+f+ Jack|other_verb|notice|Jack and Shutenmaru notice, and so do the Straw Hats|actual|stated|
+f+ Shutenmaru|other_verb|notice|Jack and Shutenmaru notice, and so do the Straw Hats|actual|stated|
+f+ Straw Hats|other_verb|notice|Jack and Shutenmaru notice, and so do the Straw Hats|actual|stated|
+
+@2968 gold: ok
+keep
+
+@2969 gold: a video-game move is production
+keep
+f- Kuro|used|Cat Claws
+f- Kuro|other_verb|technique
+t+ production|Cat Stomp: Kuro jumps into the air and then dropkicks his opponent while slashing them with his Cat Claws.
+t+ production|This is one of Kuro's techniques in One Piece: Grand Adventure.
+
+@2970 gold: ok
+keep
+
+@2971 gold: the quote's verb; Mjosgard is not the suspecter
+keep
+f- Knights of God|other_verb|over
+f+ Knights of God|other_verb|taking|taking over the investigation into the assassination attempt on Saint Charlos|actual|stated|
+f- Mjosgard|suspected|-
+t+ crowd_end|the involvement of Mjosgard in the purported suspects' escape.
+
+@2972 gold: a manga-vs-anime comparison is production
+keep
+f- Rebecca|other_verb|remained
+f- Issho|other_verb|raising
+f- Rebecca|other_verb|runs
+t+ production|In the manga, Rebecca remained at Kyros' side when Issho was raising all the rubble into the air.
+t+ production|In the anime, Rebecca runs in the direction of the eastern port.
+
+@2973 gold: ok
+keep
+
+@2974 gold: ok
+keep
+
+@2975 gold: ok
+keep
+
+@2976 gold: ok
+keep
+
+@2977 gold: a spin-off cameo is production
+keep
+t- list_header|One Piece School
+t+ production|One Piece School: Cameo in Chapter 47.
+
+@2978 gold: ok
+keep
+
+@2979 gold: "the battlefield" is no named place
+keep
+- Shanks|arrived|Marineford
+f+ Red Hair Pirates|other_verb|arrived|Soon after, the Red Hair Pirates arrived onto the battlefield|actual|stated|
+
+@2980 gold: bounty depictions across media are production
+keep
+f- Kuro|other_verb|shown
+f- Anime|other_verb|depicted
+f- Stampede|other_verb|listing
+f- Grand Characters|other_verb|list
+f- Vivre Card series|other_verb|list
+f- Live-action series|other_verb|list
+f- Kuro|other_verb|accepted
+t+ production|Neither his bounty nor his wanted poster have ever been shown in the manga proper.
+t+ production|The anime first depicted his wanted poster in the same episode as the aforementioned cameo, with a bounty of 14,000,000.
+t+ production|This has largely been maintained throughout later anime and merchandise, apart from Stampede listing it as 15,000,000.
+t+ production|Notwithstanding this, Grand Characters, the Vivre Card series and the live-action series list it as 16,000,000; this is currently accepted as the canonical amount.
+
+@2981 gold: King meets Kaidou too; Ulti's speaking irritates; an offer is no giving; the apology, asking and changing; the denial; a copula; tried = get; the ordered acts; asserters on actual rows
+keep
++ King|met|Kaidou|King comes in, revealing it was him
+f- Page One|other_verb|irritates
+f+ Ulti|other_verb|speaking|with Ulti speaking to him happily, which irritates Page One|actual|stated|
+f- Kaidou|gave|drink
+f+ Kaidou|other_verb|offers|Kaidou offers them a drink but Sasaki turns it down|actual|stated|
+f+ Sasaki|other_verb|turns|Kaidou offers them a drink but Sasaki turns it down|actual|stated|
+f+ Kaidou|other_verb|tells|Kaidou tells them they will meet in the venue shortly|actual|stated|
+f+ Big Mom|other_verb|changing|because she is currently changing|actual|stated|
+f+ Kaidou|other_verb|apologizes|He apologizes for keeping them all waiting|actual|stated|
+f+ Who's-Who|other_verb|asks|Who's-Who asks who did|actual|stated|
+f- King|other_verb|said
+f+ King|other_verb|says|King says if they knew he was the one who called them|actual|stated|
+f+ King|other_verb|saying|King continues by saying that the two of them used to be pirate captains themselves|actual|stated|
+f- Sasaki|other_verb|denied
+f+ Sasaki|other_verb|deny|which the two don't deny|actual|denied|
+f+ Who's-Who|other_verb|deny|which the two don't deny|actual|denied|
+f- Who's-Who|other_verb|were
+f- Who's-Who|other_verb|trying
+f+ Who's-Who|other_verb|get|have been trying to get a spot as an All-Star|attempted|stated|Who's-Who
+f+ Sasaki|other_verb|get|have been trying to get a spot as an All-Star|attempted|stated|Sasaki
+f+ Sasaki|other_verb|admit|They admit that is true|actual|stated|
+f+ King|ordered|Sasaki|King tells them to re-evaluate their strength|actual|stated|
+f+ Who's-Who|other_verb|re-evaluate|King tells them to re-evaluate their strength|ordered|stated|King
+f+ Sasaki|other_verb|re-evaluate|King tells them to re-evaluate their strength|ordered|stated|King
+f- King|other_verb|needed
+f+ Bao Huang|other_verb|announce|He asks one of his Shinuchi: Bao Huang, to announce the schedule|ordered|stated|Kaidou
+f+ Bao Huang|other_verb|drops|Bao Huang drops down from the ceiling|actual|stated|
+f- All-Stars|other_verb|having
+f+ All-Stars|other_verb|having|the All-Stars and Fukurokuju were having a toast|actual|stated|
+f+ Orochi|other_verb|give|after that Kaidou and Orochi would give a speech|planned|stated|Bao Huang
+f+ Bao Huang|other_verb|concludes|She concludes her reading with the reveal that Kaidou will make a really important announcement.|actual|stated|
+f- Kaidou|other_verb|said
+f+ Kaidou|other_verb|says|Kaidou confirms it but says if he revealed it now, it would bring confusion.|actual|stated|
+
+@2982 gold: "he" is Bingo; Komurasaki comes out to him; the subordinates are a crowd; the breakdown and the address
+keep
++ Komurasaki|met|Bingo|Komurasaki then comes out, revealing that she spent all of the money Bingo gave her
+t- no_doer|After giving the last amount
+f+ Bingo|other_verb|giving|After giving the last amount of money she needed to one of her aides|actual|stated|
+f+ Bingo|other_verb|went|he later went to her shop to have her leave the Red Light District with him.|actual|stated|
+f+ Komurasaki|other_verb|leave|he later went to her shop to have her leave the Red Light District with him.|planned|stated|Bingo
+t- no_relation|However, Komurasaki's subordinates
+t+ crowd_end|However, Komurasaki's subordinates laughed at him, wondering if he really fell this far.
+f+ Bingo|other_verb|breaks|Bingo breaks down|actual|stated|
+t- no_relation|Back in the present
+f+ Komurasaki|other_verb|addresses|Back in the present, Komurasaki addresses Bingo and the two other men she swindled, calling them disgraceful|actual|stated|
+f+ Kyoshiro|other_verb|addresses|Kyoshiro appears besides her and addresses Bingo as a stalker|actual|stated|

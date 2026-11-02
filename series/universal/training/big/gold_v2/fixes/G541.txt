@@ -1,0 +1,125 @@
+@3095 gold: the waiting sentence has its facts (redundant tag)
+keep
+t- no_relation|They
+
+@3109 gold: ok
+keep
+
+@3110 gold: claims and statements are actual; the citation is its own tag
+keep
+f- Genus|other_verb|claims
+f+ Genus|other_verb|claims|Genus claims that this requires certain conditions.|actual|stated|
+f- Genus|other_verb|states
+f+ Genus|other_verb|states|According to Genus, becoming a Mysterious Being is not the same as removing one's limiter: they are just reborn as a new being with a new limiter.|actual|stated|
+t+ citation|(Chapter 89)
+
+@3111 gold: ok
+keep
+
+@3112 gold: an unnamed monster; the staff are a crowd; feelings; the decision; no duty calls; Saitama's kills; flying off
+keep
+- Tatsumaki|defeated|the Wolf level monster
+f+ Tatsumaki|other_verb|decimated|and completely decimated the Wolf level monster when she reached it.|actual|stated|
+f- Hero Association staff|other_verb|told
+t+ crowd_end|and is told by the Hero Association staff that she complained to the previous day that she has the day off.
+f+ Tatsumaki|other_verb|receives|The following day, she receives no duty calls|actual|denied|
+f- Tatsumaki|other_verb|bored
+t+ no_relation|However, much to Tatsumaki's displeasure, this lack of work leaves her bored.
+f+ Tatsumaki|other_verb|decides|She decides to go after monsters anyway|actual|stated|
+f+ Saitama|other_verb|killed|but the monsters she wished to go after were already killed by Saitama.|actual|stated|
+f- Tatsumaki|other_verb|infuriated
+f- Tatsumaki|other_verb|relieved
+f+ Tatsumaki|other_verb|flies|Finally feeling relieved, she flies off.|actual|stated|
+
+@3113 gold: a noun object
+keep
+f- King|other_verb|hero
+f- Saitama|other_verb|hero
+
+@3114 gold: the citation
+keep
+t+ citation|(Chapter 146)
+
+@3115 gold: ok
+keep
+
+@3116 gold: ok
+keep
+
+@3117 gold: ok
+keep
+
+@3118 gold: ok
+keep
+
+@3119 gold: the window names him only by pronoun (a page title is no window text)
+keep
+f- Tsukuyomi Spy|joined|Blizzard Group
+f- Tsukuyomi Spy|other_verb|gathered
+f- Tsukuyomi Spy|other_verb|poison
+t+ deictic|He was recently accepted into the Blizzard Group.
+t+ deictic|During his time there, he gathered intelligence and secretly slipped a poison capsule into Fubuki's daily beauty supplements.
+
+@3120 gold: realizing is learning
+keep
+f- Garou|other_verb|realizes
+f+ Garou|learned|-|He realizes that individuals of immense power like himself and Saitama require the presence of others to act as anchors.|actual|stated|
+
+@3121 gold: a reputation is no doer; the citation
+keep
+f- Sweet Mask|other_verb|swayed
+t+ no_relation|although Sweet Mask is just as easily swayed by King's reputation as most other heroes.
+t+ citation|(Chapter 95)
+
+@3122 gold: a moon is no member
+keep
+f- Io|member_of|Jupiter's moons
+t+ no_relation|Io is one of Jupiter's moons.
+
+@3123 gold: drama-CD lines are dialogue
+keep
+f- Genos|other_verb|go
+t+ dialogue|Genos: The mountains, is it? Okay, I’ll go chase it down and finish it off right now.
+t- deictic|sound of Genos
+t+ dialogue|sound of Genos blasting off
+
+@3124 gold: traits and habits are no capability; citations are their own tags
+keep
+t- capability|Awakened Cockroach was very
+t- capability|He preferred
+t- capability|He did not seem
+t- capability|He occasionally
+t+ no_relation|Awakened Cockroach was very confident in his abilities, particularly his speed.
+t+ no_relation|He preferred targeting heroes in contrast to other monsters.
+t+ no_relation|He did not seem to kill heroes, but rather focused on incapacitating them and then letting other monsters finish them off.
+t+ no_relation|He occasionally humored himself during battle.
+t+ citation|(Chapter 64)
+
+@3125 gold: having students is no capability; Charanko stays his student; fragment tags with rows
+keep
+t- capability|He used to have
+t+ no_relation|He used to have many students
+t- deictic|One day, as Bang
+t- below_floor|because of the rampage
+f+ Bang|trained|Charanko|he lost all of his students, except Charanko.|actual|stated|
+
+@3126 gold: the hesitation; appearing against the enemy is no met; the capture and the freeing (A61); speech is actual; no new power; the finding and catching up
+keep
+f+ Garou|other_verb|hesitates|As Garou hesitates, Sage Centipede launches its counterattack.|actual|stated|
+- Metal Bat|met|Sage Centipede
+- Metal Bat|met|Evil Natural Water
++ Sage Centipede|captured|Garou|During the battle, Garou finds himself caught by the centipede but manages to escape
+f- One Shotter|helped|Garou
++ One Shotter|saved|Garou|but manages to escape, thanks to a distraction caused by One Shotter.
+f- Garou|other_verb|suggests
+f+ Garou|other_verb|suggests|He suggests a massive simultaneous attack|actual|stated|
+f- Metal Bat|other_verb|states
+f+ Metal Bat|other_verb|states|but the hero states that it would require numerous S-Class heroes.|actual|stated|
+f- Metal Bat|gained_power|Fighting Spirit
+f+ Metal Bat|other_verb|launches|Metal Bat then launches a counteroffensive, bolstered by his Fighting Spirit.|actual|stated|
+t- deictic|Despite their adversarial history
+t- deictic|but Garou is dismayed
+f+ Garou|discovered|-|but Garou is dismayed to find Metal Bat's attacks ineffective against their quarry.|actual|stated|
+t- deictic|Despite Garou's annoyance
+f+ Garou|other_verb|catch|Despite Garou's annoyance at Metal Bat's lagging pace, they finally catch up with the rescue copter.|actual|stated|
+f+ Metal Bat|other_verb|catch|Despite Garou's annoyance at Metal Bat's lagging pace, they finally catch up with the rescue copter.|actual|stated|

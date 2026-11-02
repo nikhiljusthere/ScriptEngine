@@ -1,0 +1,215 @@
+@2021 gold: ok
+keep
+
+@2022 gold: no article; a newspaper is no doer; attempt verbs; the saved Land; the parents; a description object; crowds; Vindicator leads
+keep
+r the X-Men=>X-Men
+f- Bugle|other_verb|brought
+f- Malgato|other_verb|attempted
+f+ Malgato|other_verb|sacrifice|Malgato, last of the high priests, attempted to sacrifice Ka-Zar and African adventurer Shanna|attempted|stated|Malgato
+f- Zaladane|other_verb|sought
+f+ Zaladane|other_verb|conquer|but the two then sought to conquer the Land|attempted|stated|Zaladane
+f+ Garokk|other_verb|conquer|but the two then sought to conquer the Land|attempted|stated|Garokk
+f+ Ka-Zar|protected|Savage Land|which was saved from environmental disaster by Ka-Zar and a new team of X-Men.|actual|stated|
+f+ MODOK|other_verb|vied|While outside menaces such as Klaw, MODOK, and others vied for the Land's resources|actual|stated|
+f- Sauron|other_verb|mutated
+f- Belasco|other_verb|intervention
+f+ Ka-Zar|parent_of|Matthew|Ka-Zar and Shanna found refuge in America, where their son Matthew was born|actual|stated|
+f+ Shanna|parent_of|Matthew|Ka-Zar and Shanna found refuge in America, where their son Matthew was born|actual|stated|
+f- Jorro|destroyed|technology preserving Ka-Zar's world
+f+ Jorro|other_verb|destroyed|destroyed the technology preserving Ka-Zar's world, leaving most of its population to perish.|actual|stated|
+f- most of its population|other_verb|perish
+f- survivors|other_verb|became
+t+ crowd_end|but the Land now held only sparse survivors, some of whom became the team Alpha Prime
+f+ Vindicator|leader_of|Alpha Prime|some of whom became the team Alpha Prime under the amnesiac hero Vindicator.|actual|stated|
+
+@2023 gold: the alias direction (rank stripped); the unnamed tenant is a crowd
+keep
+f- T'Challa|also_known_as|Okonkwo
+f+ Okonkwo|alias_of|T'Challa|where Mr. Okonkwo, aka T'Challa, goes to live|actual|stated|
+t- no_doer|A tenant of the building
+t+ crowd_end|A tenant of the building in Hell's Kitchen where Mr. Okonkwo, aka T'Challa, goes to live, welcomes him and offers to help him given that he is new to the city.
+
+@2024 gold: a patient subject with crowd doers; no asserter for a narrated hedge
+keep
+f- Zvilpogghua|other_verb|cast
+t+ crowd_end|Zvilpogghua was allegedly cast into "the Abyss", the N-Zone, by the ancestors of Atlantis and the Old Gods.
+
+@2025 gold: ok
+keep
+
+@2026 gold: one name (Marc); the narrated acts of Andrea, Marc, Zodiac and Jigsaw
+keep
+r Moon Knight=>Marc
+f+ Jigsaw|learned|-|Jigsaw realizes too late it was a trap|actual|stated|
+t- no_relation|until Andrea stops him
+f+ Andrea|other_verb|stops|before losing himself to wrath upon Jigsaw until Andrea stops him.|actual|stated|
+t- no_relation|Once Andrea remarks
+f+ Andrea|other_verb|remarks|Once Andrea remarks her past exposure to seeing violence|actual|stated|
+t- no_relation|When Marc demands
+f+ Marc|other_verb|demands|When Marc demands to settle the matter|actual|stated|
+f+ Zodiac|other_verb|refuses|Zodiac refuses by stating he's standing immediately outside the Midnight Mission proper|actual|stated|
+f+ Zodiac|other_verb|kill|but doesn't trust going near it in his bid to kill Reese inside.|planned|stated|Zodiac
+t- no_relation|When questioned by Andrea
+f+ Zodiac|other_verb|opens|When questioned by Andrea about his motives, Zodiac opens about his belief in self-actualization and true freedom|actual|stated|
+f+ Andrea|other_verb|questioned|When questioned by Andrea about his motives|actual|stated|
+
+@2027 gold: deaths and resurrections; a resurrection is no doer; general resurrection mechanics are capability; crowds; garbage objects (Apex rows untouched: the name holds a pipe)
+keep
+f+ Gorgon|dies|-|Gorgon also died in Otherworld and was later resurrected|actual|stated|
++ Rockslide|awakened|-|because Rockslide died in Otherworld, his resurrection did not go as planned
+f- Rictor|other_verb|brought
+f- Rictor|other_verb|fast
+t+ no_doer|As a casualty of war, his resurrection was fast tracked.
+f- Rockslide|other_verb|did
+f- Rockslide|other_verb|glitching
+f- Rockslide|other_verb|leaving
+t+ no_relation|even temporarily glitching all five Cerebros and leaving the Five and Xavier unconscious.
+f- Otherworld|other_verb|nexus
+t+ capability|As Otherworld is a nexus connected to the entirety of the Multiverse, when mutants die in Otherworld they cannot be properly resurrected.
+f- Rockslide|other_verb|amalgamation
+f- Rockslide|other_verb|corrupted
+t+ capability|Instead, this resurrection will be a random amalgamation of their multiversal counterparts and their original Cerebro backup will be corrupted and lost forever.
+f- individuals|transformed_into|more_honed_versions
+f- individuals|other_verb|reduced
+t+ capability|Conversely to the Otherworld resurrections, individuals who died on Amenth were resurrected as more honed versions of themselves.
+t+ capability|Additionally, their actual Cerebro back-up were reduced in size resembling defragmentation of computer software.
+f- Wild Child|transformed_into|keener_version
+f- Nanny|transformed_into|sharper_version
+
+@2028 gold: ok
+keep
+
+@2029 gold: ok
+keep
+
+@2030 gold: ok
+keep
+
+@2031 gold: one name (Castle); the tried escape; Venom's devouring has a doer
+keep
+r the Punisher=>Castle
+r Punisher=>Castle
+f+ Paguro Family|other_verb|escape|Venom spots the Paguro Family trying to escape and attacks them|attempted|stated|Paguro Family
+t- crowd_end|begins devouring
+f+ Venom|other_verb|devouring|Venom goes berserk and begins devouring the thugs attacking him|actual|stated|
+
+@2032 gold: training alongside is no teaching; the competing is Danny's; an event is no doer
+keep
+f- Scorpion|trained|Danny Rand
+f+ Scorpion|other_verb|trained|he trained alongside Danny Rand|actual|stated|
+f- Scorpion|other_verb|compete
+f+ Danny Rand|other_verb|compete|to prevent Iron Fist from returning to K'un-Lun to compete in the Return of Shou-Lao|planned|stated|Danny Rand
+f- Return of Shou-Lao|other_verb|determine
+
+@2033 gold: the bare name; the kidnapping is the capture; description objects; the ordered invasion; the town's destroyers; a crowd of citizens
+keep
+r Professor Grimm=>Grimm
+f- Grimm|stole|baby
+f+ Schutter|other_verb|carry|the Nazis who dispatched their agent Colonel Schutter to carry out the invasion.|ordered|stated|Nazis
+f- Captain America|destroyed|laboratory
+f- Bucky|destroyed|laboratory
+f+ Captain America|other_verb|destroyed|their laboratory in the Alps was destroyed by Captain America and Bucky.|actual|stated|
+f+ Bucky|other_verb|destroyed|their laboratory in the Alps was destroyed by Captain America and Bucky.|actual|stated|
+f- Grimm|built|lab
+f+ Grimm|other_verb|built|In 1949, mad scientist Professor Grimm built a lab in the Swiss Alps.|actual|stated|
+f- Grimm|used|growth formula
+f+ Grimm|other_verb|began|From there he began experiments in a growth formula using a stolen baby he called Borkor.|actual|stated|
+f- Human Torch|located_at|ski resort
+f- Sun Girl|located_at|ski resort
+f+ Human Torch|other_verb|vacationing|where the Human Torch and Sun Girl were vacationing.|actual|stated|
+f+ Sun Girl|other_verb|vacationing|where the Human Torch and Sun Girl were vacationing.|actual|stated|
+t- no_relation|By 1941
+t+ crowd_end|By 1941, many prominent German citizens who spoke out against the Nazi party sought refuge in the Swiss Alps.
+t- no_relation|In 1946, a Swiss town
+f+ Future Man|other_verb|wiped|In 1946, a Swiss town in the Alps was wiped out by the Future Man and Madam Death using the Green Plague.|actual|stated|
+f+ Madam Death|other_verb|wiped|In 1946, a Swiss town in the Alps was wiped out by the Future Man and Madam Death using the Green Plague.|actual|stated|
+t- no_doer|Before they could unleash
+
+@2034 gold: a description object; self-destruction and destruction of AIs are deaths
+keep
+f- Arno|created|holographic recapitulation
+f- Mistress|destroyed|-
+f+ Mistress|dies|-|and her subsequent self-destruction.|actual|stated|
+f- Motherboard|destroyed|-
+f+ Motherboard|dies|-|The holograms also display a recreation of Motherboard's destruction from .|actual|stated|
+
+@2035 gold: a people is no end
+keep
+f- Sevalithi|rival_of|Avalon
+t+ crowd_end|Diplomatically, the Sevalithi maintain a patient and calculated demeanor, but their rivalry with Avalon often brings tension
+
+@2036 gold: abdicating is no leaving a group; infobox lines one per tag; the codename in parentheses
+keep
+f- Namor|left_group|Atlantis
+f+ Namor|other_verb|abdicated|After Namor abdicated from the throne of Atlantis, seven pretenders arose to lay claim to it|actual|stated|
+t- no_relation|After Namor abdicated
+f+ Stingray|alias_of|Walter Newell|Stingray (Walter Newell)|actual|stated|
+t+ list_header|{{Marvel Database:Story Arc Template
+t+ list_header|Image = Namor Vol 2 5.jpg
+t+ list_header|Name = Last King of Atlantis
+t+ citation|NameRef =
+t+ list_header|Aliases = * War of Seven Kings
+t+ list_header|War of the Seven Kings
+t+ list_header|World War Sea
+t+ list_header|Reality = Earth-616
+t+ list_header|Locations = All oceans of Earth, including Sea Cage Prison, Sea of Set (Southern Ocean); Skarka; Secret Seas; Atlantis; Lemuria
+t+ list_header|Protagonists = * King Attuma: Skarka Tribe
+t+ list_header|mercenaries (Manowar, King Crab)
+t+ list_header|----
+t+ list_header|Lemurians
+t+ list_header|Old Atlantis: Valko
+t+ list_header|Scientists Supreme
+t+ list_header|Abbot Uriah: Octomonks
+t+ list_header|King Kailani: Secret Seas
+t+ list_header|Beast King/King in Coral: Seaweed Men
+t+ list_header|Faceless Ones
+t+ list_header|Elder Whales
+t+ list_header|other creatures of the oceans
+t+ list_header|Lord of Orphans
+t+ list_header|Antagonists =
+t+ list_header|Others = * Namor
+t+ list_header|Neptune
+t+ list_header|Origin =
+t+ production|Titles = {{cl
+t+ list_header|Collected =
+t+ production|Creators = Jason Aaron; Paul Davidson; Alex Lins
+t+ production|First = Namor Vol 2 1
+t+ production|Last = Namor Vol 2 8
+
+@2037 gold: "As Thunderstrike" ties the codename
+keep
+f+ Thunderstrike|alias_of|Masterson|As Thunderstrike, like all Asgardians, Masterson was highly resistant to the effects of aging|actual|stated|
+
+@2038 gold: a negation keeps its verb
+keep
+f- Iron Man|other_verb|didn't
+f+ Iron Man|other_verb|let|Iron Man was one of the Avengers who didn't let Spider-Man join their team.|actual|denied|
+
+@2039 gold: no article; a lightning blast is no doer; the reaching is the arrival
+keep
+r the Raft=>Raft
+f- stray lightning blast|other_verb|craft
+t+ no_doer|a stray lightning blast hit the craft
+f- Spider-Man|other_verb|reach
+
+@2040 gold: a book blurb is production
+keep
+t- no_relation|The Thing clobbers
+t+ production|The Thing clobbers the Marvel Universe!
+
+@2041 gold: no article; the talk happened; tried convincing; a belief; the tried killing
+keep
+r the Harpy=>Harpy
+f- Ross|other_verb|talk
+f+ Ross|other_verb|talk|He made his way as quickly as possible to the battle site, running to talk to her|actual|stated|
+f- Ross|other_verb|convince
+f+ Ross|other_verb|convince|Ross tried to convince her that she was a gentle human being|attempted|stated|Ross
+f- Harpy|other_verb|thought
+f+ Harpy|suspected|-|thinking Ross' words to be a poor trick, the Harpy flew away with the Hulk in her clutches.|actual|stated|
+f+ Harpy|other_verb|kill|right before she blasted and tried to kill the Hulk.|attempted|stated|Harpy
+
+@2042 gold: no pipe in a quote
+keep
+t- list_header|| Residents
+t+ list_header|Residents =

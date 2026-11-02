@@ -1,0 +1,285 @@
+@1991 gold: Sasquatch's true form; a broken finger is a wound; a refused suggestion is no persuading; the hint is speech
+keep
+f- Jubilee|revealed_as|Rahne Sinclair
+f+ Sasquatch|revealed_as|Rahne Sinclair|encouraging Sasquatch to power down, revealing her true form, Rahne Sinclair.|actual|stated|
+f+ Vindicator|wounded|Jubilee|in response, he broke one of her fingers|actual|stated|
+f- Jubilee|persuaded|Vindicator
+f+ Jubilee|other_verb|suggested|She then suggested that Vindicator unmask as well|actual|stated|
+f+ Vindicator|other_verb|unmask|She then suggested that Vindicator unmask as well|ordered|stated|Jubilee
+f+ Jubilee|other_verb|expressed|Jubilee expressed her concern about using Banshee|actual|stated|
+f- Vindicator|other_verb|hinting
+f+ Vindicator|other_verb|hinting|hinting he would have them removed next time.|actual|stated|
+f+ Vindicator|other_verb|removed|hinting he would have them removed next time.|planned|stated|Vindicator
+
+@1992 gold: the rank is stripped; the attack is by a race
+keep
+r Dr. Cecilia Reyes=>Cecilia Reyes
+t- deictic|The next day
+t+ crowd_end|The next day Warskrulls attacked again
+
+@1993 gold: ok
+keep
+
+@1994 gold: ok
+keep
+
+@1995 gold: the Monster's and the pair's acts have named doers
+keep
+t- crowd_end|a small group of humans
+f+ Cage|discovered|-|After entering a vault, they discovered a small group of humans who were capable of reproducing.|actual|stated|
+f+ Namor|discovered|-|After entering a vault, they discovered a small group of humans who were capable of reproducing.|actual|stated|
+t- crowd_end|protected the humans
+f+ Frankenstein's Monster|other_verb|protected|Frankenstein's Monster who protected the humans from Atlantean aggression.|actual|stated|
+t- crowd_end|after the Monster turned
+f+ Frankenstein's Monster|other_verb|turned|after the Monster turned the Doombots against them.|actual|stated|
+t- crowd_end|admitted to killing
+f+ Frankenstein's Monster|other_verb|admitted|were confronted by the Monster who admitted to killing Atlanteans who got too close to Latveria.|actual|stated|
+t- crowd_end|until Namor saved
+f+ Namor|other_verb|saved|until Namor saved a young human child from drowning, which ended hostilities.|actual|stated|
+
+@1996 gold: ok
+keep
+
+@1997 gold: one name; an in-person call is no contact; the tried telling; speech; the decision
+keep
+r Ned=>Ned Leeds
+f- Dr. Octopus|contacted|Aunt May
+f+ Dr. Octopus|other_verb|called|she's called by Dr. Octopus briefly.|actual|stated|
+f- Ned Leeds|contacted|Peter Parker
+f+ Ned Leeds|other_verb|tell|When Ned Leeds finishes the story, he was trying to tell Peter|attempted|stated|Ned Leeds
+f- Aunt May|revealed|Peter Parker
+f+ Aunt May|other_verb|tells|When she comes back, she tells Peter that she's not coming back home|actual|stated|
+f+ Aunt May|other_verb|decided|and that she's decided to stay here and keep watch of Dr. Octopus' home as per his request.|actual|stated|
+
+@1998 gold: the powers are no transformer; the Goblin turns them
+keep
+f- Electro's powers|transformed_into|Villain Badge
+f+ Green Goblin|other_verb|turned|He had his powers stolen by Green Goblin and turned into a Villain Badge|actual|stated|
+
+@1999 gold: ok
+keep
+
+@2000 gold: a race is no doer (crowd_end); Odin's magic has a doer
+keep
+t- capability|Dwarves crafted
+t+ crowd_end|Dwarves crafted such legendary Asgardian weapons as the spear Gungnir and Stormbreaker
+f+ Odin|other_verb|imbued|although it was the magic of Odin that imbued these objects with their special enchantments.|actual|stated|
+t- capability|Dwarves are the race
+t+ crowd_end|Dwarves are the race that have crafted most of the weapons and enchanted items for the Gods.
+
+@2001 gold: a theory is a belief
+keep
+f- Farnsworth|other_verb|theorized
+f+ Farnsworth|suspected|-|Farnsworth theorized that "in a moment of stress, some chemical reaction in [his] body must set off a force which enables [him] to move through solid matter".|actual|stated|
+
+@2002 gold: a description is no alias; he left with her; the unnamed father
+keep
+f- Thin Man|alias_of|American superhero
++ Thin Man|departed|Kalahia|She left Kalahia with him
+t+ no_relation|Olalla was the daughter of one of the elders of Kalahia.
+
+@2003 gold: a shuttle is no doer; a belief; the search happened
+keep
+f- Space Shuttle Challenger|other_verb|launched
+f- Space Shuttle Challenger|other_verb|breaking
+t+ no_relation|The Space Shuttle Challenger launched and landed nine times before breaking apart 73 seconds into its tenth mission
+f- Zankor|other_verb|believed
+f+ Zankor|suspected|-|Zankor a confused alien with amnesia believed himself to be a human looking for an alien who was lost on earth|actual|stated|
+f- Zankor|other_verb|search
+f+ Zankor|other_verb|search|after a frantic search for the disguised alien.|actual|stated|
+
+@2004 gold: the encounter becomes the fight (no met); the organisation acts through its head; the spared life
+keep
+- Wolverine|met|Omega Red
+f- Romulus' organization|other_verb|relocated
+f+ Romulus|other_verb|relocated|who had been relocated to a Russian prison by Romulus' organization.|actual|stated|
+t- no_relation|Wolverine allowed him to live
+f+ Wolverine|other_verb|allowed|Wolverine allowed him to live, however|actual|stated|
+
+@2005 gold: quitting a team is no departure from a place; one name (Ruth); a doer-less infection; Knull controls
+keep
+- Choir|departed|Britannia Project
+- Snakes|departed|Britannia Project
+- Kelpie|departed|Britannia Project
+f+ Ruth|left_group|Britannia Project|Choir, along with Snakes and Kelpie, quit the team|actual|stated|
+f- Knull|other_verb|invasion
+f- Choir|other_verb|infected
+t+ no_doer|Choir was infected by a symbiote
+f- Choir|other_verb|control
+f+ Knull|other_verb|control|and fell under Knull's control.|actual|stated|
+f- Choir|other_verb|claiming
+f+ Ruth|other_verb|claiming|quit the team, claiming they were only doing it for Britannia.|actual|stated|
+
+@2006 gold: no pipe in quotes; the cut is a wound; equipment, membership and trivia are facts
+keep
+f+ Daken|wounded|Skaar|Daken was able to use the blade to cut and seriously injure him.|actual|stated|
+t- below_floor|| 
+t- capability|| 
+t- crowd_end|| 
+t- production|| 
+t+ list_header|Equipment =
+t+ list_header|Transportation =
+f+ Skaar|wielded|broadsword|Weapons = * Skaar generally wields a large broadsword.|actual|stated|
+f+ Skaar|member_of|Shadow People|Notes = * Skaar's tattoos mark him as a true member of the Shadow People, his mother's race.|actual|stated|
+f+ Skaar|other_verb|speak|Trivia = * Skaar did not speak his first words until|actual|denied|
+
+@2007 gold: the narrated acts of Hydro-Man, the Torch and Spider-Man
+keep
+f+ Hydro-Man|other_verb|escape|Their foe tries to escape through a drain pipe.|attempted|stated|Hydro-Man
+f+ Human Torch|other_verb|rushes|With it connecting to the washrooms, Johnny rushes in to head him off at the pass.|actual|stated|
+f+ Human Torch|other_verb|going|He makes the mistake of going into the women's washroom ausing women to run out in a panic.|actual|stated|
+f+ Human Torch|other_verb|argue|While he and Spider-Man argue, Hydro-Man comes out of one of the toilets and attacks Johnny while his back is turned.|actual|stated|
+f+ Spider-Man|other_verb|head|While Spider-Man goes to head off Hydro-Man and get people to safety|actual|stated|
+t- no_relation|He comes up with
+f+ Human Torch|other_verb|comes|He comes up with a soltuion to their problem.|actual|stated|
+
+@2008 gold: a vehicle is no place to depart; the ordered and requested acts; the narrated checks
+keep
+- Iron Man|departed|helicarrier
+f+ Iron Man|other_verb|carries|Iron Man's armor detects the fact that the Vision is about to self destruct and carries the body outside of the helicarrier|actual|stated|
+f+ Iron Man|other_verb|hand|Fury demands that Iron Man hand over Ant Man for debriefing|ordered|stated|Nick Fury
+f+ Iron Man|other_verb|call|Ant Man tells Iron Man to call Captain America|ordered|stated|Ant-Man
+f+ Ant-Man|other_verb|checking|Backing up he begins checking on the Vision's diagnostics.|actual|stated|
+f+ Iron Man|other_verb|examine|Outside of the Visions body, Iron Man and Janet examine it|actual|stated|
+f+ Janet|other_verb|examine|Outside of the Visions body, Iron Man and Janet examine it|actual|stated|
+f+ Janet|other_verb|shrinks|and Janet shrinks down to Wasp size to be with her boyfriend.|actual|stated|
+f+ Janet|dated|Ant-Man|and Janet shrinks down to Wasp size to be with her boyfriend.|actual|stated|
+t- no_doer|someone has been accessing
+t+ crowd_end|but someone has been accessing the Vision's data from within Avengers Mansion.
+
+@2009 gold: a vanishing is no destruction
+keep
+f- Umar|destroyed|Dr. Strange's Mansion
+f+ Umar|other_verb|made|Umar walked across the Village and made Dr. Strange's Mansion disappear.|actual|stated|
+
+@2010 gold: one name; "Eddie" is Carnage in disguise; the killing of Eddie is Carnage's own claim; the transformation
+keep
+r Thompson=>President Thompson
+- Carnage|killed|Eddie
+f+ Carnage|other_verb|killed|Sneering that he killed the real Eddie and stuffed him in the trunk of his own car|claimed|stated|Carnage
+f- Eddie|other_verb|Saying
+f- Eddie|other_verb|says
+f+ President Thompson|transformed_into|Venom|Transforming into Venom, President Thompson demands to know who Carnage is|actual|stated|
+
+@2011 gold: one name for the Red Right Hand; decisions are actual; the creature is Hellverine; discovered takes no object; the Mongrels are trained; a naming is no alias
+keep
+r Organization=>Red Right Hand
+r criminal organization=>Red Right Hand
+f- Red Right Hand|other_verb|decided
+f+ Red Right Hand|other_verb|decided|The Organization decided that the worst punishment for the seemingly un-killable Wolverine was to send his soul to Hell.|actual|stated|
+f- creature|became|Hellverine
+f- creature|other_verb|track
+f+ Hellverine|other_verb|decided|The creature became Hellverine and decided to track down each of Wolverine’s friends and family|actual|stated|
+f+ Hellverine|other_verb|track|decided to track down each of Wolverine’s friends and family to kill them one-by-one.|planned|stated|Hellverine
+f- Daken|discovered|Red Right Hand
+f+ Daken|discovered|-|Daken discovered its existence and joined them|actual|stated|
+f- Daken|other_verb|find
+f+ Daken|other_verb|find|Daken decided to find his father’s children all around the world through the years, he then gave them to the Red Right Hand|actual|stated|
+f- Red Right Hand|trained|children
+f+ Red Right Hand|trained|Mongrels|the criminal organization trained them in order to use them as weapons against Logan.|actual|stated|
+f- Daken|other_verb|wanted
+f- children|alias_of|Mongrels
+t+ no_relation|Those children would be known as the Mongrels.
+t- capability|for the seemingly un-killable
+
+@2012 gold: no article on a name
+keep
+r The Human Torch=>Human Torch
+
+@2013 gold: a collection's contents are production
+keep
+f- Modern Era Epic Collection: Young Avengers Vol 1 2|other_verb|COLLECTING
+t+ production|COLLECTING: Civil War: Young Avengers & Runaways (2006) #1-4
+
+@2014 gold: one name; the attacked "Doom" is a Doombot (no end); the tried killing; the orders and pleas; the persuasion; things are no doers
+keep
+- The Void|fought|Doom
+- Doom|fought|Taskmaster
+r The Void=>Void
+r Doom=>Victor von Doom
+f+ Void|other_verb|hurled|The Void hurled Doom through a wall and struck him with a blast of energy after Osborn ordered him to attack again|actual|stated|
+t+ crowd_end|following Doom's own energy blast against Taskmaster. However, that was not the real Victor von Doom.
+f+ Void|other_verb|kill|leading Osborn to order the Void to kill him.|ordered|stated|Osborn
+f+ Void|other_verb|attack|after Osborn ordered him to attack again|ordered|stated|Osborn
+f+ Lindy|other_verb|kill|When Lindy tried to kill her husband with an alien weapon|attempted|stated|Lindy
+f+ Void|other_verb|end|A terrified Lindy pleaded for the Void to end her misery|ordered|stated|Lindy
+f- Robert|other_verb|intending
+f+ Robert|other_verb|commit|intending to commit suicide by plunging himself into the Sun, only to regenerate.|attempted|stated|Robert
+f- Void|other_verb|pointed
+f+ Void|other_verb|pointed|The Void then taunted his efforts and pointed out that for all intents and purposes, he should give him complete control.|actual|stated|
+f+ Void|other_verb|taunted|The Void then taunted his efforts|actual|stated|
+f- Osborn|other_verb|convinced
+f+ Osborn|persuaded|Void|He returned to New York City and started to destroy it, but was convinced not to by Osborn.|actual|stated|
+f- robots|other_verb|emerged
+t+ crowd_end|Several insect-like robots emerged from the Doombot.
+f- Osborn|other_verb|instructed
+f+ Osborn|other_verb|instructed|so he instructed the Void to let the Sentry take control.|actual|stated|
+f+ Void|other_verb|let|so he instructed the Void to let the Sentry take control.|ordered|stated|Osborn
+f+ Void|other_verb|protested|The Void protested but agreed.|actual|stated|
+f- Osborn|other_verb|sent
+f+ Osborn|ordered|Sentry|the Void emerged after the Sentry was sent by Osborn to defeat Thor.|actual|stated|
+f+ Sentry|other_verb|defeat|after the Sentry was sent by Osborn to defeat Thor.|ordered|stated|Osborn
+f+ Void|located_at|Asgard|In Asgard, the Void emerged|actual|stated|
+
+@2015 gold: an order with a clause is actual other_verb; a named team is no crowd; the yelling and walking off; an appointment over a named agency is leader_of
+keep
+f- Gyrich|other_verb|ordered
+f+ Gyrich|other_verb|ordered|he ordered another MVP be cloned and outfitted with the Tactigon, creating the mad KIA.|actual|stated|
+t- crowd_end|This situation escalated
+t+ no_relation|This situation escalated to the point of involving the Mighty Avengers.
+t- dialogue|Held responsible
+f+ Gyrich|other_verb|yelled|Gyrich was fired after a heated argument with Iron Man in which Gyrich yelled "I don't have Captain America's blood on MY hands!".|actual|stated|
+t- deictic|and walked off,
+f+ Gyrich|other_verb|walked|Gyrich announced his retirement at a press conference and walked off|actual|stated|
+f- Gyrich|other_verb|appointed
+f+ Gyrich|leader_of|S.W.O.R.D.|Gyrich had been appointed Co-Director of the U.N. space security agency S.W.O.R.D..|actual|stated|
+
+@2016 gold: one name (Sinthea); Zemo's ask; the proclaimed mantle; the father is unnamed; a covered sentence
+keep
+r Sin=>Sinthea
+f+ Sinthea|other_verb|tell|who asks her to tell him how to kill Bucky Barnes.|ordered|stated|Helmut Zemo
+f+ Red Skull|alias_of|Sinthea|who has proclaimed both his allegiance and affection to Sinthea as the new Red Skull|claimed|stated|Master Man
+f- Red Skull|parent_of|Sinthea
+t- no_relation|After taking the Black Widow
+
+@2017 gold: one name each; a hypothetical power; the henchmen act for their boss
+keep
+r Bongface=>Doctor Bongface
+r Lobo=>Lobo the Duck
+f- Doctor Bongface|gained_power|-
+t- crowd_end|Bongface's henchmen
+f+ Doctor Bongface|other_verb|initiated|Bongface's henchmen initiated the destruction of Manhattan which would paradoxically give him the power to break free|actual|stated|
+
+@2018 gold: the decision is actual; the beliefs are stated; the return and the planned elimination
+keep
+f+ Red Skull|other_verb|decides|The Skull decides to take up using Chopin's "Funeral March" as a signature for his murders.|actual|stated|
+f- Steve Rogers|suspected|-
+f- James Buchanan Barnes|suspected|-
+f+ Steve Rogers|suspected|-|Steve Rogers and James Buchanan Barnes wonder who would be responsible for the killings as they believe that the Red Skull is dead.|actual|stated|
+f+ James Buchanan Barnes|suspected|-|Steve Rogers and James Buchanan Barnes wonder who would be responsible for the killings as they believe that the Red Skull is dead.|actual|stated|
+t- crowd_end|his first order of business
+f+ Red Skull|other_verb|returned|The Red Skull has returned|actual|stated|
+f+ Red Skull|other_verb|eliminate|his first order of business is to eliminate his minions who failed on their previous mission.|planned|stated|Red Skull
+
+@2019 gold: the real name and the alias direction; the talk after the fight keeps the met; in-person help is no contact; the narrated acts
+keep
+f- Brock Jones|alias_of|Torpedo
+r Torpedo=>Brock Jones
+f+ Torpedo|alias_of|Brock Jones|a human superhero operating under the alias The Torpedo|actual|stated|
+- Rom|met|Brock Jones
++ Rom|met|Brock Jones|but after clearing up the misunderstanding and sharing their situations, they found a new ally in each other.
+t- deictic|after clearing up
+f- Rom|contacted|Fantastic Four
+f+ Rom|other_verb|seek|he left the town to seek help from the Fantastic Four in New York City.|planned|stated|Rom
+t- no_relation|attacking the school
+f+ Rocketeers|other_verb|attacking|attacking the school where his children studied to draw his attention.|actual|stated|
+t- deictic|to draw his attention
+t- below_floor|in an effort to protect
+f+ Brock Jones|other_verb|protect|who had recently moved to the small town of Clairton in an effort to protect his family.|planned|stated|Brock Jones
+f+ Rom|learned|-|discovering in the process that they had been Dire Wraith infiltrators all along|actual|stated|
+f+ Brock Jones|learned|-|discovering in the process that they had been Dire Wraith infiltrators all along|actual|stated|
+
+@2020 gold: an unnamed power source is no gained_power row
+keep
+f- Sphinx|gained_power|-
+t+ capability|The Sphinx's powers stem from her exposure to the mystic energies of the Ka Stone.

@@ -76,3 +76,12 @@ range) and G529 (upper range) to keep the two streams apart. Commit the new fix 
 pathspecs and `git add -f` (data is gitignored), as for earlier batches. New rulings noticed by the agents were not
 collected (they were stopped before reporting); skim G110-G129 / G500-G528 for any new `gold:` reasons that look like
 rules and add them to `plan/review_tools/gold27_system.md`.
+
+## Update 2026-11-02 (evening): gold review at 2,902 / 3,822 (75.9%) — stopped at the 5-hour limit (owner: do not use credits)
+
+Four Opus 5.5 (high) agents ran in parallel (no GPU), stopped by exact task at ~96% of the 5-hour window. Reviewed so far:
+b1-b1618, b1922-b2078, b2442-b3252, b3355-b3670 (fix files G110-G139, G200-G205, G500-G548, G700-G718).
+Still unreviewed (920 windows, from the audit-file gaps): **b1619-b1921 (303), b2079-b2441 (363), b3253-b3354 (102),
+b3671-b3822 (152)**. The last fix file of each agent may be cut off: re-derive gaps from the audit file before resuming
+(a window with no audit record is simply reviewed again). Next fix numbers: G140+, G206+, G549+, G719+ (any unused).
+Same method/rules as the sections above; commit with explicit pathspecs and `git add -f`.

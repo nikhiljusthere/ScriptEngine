@@ -1,0 +1,442 @@
+@1409 gold: in-person calls and words are no contact; the tried verb
+keep
+f- Jogo|contacted|Satoru
+f+ Jogo|other_verb|calls|Jogo calls out to Satoru and aims a fireball at a group of civilians, trying to get his attention.|actual|stated|
+f+ Jogo|other_verb|aims|Jogo calls out to Satoru and aims a fireball at a group of civilians, trying to get his attention.|actual|stated|
+f+ Jogo|other_verb|get|aims a fireball at a group of civilians, trying to get his attention.|attempted|stated|Jogo
+f- Satoru|contacted|Jogo
+f+ Satoru|other_verb|utters|Satoru looks back at Jogo and simply utters the words, "next".|actual|stated|
+
+@1410 gold: the narrated hunt has doers
+keep
+t- no_relation|hunting for cursed spirits
+f+ Yuji|other_verb|hunting|He finds Yuji with Choso, who he doesn't recognize, hunting for cursed spirits and drawing lots of attention to themselves.|actual|stated|
+f+ Choso|other_verb|hunting|He finds Yuji with Choso, who he doesn't recognize, hunting for cursed spirits and drawing lots of attention to themselves.|actual|stated|
+
+@1411 gold: one name; the ordered acts; the immobilising slice and the stunning hit are defeats after the stated fight; nouns and patients are no acts
+keep
+r Akari=>Akari Nitta
+f+ Haruta|located_at|Shibuya|On October 31, Haruta was in Shibuya and attacked Kiyotaka Ijichi on Uraume's orders.|actual|stated|
+f+ Haruta|other_verb|patrolling|Uraume ordered Haruta to continue patrolling the curtain's perimeter and hunt anybody wearing a suit|ordered|stated|Uraume
+f+ Haruta|other_verb|hunt|Uraume ordered Haruta to continue patrolling the curtain's perimeter and hunt anybody wearing a suit|ordered|stated|Uraume
+- Haruta|fought|Nobara
++ Haruta|fought|Nobara|As Akari ran away, Haruta faced off against Nobara.
++ Haruta|defeated|Nobara|Shigemo eventually hit Nobara in the chin with his hand-sword, rattling her brain and stunning her.
++ Haruta|defeated|Akari Nitta|After having his hand-sword chase after Akari and immobilize her by slicing her legs
+f- Nobara|other_verb|pursuit
+f- Nobara|other_verb|enraging
+f- Nobara|other_verb|stunning
+f+ Haruta|other_verb|ran|Haruta learned of her location and quickly ran after her, with Nobara in pursuit.|actual|stated|
+
+@1412 gold: deciding is actual with the planned kill; she tries to remember and tap; admitting is speech; the disbelief; the understanding
+keep
+f+ Mahito|other_verb|decides|Amused, Mahito decides to kill her|actual|stated|
+f+ Mahito|other_verb|kill|Amused, Mahito decides to kill her|planned|stated|Mahito
+f- Nobara|other_verb|unleash
+f+ Nobara|other_verb|remember|She tries to remember what it was like to unleash Black Flash|attempted|stated|Nobara
+f+ Nobara|other_verb|tap|attempting to tap into the core of cursed energy.|attempted|stated|Nobara
+f+ Nobara|other_verb|manages|In a short exchange, Nobara manages to get the better of Mahito using clever explosions of her nails and the environment around them.|actual|stated|
+f- Mahito|other_verb|admits
+f+ Mahito|other_verb|admits|He admits that she isn't bad|actual|stated|
+f+ Mahito|other_verb|believe|but doesn't believe her attacks can actually harm him.|actual|denied|
+f+ Mahito|learned|-|The cursed spirit understands that Nobara is an ally of Yuji|actual|stated|
+
+@1413 gold: ok
+keep
+
+@1414 gold: one name; the critical wound; surmising = suspected; a hint is speech; Yuta is the copier; realizing = learned; garbage objects; the finger is no doer
+keep
+r Gojo=>Satoru Gojo
+f+ Nobara|wounded|Sukuna|Nobara used Resonance on it to critically wound Sukuna before he could activate his Domain Expansion|actual|stated|
+f- Sukuna|other_verb|surmised
+f+ Sukuna|suspected|-|he surmised that Gojo hid the last finger away in order to stall Yuji's execution.|actual|stated|
+f- Yuta Okkotsu|other_verb|hinted
+f+ Yuta Okkotsu|other_verb|hinted|Yuta Okkotsu hinted that the missing finger was eaten by Rika so he could copy Shrine and store it as part of his arsenal.|actual|stated|
+f- Rika|other_verb|copy
+f+ Yuta Okkotsu|other_verb|copy|so he could copy Shrine and store it as part of his arsenal.|claimed|stated|Yuta Okkotsu
+f- Sukuna|other_verb|realized
+f+ Sukuna|learned|-|However, Sukuna soon realized that Yuta had deceived him|actual|stated|
+f- Rika|other_verb|Yuji's
+f+ Rika|other_verb|consumed|Rika had actually consumed one of Yuji's fingers instead|actual|stated|
+f- Sukuna's last finger|other_verb|sorcerers
+f- Sukuna's final finger|other_verb|act
+t+ no_doer|unsealed from its box and acting as a ward against curses.
+
+@1415 gold: ok
+keep
+
+@1416 gold: Blue is a used technique; described pillars; the wheel is no doer; the dash and the pursuit
+keep
+f- Gojo|wielded|two spheres of Blue
+f+ Gojo|used|Blue|Gojo pursues him while armed with two spheres of Blue.|actual|stated|
+f- Gojo|destroyed|pillars
+f+ Gojo|other_verb|destroys|Gojo throws the Blue orbs and destroys the pillars as Sukuna avoids the attack.|actual|stated|
+f- wheel on his head|other_verb|spins
+f- wheel on his head|other_verb|adapts
+t+ no_doer|as the wheel on his head spins again, leaving only one rotation before it adapts to the Infinity.
+f+ Sukuna|other_verb|dashes|Sukuna dashes around pillars supporting a bridge on the battlefield as Gojo pursues him|actual|stated|
+f+ Gojo|other_verb|pursues|Sukuna dashes around pillars supporting a bridge on the battlefield as Gojo pursues him|actual|stated|
+
+@1417 gold: Megumi wonders; citations
+keep
+f+ Megumi Fushiguro|other_verb|wondered|As Megumi wondered why they were in Tokyo|actual|stated|
+t+ citation|(Chapter 16, Episode 8)
+t+ citation|(Chapter 17, Episode 8)
+t+ citation|(Chapter 18, Episode 8)
+
+@1418 gold: one name; the negated understanding; the Six Eyes are no doer; the best friend
+keep
+r Suguru=>Geto
+f- Satoru|other_verb|understand
+f+ Satoru|other_verb|understand|he still can not understand how it is Geto could be alive.|actual|denied|
+f+ Satoru|friend_of|Geto|Confused, memories of his best friend rush through Satoru's mind and he still can not understand how it is Geto could be alive.|actual|stated|
+f- Six Eyes|other_verb|reject
+t+ no_doer|but the Six Eyes reject all possibilities.
+
+@1419 gold: a garbage reveal; the narrated deflect, kick and block have doers
+keep
+f- blade|revealed_as|the cursed tool formerly wielded by Nanami
+t- no_doer|A blade is then thrown
+f+ Sukuna|other_verb|deflects|A blade is then thrown at Sukuna, who deflects it into the air.|actual|stated|
+f+ Sukuna|other_verb|kicks|Sukuna realizes that the cursed tool is imbued with Nanami's Ratio Technique and kicks Ino away.|actual|stated|
+t- no_relation|Ino blocks the kick
+f+ Ino|other_verb|blocks|Ino blocks the kick with the sword but nonetheless feels the heavy impact from the attack.|actual|stated|
+
+@1420 gold: the asked act (negated); the tried help has its object; expecting is belief; they rush Hanami
+keep
+f+ Yuji|other_verb|stop|Aoi asks that his partner simply not to stop while continuing to believe.|ordered|denied|Aoi
+f- Yuji|helped|-
+f+ Yuji|helped|Aoi|Yuji tries to help, but Hanami engages him|attempted|stated|Yuji
+f- Hanami|other_verb|expecting
+f+ Hanami|suspected|-|Hanami engages him, expecting Aoi to be taken out.|actual|stated|
++ Aoi|fought|Hanami|They rush Hanami but Aoi's foot is quickly caught by a root sprouting from underground.
+
+@1421 gold: both demises; trauma is no wound; a noun; the stated verb word; the speech acts
+keep
++ Mahito|killed|Nobara|witnessing Nobara and Nanami's demise at the hands of Mahito
+f- Yuji|wounded|-
+f+ Yuji|other_verb|traumatized|having been traumatized by witnessing Nobara and Nanami's demise at the hands of Mahito|actual|stated|
+f+ Yuji|other_verb|explains|Opening his eyes, Yuji trembles on the ground as he explains that he no longer has the will to fight|actual|stated|
+f- Sukuna|other_verb|slaughter
+f- Yuji|other_verb|felt
+f+ Yuji|other_verb|feel|Sukuna's slaughter at Shibuya has made him feel as if he failed at his mission to help others.|actual|stated|
+t- no_relation|Crying and writhing
+f+ Yuji|other_verb|expresses|Crying and writhing on the ground, Yuji expresses that he can't forgive himself.|actual|stated|
+
+@1422 gold: a described place; the denied recognition; the cut-down wound
+keep
+f- Miguel|located_at|nearby building
+f+ Sukuna|other_verb|recognize|Sukuna notes that he does not recognize Ui Ui’s rescuer.|actual|denied|
+t- no_doer|Kusakabe is subsequently
+f+ Kusakabe|wounded|-|Kusakabe is subsequently cut down and left bleeding.|actual|stated|
+
+@1423 gold: a body part is the wound; Black Flash; deciding is actual with the planned act; a technique is no end; the attack is no doer; Todo gets behind
+keep
+f- Todo|destroyed|Mahito's hand
+f+ Todo|wounded|Mahito|Todo unleashes Black Flash as well through a kick that destroys Mahito's hand|actual|stated|
+f+ Todo|used|Black Flash|Todo unleashes Black Flash as well through a kick that destroys Mahito's hand|actual|stated|
+f- Mahito|other_verb|decides
+f+ Mahito|other_verb|decides|He decides to turn up the intensity of the fight|actual|stated|
+f+ Mahito|other_verb|turn|He decides to turn up the intensity of the fight|planned|stated|Mahito
+f- Mahito|attacked|Boogie Woogie
+f+ Mahito|other_verb|counters|counters Boogie Woogie by attacking with Idle Transfiguration: Body Repel from all sides.|actual|stated|
+f- The attack|other_verb|breaks
+t+ no_doer|The attack breaks through the streets of Shibuya from underground, taking the battle directly the city.
+t- capability|Mahito is surprised
+t+ no_relation|Mahito is surprised by Boogie Woogie's ability to swap places with an un-activated transfigured human
+f+ Todo|other_verb|get|allowing Todo to get behind him.|actual|stated|
+
+@1424 gold: "the four" are the four named travellers; a person is no group
+keep
+f- the four|other_verb|decided
+f+ Gojo|other_verb|decided|After the rescue, the four decided to enjoy Okinawa for a few hours before returning to Jujutsu High.|actual|stated|
+f+ Geto|other_verb|decided|After the rescue, the four decided to enjoy Okinawa for a few hours before returning to Jujutsu High.|actual|stated|
+f+ Riko|other_verb|decided|After the rescue, the four decided to enjoy Okinawa for a few hours before returning to Jujutsu High.|actual|stated|
+f+ Misato|other_verb|decided|After the rescue, the four decided to enjoy Okinawa for a few hours before returning to Jujutsu High.|actual|stated|
+f+ Gojo|other_verb|enjoy|the four decided to enjoy Okinawa for a few hours before returning to Jujutsu High.|planned|stated|Gojo
+f+ Geto|other_verb|enjoy|the four decided to enjoy Okinawa for a few hours before returning to Jujutsu High.|planned|stated|Geto
+f+ Riko|other_verb|enjoy|the four decided to enjoy Okinawa for a few hours before returning to Jujutsu High.|planned|stated|Riko
+f+ Misato|other_verb|enjoy|the four decided to enjoy Okinawa for a few hours before returning to Jujutsu High.|planned|stated|Misato
+f- Riko|left_group|Misato
+f- Geto|left_group|Misato
+
+@1425 gold: the protection; a crowd decides; the asked acts; agreeing carries the planned act
+keep
+f+ Choso|protected|Tengen|Kenjaku took Tengen despite Choso and Yuki Tsukumo's protection.|actual|stated|
+f+ Yuki Tsukumo|protected|Tengen|Kenjaku took Tengen despite Choso and Yuki Tsukumo's protection.|actual|stated|
+f- Jujutsu sorcerers|other_verb|deciding
+t+ crowd_end|The sorcerers then discussed their plans for rule additions, ultimately deciding to prioritize adding a rule that would allow players to leave the Culling Game.
+t+ crowd_end|Two days later, on the noon of the 16th, the jujutsu sorcerers in Tokyo No. 1 Colony reconvened with Maki Zenin
+f+ Kogane|other_verb|add|Using his 359 points, Megumi asked his Kogane to add such a rule|ordered|stated|Megumi
+f+ Megumi|other_verb|add|Megumi ultimately agreed to add the suggested rule|planned|stated|Megumi
+f+ Maki Zenin|other_verb|bring|asked Maki to bring Tsumiki Fushiguro to their colony.|ordered|stated|Megumi
+
+@1426 gold: the defeat of the Smallpox Deity; the attempted kill
+keep
++ Mei Mei|defeated|Smallpox Deity|Mei Mei used Bird Strike against Kenjaku after defeating the Smallpox Deity.
+f+ Kenjaku|other_verb|killed|Mei Mei was almost killed by Kenjaku during their battle|attempted|stated|Kenjaku
+
+@1427 gold: the shooter is not in the window (no-doer knockout); Nobara pummels Momo; described items; the exclaiming is speech
+keep
+- Mai|fought|Nobara
+- Mai|defeated|Nobara
+t+ no_doer|but she's shot in the temple with a cursed energy-infused rubber bullet that instantly knocks her unconscious.
++ Nobara|fought|Momo|Using her squeaky hammer, Nobara pummels Momo
+f- Nobara|took|bristle
+f+ Nobara|other_verb|grab|This allows Nobara to jump and grab one of the bristles off Momo's broom.|actual|stated|
+f- Nobara|used|squeaky hammer
+f+ Nobara|other_verb|dispels|Using Straw Doll Technique: Resonance, Nobara dispels Momo's control over her broom, causing her to crash.|actual|stated|
+t- deictic|The explosions and falling trees
+t+ no_doer|The explosions and falling trees make it difficult for Momo to navigate.
+t- dialogue|She exclaims
+f+ Nobara|other_verb|exclaims|She exclaims that she loves herself when she's being strong and when she's being beautiful, fully rejecting Momo's battle of the sexes.|actual|stated|
+
+@1428 gold: telling is speech with a clause belief; real_name_of -> alias_of; a described ability; conclusion = suspected
+keep
+f- Utahime|suspected|Mechamaru
+f+ Utahime|other_verb|tells|Utahime meets up with Gojo, Nobara, Megumi Fushiguro and Yuji where she tells them that they suspect that Mechamaru is the mole.|actual|stated|
+f+ Utahime|suspected|-|she tells them that they suspect that Mechamaru is the mole.|actual|stated|
+f- Mechamaru|real_name_of|Kokichi Muta
+f+ Mechamaru|alias_of|Kokichi Muta|Utahime reveals that Mechamaru's real identity is Kokichi Muta|actual|stated|
+f- Kokichi Muta|used|puppet manipulation ability
+f+ Utahime|other_verb|explains|and explains how his puppet manipulation ability works.|actual|stated|
+f- Utahime|suspected|Kokichi Muta
+t+ citation|(Chapter 79)
+
+@1429 gold: immobilising is defeated; the tried strike; the second summon; knowing; fragment tags
+keep
+- Noritoshi|captured|Nue
++ Noritoshi|defeated|Nue|Noritoshi resists the paralysis and immobilizes Nue using Crimson Binding.
+f+ Megumi|other_verb|summons|Right on cue, Megumi summons Nue and it strikes his opponent with electricity amplified by the water.|actual|stated|
+t- no_relation|Noritoshi sees it as a big target
+f+ Noritoshi|other_verb|strike|Noritoshi sees it as a big target and tries to strike first|attempted|stated|Noritoshi
+t- no_relation|Out in an open space
+f+ Noritoshi|other_verb|knows|Out in an open space, Noritoshi knows which shikigami Megumi will follow up with next.|actual|stated|
+t- deictic|Determined to protect his mother,
+t- deictic|Refusing to lose,
+
+@1430 gold: belief = suspected; admitting and claiming are speech; the told act; Jogo asks
+keep
+f- Sukuna|other_verb|believes
+f+ Sukuna|suspected|-|Sukuna believes Jogo should have burned everything a cinder without a second thought|actual|stated|
+t+ no_relation|Sukuna believes Jogo lacked the hunger to take hold of such desires, but even so, the battle still entertained him.
+f- Sukuna|other_verb|admits
+f+ Sukuna|other_verb|admits|Sukuna admits that compared to everyone he has fought over the last millennia, Jogo isn't bad.|actual|stated|
+f- Sukuna|other_verb|claiming
+f+ Sukuna|other_verb|claiming|claiming he doesn't know either.|actual|stated|
+f+ Jogo|other_verb|stand|He commends Jogo, telling him to stand proud because he's strong.|ordered|stated|Sukuna
+t- dialogue|Acknowledged for his strength
+f+ Jogo|other_verb|asks|Acknowledged for his strength, Jogo sheds a tear and asks what's going on.|actual|stated|
+
+@1431 gold: one name; the curses are a crowd; the hypothetical has no asserter; the grab and the severing; a trait
+keep
+r Satoru=>Satoru Gojo
+r Gojo=>Satoru Gojo
+f- curses|other_verb|believe
+t+ crowd_end|The curses believe this is the best way to make him agonize and waste time thinking of countermeasures.
+t+ crowd_end|The curses believe he won't do so because his capacity for sacrifice is limited to those killed by curses
+f- Satoru Gojo|other_verb|cast
+f+ Satoru Gojo|other_verb|cast|He could cast him Domain and sacrifice everyone on B5F for everyone else in Shibuya.|hypothetical|stated|
+t- no_relation|The Infinity throws
+f+ Satoru Gojo|other_verb|grabs|The Infinity throws the trajectory of the curse's punch off and Satoru grabs his arm.|actual|stated|
+t- no_relation|However, Jogo severs
+f+ Jogo|other_verb|severs|However, Jogo severs his own arm to disappear back into the crowd.|actual|stated|
+t- capability|Satoru Gojo is willing
+t+ no_relation|Satoru Gojo is willing to make sacrifices, but even his capacity to stomach the death of innocent people has its limit.
+
+@1432 gold: the Hollow Purple strike is the fight with Sukuna; Sukuna heals, not Gojo; the denied notice; the arms wound; a deictic line is no_relation
+keep
++ Gojo|fought|Sukuna|Gojo draws first blood with his pre-emptive strike, unleashing an amplified Hollow Purple at 200% output.
+f- Gojo|other_verb|unleashing
+f+ Gojo|used|Hollow Purple|Gojo draws first blood with his pre-emptive strike, unleashing an amplified Hollow Purple at 200% output.|actual|stated|
+f- Sukuna|other_verb|notice
+f+ Sukuna|other_verb|notice|Sukuna doesn't notice the attack until the last moment because of Ijichi's barrier.|actual|denied|
+f- Gojo|healed|Gojo
+f+ Sukuna|healed|-|Gojo teleports to his position while he's healing them.|actual|stated|
+f+ Gojo|other_verb|teleports|Gojo teleports to his position while he's healing them.|actual|stated|
+t- no_doer|Both Sukuna's cursed
+f+ Sukuna|wounded|-|Both Sukuna's cursed energy-reinforced arms are destroyed|actual|stated|
+t- deictic|The final faceoff
+t+ no_relation|The final faceoff occurs between the strongest sorcerer of today and the strongest sorcerer in history.
+
+@1433 gold: one name; Yuta regroups (Gojo is the unsealed, not the doer); the planned acts; the discussion; citation
+keep
+r Gojo=>Satoru Gojo
+f- Satoru Gojo|other_verb|unseal
+f+ Yuta|other_verb|regroups|Yuta regroups with his friends and fellow sorcerers as they begin to enact the plan to unseal Satoru Gojo from the Prison Realm|actual|stated|
+f+ Rika|other_verb|eat|Panda goes over the Yuta's plan on how he'll have Rika eat Kenjakus head to copy his brain transplanting technique to use on Satoru's body|planned|stated|Yuta
+f+ Yuta|other_verb|discussed|During a following meeting Yuta and the sorcerers gathered discussed who should deal with Kenjaku|actual|stated|
+f- Yuta|other_verb|decides
+f+ Yuta|other_verb|decides|Yuta decides he'll fight Sukuna in his domain and should he lose he will take Gojo's body despite Maki's protests.|actual|stated|
+f+ Yuta|other_verb|fight|Yuta decides he'll fight Sukuna in his domain|planned|stated|Yuta
+t+ citation|(Chapter 240)
+
+@1434 gold: the seeming defeat is apparent; citations
+keep
+f+ Mahito|other_verb|defeating|seemingly defeating the sorcerer as his large mechanical puppet collapsed.|actual|apparent|
+t+ citation|(Chapter 81, Episode 31)
+t+ citation|(Chapter 82, Episode 31)
+
+@1435 gold: the question and the reply (Kokichi's death claimed); everyone is a crowd; citations
+keep
+f+ Mai|other_verb|asks|When Mai asks what Kokichi did, Utahime replies that it no longer matters as he's already dead.|actual|stated|
+f+ Utahime|other_verb|replies|When Mai asks what Kokichi did, Utahime replies that it no longer matters as he's already dead.|actual|stated|
+f+ Kokichi|dies|-|Utahime replies that it no longer matters as he's already dead.|claimed|stated|Utahime
+t- no_relation|everyone is left in shock.
+t+ crowd_end|everyone is left in shock.
+t+ citation|(Chapter 128)
+t+ citation|(Chapter 134)
+
+@1436 gold: the urged act; Maki's killing of her (unnamed) mother
+keep
+f+ Noritoshi|other_verb|speak|Maki urges Noritoshi to speak with his mother again|ordered|stated|Maki
+f+ Maki|other_verb|killed|reveals that she killed hers before they had a chance to properly talk.|actual|stated|
+
+@1437 gold: punches and charges are fights; a described technique; explaining is speech; Nobara's drop is her attack; the reactions have doers
+keep
+f- Yuji|attacked|Kechizu
++ Yuji|fought|Kechizu|Yuji starts to punch Kechizu multiple times.
+f- Eso|attacked|Yuji
++ Eso|fought|Yuji|When Eso undoes his technique and charges, Yuji starts to rush at Eso.
+f- Eso|used|technique
+f+ Eso|other_verb|uses|Eso then uses a technique and flower patterns appear on the wounds of Nobara and Yuji.|actual|stated|
+f- Eso|revealed|Nobara
+f- Eso|revealed|Yuji
+f+ Eso|other_verb|explains|Eso then explains to the two how his technique works and how long they have to live.|actual|stated|
+f- Nobara|used|technique
+f+ Nobara|other_verb|stop|As Nobara uses her technique on herself to stop Eso and Kechizu from moving|actual|stated|
+f- Nobara|helped|Yuji
++ Nobara|fought|Eso|Nobara uses her technique to make Eso fall from the car
+t- deictic|As Nobara is worried
+t+ no_relation|As Nobara is worried about Yuji,
+t- deictic|Eso starts to cry,
+f+ Eso|other_verb|cry|After Kechizu is killed and Eso starts to cry, Yuji sees this and gets distracted.|actual|stated|
+t- deictic|Yuji sees this
+f+ Yuji|other_verb|sees|Yuji sees this and gets distracted.|actual|stated|
+
+@1438 gold: a described area; citations
+keep
+f- Sukuna|destroyed|a far more massive area
+t+ citation|(Chapter 252)
+t+ citation|(Chapter 259)
+
+@1439 gold: assuming is an actual belief; the domain is no doer; Maki's free movement is narrated
+keep
+f- Hagane Daido|suspected|-
+f- Rokujushi Miyo|suspected|-
+f+ Hagane Daido|suspected|-|As nothing appeared to happen, the two fighters assumed it was a misfire and attempted to attack.|actual|stated|
+f+ Rokujushi Miyo|suspected|-|As nothing appeared to happen, the two fighters assumed it was a misfire and attempted to attack.|actual|stated|
+t- no_relation|The domain was unable
+t+ no_doer|The domain was unable to recognize Maki, however, and couldn't target her without any cursed energy.
+t- capability|She was able to move freely
+f+ Maki Zenin|other_verb|move|She was able to move freely in the domain and killed Naoya by attacking him from behind.|actual|stated|
+
+@1440 gold: Mei Mei meets them too; the teacher; Yuta relents; Hana and Inumaki allow; citation
+keep
++ Mei Mei|met|Yuji|Yuta, accompanied by Mei Mei, met with Yuji and Ui Ui
++ Mei Mei|met|Ui Ui|Yuta, accompanied by Mei Mei, met with Yuji and Ui Ui
+f+ Gojo|mentored|Yuta|During replacement training with Gojo, Yuta asked his teacher if he could use the last of Sukuna's cursed finger|actual|stated|
+f+ Yuta|other_verb|relented|to which Yuta relented as he knew that to be the case with training with Inumaki|actual|stated|
+f+ Hana|other_verb|allowed|Yuta further explained that this was the reason Hana and Inumaki allowed their bisected arms to be copied.|actual|stated|
+f+ Inumaki|other_verb|allowed|Yuta further explained that this was the reason Hana and Inumaki allowed their bisected arms to be copied.|actual|stated|
+t+ citation|(Chapter 267)
+
+@1441 gold: bringing to their side is recruiting; the reveal is speech with the planned fight; Kashimo listens
+keep
+f- Hakari|allied_with|Kashimo
+f+ Hakari|recruited|Kashimo|Hakari reveals that he's brought Kashimo to their side in exchange for fighting Sukuna.|actual|stated|
+f+ Hakari|other_verb|reveals|Hakari reveals that he's brought Kashimo to their side in exchange for fighting Sukuna.|actual|stated|
+f+ Kashimo|other_verb|fighting|he's brought Kashimo to their side in exchange for fighting Sukuna.|planned|stated|Hakari
+f+ Kashimo|other_verb|listens|confusing Kashimo as he listens to their banter.|actual|stated|
+
+@1442 gold: the tried kill; the asked death; explaining is speech; the technique's name; an unnamed imposter; Yuji baits Choso; the station fight
+keep
+f+ Smallpox Deity|other_verb|kill|the Smallpox Deity keeps on trying to kill Mei Mei with its sure-kill technique|attempted|stated|Smallpox Deity
+f+ Mei Mei|other_verb|breaks|but Mei Mei easily breaks out of it.|actual|stated|
+f+ Ui Ui|other_verb|die|asks Ui Ui to die for her, which Ui Ui agrees to it.|ordered|stated|Mei Mei
+f- Mei Mei|revealed|-
+f+ Mei Mei|other_verb|explaining|while also explaining what Ui Ui's role is and how he can use Simple Domain to counter an enemy's domain.|actual|stated|
+f- Mei Mei|used|Bird Strike technique
+f+ Mei Mei|used|Bird Strike|Mei Mei uses her Bird Strike technique to exorcise Smallpox Deity.|actual|stated|
+f- Geto imposter|other_verb|confronted
+t+ crowd_end|As Mei Mei and Ui Ui prepares to continue down the tunnel, they are suddenly confronted by the Geto imposter.
+f- Yuji|tricked|-
+f+ Yuji|tricked|Choso|Yuji figures out Choso's strategy and baits him into attack.|actual|stated|
++ Yuji|fought|Choso|At the station that Yuji and Choso is fighting at
+
+@1443 gold: describing is speech; a trait
+keep
+f- Kento Nanami|other_verb|describes
+f+ Kento Nanami|other_verb|describes|Kento Nanami describes Mahito as extraordinarily childish and similar to Satoru Gojo.|actual|stated|
+t- capability|He enjoys messing
+t+ no_relation|He enjoys messing with humans, even in battle when his life is on the line.
+
+@1444 gold: claiming is speech; taking off is no wearing; preparing is actual; the barrier is no doer; Mahito touches; the denied care; an epithet; Yuji breaks in
+keep
+f- Mahito|other_verb|claims
+f+ Mahito|other_verb|claims|Mahito claims he's thankful|actual|stated|
+f- Nanami|wore|sunglasses
+f+ Nanami|other_verb|takes|He takes off his sunglasses|actual|stated|
+f- Nanami|other_verb|prepares
+f+ Nanami|other_verb|prepares|Just as Nanami prepares to die|actual|stated|
+f- barrier|other_verb|forces
+f- Mahito|other_verb|punished
+f+ Mahito|other_verb|touch|This forces Mahito to touch Sukuna's soul, which he is promptly punished for.|actual|stated|
+f- Sukuna|other_verb|couldn't
+f+ Sukuna|other_verb|care|the king of curses truly couldn't care less about anyone else, other than Megumi.|actual|denied|
+f- Sukuna|also_known_as|king of curses
+t- no_relation|Yuji breaks into
+f+ Yuji|other_verb|breaks|Yuji breaks into Mahito's domain from the outside.|actual|stated|
+
+@1445 gold: Yuki fights Kenjaku too; citations
+keep
++ Yuki|fought|Kenjaku|Choso returned to ambush Kenjaku and fought effectively alongside Yuki until he was eventually incapacitated.
+t+ citation|(Chapter 203)
+t+ citation|(Chapter 207)
+t+ citation|(Chapter 208)
+
+@1446 gold: one name; Kiyotaka's wound; the narrated acts and questions have doers; explaining and saying are speech; joining a person is no group; the ordered stay; citations
+keep
+r Nobara=>Nobara Kugisaki
+f+ Kiyotaka|wounded|-|Later, Nanami finds Kiyotaka laying on the ground wounded.|actual|stated|
+t- deictic|After finding Kiyotaka
+f+ Nanami|other_verb|heads|After finding Kiyotaka in that state, Nanami gets angry and heads out.|actual|stated|
+t- deictic|Nanami starts walking
+f+ Nanami|other_verb|walking|Nanami starts walking towards Haruta and he tries to get him to stop but notices that his hostage has left.|actual|stated|
+f+ Haruta Shigemo|other_verb|get|he tries to get him to stop but notices that his hostage has left.|attempted|stated|Haruta Shigemo
+f+ Haruta Shigemo|learned|-|but notices that none of his attacks are working.|actual|stated|
+t- dialogue|Nanami asks him how many
+f+ Nanami|other_verb|asks|Nanami asks him how many allies he has and where are their locations.|actual|stated|
+f+ Haruta Shigemo|other_verb|says|Haruta says that he doesn't know and Nanami sends him flying into a wall.|actual|stated|
+t- deictic|As he gets up
+f+ Nanami|other_verb|grabs|As he gets up, Nanami grabs Haruta and asks again.|actual|stated|
+t- dialogue|As Haruta is angry
+t+ no_relation|As Haruta is angry at Nobara, Nanami grabs him and asks if he is the one who killed all the assistant managers.
+f- Nanami|revealed|Akari Nitta
+f- Nanami|revealed|Nobara Kugisaki
+f+ Nanami|other_verb|explains|After this, Nanami explains to Akari Nitta and Nobara the situation with Kiyotaka and how Gojo has been sealed.|actual|stated|
+f+ Nanami|other_verb|says|Nanami then says that he will be going to help Gojo|actual|stated|
+f- Nobara Kugisaki|joined|Nanami
+f+ Nobara Kugisaki|other_verb|says|which Nobara says that she wants to join him|actual|stated|
+f+ Nobara Kugisaki|other_verb|join|which Nobara says that she wants to join him|planned|stated|Nobara Kugisaki
+f+ Akari Nitta|other_verb|stay|Nanami then tells the two to stay here while he leaves to help Gojo.|ordered|stated|Nanami
+f+ Nobara Kugisaki|other_verb|stay|Nanami then tells the two to stay here while he leaves to help Gojo.|ordered|stated|Nanami
+t+ citation|(Chapter 98)
+t+ citation|(Chapter 99)
+t+ citation|(Chapter 100)
+t+ citation|(Chapter 101)
+
+@1447 gold: the Culling Game is no group (agreeing + planned entry); deciding carries the planned defeat
+keep
+f- Kashimo|joined|Culling Game
+f+ Kashimo|other_verb|agreed|he agreed to enter the Culling Game to challenge the most substantial fighter ever to exist, Sukuna.|actual|stated|
+f+ Kashimo|other_verb|enter|he agreed to enter the Culling Game|planned|stated|Kashimo
+t- no_relation|Kashimo enjoys the challenge
+f+ Kashimo|other_verb|decides|Kashimo enjoys the challenge and decides to try and defeat someone who's effectively immortal.|actual|stated|
+f+ Kashimo|other_verb|defeat|decides to try and defeat someone who's effectively immortal.|planned|stated|Kashimo
+
+@1448 gold: overpowered is the defeat (one act)
+keep
+- Todo|fought|Megumi
++ Todo|defeated|Megumi|Todo also overpowered Megumi in a similar fashion
+

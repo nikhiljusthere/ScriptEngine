@@ -1,0 +1,129 @@
+@3501 gold: ok
+keep
+
+@3502 gold: the window's name Hana
+keep
+r Hana Kurusu=>Hana
+
+@3503 gold: recovering with help is healing, not a rescue; the request's act; a technique is no subject
+keep
+- Shoko Ieiri|saved|Hana
+- Yuta Okkotsu|saved|Hana
+f+ Shoko Ieiri|healed|Hana|after recovering with the assistance of Shoko Ieiri and Yuta Okkotsu|actual|stated|
+f+ Yuta Okkotsu|helped|Hana|after recovering with the assistance of Shoko Ieiri and Yuta Okkotsu|actual|stated|
+f- Hana|other_verb|unseal
+f+ Hana|other_verb|unseal|Although her primary role had been to unseal Satoru Gojo|planned|stated|Hana
+f+ Hana|helped|Yuta Okkotsu|Yuta requested her aid in their final effort against Sukuna.|ordered|stated|Yuta Okkotsu
+f- Jacob's Ladder|other_verb|intended
+f+ Hana|other_verb|deliver|only to deliver the finishing blow with Jacob's Ladder|planned|stated|Yuta Okkotsu
+
+@3504 gold: one name (Awasaka); the order's act; a clause object; both talk
+keep
+r Awasaki=>Awasaka
+f+ Megumi|other_verb|face|Awasaki then tells Megumi to face him like a man.|ordered|stated|Awasaka
+f- Megumi|learned|Inverse
+f+ Megumi|learned|-|After realizing Awasaka's cursed technique is Inverse|actual|stated|
+f+ Yuji|other_verb|talk|They then talk about what they need to do to defeat Awasaka.|actual|stated|
+f+ Megumi|other_verb|deactivates|Megumi deactivates Max Elephant and distances himself, which annoys Awasaka.|actual|stated|
+
+@3505 gold: deciding is actual + the planned act; a deictic with a doer
+keep
+f- Megumi|other_verb|decides
+f+ Megumi|other_verb|decides|which Megumi decides to take Takuma to get some medical treatment|actual|stated|
+f+ Megumi|other_verb|take|which Megumi decides to take Takuma to get some medical treatment|planned|stated|Megumi
+t- deictic|After getting Takuma
+f+ Megumi|other_verb|heads|After getting Takuma to safety, he heads towards the station.|actual|stated|
+f+ Megumi|other_verb|break|Megumi and Yuji break the cursed objects keeping the screen up|actual|stated|
+f+ Yuji|other_verb|break|Megumi and Yuji break the cursed objects keeping the screen up|actual|stated|
+
+@3506 gold: figuring is suspected
+keep
+f- Megumi|other_verb|figures
+f+ Megumi|suspected|-|and figures that Dagon won't let them open another portal.|actual|stated|
+
+@3507 gold: the trap catches Toji; his self-stabbing death; deciding is actual + the planned act; the dodge
+keep
+f- Toji|other_verb|gets
+f+ Toji|other_verb|caught|As Toji attacks, he gets caught in Megumi's trap, causing his attack to miss Megumi.|actual|stated|
+f+ Toji|dies|-|Toji is glad to hear his name and stabs himself in the head, which shocks Megumi.|actual|stated|
+f- Megumi|other_verb|decides
+f+ Megumi|other_verb|decides|Megumi decides to ignore it and go get healed|actual|stated|
+f+ Megumi|other_verb|ignore|Megumi decides to ignore it and go get healed|planned|stated|Megumi
+f+ Megumi|other_verb|escapes|Megumi escapes the attack and thinks about what he is capable of right now.|actual|stated|
+
+@3508 gold: the window's name Satoru; an adjective; wanting is actual + the planned act; a thing subject; Satoru's feeling
+keep
+r Satoru Gojo=>Satoru
+f- Toji|other_verb|aware
+f- Toji|other_verb|wanted
+f+ Toji|other_verb|wanted|Toji wanted to reject the jujutsu world by killing the strongest sorcerer.|actual|stated|
+f+ Toji|other_verb|reject|Toji wanted to reject the jujutsu world by killing the strongest sorcerer.|planned|stated|Toji
+f- Hollow Technique: Purple|other_verb|twisting
+t+ no_relation|However, this only ended up twisting Toji in an effort to affirm him.
+t- no_relation|He can only feel
+f+ Satoru|other_verb|feel|He can only feel the high he's on at the moment and he feels amazing.|actual|stated|
+
+@3509 gold: the window's name Satoru; an organisation is no place; a claim is speech; the recovery
+keep
+r Satoru Gojo=>Satoru
+- Satoru|departed|Time Vessel Association
+f+ Satoru|other_verb|walks|Satoru asks if there needs to be a point as he walks out.|actual|stated|
+f+ Satoru|other_verb|recovering|Suguru is surprised to find Satoru recovering Riko's body from the Time Vessel Association.|actual|stated|
+f- Suguru|other_verb|claims
+f+ Suguru|other_verb|claims|Suguru claims there's no point because the association will collapse before long|actual|stated|
+
+@3510 gold: unnamed allies; a mechanic is capability
+keep
+f- Allies|other_verb|realize
+t+ crowd_end|They quickly realize that Gojo has swapped the conditions of his barrier to make it durable to attacks from the outside
+t- no_relation|It's normally impossible
+t+ capability|It's normally impossible to use amplification and an innate technique at the same time, but techniques applied to the domain already are an exception.
+
+@3511 gold: a doer-less sending; the unnamed superior
+keep
+f- Megumi|other_verb|sent
+t+ no_doer|Megumi is sent on a mission to Sugisawa Third High School to retrieve a cursed object.
+f- Megumi|contacted|superior
+f+ Megumi|other_verb|calls|Megumi calls his superior to inform them about the circumstance|actual|stated|
+f- superior|other_verb|told
+t+ crowd_end|to which his superior tells him that he can't go home until he finds the object.
+
+@3512 gold: "the school" is unnamed here; the order's act; noticing; unnamed spirits; citation quotes
+keep
+- Yuji|arrived|Sugisawa Third High School
+f+ Yuji|other_verb|reach|Once they reach the school, Megumi tells Yuji to stay outside as he heads inside.|actual|stated|
+f+ Yuji|other_verb|stay|Megumi tells Yuji to stay outside|ordered|stated|Megumi
+f+ Megumi|other_verb|heads|Megumi tells Yuji to stay outside as he heads inside.|actual|stated|
+f- Megumi|suspected|-
+f+ Megumi|learned|-|but he notices that he can't rescue them in time.|actual|stated|
+f- Megumi|destroyed|the spirit
+f+ Megumi|other_verb|exorcise|Megumi uses this chance to exorcise the spirit.|actual|stated|
+f+ Yuji|other_verb|crashing|Suddenly, Yuji shows up by crashing through a window and manages to rescue his friends|actual|stated|
+f+ Yuji|other_verb|talking|Megumi and Yuji are talking about the circumstances of the situation|actual|stated|
+f- the spirit|other_verb|overwhelm
+t+ crowd_end|but the spirit is easily able to overwhelm him.
+t- citation|as he heads inside
+t- citation|overwhelm him.
+t+ citation|(Chapter 1)
+
+@3513 gold: the request's act; Megumi meets them; citations
+keep
+f+ Gojo|other_verb|help|which Megumi asks for Gojo to help Yuji out.|ordered|stated|Megumi
++ Megumi|met|Yuji|Megumi meets up with Gojo and Yuji and informs Yuji that he is going to enroll at the same college he attends.
+t+ no_doer|After Gojo is informed
+t+ citation|(Chapter 2)
+
+@3514 gold: waking from a nap is no awakened; in person is no contacted; moving in; deictics with a doer; citation
+keep
+- Megumi|awakened|-
+f+ Megumi|other_verb|wakes|Megumi wakes up and finds out about it and becomes annoyed.|actual|stated|
+f+ Megumi|learned|-|Megumi wakes up and finds out about it and becomes annoyed.|actual|stated|
+f- Gojo|contacted|Megumi
+f+ Gojo|other_verb|informs|Megumi then listens as Gojo informs them that they will be heading out to pick up the last of the first years tomorrow.|actual|stated|
+f- Yuji|located_at|the dorms
+f+ Yuji|other_verb|moves|when Yuji moves into the room next to his|actual|stated|
+t- deictic|Days later
+f+ Megumi|other_verb|returns|Days later, Megumi returns to the college and takes a nap in his room at the dorms.|actual|stated|
+t- deictic|finds out about it
+t+ citation|(Chapter 3)
+

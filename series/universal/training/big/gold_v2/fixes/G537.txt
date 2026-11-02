@@ -1,0 +1,158 @@
+@3037 gold: garbage objects; a report and a conversation are not stated as remote; an island is no doer; the decision with a planned transfer
+keep
+f- Big Mom|other_verb|Tea
+f+ Big Mom|other_verb|preparing|Big Mom, while preparing for a Tea Party, received a report from Pekoms and Tamago|actual|stated|
+f- Pekoms|contacted|Big Mom
+f- Tamago|contacted|Big Mom
+f+ Big Mom|other_verb|received|received a report from Pekoms and Tamago that Fish-Man Island had failed to provide its requisite amount of sweets for her.|actual|stated|
+f- Fish-Man Island|other_verb|Big Mom
+t+ no_doer|that Fish-Man Island had failed to provide its requisite amount of sweets for her.
+f- Big Mom|contacted|Monkey D. Luffy
+f+ Big Mom|other_verb|conversed|she then conversed with Monkey D. Luffy, who ate the sweets,|actual|stated|
+f- Monkey D. Luffy|other_verb|sweets
+f+ Monkey D. Luffy|other_verb|ate|she then conversed with Monkey D. Luffy, who ate the sweets,|actual|stated|
+f- Big Mom|other_verb|Monkey D. Luffy
+f+ Big Mom|other_verb|decided|and decided to transfer her grudge to him instead.|actual|stated|
+f+ Big Mom|other_verb|transfer|and decided to transfer her grudge to him instead.|planned|stated|Big Mom
+
+@3038 gold: an unnamed dragon is no end
+keep
+f- Dragon|located_at|Wano Country
+t+ crowd_end|One resided in the Wano Country long ago.
+
+@3039 gold: ok
+keep
+
+@3040 gold: Sabo interfered in Burgess's attempt on Luffy; the planned kill; belief is suspicion; a hypothetical rescue; a mindset is a trait
+keep
+f- Burgess|other_verb|interfere
+f+ Sabo|other_verb|interfered|when he interfered in his attempts to kill Luffy|actual|stated|
+f+ Burgess|other_verb|kill|when he interfered in his attempts to kill Luffy|attempted|stated|Burgess
+f+ Burgess|other_verb|kill|willing to take advantage of Luffy's weakened state to kill him and take his Devil Fruit|planned|stated|Burgess
+f- Burgess|other_verb|believing
+f+ Burgess|suspected|-|believing that it was his right to have the fruit|actual|stated|
+f- Luffy|other_verb|saving
+t+ no_relation|despite the fact that Luffy was the country's best chance at saving them from the oppressive Doflamingo
+t- capability|Burgess also displayed
+t+ no_relation|Burgess also displayed a ruthless opportunistic mindset
+t- deictic|This is further shown when
+
+@3041 gold: the alias direction (the nickname is the subject)
+keep
+f- Tongari|alias_of|チョウロウ
+f+ チョウロウ|alias_of|Tongari|Tongari goes by the nickname チョウロウ|actual|stated|
+
+@3042 gold: leaving Luffy the finish is no help
+keep
+f- Law|helped|Luffy
+f+ Law|other_verb|left|Law fought as long as he could and left Luffy to finish Doflamingo off|actual|stated|
+
+@3043 gold: one act (A145); a balloon reveal is no identity; tried = use; trauma is the defeat
+keep
+- Usopp|fought|Perona
+f- "hammer"|revealed_as|balloon
+t+ no_relation|The "hammer" is revealed to be a balloon that pops instantly upon impact
+f- Perona|wounded|-
+f- Perona|other_verb|tried
+f+ Perona|other_verb|use|when she tried to use negativity and lies as her weapons|attempted|stated|Perona
+
+@3044 gold: Jinbe's acknowledgement; Franky's view; fish-men are a crowd
+keep
+f+ Jinbe|other_verb|acknowledged|The fish-man Jinbe also acknowledged the danger Sea Kings posed|actual|stated|
+t- capability|thus proving
+t+ crowd_end|thus proving at the very least fish-men are also aware of their potential threat
+t- capability|Many people, such as Franky
+f+ Franky|other_verb|see|Many people, such as Franky, see the act of killing one a sign of strength and achievement.|actual|stated|
+
+@3045 gold: ok
+keep
+
+@3046 gold: the Straw Hats sail off as a group (members unnamed, A2 nuance); boarding is no piloting; Zoro and Sanji inform
+keep
+- Zoro|departed|Water 7
+- Sanji|departed|Water 7
++ Straw Hats|departed|Water 7|The Straw Hats then boarded their new ship, the Thousand Sunny, and began sailing away from Water 7.
+f- Straw Hats|piloted|Thousand Sunny
+f+ Straw Hats|other_verb|boarded|The Straw Hats then boarded their new ship, the Thousand Sunny|actual|stated|
+f+ Straw Hats|owns|Thousand Sunny|The Straw Hats then boarded their new ship, the Thousand Sunny|actual|stated|
+t- crowd_end|He was later seen
+f+ Zoro|other_verb|informed|He was later seen when he and Sanji informed the rest of the crew that Garp's battleship was near the island.|actual|stated|
+f+ Sanji|other_verb|informed|He was later seen when he and Sanji informed the rest of the crew that Garp's battleship was near the island.|actual|stated|
+
+@3047 gold: ok
+keep
+
+@3048 gold: stating is speech; the offer with a planned protection; Shirahoshi's tears and wondering
+keep
+f- Shirahoshi|revealed|-
+f+ Shirahoshi|other_verb|states|The princess states that no one had ever yelled at her before.|actual|stated|
+f+ Luffy|other_verb|protect|offering to protect her if anything is thrown at her.|planned|stated|Luffy
+f+ Shirahoshi|other_verb|break|causing her to break down in tears instantly.|actual|stated|
+f+ Shirahoshi|other_verb|cry|causing her to cry even more.|actual|stated|
+t- no_relation|Shirahoshi becomes fascinated
+f+ Shirahoshi|other_verb|wondering|Shirahoshi becomes fascinated with Luffy, wondering how such a small person like Luffy can eat so much.|actual|stated|
+
+@3049 gold: a list line stating a reign is leader_of
+keep
+t- list_header|Cezar: King
+f+ Cezar|leader_of|Ilisia Kingdom|Cezar: King of the Ilisia Kingdom.|actual|stated|
+
+@3050 gold: the giant is unnamed; the culprit is Rayleigh; a reveal with no earlier name
+keep
+f- a giant|other_verb|told
+t+ crowd_end|As his staff rush to find a doctor, one of the captives, a giant, tells another that he knows he was the cause of Disco fainting
+f- the culprit|other_verb|claims
+f+ Silvers Rayleigh|other_verb|claims|When asked who he is, the culprit just claims he's an old man that cannot ignore a young girl.|actual|stated|
+f- Silvers Rayleigh|revealed_as|-
+
+@3051 gold: the battle line has its fight row
+keep
+t- list_header|Gild Tesoro vs. Roronoa Zoro
+
+@3052 gold: the whale is unnamed; announcing is speech; a figurehead is no doer; the crew is a crowd; Nami dismisses
+keep
+- Luffy|fought|the whale
+f+ Luffy|other_verb|hits|Luffy hits it in the eye with a punch for breaking off "his special seat", which angers the whale.|actual|stated|
+f- Usopp|revealed|-
+f+ Usopp|other_verb|announces|Usopp announces he can see a giant mountain in the way|actual|stated|
+f- Going Merry's bow figure|other_verb|broken
+t+ no_doer|Going Merry's bow figure is broken off as it bumps in the whale.
+t- deictic|As the crew heads
+t+ crowd_end|As the crew heads down the canal stream towards the Grand Line, a loud roar rings out into the air.
+t- deictic|but Nami dismisses
+f+ Nami|other_verb|dismisses|but Nami dismisses it as they should have open sea ahead of them.|actual|stated|
+t+ crowd_end|Suddenly they discover the giant mountain is actually a large whale.
+t+ crowd_end|The crew concludes that the whale most likely does not know they are there
+t+ crowd_end|They try to come up with ideas before they hit it
+t+ crowd_end|They wonder if it felt the cannonball and call it "stupid" if it did not.
+
+@3053 gold: an attempted freeing; the guarding; the ordered acts; located keeps no object; the roof battle
+keep
+f- Shinobu|helped|Momonosuke
+f+ Shinobu|other_verb|free|Shinobu attempted to sneakily free Momonosuke.|attempted|stated|Shinobu
+f+ King|other_verb|guarded|Afterwards, a still-flying King momentarily guarded the way to the rooftop|actual|stated|
+f+ Tobiroppo|other_verb|cease|ordering them to cease their search for Yamato and prevent the rebel alliance from reaching the dome's roof.|ordered|stated|King
+f+ Tobiroppo|other_verb|prevent|ordering them to cease their search for Yamato and prevent the rebel alliance from reaching the dome's roof.|ordered|stated|King
+f- Bao Huang|discovered|Momonosuke
+f+ Bao Huang|discovered|-|After Bao Huang had located Momonosuke|actual|stated|
+f+ King|other_verb|ordered|King ordered all forces to go kill the boy, as the death of Oden's son would deprive the enemy samurai of their will to fight.|actual|stated|
+t- deictic|After the Ninja-Pirate-Mink-Samurai
++ Kaidou|fought|Scabbards|with Kaidou and the Scabbards having taken their battle to the roof of Onigashima's Skull Dome
+
+@3054 gold: discovered keeps no object; the belief; the four servants and their acts
+keep
+f- Trebol|discovered|Supreme King Haki
+f+ Trebol|discovered|-|discovered that he could use Supreme King Haki|actual|stated|
+f+ Trebol|suspected|-|Believing Doflamingo would rule over the world, they pledged their allegiance to him|actual|stated|
+f+ Vergo|assisted|Donquixote Doflamingo|Trebol, Vergo, Diamante, and Pica did anything to serve Doflamingo|actual|stated|
+f+ Diamante|assisted|Donquixote Doflamingo|Trebol, Vergo, Diamante, and Pica did anything to serve Doflamingo|actual|stated|
+f+ Pica|assisted|Donquixote Doflamingo|Trebol, Vergo, Diamante, and Pica did anything to serve Doflamingo|actual|stated|
+t- no_relation|killing people who offended
+f+ Trebol|other_verb|killing|killing people who offended Doflamingo and even burning down an entire town just because he slipped and fell on a street.|actual|stated|
+f+ Vergo|other_verb|killing|killing people who offended Doflamingo and even burning down an entire town just because he slipped and fell on a street.|actual|stated|
+f+ Diamante|other_verb|killing|killing people who offended Doflamingo and even burning down an entire town just because he slipped and fell on a street.|actual|stated|
+f+ Pica|other_verb|killing|killing people who offended Doflamingo and even burning down an entire town just because he slipped and fell on a street.|actual|stated|
+f+ Trebol|other_verb|burning|even burning down an entire town just because he slipped and fell on a street.|actual|stated|
+f+ Vergo|other_verb|burning|even burning down an entire town just because he slipped and fell on a street.|actual|stated|
+f+ Diamante|other_verb|burning|even burning down an entire town just because he slipped and fell on a street.|actual|stated|
+f+ Pica|other_verb|burning|even burning down an entire town just because he slipped and fell on a street.|actual|stated|

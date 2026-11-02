@@ -1,0 +1,217 @@
+@3445 gold: fullest names; the help is getting her to hospital; narrated speech; a promise is speech + the planned act
+keep
+f- Foggy Nelson|helped|Cardenas
+f- Karen Page|assisted|Cardenas
+f+ Foggy Nelson|other_verb|left|Foggy Nelson left her with Karen Page to see if other tenants were more seriously injured.|actual|stated|
+f+ Foggy Nelson|helped|Cardenas|Nelson and Page eventually got her to Metro-General Hospital|actual|stated|
+f+ Karen Page|helped|Cardenas|Nelson and Page eventually got her to Metro-General Hospital|actual|stated|
++ Foggy Nelson|arrived|Metro-General Hospital|Nelson and Page eventually got her to Metro-General Hospital
++ Karen Page|arrived|Metro-General Hospital|Nelson and Page eventually got her to Metro-General Hospital
+t- dialogue|Cardenas, who was in shock
+f+ Cardenas|other_verb|said|Cardenas, who was in shock, said that the sky was falling again|actual|stated|
+t- no_relation|Nelson and Page promised
+f+ Foggy Nelson|other_verb|promised|Nelson and Page promised to wait for Cardenas to come out of surgery to support her.|actual|stated|
+f+ Karen Page|other_verb|promised|Nelson and Page promised to wait for Cardenas to come out of surgery to support her.|actual|stated|
+f+ Foggy Nelson|other_verb|wait|Nelson and Page promised to wait for Cardenas to come out of surgery to support her.|planned|stated|Foggy Nelson
+f+ Karen Page|other_verb|wait|Nelson and Page promised to wait for Cardenas to come out of surgery to support her.|planned|stated|Karen Page
+
+@3446 gold: the opening quote line is dialogue (one line, one tag); Loki travels
+keep
+t- no_relation|There was a wormhole
+t- no_relation|At that moment
+t+ dialogue|There was a wormhole in space and time beneath me. At that moment, I let go.
+t- no_relation|causing Loki to travel
+f+ Loki|other_verb|travel|causing Loki to travel throughout the galaxy|actual|stated|
+
+@3447 gold: an uncovered act
+keep
+f+ Amador|other_verb|stored|Amador stored this rifle in a hidden cache in her Belarus hotel room.|actual|stated|
+
+@3448 gold: one name (Wilson); the theft; hoping is actual; realizing
+keep
+r Deadpool=>Wilson
+f+ Wilson|other_verb|decided|However, Wilson instead decided to attack Paradox and steal his TemPad|actual|stated|
+f+ Wilson|stole|TemPad|However, Wilson instead decided to attack Paradox and steal his TemPad|actual|stated|
+f- Wilson|other_verb|hoped
+f+ Wilson|other_verb|hoped|as he hoped that his healing factor had enabled him to survive.|actual|stated|
+f- Wilson|other_verb|Realizing
+f+ Wilson|learned|-|Realizing his mission was a failure|actual|stated|
+
+@3449 gold: a step-grandmother is no relation row
+keep
+f- Mrs. Quill|other_verb|step-grandmother
+
+@3450 gold: spending days in a place is located_at (A151)
+keep
+- Coulson|arrived|Tahiti
+f+ Coulson|located_at|Tahiti|spent his last days in Tahiti with Melinda May|actual|stated|
+
+@3451 gold: Fury's revelation
+keep
+f+ Nick Fury|revealed|-|now that Nick Fury had revealed everything about them|actual|stated|
+
+@3452 gold: one quote line, one tag; one name each; the captured weapon; a sentence with no doer
+keep
+r Carter=>Peggy Carter
+r the Howling Commandos=>Howling Commandos
+t- dialogue|"Cut off one head
+t+ dialogue|These assets are now under the protection of the Strategic Scientific Reserve. They'll be relocated and hidden out of sight, indefinitely, as will you." "Cut off one head, two more shall grow in its place." "Then I guess we'll keep cutting them off.
+f+ Peggy Carter|took|Obelisk|capturing General Werner Reinhardt and a weapon that became known as the first 0-8-4, the Obelisk.|actual|stated|
+f+ Howling Commandos|took|Obelisk|capturing General Werner Reinhardt and a weapon that became known as the first 0-8-4, the Obelisk.|actual|stated|
+t- no_relation|a weapon that became known
+f- Peggy Carter|gave|Werner Reinhardt
+t+ no_doer|and given a life sentence for his crimes.
+
+@3453 gold: ok
+keep
+
+@3454 gold: ok
+keep
+
+@3455 gold: the retrieval has a doer; agents of S.H.I.E.L.D.
+keep
+t- no_doer|An extraterrestrial corpse
+f+ Strategic Scientific Reserve|other_verb|retrieved|An extraterrestrial corpse, retrieved from Hydra by the Strategic Scientific Reserve, was taken to the Guest House|actual|stated|
+f+ Rebecca Stevens|member_of|S.H.I.E.L.D.|Six S.H.I.E.L.D. agents, including Rebecca Stevens and Cameron Klein|actual|stated|
+f+ Cameron Klein|member_of|S.H.I.E.L.D.|Six S.H.I.E.L.D. agents, including Rebecca Stevens and Cameron Klein|actual|stated|
+
+@3456 gold: ok
+keep
+
+@3457 gold: a quote line is dialogue
+keep
+f- Valkyrie|other_verb|progressing
+t+ dialogue|As you can see, production of the Valkyrie is progressing on schedule, even with components of this size.
+
+@3458 gold: one quote line, one tag; the user is Hydra
+keep
+f- Hydra dispatcher|gave|Zola
+t- dialogue
+t+ dialogue|You were right, Doctor Zola is on the train. Hydra dispatcher gave him permission to open up the throttle. Wherever he's going, they must need him bad.
+f- Schnellzug EB912|used|Hydra
+f+ Hydra|used|Schnellzug EB912|The Schnellzug EB912 was the advanced train used by Hydra during World War II.|actual|stated|
+
+@3459 gold: a named doer
+keep
+t- no_relation|Hulk stood
+f+ Hulk|other_verb|stood|Hulk stood among the wreckage of Manhattan, newly confident in himself.|actual|stated|
+
+@3460 gold: ok
+keep
+
+@3461 gold: a relationship list: friend labels are friend_of, other labels are list lines; garbage verbs
+keep
+f- Leo Fitz|other_verb|director
+f- Leo Fitz|other_verb|Colleague
+f- Leo Fitz|other_verb|colleague
+f- Leo Fitz|member_of|STRIKE
+f+ Leo Fitz|friend_of|Phil Coulson|Phil Coulson † - Director and Friend|actual|stated|
+f+ Leo Fitz|friend_of|Daisy Johnson|Daisy Johnson/Quake - Colleague, Friend and Temporary Enemy|actual|stated|
+f+ Leo Fitz|friend_of|Melinda May|Melinda May - Colleague and Friend|actual|stated|
+f+ Leo Fitz|friend_of|Yo-Yo Rodriguez|Yo-Yo Rodriguez - Colleague and Friend|actual|stated|
+t+ list_header|Piper - Colleague
+t+ list_header|STRIKE
+t+ list_header|James Davis † - Colleague
+t+ list_header|Wahl † - Colleague
+t+ list_header|Mike Peterson/Deathlok - Colleague
+t+ list_header|Noah † - Savior
+
+@3462 gold: Enoch informs; the Kree are a race
+keep
+t- crowd_end|Enoch informs
+f+ Enoch|other_verb|informs|Enoch informs the team that he has been found by the Kree|actual|stated|
+t+ crowd_end|that he has been found by the Kree, and that he can only withstand their assault for approximately 12 minutes.
+
+@3463 gold: a doer-less invitation; suspecting; the unnamed guards
+keep
+f- Pym|other_verb|invited
+t+ no_doer|In 2015, Pym was invited to a presentation at Pym Technologies
+f+ Pym|suspected|-|suspecting that Cross will show how far he had managed to develop the Pym Particle technology for his own.|actual|stated|
+t+ crowd_end|the security guard could not hold back his shock upon seeing his arrival
+t+ crowd_end|the next security guard asked to see his I.D.
+
+@3464 gold: one name (Thaddeus Ross); a field team is a description group
+keep
+r Ross=>Thaddeus Ross
+f- Thaddeus Ross|member_of|field team
+f- Kathleen Sparr|member_of|field team
+f- Emil Blonsky|leader_of|field team
+f+ Emil Blonsky|other_verb|led|Ross, Kathleen Sparr and their field team, led by Emil Blonsky traveled to New York City|actual|stated|
+
+@3465 gold: one quote line, one dialogue tag
+keep
+f- the new Director|other_verb|enhanced
+f- the new Director|transformed_into|hero and leader
+t- no_relation
+t- no_doer
+t- dialogue
+t+ dialogue|The decision was made that the new Director had to be enhanced. No candidate fit that criteria. So we made one." "You restarted the Erskine program." "There's no program. Just took a very well-vetted candidate and turned him into the hero and leader that we needed.
+
+@3466 gold: a record is no subject; Mahoney's speech acts and the acts they carry
+keep
+f- Hoyle's record|revealed|-
+f+ Mahoney|other_verb|complained|As Mahoney complained that, over the last few days|actual|stated|
+f+ Mahoney|other_verb|commented|he commented that he had looked up Hoyle's record, which seemed to confirm that he was a good man.|actual|stated|
+f+ Hoyle|other_verb|walk|Mahoney then promised that Hoyle would be allowed to walk free|planned|stated|Mahoney
+f+ Mahoney|other_verb|agreed|As Mahoney agreed to take Schultz back to his apartment|actual|stated|
+f+ Mahoney|other_verb|take|As Mahoney agreed to take Schultz back to his apartment|planned|stated|Mahoney
+f+ Hoyle|other_verb|return|he also advised Hoyle to return home and leave Castle behind him|ordered|stated|Mahoney
+
+@3467 gold: shot dead in one act (A145); the listener object; believing; a mechanic; the agreement
+keep
+- Toji|fought|Riko
+f+ Riko|other_verb|agrees|Just as Riko agrees to return home with Suguru|actual|stated|
+f+ Riko|other_verb|return|Just as Riko agrees to return home with Suguru|planned|stated|Riko
+f- Toji|revealed|Satoru Gojo
+f+ Toji|revealed|-|Toji grins and reveals he killed Satoru Gojo.|actual|stated|
+f- Toji|other_verb|believes
+f+ Toji|suspected|-|In this situation, Toji believes himself to be an invisible man.|actual|stated|
+f- Toji|other_verb|longer
+t+ capability|However, by holding a cursed tool he's no longer invisible.
+t+ citation|(Chapter 72, Episode 27)
+
+@3468 gold: narrated speech and acts are facts; a claim is a speech act
+keep
+t- dialogue|while telling him
+f+ Toji|other_verb|telling|while telling him to slow down|actual|stated|
+t- capability|Suguru is able to block
+f+ Suguru|other_verb|block|Suguru is able to block them with a squid-like curse|actual|stated|
+t- no_relation|while Rainbow Dragon crashes
+f+ Rainbow Dragon|other_verb|crashes|while Rainbow Dragon crashes into the wall.|actual|stated|
+t- no_relation|Toji avoids the curse
+f+ Toji|other_verb|avoids|Toji avoids the curse and continues revealing his hand.|actual|stated|
+f- Toji|other_verb|claims
+f+ Toji|other_verb|claims|claims he could have killed Riko first but it was safer to deal with the Six Eyes.|actual|stated|
+t- no_relation|it was safer
+
+@3469 gold: Suguru's own act
+keep
+t- no_relation|Suguru gets on top
+f+ Suguru|other_verb|gets|Suguru gets on top of one of the buildings to create space|actual|stated|
+t- no_relation|surprised Toji
+
+@3470 gold: things are no subjects; Toji angers her
+keep
+f- Domain|other_verb|locks
+f- Binding Vow|other_verb|can't
+t+ no_doer|This locks him into a Binding Vow that can't be broken until he answers her question.
+f- response|other_verb|angers
+f+ Toji|other_verb|angers|but his smug response only angers her.|actual|stated|
+f- scissors|other_verb|appears
+f- blades|other_verb|appear
+t+ no_doer|A pair of scissors suddenly appears in her hands and larger forms of the blades instantly appear ready to shear off his limbs.
+
+@3471 gold: the slices hit Suguru too; claims are speech; beliefs; the repelling
+keep
++ Toji|fought|Suguru|Toji draws his longsword from his cursed spirit's mouth and slices both Suguru and Kuchisake-Onna several times.
+f- Suguru|other_verb|claims
+f+ Suguru|other_verb|claims|Suguru flips that on Toji and claims it is the end for him|actual|stated|
+f- Suguru|other_verb|believes
+f+ Suguru|suspected|-|The curse manipulator believes he can take the curse and eliminate the weapons cache.|actual|stated|
+t+ no_doer|However, Suguru is repelled
+
+@3472 gold: a collapse with no doer
+keep
+t- deictic|all while the building
+t+ no_doer|all while the building is collapsing
+

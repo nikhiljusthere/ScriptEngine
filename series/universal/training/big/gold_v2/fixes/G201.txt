@@ -1,0 +1,376 @@
+@1961 gold: a list line that narrates a death gets the death fact
+keep
+t- list_header|Psynapse: Killed
+f+ Psynapse|dies|-|Psynapse: Killed by teammates for being infected and causing him to be "unfit".|actual|stated|
+
+@1962 gold: the heading home has named doers
+keep
+t- deictic|She-Hulk and Lyra head home.
+f+ She-Hulk|other_verb|head|After dumping her dress in a nearby garbage pail, She-Hulk and Lyra head home.|actual|stated|
+f+ Lyra|other_verb|head|After dumping her dress in a nearby garbage pail, She-Hulk and Lyra head home.|actual|stated|
+
+@1963 gold: a noun fragment is no verb
+keep
+f- Hydra|other_verb|over
+
+@1964 gold: a squabble with no blow is no fight; an unnamed girl is no object; Herc's return
+keep
+- Hercules|fought|Wolverine
+f+ Hercules|other_verb|squabbled|The two squabbled over a red headed girl, but it was a stalemate|actual|stated|
+f+ Wolverine|other_verb|squabbled|The two squabbled over a red headed girl, but it was a stalemate|actual|stated|
+f- Wolverine|took|red headed girl
+f+ Wolverine|other_verb|took|but Wolverine secretly took her home.|actual|stated|
+f+ Hercules|other_verb|returned|Herc returned the next night to finally seduce the girl|actual|stated|
+
+@1965 gold: non-verb objects; the attack on the outpost has a doer
+keep
+f- Crusher|other_verb|boat
+f- Crusher|other_verb|Long
+f- Crusher|other_verb|Iron
+f+ Crusher|other_verb|steal|in order to steal a boat to travel to Long Island to get revenge on Iron Man.|planned|stated|Crusher
+f+ Crusher|other_verb|travel|to travel to Long Island to get revenge on Iron Man.|planned|stated|Crusher
+f+ Crusher|other_verb|revenge|to get revenge on Iron Man.|planned|stated|Crusher
+t- no_relation|attacked an outpost
+f+ Crusher|other_verb|attacked|and attacked an outpost of one of his former masters|actual|stated|
+
+@1966 gold: MVP's death; Trauma's cause; discovered takes no object; a kind is no revealed identity; described clones; a trait
+keep
+f+ MVP|dies|-|and MVP was killed pushing Cloud 9 out of the way.|actual|stated|
+f+ Trauma|other_verb|caused|Trauma's fear targeting powers accidentally caused Armory to lose control of her weapon, the Tactigon|actual|stated|
+f- Von Blitzschlag|discovered|Übermensch
+f+ Von Blitzschlag|discovered|-|Baron Von Blitzschlag discovered that instead of being enhanced by the Super Soldier Serum as everyone believed, MVP was actually an "Übermensch"|actual|stated|
+f- MVP|revealed_as|Übermensch
+f- Von Blitzschlag|created|duplicates
+f+ Von Blitzschlag|other_verb|clone|Von Blitzschlag used MVP's body to clone several duplicates|actual|stated|
+t+ crowd_end|three of which served as the Scarlet Spiders.
+t- capability|MVP was one of the most capable
+t+ no_relation|MVP was one of the most capable young heroes.
+
+@1967 gold: described copies are no object; the theft
+keep
+f- Sinisters|created|copies of Cortez's brain
+f+ Sinisters|other_verb|created|they created many copies of Cortez's brain and hung them around the world to amplify their powers.|actual|stated|
+f+ Wagnerine|other_verb|stolen|One such brain was stolen by Wagnerine.|actual|stated|
+
+@1968 gold: one name; attempt verb; the narrated acts with named doers; the ordered beat-it; the attempted draw
+keep
+r The Two-Gun Kid=>Two-Gun Kid
+f- Sam Savage|other_verb|try
+f+ Sam Savage|other_verb|force|is trying to force the local homesteaders off their properties.|attempted|stated|Sam Savage
+f- Sam Savage|owns|all the land
+f+ Sam Savage|other_verb|bought|learns that Savage bought up all the land|actual|stated|
+f+ Two-Gun Kid|other_verb|beat|he orders the Kid to beat it as he is taking claim of the ranch|ordered|stated|Sam Savage
+f+ Sam Savage|other_verb|draw|When Savage tries to draw his gun|attempted|stated|Sam Savage
+t- no_relation|He demands to know
+f+ Two-Gun Kid|other_verb|demands|He demands to know why they were shooting at him|actual|stated|
+t- capability|The ranchers have stood up
+t+ crowd_end|The ranchers have stood up against Sam, but they don't have the resources to stand up against Savage's money or private army.
+t- crowd_end|The Kid then forces one
+f+ Two-Gun Kid|other_verb|promising|The Kid then forces one of the men to sell him his property, promising that he will help deal with Sam Savage|actual|stated|
+t- no_relation|Soon enough, word gets back
+f+ Sam Savage|learned|-|Soon enough, word gets back to Sam Savage that someone has bought one of the ranches.|actual|stated|
+t- crowd_end|Furious over this
+f+ Sam Savage|other_verb|gathers|Furious over this, Sam gathers his men and rides to the ranch that the Two-Gun Kid purchased.|actual|stated|
+t- crowd_end|Two-Gun Kid then has the other ranchers
+f+ Two-Gun Kid|other_verb|holds|Two-Gun Kid then has the other ranchers seek cover in the farmhouse and then he holds the outlaws at bay with a rifle.|actual|stated|
+t- crowd_end|The Two-Gun Kid, forces them
+f+ Two-Gun Kid|other_verb|forces|The Two-Gun Kid, forces them to stand down and has the other ranchers round them up.|actual|stated|
+
+@1969 gold: restraining = defeated; the visit happened; the requested act; the release; the spell's user
+keep
+- Strange|fought|Doom
++ Strange|defeated|Doom|Strange was able to restrain him
+f- Doom|other_verb|seeking
+f+ Doom|other_verb|seeking|Doom had come seeking Strange's help in using magic to alter time itself.|actual|stated|
+f+ Strange|other_verb|give|He requested that Strange give him the Darkhold|ordered|stated|Doom
+f- Strange|other_verb|restrain
+f+ Strange|other_verb|allowed|but allowed Doom to leave in peace.|actual|stated|
+t- apposition|a spell once used by Dracula
+f+ Dracula|used|Vampiric Verses|the "Vampiric Verses", a spell once used by Dracula to cheat time.|actual|stated|
+
+@1970 gold: one name; severing limbs = defeated; the ordered acts; an epithet is no alias; left_group twins of betrayed; failing plans are no doers; covered fragments
+keep
+r the Ghost=>Ghost
+- Scourge|fought|U.S.Agent
++ Scourge|defeated|U.S.Agent|Scourge used the spear to sever U.S.Agent's left limbs
+f- Thunderbolts|other_verb|ordered
+f+ Osborn|ordered|Thunderbolts|As part of Osborn's Siege of Asgard, the Thunderbolts were ordered to infiltrate Asgard's armories and steal Gungnir|actual|stated|
+f+ Thunderbolts|other_verb|infiltrate|the Thunderbolts were ordered to infiltrate Asgard's armories and steal Gungnir|ordered|stated|Osborn
+f+ Thunderbolts|other_verb|steal|the Thunderbolts were ordered to infiltrate Asgard's armories and steal Gungnir|ordered|stated|Osborn
+f- Gungnir|also_known_as|Odin's spear
+f+ Odin|owns|Gungnir|steal Gungnir, Odin's spear|actual|stated|
+f- Paladin|left_group|Thunderbolts
+f- Ant-Man|left_group|Thunderbolts
+f- Ghost|left_group|Thunderbolts
+f- Osborn's plans|other_verb|failed
+f- Osborn's reign of darkness|other_verb|fell
+t- deictic|Meanwhile, Osborn's plans failed
+t+ no_relation|Meanwhile, Osborn's plans failed with the return of the Avengers led by Steve Rogers and his reign of darkness fell.
+t- deictic|As part of Osborn's Siege
+t- no_relation|Despite being eroded
+t- deictic|During the clash between
+
+@1971 gold: "his stronghold" is no named place; the planning happened
+keep
+- Kang|arrived|Castle Limbo
+f- Immortus|other_verb|planned
+f+ Immortus|other_verb|planned|As Immortus had planned, Kang used his technology to create the three-member Council of Kangs|actual|stated|
+
+@1972 gold: an obligation is planned; an item is no doer; the delay is stated
+keep
+f- Squad|other_verb|finding
+f+ Squad|other_verb|finding|the Squad must hold off the devourer while finding their ally/former member of the team.|planned|stated|Squad
+f- Silver Surfer|other_verb|corrupted
+t+ no_doer|Silver Surfer (who is slowly being corrupted by the Infinity Sword)
+f- Silver Surfer|other_verb|delayed
+f+ Silver Surfer|other_verb|delayed|turns out to have delayed Ronan the Accuser from coming to the Skrull Throneworld's aid.|actual|stated|
+
+@1973 gold: ok
+keep
+
+@1974 gold: a group's other name is alias_of; unnamed occultists are a crowd
+keep
+f- Scientists Guild|also_known_as|Three Xs
+f+ Three Xs|alias_of|Scientists Guild|evolving into the three-manned Scientists Guild during the 1930s, also known as the the Three Xs.|actual|stated|
+t- no_doer|The roots of the Enclave
+t+ crowd_end|The roots of the Enclave date back to the age of Camelot, when a group of renegade occultists created the Eternity Mask to oppose King Arthur.
+
+@1975 gold: "law enforcement" is no named group
+keep
+f- Singh|member_of|law enforcement
+
+@1976 gold: the battle is its own sentence; non-agent helicopters; Lilith corrupts; the narrated acts
+keep
++ Crossbones|fought|Iron Man|Crossbones then descended to the rooftop and engaged the heroes in battle.
++ Crossbones|fought|Hunter|Crossbones then descended to the rooftop and engaged the heroes in battle.
++ Crossbones|fought|Captain America|Crossbones then descended to the rooftop and engaged the heroes in battle.
+f- Hydra helicopters|attacked|Tower
+f+ Iron Man|other_verb|intercepted|and though Iron Man intercepted most of them, one missile got through, damaging the top floors.|actual|stated|
+f+ Bruce Banner|other_verb|alerted|When Bruce Banner alerted them that the Avengers Tower was under the assault of Hydra|actual|stated|
+f- Bruce Banner|other_verb|corrupting
+f+ Lilith|other_verb|corrupting|having fallen under Lilith's corrupting influence.|actual|stated|
+f+ Bruce Banner|other_verb|taunting|Banner was hanging on the ladder, taunting the heroes and expressing gratitude for the Gamma Accelerator|actual|stated|
+f+ Crossbones|other_verb|leapt|After being defeated, Crossbones leapt from the Tower's edge onto a helicopter.|actual|stated|
+t- no_relation|They observed Captain America
+f+ Iron Man|other_verb|observed|They observed Captain America engaged in combat with Hydra forces on the rooftop.|actual|stated|
+f+ Hunter|other_verb|observed|They observed Captain America engaged in combat with Hydra forces on the rooftop.|actual|stated|
+
+@1977 gold: the most specific place; a chair over the named school is leader_of; an unnamed board
+keep
+f- Massachusetts Academy|located_at|Berkshire Mountains of Snow Valley
+f+ Massachusetts Academy|located_at|Snow Valley|founded in the 1700 in the Berkshire Mountains of Snow Valley, Massachusetts.|actual|stated|
+f- Emma Frost|became|chairperson of the board
+f+ Emma Frost|leader_of|Massachusetts Academy|a young mutant Emma Frost became chairperson of the board and ran the school.|actual|stated|
+t- no_doer|Run by a board of trustees
+t+ crowd_end|Run by a board of trustees
+
+@1978 gold: ordered takes the person told; seeking advice in person is no contact
+keep
+f- Hideki Tojo|ordered|Sub-Mariner
+f+ Hideki Tojo|other_verb|orders|When news reaches Hideki Tojo he is furious and orders the Sub-Mariner's capture.|actual|stated|
+f- Hideki Tojo|contacted|Nishki
+f+ Hideki Tojo|other_verb|seeks|He seeks the advice of his assistant Nishki|actual|stated|
+
+@1979 gold: a doer-less defeat gets no row; suspected takes no object; the hired killing
+keep
+- Captain America|defeated|Batroc
+- Captain America|defeated|Whirlwind
+- Captain America|defeated|Porcupine
+t+ no_doer|but the trio was ignominiously defeated on live television.
+f- Baron Strucker|suspected|Captain America
+f+ Baron Strucker|suspected|-|Baron Strucker felt Captain America was threatening his plans to create divisions within United States society|actual|stated|
+f+ Batroc|other_verb|kill|he hired Batroc and his “Brigade of Batroc” (Whirlwind and the Porcupine) to kill Cap|ordered|stated|Baron Strucker
+f+ Whirlwind|other_verb|kill|he hired Batroc and his “Brigade of Batroc” (Whirlwind and the Porcupine) to kill Cap|ordered|stated|Baron Strucker
+f+ Porcupine|other_verb|kill|he hired Batroc and his “Brigade of Batroc” (Whirlwind and the Porcupine) to kill Cap|ordered|stated|Baron Strucker
+
+@1980 gold: a non-verb object; the claim is a speech act; the ordered move; Shmidt's acts
+keep
+f- Johann Shmidt|other_verb|never
+f+ Johann Shmidt|other_verb|claimed|but Shmidt claimed that he never learned how to sing and that he joined the Sturmabteilung to fight.|actual|stated|
+f+ Johann Shmidt|other_verb|sing|Shmidt claimed that he never learned how to sing|claimed|denied|Johann Shmidt
+f+ S.A.|other_verb|move|the S.S. arrived and order the S.A. to move out of their way.|ordered|stated|S.S.
+t- no_relation|The Nazi soldiers sang
+f+ Johann Shmidt|other_verb|sang|The Nazi soldiers sang as they marched, except for Johann Shmidt, drawing the attention of an officer.|actual|denied|
+t- no_relation|Shmidt and his officer
+f+ Johann Shmidt|other_verb|agreed|Shmidt and his officer both agreed that the S.S. were the soldiers and that the S.A. were just "props."|actual|stated|
+
+@1981 gold: an indefinite dragon is no doer
+keep
+f- dragon|destroyed|propeller plane
+t+ crowd_end|after his plane was destroyed when it was hit by a dragon.
+
+@1982 gold: infobox: no pipe in quotes, one line per tag; the self alias; the return from death; birthplace and former reign
+keep
+t- list_header|| 
+t- citation|| 
+t- production|| 
+t- dialogue|| 
+f- Ronan|alias_of|Ronan
+f- Ronan the Accused|alias_of|Ronan
+f- Ronan the Emperor|alias_of|Ronan
+f- Ronan the Free|alias_of|Ronan
+f- Ronan the Prisoner|alias_of|Ronan
+f+ Ronan the Accused|alias_of|Ronan|Ronan the Accused|actual|stated|
+f+ Ronan the Emperor|alias_of|Ronan|Ronan the Emperor|actual|stated|
+f+ Ronan the Free|alias_of|Ronan|Ronan the Free|actual|stated|
+f+ Ronan the Prisoner|alias_of|Ronan|Ronan the Prisoner|actual|stated|
+f+ Subject NX20|alias_of|Ronan|Subject NX20|actual|stated|
+f- Ronan|married|Crystal
+f+ Ronan|married|Crystal|Spouses = * Crystal (wife,|actual|stated|
+f- Ronan|located_at|New Hala
+f+ Ronan|located_at|New Hala|BaseOfOperations = New Hala|actual|stated|
+f- Ronan|located_at|Kree-Lar
+f+ Ronan|located_at|Kree-Lar|Kree-Lar, Kree Empire|actual|stated|
+f- Ronan|other_verb|returned
+f- Ronan|other_verb|Cyborg
++ Ronan|awakened|-|(returned through unknown means)
+f+ Ronan|born|Hala|PlaceOfBirth = Hala, Pama System, Kree Empire in the Greater Magellanic Cloud|actual|stated|
+f+ Ronan|leader_of|Kree Empire|Emperor of the Kree Empire|actual|stated|
+t+ list_header|Image = Ronan (Earth-616) from Legendary Star-Lord Vol 1 12 001.jpg
+t+ list_header|Name = Ronan
+t+ citation|NameRef = {{r
+t+ citation|CurrentAliasRef = {{r
+t+ list_header|Aliases = * Emperor Ronan
+t+ list_header|Lord Ronan
+t+ list_header|Supreme General Ronan
+t+ list_header|Affiliation = *Kree Empire
+t+ list_header|Accuser Corps}}
+t+ list_header|Formerly:
+t+ list_header|Galactic Council}}
+t+ list_header|Starforce}}
+t+ list_header|United Front}}
+t+ list_header|Selects}} of the Phalanx
+t+ list_header|House of Agon
+t+ list_header|Kree/Skrull Alliance}}
+t+ list_header|InLaw = * Queen Medusa (sister-in-law)
+t+ list_header|Relatives =
+t+ list_header|MaritalStatus = Separated
+t+ citation|Marvel Avengers: The Ultimate Character Guide (Updated and Expanded)
+t+ list_header|Gender = Male
+t+ list_header|Height = 7'5"
+t+ list_header|Weight = 480 lbs
+t+ list_header|Eyes = Blue
+t+ list_header|Hair = Brown
+t+ list_header|Skin = Blue
+t+ list_header|UnusualFeatures =
+t+ list_header|Origin = Kree Supreme Accuser and Cyborg
+t+ list_header|Reality = Earth-616
+t+ list_header|PlaceOfDeath =
+t+ list_header|KilledBy = Blackagar Boltagon (Earth-616)
+t+ list_header|Identity = No Dual
+t+ list_header|Citizenship = Kree Empire
+t+ list_header|Occupation = Supreme Accuser of the Kree Empire
+t+ list_header|Accuser of the Kree/Skrull Alliance
+t+ list_header|Education =
+t+ production|Creators = Stan Lee; Jack Kirby
+t+ production|First = Fantastic Four Vol 1 65
+t+ dialogue|Quotation = You three are guilty of attempted Revolution!
+
+@1983 gold: an indefinite Sentry is no end; dreams happen; the probe happened, the learning was tried; the pursuit
+keep
+- Captain America|fought|Kree Sentry
+- West Coast Avengers|fought|Kree Sentry
+t+ crowd_end|After fighting a Kree Sentry
+f- Rick Jones|other_verb|having
+f+ Rick Jones|other_verb|having|Rick Jones who has been having dreams of Captain America with a bulbous tentacled head.|actual|stated|
+f- Shi'ar Imperial Guard|other_verb|probe
+f+ Shi'ar Imperial Guard|other_verb|probe|They probe Rick Jones in an attempt to learn where the Psyche-Magnitron is located.|actual|stated|
+f+ Shi'ar Imperial Guard|other_verb|learn|They probe Rick Jones in an attempt to learn where the Psyche-Magnitron is located.|attempted|stated|Shi'ar Imperial Guard
+f- Quasar|other_verb|pursuit
+f+ Quasar|other_verb|went|Quasar then went in pursuit of the Shi'ar.|actual|stated|
+t- no_relation|but not before the Imperial Guard
+f+ Shi'ar Imperial Guard|other_verb|get|but not before the Imperial Guard were able to get what they wanted.|actual|stated|
+
+@1984 gold: one name each; deducing = learned; an occupation; a planned headship is leader_of; a garbage subject; an apposition
+keep
+r Iron Man=>Stark
+r Baker=>Todd Baker
+r Eden=>Veronica Eden
+f- Stark|discovered|Todd Baker
+f- Captain America|discovered|Todd Baker
+f+ Stark|learned|-|they deduced Baker's participation, and Eden later confirmed it.|actual|stated|
+f+ Captain America|learned|-|they deduced Baker's participation, and Eden later confirmed it.|actual|stated|
+f- Todd Baker|other_verb|senator
+f- Todd Baker|other_verb|trying
+f+ Todd Baker|other_verb|reinstate|Todd Baker was a senator who was trying to reinstate S.H.I.E.L.D.|attempted|stated|Todd Baker
+f- Veronica Eden|became|head of Hydra
+f+ Veronica Eden|leader_of|Hydra|terrorist Veronica Eden, who intended to become the head of Hydra|planned|stated|Veronica Eden
+f- rookie super hero team|other_verb|called
+t+ no_relation|Their operation extended to other like-minded people, such as the rookie super hero team called the Paladins.
+t- capability|a super-computer bent
+t+ apposition|a super-computer bent on world domination.
+
+@1985 gold: a vehicle is no place; the soldiers are a crowd; the second explanation
+keep
+f- Dugan|located_at|Helicarrier
+f- Hill|located_at|Helicarrier
+f+ Dugan|other_verb|flying|who are flying in the Helicarrier, about Rahimov's weapons.|actual|stated|
+f+ Hill|other_verb|flying|who are flying in the Helicarrier, about Rahimov's weapons.|actual|stated|
+t+ crowd_end|In the present, Tony is fighting against Kirkhistan soldiers.
+f+ Stark|other_verb|explains|He also explains that Rahimov was incarcerated and his wife was killed.|actual|stated|
+
+@1986 gold: the clash with the Invaders; the healing is the save; the vow; the named power
+keep
++ Thor|fought|Invaders|Thor therefore clashed with the Invaders
+f- Thor|healed|Union Jack
+f+ Thor|other_verb|vowed|Learning that Hitler was evil, Thor vowed to aid him no more|actual|stated|
+f- Union Jack|gained_power|-
+f+ Union Jack|gained_power|power to discharge electrical bolts|The second Union Jack now possessed the superhuman power to discharge electrical bolts from his body.|actual|stated|
+
+@1987 gold: one Strange; the resurrection; Hunter's past defeat of Lilith; a possessive force's head; non-verb objects; the narrated acts
+keep
+r Strange=>Stephen Strange
+r Doctor Strange=>Stephen Strange
++ Hunter|awakened|-|watched as Sarah and Strange resurrected Hunter
++ Hunter|defeated|Lilith|Lilith's child and the only one to have ever defeated her
+t- no_relation|the only one to have ever
+f- Lilith's Hydra forces|other_verb|Sanctum
+f+ Lilith|other_verb|taken|The Sanctum Sanctorum had been taken over by Lilith's Hydra forces|actual|stated|
+f- Robbie Reyes|other_verb|Shop
+f- Peter Parker|other_verb|Shop
+f+ Robbie Reyes|other_verb|organized|the Shop Class organized by Robbie Reyes and Peter Parker|actual|stated|
+f+ Peter Parker|other_verb|organized|the Shop Class organized by Robbie Reyes and Peter Parker|actual|stated|
+f+ Tony|other_verb|participated|Nevertheless, he participated in the Shop Class organized by Robbie Reyes and Peter Parker|actual|stated|
+f- Babylonian demon|other_verb|Forge
+f+ Tony|other_verb|provided|Tony provided all others with access to the superhero-only "Superlink" social network of his own design and got to work at the Abbey's mystical Forge|actual|stated|
+t- no_relation|He had to share
+f+ Tony|other_verb|share|He had to share his workspace with Stephen Strange|actual|stated|
+t- no_relation|whom Tony annoyed
+f+ Tony|other_verb|annoyed|whom Tony annoyed by calling him "Doctor Spooky".|actual|stated|
+
+@1988 gold: "the symbiote" is a species noun for an unnamed individual: no end
+keep
+- symbiote|fought|Spider-Man
+- symbiote|escaped|Baxter Building
+- symbiote|fought|Reed
+- symbiote|fought|She-Hulk
+f- Kristoff Vernard|helped|symbiote
+f+ Kristoff Vernard|other_verb|help|the symbiote escaped from the Baxter Building with the help of Kristoff Vernard.|actual|stated|
+f- symbiote|other_verb|possessed
+f- symbiote|other_verb|deciding
+f- symbiote|other_verb|possess
+t+ crowd_end|It possessed Reed briefly before deciding to use Franklin as its new host.
+t+ crowd_end|The symbiote fought the Fantastic Four and Spider-Man until it managed to successfully possess Franklin
+
+@1989 gold: a body found is no met; doer-less passives; attempt verbs; discovered takes no object; the shooting wound and the believed death
+keep
+- Mentallo|met|Taskmaster
+f- S.H.I.E.L.D.|recruited|Taskmaster
+f+ Taskmaster|member_of|Secret Avengers|Taskmaster was asked to become a member of S.H.I.E.L.D.'s Secret Avengers team|actual|stated|
+f- Taskmaster|helped|Mockingbird
+f+ Taskmaster|other_verb|free|When he tried to free Mockingbird from A.I.M. captivity|attempted|stated|Taskmaster
+f- Taskmaster|revealed|-
+t+ no_doer|Taskmaster was revealed to be alive but left in a vegetative state.
+f+ Mockingbird|wounded|Taskmaster|and shot in the head by Mockingbird who had been brainwashed by A.I.M.|actual|stated|
+f+ Mockingbird|other_verb|missed|However, Mockingbird purposely missed any vitals|actual|stated|
+f+ Secret Avengers|other_verb|left|As they thought he was dead, the Secret Avengers left him behind|actual|stated|
+f+ Taskmaster|dies|-|As they thought he was dead, the Secret Avengers left him behind|actual|apparent|
+f- Mentallo|discovered|Taskmaster
+f+ Mentallo|discovered|-|but his survival was discovered by Mentallo|actual|stated|
+f- Mentallo|other_verb|survival
+f+ Mentallo|other_verb|kept|Mentallo kept his survival a secret|actual|stated|
+f- Mentallo|other_verb|cure
+f+ Mentallo|other_verb|cure|sought to cure him with his nanobots.|attempted|stated|Mentallo
+
+@1990 gold: ok
+keep

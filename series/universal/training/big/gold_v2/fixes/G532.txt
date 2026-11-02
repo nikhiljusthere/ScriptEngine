@@ -1,0 +1,99 @@
+@2947 gold: ok
+keep
+
+@2948 gold: the battle lines have their fight rows
+keep
+t- list_header|Baccarat vs. Sanji
+t- list_header|Baccarat vs. Brook
+
+@2949 gold: "here" is no place; the ordered act
+keep
+f- Nico Olvia|located_at|the tower
+f+ Jaguar D. Saul|other_verb|take|where he received orders from Sengoku to take part in the Buster Call on Ohara|ordered|stated|Sengoku
+
+@2950 gold: a bare number line is its own list_header
+keep
+t+ list_header|3
+
+@2951 gold: an author statement is production
+keep
+f- Eiichiro Oda|other_verb|professed
+t+ production|One Piece author Eiichiro Oda has professed to be a fan of Lau's work, inspiring the partnership.
+
+@2952 gold: one name; the suggested retreat and ordered warp; "the latter" is Law
+keep
+r Augur=>Van Augur
+f+ Blackbeard|other_verb|retreat|and suggests they retreat.|ordered|stated|Van Augur
+f+ Van Augur|other_verb|warp|Blackbeard refuses and has Augur warp him to where Law is,|ordered|stated|Blackbeard
+f- Blackbeard|other_verb|comments
+f+ Law|other_verb|comments|as the latter comments on how Blackbeard managed to acquire Devil Fruit powers for all of his officers.|actual|stated|
+
+@2953 gold: "the shogun" is an unnamed title; the citizens and "they" are crowds
+keep
+f- shogun|other_verb|plan
+t+ crowd_end|However, this is a façade as the real purpose is for the shogun to have a banquet with his allies at the expense of the residents.
+f- citizens|revealed|-
+t+ crowd_end|It is also revealed that all the people in Wano including the Flower Capital get the moment to relax
+t- deictic|They drink as much sake
+t+ crowd_end|They drink as much sake as possible, stating it is the only time of the year where they can do that.
+
+@2954 gold: a kingdom is no doer; Jinbe being seen is no act
+keep
+f- Ryugu Kingdom|other_verb|make
+t+ no_relation|The Ryugu Kingdom must make the first move toward equality.
+t- deictic|As she goes on
+t+ no_relation|As she goes on, Jinbe is seen off to one side with two other guards.
+
+@2955 gold: the claim is a speech act with the claimed taming
+keep
+f- Luffy|other_verb|tame
+f+ Luffy|other_verb|claims|Luffy claims that he can tame the kraken.|actual|stated|
+f+ Luffy|other_verb|tame|Luffy claims that he can tame the kraken.|claimed|stated|Luffy
+
+@2956 gold: ok
+keep
+
+@2957 gold: the takeover verb; the unnamed princes are a crowd; Zoro's demands and request
+keep
+t- no_relation|In the ensuing battle
+f- Straw Hats|other_verb|palace
+f+ Straw Hats|other_verb|taken|Thus, the Straw Hats have "taken over" the palace.|actual|stated|
+f- three princes|other_verb|-
+f- three princes|other_verb|Zoro
+f- three princes|other_verb|left
+f- three princes|other_verb|find
+t+ crowd_end|When the three princes returned
+t- no_relation|the princes were unable
+t+ crowd_end|the princes were unable to enter and they had no choice but to listen to Zoro's demands
+f+ Zoro|other_verb|demands|they had no choice but to listen to Zoro's demands of allowing the Straw Hat Pirates to leave peacefully|actual|stated|
+f+ Zoro|other_verb|request|On Zoro's request, they left to find Robin, Franky, Chopper, and Sanji.|actual|stated|
+t+ crowd_end|On Zoro's request, they left to find Robin, Franky, Chopper, and Sanji.
+
+@2958 gold: ok
+keep
+
+@2959 gold: ok
+keep
+
+@2960 gold: Caesar's watching is his act
+keep
+t- no_relation|Caesar watching
+f+ Caesar|other_verb|watching|Caesar watching the monitor in the secret room.|actual|stated|
+
+@2961 gold: a town is no doer; "active in" is a location
+keep
+f- Spider Miles|other_verb|contains
+t+ no_relation|Spider Miles: a port town that contains a waste processing unit
+f- Donquixote Pirates|other_verb|active
+f+ Donquixote Pirates|located_at|North Blue|while they were active in the North Blue.|actual|stated|
+
+@2962 gold: a destination is not yet reached
+keep
+f- Luffy|located_at|Little Garden
+
+@2963 gold: ok
+keep
+
+@2964 gold: Zoro's attack on the unnamed Marines
+keep
+f+ Zoro|other_verb|attacked|she is informed that Zoro attacked two Marines|actual|stated|

@@ -1,0 +1,82 @@
+@3543 gold: the hero alias, not a self pair
+keep
+f- Mizuki|alias_of|Mizuki
+f+ Captain Mizuki|alias_of|Mizuki|also known by her hero alias Captain Mizuki|actual|stated|
+
+@3544 gold: pinning down is defeated; a stopped attack is no fought; in-person calling; copulas; narrated speech
+keep
+- Zombieman|fought|Homeless Emperor
++ Zombieman|defeated|Homeless Emperor|Zombieman suddenly bursts out from the ground behind him, grabbing his neck and pinning him down.
+- Homeless Emperor|fought|King
+f+ Homeless Emperor|other_verb|attack|In a desperate attempt to prevent further conversation, he tries to attack King|attempted|stated|Homeless Emperor
+f+ Homeless Emperor|other_verb|declares|Despite his stress, he declares he will reveal the "real" King|actual|stated|
+f- King|suspected|Homeless Emperor
+f+ King|suspected|-|which leads King to mistakenly believe Homeless Emperor has uncovered his secret that he is just an ordinary human.|actual|stated|
+f- King|other_verb|is
+f- Homeless Emperor|contacted|Black Sperm
+f+ Homeless Emperor|other_verb|calls|In a panic, Homeless Emperor calls for Black Sperm to help him|actual|stated|
+f+ Black Sperm|helped|Homeless Emperor|Homeless Emperor calls for Black Sperm to help him|ordered|stated|Homeless Emperor
+f- Homeless Emperor|other_verb|be
+f+ Homeless Emperor|other_verb|panics|Upon hearing this, Homeless Emperor panics, fearing that if monsters like Black Sperm discovered his fragile human form without his light powers, he would be in grave danger.|actual|stated|
+t- dialogue|Internally frightened
+f+ King|other_verb|speaks|Internally frightened, King speaks "just an ordinary human".|actual|stated|
+
+@3545 gold: ok
+keep
+
+@3546 gold: webcomic-only content is production; a doer-less statement
+keep
+- Superalloy Darkshine|defeated|Raiden
+f- Superalloy Darkshine|other_verb|achieved
+f- Superalloy Darkshine|destroyed|Organization's invading robots
+t- capability|some of which
+t+ production|In the webcomic, after regaining his confidence to participate in battle during the robot invasion, Darkshine achieved several victories with little difficulty.
+t+ production|These include destroying The Organization's invading robots,(Webcomic Chapter 153) some of which appeared to be high-level units,(Webcomic Chapter 155) as well as defeating Raiden and his sumo subordinates who were controlled by their battle suits.(Webcomic Chapter 155)
+f- Superalloy Darkshine|other_verb|considered
+t+ capability|it is stated that he is the one considered to be at the pinnacle of physical combat.
+t+ citation|(Chapter 130)
+
+@3547 gold: ok
+keep
+
+@3548 gold: a named doer
+keep
+t- crowd_end|Armored Chief Clerk
+f+ Armored Chief Clerk|other_verb|converses|Armored Chief Clerk converses with several other heroes about the rumored monster in Z-City.|actual|stated|
+
+@3549 gold: a named doer
+keep
+t- no_relation|Evil Eye is one
+f+ Evil Eye|other_verb|confront|Evil Eye is one of the initial monsters that confront the Hero Association invasion squad, dropping off the sky and being the first to attack the heroes.|actual|stated|
+
+@3550 gold: ok
+keep
+
+@3551 gold: a vehicle is no place; a helicopter is no doer
+keep
+f- Sekingar|located_at|evacuation helicopter
+t+ no_relation|Later, Sekingar and the wounded heroes were present on the evacuation helicopter.
+t- no_relation|the helicopter safely left
+t+ no_doer|and the helicopter safely left the monster's attack range.
+
+@3552 gold: ok
+keep
+
+@3553 gold: ok
+keep
+
+@3554 gold: ok
+keep
+
+@3555 gold: Fukegao's acts; the brother is unnamed
+keep
+f+ Fukegao|other_verb|shouted|During their rampage, Fukegao shouted orders at his younger brother|actual|stated|
+f+ Fukegao|other_verb|urging|urging him to destroy more towns and kill more people to prove the steroid's power.|actual|stated|
+t+ crowd_end|urging him to destroy more towns and kill more people
+
+@3556 gold: a patient subject; a narrated occurrence
+keep
+f- Orochi|other_verb|destroyed
+t- capability|he is still able
+f+ Orochi|other_verb|manipulate|he is still able to manipulate and transform the bits of his flesh around the headquarters.|actual|stated|
+

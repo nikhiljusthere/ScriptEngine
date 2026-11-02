@@ -1,0 +1,126 @@
+@2983 gold: ok
+keep
+
+@2984 gold: a victim-only kidnapping passive; the call; the reply with a planned inform
+keep
+f- Camie|kidnapped|-
+t+ no_doer|telling them that Camie has been kidnapped
+f+ Sanji|other_verb|receive|Sanji, Usopp and Franky receive a call on a Den Den Mushi|actual|stated|
+f+ Usopp|other_verb|receive|Sanji, Usopp and Franky receive a call on a Den Den Mushi|actual|stated|
+f+ Franky|other_verb|receive|Sanji, Usopp and Franky receive a call on a Den Den Mushi|actual|stated|
+f+ Sanji|other_verb|replies|Sanji replies that he will inform the Flying Fish Riders.|actual|stated|
+
+@2985 gold: a doer-less order; Pacifista units and the pirates are crowds
+keep
+f- Sengoku|ordered|Pacifista units
+t+ no_doer|However, they were ordered not to attack the Whitebeard Pirates themselves, but instead the subordinate crews
+f- Pacifista|other_verb|began
+f- Pacifista|other_verb|prevent
+t+ crowd_end|The Pacifista then began an encircling formation around Marineford to prevent the pirates from escaping
+f- pirates|other_verb|realizing
+t+ crowd_end|with the pirates realizing that if they didn't target the battleships, they would have no way to escape.
+
+@2986 gold: the purpose was carried out (the defeated event)
+keep
+f- Katakuri|other_verb|knock
+
+@2987 gold: a video-game skill is production
+keep
+f- Sengoku|other_verb|is
+f- Kunrin Suru Seigi|alias_of|Reigning Justice
+t- capability|Kunrin Suru Seigi
+t+ production|Kunrin Suru Seigi: Sengoku dashes forwards towards his opponent perform creating a massive golden shockwave with a palm thrust.
+t+ production|This is the Alternate Skill 1 of the "Summit War" Sengoku unit in One Piece Bounty Rush.
+t+ production|It is called Reigning Justice in the English release.
+
+@2988 gold: a translation name is production
+keep
+f- Satsuriku Jogo|also_known_as|Blood Thirsty Drunk
+t+ production|In the VIZ manga and Funimation adaptations, this is called Blood Thirsty Drunk.
+
+@2989 gold: ok
+keep
+
+@2990 gold: an episode title line is production
+keep
+t- list_header|Shōsha wa dotchi?
+t+ production|Shōsha wa dotchi? Akuma no Mi no Nōryoku Taiketsu!
+
+@2991 gold: ok
+keep
+
+@2992 gold: a technique is no doer; a translation name is production
+keep
+f- Hakoku|destroyed|Dorry's sword
+f- Hakoku|destroyed|Brogy's axe
+t+ no_doer|However, the amount of power needed for this attack proved to be too much for the giants' rusty weapons, so both this sword and Brogy's axe shattered.
+f- Hakoku|also_known_as|Hakoku Sovereignty
+t+ production|In the VIZ manga and Funimation subs, this is called Hakoku Sovereignty, while it keeps its name in the Funimation dub.
+
+@2993 gold: ok
+keep
+
+@2994 gold: ok
+keep
+
+@2995 gold: one act (A145); holding is no help; rejoining people; the capture of York; the crack by three; the grab; the travel; the spotting and realizing
+keep
+- S-Shark|fought|Edison
+f+ Edison|other_verb|look|Edison partnered up with Brook and Nami to look for the Stella.|planned|stated|Edison
+t- no_relation|In Tower A
+f+ Nami|other_verb|filled|Nami was sidetracked by diamonds and filled a backpack with them.|actual|stated|
+f+ Nami|other_verb|set|so she set the backpack down for later.|actual|stated|
+f- Nami|helped|Edison
+f+ Nami|other_verb|held|Nami later held him in her arms|actual|stated|
+f+ Nami|other_verb|telling|telling him to "hang in there."|actual|stated|
++ Edison|met|Vegapunk|Edison later rejoined the rest of the surviving satellites, Vegapunk, and the Straw Hats
++ Straw Hats|captured|York|after they had captured the traitor York
+f+ Edison|wounded|-|though his prior injuries had not been repaired|actual|stated|
+f+ Vegapunk|other_verb|crack|he along with Vegapunk and Atlas, attempted to crack the code that York placed on the Frontier Dome, being able to crack it successfully|actual|stated|
+f+ Atlas|other_verb|crack|he along with Vegapunk and Atlas, attempted to crack the code that York placed on the Frontier Dome, being able to crack it successfully|actual|stated|
+t- no_relation|Edison was later horrified
+f+ Edison|other_verb|saw|got more surprised when he saw a giant Luffy grabbing Kizaru|actual|stated|
++ Luffy|fought|Kizaru|when he saw a giant Luffy grabbing Kizaru
+t- no_relation|When Vegapunk and Atlas
++ Vegapunk|arrived|Fabiriophase|When Vegapunk and Atlas traveled to the Fabiriophase
++ Atlas|arrived|Fabiriophase|When Vegapunk and Atlas traveled to the Fabiriophase
+f+ Edison|other_verb|spotted|Edison, along with Nami, Usopp, and Chopper, spotted the Giant Warrior Pirates|actual|stated|
+f+ Nami|other_verb|spotted|Edison, along with Nami, Usopp, and Chopper, spotted the Giant Warrior Pirates|actual|stated|
+f+ Usopp|other_verb|spotted|Edison, along with Nami, Usopp, and Chopper, spotted the Giant Warrior Pirates|actual|stated|
+f+ Chopper|other_verb|spotted|Edison, along with Nami, Usopp, and Chopper, spotted the Giant Warrior Pirates|actual|stated|
+f+ Edison|learned|-|and realized they must have heard the news of the incident on Egghead and came to help.|actual|stated|
+f- Edison|discovered|Vegapunk's prerecorded message
+f+ Edison|discovered|-|Edison and the others caught wind of Vegapunk's prerecorded message being signaled across the island.|actual|stated|
+
+@2996 gold: an encounter that becomes the attack is no met; "they" includes Lulu
+keep
+- Lulu|met|Strawberry
+t- deictic|Seeing as how
+f+ Lulu|other_verb|ran|Seeing as how the island was about to be destroyed, they all ran towards the island's front gate.|actual|stated|
+t- deictic|and remained silent
+f+ Lulu|other_verb|pretending|and remained silent, pretending to be dead as to avoid the Marines attacking.|actual|stated|
+t- deictic|With the news
+f+ Lulu|other_verb|came|With the news of the Straw Hats' survival and victory, they came out of hiding,|actual|stated|
+
+@2997 gold: the window's name is the Demon of Doom; a doer-less "copied"
+keep
+f- Doom Guardian|other_verb|copied
+t+ capability|Needle Machine Gun: An attack copied from Krieg.
+f- Doom Guardian|other_verb|copies
+f+ Demon of Doom|other_verb|copies|For this attack, the Demon of Doom copies projectiles from Krieg's weapon arsenal.|actual|stated|
+
+@2998 gold: a ship is no place; Zambai's response
+keep
+f- Zambai|located_at|Going Merry
+f+ Zambai|other_verb|responded|Zambai responded that they are The Franky Family, and they came to collect the bounty on his head.|actual|stated|
+
+@2999 gold: the intended use of the wristlets
+keep
+f+ Vinsmoke Judge|other_verb|put|to put on Sanji should the Vinsmoke patriarch have problems with his son.|hypothetical|stated|Tamago
+
+@3000 gold: a story-significance note is production
+keep
+t- no_relation|The Marineford Arc is probably
+t- no_relation|as it features
+t+ production|The Marineford Arc is probably by far the biggest turn of events in One Piece history,
+t+ production|as it features the first two deaths of major characters in the current storyline.

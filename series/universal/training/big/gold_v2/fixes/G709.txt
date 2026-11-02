@@ -1,0 +1,134 @@
+@3515 gold: the order's acts; a stopped exorcism; citations
+keep
+f+ Nobara|other_verb|head|Gojo has Nobara and Yuji head inside while he and Megumi stay outside.|ordered|stated|Gojo
+f+ Yuji|other_verb|head|Gojo has Nobara and Yuji head inside while he and Megumi stay outside.|ordered|stated|Gojo
+f+ Megumi|helped|Nobara|Megumi says that he will head inside as well to help too|planned|stated|Megumi
+f- Megumi|other_verb|exorcise
+f+ Megumi|other_verb|exorcise|Megumi goes to exorcise it but Gojo stops him|attempted|stated|Megumi
+t+ citation|(Chapter 4)
+t+ citation|(Chapter 5)
+
+@3516 gold: deciding is actual + the planned act; finding out is learned; Yuji rushes too; citation
+keep
+f- Megumi|other_verb|decides
+f+ Megumi|other_verb|decides|and decides to follow him.|actual|stated|
+f+ Megumi|other_verb|follow|and decides to follow him.|planned|stated|Megumi
+f- Megumi|other_verb|finds
+f+ Megumi|learned|-|but finds out that Yuji doesn't have the object|actual|stated|
+f+ Yuji|other_verb|rush|which the two rush over to the school.|actual|stated|
+t+ citation|(Chapter 1)
+
+@3517 gold: narrated speech; Daido's damage; citations
+keep
+t- dialogue|by saying
+f+ Miyo|other_verb|saying|invites Maki to a sumo bout by saying "hakkeyoi!".|actual|stated|
+f+ Daido|wounded|Naoya Zenin|Seeing that Maki is confused over why Daido is able to seriously damage Naoya but she isn't|actual|stated|
+t+ citation|(Chapter 194)
+t+ citation|(Chapter 195)
+
+@3518 gold: a sumo bout between allies is no fight (A71); belief; a mechanic; a doer-less start; citation
+keep
+- Maki|fought|Miyo
+f+ Maki|other_verb|rushes|Maki rushes toward Miyo, but is outmaneuvered and thrown aside by the skilled wrestler.|actual|stated|
+f+ Miyo|other_verb|thrown|Maki rushes toward Miyo, but is outmaneuvered and thrown aside by the skilled wrestler.|actual|stated|
+f+ Miyo|suspected|-|Believing that Maki is too tense and thus weakening herself|actual|stated|
+t- no_relation|The simple domain can only
+t+ capability|The simple domain can only be completed if Maki agrees to the match, thus bypassing any need for binding vows.
+t- no_relation|After the domain's barrier
+t+ no_doer|After the domain's barrier encloses the two fighters, their sumo match begins.
+t+ citation|(Chapter 196)
+
+@3519 gold: slashing in half is defeated; the witnesses and Naoya's acts are facts
+keep
+- Daido|fought|Naoya Zenin
++ Daido|defeated|Naoya Zenin|Daido then seizes the opportunity to slash Naoya in half
+t- no_relation|Miyo, along with
+f+ Miyo|other_verb|witness|Miyo, along with Maki and Daido then witness as Naoya's human form climbs out of the cursed spirit's lower half and casts Domain Expansion.|actual|stated|
+f+ Maki|other_verb|witness|Miyo, along with Maki and Daido then witness as Naoya's human form climbs out of the cursed spirit's lower half and casts Domain Expansion.|actual|stated|
+f+ Daido|other_verb|witness|Miyo, along with Maki and Daido then witness as Naoya's human form climbs out of the cursed spirit's lower half and casts Domain Expansion.|actual|stated|
+f+ Naoya Zenin|other_verb|casts|as Naoya's human form climbs out of the cursed spirit's lower half and casts Domain Expansion.|actual|stated|
+
+@3520 gold: a doer-less reveal; pretending is actual; exorcising Naoya is killed; the freeing; the wounded are victims
+keep
+f- Daido|revealed|-
+t+ no_doer|It is revealed that Naoya's domain allows him to target individual cells with Projection Sorcery's 24 FPS rule
+f- Daido|other_verb|pretends
+f+ Daido|other_verb|pretends|Daido pretends to desperately swing his sword at Naoya|actual|stated|
+f+ Daido|wounded|-|only for his hand to be cut off as it flies over Naoya's head with the blade.|actual|stated|
+f- Maki|other_verb|exorcises
++ Maki|killed|Naoya Zenin|Maki then singlehandedly exorcises Naoya
++ Maki|saved|Miyo|freeing the three from the domain
++ Maki|saved|Daido|freeing the three from the domain
+f- Maki|wounded|Miyo
+f- Maki|wounded|Daido
+f+ Miyo|wounded|-|albeit leaving Miyo and Daido severely wounded.|actual|stated|
+t- no_relation|Trapped inside
+t- deictic|Assuming the domain's effect
+f+ Daido|other_verb|rush|Assuming the domain's effect misfired, the two fighters rush towards Naoya.|actual|stated|
+f+ Miyo|other_verb|rush|Assuming the domain's effect misfired, the two fighters rush towards Naoya.|actual|stated|
+
+@3521 gold: "the spirit" is Kechizu; the dodge
+keep
+f- The spirit|other_verb|spit
+f+ Kechizu|other_verb|spit|The spirit continues to spit out its blood as Yuji acts quickly|actual|stated|
+f+ Yuji|other_verb|dodge|Yuji is able to dodge the blood shot at him by Kechizu|actual|stated|
+
+@3522 gold: the told acts
+keep
+f+ Yuji|other_verb|chase|as Megumi tells Yuji to chase after it|ordered|stated|Megumi
+f+ Megumi|other_verb|come|Yuji tells Megumi to come out if things get bad inside.|ordered|stated|Yuji
+
+@3523 gold: the taker is unnamed in this window; copulas; the attempt's verb; the encouraged act
+keep
+- Eso|captured|Nobara
+t+ no_doer|Nobara is then suddenly taken out of the barrier by a third-party
+f- Megumi|other_verb|is
+f- curse|other_verb|is
+t+ no_relation|but Megumi is unsure about it.
+f+ Megumi|other_verb|see|Megumi is surprised to see that the expanded cursed technique, the number of victims and the barrier the curse is using is draining on its main body.|actual|stated|
+f- Megumi|other_verb|tries
+f+ Megumi|other_verb|save|as Megumi turns around to try and save Nobara|attempted|stated|Megumi
+f+ Megumi|other_verb|exorcise|who instead encourages Megumi to continue to try and exorcise the spirit.|ordered|stated|Nobara
+f+ Megumi|other_verb|fighting|Megumi continues fighting, unsure of who took Nobara out of the barrier.|actual|stated|
+
+@3524 gold: the unknown entity is Eso (A49); speech is actual; the promise
+keep
++ Eso|captured|Nobara|Nobara is annoyed by the unknown entity for dragging her out of the barrier.
+t- no_doer|Outside of the barrier
+f- Eso|other_verb|believed
+f+ Eso|other_verb|comments|Surprised, Eso comments that he believed the sorcerers were given the same errand as him|actual|stated|
+f+ Eso|suspected|-|Eso comments that he believed the sorcerers were given the same errand as him: to retrieve Sukuna's finger.|actual|stated|
+t- deictic|The man is surprised
+f+ Eso|other_verb|gotten|The man is surprised to have gotten his hands on a female sorcerer since she isn't the intended target.|actual|stated|
+t- no_relation|Eso and Kechizu
+f+ Eso|other_verb|promise|Eso and Kechizu are there running "errands" and promise to do no harm to the sorcerers should they retreat.|actual|stated|
+f+ Kechizu|other_verb|promise|Eso and Kechizu are there running "errands" and promise to do no harm to the sorcerers should they retreat.|actual|stated|
+t- deictic|Nobara is confused
+t+ no_relation|Nobara is confused by Eso's statement as well as his strange anatomy.
+
+@3525 gold: calling a shikigami at hand is no contacted; hoping is actual; the attempt's verb
+keep
+f- Megumi|contacted|Nue
+f+ Megumi|other_verb|calls|he calls on his flying shikigami, Nue to secure him before falling to his demise.|actual|stated|
+f- Megumi|other_verb|hopes
+f+ Megumi|other_verb|hopes|He hopes that neither of his classmates perish in this event|actual|stated|
+f- Megumi|other_verb|try
+f+ Megumi|other_verb|locate|as he runs to try and locate Nobara's position.|attempted|stated|Megumi
+
+@3526 gold: Nobara's own kills
+keep
+f+ Nobara|other_verb|kills|Elsewhere, Nobara kills the majority of her enemies but is eventually bested by their numbers.|actual|stated|
+
+@3527 gold: an anime-only note is production
+keep
+- Gojo|fought|Jogo
+f- Gojo|used|Red technique
+t+ production|Before Gojo uses his Red technique in the anime, he kicks Jogo away from himself.
+
+@3528 gold: an anime-vs-manga comparison is production
+keep
+- Gojo|defeated|Jogo
+f- anime|other_verb|shown
+f- manga|other_verb|implied
+t+ production|Gojo ripping Jogo's read off is explicitly shown in the anime, whereas the manga implied he used his Limitless technique to decapitate the cursed spirit.
+

@@ -1,0 +1,194 @@
+@1559 gold: an apposition; covered fragments are no capability
+keep
+t- capability|two very powerful
+t+ apposition|two very powerful incarnated sorcerers
+t- capability|the high cursed energy
+t- capability|when faced with
+t- capability|in order to continue
+
+@1560 gold: "the elephant" is not named here; immobilising is defeated; preparing carries the planned attack; the current is no doer
+keep
+- Max Elephant|fought|Noritoshi
+- Noritoshi|captured|Nue
++ Noritoshi|defeated|Nue|This wraps Nue in a net of blood, rendering it immobile.
+f- Noritoshi|other_verb|prepares
+f+ Noritoshi|other_verb|prepares|Noritoshi prepares to attack but the elephant floods the corridor with water.|actual|stated|
+f+ Noritoshi|other_verb|attack|Noritoshi prepares to attack|planned|stated|Noritoshi
+f- Noritoshi|other_verb|sweeps
+f- Noritoshi|other_verb|leaving
+t+ no_doer|The strong current sweeps Noritoshi outside, leaving him defenseless while in mid-air.
+
+@1561 gold: the sorcerers and curse users are crowds
+keep
+t- no_relation|The jujutsu sorcerers want
+t+ crowd_end|The jujutsu sorcerers want to get the fighting over quickly, but the curse users have a few tricks of their own.
+
+@1562 gold: a described staff; a mode is no power gain; calling is speech; Panda's strike; Panda stands
+keep
+f- Kashimo|used|staff
+f+ Kashimo|other_verb|using|Kashimo follows up by using his staff to send Panda crashing into a shipping container.|actual|stated|
+f- Panda|gained_power|Gorilla Mode
+f+ Panda|other_verb|activates|He activates Gorilla Mode and strikes with an unblockable attack of his own|actual|stated|
+f+ Panda|other_verb|strikes|He activates Gorilla Mode and strikes with an unblockable attack of his own|actual|stated|
+f- Kashimo|other_verb|calls
+f+ Kashimo|other_verb|calls|Unimpressed, Kashimo calls Panda average while avoiding his next attack.|actual|stated|
+t- no_relation|Panda quickly stands
+f+ Panda|other_verb|stands|Panda quickly stands back up but by that time Kashimo has already closed the distance between them.|actual|stated|
+
+@1563 gold: a copula; the inability is denied; citation
+keep
+f- Divine Flame|other_verb|is
+t+ citation|(Chapter 119, Episode 41)
+f- Sukuna|other_verb|use
+f+ Sukuna|other_verb|use|He was unable to use it against Satoru Gojo due to constantly changing the domain's barrier and restricting its range|actual|denied|
+
+@1564 gold: one name (the student is Noritoshi and Kamo); freezing in place is a restraint (defeated); planning -> the planned attack; the attempted rescue; an adjective
+keep
+r Kamo=>Noritoshi
+- Uraume|sealed|Panda
+- Uraume|sealed|Yuji
++ Uraume|defeated|Panda|are suddenly stuck by Uraume's Frost Calm attack which freezes them all in place.
++ Uraume|defeated|Yuji|are suddenly stuck by Uraume's Frost Calm attack which freezes them all in place.
++ Uraume|defeated|Noritoshi|are suddenly stuck by Uraume's Frost Calm attack which freezes them all in place.
+f- Noritoshi|other_verb|Planning
+f- Panda|other_verb|Planning
+f- Yuji|other_verb|Planning
+f+ Noritoshi|other_verb|attack|Planning to use Choso's distraction to attack Noritoshi, Kamo, Panda and Yuji all get ready to attack|planned|stated|Noritoshi
+f+ Panda|other_verb|attack|Planning to use Choso's distraction to attack Noritoshi, Kamo, Panda and Yuji all get ready to attack|planned|stated|Panda
+f+ Yuji|other_verb|attack|Planning to use Choso's distraction to attack Noritoshi, Kamo, Panda and Yuji all get ready to attack|planned|stated|Yuji
+f+ Noritoshi|other_verb|rescue|opens fire on Pseudo-Geto in one last attempt to rescue Satoru Gojo.|attempted|stated|Noritoshi
+f- Noritoshi|other_verb|shocked
+
+@1565 gold: "a human" is a crowd
+keep
+t- no_doer|He's spotted
+t+ crowd_end|He's spotted by a human and is surprised to be seen.
+
+@1566 gold: ok
+keep
+
+@1567 gold: one name as written; grabbing Megumi away is no fight
+keep
+r Toji Fushiguro=>Toji
+- Toji|fought|Megumi
+
+@1568 gold: a described tube; garbage object; the collapse and the demise
+keep
+f- Kokichi|used|technique tube
+f- Mahito|other_verb|away
+t- no_relation|Mechamaru collapses
+f+ Mechamaru|other_verb|collapses|Mechamaru collapses on the bridge and its broken face bleeds its master's blood, signifying both of their demises.|actual|stated|
+f+ Kokichi|dies|-|Mechamaru collapses on the bridge and its broken face bleeds its master's blood, signifying both of their demises.|actual|stated|
+
+@1569 gold: a passive hypothetical has no asserter; fear is belief
+keep
+f- Yuji|other_verb|denied
+f+ Yuji|other_verb|denied|He could possibly be denied entry|hypothetical|stated|
+f- Yuji|other_verb|fears
+f+ Yuji|suspected|-|and Yuji fears he could be executed on the spot.|actual|stated|
+
+@1570 gold: failing is the attempted stop; an epithet; the engagement is the fight
+keep
+f- Yuta|other_verb|failing
+f+ Yuta|other_verb|stop|After killing Kenjaku but failing to stop him from triggering his failsafe|attempted|stated|Yuta
+f- Sukuna|also_known_as|King of Curses
++ Yuta|fought|Sukuna|Determined to finish off the King of Curses, Yuta and Rika swiftly engage Sukuna in combat.
++ Rika|fought|Sukuna|Determined to finish off the King of Curses, Yuta and Rika swiftly engage Sukuna in combat.
+
+@1571 gold: a described technique; realizing = learned; narration is no capability; the call
+keep
+f- Hanyu|used|airplane hair cursed technique
+f+ Hanyu|other_verb|flies|Hanyu flies through the sky at high speed using her airplane hair cursed technique and rams headfirst into Yuji.|actual|stated|
+f- Hanyu|suspected|Yuji
+f+ Hanyu|learned|-|Hanyu quickly realizes that Yuji is going to be a tough opponent|actual|stated|
+t- capability|While that attack
+t+ no_relation|While that attack would've pulverized most new players, Yuji is mostly unscathed.
+t- crowd_end|calls her partner
+f+ Hanyu|other_verb|calls|and calls her partner to her side.|actual|stated|
+
+@1572 gold: the planned having; an unnamed son is no end; the sealing; covered fragments
+keep
+f- Kenjaku|other_verb|child
+f+ Kenjaku|other_verb|having|with the purpose of having a child with him due to Jin's father being the reincarnated twin of Sukuna.|planned|stated|Kenjaku
+f- Kenjaku|parent_of|Jin's son
+f+ Kenjaku|other_verb|gave|On March 20, 2003, Kenjaku gave birth to Jin's son|actual|stated|
+f+ Kenjaku|other_verb|sealed|he sealed one of Sukuna's fingers within the child upon his birth.|actual|stated|
+t- deictic|Sometime in the modern era,
+t- deictic|due to Jin's father
+t- deictic|On March 20, 2003,
+t- deictic|and shortly after that,
+
+@1573 gold: understanding = learned; swearing carries the planned exorcism; Dagon watches; the train; the civilians; citation
+keep
+f+ Satoru|learned|-|Satoru understands he can't save everyone|actual|stated|
+f+ Satoru|other_verb|exorcise|but he swears to exorcise the curses in return.|planned|stated|Satoru
+f+ Dagon|other_verb|watches|Pseudo-Geto watches the chaos with Dagon from a safe distance away;|actual|stated|
+t+ no_doer|At 9:15 PM, Mahito's train arrives on the Fukutoshin Line Platform of Shibuya Station.
+t+ crowd_end|Frightened civilians try to escape on the newly arrived train, but unbeknownst to them it is filled with transfigured humans that attack them as the doors open.
+t+ citation|(Chapter 88, Episode 33)
+
+@1574 gold: the introduction; a treaty is no group; a mission purpose with no doer; the dispatched act
+keep
+f+ Usami|other_verb|introduced|Usami introduced the Simurian envoy Marulu Val Vol Yelvori to Tsurugi and Yuka|actual|stated|
+f- Marulu Val Vol Yelvori|member_of|Security Treaty
+f- Usami|other_verb|investigate
+f- Usami|other_verb|exterminate
+f+ Marulu Val Vol Yelvori|other_verb|exterminate|Usami dispatched the three on a mission to exterminate a shark|ordered|stated|Usami
+f+ Tsurugi|other_verb|exterminate|Usami dispatched the three on a mission to exterminate a shark|ordered|stated|Usami
+f+ Yuka|other_verb|exterminate|Usami dispatched the three on a mission to exterminate a shark|ordered|stated|Usami
+
+@1575 gold: one name; a womb is no place; an occupation; explaining is speech; taking a person; the ordered act; citations
+keep
+r Sukuna=>Ryomen Sukuna
+f- Ryomen Sukuna|resides_at|womb
+f+ Ryomen Sukuna|other_verb|resided|an infant Ryomen Sukuna resided in the womb of the starving woman that was his mother alongside his twin.|actual|stated|
+f- Ryomen Sukuna|became|sorcerer
+t+ no_relation|As he grew older Sukuna became a sorcerer
+f- Uraume|revealed|-
+f+ Uraume|other_verb|explained|Uraume explained that everytime he slept people froze around him, which ended up killing his parents.|actual|stated|
+f- Ryomen Sukuna|took|Uraume
+f+ Ryomen Sukuna|other_verb|took|Intrigued, Sukuna took Uraume to his ruined ice house|actual|stated|
+f+ Uraume|other_verb|use|ordered him to use his cursed technique to keep his stored meats cold.|ordered|stated|Ryomen Sukuna
+t+ citation|(Chapter 257)(Volume 29)
+t+ citation|(Chapter 237)(Chapter 271)
+t+ citation|(Chapter 3, Episode 2)
+
+@1576 gold: the trick; the tried pursuit and stripping; Maki, Hana and the Angel speak
+keep
+f+ Sukuna|tricked|Hana|but is fooled when the King of Curses pretends to be Megumi to lure her into an embrace,|actual|stated|
+f+ Hana|other_verb|strip|casts "Jacob's Ladder" to try to strip Sukuna away from Megumi|attempted|stated|Hana
+f+ Hana|other_verb|follow|As the latter flies away, Hana and Yuji try to follow|attempted|stated|Hana
+f+ Yuji|other_verb|follow|As the latter flies away, Hana and Yuji try to follow|attempted|stated|Yuji
+t- no_relation|When Maki brings up
+f+ Maki|other_verb|brings|When Maki brings up how Culling Game players' cannot cross Colony borders, Hana mentions that she can|actual|stated|
+f+ Hana|other_verb|mentions|When Maki brings up how Culling Game players' cannot cross Colony borders, Hana mentions that she can|actual|stated|
+f+ Angel|other_verb|expounding|with the Angel expounding that while Hana alone can freely move between Colonies, outright destroying their barriers would require that she target their foundation.|actual|stated|
+
+@1577 gold: A145 the defensive and the kill are one act; a passive reputation; preparing carries the planned kill; the denied kill and fight; the best friend
+keep
+- Satoru|fought|Toji Fushiguro
+f- Satoru|other_verb|considered
+f- Suguru|other_verb|considered
+t- capability|capable of quickly
+t+ no_relation|As students, Satoru and Suguru were considered "the strongest," capable of quickly dealing with experienced and powerful curse users.
+f- Satoru|other_verb|prepared
+f+ Satoru|other_verb|prepared|when Satoru prepared to kill him,|actual|stated|
+f+ Satoru|other_verb|kill|when Satoru prepared to kill him,|planned|stated|Satoru
+f+ Satoru|other_verb|kill|as he was unable to kill his best friend.|actual|denied|
+f+ Satoru|friend_of|Suguru|although Satoru ultimately relented as he was unable to kill his best friend.|actual|stated|
+f+ Suguru|other_verb|fight|didn't even try to fight back when Satoru prepared to kill him|actual|denied|
+
+@1578 gold: one name as written; the stated fight and considering; the domain shift; the reckless attempt; the sacrifice; a duplicate tag; citations
+keep
+r Kinji Hakari=>Hakari
+t- deictic|While fighting in the ocean
++ Hakari|fought|Kashimo|While fighting in the ocean, Hakari carefully considered his options of either returning to the surface or using his last five seconds of immortality to finish the fight.
+f+ Hakari|other_verb|considered|While fighting in the ocean, Hakari carefully considered his options of either returning to the surface or using his last five seconds of immortality to finish the fight.|actual|stated|
+f+ Hakari|other_verb|shifted|He shifted his domain over the ocean before the barrier dispelled and dropped Kashimo into it|actual|stated|
+f+ Hakari|other_verb|decided|Kinji recklessly decided to try to finish Kashimo off, only to end up on the receiving end of a steam explosion.|actual|stated|
+f+ Hakari|other_verb|finish|Kinji recklessly decided to try to finish Kashimo off|attempted|stated|Hakari
+f+ Hakari|other_verb|sacrifice|Hakari wisely decided to sacrifice his arm entirely and used the cursed energy reinforcing it to protect the rest of his body.|actual|stated|
+t- capability|As displayed at the end
+t+ citation|(Chapter 189)
+t+ citation|(Chapter 190)
+
