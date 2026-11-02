@@ -1,0 +1,109 @@
+@2428 gold: a ship is no place (A24); the planned rescue; setting the course
+keep
+- Iron Man|arrived|Q-Ship
+- Spider-Man|arrived|Q-Ship
+f+ Iron Man|other_verb|stow|Iron Man, Spider-Man and the Cloak of Levitation managed to stow away aboard the Q-Ship, aiming to rescue Strange.|actual|stated|
+f+ Spider-Man|other_verb|stow|Iron Man, Spider-Man and the Cloak of Levitation managed to stow away aboard the Q-Ship, aiming to rescue Strange.|actual|stated|
+f+ Iron Man|other_verb|rescue|aiming to rescue Strange.|planned|stated|Iron Man
+f+ Spider-Man|other_verb|rescue|aiming to rescue Strange.|planned|stated|Spider-Man
+f+ Maw|other_verb|set|With his captive in tow, Maw set the Q-Ship on an automated course for Titan|actual|stated|
+
+@2429 gold: ok
+keep
+
+@2430 gold: one name (Gideon Malick); hoping = actual + planned; a believer is a belief; the technicians are a crowd
+keep
+r Malick=>Gideon Malick
+f+ Gideon Malick|other_verb|hoping|hoping to bring Hydra's ancient Inhuman leader back to Earth|actual|stated|
+f- Gideon Malick|other_verb|firm
+f+ Gideon Malick|suspected|-|as he was a firm believer in Hydra's original believes.|actual|stated|
+f- Gideon Malick|other_verb|hope
+t+ crowd_end|with the hope that their technicians could send people on the other side.
+
+@2431 gold: a specific occurrence is no capability (A122)
+keep
+t- capability|Engineer:
+t+ list_header|Engineer:
+f+ Wilson|other_verb|fix|Wilson helped fix a component on her front porch.|actual|stated|
+
+@2432 gold: ok
+keep
+
+@2433 gold: neither agreed (denied); acknowledging
+keep
+f- Harkness|other_verb|agreed
+f- Wiccan|other_verb|agreed
+f+ Harkness|other_verb|agreed|However, neither agreed to Death's deal|actual|denied|
+f+ Wiccan|other_verb|agreed|However, neither agreed to Death's deal|actual|denied|
+f+ Death|other_verb|acknowledged|Getting back up, Death acknowledged Harkness and Wiccan now working together|actual|stated|
+
+@2434 gold: the requested act; the quote verbs (get, looked); agreeing = actual + planned help
+keep
+f+ Ward Meachum|other_verb|obtain|requested him to obtain a non-redacted Department of Justice file on her|ordered|stated|Mary Walker
+f- Ward Meachum|other_verb|obtained
+f+ Ward Meachum|other_verb|get|Meachum was able to pull some strings and get the file for Walker|actual|stated|
+f- Mary Walker|other_verb|read
+f+ Mary Walker|other_verb|looked|who looked through it and promptly burned it|actual|stated|
+f+ Mary Walker|other_verb|agreeing|before agreeing to help Meachum save his sister from Davos.|actual|stated|
+
+@2435 gold: one name (Captain Carter, Steve Rogers); the named members; a group row beside tied members is split (A2); a train is no place; Stark's noticing
+keep
+r Carter=>Captain Carter
+r Rogers=>Steve Rogers
+f+ Dum Dum Dugan|member_of|Howling Commandos|Barnes joined Howling Commandos, led by Captain Carter, together with Steve Rogers, Dum Dum Dugan, Gabe Jones, Jim Morita, James Montgomery Falsworth, and Jacques Dernier.|actual|stated|
+f+ Gabe Jones|member_of|Howling Commandos|Barnes joined Howling Commandos, led by Captain Carter, together with Steve Rogers, Dum Dum Dugan, Gabe Jones, Jim Morita, James Montgomery Falsworth, and Jacques Dernier.|actual|stated|
+f+ Jim Morita|member_of|Howling Commandos|Barnes joined Howling Commandos, led by Captain Carter, together with Steve Rogers, Dum Dum Dugan, Gabe Jones, Jim Morita, James Montgomery Falsworth, and Jacques Dernier.|actual|stated|
+f+ James Montgomery Falsworth|member_of|Howling Commandos|Barnes joined Howling Commandos, led by Captain Carter, together with Steve Rogers, Dum Dum Dugan, Gabe Jones, Jim Morita, James Montgomery Falsworth, and Jacques Dernier.|actual|stated|
+f+ Jacques Dernier|member_of|Howling Commandos|Barnes joined Howling Commandos, led by Captain Carter, together with Steve Rogers, Dum Dum Dugan, Gabe Jones, Jim Morita, James Montgomery Falsworth, and Jacques Dernier.|actual|stated|
+f+ Howard Stark|other_verb|noticed|although Howard Stark noticed that he interrupted them.|actual|stated|
+f- Howling Commandos|learned|-
+f+ Barnes|learned|-|where they received intel about a train with the Red Skull aboard.|actual|stated|
+f+ Captain Carter|learned|-|where they received intel about a train with the Red Skull aboard.|actual|stated|
+f+ Steve Rogers|learned|-|where they received intel about a train with the Red Skull aboard.|actual|stated|
+f+ Dum Dum Dugan|learned|-|where they received intel about a train with the Red Skull aboard.|actual|stated|
+f+ Gabe Jones|learned|-|where they received intel about a train with the Red Skull aboard.|actual|stated|
+f+ Jim Morita|learned|-|where they received intel about a train with the Red Skull aboard.|actual|stated|
+f+ James Montgomery Falsworth|learned|-|where they received intel about a train with the Red Skull aboard.|actual|stated|
+f+ Jacques Dernier|learned|-|where they received intel about a train with the Red Skull aboard.|actual|stated|
+f- Red Skull|located_at|train
+
+@2436 gold: the Vormir trip is only in the dialogue (B.9); Thanos' aim
+keep
+- Thanos|arrived|Vormir
+- Gamora|arrived|Vormir
+t- no_relation|The Sacrifice of Gamora
+f+ Thanos|other_verb|obtain|The Sacrifice of Gamora was the ultimate step that was required in order for Thanos to obtain the Soul Stone.|planned|stated|Thanos
+
+@2437 gold: ok
+keep
+
+@2438 gold: an unnamed father is no end; learning a skill is no realizing; a plane is boarded; packing; the doer-less drive
+keep
+f- father|helped|Barton
+f- father|other_verb|stay
+t+ crowd_end|His father helped them get themselves and their luggage into the car, but did not join them as he needed to stay in the city.
+f- Barton|learned|-
+f+ Barton|other_verb|showed|Barton showed his father the sign language he had been learning|actual|stated|
+f- Barton|used|plane
+f+ Barton|other_verb|boarded|where they boarded a plane and flew back to Iowa.|actual|stated|
+f+ Barton|other_verb|packed|Barton and his brother and sister packed and prepared to return home.|actual|stated|
+t+ no_doer|The kids were driven to an airport
+
+@2439 gold: ok
+keep
+
+@2440 gold: ok
+keep
+
+@2441 gold: crew credits are production
+keep
+t- list_header
+t+ production|Kevin Feige
+t+ production|Stephen Broussard
+t+ production|Louis D'Esposito
+t+ production|Brad Winderbaum
+t+ production|Victoria Alonso
+t+ production|Richie Palmer
+t+ production|Jason Gavin
+t+ production|Marion Dayre
+t+ production|Sydney Freeland

@@ -1,0 +1,198 @@
+@3711 gold: ok
+keep
+
+@3712 gold: an occupation is no row
+keep
+f- Bart Cooper|other_verb|student
+
+@3713 gold: a solicitation text and its creators are production
+keep
+f- Collin Kelly|other_verb|continues
+f- Jackson Lanzing|other_verb|continues
+f- Michael Dowling|other_verb|continues
+f- Paul Jenkins|other_verb|explores
+f- Stephanie Williams|other_verb|thrills
+t+ production|Collin Kelly, Jackson Lanzing and Michael Dowling’s generations-spanning epic continues!
+t+ production|Then legendary writer Paul Jenkins explores the chemistry of fear in a story that will leave you with a whole new and terrifying understanding of the Xenomorph species.
+t+ production|And Stephanie Williams thrills with a story of a marine’s first – and possibly last – day on the job.
+
+@3714 gold: ok
+keep
+
+@3715 gold: one name (Rachel); the attack was by them, the call has no doer; stating is speech
+keep
+r Marvel Girl=>Rachel
+f- Rachel|contacted|Vulcan
+f- Lilandra Neramani|contacted|Vulcan
+f- Korvus Rook'shir|contacted|Vulcan
+t+ no_doer|Vulcan is called away to the site of the attack by Rachel, Lilandra and Korvus
+f- Vulcan|other_verb|wants
+f+ Vulcan|other_verb|stating|with Vulcan stating he wants them all dead.|actual|stated|
+f+ Vulcan|other_verb|wants|with Vulcan stating he wants them all dead.|actual|stated|
+
+@3716 gold: group name without article; the X-Men's attack and Stryker's win are different doers' acts
+keep
+r the X-Men=>X-Men
++ X-Men|fought|Purifiers|Attacking them, they were all taken down by the Purifiers' leader Jason Stryker.
+
+@3717 gold: rank prefix stripped (one name Kincaid); the curator is Wendell Vaughn, no description end
+keep
+r Agent Kincaid=>Kincaid
+f- curator|revealed_as|Wendell Vaughn
+
+@3718 gold: two Steve Rogers (A18): the true one is Steve Rogers, the Hydra one is Hydra Steve; overwhelming the heroes is a defeat; things and twins
+keep
+r The true Steve=>Steve Rogers
+r the Hydra Steve=>Hydra Steve
+f- Steve Rogers|wore|armor
+f+ Hydra Steve|wore|armor|before facing off with Steve Rogers himself wearing armor powered by the Cosmic Cube fragments Hydra recovered.|actual|stated|
++ Hydra Steve|defeated|Underground|Rogers easily overwhelmed the heroes
+f- Sam Wilson|tricked|Rogers
+f+ Sam Wilson|tricked|Hydra Steve|but he was then tricked by Sam Wilson into accepting the last fragment|actual|stated|
+f- Rogers|took|the last fragment
+f+ Hydra Steve|other_verb|accepting|but he was then tricked by Sam Wilson into accepting the last fragment|actual|stated|
+f- Hydra|used|Cosmic Cube fragments
+f+ Hydra|other_verb|recovered|the Cosmic Cube fragments Hydra recovered.|actual|stated|
+f- the last fragment|other_verb|contained
+f- Kobik|located_at|her own mindscape
+f- Winter Soldier|helped|true Steve Rogers
+f- Underground|other_verb|disbandment
+
+@3719 gold: the Howling Commandos are with him; keeping the secret is the promised act
+keep
++ Howling Commandos|arrived|Krakoa|Soon after that they crashed on the island
++ Howling Commandos|met|Krakoa|where they came across the island's collective intelligence.
+f+ Howling Commandos|other_verb|witnessed|Nick Fury along with Howling Commandos accidentally witnessed an explosion on Krakoa.|actual|stated|
+f- Nick Fury|other_verb|keeping
+f+ Nick Fury|other_verb|keeping|in exchange for keeping its existence a secret.|planned|stated|Nick Fury
+
+@3720 gold: "a Goblin Slayer" is indefinite (no end); Norman as Spider-Man; joining a group is his act; Ben poses as Peter; Janine's feelings
+keep
+- Goblin Slayer|fought|Norman
+- Norman|defeated|Goblin Slayer
+t+ crowd_end|Norman is attacked by a Goblin Slayer.
+f+ Norman|other_verb|defeats|He defeats him as Spider-Man|actual|stated|
+f+ Spider-Man|alias_of|Norman|He defeats him as Spider-Man|actual|stated|
+t+ crowd_end|The other Spider-Heroes force Osborn to stop being Spider-Man,
+f- Roderick Kingsley|other_verb|wants
+f+ Roderick Kingsley|other_verb|joins|but Roderick Kingsley joins the group that wants to kill Norman.|actual|stated|
+t- deictic|Meanwhile,
+t- no_relation|Janine no longer likes
+f+ Janine|other_verb|likes|Janine no longer likes Ben pretending to be Peter,|actual|denied|
+f+ Ben|disguise_as|Peter|Janine no longer likes Ben pretending to be Peter,|actual|stated|
+t- no_relation|fearing he'll like
+f+ Janine|other_verb|fearing|fearing he'll like him too much.|actual|stated|
+
+@3721 gold: beating and knocking out is one act (A145); the tie Jennifer Walters/She-Hulk; defending is no help row; suspecting takes no object; the tried escape
+keep
+- She-Hulk|fought|Starfox
+f+ She-Hulk|alias_of|Jennifer Walters|He was defended by lawyer Jennifer Walters, the She-Hulk.|actual|stated|
+f- Jennifer Walters|helped|Starfox
+f+ Jennifer Walters|other_verb|defended|He was defended by lawyer Jennifer Walters, the She-Hulk.|actual|stated|
+f- Jennifer Walters|suspected|Starfox
+f+ Jennifer Walters|suspected|-|In the course of the trial, Ms. Walters came to suspect that Starfox had used his powers on her during their time in the Avengers|actual|stated|
+f+ Starfox|other_verb|evaded|he evaded her questions and then cut the video feed.|actual|stated|
+f+ Jennifer Walters|other_verb|charged|Walters angrily charged out of the courtroom|actual|stated|
+f+ Starfox|other_verb|escape|as he was attempting to escape from Earth.|attempted|stated|Starfox
+
+@3722 gold: a won leadership challenge is one act (A145); a named line is no deictic
+keep
+- Magneto|fought|Apocalypse
+t- deictic|Moments thereafter
+t+ no_relation|Moments thereafter, Magneto was launched onto the world stage.
+
+@3723 gold: the variants are a crowd; a belief is suspected; reaching a conclusion is learned + the planned conquest; Kang is a member
+keep
+f- variants|member_of|Council of Kangs
+t+ crowd_end|Also at the same time, a handful of the variants decided to form the Council of Kangs as a presiding body.
+f- Kang the Conqueror|other_verb|believed
+f+ Kang the Conqueror|suspected|-|one of the members, Kang the Conqueror believed that their collective temporal meddling will result in the end of the Multiverse|actual|stated|
+f+ Kang the Conqueror|member_of|Council of Kangs|However, one of the members, Kang the Conqueror believed|actual|stated|
+f- Kang the Conqueror|other_verb|conclusion
+f+ Kang the Conqueror|learned|-|Kang ultimately came to a conclusion that the only way to bring the order to the Multiverse and prevent its demise was to conquer some realities while destroying others.|actual|stated|
+f+ Kang the Conqueror|other_verb|conquer|was to conquer some realities while destroying others.|planned|stated|Kang the Conqueror
+
+@3724 gold: one name (Quill); aged to death is dies; the call; the guilt line
+keep
+r Star-Lord=>Quill
+f+ Quill|other_verb|made|During one mission, Quill made a reckless call|actual|stated|
+f+ Gamora|dies|-|caused Gamora, Drax and Groot to get caught in a temporal flux that aged them 100 years, killing them.|actual|stated|
+f+ Drax|dies|-|caused Gamora, Drax and Groot to get caught in a temporal flux that aged them 100 years, killing them.|actual|stated|
+f+ Groot|dies|-|caused Gamora, Drax and Groot to get caught in a temporal flux that aged them 100 years, killing them.|actual|stated|
+t+ no_relation|After that, he was consumed with guilt and was obsessed with becoming a hero again, like the old days.
+
+@3725 gold: a particle object; the realization; recruiting; Bender is Immortus (one name); speech is actual
+keep
+f- Apocalypse of Earth-121893|other_verb|over
+f+ Apocalypse of Earth-121893|other_verb|taken|Limbo was, at one "time", taken over by Apocalypse of Earth-121893|actual|stated|
+f+ Apocalypse of Earth-121893|learned|-|After realizing that his conquest of Earth would forever be stymied by his enemies|actual|stated|
+f+ Apocalypse of Earth-121893|other_verb|recruited|He then recruited various allies to help kidnap telepaths from the modern era of Earth-92131|actual|stated|
+f- Bender|other_verb|claimed
+f+ Immortus|other_verb|claimed|who claimed to be the janitor in what he referred to as the "Axis of Time".|actual|stated|
+f+ Immortus|other_verb|remained|Immortus himself remained undetected by Apocalypse|actual|stated|
+
+@3726 gold: the jailing has no doer; the killing of his (unnamed) father is Vance's act
+keep
+f- Vance Astrovik|other_verb|sent
+t+ no_doer|After he was sent to jail
+f+ Vance Astrovik|other_verb|killing|After he was sent to jail for killing his father|actual|stated|
+
+@3727 gold: ok
+keep
+
+@3728 gold: a belief is suspected; the conclusion is learned + the planned conquest; the Kangs are a crowd; the section header
+keep
+f- Kang the Conqueror|other_verb|believed
+f+ Kang the Conqueror|suspected|-|one of the members, Kang the Conqueror believed that their collective temporal meddling will result in the end of the Multiverse|actual|stated|
+f- Kang the Conqueror|other_verb|conclusion
+f+ Kang the Conqueror|learned|-|Kang ultimately came to a conclusion that the only way to bring the order to the Multiverse and prevent its demise was to conquer some realities while destroying others.|actual|stated|
+f+ Kang the Conqueror|other_verb|conquer|was to conquer some realities while destroying others.|planned|stated|Kang the Conqueror
+t+ list_header|===All-Out War===
+t+ crowd_end|which resulted in more and more of Kangs also waging war on each other, seeking to annihilate other realities to save their own from a ruthless conquest.
+
+@3729 gold: the ruler of Atlantis; the ordered disowning; the planned control
+keep
+f+ Namor|leader_of|Atlantis|The ruler of the broken kingdom of Atlantis, Namor, was also a member of Osborn's Cabal.|actual|stated|
+f+ Namor|other_verb|disown|Osborn ordered Namor to disown the assailants|ordered|stated|Osborn
+f+ Osborn|other_verb|control|Seeing it as an opportunity to control the mutant population|planned|stated|Osborn
+
+@3730 gold: the quote's verb; a possessive description is no end; a band trait is no capability
+keep
+f- Lorna|other_verb|sold
+f+ Lorna|other_verb|sell|Lorna eventually had to sell the rights to her song catalog to keep her home.|actual|stated|
+f- Teen's mother|parent_of|Teen
+f- Teen's mother|other_verb|got
+t+ crowd_end|"Teen"'s mother was a big fan of Lorna's and even got tickets to the last concert of the Coral Shores.
+t- capability|Although they had
+t+ no_relation|Although they had a devoted fanbase, the Coral Shores never achieved mainstream success.
+
+@3731 gold: the robbery was shared
+keep
+f+ Robot Scarlet Witch|stole|ATM machine|Alongside Robot Scarlet Witch, he participated in robbing an ATM machine.|actual|stated|
+
+@3732 gold: unnamed Beyonders are crowds; no pipe in a quote; Doom's description
+keep
+t+ crowd_end|with a single Beyonder having easily overwhelmed Thor, Hyperion, and Starbrand, suffering no visible damage from their attacks until Starbrand's detonation, and a trio of Beyonders having killed nearly all of the Celestials and abstract entities in all realities with a good bit of time and effort, before slaying the Living Tribunal itself.
+t- list_header|| Abilities
+t+ list_header|AvgStrength =
+t+ list_header|Weaknesses =
+t- capability|Linearity
+f+ Doctor Doom|other_verb|described|Linearity: The Beyonders were described by Doctor Doom as being linear.|actual|stated|
+
+@3733 gold: the Seraphim and Asura are god races (no ends); help is a noun
+keep
+- the Seraphim|fought|the Asura
+t+ crowd_end|Ultimately, the Seraphim and Asura grew so destructive
+f- Chthon|helped|-
+f+ Chthon|other_verb|help|The ideological dispute grew into a civil war, with the help of Chthon.|actual|stated|
+
+@3734 gold: things are no subjects; an attempt; a description entity is no alias end
+keep
+f- incursions|other_verb|threatened
+t+ no_relation|The sparked war led to countless incursions which threatened the stability of the Multiverse as a whole.
+f- Kang the Conqueror|other_verb|prevent
+f+ Kang the Conqueror|other_verb|prevent|all in an attempt to prevent the ultimate demise of the whole Multiverse.|attempted|stated|Kang the Conqueror
+f- ripples in space-time|other_verb|resulted
+f- trans-temporal entity|also_known_as|Alioth
+t+ crowd_end|In the middle of the war, the ripples in space-time caused by the Kang variants resulted in the creation of a trans-temporal entity, which became known as Alioth.
+

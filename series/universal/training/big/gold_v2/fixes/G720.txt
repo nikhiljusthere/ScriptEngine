@@ -1,0 +1,457 @@
+@3293 gold: catching his breath is no healing
+keep
+f- Saitama|healed|-
+f+ Saitama|other_verb|recovered|he recovered just seconds later.|actual|stated|
+
+@3294 gold: an intervention that becomes the fight is no met with the foe; the tried acts; the order's acts; non-verb objects
+keep
+- Saitama|met|Mosquito Girl
+f- Mosquito Girl|other_verb|Genos
+f+ Mosquito Girl|other_verb|kill|Just as she attempts to kill him, Saitama intervenes.|attempted|stated|Mosquito Girl
+f+ Genos|other_verb|destroy|Genos who attempts to destroy her but fails|attempted|stated|Genos
+f+ Mosquito Girl|other_verb|collect|Dr. Genus sends Mosquito Girl to collect blood and find powerful fighters.|ordered|stated|Genus
+f- Mosquito Girl|used|blood
+f+ Mosquito Girl|other_verb|absorbs|after she absorbs the blood her mosquitos collected.|actual|stated|
+t- crowd_end|Dr. Genus sends six of his creations
+f+ Genus|other_verb|sends|Dr. Genus sends six of his creations to capture Saitama.|actual|stated|
+f- Genus|created|traps
+f+ Genus|other_verb|set|Dr. Genus has set traps in the main building|actual|stated|
+f- Genus|other_verb|Carnage
+f+ Genus|other_verb|releases|Reluctantly, Dr. Genus releases Carnage Kabuto|actual|stated|
+
+@3295 gold: acknowledging is a speech act; traits are no capability
+keep
+f- Maiko Plasma|learned|-
+f+ Maiko Plasma|other_verb|acknowledged|acknowledged that there are more powerful beings than her in the world|actual|stated|
+t- capability|Maiko Plasma seemed rather calm
+t+ no_relation|Maiko Plasma seemed rather calm
+t- capability|a trait very few
+t+ no_relation|a trait very few low threat level monsters have.
+
+@3296 gold: the first Seafolk is a species noun (no end); Stinger's rescue of an unnamed citizen
+keep
+- Saitama|killed|the first Seafolk
+f+ Saitama|other_verb|destroyed|he is destroyed by Saitama.|actual|stated|
+t+ crowd_end|The first Seafolk rises from the sea and starts to head inland, but before he could even leave the water,
+f+ Stinger|other_verb|saves|The hero Stinger shows up and saves a citizen from the grip of one of the Seafolk.|actual|stated|
+
+@3297 gold: a page note about interviews is production
+keep
+t- list_header|This page will show
+t+ production|This page will show the translations of interviews from the crew responsible for the One-Punch Man anime.
+
+@3298 gold: ok
+keep
+
+@3299 gold: "their" only; the group is the page title, not window text
+keep
+f- Monster Association|other_verb|oppose
+t+ deictic|Their purpose is to oppose the Hero Association.
+
+@3300 gold: an occupation is no became; self-training is no trained; a belief is suspected
+keep
+f- Glasses|became|hero
+f+ Glasses|other_verb|wanting|Originally wanting to become a hero|actual|stated|
+f- Glasses|trained|-
+f+ Glasses|other_verb|trained|Glasses trained hard in order to become one.|actual|stated|
+f- Glasses|other_verb|believing
+f+ Glasses|suspected|-|believing that he and any other average person have limits and cannot keep up with people who have natural-born talent.|actual|stated|
+
+@3301 gold: the narrator's lines are dialogue
+keep
+f- Amai Mask|other_verb|tried
+t- no_relation|Every time before
+t+ dialogue|Saitama: Every time before his live concerts, he avoids people and his an internal struggle with all the pressure that he experiences.
+t+ dialogue|Saitama: On that day, just like his usual ritual of going to the bathroom to give himself a mental pep talk, he tried to concentrate but…
+
+@3302 gold: ok
+keep
+
+@3303 gold: ok
+keep
+
+@3304 gold: ok
+keep
+
+@3305 gold: ok
+keep
+
+@3306 gold: one name, no article; the description line
+keep
+r The King of the Lake=>King of the Lake
+t+ no_relation|The King of the Lake is a gigantic fish known among fishermen.
+
+@3307 gold: an adjective is no verb
+keep
+f- Ryumon|other_verb|excited
+t+ no_relation|Ryumon is excited about the Neo Heroes betting system allowing people to bet on the monsters too.
+
+@3308 gold: ok
+keep
+
+@3309 gold: ok
+keep
+
+@3310 gold: named fighters' acts are facts, not no_relation
+keep
+t- no_relation|Thinking the battle
+f+ Garou|suspected|-|Thinking the battle is already over due to the hero's bleeding and fractured bones|actual|stated|
+t- no_relation|Garou is mildly surprised
+f+ Metal Bat|other_verb|remains|Garou is mildly surprised when Metal Bat remains standing.|actual|stated|
+t- no_relation|He wonders
+f+ Garou|suspected|-|He wonders if this is the hero's willpower showing.|actual|stated|
+t- no_relation|but Garou dodges
+f+ Garou|other_verb|dodges|but Garou dodges and counters with a right sidekick.|actual|stated|
+t- no_relation|Despite the hit
+f+ Metal Bat|other_verb|continues|Despite the hit, Metal Bat continues swinging with increasing speed.|actual|stated|
+t- no_relation|Garou notices
+f+ Garou|other_verb|notices|Garou notices the acceleration.|actual|stated|
+t- no_relation|With a loud yell
+f+ Metal Bat|other_verb|slams|With a loud yell, Metal Bat slams his bat downward, though Garou evades,|actual|stated|
+f+ Garou|other_verb|evades|With a loud yell, Metal Bat slams his bat downward, though Garou evades,|actual|stated|
+t- no_relation|Garou retaliates
+f+ Garou|used|Water Stream Rock Smashing Fist|Garou retaliates with a flurry of strikes using his Water Stream Rock Smashing Fist,|actual|stated|
+t- no_relation|but Metal Bat pushes
+f+ Metal Bat|other_verb|pushes|but Metal Bat pushes through and attempts another counterattack.|actual|stated|
+f+ Metal Bat|other_verb|counterattack|but Metal Bat pushes through and attempts another counterattack.|attempted|stated|Metal Bat
+t- deictic|Garou jumps back
+f+ Garou|other_verb|jumps|Garou jumps back onto a fence.|actual|stated|
+
+@3311 gold: a Japanese reading is no alias; seeking carries its planned act
+keep
+f- Forest King|also_known_as|Shinrin-ō
+f+ Forest King|other_verb|sought|sought to restore the lost greenery to Earth at the cost of the humans inhabiting it|actual|stated|
+
+@3312 gold: declaring and remarking are narrated speech, not dialogue
+keep
+f+ Fuhrer Ugly|other_verb|declares|declares him the hero he loathes the most|actual|stated|
+t- dialogue|they both evoke
+f+ Fuhrer Ugly|other_verb|remarking|remarking that they both evoke screams from women in different ways.|actual|stated|
+
+@3313 gold: ok
+keep
+
+@3314 gold: ok
+keep
+
+@3315 gold: ok
+keep
+
+@3316 gold: ok
+keep
+
+@3317 gold: ok
+keep
+
+@3318 gold: ok
+keep
+
+@3319 gold: ok
+keep
+
+@3320 gold: "heroes" is a crowd; passive invitations have no doer; King's own invitation; seeing as is a belief
+keep
+f- Heroes|allied_with|Saitama
+f- Heroes|friend_of|Saitama
+f- Heroes|other_verb|responded
+f- Heroes|other_verb|grown
+t+ crowd_end|Although not an official organization, this group of heroes includes those who have affiliated themselves with Saitama or usually hang out with him.
+t+ crowd_end|These heroes were originally the ones who responded to Saitama's call about Fubuki's challenge.
+f+ Fubuki|other_verb|said|As said by Fubuki, the strong seem to be attracted to Saitama|actual|stated|
+f- King|other_verb|invited
+f- Saitama|other_verb|invited
+f- Genos|other_verb|invited
+t+ no_doer|They are usually invited to Saitama's apartment cookouts or to play video games (usually just King).
+t+ no_doer|Saitama and Genos have periodically been invited to Bang's dojo
+f+ King|other_verb|invited|King has often invited Saitama to come to his apartment to play video games or vice versa.|actual|stated|
+f- Fubuki|other_verb|sees
+f+ Fubuki|suspected|-|However, Fubuki sees Saitama's group as another branch of the Blizzard Group.|actual|stated|
+
+@3321 gold: ok
+keep
+
+@3322 gold: an unnamed employee is no end (the page title is not window text)
+keep
+f- Shelter Nr. 7 Girl|member_of|Hero Association
+t+ crowd_end|An unnamed employee of the Hero Association who works at the Shelter Nr. 7 in Z-City.
+
+@3323 gold: ok
+keep
+
+@3324 gold: Fubuki's calling it is a dubbing (no alias), a speech act
+keep
+f+ Fubuki|other_verb|called|called the New Blizzard Group (新フブキ組, Shin Fubuki-gumi) by Fubuki|actual|stated|
+
+@3325 gold: an organisation is no place (no departed)
+keep
+- Poison Punch|departed|Hero Association
+
+@3326 gold: ok
+keep
+
+@3327 gold: the unnamed girl is only "she" (page title not window text)
+keep
+f- Shelter Nr. 7 Girl|other_verb|consoles
+f- Shelter Nr. 7 Girl|other_verb|informs
+f- Shelter Nr. 7 Girl|used|megaphone
+f- Shelter Nr. 7 Girl|other_verb|praises
+f- Shelter Nr. 7 Girl|other_verb|tells
+t+ crowd_end|She consoles Saitama about the safety of the shelter and informs him that he cannot leave while the monster is still outside.
+t+ crowd_end|Later, she uses a megaphone to reassure the citizens about their safety and praises the shelter's construction, calling it perfect.
+t+ crowd_end|She eventually tells Saitama there are no restrooms
+
+@3328 gold: the used recruiters carry the act; victim-only kidnapping; the AI's own acts
+keep
+t- crowd_end|using Blue and McCoy
+f+ Fuzzy|other_verb|using|using Blue and McCoy to recruit several prominent members into the organization.|actual|stated|
+f+ Blue|other_verb|recruit|using Blue and McCoy to recruit several prominent members into the organization.|ordered|stated|Fuzzy
+f+ McCoy|other_verb|recruit|using Blue and McCoy to recruit several prominent members into the organization.|ordered|stated|Fuzzy
+f- Fuzzy|kidnapped|-
+t+ no_doer|Unbeknownst to most, he was kidnapped at some point,
+f- Fake Fuzzy|other_verb|possessed
+t- crowd_end|This AI encourages
+f+ Fake Fuzzy|other_verb|encourages|This AI encourages members to use battle suits|actual|stated|
+f+ Fake Fuzzy|other_verb|forcing|while forcing others into becoming mindless cyborgs|actual|stated|
+f+ Fake Fuzzy|other_verb|ruling|with the ultimate goal of ruling and enslaving humanity.|planned|stated|Fake Fuzzy
+
+@3329 gold: ok
+keep
+
+@3330 gold: helping and persuading need a named person; Mumen Rider's acts
+keep
+f- Mumen Rider|helped|-
+f+ Mumen Rider|other_verb|intervenes|A young Mumen Rider intervenes when he finds a high school student being bullied and extorted for money.|actual|stated|
+f+ Mumen Rider|other_verb|driving|After driving the bullies away|actual|stated|
+f- Mumen Rider|persuaded|-
+f+ Mumen Rider|other_verb|encourages|encourages him to speak up, explaining that telling someone about the abuse is the first and most important step.|actual|stated|
+
+@3331 gold: ok
+keep
+
+@3332 gold: ok
+keep
+
+@3333 gold: discovering the accident; everyone is a crowd
+keep
+f+ Asa|learned|-|she looks in horror as she discovers she has accidentally crushed Bucky underneath her|actual|stated|
+t- no_relation|As everyone looks
+t+ crowd_end|As everyone looks at Bucky's corpse in complete grief and terror
+
+@3334 gold: "his father" is no end; non-verb objects; the forbidden act; the mafia is no end
+keep
+- Denji|killed|his father
+f+ Denji|other_verb|killed|Denji killed his abusive and alcoholic father in self-defense|actual|stated|
+f- Makima|other_verb|-
+f+ Makima|other_verb|explains|Elaborating, Makima explains that she looked into Denji's past and saw his repressed memories|actual|stated|
+f+ Denji|other_verb|open|the ones hidden behind the door that Pochita ordered him not to open.|ordered|denied|Pochita
+f- Denji|other_verb|truth
+f+ Denji|other_verb|hid|She explains that Denji hid the truth from himself in order to be able to live a normal life|actual|stated|
+f+ Makima|other_verb|stating|She goes on further, stating that Denji killed his abusive and alcoholic father in self-defense|actual|stated|
+f- mafia|created|claims of suicide
+t+ crowd_end|and that the claims of suicide were merely created by the mafia so Denji would inherit his debts.
+
+@3335 gold: a chapter title line is production
+keep
+t- list_header|Always Eat
+t+ production|Always Eat a Hearty Breakfast 朝食はしっかり Chōshoku wa Shikkari is the 82nd chapter of the Chainsaw Man manga series.
+
+@3336 gold: emerging to kill is no met; the eldest brother is unnamed; a government is no doer; Devil Hunters is no end; the tied brothers act
+keep
+- Aldo|met|Michiko Tendo
+- Aldo|met|Yutaro Kurose
+- Aldo|met|Subaru
+- Joey|met|Michiko Tendo
+- Joey|met|Yutaro Kurose
+- Joey|met|Subaru
+- the eldest brother|met|Michiko Tendo
+- the eldest brother|met|Yutaro Kurose
+- the eldest brother|met|Subaru
+- the eldest brother|killed|Michiko Tendo
+- the eldest brother|killed|Yutaro Kurose
+- the eldest brother|killed|Subaru
+f- US Government|hired|Aldo
+f- US Government|hired|Joey
+t+ no_relation|The three brothers were employed by the US Government to find, and retrieve the chainsaw heart back to the USA for two million dollars.
+f- Michiko Tendo|member_of|Devil Hunters
+f- Yutaro Kurose|member_of|Devil Hunters
+f- Subaru|member_of|Devil Hunters
+f- the elder brother|other_verb|reaffirms
+f+ Aldo|other_verb|begins|Aldo begins to have doubts about the idea|actual|stated|
+t+ crowd_end|but the elder brother reaffirms Aldo that they are immortal
+f- the three brothers|other_verb|proceed
+f- the three brothers|other_verb|place
+f- the three brothers|other_verb|left
+f+ Aldo|other_verb|proceed|and proceed to Japan.|actual|stated|
+f+ Aldo|other_verb|place|Afterwards, the brothers place the dead devil hunters in body bags and leave them in the forest.|actual|stated|
+f+ Joey|other_verb|place|Afterwards, the brothers place the dead devil hunters in body bags and leave them in the forest.|actual|stated|
+f+ Aldo|other_verb|leave|Afterwards, the brothers place the dead devil hunters in body bags and leave them in the forest.|actual|stated|
+f+ Joey|other_verb|leave|Afterwards, the brothers place the dead devil hunters in body bags and leave them in the forest.|actual|stated|
+f- the eldest brother|other_verb|notes
+f- the eldest brother|other_verb|asks
+f- the eldest brother|used|Skin Devil
+f- the eldest brother|disguise_as|Yutaro Kurose
+f+ Aldo|other_verb|dismiss|Aldo initially attempts to dismiss it but however vomits.|attempted|stated|Aldo
+t+ crowd_end|The eldest brother laughs and uses the Skin Devil to change into one of the passengers, Yutaro Kurose.
+
+@3337 gold: Devils is a race (no end)
+keep
+f- Devils|other_verb|originated
+f- Devils|dies|Earth
+f- Devils|other_verb|return
+t+ crowd_end|Hell 地獄 Jigoku is the location where Devils originated.
+t+ crowd_end|They return to hell after they die on Earth.
+
+@3338 gold: saying is speech; a proposal is speech + the planned act; a trait is no capability
+keep
+f- Katana Man|other_verb|claimed
+f+ Katana Man|other_verb|saying|was disgusted to the point of saying that his grandfather would be rolling in his grave|actual|stated|
+f- Katana Man|other_verb|proposes
+f+ Katana Man|other_verb|proposes|So, he proposes to go to a soapland to make sure Denji can regain his manhood having sexual intercourse and cheer him up.|actual|stated|
+f+ Katana Man|other_verb|go|So, he proposes to go to a soapland|planned|stated|Katana Man
+t- capability|He also seems
+t+ no_relation|He also seems to put a great importance of being a traditional "alpha-male",
+t+ citation|(Chapter 165)
+
+@3339 gold: the student council president is unnamed; a role is no became; a described roof is no place
+keep
+- Mitaka|met|the student council president
+f- student council president|other_verb|reassures
+t+ crowd_end|The president notices Mitaka's annoyance with Bucky and reassures her that it'll be dead in around 100 days so it's not worth worrying about.
+f- Bucky|became|mascot
+t- deictic|Three months pass,
+t+ no_relation|Three months pass, and Bucky becomes a sort of mascot for the students.
+t+ crowd_end|Everyone seems to love him, except for Mitaka.
+f- Mitaka|located_at|school roof
+f+ Mitaka|other_verb|retreats|She retreats to the school roof to eat her lunch when she is joined by the student council president.|actual|stated|
+
+@3340 gold: devotion is apparent; the planned slaughter
+keep
+f- Spear Hybrid|allied_with|Barem
+f+ Spear Hybrid|allied_with|Barem|He also appears to be devoted to Barem's cause of luring out Chainsaw Man with a massacre|actual|apparent|
+t- no_relation|even smugly grinning
+f+ Spear Hybrid|other_verb|grinning|even smugly grinning at the thought of making women and children scream in agony|actual|stated|
+f+ Spear Hybrid|other_verb|slaughter|when planning to slaughter them|planned|stated|Spear Hybrid
+
+@3341 gold: a chapter list line
+keep
+t+ list_header|Ordinary Happiness
+
+@3342 gold: serving under is no membership; a Japanese name is no alias; "each member" is a crowd; the citation
+keep
+f- Weapon Devils|member_of|Four Horsemen
+f+ Weapon Devils|other_verb|served|were a group of 7 Devils that previously served under the Four Horsemen|actual|stated|
+f- Weapon Devils|also_known_as|武器の悪魔 Buki no Akuma
+t- capability|each member embodies
+t+ crowd_end|each member embodies the concept of a certain type of weapon.
+t+ citation|(Chapter 87)
+
+@3343 gold: a noun object; traits are no capability; the wanted killing; citations
+keep
+f- Katana Man|other_verb|disbelief
+f+ Katana Man|suspected|-|He has shown a complete disbelief in Denji's excuse that he killed his grandfather because he was a zombie|actual|stated|
+t- capability|Katana Man is a selfish
+t+ no_relation|Katana Man is a selfish, cruel-hearted, stubborn, and rather unintelligent man
+f+ Katana Man|other_verb|killing|who only cares about killing Denji and forcing him to apologize for killing his grandfather.|planned|stated|Katana Man
+t- capability|He will sacrifice
+t+ no_relation|He will sacrifice innocent people and even his own comrades to do so, being willing to cut through them just to get to Denji.
+t+ citation|(Chapter 26)
+t+ citation|(Chapter 36)
+
+@3344 gold: group names without article; fighting alongside is an alliance; citations
+keep
+r The Weapon Devils=>Weapon Devils
+r the Four Horsemen=>Four Horsemen
+f+ Weapon Devils|allied_with|Four Horsemen|The Weapon Devils once fought alongside the Four Horsemen against Pochita|actual|stated|
+t+ citation|(Chapter 87)
+
+@3345 gold: the disguised brother is unnamed (no end); the identity tie; Power's drive; named reactions
+keep
+- the disguised brother|met|Denji
+- Power|fought|the disguised brother
+- Power|killed|the disguised brother
+f- the disguised brother|disguise_as|Yutaro
+f- the disguised brother|other_verb|informs
+f- the disguised brother|other_verb|informed
+f- the disguised brother|other_verb|assures
+t+ crowd_end|The eldest, now presenting as an injured Yutaro, hurriedly informs Kobeni and the Violence Fiend, Galgali to call a phone to HQ about the incident that happened prior.
+t+ crowd_end|He gets informed that Denji is the Chainsaw Man, and assures Denji that he will protect him.
+f+ Chainsaw Man|alias_of|Denji|He gets informed that Denji is the Chainsaw Man|actual|stated|
+f+ Power|other_verb|drives|Power drives into him and Denji while driving Kobeni's car.|actual|stated|
+t+ crowd_end|The unnamed brother gets launched into a fence pole and hits his head, killing him.
+t- no_relation|His disguise deactivates
+t+ crowd_end|His disguise deactivates, and he is recognized as one of the three hitmen from the USA.
+t- no_relation|The squadron learn
+t+ crowd_end|The squadron learn that since one of the brothers are in Japan disguised, that must mean that the other two are as well.
+t- crowd_end|Aldo and Joey
+f+ Aldo|other_verb|react|Aldo and Joey are in the crowd during this and react in horror.|actual|stated|
+f+ Joey|other_verb|react|Aldo and Joey are in the crowd during this and react in horror.|actual|stated|
+
+@3346 gold: the tapasa is a class noun (no end); distracting is no trick; Daiba proposes (not Rakshas); the rocket is an attack
+keep
+- the tapasa|fought|Rakshas
+f- the tapasa|used|modified water-spraying machine
+t+ crowd_end|Rakshas is doused in flame by the tapasa using Rickert's modified water-spraying machine.
+f+ Rakshas|other_verb|assume|This forces Rakshas to assume his true form, taking to the air|actual|stated|
+f- Daiba|tricked|Rakshas
+f+ Daiba|other_verb|distract|Erica is rescued by Daiba, who manages to distract Rakshas.|actual|stated|
+f- Rakshas|other_verb|proposes
+f+ Daiba|other_verb|proposes|He then proposes the Bākiraka to accompany them.|actual|stated|
+f+ Bākiraka|other_verb|accompany|He then proposes the Bākiraka to accompany them.|planned|stated|Daiba
+f- Rickert|other_verb|fires
++ Rickert|fought|Rakshas|However, Rickert fires a rocket at Rakshas from point-blank range when he pursued
+
+@3347 gold: the old wounded man is unnamed; the ordered act; wanting carries the planned act; knowing him as
+keep
+- Azan|met|the old wounded man
+f- the old wounded man|wounded|-
+t+ crowd_end|A famous story says that years ago, Azan once met a wounded man on a bridge.
+f+ Azan|other_verb|helped|As he helped the old man cross|actual|stated|
+f+ Holy Iron Chain Knights|other_verb|back|Azan orders the Holy Iron Chain Knights to back away|ordered|stated|Azan
+f+ Azan|other_verb|wanting|wanting to take Guts on by himself using his iron studded quarterstaff.|actual|stated|
+f+ Guts|other_verb|knowing|knowing him as the Bridge Knight.|actual|stated|
+
+@3348 gold: trivia about ending themes and teasers is production
+keep
+t+ production|This is the only episode of the first season to use a different ending theme, "Ash Crow" instead of "Meimoku no Kanata".
+t+ production|This is also the first episode of the anime to end with a teaser for the next season, rather than the traditional episode preview.
+
+@3349 gold: ok
+keep
+
+@3350 gold: "the king" and "his daughter" are lower-case descriptions (no ends); Griffith's escape
+keep
+f- King of Midland|dies|-
+f- King of Midland|parent_of|daughter
++ Griffith|escaped|Tower of Rebirth|Two years after Griffith escaped from the Tower of Rebirth
+t+ crowd_end|the king has succumbed to illness.
+t+ crowd_end|In the king's delirious vision, he is sitting on his throne, his soldiers keeping him from his daughter
+
+@3351 gold: narrated speech acts; the denied speech; the grab
+keep
+f+ Guts|other_verb|grabs|Guts angrily grabs the boy's shirt and demands an explanation.|actual|stated|
+f+ Rickert|other_verb|say|Rickert doesn't say anything|actual|denied|
+f- Erica|other_verb|claimed
+f+ Erica|other_verb|cry|but Erica begins to cry|actual|stated|
+f+ Erica|other_verb|yelling|yelling that it is her fault that Casca's gone.|actual|stated|
+
+@3352 gold: ok
+keep
+
+@3353 gold: one group name; an exclamation is speech; a name used for him is an alias; the denied belief
+keep
+r the Holy Iron Chain Knights=>Holy Iron Chain Knights
+f- Farnese|other_verb|exclaims
+f+ Farnese|other_verb|exclaims|Farnese triumphantly exclaims that she's finally caught him.|actual|stated|
+f- Guts|also_known_as|Falcon of Darkness
+f+ Falcon of Darkness|alias_of|Guts|The Holy Iron Chain Knights know Guts primarily by the name "Falcon of Darkness".|actual|stated|
+f- Holy Iron Chain Knights|other_verb|believe
+f+ Holy Iron Chain Knights|other_verb|stare|They all stare at him in awe|actual|stated|
+f+ Holy Iron Chain Knights|other_verb|believe|unable to believe that he can effectively wield a sword as big as the Dragon Slayer.|actual|denied|
+
+@3354 gold: "the continent" is a description; Midland is named
+keep
+f- Wyndham|located_at|the continent
+t+ no_relation|Wyndham was a city located roughly in the center of the continent on which it sat.
+t- no_relation|Like the rest of Midland
+f+ Wyndham|located_at|Midland|Like the rest of Midland, Wyndham's temperate climate meant that it suffered no adverse weather conditions|actual|stated|
+

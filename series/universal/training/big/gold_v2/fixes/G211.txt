@@ -1,0 +1,127 @@
+@1861 gold: the caught/beaten/imprisoned clause names the Knights in the same sentence (restored); the tried escape; the later title is a codename; a prison is no named place; a self pair; the transport
+keep
++ Knights of Never|captured|Yao|He tries to escape the Knights' fortress, but is eventually caught, beaten, and imprisoned.
++ Knights of Never|fought|Yao|He tries to escape the Knights' fortress, but is eventually caught, beaten, and imprisoned.
+t- no_doer|but is eventually caught
+
+@1915 gold: the defeat follows the battle with Hawkeye, the only opponent (restored); the patient of attaching is no doer
+keep
++ Hawkeye|defeated|Frightful Four|They are easily defeated and attached to a wall as their waits for the police.
+t- no_doer|They are easily defeated
+t+ no_doer|attached to a wall
+
+@2079 gold: a realm is no doer; the suggestion is the Angels' act; a descriptive alliance is a crowd
+keep
+f- Jotunheim|paid|Angels of Heven
+f- Angels of Heven|allied_with|Asgardians' enemies
+f- Asgardians' enemies|other_verb|prepared
+f- Vanaheim|joined|Asgardians' enemies
+t+ no_relation|After Jotunheim paid the Angels of Heven for devising strategy
+f+ Angels of Heven|other_verb|suggested|they suggested an alliance of all of the Asgardians' enemies|actual|stated|
+t+ crowd_end|who consequently prepared war against Asgard, including Vanaheim.
+
+@2080 gold: ok
+keep
+
+@2081 gold: a woman taken as a prize is captured; Priam's kingdom
+keep
+f- Agamemnon|took|Cassandra
++ Agamemnon|captured|Cassandra|that Agamemnon had taken for himself as the end of the war
+f+ Priam|leader_of|Troy|Cassandra, king of Troy Priam's daughter|actual|stated|
+
+@2082 gold: an occupation is no row
+keep
+f- Ulik|other_verb|forger
+
+@2083 gold: the failed wooing; an attempt is attempted
+keep
+f+ Mole Man|other_verb|win|After failing to win the affection of Squirrel Girl by sinking Central Park|attempted|stated|Mole Man
+f- Mole Man|other_verb|force
+f+ Mole Man|other_verb|force|in an attempt to force Squirrel Girl to date him.|attempted|stated|Mole Man
+
+@2084 gold: unnamed teams and rebels are a crowd
+keep
+f- foreign superpowered teams|helped|rebels
+t+ crowd_end|Those assists from foreign superpowered teams helped the rebels into gaining the upper hand
+
+@2085 gold: a race's looks are no attire (crowd_end)
+keep
+t- attire
+t+ crowd_end|The Flb'Dbi are 3'8"-tall creatures with brown skin fur that is covered around their faces and in the rears with tufts of red hair.
+t+ crowd_end|Their faces are dominated by two huge, reflective, red gloves that look like the eyes, and a very similar globe in the place of the mouth, the latter surrounded by for more tentacles.
+
+@2086 gold: stopping Parker's ritual is his defeat; the escape with no captor
+keep
+f- Elsa Bloodstone|other_verb|stopping
+f- Talia Warroad|other_verb|stopping
++ Elsa Bloodstone|defeated|Parker|Elsa Bloodstone and Talia Warroad prevented it from being able to fully manifest by stopping the summoning ritual that was being performed by Parker.
++ Talia Warroad|defeated|Parker|Elsa Bloodstone and Talia Warroad prevented it from being able to fully manifest by stopping the summoning ritual that was being performed by Parker.
+f+ Parker|other_verb|escape|Parker somehow managed to escape back to Earth|actual|stated|
+
+@2087 gold: no pipe in quotes; the speaker line ties the codename
+keep
+t- list_header
+t- citation
+t+ list_header|Speaker = Eel (Leopold Stryke)
+f+ Eel|alias_of|Leopold Stryke|Speaker = Eel (Leopold Stryke)|actual|stated|
+t+ citation|QuoteSource = Strange Tales Vol 1 117
+t+ list_header|History =
+
+@2088 gold: the most specific place; all four came to recover him; the ordered acts and the hiring; tipping off is no proven remote contact; forcing the Nazis to flee is their defeat (A74); the Americans leave him; a self pair; stopping the plot is a defeat; the tried shaking
+keep
+- Captain America|arrived|Africa
+- Bucky|arrived|Africa
+- Logan|arrived|Africa
+- Nick Fury|arrived|Africa
++ Captain America|arrived|Djbera|arrival of Captain America, Bucky, Nick Fury (leading the British S.A.S.), and Logan who came to the area
++ Bucky|arrived|Djbera|arrival of Captain America, Bucky, Nick Fury (leading the British S.A.S.), and Logan who came to the area
++ Logan|arrived|Djbera|arrival of Captain America, Bucky, Nick Fury (leading the British S.A.S.), and Logan who came to the area
++ Nick Fury|arrived|Djbera|arrival of Captain America, Bucky, Nick Fury (leading the British S.A.S.), and Logan who came to the area
+f+ Captain America|other_verb|recover|Logan who came to the area to recover Nazi defector Major Hans Guetterez|planned|stated|Captain America
+f+ Bucky|other_verb|recover|Logan who came to the area to recover Nazi defector Major Hans Guetterez|planned|stated|Bucky
+f+ Nick Fury|other_verb|recover|Logan who came to the area to recover Nazi defector Major Hans Guetterez|planned|stated|Nick Fury
+f+ Bucky|other_verb|track|Bucky was given secret orders to track down Baron Strucker and assassinate him|planned|stated|Bucky
+t+ crowd_end|While the heroes were caught in a Nazi fire fight
+f+ Bucky|other_verb|slipped|Bucky slipped away to eliminate Strucker|actual|stated|
+f+ Bucky|other_verb|eliminate|Bucky slipped away to eliminate Strucker|planned|stated|Bucky
+f+ Romulus|hired|Logan|Logan got new orders from his employer, the mysterious Romulus|actual|stated|
+f+ Logan|other_verb|help|Logan got new orders from his employer, the mysterious Romulus to help Strucker escape|ordered|stated|Romulus
+f- Logan|contacted|Baron Zemo
+f+ Logan|other_verb|tipped|who tipped off Baron Zemo to their position|actual|stated|
++ Bucky|defeated|Baron Strucker|until Bucky shot Logan through the chest and forced the Nazis to flee under fire.
++ Bucky|defeated|Baron Zemo|until Bucky shot Logan through the chest and forced the Nazis to flee under fire.
+f+ Captain America|other_verb|left|The Americans left Logan to die in the desert|actual|stated|
+f+ Bucky|other_verb|left|The Americans left Logan to die in the desert|actual|stated|
+f- Logan|healed|Logan
+f+ Logan|healed|-|but his mutant healing factor insured his survivial.|actual|stated|
+- Captain America|fought|Fifth Columnists
++ Captain America|defeated|Fifth Columnists|this plan was stopped by Captain America and Bucky.
++ Bucky|defeated|Fifth Columnists|this plan was stopped by Captain America and Bucky.
+f- Captain America|other_verb|stopped
+f- Bucky|other_verb|stopped
+f+ Fifth Columnists|other_verb|shake|in an attempt to shake the American public's faith in the United States military by posing as American soldiers|attempted|stated|Fifth Columnists
+
+@2089 gold: the scene is a dream (A107): no rows for it; the waking realization and the self-reproach are real
+keep
+f- Eddie|other_verb|tries
+f- doctor|other_verb|says
+f- Eddie|other_verb|begs
+f- doctor|other_verb|sticking
+f- Eddie|other_verb|asks
+f- Carnage symbiote|other_verb|engulfs
+t+ no_relation|Dylan tells Eddie that Knull had appeared to him in his dreams, and had Eddie been there for him they could have done something to stop him; Captain America chiming in by saying that the death toll is in the thousands, and that if they'd had some kind of warning the casualties might have been prevented.
+t+ no_relation|As Eddie protests and tries to apologize, the doctor steps into the room with an IV blood-bag and says that it's time for Eddie to take his medicine.
+t+ no_relation|As Captain America leaves with Dylan, Eddie begs them not to go; the doctor sticking the IV needle into his arm.
+t+ no_relation|Seeing the IV line is full of a viscous red-and-black ooze, Eddie turns to his doctor and asks what it is; only to see Cletus Kasady standing over him - the IV bag actually containing the Carnage symbiote.
+f+ Eddie|learned|-|Eddie realizes this has all been a dream|actual|stated|
+t+ no_relation|ripping out the IV line too late, as the Carnage symbiote bursts from the bag and engulfs him.
+
+@2090 gold: becoming a team or a stunt is no row; the human Mother is no named maker of a team
+keep
+f- World|became|Super-Sentinels
+f- Mother|created|Super-Sentinels
+f- Super-Sentinels|became|publicity stunt
+t+ no_relation|The result was to be a team called the "Super-Sentinels", products of a "mating" between their human "Mother" and a machine.
+t+ no_relation|This team was intended to be a publicity stunt that would commercialize the genocide of mutants as part of a reality show.
+t+ no_relation|This was supposed to make it more palatable to the public.
+

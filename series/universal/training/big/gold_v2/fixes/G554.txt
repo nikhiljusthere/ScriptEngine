@@ -1,0 +1,92 @@
+@2295 gold: ok
+keep
+
+@2296 gold: one name (Peter; Ben, with the Chasm alias); the quote verbs; mind warping is the controller's act; the army acts through Ben; wanting = actual + planned
+keep
+r Spider-Man=>Peter
+r Chasm=>Ben
+f+ Chasm|alias_of|Ben|and found Ben, corrupted and warped into the villain Chasm.|actual|stated|
+f+ Goblin Queen|other_verb|take|Chasm and Goblin Queen commence their plan to take from their respective progenitors|planned|stated|Goblin Queen
+f- Madelyne|other_verb|Venom
+f+ Madelyne|other_verb|lead|while Madelyne and Hallow's Eve lead Venom in their endeavor against the X-Men|actual|stated|
+f+ Hallow's Eve|other_verb|lead|while Madelyne and Hallow's Eve lead Venom in their endeavor against the X-Men|actual|stated|
+f- Madelyne|other_verb|Eddie
+f+ Madelyne|other_verb|warped|Eddie Brock had his mind and memory warped by Madelyne|actual|stated|
+f- Eddie Brock|other_verb|Peter
+f+ Eddie Brock|other_verb|hated|into the feral lethal protector he originally was that hated Spider-Man.|actual|stated|
+f- Ben|other_verb|Norman
+f+ Ben|other_verb|prevent|while Ben brutalized Norman to prevent his helping Peter.|planned|stated|Ben
+f- Peter|other_verb|X-Men
+f+ Peter|other_verb|trusted|Spider-Man trusted the X-Men to resolve matters as they did once before|actual|stated|
+f- Venom|other_verb|magic
+f+ Venom|other_verb|prepare|As Venom occupied Spider-Man in a fight to prepare a magic ritual|planned|stated|Venom
+f- Peter|other_verb|go
+f+ Peter|other_verb|wanting|Chasm tricks Peter into wanting to go to Limbo to save Robbie and Jonah|actual|stated|
+f+ Peter|other_verb|save|Chasm tricks Peter into wanting to go to Limbo to save Robbie and Jonah|planned|stated|Peter
+t- deictic|When Peter and the X-Men
+f+ Peter|other_verb|go|When Peter and the X-Men go about their respective Christmas festivities|actual|stated|
+f+ X-Men|other_verb|go|When Peter and the X-Men go about their respective Christmas festivities|actual|stated|
+t- crowd_end|Ben leads her demon army
+f+ Ben|other_verb|leads|Ben leads her demon army to attack New York City|actual|stated|
+f+ Ben|attacked|New York City|Ben leads her demon army to attack New York City|actual|stated|
+t- deictic|completed other tasks
+f+ Venom|other_verb|completed|he completed other tasks before reaching Peter for a round two.|actual|stated|
+
+@2297 gold: Steven's call; deducing = learned; the unanswered calls, the unrecognised Layla, the confusion
+keep
+f+ Steven Grant|contacted|Layla|the day Steven Grant (one of Marc's personalities) called Layla after finding a phone hidden in his apartment.|actual|stated|
+f- Layla|discovered|Marc
+f+ Layla|learned|-|she deduced Marc had dissociative identity disorder and that Steven wasn't aware of Marc's activities.|actual|stated|
+t- deictic|but never got a reply
+f+ Layla|other_verb|got|but never got a reply until the day|actual|denied|
+t- deictic|but Steven didn't
+f+ Steven Grant|other_verb|recognize|but Steven didn't recognize Layla.|actual|denied|
+t- deictic|She was confused
+t+ no_relation|She was confused at first, but after a while,
+
+@2298 gold: a quote page is dialogue
+keep
+t+ dialogue|So, what I see here is a baby witch, obsessed with sitcoms and years of therapy ahead of her. Doesn’t explain your recent hijinks. Where’d you get the big guns, Wanda?
+t+ dialogue|I don’t wanna go back there.
+t+ dialogue|I know you don’t, but it’s good medicine, angel. The only way forward is back.
+
+@2299 gold: ok
+keep
+
+@2300 gold: ok
+keep
+
+@2301 gold: ok
+keep
+
+@2302 gold: programming is the quote's verb; deducing and realising are stated learning by both; leaving and trying to figure out
+keep
+f- Doctor|built|robots
+f+ Doctor|other_verb|programmed|but most likely programmed by one: the Doctor.|actual|apparent|
+f- Fitz|discovered|-
+f- Fitz|learned|-
+f+ Fitz|learned|-|They deduced the robots were not recreations|actual|stated|
+f+ Yo-Yo|learned|-|They deduced the robots were not recreations|actual|stated|
+f+ Fitz|learned|-|when they suddenly realized that he must want to continue his experiments on Inhumans.|actual|stated|
+f+ Yo-Yo|learned|-|when they suddenly realized that he must want to continue his experiments on Inhumans.|actual|stated|
+f+ Fitz|other_verb|figure|They all began trying to figure out what the Doctor wanted|attempted|stated|Fitz
+f+ Yo-Yo|other_verb|figure|They all began trying to figure out what the Doctor wanted|attempted|stated|Yo-Yo
+f+ Fitz|other_verb|left|Realizing this, Fitz left the room to go find Daisy.|actual|stated|
+
+@2303 gold: ok
+keep
+
+@2304 gold: ok
+keep
+
+@2305 gold: one name (Matt Murdock, Benjamin Hochberg); the requested act; disagreeing and pointing out
+keep
+r Murdock=>Matt Murdock
+f+ Cooper|other_verb|suppress|requested Cooper to suppress the discussion|ordered|stated|Matt Murdock
+t- no_relation|to which Hochberg
+f+ Benjamin Hochberg|other_verb|disagreed|to which Hochberg disagreed.|actual|stated|
+t- no_relation|Murdock pointed out
+f+ Matt Murdock|other_verb|pointed|Murdock pointed out that Ayala did not have his White Tiger Suit or the Amulet of Power during the incident with Kel Shanahan, so bringing it up would unfairly bias the jury.|actual|stated|
+
+@2306 gold: ok
+keep

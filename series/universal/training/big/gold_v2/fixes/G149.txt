@@ -1,0 +1,96 @@
+@1716 gold: A145 the stop is the defeat; deciding carries the planned resolve; the stopped resistance; a hypothetical consideration; a covered fragment
+keep
+- Megumi|fought|Kirara
+f- Yuji|other_verb|remain
+f+ Yuji|other_verb|decides|Yuji stops resisting and decides to remain resolute until Hakari breaks.|actual|stated|
+f+ Yuji|other_verb|remain|decides to remain resolute until Hakari breaks.|planned|stated|Yuji
+f+ Yuji|other_verb|stops|Yuji stops resisting and decides to remain resolute until Hakari breaks.|actual|stated|
+f- Hakari|other_verb|consider
+f+ Hakari|other_verb|consider|before Hakari can ever even consider agreeing to help|hypothetical|stated|
+t- deictic|Before Megumi's able
+
+@1717 gold: discussing is actual with the planned combat; a described technique -> the swallowing
+keep
+f- Dagon|other_verb|plan
+f+ Dagon|other_verb|discussed|Dagon joined the others while they discussed their plans to combat the incoming sorcerers.|actual|stated|
+f+ Dagon|other_verb|combat|they discussed their plans to combat the incoming sorcerers.|planned|stated|Dagon
+f- Dagon|used|technique
+f+ Dagon|other_verb|swallow|Dagon used his technique to swallow all of the humans on floor B4F in the Shibuya Station before the group split up.|actual|stated|
+
+@1718 gold: an in-person question is no contact; training is no relation to an event; the sisters; the kick; reading = learned; covered fragments
+keep
+f- Kasumi|contacted|Mai
+f+ Kasumi|other_verb|asking|Kasumi recalls asking Mai about her sister Maki|actual|stated|
+f- Kasumi|trained|Goodwill Event
+f+ Kasumi|other_verb|training|while they were training for the Goodwill Event.|actual|stated|
+f+ Mai|sibling_of|Maki|Kasumi recalls asking Mai about her sister Maki|actual|stated|
+t- capability|She's incredibly strong
+f+ Maki|other_verb|kicking|She's incredibly strong and easily overpowering her opponent, eventually kicking Kasumi down into a stream.|actual|stated|
+f- Maki|discovered|-
+f+ Maki|learned|-|However, Maki reads through her swordsmanship technique|actual|stated|
+t- no_relation|forcing Kasumi to move
+
+@1719 gold: locating Kusakabe is finding him (met); the floor is Choso's; resolving carries the planned check; moving out
+keep
+f- Panda|contacted|Kusakabe
++ Panda|met|Kusakabe|Around the same time Panda located Kusakabe
+f- Kusakabe|located_at|BF3 of the Shibuya Station
+f+ Choso|located_at|BF3 of the Shibuya Station|on BF3 of the Shibuya Station, Choso wakes up crying|actual|stated|
+f+ Choso|other_verb|Resolving|Resolving to ascertain Yuji's identity and his own, Choso gets up and moves out.|actual|stated|
+t- no_relation|Choso gets up
+f+ Choso|other_verb|moves|Choso gets up and moves out.|actual|stated|
+
+@1720 gold: a restored true form is no awakening; teaching what strength means is no training
+keep
+- Sukuna|awakened|-
+f- Sukuna|trained|Hajime Kashimo
+f+ Sukuna|other_verb|teaches|In this state of near-perfection, Sukuna teaches Hajime Kashimo exactly what it means to be the strongest.|actual|stated|
+
+@1721 gold: Mahito is not in his lair here
+keep
+- Nanami|met|Mahito
+
+@1722 gold: noticing = learned; a covered fragment
+keep
+f- Yuji|other_verb|notice
+f- Choso|other_verb|notice
+f+ Yuji|learned|-|Yuji and Choso notice something strange about Naoya's speed|actual|stated|
+f+ Choso|learned|-|Yuji and Choso notice something strange about Naoya's speed|actual|stated|
+t- no_doer|their scuffle is interrupted
+
+@1723 gold: an unnamed mother is no end; the father; disposing; preparing; a recreated blade; the attempted blow; stating is speech; citation
+keep
+f- Maki's mother|contacted|Maki
+f- Maki's mother|other_verb|wishes
+f+ Maki|other_verb|continues|As Maki continues down the hallway her mother calls out to her and tells her to stop.|actual|stated|
+f+ Maki|other_verb|ignores|When Maki ignores her, her mother tells her that she wishes Maki would make her proud of giving birth to her at least once.|actual|stated|
+f+ Ogi Zenin|parent_of|Maki|When Maki enters the warehouse she is greeted by her father Ogi Zenin|actual|stated|
+f- Ogi Zenin|destroyed|tools
+f+ Ogi Zenin|other_verb|disposed|who tells her that he's already disposed of all the tools.|actual|stated|
+f+ Maki|other_verb|prepares|Maki spots a wounded Mai behind her father and prepares to fight him.|actual|stated|
+f- Ogi Zenin|created|blade
+f+ Ogi Zenin|other_verb|recreated|Ogi had recreated his blade with curse|actual|stated|
+f+ Maki|other_verb|deliver|Thought to be defenseless, Maki attempts to deliver another blow.|attempted|stated|Maki
+t+ no_relation|Maki was confused, seeing that she had broke his sword.
+f- Ogi Zenin|revealed|-
+f+ Ogi Zenin|other_verb|stating|Ogi closes by stating that he wasn't family head because his children are worthless.|actual|stated|
+t+ citation|(Chapter 148)
+
+@1724 gold: Yuji is in the battle; wondering is actual; the confirmation
+keep
++ Yuji|fought|Sukuna|The three of them engage in battle at high speeds, with Yuji and Maki working together to bring down the King of Curses.
+f- Maki|other_verb|wonder
+f+ Maki|other_verb|wonders|She wonders if Sukuna would be able to heal wounds dealt by her Split Soul Katana with reverse cursed technique.|actual|stated|
+f+ Yuji|other_verb|confirms|Once Yuji confirms, Maki warns him that things are going to speed up.|actual|stated|
+
+@1725 gold: Yuji's attack is his fight; sensing = learned; the ordered cut and exorcism; wanting carries the planned pursuit
+keep
++ Yuji|fought|Mahito|Yuji senses the critical moment and attacks.
+f- Yuji|discovered|-
+f+ Yuji|learned|-|Despite being confused by what happened, Yuji senses the critical moment and attacks.|actual|stated|
+f+ Takuma Ino|other_verb|cut|ordering him to cut off the weakened curse and exorcise him.|ordered|stated|Nanami
+f+ Takuma Ino|other_verb|exorcise|ordering him to cut off the weakened curse and exorcise him.|ordered|stated|Nanami
+t- no_relation|Nanami wants to pursue
+f+ Nanami|other_verb|wants|Nanami wants to pursue as well but Yuji's body finally gives way to all his injuries.|actual|stated|
+f+ Nanami|other_verb|pursue|Nanami wants to pursue as well|planned|stated|Nanami
+

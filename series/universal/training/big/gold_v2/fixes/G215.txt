@@ -1,0 +1,158 @@
+@2131 gold: an army of Skrulls is a crowd; Black Bolt aids all four
+keep
+t- no_relation
+t+ crowd_end|The Hulk Black Panther, Brawn, and Ronan the Accuser fight through the army of Skrulls to reach the Super-Skrull.
+f+ Black Bolt|helped|Black Panther|They are aided by the sudden and conspicuous appearance of Black Bolt.|actual|stated|
+f+ Black Bolt|helped|Brawn|They are aided by the sudden and conspicuous appearance of Black Bolt.|actual|stated|
+f+ Black Bolt|helped|Ronan the Accuser|They are aided by the sudden and conspicuous appearance of Black Bolt.|actual|stated|
+
+@2132 gold: no pipe in quotes; a comparison to another publisher's character is production
+keep
+t- list_header
+t- citation
+t+ list_header|Weapons =
+t+ list_header|Notes =
+t+ list_header|Trivia =
+t+ production|Sometimes compared to DC Comics' who debuted in .
+
+@2133 gold: "after his defeat" (no stated death); the summoning is the Harpy's act; an enslaving twin; past self and descriptions; rallying a kind; staying is no joining; the Pilgrim brings them to Zota
+keep
+- Doctor Strange|killed|Moridun
+- Red Harpy|killed|Moridun
++ Doctor Strange|defeated|Moridun|Doctor Strange channeled his powers through the Red Harpy, allowing her to summon a Green Door to destroy Moridun
++ Red Harpy|defeated|Moridun|allowing her to summon a Green Door to destroy Moridun. After his defeat
+f- Doctor Strange|other_verb|destroy
+f- Moridun|other_verb|enslaved
+f- Moridun|also_known_as|Omnimax
+f+ Moridun|alias_of|Omnimax|Omnimax's past self, the mage Moridun|actual|stated|
+f- What-Must-Be|also_known_as|Galactus' archetypal precursor
+f- Cloud|recruited|Archetypes
+f+ Cloud|other_verb|rallied|Cloud rallied the Archetypes against What-Must-Be|actual|stated|
+f- Cloud|joined|Archetypes
+f+ Cloud|other_verb|stay|Except for Cloud, who decided to stay among the Archetypes|actual|stated|
+f- Pilgrim|alias_of|sentience of the Fourth Cosmos
+f- Pilgrim|helped|Defenders
+f+ Pilgrim|other_verb|brought|the Defenders were brought to Zota by the sentience of the Fourth Cosmos, the Pilgrim.|actual|stated|
++ Doctor Strange|met|Zota|Except for Cloud, who decided to stay among the Archetypes, the Defenders were brought to Zota
++ Red Harpy|met|Zota|Except for Cloud, who decided to stay among the Archetypes, the Defenders were brought to Zota
+
+@2134 gold: ok
+keep
+
+@2135 gold: game rules are general mechanics; entrusting gives to Shang-Chi; section headers
+keep
+t- no_relation
+t+ capability|All ten players begin on the Yellow Level, the Pagoda's ground floor, which resembles a yellow colored labyrinth.
+t+ capability|Once four players have been eliminated, the remaining six advance to the next floor, the White Level, which is covered in snow.
+t+ capability|Once three players are eliminated, the final three advance to the top floor, the Red Level, a small red colored room with a single portal in the center floor.
+t+ capability|Once two players are eliminated, the last player remaining will be named Keeper of the Rings and rewarded all Ten Rings.
+t+ list_header|===History===
+t+ list_header|====Modern Times====
+f+ Jade Emperor|gave|Shang-Chi|the Jade Emperor entrusted the Ten Rings to Shang-Chi.|actual|stated|
+
+@2136 gold: a race is no subject; the wish; Malekith leads the Dark Elves; stopping them is Bor's defeat of Malekith; Algrim escapes and wakes too; the Aether is no doer; Frigga's death; the ordered killing; no pipe in quotes
+keep
+f- Dark Elves|member_of|Svartalfheim
+t+ crowd_end|Svartalfheim was a dark world, home to the Dark Elves.
+f+ Malekith|other_verb|wished|Their leader, Malekith, wished to use the Aether to destroy the Nine Worlds|actual|stated|
+f+ Malekith|leader_of|Dark Elves|Their leader, Malekith, wished to use the Aether|actual|stated|
+- Bor|fought|Malekith
++ Bor|defeated|Malekith|but they were stopped by an Asgardian army led by their king, Bor
+f- Bor|leader_of|Asgardian army
++ Algrim|escaped|Bor|Malekith, his lieutenant Algrim, and a small army of them escaped on Malekith's ship
++ Algrim|awakened|-|They awakened when Jane Foster was transported
+t- deictic|where they lay
+f+ Malekith|other_verb|lay|where they lay dormant for eons.|actual|stated|
+f+ Algrim|other_verb|lay|where they lay dormant for eons.|actual|stated|
+f- Aether|other_verb|merged
+t+ no_doer|when Jane Foster was transported to where Bor had hidden the Aether and it merged with her.
+f- Dark Elves|other_verb|get
+t- no_doer|the Asgardian queen Frigga
+f+ Frigga|dies|-|the Asgardian queen Frigga was killed in the battle.|actual|stated|
+f+ Algrim|other_verb|kill|leaving Algrim behind to kill their prisoners.|ordered|stated|Malekith
+t- list_header
+t+ list_header|PointsOfInterest = * Bloodmuck Swamp
+t+ list_header|Svartalfheim's Eastern Spires
+t+ list_header|Library of Sins
+t+ list_header|Residents = * Dark Elves
+t+ list_header|Wild Hunt
+t+ list_header|Bog Bears
+t+ list_header|Muck Sharks
+t+ list_header|Quicksand Squids
+t+ list_header|Dwarves
+t+ list_header|Smoke Elves
+t+ list_header|Vridai
+t+ list_header|Notes =
+t+ list_header|Trivia =
+t+ list_header|Links =
+
+@2137 gold: ok
+keep
+
+@2138 gold: the window never names her (a page title is no window name)
+keep
+f- Karla Sofen|other_verb|broke
+t+ deictic|such as when she broke free from Doctor Strange's spell by making herself intangible.
+
+@2139 gold: the window's name; the asked search; cultists are a crowd; she took the unnamed spawn; unnamed new powers; the changed appearance
+keep
+r Natasha Romanova=>Natasha
+f+ Doctor Strange|other_verb|find|Natasha asked Doctor Strange to find a way for her to contact the demon Cthulhu|ordered|stated|Natasha
+f- cultists of Cthulhu|created|nursery
+t+ crowd_end|She ended up finding cultists of Cthulhu setting up a nursery in the Cthulhu Temple for the spawn of Cthulhu
+f- Natasha|took|cultists of Cthulhu
+f+ Natasha|other_verb|took|whom she took back at Avengers Academy.|actual|stated|
+f- Natasha|gained_power|-
+f+ Natasha|other_verb|changing|She was possessed by Cthulhu, in the process changing appearance and gaining new powers.|actual|stated|
+
+@2140 gold: alien hordes are a crowd; McCord's death; found him is the meeting (no discovered twin); a title is no becoming; accepted as written; contacted is the passage's word only; the meeting is a purpose
+keep
+t+ crowd_end|During a mission in Kansas, Fury found himself trying to fight off the aliens known as Tribellians.
+f+ Nick Fury|located_at|Kansas|During a mission in Kansas|actual|stated|
+f+ Woody McCord|dies|-|Howard Stark, McCord's partner, arrived to the scene and discovered Fury alongside Woody's corpse.|actual|stated|
+f- Howard Stark|discovered|Nick Fury
+f- Woody McCord|became|defender of Earth
+f- Nick Fury|other_verb|accept
+f+ Nick Fury|other_verb|accepted|Fury accepted, and over the next years|actual|stated|
+t+ crowd_end|he would secretly fight different super-human threats, from aliens to Subterranean monsters and extra-dimensional beings.
+f+ Brotherhood of the Shield|other_verb|contacted|Nick Fury was contacted by the Brotherhood of the Shield|actual|stated|
+- Nick Fury|met|Leonardo da Vinci
+f+ Nick Fury|other_verb|meet|was brought to the Immortal City to meet with Leonardo da Vinci in Pieta.|planned|stated|Brotherhood of the Shield
+
+@2141 gold: ok
+keep
+
+@2142 gold: discovered takes no object; a described device
+keep
+f- Doctor Doom|discovered|Wakanda
+f+ Doctor Doom|discovered|-|When Doctor Doom discovered that the hidden country of Wakanda held important deposits of valuable Vibranium mineral|actual|stated|
+f- Doctor Doom|created|electronic surveillance device
+f+ Doctor Doom|other_verb|built|where he built an electronic surveillance device.|actual|stated|
+
+@2143 gold: the window's name; a movement is no place (left_group); a belief; the planned kidnap is no fact relation; a hospital; forced retreat is the defeat (A74); the movement brainwashed them; the wish to leave; the blast is the defeat (no attacked twin)
+keep
+r Samuel Smithers=>Smithers
+- Smithers|departed|Celestial Mind Control Movement
+f+ Smithers|left_group|Celestial Mind Control Movement|Smithers quickly left, as he thought that the movement was nothing more than a fraud.|actual|stated|
+f- Smithers|other_verb|thought
+f+ Smithers|suspected|-|as he thought that the movement was nothing more than a fraud.|actual|stated|
+f- Smithers|kidnapped|Kyle Richmond
+f+ Smithers|other_verb|devised|He devised a plan to kidnap millionaire Kyle Richmond|actual|stated|
+f+ Smithers|other_verb|kidnap|He devised a plan to kidnap millionaire Kyle Richmond|planned|stated|Smithers
+f- Kyle Richmond|located_at|hospital
+f+ Kyle Richmond|other_verb|recuperating|who was in hospital recuperating from brain surgery|actual|stated|
++ Defenders|defeated|Smithers|He was opposed by Richmond's teammates, the Defenders, and was soon forced to retreat.
+f- Porcupine|other_verb|brainwashed
+f- Eel|other_verb|brainwashed
+f+ Celestial Mind Control Movement|other_verb|brainwashed|When he saw his friends who were brainwashed by the movement|actual|stated|
+f+ Smithers|other_verb|leave|he changed his mind and wanted to leave.|planned|stated|Smithers
+f- Nebulon|attacked|Smithers
+
+@2144 gold: the tried emulation; the verb as written; a copula
+keep
+f- Hope|other_verb|emulate
+f+ Hope|other_verb|emulate|has in many ways sought to emulate him.|attempted|stated|Hope
+f- Hope|other_verb|grew up
+f+ Hope|other_verb|grown|Having grown up on the run in a dark future|actual|stated|
+f- Hope|other_verb|is
+

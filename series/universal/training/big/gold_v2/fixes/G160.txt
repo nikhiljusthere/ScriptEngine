@@ -1,0 +1,82 @@
+@1823 gold: no articles; the knockout has no stated doer; a described device
+keep
+r the Hulk=>Hulk
+r the Leader=>Leader
+- Leader|defeated|Hulk
+f- Leader|created|device
+f+ Leader|other_verb|completed|The Leader has completed his device, a giant plasti-thene prison that keeps the Hulk contained for good.|actual|stated|
+
+@1824 gold: a composite end is the real name; A145 the lash-out is the kill; the refusal; the opponents are unnamed; the inability is denied
+keep
+r Iron Fist (Orson Randall)=>Orson Randall
+- Orson Randall|fought|Crane Champion of K'un-Zi
+f+ Orson Randall|other_verb|refused|Iron Fist (Orson Randall) refused to fight in the tournament|actual|stated|
+t- no_doer|attempting to strip
+t+ crowd_end|When confronted by his would be opponents, attempting to strip him of his station
+f- Crane Mother|other_verb|produce
+f+ Crane Mother|other_verb|produce|as she could not produce another warrior for another 300 years.|actual|denied|
+
+@1825 gold: Diamond's return
+keep
+t- no_relation|when Diamond returned
+f+ Diamond|other_verb|returned|so that when Diamond returned with some policemen seconds later there was nothing to left to see.|actual|stated|
+
+@1826 gold: ok
+keep
+
+@1827 gold: one name (Reed Richards, fullest form); no article; a doer-less capture; the attempted kill; helping pull a robot is no help to it; a trip is no membership; deducing = learned; the husband; storming off is no leaving a group; the television; a covered fragment
+keep
+r Mr. Fantastic=>Reed Richards
+r Reed=>Reed Richards
+r the Brute=>Brute
+- Frightful Four|captured|Reed Richards
+- Frightful Four|captured|Invisible Girl
+- Frightful Four|captured|Thing
+- Frightful Four|captured|Human Torch
+t+ no_doer|While the Impossible Man was thus indisposed, the Fantastic Four were captured
+f+ Brute|other_verb|kill|he attempted to kill her by throwing her out of the Baxter Building.|attempted|stated|Brute
+f- Impossible Man|helped|Metalloid
+f+ Impossible Man|other_verb|pull|the Impossible Man used his unique powers to help pull it out of the water.|actual|stated|
+f- Impossible Man|joined|Fantastic Four
+f+ Impossible Man|other_verb|joined|The Impossible Man joined the group back at the Baxter Building|actual|stated|
+f+ Impossible Man|other_verb|investigate|they were sent back out by Reed to investigate why the Metalloid was robbing a bank.|ordered|stated|Reed Richards
+f- Invisible Girl|revealed|Brute's_disguise
+f+ Invisible Girl|learned|-|When the Invisible Girl properly deduced that the Brute was posing as her husband|actual|stated|
+f+ Invisible Girl|married|Reed Richards|When the Invisible Girl properly deduced that the Brute was posing as her husband|actual|stated|
+f- Impossible Man|left_group|Fantastic Four
+f+ Impossible Man|other_verb|stormed|Having grown tired of being pushed around, the Impossible Man stormed off in the middle of the battle, leaving the Fantastic Four to stop the Brute by themselves.|actual|stated|
+t- no_relation|blowing out all the power
+t- no_relation|until the four of them
+f+ Impossible Man|other_verb|watching|The Impossible Man then went back to watching television with the Thing and the Human Torch and their guests, Tigra and Thundra|actual|stated|
+
+@1828 gold: noticing = learned; asking in person is a met, no contact; telling is speech; a description is no alias; deciding carries the planned follow; a described computer; the tried search
+keep
+f- Steve|discovered|USB
+f+ Steve|learned|-|Steve later arrives to the hospital where he notices that the USB is gone from the vending machine.|actual|stated|
+f- Steve|contacted|Natasha
++ Steve|met|Natasha|Natasha had taken it and he angrily asks her what she knows about what has happened.
+f+ Steve|other_verb|asks|he angrily asks her what she knows about what has happened.|actual|stated|
+f- Natasha|revealed|Winter Soldier
+f+ Natasha|other_verb|tells|She tells him that the masked man is an assassin known as the Winter Soldier|actual|stated|
+f- Winter Soldier|also_known_as|masked man
+f- Natasha|other_verb|follow
+f+ Natasha|other_verb|decides|She decides to follow Cap.|actual|stated|
+f+ Natasha|other_verb|follow|She decides to follow Cap.|planned|stated|Natasha
+f- Steve|used|computer
+f- Natasha|used|computer
+f+ Steve|other_verb|use|They go to an Apple store and use one of the computer to see if there is any valuable information on the flash drive.|actual|stated|
+f+ Natasha|other_verb|use|They go to an Apple store and use one of the computer to see if there is any valuable information on the flash drive.|actual|stated|
+f- Rumlow|other_verb|tries
+f+ Rumlow|other_verb|find|Rumlow and his team track them to the mall and try to find them, but fail.|attempted|stated|Rumlow
+
+@1829 gold: a noun object
+keep
+f- Arcade|other_verb|mascot
+t+ no_relation|Arcade was the mascot of a video arcade situated in New York City.
+
+@1830 gold: ok
+keep
+
+@1831 gold: ok
+keep
+

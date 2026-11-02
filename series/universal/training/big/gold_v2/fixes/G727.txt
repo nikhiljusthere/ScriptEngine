@@ -1,0 +1,119 @@
+@3783 gold: the header line
+keep
+t+ list_header|Pain Immunity:
+
+@3784 gold: a brainwashed attempt is no fought; the attempt word; the patient is no subject; setting out to clear a name; a mantle is an alias; human form is no being; a proposal carries its act; the doer-less arrest
+keep
+- Isaiah Bradley|fought|Ross
+f- Isaiah Bradley|other_verb|brainwashed
+f- Isaiah Bradley|other_verb|attempting
+f+ Isaiah Bradley|other_verb|assassinate|after Isaiah Bradley was brainwashed into attempting to assassinate President Ross.|attempted|stated|Isaiah Bradley
+f+ Captain America|alias_of|Wilson|Three years into his tenure as Captain America, Wilson became embroiled in a White House crisis|actual|stated|
+f- Wilson|helped|Isaiah Bradley
+f+ Wilson|other_verb|believe|Refusing to believe Bradley was responsible|actual|denied|
+f+ Wilson|other_verb|clear|Wilson set out to clear his name|planned|stated|Wilson
+f- Samuel Sterns|created|conspiracy
+f+ Wilson|other_verb|uncovering|uncovering a wider conspiracy orchestrated by Samuel Sterns|actual|stated|
+f+ Samuel Sterns|other_verb|orchestrated|uncovering a wider conspiracy orchestrated by Samuel Sterns|actual|stated|
+f- Torres|became|Falcon
+f+ Falcon|alias_of|Torres|With Torres as the new Falcon, the two worked together|actual|stated|
+f- Ross|transformed_into|human form
+f+ Ross|other_verb|return|allowing him to regain control and return to his human form.|actual|stated|
+t+ no_doer|Sterns was arrested
+f- Ross|other_verb|proposal
+f+ Ross|other_verb|rebuild|Inspired by Ross' proposal to rebuild the Avengers|planned|stated|Ross
+f+ Wilson|other_verb|decided|Wilson decided to reform the team and recruited Torres as his first new member.|actual|stated|
+
+@3785 gold: ok
+keep
+
+@3786 gold: ok
+keep
+
+@3787 gold: an invitation carries its act; a claim is speech; deciding carries the planned telling; the forbidden telling; relenting
+keep
+f+ Parker|other_verb|come|Stark invited him to come to Germany to confront Captain America|ordered|stated|Stark
+f- Parker|other_verb|claim
+f+ Parker|other_verb|claimed|Parker claimed he had too much homework to join the mission.|actual|stated|
+f- Stark|other_verb|take
+f+ Stark|other_verb|decided|Stark, however, decided to ignore that comment before saying that the mission could be dangerous|actual|stated|
+f+ Stark|other_verb|saying|before saying that the mission could be dangerous|actual|stated|
+f+ Stark|other_verb|tell|decided to tell Aunt May that he was taking Parker out on a field trip.|planned|stated|Stark
+f+ Stark|other_verb|tell|and sternly ordered him not to tell Aunt May.|ordered|denied|Parker
+f+ Stark|other_verb|relented|Stark relented before asking to be freed from his webbing.|actual|stated|
+
+@3788 gold: a slap before a romantic hug is no fight (A71); described places; Jaco's own acts
+keep
+- Daisy Johnson|fought|Jaco
+f+ Daisy Johnson|other_verb|slap|who then proceeded to slap Jaco across the face before romantically hugging him.|actual|stated|
+f- Daisy Johnson|other_verb|romantically
+f+ Daisy Johnson|other_verb|hugging|who then proceeded to slap Jaco across the face before romantically hugging him.|actual|stated|
+f- Jaco|located_at|another room
+t+ no_doer|he found himself being led into another room where he was suddenly blinded by a bright light.
+f- Jaco|located_at|the game world
+f- Jaco|located_at|the floor
+f+ Jaco|other_verb|lay|his actual self lay unconscious on the floor|actual|stated|
+f+ Jaco|other_verb|looked|as Jaco looked around with considerable confusion|actual|stated|
+f+ Jaco|other_verb|understand|as Jaco was left trying to understand what happened.|attempted|stated|Jaco
+
+@3789 gold: descriptive groups (past counterparts, the time-traveling Runaways, the dark counterpart) are no ends; deciding carries the planned act; joining unnamed friends
+keep
+- the time-traveling Runaways|saved|Yorkes
+t+ no_doer|Since the plan worked and Yorkes was saved
+f- past counterparts|other_verb|cry
+f- past one|other_verb|appears
+t+ crowd_end|The past counterparts of the Runaways cry over the future Stein, before the past one, who had been knocked out unconscious by his future self, appears.
+f- time-traveling Runaways|other_verb|erased
+f- time-traveling Runaways|other_verb|promising
+t+ crowd_end|and the time-traveling Runaways are progressively erased, promising that they will never give up on each other.
+f- Runaways|other_verb|celebrate
+f+ Runaways|other_verb|decide|In the next day, the Runaways, now all alive, decide to go outside to celebrate their victory.|actual|stated|
+f+ Runaways|other_verb|celebrate|decide to go outside to celebrate their victory.|planned|stated|Runaways
+f- dark counterpart|ordered|Minoru
+f- dark counterpart|other_verb|hide
+t+ crowd_end|instructing him to kill Minoru and hide someone named Victor Mancha.
+f- Alex Wilder|joined|friends
+f+ Alex Wilder|other_verb|joins|Although bewildered, he joins his friends like nothing happened.|actual|stated|
+
+@3790 gold: ok
+keep
+
+@3791 gold: one name (Obadiah Stane); paralysing him is defeated; Tony's escape; the doer-less order; garbage row
+keep
+r Stane=>Obadiah Stane
+- Obadiah Stane|fought|Raza Hamidmi al-Wazar
++ Obadiah Stane|defeated|Raza Hamidmi al-Wazar|Stane used the Sonic Taser to temporarily paralyze him
++ Tony Stark|escaped|Ten Rings|who revealed that they had recovered Tony Stark's armor that he escaped with.
+f+ Ten Rings|other_verb|recovered|who revealed that they had recovered Tony Stark's armor that he escaped with.|actual|stated|
+t- deictic|Stane arrived
+t+ no_doer|Stane arrived and was told to leave his men outside, which he did.
+f- Obadiah Stane|other_verb|expected
+f+ Raza Hamidmi al-Wazar|other_verb|talked|Raza Hamidmi al-Wazar then talked about Stane's betrayal and lies about Stark|actual|stated|
+
+@3792 gold: releasing the horn; Thor's and Mangog's own acts
+keep
+f- Thor|other_verb|Gjallarhorn
+f+ Thor|other_verb|release|Thor managed to defeat the Jotuns and release the Gjallarhorn.|actual|stated|
+t- no_relation|He then gave
+f+ Thor|other_verb|gave|He then gave a sharp blast of the horn to call Asgard's warriors to arms.|actual|stated|
+t- crowd_end|The Frost Giants used
+f+ Mangog|other_verb|opened|when Mangog opened portals allowing them and the Fire Demons to attack Asgard.|actual|stated|
+t+ crowd_end|The Frost Giants used this tactic again
+t- crowd_end|who once again defeated
+f+ Thor|other_verb|rallied|who once again defeated them and rallied Asgard's forces.|actual|stated|
+
+@3793 gold: ok
+keep
+
+@3794 gold: names in the window (Dwayne, Erik Gelden); the ordered throw; Gelden's habitual payment and his resurfacing; a business is no capability
+keep
+r Dwayne Blaskowski=>Dwayne
+r Gelden=>Erik Gelden
+f+ Dwayne|other_verb|throw|she ordered Dwayne to throw Gelden into the pool with two weights attached to him.|ordered|stated|Sal Blaskowski
+t- capability|who had a service
+t+ no_relation|who had a service of giving people money as long as they paid her back.
+t- capability|One customer
+f+ Erik Gelden|paid|Sal Blaskowski|One customer in particular, Erik Gelden, always paid her back with less money.|actual|stated|
+t- no_relation|Gelden soon resurfaced
+f+ Erik Gelden|other_verb|resurfaced|Gelden soon resurfaced and Sal gave him a week for the money.|actual|stated|
+

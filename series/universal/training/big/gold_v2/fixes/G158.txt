@@ -1,0 +1,86 @@
+@1805 gold: a continent is no doer
+keep
+f- continent|other_verb|fractured
+t+ no_relation|The continent fractured a few centuries later.
+
+@1806 gold: the arrival quote names no Frank; the real name with the Punisher as alias; covered fragments
+keep
+- Frank Castle|met|Oberoth'm'gozz
+f+ Punisher|alias_of|Frank Castle|Oberoth'm'gozz was confused as to why the Punisher was immune to his happiness-inducing magic, but Frank Castle revealed that killing is the only thing that makes him happy|actual|stated|
+t- no_relation|until only the Punisher
+t- no_relation|Oberoth'm'gozz was confused
+
+@1807 gold: a king with no realm; the transformed one is Crystar
+keep
+f- Moltar|became|king
+f+ Moltar|other_verb|declared|Moltar was horrified by his own actions, but declared himself king rather than face charges of treason.|actual|stated|
+f- Ogeode|transformed_into|crystal being
+f+ Crystar|transformed_into|crystal being|the wizard Ogeode saved Crystar's life by transforming him into a crystal being.|actual|stated|
+
+@1808 gold: one name (fullest form); a described backstory; Tony Stark's death
+keep
+r Beck=>Quentin Beck
+f- Guterman|created|the backstory of a soldier named "Quentin" from an alternate reality of Earth-833 fighting the creatures from space.
+f+ Guterman|other_verb|creating|creating the backstory of a soldier named "Quentin" from an alternate reality of Earth-833 fighting the creatures from space.|actual|stated|
+f+ Tony Stark|dies|-|Guterman is a former Stark Industries employee who after the death of Tony Stark joined Quentin Beck and his crew.|actual|stated|
+
+@1809 gold: telling in an elevator is no remote contact; a relayed story is a claim; the boyfriend; the planned access
+keep
+f- Petronella|contacted|Black
+f+ Petronella|other_verb|tells|On the elevator, Petronella tells Black he's falling for her|actual|stated|
+f- Yelena Belova|other_verb|getting
+f+ Yelena Belova|other_verb|getting|who relays an old story about Yelena Belova getting Natasha Romanova into a mess.|claimed|reported|Moe
+f+ Ralph|dated|Victor|goes out clubbing with him and his boyfriend, Victor|actual|stated|
+f+ Lisa|other_verb|work|in order to work them to get higher level access.|planned|stated|Lisa
+
+@1810 gold: Ketch's confrontation becomes his fight (no met); the Midnight Sons oppose as a group (Blaze and Vengeance are not tied); the Ghost Rider alias; convincing worked; the planned takeover; the alliance; the one who leaves is Zarathos
+keep
+- Danny Ketch|met|Zarathos
+- Danny Ketch|met|Lilith
+- Blaze|fought|Zarathos
+- Blaze|fought|Lilith
+- Vengeance|fought|Zarathos
+- Vengeance|fought|Lilith
+f- Midnight Sons|other_verb|opposed
++ Midnight Sons|fought|Zarathos|Joining with Lilith, they planned to take over Earth and were opposed by the Midnight Sons.
++ Midnight Sons|fought|Lilith|Joining with Lilith, they planned to take over Earth and were opposed by the Midnight Sons.
+f+ Ghost Rider|alias_of|Danny Ketch|The duo were soon met with Blaze, Danny Ketch the new Ghost Rider, and Vengeance|actual|stated|
+f- Lilith|other_verb|convincing
+f+ Lilith|other_verb|convincing|convincing him that he was one of her children.|actual|stated|
+f- Zarathos|other_verb|planned
+f- Lilith|other_verb|planned
+f+ Zarathos|other_verb|take|they planned to take over Earth|planned|stated|Zarathos
+f+ Lilith|other_verb|take|they planned to take over Earth|planned|stated|Lilith
+f+ Zarathos|allied_with|Lilith|Joining with Lilith, they planned to take over Earth|actual|stated|
+f+ Lilith|other_verb|mate|Zarathos and Lilith proceeded to mate with each other|actual|stated|
+f- monstrous child|other_verb|left
+f- monstrous child|other_verb|realizing
+f+ Zarathos|other_verb|leave|only for him to leave upon realizing that she was just using him to get the Medallion.|actual|stated|
+f+ Zarathos|learned|-|upon realizing that she was just using him to get the Medallion.|actual|stated|
+
+@1811 gold: a ship is no place; the watched explosion; the seeming deaths
+keep
+f- Namor|located_at|Dorcas' ship
+f- Spider-Man|located_at|Dorcas' ship
+f+ Spider-Man|other_verb|watched|Getting to safety, the two watched as Dorcas' ship explodes|actual|stated|
+f+ Namor|other_verb|watched|Getting to safety, the two watched as Dorcas' ship explodes|actual|stated|
+f+ Tiger Shark|dies|-|seemingly killing Tiger Shark and Dorcas in the process.|actual|apparent|
+f+ Dorcas|dies|-|seemingly killing Tiger Shark and Dorcas in the process.|actual|apparent|
+
+@1812 gold: the named team; the deduction
+keep
+f+ Danvers|member_of|Marvels|Danvers, Rambeau, and Kamala form a team that Kamala names "the Marvels".|actual|stated|
+f+ Rambeau|member_of|Marvels|Danvers, Rambeau, and Kamala form a team that Kamala names "the Marvels".|actual|stated|
+f+ Kamala|member_of|Marvels|Danvers, Rambeau, and Kamala form a team that Kamala names "the Marvels".|actual|stated|
+f+ Danvers|suspected|-|They deduce that Dar-Benn is targeting planets that are meaningful to Danvers|actual|stated|
+f+ Rambeau|suspected|-|They deduce that Dar-Benn is targeting planets that are meaningful to Danvers|actual|stated|
+f+ Kamala|suspected|-|They deduce that Dar-Benn is targeting planets that are meaningful to Danvers|actual|stated|
+
+@1813 gold: an adjective; agreeing carries the planned mutual help; a described place; the teens are a crowd
+keep
+f- Nitro|other_verb|paranoid
+f+ Nitro|helped|Nada|He agreed to help her, but on the condition that she in turn helped him in taking down the heroine Captain Marvel|planned|stated|Nitro
+f+ Nada|helped|Nitro|but on the condition that she in turn helped him in taking down the heroine Captain Marvel|planned|stated|Nitro
+f- Carol|located_at|teen center
+f- teens|other_verb|hope
+

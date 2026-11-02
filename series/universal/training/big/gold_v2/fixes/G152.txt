@@ -1,0 +1,115 @@
+@1745 gold: the trapping blast is his fight; planning happened; divulging has no listener object; a described battlefield
+keep
++ Nanami|fought|Mahito|By destroying the underground battlefield using Collapse and trapping Mahito under the rubble
+f- Nanami|other_verb|planned
+f+ Nanami|other_verb|planned|Nanami planned accordingly in the jujutsu battle|actual|stated|
+f- Nanami|revealed|Mahito
+f+ Nanami|revealed|-|divulged the specifics of his Ratio Technique to Mahito.|actual|stated|
+f- Nanami|destroyed|underground battlefield
+f+ Nanami|other_verb|destroying|By destroying the underground battlefield using Collapse|actual|stated|
+
+@1746 gold: Yuji's kick is his fight; belief has no object; the narrated acts
+keep
++ Yuji|fought|Sukuna|Yuji throws a kick from one side, and Maki throws an uppercut from the other.
+f- Sukuna|suspected|Megumi's interference
+f+ Sukuna|suspected|-|He believes Megumi's interference is at its greatest when cursed techniques are targetting his allies.|actual|stated|
+t- no_relation|Sukuna drops down
+f+ Sukuna|other_verb|places|Sukuna drops down and places his hand on the ground at the same time as their attacks.|actual|stated|
+t- no_relation|Sukuna capitalizes
+f+ Sukuna|other_verb|landing|Sukuna capitalizes by landing a powerful right hook to Maki's face|actual|stated|
+f+ Maki|other_verb|shakes|but she quickly shakes it off, entertaining the King of Curses.|actual|stated|
+
+@1747 gold: the arms blown apart are a wound; adjectives; a level is no power gain
+keep
+f+ Yuji|wounded|Hanami|Yuji's Black Flash blows Hanami's arms apart with its impact|actual|stated|
+f- Yuji|other_verb|surprised
+t+ no_relation|Yuji is surprised by the essence of his cursed energy.
+f- Yuji|gained_power|-
+f- Yuji|other_verb|assured
+
+@1748 gold: the death's doer is not named here; wanting, promising and expressing; claiming is speech; the asked question
+keep
+- Mahito|killed|Kokichi
+f+ Kokichi|dies|-|However, unbeknownst to her, her beloved classmate has already met his untimely end.|actual|stated|
+f+ Kasumi Miwa|other_verb|expresses|Kasumi Miwa sits next to the "sleeping" Mechamaru puppet and expresses how she enjoys that the students have gotten closer since the Baseball Game.|actual|stated|
+f+ Kasumi Miwa|other_verb|wants|Miwa wants to get even closer to Mechamaru and promises to visit Kokichi's real body one day.|actual|stated|
+f+ Kasumi Miwa|other_verb|promises|Miwa wants to get even closer to Mechamaru and promises to visit Kokichi's real body one day.|actual|stated|
+f- Mahito|other_verb|deceive
+f+ Mahito|other_verb|claims|Mahito claims that he blew himself up on purpose to deceive Kokichi and there was nothing dangerous about it.|actual|stated|
+f+ Mahito|other_verb|deceive|he blew himself up on purpose to deceive Kokichi|claimed|stated|Mahito
+t- dialogue|the ladder asks
+f+ Geto|other_verb|asks|the ladder asks if the fight was more dangerous than expected.|actual|stated|
+
+@1749 gold: agreeing carries the planned following; Larue stops and tells them; the meal reunion is planned; the followers are a crowd; citation
+keep
+f+ Manami Suda|other_verb|follow|Manami Suda and Toshihisa Negi agree to follow him as his goal is similar to their master's.|planned|stated|Manami Suda
+f+ Toshihisa Negi|other_verb|follow|Manami Suda and Toshihisa Negi agree to follow him as his goal is similar to their master's.|planned|stated|Toshihisa Negi
+f+ Larue|other_verb|stops|However before they could fight Larue stops them and tells them that none of them were wrong|actual|stated|
+f+ Larue|other_verb|meet|He also tells them that they can go their separate ways and that they will one day meet again, and once again share a meal together.|planned|stated|Larue
+t- no_relation|Geto's followers
+t+ crowd_end|Before the Shibuya Incident, Geto's followers (with the exception of Miguel) were discussing their course of action.
+t+ citation|(Chapter 136, Episode 47)
+
+@1750 gold: an honorific is no name; the station
+keep
+r Gojo sensei=>Gojo
+f+ Yuji|located_at|Harajuku Station|Yuji eats ice cream and waits with Megumi at Harajuku Station.|actual|stated|
+
+@1751 gold: a possessive proxy is no end; one name as written; explaining is speech; a copula; a school and the news are no doers
+keep
+r Yuki Tsukumo=>Yuki
+- Tengen's proxy|met|Kenjaku
+f- Tengen's proxy|other_verb|disappears
+t+ no_relation|Tengen's proxy appears before Kenjaku one last time to ask how he survived an encounter with a black hole.
+f- Kenjaku|other_verb|comes
+f+ Kenjaku|other_verb|explains|Kenjaku explains that his ability to manipulate gravity comes from the cursed technique reversal of Kaori Itadori's innate technique, Antigravity System.|actual|stated|
+f- Choso|other_verb|is
+f- Jujutsu High|other_verb|left
+t+ no_relation|Choso is distraught over the loss and Jujutsu High is left in a poor state.
+f- news|other_verb|reaches
+t+ no_relation|This news reaches Maki and the others participating in the Culling Game by noon of November 16th.
+
+@1752 gold: the immobilization is Yuta's (with Toge's speech); citations
+keep
+f- Toge|other_verb|immobilizing
+f+ Yuta|other_verb|immobilizing|after immobilizing him with Toge's Cursed Speech|actual|stated|
+t+ citation|(Chapter 262)
+t+ citation|(Chapter 263)
+
+@1753 gold: explaining is speech; Yuji eats; agreeing carries the planned help; the slash wound; recovery and death; the classmate is unnamed; adjectives
+keep
+f- Rin|revealed|-
+f+ Rin|other_verb|explain|where he proceeded to explain his cursed technique to them.|actual|stated|
+f+ Rin|other_verb|explains|Rin explains that he can increase his sugar level and manifest it in a physical form|actual|stated|
+f+ Yuji|other_verb|eats|which Yuji then eats to Arata's chagrin|actual|stated|
+f- Rin|helped|Shoko
+f+ Rin|other_verb|agrees|asks if he could help her and Arata on the medical team by administering sugar to the brain and he agrees.|actual|stated|
+f+ Rin|helped|Shoko|asks if he could help her and Arata on the medical team by administering sugar to the brain and he agrees.|planned|stated|Rin
+f- Rin|other_verb|disturbed
+t+ no_relation|On December 24, Rin is disturbed at the sight of Yuta Okkotsu's body
+f+ Sukuna|wounded|Yuta Okkotsu|after he was dealt a near lethal slash from Sukuna.|actual|stated|
+f+ Yuta Okkotsu|healed|-|Later after Yuta's recovery and Sukuna's defeat and death|actual|stated|
+f+ Sukuna|dies|-|Later after Yuta's recovery and Sukuna's defeat and death|actual|stated|
+f- Rin|contacted|classmate
+f- Rin|apologised_to|classmate
+f+ Rin|other_verb|apologized|Rin bowed and apologized to make amends but the classmate stormed off, leaving Rin dejected.|actual|stated|
+f- classmate|other_verb|stormed
+f- Rin|other_verb|dejected
+t+ citation|(Chapter 261)
+t+ citation|(Chapter 270)
+
+@1754 gold: the denied use and the saved spirit; explaining is speech; aiming carries the planned end; the narrow escape; split citation
+keep
+f- Suguru Geto|other_verb|use
+f+ Suguru Geto|other_verb|use|He chose not to use them for the Night Parade of a Hundred Demons|actual|denied|
+f+ Suguru Geto|other_verb|saved|instead saved Tamamo-no-Mae for the end of his battle with Yuta Okkotsu.|actual|stated|
+f- Suguru Geto|revealed|-
+f+ Suguru Geto|other_verb|explained|explained that they are one of 16 special grade cursed spirits.|actual|stated|
+f- Suguru Geto|other_verb|aimed
+f+ Suguru Geto|other_verb|aimed|Suguru aimed to decisively end the battle.|actual|stated|
+f+ Suguru Geto|other_verb|end|Suguru aimed to decisively end the battle.|planned|stated|Suguru Geto
+f+ Suguru Geto|other_verb|escaped|Suguru barely escaped the exchange with his life, dying shortly afterwards.|actual|stated|
+t- citation|Tamamo-no-Mae Incarnate has not
+t+ no_relation|Tamamo-no-Mae Incarnate has not been seen since.
+t+ citation|(Chapter 0-4)
+

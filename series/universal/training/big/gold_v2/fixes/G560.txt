@@ -1,0 +1,90 @@
+@2367 gold: a deleted-scene note is production
+keep
+f- Wanda Maximoff|other_verb|considered
+t+ production|Wanda Maximoff was originally considered to be among the survivors of the Snap.
+
+@2368 gold: a missile is no doer and the ship is not the Sanctuary; the Chitauri are a race
+keep
+f- nuclear missile|destroyed|Sanctuary
+t+ no_doer|which then struck the ship and exploded, obliterating it in a massive explosion
+t- no_relation|disabling the Chitauri
+t+ crowd_end|disabling the Chitauri's neural links, causing them to die all at once
+t+ crowd_end|the Chitauri began streaming through to attack the city.
+
+@2369 gold: one name (Peter Wisdom); dash objects are the quote verbs; the reverence is doer-less; the family is a crowd; smashing, preparing, feeling, the stand-down and the Corps
+keep
+r Wisdom=>Peter Wisdom
+f- Deadpool|other_verb|-
+f+ Deadpool|other_verb|made|Deadpool made it clear that he would not be coming back|actual|stated|
+f- Ladypool|other_verb|-
+f+ Ladypool|other_verb|explained|Ladypool explained that every Deadpool Variant had their own Peter Wisdom|actual|stated|
+f- Peter Wisdom|other_verb|-
+t+ no_relation|that they were revered as legends in their worlds.
+t+ crowd_end|Several days later, Wisdom met with the Chipman family at Drive Max
+t- no_relation|preparing to sell
+f+ Peter Wisdom|other_verb|preparing|preparing to sell them a ,|actual|stated|
+f+ Deadpool|other_verb|smashed|Deadpool and Wolverine fell down from the Inter-Dimensional Portal and smashed the car beneath them.|actual|stated|
+f+ Wolverine|other_verb|smashed|Deadpool and Wolverine fell down from the Inter-Dimensional Portal and smashed the car beneath them.|actual|stated|
+t- no_relation|Feeling that Deadpool
+f+ Peter Wisdom|other_verb|Feeling|Feeling that Deadpool would need his help, Wisdom donned an old Deadpool Suit|actual|stated|
+f+ Deadpool Corps|other_verb|surrounded|to see Deadpool and Wolverine being surrounded by the Deadpool Corps.|actual|stated|
+f+ Peter Wisdom|other_verb|told|Wisdom told everyone to stand down as that Deadpool was with him|actual|stated|
+f+ Deadpool Corps|other_verb|listened|and the Deadpool Corps actually listened to him.|actual|stated|
+
+@2370 gold: the last line is dialogue too
+keep
+t+ dialogue|Pretty sure your trouble is my trouble now.
+
+@2371 gold: ok
+keep
+
+@2372 gold: mantles are aliases; training alongside is no trainer relation; guiding the plane; continuing to fly
+keep
+f- Sam Wilson|became|Captain America
+f+ Captain America|alias_of|Sam Wilson|Sam Wilson became Captain America|actual|stated|
+f- Joaquín Torres|became|Falcon
+f+ Falcon|alias_of|Joaquín Torres|Joaquín Torres, who had become Falcon.|actual|stated|
+f- Sam Wilson|trained|Joaquín Torres
+f+ Sam Wilson|other_verb|trained|Sam Wilson became Captain America and trained alongside Joaquín Torres|actual|stated|
+f+ Joaquín Torres|other_verb|trained|Sam Wilson became Captain America and trained alongside Joaquín Torres|actual|stated|
+f+ Sam Wilson|other_verb|guiding|Wilson and Torres flew into action, using their EXO-7 Falcon wings to support the plane from under its wings, guiding it to a safe landing.|actual|stated|
+f+ Joaquín Torres|other_verb|guiding|Wilson and Torres flew into action, using their EXO-7 Falcon wings to support the plane from under its wings, guiding it to a safe landing.|actual|stated|
+t- deictic|Wilson and Torres then continued
+f+ Sam Wilson|other_verb|continued|Wilson and Torres then continued flying together as the pilot waved at them.|actual|stated|
+f+ Joaquín Torres|other_verb|continued|Wilson and Torres then continued flying together as the pilot waved at them.|actual|stated|
+
+@2373 gold: the discovery; wanting = actual + planned watching; both have sex
+keep
+f+ Ducasse|discovered|-|His only discovery was that Lyonne was having an affair.|actual|stated|
+f- Okonjo|other_verb|wanted
+f+ Okonjo|other_verb|wanted|she was perfectly fine with it and actually wanted to watch it with him.|actual|stated|
+f+ Okonjo|other_verb|watch|she was perfectly fine with it and actually wanted to watch it with him.|planned|stated|Okonjo
+f+ Okonjo|other_verb|having|leading to them having sex.|actual|stated|
+
+@2374 gold: the saying and commenting
+keep
+f+ Pagon|other_verb|said|but said that their spy reported he would not be a threat since he was out of shape.|actual|stated|
+f+ Gravik|other_verb|commented|Gravik commented on the limited number of people who knew the information|actual|stated|
+
+@2375 gold: ok
+keep
+
+@2376 gold: discovering powers she had is no gain; studying, removing the bracelet, reviewing and deducing
+keep
+f- Karolina Dean|gained_power|-
+f+ Karolina Dean|discovered|-|after having removed her Church of Gibborim Bracelet and discovered her powers.|actual|stated|
+f+ Karolina Dean|other_verb|study|Karolina Dean began to study the book looking for answers|actual|stated|
+f+ Karolina Dean|other_verb|removed|after having removed her Church of Gibborim Bracelet|actual|stated|
+f+ Karolina Dean|other_verb|reviewed|Dean reviewed her copy of the Book of Gibborim to find more information about her nature|actual|stated|
+f+ Karolina Dean|learned|-|and quickly deduced from an excerpt that Jonah might have left a message for her.|actual|stated|
+
+@2377 gold: a release announcement is production
+keep
+f- Disney+|other_verb|announced
+t+ production|On June 30, 2021, it was announced by Disney+ that a new Marvel-themed short from The Simpsons would premiere on the streaming platform on Wednesday, July 7, 2021.
+
+@2378 gold: the begged and told acts
+keep
+f+ Carter|other_verb|liberate|Asimov begged Carter to liberate them.|ordered|stated|Asimov
+f+ Asimov|other_verb|get|She told Asimov and Ivchenko to get away from the door|ordered|stated|Carter
+f+ Ivchenko|other_verb|get|She told Asimov and Ivchenko to get away from the door|ordered|stated|Carter

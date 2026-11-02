@@ -1,0 +1,104 @@
+@1755 gold: the face damage is a wound; a described orb; the list heading; citations
+keep
+f+ Yuji|wounded|Sukuna|Yuji used this technique against Sukuna during their fight, damaging his face.|actual|stated|
+f- Yuji|took|pressurized blood orb
+f+ Yuji|other_verb|took|Yuji took a pressurized blood orb created by Choso in order to perform Piercing Blood.|actual|stated|
+f- Choso|created|pressurized blood orb
+f+ Choso|other_verb|created|Yuji took a pressurized blood orb created by Choso|actual|stated|
+t+ list_header|Piercing Blood 穿血 Senketsu:
+t+ citation|(Chapter 256)
+t+ citation|(Modulo Chapter 19)
+
+@1756 gold: the call and the ask to an unnamed associate
+keep
+f+ Mei Mei|other_verb|calls|While there, Mei Mei calls an associate and asks them to sell off all of her Japanese assets|actual|stated|
+
+@1757 gold: the witnessed declaration; unveiling = revealed
+keep
+f+ Geto|other_verb|declare|later witnessed Geto declare war on Jujutsu High|actual|stated|
+f+ Geto|revealed|-|unveiling his plan to release a thousand curses in Shinjuku and Kyoto on December 24.|actual|stated|
+
+@1758 gold: the person and the imposter are the Geto of this window; the freeze; a passive nullification; realizing = learned; the sealing box is no doer; revealing has no listener object
+keep
+r the person=>Geto
+r the imposter=>Geto
+f+ Gojo|other_verb|freezes|Gojo stares at the eye before deciding to leave but freezes when he hears a familiar voice.|actual|stated|
+f- Gojo|other_verb|nullified
+f+ Gojo|learned|-|He realizes that this is checkmate since he is unable to move and his cursed energy is seemingly nullified.|actual|stated|
+t+ no_relation|This causes the box's sealing condition to be fulfilled and wraps itself around Gojo.
+f- Geto|revealed|Gojo
+f+ Geto|revealed|-|The imposter in front of him reveals that Gojo is correct|actual|stated|
+
+@1759 gold: the confrontation becomes the fight (no met); forcing the escape is the defeat; declining is actual; preparing happened; a remembered event; deciding carries the planned attack; the narrated acts; citation
+keep
+- Nanami|met|Dagon
+- Maki|met|Dagon
+- Naobito|met|Dagon
++ Nanami|defeated|Dagon|The three overwhelm Dagon, who is forced to escape from the three.
++ Maki|defeated|Dagon|The three overwhelm Dagon, who is forced to escape from the three.
++ Naobito|defeated|Dagon|The three overwhelm Dagon, who is forced to escape from the three.
+f- Naobito|other_verb|declines
+f+ Naobito|other_verb|declines|telling Nanami that Naobito has been drinking on the job which Naobito declines.|actual|stated|
+f- Nanami|other_verb|prepares
+f+ Nanami|other_verb|prepares|Suddenly the three comes across Dagon, which Nanami prepares to fight it|actual|stated|
+f- Dagon|remembered|Hanami
+f+ Dagon|remembered|-|Dagon remembers what had happened to Hanami|actual|stated|
+f- Nanami|other_verb|decide
+f- Maki|other_verb|decide
+f- Naobito|other_verb|decide
+f+ Nanami|other_verb|decide|they decide to attack Dagon with speed based attacks.|actual|stated|
+f+ Maki|other_verb|decide|they decide to attack Dagon with speed based attacks.|actual|stated|
+f+ Naobito|other_verb|decide|they decide to attack Dagon with speed based attacks.|actual|stated|
+f+ Nanami|other_verb|attack|they decide to attack Dagon with speed based attacks.|planned|stated|Nanami
+f+ Maki|other_verb|attack|they decide to attack Dagon with speed based attacks.|planned|stated|Maki
+f+ Naobito|other_verb|attack|they decide to attack Dagon with speed based attacks.|planned|stated|Naobito
+f+ Naobito|other_verb|wonders|The blow forces Dagon to spit up a ton of bones which Naobito wonders just how many people Dagon had eaten.|actual|stated|
+f+ Dagon|other_verb|releases|Dagon releases a torrent of water, but the three manages to avoid the flood.|actual|stated|
+f+ Naobito|other_verb|starts|Naobito starts a conversation with Dagon, which allows Nanami and Maki to attack Dagon.|actual|stated|
+t- deictic|Elsewhere, Nanami, Maki
+f+ Nanami|other_verb|enter|Elsewhere, Nanami, Maki, and Naobito enter the station.|actual|stated|
+f+ Maki|other_verb|enter|Elsewhere, Nanami, Maki, and Naobito enter the station.|actual|stated|
+f+ Naobito|other_verb|enter|Elsewhere, Nanami, Maki, and Naobito enter the station.|actual|stated|
+t+ citation|(Chapter 107, Episode 38)
+
+@1760 gold: A145 outclassing and brutalizing are one act; "a curse user" is no group; believing is actual
+keep
+- Maru|fought|Masaki Takeda
+f- Masaki Takeda|member_of|Curse User
+f- Tsurugi Okkotsu|suspected|Masaki Takeda
+f+ Tsurugi Okkotsu|suspected|-|whom Tsurugi Okkotsu believes possesses the skills of a grade 1 sorcerer|actual|stated|
+
+@1761 gold: Yuji's attacks are his fight (event twin); a described instrument; the dodge; a covered fragment
+keep
++ Yuji|fought|Sukuna|With this revised technique, Todo and Yuji synchronize their attacks, overwhelming Sukuna
+f- Yuji|attacked|Sukuna
+f- Todo|used|vibraslap
+f+ Todo|other_verb|reveals|Unwrapping his left arm, Todo reveals the vibraslap he installed in place of his missing hand.|actual|stated|
+f+ Sukuna|other_verb|avoids|Though Sukuna avoids Todo's kick|actual|stated|
+t- capability|making it nearly impossible
+
+@1762 gold: the attempted attack; the swap back
+keep
+f- Mahito|attacked|Todo
+f+ Mahito|other_verb|attack|Mahito attempts to turn around and attack Todo|attempted|stated|Mahito
+t- no_relation|Todo quickly swaps
+f+ Todo|other_verb|swaps|Todo quickly swaps Arata and Mahito again, preventing a collision as the special grade tumbles away on the ground.|actual|stated|
+
+@1763 gold: ok
+keep
+
+@1764 gold: the encounter becomes the fight (no met); garbage technique objects; recognizing = learned; deducing = suspected; covered fragments
+keep
+- Naoya|met|Yuji
+- Naoya|met|Choso
+f- Naoya|used|the technique
+f+ Naoya|other_verb|appear|Naoya used the technique to appear between the two instantly.|actual|stated|
+f- Naoya|used|his technique
+f+ Naoya|other_verb|disappear|Naoya used his technique to suddenly disappear from in between the two fighters|actual|stated|
+f- Yuji|other_verb|recognize
+f+ Yuji|learned|-|even prompting Yuji, who possesses superhuman speed and reflexes, to recognize Naoya as an extremely fast adversary.|actual|stated|
+f- Choso|other_verb|deduced
+f+ Choso|suspected|-|Choso deduced that this had to be due to Naoya's cursed technique.|actual|stated|
+t- no_relation|This surprised them both
+t- capability|who possesses superhuman
+

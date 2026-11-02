@@ -1,0 +1,127 @@
+@3747 gold: no pipe in a quote; the weakness is a capability line
+keep
+t- list_header|| Weaknesses
+t+ capability|Namorita's strength wanes the longer she spend out of water.
+t- list_header|| Equipment
+t+ list_header|* Atlantean Armor:
+
+@3748 gold: a transformation is no awakening; a nickname is an alias; reading the page; no pipes in infobox tags
+keep
+- Blade|awakened|-
+f+ Blade|transformed_into|demogorge|seeks out and reads a page from the Darkhold, transforming him into a "demogorge"|actual|stated|
+f+ Blade|other_verb|reads|seeks out and reads a page from the Darkhold|actual|stated|
+f- Blade|also_known_as|Switchblade
+f+ Switchblade|alias_of|Blade|who is swiftly nicknamed "Switchblade."|actual|stated|
+t- list_header|| Image
+t- list_header|| Name
+t- list_header|| Aliases
+t- list_header|| Reality
+t- list_header|| Locations
+t- list_header|| Protagonists
+t- list_header|| Antagonists
+t- list_header|| Others
+t- list_header|| Creators
+t- list_header|| First
+t- list_header|| Last
+t- list_header|| Synopsis
+t+ list_header|{{Marvel Database:Event Template
+t+ production|Image = Erik Brooks (Earth-616) from Nightstalkers Vol 1 10 001.jpg
+t+ list_header|Name = Midnight Massacre
+t+ list_header|Reality = Earth-616
+t+ list_header|Protagonists = Midnight Sons
+t+ list_header|Antagonists = Switchblade
+t+ citation|First = Nightstalkers Vol 1 10
+t+ citation|Last = Ghost Rider/Blaze: Spirits of Vengeance Vol 1 13
+
+@3749 gold: saving a city is protected; a renamed place is no alias
+keep
+f- Thor|helped|Rio de Janeiro
+f- Uncanny Avengers|helped|Rio de Janeiro
+f+ Thor|protected|Rio de Janeiro|Thor and the Uncanny Avengers helped save Rio de Janeiro from being hit by space debris.|actual|stated|
+f+ Uncanny Avengers|protected|Rio de Janeiro|Thor and the Uncanny Avengers helped save Rio de Janeiro from being hit by space debris.|actual|stated|
+f- South America|also_known_as|Atrocity Zone
+t+ no_relation|In the Age of Apocalypse, South America became known as "The Atrocity Zone."
+
+@3750 gold: studying and experimenting are acts; deciding carries the planned act; using Alioth; the planned prevention
+keep
+f- He Who Remains|learned|-
+f+ He Who Remains|other_verb|experimented|discovered the entity and experimented on him, studying his abilities to consume space and time itself.|actual|stated|
+f+ He Who Remains|other_verb|decided|He eventually decided to weaponize Alioth|actual|stated|
+f+ He Who Remains|used|Alioth|and used his tremendous power to defeat his alternate selves and put an end to the Multiversal War|actual|stated|
+f+ He Who Remains|other_verb|prevent|To prevent another Multiversal War, He Who Remains chose a number of realities|planned|stated|He Who Remains
+
+@3751 gold: teams are crowds; Rachel's link
+keep
+t+ crowd_end|Each team arrives at their assigned obelisk.
+f+ Rachel|other_verb|establishes|Rachel establishes a psychic connection with the other teams, so that everyone knows what's happening to the others.|actual|stated|
+
+@3752 gold: no pipes in infobox tags; split the citation template
+keep
+t- list_header|| Image
+t- list_header|| Name
+t- list_header|| Aliases
+t- list_header|| Reality
+t- list_header|| Locations
+t- production|| Creators
+t+ production|Image = Spider-Geddon teaser 003.jpg
+t+ list_header|Name = Spider-Geddon
+t+ list_header|Aliases = * Interdimensional Spider-War{{r
+t+ citation|Amazing Spider-Man Vol 5 81}}
+t+ list_header|Reality = Multiverse
+t+ production|Creators = Christos N.
+
+@3753 gold: a composite name is the real name + its alias; garbage objects; the three named lose touch
+keep
+r Wolverine (Laura)=>Laura
+f+ Wolverine|alias_of|Laura|the three mutants selected for the mission were Darwin, Synch, and Wolverine (Laura)|actual|stated|
+f- Darwin|other_verb|-
+f- Synch|other_verb|-
+t- crowd_end|As soon as the three
+f+ Darwin|other_verb|lost|As soon as the three entered the Vault, they lost touch with the X-Men.|actual|stated|
+f+ Synch|other_verb|lost|As soon as the three entered the Vault, they lost touch with the X-Men.|actual|stated|
+f+ Laura|other_verb|lost|As soon as the three entered the Vault, they lost touch with the X-Men.|actual|stated|
+
+@3754 gold: the Cynodd are a race (no end)
+keep
+f- Cynodd|other_verb|nurture
+t+ crowd_end|The Cynodd were able to nurture the Synergysts
+
+@3755 gold: garbage objects become the quote's verbs; the shared acts; forming the Dark X-Men
+keep
+f- Victoria|other_verb|mutant
+f- Osborn|other_verb|mutant
+f+ Victoria|other_verb|deal|to finally deal with the Mutant problem.|planned|stated|Victoria
+f+ Osborn|other_verb|deal|to finally deal with the Mutant problem.|planned|stated|Osborn
+f- Victoria|other_verb|team
+f+ Victoria|other_verb|discussed|Together they discussed forming their own team of Mutants.|actual|stated|
+f+ Osborn|other_verb|discussed|Together they discussed forming their own team of Mutants.|actual|stated|
+f+ Emma Frost|other_verb|discussed|Together they discussed forming their own team of Mutants.|actual|stated|
+f- Victoria|other_verb|X-Men
+f+ Victoria|other_verb|monitor|They continued to monitor the X-Men as they battled the Acolytes.|actual|stated|
+f+ Osborn|other_verb|monitor|They continued to monitor the X-Men as they battled the Acolytes.|actual|stated|
+f+ Osborn|allied_with|Emma Frost|Osborn and Victoria worked with Emma Frost|actual|stated|
+f- Victoria|other_verb|Dark
+f+ Victoria|created|Dark X-Men|and they formed the Dark X-Men.|actual|stated|
+f+ Osborn|created|Dark X-Men|and they formed the Dark X-Men.|actual|stated|
+f+ Emma Frost|created|Dark X-Men|and they formed the Dark X-Men.|actual|stated|
+
+@3756 gold: a description is no alias end; the creator; wanting is actual; the sacrifice is a death; walking off
+keep
+f- M-11|codename_of|robot
+f+ Plan Chu|created|M-11|This robot, dubbed M-11, was completed, but its creator wanted it to have free will.|actual|stated|
+f- Plan Chu|other_verb|wanted
+f+ Plan Chu|other_verb|wanted|but its creator wanted it to have free will.|actual|stated|
+f+ Plan Chu|dies|-|He sacrificed his life to instill his life force into the robot|actual|stated|
+f- M-11|located_at|sea
+f+ M-11|other_verb|walked|which then walked off into the sea.|actual|stated|
+
+@3757 gold: gaining powers is no awakening; the patient is no subject
+keep
+- Max Dillon|awakened|-
+f- Max Dillon|other_verb|struck
+
+@3758 gold: a solicitation headline is production
+keep
+t- list_header|FROM SWIMSUITS
+t+ production|FROM SWIMSUITS TO THE SAUNA!
+

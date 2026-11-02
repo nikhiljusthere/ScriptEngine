@@ -1,0 +1,157 @@
+@1850 gold: ok
+keep
+
+@1851 gold: the approach turns into the fire fight (no met); the gunning down is the killing (no fought); the apparent death
+keep
+- Spider-Killer|met|Chameleon
+- Spider-Killer|met|Mac Gargan
+- Spider-Killer|met|Curt Connors
+- Harold Osborn|fought|Chameleon
+- Harold Osborn|fought|Mac Gargan
+- Harold Osborn|fought|Curt Connors
+f+ Spider-Killer|dies|-|The three criminals opened fire and apparently killed the creature|actual|apparent|
+
+@1852 gold: a phone is no object (the smashing); the planned upload; she is the doer of the talk; a fragment naming Tsubasa is no below_floor
+keep
+f- Hisako Ichiki|destroyed|recording phone
+f+ Hisako Ichiki|other_verb|smashed|But the angry Hisako smashed her recording phone.|actual|stated|
+f+ Yukio|other_verb|upload|She recorded herself exploring the school at night to upload it later|planned|stated|Yukio
+t- no_doer|had a conversation
+t- below_floor|especially that of Tsubasa
+
+@1853 gold: ok
+keep
+
+@1854 gold: one name
+keep
+r Billie=>Billie Mariana Morales
+
+@1855 gold: opposing is actual; the belief; passing away is a death
+keep
+f- Magneto|other_verb|opposed
+f+ Magneto|other_verb|opposed|Magneto opposed Charles Xavier's dream of mutant-human coexistence|actual|stated|
+f+ Magneto|suspected|-|believing there could never be peace unless the mutants ruled the world|actual|stated|
+f- Magneto|other_verb|passed
+f+ Magneto|dies|-|He had passed down two years before the present day.|actual|stated|
+
+@1856 gold: a lab and a power loss are no doers
+keep
+f- Aerie Shalan|other_verb|experiences
+f- temporary loss of power|other_verb|threatened
+t+ no_relation|Meanwhile, in the real world, the lab in Aerie Shalan experiences a temporary loss of power that could have threatened the safety of those within Shanna's mind if it had lasted longer.
+
+@1857 gold: the challenged duel and the defeat are one act (no fought); a race is no end of orders or refusals; Namor's tracking and identifying have a doer
+keep
+- Namor|fought|Attuma
+f- Attuma|ordered|followers
+f+ Attuma|other_verb|ordered|While Attuma ordered his followers to scour the oceans and find Namor|actual|stated|
+f- Namor|ordered|Skarka
+f+ Namor|other_verb|ordered|Namor ordered the Skarka to return home and stop their attacks|actual|stated|
+f- Skarka|other_verb|refused
+t+ crowd_end|but the Skarka, refused to recognize Namor.
+t- no_relation|Namor first tracked
+f+ Namor|other_verb|tracked|Namor first tracked down the Skarka, following their scent and meeting with a victim of them in the Skarka Sea|actual|stated|
+f+ Namor|located_at|Skarka Sea|meeting with a victim of them in the Skarka Sea, at the rim of Attumacht Trench|actual|stated|
+t- no_relation|identifying a Skarka
+f+ Namor|other_verb|identifying|identifying a Skarka that had robbed an old Atlantean Namor had met earlier|actual|stated|
+
+@1858 gold: Brand had them sent: the order and the ordered rescue; the invasion
+keep
+f+ Brand|ordered|Random|Brand had Random, Frenzy, Paibok, and Fabian sent to Krakoa to rescue the Five|actual|stated|
+f+ Brand|ordered|Frenzy|Brand had Random, Frenzy, Paibok, and Fabian sent to Krakoa to rescue the Five|actual|stated|
+f+ Brand|ordered|Paibok|Brand had Random, Frenzy, Paibok, and Fabian sent to Krakoa to rescue the Five|actual|stated|
+f+ Brand|ordered|Fabian|Brand had Random, Frenzy, Paibok, and Fabian sent to Krakoa to rescue the Five|actual|stated|
+f+ Random|other_verb|rescue|Brand had Random, Frenzy, Paibok, and Fabian sent to Krakoa to rescue the Five in the case that Knull succeeded|ordered|stated|Brand
+f+ Frenzy|other_verb|rescue|Brand had Random, Frenzy, Paibok, and Fabian sent to Krakoa to rescue the Five in the case that Knull succeeded|ordered|stated|Brand
+f+ Paibok|other_verb|rescue|Brand had Random, Frenzy, Paibok, and Fabian sent to Krakoa to rescue the Five in the case that Knull succeeded|ordered|stated|Brand
+f+ Fabian|other_verb|rescue|Brand had Random, Frenzy, Paibok, and Fabian sent to Krakoa to rescue the Five in the case that Knull succeeded|ordered|stated|Brand
+f+ Knull|other_verb|invaded|When Knull and his symbiotes invaded Earth|actual|stated|
+
+@1859 gold: a planet is no doer; the Wave destroyed Xandar (reversed); an epithet is no alias
+keep
+f- Xandar|contacted|Nova Corps
+t+ no_relation|After a mysterious attack on the Kyln, Xandar once again called upon all of the Nova Corps to investigate
+f- Xandar|destroyed|Annihilation Wave
+f+ Annihilation Wave|destroyed|Xandar|only to be utterly destroyed by the Annihilation Wave|actual|stated|
+f- Xandar|alias_of|Brightmind
+f- Xandar|located_at|Earth-6160
+t+ no_relation|In the original iteration of the 61st Century of Earth-6160, Xandar the Brightmind was the Hero-Star of Tranta.
+
+@1860 gold: the narrated enlisting
+keep
+f+ Flash Thompson|other_verb|enlisted|but Thompson dropped out and enlisted in the army.|actual|stated|
+
+@1861 gold: the doer of the capture is not stated (A8); the tried escape; the later title is a codename; a prison is no named place; a self pair; the transport
+keep
+- Knights of Never|captured|Yao
+- Knights of Never|fought|Yao
+f+ Yao|other_verb|escape|He tries to escape the Knights' fortress|attempted|stated|Yao
+t+ no_doer|but is eventually caught, beaten, and imprisoned.
+f- Yao|became|Ancient One
+f+ Ancient One|alias_of|Yao|A young Yao (who would later become the Ancient One)|actual|stated|
+f- Yao|located_at|prison
+f- Yao|wounded|Yao
+f+ Yao|other_verb|withers|His punishment for stealing the map is to rot in prison, and Yao's body withers away over time.|actual|stated|
+t- no_relation|right in front
+f+ Merlin|other_verb|transports|then transports them out of the cell, right in front of a giant monster|actual|stated|
+
+@1862 gold: an issue summary is production
+keep
+t- list_header
+t+ production|A recapping of the origin of Galactus.
+
+@1863 gold: a solicitation blurb is production
+keep
+t- no_relation
+t+ production|Traveling to New York City to help Cloak and Dagger, the Marvel Universe's newest teen heroes run into the Marvel's Universe's ORIGINAL teen hero.
+
+@1864 gold: a solicitation blurb is production
+keep
+t- no_relation
+t+ production|VOTE. DIE. REPEAT.
+t+ production|Putting the "Meat" in office meeting. Trust me, bad spelling is the least of the Quiet Council's problems as everything hits the fan.
+
+@1865 gold: one name; imbuing powers is no awakening; Mordo's spoken plan; seeking a home is no arrival; Clea reaches him; the tried understanding
+keep
+r Baron Mordo=>Mordo
+- Cyrus Black|awakened|-
+f- Cyrus Black|gained_power|-
+f+ Dormammu|other_verb|imbued|imbued Cyrus Black with powers|actual|stated|
+f+ Mordo|other_verb|called|who called out Dormammu for his failure|actual|stated|
+t- no_relation|He subsequently spoke
+f+ Mordo|other_verb|spoke|He subsequently spoke of a sinister plan to an unnamed figure to deal with Dr. Strange|actual|stated|
+f+ Mordo|other_verb|deal|He subsequently spoke of a sinister plan to an unnamed figure to deal with Dr. Strange|planned|stated|Mordo
+- Dr. Strange|arrived|Bleeker Street mansion
+f+ Dr. Strange|located_at|Bleeker Street mansion|sought out Mordo’s assistance at the Bleeker Street mansion|actual|stated|
+f+ Mordo|other_verb|entered|Mordo entered Strange’s dream|actual|stated|
+f+ Dr. Strange|other_verb|understand|Dr. Strange sought to understand why he was been targeted|attempted|stated|Dr. Strange
+f+ Dr. Strange|located_at|Dark Dimension|fought his way through the Dark Dimension|actual|stated|
++ Clea|met|Dr. Strange|before Clea arrived to help return to his dimension.
+
+@1866 gold: the window's name; powering up is no awakening; the study
+keep
+r Richard Schlickeisen=>Schlickeisen
+- Covington|awakened|-
+f+ Covington|other_verb|studied|and studied him until she found the new Inhuman gene|actual|stated|
+t- capability
+t+ capability|Mr. Schlickeisen was proved to be invisible to the machines, detection devices & cameras.
+
+@1867 gold: the team travels with unnamed members (group end); fatally wounded is a death; an adverb is no verb; unnamed pirates are a crowd; a team is no place
+keep
+- Elmo|arrived|Wereworld
+- Gatecrasher|arrived|Wereworld
+- Yap|arrived|Wereworld
+- Fascination|arrived|Wereworld
++ Technet|arrived|Wereworld|Later, Technet traveled on business to the Wereworld
+f+ Elmo|dies|-|Technet member Elmo was fatally wounded by werewolves|actual|stated|
+f- Gatecrasher|other_verb|seriously
+f+ Gatecrasher|other_verb|injured|Gatecrasher either seriously injured or killed a member of the Berserker Pirates|actual|stated|
+t- no_doer|who attempted
+t+ crowd_end|who attempted to interest her in becoming his lover
+t- no_relation|The pirate's family
+t+ crowd_end|The pirate's family forced Technet to turn over all their accumulated wealth as reparations
+- Gatecrasher|departed|Technet
+
+@1868 gold: ok
+keep
+

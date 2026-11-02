@@ -1,0 +1,85 @@
+@2319 gold: a narration line with unnamed generals is a crowd end, not a header
+keep
+t- list_header|The begins
+t+ crowd_end|The begins with a declaration of opposition by a group of Spanish Generals.
+
+@2320 gold: ok
+keep
+
+@2321 gold: the threatened kill is Johnson's plan, the stop is Fitz's; Mackenzie's escape from Hellfire
+keep
+f- Johnson|other_verb|stop
+f+ Johnson|other_verb|kill|that the next time he would try to stop her, she would not hesitate to kill him.|planned|stated|Johnson
++ Mackenzie|escaped|Hellfire|He was confronted by Mackenzie, who managed to escape the bar.
+
+@2322 gold: Inhumans and Kree are races
+keep
+t- no_relation|Many descendants
+t+ crowd_end|Many descendants of Inhumans, a species created by the Kree to act as their superpowered soldiers in a war but ultimately abandoned, live among Humans, but do not know their heritage.
+t- no_relation|They live normal lives
+t+ crowd_end|They live normal lives as construction workers, college professors, and government employees.
+
+@2323 gold: "they" are Hernandez and Alex; the planned break-out; Nico's tiredness
+keep
+f+ Alex Wilder|learned|-|They soon realized that Chase Stein and Gert Yorkes were not back yet.|actual|stated|
+f+ Alex Wilder|other_verb|brought|they brought Karolina Dean with them to break the two out of the Yorkes Residence.|actual|stated|
+f+ Hernandez|other_verb|break|they brought Karolina Dean with them to break the two out of the Yorkes Residence.|planned|stated|Hernandez
+f+ Alex Wilder|other_verb|break|they brought Karolina Dean with them to break the two out of the Yorkes Residence.|planned|stated|Alex Wilder
+t+ no_relation|Since Nico Minoru was too tired from the spell
+
+@2324 gold: the opening quote is dialogue; a rank is no became row; growing up is his act
+keep
+f- Pryce Cheng|became|captain
+t- no_relation|I've seen guys
+t- below_floor|High school quarterback.
+t- below_floor|Marine Corps captain.
+t- capability|He needs to be
+t+ dialogue|I've seen guys like Cheng before.
+t+ dialogue|High school quarterback.
+t+ dialogue|Marine Corps captain.
+t+ dialogue|He needs to be the top dog.
+t- capability|Pryce Cheng grew up
+f+ Pryce Cheng|other_verb|grew|Pryce Cheng grew up as his high school quarterback which made him very cocky.|actual|stated|
+
+@2325 gold: lights are no doer; the tried verb
+keep
+f- museum lights|other_verb|turned
+t+ no_doer|Later, the lights of the museum turned off
+f- Steven Grant|other_verb|try
+f+ Steven Grant|other_verb|find|Grant wandered through the museum to try and find the dog|attempted|stated|Steven Grant
+
+@2326 gold: the anonymous call was Luke's
+keep
+f+ Luke|contacted|Malick|as the anonymous who had called to tell him that Sousa was on the train.|actual|stated|
+
+@2327 gold: ok
+keep
+
+@2328 gold: Udonta's remark is his act
+keep
+t- deictic|Udonta remarked
+f+ Yondu Udonta|other_verb|remarked|Udonta remarked that it turned out well that they did not deliver Quill to Ego.|actual|stated|
+
+@2329 gold: the go-after verb; the trick happened (lulling); acting is actual; G'iah's own gunning and passing
+keep
+f- Nick Fury|other_verb|after
+f+ Nick Fury|other_verb|go|While Fury and Falsworth would go after Ritson|planned|stated|Nick Fury
+f+ Sonya Falsworth|other_verb|go|While Fury and Falsworth would go after Ritson|planned|stated|Sonya Falsworth
+f- G'iah|tricked|Gravik
+f+ G'iah|tricked|Gravik|lulling Gravik into a false sense of security.|actual|stated|
+f+ G'iah|other_verb|pretending|pretending to suffer from radiation poisoning to trick Gravik.|actual|stated|
+f- G'iah|other_verb|acted
+f+ G'iah|other_verb|acted|G'iah acted like her condition was getting worse|actual|stated|
+t- crowd_end|gunned down
+f+ G'iah|other_verb|gunned|G'iah gunned down two Skrull Resistance members guarding the entrance gate|actual|stated|
+t- crowd_end|passing by
+f+ G'iah|other_verb|passing|passing by the corpses of the rebels|actual|stated|
+t- deictic|lulling Gravik
+
+@2330 gold: a doer-less sending; the unnamed teacher; the asked act; the father
+keep
+f- Frank|other_verb|sent
+t+ no_doer|The day before Frank was sent to Afghanistan
+f- teacher|other_verb|told
+f+ Lisa|other_verb|do|and asked Lisa to do the second verse of the poem.|ordered|stated|Frank
+f+ Frank|parent_of|Lisa|Lisa noted that her teacher told her that it represented everything good about the United States which her father agreed with.|actual|stated|

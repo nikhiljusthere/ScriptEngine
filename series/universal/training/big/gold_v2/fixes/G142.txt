@@ -1,0 +1,117 @@
+@1646 gold: insisting is speech with the planned going; citations
+keep
+f- Riko|other_verb|insisted
+f+ Riko|other_verb|insisted|Riko insisted on going with them.|actual|stated|
+f+ Riko|other_verb|going|Riko insisted on going with them.|planned|stated|Riko
+t+ citation|(Chapter 67, Episode 26)
+t+ citation|(Chapter 69, Episode 26)
+t+ citation|(Chapter 70, Episode 27)
+
+@1647 gold: an adjective; belief = suspected; a described wave; the spear is no doer; the move to kill
+keep
+f- Satoru|other_verb|vengeful
+f- Satoru|other_verb|believes
+f+ Satoru|suspected|-|Throughout heaven and earth, Satoru believes he alone is the honored one.|actual|stated|
+f- Toji|created|dust wave
+f+ Toji|other_verb|creates|Toji creates a dust wave that forces Satoru to float above it|actual|stated|
+f- Inverted Spear of Heaven|other_verb|appear
+f+ Toji|other_verb|kill|quickly calms down and makes his move to kill the young sorcerer|attempted|stated|Toji
+
+@1648 gold: the talk with Geto; garbage objects -> announcing, revealing, naming, the tried stop, the summon and threat; the attended meeting
+keep
++ Gojo|met|Geto|When Gojo asks Geto about the purpose of his visit
+f- Geto|other_verb|Jujutsu
+f+ Geto|other_verb|announces|Geto announces that he arrived to declare war on Jujutsu High|actual|stated|
+f- Geto|other_verb|Shinjuku
+f- Geto|other_verb|Kyoto
+f+ Geto|revealed|-|revealing his plans to release a thousand curses in Shinjuku and Kyoto respectively on December 24|actual|stated|
+f+ Geto|other_verb|release|revealing his plans to release a thousand curses in Shinjuku and Kyoto respectively on December 24|planned|stated|Geto
+f- Geto|other_verb|Night
+f+ Geto|other_verb|named|an attack which he named the Night Parade of a Hundred Demons.|actual|stated|
+f- Gojo|other_verb|Geto
+f+ Gojo|other_verb|stop|As he prepares to leave, Gojo attempts to stop him|attempted|stated|Gojo
+f- Geto|other_verb|cursed
+f- Geto|other_verb|first-years
+f+ Geto|other_verb|summons|but Geto summons a cursed spirit to threaten the first-years|actual|stated|
+f+ Geto|other_verb|threaten|but Geto summons a cursed spirit to threaten the first-years, forcing Gojo to allow him to escape.|actual|stated|
+t- crowd_end|Once Geto leaves
+f+ Gojo|other_verb|attends|Once Geto leaves, Gojo attends a meeting were the jujutsu sorcerers discuss their course of action.|actual|stated|
+
+@1649 gold: Jogo is at the rendezvous too; teaching a fact is no training
+keep
++ Jogo|met|Geto|Hanami rescues Jogo and the rendezvous with Geto and their leader, Mahito.
++ Jogo|met|Mahito|Hanami rescues Jogo and the rendezvous with Geto and their leader, Mahito.
+f- Satoru|trained|Yuji
+f+ Satoru|other_verb|teaches|Satoru teaches Yuji this type of technique increases the users power and ensures their attacks never miss.|actual|stated|
+
+@1650 gold: treating injuries is healing, not a rescue; the tried hope
+keep
+- Arata|saved|Yuji
+- Arata|saved|Nobara
+f+ Arata|healed|Yuji|Arata quickly treats Yuji's injuries by applying his cursed technique.|actual|stated|
+f+ Arata|healed|Nobara|he has already treated Nobara the same way|actual|stated|
+f+ Arata|other_verb|instill|After trying to instill some hope in Yuji|attempted|stated|Arata
+
+@1651 gold: noticing = learned; the ordered drop; replying, asking and proclaiming are speech; overpowering is the defeat; the summon and exorcism; the talk
+keep
+f- Yuta|discovered|-
+f+ Yuta|learned|-|When Geto puts up a screen, Yuta notices it being put up.|actual|stated|
+f+ Rika|other_verb|drop|Yuta immediately scolded her and made her to drop Maki to which Rika complied.|ordered|stated|Yuta
+f- Yuta|revealed|Geto
+f+ Yuta|other_verb|replies|Rika then asks Yuta who Geto was to which he replies that he was their enemy|actual|stated|
+f+ Rika|other_verb|asks|Rika then asks Yuta who Geto was|actual|stated|
+f+ Rika|other_verb|proclaims|Rika in turn proclaims that she too hates him.|actual|stated|
+f- Geto|other_verb|overpower
++ Geto|defeated|Yuta|Geto manages to overpower Yuta by hitting him with the Playful Cloud in the face
+f+ Geto|other_verb|summoned|Geto immediately summoned Octopus curse which Yuta exorcises|actual|stated|
+f+ Yuta|other_verb|exorcises|Geto immediately summoned Octopus curse which Yuta exorcises|actual|stated|
+t- dialogue|Geto talks about
+f+ Geto|other_verb|talks|During the skirmish Geto talks about non shamans beliefs about being superior beings and mocks|actual|stated|
+f+ Yuta|other_verb|calls|to which Yuta angrily calls him a kid.|actual|stated|
+
+@1652 gold: A145 the kick is the exorcism
+keep
+- Yuki|fought|Ganesha
+
+@1653 gold: one name as written; the told entry; deciding carries the planned test and fight; finding = learned; covered lines; citations
+keep
+r Yoshinobu Gakuganji=>Yoshinobu
+f+ Gojo|other_verb|head|Utahime tells Gojo to head in before the site is fully covered.|ordered|stated|Utahime
+f- Utahime|other_verb|decide
+f- Yoshinobu|other_verb|decide
+f+ Utahime|other_verb|decide|They decide to test out the screen|actual|stated|
+f+ Yoshinobu|other_verb|decide|They decide to test out the screen|actual|stated|
+f+ Utahime|other_verb|test|They decide to test out the screen|planned|stated|Utahime
+f+ Yoshinobu|other_verb|test|They decide to test out the screen|planned|stated|Yoshinobu
+f- Utahime|discovered|Gojo
+f- Yoshinobu|discovered|Gojo
+f+ Utahime|learned|-|find that Gojo is the only one that can't enter|actual|stated|
+f+ Yoshinobu|learned|-|find that Gojo is the only one that can't enter|actual|stated|
+f+ Yoshinobu|other_verb|decides|Yoshinobu decides to take fight him alone|actual|stated|
+f+ Yoshinobu|other_verb|fight|Yoshinobu decides to take fight him alone|planned|stated|Yoshinobu
+t- apposition|she encounters Haruta
+t- no_doer|causing the enemy
+t+ citation|(Chapter 45, Episode 18)
+t+ citation|(Chapter 46, Episode 18)
+t+ citation|(Chapter 52, Episode 20)
+
+@1654 gold: the staged show match is no fight; the guard is unnamed; impressing; wanting carries the planned meeting; asking that Yuji be brought orders no one named; suspicion has no object
+keep
+- Yuji|fought|Panda
+t+ crowd_end|The same security guard preps Yuji for his first match in the tournament by reviewing the rules of fight club.
+f- Hakari|other_verb|want
+f+ Yuji|other_verb|impressed|With Panda's help, Yuji really impressed Hakari, enough so for the boss to want to meet him.|actual|stated|
+f+ Hakari|other_verb|want|enough so for the boss to want to meet him.|actual|stated|
+f+ Hakari|other_verb|meet|enough so for the boss to want to meet him.|planned|stated|Hakari
+f- Hakari|ordered|Yuji
+f+ Hakari|other_verb|asked|He asked that Yuji be brought to the roof after his next fight and that the rest of security stay vigilant|actual|stated|
+f- Hakari|suspected|Megumi
+f+ Hakari|suspected|-|still suspicious of Megumi.|actual|stated|
+
+@1655 gold: the gaze is Ryu's; an assessment is no capability
+keep
+f- Yuta|other_verb|swayed
+f+ Ryu|other_verb|swayed|However, Yuta's heart is swayed by Ryu's gaze|actual|stated|
+t- capability|Yuta's best option
+t+ no_relation|Yuta's best option is to charge his laser and release it before Ryu reaches full power.
+

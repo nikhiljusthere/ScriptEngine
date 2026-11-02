@@ -1,0 +1,122 @@
+@2104 gold: a believed death is apparent, not a claim by the dead
+keep
+f- Tempo|dies|-
+f+ Tempo|dies|-|Tempo is believed dead.|actual|apparent|
+
+@2105 gold: the window's name; no pipe in quotes
+keep
+r Harold Osborn=>Harry
+t- list_header
+t+ list_header|Marvel = harry-osborn
+t+ list_header|Wikipedia = Harry Osborn
+t+ citation|Links = * OHMU Deluxe Edition #16, 1987, MARVEL COMICS GROUP.
+
+@2106 gold: the alias direction; both parents; the break-in; a negation keeps its verb; the truck deaths; the construction happened
+keep
+f- Wilson Fisk|also_known_as|Kingpin
+f+ Kingpin|alias_of|Wilson Fisk|Wilson was the crime lord Kingpin|actual|stated|
+f+ Wilson Fisk|parent_of|Richard|eventually marrying him and having a son with him named Richard.|actual|stated|
+f+ Spider-Man|other_verb|broke|One day, Spider-Man broke into the Fisk residence to fight Wilson.|actual|stated|
+f- Vanessa Fisk|other_verb|did
+f+ Vanessa Fisk|other_verb|notice|Vanessa did not notice an oncoming truck.|actual|denied|
+f+ Vanessa Fisk|dies|-|The truck hit her car, killing Vanessa and her son.|actual|stated|
+f+ Richard|dies|-|The truck hit her car, killing Vanessa and her son.|actual|stated|
+f- Wilson Fisk|other_verb|constructing
+f+ Wilson Fisk|other_verb|constructing|would subsequently begin constructing a super-collider to access other universes|actual|stated|
+
+@2107 gold: ok
+keep
+
+@2108 gold: one name each (window forms); Karkov's work and Sable's wish; the decided deal and the planned claim; the siblings and Teresa's wish; the explanation and relenting have doers
+keep
+r The Foreigner=>Foreigner
+r Teresa Parker=>Teresa
+t- deictic|As Karkov
+f+ Karkov|other_verb|regain|As Karkov worked to regain control of Symkaria|attempted|stated|Karkov
+f+ Sable|other_verb|fight|Sable became desperate to fight her.|planned|stated|Sable
+f+ Foreigner|other_verb|decided|The Foreigner decided to make a deal with the Chameleon to claim the Infinity Formula|actual|stated|
+f+ Foreigner|other_verb|claim|The Foreigner decided to make a deal with the Chameleon to claim the Infinity Formula|planned|stated|Foreigner
+t- no_relation|However, Spider-Man
+f+ Spider-Man|other_verb|got|However, Spider-Man and his sister Teresa got in their way|actual|stated|
+f+ Teresa|sibling_of|Spider-Man|However, Spider-Man and his sister Teresa got in their way|actual|stated|
+f+ Teresa|other_verb|kill|as the latter wished to kill Chameleon to avenge her lover.|planned|stated|Teresa
+t- dialogue
+f+ Sable|other_verb|explained|who explained to them why she and Foreigner were collaborating with Chameleon.|actual|stated|
+t- no_relation|Teresa was against
+f+ Teresa|other_verb|relented|Teresa was against giving Sable the Infinity Formula, but eventually relented and let her have it.|actual|stated|
+
+@2109 gold: a gem is no doer; the patients of the flash are no doers
+keep
+f- Time Gem|other_verb|appearance
+f- Time Gem|destroyed|-
+t+ no_doer|The fight is interrupted by the sudden appearance of the Time Gem
+t+ no_relation|which appears in Steve's hand only to fracture and break
+f- Avengers|other_verb|caught
+
+@2110 gold: ok
+keep
+
+@2111 gold: the raid on the office is no fight (a building) but has doers
+keep
+t- no_relation|They attacked
+f+ Silver Burper|other_verb|attacked|They attacked Malpractus' office|actual|stated|
+f+ Spider-Ham|other_verb|attacked|They attacked Malpractus' office|actual|stated|
+f+ Sweet Thing|other_verb|attacked|They attacked Malpractus' office|actual|stated|
+
+@2112 gold: the Goblin meets both; the reveal is the Goblin's
+keep
++ Queen Goblin|met|Janine|But swiftly met by Queen Goblin
+f- Mary Jane|revealed|-
+f+ Queen Goblin|revealed|-|but reveals her focus squared on the hard drive.|actual|stated|
+
+@2113 gold: ok
+keep
+
+@2114 gold: verbs as written; the asked permission; the tried protection; learned takes no object (hedged); Messenger's vanishing; the discoveries; the rebellion and foiling are fight and defeat; the rescuer is Sage; nursing is healing; the couple
+keep
+f- Xavier|other_verb|ask
+f+ Xavier|other_verb|asked|he asked her to allow him to research her own files on mutants|actual|stated|
+f+ Moira MacTaggert|other_verb|allow|he asked her to allow him to research her own files on mutants, but she was reluctant to do so.|ordered|stated|Xavier
+f- Gracie Gamble|other_verb|erase
+f+ Gracie Gamble|other_verb|erased|Gracie erased his memories of the event.|actual|stated|
+f- Gracie Gamble|helped|Xavier
+f+ Gracie Gamble|protected|Xavier|in an attempt to protect Xavier, Gracie erased his memories of the event.|attempted|stated|Gracie Gamble
+f- Xavier|learned|Tobias Messenger
+f+ Xavier|learned|-|It was likely during these travels he learned of another telepath named Tobias Messenger|actual|apparent|
+f- Tobias Messenger|other_verb|recruit
+f+ Tobias Messenger|other_verb|recruiting|who was recruiting mutants for his own cause|actual|stated|
+t- no_relation|but Messenger
+f+ Tobias Messenger|other_verb|disappeared|but Messenger disappeared before Charles had the opportunity to meet him.|actual|stated|
+t- no_relation|where he discovered
+f+ Xavier|discovered|-|where he discovered a mysterious walled off city.|actual|stated|
+f- Lucifer|other_verb|enthral
+f+ Lucifer|other_verb|enthralled|he discovered that the city was enthralled by the alien invader known as Lucifer|actual|stated|
+f- Xavier|other_verb|lead
+f+ Xavier|other_verb|led|and led a rebellion against the would-be world conqueror.|actual|stated|
++ Xavier|fought|Lucifer|and led a rebellion against the would-be world conqueror.
++ Xavier|defeated|Lucifer|Although Xavier foiled Lucifer's plans
+f- Xavier|other_verb|call
+f+ Xavier|other_verb|called|Xavier called out mentally for help|actual|stated|
+f- Sage|alias_of|-
++ Sage|saved|Xavier|was rescued by a mutant who carried Xavier to medical aid. She later became known as Sage.
+- Amelia Voght|saved|Xavier
+f+ Amelia Voght|healed|Xavier|He was then nursed back to health and put through physiotherapy with a young American nurse named Amelia Voght.|actual|stated|
+f- Amelia Voght|other_verb|physiotherapy
+f- Amelia Voght|other_verb|push
+f+ Amelia Voght|other_verb|pushed|Amelia pushed Xavier to the limits to rehabilitate himself|actual|stated|
+f+ Amelia Voght|resides_at|Bombay|Three months later the couple moved into an apartment together in Bombay.|actual|stated|
+f+ Xavier|dated|Amelia Voght|Three months later the couple moved into an apartment together in Bombay.|actual|stated|
+f- Xavier|created|Cerebro
+f+ Xavier|other_verb|working|There Xavier began working on schematics for a mutant detecting computer he called Cerebro.|actual|stated|
+
+@2115 gold: unnamed pronouns
+keep
+t- no_relation
+t+ deictic|He then shows her the great evils of the universe: Mephisto, D'Spayre, Dweller-in-Darkness, Shuma-Gorath, Thanos, Satannish and Chthon.
+
+@2116 gold: a reorganised group is no becoming (the vote); the declaration
+keep
+f- Galactic Council|became|Galactic Union
+f+ Galactic Council|other_verb|votes|the Galactic Council votes to officially transition into the Galactic Union.|actual|stated|
+f+ Nova|other_verb|declare|causing Nova to punch him into a wall and declare that they're no longer friends.|actual|stated|
+

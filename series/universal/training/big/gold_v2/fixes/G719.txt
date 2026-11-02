@@ -1,0 +1,140 @@
+@3278 gold: the simulated kill is hypothetical
+keep
+f+ Zombieman|other_verb|kill|Zombieman can find a way to kill Carnage Kabuto with a counter-attack after the monster exhausted himself.|hypothetical|stated|
+
+@3279 gold: speech acts are actual with no asserter; a seeking carries its planned act; Genos' question
+keep
+f- Neo Heroes|other_verb|claim
+f+ Neo Heroes|other_verb|claim|The Neo Heroes claim to have taken a look at the mistakes made by the Hero Association|actual|stated|
+f- Neo Heroes|other_verb|seek
+f+ Neo Heroes|other_verb|seek|seek to correct and improve upon the formula|actual|stated|
+f+ Neo Heroes|other_verb|correct|seek to correct and improve upon the formula|planned|stated|Neo Heroes
+t- deictic|Genos' question is
+t+ no_relation|Genos' question is, if Saitama thinks that they should transfer over to the Neo Heroes, as he feels with a higher standard set, he might become stronger.
+
+@3280 gold: the place is never named in the window (page title only)
+keep
+f- Sweet Mask|resides_at|Talent Agency
+f- Soda Pop Boys|resides_at|Talent Agency
+t+ deictic|Sweet Mask and Soda Pop Boys are among the most famous residents.
+
+@3281 gold: the spy is unnamed (no end); the tried act; the poisoning wound; breaking free
+keep
+- Saitama|met|the spy
+- Tatsumaki|defeated|the spy
+f- the spy|member_of|Blizzard Group
+f- the spy|other_verb|tries
+f+ Apollo|other_verb|leave|Apollo is about to leave with his spy|planned|stated|Apollo
+t+ crowd_end|who is revealed to have infiltrated the Blizzard Group as a fake member.
+t+ crowd_end|The spy desperately tries to flee the scene but the heroine smashes him into the wall, knocking him out.
+f+ Tatsumaki|other_verb|breaks|At the moment of distraction, Tatsumaki breaks free of her restraints|actual|stated|
+f- Apollo|other_verb|tries
+f+ Apollo|other_verb|break|Apollo quickly tries to break the poison pill inside of Fubuki|attempted|stated|Apollo
+f- Tatsumaki|learned|-
+f+ Tatsumaki|other_verb|copying|by copying the wavelength of Apollo's telekinetic signals|actual|stated|
+f+ Tatsumaki|wounded|Apollo|directs it towards Apollo's face, causing him to be badly poisoned|actual|stated|
+
+@3282 gold: fought and lost is one act (A145); a disciple recruited; split the citation
+keep
+- Okamaitachi|fought|Child Emperor
+- Iaian|fought|Child Emperor
+- Bushidrill|fought|Child Emperor
+f- Okamaitachi|joined|Kamikaze
+f+ Kamikaze|recruited|Okamaitachi|As a disciple of Kamikaze, Okamaitachi was recruited after an apple cutting test.|actual|stated|
+t- citation|As Kamikaze has the ability
+t+ capability|As Kamikaze has the ability to tell how a person lived their life by cutting with a sword, he only recruits disciples if they pass his test.
+t+ citation|(Chapter 189 (Online))
+
+@3283 gold: ok
+keep
+
+@3284 gold: ok
+keep
+
+@3285 gold: ok
+keep
+
+@3286 gold: things are no subjects
+keep
+f- colossal structure|other_verb|destabilized
+f- Ferris wheel|other_verb|collapsed
+
+@3287 gold: arriving to bolster is a purpose (A19), no fought; the clone is unnamed; plotting carries its act
+keep
+- Council of Swordmasters|fought|Black Sperm
+- Spring Mustachio|fought|Black Sperm
+f+ Council of Swordmasters|other_verb|arrive|The Council of Swordmasters and Spring Mustachio arrive to bolster their efforts.|actual|stated|
+f+ Spring Mustachio|other_verb|arrive|The Council of Swordmasters and Spring Mustachio arrive to bolster their efforts.|actual|stated|
+f+ Council of Swordmasters|other_verb|bolster|The Council of Swordmasters and Spring Mustachio arrive to bolster their efforts.|planned|stated|Council of Swordmasters
+f+ Spring Mustachio|other_verb|bolster|The Council of Swordmasters and Spring Mustachio arrive to bolster their efforts.|planned|stated|Spring Mustachio
+f- Black Sperm clone|contacted|Homeless Emperor
+t+ crowd_end|Noticing that the heroes are holding their ground and proving challenging, a Black Sperm clone seeks help from the Homeless Emperor,
+t- no_relation|who is casually seated
+f+ Homeless Emperor|other_verb|watching|who is casually seated amidst the rubble, watching the fight unfold.|actual|stated|
+t- no_relation|which frustrates the clone
+t+ crowd_end|which frustrates the clone before it departs.
+f- Homeless Emperor|other_verb|plots
+f+ Homeless Emperor|other_verb|plots|Homeless Emperor then plots to eliminate Black Sperm|actual|stated|
+f+ Homeless Emperor|other_verb|eliminate|Homeless Emperor then plots to eliminate Black Sperm|planned|stated|Homeless Emperor
+t- no_relation|after the monster multiplies
+f+ Homeless Emperor|other_verb|observe|while he continues to observe the battle as Black Sperm struggles against its foes.|actual|stated|
+
+@3288 gold: ok
+keep
+
+@3289 gold: noun object; the claimed power is a capability; inferred integration; the feared death; uncovered lines
+keep
+f- Saitama|other_verb|suggestions
+f- Genos|other_verb|claimed
+t+ capability|At full power, stated by himself, Genos is capable of firing energy beams powerful enough to destroy a giant meteor in one shot.
+f- Kuseno|other_verb|integrated
+f+ Kuseno|other_verb|integrated|indicating that Dr. Kuseno integrated the technology into this upgrade.|actual|apparent|
+f+ Genos|other_verb|killing|exceeding this limit could cause his core to fail and explode, killing him.|hypothetical|stated|Kuseno
+f+ Genos|used|True Spiral Incineration Cannon|With his ten-second last resort attack, True Spiral Incineration Cannon, Genos managed to counter and neutralize one of the fusion monster's largest energy beams.|actual|stated|
+t+ list_header|Monster Association Arc Upgrade:
+t+ attire|What sets this upgrade apart from others even further is its full black appearance,
+t+ capability|In this form, Genos has beam emitters integrated along his arms and shoulders that he can use to attack enemies around him while he is otherwise occupied.
+t- attire|During this ten-second power burst
+t+ capability|During this ten-second power burst, Genos leaves behind a blue glow while moving, resembling a blue dragon.
+t+ citation|(Chapter 95)
+t+ citation|(Chapter 124)
+t+ citation|(Chapter 137)
+
+@3290 gold: King meets Charanko, not Bang; non-verb objects; the demanded act; revealed/learned take no clause object; named lines are no deictic
+keep
+- King|met|Bang
+f+ Charanko|other_verb|inform|runs to inform Bang about it.|actual|stated|
+f+ Garou|other_verb|returning|despite Garou and Sour Face returning to the dojo.|actual|stated|
+f+ Sour Face|other_verb|returning|despite Garou and Sour Face returning to the dojo.|actual|stated|
+f- Garou|other_verb|Charanko
+f+ Garou|other_verb|scares|Garou scares him when he demands that Charanko go buy him some pocari and yakisoba bread|actual|stated|
+f+ Charanko|other_verb|buy|he demands that Charanko go buy him some pocari and yakisoba bread|ordered|stated|Garou
+f- Bang|other_verb|Garou
+f+ Bang|other_verb|chastises|Bang chastises the teenager|actual|stated|
+f+ Garou|other_verb|leave|forces him to leave Charanko alone.|ordered|stated|Bang
+f- King|revealed|Charanko
+f+ King|revealed|-|Having heard directly from King that all his achievements are exaggerated or even completely false|actual|stated|
+f+ Charanko|learned|-|Having heard directly from King that all his achievements are exaggerated or even completely false|actual|stated|
+t- deictic|When Garou goes to work
+f+ Garou|other_verb|work|When Garou goes to work at his part-time job|actual|stated|
+f+ Charanko|other_verb|relaxes|Charanko finally relaxes.|actual|stated|
+t- deictic|Charanko is in great shock.
+
+@3291 gold: the rival is only "their" (page title not in the window); split the citation
+keep
+f- Abandoned Masses|rival_of|Ninja Village
+t+ deictic|The Abandoned Masses is their direct competitor.
+t+ citation|(Webcomic Chapter 130)
+
+@3292 gold: named doers' acts are facts, not no_relation; the child is a description
+keep
+t- no_relation|After Junior Centipede emerged
+f+ Junior Centipede|other_verb|emerged|After Junior Centipede emerged from the ground with Venus Mantrap at a restaurant|actual|stated|
+f+ Venus Mantrap|other_verb|emerged|After Junior Centipede emerged from the ground with Venus Mantrap at a restaurant|actual|stated|
+f+ Junior Centipede|other_verb|grabbed|he grabbed a Hero Association's sponsor's child.|actual|stated|
+t- no_relation|Junior Centipede briefly mentions
+f+ Junior Centipede|other_verb|mentions|Junior Centipede briefly mentions that he is looking for the sponsor of the Hero Association.|actual|stated|
+t- no_relation|He praises Metal Bat
+f+ Junior Centipede|other_verb|praises|He praises Metal Bat for his strength|actual|stated|
+f+ Junior Centipede|other_verb|questions|but still questions Metal Bat about how high Metal Bat is in the food chain.|actual|stated|
+

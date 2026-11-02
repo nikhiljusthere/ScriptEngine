@@ -1,0 +1,171 @@
+@2157 gold: one name (Hammer); deciding is actual with the planned confrontation; the wanted destruction
+keep
+r Justin=>Hammer
+f- War Machine|other_verb|decides
+f+ War Machine|other_verb|decides|War Machine decides to confront Hammer over the issue|actual|stated|
+f+ War Machine|other_verb|confront|War Machine decides to confront Hammer over the issue|planned|stated|War Machine
+f+ Hammer|other_verb|destroy|the Mandarin wanted him to destroy Iron Man to get his armor|planned|stated|Mandarin
+
+@2158 gold: the revealed guise is an alias; defending is protecting
+keep
+f+ Ronin|alias_of|Barton|Barton revealed himself as the current user of the Ronin guise|actual|stated|
+f- Barton|helped|Rick Jones
+f+ Barton|protected|Rick Jones|while trying to defend Rick Jones.|attempted|stated|Barton
+
+@2159 gold: no article on a name; the escape with no captor; a noun is no verb
+keep
+r The Yeti=>Yeti
+f+ Yeti|other_verb|escape|The Yeti managed to escape back to Earth|actual|stated|
+f- Yankee Clipper|other_verb|retirement
+f+ Yankee Clipper|other_verb|remained|Yankee Clipper who was not present during the battle and have apparently remained in retirement.|actual|apparent|
+
+@2160 gold: status is no capability; the sneaking; befriending; the mantle direction
+keep
+t- capability
+t+ no_relation|Once an ordinary rebellious teenager, Rick Jones has become one of the most pivotal figures in superhuman history.
+f+ Rick Jones|other_verb|sneaking|while sneaking into the Gamma Bomb testing site.|actual|stated|
+f+ Rick Jones|friend_of|Captain America|He befriended Captain America|actual|stated|
+f- Rick Jones|alias_of|second Bucky
+f+ Bucky|alias_of|Rick Jones|who briefly trained him as the second Bucky.|actual|stated|
+
+@2161 gold: ok
+keep
+
+@2162 gold: the solicitation hook is production; the shut-down is narrated
+keep
+t- list_header
+t+ production|• Casting a spotlight on young synthezoid Viv Vision!
+f+ Viv Vision|other_verb|shut|After what became of her family, she willingly shut down her emotions|actual|stated|
+t+ production|but does that come with a price to pay?
+
+@2163 gold: a sentence covered by the arrival needs no deictic tag
+keep
+t- deictic
+
+@2164 gold: the window's name (no self alias); an unnamed father; tied with no captor
+keep
+f- Tyler|alias_of|Tyler Bridge
+r Tyler Bridge=>Tyler
+f- father|parent_of|Tyler
+t+ no_doer|and was tied there with his father.
+
+@2165 gold: X-Factor fights as a group with unnamed members; Angel's team; the negated meeting
+keep
++ X-Factor|fought|Marauders|before the separate arrivals of the X-Men and X-Factor fight the group of murderers
+f+ Angel|member_of|X-Factor|X-Factor's Angel is crucified by the Marauders|actual|stated|
+t- no_relation|The two teams
+f+ X-Men|other_verb|meet|The two teams however do not meet during the battle and suffer crippling losses:|actual|denied|
+
+@2166 gold: reading minds is no contact; the future is no place; the possession of Logan is no fight (A116); Apocalypse reigns over Earth
+keep
+f- Jean Grey|contacted|young X-Men's minds
+f+ Jean Grey|other_verb|read|Jean Grey read the young X-Men's minds|actual|stated|
+f- X-Men|located_at|future
+- Venom Symbiote|fought|Logan
+t- no_relation|who now reigned
+f+ Apocalypse|leader_of|Earth|who now reigned supreme over what remained of Earth.|actual|stated|
+
+@2167 gold: one name (Bruce); the heard turn is a rumour (allied_with); the discovery; the rallied leads and the sent deal; a person is no group; Tony's death; forced to flee is the defeat (A74); she reaches Bruce; the belief
+keep
+r Banner=>Bruce
+f- Rogers|joined|Maestro
+f+ Rogers|allied_with|Maestro|whom she have heard to have turned over to Maestro's side.|claimed|rumored|Valkyrie
+f+ Valkyrie|learned|-|Val was relieved to discover that the Captain was only faking submission to Maestro|actual|stated|
+f+ Rogers|other_verb|rallied|Rogers rallied his most trusted lieutenants, such as Korg and Miek, to lead the gladiators against their slave masters.|actual|stated|
+f+ Korg|other_verb|lead|Rogers rallied his most trusted lieutenants, such as Korg and Miek, to lead the gladiators against their slave masters.|ordered|stated|Rogers
+f+ Miek|other_verb|lead|Rogers rallied his most trusted lieutenants, such as Korg and Miek, to lead the gladiators against their slave masters.|ordered|stated|Rogers
+f- Ares|member_of|Maestro
+f+ Ares|other_verb|deal|when Maestro send his champion Ares to deal with them.|ordered|stated|Maestro
++ Ares|defeated|Korg|Ares accomplished this by personally confronting and killing the Captain, forcing the rest to flee and regroup.
++ Ares|defeated|Miek|Ares accomplished this by personally confronting and killing the Captain, forcing the rest to flee and regroup.
+f+ Tony|dies|-|and revealed that before Tony's death he and Bruce were working on a Gamma Arc Reactor|actual|stated|
++ Valkyrie|met|Bruce|Rhodey helped Valkyrie locate Bruce within the Gamma Desert, where she saved Banner from Gamma-mutated creatures
+f+ Bruce|suspected|-|believing it to be their best chance against Maestro.|actual|stated|
+
+@2168 gold: the Aqueos and the Atlanteans are peoples (crowd_end); the father; the Tridents' tried defence and members; the patients of a conversion; Namor's spell; a garbage alias
+keep
+f- Aqueos|helped|Xarus
+f- Aqueos|allied_with|surface vampires
+f- Aqueos|attacked|Utopia
+f- Aqueos|attacked|New Atlantis
+f- Aqueos|member_of|Atlantis
+f- Atlantis|alias_of|emissary
+t- no_relation|attended the vampire
+t+ crowd_end|The Aqueos, represented by an emissary known as "Atlantis", attended the vampire gathering, which takes place once every century.
+t+ crowd_end|They helped Xarus assassinate his father, Dracula.
+f+ Dracula|parent_of|Xarus|They helped Xarus assassinate his father, Dracula.|actual|stated|
+t+ crowd_end|They allied themselves with the surface vampires and helped in the attack of Utopia, by attacking New Atlantis which supports the island.
+t- capability
+t+ crowd_end|The Atlanteans try to defend their home
+f+ Tridents|other_verb|defend|but even their elite team the Tridents were unsuccessful.|attempted|stated|Tridents
+f- Husni|other_verb|converted
+f- Husam|other_verb|converted
+f+ Husni|member_of|Tridents|Many of the members such as Husni and Husam were converted and joined the invasion.|actual|stated|
+f+ Husam|member_of|Tridents|Many of the members such as Husni and Husam were converted and joined the invasion.|actual|stated|
+f- Namor|destroyed|Aqueos
+f+ Namor|other_verb|cast|most of the Aqueos were destroyed when Namor cast a ritual spell that added excess salt to the waters, purging them.|actual|stated|
+t- no_relation|again fell
+t+ crowd_end|The remaining Aqueos again fell under the detante of the Shallow Peace, while being incorporated within Atlantis' dominion.
+
+@2169 gold: the Shi'ar are a race (no end); one asserter per row; the Starjammers save and meet them as a group (members unnamed)
+keep
+- Shi'ar Empire|captured|Jean Grey
+- Shi'ar Empire|fought|Guardians of the Galaxy
+- Shi'ar Empire|fought|X-Men
+f- Shi'ar Empire|other_verb|put
+t+ crowd_end|who had abducted the Jean Grey of the past to put her on trial for the crimes of the Phoenix, they were discovered and attacked.
+f- Guardians of the Galaxy|other_verb|follow
+f- X-Men|other_verb|follow
+f+ Guardians of the Galaxy|other_verb|follow|When the Guardians of the Galaxy and the past X-Men tried to follow the Shi'ar|attempted|stated|Guardians of the Galaxy
+f+ X-Men|other_verb|follow|When the Guardians of the Galaxy and the past X-Men tried to follow the Shi'ar|attempted|stated|X-Men
+- Corsair|saved|Guardians of the Galaxy
+- Corsair|saved|X-Men
++ Starjammers|saved|Guardians of the Galaxy|they ran across the Starjammers, who saved them from the Shi'ar
++ Starjammers|saved|X-Men|they ran across the Starjammers, who saved them from the Shi'ar
++ Guardians of the Galaxy|met|Starjammers|During the battle, they ran across the Starjammers
++ X-Men|met|Starjammers|During the battle, they ran across the Starjammers
+t- deictic
+
+@2170 gold: the jealousy has a doer; a codename is alias_of (the mutation is other_verb); pit sparring is no fight (A71)
+keep
+t- no_relation|though secretly
+f+ Blonsky|other_verb|harboring|though secretly harboring jealousy about how the Hulk was a world-renowned superhero|actual|stated|
+f- Blonsky|transformed_into|Abomination
+f+ Abomination|alias_of|Blonsky|By 2024, the Abomination - having further mutated to sport fin-like ears and a dorsal ridge|actual|stated|
+f+ Blonsky|other_verb|mutated|having further mutated to sport fin-like ears and a dorsal ridge|actual|stated|
+- Wong|fought|Blonsky
+f+ Wong|other_verb|sparred|who sparred with him in the Golden Dagger Club's fighting pits.|actual|stated|
+
+@2171 gold: described towers and statues; "at her side but not on it" is no alliance; crowds (mercenaries, mutants, refugees); Storm's base; the doer-less defeats; attempt verb; a negation keeps its verb
+keep
+f- Genesis|created|ten towers
+f+ Genesis|other_verb|create|Genesis used her mutant powers to create ten towers that functioned as both her castle and defense.|actual|stated|
+f- Lactuca|allied_with|Genesis
+t+ no_relation|Lactuca was at Genesis’ side but not on it.
+f- Mercenaries of Arakko|learned|-
+f- Mercenaries of Arakko|other_verb|chose
+t+ crowd_end|Mercenaries of Arakko heard about the conflict.
+t+ crowd_end|They chose sides on the principles of Genesis and Storm.
+f- mutants from Earth|resides_at|Port Prometheus
+t+ crowd_end|Fearful and hungry mutants from Earth exiled by Orchis remained here.
+f+ Storm|located_at|Port Prometheus|Port Prometheus also served as the base from where Storm worked with Brotherhood of Arakko|actual|stated|
+f- refugees|other_verb|faced
+t+ crowd_end|Therefore these refugees faced discrimination from arakki.
+t+ no_doer|and they were repeatedly defeated.
+f- Genesis Horde|other_verb|tried
+f+ Genesis Horde|other_verb|conquer|Genesis Horde tried to conquer the Valley of the Fallen|attempted|stated|Genesis Horde
+f- Sobunar|other_verb|offered
+f+ Sobunar|other_verb|offered|as Sobunar hadn’t offered the Sea to the war.|actual|denied|
+f- Storm|destroyed|statues
+f+ Storm|other_verb|destroying|when Storm blocked their way by destroying statues of Apocalypse and Genesis|actual|stated|
+t+ crowd_end|while others fled when Storm blocked their way
+
+@2172 gold: a kind is no alias (apposition); a noun is no verb; the madness has no doer
+keep
+f- Star Child|also_known_as|Celestial
+t+ apposition|a unique child Celestial
+f- Star Child|other_verb|conclusion
+f+ Star Child|other_verb|came|he came to the same conclusion|actual|stated|
+f- Star Child|other_verb|driven
+t+ no_doer|and was driven mad.
+

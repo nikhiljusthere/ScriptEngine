@@ -1,0 +1,137 @@
+@1907 gold: things are no doers; Turk's walk has a doer; a noun is no verb
+keep
+t- deictic|Not long afterwards
+t+ no_relation|Not long afterwards, three limousines stop in front of the park.
+t+ no_relation|The ship of the former Guardians of the Galaxy also arrives around this time, and lands in the middle of the park.
+t- deictic|Turk and his people
+f+ Turk Barrett|other_verb|walk|Turk and his people walk up the steps of the castle|actual|stated|
+f- Rocket|other_verb|threats
+f- Groot|other_verb|threats
+
+@1908 gold: a described snowman is no created object; webs are no object
+keep
+f- Spider-Man|created|giant snowman
+f- Hulk|created|giant snowman
+f+ Spider-Man|other_verb|create|Spider-Man and Hulk work together to create a giant snowman using their special heroic skills.|actual|stated|
+f+ Hulk|other_verb|create|Spider-Man and Hulk work together to create a giant snowman using their special heroic skills.|actual|stated|
+f- Spider-Man|used|webs
+
+@1909 gold: the list line states her former memberships
+keep
+f+ Talia Kruma|member_of|Whiz Kids|Talia Kruma D.Sc PhD - Former member of the Whiz Kids and Stark West|actual|stated|
+f+ Talia Kruma|member_of|Stark West|Talia Kruma D.Sc PhD - Former member of the Whiz Kids and Stark West|actual|stated|
+
+@1910 gold: noticing is no named discovery; an offer to a thing is no handing; the informing and surprising
+keep
+f+ Skull|other_verb|informs|He informs Cap that he will be his prisoner.|actual|stated|
+f- Cap|discovered|Cosmic Cube
+f+ Cap|other_verb|notices|Cap notices the Cosmic Cube|actual|stated|
+f- Cap|handed|Hostess Twinkies
+f+ Cap|other_verb|offers|He offers a meal of Hostess Twinkies to the sentient Cube, surprising the Skull.|actual|stated|
+
+@1911 gold: a noun is no verb
+keep
+f- Magneto|other_verb|humanity
+
+@1912 gold: the Six as a group end; regaining consciousness is awakened; the shot is the killing (no attacked twin); MJ's ram is a fight; garbage verbs; a truck is no doer; the mortal wound
+keep
++ Peter|fought|Six|Peter fought Norman Osborn and the Six
+f- Peter|other_verb|regain
++ Peter|awakened|-|After managing to regain consciousness and dress his wound with webbing
+f+ Peter|other_verb|dress|dress his wound with webbing|actual|stated|
+f- Aunt May|attacked|Electro
++ Mary Jane|fought|Norman Osborn|Mary Jane rammed a truck into him, saving Peter.
+f- Peter|other_verb|truck
+f+ Peter|other_verb|smashed|lifted the truck and smashed it onto Osborn.|actual|stated|
+f- truck|other_verb|exploded
+f- Peter|other_verb|lawn
+t+ no_doer|However, the truck then exploded in front of Peter, sending him flying towards a nearby lawn and impacting hard against it.
+f+ Peter|wounded|-|served to grievously injure Peter even further, mortally wounding him.|actual|stated|
+
+@1913 gold: ok
+keep
+
+@1914 gold: an evolving kind is no becoming; a description object; an epithet is no alias
+keep
+f- Ennilux|became|cross between the mafia and a corporation
+f- Capo|used|powers
+f- demon God|alias_of|Chthon
+
+@1915 gold: the defeat has no stated doer (A8); the patient of attaching is no doer
+keep
+- Hawkeye|defeated|Frightful Four
+f- Frightful Four|other_verb|attached
+t+ no_doer|They are easily defeated and attached to a wall
+
+@1916 gold: a hero identity is alias_of; the planned capture; the codename in parentheses; Kamala's internship
+keep
+f- Norman|disguise_as|Gold Goblin
+f+ Gold Goblin|alias_of|Norman|Norman suits up as Gold Goblin again|actual|stated|
+f+ Norman|other_verb|capture|Norman suits up as Gold Goblin again to capture Jack O'Lantern (Owen Ward)|planned|stated|Norman
+f+ Jack O'Lantern|alias_of|Owen Ward|Jack O'Lantern (Owen Ward)|actual|stated|
+t- no_relation|As Kamala Khan
+f+ Kamala Khan|other_verb|continues|As Kamala Khan continues her Oscorp internship|actual|stated|
+t+ no_relation|Nakia and Bruno are concerned for her as Kamala is uncertain for her own career path.
+
+@1917 gold: an unnamed killer is no end; a site is no subject; the hook is production
+keep
+f- the killer|other_verb|cornered
+t+ no_doer|The killer has been cornered
+f- nuclear testing site|located_at|Nevada
+t- deictic
+t+ production|but will it be who they expect?
+
+@1918 gold: ok
+keep
+
+@1919 gold: doer-less passives; Janet infects her husband; a virus is no doer; a people is no end
+keep
+f- Janet Van Dyne|other_verb|infected
+t+ no_doer|until Janet Van Dyne was infected by a virus from the Quantum Realm.
+f+ Janet Van Dyne|other_verb|infected|Janet infected her husband Hank Pym|actual|stated|
+f+ Janet Van Dyne|married|Hank Pym|Janet infected her husband Hank Pym|actual|stated|
+f- virus|other_verb|spread
+t+ no_doer|which resulted in the spread of the virus around the world.
+f- Namor|other_verb|exposed
+f- Talokanil|other_verb|exposed
+t+ no_doer|Namor and Talokanil were exposed to the quantum virus
+f- Talokanil|transformed_into|zombie
+f- Talokanil|other_verb|feed
+
+@1920 gold: a solicitation blurb is production
+keep
+t- deictic
+t- capability
+t- no_relation
+t+ production|Justin’s day out!
+t+ production|Kid Juggernaut may be unstoppable, but it turns out he’s not unCRUSHable.
+t+ production|Too bad the object of his affection is obsessed with hot new antihero Mysteriant.
+t+ production|When is Justin gonna take his armor down and ask Aaron out already?!
+
+@1921 gold: the Beyonders are a race; annihilated named beings die (race doer, no killer row); a sliver is no subject; discovered takes no object; attempt verb; gave takes the recipient; a mantle is alias_of
+keep
+t+ crowd_end|As the Multiverse was collapsing from the incursions, many entities found the Beyonders, the tremendously powerful beings from beyond the Multiverse who were destroying the Multiverse as part of a grand experiment.
+f- Celestials|other_verb|annihilated
+f- Eternity|other_verb|annihilated
+f- Infinity|other_verb|annihilated
+f- Master Order|other_verb|annihilated
+f- Lord Chaos|other_verb|annihilated
+f- In-Betweener|other_verb|annihilated
+f+ Eternity|dies|-|Even cosmic beings like the Celestials, Eternity, Infinity, Master Order, Lord Chaos, and the In-Betweener were annihilated by the Beyonders in every reality.|actual|stated|
+f+ Infinity|dies|-|Even cosmic beings like the Celestials, Eternity, Infinity, Master Order, Lord Chaos, and the In-Betweener were annihilated by the Beyonders in every reality.|actual|stated|
+f+ Master Order|dies|-|Even cosmic beings like the Celestials, Eternity, Infinity, Master Order, Lord Chaos, and the In-Betweener were annihilated by the Beyonders in every reality.|actual|stated|
+f+ Lord Chaos|dies|-|Even cosmic beings like the Celestials, Eternity, Infinity, Master Order, Lord Chaos, and the In-Betweener were annihilated by the Beyonders in every reality.|actual|stated|
+f+ In-Betweener|dies|-|Even cosmic beings like the Celestials, Eternity, Infinity, Master Order, Lord Chaos, and the In-Betweener were annihilated by the Beyonders in every reality.|actual|stated|
+f- sliver of the fallen Tribunal|located_at|Moon
+t+ no_relation|Upon its death, a sliver of the fallen Tribunal landed on the Moon of each reality.
+f- Uatu|discovered|Tribunal's corpse
+f- Iron Man|discovered|Tribunal's corpse
+f+ Uatu|discovered|-|On Earth-616, Uatu and Iron Man discovered the Tribunal's corpse|actual|stated|
+f+ Iron Man|discovered|-|On Earth-616, Uatu and Iron Man discovered the Tribunal's corpse|actual|stated|
+f- Illuminati|other_verb|trying
+f+ Illuminati|other_verb|find|while the Illuminati were trying to find their own solution for the incursions.|attempted|stated|Illuminati
+f- Above-All-Others|gave|title and duties
+f+ Above-All-Others|gave|Adam Warlock|Adam Warlock of Earth-19141 was given by the Above-All-Others the title and duties of the Living Tribunal|actual|stated|
+f- Adam Warlock|became|Living Tribunal
+f+ Living Tribunal|alias_of|Adam Warlock|Adam Warlock of Earth-19141 was given by the Above-All-Others the title and duties of the Living Tribunal, becoming its replacement.|actual|stated|
+

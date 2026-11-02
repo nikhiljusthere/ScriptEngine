@@ -1,0 +1,129 @@
+@2091 gold: joining an unnamed cult has named doers; the unnamed mother and the cultists are crowds; a description is no alias; both planned the ceremony; the wish to save
+keep
+t- no_relation|Barbara and Jack joined
+f+ Barbara|other_verb|joined|Barbara and Jack joined a cult worshiping the Undying Ones led by a cult leader named Van Nyborg|actual|stated|
+f+ Jack|other_verb|joined|Barbara and Jack joined a cult worshiping the Undying Ones led by a cult leader named Van Nyborg|actual|stated|
+t- no_doer|unaware that they
+t+ crowd_end|unaware that they were manipulated into joining the cult by her mother
+f+ Jack|other_verb|perform|they were to perform the ceremony to bring the Undying Ones to Earth|planned|stated|Jack
+f- Nightcrawler|also_known_as|Guardian
+f+ Barbara|other_verb|wished|When Barbara began to have second thoughts and wished to save the Hulk|actual|stated|
+f+ Barbara|other_verb|save|When Barbara began to have second thoughts and wished to save the Hulk|planned|stated|Barbara
+t- no_relation|the cultists threw
+t+ crowd_end|the cultists threw her into the dimension with the Hulk.
+
+@2092 gold: ok
+keep
+
+@2093 gold: doer-less passives; the former Thunderbolts are a crowd; a described team; the wish; an interview is production; no pipe in quotes
+keep
+f- Tony Stark|other_verb|placed
+t+ no_doer|The blame for the invasion was placed on the shoulders of Tony Stark
+f- Osborn|other_verb|assembled
+t+ no_doer|A new roster led by Osborn was assembled to act as the Initiative's Avengers.
+t+ crowd_end|The Dark Avengers were formed mostly by former Thunderbolts adopting classic mantles of the Avengers.
+f- Hank Pym|created|a team
+f+ Hank Pym|other_verb|creating|manipulated the real Hank Pym into creating a team from the ashes of the disbanded team of Avengers.|actual|stated|
+f- Loki|other_verb|wished
+f+ Loki|other_verb|wished|As an ally of Osborn, Loki wished to cause disorder with his actions.|actual|stated|
+f+ Loki|other_verb|cause|Loki wished to cause disorder with his actions.|planned|stated|Loki
+f- Brian Michael Bendis|other_verb|said
+t- list_header
+t+ list_header|Equipment =
+t+ list_header|Transportation = Avengers Quinjet
+t+ list_header|Weapons =
+t+ list_header|Notes =
+t+ production|Trivia = * An interview with series writer Brian Michael Bendis on the Word Balloon Podcast said that the roster revealed in Wizard was not entirely accurate.
+
+@2094 gold: the place of the encounter
+keep
+f+ Runciter|located_at|S.H.I.E.L.D. Headquarters|Runciter briefly encountered Countess Valentina Allegra de Fontaine at S.H.I.E.L.D. Headquarters in Manhattan.|actual|stated|
+
+@2095 gold: her surfacing has a doer; the speculated restorers are hypothetical doers
+keep
+t- no_relation|another woman named
+f+ Barbara Norriss|other_verb|surfaced|another woman named Barbara Norriss has surfaced who bears a striking resemblance to the previous|actual|stated|
+f- Barbara Norriss|other_verb|restored
+f+ Love|other_verb|restored|one could speculate that she was restored to life either by Love or by Odin.|hypothetical|apparent|Love
+f+ Odin|other_verb|restored|one could speculate that she was restored to life either by Love or by Odin.|hypothetical|apparent|Odin
+
+@2096 gold: the bartender, the woman and the man are never named
+keep
+f- Bartender|other_verb|flirts
+f- Woman|other_verb|undergoing
+t+ crowd_end|The bartender flirts with him, telling him that she gets off at five.
+t+ deictic|He's interested, but he gets a call from his ear piece telling him that a video is ready.
+t+ deictic|He goes to the local sex shop and gets a private booth.
+t+ deictic|Putting on his specially polarized lenses he is able to see the video hidden beneath an adult film.
+t+ crowd_end|It's the same woman in the previous video undergoing a sophisticated form of plastic surgery.
+t+ crowd_end|The man copies the video to a disc and destroys the film before leaving.
+
+@2097 gold: a noun is no verb
+keep
+f- Captain America|other_verb|donations
+f+ Captain America|other_verb|took|Captain America was one of many superheroes who took part by making donations|actual|stated|
+
+@2098 gold: Strange's fight with an unnamed alien has a doer
+keep
+t- no_relation|Doctor Strange was first seen
+f+ Doctor Strange|other_verb|fighting|Doctor Strange was first seen fighting an alien in front of Midtown High|actual|stated|
+f+ Doctor Strange|located_at|Midtown High|Doctor Strange was first seen fighting an alien in front of Midtown High|actual|stated|
+
+@2099 gold: no pipe in quotes, one line per tag
+keep
+t- list_header
+t- production
+t+ list_header|LegacyNumber = Iron Man Vol 1 560
+t+ list_header|Image1 = Superior Iron Man Vol 1 2.jpg
+t+ list_header|Image2 = Superior Iron Man Vol 1 2 Textless.jpg
+t+ list_header|Image2_Text = Textless
+t+ list_header|Image3 = Superior Iron Man Vol 1 2 Noto Variant.jpg
+t+ list_header|Image3_Text = Noto Variant
+t+ list_header|Image4 = Superior Iron Man Vol 1 2 Noto Variant Textless.jpg
+t+ list_header|Image4_Text = Noto Variant Textless
+t+ production|ReleaseDate = November 26, 2014
+t+ production|Month = January
+t+ production|Year = 2015
+t+ production|MarvelUnlimitedID = 51087
+t+ list_header|Event1 = Avengers NOW!
+t+ production|Editor-in-Chief = Axel Alonso
+t+ production|Image1_Artist1 = Mike Choi
+t+ list_header|BlockQuote = {{conversation
+t+ dialogue|That's it.
+
+@2100 gold: ok
+keep
+
+@2101 gold: ok
+keep
+
+@2102 gold: the conference place; a described serum is no created object
+keep
+f+ Herbert Wyndham|located_at|Geneva|Later, when he attended a conference in Geneva|actual|stated|
+f- Herbert Wyndham|created|serum
+f+ Herbert Wyndham|other_verb|created|As a result, he created a serum that allowed for genetic alteration|actual|stated|
+
+@2103 gold: one name; selling is no gift to a recipient; the formers are members; the planned betrayal; an adverb is no verb; the tried break-out and the learning; disposing of a survivor is a defeat (A38); joining him where he is is a meeting; a noun is no verb
+keep
+r Jarvis=>Edwin Jarvis
+t- attire
+t+ apposition|a villain with no face and no identity
+f- Edwin Jarvis|gave|blueprints
+f+ Edwin Jarvis|other_verb|selling|The Crimson Cowl maneuvered the Avengers' butler Edwin Jarvis into selling them the blueprints to the Avengers' security systems|actual|stated|
+f- Masters of Evil|other_verb|formed
+f+ Radioactive Man|member_of|Masters of Evil|The revived group was formed by Radioactive Man, the Melter, the vicious Whirlwind, the master of sound Klaw and the new Black Knight|actual|stated|
+f+ Melter|member_of|Masters of Evil|The revived group was formed by Radioactive Man, the Melter, the vicious Whirlwind, the master of sound Klaw and the new Black Knight|actual|stated|
+f+ Whirlwind|member_of|Masters of Evil|The revived group was formed by Radioactive Man, the Melter, the vicious Whirlwind, the master of sound Klaw and the new Black Knight|actual|stated|
+f+ Klaw|member_of|Masters of Evil|The revived group was formed by Radioactive Man, the Melter, the vicious Whirlwind, the master of sound Klaw and the new Black Knight|actual|stated|
+f+ Black Knight|joined|Masters of Evil|The new Black Knight had only joined the group to betray them to the Avengers|actual|stated|
+f+ Black Knight|other_verb|betray|The new Black Knight had only joined the group to betray them to the Avengers|planned|stated|Black Knight
+f- Edwin Jarvis|other_verb|hypnotically
+f+ Avengers|other_verb|break|As the Avengers attempted to break free from their opponents|attempted|stated|Avengers
+f+ Avengers|learned|-|they learned Jarvis had been hypnotically suggested to assume the Crimson Cowl identity.|actual|stated|
+- Ultron-5|fought|Edwin Jarvis
++ Ultron-5|defeated|Edwin Jarvis|Ultron-5 disposed of Jarvis, who managed to survive
+f- Ultron-5|other_verb|disposed
++ Edwin Jarvis|met|Black Knight|who managed to survive and join the Black Knight to initiate the Avengers' rescue.
+f- Edwin Jarvis|other_verb|initiate
+f- Liberators|other_verb|dissolution
+

@@ -1,0 +1,103 @@
+@1832 gold: no pipe inside tag quotes; credits are production
+keep
+t- list_header||
+t- production||
+t+ list_header|Image = Iron Man The Armor Wars TPB Vol 1 1.jpg
+t+ list_header|Name = Armor Wars I
+t+ list_header|Aliases = Stark Wars
+t+ list_header|Reality = Earth-616
+t+ list_header|Locations =
+t+ list_header|Protagonists = Iron Man
+t+ list_header|Antagonists =
+t+ list_header|Others =
+t+ production|Creators = Bob Layton; David Michelinie
+t+ production|First = Iron Man Vol 1 225
+t+ production|Last = Iron Man Vol 1 232
+t+ citation|Synopsis = Iron Man #225-Vol 1 232
+
+@1833 gold: the real names the window gives (Jen, Patsy, Pym) with their codenames as aliases; a described invention; garbage object; realizing = learned; hiding in a described yard; agreeing carries the planned case; the wished search; the denied order; the planned meeting
+keep
+r She-Hulk=>Jen
+r Hellcat=>Patsy
+r Giant-Man=>Pym
+f+ She-Hulk|alias_of|Jen|The She-Hulk and Hellcat are visiting R&R&R&R Labs, that shares workspace in the same building as Jen's law firm.|actual|stated|
+f+ Hellcat|alias_of|Patsy|She-Hulk and Patsy quickly realize that Reza had shrunk himself|actual|stated|
+f+ Giant-Man|alias_of|Pym|She puts in a call to Giant-Man and explains the circumstances. Pym tells her not to do anything|actual|stated|
+f- Rufus Randall|created|invention
+f+ Rufus Randall|other_verb|shows|There their friend Rufus Randall shows off his latest invention, a new more affordable method of shrinking objects.|actual|stated|
+f- Rufus Randall|other_verb|partner
+f+ Rufus Randall|other_verb|explains|Rufus explains that the only problem that he has right now is convincing his partner, Reza, to sell the invention.|actual|stated|
+f+ Rufus Randall|other_verb|know|Unfortunately, he doesn't know where Reza had disappeared.|actual|denied|
+f- Jen|discovered|Reza
+f- Patsy|discovered|Reza
+f+ Jen|learned|-|She-Hulk and Patsy quickly realize that Reza had shrunk himself|actual|stated|
+f+ Patsy|learned|-|She-Hulk and Patsy quickly realize that Reza had shrunk himself|actual|stated|
+f+ Rufus Randall|other_verb|search|and Rufus wants them to search for him.|planned|stated|Rufus Randall
+f- Reza|located_at|his back yard
+f+ Reza|other_verb|hid|Reza shrank himself and the plans and hid somewhere in his back yard.|actual|stated|
+f- Jen|other_verb|take
+f+ Jen|other_verb|agrees|She-Hulk agrees to take the case but insists on bringing in an expert on shrinking to help them out.|actual|stated|
+f+ Jen|other_verb|take|She-Hulk agrees to take the case|planned|stated|Jen
+f+ Jen|other_verb|do|Pym tells her not to do anything|ordered|denied|Pym
+f- Pym|other_verb|plans
+f+ Pym|other_verb|meet|he will meet with them shortly after he finishes installing a wind turbine off the coast of Long Island.|planned|stated|Pym
+
+@1834 gold: duplicates are not the people; the creation
+keep
+f- Arno|created|Howard Stark
+f- Arno|created|Maria Stark
+f+ Arno|other_verb|create|Arno mentions using the Maria Stark Foundation restructuring pods to create duplicates of Howard and Maria Stark.|actual|stated|
+
+@1835 gold: the narrated tastes have doers
+keep
+t- no_relation|While Phoebe and Mindee
+f+ Phoebe|other_verb|enjoy|While Phoebe and Mindee enjoy Glee, Celeste appears to find the show vapid and shallow.|actual|stated|
+f+ Mindee|other_verb|enjoy|While Phoebe and Mindee enjoy Glee, Celeste appears to find the show vapid and shallow.|actual|stated|
+f+ Celeste|other_verb|find|Celeste appears to find the show vapid and shallow.|actual|apparent|
+
+@1836 gold: ok
+keep
+
+@1837 gold: a promotional blurb is production
+keep
+t- list_header|The Infinity Comics
+t+ production|The Infinity Comics adaptation of ROCKET RACCOON & GROOT (2016) #10! Get ready for an explosive series finale!
+
+@1838 gold: one name (Daniel Rand, fullest; Ward Meachum) with Iron Fist as his alias; partnering is an alliance; the tried kill; Ward teams up too; the ordered investigation and the defied attack; the planned work and kill; Ward watches too
+keep
+f- Daniel Rand|transformed_into|Iron Fist
+r Iron Fist=>Daniel Rand
+r Ward=>Ward Meachum
+f+ Iron Fist|alias_of|Daniel Rand|When Rand changed into his identity of Iron Fist|actual|stated|
+f- Joy|other_verb|partnering
+f+ Joy|allied_with|Ward Meachum|Partnering with her uncle Ward Meachum, she tried for years to avenge her father and kill Iron Fist.|actual|stated|
+f+ Joy|other_verb|kill|she tried for years to avenge her father and kill Iron Fist.|attempted|stated|Joy
+f+ Ward Meachum|allied_with|Steel Serpent|They teamed up with Steel Serpent who would work for them as long as he could get revenge on Iron Fist.|actual|stated|
+f+ Davos|other_verb|investigate|Joy asked Davos to investigate her uncle Ward|ordered|stated|Joy
+f+ Davos|other_verb|work|he complied as he agreed to work for them until he killed Danny Rand.|planned|stated|Davos
+f+ Davos|other_verb|killed|he agreed to work for them until he killed Danny Rand.|planned|stated|Davos
+f+ Steel Serpent|other_verb|defied|she was brought to safety by Steel Serpent, who defied her orders to attack Iron Fist.|actual|stated|
+f+ Steel Serpent|other_verb|attack|who defied her orders to attack Iron Fist.|ordered|denied|Joy
+f+ Ward Meachum|other_verb|watched|They watched the battle between Iron Fist and Radion on television, hoping he would survive so they could get their revenge.|actual|stated|
+
+@1839 gold: a described countermeasure; the missile is no doer
+keep
+f- Bruce Banner|built|countermeasure
+f+ Bruce Banner|other_verb|built|was intercepted by a countermeasure built and launched by Dr. Bruce Banner and ultimately destroyed.|actual|stated|
+f- missile|other_verb|exploded
+
+@1840 gold: no pipe inside tag quotes; credits and the story title are production; the synopsis line is covered; Gwen's death; the dismissal
+keep
+t- list_header||
+t+ list_header|Speaker = Spider-Man
+t+ production|StoryTitle1 = ...And The Wind Cries: Cyclone!
+t+ production|Writer1_1 = Gerry Conway
+t+ production|Penciler1_1 = Ross Andru
+t+ production|Inker1_1 = Frank Giacoia
+t+ production|Inker1_2 = Dave Hunt
+t+ production|Colorist1_1 = Janice Cohen
+t+ production|Letterer1_1 = Artie Simek
+t+ production|Editor1_1 = Len Wein
+f+ Spider-Man|other_verb|dismisses|but dismisses it only as guilt brought on over her death.|actual|stated|
+f+ Gwen Stacy|dies|-|but dismisses it only as guilt brought on over her death.|actual|stated|
+

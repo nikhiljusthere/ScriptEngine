@@ -1,0 +1,121 @@
+@3735 gold: following them; "one of them" is a partitive crowd
+keep
+f+ Conduit|other_verb|followed|Returning to the future, Conduit and Triptych followed Stryfe to Clan Chosen's secret base|actual|stated|
+f+ Triptych|other_verb|followed|Returning to the future, Conduit and Triptych followed Stryfe to Clan Chosen's secret base|actual|stated|
+t- no_doer|One of them attacked
+t+ crowd_end|One of them attacked Flintshard
+
+@3736 gold: a confrontation with no stated attack is met (A6); article; the named heroes line is covered
+keep
+- Doctor Strange|fought|Nick Fury
+- the Black Panther|fought|Nick Fury
+- Captain America|fought|Nick Fury
++ Doctor Strange|met|Nick Fury|Some of these heroes included Doctor Strange, the Black Panther and the Avenger Captain America.
++ Black Panther|met|Nick Fury|Some of these heroes included Doctor Strange, the Black Panther and the Avenger Captain America.
++ Captain America|met|Nick Fury|Some of these heroes included Doctor Strange, the Black Panther and the Avenger Captain America.
+t- list_header|Some of these heroes
+
+@3737 gold: "their" only
+keep
+t+ deictic|Their combined forces defeated the Red Lord and preserved Avalon's natural order.
+
+@3738 gold: the stated task is an act, not a capability
+keep
+t- capability|They were responsible
+f+ Chamber Nocturne|other_verb|firing|They were responsible for firing the thrusters of the Narthex, using their powers to propel it through space.|actual|stated|
+
+@3739 gold: one name (Thing, Valeria Richards); the unnamed rest keeps the Fantastic Four as an end; the waking
+keep
+r The Thing=>Thing
+r Valeria=>Valeria Richards
++ Nightmare|sealed|Fantastic Four|The Thing and the rest of the Fantastic Four have been trapped by Nightmare
++ Spider-Man|saved|Fantastic Four|who helped awake the Fantastic Four from the nightmare.
++ Moon Girl|saved|Fantastic Four|who helped awake the Fantastic Four from the nightmare.
++ Fantastic Four|awakened|-|who helped awake the Fantastic Four from the nightmare.
+
+@3740 gold: Kang's death by named doers; realizing is learned; calling a council carries its act; the trio's watch
+keep
++ Ant-Man|killed|Kang the Conqueror|told the two about Kang's demise at the hands of Ant-Man and Wasp.
++ Wasp|killed|Kang the Conqueror|told the two about Kang's demise at the hands of Ant-Man and Wasp.
+f- Immortus|other_verb|Realizing
+f+ Immortus|learned|-|Realizing that more people were beginning to learn more about the Multiverse and that could potentially lead to the destruction of their dynasty|actual|stated|
+f- Immortus|other_verb|called
+f+ Immortus|other_verb|called|Immortus called upon the Council of Kangs to discuss the impending threat.|actual|stated|
+f+ Council of Kangs|other_verb|discuss|Immortus called upon the Council of Kangs to discuss the impending threat.|ordered|stated|Immortus
+t- no_relation|As the trio observed
+f+ Centurion|other_verb|observed|As the trio observed the branching timelines|actual|stated|
+f+ Immortus|other_verb|observed|As the trio observed the branching timelines|actual|stated|
+f+ Rama-Tut|other_verb|observed|As the trio observed the branching timelines|actual|stated|
+t+ crowd_end|more and more Variants entered the stadium.
+t- list_header|* The Multiversal War
+t+ no_relation|* The Multiversal War was presumably occured on several realities in the Multiverse, according to what He Who Remains and Kang the Conqueror said.
+
+@3741 gold: embracing a cause; description objects; assuring and comforting are acts; a Dark God is no alias; landing; vowing is actual; Phoenix incites fear
+keep
+f- Jean Grey|other_verb|fixing
+f+ Jean Grey|other_verb|embraced|Wielding the unlimited powers of the Phoenix, Jean Grey embraced fixing the universe as her cause.|actual|stated|
+f- Jean Grey|protected|millions of lives
+f+ Jean Grey|other_verb|preventing|She went to the stars preventing disasters to save millions of lives.|actual|stated|
+f- Jean Grey|other_verb|be
+f+ Jean Grey|other_verb|comforted|Grey comforted him, assuring him she would not be in the cosmos forever|actual|stated|
+f+ Jean Grey|other_verb|assuring|Grey comforted him, assuring him she would not be in the cosmos forever|actual|stated|
+f- Jean Grey|protected|prisoners
+f- Perrikus|also_known_as|Dark God
+f- Perrikus|located_at|isolated planet
+f+ Perrikus|other_verb|landed|He landed on an isolated planet|actual|stated|
+f- Adani|other_verb|vowed
+f+ Adani|other_verb|vowed|and vowed for revenge.|actual|stated|
+t- no_relation|Across galaxies
+f+ Jean Grey|other_verb|incited|Across galaxies, despite her benevolent intentions, Phoenix incited fear among those who knew about her reputation.|actual|stated|
+
+@3742 gold: the Birdmen are a race (no end); the visitors' own act
+keep
+f- Zephyr Jones|gave|Birdmen
+f- Corky Grogan|gave|Birdmen
+f+ Zephyr Jones|other_verb|provided|however, Zephyr and Corky provided them various technologies.|actual|stated|
+f+ Corky Grogan|other_verb|provided|however, Zephyr and Corky provided them various technologies.|actual|stated|
+t- no_relation|In the 1940's
+t+ crowd_end|In the 1940's, the Birdmen encountered visitors from Earth Zephyr Jones and his companion Corky Grogan.
+
+@3743 gold: a noun object
+keep
+f- Rose Logan|other_verb|candidate
+
+@3744 gold: Bonnie Roach is not tied to the clash (the group is the end); an approach that becomes the fight is no met; hired; the leader
+keep
+- Logan|fought|Bonnie Roach
+- Bonnie Roach|met|Logan
++ Logan|fought|Col Blooded|The group approached Logan in the French Quarter of New Orleans, but he fought his way off by severely maiming several of the Col Blooded.
+f+ Weapon X|hired|Col Blooded|They were hired by Weapon X to act as plausible cover during their hunt for Logan in Louisiana.|actual|stated|
+t- capability|Led by Bonnie Roach
+f+ Bonnie Roach|leader_of|Col Blooded|Led by Bonnie Roach, they would kidnap Mutants and brutally torture them|actual|stated|
+
+@3745 gold: credits are production; no pipe in a quote
+keep
+t- list_header|| Letterer1_1
+t- list_header|| Editor1_1
+t- list_header|| Editor1_2
+t+ production|Letterer1_1 = Joe Sabino
+t+ production|Editor1_1 = Ellie Pyle
+t+ production|Editor1_2 = M.R.
+
+@3746 gold: one coordinated act (A145); a broken trance is no rescue; the Circus is the captured group; one name (Kronin Krask); the employer is a description; the ordered hunt; finding is met
+keep
+r Krask=>Kronin Krask
+- Thor|fought|Wrecker
+- Thor|saved|Ulik
+f+ Thor|other_verb|break|managed to break Ulik free from the trance, leading to a duel.|actual|stated|
+- Thor|captured|Ringmaster
++ Thor|captured|Circus of Crime|had the Circus of Crime under police custody.
+f- Jane Foster's employer|contacted|Thor
+t+ crowd_end|In his clinic, Dr. Blake was astonished by Jane Foster's employer, who shared that he needed help in rescuing him from the insane billionaire Kronin Krask and sought for Thor's assistance.
+f- Kronin Krask|other_verb|wished
+f+ Kronin Krask|other_verb|wished|Krask wished to acquire immortality through a mind transplant with Thor|actual|stated|
+f+ Kronin Krask|other_verb|acquire|Krask wished to acquire immortality through a mind transplant with Thor|planned|stated|Kronin Krask
+f+ Ulik|other_verb|hunt|Loki dispatched Ulik to hunt him down.|ordered|stated|Loki
++ Ringmaster|met|Ulik|The Ringmaster was the one who found the Troll warrior first
+f- Circus members|other_verb|mistaken
+t+ crowd_end|Thor was mistaken by the Circus members as one of their own
+t- no_relation|Safe, Thor parted
+f+ Thor|other_verb|parted|Safe, Thor parted ways with Foster.|actual|stated|
+

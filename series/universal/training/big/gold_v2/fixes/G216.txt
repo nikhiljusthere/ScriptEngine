@@ -1,0 +1,164 @@
+@2145 gold: the listing is the Uncanny Avengers' act; the death is their claim
+keep
+f- Mister Sinister|other_verb|listed
+f+ Uncanny Avengers|other_verb|listed|Mister Sinister was listed as "confirmed dead" by the Uncanny Avengers.|actual|stated|
+f+ Mister Sinister|dies|-|Mister Sinister was listed as "confirmed dead" by the Uncanny Avengers.|claimed|stated|Uncanny Avengers
+
+@2146 gold: a place is no verb (birth denied, childhood residence); no pipe in quotes
+keep
+f- Dr. Strange|other_verb|Nebraska
+f- Scott Summers|other_verb|Nebraska
+f+ Dr. Strange|born|Nebraska|While neither Dr. Strange nor Scott Summers were born in Nebraska|actual|denied|
+f+ Scott Summers|born|Nebraska|While neither Dr. Strange nor Scott Summers were born in Nebraska|actual|denied|
+f+ Dr. Strange|resides_at|Nebraska|both spent their childhoods in the state.|actual|stated|
+f+ Scott Summers|resides_at|Nebraska|both spent their childhoods in the state.|actual|stated|
+t- list_header|| 
+t+ list_header|Residents =
+t+ list_header|Notes =
+t+ list_header|Trivia =
+t+ list_header|Wikipedia = Nebraska
+t+ list_header|Links =
+
+@2147 gold: a noun is no verb; the deal's purge has no doer
+keep
+f- Loki|other_verb|deal
+f+ Loki|other_verb|came|Loki came back to the All-Mother with a new deal:|actual|stated|
+f- Loki|other_verb|purged
+t+ no_doer|Each successful mission would means a crime of Loki purged from Asgard's memory.
+
+@2148 gold: ok
+keep
+
+@2149 gold: verbs as written; the reading and finding; X-Force's monitoring; redacted reports; a described ID and an unnamed scientist; a base is no doer; deducing is a belief
+keep
+f+ Mystique|other_verb|sneaks|and sneaks into X-Force's headquarters.|actual|stated|
+f- Mystique|other_verb|saw
+f+ Mystique|other_verb|sees|She sees the mission log for the the Krakoan gateway in the Paris safehouse.|actual|stated|
+f+ Mystique|other_verb|reads|She reads the report|actual|stated|
+f+ Mystique|learned|-|and finds that Orchis detected anomalous gateway behavior|actual|stated|
+t- no_relation|which in turn
+f+ X-Force|other_verb|monitor|which in turn triggered X-Force to monitor Orchis and ready its strike team.|actual|stated|
+t+ no_doer|and the subsequent reports redacted.
+f- Mystique|stole|I.D. of an Orchis scientist
+f+ Mystique|other_verb|steals|steals the I.D. of an Orchis scientist|actual|stated|
+f- Mystique|disguise_as|Orchis scientist
+f+ Mystique|other_verb|impersonates|and impersonates her.|actual|stated|
+f- Orchis' Paris base|other_verb|has
+t+ no_relation|She finds that Orchis' Paris base has a transporter directly to the Forge.
+f- Mystique|other_verb|deduces
+f+ Mystique|suspected|-|There, she deduces that Orchis means to use the Forge for its original purpose|actual|stated|
+
+@2150 gold: seeking out in person is no contact; the factions' heads
+keep
+f- Iron Man|contacted|Champions of Battlerealm
+f+ Iron Man|other_verb|sought|Iron Man sought out the other Champions of Battlerealm to help him|actual|stated|
+f+ Iron Man|leader_of|Iron Faction|Those who agreed with him joined his Iron Faction|actual|stated|
+f+ Captain America|leader_of|Blue Faction|while those who didn't joined Captain America's Blue Faction|actual|stated|
+
+@2151 gold: the verb as written; the Chainsaurs and the Kree are crowds; the bombardment; the convincing; the farewell has named doers
+keep
+f- Mar-Vell|other_verb|fled
+f+ Mar-Vell|other_verb|flee|and attempted to flee with them|attempted|stated|Mar-Vell
+t+ crowd_end|Together they fought the Chainsaurs the best they could
+f+ Starforce|other_verb|bombard|until the Starforce finally arrived to bombard the Deadwoods.|actual|stated|
+t+ crowd_end|The Kree managed to capture Agz, and at first planned to put Planet X under their protection
+f+ Mar-Vell|other_verb|convinced|but were convinced to leave it alone by Mar-Vell and Yondar in order to heal itself.|actual|stated|
+f+ Yondar|other_verb|convinced|but were convinced to leave it alone by Mar-Vell and Yondar in order to heal itself.|actual|stated|
+t- no_relation|Groot, Gleef
+f+ Groot|other_verb|bid|Groot, Gleef and Tweeg bid their alien friends farewell, and returned to their peaceful life|actual|stated|
+f+ Gleef|other_verb|bid|Groot, Gleef and Tweeg bid their alien friends farewell, and returned to their peaceful life|actual|stated|
+f+ Tweeg|other_verb|bid|Groot, Gleef and Tweeg bid their alien friends farewell, and returned to their peaceful life|actual|stated|
+
+@2152 gold: skin is no attire: an art depiction is production; the mutation into the rock form
+keep
+t- attire
+t+ production|In the flashback of the Fantastic Four's origins the Thing is depicted as having dinosaur-like skin.
+f+ Thing|transformed_into|rock-like form|He initially maintained that form until he eventually mutated further into the rock-like form he is more commonly known for|actual|stated|
+
+@2153 gold: the infiltration; a description is no alias; the belief; the promise is speech with a planned kill; Kio's doer-less end
+keep
+f+ Venom|other_verb|infiltrated|When Venom infiltrated Kio's ship to recover a shipment|actual|stated|
+f- YT-19|also_known_as|blood of a species from the planet Vvex
+f+ Venom|suspected|-|initially thinking of him as an enemy.|actual|stated|
+f- Venom|other_verb|promised
+f+ Venom|other_verb|promised|as long as he promised to kill him afterwards.|actual|stated|
+f+ Venom|other_verb|kill|as long as he promised to kill him afterwards.|planned|stated|Venom
+t+ no_doer|Once Kio was dealt with
+
+@2154 gold: a realm's turmoil; the Excalibur team is the killer (no member named); the installation and the throne; a mantle is alias_of
+keep
+t+ no_relation|Otherworld suffered political turmoil
+- Betsy Braddock|killed|Morgan le Fay
++ Excalibur|killed|Morgan le Fay|But after Krakoa's Excalibur team killed Morgan le Fay
+f- Jamie Braddock|other_verb|installed
+f+ Excalibur|other_verb|installed|and installed Jamie Braddock on the throne of Avalon|actual|stated|
+f+ Jamie Braddock|leader_of|Avalon|and installed Jamie Braddock on the throne of Avalon|actual|stated|
+f- Betsy Braddock|became|Captain Britain
+f+ Captain Britain|alias_of|Betsy Braddock|Brian had given the Amulet of Right to Betsy Braddock, making her the new Captain Britain|actual|stated|
+
+@2155 gold: window names (Billie Mariana Morales, Miles); the alias direction; the parents' tried rescue; verbs as written; a described empire; the blockade; section headers
+keep
+r Billie Morales=>Billie Mariana Morales
+r Miles Morales=>Miles
+f- Miles|alias_of|Spider-Man
+f+ Spider-Man|alias_of|Miles|she also had a brother named Miles who secretly operated as the masked vigilante known as Spider-Man.|actual|stated|
+f+ Jefferson Morales|other_verb|save|Selim would later go after Billie's parents, who died trying to save her|attempted|stated|Jefferson Morales
+f+ Rio Morales|other_verb|save|Selim would later go after Billie's parents, who died trying to save her|attempted|stated|Rio Morales
+f- Ganke|other_verb|secret
+f+ Ganke|other_verb|keeping|while keeping the details of her family and true origin a secret for her own safety|actual|stated|
+f- Selim|created|empire
+f+ Selim|other_verb|created|who created his own empire in Brooklyn|actual|stated|
+t- no_relation|preventing anyone
+f+ Selim|other_verb|preventing|who created his own empire in Brooklyn, preventing anyone from leaving.|actual|stated|
+t+ list_header|===Early Life===
+t+ list_header|===Captain Billie===
+
+@2156 gold: window names (Janet; the unmasked Wrecker is Frank Smith); both assist and rejoin; the tried stop and capture; the racket and intimidation have doers; described store, android and replica; the Masters convinced the Hulk; turning on allies who flee is betrayal and defeat (one act); an unnamed robot is no end; verbs as written; the decision
+keep
+r Janet van Dyne=>Janet
+- Pym|defeated|Wrecker
+- Janet|defeated|Wrecker
++ Pym|defeated|Frank Smith|when the Wrecker arrived to intimidate them, they easily trounced him.
++ Janet|defeated|Frank Smith|when the Wrecker arrived to intimidate them, they easily trounced him.
+f- Frank Smith|alias_of|Wrecker
+f+ Janet|assisted|NYPD|Giant-Man and the Wasp were later assisted the NYPD|actual|stated|
+f+ Pym|other_verb|stop|in trying to stop the protection racketeer known only as the Wrecker|attempted|stated|Pym
+f+ Janet|other_verb|stop|in trying to stop the protection racketeer known only as the Wrecker|attempted|stated|Janet
+t- no_relation|who was forcing
+f+ Frank Smith|other_verb|forcing|who was forcing shops to pay him in order to keep their businesses safe.|actual|stated|
+f- Pym|owns|hardware store
+f+ Pym|other_verb|purchased|Pym and Janet purchased a hardware store in the area|actual|stated|
+f+ Janet|other_verb|purchased|Pym and Janet purchased a hardware store in the area|actual|stated|
+t- no_relation|when the Wrecker arrived
+f+ Frank Smith|other_verb|intimidate|when the Wrecker arrived to intimidate them|planned|stated|Frank Smith
+t- no_relation|the former owner
+t+ apposition|the former owner of the hardware store that Hank and Jan had purchased.
+f+ Janet|joined|Avengers|Giant-Man and the Wasp later rejoined the Avengers|actual|stated|
+f- Pym|other_verb|bring
+f+ Pym|other_verb|bring|in yet another attempt to bring in the Hulk.|attempted|stated|Pym
+f+ Janet|other_verb|bring|in yet another attempt to bring in the Hulk.|attempted|stated|Janet
+f- Zemo|persuaded|Hulk
+f+ Masters of Evil|persuaded|Hulk|the Masters of Evil convinced the Hulk to join them instead.|actual|stated|
+f- Zemo|other_verb|threaten
+f+ Zemo|other_verb|threatened|until Zemo threatened the life of his former sidekick, Rick Jones|actual|stated|
+- Hulk|fought|Zemo
++ Hulk|defeated|Zemo|and the Hulk turned on Zemo and the Masters, forcing them to flee
++ Hulk|betrayed|Zemo|and the Hulk turned on Zemo and the Masters, forcing them to flee
+f+ Kang the Conqueror|other_verb|targeted|the Avengers were targeted by Kang the Conqueror|actual|stated|
+f- Kang the Conqueror|built|android duplicate of Spider-Man
+f+ Kang the Conqueror|other_verb|built|who built a android duplicate of Spider-Man to lure the Avengers into a trap.|actual|stated|
+- the Spider-Man robot|defeated|Pym
+- the Spider-Man robot|defeated|Janet
+t+ crowd_end|they were quickly incapacitated by the Spider-Man robot
+t- no_relation|and the other Avengers
+t+ crowd_end|and the other Avengers soon followed.
+f- Spider-Man|other_verb|deactivate
+f+ Spider-Man|other_verb|deactivated|who deactivated his robot doppelgänger.|actual|stated|
+f- Pym|built|robotic replica of an ant
+f+ Pym|other_verb|building|In his private time, Pym began building a robotic replica of an ant|actual|stated|
+f- Janet|other_verb|damage
+f+ Janet|other_verb|damaged|but got mad at Janet when she damaged equipment delaying the project.|actual|stated|
+f+ Janet|other_verb|decided|Feeling rejected, Janet decided to leave Hank for good.|actual|stated|
+f- Attuma|other_verb|take
+f+ Attuma|other_verb|decided|who decided to take Janet prisoner to study surface humans.|actual|stated|
+

@@ -1,0 +1,77 @@
+@2403 gold: thinking is a belief; asking
+keep
+f- Rodriguez|other_verb|thinks
+f+ Rodriguez|suspected|-|Rodriguez explains she thinks she always could, but held herself back.|actual|stated|
+f+ Mackenzie|other_verb|asks|He visits her and asks about her not bouncing back|actual|stated|
+
+@2404 gold: casting trivia is production (no facts)
+keep
+f- Jon Favreau|hired|Robert Downey Jr.
+f- Jon Favreau|other_verb|felt
+t+ production|Jon Favreau wanted Robert Downey Jr. because he felt the actor's past was right for the part.
+t+ production|He commented:
+t+ production|Favreau also felt Downey could make Stark "a likable asshole", but also depict an authentic emotional journey once he won over the audience.
+
+@2405 gold: a relatives list whose subject is only the page title: header lines, no facts
+keep
+f- Ying Li|sibling_of|Ying Nan
+f- Xu Wenwu|other_verb|Brother-in-Law
+f- Xu Shang-Chi|other_verb|Nephew
+f- Xu Xialing|other_verb|Niece
+t+ list_header|Ying Li † - Sister
+t+ list_header|Xu Wenwu † - Brother-in-Law
+t+ list_header|Xu Shang-Chi - Nephew
+t+ list_header|Xu Xialing - Niece
+
+@2406 gold: "him" is never named in the window (no Green Goblin end); Peter-Two stops and blocks; calming and realizing
+keep
+- Spider-Man|fought|Green Goblin
+- Peter-Two|saved|Green Goblin
+f+ Peter-Two|other_verb|stopped|he was stopped by Peter-Two who blocked the strike by holding the glider at bay|actual|stated|
+f+ Peter-Two|other_verb|blocked|he was stopped by Peter-Two who blocked the strike by holding the glider at bay|actual|stated|
+f+ Spider-Man|other_verb|calmed|until Spider-Man finally calmed down and came to his senses|actual|stated|
+f+ Spider-Man|learned|-|after realizing this was not what May would want for him.|actual|stated|
+
+@2407 gold: the first line is dialogue too
+keep
+t+ dialogue|Him can't die 'til he finish what him supposed to do.
+
+@2408 gold: a soundtrack table: split cells (no pipe), production
+keep
+t- list_header
+t+ production|Hot Poppin' Popcorn
+t+ production|The Wiggles *Cassie Lang's birthday party.
+
+@2409 gold: ignoring the warning
+keep
+f+ Stein|other_verb|Ignoring|Ignoring the warning given to him earlier by his own time machine, Stein picked them up|actual|stated|
+
+@2410 gold: a warning beam is no attack and a talk follows (met); "the airport" is unnamed (the page title is no window text); the offered surrender; giving time; charging
+keep
+- Vision|fought|Captain America
++ Vision|met|Captain America|Vision used this time to give Captain America one last chance to surrender
+- Vision|arrived|Leipzig-Halle Airport
+f+ Vision|other_verb|arrived|Vision arrived at the airport and stopped them by firing a warning beam across the floor.|actual|stated|
+f+ Captain America|other_verb|surrender|Vision used this time to give Captain America one last chance to surrender|ordered|stated|Vision
+t- no_relation|while also giving
+f+ Vision|other_verb|giving|while also giving Iron Man's faction enough time to regroup as well.|actual|stated|
+t- no_relation|and began to charge
+f+ Captain America|other_verb|charge|and began to charge alongside his faction.|actual|stated|
+
+@2411 gold: ok
+keep
+
+@2412 gold: Khan's concern
+keep
+f+ Khan|suspected|-|Khan became concerned that Blade might try to take the device off her|actual|stated|
+
+@2413 gold: the last line is dialogue too
+keep
+t+ dialogue|Happy was concerned.
+
+@2414 gold: the opening line is spoken; Stark ended the call; a suit is no doer
+keep
+t- deictic|Mr. Stark
+t+ dialogue|Mr. Stark is no longer connected.
+f+ Stark|other_verb|ended|that Stark had ended the phone call|actual|stated|
+t+ no_doer|before the Mark XLVII suit flew away.

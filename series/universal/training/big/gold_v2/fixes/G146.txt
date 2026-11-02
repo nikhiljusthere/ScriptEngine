@@ -1,0 +1,110 @@
+@1686 gold: Yuji and Nanami fight Mahito; noticing = learned; described plan and ex-humans; belief = suspected
+keep
++ Yuji|fought|Mahito|Fighting together, they attack relentlessly to create openings for each other.
++ Nanami|fought|Mahito|Fighting together, they attack relentlessly to create openings for each other.
+f- Nanami|discovered|-
+f+ Nanami|learned|-|after noticing that Yuji's attacks can actually hurt Mahito.|actual|stated|
+f- Nanami|created|a plan of attack
+f+ Nanami|other_verb|creates|Rather than scolding him, Nanami creates a plan of attack|actual|stated|
+f- Mahito|created|ex-humans
+f+ Mahito|other_verb|creates|Mahito creates ex-humans for Yuji to fight.|actual|stated|
+f- Mahito|other_verb|believing
+f+ Mahito|suspected|-|believing that Yuji won't have the heart to kill.|actual|stated|
+
+@1687 gold: an item is no helper
+keep
+f- Playful Cloud|helped|Maki
+
+@1688 gold: trapping the whole group in frost incapacitates them (defeated); the membership is not stated
+keep
+- Uraume|sealed|Panda
+- Uraume|sealed|Noritoshi Kamo
+- Uraume|sealed|Atsuya Kusakabe
+- Uraume|sealed|Choso
++ Uraume|defeated|Panda|In one fell swoop, Uraume used Frost Calm to trap Panda, Noritoshi Kamo, Atsuya Kusakabe, and Choso at the same time.
++ Uraume|defeated|Noritoshi Kamo|In one fell swoop, Uraume used Frost Calm to trap Panda, Noritoshi Kamo, Atsuya Kusakabe, and Choso at the same time.
++ Uraume|defeated|Atsuya Kusakabe|In one fell swoop, Uraume used Frost Calm to trap Panda, Noritoshi Kamo, Atsuya Kusakabe, and Choso at the same time.
++ Uraume|defeated|Choso|In one fell swoop, Uraume used Frost Calm to trap Panda, Noritoshi Kamo, Atsuya Kusakabe, and Choso at the same time.
+f- Panda|member_of|Jujutsu High
+f- Noritoshi Kamo|member_of|Jujutsu High
+f- Atsuya Kusakabe|member_of|Jujutsu High
+f- Choso|member_of|Jujutsu High
+
+@1689 gold: a noun object -> the hit suffered
+keep
+f- Naoya|other_verb|knowledge
+f+ Naoya|other_verb|suffers|Naoya has no prior knowledge of Supernova and suffers a direct hit.|actual|stated|
+
+@1690 gold: the leaving happened; the told arrival
+keep
+f- Gojo|other_verb|leave
+f+ Gojo|other_verb|leave|Gojo says that he is done talk and leave|actual|stated|
+f+ Gojo|other_verb|tells|but not before tells Yoshinobu that Masamichi will arrive two hours later.|actual|stated|
+
+@1691 gold: "Geto" here is Kenjaku; A145 breaking free and exorcising is one act; guarding a seal; realizing = learned; preparing carries the planned face-off; claiming is speech; fleeing from Kenjaku is an escape
+keep
+r Geto=>Kenjaku
+- Mei Mei|fought|Smallpox Deity
+f- Kenjaku|protected|seal
+f+ Kenjaku|other_verb|guard|Kenjaku stays with the seal to guard it while the curses spread out to kill their enemies.|actual|stated|
+f- Mei Mei|discovered|-
+f+ Mei Mei|learned|-|Mei Mei quickly realizes that this Geto is a fake|actual|stated|
+f- Mei Mei|attacked|Kenjaku
+f- Ui Ui|attacked|Kenjaku
+f+ Mei Mei|other_verb|prepare|Mei Mei and Ui Ui prepare to face off against Geto|actual|stated|
+f+ Ui Ui|other_verb|prepare|Mei Mei and Ui Ui prepare to face off against Geto|actual|stated|
+f+ Mei Mei|other_verb|face|Mei Mei and Ui Ui prepare to face off against Geto|planned|stated|Mei Mei
+f+ Ui Ui|other_verb|face|Mei Mei and Ui Ui prepare to face off against Geto|planned|stated|Ui Ui
+f- Kenjaku|other_verb|claim
+f+ Kenjaku|other_verb|claims|who claims they are strong for sorceress of this era.|actual|stated|
+f- Mei Mei|other_verb|flee
+f- Ui Ui|other_verb|flee
++ Mei Mei|escaped|Kenjaku|The siblings ultimately flee.
++ Ui Ui|escaped|Kenjaku|The siblings ultimately flee.
+
+@1692 gold: the stab is a wound; an imagined Mai is no person
+keep
+f+ Maki|wounded|Naoya Zenin|When Maki stabbed a reborn cursed Naoya Zenin through the chest with the Split Soul Katana|actual|stated|
+f- Mai|other_verb|asked
+
+@1693 gold: A145 the smash before the kill is one act; a described blade; the narrated fight with Reggie
+keep
+- Megumi|fought|Chizuru Hari
+f- Megumi|wielded|one-handed blade
+t+ capability|Megumi's current weapon of choice is another one-handed blade he still incorporates while fighting at close range.
+t- capability|Up against Reggie
++ Megumi|fought|Reggie|Up against Reggie, who was the superior taijutsu specialist, Megumi continued to use his swordplay to supplement his close combat skills throughout their entire fight.
+
+@1694 gold: the stated fight with Kashimo; the kick; offering carries the planned purchase; the surprise; a denied publication has no asserter; the told drawing; rejoining a crowd; the planned freeing; a habit
+keep
++ Hakari|fought|Kashimo|After his fight with Kashimo, Hakari returned to Charles
++ Hakari|fought|Charles|Annoyed, Hakari kicks Charles and tells him not to worry
+f+ Hakari|other_verb|buy|Hakari offers to buy and read Charles' manga|planned|stated|Hakari
+f+ Hakari|learned|-|but is surprised to learn that Charles hasn't published anything yet.|actual|stated|
+f- Charles|other_verb|published
+f+ Charles|other_verb|published|Charles hasn't published anything yet.|actual|denied|
+f+ Charles|other_verb|continue|to continue drawing like his life depends on it because the Culling Game will be over soon.|ordered|stated|Hakari
+f- Hakari|joined|fellow sorcerers
+f- Kashimo|joined|fellow sorcerers
+f- Panda|joined|fellow sorcerers
+f- Momo|joined|fellow sorcerers
+f+ Hakari|other_verb|freeing|Hakari, Kashimo, Panda and Momo rejoined their fellow sorcerers back at headquarters to go about the process of freeing Satoru Gojo from the Prison Realm.|planned|stated|Hakari
+f+ Kashimo|other_verb|freeing|Hakari, Kashimo, Panda and Momo rejoined their fellow sorcerers back at headquarters to go about the process of freeing Satoru Gojo from the Prison Realm.|planned|stated|Kashimo
+f+ Panda|other_verb|freeing|Hakari, Kashimo, Panda and Momo rejoined their fellow sorcerers back at headquarters to go about the process of freeing Satoru Gojo from the Prison Realm.|planned|stated|Panda
+f+ Momo|other_verb|freeing|Hakari, Kashimo, Panda and Momo rejoined their fellow sorcerers back at headquarters to go about the process of freeing Satoru Gojo from the Prison Realm.|planned|stated|Momo
+t- capability|Charles usually learns
+t+ no_relation|Charles usually learns everything important from manga
+
+@1695 gold: Yorozu's death; wanting carries the planned use; belief = suspected; discerning = learned; the King of Curses is Sukuna; citations
+keep
+f+ Yorozu|dies|-|shedding tears of joy at the end of her life at how well he knew her|actual|stated|
+f+ Sukuna|other_verb|use|wanted him to use his own technique to defeat her.|planned|stated|Yorozu
+f- Sukuna|other_verb|believed
+f+ Sukuna|suspected|-|She was insulted that Sukuna believed he could win without his Shrine|actual|stated|
+f- Sukuna|discovered|Yorozu's technique
+f+ Sukuna|learned|-|Yorozu was ecstatic Sukuna discerned her technique rather than disappointed|actual|stated|
+f- Yorozu|gave|King of Curses
+f+ Yorozu|gave|Sukuna|leaving the King of Curses with a keepsake to remind him of her.|actual|stated|
+t+ citation|(Chapter 217)(Chapter 218)
+t+ citation|(Chapter 219)
+

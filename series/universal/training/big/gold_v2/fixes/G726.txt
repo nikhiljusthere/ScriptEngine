@@ -1,0 +1,194 @@
+@3759 gold: a list of issues they met in is publication trivia (production)
+keep
+- Spider-Man|met|Deadpool
+t+ production|Spider-Man and Deadpool have met to date in , , , , -, -, and --.
+
+@3760 gold: realizing is learned; a device's use is no capability
+keep
+f+ Spider-Man|learned|-|Spider-Man realizes that the Flatiron Building not only is the place where the Spider-Slayers have been coordinating their attacks|actual|stated|
+t- capability|but is also the place
+t+ no_relation|but is also the place where the insect-sense disruptor can have the greatest impact.
+
+@3761 gold: one name (Carol); she escapes the Triskelion (no named captor); believing is suspected; setting out carries the planned search
+keep
+r Captain Marvel=>Carol
+- Ms. Green|escaped|Carol
++ Ms. Green|escaped|Triskelion|Captain Marvel exits the room, and Green disappears with a trace of brimstone smoke left behind
+f- Carol|suspected|Tony
+f+ Carol|suspected|-|Believing Tony to be behind Ms. Green's escape|actual|stated|
+f+ Carol|other_verb|sets|Carol sets out to find him when Maria Hill informs her that he's on the rooftop.|actual|stated|
+
+@3762 gold: ok
+keep
+
+@3763 gold: one name (Janet Stein); the claim; the denied belief and her own belief; the affair
+keep
+r Janet=>Janet Stein
+f+ Robert|other_verb|claimed|Robert reminded her of his abuse and claimed he would do it again.|actual|stated|
+f- Janet Stein|other_verb|believed
+f+ Janet Stein|other_verb|believe|Janet refused to believe that|actual|denied|
+f+ Janet Stein|suspected|-|as she believed Victor to be a changed man.|actual|stated|
+f+ Robert|dated|Janet Stein|She said goodbye to Janet as she broke off their affair.|actual|stated|
+
+@3764 gold: the scanning has no doer; the purpose of the Renewals
+keep
+f- Metrics|other_verb|scanned
+t+ no_doer|during which the Metrics of all the Lighthouse residents would be scanned.
+f+ Kree Watch|other_verb|keep|In order to keep the human population under control|planned|stated|Kree Watch
+
+@3765 gold: one name (James Rhodes); Rhodes' admitting and asking
+keep
+r Rhodes=>James Rhodes
+f+ James Rhodes|other_verb|admitting|admitting that Stevens did rather good for a kid from Oakland.|actual|stated|
+f+ James Rhodes|other_verb|asked|When Rhodes asked what was her concern|actual|stated|
+
+@3766 gold: telling is speech; the asked call; a possessive end; leaving
+keep
+f- Jones|revealed|-
+f+ Jones|other_verb|tells|Jones tells Walker that her mother is looking for her and to call her|actual|stated|
+f+ Walker|other_verb|call|Jones tells Walker that her mother is looking for her and to call her|ordered|stated|Jones
+f- Jones's mother|other_verb|looking
+f+ Jones|other_verb|leaving|Before leaving, Jones tells Walker|actual|stated|
+
+@3767 gold: a described room is no place; having the painting; planning carries the act
+keep
+f- Gabriel Soto|located_at|secured sub-level storage room
+f+ Gabriel Soto|owns|painting|Gabriel Soto, host of the event, had the painting in a secured sub-level storage room|actual|stated|
+f+ Gabriel Soto|other_verb|planning|planning to show it to the guests that same night|actual|stated|
+
+@3768 gold: combining power; a biomass is no end; stopping the Expansion defeats Ego
+keep
+f+ Ego|other_verb|combined|In 2014, Ego combined his power with that of his son Peter Quill, sprouting every seed he had planted across the universe.|actual|stated|
+f- Ego's biomass|located_at|Hala
+t+ no_relation|Ego's biomass on Hala grew increasingly
++ Guardians of the Galaxy|defeated|Ego|However, the Expansion was stopped in time by the Guardians of the Galaxy.
+
+@3769 gold: Metzger's own acts are facts, not no_relation
+keep
+t- no_relation|Metzger retreated
+f+ Metzger|other_verb|retreated|Metzger retreated to an observation room a safe 40 feet beyond the radius in which Grey could control others|actual|stated|
+f+ Metzger|other_verb|ordering|ordering his team to seal the room and deactivate the inhibitor.|actual|stated|
+f+ Metzger|other_verb|expressed|and expressed surprise that she had managed to transmit it across such a distance.|actual|stated|
+
+@3770 gold: a dialogue line
+keep
+t+ dialogue|How exactly do you know this guy?" "Old, uh, Freedom Fighter friend of mine.
+
+@3771 gold: the planned rescue; pressuring carries the act; a copula; the attack on a building
+keep
+f+ Stark|other_verb|rescue|he rushed to rescue Potts despite it being a trap.|planned|stated|Stark
+f- Stane|persuaded|A.I.M.
+f+ Stane|other_verb|escape|Meanwhile, Stane escape and pressured A.I.M. to finish their design.|actual|stated|
+f+ Stane|other_verb|pressured|Meanwhile, Stane escape and pressured A.I.M. to finish their design.|actual|stated|
+f+ A.I.M.|other_verb|finish|pressured A.I.M. to finish their design.|ordered|stated|Stane
+f- Stark|other_verb|became
+f+ Stark|other_verb|fight|Stark became newly determined to fight A.I.M.|planned|stated|Stark
+f+ Stark|other_verb|attacked|and attacked their headquarters while Potts looked into Stane.|actual|stated|
+
+@3772 gold: Rock Trolls are a race and "a Rock Troll" is indefinite (no ends); Thor's noticing and looking
+keep
+f- Rock Trolls|attacked|Mire Giant
+f- Rock Trolls|other_verb|destroy
+f- Rock Trolls|other_verb|send
+t+ crowd_end|The Rock Trolls then attacked the giant, trying to destroy Thor's raft.
+f+ Thor|other_verb|noticing|noticing a Rock Troll throw Leechwood into the water and sending the Mire Giant away.|actual|stated|
+t- no_relation|He got off the skiff
+f+ Thor|other_verb|looked|He got off the skiff and looked for the launch center|actual|stated|
+
+@3773 gold: stopping and disarming her is defeated; her kill was only attempted (no fought); named acts are facts
+keep
+- Daredevil|fought|Page
++ Daredevil|defeated|Page|Daredevil intervened and stopped Page by throwing a billy club at her gun, disarming her.
+- Page|fought|Poindexter
+f+ Page|other_verb|kill|Surviving Page's attempted to kill him|attempted|stated|Page
+t- no_relation|Poindexter listened
+f+ Poindexter|other_verb|listened|Poindexter listened to her lashing out at Daredevil for always protecting his enemies|actual|stated|
+f+ Page|other_verb|lashing|Poindexter listened to her lashing out at Daredevil for always protecting his enemies|actual|stated|
+t- no_relation|while Poindexter remained
+f+ Poindexter|other_verb|remained|while Poindexter remained silent and Page walked out.|actual|stated|
+f+ Page|other_verb|walked|while Poindexter remained silent and Page walked out.|actual|stated|
+
+@3774 gold: garbage objects become the quote's verbs; the President (a title used as his name); the ordered act
+keep
+f- A.I.M.|other_verb|-
+f+ A.I.M.|other_verb|developing|However, A.I.M. was unsuccessful at developing a prototype|attempted|stated|A.I.M.
+f- A.I.M.|other_verb|Stane
+f+ A.I.M.|other_verb|angering|angering Stane.|actual|stated|
+f- Stane|other_verb|President
+f+ Stane|other_verb|scolded|Stane scolded the President|actual|stated|
+f- President|other_verb|-
+f+ President|other_verb|explained|who explained that his engineers needed a more complete version.|actual|stated|
+f- Stane|other_verb|-
+f+ Stane|other_verb|refused|However, Stane refused to accept this and suggested that A.I.M. did not have a prototype.|actual|stated|
+f+ Stane|other_verb|suggested|However, Stane refused to accept this and suggested that A.I.M. did not have a prototype.|actual|stated|
+f+ President|other_verb|insisted|The President insisted that they did|actual|stated|
+f+ President|other_verb|make|but Stane simply ordered him to make it simple.|ordered|stated|Stane
+
+@3775 gold: inmates are a crowd; the stab is a wound; Castle's acts on unnamed men are his other_verb facts
+keep
+f+ Castle|wounded|Dutton|Castle was the one who stabbed Dutton|actual|stated|
+f- inmates|learned|Castle stabbed Dutton
+f- inmates|other_verb|beat
+t+ crowd_end|The rest of the inmates, quickly realizing Castle was the one who stabbed Dutton, proceeded to charge at him, planning to beat Castle to death.
+f+ Castle|other_verb|charging|The defenseless but determined Castle faced them head on, charging in with a battle cry and began fighting back|actual|stated|
+f- Castle|wounded|arm
+f+ Castle|wounded|-|shrugging off a stab in the arm|actual|stated|
+t- capability|Castle's superior combat
+f+ Castle|other_verb|disarm|Castle's superior combat training allowed him to quickly disarm the men|actual|stated|
+t- crowd_end|use their weapons
+f+ Castle|other_verb|stab|use their weapons to stab them or crush their skulls|actual|stated|
+t- crowd_end|killed more
+f+ Castle|other_verb|killed|as he killed more of the attacking criminals.|actual|stated|
+t- no_relation|continued to attack
+t+ crowd_end|The inmates continued to attack him with various weapons and shivs
+
+@3776 gold: an event is no subject; the uncovered dialogue lines
+keep
+f- Stark Industries Weapons Mongering|other_verb|unfolding
+f+ Obadiah Stane|other_verb|selling|unfolding from Obadiah Stane's thirst for power and money from selling weapons to both the allies and enemies.|actual|stated|
+t+ dialogue|You stood by my side all these years while I reaped the benefits of destruction.
+t+ dialogue|And I know in my heart that it's right.
+
+@3777 gold: Stane's refusal
+keep
+f+ Stane|other_verb|refused|Stane refused to give up, claiming that he was working in Stark Industries' best interests.|actual|stated|
+
+@3778 gold: ok
+keep
+
+@3779 gold: the captivity has no named doer; Chronicoms are a race; the escape
+keep
+t+ no_doer|Fitz and Simmons were later kept prisoners in one of the destroyers
+f- Chronicoms|other_verb|get
+t+ crowd_end|so that the Chronicoms could get their planet back.
+f+ Enoch|other_verb|escape|to escape from the destroyer ship.|actual|stated|
+f+ Fitz|other_verb|escape|to escape from the destroyer ship.|actual|stated|
+f+ Simmons|other_verb|escape|to escape from the destroyer ship.|actual|stated|
+
+@3780 gold: one name (Rogers); mind control is no fought (A116); knocking him down is one act (A145); the reunion before the control keeps its met; mercenaries are a crowd; the failed contact
+keep
+r Captain America=>Rogers
+- Loki|fought|Hulk
+- Rogers|fought|Hulk
+f+ Rogers|contacted|Thor|once they could not contact Thor.|actual|denied|
+f+ Hulk|contacted|Thor|once they could not contact Thor.|actual|denied|
+t+ crowd_end|Once there, they were immediately attacked by mercenaries.
+f+ Hulk|other_verb|stay|Rogers told Hulk to stay close in case he needed him to access the computers|ordered|stated|Rogers
+f+ Hulk|other_verb|plowed|With his strength, Hulk easily plowed through the mercenaries and made his way to the elevator shaft where he climbed up.|actual|stated|
+
+@3781 gold: ok
+keep
+
+@3782 gold: one name (Claire Temple); a necessity is no rescue by Burstein; deciding carries the planned act; the heat is the subject of weakening
+keep
+r Temple=>Claire Temple
+- Noah Burstein|saved|Cage
+f- Claire Temple|other_verb|decide
+f- Noah Burstein|other_verb|decide
+f+ Claire Temple|other_verb|decide|They decide to turn the water's heat up all the way|actual|stated|
+f+ Noah Burstein|other_verb|decide|They decide to turn the water's heat up all the way|actual|stated|
+f+ Claire Temple|other_verb|turn|They decide to turn the water's heat up all the way|planned|stated|Claire Temple
+f+ Noah Burstein|other_verb|turn|They decide to turn the water's heat up all the way|planned|stated|Noah Burstein
+f- Cage|other_verb|weakens
+f+ Cage|other_verb|flatlines|When he briefly flatlines|actual|stated|
+

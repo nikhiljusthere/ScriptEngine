@@ -1,0 +1,179 @@
+@2283 gold: a described base is no place end; the unnamed captive and sentinel
+keep
+f- base housing sentinels|located_at|Tokyo
+t+ no_relation|On Earth-7642, a base housing sentinels was located in a sewer underneath Tokyo.
+t+ crowd_end|and was captured by a sentinel and held captive in the base until being freed by Psylocke and Wolverine.
+
+@2284 gold: a blurb is production
+keep
+t- list_header|Heroes for Hire
+t+ production|Heroes for Hire - and foes to fear! How do Power Man and Iron Fist beat someone they can't punch or kick? Find out when Unus the Untouchable comes to town!
+
+@2285 gold: the stone man, the soldier and the commander are unnamed; a described factory is no place; the planned destruction
+keep
+- the stone man|killed|the soldier
+t+ crowd_end|Shortly after the Destroyer leaves, the soldier is attacked and killed by the statue creature.
+f- Destroyer|located_at|ammunition factory
+f- British soldier|located_at|ammunition factory
+f+ Destroyer|other_verb|get|Elsewhere, at the ammunition factory, the Destroyer and British soldier get the drop on the security patrolling the property.|actual|stated|
+f- Destroyer|destroyed|plant
+f+ Destroyer|destroyed|plant|the Destroyer goes ahead to destroy the plant.|planned|stated|Destroyer
+f- commander|other_verb|decides
+t+ crowd_end|Meanwhile, the stone man runs into an army of Nazi soldiers and their commander, after receiving a warning that the Destroyer is in the area, decides to use the loyal creature to destroy the Nazis greatest menace.
+t+ crowd_end|While the soldier keeps the Nazis at gun point
+
+@2286 gold: a company is no doer; humanity is a crowd; the poisoning and taking
+keep
+f- Alchemax|created|K-Chemical
+t+ no_doer|which refined it into the K-Chemical
+t- capability|In an alternate future
+t+ crowd_end|In an alternate future where the symbiote-machine hybrids attacked Earth, humanity had created a new type of radiation that could kill symbiotes
+f+ Dylan Brock|wounded|-|but it had no effect on them, instead poisoning Dylan Brock.|actual|stated|
+f+ Meridius|took|radiation|After Meridius got hold of the radiation from Dylan|actual|stated|
+
+@2287 gold: a project is no group; the found proof is a discovery; tracking, listening, demanding, the planned cutting, the escape with Passim, the former lover, the agreement
+keep
+f- Passim|member_of|About Face project
+f+ Passim|other_verb|involved|who had been involved in the About Face project|actual|stated|
+f- Daredevil|revealed|-
+f+ Daredevil|discovered|-|having found circumstantial proof suggesting that his former lover Elektra was alive|actual|stated|
+f+ Daredevil|dated|Elektra|his former lover Elektra was alive|actual|stated|
+f+ Kelly|other_verb|tracked|Kelly tracked the virus to runaway telepath Eddie Passim|actual|stated|
+f+ Kelly|other_verb|listened|and secretly listened Passim talk about the About Face virus|actual|stated|
+f+ Kelly|other_verb|demanding|then revealed himself, demanding to be taken to Garrett|actual|stated|
+f+ Tekagi|other_verb|cut|Tekagi faced Kelly, wanting to cut him to pieces|planned|stated|Tekagi
+f+ Tekagi|suspected|-|but still Tekagi expected to overcome him with Snakeroot's superior numbers|actual|stated|
+f+ Daredevil|other_verb|protect|Daredevil joined Kelly to try and protect Passim|attempted|stated|Daredevil
++ Budo|captured|Passim|but Enteki sacrificed his life to let Budo escape with Passim.
++ Budo|escaped|Kelly|but Enteki sacrificed his life to let Budo escape with Passim.
+f+ Kelly|other_verb|agreed|Still, Kelly agreed to cooperate with Daredevil in the hunt of About Face.|actual|stated|
+
+@2288 gold: one name (Matt Murdock, Wilson Fisk) + alias; "contacted" is no in-person meeting; the quote verbs; unnamed allies and gangsters are crowds
+keep
+r Daredevil=>Matt Murdock
+r Murdock=>Matt Murdock
+r Fisk=>Wilson Fisk
+- Colonel Fury|met|Matt Murdock
+f+ Daredevil|alias_of|Matt Murdock|While working with Foggy Nelson to restore his legal license as Matt Murdock, Daredevil was also troubled|actual|stated|
+f- Matt Murdock|other_verb|Fisk's
+f+ Matt Murdock|other_verb|compromise|Murdock was able to compromise Fisk's reputation among other gangsters|actual|stated|
+f- Matt Murdock|tricked|gangsters
+f+ Matt Murdock|other_verb|planting|by secretly planting the idea that Fisk had knowingly begun working with Hydra|actual|stated|
+f- Wilson Fisk|other_verb|resources
+f+ Wilson Fisk|other_verb|underestimated|as he underestimated their own resources|actual|stated|
+f- Matt Murdock|other_verb|Wilson Fisk
+f+ Matt Murdock|other_verb|provoked|Fisk was ultimately exposed when Daredevil provoked Fisk into a public rampage|actual|stated|
+t- no_doer|while Fisk found himself
+t+ crowd_end|while Fisk found himself under attack from his erstwhile allies
+
+@2289 gold: one name (Charles Xavier) + the X alias; the tried verb; the plan was stopped by an unnamed group; Fantomex is not in the second fight; the final destruction; hoping, taking advantage, forming
+keep
+r Xavier=>Charles Xavier
+r Professor X=>Charles Xavier
+r X=>Charles Xavier
+f- Charles Xavier|alias_of|Charles Xavier
+f+ X|alias_of|Charles Xavier|Professor X, now simply going by X,|actual|stated|
+- Shadow King|defeated|Fantomex
+f- Shadow King|other_verb|attempted
+f+ Shadow King|other_verb|access|the Shadow King attempted to access a network of psychics around the Earth to escape the Astral Plane|attempted|stated|Shadow King
+f- Psylocke|other_verb|stopped
+f+ Psylocke|other_verb|sought|but a group of X-Men sought out by Psylocke stopped this plan.|actual|stated|
+t+ crowd_end|but a group of X-Men sought out by Psylocke stopped this plan.
+f+ Charles Xavier|other_verb|hoped|and Xavier hoped their presence could give him the advantage to put an end to the confrontation.|actual|stated|
+f+ Shadow King|other_verb|took|The Shadow King took advantage of this strategy and accessed the network|actual|stated|
+f+ Psylocke|other_verb|form|convinced Psylocke to form a psychic network and draw its power to push back his influence.|actual|stated|
++ Charles Xavier|killed|Shadow King|worked together with Psylocke to create a deeper psychic network, gathering enough power to destroy the monster once and for all.
++ Psylocke|killed|Shadow King|worked together with Psylocke to create a deeper psychic network, gathering enough power to destroy the monster once and for all.
+
+@2290 gold: the refusal is a denied submission; unnamed agents are no group end; the threat noun is no act; the unnamed scientist; Baldwin's prison
+keep
+f- Blazing Skull|other_verb|refusal
+f+ Blazing Skull|other_verb|submit|but not before his refusal to submit to the pain of his torture caused Hitler to burst into a fit of hysterics.|actual|denied|
+f- Red Skull|leader_of|Nazi agents
+f- original Destroyer|other_verb|threatened
+t+ no_relation|The most frequent threat to security in Berlin came from the original Destroyer
+t- no_doer|producing a enervating gas
+t+ crowd_end|in order to stop a Nazi scientist who was producing a enervating gas.
+f+ Henry Baldwin|located_at|Blackforest Concentration Camp|who was being kept prisoner in the Blackforest Concentration Camp|actual|stated|
+
+@2291 gold: one tag per infobox line, no pipe in a quote; a citation tail
+keep
+t- list_header
+t- production
+t+ citation|Season 5 17}}
+t+ list_header|KilledBy = Elena Rodríguez (Earth-199999)
+t+ list_header|Identity = Known to Authorities
+t+ list_header|Citizenship = Russian
+t+ list_header|Occupation = Industrialist
+t+ list_header|Education =
+t+ list_header|BaseOfOperations = Mobile
+t+ production|Creators = Craig Titley
+t+ production|First = Marvel's Agents of S.H.I.E.L.D.
+
+@2292 gold: one name (Flash Thompson, Lee Price) + aliases; a desire is actual with the planned reclaim; unnamed freed people
+keep
+r Flash=>Flash Thompson
+f- Lee Price|became|Maniac
+r Maniac=>Lee Price
+r Price=>Lee Price
+f+ Maniac|alias_of|Lee Price|When Lee Price stole Andi Benton's symbiote to become Maniac|actual|stated|
+f- Flash Thompson|became|Agent Venom
+f- Flash Thompson|took|symbiote
+f+ Agent Venom|alias_of|Flash Thompson|Desiring to reclaim the symbiote and become Agent Venom again, Flash Thompson|actual|stated|
+f+ Flash Thompson|other_verb|Desiring|Desiring to reclaim the symbiote and become Agent Venom again, Flash Thompson confronted its host|actual|stated|
+f+ Flash Thompson|other_verb|reclaim|Desiring to reclaim the symbiote and become Agent Venom again|planned|stated|Flash Thompson
+t- no_doer|Using antibodies
+t+ crowd_end|Using antibodies developed by those who'd been freed from Price's control
+
+@2293 gold: one tag per infobox line, no pipe in a quote; the arc synopsis is production
+keep
+t- list_header
+t- capability
+t+ list_header|{{Marvel Database:Story Arc Template
+t+ list_header|Image = Amazing Spider-Man Vol 2 612 Variant Granov Textless.jpg
+t+ list_header|Name = The Gauntlet
+t+ list_header|Reality = Earth-616
+t+ list_header|Locations = New York City
+t+ list_header|Protagonists = Spider-Man
+t+ list_header|Antagonists = * Kraven Family (Sasha Kravinoff, Ana Kravinoff, Alyosha Kravinoff, Grim Hunter, Chameleon, Sergei Kravinoff)
+t+ list_header|Electro
+t+ list_header|Sandman
+t+ list_header|Rhino II
+t+ list_header|Rhino I
+t+ list_header|Mister Negative
+t+ list_header|Mysterio
+t+ list_header|Morbius The Living Vampire
+t+ list_header|Martine Bancroft
+t+ list_header|Vulture IV
+t+ list_header|Scorpion II
+t+ list_header|Juggernaut
+t+ list_header|Lizard
+t+ list_header|Others = * Black Cat
+t+ list_header|Arachne
+t+ list_header|Araña
+t+ list_header|Kaine
+t+ list_header|Madame Web
+t+ list_header|Titles = Amazing Spider-Man; Web of Spider-Man
+t+ list_header|First = Amazing Spider-Man Vol 2 612
+t+ list_header|Last = Amazing Spider-Man Vol 2 633
+t+ production|Synopsis = The Gauntlet is the story arc that has old Spider-Man villains such as Electro, the Sandman, and the Rhino coming back upgraded or with new abilities somehow taking on Spider-Man.
+
+@2294 gold: cast credits are production (no facts), one tag per line, no pipe in a quote
+keep
+f- Georges St-Pierre|other_verb|as
+f- Alan Dale|other_verb|as
+f- Chin Han|other_verb|as
+f- Bernard White|other_verb|as
+f- Garry Shandling|other_verb|reprises
+f- Adetokumboh M'Cormack|other_verb|portrays
+f- Aaron Himelstein|other_verb|appears
+t+ citation|Team From CAPTAIN AMERICA: THE WINTER SOLDIER
+t+ production|Georges St-Pierre}} as Georges Batroc
+t+ citation|UFC Champion George St-Pierre Joins Captain America: The Winter Soldier
+t+ production|Alan Dale}} as Councilman Rockwell
+t+ production|Chin Han}} as Councilman Yen
+t+ production|Bernard White}} as Councilman Singh
+t+ production|Garry Shandling}} reprises his role as Senator Stern.
+t+ citation|Hey, isn't that. . .?: Garry Shandling in 'Captain America' sequel
+t+ production|Adetokumboh M'Cormack}} portrays Ferdinand Lopez.
+t+ production|Aaron Himelstein}} appears as a launch technician.

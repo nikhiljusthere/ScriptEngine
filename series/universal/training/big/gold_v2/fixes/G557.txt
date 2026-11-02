@@ -1,0 +1,122 @@
+@2331 gold: ok
+keep
+
+@2332 gold: ok
+keep
+
+@2333 gold: the ordered acts; discoveries keep no object; the mistaken belief is Thanos'
+keep
+f+ Ebony Maw|other_verb|run|Thanos had Ebony Maw run a diagnostic test on her memory file.|ordered|stated|Thanos
+f+ Ebony Maw|other_verb|search|Having the Maw search the future Nebula's memories for Infinity Stones|ordered|stated|Thanos
+f+ Ebony Maw|other_verb|show|Thanos had Maw show him all of future Nebula's memories along the way.|ordered|stated|Thanos
+f- Ebony Maw|discovered|Nebula
+f+ Ebony Maw|discovered|-|Maw discovered that Nebula's memories were entangled a counterpart from nine years in the future.|actual|stated|
+f- Thanos|discovered|Avengers
+f+ Thanos|discovered|-|Thanos discovered the Avengers plan to undo the results of his future self's Snap.|actual|stated|
+f- Nebula|suspected|Thor
+f+ Thanos|suspected|-|This included the memory of Thor murdering Thanos, mistakenly believing that it was Nebula who did the deed.|actual|stated|
+
+@2334 gold: the power gained is named
+keep
+f- Kro|gained_power|-
+f+ Kro|gained_power|Energy Exoskeleton|Kro absorbed his unique power of projecting a golden, cosmic energy-enhanced exoskeleton shielding his arms and fists|actual|stated|
+
+@2335 gold: ok
+keep
+
+@2336 gold: a device and its signal are no doers (mechanics)
+keep
+f- Kree Orb|other_verb|activated
+f- Reapers|other_verb|woke
+f- Kree Orb|other_verb|summoned
+t+ capability|This signal remotely activated the Kree Reapers Satellite, woke up the Reapers in stasis onboard, and summoned the satellite back to Earth.
+
+@2337 gold: "a group of Barbaria" is a partitive crowd; contacted is no meeting; one name (Rick Jones); Hulk is Banner's form (A156); the quote verbs; threatening = actual + planned; a doer-less creation
+keep
+r Jones=>Rick Jones
+- Hulk|defeated|Barbaria
+- Hulk|met|Barbaria
+- Rick Jones|met|Barbaria
+t+ crowd_end|Jones diffused the bomb in time for them to flee, coming across a group of Barbaria.
+t+ crowd_end|Hulk defeated the Barbaria
+- Rick Jones|met|Banner
+f+ Rick Jones|contacted|Banner|Rick Jones then contacted Banner and told him that the Vulcan Sector of the Enclave was planning to use Earthquake Bombs on the city.|actual|stated|
+f+ Hulk|alias_of|Banner|Banner transformed into Hulk|actual|stated|
+t+ crowd_end|fighting off the Enclave soldiers while Jones disarmed it.
+f+ Hulk|other_verb|carried|Banner transformed into Hulk and carried Jones to the first bomb|actual|stated|
+f- Banner|other_verb|suggest
+f+ Banner|other_verb|suggested|Banner suggested they leave it alone|actual|stated|
+f- Rick Jones|other_verb|say
+f+ Rick Jones|other_verb|said|Jones said that they could not since people would get hurt.|actual|stated|
+f- Rick Jones|other_verb|threaten
+f+ Rick Jones|other_verb|threatened|Jones threatened to do it alone|actual|stated|
+f+ Rick Jones|other_verb|do|Jones threatened to do it alone|planned|stated|Rick Jones
+f- Rick Jones|other_verb|disarm
+f+ Rick Jones|other_verb|disarmed|while Jones disarmed it.|actual|stated|
+f- Rick Jones|other_verb|diffuse
+f+ Rick Jones|other_verb|diffused|Jones diffused the bomb in time for them to flee|actual|stated|
+f- Earthquake Bomb|other_verb|create
+t+ no_doer|where the bombs were created.
+
+@2338 gold: one name (Leland Owlsley); the quote's verb; twins of met and captured; wanting = actual + planned; the conditional testimony; the low profile
+keep
+r Owlsley=>Leland Owlsley
+f- Masked Man|other_verb|got
+f+ Masked Man|other_verb|get|Masked Man managed to get some information from Blake before he died|actual|stated|
+f- Leland Owlsley|other_verb|found
+f- Leland Owlsley|other_verb|kept
+f- Leland Owlsley|other_verb|wanted
+f+ Leland Owlsley|other_verb|wanted|who wanted to have a leverage on Fisk|actual|stated|
+f+ Leland Owlsley|other_verb|have|who wanted to have a leverage on Fisk|planned|stated|Leland Owlsley
+t- deictic|if Owlsley stops
+f+ Hoffman|other_verb|testify|promising Hoffman $10 million to testify against Fisk if Owlsley stops checking in.|hypothetical|stated|Leland Owlsley
+f+ Hoffman|other_verb|kept|Hoffman reported to James Wesley and kept a low profile for a while|actual|stated|
+
+@2339 gold: children are a crowd; claiming and ranting are speech; the exposure is narrated; the prison term
+keep
+f- Walsh|mentored|children
+f- Walsh|helped|children
+f- Tommy O'Neal|other_verb|exposed
+f+ Walsh|other_verb|claimed|Walsh claimed that he had been a good mentor to all the children under his care|actual|stated|
+f+ Tommy O'Neal|other_verb|exposed|until Tommy O'Neal had exposed him|actual|stated|
+f+ Walsh|other_verb|spending|resulting in Walsh spending ten years in .|actual|stated|
+f+ Walsh|other_verb|ranted|Walsh ranted about how he viewed all of his actions as unjust, claiming that he dedicated his life to helping children.|actual|stated|
+
+@2340 gold: an unnamed shaman is no end
+keep
+f- Chaac|ordered|shaman
+f+ Chaac|other_verb|instructed|instructed a shaman from a Mayan tribe of Zama Village to catch it and make his people ingest the herb.|actual|stated|
+
+@2341 gold: the encounter is the execution (A145); an offered job is no hire; Skurge observes and kneels; declaring and crossing are Hela's acts
+keep
+- Hela|met|Volstagg
+- Hela|met|Fandral
+f- Hela|hired|Skurge
+f+ Hela|other_verb|offered|the Goddess offered him a job before crossing the Rainbow Bridge that led to Asgard.|actual|stated|
+t- deictic|Skurge, who had observed
+f+ Skurge|other_verb|observed|Skurge, who had observed the murders from a distance, knelt as Hela approached him.|actual|stated|
+f+ Skurge|other_verb|knelt|Skurge, who had observed the murders from a distance, knelt as Hela approached him.|actual|stated|
+t- deictic|Declaring him
+f+ Hela|other_verb|Declaring|Declaring him to be a "smart boy", the Goddess offered him a job|actual|stated|
+t- deictic|before crossing
+f+ Hela|other_verb|crossing|the Goddess offered him a job before crossing the Rainbow Bridge that led to Asgard.|actual|stated|
+
+@2342 gold: PRIDE acts as a group (most members unnamed here); the wound; a described disguise; a broken necklace has no doer; deciding = actual + planned rescue; reassembling, not requesting
+keep
+- Geoffrey Wilder|arrived|Olympic Grand Hotel
+- Tina Minoru|arrived|Olympic Grand Hotel
+- Geoffrey Wilder|saved|Hernandez
+- Tina Minoru|saved|Hernandez
++ PRIDE|arrived|Olympic Grand Hotel|Posing as operatives, PRIDE enters the Olympic Grand Hotel
++ PRIDE|saved|Hernandez|PRIDE enters the Olympic Grand Hotel and is able to take Hernandez from the coven
+f+ Hernandez|wounded|Geoffrey Wilder|Geoffrey is seriously wounded by the enthralled Hernandez|actual|stated|
+f- Geoffrey Wilder|other_verb|free
+f- Crow Necklace|destroyed|-
+t+ no_doer|free from le Fay's enthralment now that his Crow Necklace has been broken.
+f- Geoffrey Wilder|other_verb|decide
+f+ Geoffrey Wilder|other_verb|decide|and they decide that they will rescue the young girl|actual|stated|
+f+ PRIDE|other_verb|rescue|and they decide that they will rescue the young girl|planned|stated|PRIDE
+f+ Geoffrey Wilder|other_verb|reassembles|In order to save Hernandez, Geoffrey reassembles PRIDE|actual|stated|
+f+ PRIDE|other_verb|requesting|without requesting assistance from the Runaways to keep them out of harm's way.|actual|denied|
+f- PRIDE|disguise_as|operatives
+f+ PRIDE|other_verb|Posing|Posing as operatives, PRIDE enters the Olympic Grand Hotel|actual|stated|

@@ -1,0 +1,85 @@
+@2415 gold: a spoken line names no one; it is dialogue
+keep
+f- Daredevil|wounded|-
+t+ dialogue|I really wouldn't try to move too much, you've got two or three broken ribs, probable concussion, some kind of puncture wound and that's just the stuff that I know about, and your eyes, they're unresponsive to light which isn't freaking you the hell out so either you're blind or in way worse shape than I thought.
+
+@2416 gold: the first line is dialogue too
+keep
+t+ dialogue|Look, I know that we scare you, and you've never seen anything like us, but this is a good man.
+
+@2417 gold: the students are a crowd
+keep
+t- deictic|while the students
+t+ crowd_end|while the students were physically training
+
+@2418 gold: ok
+keep
+
+@2419 gold: one dialogue tag per spoken line; the soldiers' doer-less arrest; the unanswered question; explaining, empathizing, the asked hoodie
+keep
+t- dialogue|So guess what?
+t+ dialogue|So guess what?
+t+ dialogue|What?
+t+ dialogue|Today... a hero looks like you.
+t+ no_doer|Once the soldiers were apprehended
+t- deictic|but DJ was too excited
+f+ DJ|other_verb|answer|but DJ was too excited about getting a lecture from Captain America to answer.|actual|denied|
+f+ Sam Wilson|other_verb|empathized|Wilson empathized with DJ's desire to help|actual|stated|
+f+ Sam Wilson|other_verb|explained|Wilson explained that people would get the Solar-Battery Drones thanks to DJ|actual|stated|
+f+ DJ|other_verb|make|so Wilson asked DJ to make him a hoodie, claiming his uniform got itchy.|ordered|stated|Sam Wilson
+
+@2420 gold: the Runaways infiltrate to prevent (not Chase); wanting = actual + planned; the teammates are unnamed
+keep
+f- Chase Stein|other_verb|prevent
+f+ Runaways|other_verb|prevent|as they infiltrated the building in order to prevent Jonah from performing another sacrifice.|planned|stated|Runaways
+t- no_relation|The glass tank
+f+ Runaways|other_verb|found|The glass tank was found by the Runaways as they infiltrated the building|actual|stated|
+f+ Runaways|other_verb|infiltrated|as they infiltrated the building in order to prevent Jonah from performing another sacrifice.|actual|stated|
+f+ Chase Stein|other_verb|wanting|Despite Chase Stein wanting to release his father|actual|stated|
+t- no_doer|his teammates convinced
+t+ crowd_end|his teammates convinced him not to since they did not know how to deactivate the algorithm
+
+@2421 gold: a spell is no doer (its caster is); the planned saving
+keep
+f- spell|other_verb|sent
+f+ Doctor Strange|other_verb|sent|which sent the "multiversal visitors" back to their home universes.|actual|stated|
+f+ Doctor Strange|other_verb|save|To save the Multiverse, Doctor Strange completed a second rendition of the spell|planned|stated|Doctor Strange
+
+@2422 gold: a possessive son is no end; "the Irish" are unnamed shooters (no member tied); claiming is speech; the money taken; the reveal; the unnamed attackers
+keep
+- Castle|killed|Cooley's youngest son
+- Finn Cooley|fought|Castle
+- Rory|fought|Castle
+t+ crowd_end|The Irish began shooting Castle with tasers which barely slowed him down.
+t+ crowd_end|killing several of attackers and using his hostage as a human shield
+f- Rory|other_verb|wanted
+f+ Rory|other_verb|claiming|with Rory claiming they wanted Castle alive.|actual|stated|
+f+ Finn Cooley|revealed|-|Finn Cooley revealed that he wanted Castle after he killed several of their members|actual|stated|
+f- Castle|other_verb|taken
+f+ Castle|stole|money|including Nesbitt and Cooley's youngest son and taken his money.|actual|stated|
+
+@2423 gold: one name (Peter); the saying; the denied wish
+keep
+r Star-Lord=>Peter
+f+ Gamora|other_verb|saying|which she had stolen earlier, saying that it was lying around.|actual|stated|
+f+ Gamora|other_verb|want|as she didn't want to leave her sister to deal with High Evolutionary|actual|denied|
+
+@2424 gold: ok
+keep
+
+@2425 gold: hearing, testifying, yelling
+keep
+f+ Batzer|other_verb|heard|Batzer heard Andrew Lee testify about Castle's head injury and possible PTSD.|actual|stated|
+f+ Andrew Lee|other_verb|testify|Batzer heard Andrew Lee testify about Castle's head injury and possible PTSD.|actual|stated|
+f+ Brian|other_verb|yelled|Suddenly Brian, the son of Finn Cooley, had an outburst and yelled at Castle for killing his father.|actual|stated|
+
+@2426 gold: the unnamed guard is no end; impersonating a kind of guard is no named disguise; Loki's false report of his death
+keep
+- Loki|killed|the guard
+t+ crowd_end|but Loki murdered him in surprise
+f- Loki|disguise_as|Einherjar Guard
+f+ Loki|other_verb|impersonated|impersonated the guard, and returned to Asgard|actual|stated|
+f+ Loki|dies|-|to inform Odin that Loki had been killed.|claimed|stated|Loki
+
+@2427 gold: ok
+keep

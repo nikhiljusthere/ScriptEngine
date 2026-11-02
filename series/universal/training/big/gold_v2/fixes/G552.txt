@@ -1,0 +1,92 @@
+@2271 gold: a stated rule is no apparent
+keep
+f- Knull|other_verb|resurrect
+f+ Knull|other_verb|resurrect|Knull will resurrect in the Far Shore to fill that position|hypothetical|stated|Knull
+
+@2272 gold: a ship is no doer; the forcing
+keep
+f- Bird of Prey|other_verb|retrieved
+t+ no_doer|In deep space, he was retrieved by the Bird of Prey, a pirate starship whose crew members were of various alien races.
+f- Grey Gargoyle|other_verb|command
+f+ Grey Gargoyle|other_verb|forced|the Grey Gargoyle forced himself into command of the ship|actual|stated|
+
+@2273 gold: the enhanced subjects; Captain America is Steve Rogers; things are no doers; no pipe in a quote
+keep
+f- Captain America|gained_power|-
+f- Variations of the Super-Soldier Serum|other_verb|induced
+f- Captain America|other_verb|appear
+f- The more powerful variants|other_verb|come
+f+ Captain America|alias_of|Steve Rogers|it would appear that Captain America (Steve Rogers) is the "perfect man."|actual|stated|
+f+ Steve Rogers|gained_power|Peak-Potential|Subjects that are considered to have been enhanced to their "Peak-Potential" are noted to be Captain America,|actual|stated|
+f+ Isaiah Bradley|gained_power|Peak-Potential|Isaiah Bradley,|actual|stated|
+f+ Protocide|gained_power|Peak-Potential|Protocide via an SSS variant,|actual|stated|
+f+ Union Jack|gained_power|Peak-Potential|and Union Jack via a different SSS.|actual|stated|
+t+ no_doer|Variations of the Super-Soldier Serum have been developed over the years which induced greater-mutations than peak human capabilities.
+t+ no_relation|So far, it would appear that Captain America (Steve Rogers) is the "perfect man."
+t+ capability|The more powerful variants come with strange side-effects that may also include mental deficiencies.
+t- list_header|| History
+t+ list_header|History =
+
+@2274 gold: one stated act (A145); the purpose clause is no Morlock act
+keep
+- Storm|fought|Callisto
+f- Morlocks|other_verb|noticed
+
+@2275 gold: a company's origin name is no act
+keep
+f- Roxxon|other_verb|began
+t+ no_relation|Roxxon began as the Roxxon Oil Company, a small oil engineering business in the early 20th century
+
+@2276 gold: one name (Axl Heimdallson); becoming a fan is a copula
+keep
+r Axl=>Axl Heimdallson
+f- Axl Heimdallson|other_verb|fan
+t+ no_relation|Axl became a fan of Guns N' Roses
+
+@2277 gold: a possessive force acts through its named head; the failed invasion
+keep
+f- Fascist Italian forces|attacked|Greece
+f- Fascist Italian forces|other_verb|failed
+f+ Benito Mussolini|attacked|Greece|In 1940, Benito Mussolini's Fascist Italian forces attacked Greece.|actual|stated|
+t+ no_relation|But the invasion failed.
+
+@2278 gold: the meeting on the bus is separate from the later fight; threatening = actual threat + planned beating
+keep
+f- Ransom|other_verb|threatened
+f+ Ransom|other_verb|threatened|Ransom threatened to beat him|actual|stated|
+f+ Ransom|other_verb|beat|Ransom threatened to beat him|planned|stated|Ransom
+
+@2279 gold: a team is no place (left_group); the fullest name Doctor Spectrum; the hired act; relenting
+keep
+r Spectrum=>Doctor Spectrum
+- Rocket|departed|Starjammers
+- Groot|departed|Starjammers
+f+ Rocket|left_group|Starjammers|Rocket and Groot eventually left the Starjammers and went on their own.|actual|stated|
+f+ Groot|left_group|Starjammers|Rocket and Groot eventually left the Starjammers and went on their own.|actual|stated|
+f+ Rocket|other_verb|kill|the Watcher hired Rocket and Groot to kill Doctor Spectrum|ordered|stated|Watcher
+f+ Groot|other_verb|kill|the Watcher hired Rocket and Groot to kill Doctor Spectrum|ordered|stated|Watcher
+f+ Rocket|other_verb|relented|Rocket eventually relented, and he and Groot raised Brandy.|actual|stated|
+
+@2280 gold: ok
+keep
+
+@2281 gold: an in-person offer is no contact; interest is a trait; the unnamed figure is no end
+keep
+f- Manipulator|contacted|Company
+f+ Manipulator|other_verb|offered|The Manipulator offered his services to "the Company" (probably the CIA)|actual|stated|
+t- capability|The Manipulator was quite interested
+t+ no_relation|The Manipulator was quite interested in human behavior and how behavior was influenced by a number of factors.
+t- capability|who was supposedly ready
+t+ crowd_end|who was supposedly ready to die to expunge the desolation which haunted the Beast's soul.
+t+ crowd_end|The figure hinted at the Beast's hidden insecurities and emotional turmoil
+
+@2282 gold: thwarting is the defeat (one act); the deported arrive; vampires are a race; the tried verb; a newly-formed group is no doer
+keep
+- Nightstalkers|fought|AvenG.E.R.S.
++ Nightstalkers|arrived|Vampyrsk|They took down the disgraced vampire-hunters and deported them to Vampyrsk to be judged for their crimes.
+f- vampires|other_verb|began
+t+ crowd_end|The vampires began living publicly, but faced ostracization from humans who saw them as ruthless, bloodthirsty monsters.
+f- Nightstalkers|other_verb|attempted
+f+ Nightstalkers|other_verb|exterminate|The Nightstalkers attempted to exterminate a colony of vampires in North Brother Island|attempted|stated|Nightstalkers
+f- AvenG.E.R.S.|protected|vampires
+f- Blood Hunters|other_verb|formed

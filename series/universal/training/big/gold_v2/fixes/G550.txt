@@ -1,0 +1,87 @@
+@2247 gold: one name (Daniels, the real name given) + alias row; the escape from Croit; the feeling is his act
+keep
+r Blackout=>Daniels
+f- Daniels|alias_of|Daniels
+f+ Blackout|alias_of|Daniels|Daniels escaped from Croit's laboratory not long afterward, and calling himself Blackout|actual|stated|
++ Daniels|escaped|Croit|Daniels escaped from Croit's laboratory not long afterward
+t- deictic|Feeling the energies
+f+ Daniels|other_verb|Feeling|Feeling the energies within him becoming increasingly unstable, Blackout returned to Croit's laboratory|actual|stated|
+t- deictic|his grasp on sanity
+t+ no_relation|his grasp on sanity made more precarious by his time spent in the other dimension.
+
+@2248 gold: ok
+keep
+
+@2249 gold: named doers see and play
+keep
+t- no_relation|When Captain America
+f+ Captain America|other_verb|saw|When Captain America and Storm check out the playground, they saw Spider-Girl and Rhino playing on the swings.|actual|stated|
+f+ Storm|other_verb|saw|When Captain America and Storm check out the playground, they saw Spider-Girl and Rhino playing on the swings.|actual|stated|
+f+ Spider-Girl|other_verb|playing|they saw Spider-Girl and Rhino playing on the swings.|actual|stated|
+f+ Rhino|other_verb|playing|they saw Spider-Girl and Rhino playing on the swings.|actual|stated|
+
+@2250 gold: one name (Svenson); a race is no doer; the planned rescue
+keep
+r Dr. Svenson=>Svenson
+f- Kallusians|kidnapped|Svenson
+f- Kallusians|built|underground city
+t+ crowd_end|The Kallusians landed upon the North Pole and kidnapped Doctor Svenson, to help them breath the Earth's oxygen.
+t+ crowd_end|They built an entire underground city
+t+ crowd_end|When the Kallusians were discovered by their enemies and had to flee
+f+ Avengers|other_verb|save|who were looking for Doctor Svenson in order to save Wasp's life|planned|stated|Avengers
+
+@2251 gold: things are no doers; the being is Kobik; a naming is no alias; no pipe in a quote
+keep
+f- fragments|other_verb|merged
+f- single being|transformed_into|child
+f- Kobik|also_known_as|the child
+t+ no_relation|Then the fragments merged together into a single being
+f+ Kobik|transformed_into|child|and this being transformed into a child. This child was named Kobik.|actual|stated|
+t+ no_doer|This child was named Kobik.
+t- list_header|| Properties
+t+ list_header|Properties =
+
+@2252 gold: enemies are rivals; the Seraphim are a kind of being
+keep
+f- Trinity of Ashes|other_verb|enemies
+f+ Trinity of Ashes|rival_of|Vishanti|the enemies of the Vishanti were primarily the Trinity of Ashes|actual|stated|
+f- Slorioth|other_verb|Vishanti
+f+ Vishanti|rival_of|Slorioth|though they were also opposite to Slorioth|actual|stated|
+f- Seraphim|other_verb|enemy
+t+ crowd_end|such as the Seraphim who considered themselves enemy of Shaeol
+
+@2253 gold: a solicitation blurb is production
+keep
+t- deictic|But what sinister aim
+t+ production|But what sinister aim is this group after, and how does it play into Ogun's plan?
+
+@2254 gold: a Wild Sentinel is a kind, no alias; "had" is ownership
+keep
+f- Danger|other_verb|had
+f- Ultron|other_verb|had
+f- Wild Sentinel|alias_of|Charles Xavier
+f+ Danger|owns|Charles Xavier|Danger and Ultron had as a gift from their children the Wild Sentinel, Charles Xavier.|actual|stated|
+f+ Ultron|owns|Charles Xavier|Danger and Ultron had as a gift from their children the Wild Sentinel, Charles Xavier.|actual|stated|
+
+@2255 gold: the ordered act; the named group follows
+keep
+f+ Harrow|other_verb|stop|Osborn demands to Harrow to stop the bomb from detonating.|ordered|stated|Osborn
+t- no_relation|The Dark Avengers follow
+f+ Dark Avengers|other_verb|follow|The Dark Avengers follow the bomb's beacon.|actual|stated|
+
+@2256 gold: the group's name without its article; a belief
+keep
+r the Twelve=>Twelve
+f- Order of the Witnesses|other_verb|belief
+f+ Order of the Witnesses|suspected|-|The only opposition was a quiet belief in the Twelve, mutants who battled Apocalypse in the modern era, by the Order of the Witnesses.|actual|stated|
+
+@2257 gold: an unnamed specimen is no end
+keep
+f- Poison|disguise_as|Daredevil
+t+ crowd_end|though a specimen impersonated Daredevil on the world where a Venomized Gwenpool was located in order to ambush and consume her.
+
+@2258 gold: an unnamed officer is a crowd end; swinging off
+keep
+t- no_doer|Keating is informed
+t+ crowd_end|Keating is informed by one of his officers that the Cobra managed to escape while they were trying to get him into a police van.
+f+ Spider-Man|other_verb|swings|Spider-Man mocks Keating for bungling the capture and swings off.|actual|stated|

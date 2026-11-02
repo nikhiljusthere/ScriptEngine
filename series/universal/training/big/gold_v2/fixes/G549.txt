@@ -1,0 +1,76 @@
+@2237 gold: ok
+keep
+
+@2238 gold: one name (Peter Parker); Puma without article; Frank is the alias; wondered is a clause belief; the sending carries its act; the telling, declining, unease and undetermined extent
+keep
+r Spider-Man=>Peter Parker
+r the Puma=>Puma
+f- Peter Parker|suspected|Beyonder
+f+ Peter Parker|suspected|-|Spider-Man wondered if the Beyonder was responsible for the cult.|actual|stated|
+f+ Peter Parker|other_verb|declined|Spider-Man politely declined|actual|stated|
+f- Thomas Fireheart|other_verb|connection
+f+ Thomas Fireheart|other_verb|made|His considerable resources had made a connection between the Beyonder and the Cosmic Oneness cult.|actual|stated|
+f+ Kathryn Cushing|other_verb|demanded|whose new editor Kathryn Cushing demanded results from her staff on the cult.|actual|stated|
+f+ Ned Leeds|other_verb|get|she sent Ned Leeds and Lance Bannon to get the scoop on the cult|ordered|stated|Kathryn Cushing
+f+ Lance Bannon|other_verb|get|she sent Ned Leeds and Lance Bannon to get the scoop on the cult|ordered|stated|Kathryn Cushing
+f- Beyonder|alias_of|Frank
+f+ Frank|alias_of|Beyonder|the Beyonder, under the alias "Frank"|actual|stated|
+t- no_relation|felt uneasy
+f+ Peter Parker|other_verb|felt|felt uneasy about the cult and it's true intentions|actual|stated|
+t- no_relation|who told him
+f+ Puma|other_verb|told|who told him all the information regarding the Beyonder he had learned|actual|stated|
+f+ Puma|other_verb|explained|He explained that the Beyonder, under the alias "Frank" was involved with crook Vinnie Corbo|actual|stated|
+t- no_relation|had yet to determine
+f+ Puma|other_verb|determine|had yet to determine the extent of the Beyonder's involvement with its operations|actual|denied|
+
+@2239 gold: a described house is no place
+keep
+f- Rogue|located_at|empty house
+f+ Rogue|other_verb|spent|They eventually found an empty house and spent the night in there.|actual|stated|
+
+@2240 gold: "including" is no act
+keep
+f- Scorpion|other_verb|including
+
+@2241 gold: a doer-less passive call; figured out = learned; wanting = actual want + planned help; Knull's destroying
+keep
+f- Rocket|other_verb|called
+t+ no_doer|Later, Rocket was called to investigate the murder of Stote
+f- Rocket|other_verb|figured
+f+ Rocket|learned|-|After he figured out it was caused by the Profiteer|actual|stated|
+f- Rocket|other_verb|wanted
+f+ Rocket|other_verb|wanted|Rocket wanted to go help Earth against Knull|actual|stated|
+f+ Rocket|other_verb|help|Rocket wanted to go help Earth against Knull|planned|stated|Rocket
+t- crowd_end|Knull was destroying
+f+ Knull|other_verb|destroying|Knull was destroying entire planets|actual|stated|
+
+@2242 gold: a rumoured identity of a place is no alias
+keep
+f- R'llyeh|also_known_as|First Atlantis
+t+ no_relation|The Aqueos city of R'llyeh was rumored to be the "First Atlantis", and the source of all magic.
+
+@2243 gold: "destroyed thanks to" the named groups is their act (A103)
+keep
+f- Onslaught|destroyed|-
++ Fantastic Four|killed|Onslaught|until Onslaught was destroyed thanks to the seeming sacrifice of the Fantastic Four and the Avengers.
++ Avengers|killed|Onslaught|until Onslaught was destroyed thanks to the seeming sacrifice of the Fantastic Four and the Avengers.
+
+@2244 gold: ok
+keep
+
+@2245 gold: one name (Jessica Jones); thwarting a plan = defeated; the power gained; the father; the crush and regained powers; an item is no doer
+keep
+r Jessica=>Jessica Jones
+f- Gwen|other_verb|Thwarting
++ Gwen|defeated|Loki|Thwarting Loki's plans for the Cosmic Cube
+f- Gwen|other_verb|crush
+f+ Gwen|other_verb|developing|developing a crush on crime-lord Carlos LaMuerto's son Fabian|actual|stated|
+f+ Carlos LaMuerto|parent_of|Fabian|crime-lord Carlos LaMuerto's son Fabian|actual|stated|
+f- Gwen|gained_power|-
+f+ Gwen|gained_power|electrical powers|she had developed strange new electrical powers|actual|stated|
+f- Cosmic Cube|other_verb|merged
+f+ Gwen|other_verb|regaining|regaining her original Spider powers|actual|stated|
+
+@2246 gold: the head of A.I.M.
+keep
+f+ Clinton|leader_of|A.I.M.|As Scientist Supreme, the highest position held in A.I.M., Clinton presumably must possesses considerable expertise|actual|stated|

@@ -1,0 +1,152 @@
+@2117 gold: all four swore the oath
+keep
+f+ Screwbeard|other_verb|sworn|All sworn a sacred oath to bring peace to Realms|actual|stated|
+f+ Oggmunder Dragglevadd Vinnsuvius XVII|other_verb|sworn|All sworn a sacred oath to bring peace to Realms|actual|stated|
+f+ Ud the Troll|other_verb|sworn|All sworn a sacred oath to bring peace to Realms|actual|stated|
+
+@2118 gold: Sinister's disruption has a doer; a body is no object; one asserter per row; the vendetta; the tried arrest; unnamed civilians
+keep
+t- crowd_end|The auction was disrupted
+f+ Mister Sinister|other_verb|disrupted|The auction was disrupted by Mister Sinister|actual|stated|
+t+ crowd_end|who attacked the unidentified seller
+f- Jessica|used|Luke's body
+f+ Jessica|other_verb|plug|Luke's body was used by Jessica to plug up the hole created by Mister Sinister.|actual|stated|
+f+ Wilson Fisk|rival_of|Daredevil|as part of a vendetta against Daredevil|actual|stated|
+f- Luke|other_verb|keep
+f- Jessica|other_verb|keep
+f+ Luke|other_verb|keep|Luke and Jessica tried to keep a low profile|attempted|stated|Luke
+f+ Jessica|other_verb|keep|Luke and Jessica tried to keep a low profile|attempted|stated|Jessica
+f+ Shocker|other_verb|arrest|while trying to arrest Darkhawk|attempted|stated|Shocker
+t+ crowd_end|Luke and Jessica had to step in, rescuing some civilians.
+
+@2119 gold: no article on a name
+keep
+r The Imperial Guard=>Imperial Guard
+
+@2120 gold: ok
+keep
+
+@2121 gold: one name for this version (Revision) and for Jesse Jones; a kind is no verb; the tried defeat; the Variants turn as a group with unnamed members
+keep
+r Jessica Jones=>Revision
+r Jesse=>Jesse Jones
+f- Revision|other_verb|synthezoid
+t+ no_relation|Revision was a synthezoid.
+f+ Jesse Jones|other_verb|defeat|When he failed to defeat Luke Cage|attempted|stated|Jesse Jones
+- Revision|betrayed|Jewel
++ Variants|betrayed|Jewel|With Jewel incapacitated, The Variants turned on her.
+
+@2122 gold: Namor's rampage; take is the verb; Doom's stated death
+keep
+f+ Namor|other_verb|ran|After Namor ran amuck in Dystopia with a Giganto|actual|stated|
+f- Abomination|other_verb|control
+f+ Abomination|other_verb|take|used it to take control of Human Torch's systems|actual|stated|
+f+ Victor von Doom|dies|-|Castle Doom, formally served as the residence of Victor von Doom (until his death)|actual|stated|
+
+@2123 gold: ok
+keep
+
+@2124 gold: Sue mutated too; a show is no group; garbage objects; quotes that show the tie; Ben is a member; received powers have no named power
+keep
+f+ Sue Storm|other_verb|mutated|Reed Richards and Sue Storm mutated and died in a rocket explosion|actual|stated|
+f- Johnny Storm|member_of|Sapien Death Match
+t+ no_relation|Johnny Storm is a contestant on 'Sapien Death Match'
+f- Doctor Doom|other_verb|liquid-metal
+f- Valeria|married|Doctor Doom
+f+ Valeria|married|Doctor Doom|Valeria (not Marvel Girl, but Doom's wife)|actual|stated|
+f- Invincible Woman|alias_of|Valeria
+f+ Invincible Woman|alias_of|Valeria|Valeria (not Marvel Girl, but Doom's wife) as The Invincible Woman|actual|stated|
+f- Kristoff Vernard|member_of|Fearsome Four
+f- Doctor Doom|parent_of|Kristoff Vernard
+f- Kristoff Vernard|sibling_of|Reed Richards
+f- Inhuman Torch|alias_of|Kristoff Vernard
+f+ Kristoff Vernard|member_of|Fearsome Four|other members include Valeria (not Marvel Girl, but Doom's wife) as The Invincible Woman, Kristoff Vernard|actual|stated|
+f+ Doctor Doom|parent_of|Kristoff Vernard|Kristoff Vernard (Doom's adopted son|actual|stated|
+f+ Kristoff Vernard|sibling_of|Reed Richards|possibly the half-brother of Reed Richards|actual|apparent|
+f+ Inhuman Torch|alias_of|Kristoff Vernard|possibly the half-brother of Reed Richards) as the Inhuman Torch|actual|stated|
+f+ Ben Grimm|member_of|Fearsome Four|and Ben Grimm as the It)|actual|stated|
+f- Valeria|gained_power|-
+f- Kristoff Vernard|gained_power|-
+f- Doctor Doom|other_verb|experiments
+f+ Valeria|other_verb|received|all members of the group received their powers from Doom's experiments on the corpses of Reed and Susan Richards.|actual|stated|
+f+ Kristoff Vernard|other_verb|received|all members of the group received their powers from Doom's experiments on the corpses of Reed and Susan Richards.|actual|stated|
+
+@2125 gold: the call, crash and contact; a company owning a described complex; Miles is injured; the refusal; the named new power; Miles' victory is the defeat (own sentence); the assist; Krieger works for Roxxon; a suggestion is speech
+keep
+f+ Peter|other_verb|called|Peter soon called for Miles' backup|actual|stated|
+f+ Rhino|other_verb|crash|as Rhino began to crash through commercial buildings, including a mall.|actual|stated|
+f- Roxxon|owns|building complex
+t+ no_relation|The explosion decimated a building complex now owned by the energy company Roxxon.
+f+ Miles|wounded|-|Injured, Miles tried to get ahold of Peter|actual|stated|
+f+ Peter|contacted|Miles|During these confrontations, Peter contacted Miles|actual|stated|
+f+ Miles|other_verb|refused|but Miles refused to back down|actual|stated|
+f- Miles|gained_power|-
+f+ Miles|gained_power|bioelectricity|blasting him with a bolt of bioelectricity. Miles was awestruck by this new power|actual|stated|
++ Miles|defeated|Rhino|After some time, Miles emerged victorious and went to assist his mentor.
+f+ Miles|assisted|Peter|After some time, Miles emerged victorious and went to assist his mentor.|actual|stated|
+f+ Simon Krieger|member_of|Roxxon|Roxxon executive Simon Krieger showed up|actual|stated|
+f- Peter|ordered|Miles
+f+ Peter|other_verb|told|but Peter told him they should get out of there and let the police do their work.|actual|stated|
+
+@2126 gold: one tag per sentence; section headers; a described tower is no object
+keep
+t- capability
+t+ capability|Multiple sub-basements found below the STC house parking and secure parking facilities (for 800 vehicles), computer support, and energy conservation mechanicals.
+t+ capability|The latter provides the Stark Tower Complex with the ability to make use of full-spectrum energy conservation which recycles all energies normally expended.
+t+ capability|In the sub-basements can also be found the regional offices for various federal government agencies and programs such as the CSA and the 50-State Initiative, these two oversee the paperwork associated with local superhuman registration operations.
+t+ capability|Through these sub-basements, the STC is connected to a New York subway station which is also accessible from the street.
+t+ list_header|==Alternate Realities==
+t+ list_header|===Marvel Adventures (Earth-20051)===
+f- Iron Man|used|tower
+f+ Iron Man|other_verb|store|Iron Man used the tower to store his armors.|actual|stated|
+
+@2127 gold: standing down and the coward belief; the sheriff talk has a doer; the father; almost shooting is denied; told harassment is Seth's claim; the refusal, offer and reminder; the ordered burial; beliefs are suspected; the unnamed lawman; helping anyone is a crowd
+keep
+f+ Clay Harder|other_verb|stands|Clay manages to control his temper and stands down|actual|stated|
+f+ Bull Yaeger|suspected|-|leaving Yaeger to believe that he is a coward.|actual|stated|
+t- no_doer|he talks to the local sheriff
+f+ Clay Harder|other_verb|talks|When he talks to the local sheriff, he asks to be directed to the home of his father Seth Harder.|actual|stated|
+f+ Seth Harder|parent_of|Clay Harder|he asks to be directed to the home of his father Seth Harder.|actual|stated|
+f- Seth Harder|other_verb|shoots
+f+ Seth Harder|other_verb|shoots|almost shoots his own son until he recognizes the boy.|actual|denied|
+f- Bull Yaeger|other_verb|harassed
+f+ Bull Yaeger|other_verb|harassed|He tells Clay that he has been harassed by Bull Yaeger and his men who want to take over his ranch|claimed|stated|Seth Harder
+f+ Seth Harder|other_verb|refuses|but he refuses to give it up.|actual|stated|
+f+ Clay Harder|other_verb|offers|When Clay offers to deal with Bull for him|actual|stated|
+f+ Clay Harder|other_verb|deal|When Clay offers to deal with Bull for him|planned|stated|Clay Harder
+f+ Seth Harder|other_verb|reminds|Seth reminds his son of the vow he made never to raise his guns to another man|actual|stated|
+f+ Bull Yaeger|other_verb|tells|who tells Clay that he and his friends will claim that they killed his father in self defence|actual|stated|
+f+ Clay Harder|other_verb|bury|then order Clay to bury Seth and clear off the land.|ordered|stated|Bull Yaeger
+f- Clay Harder|other_verb|believes
+f+ Clay Harder|suspected|-|he believes that he is no longer bound to the promise he made with his father|actual|stated|
+f+ Clay Harder|other_verb|waits|and waits for Bull and his men to return.|actual|stated|
+f+ Clay Harder|other_verb|turning|After turning the outlaws over to the sheriff|actual|stated|
+t- no_doer|the lawman remarks
+t+ crowd_end|the lawman remarks how Clay is a real "Two-Gun Kid"
+f- Clay Harder|helped|-
+f+ Clay Harder|other_verb|rides|Clay decides to take the name and rides off onto the range, wanting to help anyone in need.|actual|stated|
+
+@2128 gold: patients of passives are no doers; the landing; a state is no verb
+keep
+f- Battle Brady|other_verb|commended
+t+ no_doer|Battle Brady is commended for his action.
+f- Battle Brady|other_verb|asked
+f+ Battle Brady|other_verb|land|Miraculously able to right the chopper and land|actual|stated|
+f- Swenski|other_verb|dazed
+
+@2129 gold: the laying waste has the Wave as doer
+keep
+t- no_relation|and laying waste
+f+ Annihilation Wave|other_verb|laying|and laying waste to the planet's defenses in less than a hour.|actual|stated|
+
+@2130 gold: a chase is no fight; the place; the planned reveal; the tried escape; "the team" is no end (the forming)
+keep
+- Iron Man|fought|Hulk
+f+ Iron Man|other_verb|chased|As Iron Man chased Hulk inside a huge auto factory in Detroit|actual|stated|
+f+ Iron Man|located_at|Detroit|As Iron Man chased Hulk inside a huge auto factory in Detroit|actual|stated|
+f+ Thor|other_verb|reveal|who brought Loki in order to reveal his plot to blame Hulk for a train wreck.|planned|stated|Thor
+f+ Loki|other_verb|escape|Loki tried to escape by becoming radioactive|attempted|stated|Loki
+f- The team|allied_with|-
+f- The team|became|Avengers
+t+ no_relation|The team decided to join forces and became the Avengers
+

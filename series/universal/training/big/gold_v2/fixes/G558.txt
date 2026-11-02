@@ -1,0 +1,91 @@
+@2343 gold: ok
+keep
+
+@2344 gold: ok
+keep
+
+@2345 gold: ok
+keep
+
+@2346 gold: a cast list is production (no facts), one tag per line
+keep
+f- Charlie Cox|other_verb|Matt
+f- Deborah Ann Woll|other_verb|Karen
+f- Elden Henson|other_verb|Foggy
+f- Toby Leonard Moore|other_verb|James
+f- Vondie Curtis-Hall|other_verb|Ben
+f- Bob Gunton|other_verb|Leland
+f- Ayelet Zurer|other_verb|Vanessa
+f- Jon Bernthal|other_verb|Frank
+f- Élodie Yung|other_verb|Elektra
+f- Joanne Whalley|other_verb|Maggie
+f- Jay Ali|other_verb|Ray
+f- Wilson Bethel|other_verb|Benjamin
+f- Stephen Rider|other_verb|Blake
+f- Rosario Dawson|other_verb|Claire
+f- Vincent D'Onofrio|other_verb|Wilson
+t+ production|Charlie Cox as Matt Murdock/Masked Man/Daredevil (Seasons 1-3)
+t+ production|Deborah Ann Woll as Karen Page (Seasons 1-3)
+t+ production|Elden Henson as Foggy Nelson (Seasons 1-3)
+t+ production|Toby Leonard Moore as James Wesley (Season 1)
+t+ production|Vondie Curtis-Hall as Ben Urich (Season 1)
+t+ production|Bob Gunton as Leland Owlsley (Season 1)
+t+ production|Ayelet Zurer as Vanessa Marianna (Season 1; Special Guest Star Season 3)
+t+ production|Jon Bernthal as Frank Castle/Punisher (Season 2)
+t+ production|Élodie Yung as Elektra (Season 2)
+t+ production|Joanne Whalley as Maggie Grace (Season 3)
+t+ production|Jay Ali as Ray Nadeem (Season 3)
+t+ production|Wilson Bethel as Benjamin Poindexter (Season 3)
+t+ production|Stephen Rider as Blake Tower (Seasons 2-3)
+t+ production|Rosario Dawson as Claire Temple (Seasons 1-2)
+t+ production|Vincent D'Onofrio as Wilson Fisk/Kingpin (Seasons 1-3)
+
+@2347 gold: ok
+keep
+
+@2348 gold: ok
+keep
+
+@2349 gold: the window says Cooper (no page-title name)
+keep
+r Cooper Barton=>Cooper
+
+@2350 gold: a doer-less apprehension; one name (Barnes); freeing himself has no captor named; "confront" with no stated attack is met
+keep
+r Winter Soldier=>Barnes
+f- Steve Rogers|other_verb|apprehended
+f- Sam Wilson|other_verb|apprehended
+f- T'Challa|other_verb|apprehended
+t+ no_doer|which were apprehended after the incident in Bucharest.
+- Barnes|escaped|Avengers
+- Barnes|fought|Avengers
+f+ Barnes|other_verb|freed|a power outage occurred and Barnes freed himself|actual|stated|
++ Barnes|met|Avengers|Barnes freed himself, forcing the Avengers and the Centre operatives to confront him.
+
+@2351 gold: ok
+keep
+
+@2352 gold: ok
+keep
+
+@2353 gold: the opening lines are dialogue; the execution in battle is one act (A145); the sealed substance has no doer
+keep
+- Colleen Wing|fought|Bakuto
+t+ dialogue|Gao... 何が起こっている？
+t+ dialogue|The end.
+t+ no_doer|and the substance itself was sealed off for good.
+
+@2354 gold: telling is speech with the ordered stay; the watch is planned; Thor's study trip is a claim; leaving, sleeping, inviting
+keep
+f- Frigga|other_verb|told
+f+ Frigga|other_verb|told|told Thor to stay on his best behavior|actual|stated|
+f+ Thor|other_verb|stay|told Thor to stay on his best behavior|ordered|stated|Frigga
+f- Heimdall|other_verb|keep
+f+ Heimdall|other_verb|keep|as Heimdall would keep his eyes on him.|planned|stated|Heimdall
+f- Thor|other_verb|going
+f+ Thor|other_verb|going|he, the Warriors Three, and Sif were going to Midgard to study.|claimed|stated|Thor
+f+ Odin|other_verb|went|Once Odin went to sleep|actual|stated|
+t- no_relation|after Frigga left
+f+ Frigga|other_verb|left|However, after Frigga left, Thor told Heimdall|actual|stated|
+t- crowd_end|Thor invited
+f+ Thor|other_verb|invited|Thor invited his friends from across the universe to Midgard for a huge party.|actual|stated|

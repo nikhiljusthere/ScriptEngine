@@ -1,0 +1,93 @@
+@3795 gold: the call is remote contact; the told and explained acts carry their ordered acts; arguing; the chief and the police are no ends
+keep
+f+ Johnson|contacted|O'Reilly|At the precinct, O'Reilly was called by Johnson|actual|stated|
+f+ O'Reilly|other_verb|bring|who told her to bring her whole police force down to Clemence Convent.|ordered|stated|Johnson
+f+ O'Reilly|other_verb|tell|He explained that she should tell the police that he is unarmed and his mother was a hostage.|ordered|stated|Johnson
+f+ Adina|other_verb|argued|Adina argued, but O'Reilly told her that her son could handle himself.|actual|stated|
+t+ crowd_end|but the police went in full force.
+f+ O'Reilly|other_verb|argued|O'Reilly argued that he was unarmed|actual|stated|
+f- chief|other_verb|said
+t+ crowd_end|but the chief said that Kenneth Fuchs was too as they believed Johnson killed Fuchs.
+
+@3796 gold: a claim is speech
+keep
+f- Frank Castle|other_verb|leave
+f+ Frank Castle|other_verb|claimed|but Castle claimed that he could not let Madani die.|actual|stated|
+
+@3797 gold: ok
+keep
+
+@3798 gold: putting the team together
+keep
+f+ Phil Coulson|other_verb|put|a splinter team Coulson put together to recapture him.|actual|stated|
+
+@3799 gold: ok
+keep
+
+@3800 gold: the patient is no subject; alias direction; one name (Joey Gutierrez); interviewing; the fantasy is actual, the kill hypothetical
+keep
+f- Garner|other_verb|sent
+t+ no_doer|Garner, a professor at Culver University, was sent to the Cocoon
+f- Garner|alias_of|Lash
+f+ Lash|alias_of|Garner|unknown to all was that Garner was Lash, the killer of Inhumans|actual|stated|
+f- Garner|interrogated|Gutierrez
+f+ Garner|other_verb|interviewing|While interviewing Gutierrez|actual|stated|
+f- Garner|other_verb|fantasized
+f+ Garner|other_verb|fantasized|Garner fantasized about how he would kill the new Inhuman.|actual|stated|
+f+ Garner|other_verb|kill|Garner fantasized about how he would kill the new Inhuman.|hypothetical|stated|Garner
+
+@3801 gold: the attempt word; suspicion; the failed opening
+keep
+f- Frank|other_verb|attempted
+f+ Frank|other_verb|enter|Frank attempted to enter her private meditation room.|attempted|stated|Frank
+f+ Frank|suspected|-|Suspicious about all the time Leslie spent in the Church's office|actual|stated|
+f+ Frank|other_verb|open|However, he could not open the door|actual|denied|
+
+@3802 gold: a noun object
+keep
+f- Sugar Snaps|other_verb|brand
+t+ no_relation|Sugar Snaps was a brand of breakfast cereal.
+
+@3803 gold: readying is actual; the look and the calm are named acts
+keep
+f- Doctor Strange|other_verb|readied
+f+ Doctor Strange|other_verb|readied|Strange then readied his magic for a duel against Thanos|actual|stated|
+t- no_relation|looked Thanos
+f+ Doctor Strange|other_verb|looked|who floated down with the Cloak of Levitation and looked Thanos straight in the eye.|actual|stated|
+t- no_relation|who remained calm
+f+ Thanos|other_verb|remained|who remained calm and confident over being challenged by a Master of the Mystic Arts|actual|stated|
+
+@3804 gold: wars on the Nova Empire; a city is a description; the rogue faction and the first Inhuman are unnamed; one name (Kree Empire)
+keep
+r Empire=>Kree Empire
+t- no_relation|Being an authoritarian
++ Kree Empire|fought|Nova Empire|Being an authoritarian and imperial state, the Kree Empire conquered and waged multiple wars on other civilizations, such as Skrulls and the Nova Empire.
+f- Kree Empire|built|City on MB-418
+f+ Kree Empire|other_verb|built|where they built a city within which one of the Quantum Bands would eventually reside.|actual|stated|
+f- Rogue faction of Kree Reapers|other_verb|create
+t+ crowd_end|A rogue faction of Kree Reapers engaged in a secret campaign to create an enhanced army out of a more primitive species in order to serve as soldiers in their many wars.
+t+ crowd_end|While many of their experiments failed, they managed to succeed by creating Inhumans on Earth.
+f- Kree Empire|ordered|Rogue faction of Kree Reapers
+f+ Kree Empire|other_verb|disapproved|When the Empire received word of these experiments, they disapproved, ordering them to be shut down|actual|stated|
+f+ Kree Empire|other_verb|ordering|they disapproved, ordering them to be shut down|actual|stated|
+f- Kree Empire|other_verb|banish
+f+ Kree Empire|other_verb|banish|sending a Monolith to banish the species to a distant planet.|planned|stated|Kree Empire
+f- First Inhuman|other_verb|led
+f- First Inhuman|other_verb|drove
+t+ crowd_end|However the banishment failed, as their first Inhuman had led a rebellion against the Reapers and drove them out of Earth.
+
+@3805 gold: ok
+keep
+
+@3806 gold: a described desert is Afghanistan; the ordered approach; the hypothetical membership has Stark as member; Fury's suspicion
+keep
+f- Stark|located_at|desert in Afghanistan
+f+ Stark|located_at|Afghanistan|when Stark was found in a desert in Afghanistan|actual|stated|
+f+ Coulson|other_verb|approach|Fury ordered Coulson to approach Stark without pushing him too hard|ordered|stated|Fury
+f- Ten Rings|member_of|Stark
+f+ Stark|member_of|Ten Rings|if the Ten Rings had made Stark one of their members|hypothetical|stated|Fury
+t- no_relation|suspicious of the veracity
+f+ Fury|suspected|-|suspicious of the veracity of the circumstances regarding his escape|actual|stated|
+t- deictic|Three months later,
+t- deictic|regarding Stark's return.
+

@@ -1,0 +1,111 @@
+@2379 gold: ok
+keep
+
+@2380 gold: an episode blurb is production
+keep
+t- crowd_end|After fleeing
+t- no_relation|Now they must
+t+ production|After fleeing their home, the Inhumans desperately search for each other in the wake of Maximus’ coup.
+t+ production|Now they must learn who they can trust on Earth.
+
+@2381 gold: "her father" is an unnamed relative, no end; the tried leaving
+keep
+- her father|captured|Skye
+- Skye|met|her father
+f- Skye|other_verb|attempted
+f+ Skye|other_verb|leave|She attempted to leave|attempted|stated|Skye
+t+ crowd_end|but he approached them and told them to continue with their guard as if never had happened, saying it was just a misunderstanding.
+
+@2382 gold: a teaser blurb is production
+keep
+f- Hulk|other_verb|at
+f- Army|other_verb|at
+f- Hulk|other_verb|choose
+f- Hulk|other_verb|destroy
+t+ production|Hulk's at war with the Army and the Enclave.
+t+ production|They're at war with each other.
+t+ production|If Hulk could choose one side, would he?
+t+ production|Or would he just destroy everything in his path?
+
+@2383 gold: ok
+keep
+
+@2384 gold: the arrival place is the window's (the page title is not window text; the museum name splits at "and")
+keep
+- Steve Rogers|arrived|Smithsonian Institution
++ Steve Rogers|arrived|Washington, D.C.|Steve Rogers visited the Smithsonian National Air and Space Museum in Washington, D.C.
+
+@2385 gold: taking the stage is no arrival; drones are no doers
+keep
+- Justin Hammer|arrived|Stark Expo
+f+ Justin Hammer|located_at|Stark Expo|Justin Hammer took the stage at Stark Expo in New York City|actual|stated|
+f- Hammer Drones|other_verb|went
+f- Hammer Drones|other_verb|caused
+t+ no_doer|However, the drones unexpectadly went haywire and caused massive chaos at the event
+
+@2386 gold: the joining happened (decided + joined); a doer-less assignment; the quote verbs for supporting, asking, accepting, choosing
+keep
+f- Pete Leitner|joined|United States Navy
+f+ Pete Leitner|other_verb|decided|Leitner decided to join the United States Navy some time afterwards|actual|stated|
+f+ Pete Leitner|joined|United States Navy|Leitner decided to join the United States Navy some time afterwards, eventually being assigned with his unit to an anti-Hydra taskforce.|actual|stated|
+f- Pete Leitner|other_verb|anti-Hydra
+t+ no_doer|eventually being assigned with his unit to an anti-Hydra taskforce.
+f- Schneider|other_verb|-
+f+ Schneider|other_verb|supported|His decision was supported by Schneider|actual|stated|
+f- Pete Leitner|other_verb|Mariah
+f+ Pete Leitner|other_verb|asked|When Leitner asked Mariah to marry him|actual|stated|
+f- Mariah|other_verb|-
+f+ Mariah|other_verb|accepted|When Leitner asked Mariah to marry him, she accepted|actual|stated|
+f- Pete Leitner|other_verb|Schneider
+f+ Pete Leitner|other_verb|chose|he chose Schneider to be his best man.|actual|stated|
+
+@2387 gold: the opening lines are dialogue; a team is no place (left_group); wanting = actual + planned; the shot; watching; the unnamed gods; the planned rescue; the goodbye
+keep
+t+ dialogue|Take care of my crew. This is gonna be hard for them.
+t+ dialogue|Not her.
+- Thor|departed|Guardians of the Galaxy
+f+ Thor|left_group|Guardians|Before answering the calls, Thor leaves the team to save Sif|actual|stated|
+f+ Thor|other_verb|save|Thor leaves the team to save Sif|planned|stated|Thor
+f+ Nebula|other_verb|wanting|with Nebula and Mantis wanting to kill the goats|actual|stated|
+f+ Mantis|other_verb|wanting|with Nebula and Mantis wanting to kill the goats|actual|stated|
+f+ Nebula|other_verb|kill|with Nebula and Mantis wanting to kill the goats|planned|stated|Nebula
+f+ Mantis|other_verb|kill|with Nebula and Mantis wanting to kill the goats|planned|stated|Mantis
+t- no_relation|accidentally shooting
+f+ Nebula|other_verb|shooting|only to be stopped by Thor and accidentally shooting Korg.|actual|stated|
+f+ Guardians|other_verb|watched|Later, the Guardians watched the calls for help in horror|actual|stated|
+t+ crowd_end|several gods were being killed by Gorr the God Butcher.
+t- no_relation|the Guardians said goodbye
+f+ Guardians|other_verb|said|the Guardians said goodbye to Thor before leaving.|actual|stated|
+
+@2388 gold: the vision is a hallucination (no row for Maria); regaining consciousness is awakened; the reply
+keep
+f- Frank Castle|other_verb|vision
+t+ no_relation|Frank had a vision of Maria who asks him to come home while holding his hand.
+f+ Frank Castle|other_verb|replied|Releasing her hand, Frank replied that he was home|actual|stated|
++ Frank Castle|awakened|-|and returned to full consciousness and killed Rawlins.
+
+@2389 gold: the tasked acts; the Collector is an alias; agreeing = actual + planned; Thanos' unspoken truth and belief; Tivan's aim; hoping
+keep
+f+ Gamora|other_verb|accompany|Thanos tasked his two adopted daughters, Gamora and Nebula, to accompany the Kree.|ordered|stated|Thanos
+f+ Nebula|other_verb|accompany|Thanos tasked his two adopted daughters, Gamora and Nebula, to accompany the Kree.|ordered|stated|Thanos
+f- Taneleer Tivan|also_known_as|Collector
+f+ Collector|alias_of|Taneleer Tivan|Taneleer Tivan, the infamous Collector|actual|stated|
+f+ Taneleer Tivan|other_verb|add|sought to add the Orb to his collection for a very hefty fee|planned|stated|Taneleer Tivan
+f+ Gamora|other_verb|agreed|she agreed to bring the Orb to him|actual|stated|
+f+ Gamora|other_verb|hoping|hoping that his reward would give her the passage she needed to escape Thanos' hold.|actual|stated|
+t- no_relation|Thanos did not bother
+f+ Thanos|other_verb|tell|Thanos did not bother to tell Ronan what was inside of the Orb|actual|denied|
+f+ Thanos|suspected|-|believing that the truth of the Power Stone would deter Ronan away from his cause.|actual|stated|
+
+@2390 gold: threatening = actual + planned spraying; a nickname is no gift; the tried verb; spotting, calling, answering, hesitation
+keep
+f- Jeri Hogarth|other_verb|threaten
+f+ Jeri Hogarth|other_verb|threaten|Hogarth turned around and threaten to spray Rand with pepper spray.|actual|stated|
+f+ Jeri Hogarth|other_verb|spray|Hogarth turned around and threaten to spray Rand with pepper spray.|planned|stated|Jeri Hogarth
+f- Danny Rand|gave|Jeri Hogarth
+f+ Danny Rand|other_verb|called|He called her by a nickname that he gave her, J-Money.|actual|stated|
+f- Danny Rand|other_verb|trying
+f+ Danny Rand|other_verb|go|He continued by trying to go into more details about their past.|attempted|stated|Danny Rand
+f+ Danny Rand|other_verb|spotted|Danny Rand spotted Jeri Hogarth leaving her firm.|actual|stated|
+f+ Danny Rand|other_verb|answered|Rand answered all of them correctly|actual|stated|
+t+ no_relation|Hogarth is hesitant to believe Rand.

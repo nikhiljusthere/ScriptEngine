@@ -1,0 +1,63 @@
+@1814 gold: ok
+keep
+
+@1815 gold: assuring is speech; possessing a book is owning it
+keep
+f- Chthon|other_verb|assured
+f+ Chthon|other_verb|assured|Chthon assured that the Darkhold is intelligible in any language|actual|stated|
+f- Carnage|other_verb|possessed
+f+ Carnage|owns|Darkhold|even after he had possessed it for several weeks.|actual|stated|
+
+@1816 gold: no article; the Superior is Ivanov (the window's real name); beheading is the defeat; garbage objects -> replacing, recovering, the escape, begging, placing, the tried search, watching; the planned control is Aida's
+keep
+r the Superior=>Ivanov
+r Superior=>Ivanov
+- Aida|fought|Ivanov
++ Aida|defeated|Ivanov|She cut off the Superior's head and placed it in a pod to keep it alive.
+f+ Superior|alias_of|Ivanov|While he watched over Aida's prisoners, Ivanov discovered his new bodies were programmed to be unable to harm them.|actual|stated|
+f- Aida|other_verb|S
+f+ Aida|other_verb|replace|Aida managed to replace four high-ranking S.H.I.E.L.D. agents, including Coulson, with their Life-Model Decoy counterparts.|actual|stated|
+f- Aida|other_verb|Ivanov
+f+ Aida|other_verb|recovered|Aida recovered the Superior's unconscious body and escaped to an oil rig in the Baltic Sea on his submarine.|actual|stated|
+f+ Aida|other_verb|escaped|Aida recovered the Superior's unconscious body and escaped to an oil rig in the Baltic Sea on his submarine.|actual|stated|
+f- Ivanov|other_verb|Aida
+f+ Ivanov|other_verb|begged|The Superior, strapped to an operating table, begged Aida to not let him become a thing like her|actual|stated|
+f- Aida|other_verb|Superior's head
+f+ Aida|other_verb|placed|She cut off the Superior's head and placed it in a pod to keep it alive.|actual|stated|
+f- Ivanov|other_verb|LMD
+f+ Ivanov|other_verb|control|From the pod, the Superior would be able to remotely control a large number of LMD bodies created in his likeness|planned|stated|Aida
+f- Aida|other_verb|-
+f+ Aida|other_verb|find|Aida used the Darkhold to try and find a way to let her feel human emotions.|attempted|stated|Aida
+f- Ivanov|other_verb|-
+f+ Ivanov|other_verb|watched|While he watched over Aida's prisoners|actual|stated|
+
+@1817 gold: ok
+keep
+
+@1818 gold: the new Valkyrior is planned; the agreement; covered fragments
+keep
+f- Brunnhilde|leader_of|Valkyrior
+f+ Brunnhilde|leader_of|Valkyrior|a new Valkyrior was needed, this time constituted of eight Midgard women, chosen and commanded by Brunnhilde.|planned|stated|Gaea
+t- no_relation|her quest to neutralize
+t- no_relation|Gaea and Idunn agreed
+f+ Gaea|other_verb|agreed|Gaea and Idunn agreed on the fact that a new Valkyrior was needed|actual|stated|
+f+ Idunn|other_verb|agreed|Gaea and Idunn agreed on the fact that a new Valkyrior was needed|actual|stated|
+t- no_relation|this time constituted
+t- deictic|She was then left to go
+
+@1819 gold: ok
+keep
+
+@1820 gold: ok
+keep
+
+@1821 gold: a doer-less statement
+keep
+f- Santo Marco|other_verb|island
+t+ no_relation|On another statement, Santo Marco was stated to be an island nation.
+
+@1822 gold: the bonding is the symbiote's act
+keep
+t- crowd_end|bonded offshoots
+f+ Dark Carnage symbiote|other_verb|bonded|the Dark Carnage symbiote bonded offshoots of itself to all the wildlife on the Isla de Huesos|actual|stated|
+

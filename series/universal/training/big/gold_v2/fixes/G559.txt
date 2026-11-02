@@ -1,0 +1,108 @@
+@2355 gold: a prevented attack is planned; the immunity named; the rape is Kilgrave's, the killing Jones' plan
+keep
+f- Cage|other_verb|attack
+f+ Cage|other_verb|attack|before Cage could attack him, Kilgrave enthralled him|planned|stated|Cage
+f- Jones|gained_power|-
+f+ Jones|gained_power|immunity to Kilgrave's power|it gave her immunity to Kilgrave's power|actual|stated|
+f- Jones|other_verb|rape
+f+ Kilgrave|other_verb|rape|Jones sought to kill the man for his many crimes, including her rape|actual|stated|
+f+ Jones|other_verb|kill|Jones sought to kill the man for his many crimes|planned|stated|Jones
+
+@2356 gold: the forerunner's lines are dialogue; Thanos' aim
+keep
+t- no_relation|I remember a battle.
+t- no_relation|We were fighting
+t+ dialogue|I remember a battle.
+t+ dialogue|We were fighting a monster from the skies, armed with a golden glove.
+t- no_relation|The Battle of Wakanda
+f+ Thanos|other_verb|acquire|The Battle of Wakanda was an attack by Thanos to acquire the Infinity Stones.|planned|stated|Thanos
+
+@2357 gold: the rest of the fight: the car, the dodge, the stab, the push and kick; Ghost's abilities
+keep
+f+ Gravik|other_verb|threw|who threw a car at G'iah.|actual|stated|
+f+ G'iah|other_verb|avoided|G'iah avoided the car using Ghost's abilities|actual|stated|
+f+ G'iah|used|Ghost's abilities|G'iah avoided the car using Ghost's abilities|actual|stated|
+f+ G'iah|wounded|Gravik|G'iah stabbed Gravik into a dumpster|actual|stated|
+f+ Gravik|other_verb|push|but Gravik telekinetically push her to the side before crashing her into a crane and kicking her through a wall.|actual|stated|
+f+ Gravik|other_verb|kicking|before crashing her into a crane and kicking her through a wall.|actual|stated|
+
+@2358 gold: no place is named in the arrival sentence (the facility is the page title); one name (Romanoff); the attack, the fight with the drones, holding off; going is actual
+keep
+r Black Widow=>Romanoff
+- Tony Stark|arrived|Project P.R.O.T.E.A.N. Facility
+- James Rhodes|arrived|Project P.R.O.T.E.A.N. Facility
+- Romanoff|arrived|Project P.R.O.T.E.A.N. Facility
+f+ Tony Stark|other_verb|arrived|Tony Stark, James Rhodes, and Black Widow arrived on a stolen A.I.M. gunship.|actual|stated|
+f+ James Rhodes|other_verb|arrived|Tony Stark, James Rhodes, and Black Widow arrived on a stolen A.I.M. gunship.|actual|stated|
+f+ Romanoff|other_verb|arrived|Tony Stark, James Rhodes, and Black Widow arrived on a stolen A.I.M. gunship.|actual|stated|
+t+ no_doer|They received clearance to land and orders to open fire
+f- Romanoff|used|orders
+f+ Romanoff|other_verb|attack|which Romanoff used to attack both the drones and A.I.M. soldiers.|actual|stated|
+f+ Tony Stark|other_verb|fought|Stark and Rhodes fought, and Rhodes held off the drones where they were|actual|stated|
+f+ James Rhodes|other_verb|fought|Stark and Rhodes fought, and Rhodes held off the drones where they were|actual|stated|
+f+ James Rhodes|other_verb|held|and Rhodes held off the drones where they were while Stark left to find DeWitt.|actual|stated|
+f- Tony Stark|other_verb|went
+f+ Tony Stark|other_verb|went|as he went toward the reactor room.|actual|stated|
+
+@2359 gold: ok
+keep
+
+@2360 gold: a trivia note on appearances across productions is production
+keep
+f- Kingpin|other_verb|appeared
+f- Edwin Jarvis|other_verb|preceding
+f- Matt Murdock/Daredevil|other_verb|preceding
+t+ production|Eventually, Kingpin's presence was confirmed when he appeared in a photo in the episode Ronin.
+t+ production|This marks the third time that a character from a Marvel Television production appeared in a Marvel Studios project, preceding Edwin Jarvis and Matt Murdock/Daredevil.
+
+@2361 gold: asking is no interrogation; the wound is Rocket's shot; the unnamed woman; following, fleeing, the planned kill, the threat
+keep
+f- Bounty Hunter|interrogated|Rocket
+f+ Bounty Hunter|other_verb|asked|While the Bounty Hunter asked Rocket how he got his name|actual|stated|
+f- Groot|wounded|Groot
+f+ Rocket|wounded|Groot|so he shot Groot's thumb off|actual|stated|
+t- no_doer|Rocket and Groot were stopped
+t+ crowd_end|Rocket and Groot were stopped by a woman outside of a bar
+t- no_doer|who had overheard
+t+ crowd_end|who had overheard Rocket's mention of D'Xtar giving them a lower-than-promised price
+t- no_doer|She offered
+t+ crowd_end|She offered to buy them a drink
+t- no_relation|Rocket followed her inside
+f+ Rocket|other_verb|followed|Rocket followed her inside, despite Groot's weariness.|actual|stated|
+t- no_relation|fled into a locked room
+f+ Rocket|other_verb|fled|so he shot Groot's thumb off and fled into a locked room.|actual|stated|
+f+ Bounty Hunter|other_verb|kill|He found the Bounty Hunter there, who was getting ready to kill him.|planned|stated|Bounty Hunter
+f+ Groot|other_verb|threatened|He threatened the Bounty Hunter, who quickly cancelled the bounty.|actual|stated|
+
+@2362 gold: a rank definition is no header
+keep
+t- list_header|Senior Airman
+t+ no_relation|Senior Airman is an airman in the United States Air Force.
+
+@2363 gold: the tried call; a victim-only kidnapping; Murdock's telling; Nelson cannot tell
+keep
+f- Page|other_verb|tries
+f+ Page|other_verb|call|Page tries to call Murdock|attempted|stated|Page
+f- Page|kidnapped|-
+t+ no_doer|but gets kidnapped before reaching her apartment.
+f+ Murdock|other_verb|told|As Page says that Murdock told her the same|actual|stated|
+f+ Nelson|other_verb|tell|but Nelson is unable to tell her the truth.|actual|denied|
+
+@2364 gold: "the Magistrate's son" is a possessive description, no end
+keep
+f- Magistrate's son|other_verb|possession
+f- Magistrate's son|other_verb|take
+f- Magistrate's son|other_verb|bring
+t+ crowd_end|During his possession of Alex Wilder, the Magistrate's son used this car in an attempt to take Leslie Dean out of the Hostel so he could bring her to-be-born baby to his father.
+
+@2365 gold: ok
+keep
+
+@2366 gold: the quote's verb; discovered keeps no object; gave takes the recipient
+keep
+f- Stark|other_verb|Rogers
+f+ Stark|other_verb|showed|who showed his advances in fibers for the uniform and improvements for the shield.|actual|stated|
+f- Rogers|discovered|Vibranium
+f+ Rogers|discovered|-|Rogers discovered a prototype made of Vibranium|actual|stated|
+f- Rogers|handed|a few ideas
+f+ Rogers|gave|Stark|Rogers handed Stark a few ideas for his uniform.|actual|stated|

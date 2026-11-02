@@ -1,0 +1,76 @@
+@1706 gold: the sisters
+keep
+f+ Mai|sibling_of|Maki|Despite Mai's best efforts to deceive her older sister, she's ultimately defeated by Maki's physical prowess.|actual|stated|
+
+@1707 gold: a copula; garbage object -> the talk; the planned kill
+keep
+f- Yuji|other_verb|is
+f- Yuji|other_verb|Nanami
+f+ Yuji|other_verb|talk|The two talk about what had happened today and what is a proper death.|actual|stated|
+f+ Nanami|other_verb|talk|The two talk about what had happened today and what is a proper death.|actual|stated|
+f- Yuji|other_verb|lose
+f+ Yuji|other_verb|kills|while thinks about he won't lose again until he kills Mahito.|planned|stated|Yuji
+
+@1708 gold: offering carries the planned trip
+keep
+f+ Kenjaku|other_verb|take|Kenjaku offered to take him there in exchange for his points|planned|stated|Kenjaku
+
+@1709 gold: understanding = learned; a described request
+keep
+f- Dabura|other_verb|understands
+f+ Dabura|learned|-|As he endures the blows, Dabura finally understands what it means to be a warrior.|actual|stated|
+f- Dabura|remembered|Dura's final request
+f+ Dabura|remembered|-|Remembering Dura's final request to him and his sister, Dabura realizes that a warrior is someone who fights when they have to for the sake of others|actual|stated|
+f- Dabura|other_verb|realizes
+
+@1710 gold: assuring is speech; a mention has no asserter; the approach; a covered fragment
+keep
+f- Naoya|other_verb|assures
+f+ Naoya|other_verb|assures|Naoya raises both his hands and assures Yuta that he is on his side|actual|stated|
+f- Megumi|other_verb|mentioned
+f+ Megumi|other_verb|mentioned|Yuji remembers the name as the second-year student mentioned by Megumi|actual|stated|
+t- no_doer|Slowing approaching them
+t+ deictic|Slowing approaching them, he asks who is with Yuji, and Choso says that Yuta must be Yuji's executioner.
+t- capability|that like Gojo
+
+@1711 gold: one name (fullest form); the building is no alliance; a body-part object; the arms wound; the late notice; a covered line
+keep
+r Gojo=>Satoru Gojo
+f- Uraume|allied_with|Sukuna
+f- Sukuna|healed|arms
+f+ Sukuna|healed|-|Gojo teleports to his position while he's healing them.|actual|stated|
+f+ Satoru Gojo|wounded|Sukuna|Both Sukuna's cursed energy-reinforced arms are destroyed|actual|stated|
+t- no_relation|Sukuna doesn't notice
+f+ Sukuna|other_verb|notice|Sukuna doesn't notice the attack until the last moment because of Ijichi's barrier.|actual|denied|
+t- no_doer|The building he and Uraume
+
+@1712 gold: ok
+keep
+
+@1713 gold: one name (fullest form); working together is an alliance; the narrated acts
+keep
+r Hana=>Hana Kurusu
+f- Yuji|helped|Takaba
+f+ Yuji|allied_with|Takaba|Yuji happened upon Takaba's explosive fight with Hazenoki and they worked together to locate Megumi.|actual|stated|
+t- no_relation|Takaba is able to bring
+f+ Takaba|other_verb|bring|Takaba is able to bring back goods from the store because the electrical grid in the city is still functional.|actual|stated|
+t- no_relation|Megumi questions
+f+ Megumi|other_verb|questions|Megumi questions the caution of everyone involved|actual|stated|
+f+ Megumi|other_verb|thank|and then rectifies his statement to thank everyone for helping him.|actual|stated|
+
+@1714 gold: citation
+keep
+t+ citation|(Chapter 163)
+
+@1715 gold: names as written; promising is speech with the planned return; the threatened kill; the mocking; the sisters
+keep
+r Nanako Hasaba=>Nanako
+r Mimiko Hasaba=>Mimiko
+f- Pseudo-Geto|other_verb|promised
+f+ Pseudo-Geto|other_verb|promised|who promised to return Geto's body to them if they helped kill non-sorcerers during the attack.|actual|stated|
+f+ Pseudo-Geto|other_verb|return|who promised to return Geto's body to them|planned|stated|Pseudo-Geto
+f+ Pseudo-Geto|other_verb|kill|He then threatened to kill them unless they left.|planned|stated|Pseudo-Geto
+t- no_relation|mocking the sisters
+f+ Pseudo-Geto|other_verb|mocking|mocking the sisters for not making a binding vow that would have compelled him to honor the agreement.|actual|stated|
+f+ Nanako|sibling_of|Mimiko|The sisters swore revenge before leaving the scene.|actual|stated|
+

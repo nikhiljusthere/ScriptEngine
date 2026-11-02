@@ -1,0 +1,116 @@
+@2259 gold: the Punisher without article; Willie is in the gang rival to Red Fever, not a member of Red Fever
+keep
+r the Punisher=>Punisher
+f- Willie|member_of|Red Fever
+f+ Willie|rival_of|Red Fever|Willie was a member of the rival gang of Red Fever|actual|stated|
+
+@2260 gold: a computer is no doer; the insisted act; taking Kitty is no assisting; resisting, phasing, travel, landing, realizing
+keep
+f- Cerebro|other_verb|detected
+f- Wolverine|assisted|Kitty
+f+ Wolverine|other_verb|takes|At the insistence of Professor X, Wolverine reluctantly takes Kitty on the mission.|ordered|stated|Professor X
+f+ Wolverine|other_verb|takes|At the insistence of Professor X, Wolverine reluctantly takes Kitty on the mission.|actual|stated|
+f+ Wolverine|other_verb|resists|but Wolverine resists.|actual|stated|
+t- capability|she simply phases out
+f+ Kitty|other_verb|phases|Wolverine tries locking Kitty in the jet, but she simply phases out.|actual|stated|
+t- deictic|while they travel
+f+ Kitty|other_verb|travel|Kitty tries to strike up a conversation while they travel on the X-Men Blackbird|actual|stated|
+f+ Wolverine|other_verb|travel|Kitty tries to strike up a conversation while they travel on the X-Men Blackbird|actual|stated|
+t- deictic|When they finally land
+f+ Wolverine|other_verb|land|When they finally land at the site, Wolverine tries locking Kitty in the jet|actual|stated|
+f+ Kitty|other_verb|land|When they finally land at the site, Wolverine tries locking Kitty in the jet|actual|stated|
+f+ Wolverine|learned|-|Realizing he has no choice, Wolverine lets Kitty tag along.|actual|stated|
+
+@2261 gold: the wife; the grave visit; fleeing from Yusuf is escaped
+keep
+f+ Yusuf Khan|married|Muneeba Khan|After the death of his wife, Muneeba Khan|actual|stated|
+t- no_relation|he and Aamir visited
+f+ Yusuf Khan|other_verb|visited|he and Aamir visited her grave where they ran into a time travelling Kamala Khan|actual|stated|
+f+ Aamir|other_verb|visited|he and Aamir visited her grave where they ran into a time travelling Kamala Khan|actual|stated|
+t- no_relation|causing Kamala to flee
++ Kamala Khan|escaped|Yusuf Khan|Yusuf commented how she looked like a young Muneeba, causing Kamala to flee.
+
+@2262 gold: an avatar is a title (no row); the invited act; the death is a fact; the girlfriend; lashing out; Khonshu's failure
+keep
+f- Marlene Alraune|became|avatar
+f+ Marlene Alraune|other_verb|avenge|who invited her to become his avatar and avenge Spector's death as the Luminary|ordered|stated|Ra
+t- no_doer|Khonshu's avatar
+f+ Moon Knight|dies|-|After Khonshu's avatar Moon Knight was killed|actual|stated|
+t- apposition|his girlfriend
+f+ Marlene Alraune|dated|Moon Knight|After Khonshu's avatar Moon Knight was killed, his girlfriend Marlene Alraune lashed out in anger|actual|stated|
+f+ Marlene Alraune|other_verb|lashed|his girlfriend Marlene Alraune lashed out in anger|actual|stated|
+f+ Khonshu|other_verb|save|breaking a statue of Khonshu for failing to save his avatar|actual|denied|
+
+@2263 gold: the assumption is a belief, not a denied claim; titan is no helped end, they accepted; the request carries its act; sensing, entering, feeling
+keep
+f- Drax|suspected|Captain Marvel
+f+ Drax|suspected|-|Enraged, he quickly assumed that it was Captain Marvel who had slain Thanos.|actual|stated|
+f- Drax|helped|Titan
+f- Captain Marvel|helped|Titan
+f+ Drax|other_verb|accepted|Captain Marvel and Drax accepted the request, and traveled to Saturn.|actual|stated|
+f+ Captain Marvel|other_verb|accepted|Captain Marvel and Drax accepted the request, and traveled to Saturn.|actual|stated|
+f+ ISAAC|other_verb|requesting|came to them requesting aid to save Titan from Thanos' remaining forces|actual|stated|
+f+ Drax|other_verb|save|came to them requesting aid to save Titan from Thanos' remaining forces|ordered|stated|ISAAC
+f+ Captain Marvel|other_verb|save|came to them requesting aid to save Titan from Thanos' remaining forces|ordered|stated|ISAAC
+f+ Drax|other_verb|sense|He did not sense any life forms on board|actual|denied|
+f+ Drax|other_verb|entered|he entered the space station to investigate for clues on Thanos' location|actual|stated|
+t- deictic|Drax had felt
+f+ Drax|other_verb|felt|Drax had felt like he had lost all purpose in life once again, for Thanos was once again slayed.|actual|stated|
+
+@2264 gold: one name per person (Tony, Carol); a damaged building is a doer-less passive
+keep
+r Iron Man=>Tony
+r Captain Marvel=>Carol
+f- Triskelion|other_verb|damaged
+t+ no_doer|An intense fight ensued leading to the Triskelion being heavily damaged
+
+@2265 gold: the intervention turns into the fight (A145); the attempted killing; not recognising
+keep
+- Daredevil|met|Castle
+f+ Castle|other_verb|kill|Daredevil intervened when Castle attempted to kill them|attempted|stated|Castle
+f+ Castle|other_verb|recognize|the Jackal who he didn't initially recognize|actual|denied|
+
+@2266 gold: ok
+keep
+
+@2267 gold: an attempted attack stopped is no fight; Juggernaut is Cain Marko; assuming is a belief; noting
+keep
+r Juggernaut=>Cain Marko
+- Toxic Doxie|fought|Satana
+f+ Toxic Doxie|other_verb|attack|Toxic Doxie attempts to attack, but Satana incapacitates her.|attempted|stated|Toxic Doxie
+f- Toxic Doxie|suspected|Cage
+f+ Toxic Doxie|suspected|-|Assuming they've been betrayed by Cage, Toxic Doxie attempts to attack|actual|stated|
+f- Cage|discovered|Dark Spider-Man
+f+ Cage|other_verb|noting|Cage easily pounds Dark Spider-Man, noting he doesn't have a spider sense.|actual|stated|
+
+@2268 gold: the conflict is the meeting (A145); picking up is taking; an item is no doer
+keep
+- Hulk|met|Gardener
+f- Gardener|used|Soul Gem
+f+ Gardener|took|Soul Gem|where it was picked up by the Gardener to replace the gem he earlier discarded.|actual|stated|
+f- Soul Gem|healed|life on the surface
+t+ no_relation|where it revitalized life on the surface.
+
+@2269 gold: a solicitation blurb is production
+keep
+f- Buck Vancto|other_verb|is
+f- Corbus|other_verb|is
+f- issue|other_verb|leads
+t- no_relation|What does the urn
+t+ production|Marshal Buck Vancto is after Han Solo and Chewbacca!
+t+ production|Corbus is after Han Sol – well, you get the idea…
+t+ production|• What does the urn hold that unlocks the future of the Star Wars galaxy?
+t+ production|• This can't-miss issue leads into the STAR WARS event of 2023!
+
+@2270 gold: the confrontation becomes the second fight; pulled from the plane = defeated; a company is no doer; the power named; the presumed death; Juggernaut pursues and the competing
+keep
+- Deadpool|met|Tom
++ Deadpool|defeated|Tom|In the ensuing fight over Tolliver's disk, Deadpool tore open the emergency exit, pulling Tom from the plane.
+f- Genetech|created|experimental wood-fiber implants
+f- Tom|gained_power|-
+f+ Tom|gained_power|enhanced durability|These viral fibers grew symbiotically within Tom's body, replacing damaged tissue and granting him enhanced durability|actual|stated|
+f+ Tolliver|dies|-|With Tolliver presumed dead|actual|apparent|
+f+ Juggernaut|other_verb|pursued|With Tolliver presumed dead, Tom and Juggernaut pursued the crimelord's hidden assets, known as “Tolliver's Will.”|actual|stated|
+f+ Tom|other_verb|Competing|Competing with Deadpool and others, Tom blasted Wade through the chest|actual|stated|
+t- below_floor|In Angoulême
+t+ no_relation|In Angoulême, France.

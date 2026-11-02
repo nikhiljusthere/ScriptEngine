@@ -1,0 +1,127 @@
+@1765 gold: the failed catch is denied; "She" under pressure is Mai (no doer); the seeming indifference; firing and evading; the training is Nobara's; an adjective
+keep
+f- Nobara|other_verb|catch
+f+ Nobara|other_verb|catch|Meanwhile, Nobara is unable to catch Momo as she rides through the air on her broom.|actual|denied|
+f- Momo|other_verb|under
+t+ no_relation|She's under pressure from the Zenin Family, but Nobara doesn't seem to care.
+f- Nobara|other_verb|care
+f+ Nobara|other_verb|care|but Nobara doesn't seem to care.|actual|denied|
+f- Nobara|used|nails
+f+ Nobara|other_verb|firing|Nobara continues firing nails and Momo evades while send wind back in return.|actual|stated|
+f- Momo|used|wind
+f+ Momo|other_verb|evades|Nobara continues firing nails and Momo evades while send wind back in return.|actual|stated|
+f- Momo|trained|Panda
+f+ Nobara|other_verb|training|after she's been training with Panda.|actual|stated|
+f- Momo|other_verb|worried
+t+ no_relation|Additionally, Momo is too worried about the possibility of Toge appearing at any moment.
+
+@1766 gold: one name as written; Shiu is the one who speaks (and is met); citation
+keep
+r Riko Amanai=>Riko
+f- Shigeru Sonoda|other_verb|says
+f+ Shiu|other_verb|says|but Shiu says he'd only associate with Toji in business or in hell.|actual|stated|
++ Toji|met|Shiu|After discussing the event that happened Toji asks him to go out for food, but Shiu says he'd only associate with Toji in business or in hell.
+t+ citation|(Chapter 74, Episode 28)
+
+@1767 gold: the restraint is the defeat; a doer-less kick-out; the attack is the fight (event twin); recognizing = learned; deciding carries the planned deal
+keep
+- Megumi|fought|Kirara
++ Megumi|defeated|Kirara|Megumi restrained Kirara and forced them to release their technique
+f- Yuji|other_verb|kicked
+t+ no_doer|but Yuji was kicked out of the monitor room shortly after anyway.
+f- Hakari|attacked|Yuji
++ Hakari|fought|Yuji|so he attacked Yuji inside the monitor room before hitting him outside the room in front of everyone else.
+f- Hakari|discovered|Yuji's resolve
+f+ Hakari|learned|-|With Kirara's help, Hakari recognized Yuji's resolve|actual|stated|
+f+ Hakari|other_verb|cut|decided to cut a deal that would benefit the fight club in the future.|planned|stated|Hakari
+
+@1768 gold: an illness is no wound; a role with no group; devising carries the planned fall; the Simurians are a people
+keep
+f- Yuka|wounded|brain tumor
+f- Yuka|became|Earth's representative
+f+ Yuka|other_verb|accepted|Yuka was chosen as Earth's representative and accepted the role.|actual|stated|
+f- Yuka|other_verb|devised
+f+ Yuka|other_verb|devised|Anticipating her own limitations, Yuka devised a desperate plan|actual|stated|
+f+ Yuka|other_verb|fall|to fall from the aircraft and summon Mahoraga moments before impact|planned|stated|Yuka
+f- Simurians|other_verb|naming
+f- Simurians|other_verb|threatening
+t+ crowd_end|In January 2087, the Simurians issued a Deskunte-style duel against Japan, naming Dabura Karaba as their champion and threatening to annex Tokyo should Japan lose.
+
+@1769 gold: one name; absorbing is no sealing; thinking carries the planned delay; speech acts are actual; the confrontation, laugh, casting and refutation; Toji's death
+keep
+r Geto=>Pseudo-Geto
+- Pseudo-Geto|sealed|Mahito
+f+ Pseudo-Geto|other_verb|absorbed|Yuji tells Yuki that Geto absorbed him.|actual|stated|
+f- Yuki|other_verb|buy
+f+ Yuki|other_verb|thinks|she thinks to herself that she must buy time for Larue.|actual|stated|
+f+ Yuki|other_verb|buy|she must buy time for Larue.|planned|stated|Yuki
+f- Yuki|other_verb|explain
+f+ Yuki|other_verb|explain|Yuki proceeds to explain that no matter what method one adopts, humans will continue to evolve.|actual|stated|
+f- Yuki|other_verb|say
+f+ Yuki|other_verb|says|She then says that the next stage of humanity is breaking away from cursed energy.|actual|stated|
+f- Pseudo-Geto|other_verb|say
+f+ Pseudo-Geto|other_verb|refutes|Geto refutes and says that it instead lies in optimizing cursed energy.|actual|stated|
+f- Pseudo-Geto|other_verb|mention
+f+ Pseudo-Geto|other_verb|mentions|He mentions that he thought Yuki broke away from that method 12 years ago when Toji Zenin was killed.|actual|stated|
+t- no_doer|when Toji Zenin was killed.
+f+ Toji Zenin|dies|-|12 years ago when Toji Zenin was killed.|actual|stated|
+f+ Yuki|other_verb|explains|Yuki explains to Geto about how his method has a large hole and adds on that Tengen's barrier is necessary for optimizing cursed energy.|actual|stated|
+f+ Pseudo-Geto|other_verb|laughs|Geto merely laughs and says that they have different objectives|actual|stated|
+f+ Pseudo-Geto|other_verb|says|He says that non-sorcerers, sorcerers and cursed spirits are all possibilities of cursed energy in the form of human beings|actual|stated|
+f- Yuki|other_verb|ask
+f+ Yuki|other_verb|asks|Yuki turns around to Yuji and asks if there's a cursed spirit called Mahito|actual|stated|
+f- Yuji|other_verb|tell
+f+ Yuji|other_verb|tells|Yuji tells Yuki that Geto absorbed him.|actual|stated|
+f+ Yuki|other_verb|confronts|Yuki is left shocked as she confronts Geto and asks what he's done.|actual|stated|
+f+ Pseudo-Geto|other_verb|casted|He says that he has remotely casted Idle Transfiguration on two type of non-sorcerers who have been already been marked.|actual|stated|
+f- Pseudo-Geto|other_verb|reveal
+f+ Pseudo-Geto|revealed|-|He reveals that he adjusted their brains for sorcery and gave them strength as vessels along with the ability to use cursed technique.|actual|stated|
+f- Pseudo-Geto|other_verb|add
+f+ Pseudo-Geto|other_verb|adds|Geto adds that he has broken the seal on the cursed object and will have them fight each other.|actual|stated|
+f+ Yuki|warned|Pseudo-Geto|Yuki says that a thousand isn't too many and that Geto shouldn't underestimate human rationality.|actual|stated|
+f+ Pseudo-Geto|other_verb|make|Geto refutes this and says everything has an order and he wouldn't make such an oversight.|actual|denied|
+
+@1770 gold: the students' past encounter
+keep
+f+ Yuji|other_verb|encountered|Yuji, Megumi, and Nobara encountered an unpolished Domain during their mission in the detention center.|actual|stated|
+f+ Megumi|other_verb|encountered|Yuji, Megumi, and Nobara encountered an unpolished Domain during their mission in the detention center.|actual|stated|
+f+ Nobara|other_verb|encountered|Yuji, Megumi, and Nobara encountered an unpolished Domain during their mission in the detention center.|actual|stated|
+
+@1771 gold: one name as written; the ordered run; the stop
+keep
+r Noritoshi Kamo=>Noritoshi
+f+ Megumi|other_verb|run|uses his cursed speech to order them to run away.|ordered|stated|Toge
+f+ Noritoshi|other_verb|run|uses his cursed speech to order them to run away.|ordered|stated|Toge
+t- no_relation|Both jujutsu students stop
+f+ Megumi|other_verb|stop|Both jujutsu students stop just before they clash to notice a swarm of giant branches reaching over top the building.|actual|stated|
+f+ Noritoshi|other_verb|stop|Both jujutsu students stop just before they clash to notice a swarm of giant branches reaching over top the building.|actual|stated|
+
+@1772 gold: the table cell; citation
+keep
+t+ list_header|Tsurugi Okkotsu
+t+ citation|(Modulo Chapter 20)
+
+@1773 gold: presence is no stated place; a clause reveal; a covered fragment
+keep
+f- Noritoshi|located_at|Tokyo College
+f- Satoru Gojo|revealed|Yuji Itadori
+f+ Satoru Gojo|revealed|-|Noritoshi is present when Satoru Gojo reveals to everyone that Yuji Itadori is alive.|actual|stated|
+t- crowd_end|along with the other Kyoto
+
+@1774 gold: waking from sleep is no awakening; garbage relations -> bickering, noticing, asking, assuring
+keep
+- Satoru|awakened|-
+f+ Satoru|other_verb|wakes|A decade later, Satoru wakes up to the sound of his three students, one of them being non-other than a teenage Megumi.|actual|stated|
+f- Megumi|member_of|Satoru
+f- Yuji|member_of|Satoru
+f- Nobara|member_of|Satoru
+f- Yuji|other_verb|Nobara
+f- Nobara|other_verb|Yuji
+f+ Yuji|other_verb|bicker|While Yuji and Nobara bicker over the chair Satoru was sleeping in|actual|stated|
+f+ Nobara|other_verb|bicker|While Yuji and Nobara bicker over the chair Satoru was sleeping in|actual|stated|
+f- Megumi|other_verb|Satoru
+f+ Megumi|learned|-|Megumi notices him smiling and asks what that's about.|actual|stated|
+f+ Megumi|other_verb|asks|Megumi notices him smiling and asks what that's about.|actual|stated|
+f- Satoru|other_verb|Megumi
+f+ Satoru|other_verb|assures|Satoru gleefully assures him it's nothing.|actual|stated|
+

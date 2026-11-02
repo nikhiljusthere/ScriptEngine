@@ -1,0 +1,101 @@
+@2307 gold: a quote page is dialogue only (B.9): no rows from spoken lines
+keep
+- N'Jadaka|captured|Klaue
+- T'Challa|captured|Klaue
+f- T'Challa|other_verb|told
+f- T'Challa|other_verb|bring
+t+ dialogue|T'Challa told me to my face right here, that he would bring Klaue back.
+
+@2308 gold: ok
+keep
+
+@2309 gold: Framework (simulated) lives are no facts about the people (A107); the connecting
+keep
+f- Johnson|dated|Grant Ward
+f- Simmons|dies|-
+f- May|resides_at|Triskelion
+f- Coulson|became|teacher
+f- Mackenzie|parent_of|Hope
+t- crowd_end|Fitz seems
+t+ no_relation|Johnson dates Grant Ward, Simmons is officially deceased, May works at the Triskelion which has been taken over by Hydra, Coulson is a teacher giving lessons about why Inhumans must be feared, Mackenzie lives a peaceful life with his daughter Hope and Fitz seems to be a high-ranking member of an undisclosed organization.
+t- crowd_end|They pick up
+t+ deictic|They pick up Yo-Yo Rodriguez
+f+ Simmons|other_verb|connect|before Simmons and Johnson connect to the Framework.|actual|stated|
+f+ Johnson|other_verb|connect|before Simmons and Johnson connect to the Framework.|actual|stated|
+
+@2310 gold: Inhumans are a race; the purpose of the gel
+keep
+t- no_relation|When Inhumans
+t+ crowd_end|When Inhumans started to appear as a result of the Terrigen Mist spreading across the world
+t- no_relation|to put recovered
+f+ Advanced Threat Containment Unit|other_verb|put|developed the Suspension Gel to put recovered Inhumans in stasis until they could develop a cure for their condition.|planned|stated|Advanced Threat Containment Unit
+
+@2311 gold: ok
+keep
+
+@2312 gold: one name (Sue, Reed); the team returns as a group (Johnny is unnamed here); handed takes the boy, gave the recipient; mourning; the citizens
+keep
+r Invisible Woman=>Sue
+r Mister Fantastic=>Reed
+- Reed|arrived|Baxter Building
+- Sue|arrived|Baxter Building
+- Thing|arrived|Baxter Building
++ Fantastic Four|arrived|Baxter Building|The Fantastic Four returned to the Baxter Building
+f- Thing|handed|Reed
+f+ Thing|handed|Franklin|Mourning her, Thing handed Franklin to Reed|actual|stated|
+f+ Thing|gave|Reed|Mourning her, Thing handed Franklin to Reed|actual|stated|
+f+ Thing|other_verb|Mourning|Mourning her, Thing handed Franklin to Reed|actual|stated|
+t+ crowd_end|celebrated by the citizens emerging from Subterranea.
+
+@2313 gold: the offered and ordered acts; leaving; Lucio's paralysing; "plans" is a noun (the stating)
+keep
+f+ Gideon Malick|other_verb|find|Malick offered to find a suitable host|planned|stated|Gideon Malick
+f+ R. Giyera|other_verb|obtain|Hive ordered R. Giyera, now loyal to him and not Malick, to obtain for him five healthy and alive Humans.|ordered|stated|Hive
+f+ Gideon Malick|other_verb|left|When Malick left to attended a summit in Taiwan|actual|stated|
+f+ Lucio|other_verb|paralyzed|Giyera presented the five humans, paralyzed by Lucio to Hive|actual|stated|
+f- Hive|other_verb|plans
+f+ Hive|other_verb|stating|and thanked him, stating that he had great plans for the five humans.|actual|stated|
+
+@2314 gold: an unnamed mother is no end
+keep
+f- mother|parent_of|Leo Fitz
+f+ Leo Fitz|other_verb|growing|growing up alone with his mother.|actual|stated|
+
+@2315 gold: a doer-less reveal; the battle between the named groups
+keep
+f- Hydra|revealed|-
+t+ no_doer|after their existence was revealed.
+t- no_relation|The Battle at the Triskelion
++ Hydra|fought|S.H.I.E.L.D.|The Battle at the Triskelion was the first open battle between Hydra and S.H.I.E.L.D.
+
+@2316 gold: self pair; the grenade; setting out = actual + planned retrieval
+keep
+f- Black Widow|protected|Black Widow
+f+ Black Widow|other_verb|shield|she used a dead mercenary's corpse to shield herself from the blast.|actual|stated|
+f+ Crossbones|other_verb|threw|He then threw a grenade at her|actual|stated|
+f- Falcon|other_verb|set
+f- Maximoff|other_verb|set
+f- Black Widow|other_verb|set
+f+ Falcon|other_verb|set|While Falcon, Maximoff, and Black Widow set out to find the other mercenaries and retrieve the bioweapon,|actual|stated|
+f+ Maximoff|other_verb|set|While Falcon, Maximoff, and Black Widow set out to find the other mercenaries and retrieve the bioweapon,|actual|stated|
+f+ Black Widow|other_verb|set|While Falcon, Maximoff, and Black Widow set out to find the other mercenaries and retrieve the bioweapon,|actual|stated|
+f+ Falcon|other_verb|retrieve|set out to find the other mercenaries and retrieve the bioweapon|planned|stated|Falcon
+f+ Maximoff|other_verb|retrieve|set out to find the other mercenaries and retrieve the bioweapon|planned|stated|Maximoff
+f+ Black Widow|other_verb|retrieve|set out to find the other mercenaries and retrieve the bioweapon|planned|stated|Black Widow
+
+@2317 gold: Ward's wanting
+keep
+t- no_relation|Though Ward wanted
+f+ Grant Ward|other_verb|wanted|Though Ward wanted Skye for his own reasons, this was an extra boon.|actual|stated|
+
+@2318 gold: the Sovereign and the drones are crowds; a ship and a hit are no doers; one name (Yondu Udonta)
+keep
+r Udonta=>Yondu Udonta
+f- Drones|located_at|planet's core
+f- Drones|other_verb|damaging
+f- Guardians|other_verb|hit
+f- last ship|destroyed|Laser Drill
+t+ crowd_end|The Sovereign followed up on Taserface's tip and tracked the Guardians to Ego.
+t+ crowd_end|Entering the planet's core, the Drones attacked the Guardians, heavily damaging their ship under heavy fire.
+t+ no_doer|only for the power to cut out due to a hit to the engine.
+t+ no_doer|The Laser Drill was destroyed by a final shot from the last ship

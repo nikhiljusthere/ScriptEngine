@@ -1,0 +1,214 @@
+@1869 gold: ok
+keep
+
+@1870 gold: no article; found out is learned; teleported to her they reach Hope
+keep
+r the Moon=>Moon
+f- X-Men|discovered|Moon
+f+ X-Men|learned|-|When the X-Men found out Hope was on the Moon|actual|stated|
++ Cyclops|met|Hope|Magik teleported Cyclops, Emma Frost, Namor, and Colossus to her.
++ Emma Frost|met|Hope|Magik teleported Cyclops, Emma Frost, Namor, and Colossus to her.
++ Namor|met|Hope|Magik teleported Cyclops, Emma Frost, Namor, and Colossus to her.
++ Colossus|met|Hope|Magik teleported Cyclops, Emma Frost, Namor, and Colossus to her.
+
+@1871 gold: devices are no doers; a race's network is general mechanics
+keep
+f- Stargates|used|Wormholes
+t+ capability|Shi'ar have a network of devices known as Stargates.
+t+ capability|They were used to create stable Wormholes.
+
+@1872 gold: Loki's appeal; a description object; a saved planet is protected; the sacrifice is a death; a city is no doer
+keep
+t- no_relation|by appealing
+f+ Loki|other_verb|appealing|Loki convinced him by appealing to his love for Titania.|actual|stated|
+f- Iron Maiden|used|powers
+f+ Iron Maiden|other_verb|distribute|Iron Maiden used her powers to distribute him evenly throughout the planet's core|actual|stated|
+f- Iron Maiden|other_verb|saving
+f+ Iron Maiden|protected|Earth|Iron Maiden used her powers to distribute him evenly throughout the planet's core, saving the Earth.|actual|stated|
+f+ Creel|dies|-|While Creel sacrificed his life to save the Earth|actual|stated|
+f- Manhattan|other_verb|maintained
+t+ no_relation|Manhattan maintained the general shape of Creel's body
+
+@1873 gold: ok
+keep
+
+@1874 gold: the first "Ching Toy" is Nogatmi (the real one is found wounded); the attempt is the keeping at bay
+keep
+f- Ching Toy|other_verb|orders
+f+ Nogatmi|other_verb|orders|Ching Toy orders his minions to attack.|actual|stated|
+f+ Nogatmi|disguise_as|Ching Toy|They find the real Ching Toy who has been mortally wounded.|actual|stated|
+f- Nogatmi|other_verb|creating
+f+ Nogatmi|other_verb|keep|their foe who attempts to keep them at bay by creating fires on the street|attempted|stated|Nogatmi
+f+ Nogatmi|other_verb|creating|their foe who attempts to keep them at bay by creating fires on the street|actual|stated|
+
+@1875 gold: one name (Cain) tied to the codename; the entity seeking control is Cyttorak; an apposition is no verb
+keep
+r Juggernaut=>Cain
+f+ Juggernaut|alias_of|Cain|ripped the Crimson Gem of Cyttorak from Juggernaut's body and imprisoned him within it. Inside the jewel, Cain learned he was an avatar for Cyttorak.|actual|stated|
+f- Onslaught|other_verb|assume
+f+ Cyttorak|other_verb|assume|As such, the otherworldly entity sought to assume control of Juggernaut's form.|attempted|stated|Cyttorak
+f- Onslaught|other_verb|amalgamation
+t+ apposition|actually an amalgamation of the psyches of Xavier and Magneto
+
+@1876 gold: ok
+keep
+
+@1877 gold: his own Avengers act for Iron Man (A63); informing in person is no contact; a trap is no created thing; the realised trap; the tried capture; the departing one is Iron Man
+keep
+- Iron Man's Avengers|fought|Spider-Woman
+- Iron Man's Avengers|fought|Spider-Man
+- Iron Man's Avengers|fought|Wolverine
+- Iron Man's Avengers|fought|Iron Fist
+- Iron Man's Avengers|fought|Cage
++ Iron Man|fought|Spider-Woman|who had his own Avengers ambush them with power-dampening technology
++ Iron Man|fought|Spider-Man|who had his own Avengers ambush them with power-dampening technology
++ Iron Man|fought|Wolverine|who had his own Avengers ambush them with power-dampening technology
++ Iron Man|fought|Iron Fist|who had his own Avengers ambush them with power-dampening technology
++ Iron Man|fought|Cage|who had his own Avengers ambush them with power-dampening technology
+f- Ms. Marvel|contacted|Spider-Woman
+f+ Ms. Marvel|other_verb|informed|Spider-Woman had been informed by Ms. Marvel that Captain America was, in fact, alive and kept in the Raft|actual|stated|
+f+ Ms. Marvel|revealed|-|Spider-Woman had been informed by Ms. Marvel that Captain America was, in fact, alive and kept in the Raft|actual|stated|
+f- Iron Man|created|trap
+f+ Iron Man|other_verb|set|only to immediately realize it was a trap set by Iron Man|actual|stated|
+f- Iron Man|used|power-dampening technology
+f+ Cage|learned|-|The Avengers raided the Raft only to immediately realize it was a trap set by Iron Man|actual|stated|
+f+ Spider-Woman|learned|-|The Avengers raided the Raft only to immediately realize it was a trap set by Iron Man|actual|stated|
+f+ Spider-Man|learned|-|The Avengers raided the Raft only to immediately realize it was a trap set by Iron Man|actual|stated|
+f+ Wolverine|learned|-|The Avengers raided the Raft only to immediately realize it was a trap set by Iron Man|actual|stated|
+f+ Iron Fist|learned|-|The Avengers raided the Raft only to immediately realize it was a trap set by Iron Man|actual|stated|
+f+ Iron Man|other_verb|capture|Despite Iron Man attempting to capture them using the magic abilities of Brother Voodoo, he failed.|attempted|stated|Iron Man
+f- Doctor Strange|persuaded|New Avengers
+f+ Iron Man|other_verb|led|Before departing, he ultimately led the outlaw Avengers question their purpose as a resistance after the war.|actual|stated|
+
+@1878 gold: the doer-less killing is her death
+keep
+t- no_doer|She was later killed
+f+ Christine Everhart|dies|-|She was later killed when Dr. Strange tried to break an absolute point in time.|actual|stated|
+
+@1879 gold: no article on a name
+keep
+r the Grandmaster=>Grandmaster
+
+@1880 gold: Super-Skrull manipulated too; fleets and races are crowds; a restored ability is no awakening; the new power named; the machine gives, not S'Byll; described ships
+keep
+f+ Super-Skrull|tricked|Silver Surfer|S'Byll and the Super-Skrull manipulated the Silver Surfer into allying with them against the Kree|actual|stated|
+t+ crowd_end|As he was unaware that the Badoon were allied to the Kree, it meant his intervention on the side of the Skrulls made him an enemy of the Kree.
+- Silver Surfer|fought|Kree fleet
+- S'Byll|fought|Kree fleet
+- Skrull fleet|fought|Kree fleet
+- Skrull fleet|defeated|Kree fleet
+t+ crowd_end|A Skrull fleet arrived and battle ensued between the two armadas.
+t+ crowd_end|After several hours of intense combat, the Skrulls emerged victorious.
+- S'Byll|awakened|-
+f- S'Byll|gained_power|-
+f+ S'Byll|gained_power|ability to restore shapeshifting abilities|in addition to giving her the ability to restore shapeshifting abilities to any Skrull with just a touch|actual|stated|
+f- S'Byll|other_verb|giving
+f- S'Byll|destroyed|Kree ships
+f- Silver Surfer|destroyed|Kree ships
+f+ S'Byll|other_verb|destroyed|The cosmic enhanced S'Byll and the Silver Surfer then headed out to space to engage the returning Kree fleet and destroyed many ships|actual|stated|
+f+ Silver Surfer|other_verb|destroyed|The cosmic enhanced S'Byll and the Silver Surfer then headed out to space to engage the returning Kree fleet and destroyed many ships|actual|stated|
+f+ Silver Surfer|other_verb|fought|and then fought the Kree fleet.|actual|stated|
+
+@1881 gold: working for the Kingpin is hiring; the assignment; the learning; a hospital is no named place (the fight keeps its own clause before "until"; the later visit is its own meeting)
+keep
+f- Bullseye|allied_with|Kingpin
+f+ Kingpin|hired|Bullseye|Bullseye simply received a better offer from the Kingpin and agreed to work for him instead.|actual|stated|
+f+ Bullseye|other_verb|kill|while on assignment to kill the Kingpin|planned|stated|Bullseye
+f+ Bullseye|learned|-|Bullseye was furious to learn that the Kingpin had chosen Elektra as his assassin in the meantime.|actual|stated|
+f- Bullseye|located_at|hospital
+f+ Bullseye|other_verb|recovering|While recovering in the hospital|actual|stated|
+
+@1882 gold: the window's name; the Jackal's making and control; the cure is no doer and no clone is a becoming; helped needs an object; the Queen's name
+keep
+r Kaine Parker=>Kaine
+f+ Jackal|other_verb|made|The Jackal made him the first of his army of individuals to use during the Spider-Island event.|actual|stated|
+f+ Jackal|other_verb|control|Kaine, however, followed the Jackal merely because he was under his control.|actual|stated|
+f- the cure|other_verb|stabilized
+f- Spider-Man|other_verb|intended
+t+ no_doer|which was intended to help cure the people of Spider-Island.
+f- Kaine|became|Peter Parker
+t+ no_relation|The cure did more than return Kaine from being a monster, it also stabilized his DNA and made him a perfect clone of Peter Parker
+f- Kaine|helped|-
+f+ Spider Queen|alias_of|Adriana Soria|the retaliation against the Spider Queen, Adriana Soria, in Central Park|actual|stated|
+
+@1883 gold: the convicting judge is the father
+keep
+f- Dan Elkhart|other_verb|convicted
+f+ Len Elkhart|other_verb|convicted|a criminal he had convicted, with a fake gun|actual|stated|
+
+@1884 gold: ok
+keep
+
+@1885 gold: attempt verb; the negated acceptance
+keep
+f- Emmet|other_verb|tried
+f+ Emmet|other_verb|peer|other torturous ways she tried to peer into his head|attempted|stated|Emmet
+f+ Emmet|other_verb|accept|Emmet still couldn't accept Marc's reality|actual|denied|
+
+@1886 gold: the infobox field line
+keep
+t+ list_header|History =
+
+@1887 gold: ok
+keep
+
+@1888 gold: the patients of a teleport are no doers; the kiss; the agreement is actual; the one returning is Professor X; a feeling is a belief; hoping is actual
+keep
+f- Fantomex|other_verb|teleported
+f- Mystique|other_verb|teleported
+f+ Fantomex|other_verb|sharing|Fantomex and Mystique enjoyed numerous activities together, eventually sharing a kiss|actual|stated|
+f+ Mystique|other_verb|sharing|Fantomex and Mystique enjoyed numerous activities together, eventually sharing a kiss|actual|stated|
+f+ Fantomex|other_verb|agreed|Near the end of the conflict, Fantomex agreed to donate his body to Professor X's astral form|actual|stated|
+f- Fantomex|other_verb|return
+f+ Professor X|other_verb|return|so that he could return to the real world while his mind remained in the Astral Plane.|planned|stated|Fantomex
+f- Fantomex|other_verb|felt
+f+ Fantomex|suspected|-|a role he felt he was chained to.|actual|stated|
+f- Fantomex|other_verb|hope
+f+ Fantomex|other_verb|hoped|Fantomex hoped his sacrifice would earn him a clean slate|actual|stated|
+
+@1889 gold: the asked stand-down; no pipe in quotes
+keep
+f+ Silver Surfer|other_verb|stand|as he kept asking them to stand down|ordered|stated|Odin
+f+ Thanos|other_verb|stand|as he kept asking them to stand down|ordered|stated|Odin
+t- list_header|| Weaknesses
+t+ list_header|Weaknesses =
+t+ list_header|Equipment =
+
+@1890 gold: the kidnappers are the soldiers, not Cornelius; Taylor's death; the turning is Cornelius'; the tried escape; a triggered power is no awakening; the captors are a crowd
+keep
+t+ crowd_end|only to be confronted by three opposing Weapon X soldiers.
+t- no_relation|and while Meifeng
+f+ Meifeng|other_verb|have|while Meifeng and Taylor were trying to have a child|attempted|stated|Meifeng
+f+ Taylor|other_verb|have|while Meifeng and Taylor were trying to have a child|attempted|stated|Taylor
+f+ Taylor|dies|-|they kidnapped Meifeng and killed Taylor.|actual|stated|
+- Cornelius|captured|Meifeng
+f+ Cornelius|other_verb|experimented|After the kidnapping, Cornelius then experimented on Meifeng|actual|stated|
+f- Meifeng|other_verb|turning
+f+ Cornelius|other_verb|turning|Cornelius then experimented on Meifeng, unexpectedly turning her from a man to a woman.|actual|stated|
+f+ Meifeng|other_verb|escape|Meifeng once again attempted to escape her captors|attempted|stated|Meifeng
+- Meifeng|awakened|-
+f+ Meifeng|gained_power|second mutant power|Doing this managed to trigger her second mutant power, which enabled her to transform into a massive, hulking being.|actual|stated|
+t- no_relation|She then managed
+t+ crowd_end|She then managed to turn the tables on her captors with the help of Skel and Junk.
+
+@1891 gold: ok
+keep
+
+@1892 gold: Cyclops sanctioned the division
+keep
+t- no_relation|Originally a division
+f+ Cyclops|other_verb|sanctioned|Originally a division of the X-Men sanctioned by Cyclops|actual|stated|
+t+ no_relation|this team's roster included some of the most powerful mutants on the planet.
+
+@1893 gold: garbage verbs; described products; the reveal
+keep
+f- Iron Man|other_verb|I
+f+ Iron Man|other_verb|blasted|Iron Man blasted into an A.I.M. weaponry laboratory|actual|stated|
+f- A.I.M.|built|giant mechas
+f+ A.I.M.|other_verb|mass-producing|A.I.M. was mass-producing a series of giant mechas|actual|stated|
+f- A.I.M.|built|armor
+f+ A.I.M.|other_verb|building|they were building armor based on his designs|actual|stated|
+f- Iron Man|other_verb|M.O.D.O.K.
+f+ Iron Man|other_verb|cornered|Iron Man encountered M.O.D.O.K. and cornered him|actual|stated|
+f+ Iron Man|revealed|-|revealing that he has purged all of his data from A.I.M.'s systems.|actual|stated|
+
