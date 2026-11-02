@@ -1,0 +1,112 @@
+@2556 gold: ok
+keep
+
+@2557 gold: the parties meet and Loki hands Foster over; "the planet" names no place
+keep
++ Loki|met|Malekith|The two parties met each other on the war ridden surface of the planet, where, in an unexpected turn of events, Loki appeared to betray Thor and hand Jane Foster over to Malekith willingly.
++ Thor|met|Malekith|The two parties met each other on the war ridden surface of the planet, where, in an unexpected turn of events, Loki appeared to betray Thor and hand Jane Foster over to Malekith willingly.
++ Jane Foster|met|Malekith|The two parties met each other on the war ridden surface of the planet, where, in an unexpected turn of events, Loki appeared to betray Thor and hand Jane Foster over to Malekith willingly.
+f+ Loki|handed|Jane Foster|Loki appeared to betray Thor and hand Jane Foster over to Malekith willingly.|actual|stated|
+- Malekith|departed|Svartalfheim
+f+ Malekith|other_verb|left|Malekith then absorbed the Aether, and left the planet.|actual|stated|
+
+@2558 gold: ok
+keep
+
+@2559 gold: one name; he went to the Mansion; name the power; garbage origin; Dale learns; the parents
+keep
+r Dean=>Leslie Dean
++ Dale|arrived|Minoru Mansion|Dale went to meet the rest of PRIDE, except Leslie Dean, at the Minoru Mansion.
+f- Dale|located_at|Minoru Mansion
+f- Molly Hernandez|gained_power|-
+f+ Molly Hernandez|gained_power|superhuman strength|Molly Hernandez had displayed superhuman strength,|actual|stated|
+f- Molly Hernandez|other_verb|originated
+t- no_doer|where Molly's parents
+f+ Gene Hernandez|parent_of|Molly Hernandez|where Molly's parents Gene and Alice had been killed.|actual|stated|
+f+ Alice Hernandez|parent_of|Molly Hernandez|where Molly's parents Gene and Alice had been killed.|actual|stated|
+f+ Dale|other_verb|discussed|They discussed what had happened, including the fact that Molly Hernandez had displayed superhuman strength|actual|stated|
+t- no_relation|When this was mentioned
+f+ Dale|learned|-|Dale was shocked to learn from Tina Minoru that the Hernandezes had actually been murdered by Dean.|actual|stated|
+
+@2560 gold: the agenda is Coulson's; Superior turns, insists and vows; the Watchdogs hunt
+keep
+f- Superior|other_verb|pursue
+f+ Coulson|other_verb|pursue|while he had continued to pursue his secret alien agenda.|actual|stated|
+f+ Superior|other_verb|turned|Having hung up on their call, Superior turned his attention back onto Mace|actual|stated|
+t- crowd_end|who had since then used that hate
+f+ Watchdogs|other_verb|used|which had since been installed into the Watchdogs who had since then used that hate to hunt down the Inhumans.|actual|stated|
+f+ Superior|other_verb|insisted|Superior, however, insisted that Coulson had opened up a world and allowed aliens onto the planet|actual|stated|
+f+ Superior|other_verb|vowing|vowing to make Mace and Coulson finally confess all of their true sins to him very soon.|actual|stated|
+f+ Superior|other_verb|make|vowing to make Mace and Coulson finally confess all of their true sins to him very soon.|planned|stated|Superior
+
+@2561 gold: one name; her brother the new Captain America; showing off and taking pictures are verbs
+keep
+r Sarah=>Sarah Wilson
+f+ Sarah Wilson|sibling_of|Sam|saw her brother in his new Captain America suit, giving his first speech to the world as Captain America.|actual|stated|
+f+ Captain America|alias_of|Sam|and smiled as Sam, being the new Captain America, took pictures with the community.|actual|stated|
+f- Bucky Barnes|wielded|vibranium arm
+f+ Bucky Barnes|other_verb|showed|She laughed as Barnes showed off his vibranium arm to the children|actual|stated|
+f- Sam|took|pictures
+f+ Sam|other_verb|took|Sam, being the new Captain America, took pictures with the community.|actual|stated|
+f+ Sarah Wilson|other_verb|laughed|She laughed as Barnes showed off his vibranium arm to the children|actual|stated|
+
+@2562 gold: the obtain plan's own quote; obtaining is no stealing; a described seabed; unnamed superiors
+keep
+f- Ten Rings|other_verb|obtain
+f+ Ten Rings|other_verb|obtain|the intention of the Ten Rings was to lure War Machine and obtain his armor|planned|stated|Ten Rings
+f- Ten Rings|stole|Stark Industries
+f+ Ten Rings|other_verb|obtained|as they obtained technology from over a dozen legit companies through the black market, including Stark Industries.|actual|stated|
+f- Battle Tank|located_at|bottom of the sea
+t- no_relation|Rhodes' superiors deduced
+t+ crowd_end|Rhodes' superiors deduced from the analysis of the remains of the tank and the scarce intel gathered from the captured terrorists
+t- deictic|and the radiation levels
+t+ no_relation|As the remains of the Battle Tank rested at the bottom of the sea and the radiation levels were as good as could be expected
+
+@2563 gold: an untagged list line
+keep
+t+ list_header|Jessica Jones
+
+@2564 gold: tried = locate; a conspiracy is no doer
+keep
+f- conspiracy|other_verb|resulted
+f- Micro|other_verb|try
+f+ Micro|other_verb|locate|Micro had then also continued to try and locate Frank Castle|attempted|stated|Micro
+
+@2565 gold: an unnamed mech
+keep
+t- no_relation|he was escorted
+t+ crowd_end|he was escorted to his room by a sleeper mech.
+
+@2566 gold: ok
+keep
+
+@2567 gold: one name; overpowered = defeated (one act); the upper hand on Sam is a fight before the turn
+keep
+r Rogers=>Steve Rogers
+- Steve Rogers|fought|Batroc
++ Steve Rogers|defeated|Batroc|However, he was easily overpowered by Rogers and was forced to escape.
++ Batroc|fought|Sam Wilson|He was easily get an upperhand against Sam Wilson but only get defeated
+
+@2568 gold: a wiki staff application is real-world (production)
+keep
+f- SilverQuake616|other_verb|advice
+f- SilverQuake616|created|Discussion Guidelines
+f- SilverQuake616|other_verb|proposed
+f- SilverQuake616|other_verb|strive
+f- SilverQuake616|other_verb|remained
+t- no_doer|When the wiki was brought
+t+ production|When the wiki was brought into a transitional period in 2024 as the administration overhaul took place I was allowed a much greater degree of freedom in regard to decisions for the future of the Discussions Area.
+t+ production|My advice has been taken in regard to the promotion of further users into the DA staff team, as well regarding warns and blocks for other users.
+t+ production|I rewrote and reimplemented a new set of Discussion Guidelines.
+t+ production|I proposed the trialling of a new offtopic thread to boost community interaction, which has now gained momentum and continues monthly to great success.
+t+ production|I also advised for the creation of a discord channel within the wiki’s server specifically to deal with DA-related issues, which has allowed for better communication between moderators and admins alike.
+t+ production|I continue to strive for the gradual improvement of the Discussion Area with many plans in the pipeline, and am trusted by admins and other moderators to do so.
+t+ production|Throughout all of my work I have remained a consistent presence within the community am easily accessible via both Discord and my message wall, and users have been able to approach me as necessary.
+
+@2569 gold: ok
+keep
+
+@2570 gold: an actor's likeness is production
+keep
+f- Hulk|other_verb|based
+t+ production|Hulk's likeness is based off of Edward Norton.

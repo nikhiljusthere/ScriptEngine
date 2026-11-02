@@ -1,0 +1,93 @@
+@2691 gold: one name for Alisa; Toussaint's belief
+keep
+r Jones=>Alisa
+f+ Toussaint|suspected|-|Although Toussaint believed Jones was taking advantage|actual|stated|
+
+@2692 gold: ok
+keep
+
+@2693 gold: ok
+keep
+
+@2694 gold: no pipe in a tag quote; a song credit is production; the bonding and explaining are meetings
+keep
+t- list_header|Song title
+t+ list_header|Song title
+t+ list_header|Artist
+t+ list_header|Location(s)
+t- list_header|Tremors :Nemesis
+t+ production|Tremors :Nemesis (feat. Robot Koch)
+t+ production|Delhia de France *
++ Chase Stein|met|Tyrone Johnson|Chase Stein and Tyrone Johnson bond over sports.
++ Karolina Dean|met|Tandy Bowen|Karolina Dean explains to Tandy Bowen why she trusts Nico Minoru.
+
+@2695 gold: ok
+keep
+
+@2696 gold: ok
+keep
+
+@2697 gold: untagged dialogue
+keep
+t+ dialogue|TVA decided our universe was dying. And I never even got a chance to fight for it.
+
+@2698 gold: a doer-less erasure; habitual acts are no capability
+keep
+f- Zabo|other_verb|mind
+t+ no_doer|Zabo had his mind erased and was given new memories
+t- capability|He held adoption days
+f+ Zabo|other_verb|held|He held adoption days on Saturday and gave free spaying and neutering at the clinic.|actual|stated|
+
+@2699 gold: the page's opening quote is dialogue
+keep
+t- capability|They speak thirty languages
+t+ dialogue|They speak thirty languages, can hide in plain sight.
+t- capability|Infiltrate, assassinate
+t+ dialogue|Infiltrate, assassinate, destabilize.
+t- capability|They can take a whole country
+t+ dialogue|They can take a whole country down in one night, and you'd never see them coming.
+
+@2700 gold: Daisy's arrival on site and help
+keep
+t- deictic|Daisy Johnson and Melinda May's LMD
+f+ Daisy Johnson|other_verb|arrived|Daisy Johnson and Melinda May's LMD arrived on site and help to defeat the remaining operatives.|actual|stated|
+
+@2702 gold: got him arrested = captured; a doer-less release; political power is no power; mayor of the named city = leader_of
+keep
++ Daredevil|captured|Wilson Fisk|Daredevil defeated Wilson Fisk and got him arrested on two occasions.
+f- Wilson Fisk|other_verb|released
+t+ no_doer|Fisk was acquitted and released from prison,
+f- Wilson Fisk|gained_power|-
+f+ Wilson Fisk|other_verb|regained|and regained enough power and influence in New York City to be elected to the mayor's office in 2026.|actual|stated|
+f- Wilson Fisk|became|mayor
+f+ Wilson Fisk|leader_of|New York City|and regained enough power and influence in New York City to be elected to the mayor's office in 2026.|actual|stated|
+
+@2701 gold: ok
+keep
+
+@2703 gold: a doer-less recruitment; a car is no place; the request; bringing to a car
+keep
+f- Pagon|recruited|-
+t+ no_doer|Pagon was recruited to assist in the rescue of Brogan
+f- G'iah|located_at|car
+f- Beto|located_at|car
+f+ G'iah|other_verb|waited|while G'iah and Beto waited in the car.|actual|stated|
+f+ Beto|other_verb|waited|while G'iah and Beto waited in the car.|actual|stated|
+f- Gravik|ordered|-
+f+ Gravik|ordered|Pagon|Pagon then brought Brogan to the car at Gravik's request.|actual|stated|
+f- Pagon|took|Brogan
+f+ Pagon|other_verb|brought|Pagon then brought Brogan to the car at Gravik's request.|ordered|stated|Gravik
+f+ Pagon|other_verb|helped|Once all the guards were killed, Pagon broke inside and helped Brogan to his feet.|actual|stated|
+
+@2704 gold: the window's name is Karolina; Nico's arrival interrupts them; Xavin touches, vanishes and insists
+keep
+r Karolina Dean=>Karolina
++ Nico Minoru|met|Karolina|They were interrupted, however, by the arrival of Nico Minoru.
++ Nico Minoru|met|Xavin|They were interrupted, however, by the arrival of Nico Minoru.
+f+ Xavin|other_verb|touched|They touched Karolina on the forerarm and disappeared, leaving Karolina wondering where they went.|actual|stated|
+f+ Xavin|other_verb|disappeared|They touched Karolina on the forerarm and disappeared, leaving Karolina wondering where they went.|actual|stated|
+f+ Xavin|other_verb|insisted|but Xavin insisted, kneeling in front of Karolina.|actual|stated|
+f+ Runaways|other_verb|shopping|While the Runaways were shopping for Molly Hernandez's fifteenth birthday party|actual|stated|
+
+@2705 gold: ok
+keep

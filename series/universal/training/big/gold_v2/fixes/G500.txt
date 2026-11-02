@@ -1,0 +1,188 @@
+@2442 gold: the turned one transforms; posing is a verb; the placing happened; named doer releases
+keep
+f- Malekith|transformed_into|Kursed
+f+ Algrim|transformed_into|Kursed|Malekith turned Algrim into a Kursed, a Dark Elf super-soldier|actual|stated|
+f+ Malekith|other_verb|turned|Malekith turned Algrim into a Kursed, a Dark Elf super-soldier|actual|stated|
+f+ Algrim|other_verb|infiltrate|and had him infiltrate Asgard|ordered|stated|Malekith
+f+ Malekith|other_verb|recover|To recover the Aether, Malekith turned Algrim into a Kursed|planned|stated|Malekith
+f- Algrim|disguise_as|prisoner
+f+ Algrim|other_verb|posed|There, he posed as a prisoner|actual|stated|
+f- Heimdall|created|force field
+f+ Heimdall|created|force field|by placing a force field around the royal palace|actual|stated|
+t- crowd_end|released various prisoners
+f+ Algrim|other_verb|released|released various prisoners from Asgard's dungeons|actual|stated|
+t- deictic|while the Asgardians were distracted
+t+ crowd_end|while the Asgardians were distracted by the prisoners
+
+@2443 gold: the page title is not window text; the ordered protection; a doer-less discovery
+keep
+r Julien Beckers=>Beckers
+f+ Noelle Walters|protected|Beckers|Agent Noelle Walters and her team were directed by Phil Coulson to protect Beckers|ordered|stated|Phil Coulson
+f- Phil Coulson|discovered|-
+
+@2444 gold: Druig's unawareness
+keep
+t+ no_relation|while Druig was completely unaware of it.
+
+@2445 gold: ok
+keep
+
+@2446 gold: a war cry naming a group is dialogue
+keep
+t- below_floor|Dora Milaje! Phambili!
+t+ dialogue|Dora Milaje! Phambili!
+
+@2447 gold: Malick stands by and goes to meet; the Chronicoms are a crowd
+keep
+f+ Malick|other_verb|stood|Malick then stood by as the Chronicoms pushed Simmons and Shaw inside the cell|actual|stated|
+f+ Malick|other_verb|meet|Malick made his way toward the control room to meet with Sibyl|planned|stated|Malick
+t+ crowd_end|as one of the Chronicoms then injected Simmons with a substance which was designed to melt down D.I.A.N.A. inside her head
+
+@2448 gold: revealed takes no listener; Fisk owes; tried = convince; belief = suspected; promise = speech + plan
+keep
+f- Urich|revealed|Page
+f+ Urich|revealed|-|Urich revealed he had been in contact with a mobster|actual|stated|
+f- Urich|other_verb|owed
+f+ Bill Fisk|other_verb|owed|to whom he owed money to.|actual|stated|
+f- Urich|other_verb|tried
+f+ Urich|persuaded|Page|he tried to convince her to put it online herself|attempted|stated|Urich
+f- Page|other_verb|believed
+f+ Page|suspected|-|but she believed no one would believe her.|actual|stated|
+f- Urich|other_verb|promised
+f+ Urich|other_verb|promised|Urich promised to write up the story and give it to his editor Mitchell Ellison.|actual|stated|
+f+ Urich|other_verb|write|Urich promised to write up the story and give it to his editor Mitchell Ellison.|planned|stated|Urich
+
+@2449 gold: a described rooftop is no place; the police are a crowd; Reyes orders a crowd
+keep
+f- Punisher|located_at|rooftop
+t- no_relation|The police reported
+t+ crowd_end|The police reported that they could not get a clear shot on the Punisher,
+f+ Reyes|other_verb|ordered|but Reyes ordered them to fire anyway.|actual|stated|
+
+@2450 gold: cast credits are production
+keep
+t- list_header|Agent (uncredited)
+t+ production|Agent (uncredited)
+t- list_header|Nate Paige as New York
+t+ production|Nate Paige as New York Pedestrian (uncredited)
+t- list_header|Martin Palmer as
+t+ production|Martin Palmer as S.H.I.E.L.D.
+
+@2451 gold: ok
+keep
+
+@2452 gold: a song credit is production; the scene line narrates a meeting; no pipe in a quote
+keep
+t- list_header|Sugar (That Sugar
+t+ production|Sugar (That Sugar Baby O'mine)
++ Peggy Carter|met|Angie Martinelli|Peggy Carter converses with Angie Martinelli at the L&L Automat.
+
+@2453 gold: four unnamed guards are a crowd; Karnak leaves
+keep
+f- Attilan Royal Guards|attacked|Karnak
+f- Attilan Royal Guards|other_verb|assumed
+t+ crowd_end|A group of four Attilan Royal Guards ambushed Karnak in Attilan's Control Room.
+t+ crowd_end|They assumed that they were here to either capture or kill him and that the outcome would depend on Karnak's own choice.
+f+ Karnak|other_verb|left|Once the scenario was fulfilled, Karnak left the Control Room.|actual|stated|
+
+@2454 gold: a deduction is suspected; an unnamed "they"
+keep
+f+ Stark|suspected|-|Stark deduced that Loki wanted to publicly beat them to assert his authority over the world|actual|stated|
+t+ deictic|They started to analyze Loki's motives, and how he attacked them in at a personal level.
+
+@2455 gold: a described car is no end; duplicate non-verb object; tailing is an act
+keep
+f- Winter Soldier|destroyed|the car
+f+ Winter Soldier|other_verb|shot|he shot it down, causing the car to swerve off the road and crash into a tree|actual|stated|
+f- Winter Soldier|other_verb|Starks
+f+ Winter Soldier|other_verb|execute|prepared to execute the Starks|planned|stated|Winter Soldier
+t- no_relation|Winter Soldier concealed himself
+f+ Winter Soldier|other_verb|tailed|Winter Soldier concealed himself and tailed Howard and Maria Stark's car on his motorcycle|actual|stated|
+
+@2456 gold: ok
+keep
+
+@2457 gold: a doer-less pronouncement; the first dialogue line
+keep
+f- Scott Lang|other_verb|pronounced
+t+ no_doer|Pronounced dead by society as his body was never recovered
+t+ dialogue|That must've been a very long five years.
+
+@2458 gold: admitting reveals no listener; acting king names no realm; Loki realizes; the friends are unnamed
+keep
+f- Odin|revealed|Loki
+f+ Odin|revealed|-|Odin admits that Loki was taken from Jotunheim as an infant and raised as his own|actual|stated|
+f- Loki|became|acting king
+f+ Loki|learned|-|Loki realizes that he is not a pure Asgardian|actual|stated|
+t- no_relation|On Asgard, Thor's four friends
+t+ crowd_end|On Asgard, Thor's four friends begin to suspect Loki had something to do with Thor's banishment.
+
+@2459 gold: Tina's call; working for = member_of; ties = allied_with; apparent death; a conclusion is a belief
+keep
+f+ Tina Minoru|contacted|Flores|Flores was called by Tina Minoru|actual|stated|
+f- Flores|other_verb|working
+f+ Flores|member_of|Los Angeles Police Department|Working for Los Angeles Police Department, Detective Flores|actual|stated|
+f- Flores|other_verb|ties
+f+ Flores|allied_with|PRIDE|Detective Flores had ties with the so-called charity PRIDE|actual|stated|
+f- Amy Minoru|other_verb|committed
+f+ Amy Minoru|dies|-|When Amy Minoru seemingly committed suicide|actual|apparent|
+f- Flores|other_verb|concluded
+f+ Flores|suspected|-|Flores later concluded that Amy's death was effectively a suicide.|actual|stated|
+
+@2460 gold: Redwing fires on two unnamed Smashers; the Smashers fight is the confrontation; met that becomes the fight; assuming = suspected
+keep
+- Wilson|fought|Karli Morgenthau
++ Wilson|fought|Karli Morgenthau|Wilson then joined the battle and confronted the Flag Smashers together with Barnes
+- Captain America|met|Karli Morgenthau
+- Battlestar|met|Karli Morgenthau
+f- Barnes|other_verb|assuming
+f+ Barnes|suspected|-|Assuming that she was a hostage|actual|stated|
+t+ crowd_end|Two other Flag Smasher restrained Barnes
+t- capability|however, they could not
+t+ no_relation|however, they could not compete with super soldiers
+
+@2461 gold: thrown out of the Bifrost = defeated (A56); discovery; family ties
+keep
+- Hela|fought|Thor
+- Hela|fought|Loki
++ Hela|defeated|Thor|but Hela threw the two out of it and they landed on the planet of Sakaar
++ Hela|defeated|Loki|but Hela threw the two out of it and they landed on the planet of Sakaar
+f+ Thor|discovered|-|He discovered that Loki was still alive and disguising himself as Odin to rule Asgard.|actual|stated|
+f+ Odin|parent_of|Thor|Odin told his sons that their sister, Hela would be free|actual|stated|
+f+ Odin|parent_of|Loki|Odin told his sons that their sister, Hela would be free|actual|stated|
+f+ Hela|sibling_of|Thor|Odin told his sons that their sister, Hela would be free|actual|stated|
+f+ Hela|sibling_of|Loki|Odin told his sons that their sister, Hela would be free|actual|stated|
+
+@2462 gold: cast credits are production
+keep
+t- list_header|Thatcher)
+t+ production|Thatcher)
+t- list_header|Liorn (Leonardo Nam)
+t+ production|Liorn (Leonardo Nam)
+t- list_header|Barasso (Daniel J.
+t+ production|Barasso (Daniel J.
+
+@2463 gold: the asked training; the planned fight
+keep
+f+ Jiayi|trained|Hela|asked if Jiayi could train her in the Ta Loan fighting style|ordered|stated|Hela
+f+ Hela|other_verb|fight|donned Dragon Scale Armor to go and fight him.|planned|stated|Hela
+
+@2464 gold: ok
+keep
+
+@2465 gold: one name; she meets K.E.V.I.N.; named doers' acts; the ordered return
+keep
+r Walters=>Jennifer Walters
++ She-Hulk|met|K.E.V.I.N.|on her way to meet K.E.V.I.N., discovering that he was an artificial intelligence.
+f+ She-Hulk|other_verb|agreed|was asked to sign a non-disclosure agreement, to which she agreed.|actual|stated|
+t+ crowd_end|However, the receptionist pressed the security button, leading to a fight as She-Hulk fought through several guards
+f+ Jennifer Walters|other_verb|return|but K.E.V.I.N. told her that she had to return to her series|ordered|stated|K.E.V.I.N.
+f+ Jennifer Walters|other_verb|explained|As Jennifer Walters, she explained that the MCU had become known for spectacle and similar endings.|actual|stated|
+t- no_relation|She-Hulk expressed displeasure
+f+ She-Hulk|other_verb|expressed|She-Hulk expressed displeasure with her story|actual|stated|
+t- no_relation|K.E.V.I.N. agreed
+f+ K.E.V.I.N.|other_verb|agreed|K.E.V.I.N. agreed and asked for her input on the finale|actual|stated|
+f+ K.E.V.I.N.|other_verb|asked|K.E.V.I.N. agreed and asked for her input on the finale|actual|stated|
+f+ Jennifer Walters|other_verb|suggest|leading Walters to suggest the removal of Phelps getting powers|actual|stated|
+t- deictic|Walters left
+f+ Jennifer Walters|other_verb|left|Walters left, returning to her own universe.|actual|stated|

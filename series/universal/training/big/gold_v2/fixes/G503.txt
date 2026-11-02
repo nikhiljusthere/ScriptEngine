@@ -1,0 +1,224 @@
+@2496 gold: ok
+keep
+
+@2497 gold: the recall happened and failed; S.H.I.E.L.D. seeks them; murders with no doer
+keep
+f- S.H.I.E.L.D.|took|Nature Max Supplements Fish Oil pills
+f- S.H.I.E.L.D.|other_verb|recall
+f+ S.H.I.E.L.D.|other_verb|recall|S.H.I.E.L.D. was able to recall Nature Max Supplements Fish Oil pills off store shelves|actual|stated|
+f+ S.H.I.E.L.D.|other_verb|recall|the organization could not recall what was already ingested by those with Inhuman ancestry|actual|denied|
+t- no_relation|New Inhumans emerge
+t+ crowd_end|New Inhumans emerge with uncontrolled powers
+t- no_relation|causing S.H.I.E.L.D. to seek
+f+ S.H.I.E.L.D.|other_verb|seek|causing S.H.I.E.L.D. to seek them out and place them in the Caterpillars program|actual|stated|
+t- no_relation|However, the newly transformed
+t+ no_doer|However, the newly transformed are being murdered before they can be collected.
+
+@2498 gold: Livvie jeopardizes the plan; the ordered threat; determined = planned; belief = suspected; former girlfriend
+keep
+f- Catherine|other_verb|jeopardized
+f+ Livvie|other_verb|jeopardized|Catherine's plan was soon jeopardized by Livvie|actual|stated|
+f+ AWOL|other_verb|threaten|ordered AWOL to threaten Livvie to silence her.|ordered|stated|Catherine
+f- Alex|other_verb|determined
+f+ Alex|other_verb|bring|this caused Alex, who was present at the shooting, to be even more determined to bring his parents to justice|planned|stated|Alex
+f- Alex|other_verb|believed
+f+ Alex|suspected|-|even though he believed that Davis had been killed by Geoffrey instead of Catherine.|actual|stated|
+f+ Livvie|dated|Alex|Davis' sister-in-law and Alex's former girlfriend|actual|stated|
+
+@2499 gold: named doers drive and record
+keep
+t- no_relation|In 2016, Happy Hogan
+f+ Happy Hogan|other_verb|drove|In 2016, Happy Hogan drove Peter Parker past the Stark Expo's Unisphere on their way to the airport.|actual|stated|
+t- no_relation|Parker recorded
+f+ Peter Parker|other_verb|recorded|Parker recorded them passing by on his cellphone, narrating about his trip.|actual|stated|
+
+@2500 gold: a suggestion is a request: the ordered kneel
+keep
+f- Loki|ordered|Fury
+f+ Loki|other_verb|suggests|and Loki suggests that Fury kneel.|actual|stated|
+f+ Fury|other_verb|kneel|and Loki suggests that Fury kneel.|ordered|stated|Loki
+
+@2501 gold: ok
+keep
+
+@2502 gold: the forced sending; the brother
+keep
+f+ Jeffrey Mace|other_verb|send|forcing him to send Jemma Simmons to investigate the Terrigenesis of her brother Vijay Nadeer.|ordered|stated|Ellen Nadeer
+f+ Ellen Nadeer|sibling_of|Vijay Nadeer|to investigate the Terrigenesis of her brother Vijay Nadeer.|actual|stated|
+
+@2503 gold: a trait is no capability
+keep
+t- capability|Ravager captains are often
+t+ no_relation|Ravager captains are often intelligent, serving as the brain that guides their largely dim-witted crew.
+
+@2504 gold: name the power; authorities are a crowd
+keep
+f- Doreen Green|gained_power|-
+f+ Doreen Green|gained_power|power to communicate|Doreen Green discovered that she had to power to communicate with .|actual|stated|
+f- Doreen Green|rival_of|municipal authorities
+
+@2505 gold: an invitation is no recruiting; the transfer, walk, reveal and realizing
+keep
+f- Fury|recruited|Parker
+f+ Fury|other_verb|invites|Fury invites Parker to join him in Berlin|actual|stated|
+f+ Parker|other_verb|decide|telling Parker to decide whether to use his power.|ordered|stated|Fury
+f+ Parker|gave|Beck|so he transfers ownership of E.D.I.T.H. to Beck, insisting that it is the right thing to do.|actual|stated|
+f+ Beck|other_verb|celebrate|Beck and his crew celebrate getting the glasses and drones|actual|stated|
++ Parker|met|Jones|Meanwhile, Parker and Jones goes for a walk
+f+ Spider-Man|alias_of|Parker|Jones reveals that she has figured out that he is Spider-Man.|actual|stated|
+f+ Jones|other_verb|shows|Jones shows Parker a device which projects an illusion of the same battle|actual|stated|
+f- Parker|other_verb|realize
+f+ Parker|learned|-|leading Parker to realize Mysterio was fake.|actual|stated|
+
+@2506 gold: a named doer shoots
+keep
+t- no_relation|Bishop continues shooting.
+f+ Bishop|other_verb|shooting|Bishop continues shooting.|actual|stated|
+
+@2507 gold: no pipe in a tag quote (title cell only)
+keep
+t- production|The Watcher Broke His Oath?
+t+ production|The Watcher Broke His Oath?
+t- production|Eternals
+t+ production|Eternals
+t- production|Hawkeye: 1.01: Never Meet Your Heroes
+t+ production|Hawkeye: 1.01: Never Meet Your Heroes
+t- production|Hawkeye: 1.02: Hide and Seek
+t+ production|Hawkeye: 1.02: Hide and Seek
+t- production|Hawkeye: 1.03: Echoes
+t+ production|Hawkeye: 1.03: Echoes
+t- production|Hawkeye: 1.04: Partners, Am I Right?
+t+ production|Hawkeye: 1.04: Partners, Am I Right?
+t- production|Hawkeye: 1.05: Ronin
+t+ production|Hawkeye: 1.05: Ronin
+t- production|Spider-Man: No Way Home
+t+ production|Spider-Man: No Way Home
+t- production|Hawkeye: 1.06: So This Is Christmas?
+t+ production|Hawkeye: 1.06: So This Is Christmas?
+t- production|Moon Knight: 1.01: The Goldfish Problem
+t+ production|Moon Knight: 1.01: The Goldfish Problem
+t- production|Moon Knight: 1.02: Summon the Suit
+t+ production|Moon Knight: 1.02: Summon the Suit
+t- production|Moon Knight: 1.03: The Friendly Type
+t+ production|Moon Knight: 1.03: The Friendly Type
+t- production|Moon Knight: 1.04: The Tomb
+t+ production|Moon Knight: 1.04: The Tomb
+t- production|Moon Knight: 1.05: Asylum
+t+ production|Moon Knight: 1.05: Asylum
+t- production|Moon Knight: 1.06: Gods and Monsters
+t+ production|Moon Knight: 1.06: Gods and Monsters
+t- production|Doctor Strange in the Multiverse of Madness
+t+ production|Doctor Strange in the Multiverse of Madness
+t- production|Ms. Marvel: 1.01: Generation Why
+t+ production|Ms. Marvel: 1.01: Generation Why
+t- production|Ms. Marvel: 1.02: Crushed
+t+ production|Ms. Marvel: 1.02: Crushed
+t- production|Ms. Marvel: 1.03: Destined
+t+ production|Ms. Marvel: 1.03: Destined
+t- production|Ms. Marvel: 1.04: Seeing Red
+t+ production|Ms. Marvel: 1.04: Seeing Red
+t- production|Ms. Marvel: 1.05: Time and Again
+t+ production|Ms. Marvel: 1.05: Time and Again
+t- production|Thor: Love and Thunder
+t+ production|Thor: Love and Thunder
+t- production|Ms. Marvel: 1.06: No Normal
+t+ production|Ms. Marvel: 1.06: No Normal
+t- production|I Am Groot: 1.01: Groot's First Steps
+t+ production|I Am Groot: 1.01: Groot's First Steps
+t- production|I Am Groot: 1.02: The Little Guy
+t+ production|I Am Groot: 1.02: The Little Guy
+t- production|I Am Groot: 1.03: Groot's Pursuit
+t+ production|I Am Groot: 1.03: Groot's Pursuit
+t- production|I Am Groot: 1.04: Groot Takes a Bath
+t+ production|I Am Groot: 1.04: Groot Takes a Bath
+t- production|I Am Groot: 1.05: Magnum Opus
+t+ production|I Am Groot: 1.05: Magnum Opus
+t- production|She-Hulk: Attorney at Law: 1.01: A Normal Amount of Rage
+t+ production|She-Hulk: Attorney at Law: 1.01: A Normal Amount of Rage
+t- production|She-Hulk: Attorney at Law: 1.02: Superhuman Law
+t+ production|She-Hulk: Attorney at Law: 1.02: Superhuman Law
+t- production|She-Hulk: Attorney at Law: 1.03: The People vs. Emil Blonsky
+t+ production|She-Hulk: Attorney at Law: 1.03: The People vs. Emil Blonsky
+t- production|She-Hulk: Attorney at Law: 1.04: Is This Not Real Magic?
+t+ production|She-Hulk: Attorney at Law: 1.04: Is This Not Real Magic?
+t- production|She-Hulk: Attorney at Law: 1.05: Mean, Green, and Straight Poured into These Jeans
+t+ production|She-Hulk: Attorney at Law: 1.05: Mean, Green, and Straight Poured into These Jeans
+t- production|She-Hulk: Attorney at Law: 1.06: Just Jen
+t+ production|She-Hulk: Attorney at Law: 1.06: Just Jen
+t- production|She-Hulk: Attorney at Law: 1.07: The Retreat
+t+ production|She-Hulk: Attorney at Law: 1.07: The Retreat
+t- production|She-Hulk: Attorney at Law: 1.08: Ribbit and Rip It
+t+ production|She-Hulk: Attorney at Law: 1.08: Ribbit and Rip It
+t- production|Werewolf by Night
+t+ production|Werewolf by Night
+t- production|She-Hulk: Attorney at Law: 1.09: Whose Show is This?
+t+ production|She-Hulk: Attorney at Law: 1.09: Whose Show is This?
+t- production|Black Panther: Wakanda Forever
+t+ production|Black Panther: Wakanda Forever
+t- production|The Guardians of the Galaxy Holiday Special
+t+ production|The Guardians of the Galaxy Holiday Special
+t- production|Ant-Man and the Wasp: Quantumania
+t+ production|Ant-Man and the Wasp: Quantumania
+t- production|Guardians of the Galaxy Vol. 3
+t+ production|Guardians of the Galaxy Vol. 3
+t- production|Secret Invasion: 1.01: Resurrection
+t+ production|Secret Invasion: 1.01: Resurrection
+t- production|Secret Invasion: 1.02: Promises
+t+ production|Secret Invasion: 1.02: Promises
+t- production|Secret Invasion: 1.03: Betrayed
+t+ production|Secret Invasion: 1.03: Betrayed
+t- production|Secret Invasion: 1.04: Beloved
+t+ production|Secret Invasion: 1.04: Beloved
+t- production|Secret Invasion: 1.05: Harvest
+t+ production|Secret Invasion: 1.05: Harvest
+t- production|Secret Invasion: 1.06: Home
+t+ production|Secret Invasion: 1.06: Home
+t- production|I Am Groot: 2.01: Are You My Groot?
+t+ production|I Am Groot: 2.01: Are You My Groot?
+t- production|I Am Groot: 2.02: Groot Noses Around
+t+ production|I Am Groot: 2.02: Groot Noses Around
+t- production|I Am Groot: 2.03: Groot's Snow Day
+t+ production|I Am Groot: 2.03: Groot's Snow Day
+t- production|I Am Groot: 2.04: Groot's Sweet Treat
+t+ production|I Am Groot: 2.04: Groot's Sweet Treat
+t- production|I Am Groot: 2.05: Groot and the Great Prophecy
+t+ production|I Am Groot: 2.05: Groot and the Great Prophecy
+t- production|Loki: 2.01: Ourboros
+t+ production|Loki: 2.01: Ourboros
+t- production|Loki: 2.02: Breaking Brad
+t+ production|Loki: 2.02: Breaking Brad
+t- production|Loki: 2.03: 1893
+t+ production|Loki: 2.03: 1893
+t- production|Loki: 2.04: Heart of the TVA
+t+ production|Loki: 2.04: Heart of the TVA
+t- production|Loki: 2.05: Science/Fiction
+t+ production|Loki: 2.05: Science/Fiction
+t- production|Loki: 2.06: Glorious Purpose
+t+ production|Loki: 2.06: Glorious Purpose
+t- production|The Marvels
+t+ production|The Marvels
+t- production|What If...?: 2.01: What If...
+t+ production|What If...?: 2.01: What If...
+
+@2508 gold: "the fair" names no place; refusing is denied; the escape from unnamed pursuers; the retrieval plan
+keep
+- Victor Timely|departed|World's Columbian Exposition
+- Ravonna Renslayer|departed|World's Columbian Exposition
+f+ Victor Timely|other_verb|left|Timely and Renslayer then left the fair to retreive the multiplyer.|actual|stated|
+f+ Ravonna Renslayer|other_verb|left|Timely and Renslayer then left the fair to retreive the multiplyer.|actual|stated|
+f+ Victor Timely|other_verb|retreive|Timely and Renslayer then left the fair to retreive the multiplyer.|planned|stated|Victor Timely
+f+ Ravonna Renslayer|other_verb|retreive|Timely and Renslayer then left the fair to retreive the multiplyer.|planned|stated|Ravonna Renslayer
+f- Victor Timely|other_verb|go
+f+ Victor Timely|other_verb|said|However, Timely said he would not go anywhere without his prototype Throughput Multiplier|actual|stated|
+f+ Victor Timely|other_verb|go|Timely said he would not go anywhere without his prototype Throughput Multiplier|planned|denied|Victor Timely
+t- no_relation|Having escaped all their pursuers
+f+ Ravonna Renslayer|other_verb|escaped|Having escaped all their pursuers, Ravonna Renslayer tried to convince Victor Timely|actual|stated|
+f+ Victor Timely|other_verb|escaped|Having escaped all their pursuers, Ravonna Renslayer tried to convince Victor Timely|actual|stated|
+
+@2509 gold: ok
+keep
+
+@2510 gold: the ordered preparation; the stored staff
+keep
+f+ Masters of the Mystic Arts|other_verb|prepare|When Wong ordered the Masters of the Mystic Arts to prepare for the Battle at the Hong Kong Sanctum|ordered|stated|Wong
+t+ no_relation|This mystical staff was one of many items stored at the Hong Kong Sanctum.

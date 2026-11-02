@@ -1,0 +1,120 @@
+@2511 gold: one name each (the young boy is Mackenzie himself); described team and band; guitar playing; belief = suspected; resolving = planned leave
+keep
+r Glass=>Roxy Glass
+r Shaw=>Deke Shaw
+r Mackenzie=>Alphonso Mackenzie
+f- Roxy Glass|joined|S.H.I.E.L.D. team
+f- Roxy Glass|used|guitar
+f+ Roxy Glass|other_verb|played|Roxy played guitar on the band|actual|stated|
+f- the band|other_verb|opened
+f+ Alphonso Mackenzie|leader_of|S.H.I.E.L.D.|how much he admired his S.H.I.E.L.D. director, Alphonso Mackenzie|actual|stated|
+f- Roxy Glass|suspected|Alphonso Mackenzie's son
+f+ Roxy Glass|suspected|-|who Glass assumed to be the older Mackenzie's son|actual|stated|
+f- Alphonso Mackenzie|other_verb|resolving
+f+ Alphonso Mackenzie|other_verb|leave|resolving to leave.|planned|stated|Alphonso Mackenzie
+t- no_relation|However, the demonstration went wrong
+f+ Ronnie Chang|other_verb|shot|and Ronnie Chang accidentally shot Glass with a paintball.|actual|stated|
+
+@2512 gold: named watchers; the wish is actual and the talk planned; Howard is the father
+keep
+t- no_relation|Rhodes watched the speech
+t- no_relation|Rhodes watched with Potts
+f+ Rhodes|other_verb|watched|Rhodes watched on as Stark had appeared before the group of reporters and cameramen alongside Obadiah Stane.|actual|stated|
+f+ Stark|other_verb|appeared|Stark had appeared before the group of reporters and cameramen alongside Obadiah Stane.|actual|stated|
+f+ Rhodes|other_verb|listened|Rhodes watched the speech alongside Pepper Potts and listened as Stark asked everyone to sit down on the floor|actual|stated|
+f- Stark|other_verb|wished
+f+ Stark|other_verb|wished|how he wished he could speak with his father about the legacy of Stark Industries|actual|stated|
+f+ Stark|other_verb|speak|how he wished he could speak with his father about the legacy of Stark Industries|planned|stated|Stark
+f+ Howard Stark|parent_of|Stark|Stark then discussed his relationship with Howard Stark and how he wished he could speak with his father|actual|stated|
+
+@2513 gold: ok
+keep
+
+@2514 gold: ok
+keep
+
+@2515 gold: an actress's remarks are production
+keep
+f- Scarlett|other_verb|mentioned
+f- Scarlett|other_verb|admits
+t+ production|On June 28, 2021, Scarlett mentioned how she is proud that her character is going out on a high note with her standalone film.
+t+ production|However, she admits it is bittersweet because she will miss working with her Marvel family, and getting to see them every 18 months to two years.
+
+@2516 gold: a vehicle is no place
+keep
+f- Stephen Morton|located_at|Helicarrier
+
+@2517 gold: the TVA prunes
+keep
+t- no_relation|This created a branched
+f+ Time Variance Authority|other_verb|prune|This created a branched timeline which forced the Time Variance Authority to prune the branch and reset the timeline.|actual|stated|
+
+@2518 gold: ok
+keep
+
+@2519 gold: ok
+keep
+
+@2520 gold: waking from sleep is no awakened; the told act; arguing is speech
+keep
+- Flint|awakened|-
+f+ Tess|other_verb|awakened|Flint was awakened by Tess|actual|stated|
+f+ Tess|ordered|Flint|who told him to clear the path to the Trawler.|actual|stated|
+f+ Flint|other_verb|clear|who told him to clear the path to the Trawler.|ordered|stated|Tess
+f- Flint|other_verb|argued
+f+ Flint|other_verb|argued|Although Flint argued that she had let him sleep there|actual|stated|
+
+@2521 gold: one name each; neutralizing and an I.C.E.R. shot = defeated; a doer-less assignment; Hartley's death; named doers
+keep
+r Creel=>Carl Creel
+r Hunter=>Lance Hunter
+r Coulson=>Phil Coulson
+- Lance Hunter|fought|Melinda May
+- Lance Hunter|fought|Skye
+- Lance Hunter|fought|Triplett
++ Lance Hunter|defeated|Melinda May|who had already neutralized both Melinda May and Skye
++ Lance Hunter|defeated|Skye|who had already neutralized both Melinda May and Skye
++ Lance Hunter|defeated|Triplett|Before Triplett could react he was shot by with an I.C.E.R. by Hunter
+f- Triplett|other_verb|assigned
+t+ no_doer|Triplett was assigned as a sniper.
+f+ Triplett|other_verb|get|He managed to get Creel in his sights|actual|stated|
+f+ Isabelle Hartley|dies|-|to exact his own revenge for the death of Isabelle Hartley.|actual|stated|
+f+ Lance Hunter|other_verb|exact|who took his rifle to exact his own revenge for the death of Isabelle Hartley.|planned|stated|Lance Hunter
+f+ Melinda May|other_verb|seeking|despite Triplett and May seeking revenge.|actual|stated|
+t- no_relation|commenting on the new sports car
+f+ Triplett|other_verb|commenting|commenting on the new sports car that Hunter arrived in|actual|stated|
+t- no_relation|Triplett and the other field agents
+f+ Triplett|other_verb|discussed|Triplett and the other field agents discussed with Phil Coulson what Carl Creel's motives might be|actual|stated|
+t- deictic|After Creel was found
+t+ no_doer|After Creel was found,
+t- deictic|Triplett was present when
+
+@2522 gold: ok
+keep
+
+@2523 gold: one name each; the ordered moves; named doers follow, watch and hold
+keep
+r Johnson=>Daisy Johnson
+r Shockley=>Tucker Shockley
+f+ Prince|other_verb|move|Johnson said to Prince and Davis to move|ordered|stated|Daisy Johnson
+f+ Davis|other_verb|move|Johnson said to Prince and Davis to move|ordered|stated|Daisy Johnson
+t- no_relation|Prince and May's Team followed
+f+ Prince|other_verb|followed|Prince and May's Team followed Daisy Johnson to a warehouse where Tucker Shockley and other Watchdogs were hiding.|actual|stated|
+f+ Prince|other_verb|watching|On Zephyr One, Prince was watching the cuffed Watchdogs|actual|stated|
+t- no_relation|He and Davis then hold
+f+ Prince|other_verb|hold|He and Davis then hold Shockley as he talked to Mace and Johnson.|actual|stated|
+f+ Davis|other_verb|hold|He and Davis then hold Shockley as he talked to Mace and Johnson.|actual|stated|
+f+ Tucker Shockley|other_verb|talked|He and Davis then hold Shockley as he talked to Mace and Johnson.|actual|stated|
+
+@2524 gold: chained with no stated captor (A47); named doers overhear, call out and unmask
+keep
+- Zeus|captured|Thor
+t- no_relation|Zeus overheard
+f+ Zeus|other_verb|overheard|Zeus overheard somebody talking|actual|stated|
+f+ Korg|other_verb|calling|which led to Korg directly calling out his own friends.|actual|stated|
+f+ Korg|other_verb|take|forcing Korg, Foster and Valkyrie to take off their own disguises, revealing them as Asgardians.|actual|stated|
+f+ Foster|other_verb|take|forcing Korg, Foster and Valkyrie to take off their own disguises, revealing them as Asgardians.|actual|stated|
+f+ Valkyrie|other_verb|take|forcing Korg, Foster and Valkyrie to take off their own disguises, revealing them as Asgardians.|actual|stated|
+
+@2525 gold: ok
+keep

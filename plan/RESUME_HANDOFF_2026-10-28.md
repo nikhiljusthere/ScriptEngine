@@ -50,3 +50,29 @@ Read first: `plan/RESUME_HANDOFF_2026-10-14b.md` (owner decisions, method), `pla
   saved/defeated are event-only; negation = certainty denied; speech acts actual; orders/asks carry the ordered act;
   cutting/slicing to pieces, restraining, knocking out = defeated; in-person calls are never `contacted`;
   "Devil embodies X" = other_verb embodies; the gate refuses "Kami" as a species end.
+
+## Update 2026-11-02: gold review at 1,846 / 3,822 (48.3%) — stopped by the owner, resume later
+
+Two Opus 5.5 (high) subagents reviewed in parallel, reading windows directly (no GPU, no model server; ninfer was
+busy with the owner's work; there are no 27B answers for b1060+). Owner stopped both mid-run; neither committed or ran `mark`.
+
+Audit coverage (`big/gold_v2/gold_audit_v2.jsonl`, unique `b`, counted from disk 2026-11-02):
+
+| range | state |
+|---|---|
+| b1-b1059 | reviewed (G001-G109, committed through 369e8bbd) |
+| b1060-b1402 | reviewed 2026-11-02, fix files G110-G129 (UNCOMMITTED) |
+| b1403-b2441 | NOT reviewed (the lower agent's remainder) |
+| b2442-b2885 | reviewed 2026-11-02, fix files G500-G528 (UNCOMMITTED) |
+| b2886-b3822 | NOT reviewed (the upper agent's remainder) |
+
+Remaining: 1,976 windows (b1403-b2441 = 1,039; b2886-b3822 = 937). Agents were stopped, so the last submitted fix
+file of each may have been cut off mid-write: before resuming, re-derive the true cursor from the audit file (the
+gaps above), and spot-check G129 / G528 against the audit. A window with no audit record is simply reviewed again.
+
+To resume: same method as the section above (`BV2_SET=gold bash plan/review_tools/pre27.sh show B...`, fix blocks
+`@<b> gold: reason` + `keep`/edits, submit with `rv.sh fix`, never `mark`). Number new fix files from G130 (lower
+range) and G529 (upper range) to keep the two streams apart. Commit the new fix files + audit copy with explicit
+pathspecs and `git add -f` (data is gitignored), as for earlier batches. New rulings noticed by the agents were not
+collected (they were stopped before reporting); skim G110-G129 / G500-G528 for any new `gold:` reasons that look like
+rules and add them to `plan/review_tools/gold27_system.md`.

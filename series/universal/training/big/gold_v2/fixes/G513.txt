@@ -1,0 +1,94 @@
+@2646 gold: one name per person (the real name Maximoff); the pulling is the fight itself
+keep
+r Scarlet Witch=>Maximoff
+f- Maximoff|other_verb|pulling
+
+@2647 gold: the plan is to get revenge
+keep
+f- Palamas|other_verb|plan
+f+ Palamas|other_verb|get|her placement was part of a preconceived plan for Palamas to get revenge on Bobbi Morse.|planned|stated|Palamas
+
+@2648 gold: named doers move in and find the empty cell
+keep
+t- no_relation|Morse and Coulson moved in
+f+ Morse|other_verb|moved|Morse and Coulson moved in, seeing if the two deadly prisoners housed below ground were still there|actual|stated|
+f+ Coulson|other_verb|moved|Morse and Coulson moved in, seeing if the two deadly prisoners housed below ground were still there|actual|stated|
+f+ Morse|discovered|-|They found Angar's cell empty with "Fight On" inscribed on the wall by Zabo|actual|stated|
+f+ Coulson|discovered|-|They found Angar's cell empty with "Fight On" inscribed on the wall by Zabo|actual|stated|
+
+@2649 gold: one name
+keep
+r Barnes=>Bucky Barnes
+
+@2650 gold: the page's opening line is a spoken report
+keep
+t- no_doer|A few minutes ago
+t+ dialogue|A few minutes ago, a S.H.I.E.L.D. transport was attacked while carrying a priority red protected asset off route 76 near Sterling.
+
+@2651 gold: a wiki policy line is production
+keep
+t- no_relation|A user who is blocked
+t+ production|A user who is blocked is also not allowed to cast votes for the entire duration of their block.
+
+@2652 gold: the ambush was arranged; driving a car; the reacting, noting, returning and interrupting
+keep
+f- Fennhoff|other_verb|arranged
+f- Underwood|other_verb|arranged
+f+ Fennhoff|other_verb|arranged|Fennhoff and Underwood had then arranged their ambush for Stark|actual|stated|
+f+ Underwood|other_verb|arranged|Fennhoff and Underwood had then arranged their ambush for Stark|actual|stated|
+f- Fennhoff|piloted|car
+f+ Fennhoff|other_verb|drove|while Fennhoff drove them to the next destination.|actual|stated|
+f+ Fennhoff|other_verb|reacted|While Fennhoff reacted to the news that Stark had returned into New York|actual|stated|
+f+ Underwood|other_verb|came|Underwood came back to the car|actual|stated|
+f+ Fennhoff|other_verb|noting|noting that the new opportunity had arisen.|actual|stated|
+f+ Jack Thompson|other_verb|give|allowing Jack Thompson to give his press conference to those people of New York|actual|stated|
+f+ Fennhoff|other_verb|interrupted|which they then interrupted with the rigged sniper|actual|stated|
+f+ Underwood|other_verb|interrupted|which they then interrupted with the rigged sniper|actual|stated|
+
+@2653 gold: the event covers the sentence
+keep
+t- no_relation|The Duel at Bruce Banner's Island
+
+@2654 gold: ok
+keep
+
+@2655 gold: suggesting is speech, the use planned; tried = kill; resolving = planned study
+keep
+f- Fitz|other_verb|suggested
+f- Simmons|other_verb|suggested
+f+ Fitz|other_verb|suggested|Fitz and Simmons suggested to use Aida's severed head in order to intimidate Yuri Zaikin|actual|stated|
+f+ Simmons|other_verb|suggested|Fitz and Simmons suggested to use Aida's severed head in order to intimidate Yuri Zaikin|actual|stated|
+f+ Fitz|other_verb|use|Fitz and Simmons suggested to use Aida's severed head in order to intimidate Yuri Zaikin|planned|stated|Fitz
+f+ Simmons|other_verb|use|Fitz and Simmons suggested to use Aida's severed head in order to intimidate Yuri Zaikin|planned|stated|Simmons
+f- Yuri Zaikin|other_verb|tried
+f+ Yuri Zaikin|other_verb|kill|the Watchdog who had tried to kill Mace|attempted|stated|Yuri Zaikin
+f- Fitz|other_verb|resolved
+f+ Fitz|other_verb|resolved|Fitz resolved to study Aida's head to find what had caused her rebellion.|actual|stated|
+f+ Fitz|other_verb|study|Fitz resolved to study Aida's head to find what had caused her rebellion.|planned|stated|Fitz
+
+@2656 gold: ok
+keep
+
+@2657 gold: cast credits are production
+keep
+t- list_header|Stubbs
+t+ production|Stubbs
+t- list_header|Aaron Toney
+t+ production|Aaron Toney
+t- list_header|Coleen M.
+t+ production|Coleen M.
+
+@2658 gold: cast credits are production
+keep
+f- Annette Lawless|other_verb|portrayed
+t- list_header|Business Woman
+t+ production|Business Woman (uncredited)
+t+ production|Annette Lawless as S.H.I.E.L.D.
+
+@2659 gold: an episode title line is production
+keep
+t- list_header|Episode 2.02
+t+ production|Episode 2.02: What If... Peter Quill Attacked Earth's Mightiest Heroes?
+
+@2660 gold: ok
+keep

@@ -1,0 +1,109 @@
+@2586 gold: the real-world reference is production
+keep
+f- the dialogue|other_verb|reference
+f- the phrase|other_verb|adopted
+t+ production|This is a reference to an infamous quote cited by U.S. Senator during a debate with Senator , which he used as his reasoning for having her shut down when she was speaking.
+t+ production|The phrase has been ironically adopted by several feminist groups to encourage protesting in a similar manner as that expressed by Senator Warren.
+
+@2587 gold: the page's opening quote is dialogue
+keep
+t- list_header|Momentum Alternative
+t+ dialogue|Momentum Alternative Energy Lab.
+t- crowd_end|Best I can tell
+t+ dialogue|Best I can tell, that's where they stole the weapon from.
+t- no_relation|But it's been shut down
+t+ dialogue|But it's been shut down for years.
+
+@2588 gold: a quote page line is dialogue
+keep
+f- Tracker|other_verb|says
+t+ dialogue|Tracker says he's not from this world, but his signature's different from the others.
+
+@2589 gold: untagged dialogue lines
+keep
+t+ dialogue|You filled her head with nonsense about protecting humanity and saving the world.
+t+ dialogue|You just left out how she died the same way her mother did, doing S.H.I.E.L.D.'s dirty work!
+t+ dialogue|You took everything from me.
+
+@2590 gold: interns are a crowd; not showing up is denied; described places; knowing his identity = learned
+keep
+f- Peter|other_verb|revoked
+t+ crowd_end|The interns and faculty bid Peter goodbye, thinking his internship will be revoked.
+f- Parker|other_verb|show
+f+ Parker|other_verb|show|saying she is bailing on the party since he did not show up.|actual|denied|
+f- Parker|located_at|top of the tower
+f- Parker|located_at|Osborn's office
+f+ Parker|other_verb|enters|Parker makes his way to the top of the tower and enters Osborn's office|actual|stated|
+f- Osborn|learned|Parker's identity
+f+ Osborn|learned|-|showing Parker security cam footage of him donning his Spider-Man suit and revealing he knows Parker's identity.|actual|stated|
+f+ Spider-Man|alias_of|Parker|security cam footage of him donning his Spider-Man suit and revealing he knows Parker's identity.|actual|stated|
+
+@2591 gold: a guess is suspected with no object
+keep
+f- May|suspected|Lima
+f+ May|suspected|-|May even dared to guess that Lima would be his most probable destination|actual|stated|
+
+@2592 gold: Comanche notes; Shades returns to Dillard; the friendship; the planned work
+keep
+f- Shades|other_verb|note
+f+ Comanche|other_verb|note|by making Comanche note that they did not have any rivals|actual|stated|
++ Shades|met|Dillard|Shades then returned to Dillard and had continued pushing her towards a possible retirement
+f+ Shades|friend_of|Comanche|With his friend set up with work upon gaining his freedom|actual|stated|
+f+ Comanche|other_verb|working|where he would begin working as security for Dillard.|planned|stated|Comanche
+
+@2593 gold: Shanahan's death; pressure is no order; the harassing and the reveal
+keep
+f+ Kel Shanahan|dies|-|Shanahan ended up tripping and falling onto the tracks, before getting killed by an oncoming train.|actual|stated|
+f- New York City Police Department|ordered|Hector Ayala
+f+ New York City Police Department|other_verb|pressured|where he was being pressured by the New York City Police Department to admit to murdering Shanahan.|actual|stated|
+f+ Connor Powell|other_verb|harassing|Hector Ayala spotted Connor Powell and Kel Shanahan harassing Nicky Torres|actual|stated|
+f+ Kel Shanahan|other_verb|harassing|Hector Ayala spotted Connor Powell and Kel Shanahan harassing Nicky Torres|actual|stated|
+f+ Connor Powell|revealed|-|Powell then revealed himself to be a police officer|actual|stated|
+
+@2594 gold: a named doer poses
+keep
+t- crowd_end|He posed for several
+f+ Steve Rogers|other_verb|posed|He posed for several pictures with mothers and their babies.|actual|stated|
+
+@2595 gold: an attack is no doer; stating is speech; a broadcast is no doer; the found body; a described apartment
+keep
+r Donnelly=>John Donnelly
+f- Lincoln Campbell|other_verb|brought
+f- Daisy Johnson|other_verb|brought
+t+ no_doer|The attack that occurred at the hospital brought Lincoln Campbell and Daisy Johnson to the attention of the ATCU.
+f- Lincoln Campbell|other_verb|was
+f+ John Donnelly|other_verb|stating|stating that Campbell was with him|actual|stated|
+f- national broadcast|other_verb|announcing
+f- Luther Banks|discovered|John Donnelly
+f+ Luther Banks|discovered|-|they found the body of Donnelly in his apartment|actual|stated|
+f+ John Donnelly|dies|-|they found the body of Donnelly in his apartment|actual|stated|
+f- John Donnelly|located_at|apartment
+
+@2596 gold: one name; revealing keeps no object; working with A.I.M.; fleeing is no piloting; Stark's own acts are no fragments
+keep
+r Bullski=>Boris Bullski
+f- Stane|other_verb|revealed
+f+ Stane|revealed|-|revealed that he had been working with A.I.M. and was behind the attack.|actual|stated|
+f+ Stane|allied_with|A.I.M.|revealed that he had been working with A.I.M. and was behind the attack.|actual|stated|
+f- Stane|piloted|Stark Industries Private Jet
+f+ Stane|other_verb|fled|As Stane fled in the Stark Industries Private Jet|actual|stated|
+t- below_floor|Stark returned home
+t- below_floor|worked on the armor
+t- below_floor|During the attack,
+t- below_floor|rendering him unconscious.
+f+ Stark|other_verb|returned|Stark returned home and worked on the armor|actual|stated|
+f+ Stark|other_verb|worked|Stark returned home and worked on the armor|actual|stated|
+
+@2597 gold: ok
+keep
+
+@2598 gold: ok
+keep
+
+@2599 gold: Thanos' attacks and aim
+keep
+f+ Thanos|other_verb|attacked|While Thanos attacked other planets to eliminate half the population|actual|stated|
+f+ Thanos|other_verb|eliminate|While Thanos attacked other planets to eliminate half the population|planned|stated|Thanos
+
+@2600 gold: ok
+keep

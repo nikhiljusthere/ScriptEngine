@@ -1,0 +1,98 @@
+@2766 gold: ok
+keep
+
+@2767 gold: ok
+keep
+
+@2768 gold: the birthplace
+keep
+f- Werner Reinhardt|born|-
+f+ Werner Reinhardt|born|Arnsberg|Werner Reinhardt is born in Arnsberg, Germany.|actual|stated|
+
+@2769 gold: ok
+keep
+
+@2770 gold: ok
+keep
+
+@2771 gold: an explosion and a drone are no doers; the department sends it
+keep
+f- Circle Q|other_verb|-
+t+ no_doer|Circle Q exploded.
+f- the drone|other_verb|sent
+f+ United States Department of Damage Control|other_verb|sent|a drone sent by the United States Department of Damage Control appeared in the window.|actual|stated|
+f- the drone|attacked|Circle Q
+f- the drone|destroyed|Circle Q
+t+ no_doer|and in response the drone fired upon the Circle Q, causing it to explode and the windows to shatter.
+
+@2772 gold: speech acts are actual
+keep
+f- Fury|other_verb|suggests
+f+ Fury|other_verb|suggests|Fury suggests that someone will come looking for it.|actual|stated|
+f- Fury|other_verb|says
+f+ Fury|other_verb|says|and Fury says that they will hope for the best while preparing for the worst.|actual|stated|
+
+@2773 gold: the confrontation is the fight; the stated murder; best friends; seizing control; considering = suspected
+keep
+- Stark|met|Killmonger
++ Killmonger|killed|T'Challa|Stark figured out that Killmonger was behind the murder of his best friend.
+f- T'Challa|dies|-
+f+ Stark|friend_of|T'Challa|Stark figured out that Killmonger was behind the murder of his best friend.|actual|stated|
+f- US military|took|Stark Industries
+f+ US military|other_verb|seized|and seized control of Stark Industries to mass-produce the drones for the upcoming war|actual|stated|
+f- US military|other_verb|considered
+f+ US military|suspected|-|The US military considered it a declaration of war from Wakandans|actual|stated|
+
+@2774 gold: one name; ejected from the plane = defeated (A56); patient zero is a state, the injuries a wound; healing takes its patient; the Clairvoyant
+keep
+r Coulson=>Phil Coulson
+- Grant Ward|fought|Leo Fitz
+- Grant Ward|fought|Jemma Simmons
++ Grant Ward|defeated|Leo Fitz|Fitz, along with Jemma Simmons, was ejected from the Bus in a Medical Pod into the Atlantic Ocean by Grant Ward.
++ Grant Ward|defeated|Jemma Simmons|Fitz, along with Jemma Simmons, was ejected from the Bus in a Medical Pod into the Atlantic Ocean by Grant Ward.
+f- Leo Fitz|other_verb|ejected
+f- Jemma Simmons|other_verb|ejected
+f- John Garrett|became|patient zero of Project Deathlok
+f+ John Garrett|wounded|-|Previously, Garrett had become patient zero of Project Deathlok as a result of his injuries in a mission|actual|stated|
+f+ John Garrett|other_verb|save|he sought the secret to Coulson's resurrection in order to save himself.|planned|stated|John Garrett
+f- Raina|healed|-
+f+ Raina|healed|John Garrett|Raina injected him with a synthetic version of GH.325, which restored and strengthened him.|actual|stated|
+f+ Clairvoyant|alias_of|John Garrett|his old colleague John Garrett was both a Hydra sleeper agent and the Clairvoyant.|actual|stated|
+f+ John Garrett|member_of|Hydra|his old colleague John Garrett was both a Hydra sleeper agent and the Clairvoyant.|actual|stated|
+
+@2775 gold: "the group" is unnamed; infection by zombies; the survivors escape
+keep
+f- the group|discovered|-
+t+ deictic|After the group rescued Bruce Banner, they discovered a signal from the Camp Lehigh
+f- Happy Hogan|other_verb|infected
+t- no_relation|The confrontation with the Zombies
+t+ crowd_end|The confrontation with the Zombies resulted in Happy Hogan being infected
+t+ crowd_end|so the survivor group was able to escape the zombie horde.
+
+@2776 gold: ok
+keep
+
+@2777 gold: the turner is no transformer; fought and defeated in one act; the reactivated head
+keep
+f- snowman|transformed_into|Killer Snowbot
+f+ Groot|other_verb|turned|he had accidentally turned it into a Killer Snowbot.|actual|stated|
++ Groot|defeated|Killer Snowbot|Groot fought the snowbot, defeating it, and leaving the planet.
+f- Killer Snowbot's head|other_verb|reactivated
++ Killer Snowbot|awakened|-|However, the snowbot's head reactivated when Groot left the planet.
+
+@2778 gold: an attempt is attempted
+keep
+f- Ronan the Accuser|other_verb|destroy
+f+ Ronan the Accuser|other_verb|destroy|attacked the planet in an attempt to destroy it.|attempted|stated|Ronan the Accuser
+
+@2779 gold: the king of Attilan; the ordered retrieval includes Jane; the wish; the denied telling
+keep
+f+ Black Bolt|leader_of|Attilan|Attilan's King, Black Bolt, was aware of the Inhuman Outbreak.|actual|stated|
+f+ Triton|other_verb|retrieve|he gave Triton orders to retrieve any Inhumans on Earth, among which was Jane.|ordered|stated|Black Bolt
+f+ Black Bolt|other_verb|keep|Wanting to keep all the Inhumans of Earth safe|planned|stated|Black Bolt
+t- crowd_end|among which was Jane
+t- no_relation|Black Bolt did not let
+f+ Black Bolt|other_verb|let|Black Bolt did not let anyone else know of Triton's orders.|actual|denied|
+
+@2780 gold: ok
+keep

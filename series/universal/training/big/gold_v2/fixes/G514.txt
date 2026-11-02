@@ -1,0 +1,127 @@
+@2661 gold: ok
+keep
+
+@2662 gold: the murders Jones committed; suggesting is speech; the enraged patient
+keep
++ Jones|killed|Will Simpson|Jones claimed that Walker was the reason for every murder that Jones had committed, including Will Simpson and Robert Coleman
++ Jones|killed|Robert Coleman|Jones claimed that Walker was the reason for every murder that Jones had committed, including Will Simpson and Robert Coleman
+f- Walker|other_verb|suggesting
+f+ Walker|other_verb|suggesting|suggesting that this was why her own daughter turned her into the New York City Police Department|actual|stated|
+f- Jones|other_verb|enraged
+t+ no_relation|which enraged Jones.
+
+@2663 gold: one name; agreeing to help is a plan; the sending happened; Enoch kidnaps the team
+keep
+r Fitz=>Leo Fitz
+f- Enoch|assisted|Leo Fitz
+f+ Enoch|other_verb|agreed|Enoch agreed to help him travel into the future.|actual|stated|
+f+ Enoch|helped|Leo Fitz|Enoch agreed to help him travel into the future.|planned|stated|Enoch
+f- Enoch|other_verb|send
+f+ Enoch|other_verb|send|when Enoch kidnapped the rest of his S.H.I.E.L.D. team to send them into year 2091 with the Time Di'Alla.|actual|stated|
+t- crowd_end|Enoch kidnapped the rest
+f+ Enoch|other_verb|kidnapped|when Enoch kidnapped the rest of his S.H.I.E.L.D. team to send them into year 2091|actual|stated|
+
+@2664 gold: interrupting and noting; a noun object; the denied understanding; the officers
+keep
+f- Russo|other_verb|notebook
+f+ Russo|other_verb|interrupted|Russo then interrupted her by noting how her work with his White Mask and a notebook did not result in Dumont really understanding what was happening to him|actual|stated|
+f- Dumont|other_verb|work
+f- Dumont|other_verb|understanding
+f+ Dumont|other_verb|understanding|did not result in Dumont really understanding what was happening to him|actual|denied|
+t+ crowd_end|This action caused the New York City Police Department officers stationed outside the room to charge inside, believing that Dumont could be in danger
+
+@2665 gold: the demanded leaving; knocking off a helmet; the Hand stands away
+keep
+f+ Yoshioka|other_verb|leave|as Daredevil demanded that he leave New York City|ordered|stated|Daredevil
+f- Yoshioka|took|Daredevil's Helmet
+f+ Yoshioka|other_verb|knocking|before knocking off Daredevil's Helmet|actual|stated|
+t- deictic|The Hand then stand away
+f+ Hand|other_verb|stand|The Hand then stand away while Yoshioka fights both Daredevil and Elektra|actual|stated|
+
+@2666 gold: one name each; the alias direction; defending in court and framing are other_verb; the tip-off and sent men; Zubair's death; a doer-less summons
+keep
+r Page=>Karen Page
+r Castle=>Frank Castle
+f- Schoonover|alias_of|Blacksmith
+f+ Blacksmith|alias_of|Schoonover|Schoonover continued a drug empire going under the name of Blacksmith.|actual|stated|
+f- Schoonover|protected|Frank Castle
+f+ Schoonover|other_verb|defended|Schoonover defended Castle to take attention off of himself|actual|stated|
+f- Schoonover|tricked|Frank Castle
+f+ Schoonover|other_verb|framing|all while framing Castle.|actual|stated|
+f+ Schoonover|other_verb|tipped|Schoonover tipped three gangs in New York to meet in Central Park in the hopes of killing Frank Castle alongside his family.|actual|stated|
+f+ Schoonover|other_verb|killing|in the hopes of killing Frank Castle alongside his family.|planned|stated|Schoonover
+f+ Schoonover|other_verb|sent|He also sent men after Castle to kill him.|actual|stated|
+f+ Zubair|dies|-|When it became evident that someone leaked a video depicting Zubair's assassination|actual|stated|
+t- no_relation|Schoonover was soon summoned
+t+ no_doer|Schoonover was soon summoned to the trial of Castle
+f+ Frank Castle|other_verb|survived|Schoonover was soon summoned to the trial of Castle as he survived the attacks.|actual|stated|
+t- deictic|However, his actions soon
+
+@2667 gold: ok
+keep
+
+@2668 gold: crew credits are production
+keep
+f- Charles Tait|other_verb|head
+f- Charles Tait|other_verb|digital
+f- Charles Tait|other_verb|visual
+t+ production|Charles Tait was the head of compositing for The Avengers, a digital effects crewmember for Iron Man 3, a visual effects sequence supervisor for Guardians of the Galaxy Vol. 2 and a visual effects supervisor for Avengers: Infinity War.
+
+@2669 gold: Coulson's remark
+keep
+f+ Coulson|other_verb|remarking|with Coulson remarking "I know what it does"|actual|stated|
+
+@2670 gold: casting and role preparation are production
+keep
+f- Kathryn Hahn|other_verb|informed
+f- Kathryn Hahn|other_verb|playing
+f- Kathryn Hahn|other_verb|read
+f- Kathryn Hahn|other_verb|saw
+t+ production|Kathryn Hahn was secretly informed since the beginning that she would be playing Agatha Harkness in WandaVision.
+t+ production|To prepare for the role, Hahn read some comic books featuring her character and saw other movies of the Marvel Cinematic Universe.
+
+@2671 gold: ok
+keep
+
+@2672 gold: one name; portraying the Mandarin is a disguise
+keep
+r Killian=>Aldrich Killian
+f+ Trevor Slattery|disguise_as|Mandarin|Trevor Slattery was recruited by Aldrich Killian to portray the "Mandarin", the mysterious leader of the Ten Rings|actual|stated|
+
+@2673 gold: a belief is suspected; the lie deceives PRIDE
+keep
+f- PRIDE|other_verb|thought
+f+ PRIDE|suspected|-|the members of PRIDE thought they were after a source of clean and renewable energy.|actual|stated|
+f- Jonah|other_verb|lied
+f+ Jonah|tricked|PRIDE|This was also a lie from Jonah, as his true purpose was to uncover his ship under the surface.|actual|stated|
+
+@2674 gold: empty verb objects; Heimdall's son; Valkyrie's request; an item is no creator
+keep
+f- Thor|other_verb|-
+f+ Thor|other_verb|uplift|Thor tried to uplift the New Asgardians spirits and find the kids through the Bifrost Bridge|attempted|stated|Thor
+f+ Thor|other_verb|find|Thor tried to uplift the New Asgardians spirits and find the kids through the Bifrost Bridge|attempted|stated|Thor
+f+ Thor|other_verb|concoct|making Thor, Jane Foster, Korg, and Valkyrie to concoct a plan to find a way into the Shadow Realm|actual|stated|
+f+ Jane Foster|other_verb|concoct|making Thor, Jane Foster, Korg, and Valkyrie to concoct a plan to find a way into the Shadow Realm|actual|stated|
+f+ Korg|other_verb|concoct|making Thor, Jane Foster, Korg, and Valkyrie to concoct a plan to find a way into the Shadow Realm|actual|stated|
+f+ Valkyrie|other_verb|concoct|making Thor, Jane Foster, Korg, and Valkyrie to concoct a plan to find a way into the Shadow Realm|actual|stated|
+f+ Thor|other_verb|agreed|Thor and Valkyrie agreed that their best option was to ask for additional help from the other gods in Omnipotence City|actual|stated|
+f+ Valkyrie|other_verb|agreed|Thor and Valkyrie agreed that their best option was to ask for additional help from the other gods in Omnipotence City|actual|stated|
+f+ Thor|other_verb|ask|their best option was to ask for additional help from the other gods in Omnipotence City|planned|stated|Thor
+f+ Valkyrie|other_verb|ask|their best option was to ask for additional help from the other gods in Omnipotence City|planned|stated|Valkyrie
+f- Stormbreaker|created|-
+f- Toothgnasher|other_verb|-
+f- Toothgrinder|other_verb|-
+f+ Toothgnasher|other_verb|pulled|a chariot for the team pulled by Toothgnasher and Toothgrinder|actual|stated|
+f+ Toothgrinder|other_verb|pulled|a chariot for the team pulled by Toothgnasher and Toothgrinder|actual|stated|
+f+ Heimdall|parent_of|Axl|Axl, Heimdall's son, used his powers to contact Thor|actual|stated|
+t- crowd_end|the citizens were requested
+f+ Valkyrie|other_verb|requested|so the citizens were requested by Valkyrie to return home.|actual|stated|
+
+@2675 gold: the series' opening narration is dialogue
+keep
+t- list_header|Time. Space. Reality.
+t+ dialogue|Time. Space. Reality.
+t- no_relation|It's more than a linear path.
+t+ dialogue|It's more than a linear path.
+t- no_relation|It's a prism of endless
+t+ dialogue|It's a prism of endless possibility, where a single choice can branch out into infinite realities, creating alternate worlds from the ones you know.

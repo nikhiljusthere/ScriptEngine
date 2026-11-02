@@ -1,0 +1,89 @@
+@2781 gold: ok
+keep
+
+@2782 gold: working for a command is member_of
+keep
+f- Carl Curtis|other_verb|working
+f+ Carl Curtis|member_of|Strategic Operations Command Center|Carl Curtis was a United States Army soldier working for the Strategic Operations Command Center.|actual|stated|
+
+@2783 gold: ok
+keep
+
+@2784 gold: ok
+keep
+
+@2785 gold: one name each (the window gives Rand) plus the alias; bringing is no taking; a described building
+keep
+r Wing=>Colleen Wing
+r Iron Fist=>Rand
+f+ Iron Fist|alias_of|Rand|Elektra brought Iron Fist to the wall which blocked the way to the substance. During their fight, Elektra caused Rand to touch with his fist on the wall|actual|stated|
+f- Elektra|took|Rand
+f+ Elektra|other_verb|brought|In Midland Circle, Elektra brought Iron Fist to the wall which blocked the way to the substance.|actual|stated|
+f- Colleen Wing|destroyed|building
+f- Claire Temple|destroyed|building
+f- Misty Knight|destroyed|building
+
+@2786 gold: the knockout has no doer; the cut chest is a wound
+keep
+t+ no_doer|The pair were then knocked unconscious
+f+ List|wounded|Lincoln Campbell|while also cutting open Campbell's chest to examine his DNA.|actual|stated|
+
+@2787 gold: one name; dismantling HYDRA = defeated; a frustrated patient; the ordered trap; a doer-less trap; a belief keeps no object; the raids
+keep
+r Commandos=>Howling Commandos
+f- Carter|destroyed|HYDRA's forces
+f- Howling Commandos|destroyed|HYDRA's forces
++ Carter|defeated|HYDRA|Carter and the Commandos successfully dismantled HYDRA's forces across Europe
++ Howling Commandos|defeated|HYDRA|Carter and the Commandos successfully dismantled HYDRA's forces across Europe
+f- Adolf Hitler|other_verb|frustrated
+t+ no_relation|which deeply frustrated Adolf Hitler.
+f+ Red Skull|other_verb|ordered|and ordered to set a trap for the Commandos to capture Rogers and retrieve the Tesseract from his armor.|actual|stated|
+f+ Red Skull|other_verb|capture|and ordered to set a trap for the Commandos to capture Rogers and retrieve the Tesseract from his armor.|planned|stated|Red Skull
+f- Howling Commandos|other_verb|caught
+t+ no_doer|the Commandos were caught in a trap with train being filled with explosives.
+f- Allied forces|suspected|Rogers
+f+ Allied forces|suspected|-|while the Allied forces considered him being killed in action|actual|stated|
+f+ Carter|other_verb|raiding|and participated in raiding numerous HYDRA facilities.|actual|stated|
+f+ Rogers|other_verb|raiding|and participated in raiding numerous HYDRA facilities.|actual|stated|
+
+@2788 gold: ok
+keep
+
+@2789 gold: the page's opening quote is dialogue
+keep
+t- no_doer|After the war
+t+ dialogue|After the war, S.H.I.E.L.D. was founded, and I was recruited.
+t- no_relation|The new Hydra grew
+t+ dialogue|The new Hydra grew, a beautiful parasite, inside S.H.I.E.L.D.
+
+@2790 gold: Stark breaks in and escapes; Shatalov walks away; scrambled signal
+keep
+f+ Stark|other_verb|broke|Stark flew to the power planet and broke in through the ventilation shaft|actual|stated|
+f+ Valentin Shatalov|other_verb|walked|Shatalov walked away as several A.I.M. Drones attacked Stark|actual|stated|
+f+ Stark|other_verb|escaped|He escaped the facility before it blew up|actual|stated|
+t+ no_doer|However, the Tesla energy scrambled the signal
+
+@2791 gold: a comics comparison is production
+keep
+f- S.H.I.E.L.D.|built|Iliad
+t+ production|In the comics, the Iliad is one of several Helicarriers built by S.H.I.E.L.D. which was used in the Secret Avengers story line.
+
+@2792 gold: ok
+keep
+
+@2793 gold: episode title notes are production
+keep
+f- Deals With Our Devils|other_verb|title
+f- Laws of Inferno Dynamics|other_verb|is
+t+ production|The title of episode 4.07, Deals With Our Devils,
+t+ production|The title of episode 4.08, The Laws of Inferno Dynamics, is a play on the words referencing the Laws of Thermodynamics.
+
+@2794 gold: ok
+keep
+
+@2795 gold: the page's opening quote is dialogue
+keep
+f- Juggernaut|other_verb|works
+t- capability|She knows that helmet
+t+ dialogue|She knows that helmet was the only way to protect anyone from her powers.
+t+ dialogue|The only other helmet that strong is Juggernaut's, but he works for Cassandra,

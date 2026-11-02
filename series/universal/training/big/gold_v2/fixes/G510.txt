@@ -1,0 +1,99 @@
+@2601 gold: one name; Kingpin argues too
+keep
+r Lopez=>Maya Lopez
+f+ Kingpin|other_verb|argued|As Lopez and Kingpin argued|actual|stated|
+
+@2602 gold: one name (the window gives Castle) plus the alias; described rooms; Pilgrim's own acts
+keep
+r Punisher=>Castle
+f+ Punisher|alias_of|Castle|he was suddenly alerted to the sound of the Punisher kicking down the door of his other room. Without making any sound, Pilgrim waited until he could hear that Castle had stepped into the center of the room|actual|stated|
+f- Pilgrim|located_at|hotel room
+f+ Pilgrim|other_verb|sat|While Pilgrim was sat in the hotel room once used by Bob Wick|actual|stated|
+f- Castle|located_at|center of the room
+f+ Castle|other_verb|stepped|Castle had stepped into the center of the room|actual|stated|
+t- no_relation|considered what he was doing
+f+ Pilgrim|other_verb|considered|considered what he was doing to do about his current situation|actual|stated|
+f+ Pilgrim|other_verb|waited|Without making any sound, Pilgrim waited until he could hear that Castle had stepped into the center of the room|actual|stated|
+
+@2603 gold: one name; joining the fight is no alliance; taking a mask off
+keep
+r Lopez=>Maya Lopez
+f- Kate Bishop|allied_with|Maya Lopez
+f- Clint Barton|took|Belova's mask
+f+ Clint Barton|other_verb|took|After Barton took Belova's mask off|actual|stated|
+
+@2604 gold: the list line narrates a death
+keep
+f+ Gerber|dies|-|Gerber † - killed in 2012.|actual|stated|
+
+@2605 gold: "the two" are unnamed here
+keep
+t- no_relation|After this revelation
+t+ deictic|After this revelation, the two had to escape a debris field made of asteroids and remnants of the Earth.
+
+@2606 gold: a task list line is no capability
+keep
+t- capability|Investigate Adam Cross
+t+ list_header|Investigate Adam Cross as the first victim of an attack by a then unknown Chitauri virus.
+
+@2607 gold: ok
+keep
+
+@2608 gold: named watchers and walkers; weeping and recalling
+keep
+t- no_relation|Ellison watched on
+f+ Ellison|other_verb|watched|Ellison watched on from the doorway of the office while Page walked around|actual|stated|
+f+ Page|other_verb|walked|Ellison watched on from the doorway of the office while Page walked around|actual|stated|
+t- no_relation|while Page had then begun
+f+ Page|other_verb|weeping|while Page had then begun openly weeping at this discovery about Urich's work|actual|stated|
+f+ Page|remembered|-|while recalling her grief at Urich's untimely death.|actual|stated|
+
+@2609 gold: corrupting a mind is no persuasion; Whitehall's questioning, mocking, noting; Bakshi's mission
+keep
+f- Whitehall|persuaded|Agent 33
+f+ Whitehall|other_verb|corrupt|Whitehall then continued to twist and corrupt Agent 33's mind|actual|stated|
+f+ Whitehall|other_verb|question|as he began to question why she would still continue to hold onto these principles of S.H.I.E.L.D.|actual|stated|
+f+ Whitehall|other_verb|mocking|mocking those concepts of freedom, equality, individual rights|actual|stated|
+f+ Whitehall|other_verb|noting|noting that mankind would fight the fire, believing every plant was perfect in its own way|actual|stated|
+t- deictic|With Bakshi being
+f+ Bakshi|other_verb|recapture|With Bakshi being on the mission on recapture Donnie Gill|planned|stated|Bakshi
+
+@2610 gold: ok
+keep
+
+@2611 gold: one name in the entry
+keep
+r Stane=>Obadiah Stane
+
+@2612 gold: one name; the son held prisoner; the decapitation is Deathlok's
+keep
+r Garrett=>John Garrett
+f- Peterson|other_verb|prisoner
++ John Garrett|captured|Peterson|Deathlok explained how his son was Garrett's prisoner.
+t- no_relation|After Deathlok decapitated
+f+ Deathlok|other_verb|decapitated|After Deathlok decapitated a South American drug lord for Ian Quinn's super-soldier scheme|actual|stated|
+
+@2613 gold: mind manipulation is no fight (A116); non-verb objects; predicting = suspected; the transformation
+keep
+- Wanda Maximoff|fought|Bruce Banner
+f- Avengers|other_verb|Ulysses
+f+ Avengers|other_verb|investigate|to investigate Ulysses Klaue's cache of vibranium|planned|stated|Avengers
+f- Avengers|other_verb|Ulysses Klaue
+f+ Avengers|suspected|-|predicting Ultron would come to meet him.|actual|stated|
+f- Wanda Maximoff|other_verb|Bruce Banner
+f+ Wanda Maximoff|other_verb|forced|Wanda Maximoff targeted Bruce Banner and forced him to turn into Hulk using her mental manipulation powers.|actual|stated|
+f+ Bruce Banner|transformed_into|Hulk|forced him to turn into Hulk using her mental manipulation powers.|actual|stated|
+t- capability|using her mental manipulation
+f+ Wanda Maximoff|used|mental manipulation powers|forced him to turn into Hulk using her mental manipulation powers.|actual|stated|
+
+@2614 gold: a crew credit is production
+keep
+t+ production|He also was a fight coordinator in the Daredevil episodes Into the Ring, Cut Man, Rabbit in a Snowstorm, In the Blood, World on Fire, Condemned, Stick, Shadows in the Glass, Speak of the Devil, Nelson v. Murdock, The Path of the Righteous, The Ones We Leave Behind, Daredevil, Bang, Dogs to a Gunfight, New York's Finest, Penny and Dime, Kinbaku, Regrets Only, Semper Fidelis, Guilty as Sin, Seven Minutes in Heaven, The Man in the Box, .380, The Dark at the End of the Tunnel, and A Cold Day in Hell's Kitchen.
+
+@2615 gold: one name; Sibyl's destroyed body = defeated (A53); the asked help; agreeing
+keep
+r Feldman=>Russell Feldman
+f- Phil Coulson|destroyed|body
++ Phil Coulson|defeated|Sibyl|asking for help building a body for her after Phil Coulson destroyed hers.
+f+ Russell Feldman|helped|Sibyl|asking for help building a body for her after Phil Coulson destroyed hers.|ordered|stated|Sibyl
+f+ Russell Feldman|other_verb|agreed|Feldman agreed to help, and Sibyl provided him with instructions.|actual|stated|

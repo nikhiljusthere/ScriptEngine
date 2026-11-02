@@ -1,0 +1,105 @@
+@2481 gold: ok
+keep
+
+@2482 gold: a ride is no taking; the arrivals cover the travel
+keep
+f- Rand|took|Rand Enterprises jet
+f- Wing|took|Rand Enterprises jet
+f- Rand|took|private helicopter
+f- Wing|took|private helicopter
+
+@2483 gold: ok
+keep
+
+@2484 gold: the engineered group
+keep
+f+ High Evolutionary|created|Star Children|a group of children genetically engineered by the High Evolutionary.|actual|stated|
+
+@2485 gold: the explaining, challenging and dismissing; teammates are a crowd
+keep
+f+ Morgenthau|other_verb|explained|Morgenthau explained how if the plan would not work out, they may have to kill the GRC hostages.|actual|stated|
+f+ Gigi|other_verb|challenged|However, Gigi challenged her saying that the plan was only to negotiate with the GRC members, not kill anyone.|actual|stated|
+f+ Morgenthau|other_verb|dismissed|Morgenthau dismissed that and went on to say|actual|stated|
+f- teammates|other_verb|reaffirming
+t+ crowd_end|and her teammates finished their motto, reaffirming their loyalty to her.
+
+@2486 gold: an attempt is attempted; the arranging happened; the order to Skye; the handing over
+keep
+f- Phil Coulson|other_verb|negotiate
+f+ Phil Coulson|other_verb|negotiate|In an attempt to peacefully negotiate terms between S.H.I.E.L.D. and the Inhumans|attempted|stated|Phil Coulson
+f- Phil Coulson|other_verb|arranged
+f+ Phil Coulson|other_verb|arranged|Phil Coulson arranged a meeting between himself and Jiaying in Afterlife|actual|stated|
+f+ Jiaying|ordered|Skye|and told Skye to take him to S.H.I.E.L.D. as she began her meeting.|actual|stated|
+f+ Skye|other_verb|take|and told Skye to take him to S.H.I.E.L.D. as she began her meeting.|ordered|stated|Jiaying
+f+ Jiaying|handed|Calvin Zabo|Jiaying informed Gonzales that she was handing Zabo over to S.H.I.E.L.D. as a peace offering|actual|stated|
+
+@2487 gold: an occupation is no became; Tourminet's own acts
+keep
+f- Rebecca Tourminet|became|vice principal
+f+ Rebecca Tourminet|other_verb|graduated|Rebecca Tourminet graduated college|actual|stated|
+t- crowd_end|Tourminet received several
+f+ Rebecca Tourminet|other_verb|received|Tourminet received several thank you notes from students throughout her time.|actual|stated|
+t- crowd_end|she left a room adjacent
+f+ Rebecca Tourminet|other_verb|left|she left a room adjacent to her office to find two strangers in her office.|actual|stated|
+f+ Rebecca Tourminet|other_verb|expressed|Tourminet expressed shock|actual|stated|
+
+@2488 gold: the Guardians witness; each conversation has a named doer
+keep
+f+ Guardians|other_verb|witnessed|the Guardians witnessed the Ravagers arrive to give Udonta a Ravager Funeral.|actual|stated|
+t- no_relation|As the Guardians watched
+f+ Rocket|other_verb|reflecting|Rocket reflecting upon himself|actual|stated|
+f+ Gamora|other_verb|accepting|Gamora accepting her feelings for Peter Quill|actual|stated|
+f+ Drax|other_verb|admitting|Drax admitting to Mantis' beauty|actual|stated|
+
+@2489 gold: untagged dialogue lines
+keep
+t+ dialogue|How'd you guys find me, anyway?
+t+ dialogue|Five minutes later, his data was mine.
+
+@2490 gold: ok
+keep
+
+@2491 gold: moles in Coulson's team betray him (A66); an attempt is attempted
+keep
++ Alphonso Mackenzie|betrayed|Phil Coulson|two of his agents, Alphonso Mackenzie and Bobbi Morse, were actually working undercover for Gonzales
++ Bobbi Morse|betrayed|Phil Coulson|two of his agents, Alphonso Mackenzie and Bobbi Morse, were actually working undercover for Gonzales
+f+ Alphonso Mackenzie|allied_with|Robert Gonzales|Alphonso Mackenzie and Bobbi Morse, were actually working undercover for Gonzales|actual|stated|
+f+ Bobbi Morse|allied_with|Robert Gonzales|Alphonso Mackenzie and Bobbi Morse, were actually working undercover for Gonzales|actual|stated|
+f- Alphonso Mackenzie|other_verb|retrieve
+f- Bobbi Morse|other_verb|retrieve
+f+ Alphonso Mackenzie|other_verb|retrieve|in an attempt to retrieve the Toolbox.|attempted|stated|Alphonso Mackenzie
+f+ Bobbi Morse|other_verb|retrieve|in an attempt to retrieve the Toolbox.|attempted|stated|Bobbi Morse
+
+@2492 gold: the meeting with Donovan; speech acts are actual; the ordered payment; Finney's explaining
+keep
++ Fisk|met|Donovan|At a meeting with Donovan, Fisk asks him to pay off a guard
+f+ Finney|other_verb|explains|Finney explains that he had killed members of the Dogs of Hell, the Mexican Cartel, and the Kitchen Irish|actual|stated|
+f- Finney|other_verb|deal
+f+ Finney|other_verb|mentions|Finney mentions that he also had a deal with the Irish that went wrong|actual|stated|
+f+ Donovan|other_verb|pay|Fisk asks him to pay off a guard and give him a message to deliver|ordered|stated|Fisk
+f- Fisk|other_verb|assures
+f+ Fisk|other_verb|assures|Fisk assures him that after this, he won't need any more funds|actual|stated|
+
+@2493 gold: one name each; the death; the prayer; the brother; the new Ghost Rider
+keep
+r Blaze=>Johnny Blaze
+r Robbie=>Reyes
+t- no_doer|Reyes is killed
+f+ Reyes|dies|-|Reyes is killed on impacting the ground|actual|stated|
+f+ Reyes|other_verb|prays|as he prays to anyone to keep his brother safe.|actual|stated|
+f+ Reyes|sibling_of|Gabe|as he prays to anyone to keep his brother safe.|actual|stated|
+f+ Reyes|transformed_into|Ghost Rider|revives Reyes by transforming him into the next Ghost Rider.|actual|stated|
+
+@2494 gold: the Hand fights the Defenders; intending is a plan; the tried escape
+keep
++ Hand|fought|Defenders|The Hand found them at the restaurant. During the battle
+t- no_relation|The Hand found them
+f- Hand|other_verb|intended
+f+ Hand|other_verb|use|the Hand intended to use the Iron Fist to destroy an indestructible stone of K'un-Lun origin|planned|stated|Hand
+f- Sowande|other_verb|attempted
+f+ Sowande|other_verb|escape|Sowande was killed by Stick when he attempted to escape.|attempted|stated|Sowande
+
+@2495 gold: the birthplace
+keep
+f- Colleen O'Brien|born|-
+f+ Colleen O'Brien|born|New Rochelle|Colleen O'Brien is born in New Rochelle, New York.|actual|stated|

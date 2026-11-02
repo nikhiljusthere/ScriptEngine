@@ -1,0 +1,119 @@
+@2796 gold: the Badoon are a race
+keep
+t- no_relation|When the Bifrost Bridge
+t+ crowd_end|When the Bifrost Bridge was destroyed, the Badoon seized to opportunity to wage a civil war between several of their clans.
+
+@2797 gold: the intercepted attack saves Potts; the ordered overload; Stane's planned kill
+keep
++ Stark|saved|Potts|but Stark attacked Stane before he could kill Potts
+f+ Stane|other_verb|kill|but Stark attacked Stane before he could kill Potts|planned|stated|Stane
+f+ Potts|other_verb|overload|Stark was able to stop Stane by ordering Potts to overload the Arc Reactor powering the Stark Industries building|ordered|stated|Stark
+
+@2798 gold: described mansion and headquarters; Lang's robbery; Zorick's company; the ordered change
+keep
+f- Geoff Zorick|resides_at|mansion
+f+ Geoff Zorick|other_verb|lived|Zorick lived in a mansion, which Scott Lang broke into and robbed.|actual|stated|
+f+ Scott Lang|other_verb|robbed|Zorick lived in a mansion, which Scott Lang broke into and robbed.|actual|stated|
+f- Geoff Zorick|located_at|headquarters
+f+ Geoff Zorick|owns|VistaCorp|VistaCorp Headquarters: Zorick operated his company out of its headquarters|actual|stated|
+f+ Scott Lang|other_verb|change|and ordered him to change it back.|ordered|stated|Geoff Zorick
+
+@2799 gold: one name; realizing = learned; Stark's own acts; the alias; Iron Monger's taunts and plan; the crush
+keep
+r Stark=>Tony Stark
+f- Tony Stark|discovered|-
+f+ Tony Stark|learned|-|and realizes that the fight caused significant damage.|actual|stated|
+t- no_relation|Tony Stark tests
+f+ Tony Stark|other_verb|tests|Tony Stark tests his Iron Man armor near Pacific Park.|actual|stated|
+f+ Tony Stark|other_verb|works|He returns home and works on the suit|actual|stated|
+f+ Tony Stark|other_verb|takes|Stark takes the armor into the desert for tests, wanting to make sure everything is perfect.|actual|stated|
+f+ Iron Man|alias_of|Tony Stark|who know Stark's identity as Iron Man but keep it secret.|actual|stated|
+t- no_relation|who announces himself.
+f+ Iron Monger|other_verb|announces|but gets attacked by Iron Monger, who announces himself.|actual|stated|
+t- no_relation|Iron Monger taunts Stark
+f+ Iron Monger|other_verb|taunts|Iron Monger taunts Stark, referring to their armors as weapons, and the two continue to fight.|actual|stated|
+t+ no_doer|Stark is crushed by a car
+f+ Iron Monger|other_verb|kill|and Iron Monger prepares to kill him, but gets hit by a truck.|planned|stated|Iron Monger
+t- capability|Stark stands proud
+f+ Tony Stark|other_verb|stands|Stark stands proud, ready for threats in the future.|actual|stated|
+
+@2800 gold: the meeting; the asked act
+keep
++ Luke|met|Coulson|Luke says he has come to "Coulson" because he will be more understanding as a non-human
+f+ Coulson|other_verb|let|Luke asks that he let them have Earth in return for the Chronicoms treating humans with charity.|ordered|stated|Luke
+
+@2801 gold: ok
+keep
+
+@2802 gold: non-verb objects; the drive; the possession
+keep
+f- Helstrom|other_verb|Saint
+f- Rosetti|other_verb|Saint
+f+ Helstrom|other_verb|left|and left the half of the dagger the Blood had at Saint Teresa Center for Mental Health.|actual|stated|
+f+ Rosetti|other_verb|left|and left the half of the dagger the Blood had at Saint Teresa Center for Mental Health.|actual|stated|
+f- Louise Hastings|other_verb|safe
+f+ Louise Hastings|other_verb|put|While Louise Hastings put it in her safe|actual|stated|
+f- Helstrom|other_verb|Kthara
+f- Rosetti|other_verb|Kthara
+f+ Helstrom|other_verb|destroy|so that they could combine it and destroy Kthara|planned|stated|Helstrom
+f+ Rosetti|other_verb|destroy|so that they could combine it and destroy Kthara|planned|stated|Rosetti
+f+ Helstrom|other_verb|drove|Helstrom and Rosetti drove to their childhood home to recover the other piece of the dagger|actual|stated|
+f+ Rosetti|other_verb|drove|Helstrom and Rosetti drove to their childhood home to recover the other piece of the dagger|actual|stated|
+f+ Kthara|other_verb|possessing|even though the demon was possessing Helstrom's mother and might kill her as well.|actual|stated|
+
+@2803 gold: ok
+keep
+
+@2804 gold: one name; a statement is no interrogation; claims are speech; the forced stand-down; the van search; the planned testimony
+keep
+r Tam=>Forrest Tam
+f- Murdock|interrogated|Torres
+f+ Murdock|other_verb|takes|Murdock takes a statement from Torres|actual|stated|
+f- Torres|other_verb|claims
+f+ Torres|other_verb|claims|however he suddenly goes back on his word and claims that he was not present at the station that night.|actual|stated|
+f+ Murdock|other_verb|stand|but Hochberg and Jerry Cooper force him to stand down|ordered|stated|Hochberg
+f+ Powell|other_verb|finds|Powell stops Cherry by but finds no one in his van|actual|stated|
+f+ Torres|other_verb|testify|so he could testify in Ayala's favor.|planned|stated|Torres
+
+@2805 gold: the ruse
+keep
+t+ no_relation|revealing that Nebula's betrayal was part of their plan.
+
+@2806 gold: ok
+keep
+
+@2807 gold: ok
+keep
+
+@2808 gold: a ship's look is no capability; the ship's breach is its captain's act
+keep
+t- list_header|Whitey Bay's pirate ship
+t+ no_relation|Whitey Bay's pirate ship is an .
+t- capability|It has a steel-plated hull
+t+ no_relation|It has a steel-plated hull instead of a wooden hull.
+t- capability|In place of a figurehead
+t+ no_relation|In place of a figurehead, the ship has a snowflake insignia on the front.
+t- capability|On board the ship
+t+ no_relation|On board the ship is the cabin which also has snowflakes painted on the walls, and has cannons mounted on top.
+t- capability|There are masts and sails
+t+ no_relation|There are masts and sails, with the front sail having the crew's Jolly Roger painted on it.
+t- capability|This made her ship
+t+ no_relation|This made her ship the only one of the entire Whitebeard Pirates capable of continuing onward, while the rest were trapped by the ice.
+t- no_relation|Additionally, her ship broke
+f+ Whitey Bay|other_verb|broke|Additionally, her ship broke through a section of Marineford's wall.|actual|stated|
+
+@2809 gold: volume title translations are production
+keep
+t- list_header|SBS Volum 13
+t+ production|SBS Volum 13
+t- list_header|Volume 13
+t+ production|Volume 13
+t- list_header|SBS Том 13
+t+ production|SBS Том 13
+t- list_header|SBS Tome 13
+t+ production|SBS Tome 13
+t- list_header|SBS Cilt 13
+t+ production|SBS Cilt 13
+
+@2810 gold: ok
+keep

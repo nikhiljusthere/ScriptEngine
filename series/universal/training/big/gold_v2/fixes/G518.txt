@@ -1,0 +1,118 @@
+@2721 gold: the drive with Hill
+keep
+f+ Fury|other_verb|drove|He drove this vehicle with Maria Hill in Atlanta at the time of the Snap.|actual|stated|
+f+ Maria Hill|located_at|Atlanta|He drove this vehicle with Maria Hill in Atlanta at the time of the Snap.|actual|stated|
+
+@2722 gold: the page's opening quote is dialogue
+keep
+f- Simmons|other_verb|reach
+f- Simmons|other_verb|found
+t+ dialogue|Simmons is trying to reach Leopold.
+t+ dialogue|She must have found a way out.
+
+@2723 gold: a doer-less kick; Walker's landing and failure
+keep
+t- no_relation|Hoskins then was kicked
+t+ no_doer|Hoskins then was kicked out of the track
+t- no_relation|Walker landed on a car
+f+ Walker|other_verb|landed|Walker landed on a car and was left uninjured|actual|stated|
+t- no_relation|he failed the mission
+f+ Walker|other_verb|failed|however, he failed the mission, as the Flag Smashers successfully escaped.|actual|stated|
+
+@2724 gold: a signal is no doer
+keep
+f- Hydra signal|other_verb|hijacked
+t+ no_doer|as the Hydra signal hijacked every communications channel.
+
+@2725 gold: the told acts; Nelson drags him; the driver and crew are unnamed; Jimbo agrees and drives
+keep
+f- Russo|warned|Jimbo
+f+ Russo|ordered|Jimbo|Russo told Jimbo to get out of town, change his license plates and get to Texas to lay low for a while|actual|stated|
+f+ Jimbo|other_verb|get|Russo told Jimbo to get out of town, change his license plates and get to Texas to lay low for a while|ordered|stated|Russo
+f+ Jake Nelson|other_verb|dragged|until Jake Nelson then dragged him away.|actual|stated|
+t+ crowd_end|As the driver called him crazy
+t+ crowd_end|the crew then lowered Jimbo's car off the truck.
+f+ Jimbo|other_verb|agreeing|Agreeing with Russo, Jimbo then thanked all of the members of their crew who had helped him out and drove away.|actual|stated|
+f+ Jimbo|other_verb|drove|who had helped him out and drove away.|actual|stated|
+
+@2726 gold: informing is speech of the informer; the ordered return and hurry; the wound is Koenig's; the Zephyr is no doer
+keep
+f- Enoch|other_verb|informed
+f+ Koenig|other_verb|informed|and was informed he fled with his Hydra contact.|actual|stated|
+f+ Malick|other_verb|fled|and was informed he fled with his Hydra contact.|actual|stated|
+f- Enoch|other_verb|claimed
+f+ Enoch|other_verb|informed|Enoch informed him that he made his delivery, therefore, Hydra will rise and the future was secure.|actual|stated|
+f+ Enoch|other_verb|get|Coulson told him to get back to Zephyr One as soon as possible before the time window closed.|ordered|stated|Phil Coulson
+f+ Enoch|other_verb|hurry|Koenig urged Enoch to hurry since his wound won't be a problem|ordered|stated|Koenig
+f- Enoch|wounded|-
+f+ Koenig|wounded|-|since his wound won't be a problem|actual|stated|
+f- Enoch|other_verb|stranding
+f+ Enoch|other_verb|ran|Enoch ran back to the Zephyr; however, he did not make it in time|actual|stated|
+t+ no_doer|and the Zephyr jumped away, stranding him in 1931.
+
+@2727 gold: untagged dialogue
+keep
+t+ dialogue|Captain William Dole? New York Police Department, 4th Precinct? I am a sentient Chronicom from the planet Chronyca-2.
+
+@2728 gold: an event name is no subject
+keep
+f- Arrest of Baron Zemo|located_at|Sokovia
+f+ Helmut Zemo|located_at|Sokovia|The Arrest of Baron Zemo was the apprehension of Helmut Zemo by the Dora Milaje in Sokovia.|actual|stated|
+
+@2729 gold: a crew credit is production
+keep
+f- David Altenau|other_verb|supervisor
+t+ production|David Altenau was a visual effects supervisor for the first season of Agents of S.H.I.E.L.D..
+
+@2730 gold: the unnamed mother is no end; Alistair's fatherhood and divorce; the academy split by the gate; Fitz's fondness
+keep
+f- The mother of Leo Fitz|married|Alistair Fitz
+f- The mother of Leo Fitz|parent_of|Leo Fitz
+f- The mother of Leo Fitz|other_verb|raise
+t+ crowd_end|The mother of Leo Fitz married Alistair Fitz and gave birth to their son on Wednesday, August 19, 1987.
+t+ crowd_end|forcing the woman to raise their son by herself.
+f+ Alistair Fitz|parent_of|Leo Fitz|The mother of Leo Fitz married Alistair Fitz and gave birth to their son on Wednesday, August 19, 1987.|actual|stated|
+f+ Alistair Fitz|other_verb|divorced|Alistair divorced his wife and abandoned them both|actual|stated|
+f- Leo Fitz|joined|Technology
+t- capability|When Fitz developed
+f+ Leo Fitz|other_verb|developed|When Fitz developed a fondness for electronics|actual|stated|
+t+ crowd_end|she tried her best to understand it but was unable to.
+
+@2731 gold: ok
+keep
+
+@2732 gold: a building's height is no capability
+keep
+t- capability|due to it's tall stature.
+t+ no_relation|due to it's tall stature.
+
+@2733 gold: one name; Hood's yoga, dismissal and viewing; the ex and father are unnamed
+keep
+r King=>John King
+f+ Hood|other_verb|did|Hood did shirtless yoga as John King walked in|actual|stated|
+f+ John King|other_verb|commenting|John King walked in, commenting on the heat.|actual|stated|
+f+ Hood|other_verb|dismissed|Hood dismissed King's worries|actual|stated|
+t- no_doer|aside from his ex claiming
+t+ crowd_end|aside from his ex claiming that he took thirty minutes showers.
+t- no_doer|a news report where his father
+t+ crowd_end|a news report where his father commented on the recent heists they had committed
+f+ Hood|other_verb|saw|Hood then saw on the television a news report|actual|stated|
+
+@2734 gold: one name; the protocol and rebuild happened; a drug's origin has no doer
+keep
+r Fury=>Nick Fury
+f- Coulson|other_verb|initiate
+f+ Coulson|other_verb|initiate|Coulson would later initiate the Theta Protocol to rebuild the decommissioned Helicarrier|actual|stated|
+f- Coulson|built|Helicarrier
+f+ Coulson|built|Helicarrier|Coulson would later initiate the Theta Protocol to rebuild the decommissioned Helicarrier|actual|stated|
+t- crowd_end|created out of a Kree blood
+t+ no_doer|created out of a Kree blood
+
+@2735 gold: working for a person is allied_with; the friend; awareness = learned; the investigator's dismissal
+keep
+f- BB Urich|joined|Fisk
+f+ BB Urich|allied_with|Fisk|began working for Fisk under the guidance of her friend, Deputy Mayor for Communications Daniel Blake|actual|stated|
+f+ BB Urich|friend_of|Daniel Blake|under the guidance of her friend, Deputy Mayor for Communications Daniel Blake|actual|stated|
+f- BB Urich|other_verb|aware
+f+ BB Urich|learned|-|In reality, Urich was aware of her uncle's murder at the hands of Fisk|actual|stated|
+t+ no_doer|After days of investigation without finding anything, the investigator was paid and sent on his way

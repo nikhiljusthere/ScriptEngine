@@ -1,0 +1,92 @@
+@2706 gold: ok
+keep
+
+@2707 gold: ok
+keep
+
+@2708 gold: ok
+keep
+
+@2709 gold: one name; the escape is from the captor; siding is allied_with; the father; the distrust
+keep
+r Shaw=>Deke Shaw
+- Deke Shaw|escaped|S.H.I.E.L.D.
++ Deke Shaw|escaped|Phil Coulson|Despite that, Shaw was eventually able to escape and sided with S.H.I.E.L.D.
+f- Deke Shaw|joined|S.H.I.E.L.D.
+f+ Deke Shaw|allied_with|S.H.I.E.L.D.|Shaw was eventually able to escape and sided with S.H.I.E.L.D., helping them to escape from the Lighthouse.|actual|stated|
+f+ Deke Shaw|helped|S.H.I.E.L.D.|sided with S.H.I.E.L.D., helping them to escape from the Lighthouse.|actual|stated|
+f+ Owen|parent_of|Deke Shaw|after learning that Shaw's father Owen as the one speaking in the radio signal they had received.|actual|stated|
+t- no_relation|As S.H.I.E.L.D. could not trust
+f+ S.H.I.E.L.D.|other_verb|trust|As S.H.I.E.L.D. could not trust Deke Shaw|actual|denied|
+
+@2710 gold: testing arms; explaining is speech; the saying is Simmons'; a race is no end
+keep
+f- Yo-Yo Rodriguez|used|new arms
+f+ Yo-Yo Rodriguez|other_verb|tests|Yo-Yo Rodriguez tests her new arms, and becomes emotional at feeling the sensation of touch again.|actual|stated|
+f- Jemma Simmons|other_verb|explains
+f+ Jemma Simmons|other_verb|explains|who explains that Leo Fitz said he would try to send her a message|actual|stated|
+f- Yo-Yo Rodriguez|other_verb|says
+f+ Jemma Simmons|other_verb|says|She says Fitz is safe, but she cannot try to reach out to him|actual|stated|
+f- Chronicoms|other_verb|listening
+
+@2711 gold: a race is no doer; name the power
+keep
+f- Gibborim|located_at|Earth
+f- Gibborim|created|PRIDE
+f- Gibborim|created|Runaways
+f- Gibborim|other_verb|sparked
+t+ crowd_end|The presence of these Gibborim on Earth eventually caused the formation of PRIDE, and later the Runaways, and subsequently sparked the conflict between these two groups.
+f- Karolina Dean|gained_power|-
+f+ Karolina Dean|gained_power|Gibborim-related powers|Karolina Dean, who could use Gibborim-related powers without having to possess a human host|actual|stated|
+
+@2712 gold: the son is recognized, not N'Jobu; N'Jobu's death and gift; a mission is a plan; Black Panther is T'Challa
+keep
+f- N'Jobu|other_verb|recognized
+f+ N'Jobu|other_verb|gave|Before his death, N'Jobu gave a War Dogs Tattoo to his son, so he could be recognized by people of Wakanda one day.|actual|stated|
+f+ N'Jobu|dies|-|however, he was killed due to the increasing gang violence in the area.|actual|stated|
+f- T'Challa|other_verb|take
+f+ T'Challa|other_verb|take|Black Panther went on a mission to take Klaue down and retrieve the vibranium|planned|stated|T'Challa
+f+ Black Panther|alias_of|T'Challa|Black Panther went on a mission to take Klaue down and retrieve the vibranium, however, it turned out to be a trap, as Klaue was the one who leaked the information to the War Dogs and T'Challa was killed by Killmonger.|actual|stated|
+
+@2713 gold: ok
+keep
+
+@2714 gold: the squad hunts and fails to kill its creator; the planets' destruction has no doer
+keep
+f- Sarge|destroyed|Chronyca-2
+t+ no_doer|which resulted in the destruction of several planets such as Chronyca-2.
+t- crowd_end|They hunted down Shrike
+f+ Sarge's Squad|other_verb|hunted|They hunted down Shrike across the galaxies|actual|stated|
+f+ Sarge's Squad|other_verb|kill|and repeatedly failed to kill their creator Izel|attempted|stated|Sarge's Squad
+f+ Izel|created|Sarge's Squad|and repeatedly failed to kill their creator Izel|actual|stated|
+
+@2715 gold: Black Panther is T'Challa
+keep
+f+ Black Panther|alias_of|T'Challa|After taking down Klaue's henchmen, Black Panther attempted to reason with Rhodes that he only needed to retrieve the stolen vibranium, only for them to be ambushed by Killmonger. Killmonger killed both T'Challa and Rhodes|actual|stated|
+
+@2716 gold: a doer-less release; the named gang; the old friend; a difficulty is no capability
+keep
+f- Darius Davis|other_verb|released
+t+ no_doer|Once Darius Davis was released from prison
+f- Darius Davis|leader_of|Crips gang
+f+ Darius Davis|leader_of|Crips|he took the leadership of a Crips gang|actual|stated|
+f- Geoffrey Wilder|left_group|Crips gang
+f+ Geoffrey Wilder|left_group|Crips|as Geoffrey Wilder had walked away from gang activities.|actual|stated|
+t- capability|However, Davis had a hard time
+t+ no_relation|However, Davis had a hard time leading the gang into the same glory Wilder used to
+f+ Darius Davis|friend_of|Geoffrey Wilder|as he was less skilled than his old friend|actual|stated|
+
+@2717 gold: no pipe in a tag quote; a soundtrack line is production
+keep
+t- list_header|Doomsday Clock
+t+ production|Doomsday Clock
+t+ production|The Smashing Pumpkins *Official Trailer 2.
+
+@2718 gold: ok
+keep
+
+@2719 gold: ok
+keep
+
+@2720 gold: ok
+keep

@@ -1,0 +1,122 @@
+@2751 gold: a hostile arrival that becomes the capture is no met
+keep
+- Bakshi|met|Deathlok
+- Bakshi|met|Campbell
+
+@2752 gold: the realizing; the waiting; Alphonso's terror; the Hydra custody
+keep
+f+ Alphonso Mackenzie|learned|-|When Alphonso realizes what Hope has done|actual|stated|
+f+ Alphonso Mackenzie|other_verb|waits|As Alphonso Mackenzie waits with Hope for the school bus|actual|stated|
+t+ no_relation|Alphonso is terrified that they know about the drone
+t+ crowd_end|but it transpires that they are, in fact, taking a potential Inhuman into custody.
+
+@2753 gold: mother and son both craft the Ballad; the killing and escape are theirs
+keep
+f+ Agatha Harkness|created|Ballad of the Witches' Road|From there, he and his mother began to tweak and tinker with the song until they had crafted the Ballad of the Witches' Road.|actual|stated|
+t- crowd_end|after killing a coven
+f+ Agatha Harkness|other_verb|killing|In 1756 after killing a coven of witches, Agatha Harkness and her son were escaping their previous town to find their next target.|actual|stated|
+f+ Scratch|other_verb|killing|In 1756 after killing a coven of witches, Agatha Harkness and her son were escaping their previous town to find their next target.|actual|stated|
+f+ Agatha Harkness|other_verb|escaping|Agatha Harkness and her son were escaping their previous town to find their next target.|actual|stated|
+f+ Scratch|other_verb|escaping|Agatha Harkness and her son were escaping their previous town to find their next target.|actual|stated|
+
+@2754 gold: ok
+keep
+
+@2755 gold: escorting the prisoner back = captured (A37); the evolving, killing and looking
+keep
+f- High Evolutionary|ordered|Rocket
++ High Evolutionary|captured|Rocket|intrigued High Evolutionary had Rocket escorted back to his cage
+f+ High Evolutionary|other_verb|evolving|Showing off him rapidly evolving a turtle into a Humanimal with a specialized chamber|actual|stated|
+f+ High Evolutionary|other_verb|killed|before High Evolutionary killed them by igniting the pod with fire.|actual|stated|
+f+ High Evolutionary|other_verb|looked|as him and the recorders looked into the problem.|actual|stated|
+
+@2756 gold: the ordered telling and convincing; showing is no giving; Gravik's certainty
+keep
+f+ Raava|other_verb|tell|ordering her to tell Ritson about the Skrulls and convince him that they were a threat|ordered|stated|Gravik
+f+ Raava|persuaded|Ritson|ordering her to tell Ritson about the Skrulls and convince him that they were a threat|ordered|stated|Gravik
+f- Raava|gave|Ritson
+f+ Raava|other_verb|shows|Raava carries out an order and shows Ritson the satellite images of New Skrullos provided by MI6|actual|stated|
+t- no_relation|Gravik was certain
+f+ Gravik|suspected|-|but Gravik was certain that Fury would do anything to prevent it|actual|stated|
+
+@2757 gold: a noun object
+keep
+f- Rick|other_verb|survivor
+t+ no_relation|Rick was a survivor of the Zombie Apocalypse.
+
+@2758 gold: one name; the team is unnamed; an unnamed power; the mercenaries; the codename direction
+keep
+r May=>Melinda May
+- Katya Belyakov|captured|S.H.I.E.L.D.
+t+ crowd_end|the S.H.I.E.L.D. team was taken captive by Katya's mind control leaving only Coulson and May left.
+f- Katya Belyakov|gained_power|-
+f- Katya Belyakov|other_verb|mind
+f+ Katya Belyakov|other_verb|killed|When Katya killed some mercenaries and threatened to kill the captured S.H.I.E.L.D. agents|actual|stated|
+f+ Katya Belyakov|other_verb|kill|threatened to kill the captured S.H.I.E.L.D. agents|planned|stated|Katya Belyakov
+f- Melinda May|codename_of|Cavalry
+f+ Cavalry|alias_of|Melinda May|the agents gave her the codename, Cavalry.|actual|stated|
+t+ crowd_end|Upon her death, the S.H.I.E.L.D. agents were released from the mind control.
+
+@2759 gold: one name; a flare and a Time Drive are no doers; pulling a bottle; the denied care
+keep
+r Simmons=>Jemma Simmons
+f- Mackenzie|other_verb|blinded
+t+ no_doer|Mackenzie was blinded by a radiation flare
+f- Jemma Simmons|took|cologne bottle
+f+ Jemma Simmons|other_verb|pulled|Simmons pulled one of Shaw's cologne bottles out of a draw|actual|stated|
+f- Sousa|other_verb|care
+f+ Sousa|other_verb|care|and Sousa did not care for the scent.|actual|denied|
+f- Time Drive|other_verb|caused
+f- Time Drive|other_verb|propelling
+t+ no_doer|The Time Drive then caused a feedback, propelling the team into a time-loop.
+
+@2760 gold: ok
+keep
+
+@2761 gold: retrieving; tried = get; intending = planned fly; one destroyed object per row
+keep
+f- Thanos|used|damaged sword
+f+ Thanos|other_verb|retrieved|Thanos retrieved his damaged sword|actual|stated|
+f- Captain Marvel|other_verb|attempted
+f+ Captain Marvel|other_verb|get|as she attempted to get the Gauntlet to Luis' Van|attempted|stated|Captain Marvel
+f- Captain Marvel|other_verb|intending
+f+ Captain Marvel|other_verb|fly|intending to fly it through the Quantum Tunnel and back in time.|planned|stated|Captain Marvel
+f- Thanos|destroyed|van, the tunnel, and the sword
+f+ Thanos|destroyed|Quantum Tunnel|destroying the van, the tunnel, and the sword in an explosion of quantum energy.|actual|stated|
+
+@2762 gold: holding him in place is restraining = defeated; an armor is worn
+keep
+- Rhodes|fought|Shatalov
++ Rhodes|defeated|Shatalov|Rhodes then grabbed Shatalov from behind and held him in place
+f- Shatalov|wielded|Crimson Dynamo Armor
+f+ Shatalov|wore|Crimson Dynamo Armor|before battling Shatalov in the Crimson Dynamo Armor.|actual|stated|
+
+@2763 gold: one name; a doer-less appointment; the murder; Mordo brings Strange; Strange's tries; the denied asking
+keep
+r Strange=>Stephen Strange
+f- Wong|other_verb|appointed
+t+ no_doer|Wong was appointed as the librarian at Kamar-Taj
+f+ Kaecilius|other_verb|murdered|who had murdered the previous Librarian and stolen pages from the Book of Cagliostro.|actual|stated|
+f+ Karl Mordo|other_verb|bring|what prompted Karl Mordo to bring a man such as Strange into the walls of Kamar-Taj to meet the Ancient One.|actual|stated|
+f+ Stephen Strange|other_verb|making|despite all of Strange's attempts at making him laugh|attempted|stated|Stephen Strange
+t- no_relation|although he never asked
+f+ Wong|other_verb|asked|and although he never asked|actual|denied|
+
+@2764 gold: a described brownstone; hiding
+keep
+f- Mariah Dillard|located_at|Dillard's brownstone
+f- Tilda Johnson|located_at|Dillard's brownstone
+f+ Mariah Dillard|other_verb|hide|Mariah Dillard and Tilda Johnson hide in Dillard's brownstone.|actual|stated|
+f+ Tilda Johnson|other_verb|hide|Mariah Dillard and Tilda Johnson hide in Dillard's brownstone.|actual|stated|
+
+@2765 gold: one name; asking is speech with the sat act ordered; suspicion keeps no object; the noticing, demand and broken ribs
+keep
+r Ward=>Grant Ward
+f- Koenig|other_verb|asked
+f+ Koenig|other_verb|asked|so Koenig asked him to sit as still as possible.|actual|stated|
+f+ Grant Ward|other_verb|sit|so Koenig asked him to sit as still as possible.|ordered|stated|Koenig
+f- Koenig|suspected|Grant Ward
+f+ Koenig|suspected|-|Koenig became more suspicious of Ward as his answers seemed questionable|actual|stated|
+f+ Koenig|discovered|-|Koenig noticed that his heart rate and pulse were spiking|actual|stated|
+f+ Grant Ward|wounded|-|because of his broken ribs|actual|stated|
+f+ Koenig|other_verb|demanded|Drawing a gun, Koenig questioned his connections to Hydra and demanded to know why Ward was there|actual|stated|

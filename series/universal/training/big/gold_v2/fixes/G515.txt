@@ -1,0 +1,95 @@
+@2676 gold: one name; a noun object
+keep
+r Garrett=>John Garrett
+f- Marcus Daniels|other_verb|pursuit
+f+ Marcus Daniels|other_verb|resume|allowing him to resume his pursuit of Nathan.|actual|stated|
+
+@2677 gold: the tried stop; a ship is no place; S.H.I.E.L.D. contacts and instructs the crowd
+keep
+f+ S.H.I.E.L.D.|other_verb|stop|S.H.I.E.L.D. soon intervened in an attempt to stop Graviton.|attempted|stated|S.H.I.E.L.D.
+f- Jemma Simmons|located_at|Zephyr One
+f- Yo-Yo Rodriguez|located_at|Zephyr One
+f- Piper|located_at|Zephyr One
+f+ Jemma Simmons|other_verb|remained|While Jemma Simmons, Yo-Yo Rodriguez and Piper remained in the Zephyr One to coordinate the evacuation|actual|stated|
+f+ Yo-Yo Rodriguez|other_verb|remained|While Jemma Simmons, Yo-Yo Rodriguez and Piper remained in the Zephyr One to coordinate the evacuation|actual|stated|
+f+ Piper|other_verb|remained|While Jemma Simmons, Yo-Yo Rodriguez and Piper remained in the Zephyr One to coordinate the evacuation|actual|stated|
+t- crowd_end|contacted the civilians
+t- crowd_end|instructing them to evacuate
+f+ S.H.I.E.L.D.|other_verb|contacted|contacted the civilians and first responders, instructing them to evacuate to the Zephyr and to not engage with Graviton.|actual|stated|
+f+ S.H.I.E.L.D.|other_verb|instructing|contacted the civilians and first responders, instructing them to evacuate to the Zephyr and to not engage with Graviton.|actual|stated|
+t- below_floor|to rescue trapped
+
+@2678 gold: one name; the president is unnamed; Stane's call and order; Iron Man's raids
+keep
+r Stane=>Obadiah Stane
+f- the president|other_verb|refuted
+t+ crowd_end|The president refuted this, but said it was not that simple.
+t+ crowd_end|the president got a call from Obadiah Stane, who was angry at A.I.M.'s lack of production.
+f+ Obadiah Stane|other_verb|ordered|Stane ordered him to make it simple.|actual|stated|
+f+ Iron Man|other_verb|taking|With Iron Man taking down A.I.M. bases|actual|stated|
+
+@2679 gold: working at a company is member_of; noun objects
+keep
+f- Colleen Deirdre O'Brien|other_verb|worker
+f- Colleen Deirdre O'Brien|other_verb|roommate
+f+ Colleen Deirdre O'Brien|member_of|Betran Metalworks|Colleen Deirdre O'Brien was a factory worker at Betran Metalworks and Peggy Carter's roommate.|actual|stated|
+
+@2680 gold: ok
+keep
+
+@2681 gold: Ego's blasts; Ego and Mantis land on Berhert
+keep
+t- crowd_end|Ego appeared unseen
+f+ Ego|other_verb|shot|Ego appeared unseen and shot immense projectile blasts to hundreds of the Sovereign fleets|actual|stated|
+t- no_relation|before the Guardians crashed
+t- no_relation|Ego's Ship arrived
++ Ego|arrived|Berhert|Ego's Ship arrived and landed on the surface of Berhert, where Ego, along with Mantis, encountered the Guardians
++ Mantis|arrived|Berhert|Ego's Ship arrived and landed on the surface of Berhert, where Ego, along with Mantis, encountered the Guardians
+
+@2682 gold: the page's opening quote is dialogue
+keep
+t- no_relation|I understand you started
+t+ dialogue|I understand you started the program to potentially save a mortally wounded Avenger, but the side effects are too extreme.
+t- no_relation|We had initial success
+t+ dialogue|We had initial success with the regenerative properties of the guest-host tissue, but after the initial physical recovery, the subject began to deteriorate mentally, displaying , , , or just complete .
+
+@2683 gold: ok
+keep
+
+@2684 gold: ok
+keep
+
+@2685 gold: ok
+keep
+
+@2686 gold: the meeting is the fight; joining a group is no met; races are no ends
+keep
+- Enoch|met|Isaiah
+- Enoch|met|the Hunters
+f- Enoch|other_verb|wanted
+t+ crowd_end|as Enoch was wanted by the Chronicoms.
+f- Chronicoms|resides_at|Earth
+f- Chronicoms|helped|ambush
+t+ crowd_end|The Chronicoms then decided to use Earth as their new home, so they used Fitz and Simmons' knowledge to help them prepare an ambush on the Lighthouse.
+
+@2687 gold: a doer-less hiring
+keep
+f- William Alexander Hart|hired|-
+t+ no_doer|William Alexander Hart is a musical performer hired to perform at Harlem's Paradise.
+
+@2688 gold: ok
+keep
+
+@2689 gold: an interview is production
+keep
+f- Kevin Feige|revealed|-
+t+ production|On January 11, 2021, in an interview with Collider, Kevin Feige revealed that the series' first season would consist of ten episodes.
+
+@2690 gold: the Hulk's revival; a possessive faction acts through its head; Maguire's death
+keep
++ Hulk|saved|Galaga Guy|died with half the universe by Thanos, later restored to life by Hulk
+f- Billy Koenig|joined|Coulson's faction
+f- Sam Koenig|joined|Coulson's faction
+f+ Billy Koenig|allied_with|Coulson|Billy Koenig - Life-Model Decoy Program Technician, clearance Level 6, joined Coulson's faction|actual|stated|
+f+ Sam Koenig|allied_with|Coulson|Sam Koenig - Life-Model Decoy Program Technician, clearance Level 6, joined Coulson's faction|actual|stated|
+f+ Tim Maguire|dies|-|Tim Maguire †, Engineer on the Iliad, killed in 2014 by Lead Hydra Agent|actual|stated|

@@ -1,0 +1,92 @@
+@2466 gold: the failed persuasion has no named doer and joining a person is no joined
+keep
+f- Alphonso Mackenzie|joined|Robert Gonzales
+t+ no_doer|It was followed by a failed attempt to convince Hunter to switch sides and join Gonzales
+
+@2467 gold: the stalling; the ordered retrieval
+keep
+f+ High Evolutionary|other_verb|stalled|he stalled the two Guardians|actual|stated|
+f+ War Pig|other_verb|retrieve|Vim ordered War Pig to retrieve Rocket for them|ordered|stated|Vim
+
+@2468 gold: name the gained power
+keep
+f- Kahhori|gained_power|-
+f+ Kahhori|gained_power|newfound powers|she awakened with newfound powers|actual|stated|
+
+@2469 gold: the page's opening quote is dialogue
+keep
+f- S.H.I.E.L.D.|other_verb|turn
+t- crowd_end|we were able to eliminate
+t+ dialogue|Even though S.H.I.E.L.D. managed to turn on all the power, we were able to eliminate seventeen Inhumans worldwide.
+
+@2470 gold: ok
+keep
+
+@2471 gold: ok
+keep
+
+@2472 gold: a ship is no place; a described phone; the call comes from Valkyrie
+keep
+f- Khan|located_at|Hoopty
+f+ Khan|other_verb|spent|Khan spent some time onboard the Hoopty|actual|stated|
+f- Khan|used|phone
+f- Khan|contacted|Valkyrie
+f+ Valkyrie|contacted|Khan|While onboard, Khan used the phone to answer a call from Valkyrie.|actual|stated|
+
+@2473 gold: ok
+keep
+
+@2474 gold: a conclusion is suspected; the failed recall; a garbage object
+keep
+f- Rambeau|discovered|-
+f+ Rambeau|suspected|-|Rambeau also concluded that Dar-Benn was overloading the power in the single band using the Universal Weapon|actual|stated|
+f+ Khan|remembered|-|Khan then mentioned seeing a map but unable to recall the locations.|actual|denied|
+f- Danvers|other_verb|memory
+t+ no_relation|which saddened Rambeau to know that Danvers still had memory troubles with what the Kree did to her.
+
+@2475 gold: ok
+keep
+
+@2476 gold: ok
+keep
+
+@2477 gold: Fox's death; the speech is Mackenzie's act; the told agents carry the order
+keep
+f+ Fox|dies|-|Following the Destruction of the Museum of Natural History and the death of Fox|actual|stated|
+t- no_relation|Mackenzie gave a small speech
+f+ Mackenzie|other_verb|gave|Mackenzie gave a small speech to the S.H.I.E.L.D. agents at the Lighthouse.|actual|stated|
+f+ Jaross|other_verb|scanning|telling Jaross and Runco to keep scanning for any more disturbances|ordered|stated|Mackenzie
+f+ Runco|other_verb|scanning|telling Jaross and Runco to keep scanning for any more disturbances|ordered|stated|Mackenzie
+
+@2478 gold: a named doer helps a crowd
+keep
+t- crowd_end|In 2027, she secretly helped
+f+ Ariana Iacovou|other_verb|helped|In 2027, she secretly helped people escape from New York City amidst the Safer Streets Initiative.|actual|stated|
+
+@2479 gold: tried = control; disappearing is no death; a described plane
+keep
+f- Red Skull|used|Tesseract
+f+ Red Skull|other_verb|control|the villain tried to control the Tesseract's power|attempted|stated|Red Skull
+f- Red Skull|dies|-
+f+ Red Skull|other_verb|disappeared|but ended up being consumed by it and disappeared|actual|stated|
+f- Steve|destroyed|plane
+f+ Steve|other_verb|threw|Steve had to stop the plane, so he threw it into the sea|actual|stated|
+f- plane|located_at|sea
+
+@2480 gold: Yondu's sacrifice; revealed plan = -; viewing is no kinship; named doers' acts; partitive crowds
+keep
+f+ Udonta|dies|-|but sacrifices himself to keep Quill safe|actual|stated|
+f- Mantis|revealed|Ego's plan
+f+ Mantis|revealed|-|Mantis informs Gamora, Drax, and Nebula of Ego’s plan|actual|stated|
+f- Udonta|parent_of|Quill
+f+ Udonta|other_verb|view|as he has come to view him as an adopted son|actual|stated|
+t- no_relation|chooses to leave to kill Thanos
+f+ Nebula|other_verb|leave|Later, Nebula reconciles with Gamora but chooses to leave to kill Thanos anyway.|actual|stated|
+f+ Nebula|other_verb|kill|chooses to leave to kill Thanos anyway|planned|stated|Nebula
+t- no_relation|Rocket sent word
+f+ Rocket|contacted|Ravagers|Rocket sent word about Udonta's sacrifice|actual|stated|
+t- no_relation|all the Ravagers came
+f+ Ravagers|other_verb|came|all the Ravagers came to perform a traditional Ravager funeral for Udonta|actual|stated|
+t- no_relation|Suddenly, a swarm
+t+ crowd_end|Suddenly, a swarm of Ravager ships appears and surround the Guardians' ship.
+t+ crowd_end|and most of the Guardians escape while Quill remains to battle his father

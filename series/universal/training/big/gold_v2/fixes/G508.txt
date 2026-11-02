@@ -1,0 +1,125 @@
+@2571 gold: one name; Gorgon dies too; discovered keeps no object; saying is speech; the tried killing; "about to" is planned; the escort
+keep
+r Declan=>Evan Declan
+f+ Gorgon|dies|-|before Gorgon crushed the lab on top of the both of them, killing them.|actual|stated|
+f- Karnak|discovered|Maximus
+f+ Karnak|learned|-|then finding out about his collaboration with Maximus.|actual|stated|
+f- Mordis|other_verb|refuse
+f+ Mordis|other_verb|saying|Mordis began to resist, saying he would not be put in a cell again|actual|stated|
+f+ Mordis|other_verb|kill|and began to attempt to kill everyone by unleashing his powers.|attempted|stated|Mordis
+f- Mordis|other_verb|fire
+f+ Mordis|other_verb|fire|he was about to fire a powerful beam|planned|stated|Mordis
+t- no_relation|escorted Auran's army out
+f+ Karnak|other_verb|escorted|As Karnak and Gorgon escorted Auran's army out|actual|stated|
+f+ Gorgon|other_verb|escorted|As Karnak and Gorgon escorted Auran's army out|actual|stated|
+t- capability|Mordis was too powerful
+t+ no_relation|Gorgon was able to restrain him but Mordis was too powerful
+t- capability|unleashing his powers
+
+@2572 gold: the stab wound; the protection failed; accompanying is no help; the Hand agent is Elektra
+keep
+f+ Elektra|wounded|Shaft|forced to watch Elektra as stabbed Shaft through the chest|actual|stated|
+f- Rand|protected|Shaft
+f+ Rand|protected|Shaft|Rand proceeded to juggle fighting Elektra and protecting Shaft, but was unsuccessful|attempted|stated|Rand
+f- Colleen Wing|helped|Rand
+f+ Colleen Wing|other_verb|accompanied|Colleen Wing, who had accompanied Rand on his quest, stayed with Shaft|actual|stated|
+f+ Colleen Wing|other_verb|stayed|Colleen Wing, who had accompanied Rand on his quest, stayed with Shaft|actual|stated|
+t- crowd_end|the Hand agent disappeared
+f+ Elektra|other_verb|disappeared|Seizing the opportunity, the Hand agent disappeared and left Rand to deal with Shaft.|actual|stated|
+
+@2573 gold: grabbing is no contact
+keep
+f- Carter|contacted|Star-Lord
+f+ Carter|other_verb|grabbed|Carter grabbed onto Star-Lord, who flew who towards Ultron.|actual|stated|
+
+@2574 gold: a rogue group is a crowd; Burrows stands by
+keep
+t- no_relation|As a blackout occurred
+t+ crowd_end|As a blackout occurred in Miami because of a rogue "Inhumans" group
+t- no_relation|Burrows later stood
+f+ Burrows|other_verb|stood|Burrows later stood beside Mace as the latter announced the returning of S.H.I.E.L.D. to the public.|actual|stated|
+
+@2575 gold: braiding is no giving; Livvie's acts; the talk and kiss are both theirs
+keep
+f- Livvie|gave|Wilder
+f+ Livvie|other_verb|giving|She moisturized it and started giving him cornrows|actual|stated|
+f+ Livvie|other_verb|saying|saying that it will help the police not recognize him.|actual|stated|
+f+ Wilder|other_verb|kissing|They then talked some more before kissing.|actual|stated|
+t- no_relation|They had dinner together
+f+ Livvie|other_verb|talked|They had dinner together before Livvie and Wilder talked upstairs.|actual|stated|
+f+ Wilder|other_verb|talked|They had dinner together before Livvie and Wilder talked upstairs.|actual|stated|
+
+@2576 gold: ok
+keep
+
+@2577 gold: the page's opening speech is dialogue; the Variants' war is a crowd; a species line is no attire
+keep
+f- Variant of myself|resides_at|Earth
+f- Variant of myself|discovered|-
+f- other versions of us|learned|-
+t- deictic|Eons ago
+t- deictic|At the same time
+t+ dialogue|Eons ago, before the TVA, a Variant of myself lived on Earth in the 31st Century.
+t+ dialogue|He was a scientist and he discovered that there were universes stacked on top of his own.
+t+ dialogue|At the same time, other versions of us were learning the same thing.
+t+ crowd_end|Some of these Variants rose up against the others to conquer the Multiverse and started a war.
+t- attire|Victor Timely was a reptilian
+t+ no_relation|Victor Timely was a reptilian humanoid
+
+@2578 gold: the plan is to use; the told act; the escape from a vehicle
+keep
+f- Melinda May|other_verb|planned
+f+ Melinda May|other_verb|use|Melinda May planned to use the Mouse Hole to get Hunter out of the car|planned|stated|Melinda May
+f+ Lance Hunter|ordered|Melinda May|but he told her to continue the chase for Creel.|actual|stated|
+f+ Melinda May|other_verb|continue|but he told her to continue the chase for Creel.|ordered|stated|Lance Hunter
+f+ Lance Hunter|other_verb|escape|the Mouse Hole which he used to escape from the SUV.|actual|stated|
+
+@2579 gold: ok
+keep
+
+@2580 gold: one name; she kills a crowd; a described facility; Romanoff's weakness is no act; figuring out = learned; Frampton's Ten Rings
+keep
+r Romanoff=>Natasha Romanoff
+f+ Natasha Romanoff|other_verb|killed|Natasha Romanoff stormed in and killed them all, setting the facility on fire.|actual|stated|
+f- Natasha Romanoff|destroyed|facility
+f+ Natasha Romanoff|other_verb|setting|Natasha Romanoff stormed in and killed them all, setting the facility on fire.|actual|stated|
+f- Sofia|other_verb|weak
+t+ no_relation|Now she was weak and riddled with regret, which disgusted Sofia.
+f- Black Widow|discovered|Jericho missile
+f+ Black Widow|learned|-|was able to figure out that he was building his own Jericho missile and was a member of the Ten Rings.|actual|stated|
+f+ Richard Frampton|member_of|Ten Rings|figure out that he was building his own Jericho missile and was a member of the Ten Rings.|actual|stated|
+t- deictic|When Sofia was fourteen.
+t+ no_relation|When Sofia was fourteen.
+
+@2581 gold: one name per person (the window gives Stark), plus the alias
+keep
+r Iron Man=>Stark
+f+ Iron Man|alias_of|Stark|Thanos tore off Iron Man's helmet with his bare hand and punched him to the ground. Stark reformed his helmet just in time.|actual|stated|
+
+@2582 gold: the page's opening speech is dialogue
+keep
+t- no_relation|Fifteen men
+t+ dialogue|Fifteen men, tough Irish.
+t- below_floor|Armed.
+t+ dialogue|Armed.
+t- no_doer|All of them blown away.
+t+ dialogue|All of them blown away.
+t- below_floor|It was a massacre.
+t+ dialogue|It was a massacre.
+t- no_doer|We weren't hit
+t+ dialogue|We weren't hit by any rival family there.
+t- no_doer|I'm telling you
+t+ dialogue|I'm telling you, we were hit by an army.
+
+@2583 gold: ok
+keep
+
+@2584 gold: growing concerned is a state; taking out the dagger is no taking
+keep
+f- Rosetti|other_verb|grows
+t+ no_relation|Rosetti grows concerned.
+f- Hastings|took|dagger
+f+ Hastings|other_verb|takes|Hastings takes out the dagger after Mother explains|actual|stated|
+
+@2585 gold: ok
+keep
