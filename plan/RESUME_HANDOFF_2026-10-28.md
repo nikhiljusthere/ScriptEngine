@@ -119,3 +119,19 @@ no alias; "not far from X" is not located_at; "prevented by X" = defeated; race 
 rows (A2); volunteers-to-escape = plan; revealed identity rows under the name (A49); generic used|powers replaced by the
 act's verb; "almost V" = other_verb V denied; "decided not to V" = decided actual + V planned denied; ordinary waking
 is no awakened event (A106); "were tasked to V" with no tasker = V planned asserted by subject.
+
+## Update 2026-11-03 (stage 8 status)
+
+- Stage 8b (compose v2 dry run) DONE: plan/COMPOSE_V2_NOTES.md (final re-run command in section 7). Ship bar decision:
+  student must beat the old teacher on the SAME revised test (provisional .522 [.415-.639]; old gold .602) -- re-score
+  after the lint/outcome changes. Empty rule: keep "all three layers empty", drop nothing. Keep --max-len 4096 (10 rows
+  dropped), 487-token short system prompt. sft_qwen.py:159 generation cap must be raised 2048 -> 4096 before training.
+  eval_base.py cannot score v2; use eval_base_v2.py (GPU path never run: smoke on a few windows first).
+- Stage 8a (gold lint) DONE read-only: plan/GOLD_LINT_REPORT.md; 0 gate refusals, 0 mechanical fixes; reading list
+  series/universal/training/big/gold_v2/lint/work_gold.txt (170 windows / 162 groups, suggested fix files GL001+, via
+  lint_gold_work.sh show B + BV2_SET=gold rv.sh fix). Run the 4-step list in the report before reading.
+- Owner ruling 2026-11-03 (general outcome-state principle, plan/review_tools/gold27_system.md) applied to b2187 (G221).
+  Outcome-audit agents (read-only, proposals only) write to gold_v2/outcome/ and big/outcome/ -- apply after review.
+- Decisions taken (Claude, factual): vehicles are not places; page-title ends absent from the window are dropped;
+  fact-gate rank-prefix self pairs (King Vegeta b893, Captain Mizuki b3543) need a fact_gate.RANK allow-list entry (gate
+  changes Claude-only, not done yet); narrowed M2: A89 twins dropped only when same act with identical quote.

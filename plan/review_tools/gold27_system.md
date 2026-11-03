@@ -182,3 +182,18 @@ answer `@B gold: ok` and `keep` only. Use the exact strings shown in the window'
 - "Devil embodies the concept of X" is the fact `Devil|other_verb|embodies` (not a capability tag).
 - An epithet ("the Primal Fear", "Great King of Terror", "the Violence Fiend" used once) is no alias; a hero identity tied
   in the window ("Denji ... his identity as Chainsaw Man") is `Chainsaw Man|alias_of|Denji`.
+
+### Owner ruling 2026-11-03 (state the outcome the text implies; wounds are one example)
+GENERAL PRINCIPLE (owner: the Klaue case "can be implemented many ways for many other events or facts"): decide every
+outcome row from the factual state the passage establishes -- who is subdued, who is in control, does the exchange
+continue, is the state final or temporary -- not from the surface verb alone. One act can carry several true rows;
+write all that the text supports, and none that it does not.
+Worked example (b2187): Ultron throws Klaue out of the window, takes his money, then cuts off his arm "to teach him a
+lesson"; nothing continues, Klaue is subdued -> `Ultron|wounded|Klaue` AND `Ultron|defeated|Klaue`. If instead the fight
+continued and the wounded side won, the row is the wound plus the wounded side's own `defeated` row against the other
+party (a wound alone never means the victim lost).
+Apply the same test to: restraining/capturing/disarming/paralysing/trapping (defeated when the encounter ends there, not
+when it is a pause); killing vs. a destroyed body whose owner survives (defeated); a lost limb/eye/power (wounded or a
+state fact, plus defeated only if it ends the encounter); fights with a stated winner (fought + defeated, not fought
+alone); temporary vs. permanent state facts (certainty/modality fields); who did it vs. who suffered it. When the text
+leaves the outcome open, write only what is stated.
