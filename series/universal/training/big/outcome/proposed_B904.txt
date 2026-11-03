@@ -1,0 +1,131 @@
+@5021 outcome 2026-11-03: "His plan to fuse his two exes was thwarted by Iron Man and Machine Man" -> thwarting the plot = defeated (2026-10-14 ruling), one act so fought dropped
+keep
+- Iron Man|fought|Ultron
+- Machine Man|fought|Ultron
++ Iron Man|defeated|Ultron|His plan to fuse his two exes was thwarted by Iron Man and Machine Man
++ Machine Man|defeated|Ultron|His plan to fuse his two exes was thwarted by Iron Man and Machine Man
+@5251 outcome 2026-11-03: the Wizard attacks Reed and Ben, "who nearly defeated the team ... but was defeated" -> stated loser of the fight they are in: Reed and Ben defeated the Wizard (the attack is its own clause before "but": fought stays)
+keep
++ Reed|defeated|Wizard|but was defeated, making Ben question his decision to renounce his powers
++ Ben|defeated|Wizard|but was defeated, making Ben question his decision to renounce his powers
+@5369 outcome 2026-11-03: the Rhino traps Sable in the flooding base and she is left to her death; her part ends there -> trapping that ends the encounter = defeated (one act, fought dropped)
+keep
+- Rhino|fought|Silver Sable
++ Rhino|defeated|Silver Sable|he trapped Sable and left Spider-Man with two choices
+@6095 outcome 2026-11-03: "Outnumbered and his cover ruined, the Sandman and Trapster fled the scene" after the battle drew out Spider-Man AND the Fantastic Four -> the escape is from both; only the Spider-Man escaped rows exist
+keep
++ Sandman|escaped|Fantastic Four|Outnumbered and his cover ruined, the Sandman and Trapster fled the scene
++ Trapster|escaped|Fantastic Four|Outnumbered and his cover ruined, the Sandman and Trapster fled the scene
+@6150 outcome 2026-11-03: "His plot was thwarted by Spider-Man and his temporary sidekick the Kiwi Kid" -> thwarting the plot = defeated, one act so fought dropped
+keep
+- Spider-Man|fought|Octavius
+- Kiwi Kid|fought|Octavius
++ Spider-Man|defeated|Octavius|His plot was thwarted by Spider-Man and his temporary sidekick the Kiwi Kid
++ Kiwi Kid|defeated|Octavius|His plot was thwarted by Spider-Man and his temporary sidekick the Kiwi Kid
+@7889 outcome 2026-11-03: prevented/stopped/foiled/thwarts acts against named villains are stopped plots = defeated events (2026-10-14 ruling), not other_verb facts; "thwarts attacks by ... the Ambassador of Terror" likewise (fought dropped, one act)
+keep
+f- Human Torch|other_verb|prevented
+f- Toro|other_verb|prevented
+f- Human Torch|other_verb|stopped
+f- Toro|other_verb|stopped
+f- Human Torch|other_verb|foiled
+f- Toro|other_verb|foiled
+f- Toro|other_verb|thwarts
+- Toro|fought|Ambassador of Terror
++ Human Torch|defeated|Colonel von Getter|The Torch and Toro prevented Colonel von Getter from stealing a new American bomber
++ Toro|defeated|Colonel von Getter|The Torch and Toro prevented Colonel von Getter from stealing a new American bomber
++ Human Torch|defeated|Herr Blutcher|stopped Herr Blutcher's attempted invasion of England
++ Toro|defeated|Herr Blutcher|stopped Herr Blutcher's attempted invasion of England
++ Human Torch|defeated|Blue Diamond|prevented Nazi agent Blue Diamond from stealing a new experimental "Puff Gun"
++ Toro|defeated|Blue Diamond|prevented Nazi agent Blue Diamond from stealing a new experimental "Puff Gun"
++ Human Torch|defeated|Captain von Sar|foiled Captain von Sar's bombing plot
++ Toro|defeated|Captain von Sar|foiled Captain von Sar's bombing plot
++ Toro|defeated|Ambassador of Terror|thwarts attacks by Nazi agent the Ambassador of Terror
+@8697 outcome 2026-11-03: Dazzler turns Black Bolt's scream against him and he is "subsequently held captive in Limbo", the attack leaving him voiceless -> defeated (one act, fought dropped) + the lost voice; Emma Frost impales him (a stated wound; he is saved, the battle continues)
+keep
+- Dazzler|fought|Black Bolt
++ Dazzler|defeated|Black Bolt|to dampen Black Bolt's sonic scream and use its power against him
+f+ Black Bolt|lost_power|-|The attack had left Black Bolt unable to access his voice
+f+ Emma Frost|wounded|Black Bolt|Black Bolt is impaled by Emma Frost's diamond arm
+@8974 outcome 2026-11-03: "thwarting a robbery by the Manfredi Mob" -> stopping a crime = defeated, one act so fought dropped (partner b3950 does not hold the sentence)
+keep
+- Peter|fought|Manfredi Mob
++ Peter|defeated|Manfredi Mob|thwarting a robbery by the Manfredi Mob
+@8291 outcome 2026-11-03: "This kidnapping attempt was foiled by Spider-Man ..., the visiting Rangers and the novice hero Turbine" -> foiling the crime = defeated (2026-10-14: stopping a plot or crime is defeated); the foiling is the only fight act, so fought dropped; partners b8296/b10073 edited identically
+keep
+- Spider-Man|fought|Wizard
++ Spider-Man|defeated|Wizard|This kidnapping attempt was foiled by Spider-Man
+- Spider-Man|fought|Trapster
++ Spider-Man|defeated|Trapster|This kidnapping attempt was foiled by Spider-Man
+- Spider-Man|fought|Dreadknight
++ Spider-Man|defeated|Dreadknight|This kidnapping attempt was foiled by Spider-Man
+- Spider-Man|fought|Man-Bull
++ Spider-Man|defeated|Man-Bull|This kidnapping attempt was foiled by Spider-Man
+- Turbine|fought|Wizard
++ Turbine|defeated|Wizard|the visiting Rangers and the novice hero Turbine
+- Turbine|fought|Trapster
++ Turbine|defeated|Trapster|the visiting Rangers and the novice hero Turbine
+- Turbine|fought|Dreadknight
++ Turbine|defeated|Dreadknight|the visiting Rangers and the novice hero Turbine
+- Turbine|fought|Man-Bull
++ Turbine|defeated|Man-Bull|the visiting Rangers and the novice hero Turbine
+- Rangers|fought|Wizard
++ Rangers|defeated|Wizard|the visiting Rangers and the novice hero Turbine
+- Rangers|fought|Trapster
++ Rangers|defeated|Trapster|the visiting Rangers and the novice hero Turbine
+- Rangers|fought|Dreadknight
++ Rangers|defeated|Dreadknight|the visiting Rangers and the novice hero Turbine
+- Rangers|fought|Man-Bull
++ Rangers|defeated|Man-Bull|the visiting Rangers and the novice hero Turbine
+@8296 outcome 2026-11-03: as partner b8291 (the foiled kidnapping = defeated, fought dropped)
+keep
+- Spider-Man|fought|Wizard
++ Spider-Man|defeated|Wizard|This kidnapping attempt was foiled by Spider-Man
+- Spider-Man|fought|Trapster
++ Spider-Man|defeated|Trapster|This kidnapping attempt was foiled by Spider-Man
+- Spider-Man|fought|Dreadknight
++ Spider-Man|defeated|Dreadknight|This kidnapping attempt was foiled by Spider-Man
+- Spider-Man|fought|Man-Bull
++ Spider-Man|defeated|Man-Bull|This kidnapping attempt was foiled by Spider-Man
+- Turbine|fought|Wizard
++ Turbine|defeated|Wizard|the visiting Rangers and the novice hero Turbine
+- Turbine|fought|Trapster
++ Turbine|defeated|Trapster|the visiting Rangers and the novice hero Turbine
+- Turbine|fought|Dreadknight
++ Turbine|defeated|Dreadknight|the visiting Rangers and the novice hero Turbine
+- Turbine|fought|Man-Bull
++ Turbine|defeated|Man-Bull|the visiting Rangers and the novice hero Turbine
+- Rangers|fought|Wizard
++ Rangers|defeated|Wizard|the visiting Rangers and the novice hero Turbine
+- Rangers|fought|Trapster
++ Rangers|defeated|Trapster|the visiting Rangers and the novice hero Turbine
+- Rangers|fought|Dreadknight
++ Rangers|defeated|Dreadknight|the visiting Rangers and the novice hero Turbine
+- Rangers|fought|Man-Bull
++ Rangers|defeated|Man-Bull|the visiting Rangers and the novice hero Turbine
+@10073 outcome 2026-11-03: as partner b8291 (the foiled kidnapping = defeated, fought dropped)
+keep
+- Spider-Man|fought|Wizard
++ Spider-Man|defeated|Wizard|This kidnapping attempt was foiled by Spider-Man
+- Spider-Man|fought|Trapster
++ Spider-Man|defeated|Trapster|This kidnapping attempt was foiled by Spider-Man
+- Spider-Man|fought|Dreadknight
++ Spider-Man|defeated|Dreadknight|This kidnapping attempt was foiled by Spider-Man
+- Spider-Man|fought|Man-Bull
++ Spider-Man|defeated|Man-Bull|This kidnapping attempt was foiled by Spider-Man
+- Turbine|fought|Wizard
++ Turbine|defeated|Wizard|the visiting Rangers and the novice hero Turbine
+- Turbine|fought|Trapster
++ Turbine|defeated|Trapster|the visiting Rangers and the novice hero Turbine
+- Turbine|fought|Dreadknight
++ Turbine|defeated|Dreadknight|the visiting Rangers and the novice hero Turbine
+- Turbine|fought|Man-Bull
++ Turbine|defeated|Man-Bull|the visiting Rangers and the novice hero Turbine
+- Rangers|fought|Wizard
++ Rangers|defeated|Wizard|the visiting Rangers and the novice hero Turbine
+- Rangers|fought|Trapster
++ Rangers|defeated|Trapster|the visiting Rangers and the novice hero Turbine
+- Rangers|fought|Dreadknight
++ Rangers|defeated|Dreadknight|the visiting Rangers and the novice hero Turbine
+- Rangers|fought|Man-Bull
++ Rangers|defeated|Man-Bull|the visiting Rangers and the novice hero Turbine

@@ -1,0 +1,38 @@
+@9721 outcome 2026-11-03: "After a fiery battle, Wanda hexed her heart, Agatha retreated" -> the fight ends with Agatha wounded and retreating = defeated (A74; the wounded and escaped rows exist); partner b1645 edited identically (its form "Agatha")
+keep
++ Wanda|defeated|Agatha Harkness|After a fiery battle, Wanda hexed her heart, Agatha retreated to the Sanctum Sanctorum
+@1645 outcome 2026-11-03: as partner b9721 (hexed and retreating = defeated)
+keep
++ Wanda|defeated|Agatha|After a fiery battle, Wanda hexed her heart, Agatha retreated to the Sanctum Sanctorum
+@11309 outcome 2026-11-03: Falcon helps the Winter Soldier disarm Walker "by breaking his arm", and Walker "was easily man-handled" -> Barnes is a winner too (Falcon|defeated|Walker exists; Walker's fight with both is its own clause, fought stays)
+keep
++ Barnes|defeated|Walker|until Falcon eventually helped Winter Soldier disarm him of the shield by breaking his arm, and was easily man-handled upon being disarmed of the shield due to his injury
+@12156 outcome 2026-11-03: Diamondback punches Colon "in the stomach and crush his bones" and leaves the survivors to burn; nothing continues -> wounded + defeated (Klaue pattern), one act so fought dropped
+keep
+- Diamondback|fought|Colon
++ Diamondback|defeated|Colon|using the Judas Gauntlet to punch Colon in the stomach and crush his bones
+f+ Diamondback|wounded|Colon|using the Judas Gauntlet to punch Colon in the stomach and crush his bones
+@12551 outcome 2026-11-03: Bakuto manages "to maim Misty Knight" -> a stated wound (the fight goes on and Bakuto is decapitated by Wing, so no defeated)
+keep
+f+ Bakuto|wounded|Misty Knight|while also managing to maim Misty Knight
+@13296 outcome 2026-11-03: "Russo was eventually captured following a brutal disfigurement at the hands of the Punisher" -> wounded + defeated (the disfigurement is the only stated act: fought dropped)
+keep
+- Punisher|fought|Billy Russo
++ Punisher|defeated|Billy Russo|Russo was eventually captured following a brutal disfigurement at the hands of the Punisher
+f+ Punisher|wounded|Billy Russo|Russo was eventually captured following a brutal disfigurement at the hands of the Punisher
+@289 outcome 2026-11-03: Captain America and the Secret Avengers attack the trio and Vulture and the Grim Reaper end "tied to a post and Trapster on the bottom floor to a toilet" -> restrained and left for SHIELD = defeated (one act, fought dropped); the Iron Man ambush has no stated outcome; partner b2997 edited identically
+keep
+- Captain America|fought|Vulture
++ Captain America|defeated|Vulture|Vulture and the Grim Reaper were tied to a post and Trapster on the bottom floor to a toilet
+- Captain America|fought|Grim Reaper
++ Captain America|defeated|Grim Reaper|Vulture and the Grim Reaper were tied to a post and Trapster on the bottom floor to a toilet
+- Captain America|fought|Trapster
++ Captain America|defeated|Trapster|Vulture and the Grim Reaper were tied to a post and Trapster on the bottom floor to a toilet
+@2997 outcome 2026-11-03: as partner b289 (the trio tied up = defeated, fought dropped)
+keep
+- Captain America|fought|Vulture
++ Captain America|defeated|Vulture|Vulture and the Grim Reaper were tied to a post and Trapster on the bottom floor to a toilet
+- Captain America|fought|Grim Reaper
++ Captain America|defeated|Grim Reaper|Vulture and the Grim Reaper were tied to a post and Trapster on the bottom floor to a toilet
+- Captain America|fought|Trapster
++ Captain America|defeated|Trapster|Vulture and the Grim Reaper were tied to a post and Trapster on the bottom floor to a toilet

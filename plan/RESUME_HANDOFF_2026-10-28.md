@@ -135,3 +135,20 @@ is no awakened event (A106); "were tasked to V" with no tasker = V planned asser
 - Decisions taken (Claude, factual): vehicles are not places; page-title ends absent from the window are dropped;
   fact-gate rank-prefix self pairs (King Vegeta b893, Captain Mizuki b3543) need a fact_gate.RANK allow-list entry (gate
   changes Claude-only, not done yet); narrowed M2: A89 twins dropped only when same act with identical quote.
+
+## Update 2026-11-03 (outcome-state audit done; stopped at 96% of the 5-hour window)
+
+Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHING applied yet:
+- GOLD: all 3,822 scanned, 639 candidates all read, 70 proposal blocks -> gold_v2/outcome/proposed_G901.txt (+SUMMARY.md).
+  Re-run `bash plan/review_tools/outcome_scan_gold.sh check FILE` before applying (b2187 changed since).
+- BIG: 14,000 scanned, 2,409 candidates / 1,491 windows; ranks 1-600 read (P2/P3 fully), 94 windows proposed
+  -> big/outcome/proposed_B901..B911.txt (+SUMMARY.md). A successor continues at rank 601 with P1, then P4 above 1777;
+  keep candidates.jsonl (a re-scan may re-rank). Scanner: plan/review_tools/outcome_scan_big.py (SCRIPTENGINE_ROOT=main).
+- Open owner/Claude questions are in each SUMMARY.md: captured/sealed as outcome (28 gold windows), ally restraining
+  ally, possession ending a clash, killed w/o stated death (b768, b2692), restraining so others can finish (Athena/Zeus,
+  Strange/Ultron), wounded winner vs race end (Nuada), Sentry destroyed+reconstitutes, passive outcomes with no doer
+  (A8 vs ruling), A113 self-report kills, capability-list "victories" (b2290).
+- New pattern: stopped-plot verbs (prevented/stopped/foiled/thwarted) stored as other_verb facts should be `defeated`
+  events -- grep the corpus; add to the catalog.
+- Stage 8d plan (scheduled 15:31 IST 2026-11-03): apply accepted outcome proposals, re-run the gold lint, then 2 agents
+  read work_gold.txt (170 windows; fix files GL001+), then re-snapshot compose and re-score the teacher.

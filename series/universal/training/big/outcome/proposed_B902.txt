@@ -1,0 +1,41 @@
+@8792 outcome 2026-11-03: two stated wounds missing (the Samurai severs Logan's claws; Mariko stabs Yashida in the neck, "Yashida stunned"); the fight continues and Logan kills Yashida, so no defeated
+keep
+f+ Yashida|wounded|Logan|the Samurai severs his claws
+f+ Mariko|wounded|Yashida|stabs him in the neck with Logan's severed claw
+@8960 outcome 2026-11-03: as b1055 (same text): Nuke severs John's arm and leg under the "Retirement" heading, the battle ends for him -> wounded + defeated (fought stays)
+keep
++ Nuke|defeated|John|John's left arm and leg were severed by Thunderbolts leader Nuke/Scourge
+@10673 outcome 2026-11-03: Romanoff disarms Pierce, knocks down every STRIKE operative and holds him at gunpoint; nothing continues -> disarming that ends the encounter = defeated (one act, fought dropped)
+keep
+- Natasha Romanoff|fought|Pierce
++ Natasha Romanoff|defeated|Pierce|disarmed Pierce and knocked down all the STRIKE operatives in the room
+@11820 outcome 2026-11-03: Lopez is about to execute Barton when Kate disarms her with an arrow -> an intercepted killing = Kate saved Barton (fought stays: Lopez is not subdued, she rides off)
+keep
++ Kate Bishop|saved|Barton|was about to execute him with his own sword until Kate Bishop arrived and disarmed Lopez with an arrow
+@12862 outcome 2026-11-03: "Red Guardian laid in defeat with the others ... Knowing they were bested", the team flees -> stated winner: Sentry defeated Shostakov and Ghost (their fought rows are separate statements and stay)
+keep
++ Sentry|defeated|Shostakov|Red Guardian laid in defeat with the others
++ Sentry|defeated|Ghost|Red Guardian laid in defeat with the others
+@1131 outcome 2026-11-03: "Elektra easily bested them all" happens during a fight that goes on (Stick struggles to land blows, then "the fight paused") -> not a decided outcome: fought, not defeated
+keep
+- Elektra|defeated|Stick
+- Elektra|defeated|Danny Rand
++ Elektra|fought|Stick|Stick fought with the Defenders as Elektra easily bested them all
++ Elektra|fought|Danny Rand|Stick fought with the Defenders as Elektra easily bested them all
+@1860 outcome 2026-11-03: Laura disables Mooney's vehicle and leaves him "bleeding in the street"; the pursuit ends and the girls escape him -> wounded + defeated (one act, fought dropped) + the girls escaped their pursuer Mooney
+keep
+- Laura|fought|Mooney
++ Laura|defeated|Mooney|She disabled his vehicle, allowing the girls to escape
+f+ Laura|wounded|Mooney|before leaving him bleeding in the street
++ Bellona|escaped|Mooney|She disabled his vehicle, allowing the girls to escape
++ Zelda|escaped|Mooney|She disabled his vehicle, allowing the girls to escape
+@2986 outcome 2026-11-03: "Rictor and Monet fought Huber soon after and forced him to retreat" -> forced to retreat = defeated + the retreating side escaped (A74); fight and outcome one coordinated act -> fought dropped (2026-10-28 ruling)
+keep
+- Rictor|fought|Isolationist
+- Monet|fought|Isolationist
++ Rictor|defeated|Isolationist|Rictor and Monet fought Huber soon after and forced him to retreat
++ Monet|defeated|Isolationist|Rictor and Monet fought Huber soon after and forced him to retreat
++ Isolationist|escaped|Monet|forced him to retreat
+@4055 outcome 2026-11-03: Poindexter overpowers Murdock, but "Murdock got back onto his feet and continued fighting against Poindexter" -> the exchange continues, the overpowering is not an outcome: defeated dropped (the Murdock|fought|Poindexter row already covers the fight)
+keep
+- Poindexter|defeated|Murdock

@@ -1,0 +1,46 @@
+@11988 outcome 2026-11-03: Ruby slices off Rodriguez's arms and the team escapes with her -> wounded (row exists) + defeated (Klaue pattern) + the escape from Ruby (no events were written)
+keep
++ Ruby|defeated|Rodriguez|Ruby used her blade to slice off Rodriguez's arms, causing the team to escape
++ Rodriguez|escaped|Ruby|causing the team to escape and desperately to get Rodriguez to safety
+@7230 outcome 2026-11-03: Fury "was then shot twice by the assassin and collapsed"; nothing continues for him -> wounded (row exists) + defeated (one act with the shooting, fought dropped); Steve "tried to pursue the assassin, but failed to catch" him -> the assassin escaped Rogers
+keep
+- Winter Soldier|fought|Fury
++ Winter Soldier|defeated|Fury|Fury was then shot twice by the assassin and collapsed
++ Winter Soldier|escaped|Rogers|Steve then tried to pursue the assassin, but failed to catch who was later identified by Black Widow as the "Winter Soldier.
+@2425 outcome 2026-11-03: "Warlord Morrat lead a sneak attack on Earth that was thwarted by the Fantastic Four" -> thwarting the attack = defeated (2026-10-14 ruling); row missing
+keep
++ Fantastic Four|defeated|Morrat|Warlord Morrat lead a sneak attack on Earth that was thwarted by the Fantastic Four
+@6522 outcome 2026-11-03: Osborn damages Gargan's spine, "crippling him", and Venom escapes with Gargan -> wounded (row exists) + defeated (one act with the attack, fought dropped) + Venom and Gargan escaped Norman
+keep
+- Norman|fought|Gargan
++ Norman|defeated|Gargan|Osborn was dispatched to claim the Scorpion's codex, damaging his spine and crippling him
++ Venom|escaped|Norman|As Venom escaped with Gargan
++ Gargan|escaped|Norman|As Venom escaped with Gargan
+@7499 outcome 2026-11-03: Banner "engaged and routed the assembled military, also grievously injuring Blonsky, who was left in a critical state" -> one coordinated act ending with Blonsky crushed = defeated (fought dropped; the wounded row exists)
+keep
+- Banner|fought|Emil Blonsky
++ Banner|defeated|Emil Blonsky|He engaged and routed the assembled military, also grievously injuring Blonsky, who was left in a critical state with bones crushed throughout his body.
+@9363 outcome 2026-11-03: Bishop attacks Forge (head trauma), steals the devices and flees; nothing continues -> wounded (row exists) + defeated (Klaue pattern); no events were written
+keep
++ Bishop|defeated|Forge|Forge began to behave differently after Bishop attacked him, suffering an array of injuries including serious head trauma.
+@9778 outcome 2026-11-03: "Magneto heavily injured Mystique and the Brotherhood" (Sabretooth, the Silver Samurai, the Blob) and collapses their headquarters; nothing continues -> wounded + defeated for each, one act so fought dropped
+keep
+- Magneto|fought|Mystique
+- Magneto|fought|Sabretooth
+- Magneto|fought|Silver Samurai
+- Magneto|fought|Blob
++ Magneto|defeated|Mystique|Magneto heavily injured Mystique and the Brotherhood
++ Magneto|defeated|Sabretooth|Magneto heavily injured Mystique and the Brotherhood
++ Magneto|defeated|Silver Samurai|Magneto heavily injured Mystique and the Brotherhood
++ Magneto|defeated|Blob|Magneto heavily injured Mystique and the Brotherhood
+f+ Magneto|wounded|Sabretooth|Magneto heavily injured Mystique and the Brotherhood
+f+ Magneto|wounded|Silver Samurai|Magneto heavily injured Mystique and the Brotherhood
+f+ Magneto|wounded|Blob|Magneto heavily injured Mystique and the Brotherhood
+@11793 outcome 2026-11-03: Bishop "fought Fisk off" -> drove him off = defeated (A74, one act: fought dropped); Lopez "shot Fisk in the eyes" -> a stated wound (the attacked fact stays)
+keep
+- Bishop|fought|Fisk
++ Bishop|defeated|Fisk|Bishop then found her mother, who was getting attacked by Fisk, and fought Fisk off.
+f+ Lopez|wounded|Fisk|shot Fisk in the eyes
+@3380 outcome 2026-11-03: Wolf Turbin "was forced to flee into the past when Captain America confronted him" -> forced to flee = defeated (A74); the escaped row exists
+keep
++ Captain America|defeated|Wolf Turbin|he was forced to flee into the past when Captain America confronted him
