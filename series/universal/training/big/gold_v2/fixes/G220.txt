@@ -1,0 +1,132 @@
+@2224 gold: the trapped coven is a specific occurrence (the tag keeps only the ability clause); the shared home and the partner
+keep
+t- capability|Cloak's pocket Dimensions
+t+ capability|Cloak's pocket Dimensions cannot be accessed by anyone other than himself
+f+ Cloak|other_verb|use|Cloak and his partner Dagger make use of one of his pocket universes as their current living space and home.|actual|stated|
+f+ Dagger|other_verb|use|Cloak and his partner Dagger make use of one of his pocket universes as their current living space and home.|actual|stated|
+f+ Cloak|allied_with|Dagger|Cloak and his partner Dagger make use of one of his pocket universes|actual|stated|
+
+@2225 gold: being prevented is defeated; the race is no actor, the tied survivor Vuk is (A2); the trip to Earth is an arrival; wanting = act + planned
+keep
+- X-Men|fought|Vuk
++ X-Men|defeated|Vuk|but were prevented by the X-Men
+f- D'bari|other_verb|avenge
+f+ Vuk|other_verb|wanting|Wanting to avenge their people|actual|stated|
+f+ Vuk|other_verb|avenge|Wanting to avenge their people|planned|stated|Vuk
+f- D'bari|other_verb|went
++ Vuk|arrived|Earth|the D'bari went to Earth to kill Jean
+f+ Vuk|other_verb|kill|the D'bari went to Earth to kill Jean|planned|stated|Vuk
+
+@2226 gold: rank stripped; one of the Skrulls is a race classification; the attack has a crowd object; In <place> = located_at
+keep
+t- no_relation|Captain Vyrik
+f+ Vyrik|member_of|Skrulls|Captain Vyrik was one of the Skrulls who attacked the heroes of this reality in Hightown Madripoor.|actual|stated|
+f+ Vyrik|other_verb|attacked|Captain Vyrik was one of the Skrulls who attacked the heroes of this reality in Hightown Madripoor.|actual|stated|
+f+ Vyrik|located_at|Hightown|Captain Vyrik was one of the Skrulls who attacked the heroes of this reality in Hightown Madripoor.|actual|stated|
+
+@2227 gold: ok
+keep
+
+@2228 gold: one name (Charles, the window's form; the page title is not window text); the X-Men fell to the Cabal (no member tied to the Cabal, unnamed X-Men); the tried defense; the torturers are the doers (A110); the asked act; membership; the smile
+keep
+r Charles Xavier=>Charles
+- Corvus Glaive|defeated|Charles
+- Terrax|defeated|Charles
+- Thanos|defeated|Charles
++ Cabal|defeated|X-Men|but were unsuccessful, falling before the Cabal's might.
+t- no_relation|When their world faced
+f+ X-Men|other_verb|defend|the X-Men sought to defend their planet against the invading Cabal of Earth-616|attempted|stated|X-Men
+f- Charles|other_verb|tortured
+f+ Corvus Glaive|other_verb|tortured|Charles was left to be tortured by Corvus Glaive and Terrax.|actual|stated|
+f+ Terrax|other_verb|tortured|Charles was left to be tortured by Corvus Glaive and Terrax.|actual|stated|
+f+ Charles|other_verb|beg|Thanos asked the Professor to beg.|ordered|stated|Thanos
+f+ Cannonball|member_of|X-Men|Corvus brought forth the last two remaining X-Men, Cannonball and Wolfsbane|actual|stated|
+f+ Wolfsbane|member_of|X-Men|Corvus brought forth the last two remaining X-Men, Cannonball and Wolfsbane|actual|stated|
+f+ Thanos|other_verb|smiled|Charles begged, and Thanos smiled.|actual|stated|
+
+@2229 gold: a list entry that narrates is no header (the name is under 12 chars); wanting = act + planned; the massacre has crowd ends
+keep
+t- list_header|Ganymede: She wanted
+f+ Ganymede|other_verb|wanted|Ganymede: She wanted to avenge her people|actual|stated|
+f+ Ganymede|other_verb|avenge|She wanted to avenge her people|planned|stated|Ganymede
+t+ crowd_end|who were massacred by the Blood Skrulls.
+
+@2230 gold: whose execution is not stated in the window (no saved); volunteering to escape is a plan, not an escape
+keep
+- Charles Xavier|saved|Deathbird
+- Lilandra Neramani|saved|Deathbird
+f+ Charles Xavier|other_verb|interrupt|Charles Xavier and the newly-resurrected Lilandra Neramani interrupt the execution|actual|stated|
+f+ Lilandra Neramani|other_verb|interrupt|Charles Xavier and the newly-resurrected Lilandra Neramani interrupt the execution|actual|stated|
+- Deathbird|escaped|Secret Alliance
+f+ Deathbird|other_verb|volunteers|Deathbird volunteers to distract the Secret Alliance|actual|stated|
+f+ Deathbird|other_verb|escaping|by escaping with a Hobgoblin brainwashed into thinking it's Xandra.|planned|stated|Deathbird
+
+@2231 gold: no pipe in quotes
+keep
+t- list_header||
+t+ list_header|Notes = * ties in the event.
+t+ list_header|Trivia =
+t+ list_header|Links =
+
+@2232 gold: the attack on the station; the forced design (ordered act); obtaining the glove; a star is no doer
+keep
+f+ Thanos|attacked|Nidavellir|Thanos attacked Nidavellir, forcing the lead Dwarf Eitri to design a gauntlet|actual|stated|
+f+ Eitri|other_verb|design|forcing the lead Dwarf Eitri to design a gauntlet|ordered|stated|Thanos
+f+ Thanos|took|glove|After obtaining the glove, Thanos had all the Dwarves killed|actual|stated|
+t- no_relation|the neutron star
+t+ no_doer|Following the massacre, the neutron star at Nidavellir's core burnt off all of its energy, leaving the entire station and its forges to be frozen shut.
+
+@2233 gold: the Beyonders are a race (crowd_end, as b1921); Thor's ask and attack on one of them
+keep
+f- Beyonders|other_verb|ask
+t+ crowd_end|The Beyonders speak from a rift in space and ask who has come to challenge them.
+f- Beyonders|other_verb|tell
+f- Beyonders|other_verb|stop
+f+ Thor|other_verb|asks|Thor asks them to stop their experiment|actual|stated|
+t+ crowd_end|but the Beyonders tell them that they are fully aware of what the experiment means to the multiverse, and that they will not stop until it is finished.
+f+ Thor|other_verb|attacks|Thor attacks one of them, to no effect|actual|stated|
+
+@2234 gold: a place is no doer; the partitive remnant is no end; the Panther is on the haven
+keep
+f- Asteroid M|protected|Acolytes
+f- Asteroid M|protected|Black Panther
+f+ Black Panther|located_at|Asteroid M|Asteroid M acted as a safe haven, protecting who was left of the Acolytes and the Black Panther from the hordes of zombies on Earth.|actual|stated|
+
+@2235 gold: arrivals in time to save also meet (A34); the X-Men's suppression is a fight; the imprisonment has no stated doer; seeks = act + planned; the asked help; the Embassy was established; the future help is planned
+keep
++ Ms. Marvel|met|Spider-Man|they are aided by the timely arrival of Ms. Marvel and Gold Goblin
++ Ms. Marvel|met|Rek-Rap|they are aided by the timely arrival of Ms. Marvel and Gold Goblin
++ Gold Goblin|met|Spider-Man|they are aided by the timely arrival of Ms. Marvel and Gold Goblin
++ Gold Goblin|met|Rek-Rap|they are aided by the timely arrival of Ms. Marvel and Gold Goblin
++ X-Men|fought|Chasm|long enough for the X-Men to return and help suppress Chasm
+- Madelyne|captured|Chasm
+t+ no_doer|where Ben Reilly will remain imprisoned
+f- Madelyne|other_verb|seeks
+f+ Madelyne|other_verb|seeks|Madelyne seeks to punish Chasm in her way|actual|stated|
+f+ Madelyne|other_verb|punish|Madelyne seeks to punish Chasm in her way|planned|stated|Madelyne
+f+ X-Men|other_verb|help|asks the X-men for help|ordered|stated|Madelyne
+f- Madelyne|created|Limbo Embassy
+f+ Madelyne|created|Limbo Embassy|taking until Spring to establish the Limbo Embassy|actual|stated|
+t- deictic|and Madelyne shall try
+f+ Madelyne|other_verb|helping|Madelyne shall try helping anyone seeking Limbo by healing them of their darkness.|planned|stated|Madelyne
+
+@2236 gold: one name (Reed: Mister Fantastic/Richards); the five allies; the led battle and Doom's escape; crowd captures and invasion; the reunion and planned fight; failing to stop is no fight; a portal is no doer and the enslaving has none (A8)
+keep
+r Mister Fantastic=>Reed
+r Richards=>Reed
+f+ Reed|allied_with|Mad Thinker|Mister Fantastic made an alliance with many villains such as the Mad Thinker, A.I.M., the Wizard, Diablo, and the High Evolutionary|actual|stated|
+f+ Reed|allied_with|A.I.M.|Mister Fantastic made an alliance with many villains such as the Mad Thinker, A.I.M., the Wizard, Diablo, and the High Evolutionary|actual|stated|
+f+ Reed|allied_with|Wizard|Mister Fantastic made an alliance with many villains such as the Mad Thinker, A.I.M., the Wizard, Diablo, and the High Evolutionary|actual|stated|
+f+ Reed|allied_with|Diablo|Mister Fantastic made an alliance with many villains such as the Mad Thinker, A.I.M., the Wizard, Diablo, and the High Evolutionary|actual|stated|
+f+ Reed|allied_with|High Evolutionary|Mister Fantastic made an alliance with many villains such as the Mad Thinker, A.I.M., the Wizard, Diablo, and the High Evolutionary|actual|stated|
+f+ Reed|other_verb|led|Then they led the battle to the High Evolutionary's city|actual|stated|
+f+ Doctor Doom|other_verb|escaped|one of the Richardses escaped with Doctor Doom|actual|stated|
+t+ crowd_end|the other two were captured by the Kree army.
+f+ Reed|other_verb|reunited|Richards reunited other heroes to fight the Inhumans in Attilan|actual|stated|
+f+ Reed|other_verb|fight|Richards reunited other heroes to fight the Inhumans in Attilan|planned|stated|Reed
+t+ crowd_end|a Kree invasion started.
+- Spider-Man|fought|Cult of the Negative Zone
+- Johnny Storm|captured|Annihilus
+f- portal|revealed|Johnny Storm
+f- Annihilus|other_verb|enslaved
+t+ no_doer|the portal revealed a living Johnny Storm with an enslaved Annihilus.

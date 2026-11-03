@@ -1,0 +1,122 @@
+@2211 gold: the inline header line
+keep
+t+ list_header|Incendiary Capsules:
+
+@2212 gold: remaining in a realm is being there, not residence
+keep
+f- Mikaboshi|resides_at|Yomi
+f+ Mikaboshi|located_at|Yomi|Mikaboshi remained in Yomi|actual|stated|
+
+@2213 gold: the crashing object is revealed as Nova (A49); whispering is a speech act; the discovery has a named group; In <place> = located_at; all present is a crowd
+keep
+t- no_relation|An object crashes
+f+ Nova|other_verb|crashes|An object crashes into the city, sending Earth's Mightiest Heroes into action.|actual|stated|
+t- no_relation|After dealing
+f+ Earth's Mightiest Heroes|learned|-|they discover that the object was in fact Nova|actual|stated|
+t- dialogue|who cryptically whispers
+f+ Nova|other_verb|whispers|who cryptically whispers "It's Coming" before fainting|actual|stated|
+f+ Scott|located_at|Utopia|On Utopia, Cyclops trains Hope|actual|stated|
+f+ Hope|located_at|Utopia|On Utopia, Cyclops trains Hope|actual|stated|
+t- deictic|All present are shocked.
+t+ crowd_end|All present are shocked.
+
+@2214 gold: the header line; the suit he must wear
+keep
+t+ list_header|Electrical Form:
+f+ Miguel|wore|special containment suit|Miguel must wear a special containment suit to retain a solid form.|actual|stated|
+
+@2215 gold: gave takes the recipient; Xilo's help; the strategy is the Brotherhood's; both blockers; the denied passage and the trip; the ordered bleeding; a transformer is other_verb; the monster is no end; Genesis' fleet acts through Genesis (A63); her expectation; a gateway is no doer; the armada leaves Amenth
+keep
+f- Fisher King|gave|map
+f+ Fisher King|gave|Brotherhood|with his help provided the Brotherhood a map to form a strategy|actual|stated|
+f+ That-Which-Was-Xilo|helped|Fisher King|The Fisher King merged with That-Which-Was-Xilo, and with his help provided the Brotherhood a map|actual|stated|
+f- Fisher King|other_verb|form
+f+ Brotherhood|other_verb|form|provided the Brotherhood a map to form a strategy|planned|stated|Fisher King
+f+ Locus Vile|other_verb|blocked|being blocked by Isca and the Locus Vile|actual|stated|
+f+ Genesis|other_verb|pass|Unable to pass through land|actual|denied|
+f+ Genesis|other_verb|go|Genesis and her army were forced to go to the shore of Sobunar's Ocean|actual|stated|
+f+ Satis Exotica|other_verb|bleed|had Satis Exotica bleed in the water|ordered|stated|Genesis
+f- Genesis|transformed_into|fishes
+f+ Genesis|other_verb|transforming|transforming one of the fishes into a colossal monstrosity under their command|actual|stated|
+- Storm|killed|the monster
+f- Storm|used|powers
+f+ Storm|other_verb|pierce|only to be killed by Storm using her powers to pierce its head|actual|stated|
+f+ Genesis|other_verb|followed|The monster approached Port Prometheus, followed behind by Genesis' fleet|actual|stated|
+t- no_doer|They realized too late
+t+ crowd_end|They realized too late that this was exactly what Genesis expected
+f+ Genesis|other_verb|expected|this was exactly what Genesis expected|actual|stated|
+f- Okkaran Gateway|other_verb|arose
+t+ no_doer|from the creature's blood an Okkaran Gateway arose
+f- First Horsemen|leader_of|Summoners
+f+ First Horsemen|leader_of|Ninety-Nine Champions|through which an armada of Summoners, Daemons and the Ninety-Nine Champions passed from Amenth, led by the First Horsemen.|actual|stated|
++ Ninety-Nine Champions|departed|Amenth|through which an armada of Summoners, Daemons and the Ninety-Nine Champions passed from Amenth, led by the First Horsemen.
++ First Horsemen|departed|Amenth|through which an armada of Summoners, Daemons and the Ninety-Nine Champions passed from Amenth, led by the First Horsemen.
+
+@2216 gold: facing the Nazis; the suicide is his death; the party continues
+keep
+t- no_relation|Among those that faced
+f+ Bucky|other_verb|faced|Among those that faced them were the costumed super heroes Bucky, Captain America, and .|actual|stated|
+f+ Captain America|other_verb|faced|Among those that faced them were the costumed super heroes Bucky, Captain America, and .|actual|stated|
+f+ Adolf Hitler|dies|-|he opted to commit suicide rather than face trial|actual|stated|
+t- no_relation|Despite the loss
+f+ Nazi Party|other_verb|continued|Despite the loss of its leader, the Nazi Party continued to operate until officially losing the war.|actual|stated|
+
+@2217 gold: a hostile arrival that becomes the attack is no met; slicing off the hand ends the fight (defeated) and wounds; the complaint; the killing blow he was about to deal
+keep
+- Wolverine|met|Sabretooth
+- Wolverine|fought|Sabretooth
++ Wolverine|defeated|Sabretooth|Wolverine used his claws to slice off Sabretooth's hand resulting in Sabretooth's imprisonment shortly thereafter.
+f+ Wolverine|wounded|Sabretooth|Wolverine used his claws to slice off Sabretooth's hand|actual|stated|
+f+ Sabretooth|other_verb|complaining|Sabretooth was chained in the royal palace of Wakanda complaining about the way he was being treated.|actual|stated|
+f+ Sabretooth|other_verb|deal|was about to deal a killing blow when Wolverine suddenly arrived.|planned|stated|Sabretooth
+
+@2218 gold: an agency's full name is no alias; copula; doer-less founding/abolition and report (no_doer)
+keep
+f- KGB|also_known_as|Komitet Gosudarstvennoy Bezopasnosti
+f- KGB|other_verb|was
+t+ no_relation|The KGB (Komitet Gosudarstvennoy Bezopasnosti) was the primary security agency of the Soviet Union.
+f- KGB|other_verb|established
+f- KGB|other_verb|abolished
+t+ no_doer|It was established in 1954 and abolished at its fall in December 1991.
+f- KGB|other_verb|said
+t+ no_doer|It was said that it was the world's most effective information-gathering organization.
+
+@2219 gold: the slaves (a crowd) learned, not N'Kantu; the Pharaoh's plan; the unnamed chief priest is no end; one tag per sentence
+keep
+f- N'Kantu|learned|-
+f+ Pharaoh|other_verb|kill|the Pharaoh planned to kill them all after the completion of the temple|planned|stated|Pharaoh
+t- no_relation|the slaves revolted
+t+ crowd_end|having learned that the Pharaoh planned to kill them all after the completion of the temple, the slaves revolted
+f- chief priest|used|burial ritual
+t+ crowd_end|his chief priest, who had his own designs on the throne and feared that the Pharaoh would return from death, used it on the still-living N'Kantu.
+t- no_doer|burying the temple
+
+@2220 gold: not far from Venzia is not located at Venzia
+keep
+f- Messantia|located_at|Venzia
+t+ no_relation|was presumably not far from Venzia.
+
+@2221 gold: a writer's career note is production
+keep
+f- Roy Thomas|gave|Claremont
+t- no_relation|Claremont's first work
+t+ production|Claremont's first work at Marvel Comics was on .
+t+ production|This was an assignment given to him by then current Marvel EIC Roy Thomas.
+
+@2222 gold: coming to oppose states no attack (met stays for the talk); the tried verb; the coming death; realizing is learned; the persuaded plan
+keep
+- Rogue|fought|Shredded Man
+f- Shredded Man|other_verb|-
+f+ Shredded Man|other_verb|destroy|the Shredded Man tried to destroy as much of humanity as he could|attempted|stated|Shredded Man
+f+ Shredded Man|other_verb|expire|Before he was to expire due to his cancer|hypothetical|stated|
+f- X-Men|discovered|-
+f+ X-Men|learned|-|the X-Men who came to oppose him realized what was truly happening|actual|stated|
+f+ X-Men|other_verb|oppose|the X-Men who came to oppose him|actual|stated|
+f+ Rogue|other_verb|take|Rogue convinced him to let her temporarily take his powers to reverse the situation.|planned|stated|Rogue
+
+@2223 gold: claiming control is a claimed reign; ordered takes the one told to act, not the victims (A108)
+keep
+f+ Secret Alliance|leader_of|Shi'ar Empire|The Secret Alliance claims full control over the Shi'ar Empire|claimed|stated|Secret Alliance
+f- Secret Alliance|ordered|Xandra Neramani
+f- Secret Alliance|ordered|Deathbird
+f+ Secret Alliance|other_verb|orders|orders the public execution of Xandra Neramani and Deathbird.|actual|stated|

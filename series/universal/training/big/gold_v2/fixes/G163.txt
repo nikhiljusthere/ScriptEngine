@@ -1,0 +1,216 @@
+@2188 gold: one name (Norman Osborn, the misspelling is the same man); possessing the Gauntlet is owning it
+keep
+r Norman Orsborn=>Norman Osborn
+f+ Norman Osborn|owns|Infinity Gauntlet|Norman Osborn possessed and used the Infinity Gauntlet|actual|stated|
+
+@2189 gold: the named pair joins the battle; vowing is speech, the fight is planned
+keep
+t- no_relation|During the attack
+f+ Nick Fury|other_verb|joined|During the attack they joined the battle|actual|stated|
+f+ Red Hargrove|other_verb|joined|During the attack they joined the battle|actual|stated|
+f- Nick Fury|other_verb|vowed
+f+ Nick Fury|other_verb|vowed|Fury vowed to fight the Axis powers until they were wiped off the map.|actual|stated|
+f+ Nick Fury|other_verb|fight|Fury vowed to fight the Axis powers until they were wiped off the map.|planned|stated|Nick Fury
+
+@2190 gold: no articles; the superheroes are a crowd; realizing = learned
+keep
+r the Invaders=>Invaders
+r the Patriot=>Patriot
+r the Whizzer=>Whizzer
+r the Red Raven=>Red Raven
+r the Thin Man=>Thin Man
+r the Blue Diamond=>Blue Diamond
+f- Bucky|contacted|superheroes
+f+ Bucky|other_verb|sent|sent out a call for help to all the other available superheroes.|actual|stated|
+f+ Bucky|learned|-|Bucky, realizing the danger that a German-friendly Invaders posed|actual|stated|
+
+@2191 gold: the speculation has no doer; Hybrid's statement and control are his acts
+keep
+t- capability|It was speculated
+t+ no_doer|It was speculated that a near-starvation regime could made him lose weight after a couple of years
+f+ Hybrid|other_verb|stated|but Hybrid stated while controlling him that he could feed off him forever|actual|stated|
+f+ Hybrid|other_verb|controlling|but Hybrid stated while controlling him that he could feed off him forever|actual|stated|
+t+ capability|hinting that Emery is immortal and would seemingly never lose weight.
+
+@2192 gold: no pipe inside tag quotes, one tag per field; the rule field names its rulers
+keep
+t- capability||
+t- list_header||
+t- citation||
+t+ capability|Powers =Depends on their original abilities and how they were modified
+t+ list_header|Abilities =
+t+ list_header|AvgStrength =
+t+ capability|Weaknesses = Due to their programming, they possess no free will of their own, acting like mindless zombies when not given any orders
+t+ list_header|GovernmentType = Formerly slaves under the Magistrates' rule; Part of a human-mutant government; Ruled by Magneto
+f+ Magneto|leader_of|Genoshan Mutates|Ruled by Magneto|actual|stated|
+f+ Magistrates|leader_of|Genoshan Mutates|Formerly slaves under the Magistrates' rule|actual|stated|
+t+ list_header|CulturalTraits =
+t+ list_header|Representatives = Please report to the list of the List of Genoshan Mutates on Earth-616, and the List of Genoshan Mutates.
+t+ citation|Notes = For a complete list without references: Comicvine article.
+t+ list_header|Trivia =
+t+ list_header|Links =
+t+ list_header|Hair2=Mostly Shaved Bald
+t+ list_header|BodyType2=Depending on their how they were modified
+t+ list_header|Abilities2=
+t+ list_header|Mutate Bonding Process=}}
+
+@2193 gold: ok
+keep
+
+@2194 gold: no article; the encounter turns straight into the battle (no met); deciding is actual, the truce planned
+keep
+r The X-Men=>X-Men
+- X-Men|met|Freedom Force
+f+ X-Men|other_verb|decide|and decide to put aside their differences for the moment.|actual|stated|
+f+ Freedom Force|other_verb|decide|and decide to put aside their differences for the moment.|actual|stated|
+
+@2195 gold: the hospital visit is a purpose (no met; Phillip is not tied to the grandfather); Adam's permission; deciding is actual, the reveal denied
+keep
+- Scott|met|Phillip
+f+ Scott|other_verb|check|Accompanying Scott to Alaska to check on his grandfather in the hospital|planned|stated|Scott
+f+ Adam-X|other_verb|allowed|Adam allowed Jean to transfer memories of his days as a Shi'ar combat pilot to Phillip.|actual|stated|
+f- Jean|other_verb|decided
+f+ Jean|other_verb|decided|Jean decided not to reveal her encounter to Scott.|actual|stated|
+f+ Jean|other_verb|reveal|Jean decided not to reveal her encounter to Scott.|planned|denied|Jean
+
+@2196 gold: no articles; one name (Doctor Strange); the Avengers meet the Midnight Suns as a group (Blade is not tied); driving Venom away is the defeat; Hunter's past defeat of Lilith; the minions are a crowd; the shell has no doer; the portal is opened
+keep
+r The Avengers=>Avengers
+r the Abbey=>Abbey
+r the Caretaker=>Caretaker
+r the Sanctum Sanctorum=>Sanctum Sanctorum
+r Strange=>Doctor Strange
+- Avengers|met|Blade
++ Avengers|met|Midnight Suns|were introduced to the Midnight Suns and the Caretaker
+- Spider-Man|fought|Venom
++ Spider-Man|defeated|Venom|who was driven away by Spider-Man.
++ Venom|escaped|Spider-Man|who was driven away by Spider-Man.
++ Hunter|defeated|Lilith|the only one to have ever defeated her.
+f+ Blade|other_verb|watched|Blade and the others stood by and watched as Sarah and Strange resurrected Hunter|actual|stated|
+f- Magik|created|Limbo portal
+f+ Magik|other_verb|opened|through a Limbo portal opened by Magik.|actual|stated|
+f- Venom symbiote|created|shell
+t+ no_doer|Just then, the protecting wards have failed and the Sanctum was engulfed by the shell created from the Venom symbiote.
+f- Hydra minions|gained_power|-
+t+ crowd_end|The three of them were attacked by Hydra minions whom they quickly dispatched
+f+ Hunter|learned|-|finding out that they were enhanced by Lilith's magic which made them more formidable than ever before.|actual|stated|
+f+ Blade|learned|-|finding out that they were enhanced by Lilith's magic which made them more formidable than ever before.|actual|stated|
+f+ Doctor Strange|learned|-|finding out that they were enhanced by Lilith's magic which made them more formidable than ever before.|actual|stated|
+f+ Lilith|other_verb|enhanced|finding out that they were enhanced by Lilith's magic|actual|stated|
+
+@2197 gold: ok
+keep
+
+@2198 gold: no article; "the last Gemini" is a description and no death is stated; going to help is no stated rescue; garbage objects -> forcing, rewriting, warning, explaining, saying; the narrated jump and dodge have a doer
+keep
+r the Brain=>Brain
+- Jacobs|killed|the last Gemini
+- Spidey|saved|Anna
+- Spidey|saved|Brain
+f+ Spidey|helped|Anna|forcing Spidey to go help them.|actual|stated|
+f+ Spidey|helped|Brain|forcing Spidey to go help them.|actual|stated|
+f- Jacobs|other_verb|Zodiac
+f+ Jacobs|other_verb|forces|Inside the train, Jacobs forces Zodiac masks on the conductors with their respective signs, Cancer and Leo|actual|stated|
+f- Jacobs|other_verb|conductors
+f+ Jacobs|other_verb|rewriting|rewriting their minds and putting them under his control.|actual|stated|
+f+ Jacobs|other_verb|orders|He orders them to get him to England|actual|stated|
+f- Spidey|warned|passengers
+f+ Spidey|other_verb|warn|but Spidey uses the train speakers to warn the passengers of the Zodiac.|actual|stated|
+f+ Jacobs|other_verb|asks|Jacobs asks how Gemini couldn't predict this|actual|stated|
+f- Gemini|other_verb|can't
+f+ Gemini|other_verb|explains|and he explains that he can't see into his own future|actual|stated|
+f+ Gemini|other_verb|see|he can't see into his own future|actual|denied|
+f+ Jacobs|other_verb|poision|which is why Jacobs managed to poision the last Gemini.|actual|stated|
+t- deictic|Meanwhile, Spidey jumps
+f+ Spidey|other_verb|jumps|Meanwhile, Spidey jumps from the flying car to the train, barely managing to keep hold of it.|actual|stated|
+t- no_relation|He manages to dodge
+f+ Spidey|other_verb|dodge|He manages to dodge a shot from Scorpio|actual|stated|
+t+ no_relation|but his webbing backfires because he is going against wind.
+f- Scorpio|other_verb|world
+f+ Scorpio|other_verb|says|As the three crash, Scorpio says that with one more stop, the world and it's future will be his.|actual|stated|
+
+@2199 gold: the ordered act of the commanded ship
+keep
+f+ SmartShip|other_verb|watch|and commanded his SmartShip to watch over them.|ordered|stated|Aelfrye
+
+@2200 gold: unleashing is no hiring; the Enigma Force is the giver, not the power; a mantle is an alias; the attack is the fight event (stated apart from the defeat); the Kingpin orders the three sent to eliminate
+keep
+f- Wizard|hired|Dragon Man
+f+ Wizard|other_verb|unleashed|Later during the Acts of Vengeance conspiracy, the Wizard unleashed Dragon Man against Spider-Man|actual|stated|
+f- Spider-Man|gained_power|Enigma Force
+f+ Enigma Force|other_verb|endowed|after being endowed with too much power by the Enigma Force|actual|stated|
+f- Spider-Man|became|Captain Universe
+f+ Captain Universe|alias_of|Spider-Man|and becoming the most recent Captain Universe.|actual|stated|
+f- Dragon Man|attacked|Spider-Man
++ Dragon Man|fought|Spider-Man|This plan backfired when the Dragon Man attacked Spider-Man in a subway tunnel.
+f- Kingpin|other_verb|eliminate
+f+ Kingpin|ordered|Dragon Man|Dragon Man was next acquired by the Kingpin and sent along with Killer Shrike and Grey Gargoyle to eliminate Woziah|actual|stated|
+f+ Kingpin|ordered|Killer Shrike|Dragon Man was next acquired by the Kingpin and sent along with Killer Shrike and Grey Gargoyle to eliminate Woziah|actual|stated|
+f+ Kingpin|ordered|Grey Gargoyle|Dragon Man was next acquired by the Kingpin and sent along with Killer Shrike and Grey Gargoyle to eliminate Woziah|actual|stated|
+f+ Dragon Man|other_verb|eliminate|sent along with Killer Shrike and Grey Gargoyle to eliminate Woziah|ordered|stated|Kingpin
+f+ Killer Shrike|other_verb|eliminate|sent along with Killer Shrike and Grey Gargoyle to eliminate Woziah|ordered|stated|Kingpin
+f+ Grey Gargoyle|other_verb|eliminate|sent along with Killer Shrike and Grey Gargoyle to eliminate Woziah|ordered|stated|Kingpin
+
+@2201 gold: no pipe inside tag quotes, one tag per field; credits are production; the quotation is dialogue
+keep
+t- list_header||
+t+ list_header|Image = Imperial Vol 1 1.jpg
+t+ list_header|Name = Imperial
+t+ list_header|Aliases = Imperial War{{r
+t+ citation|Nova: Centurion Vol 1 1}}
+t+ list_header|Reality = Earth-616
+t+ list_header|Locations = Fulcrum; Wakanda Prime
+t+ list_header|Protagonists = * Hulk
+t+ list_header|Antagonists = * Inhuman Royal Family
+t+ list_header|Others = * Galactic Council
+t+ production|Creators = Jonathan Hickman; Federico Vicentini; Iban Coello
+t+ production|First = Imperial Vol 1 1
+t+ production|Last = Imperial Vol 1 4
+t+ dialogue|Quotation = The Council fell, man!
+
+@2202 gold: the page-title end is not in the window text ("This organization", "It"); the headmistress runs it
+keep
+f- United Nations Headquarters|located_at|United Nations Building
+t+ deictic|This organization was established into the old United Nations Building.
+f- Xuân Cao Mạnh|leader_of|United Nations Headquarters
+f+ Xuân Cao Mạnh|other_verb|run|It was run independent of SHIELD under the direction of Headmistress Xuân Cao Mạnh.|actual|stated|
+
+@2203 gold: a solicitation blurb about the creators is production
+keep
+f- J.M. DeMatteis|other_verb|scribe
+f- J.M. DeMatteis|other_verb|returns
+f- J.M. DeMatteis|allied_with|David Baldeón
+f- J.M. DeMatteis|created|KRAVEN'S LAST HUNT
+f- David Baldeón|created|WEB WARRIORS
+t+ production|Iconic Spider-Man scribe J.M. DeMatteis (KRAVEN’S LAST HUNT, SPIDER-MAN: THE LOST YEARS) returns to spin his webs once more within the Spidey mythos, this time joined by explosive artist David Baldeón (WEB WARRIORS, DOMINO)!
+
+@2204 gold: Thor reaches Jake (met); retaking his own power is no gained_power; the catch-up, the noticing and Amora's watching have doers; the ordered delivery; the restoration is a revival (awakened, no healed twin); the planned step and the attempted beheading; no death is stated (defeated)
+keep
++ Thor|met|Jake|The real Thor arrives on Earth in time to save Jake/Thor.
+f- Thor|gained_power|-
+f+ Thor|other_verb|takes|Thor takes back his power into himself|actual|stated|
+t- deictic|just as Desak catches
+f+ Desak|other_verb|catches|just as Desak catches up to them.|actual|stated|
+f+ Desak|learned|-|Desak notices the real Thor|actual|stated|
+f+ Amora|other_verb|watching|In Asgard, Amora is watching the entire thing|actual|stated|
+f+ Thialfi|other_verb|bring|summons Thialfi to bring Thor a weapon.|ordered|stated|Amora
+f- Jake|healed|Thor Girl
++ Thor Girl|awakened|-|Jake takes Thor Girls' remains and dumps them through Amora's mirror, restoring her.
+f+ Jake|other_verb|step|He's about to step through himself, when he's stopped by Amora.|planned|stated|Jake
+f+ Desak|other_verb|beheaded|Thor is about the be beheaded by Desak|attempted|stated|Desak
+- Thor|killed|Desak
++ Thor|defeated|Desak|Thor then buries the Bloodaxe into the chest of Desak, ending his threat.
+
+@2205 gold: ok
+keep
+
+@2206 gold: Alpha Flight's unnamed rest keeps the group as an end; the tasking is doer-less, the retrieval planned; the apposition; a covered fragment
+keep
++ Alpha Flight|fought|Wolverine|Arsenault and Alpha Flight clashed with Wolverine again
+f- Arsenault|other_verb|tasked
+f- Alpha Flight|other_verb|tasked
+f+ Arsenault|other_verb|retrieve|they were tasked to retrieve a former Department H contractor, Doctor Murat Mor, and secure him to the Canadian organization|planned|stated|Arsenault
+f+ Alpha Flight|other_verb|retrieve|they were tasked to retrieve a former Department H contractor, Doctor Murat Mor, and secure him to the Canadian organization|planned|stated|Alpha Flight
+f- Murat Mor|other_verb|former
+t+ apposition|a former Department H contractor, Doctor Murat Mor
+t- deictic|Before they could do anything

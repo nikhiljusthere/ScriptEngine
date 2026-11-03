@@ -102,3 +102,20 @@ body destroyed while owner survives = defeated (A53); restraining allies is not 
 page-subject monarch (b3350 vs b3594) — needs an owner/Claude decision; codename->real-name without an alias row when
 no sentence ties them (inconsistent across fix files — reconcile); "Voiced by Medusa" (b3811) is in-universe speech;
 symmetric `fought` dedupe silently drops the reverse row (b3346); the tag gate refuses 2-char kanji list tags (b3696).
+
+## Update 2026-11-03 (later): GOLD v2 REVIEW COMPLETE — 3,822 / 3,822
+
+Final 59 windows done (fix files G162-G164, G219-G220). Stage 8 (gold lint + compose v2) was started by two read-only
+agents: lint report plan/GOLD_LINT_REPORT.md + proposals under big/gold_v2/lint/ (NOT applied), compose draft in
+series/universal/training/student_v2_draft/ + plan/COMPOSE_V2_NOTES.md (dry run only). Apply lint fixes and run the
+final compose only after reading those.
+Open owner/Claude decisions from the last agents: event gate refuses "Maximoff twins" as a class end though the fact
+gate accepts it (b2187: met row lost); infobox short fields (<12 chars) tagged in some fix files (G157, G201, G209,
+G162-G164) but left untagged in others (G219-G220) — pick one and normalise; codename->real name without alias row
+(b1847 etc.); calls to recheck: b2204 killed->defeated (Desak), b2187 Klaue arm = wounded, b2198 saved->helped facts,
+b2196 dropped "met Blade", b2215 Vulcan|destroyed|Autumn Continent, b2230/b2235 dropped rows (doer/rename unstated),
+b2228 Cabal|defeated|X-Men group-to-group. New rulings applied (not yet in gold27_system.md): org full-name/acronym is
+no alias; "not far from X" is not located_at; "prevented by X" = defeated; race member named as survivor takes the
+rows (A2); volunteers-to-escape = plan; revealed identity rows under the name (A49); generic used|powers replaced by the
+act's verb; "almost V" = other_verb V denied; "decided not to V" = decided actual + V planned denied; ordinary waking
+is no awakened event (A106); "were tasked to V" with no tasker = V planned asserted by subject.
