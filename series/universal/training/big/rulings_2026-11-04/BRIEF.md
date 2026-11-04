@@ -76,3 +76,13 @@ no change). Final message: counts, files, owner questions, new patterns.
   outside your list; edit gold b825 b893 b1014 b3543 b3657 (waiting for an owner decision on the fact gate);
 - kill processes by pattern (`pgrep -f` / `pkill -f`).
 You may be stopped at any time (usage limit): keep ledger and notes current so a successor can resume.
+
+## Addendum 2026-11-04 (owner rulings: torture, mind control, clinical death)
+Read `gold27_system.md` "Owner rulings 2026-11-04 (torture, mind control, clinical death)". Classes in the tc lists:
+- TORT / TORT?  a fought/defeated row for cruelty to a captive or helpless victim -> `f+ T|tortured|V|quote`, drop the
+  fought/defeated (`- T|fought|V`), add wounded/interrogated/killed only as stated. A real fight keeps its rows.
+- CTRL  an event near a mind-control/possession cue. If the window states that the doer acted under someone's
+  control and not by his own will: remove the plain event and add the controlled fact
+  (`f+ B|attacked|C|quote|controlled|stated|A`, outcomes as `f+ B|other_verb|<verb>|quote|controlled|stated|A`).
+  Most CTRL hits are the controller's own acts, the victim's resistance, or control that ended: no change.
+The new relation `tortured` and modality `controlled` are in fact_gate (the dry-run check accepts them).

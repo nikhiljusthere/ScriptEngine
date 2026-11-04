@@ -195,3 +195,18 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
 - NEXT: finish the big lists (step 3 remainder), then step 4: gold lint re-run (data changed), compose v2 with the
   b190 rule (compose drops a gold train window repeating a >=40-char dev/test sentence — code change still to make),
   check_v2_set.py rc=0, teacher re-score. Step 5 (GPU) only after the owner says go.
+
+## Update 2026-11-04 (end of window, 95%): owner rulings on torture, mind control, clinical death
+- Owner answers (chat): b12398 clinical death -> decided by cause; torture is not a fight; mind control = "B under
+  control of A fighting C", with will deciding (Majin Vegeta chose to fight). Written in gold27_system.md "Owner
+  rulings 2026-11-04 (torture, mind control, clinical death)"; BRIEF.md addendum.
+- Code (cc2b3677): fact relation `tortured`, fact modality `controlled` (asserted_by = controller), in fact_gate
+  (so the student system prompt carries them), score_layers_v2 groups, test. Full test suite: only the usual
+  environment failures (worktree has no series stores); test_fact_layer 65/65.
+- Data: b12398 fixed (M_01: Janet killed Victor, saved Chase, Victor awakened). Candidates from
+  plan/review_tools/tc_scan.py: list_TC_gold.txt (51) and list_TC_big.txt (422, NOT partner-grouped yet: group by
+  recon components before giving it to agents). Gold TC pass: 30/51 read, 3 changed (TCG_01: b1861 tortured,
+  b1989/b2041 controlled); resume at b2143 (TCG_02). Agent questions in notes_TCG.md (b532 devil summoned under
+  Makima's control; b1989 "purposely missed any vitals"; outcome object named for a quote with no outcome verb).
+- Order for the next window: finish TC gold (21), the three big lists (resume points above), TC big (422, grouped),
+  then step 4.

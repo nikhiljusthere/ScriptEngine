@@ -269,3 +269,27 @@ Each open question from the outcome audits, answered by the test "what state doe
   Naobito's frame b1516) or a Domain that opens the contest (b1168) is `sealed` only.
 - INTERCEPTED ATTACKS. Stopping an attack on a named person is `saved` for that person (A75; b1533, b1669), with
   `defeated` only when the stop also ends the attacker's part.
+
+### Owner rulings 2026-11-04 (torture, mind control, clinical death) and what follows from them
+- TORTURE IS NOT A FIGHT (owner). Cruelty to a captive or helpless victim (chained, tied, held, unconscious; beating
+  or burning a prisoner, "tortured", "tormented", dissecting, painful experiments) is the fact `Torturer|tortured|
+  Victim` (new relation, actual), never `fought` and never `defeated`. A stated injury adds `wounded`; questioning
+  adds `interrogated`; a death from it is `killed`. The capture before it stays `captured`; a fight that ends in the
+  capture keeps its own rows, and the torture after it is `tortured`. Experiments with no stated cruelty stay
+  `other_verb` (b105 "experimented on").
+- MIND CONTROL: THE ACT BELONGS TO THE CONTROLLED, UNDER THE CONTROLLER (owner). When the window states that B acts
+  under A's mind control, possession, hypnosis or programming, B's act is no plain event: it is a fact with the new
+  modality `controlled` and asserted_by = A, the same shape as an `ordered` act. A fight -> `B|attacked|C|quote|
+  controlled|stated|A`; an outcome -> `B|other_verb|<the quote's verb: killed/defeated/captured...>|quote|controlled|
+  stated|A`; a wound -> `B|wounded|C|quote|controlled|stated|A`. The victim's own state is written as usual (`C|dies|-`,
+  `C|wounded|-`). The control itself stays the controller's fact (`A|other_verb|controlled/possessed`, A116; no
+  `A|fought|B`). The controller gets no `fought` with C unless he fights C himself: asserted_by is the indirect link
+  ("indirectly A fighting C"). C's acts against the controlled B (fighting back, beating him) are C's plain events.
+  WILL DECIDES: when the window says B acts by his own will while under the influence (Majin Vegeta: Babidi's mark,
+  but Vegeta chooses to fight Goku), or after breaking free, B's acts are plain events. Control the window does not
+  state (a codename alone, "the Winter Soldier killed X" with no brainwashing in the window) gives plain events.
+- CLINICAL DEATH (owner: "was it because of some fight?"). Death is decided by its cause: a stated death ("clinically
+  dead", "died", "killed") caused by a named doer's act in a fight is `killed`, even if the victim is revived later
+  (the revival is `awakened`, the reviver `saved`). b12398: Victor attacks Chase, Janet shoots him, "Despite PRIDE's
+  efforts to save him, Victor was clinically dead" -> `Janet Stein|killed|Victor` + `Janet Stein|saved|Chase`
+  (intercepted attack); the `dies` twin goes. A clinical death from illness or with no stated doer stays `X|dies|-`.
