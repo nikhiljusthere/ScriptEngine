@@ -1,0 +1,127 @@
+# notes_RB3 — rulings pass 2026-11-04 (BIG set), resume of list_R_B3.txt (predecessor notes_B3.md)
+
+## Per window
+- b9783 STOP changed: Darkstar stops the Vanisher's revenge plan -> defeated (stopping fact dropped); CTRL no change (Sentinels are robots under the Vanisher, no mind control of a person)
+- b9787 CAPT changed: Stranger|defeated|Magneto (hostage capture ends the fight; Toad captured alone)
+- b9789 STOP changed: purpose clause -> planned
+- b9831 CAPT no change (predecessor decision)
+- b9842 FW changed: stab -> wounded; "almost killed" -> killed denied; fought kept (A11)
+- b9861 CAPT/ESC changed: Ronan|escaped|Super Sentry (drove off, A74); b9870 PARTNER no change (lacks the sentence)
+- b9876/b9878 ESC no change (predecessor)
+- b9881 CAPT changed: Mar-Vell|defeated|Super-Adaptoid (seal ends the battle)
+- b9937 CAPT changed: clash + bringing to justice one act -> defeated replaces fought; r Dr. Hyde=>Hyde; CTRL no change
+- b9949 TEAM no change, b9984 CAPT no change (predecessor)
+- b9990 CAPT changed: Mandarin/Sandman defeated Hulk/Betty (gas capture ends the attack)
+- b10005 CAPT changed: Odd John|defeated|Rann
+- b10053 STOP changed: Storm|defeated|Magneto (missile plot stopped)
+- b10057 CAPT changed: ambushed and captured one act -> defeated replaces fought
+- b10059 STOP changed: X-Men|defeated|Apocalypse
+- b10086 STOP changed: Hawkeye|defeated|Angela Golden
+- b10088 TEAM changed: Thing defeated Trapster/Sandman; "turned over to the authorities" -> captured x4 (A8 refined)
+- b10505 FW changed: Carter shot Morgenthau -> defeated + wounded (fought dropped) + saved Sam Wilson (A75)
+- b10114 TORT changed: kidnappers torture the captive -> tortured (fought dropped), captured kept (predecessor's no-change predates the torture ruling)
+- b10169/b10213/b10451/b10493/b10495/b10501/b10503/b10504/b10506/b10517/b10569/b10709/b10723/b10836: no change (predecessor decisions stand)
+- b10653 CAPT/TORT changed: tortured replaces fought; Thanos|defeated|Nebula (her attempt then capture)
+- b10656 FW changed: Corvus Glaive|wounded|Vision (fight continues)
+- b10667 FW no change (owner): Hunter stuns allies Skye/May with an I.C.E.R. to go after Creel himself - not an ally restraint for their good, not hostile allies either; stun weapon (no injury stated). Left as fought.
+- b10743 STOP no change: Parker's stop is an intercepted attack (saved exists) inside an ongoing fight with Gargan
+- b10761 NEAR changed: almost shot -> shot actual/denied (+ fired)
+- b10768 WBY no change: ricochet, no named doer
+- b10778 FW no change: "stabbed at" is blocked (no wound)
+- b10848 CAPT changed: paralysis + capture one act -> defeated replaces fought (Morse, Hunter); the team's captive Lucio has no named captor
+- b10871 FW no change: wing/helmet are suit equipment (no body wound), no stated end (abilities section)
+- b10876 FW no change: darts miss (Banner already gone)
+- b10916 STOP no change: Madani stops herself
+- b11041 FW no change: "shot at", bullets blocked
+- b11042 LISTED changed: Belova + Sonya (pin) defeated Ana; facts for "did not shoot" (denied) and the disarm; CTRL no change
+- b11069 LISTED changed: Romanoff|defeated|Belova (disarm, nothing continues)
+- b11080 STOP no change: Ant-Man stops his ally Wasp
+- b11114 FW no change: grenades blocked by debris
+- b11241 FW changed: Alex shot Andre -> wounded + defeated (fought dropped) + saved Geoffrey
+- b11257 STOP changed: purpose clause -> planned
+- b11261 FW no change: the Loki fight names no wound (Minuteman killed already)
+- b11283 LISTED changed: stop kept (ruling), + Loki|saved|He Who Remains (intercepted attack)
+- b11309 TEAM no change: both Falcon and Barnes already defeated Walker
+- b11332 FW no change: "shot at"
+- b11383 FW no change: "shot Garrett multiple times in the chest with little effect" - the text denies the effect; no wound written
+- b11403/b11411/b11414/b11424 STOP no change: stops of allies / a guest, no villain plot
+- b11464 FW changed: Patch and Logan wounded Deadpool (montage continues, no defeated)
+- b11558 CAPT changed: Spider-Man|defeated|Toomes (webbed for the police after the fight)
+- b11566 STOP no change: "stopping a car wreck" is a thing. Observed miss (outside the class, not edited): "He then fought the Enforcers, however, they defeated him ... so he could escape" has no rows.
+- b11574 STOP changed: Avengers|defeated|Ultron (plans foiled); CTRL no change (vehicle control)
+- b11577 LISTED changed: Ultron's attempted stop as an attempted fact, no outcome
+- b11584 WBY no change: injured, no named doer
+- b11605 FW no change: resisted being shot down
+- b11612 ESC changed: Gorr escaped Valkyrie / Mighty Thor
+- b11629 STOP changed: Aida|defeated|Eli Morrow
+- b11641 CAPT changed: I.C.E.R. shot + containment one act -> defeated replaces fought (Ophelia, Fitz); no wounded for the stun round (owner)
+- b11711 FW changed: Kilgrave|wounded|- (existing bullet wound, no doer); fought kept
+- b11781 STOP no change: Jonah stops a fight between Leslie and Tina
+- b11826 ESC no change: the winner Lopez flees the scene, not the beaten side
+- b11885 STOP no change: Li stops an escape from Afterlife by her own community (ally restraint); Malick stops a self-harm. Observed (not edited): "Coulson" vs "Phil Coulson" in the same window; "helped ... prevent Gordon and Phil Coulson's infiltration, but was captured by Coulson" has no outcome row
+- b11929 STOP no change: the villain Deschaine stops the heroes inside the ongoing scene
+- b11996 LISTED changed: r General Hale=>Hale (ruling example); captured alone
+- b11997 FW changed: Piper|wounded|Hive; CTRL no change
+- b12029 WBY no change: Chico Diaz injured by an unnamed shooter
+- b12086 CAPT changed: Sinara|defeated|May
+- b12104 LISTED no change: Vision's hack is inside the continuing battle (no defeated, nothing to remove)
+- b12119 LISTED changed: no defeated (ruling); added the prevention as Vision's fact for coverage
+- b12131 FW changed: Corvus Glaive|wounded|Vision
+- b12153 FW changed: three wounded rows (abilities note, no stated death)
+- b12157 FW changed: Diamondback|wounded|Luke Cage
+- b12198 NEAR changed: destroying -> actual/denied
+- b12207 NEAR changed: hit -> actual/denied
+- b12264 STOP no change: Karen Page stops walking
+- b12268 FW changed: Nadeem/Poindexter shot each other -> wounded both ways
+- b12297 FW changed: Shades shot Comanche in the chest, nothing continues -> wounded + defeated (fought dropped)
+- b12316 CAPT/TORT changed: "Helstrom's father" is a possessive description (no end) -> his rows dropped, crowd_end tags; Zoe Richards|wounded|- (set on fire)
+- b12319 STOP/FW no change: Kthara's stop of Hastings is inside the fight; "made her stab Helstrom" names no mind control (owner); Helstrom|wounded|- exists
+- b12327 CAPT changed: Marduk|defeated|Helstrom (recapture ends her flight); Helstrom|wounded|Marduk
+- b12343 FW no change: explosion/collapse, no injury stated (they survive)
+- b12346 FW no change (owner): "Cottonmouth informed Mariah Dillard that he had shot Scarfe" - is "informed" a report verb (A113 -> claimed, no event) or factive (keep fought + wounded)? left as is
+- b12349 FW changed: Stokes wounded Koko, Rafael Scarfe (abilities note)
+- b12380 STOP changed: Frank Dean|defeated|Leslie Dean (hostile stop of her plan, sent to the Crater)
+- b12383 CAPT changed: Tina|defeated|Morgan le Fay (banishment ends the conflict)
+- b12391 CAPT changed: Tina Minoru|defeated|le Fay; Stein enabling only
+- b12392 CAPT changed: attack + capture one act -> Jonah defeated Chase/Janet Stein (fought dropped); Jonah-possessing-Victor kept under Jonah (owner)
+- b12405 CAPT/TORT/CTRL changed: Fitz acts under Ward and Lorelei's stated control -> captured/fought replaced by controlled facts (asserted_by Lorelei)
+- b12421 WBY no change: Skye shot herself. Observed: May|sealed|Skye is an ally locking her up for her protection (ally-restraint ruling would make it other_verb only) - not edited
+- b12466 NEAR changed: provoked -> actual/denied
+- b12503 FW no change: "He immediately shot" states no hit
+- b12505 FW changed: "Bakuto's men shot them" - unnamed men are the doers -> Bakuto fought rows dropped, victims wounded|-
+- b12511/b12550 CAPT/FW changed: shooting the hostage Joy -> tortured (+ wounded), fought dropped (owner check)
+- b12534 STOP no change: Wing stops herself
+- b12575 STOP changed: ally stop kept; Wilson and Barnes saved Zemo (intercepted attack)
+- b12584 FW/LISTED changed: Brock Rumlow|defeated|Carter (disarm, nothing continues); r Rumlow=>Brock Rumlow; Winter Soldier|wounded|Nick Fury
+- b12615 FW changed: fatally shot -> wounded + defeated (no stated death), fought dropped
+- b12634 CAPT changed: thrown down + arrested one act -> defeated replaces fought (owner: Wilson does not resist)
+- b12719 LISTED no change: ruling names b12719 - restraint stays fought
+- b12735 CAPT no change: the hammer trap inside the first battle, no stated end (sealed only)
+
+## STOPPED HERE (coordinator: usage limit) - resume point
+Submitted: RB3_01..RB3_04 (60 windows, see ledger_RB3.txt). RB3_05 was NOT written.
+Read, NOT submitted (re-read before use):
+- b12754 STOP no change: drones are things (no named villain)
+- b12790 CAPT no change (owner): Vulture seals Spider-Man in the truck and flees leaving his loot - who is beaten is mixed
+- b12849 FW no change: "shot at"
+- b12884 TORT draft: - Rawlins|fought|Frank Castle; f+ Rawlins|tortured|Frank Castle|During the torture of Frank Castle, Rawlins wished to ensure the dazed Castle felt every bit of pain being inflicted upon him
+- b12890 TORT draft: - Rawlins|fought|Castle; f+ Rawlins|tortured|Castle|Rawlins attempted to keep Castle awake by pushing his fingers into Castle's wound; f+ Castle|wounded|-|pushing his fingers into Castle's wound
+- b12962 CAPT/TORT draft: - Dottie Underwood|fought|Howard Stark; f+ Dottie Underwood|tortured|Howard Stark|Underwood tied him to a chair and beat him; CTRL (hypnosis stated): f- Howard Stark|other_verb|flying; f+ Howard Stark|other_verb|flying|he was flying a plane and was preparing to spread the Midnight Oil|controlled|stated|Johann Fennhoff
+- b12972 STOP no change (Pike's traffic stop). Observed: "As he went for his gun, Underwood quickly held him at gunpoint and captured him" = stated resistance -> Underwood|defeated|Pike would be the CAPT ruling (not hinted, not drafted into a file)
+- b12982 LISTED read, undecided: see outcome/SUMMARY_r1501-2409.md line 43 for the earlier reasoning
+Not read: b12993 onward in list_R_B3.txt (b12993 .. b13969, ~33 lines).
+
+## For the owner
+- b10667 / b11641: I.C.E.R. (stun) shots - "shot" is a FW word but no injury is stated. b11641 written as defeated + captured with no wounded; b10667 (Hunter stuns allies Skye/May to chase Creel alone) left as fought.
+- b12511 / b12550: Bakuto shoots his hostage Joy to pressure Rand - written as tortured + wounded (fought dropped). Is shooting a hostage "tortured"?
+- b12346: "Cottonmouth informed Mariah Dillard that he had shot Scarfe" - A113 report verb or factive? left unchanged.
+- b12392: Jonah acts in Victor's possessed body; the window credits Jonah, rows kept under Jonah (owner rule would put the acts on Victor as controlled?).
+- b12405: two named controllers (Grant Ward and Lorelei) - controlled facts written with asserted_by Lorelei only.
+- b12634: Fahey throws the non-resisting Wilson down and arrests him - written defeated + captured (fought dropped); the ruling's "arrest of someone who does not resist" would say captured alone.
+- b12319: "Kthara stopped Hastings and made her stab Helstrom" - compulsion not stated as mind control; left.
+- b12790: Vulture seals Spider-Man and flees without his loot - outcome left open.
+
+## Counts (this agent)
+- Read: 125 windows (b9783 .. b12982 of list_R_B3.txt, incl. 14 predecessor no-change windows not re-read).
+- Changed and submitted: 60 (RB3_01..RB3_04). Drafted unsubmitted: 3 (b12884, b12890, b12962).
+- By class (changed / no change, approx.): STOP 14/26, CAPT 21/6, FW 20/14, NEAR 5/0, ESC 2/3, TEAM 1/2, WBY 0/6, LISTED 6/4, TORT 3 (with CAPT/FW), CTRL 1/6.

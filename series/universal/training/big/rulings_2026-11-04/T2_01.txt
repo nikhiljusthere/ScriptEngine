@@ -1,0 +1,86 @@
+@5727 rulings 2026-11-04: TORTURE IS NOT A FIGHT (owner), Ultron tortures the captive Peter (Rocket later frees him) to get the resistance's secrets: tortured + interrogated, no fought
+keep
+- Ultron|fought|Peter
+f+ Ultron|tortured|Peter|Ultron began torturing Peter to get the secrets of the resistance
+f+ Ultron|interrogated|Peter|Ultron began torturing Peter to get the secrets of the resistance
+
+@5750 rulings 2026-11-04: TORTURE IS NOT A FIGHT (owner), Roscoe is crucified and tortured by the Red Skull: tortured, no fought
+keep
+- Red Skull|fought|Roscoe
+f+ Red Skull|tortured|Roscoe|Roscoe was crucified and tortured by the Red Skull
+
+@5760 rulings 2026-11-04: MIND CONTROL (owner), HYDRA brainwashed Dunphy into attacking former villains: his attacks are controlled (asserted_by HYDRA); Cap's fight and Sharon's kill are plain acts against him
+keep
+f- Dennis Dunphy|other_verb|attacking
+f+ Dennis Dunphy|other_verb|attacking|HYDRA, had brainwashed Dunphy into attacking former villains|controlled|stated|HYDRA
+
+@5852 rulings 2026-11-04: MIND CONTROL (owner), Namor fights Cap under Thomas' hold on his mind (pulling his punches = his own partial resistance, addendum 2): Namor's attack and intercept are controlled, Cap's fighting back is his plain fought; the intercepted attack on Roman never landed (A11): no Cap|fought|Roman
+keep
+- Namor|fought|Captain America
+- Captain America|fought|Roman
++ Captain America|fought|Namor|Namor dragged Steve into the sea where the two did battle for a brief period
+f+ Namor|attacked|Captain America|Namor dragged Steve into the sea where the two did battle for a brief period|controlled|stated|Thomas
+f- Namor|other_verb|intercepted
+f+ Namor|other_verb|intercepted|Having intercepted an attack by Captain America directed towards the Machan possessed Roman|controlled|stated|Thomas
+f+ Namor|other_verb|pulling|the Captain noticed his frenemy was pulling his punches
+
+@6088 rulings 2026-11-04: MIND CONTROL (owner), the Wizard's ID machine changed the Thing's personality so that he was evil; his aid in capturing the Fantastic Four is a controlled act (asserted_by Wizard); the FF's capture of him is their plain act
+keep
+f- Thing|helped|Frightful Four
+f+ Thing|helped|Frightful Four|they were easily captured with the aid of the Thing|controlled|stated|Wizard
+
+
+@6207 rulings 2026-11-04: MIND CONTROL (owner), Iron Man disables Jocasta and subdues and abducts Wanda "under Ultron's control": controlled facts asserted_by Ultron, no plain events; his attack after he "recovered his free will" stays plain
+keep
+- Iron Man|defeated|Jocasta
+- Iron Man|captured|Scarlet Witch
+f+ Iron Man|other_verb|disabled|When he again fell under Ultron's control, he disabled Jocasta|controlled|stated|Ultron
+f+ Iron Man|other_verb|subdues|then subdues and abducted Wanda, bringing her to Ultron's lair|controlled|stated|Ultron
+f+ Iron Man|other_verb|abducted|then subdues and abducted Wanda, bringing her to Ultron's lair|controlled|stated|Ultron
+
+@6225 rulings 2026-11-04: MIND CONTROL (owner), Ultron brainwashed Henry Pym into transferring Janet's mind: Pym's act is controlled (asserted_by Ultron-8)
+keep
+f- Henry Pym|other_verb|transferring
+f+ Henry Pym|other_verb|transferring|Ultron brainwashed his own maker, Henry Pym, into transferring the mind of his wife|controlled|stated|Ultron-8
+
+@6313 rulings 2026-11-04: MIND CONTROL (owner), Thor strikes Sif "under the influence of a love spell that compelled him to obey Lorelei": a controlled attack asserted_by Lorelei, no fought
+keep
+- Thor|fought|Sif
+f+ Thor|attacked|Sif|while under the influence of a love spell that compelled him to obey Lorelei, struck the Lady Sif|controlled|stated|Lorelei
+
+@6397 rulings 2026-11-04: MIND CONTROL (owner), Moondragon "possessed by Dragon of the Moon, seemingly killed most of the members of the Defenders": a controlled act (the quote's verb, hedged as apparent), asserted_by Dragon of the Moon, no plain defeated
+keep
+- Moondragon|defeated|Defenders
+f+ Moondragon|other_verb|killed|Moondragon, who was possessed by Dragon of the Moon, seemingly killed most of the members of the Defenders|controlled|apparent|Dragon of the Moon
+
+@6472 rulings 2026-11-04: CTRL hit needs no controlled row (the Thing's own act against the controlled Hulk is plain); plain error in the same row: sending someone flying is fought (2026-10-28), the defeat is the knockout of the Immortal Hulk (as in partner b6478)
+keep
+- Thing|defeated|Hulk
++ Thing|defeated|Hulk|could knock out the Immortal Hulk
+
+@6476 rulings 2026-11-04: CTRL hit needs no controlled row (the Thing's own act against the controlled Hulk is plain); plain error in the same row: sending someone flying is fought (2026-10-28), the defeat is the knockout of the Immortal Hulk (as in b6478)
+keep
+- Thing|defeated|Hulk
++ Thing|defeated|Hulk|could knock out the Immortal Hulk
+
+@6784 rulings 2026-11-04: MIND CONTROL (owner), Moondragon "forced Thor to attack the Avengers" under her "mind-controlling rule": Thor's attack is a controlled fact asserted_by Moondragon; the window ties Thor to no part in ending her rule (the Wasp leads the Avengers, joined by Drax), so Thor|defeated|Moondragon goes
+keep
+- Thor|defeated|Moondragon
+f+ Thor|attacked|Avengers|Moondragon, who in turn forced Thor to attack the Avengers|controlled|stated|Moondragon
+
+@6935 rulings 2026-11-04: MIND CONTROL (owner), "Arcade brainwashed Colossus into becoming The Proletarian, who then battled the other X-Men": a controlled attack asserted_by Arcade (missing row)
+keep
+f+ Piotr|attacked|X-Men|who then battled the other X-Men until they countered the brainwashing|controlled|stated|Arcade
+
+@6966 rulings 2026-11-04: TORTURE IS NOT A FIGHT (owner), Cletus drags Eddie's consciousness into the Hive-Mind and torments him with nightmares (a helpless victim, no fight): tortured, no fought
+keep
+- Cletus|fought|Eddie Brock
+f+ Cletus|tortured|Eddie Brock|tormented him with nightmares of his worst fears come to life
+
+
+@7517 rulings 2026-11-04: MIND CONTROL (owner), Jean Grey "attacked him by controlling Smart Hulk": the attack belongs to the controlled Banner (asserted_by Jean Grey); the controller does not fight Spider-Man herself; the Hulk's later fight after he is freed stays plain
+keep
+- Jean Grey|fought|Spider-Man
+f+ Banner|attacked|Spider-Man|she attacked him by controlling Smart Hulk|controlled|stated|Jean Grey
+
+

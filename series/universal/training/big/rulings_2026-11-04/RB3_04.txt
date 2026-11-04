@@ -1,0 +1,82 @@
+@12327 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOME - Helstrom stabs Marduk in the leg and flees (fought + escaped), then he catches her and buries her: the recapture ends the struggle -> Marduk|defeated|Helstrom beside captured + sealed; FW - the stab is a stated wound -> Helstrom|wounded|Marduk
+keep
++ Marduk|defeated|Helstrom|Marduk appeared behind her and put his hand over her mouth, scaring her
+f+ Helstrom|wounded|Marduk|she stabbed him in the leg instead
+
+@12349 rulings 2026-11-04: FW - abilities note: "shot Koko in the head" and "shot Rafael Scarfe from his own sidearm" are stated wounds -> wounded each (no stated death or end: fought kept)
+keep
+f+ Stokes|wounded|Koko|managed accurately shot Koko in the head
+f+ Stokes|wounded|Rafael Scarfe|shot Rafael Scarfe from his own sidearm
+
+@12380 rulings 2026-11-04: STOP - Frank stops Leslie's attempt to dismantle the Church and sends her to the Crater, so that the Runaways must save her (hostile at that moment, not an ally restraint for her good): a completed stop of a named person's plan -> Frank Dean|defeated|Leslie Dean beside captured, the stopped fact goes
+keep
+f- Frank Dean|other_verb|stopped
++ Frank Dean|defeated|Leslie Dean|However, she was stopped in this endeavor by Frank and sent to the Crater
+
+@12383 rulings 2026-11-04: SEALED AS OUTCOME - Tina's ferocious conflict with le Fay (fought row) ends with her banishing le Fay to the Dark Dimension -> defeated + sealed
+keep
++ Tina|defeated|Morgan le Fay|She was the one who banished le Fay back to the Dark Dimension
+
+@12391 rulings 2026-11-04: SEALED AS OUTCOME - Tina Minoru fights le Fay in the battle (fought row) and ends it "banishing the enchantress back to the Dark Dimension" -> defeated + sealed; Stein's phone disruption only enables her (ENABLING ACTS: no outcome row)
+keep
++ Tina Minoru|defeated|le Fay|before banishing the enchantress back to the Dark Dimension
+
+@12392 rulings 2026-11-04: CAPTURED AS OUTCOME - "Jonah also attacked Chase and Janet Stein, capturing them both": attack and capture are one stated act -> defeated replaces fought (A145), captured kept (Jonah possessing Victor: see owner note, rows kept under Jonah as the window credits him)
+keep
+- Jonah|fought|Chase Stein
+- Jonah|fought|Janet Stein
++ Jonah|defeated|Chase Stein|Jonah also attacked Chase and Janet Stein, capturing them both
++ Jonah|defeated|Janet Stein|Jonah also attacked Chase and Janet Stein, capturing them both
+
+@12405 rulings 2026-11-04: MIND CONTROL (owner) - Grant Ward and Lorelei "had taken control of Fitz, who locked Sif in the interrogation room and opened the airlock": Fitz acts under their stated control, not by his own will -> his plain captured/fought rows go and become controlled facts (asserted_by = the controllers); no torture (not cruelty to a captive)
+keep
+- Leo Fitz|captured|Sif
+- Leo Fitz|fought|Sif
+f+ Leo Fitz|attacked|Sif|who locked Sif in the interrogation room and opened the airlock|controlled|stated|Lorelei
+f+ Leo Fitz|other_verb|locked|who locked Sif in the interrogation room and opened the airlock|controlled|stated|Lorelei
+f+ Leo Fitz|other_verb|opened|who locked Sif in the interrogation room and opened the airlock|controlled|stated|Lorelei
+
+@12466 rulings 2026-11-04: "NEARLY V" - "When Thor almost provoked a new war" did not happen -> provoked actual/denied (not attempted)
+keep
+f- Thor|other_verb|provoked
+f+ Thor|other_verb|provoked|When Thor almost provoked a new war with the Frost Giants of Jotunheim|actual|denied|
+
+@12505 rulings 2026-11-04: FW + plain error in the same rows - "Bakuto's men shot them" names unnamed men as the doers (a crowd, no end), not Bakuto -> the Bakuto fought rows go; the stated shooting stays as the victims' wounds (Victim|wounded|-)
+keep
+- Bakuto|fought|Kevin Singleton
+- Bakuto|fought|Gary
+f+ Kevin Singleton|wounded|-|so Bakuto's men shot them in retaliation
+f+ Gary|wounded|-|so Bakuto's men shot them in retaliation
+
+@12511 rulings 2026-11-04: TORTURE IS NOT A FIGHT - Joy is Bakuto's hostage when he "shot Joy on call" to pressure Rand: harm to a helpless captive -> tortured + wounded (stated: "the bleeding Joy"), the fought row goes; captured kept (no fight before it)
+keep
+- Bakuto|fought|Joy
+f+ Bakuto|tortured|Joy|He called Danny Rand and shot Joy on call
+f+ Bakuto|wounded|Joy|He called Danny Rand and shot Joy on call
+
+@12550 rulings 2026-11-04: TORTURE IS NOT A FIGHT - same act as b12511: the Meachums are "trapped under his control" (hostages, not mind control) and Bakuto shoots Joy through the gut as a threat to Rand -> tortured (wounded row exists), the fought row goes; CTRL: "under his control" is the hostage-taking, no change
+keep
+- Bakuto|fought|Joy
+f+ Bakuto|tortured|Joy|Bakuto then shot Joy through the gut
+
+@12575 rulings 2026-11-04: STOP of an ally kept (Wilson and Barnes stop their ally Carter) + INTERCEPTED ATTACKS - Carter points her gun at Zemo to kill him and they stop her from shooting -> Wilson and Barnes saved Zemo (A75)
+keep
++ Wilson|saved|Zemo|stopped her from shooting, explaining that Zemo was helping them
++ Barnes|saved|Zemo|stopped her from shooting, explaining that Zemo was helping them
+
+@12584 rulings 2026-11-04: NEAR-FINAL STATES - Carter threatens Rumlow and "Rumlow disarmed her and used the gun to shoot against loyal S.H.I.E.L.D. agents": the disarm ends her part, nothing of their exchange continues -> Brock Rumlow|defeated|Carter (her threat keeps fought: acts of different doers); ONE NAME - "Brock Rumlow" is in the window; FW - "the Winter Soldier shot Nick Fury" -> wounded (no control stated: plain row)
+keep
+r Rumlow=>Brock Rumlow
++ Brock Rumlow|defeated|Carter|but Rumlow disarmed her and used the gun to shoot against loyal S.H.I.E.L.D. agents
+f+ Winter Soldier|wounded|Nick Fury|when the Winter Soldier shot Nick Fury
+
+@12615 rulings 2026-11-04: FW - "Skye was fatally shot in the gut twice by Ian Quinn": a stated wound that ends the encounter (the team must find a cure) -> wounded + defeated, fought dropped (one act); no death is stated (KILLED WITHOUT A STATED DEATH)
+keep
+- Ian Quinn|fought|Skye
++ Ian Quinn|defeated|Skye|When Skye was fatally shot in the gut twice by Ian Quinn
+f+ Ian Quinn|wounded|Skye|When Skye was fatally shot in the gut twice by Ian Quinn
+
+@12634 rulings 2026-11-04: CAPTURED AS OUTCOME - "Fahey threw Wilson onto the ground and arrested him": the throw and the arrest are one stated act that subdues Wilson -> defeated replaces fought (A145), captured kept (see owner note: Wilson does not resist)
+keep
+- Fahey|fought|Wilson
++ Fahey|defeated|Wilson|Fahey threw Wilson onto the ground and arrested him

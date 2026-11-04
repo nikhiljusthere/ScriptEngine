@@ -1,0 +1,75 @@
+@1453 rulings 2026-11-04: Morbius ends his rampage "torturing Slaughter and burying him alive" and Nightmare "delighted in tormenting" the trapped Morbius -> tortured, not defeated (TORTURE IS NOT A FIGHT); in the body-swap fight Strange and Morbius are one side against Nightmare (possessor's acts are his own) -> no Strange|fought|Morbius; partners b8134/b8155 edited identically
+keep
+- Morbius|defeated|Vic Slaughter
+f+ Morbius|tortured|Vic Slaughter|ending his rampage with torturing Slaughter and burying him alive
+f- Nightmare|other_verb|tormenting
+f+ Nightmare|tortured|Morbius|Nightmare delighted in tormenting Morbius
+- Stephen Strange|fought|Morbius
+
+@8134 rulings 2026-11-04: as partner b1453 (Strange and Morbius are one side against the possessing Nightmare: no Strange|fought|Morbius)
+keep
+- Stephen Strange|fought|Morbius
+
+@8155 rulings 2026-11-04: as partner b1453 (torture of Slaughter and Nightmare's tormenting of Morbius -> tortured, TORTURE IS NOT A FIGHT)
+keep
+- Morbius|defeated|Vic Slaughter
+f+ Morbius|tortured|Vic Slaughter|ending his rampage with torturing Slaughter and burying him alive
+f- Nightmare|other_verb|tormenting
+f+ Nightmare|tortured|Morbius|Nightmare delighted in tormenting Morbius
+
+@1493 rulings 2026-11-04: Marvel Boy is Phillip's puppet ("his puppet controlling Marvel Boy") sent to kidnap the false Alicia -> his act is controlled|stated|Phillip (MIND CONTROL ruling); Phillip keeps his captured (named the kidnapper, holds her: A28); partner b9624 edited identically
+keep
+f+ Marvel Boy|other_verb|kidnap|he created a puppet of Marvel Boy of the New Warriors, sending him to kidnap her from her apartment|controlled|stated|Phillip
+
+@9624 rulings 2026-11-04: as partner b1493 (Marvel Boy's kidnapping under the Puppet Master's control -> controlled|stated|Phillip)
+keep
+f+ Marvel Boy|other_verb|kidnap|he created a puppet of Marvel Boy of the New Warriors, sending him to kidnap her from her apartment|controlled|stated|Phillip
+
+@1503 rulings 2026-11-04: "Dylon-Cir, who once tortured Deathcry" -> tortured, not fought (TORTURE IS NOT A FIGHT)
+keep
+- Dylon-Cir|fought|Deathcry
+f+ Dylon-Cir|tortured|Deathcry|Tabula Rasa morphed into Dylon-Cir, who once tortured Deathcry
+
+@1587 rulings 2026-11-04: Kang uses telekinesis on the imprisoned Scott and Cassie Lang, "torturing Ant-Man and his daughter" -> tortured, not fought (TORTURE IS NOT A FIGHT); captures kept
+keep
+- Kang|fought|Scott Lang
+- Kang|fought|Cassie Lang
+f+ Kang|tortured|Scott Lang|He also used this ability against Scott Lang and Cassie Lang when they were imprisoned, torturing Ant-Man and his daughter
+f+ Kang|tortured|Cassie Lang|He also used this ability against Scott Lang and Cassie Lang when they were imprisoned, torturing Ant-Man and his daughter
+
+@1633 rulings 2026-11-04: Simmons and Fitz, held and in "excruciating pain", are each tortured by the other's evil side -> tortured, not fought (TORTURE IS NOT A FIGHT)
+keep
+- Doctor|fought|Simmons
+- Id Simmons|fought|Fitz
+f+ Doctor|tortured|Simmons|The two then get mad at each other for the other's evil side torturing them
+f+ Id Simmons|tortured|Fitz|The two then get mad at each other for the other's evil side torturing them
+
+@1752 rulings 2026-11-04: Logan, brought in unconscious, is lobotomized and brutalized by Sinister -> tortured plus the stated injury as wounded, not fought (TORTURE IS NOT A FIGHT)
+keep
+- Sinister|fought|Logan
+f+ Sinister|tortured|Logan|he lobotomized Logan and brutalized him while Creed enjoyed the show
+f+ Sinister|wounded|Logan|he lobotomized Logan and brutalized him while Creed enjoyed the show
+
+@1816 rulings 2026-11-04: Hive infecting Johnson and "turning her into a double agent" is control, not a fight (A116, MIND CONTROL ruling); the turning is Hive's act, not Johnson's
+keep
+- Hive|fought|Daisy Johnson
+f+ Hive|other_verb|infected|Johnson had been found and infected by Hive
+f- Daisy Johnson|other_verb|turning
+f+ Hive|other_verb|turning|turning her into a double agent who would soon betray her friends
+
+@1828 rulings 2026-11-04: the captured Wolverine is delivered to Roche "where he was tortured" -> tortured, not fought (TORTURE IS NOT A FIGHT); wound kept
+keep
+- Roche|fought|Wolverine
+f+ Roche|tortured|Wolverine|delivered to Roche where he was tortured
+
+@1862 rulings 2026-11-04: Killer Thrill mind-controls the troll "into teleporting them away" -> Pip's act is controlled|stated|Killer Thrill (MIND CONTROL ruling); her own capture/defeat of Pip stays
+keep
+f+ Pip|other_verb|teleporting|use her telepathy to mind control the troll into teleporting them away|controlled|stated|Killer Thrill
+
+@1930 rulings 2026-11-04: under the Puppet Master's control the Hulk strikes down Rick and is "forced to attack" Namor -> controlled facts asserted_by the Puppet Master; Namor's fighting back and his win are his plain events (MIND CONTROL ruling)
+keep
+- Hulk|defeated|Rick
+- Hulk|fought|Namor
+f+ Hulk|other_verb|struck|the Hulk was ordered to attack anyone who came near and he struck down his staunchest ally|controlled|stated|Puppet Master
+f+ Hulk|attacked|Namor|When Namor offered a partnership, the Hulk was forced to attack|controlled|stated|Puppet Master
++ Namor|fought|Hulk|The two fought across the beaches of Florida

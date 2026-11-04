@@ -1,0 +1,77 @@
+@11629 rulings 2026-11-04: STOP - "stopping Eli Morrow from destroying Los Angeles": completed stop of a named villain's plot -> Aida|defeated|Eli Morrow, the stopping fact goes
+keep
+f- Aida|other_verb|stopping
++ Aida|defeated|Eli Morrow|stopping Eli Morrow from destroying Los Angeles
+
+@11641 rulings 2026-11-04: CAPTURED AS OUTCOME - Simmons shoots Ophelia and Fitz with an I.C.E.R. and puts them in a Containment Chamber: the attack and the capture are one stated act that ends the encounter -> defeated replaces fought (A145), captured kept; no injury is stated for the stun round (no wounded; see owner note)
+keep
+- Jemma Simmons|fought|Ophelia
+- Jemma Simmons|fought|Fitz
++ Jemma Simmons|defeated|Ophelia|They were shot with an I.C.E.R. by Jemma Simmons immediately after and put in a Containment Chamber at the Playground
++ Jemma Simmons|defeated|Fitz|They were shot with an I.C.E.R. by Jemma Simmons immediately after and put in a Containment Chamber at the Playground
+
+@11711 rulings 2026-11-04: FW - Jones attacks Kilgrave and presses "his open bullet wound": the wound is stated but not caused by this act (no doer in the window) -> Kilgrave|wounded|-; the exchange continues (fought kept)
+keep
+f+ Kilgrave|wounded|-|pressed his finger into his open bullet wound
+
+@11996 rulings 2026-11-04: ONE NAME PER PERSON ACROSS LAYERS - the ruling's own example: the fact gate strips the ordinary title (General Hale -> Hale), so the event row follows; the capture has no stated fight (captured alone)
+keep
+r General Hale=>Hale
+
+@11997 rulings 2026-11-04: FW - "shot the Inhuman Hive with a grenade launcher" is a stated hit -> Piper|wounded|Hive (abilities note, no stated end: fought kept); CTRL hit: Piper is not under Hive's control in the window (no change)
+keep
+f+ Piper|wounded|Hive|She also shot the Inhuman Hive with a grenade launcher from a distance with relative ease
+
+@12086 rulings 2026-11-04: CAPTURED AS OUTCOME - May and Sinara fight (fought row, own clause) and "rather than kill May, Sinara then captured her": the capture ends the fight -> Sinara|defeated|May beside captured
+keep
++ Sinara|defeated|May|However, rather than kill May, Sinara then captured her and brought her to Kasius
+
+@12119 rulings 2026-11-04: STOP INSIDE AN EXCHANGE (ruling names b12119: no defeated) - the prevention happens inside the continuing battle; it is kept as Vision's fact so the sentence is covered
+keep
+f+ Vision|other_verb|prevented|working in considerable tandem with the other Avengers as they prevented Ultron and the drones from reaching the activation device
+
+@12131 rulings 2026-11-04: FW - "after being stabbed by it" (Corvus Glaive's Glaive) is a stated wound -> Corvus Glaive|wounded|Vision (abilities note, no stated end: fought kept)
+keep
+f+ Corvus Glaive|wounded|Vision|Corvus Glaive's Glaive was capable of negating Vision's phasing powers after being stabbed by it
+
+@12153 rulings 2026-11-04: FW - abilities note: "shot Peter Hong in the head", "shot Neville Barnwell through the back of the neck and into Juan Carlos Castro's eye" are stated wounds -> wounded each; no death is stated (KILLED WITHOUT A STATED DEATH), fought kept as for the other abilities notes (b8783)
+keep
+f+ Diamondback|wounded|Peter Hong|he shot Peter Hong in the head
+f+ Diamondback|wounded|Neville Barnwell|shot Neville Barnwell through the back of the neck and into Juan Carlos Castro's eye with a single round
+f+ Diamondback|wounded|Juan Carlos Castro|shot Neville Barnwell through the back of the neck and into Juan Carlos Castro's eye with a single round
+
+@12157 rulings 2026-11-04: FW - "after he shot him" is a stated wound (Cage is in an ambulance, the chase continues) -> wounded only, fought kept
+keep
+f+ Diamondback|wounded|Luke Cage|Diamondback used a Humvee to chase Luke Cage's ambulance after he shot him
+
+@12198 rulings 2026-11-04: "NEARLY V" - "almost destroying his mansion" did not happen -> destroying actual/denied (not attempted)
+keep
+f- Rhodes|other_verb|destroying
+f+ Rhodes|other_verb|destroying|almost destroying his mansion|actual|denied|
+
+@12207 rulings 2026-11-04: "NEARLY V" - "he accidentally almost hit her" did not happen -> hit actual/denied
+keep
+f- Stark|other_verb|hit
+f+ Stark|other_verb|hit|he accidentally almost hit her with a beam from his flight stabilizer|actual|denied|
+
+@12268 rulings 2026-11-04: FW - "the two shot each other through an alley" states a hit both ways -> wounded each direction (abilities note, outcome open: fought kept)
+keep
+f+ Nadeem|wounded|Benjamin Poindexter|as the two shot each other through an alley
+f+ Benjamin Poindexter|wounded|Nadeem|as the two shot each other through an alley
+
+@12297 rulings 2026-11-04: FW - "Shades then shot Comanche into the chest": a stated wound with nothing continuing in the window (Klaue test) -> wounded + defeated, fought dropped (one act, A145); no death is stated (no killed)
+keep
+- Shades|fought|Comanche
++ Shades|defeated|Comanche|before Shades then shot Comanche into the chest
+f+ Shades|wounded|Comanche|before Shades then shot Comanche into the chest
+
+@12316 rulings 2026-11-04: TORTURE IS NOT A FIGHT - tying the kidnapped Richards to a chair and setting her on fire is cruelty to a captive, not a fight; and "Helstrom's father" is a possessive description, no end (b1-b288 ruling), so his rows go and his sentences take crowd_end; the victim's own injury stays as Zoe Richards|wounded|-
+keep
+- Helstrom's father|fought|Zoe Richards
+- Helstrom's father|captured|Zoe Richards
+- Helstrom's father|met|Zoe Richards
+f- Helstrom's father|ordered|Helstrom
+f- Helstrom's father|other_verb|feigning
+f+ Zoe Richards|wounded|-|He tied Richards to a chair, pouring liquid on her and setting her on fire
+t+ crowd_end|Her father eventually approached Helstrom and Richards, feigning concern for Helstrom, before kidnapping Richards
+t+ crowd_end|He tied Richards to a chair, pouring liquid on her and setting her on fire

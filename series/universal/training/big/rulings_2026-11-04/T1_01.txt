@@ -1,0 +1,77 @@
+@39 rulings 2026-11-04: Thanos kidnaps and tortures captives Nebula and Starfox -> tortured, not fought (owner ruling TORTURE IS NOT A FIGHT); capture kept
+keep
+- Thanos|fought|Nebula
+- Thanos|fought|Starfox
+f+ Thanos|tortured|Nebula|torturing them in the gigantic temple he had erected to adore Death
+f+ Thanos|tortured|Starfox|torturing them in the gigantic temple he had erected to adore Death
+
+@57 rulings 2026-11-04: the Facility "tortured and captured Mercury" with no stated fight for the pair -> tortured, not defeated (TORTURE IS NOT A FIGHT); capture kept
+keep
+- Facility|defeated|Mercury
+f+ Facility|tortured|Mercury|who tortured and captured Mercury to create mutant-hunting monsters
+
+@79 rulings 2026-11-04: the Black Queen chains and tortures the X-Men while under Mastermind's control (she later "broke free from Mastermind's control") -> tortured and the chaining as controlled|stated|Mastermind (TORTURE IS NOT A FIGHT; MIND CONTROL); the control is no fought (A116)
+keep
+- Phoenix|captured|X-Men
+- Phoenix|fought|X-Men
+- Mastermind|fought|Phoenix
+f+ Phoenix|tortured|X-Men|The ruthless Black Queen cruelly chained and tortured the X-Men|controlled|stated|Mastermind
+f+ Phoenix|other_verb|chained|The ruthless Black Queen cruelly chained and tortured the X-Men|controlled|stated|Mastermind
+
+@526 rulings 2026-11-04: Phillip "used his clay to force her to move to Sunshine City" -> Alicia's move is a controlled act, not a plain arrival (MIND CONTROL ruling); partner b9628 edited identically
+keep
+- Alicia|arrived|Sunshine City
+f+ Alicia|other_verb|move|He used his clay to force her to move to Sunshine City|controlled|stated|Phillip
+
+@9628 rulings 2026-11-04: as partner b526 (Alicia moved under the Puppet Master's clay control -> controlled act, MIND CONTROL ruling)
+keep
+- Alicia|arrived|Sunshine City
+f+ Alicia|other_verb|move|He used his clay to force her to move to Sunshine City|controlled|stated|Phillip
+
+@1341 rulings 2026-11-04: Dragon Man is summoned through the control helmet that takes control of the donors -> his attack on the Thing is controlled|stated|Phillip; the control itself is no fight (MIND CONTROL ruling, A116)
+keep
+- Dragon Man|fought|Thing
+- Phillip|fought|Dragon Man
+f+ Dragon Man|attacked|Thing|summon Dragon Man to battle the Thing|controlled|stated|Phillip
+@782 rulings 2026-11-04: an attempted mind control is no fight (A116, MIND CONTROL ruling: no controller fought); the attempt is already an attempted other_verb fact
+keep
+- Puppet Master|fought|Hulk
+
+@796 rulings 2026-11-04: Fitz locks Sif, Simmons and Skye in "being under the control of Lorelei" -> his acts are controlled facts asserted_by Lorelei, not plain captures (MIND CONTROL ruling)
+keep
+- Fitz|captured|Sif
+- Fitz|captured|Simmons
+- Fitz|captured|Skye
+f+ Fitz|other_verb|locked|as Fitz showed Sif the collar inside the Cage, he locked her in, being under the control of Lorelei|controlled|stated|Lorelei
+f+ Fitz|other_verb|locked|Fitz explained that he had already locked them in for Lorelei|controlled|stated|Lorelei
+@826 rulings 2026-11-04: Peggy and Gabe, held captive, undergo the Red Skull's torture -> tortured, not fought (TORTURE IS NOT A FIGHT); captures kept
+keep
+- Red Skull|fought|Peggy
+- Red Skull|fought|Gabe
+f+ Red Skull|tortured|Peggy|Peggy and Gabe had undergone some of the most excruciating torture the Red Skull could imagine
+f+ Red Skull|tortured|Gabe|Peggy and Gabe had undergone some of the most excruciating torture the Red Skull could imagine
+@1163 rulings 2026-11-04: the Shadow King uses David's body "to torment Prof. X, mocking him": cruelty with no stated fight -> tortured, not fought (TORTURE IS NOT A FIGHT)
+keep
+- Shadow King|fought|Prof. X
+f+ Shadow King|tortured|Prof. X|The Shadow King used David's body to torment Prof. X, mocking him
+
+@1242 rulings 2026-11-04: Iron Man "incapable of following the Puppet Master's commands" is the control failing, no attack: the controller gets no fought (MIND CONTROL ruling, A116)
+keep
+- Puppet Master|fought|Iron Man
+
+@1314 rulings 2026-11-04: the Jackal beats Shriek and forcibly removes the virus while she is imprisoned in Ravencroft -> cruelty to a prisoner is tortured, not fought (TORTURE IS NOT A FIGHT)
+keep
+- Jackal|fought|Shriek
+f+ Jackal|tortured|Shriek|the Jackal beat and forcibly removed the Carrion virus from Shriek while the two of them were imprisoned in Ravencroft
+
+@1367 rulings 2026-11-04: Morgan le Fay enthralls Geoffrey and under her influence he goes up against the Runaways -> the enthralling is the controller's other_verb, not fought (A116); his act is controlled|stated|Morgan le Fay (MIND CONTROL ruling)
+keep
+- Morgan le Fay|fought|Geoffrey
+f+ Morgan le Fay|other_verb|enthralled|which was now controlled by Morgan le Fay, who enthralled him
+f+ Geoffrey|attacked|Runaways|Under her influence, Geoffrey went up against his fellow former PRIDE members and the Runaways|controlled|stated|Morgan le Fay
+
+@1438 rulings 2026-11-04: Doc Gross chains the captive Prime and shocks him -> tortured, not fought (TORTURE IS NOT A FIGHT); Prime's own stated attack after breaking free is the fight
+keep
+- Doc Gross|fought|Prime
+f+ Doc Gross|tortured|Prime|who chained him up and electrically shocked him when he tried to escape
++ Prime|fought|Doc Gross|Prime broke free and attacked him

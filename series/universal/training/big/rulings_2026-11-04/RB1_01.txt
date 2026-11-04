@@ -1,0 +1,95 @@
+@2139 rulings 2026-11-04: FW + owner ruling 2026-11-03 (Klaue test) and INTERCEPTED ATTACKS (A75): Janet shoots Victor to protect Chase and nothing continues (Victor is out, the others arrive after) -> wounded + defeated, one stated act so fought goes (A145); no death stated in this window so no killed; the shot protects Chase -> saved
+keep
+- Janet|fought|Victor
+f+ Janet|wounded|Victor|Janet had shot Victor to protect their son Chase
++ Janet|defeated|Victor|Janet had shot Victor to protect their son Chase
++ Janet|saved|Chase|Janet had shot Victor to protect their son Chase
+
+@2161 rulings 2026-11-04: TORTURE IS NOT A FIGHT (owner) + CAPTURED AS OUTCOMES: the Red Skull kidnaps (no fight stated) and tortures the two captives -> captured stays alone, the fought rows become tortured
+keep
+- Red Skull|fought|Margaret Carter
+- Red Skull|fought|Gabe Jones
+f+ Red Skull|tortured|Margaret Carter|the Red Skull kidnaps and tortures them due to his bigotry
+f+ Red Skull|tortured|Gabe Jones|the Red Skull kidnaps and tortures them due to his bigotry
+
+@2209 rulings 2026-11-04: FW: stated wounds inside the fight (stabbing in the back, unloading clips into his sides) get wounded facts; the fight continues, no defeated
+keep
+f+ Wolverine|wounded|Deadpool|causing Wolverine to once again attack Deadpool by stabbing him in the back
+f+ Deadpool|wounded|Wolverine|allowing him to unload his clips into Wolverine's sides
+
+@2245 rulings 2026-11-04: TORTURE IS NOT A FIGHT (owner): the Silent Monk throws his pit captive Logan in over and over ("this torture") -> tortured, not fought; captured stays alone (no fight before the capture); Deathstrike's arrow in his thigh is a real attack -> fought stays + wounded (FW); the exchange continues (threat), no defeated
+keep
+- Silent Monk|fought|Old Man Logan
+f+ Silent Monk|tortured|Old Man Logan|The Silent Monk decided to kill the old man in front of Lady Deathstrike's eyes by throwing him into the pit over and over again with his telekinetic powers
+f+ Deathstrike|wounded|Silent Monk|threw it into the Silent Monk's thigh, causing him to fall into the pit with them
+
+@2251 rulings 2026-11-04: FW: Jarvis shoots Frost (a stated wound); she heals and the scene continues -> wounded only, fought stays
+keep
+f+ Jarvis|wounded|Whitney Frost|he then shot her in cold blood
+
+@2260 rulings 2026-11-04: WBY: "Dylan was injured by Dr. Fortissimo" names the doer -> attacker|wounded|victim
+keep
+f- Dylan|wounded|-
+f+ Dr. Fortissimo|wounded|Dylan|When Dylan was injured by Dr. Fortissimo
+
+@2284 rulings 2026-11-04: "NEARLY V": "she almost hit Bishop in the head" -> the hit did not happen: actual, denied
+keep
+f- Lopez|other_verb|hit
+f+ Lopez|other_verb|hit|as she almost hit Bishop in the head with one|actual|denied|
+
+@2290 rulings 2026-11-04: RECORDS OF VICTORIES (b2290 named in the ruling): one defeated per named individual foe, descriptions cut to the name (Lady stripped by the gate, "Master Man (Max Lohmer)" is the second Master Man, so his real name; "Hydra Super-Soldiers (including Erlking)" -> Erlking); the Arena of Death ends "emerging victorious" over the named Batroc, Mad Dog, Razor-Fist -> defeated; Dark Elves, Super-Soldiers and the boxer are no ends; the Iron Spider fight "to a standstill" stays fought
+keep
++ Rogers|defeated|Red Skull|foes including Red Skull wielding the Cosmic Cube
++ Rogers|defeated|Warrior Woman|Red Skull wielding the Cosmic Cube, Warrior Woman
++ Rogers|defeated|Master Man|Warrior Woman, Master Man, Master Man (Max Lohmer)
++ Rogers|defeated|Max Lohmer|Warrior Woman, Master Man, Master Man (Max Lohmer)
++ Rogers|defeated|Kang the Conqueror|Kang the Conqueror, Lady Deathstrike
++ Rogers|defeated|Deathstrike|Kang the Conqueror, Lady Deathstrike
++ Rogers|defeated|Beast|Lady Deathstrike, Beast, Nuke, Absorbing Man
++ Rogers|defeated|Nuke|Lady Deathstrike, Beast, Nuke, Absorbing Man
++ Rogers|defeated|Absorbing Man|Nuke, Absorbing Man, Spider-Man, Rhino
++ Rogers|defeated|Spider-Man|Nuke, Absorbing Man, Spider-Man, Rhino
++ Rogers|defeated|Rhino|Absorbing Man, Spider-Man, Rhino, N2 (Namor's clone)
++ Rogers|defeated|N2|Rhino, N2 (Namor's clone), Gambit, Protocide
++ Rogers|defeated|Gambit|N2 (Namor's clone), Gambit, Protocide
++ Rogers|defeated|Protocide|N2 (Namor's clone), Gambit, Protocide
++ Rogers|defeated|Erlking|Hydra Super-Soldiers (including Erlking), Klaw
++ Rogers|defeated|Klaw|Hydra Super-Soldiers (including Erlking), Klaw
++ Rogers|defeated|Bron Char|Superhuman Kree Bron Char, Scorpion, Iron Man
++ Rogers|defeated|Scorpion|Superhuman Kree Bron Char, Scorpion, Iron Man
++ Rogers|defeated|Iron Man|Superhuman Kree Bron Char, Scorpion, Iron Man
++ Rogers|defeated|Anti-Cap|Iron Man, Anti-Cap, Bushmaster, and Armadillo
++ Rogers|defeated|Bushmaster|Iron Man, Anti-Cap, Bushmaster, and Armadillo
++ Rogers|defeated|Armadillo|Iron Man, Anti-Cap, Bushmaster, and Armadillo
++ Rogers|defeated|Batroc the Leaper|Rogers battled through an army of over a hundred supervillains including Batroc the Leaper, Mad Dog, Razor-Fist
++ Rogers|defeated|Mad Dog|Rogers battled through an army of over a hundred supervillains including Batroc the Leaper, Mad Dog, Razor-Fist
++ Rogers|defeated|Razor-Fist|Rogers battled through an army of over a hundred supervillains including Batroc the Leaper, Mad Dog, Razor-Fist
+
+@2337 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOMES: Parker traps Strange in the Mirror Dimension and takes the Macchina and the Sling Ring, ending the stated fight -> defeated + sealed (fought is its own sentence, stays); Strange's sending of Parker opens the contest -> sealed only
+keep
++ Peter Parker|defeated|Doctor Strange|He managed to trap Strange in the Dimension and take the Macchina and Strange's Sling Ring
+
+@2378 rulings 2026-11-04: CAPTURED AS OUTCOMES: "attacked and kidnapped" is one stated act ending the struggle -> defeated + captured, defeated replaces that fought (A145)
+keep
+- Darius Davis|fought|Alex Wilder
+- Crips|fought|Alex Wilder
++ Darius Davis|defeated|Alex Wilder|only to be attacked and kidnapped in the parking zone by Darius Davis and the Crips
++ Crips|defeated|Alex Wilder|only to be attacked and kidnapped in the parking zone by Darius Davis and the Crips
+
+@2398 rulings 2026-11-04: STOP (2026-10-14 ruling): foiling a named person's plot is defeated; the other_verb fact goes
+keep
+f- Angel|other_verb|foiling
++ Angel|defeated|Handley|foiling Professor Handley's plot to flood the diamond market with phony diamonds
+
+@2425 rulings 2026-11-04: STOP: the thwarted sneak attack already has Fantastic Four|defeated|Morrat; the other_verb thwarted twin goes
+keep
+f- Fantastic Four|other_verb|thwarted
+
+@2455 rulings 2026-11-04: FW: Byrdie slices through one of the Champion's tentacles (a severed limb) -> wounded; the battle continues to the kill by Carter, no defeated for Byrdie
+keep
+f+ Byrdie|wounded|Champion|Byrdie then infused her wings with energy and sliced through a tentacle with great speed
+
+@2472 rulings 2026-11-04: CAPTURED AS OUTCOMES: ambushed and then taken captive and held prisoner -> the ambush ends in the capture: defeated + captured, one coordinated act so defeated replaces fought (A145)
+keep
+- Skrull Empire|fought|Black Bolt
++ Skrull Empire|defeated|Black Bolt|Black Bolt was ambushed by the Skrull Empire

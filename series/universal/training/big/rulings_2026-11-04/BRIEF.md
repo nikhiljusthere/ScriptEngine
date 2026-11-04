@@ -86,3 +86,17 @@ Read `gold27_system.md` "Owner rulings 2026-11-04 (torture, mind control, clinic
   (`f+ B|attacked|C|quote|controlled|stated|A`, outcomes as `f+ B|other_verb|<verb>|quote|controlled|stated|A`).
   Most CTRL hits are the controller's own acts, the victim's resistance, or control that ended: no change.
 The new relation `tortured` and modality `controlled` are in fact_gate (the dry-run check accepts them).
+
+## Addendum 2 (2026-11-04 evening, decisions on the TCG questions)
+- A creature or person acting on a summoner's or master's COMMAND is an `ordered` act (`Y|other_verb|V|...|ordered|
+  stated|X`, plus `X|ordered|Y`); `controlled` is only for stated mind control / possession / hypnosis /
+  programming by a named controller (asserted_by = that controller).
+- A controlled act the doer partly resists by his own will ("purposely missed any vitals", b1989): the act stays
+  `controlled`; the resisting act is the doer's own actual fact (`Mockingbird|other_verb|missed|quote`).
+- other_verb objects are the quote's own verb word, also under `controlled`: "shot in the head" ->
+  `B|other_verb|shot|...|controlled|stated|A` (+ `B|wounded|C|...|controlled|stated|A` when injured), never an outcome
+  word the quote does not contain. Re-check gold b1989 and b2041 (TCG_01) for this and fix them in your first file
+  if you are the agent with list_TCG_rest.txt.
+- Torture of a captive also seen as `defeated` (b1861) or as `fought` beside a capture (b10653 Nebula): `tortured`.
+- RESUME lists (`list_R_B1/B2/B3.txt`): read your predecessor's notes_<B1|B2|B3>.md first. Its drafts ("STOPPED HERE")
+  must be re-read against the window before use; its "no change" decisions stand. Some lines also carry TC classes.

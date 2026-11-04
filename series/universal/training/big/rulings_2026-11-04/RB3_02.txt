@@ -1,0 +1,79 @@
+@10114 rulings 2026-11-04: TORTURE IS NOT A FIGHT (owner) - Claire Temple is the kidnappers' captive when "Sergei and Dmitry, tortured and hit her" -> tortured, the fought rows go; captured kept; no injury or questioning is stated
+keep
+- Sergei|fought|Claire Temple
+- Dmitry|fought|Claire Temple
+f+ Sergei|tortured|Claire Temple|Her kidnappers, Sergei and Dmitry, tortured and hit her
+f+ Dmitry|tortured|Claire Temple|Her kidnappers, Sergei and Dmitry, tortured and hit her
+
+@10653 rulings 2026-11-04: TORTURE (addendum 2, b10653 named) - "frequently torturing her" is cruelty to his captive -> tortured, the fought row goes; CAPTURED AS OUTCOME - Nebula's attempt on Thanos (stated resistance) ends in her capture -> defeated + captured
+keep
+- Thanos|fought|Nebula
+f+ Thanos|tortured|Nebula|keeping her on his ship, frequently torturing her to find out where the Soul Stone was from Gamora
++ Thanos|defeated|Nebula|After she attempted to kill Thanos. he captured her
+
+@10656 rulings 2026-11-04: FW - "Vision was stabbed by Corvus Glaive" is a stated wound; the fight continues (Maximoff rescues him, the intense fight begins) -> wounded only, fought kept
+keep
+f+ Corvus Glaive|wounded|Vision|Vision was stabbed by Corvus Glaive
+
+@10761 rulings 2026-11-04: "NEARLY V" - "she had almost shot him by mistake": the shooting of Curtis did not happen -> other_verb shot actual/denied (not attempted); the shot she did fire at the door is her own act
+keep
+f- Amy Bendix|other_verb|shot
+f+ Amy Bendix|other_verb|shot|she had almost shot him by mistake|actual|denied|
+f+ Amy Bendix|other_verb|fired|fired a shot at the door
+
+@10848 rulings 2026-11-04: CAPTURED AS OUTCOME - Morse readies for battle (stated resistance) and Lucio "paralyzed Morse and Hunter with his eyes and then took them to the station": the paralysis is the outcome of the one stated act -> defeated replaces fought (A145), captured kept
+keep
+- Lucio|fought|Morse
+- Lucio|fought|Hunter
++ Lucio|defeated|Morse|paralyzed Morse and Hunter with his eyes and then took them to the station
++ Lucio|defeated|Hunter|paralyzed Morse and Hunter with his eyes and then took them to the station
+
+@11042 rulings 2026-11-04: NEAR-FINAL STATES + RESTRAINING SO OTHERS CAN FINISH - Belova gains the upper hand and sprays Ana while Sonya pins her; nothing of the fight continues (the scene turns to the reveal) -> Belova|defeated|Ana and Sonya|defeated|Ana (the fight with "them" is stated separately: fought rows kept); the negated shot and the disarm get their facts; CTRL: no control of Sonya is stated (no change)
+keep
++ Belova|defeated|Ana|Eventually, Belova managed to gain an upper hand and while Sonya pinned Ana to the floor, Belova sprayed her with the Red Dust
++ Sonya|defeated|Ana|Eventually, Belova managed to gain an upper hand and while Sonya pinned Ana to the floor, Belova sprayed her with the Red Dust
+f+ Belova|other_verb|shoot|but Belova did not shoot|actual|denied|
+f+ Ana|other_verb|disarm|so Ana was able to disarm her
+
+@11069 rulings 2026-11-04: NEAR-FINAL STATES - "she aimed it at her sister ..., but Romanoff swiftly disarmed her": a disarm with nothing continuing in the window -> Romanoff|defeated|Belova; the aim (Belova's act) keeps fought (acts of different doers)
+keep
++ Romanoff|defeated|Belova|but Romanoff swiftly disarmed her
+
+@11241 rulings 2026-11-04: FW + INTERCEPTED ATTACK - "Alex shot Andre, who aimed at Geoffrey": a stated shot with nothing continuing in the window -> wounded + defeated, fought dropped (one act, A145); the shot stops Andre's attack on a named person -> Alex saved Geoffrey (A75)
+keep
+- Alex Wilder|fought|Andre
++ Alex Wilder|defeated|Andre|In the ensuing confrontation, Alex shot Andre, who aimed at Geoffrey
+f+ Alex Wilder|wounded|Andre|In the ensuing confrontation, Alex shot Andre, who aimed at Geoffrey
++ Alex Wilder|saved|Geoffrey|In the ensuing confrontation, Alex shot Andre, who aimed at Geoffrey
+
+@11257 rulings 2026-11-04: STOP - "forced to intervene once more in order to stop Dox and her loyalists" is a purpose clause -> planned
+keep
+f- Laufeydottir|other_verb|stop
+f+ Laufeydottir|other_verb|stop|in order to stop Dox and her loyalists from pruning the new branches|planned|stated|Laufeydottir
+
+@11283 rulings 2026-11-04: STOP INSIDE AN EXCHANGE (ruling names b11283: no defeated, stop fact kept) + INTERCEPTED ATTACKS - Loki stops her attempts to stab and kill He Who Remains -> Loki|saved|He Who Remains (A75)
+keep
++ Loki|saved|He Who Remains|tried to stab He Who Remains but Loki stopped her
+
+@11464 rulings 2026-11-04: FW - Patch "stabbing him in the head" and Logan "who shot him" are stated wounds; Deadpool moves on to the next Variants (no stated end) -> wounded only, fought kept
+keep
+f+ Patch|wounded|Deadpool|who also responded with aggression by stabbing him in the head
+f+ Logan|wounded|Deadpool|an older version of Logan who shot him
+
+@11558 rulings 2026-11-04: CAPTURED AS OUTCOME - the Vulture's attack on Spider-Man (fought row) ends with Spider-Man webbing Toomes to the cargo for the police -> defeated + captured (saved kept: he pulls him from the blaze first)
+keep
++ Spider-Man|defeated|Toomes|Spider-Man retrieved Toomes from the blaze and webbed him to the remaining cargo
+
+@11574 rulings 2026-11-04: STOP - "his plans were foiled by the Avengers": completed stop of a named villain's plot -> Avengers|defeated|Ultron (no member tied), the foiled fact goes; CTRL hit is Ultron controlling the Quinjet (a vehicle, not mind control): no change
+keep
+f- Avengers|other_verb|foiled
++ Avengers|defeated|Ultron|but his plans were foiled by the Avengers
+
+@11577 rulings 2026-11-04: STOP INSIDE AN EXCHANGE - Ultron's "desperate attempt to stop this" fails ("still unable to free himself"): no outcome row; the attempted stop is his attempted fact
+keep
+f+ Ultron|other_verb|stop|In a desperate attempt to stop this|attempted|stated|Ultron
+
+@11612 rulings 2026-11-04: ESC (A74) - Valkyrie and Mighty Thor back Thor up, "causing Gorr to retreat" (defeated rows exist) -> Gorr escaped each of them
+keep
++ Gorr the God Butcher|escaped|Valkyrie|Valkyrie and Mighty Thor went to back him up, causing Gorr to retreat
++ Gorr the God Butcher|escaped|Mighty Thor|Valkyrie and Mighty Thor went to back him up, causing Gorr to retreat

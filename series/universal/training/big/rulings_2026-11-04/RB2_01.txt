@@ -1,0 +1,56 @@
+@6245 rulings 2026-11-04: NEARLY V: "almost burned down New York" -> the act did not happen: actual/denied, not attempted
+keep
+f- Human Torch|other_verb|burned
+f+ Human Torch|other_verb|burned|almost burned down New York|actual|denied|
+@6352 rulings 2026-11-04: TEAM: "He then teamed up with Captain America and defeated the Grey Gargoyle" -> Captain America, named in the same clause, gets the same defeated row as Spidey
+keep
++ Captain America|defeated|Grey Gargoyle|He then teamed up with Captain America and defeated the Grey Gargoyle
+@6355 rulings 2026-11-04: ESC (A74): "attacked by the Lizard, but managed to fight him off" -> the defeated row exists; the Lizard driven off also escaped Peter; the museum robbers are unnamed (STOP fact kept)
+keep
++ Lizard|escaped|Peter Parker|Peter was attacked by the Lizard, but managed to fight him off
+@6401 rulings 2026-11-04: TEAM: "Bobby and Loki confronted an illusion ... and Bobby helped defeat Daemond" -> Loki, named in the same sentence as the one Bobby helped, gets the same defeated row
+keep
++ Loki|defeated|Daemond|Bobby helped defeat Daemond without killing him
+@6408 rulings 2026-11-04: ESC (A74): the Fantastic Four's revolt "saw Rama-Tut flee back to his own future" -> the beaten Rama-Tut escaped each named winner; the flee fact is the event's twin (A89) and goes; CTRL: the thrall and capture are Rama-Tut's own acts (no change)
+keep
+f- Rama-Tut|other_verb|flee
++ Rama-Tut|escaped|Sue|staged a revolt that saw Rama-Tut flee back to his own future
++ Rama-Tut|escaped|Reed|staged a revolt that saw Rama-Tut flee back to his own future
+@6425 rulings 2026-11-04: TEAM: "the others stopped him with the assistance of Ben" -> Ben, named in the same clause, gets the same defeated row; A8 stands for "After the Red Ghost was defeated" (the Watcher is present as a possible doer)
+keep
++ Ben|defeated|Diablo|the others stopped him with the assistance of Ben
+@6456 rulings 2026-11-04: PASSIVE (A8): "was stabbed and taken away by the Zombiotes" -> the doers are a crowd (no event), the victim's state is a fact
+keep
+f+ Eddie|wounded|-|Eddie tried to restrain Meridius during their fight but was stabbed
+@6533 rulings 2026-11-04: FW: "he was shot by Sin-Eater" is a stated wound -> Sin-Eater|wounded|Norman; the outcome is left open (powers section follows), so no defeated and the fight row stays
+keep
+f+ Sin-Eater|wounded|Norman|Norman was then cleansed of his evil when he was shot by Sin-Eater
+@6539 rulings 2026-11-04: STOP: Deadpool "foiled Dark Carnage's attempt to harvest his codex ... blowing up the lair" is a completed stop of a named person's plot that ends the scene -> Deadpool|defeated|Dark Carnage, the foiled fact goes (2026-10-14 ruling); Kindred's stop of Osborn is inside the ongoing Osborn/Spider-Man exchange (fact kept)
+keep
+f- Deadpool|other_verb|foiled
++ Deadpool|defeated|Dark Carnage|who foiled Dark Carnage's attempt to harvest his codex by filling his body full of dynamite and blowing up the lair
+@6540 rulings 2026-11-04: PASSIVE / NO DOER: the glider impales the Goblin by his own trick (no doer) -> victim's state as a fact (wounded; the apparent death is present); NEARLY V: "nearly killing him" -> the stated fight stays, the killing is actual/denied
+keep
+f+ Green Goblin|wounded|-|Spider-Man was able to dodge the glider which instead impaled the Green Goblin
+f+ Spider-Man|other_verb|killing|Spider-Man brutally attacked the Green Goblin, nearly killing him|actual|denied|
+@6559 rulings 2026-11-04: FW + Klaue test: Sinister "shot Iceman to the floor" and Iceman is out (Kitty checks that he is alive) -> wounded + defeated, one stated act so fought goes (A145)
+keep
+- Mr. Sinister|fought|Iceman
+f+ Mr. Sinister|wounded|Iceman|Sinister threw Prof X off the staircase and shot Iceman to the floor
++ Mr. Sinister|defeated|Iceman|Sinister threw Prof X off the staircase and shot Iceman to the floor
+@6609 rulings 2026-11-04: CAPTURED / SEALED + stated loss: the Surfer joined the fight against Galactus and "even his herald was no match for the world eater" -> Galactus|defeated|Silver Surfer; the later banishment (no resistance) stays sealed; partner b6607 does not share these sentences
+keep
++ Galactus|defeated|Silver Surfer|even his herald was no match for the world eater
+@6611 rulings 2026-11-04: FW + Klaue test (as b5066, same scene): Norman "was about to shoot Reed when Franklin shot him first" and they let Norman go -> wounded + defeated, one stated act so fought goes (A145); the intercepted attack gives saved (A75)
+keep
+- Franklin|fought|Norman Osborn
+f+ Franklin|wounded|Norman Osborn|when Franklin shot him first with a toy gun
++ Franklin|defeated|Norman Osborn|when Franklin shot him first with a toy gun
++ Franklin|saved|Reed|He pulled a gun and was about to shoot Reed when Franklin shot him first
+@6657 rulings 2026-11-04: STOP / crisis averted: the Purifiers' attack is stopped when "Glob was able to save the day. The crisis now averted" -> Glob|defeated|Purifiers; ENABLING ACTS: Logan and Cecilia only help (the text credits Glob), no outcome row for them
+keep
++ Glob|defeated|Purifiers|Thanks to the help of his friends, Logan and Cecilia, Glob was able to save the day
+@6658 rulings 2026-11-04: PASSIVE (A8 refined) + KILLED needs a stated death: "After his fight with the Maestro" Logan is found "alongside the body and head of the Maestro" (a severed head, final), the only party to that fight is Logan -> Logan|killed|Maestro, same sentence so fought goes (A145); partner b6669 does not share the sentence
+keep
+- Logan|fought|Maestro
++ Logan|killed|Maestro|After his fight with the Maestro, Logan was quickly found by Forge, Jubilee, Cecilia, and Glob who took him back to the X-Mansion alongside the body and head of the Maestro

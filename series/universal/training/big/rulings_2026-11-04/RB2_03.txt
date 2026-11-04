@@ -1,0 +1,59 @@
+@7212 rulings 2026-11-04: DESTROYED, THEN RECONSTITUTES (ruling names b7212): Robert "used to rebuild himself after being destroyed by him" -> never dead: Molecule Man|defeated|Robert Reynolds replaces killed, the restoration is his own other_verb (the quote's verb, rebuild)
+keep
+- Molecule Man|killed|Robert Reynolds
++ Molecule Man|defeated|Robert Reynolds|which he used to rebuild himself after being destroyed by him
+f+ Robert Reynolds|other_verb|rebuild|which he used to rebuild himself after being destroyed by him
+@7274 rulings 2026-11-04: STOP: in the list of Blade's acts, "stop Khonshu from taking over the world" is a completed stop of a named person's plot (as "help subdue the Hulk" beside it) -> Blade|defeated|Khonshu, the stop fact goes (2026-10-14 ruling)
+keep
+f- Blade|other_verb|stop
++ Blade|defeated|Khonshu|stop Khonshu from taking over the world
+@7287 rulings 2026-11-04: STOP: Blade, hostile to Dracula, "attacked a vampire but was easily stopped in his tracks by Dracula", who then takes him along -> a completed stop of a named person that ends Blade's attack = Dracula|defeated|Blade, the stopped fact goes (2026-10-14 ruling)
+keep
+f- Dracula|other_verb|stopped
++ Dracula|defeated|Blade|Blade attacked a vampire but was easily stopped in his tracks by Dracula
+@7367 rulings 2026-11-04: STOP: "Tony Stark ... continually foiled her schemes against Stark Industries" -> completed stops of a named person's schemes = Tony Stark|defeated|Natasha, the foiled fact goes (2026-10-14 ruling); partner b7380 identical (b7373 does not share the sentence)
+keep
+f- Tony Stark|other_verb|foiled
++ Tony Stark|defeated|Natasha|Tony Stark, the original Iron Man, continually foiled her schemes against Stark Industries
+@7380 rulings 2026-11-04: as partner b7367 (Tony Stark|defeated|Natasha for the foiled schemes)
+keep
+f- Tony Stark|other_verb|foiled
++ Tony Stark|defeated|Natasha|Tony Stark, the original Iron Man, continually foiled her schemes against Stark Industries
+@7417 rulings 2026-11-04: FW: the slash by "one of Owl's men" "did produce a wound" -> wounded, with the doer the existing fought row already gives (A63, a possessive group with a named head); no outcome
+keep
+f+ Owl|wounded|Jessica|Being slashed in the back by one of Owl's men with a knife did produce a wound
+@7444 rulings 2026-11-04: CAPTURED / NEAR-FINAL: "he webs up Batroc" is a restraint that ends Batroc's part (nothing continues for him) -> defeated beside captured; same rows as partner b7449 for the shared sentence
+keep
++ Peter Parker|defeated|Batroc|when he webs up Batroc he is attacked by a mob
+@7449 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOMES: the stated battle with Batroc ends when "he webs up Batroc" -> defeated beside captured; the battle is its own clause, fought stays; partner b7444 identical
+keep
++ Peter Parker|defeated|Batroc the Leaper|when he webs up Batroc he is attacked by a mob
+@7511 rulings 2026-11-04: FW: "hitting him hard enough to make the thunder god's nose bleed" is a stated wound inside the Thor fought row -> Hulk|wounded|Thor (toe to toe, no outcome); the Thanos row states no wound; partner b7516 identical
+keep
+f+ Hulk|wounded|Thor|hitting him hard enough to make the thunder god's nose bleed
+@7516 rulings 2026-11-04: as partner b7511 (Hulk|wounded|Thor for the nose bleed)
+keep
+f+ Hulk|wounded|Thor|hitting him hard enough to make the thunder god's nose bleed
+@7526 rulings 2026-11-04: ESC: the beaten side (Wolverine) did not flee -- the winners did, and their escaped rows exist; the defeated row's own act is a stated injury ("shocked him point-blank", "barely alive") -> + Magnum|wounded|Wolverine
+keep
+f+ Magnum|wounded|Wolverine|but then Magnum shocked him point-blank range with his powers
+@7527 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOMES: Magnum's attack on the lair ends in "Magnum indeed captured the Punisher" -> defeated beside captured (fought stays, separate act); TORTURE IS NOT A FIGHT: Magnum "had one of his men torture him by waterboarding" a captive -> tortured (A63, his men); WBY: "the Punisher shot Magnum in the stomach" names the doer -> Punisher|wounded|Magnum, and Magnum is out (taken to hospital, Punisher escapes) -> Punisher|defeated|Magnum (Klaue test)
+keep
++ Magnum|defeated|Punisher|Magnum indeed captured the Punisher
+f+ Magnum|tortured|Punisher|had one of his men torture him by waterboarding
+f- Magnum|wounded|-
+f+ Punisher|wounded|Magnum|the Punisher shot Magnum in the stomach
++ Punisher|defeated|Magnum|the Punisher shot Magnum in the stomach, so that Spider-Man would take Magnum to the hospital
+@7531 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOMES: Killjoy "was apprehended by Deathlok, though he managed to cut off Deathlok's right arm" (stated resistance) -> defeated beside captured; ESC (A74): "Defeated by Deathlok, Phreak retreated to Canaan" -> + Phreak|escaped|Michael Collins; STOP: T'Challa stops his ally Deathlok (fact kept)
+keep
++ Michael Collins|defeated|Killjoy|Killjoy failed in his mission and was apprehended by Deathlok
++ Phreak|escaped|Michael Collins|Defeated by Deathlok, Phreak retreated to Canaan without the files
+@7537 rulings 2026-11-04: TORTURE IS NOT A FIGHT: the fought row quoted Magnum slapping his prisoner -> Magnum|tortured|Spider-Man for the slap/punch of the captive, and the pair's real fight in the laboratory keeps fought with its own quote; NEARLY V: "almost broke the latter's column" -> actual/denied; CAPT: no defeated -- Spider-Man was losing, sealed the door while fleeing the gas, and Magnum survives and escapes (sealed row left as is, see notes)
+keep
+- Magnum|fought|Spider-Man
++ Magnum|fought|Spider-Man|Spider-Man reached Magnum's isolated laboratory and confronted him, only to find that Magnum was an excellent one-on-one fighter
+f+ Magnum|tortured|Spider-Man|When Spider-Man still challenged him, Magnum punched his prisoner's stomach
+f+ Magnum|other_verb|broke|stunned Spider-Man with attacks that almost broke the latter's column|actual|denied|
+@7543 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOMES: "Iron Man fought Magnum while also collaborating with Shuri to find a way to reverse the black hole, which caused the hole to absorb Magnum" -> the seal ends the stated fight: Anthony Stark|defeated|Magnum beside sealed; the fight is its own clause, fought stays; Shuri did not fight Magnum (sealed only)
+keep
++ Anthony Stark|defeated|Magnum|Iron Man fought Magnum while also collaborating with Shuri to find a way to reverse the black hole, which caused the hole to absorb Magnum before disappearing itself

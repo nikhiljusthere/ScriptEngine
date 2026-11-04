@@ -1,0 +1,52 @@
+@6709 rulings 2026-11-04: STOP: Kamala and her friends "free the city from Mojo's influence and banished him back to his home dimension" -> a completed stop of a named villain's plot = Kamala|defeated|Mojo beside the seal that ends it (CAPTURED / SEALED AS OUTCOMES); "stop calling herself a mutant" is cue noise (fact kept); partner b6733 identical
+keep
++ Kamala|defeated|Mojo|Kamala and her friends rallied together to free the city from Mojo's influence
+@6733 rulings 2026-11-04: as partner b6709 (Kamala|defeated|Mojo for the stop of Mojo's takeover that the banishment ends)
+keep
++ Kamala|defeated|Mojo|Kamala and her friends rallied together to free the city from Mojo's influence
+@6738 rulings 2026-11-04: ALLY / accidental KO: Spider-Man's accidental knockout of Sue gives no defeated (none written); Sue, knocked out, did not fight Spider-Man but "stopped them" (an ally stopping allies -> other_verb fact), so her fought row goes; INTERCEPTED ATTACKS: Johnny stops the Trio "before they could attack his sister" -> Johnny|saved|Sue; CTRL: the X-Men are tricked, not controlled, and Professor X acts after breaking free (plain events, no change)
+keep
+- Sue|fought|Spider-Man
+f+ Sue|other_verb|stopped|the Fantastic Four fought with Spider-Man until Sue stopped them
++ Johnny|saved|Sue|Johnny managed to break free and stop them before they could attack his sister
+@6808 rulings 2026-11-04: FW: "his injuries by the U-Foes attacking" is a stated wound -> U-Foes|wounded|Peter; no outcome stated
+keep
+f+ U-Foes|wounded|Peter|his injuries by the U-Foes attacking as he attended ESU
+@6910 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOMES: the fight with Death's Head ends when "Wiccan used a spell to lock him up in their bathroom" -> defeated + captured for Wiccan; the fight is stated as its own noun ("led into a fight"), so fought stays
+keep
++ Wiccan|defeated|Death's Head|Wiccan used a spell to lock him up in their bathroom
+@6917 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOMES: Baba Yaga "ambushed the couple ... containing Hulkling in a wax statue" -> ambush + capture are one stated act: defeated replaces fought beside captured (A145), as her row for Billy
+keep
+- Baba Yaga|fought|Teddy
++ Baba Yaga|defeated|Teddy|ambushed the couple, first cutting off Wiccan's head while keeping him alive, and containing Hulkling in a wax statue
+@6952 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOMES: the X-Men battled the Adversary and the battle ends in his imprisonment -> defeated beside the existing sealed row (same group end as the existing rows); the fight is its own clause, fought stays
+keep
++ X-Men|defeated|Adversary|the X-Men battled the Adversary and, after Rogue absorbed his power and opened a portal to seal him in, gave their life to imprison the Adversary
+@6970 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOMES: Nova's fight with Carnage ends when "He was then tied in metal plates by Nova" and left in Ryker's -> defeated beside captured; fight stated separately, fought stays
+keep
++ Nova|defeated|Cletus|He was then tied in metal plates by Nova
+@7011 rulings 2026-11-04: ONE NAME PER PERSON ACROSS LAYERS: "Sir" is an ordinary title the fact gate strips (the facts already say Percy, and the window names him "Percy") -> event rows follow (r Sir Percy=>Percy); the thwarted assassins are unnamed
+keep
+r Sir Percy=>Percy
+@7096 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOMES: Johnny "captured the new Ghost Rider, Danny Ketch" with a stated fight between them, and Johnny stays in control (he becomes Danny's mentor) -> defeated beside captured; fight stated separately, fought stays
+keep
++ Johnny|defeated|Danny Ketch|he captured the new Ghost Rider, Danny Ketch
+@7108 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOMES: Rider "fought the psionic entity Harrow" and the fight ends when "Nova captured him" -> defeated beside captured; fought stays (separate sentence)
+keep
++ Rider|defeated|Harrow|Harrow was able to jump from mind to mind, but Nova captured him
+@7186 rulings 2026-11-04: NEARLY V: "nearly tearing Ultron's head off" -> the act did not happen: actual/denied; the stated fight stays (A11)
+keep
+f- Sentry|other_verb|tearing
+f+ Sentry|other_verb|tearing|almost compromised the Avengers plan by nearly tearing Ultron's head off|actual|denied|
+@7192 rulings 2026-11-04: STOP: "killed Loki to prevent him from further using the stones" is a purpose clause -> planned (asserted_by the Void), not an actual act; the killing is the event
+keep
+f- Void|other_verb|prevent
+f+ Void|other_verb|prevent|the Void killed Loki to prevent him from further using the stones|planned|stated|Void
+@7195 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOMES: the confrontation ends when "the Sentry threw the Void into the Sun" (the Void only promises to return) -> defeated + sealed; fight and seal are one stated act (same quote), so defeated replaces fought (A145); partner b7201 identical
+keep
+- Sentry|fought|Void
++ Sentry|defeated|Void|the Sentry threw the Void into the Sun
+@7201 rulings 2026-11-04: as partner b7195 (the throw into the Sun ends the confrontation: defeated replaces fought, sealed stays)
+keep
+- Sentry|fought|Void
++ Sentry|defeated|Void|the Sentry threw the Void into the Sun
