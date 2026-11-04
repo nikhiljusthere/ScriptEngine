@@ -1,0 +1,97 @@
+@1277 outcome 2026-11-03: "Sue and the others managed to liberate Sub-Atomica with the assistance of Ant Man, forcing Doom to flee back to Earth" -> forced to flee = defeated + escaped (A74; only the departed row exists); Doom's attack is its own clause, fought stays
+keep
++ Sue|defeated|Doom|Sue and the others managed to liberate Sub-Atomica with the assistance of Ant Man, forcing Doom to flee back to Earth
++ Doom|escaped|Sue|forcing Doom to flee back to Earth
+@1590 outcome 2026-11-03: "Doctor Octopus fought off Spider-Man" and Spider-Man "fled to get it to safety, with the villains in tow" -> fought off = defeated (A74, one act so fought dropped) + Spider-Man escaped him; partner b6096 edited identically
+keep
+- Doctor Octopus|fought|Spider-Man
++ Doctor Octopus|defeated|Spider-Man|There, Doctor Octopus fought off Spider-Man
++ Spider-Man|escaped|Doctor Octopus|Spider-Man recovered the newborn and fled to get it to safety, with the villains in tow.
+@6096 outcome 2026-11-03: as partner b1590 (Doctor Octopus fought off Spider-Man = defeated, fought dropped; Spider-Man fled with the child)
+keep
+- Doctor Octopus|fought|Spider-Man
++ Doctor Octopus|defeated|Spider-Man|There, Doctor Octopus fought off Spider-Man
++ Spider-Man|escaped|Doctor Octopus|Spider-Man recovered the newborn and fled to get it to safety, with the villains in tow.
+@1717 outcome 2026-11-03: "the X-Men ambushed them ... The Marauders fled" -> fled after the ambush = defeated (A74; the escaped row exists); the ambush is its own sentence, fought stays
+keep
++ X-Men|defeated|Marauders|The Marauders fled and, as the X-Men gave chase, they found themselves battling a demonic invasion of New York
+@1768 outcome 2026-11-03: Wolverine "stabbed him in the leg" -> a stated wound (row missing); they keep talking, no defeated
+keep
+f+ Wolverine|wounded|Deadpool|so he stabbed him in the leg
+@1944 outcome 2026-11-03: the Thing "fought them off single-handedly" (the army of villains incl. the Mole Man) and "With his plan foiled ... Mephisto conceded defeat" -> fought off = defeated (A74) and a foiled plot = defeated; the Mole Man's attack on the Beyonder is its own clause, fought stays
+keep
++ Thing|defeated|Mole Man|the Thing couldn't bring himself to allow the seemingly defenseless Beyonder be trounced by the army of villains and fought them off single-handedly
++ Thing|defeated|Mephisto|With his plan foiled and the Beyondersbane now having reached critical mass, Mephisto conceded defeat
+@2046 outcome 2026-11-03: "The Fantastic Four quickly defeated the creature which then fled out to sea" -> the beaten side escaped (A74); only the defeated rows exist
+keep
++ Giganto|escaped|Reed|The Fantastic Four quickly defeated the creature which then fled out to sea
++ Giganto|escaped|Sue|The Fantastic Four quickly defeated the creature which then fled out to sea
+@2092 outcome 2026-11-03: "Toro and the others clashed with the Blue Bullet" and Jacqueline "aided the group in defeating the Blue Bullet" -> the group (Toro) is a winner too (the clash is its own clause, fought stays)
+keep
++ Toro|defeated|Blue Bullet|She aided the group in defeating the Blue Bullet and joined the group as Spitfire.
+@2125 outcome 2026-11-03: Ghost Rider "wrapped his chain around Superior and then ducked quickly, allowing Quake to defeat him" -> the restraint is part of the defeat (as b1109 Finnegan immobilized Tyro for Eddie): defeated, one act so fought dropped
+keep
+- Ghost Rider|fought|Superior
++ Ghost Rider|defeated|Superior|He also wrapped his chain around Superior and then ducked quickly, allowing Quake to defeat him.
+@2316 outcome 2026-11-03: "Victoria rushes over to stop Kurios, but he pushes her to the ground, marking her for possession" and leaves with Ana -> her attempt ends with her down = defeated (one act, fought dropped)
+keep
+- Kurios|fought|Victoria
++ Kurios|defeated|Victoria|he pushes her to the ground, marking her for possession by Kthara
+@2510 outcome 2026-11-03: "Opposed by Silver Sable, Doctor Strange, and Spider-Man, Doom even went to the extent of attacking the Symkarian Embassy ... to prevent the wedding ... but withdrew when the wedding had been performed" -> his plot failed against their opposition and he withdrew = defeated (2026-10-14 ruling); one act so fought dropped; partner b4748 edited identically
+keep
+- Silver Sable|fought|Doom
+- Doctor Strange|fought|Doom
+- Spider-Man|fought|Doom
++ Silver Sable|defeated|Doom|Opposed by Silver Sable, Doctor Strange, and Spider-Man, Doom even went to the extent of attacking the Symkarian Embassy in New York City to prevent the wedding of Lenka with Marek, but withdrew when the wedding had been performed.
++ Doctor Strange|defeated|Doom|Opposed by Silver Sable, Doctor Strange, and Spider-Man, Doom even went to the extent of attacking the Symkarian Embassy in New York City to prevent the wedding of Lenka with Marek, but withdrew when the wedding had been performed.
++ Spider-Man|defeated|Doom|Opposed by Silver Sable, Doctor Strange, and Spider-Man, Doom even went to the extent of attacking the Symkarian Embassy in New York City to prevent the wedding of Lenka with Marek, but withdrew when the wedding had been performed.
+@4748 outcome 2026-11-03: as partner b2510 (Doom's plot failed against their opposition and he withdrew = defeated, fought dropped)
+keep
+- Silver Sable|fought|Doom
+- Doctor Strange|fought|Doom
+- Spider-Man|fought|Doom
++ Silver Sable|defeated|Doom|Opposed by Silver Sable, Doctor Strange, and Spider-Man, Doom even went to the extent of attacking the Symkarian Embassy in New York City to prevent the wedding of Lenka with Marek, but withdrew when the wedding had been performed.
++ Doctor Strange|defeated|Doom|Opposed by Silver Sable, Doctor Strange, and Spider-Man, Doom even went to the extent of attacking the Symkarian Embassy in New York City to prevent the wedding of Lenka with Marek, but withdrew when the wedding had been performed.
++ Spider-Man|defeated|Doom|Opposed by Silver Sable, Doctor Strange, and Spider-Man, Doom even went to the extent of attacking the Symkarian Embassy in New York City to prevent the wedding of Lenka with Marek, but withdrew when the wedding had been performed.
+@2783 outcome 2026-11-03: the Dragon Man attacks the plotters and "the Wizard fled from the android dragon" -> forced to flee = defeated (A74, as b8302; the escaped row exists); the attack is its own sentence, fought stays
+keep
++ Dragon Man|defeated|Wizard|While the Mad Thinker had a robot acting in his place, the Wizard fled from the android dragon.
+@3053 outcome 2026-11-03: Spider-Man is "personally fighting Osborn" and "When S.H.I.E.L.D. appeared on the scene, Osborn fled" -> forced off = S.H.I.E.L.D. defeated him (A74, as b11580) and he escaped Spider-Man as well (only the escape from S.H.I.E.L.D. exists)
+keep
++ S.H.I.E.L.D.|defeated|Norman Osborn|When S.H.I.E.L.D. appeared on the scene, Osborn fled.
++ Norman Osborn|escaped|Spider-Man|When S.H.I.E.L.D. appeared on the scene, Osborn fled.
+@3097 outcome 2026-11-03: Poison Carnage battles Venom and Spider-Man, "nearly decapitating the former and impaling the latter" -> impaling = a wound fact, not an other_verb (the fight continues and he is tossed into space, so no defeated)
+keep
+f- Kasady|other_verb|impaling
+f+ Kasady|wounded|Spider-Man|impaling the latter
+@3145 outcome 2026-11-03: Cage charges Kilgrave, but "Kilgrave managed to stop Cage in his tracks" and orders him into the car -> Kilgrave takes control, the attack ends = defeated (Cage's charge is his own act, fought stays)
+keep
++ Kilgrave|defeated|Luke Cage|Kilgrave managed to stop Cage in his tracks and questioned who he was and why he was there
+@3163 outcome 2026-11-03: Venom "ate a chunk of the Sandman" -> a stated wound (the attacked fact stays; the lighter that drives Venom off has no doer, A8)
+keep
+f+ Venom|wounded|Sandman|ate a chunk of the Sandman
+@3219 outcome 2026-11-03: "Thanos swiftly gained the upper hand, downing Drax with a single punch and disarming Strange" -> the same act takes Strange out as Drax (Thanos|defeated|Drax exists) = defeated
+keep
++ Thanos|defeated|Doctor Strange|However, Thanos swiftly gained the upper hand, downing Drax with a single punch and disarming Strange, while removing the webbing that blinded him.
+@3256 outcome 2026-11-03: Toomes "interfered and dropped Peter in a lake where he nearly drowned, but he was saved in time by Stark" -> Peter is subdued, the thugs get away = defeated (one act, fought dropped)
+keep
+- Adrian Toomes|fought|Peter Parker
++ Adrian Toomes|defeated|Peter Parker|their boss, Adrian Toomes, interfered and dropped Peter in a lake where he nearly drowned
+@3327 outcome 2026-11-03: the new Fantastic Four "was able to defeat the Mole Man and send him fleeing" -> the beaten side escaped (A74); only the defeated rows exist
+keep
++ Mole Man|escaped|Ant-Man|this new incarnation of the Fantastic Four was able to defeat the Mole Man and send him fleeing
++ Mole Man|escaped|She-Hulk|this new incarnation of the Fantastic Four was able to defeat the Mole Man and send him fleeing
++ Mole Man|escaped|Medusa|this new incarnation of the Fantastic Four was able to defeat the Mole Man and send him fleeing
++ Mole Man|escaped|Darla Deering|this new incarnation of the Fantastic Four was able to defeat the Mole Man and send him fleeing
+@3434 outcome 2026-11-03: "By teaming up with Spider-Man, Ms. Marvel was able to stop Minerva" -> Spider-Man is a doer of the stop too (Kamala's defeated row exists; his physical combat is its own sentence, fought stays); partner b6724 edited identically
+keep
++ Spider-Man|defeated|Minerva|By teaming up with Spider-Man, Ms. Marvel was able to stop Minerva.
+@6724 outcome 2026-11-03: as partner b3434 (Spider-Man teamed up in stopping Minerva = defeated)
+keep
++ Spider-Man|defeated|Minerva|By teaming up with Spider-Man, Ms. Marvel was able to stop Minerva.
+@3868 outcome 2026-11-03: the Vulture "managed to slash him with a powerful sedative" -> a stated wound (row missing); Toomes collapses with a stroke himself, so no defeated
+keep
+f+ Toomes|wounded|Spider-Man|managed to slash him with a powerful sedative
+@4378 outcome 2026-11-03: "The Super-Soldier Serum within Steve Rogers' body was neutralized by the Iron Nail, which caused him to age rapidly" -> a lost power (row missing); the Falcon rescues him mid-fight, so no defeated
+keep
+f+ Steve Rogers|lost_power|-|The Super-Soldier Serum within Steve Rogers' body was neutralized by the Iron Nail

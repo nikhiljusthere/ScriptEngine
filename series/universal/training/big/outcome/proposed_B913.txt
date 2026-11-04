@@ -1,0 +1,57 @@
+@6745 outcome 2026-11-03: same text as b6465: Johnny and Ben "assisted King Arthur and his Knights of the Round Table stave off an invasion from Kang the Conqueror" -> repelled = defeated (A74), one act so fought dropped; "foiling the machinations of mad scientist Professor Jack" -> a foiled plot = defeated, not an other_verb fact
+keep
+- Johnny Storm|fought|Kang the Conqueror
+- Ben Grimm|fought|Kang the Conqueror
+f- Johnny Storm|other_verb|foiling
++ Johnny Storm|defeated|Kang the Conqueror|they assisted King Arthur and his Knights of the Round Table stave off an invasion from Kang the Conqueror
++ Ben Grimm|defeated|Kang the Conqueror|they assisted King Arthur and his Knights of the Round Table stave off an invasion from Kang the Conqueror
++ Johnny Storm|defeated|Professor Jack|foiling the machinations of mad scientist Professor Jack
+@7722 outcome 2026-11-03: Bishop "attacked Forge in his Dallas headquarters, and stole time travel technology" and leaves with it -> the attack ends with Bishop in control = defeated (as b9363, same episode), one act so fought dropped
+keep
+- Bishop|fought|Forge
++ Bishop|defeated|Forge|Bishop escaped from the X-Men, attacked Forge in his Dallas headquarters, and stole time travel technology in the form of a cybernetic arm.
+@9049 outcome 2026-11-03: "the group managed to defeat their foes, who then retreated" -> the retreating side escaped (A74); only the defeated rows were written
+keep
++ Enchantress|escaped|Tony Stark|but the group managed to defeat their foes, who then retreated
++ Enchantress|escaped|Giant-Man|but the group managed to defeat their foes, who then retreated
++ Enchantress|escaped|Wasp|but the group managed to defeat their foes, who then retreated
++ Executioner|escaped|Tony Stark|but the group managed to defeat their foes, who then retreated
++ Executioner|escaped|Giant-Man|but the group managed to defeat their foes, who then retreated
++ Executioner|escaped|Wasp|but the group managed to defeat their foes, who then retreated
+@9530 outcome 2026-11-03: "they ... stopped the Japanese agents called Seven Sons of Satan in India, and the Red Skull's attempt to use a device ..." -> the stopped attempt = defeated Red Skull (written as met); "defended the Crawford Bomber plant from Japanese agents the Death Riders" in the same list of stopped plots -> the attack was beaten off = defeated (one act, fought dropped)
+keep
+- Captain America|met|Red Skull
+- Bucky|met|Red Skull
+- Captain America|fought|Death Riders
+- Bucky|fought|Death Riders
++ Captain America|defeated|Red Skull|and the Red Skull's attempt to use a device that utilized the northern lights to wipe out allied machines
++ Bucky|defeated|Red Skull|and the Red Skull's attempt to use a device that utilized the northern lights to wipe out allied machines
++ Captain America|defeated|Death Riders|defended the Crawford Bomber plant from Japanese agents the Death Riders
++ Bucky|defeated|Death Riders|defended the Crawford Bomber plant from Japanese agents the Death Riders
+@9889 outcome 2026-11-03: Monet stays behind to fight the invading Orchis soldiers and "Despite fighting valiantly, she was killed at the hands of the army" -> the doer is stated (the army = Orchis): killed (the fight is its own sentence, fought stays; the dies fact stays)
+keep
++ Orchis|killed|Monet|Despite fighting valiantly, she was killed at the hands of the army.
+@11580 outcome 2026-11-03: Ultron attacks Cho "before being forced to escape, as the Avengers arrived" -> forced to escape = the Avengers defeated Ultron (A74; the escaped row exists)
+keep
++ Avengers|defeated|Ultron|With that Ultron attacked Cho and her staff, before being forced to escape, as the Avengers arrived.
+@12111 outcome 2026-11-03: Vision attempts "to shoot Falcon down to the ground, but was stopped by an electric arrow fired by Hawkeye"; Vision keeps fighting -> an intercepted attack: Hawkeye saved Falcon (A75); no defeated, fought stays
+keep
++ Hawkeye|saved|Falcon|He did, however, attempt to shoot Falcon down to the ground, but was stopped by an electric arrow fired by Hawkeye.
+@12875 outcome 2026-11-03: "Russo was eventually arrested having been horrifically disfigured by the Punisher" -> wounded + defeated (as b13296, same story); the disfigurement is the only stated act, fought dropped
+keep
+- Castle|fought|Russo
++ Castle|defeated|Russo|Russo was eventually arrested having been horrifically disfigured by the Punisher
+f+ Castle|wounded|Russo|having been horrifically disfigured by the Punisher
+@12971 outcome 2026-11-03: "Frost had just shot Ana and was escaping"; Ana is rushed to hospital, nothing continues -> wounded + defeated (Klaue pattern), one act so fought dropped
+keep
+- Whitney Frost|fought|Ana Jarvis
++ Whitney Frost|defeated|Ana Jarvis|Frost had just shot Ana and was escaping with Joseph Manfredi and the kidnapped Wilkes
+f+ Whitney Frost|wounded|Ana Jarvis|Frost had just shot Ana
+@13047 outcome 2026-11-03: "The Watchdogs, assisted by Radcliffe, tried to take the book, but were stopped by S.H.I.E.L.D." -> stopping them = defeated (2026-10-14 ruling), one act so fought dropped
+keep
+- S.H.I.E.L.D.|fought|Watchdogs
++ S.H.I.E.L.D.|defeated|Watchdogs|The Watchdogs, assisted by Radcliffe, tried to take the book, but were stopped by S.H.I.E.L.D.
+@13165 outcome 2026-11-03: "Doctor Strange managed to stop the Zealots from destroying the New York Sanctum" -> stopping them = defeated (2026-10-14 ruling), one act so fought dropped
+keep
+- Doctor Strange|fought|Zealots
++ Doctor Strange|defeated|Zealots|Once Doctor Strange managed to stop the Zealots from destroying the New York Sanctum

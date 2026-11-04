@@ -1,0 +1,73 @@
+@3004 outcome 2026-11-03: "Bucky assisted Captain America in stopping jewel thief Prince Suli before assisting Cap in stopping the Red Skull's attempt" -> Bucky is a doer of the second stop too (only Captain America|defeated|Red Skull was written; his Prince Suli row exists)
+keep
++ Bucky|defeated|Red Skull|assisting Cap in stopping the Red Skull's attempt to convert America into a fascist state one town at a time
+@6066 outcome 2026-11-03: "Hadad apparently made quick work with Eternity as he did with Oblivion, while both the Silver Surfer and Galactus were left defeated" -> the Surfer and Galactus lost to Hadad too; partner b6274 holds these two rows, this copy lacks them
+keep
++ Hadad|defeated|Silver Surfer|while both the Silver Surfer and Galactus were left defeated
++ Hadad|defeated|Galactus|while both the Silver Surfer and Galactus were left defeated
+@8802 outcome 2026-11-03: "Bella stabbed her in the shoulder" -> a stated wound (row missing); the fight goes on, so no defeated
+keep
+f+ Bella|wounded|Candra|Bella stabbed her in the shoulder
+@1739 outcome 2026-11-03: "Venom was able to thwart the Red Goblin's attempt on Mary Jane's life with Spider-Man's help" -> thwarting the attack = defeated (one act, fought dropped) + an intercepted killing = saved Mary Jane (A75)
+keep
+- Eddie|fought|Norman Osborn
+- Spider-Man|fought|Norman Osborn
++ Eddie|defeated|Norman Osborn|Venom was able to thwart the Red Goblin's attempt on Mary Jane's life with Spider-Man's help
++ Spider-Man|defeated|Norman Osborn|Venom was able to thwart the Red Goblin's attempt on Mary Jane's life with Spider-Man's help
++ Eddie|saved|Mary Jane|Venom was able to thwart the Red Goblin's attempt on Mary Jane's life with Spider-Man's help
++ Spider-Man|saved|Mary Jane|Venom was able to thwart the Red Goblin's attempt on Mary Jane's life with Spider-Man's help
+@2796 outcome 2026-11-03: the Vulture "almost beats Alfred to death; if it weren't for Spider-Man" -> the beating is a stated wound and Spider-Man's intervention a rescue (A75); the fight moves on to Spider-Man, so no defeated
+keep
+f+ Vulture|wounded|Alfred|Vulture goes into a blind rage and almost beats Alfred to death
++ Spider-Man|saved|Alfred|almost beats Alfred to death; if it weren't for Spider-Man
+@2883 outcome 2026-11-03: "his attempts were thwarted by both PRIDE and the Runaways, causing the destruction of the ship" -> thwarting = defeated (2026-10-14 ruling), one act so fought dropped
+keep
+- PRIDE|fought|Magistrate
+- Runaways|fought|Magistrate
++ PRIDE|defeated|Magistrate|his attempts were thwarted by both PRIDE and the Runaways, causing the destruction of the ship
++ Runaways|defeated|Magistrate|his attempts were thwarted by both PRIDE and the Runaways, causing the destruction of the ship
+@3089 outcome 2026-11-03: "U.S.Agent was later severely beaten nearly to death by Protocide" and needs emergency medical procedures -> wounded + defeated (Klaue pattern), one act so fought dropped
+keep
+- Protocide|fought|U.S.Agent
++ Protocide|defeated|U.S.Agent|U.S.Agent was later severely beaten nearly to death by Protocide.
+f+ Protocide|wounded|U.S.Agent|U.S.Agent was later severely beaten nearly to death by Protocide.
+@6440 outcome 2026-11-03: Venom "nearly beat her to death" and moves on -> the Black Cat is wounded and down = wounded + defeated (one act, fought dropped); Spider-Man tricks the symbiote, which knocks Eddie and it unconscious and they are re-incarcerated -> Spider-Man defeated Venom (as b1973; the beach battle is its own sentence, fought stays)
+keep
+- Venom|fought|Black Cat
++ Venom|defeated|Black Cat|Venom came across Peter's former lover the Black Cat, and nearly beat her to death
+f+ Venom|wounded|Black Cat|nearly beat her to death
++ Spider-Man|defeated|Venom|Spider-Man exploited the symbiote's desire to return to him in order to trick it into attempting to separate from Eddie
+@13482 outcome 2026-11-03: "After an intense struggle, Kahhori managed to thwart his attempt and used her portals to send Killmonger back" -> thwarting Strange = defeated (one act with the struggle, fought dropped); the other_verb thwart fact repeats it
+keep
+- Kahhori|fought|Strange Supreme
+f- Kahhori|other_verb|thwart
++ Kahhori|defeated|Strange Supreme|After an intense struggle, Kahhori managed to thwart his attempt
+@30 outcome 2026-11-03: "Immortus intervened, tricking Kang into believing he had acquired Mantis, when in fact he had captured a Space Phantom" -> Kang's plan is foiled and the battle ends = Immortus defeated Kang (the battle with the Avengers is its own sentence, fought stays)
+keep
++ Immortus|defeated|Kang|Immortus intervened, tricking Kang into believing he had acquired Mantis, when in fact he had captured a Space Phantom.
+@54 outcome 2026-11-03: "The first clash with the Marauders proved to be catastrophic for the X-Men, leaving Nightcrawler in a coma, Shadowcat trapped in an intangible state, and Colossus paralyzed" -> all three are taken out (Nightcrawler's defeated row exists) = defeated for Shadowcat and Colossus too; one act so their fought rows dropped
+keep
+- Shadowcat|fought|Marauders
+- Colossus|fought|Marauders
++ Marauders|defeated|Shadowcat|leaving Nightcrawler in a coma, Shadowcat trapped in an intangible state, and Colossus paralyzed in his steel form
++ Marauders|defeated|Colossus|leaving Nightcrawler in a coma, Shadowcat trapped in an intangible state, and Colossus paralyzed in his steel form
+@263 outcome 2026-11-03: "stopping mobster Big Joe from manipulating the creature" -> stopping a person = defeated, written as met
+keep
+- Johnny|met|Big Joe
++ Johnny|defeated|Big Joe|stopping mobster Big Joe from manipulating the creature
+@545 outcome 2026-11-03: Reyes and Johnson join the team "in order to stop them", destroy all of Aida's LMDs, and "Aida fled once again" -> forced to flee = defeated + escaped (A74); no row was written
+keep
++ Reyes|defeated|Aida|Successfully teaming up with Johnson, Reyes managed to destroy all the LMDs and, although Aida fled once again, they retrieved the Darkhold.
++ Johnson|defeated|Aida|Successfully teaming up with Johnson, Reyes managed to destroy all the LMDs and, although Aida fled once again, they retrieved the Darkhold.
++ Aida|escaped|Reyes|although Aida fled once again
++ Aida|escaped|Johnson|although Aida fled once again
+@663 outcome 2026-11-03: the shield created by Minoru blocks Davis' bullets, "causing Davis to flee" -> forced to flee = defeated + escaped (A74; Davis|escaped|Dean exists); the other_verb flee fact repeats the escape
+keep
+f- Davis|other_verb|flee
++ Minoru|defeated|Davis|Dean and the other Runaways were then protected from Davis' bullets thanks to the shield created by Minoru and the Staff of One, causing Davis to flee.
++ Davis|escaped|Minoru|causing Davis to flee
+@1163 outcome 2026-11-03: "David's physical body was hurt by Storm and needed time to heal so the Shadow King retreated" -> a stated wound + forced retreat = Storm defeated the Shadow King, who escaped (A74); Storm's fought stays
+keep
+f+ Storm|wounded|David|David's physical body was hurt by Storm
++ Storm|defeated|Shadow King|David's physical body was hurt by Storm and needed time to heal so the Shadow King retreated.
++ Shadow King|escaped|Storm|so the Shadow King retreated

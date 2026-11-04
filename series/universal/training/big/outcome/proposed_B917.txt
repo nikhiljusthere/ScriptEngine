@@ -1,0 +1,75 @@
+@4492 outcome 2026-11-03: "Once Davis fled due to being afraid of Chase Stein's Fistigons and Minoru's Staff of One" -> forced to flee = defeated by those who forced it (A74; the escaped rows exist)
+keep
++ Chase Stein|defeated|Darius Davis|Once Davis fled due to being afraid of Chase Stein's Fistigons and Minoru's Staff of One
++ Minoru|defeated|Darius Davis|Once Davis fled due to being afraid of Chase Stein's Fistigons and Minoru's Staff of One
+@4656 outcome 2026-11-03: "Romanoff managed to injure Glaive" -> the doer is stated, so the wound row names her (written doer-less); "after Midnight realized she was outnumbered, chose to retreat" -> forced retreat = defeated by Rogers, Wilson and Romanoff + escaped (A74; only the escape from Rogers exists; the other_verb retreat fact repeats it)
+keep
+f- Corvus Glaive|wounded|-
+f- Midnight|other_verb|retreat
+f+ Natasha Romanoff|wounded|Corvus Glaive|Romanoff managed to injure Glaive with Midnight's spear
++ Steve Rogers|defeated|Midnight|after Midnight realized she was outnumbered, chose to retreat back into her Q-Ship
++ Sam Wilson|defeated|Midnight|after Midnight realized she was outnumbered, chose to retreat back into her Q-Ship
++ Natasha Romanoff|defeated|Midnight|after Midnight realized she was outnumbered, chose to retreat back into her Q-Ship
++ Midnight|escaped|Sam Wilson|after Midnight realized she was outnumbered, chose to retreat back into her Q-Ship
++ Midnight|escaped|Natasha Romanoff|after Midnight realized she was outnumbered, chose to retreat back into her Q-Ship
+@4808 outcome 2026-11-03: "Ben defeated Doom by crushing his hands sending him fleeing" -> the crushed hands are a stated wound (row missing; defeated and escaped exist)
+keep
+f+ Ben|wounded|Doom|Ben defeated Doom by crushing his hands
+@4870 outcome 2026-11-03: Beck "attacked him and wore him down with illusions; Peter was then hit by a train" and falls unconscious, badly injured -> the attack ends with Peter beaten = defeated (one act, fought dropped)
+keep
+- Beck|fought|Peter Parker
++ Beck|defeated|Peter Parker|who attacked him and wore him down with illusions; Peter was then hit by a train
+@5407 outcome 2026-11-03: "Zuhn was shot by a hunter named Jacob Scott" and is left "to be recovered by the government" -> wounded + defeated (Klaue pattern), one act so fought dropped
+keep
+- Jacob Scott|fought|Zuhn
++ Jacob Scott|defeated|Zuhn|Exiting their ship, Zuhn was shot by a hunter named Jacob Scott
+f+ Jacob Scott|wounded|Zuhn|Zuhn was shot by a hunter named Jacob Scott
+@6108 outcome 2026-11-03: in the battle "between Spider-Man, ... Silver Sable and the Sinister Syndicate", Marko "helped defeat the Sinister Syndicate who fled the scene" -> Spider-Man and Sable are winners too, and the Syndicate escaped them (only the Sandman rows exist; the battle is its own sentence, fought stays); partner b6094 does not name them
+keep
++ Spider-Man|defeated|Sinister Syndicate|Despite his misgivings about Spider-Man, Marko helped defeat the Sinister Syndicate who fled the scene.
++ Silver Sable|defeated|Sinister Syndicate|Despite his misgivings about Spider-Man, Marko helped defeat the Sinister Syndicate who fled the scene.
++ Sinister Syndicate|escaped|Spider-Man|Marko helped defeat the Sinister Syndicate who fled the scene
++ Sinister Syndicate|escaped|Silver Sable|Marko helped defeat the Sinister Syndicate who fled the scene
+@6124 outcome 2026-11-03: "Nightcrawler was shot by Scalphunter. The X-Men retreated with the mortally wounded Nightcrawler" -> he is out of the fight: wounded (row exists) + defeated, one act so Scalphunter's fought dropped; the X-Men's retreat = the Marauders defeated them + they escaped (A74; the battle is its own clause, fought stays)
+keep
+- Scalphunter|fought|Nightcrawler
++ Scalphunter|defeated|Nightcrawler|during which Nightcrawler was shot by Scalphunter
++ Marauders|defeated|X-Men|The X-Men retreated with the mortally wounded Nightcrawler
++ X-Men|escaped|Marauders|The X-Men retreated with the mortally wounded Nightcrawler
+@6273 outcome 2026-11-03: Galactus withstands "Thor's Godblast ... though Galactus had to retreat in order to survive" -> forced retreat = defeated + escaped (A74), one act so fought dropped; the other_verb retreat fact repeats the escape
+keep
+- Thor|fought|Galactus
+f- Galactus|other_verb|retreat
++ Thor|defeated|Galactus|Galactus was able to temporarily withstand Thor's Godblast
++ Galactus|escaped|Thor|though Galactus had to retreat in order to survive
+@6311 outcome 2026-11-03: "After the Ultimates battled Ultron and Magneto, Thor lost his hammer to Magneto", who then wields it -> disarmed and the battle ends with Magneto in control = defeated (the battle is its own clause, fought stays)
+keep
++ Magneto|defeated|Thor|Thor lost his hammer to Magneto, who was able to manipulate it because iron was used in its construction
+@6425 outcome 2026-11-03: Reed "turned Doom's trick around by fooling him into drinking a drugged beverage that made Doom believe he had won" -> the trick ends the encounter with Doom fooled = defeated (as b1973 trick)
+keep
++ Reed|defeated|Doom|Reed properly deduced that Doom was responsible and turned Doom's trick around by fooling him into drinking a drugged beverage that made Doom believe he had won
+@6763 outcome 2026-11-03: "The Thinker was defeated thanks to the assistance of Marvel Girl" and is then apprehended -> the stated agent of the defeat is Marvel Girl (the clash with the Four is its own sentence, fought stays)
+keep
++ Marvel Girl|defeated|Mad Thinker|The Thinker was defeated thanks to the assistance of Marvel Girl of the X-Men
+@7424 outcome 2026-11-03: Jessica "was found and nearly killed by the Vision and Iron Man" and has to be awakened "from another coma" -> she is beaten into a coma = wounded + defeated (the kill is hedged, A11), one act so fought dropped; partner b7425 edited identically
+keep
+- Vision|fought|Jessica
+- Iron Man|fought|Jessica
++ Vision|defeated|Jessica|was found and nearly killed by the Vision and Iron Man
++ Iron Man|defeated|Jessica|was found and nearly killed by the Vision and Iron Man
+f+ Vision|wounded|Jessica|was found and nearly killed by the Vision and Iron Man
+f+ Iron Man|wounded|Jessica|was found and nearly killed by the Vision and Iron Man
+@7425 outcome 2026-11-03: as partner b7424 (nearly killed into a coma = wounded + defeated, fought dropped)
+keep
+- Vision|fought|Jessica
+- Iron Man|fought|Jessica
++ Vision|defeated|Jessica|but was found and nearly killed by the Vision and Iron Man
++ Iron Man|defeated|Jessica|but was found and nearly killed by the Vision and Iron Man
+f+ Vision|wounded|Jessica|but was found and nearly killed by the Vision and Iron Man
+f+ Iron Man|wounded|Jessica|but was found and nearly killed by the Vision and Iron Man
+@7487 outcome 2026-11-03: "after a long anguish filled battle, Ben convinced Kaine to stop attacking them, and turn himself in" -> surrender = defeated (the battle is its own clause, fought stays)
+keep
++ Ben Reilly|defeated|Kaine|Ben convinced Kaine to stop attacking them, and turn himself in
+@7656 outcome 2026-11-03: Hela battles Pluto "for the right to claim Odin's soul" and "restored Odin to life to stop Pluto from claiming him" -> stopping Pluto's claim ends the contest = defeated (the battle is its own clause, fought stays)
+keep
++ Hela|defeated|Pluto|Hela eventually restored Odin to life to stop Pluto from claiming him

@@ -1,0 +1,82 @@
+@7750 outcome 2026-11-03: Lugh rises "grievously wounding and blinding Balor ... fulfilling the prophecy that a descendant of Balor would bring about his downfall. The Tuatha emerged victorious" -> wounded + defeated (stated winner), one act so fought dropped; partner b7753 edited identically
+keep
+- Lugh|fought|Balor
++ Lugh|defeated|Balor|Lugh, however, rose to the occasion, grievously wounding and blinding Balor, his own grandfather, fulfilling the prophecy that a descendant of Balor would bring about his downfall.
+f+ Lugh|wounded|Balor|grievously wounding and blinding Balor
+@7753 outcome 2026-11-03: as partner b7750 (Lugh wounds and blinds Balor and the Tuatha win = wounded + defeated, fought dropped)
+keep
+- Lugh|fought|Balor
++ Lugh|defeated|Balor|Lugh, however, rose to the occasion, grievously wounding and blinding Balor, his own grandfather, fulfilling the prophecy that a descendant of Balor would bring about his downfall.
+f+ Lugh|wounded|Balor|grievously wounding and blinding Balor
+@7863 outcome 2026-11-03: "Loki stabbed their adoptive mother with a poisoned dagger that left her on the brink of death", deciding "to neutralize her" -> she is taken out of the confrontation = wounded (row exists) + defeated (Klaue pattern), one act so fought dropped
+keep
+- Loki|fought|Frigga
++ Loki|defeated|Frigga|Loki stabbed their adoptive mother with a poisoned dagger that left her on the brink of death
+@8036 outcome 2026-11-03: "After the Human Torch and the Thing thwarted one of his carefully planned robberies" and the Torch destroys the device, "foiling the Mad Thinker's revenge scheme" -> thwarted/foiled plots = defeated events, not other_verb facts (the battle is its own sentence, fought stays)
+keep
+f- Human Torch|other_verb|thwarted
+f- Thing|other_verb|thwarted
++ Human Torch|defeated|Mad Thinker|During the course of the battle, the Human Torch managed to use one of his nova blasts to destroy the device, foiling the Mad Thinker's revenge scheme.
++ Thing|defeated|Mad Thinker|After the Human Torch and the Thing thwarted one of his carefully planned robberies
+@8170 outcome 2026-11-03: Lorna attacks with scalpels, "even bruising Northstar when he tried to stop her" -> a stated wound (row missing); she is calmed, no defeated; partner b8180 edited identically
+keep
+f+ Lorna|wounded|Northstar|even bruising Northstar when he tried to stop her
+@8180 outcome 2026-11-03: as partner b8170 (bruising Northstar = wounded)
+keep
+f+ Lorna|wounded|Northstar|even bruising Northstar when he tried to stop her
+@8182 outcome 2026-11-03: "Polaris decided to try and stop him but was defeated and fled the country" -> the opponent is in the same sentence (as b5251): Magneto defeated her (her escape from him exists)
+keep
++ Magneto|defeated|Lorna|Polaris decided to try and stop him but was defeated and fled the country following Magneto's return to full power.
+@8202 outcome 2026-11-03: Thor challenges K'ythri and Sharra in a fight, joined by other Asgardians, and "Because of this act, Thor was declared the winner" -> stated winner = defeated (the fight is its own sentence, fought stays)
+keep
++ Thor|defeated|K'ythri|Because of this act, Thor was declared the winner, greatly infuriating K'ythri and Sharra.
++ Thor|defeated|Sharra|Because of this act, Thor was declared the winner, greatly infuriating K'ythri and Sharra.
+@8649 outcome 2026-11-03: Brian fights Merlyn's forces and "Facing imminent defeat, Brian and his family retreated to the Braddock Lighthouse" -> forced retreat = defeated + escaped (A74); the fight is its own sentence, fought stays
+keep
++ Merlyn|defeated|Brian|Facing imminent defeat, Brian and his family retreated to the Braddock Lighthouse on Earth.
++ Brian|escaped|Merlyn|Facing imminent defeat, Brian and his family retreated to the Braddock Lighthouse on Earth.
+@8688 outcome 2026-11-03: Black Bolt "began savagely beating Quicksilver until Medusa stopped him from killing him" -> the beating is a stated wound (row missing); Medusa intervenes (saved exists), so no defeated
+keep
+f+ Black Bolt|wounded|Quicksilver|began savagely beating Quicksilver
+@9220 outcome 2026-11-03: "After aiding Spider-Man in stopping the Meteor Man from stealing meteors ..., Kyle aided his fellow Defenders in stopping the Sons of the Serpent from burning down tenement slums" -> stopping them = defeated (2026-10-14 ruling); none was written (the battle with the Sons is its own sentence, fought stays)
+keep
++ Kyle Richmond|defeated|Meteor Man|After aiding Spider-Man in stopping the Meteor Man from stealing meteors to increase his powers
++ Spider-Man|defeated|Meteor Man|After aiding Spider-Man in stopping the Meteor Man from stealing meteors to increase his powers
++ Kyle Richmond|defeated|Sons of the Serpent|Kyle aided his fellow Defenders in stopping the Sons of the Serpent from burning down tenement slums in New York
++ Defenders|defeated|Sons of the Serpent|Kyle aided his fellow Defenders in stopping the Sons of the Serpent from burning down tenement slums in New York
+@9226 outcome 2026-11-03: "stopping Defenders member the Hulk from a rampage" -> stopping a person = defeated, not an other_verb fact
+keep
+f- Kyle Richmond|other_verb|stopping
++ Kyle Richmond|defeated|Hulk|stopping Defenders member the Hulk from a rampage
+@9379 outcome 2026-11-03: Rahne loses control, "slashing him open", Josh is left "mortally-wounded", and Laurie "managed to control her power to scare Rahne away" -> the doer of the wound is stated (written doer-less) and Josh is out = wounded + defeated (one act, fought dropped); scared away = Rahne escaped Laurie (A74; Laurie's defeated row exists)
+keep
+- Rahne Sinclair|fought|Josh
+f- Josh|wounded|-
++ Rahne Sinclair|defeated|Josh|she lost control as this happened, slashing him open and howling to the moon
+f+ Rahne Sinclair|wounded|Josh|slashing him open and howling to the moon
++ Rahne Sinclair|escaped|Laurie|managed to control her power to scare Rahne away
+@9421 outcome 2026-11-03: Hardcase is briefly stopped, then "punched him hard, penetrating Prime's hardened skin", and "Prime left scared" -> the exchange ends with Prime wounded and leaving = wounded + Hardcase defeated Prime + Prime escaped (A74); the punch is its own sentence, fought stays
+keep
+f+ Hardcase|wounded|Prime|Hardcase punched him hard, penetrating Prime's hardened skin
++ Hardcase|defeated|Prime|Prime left scared but was rescued by Mantra
++ Prime|escaped|Hardcase|Prime left scared but was rescued by Mantra
+@9516 outcome 2026-11-03: Greyflank hijacks the armor "in an attempt to flee, but Amadeus activated the Armor's contingency system which gave Greyflank temporary amnesia" -> the flight is stopped = defeated (one act, fought dropped)
+keep
+- Amadeus Cho|fought|Syrus Greyflank
++ Amadeus Cho|defeated|Syrus Greyflank|Amadeus activated the Armor's contingency system which gave Greyflank temporary amnesia
+@9536 outcome 2026-11-03: the Red Skull "managed to injure Bucky with an arrow to the shoulder" and Bucky is in hospital while the Skull captures Cap -> wounded (row exists) + defeated (Klaue pattern), one act so fought dropped
+keep
+- Red Skull|fought|Bucky
++ Red Skull|defeated|Bucky|When the Red Skull returned, he managed to injure Bucky with an arrow to the shoulder.
+@9544 outcome 2026-11-03: "Bucky and the Young Allies defended it from Nazis led by the Black Talon and liberated it" -> the island is held and freed = defeated (one act, fought dropped)
+keep
+- Black Talon|fought|Bucky
++ Bucky|defeated|Black Talon|Bucky and the Young Allies defended it from Nazis led by the Black Talon and liberated it with an assist from Captain America and the Human Torch
++ Young Allies|defeated|Black Talon|Bucky and the Young Allies defended it from Nazis led by the Black Talon and liberated it with an assist from Captain America and the Human Torch
+@9581 outcome 2026-11-03: "Le Fay shot him in the body as if to destroy it" -> a stated wound (row missing); "Drew continued to repel her attacks. An enraged Drew fired venom blasts seemingly dissolving Le Fay's body" -> a (seemingly) destroyed body = defeated (A11/A53)
+keep
+f+ Le Fay|wounded|Magnus|Le Fay shot him in the body as if to destroy it
++ Jessica Drew|defeated|Le Fay|An enraged Drew fired venom blasts seemingly dissolving Le Fay's body as well.
+@9832 outcome 2026-11-03: Stryfe battles "an older Cable and his allies, a new deadlier X-Force, and fled with Hope and Warpath" -> the escape is from X-Force too (only Stryfe|escaped|Cable exists)
+keep
++ Stryfe|escaped|X-Force|Stryfe found himself battling an older Cable and his allies, a new deadlier X-Force, and fled with Hope and Warpath.

@@ -1,0 +1,135 @@
+@1064 outcome 2026-11-03: Colossus "was severely harmed by the combined attack" of Blob, Pyro and Avalanche, who then move on to the other X-Men; nothing continues for him -> wounded + defeated (as b84), one act so fought dropped
+keep
+- Blob|fought|Colossus
+- Pyro|fought|Colossus
+- Avalanche|fought|Colossus
++ Blob|defeated|Colossus|He was severely harmed by the combined attack of the now free Blob, Pyro and Avalanche.
++ Pyro|defeated|Colossus|He was severely harmed by the combined attack of the now free Blob, Pyro and Avalanche.
++ Avalanche|defeated|Colossus|He was severely harmed by the combined attack of the now free Blob, Pyro and Avalanche.
+f+ Blob|wounded|Colossus|He was severely harmed by the combined attack of the now free Blob, Pyro and Avalanche.
+f+ Pyro|wounded|Colossus|He was severely harmed by the combined attack of the now free Blob, Pyro and Avalanche.
+f+ Avalanche|wounded|Colossus|He was severely harmed by the combined attack of the now free Blob, Pyro and Avalanche.
+@1224 outcome 2026-11-03: "The Crippler collaborated with the Pack, the Knights, and other allies to destroy all the Cyberwarriors" -> the battle ends with every Cyberwarrior destroyed = defeated for the Crippler and the Knights (one act, the Crippler's fought dropped; the other_verb destroy fact repeats it; the Cyberwarriors-vs-Knights combat is its own clause and stays)
+keep
+- Crippler|fought|Cyberwarriors
+f- Crippler|other_verb|destroy
++ Crippler|defeated|Cyberwarriors|The Crippler collaborated with the Pack, the Knights, and other allies to destroy all the Cyberwarriors.
++ Knights of Wundagore|defeated|Cyberwarriors|The Crippler collaborated with the Pack, the Knights, and other allies to destroy all the Cyberwarriors.
+@1693 outcome 2026-11-03: "the Punisher shot Phillip in the back and left him for dead"; Phillip falls into a coma and is sent to the Raft -> wounded + defeated (Klaue pattern), one act so fought dropped
+keep
+- Punisher|fought|Phillip
++ Punisher|defeated|Phillip|the Punisher shot Phillip in the back and left him for dead
+f+ Punisher|wounded|Phillip|the Punisher shot Phillip in the back and left him for dead
+@1780 outcome 2026-11-03: Kyle "aided the group and Professor X in stopping Magneto, the Brotherhood of Evil Mutants, and ... Alpha the Ultimate Mutant, from terrorizing the world" -> stopping them = defeated (2026-10-14 ruling) for each doer and each villain; the stopping is the only fight act, so fought dropped
+keep
+- Kyle Richmond|fought|Magneto
++ Kyle Richmond|defeated|Magneto|he aided the group and Professor X in stopping Magneto, the Brotherhood of Evil Mutants, and Magneto's newest creation, Alpha the Ultimate Mutant, from terrorizing the world
++ Kyle Richmond|defeated|Brotherhood of Evil Mutants|he aided the group and Professor X in stopping Magneto, the Brotherhood of Evil Mutants, and Magneto's newest creation, Alpha the Ultimate Mutant, from terrorizing the world
++ Kyle Richmond|defeated|Alpha|he aided the group and Professor X in stopping Magneto, the Brotherhood of Evil Mutants, and Magneto's newest creation, Alpha the Ultimate Mutant, from terrorizing the world
++ Defenders|defeated|Magneto|he aided the group and Professor X in stopping Magneto, the Brotherhood of Evil Mutants, and Magneto's newest creation, Alpha the Ultimate Mutant, from terrorizing the world
++ Defenders|defeated|Brotherhood of Evil Mutants|he aided the group and Professor X in stopping Magneto, the Brotherhood of Evil Mutants, and Magneto's newest creation, Alpha the Ultimate Mutant, from terrorizing the world
++ Defenders|defeated|Alpha|he aided the group and Professor X in stopping Magneto, the Brotherhood of Evil Mutants, and Magneto's newest creation, Alpha the Ultimate Mutant, from terrorizing the world
++ Professor X|defeated|Magneto|he aided the group and Professor X in stopping Magneto, the Brotherhood of Evil Mutants, and Magneto's newest creation, Alpha the Ultimate Mutant, from terrorizing the world
++ Professor X|defeated|Brotherhood of Evil Mutants|he aided the group and Professor X in stopping Magneto, the Brotherhood of Evil Mutants, and Magneto's newest creation, Alpha the Ultimate Mutant, from terrorizing the world
++ Professor X|defeated|Alpha|he aided the group and Professor X in stopping Magneto, the Brotherhood of Evil Mutants, and Magneto's newest creation, Alpha the Ultimate Mutant, from terrorizing the world
+@2078 outcome 2026-11-03: "Elektra assisted in fending off the War Fists ... together, they prevented them from capturing the Third Tower" -> fended off + stopped = defeated (A74, 2026-10-14 ruling) for Elektra and Fooh, one act so fought dropped; partner b2566 edited identically
+keep
+- Elektra|fought|War Fists
+- Fooh|fought|War Fists
++ Elektra|defeated|War Fists|Elektra assisted in fending off the War Fists while provided with additional weaponry by Fooh and together, they prevented them from capturing the Third Tower of Wisdom
++ Fooh|defeated|War Fists|Elektra assisted in fending off the War Fists while provided with additional weaponry by Fooh and together, they prevented them from capturing the Third Tower of Wisdom
+@2566 outcome 2026-11-03: as partner b2078 (fended off + prevented = defeated, fought dropped)
+keep
+- Elektra|fought|War Fists
+- Fooh|fought|War Fists
++ Elektra|defeated|War Fists|Elektra assisted in fending off the War Fists while provided with additional weaponry by Fooh and together, they prevented them from capturing the Third Tower of Wisdom
++ Fooh|defeated|War Fists|Elektra assisted in fending off the War Fists while provided with additional weaponry by Fooh and together, they prevented them from capturing the Third Tower of Wisdom
+@2537 outcome 2026-11-03: "Widow and the other Avengers were able to stop him stealing a biological weapon" -> stopping a person = defeated (as b8081, same story); one act so Widow's fought dropped; Wanda's later throw is its own act (her fought stays)
+keep
+- Widow|fought|Rumlow
++ Widow|defeated|Rumlow|Although Widow and the other Avengers were able to stop him stealing a biological weapon
+@3849 outcome 2026-11-03: James uses the chain "to threaten and disarm his assailants" while chased by the Watchdogs; nothing continues -> disarming that ends the encounter = defeated (one act, fought dropped)
+keep
+- James|fought|Watchdogs
++ James|defeated|Watchdogs|using it to threaten and disarm his assailants
+@4031 outcome 2026-11-03: Paxton tries to shoot Yellowjacket but "was quickly disarmed by one of the suit's arms, leaving him and Cassie defenseless"; the window ends there -> disarming that ends his part = Yellowjacket defeated Paxton (one act with the attempted shot, fought dropped)
+keep
+- Jim Paxton|fought|Yellowjacket
++ Yellowjacket|defeated|Jim Paxton|he was quickly disarmed by one of the suit's arms, leaving him and Cassie defenseless against him and his technology
+@4201 outcome 2026-11-03: the X-Men battle the Brotherhood in Santo Marco and "The Brotherhood retreated to Asteroid M" -> forced retreat = defeated + escaped (A74); the battle is its own sentence, fought stays
+keep
++ X-Men|defeated|Brotherhood|The Brotherhood retreated to Asteroid M to scheme a retaliation plan to destroy the X-Men.
++ Brotherhood|escaped|X-Men|The Brotherhood retreated to Asteroid M to scheme a retaliation plan to destroy the X-Men.
+@4239 outcome 2026-11-03: Monet dies later of "a serious brain injury inflicted when she fought Pluto" -> the wound is stated (row missing); Tier intervenes and kills Pluto mid-beating (a rescue mid-fight), so no defeated
+keep
+f+ Pluto|wounded|Monet|Monet was later dying from a serious brain injury inflicted when she fought Pluto
+@4354 outcome 2026-11-03: "the badly beaten Thor lay, after battling the Midgard Serpent", and Hela comes to claim his soul -> the battle ended with Thor down: wounded + Midgard Serpent defeated Thor (the battle is its own clause, fought stays)
+keep
++ Midgard Serpent|defeated|Thor|Mephisto then transported himself and Rogue to where the badly beaten Thor lay, after battling the Midgard Serpent.
+f+ Midgard Serpent|wounded|Thor|the badly beaten Thor lay, after battling the Midgard Serpent
+@4403 outcome 2026-11-03: Mogart is about to kill El-Faouly "only for Spector to use one of his Crescent Darts to stop him"; they then leave -> stopping a person = defeated (the saved row exists), one act so fought dropped
+keep
+- Spector|fought|Mogart
++ Spector|defeated|Mogart|only for Spector to use one of his Crescent Darts to stop him
+@4435 outcome 2026-11-03: Kamala breaks free "to stop Boone and save Hellverine", and Boone is then "the incapacitated Boone" -> stopped and incapacitated = defeated (one act, fought dropped); partner b6714 edited identically
+keep
+- Kamala|fought|Barberry Boone
++ Kamala|defeated|Barberry Boone|broke free from Cable's shield to stop Boone and save Hellverine
+@6714 outcome 2026-11-03: as partner b4435 (Kamala stops Boone, who is left incapacitated = defeated, fought dropped)
+keep
+- Kamala|fought|Barberry Boone
++ Kamala|defeated|Barberry Boone|broke free from Cable's shield to stop Boone and save Hellverine
+@4597 outcome 2026-11-03: Rance is sent to finish Page off, "However, Rance was stopped by Masked Man" -> stopping a person = defeated (2026-10-14 ruling), one act so fought dropped
+keep
+- Masked Man|fought|Rance
++ Masked Man|defeated|Rance|However, Rance was stopped by Masked Man who had been disrupting Fisk's operations for a while.
+@4647 outcome 2026-11-03: Bishop is lured into a trap, "attacked and possessed by the Demon Bear and the Ghost Owl who used him to travel back in time" -> they take control of him and the encounter ends there = defeated (one act, fought dropped)
+keep
+- Demon Bear|fought|Bishop
+- Ghost Owl|fought|Bishop
++ Demon Bear|defeated|Bishop|Bishop was attacked and possessed by the Demon Bear and the Ghost Owl who used him to travel back in time.
++ Ghost Owl|defeated|Bishop|Bishop was attacked and possessed by the Demon Bear and the Ghost Owl who used him to travel back in time.
+@4959 outcome 2026-11-03: Meridius "stabbed Eddie when he tried to restrain him and lended him to the Zombiotes to take him away" -> Eddie is wounded and taken out of the fight = wounded + defeated (Klaue pattern), one act so fought dropped
+keep
+- Meridius|fought|Eddie
++ Meridius|defeated|Eddie|he stabbed Eddie when he tried to restrain him and lended him to the Zombiotes to take him away
+f+ Meridius|wounded|Eddie|he stabbed Eddie when he tried to restrain him
+@6139 outcome 2026-11-03: "The X-Men joined the fight and rescued Nightcrawler, but had to retreat" -> forced to retreat = the Warclan defeated the X-Men + the X-Men escaped (A74); the fight is its own clause, fought stays
+keep
++ Warclan|defeated|X-Men|The X-Men joined the fight and rescued Nightcrawler, but had to retreat.
++ X-Men|escaped|Warclan|The X-Men joined the fight and rescued Nightcrawler, but had to retreat.
+@6190 outcome 2026-11-03: the Masters "were met with resistance from the Prehistoric Avengers and the present day Avengers, leaving Doom to betray them and forcing both Thanos and Dark Phoenix Mystique to escape" -> forced to escape = defeated + escaped from those who forced it (A74; only the escape from Doom was written); the resistance and the forced escape are one act, so Thanos' and Mystique's fought dropped (Doom's stays)
+keep
+- Thanos|fought|Prehistoric Avengers
+- Thanos|fought|Avengers
+- Dark Phoenix Mystique|fought|Prehistoric Avengers
+- Dark Phoenix Mystique|fought|Avengers
++ Prehistoric Avengers|defeated|Thanos|they were met with resistance from the Prehistoric Avengers and the present day Avengers, leaving Doom to betray them and forcing both Thanos and Dark Phoenix Mystique to escape
++ Avengers|defeated|Thanos|they were met with resistance from the Prehistoric Avengers and the present day Avengers, leaving Doom to betray them and forcing both Thanos and Dark Phoenix Mystique to escape
++ Prehistoric Avengers|defeated|Dark Phoenix Mystique|they were met with resistance from the Prehistoric Avengers and the present day Avengers, leaving Doom to betray them and forcing both Thanos and Dark Phoenix Mystique to escape
++ Avengers|defeated|Dark Phoenix Mystique|they were met with resistance from the Prehistoric Avengers and the present day Avengers, leaving Doom to betray them and forcing both Thanos and Dark Phoenix Mystique to escape
++ Thanos|escaped|Prehistoric Avengers|forcing both Thanos and Dark Phoenix Mystique to escape
++ Thanos|escaped|Avengers|forcing both Thanos and Dark Phoenix Mystique to escape
++ Dark Phoenix Mystique|escaped|Prehistoric Avengers|forcing both Thanos and Dark Phoenix Mystique to escape
++ Dark Phoenix Mystique|escaped|Avengers|forcing both Thanos and Dark Phoenix Mystique to escape
+@6229 outcome 2026-11-03: "The West Coast Avengers stop the pair once again" -> stopping Ultron and Alkhema = defeated (2026-10-14 ruling), one act so fought dropped
+keep
+- West Coast Avengers|fought|Alkhema
+- West Coast Avengers|fought|Ultron
++ West Coast Avengers|defeated|Alkhema|The West Coast Avengers stop the pair once again
++ West Coast Avengers|defeated|Ultron|The West Coast Avengers stop the pair once again
+@6465 outcome 2026-11-03: Johnny and Ben "assisted King Arthur and his Knights of the Round Table stave off an invasion from Kang the Conqueror" -> repelled = defeated (A74), one act so fought dropped; "foiling the machinations of mad scientist Professor Jack" -> a foiled plot = defeated, not an other_verb fact
+keep
+- Johnny|fought|Kang the Conqueror
+- Ben|fought|Kang the Conqueror
+- King Arthur|fought|Kang the Conqueror
+f- Ben|other_verb|foiling
++ Johnny|defeated|Kang the Conqueror|assisted King Arthur and his Knights of the Round Table stave off an invasion from Kang the Conqueror
++ Ben|defeated|Kang the Conqueror|assisted King Arthur and his Knights of the Round Table stave off an invasion from Kang the Conqueror
++ King Arthur|defeated|Kang the Conqueror|assisted King Arthur and his Knights of the Round Table stave off an invasion from Kang the Conqueror
++ Ben|defeated|Professor Jack|foiling the machinations of mad scientist Professor Jack
+@6495 outcome 2026-11-03: "A team of X-Men managed to foil his schemes, with Magneto being left wheelchair bound due to injuries inflicted by the X-Man Wolverine" -> foiled plot + crippling wound = defeated for the X-Men and Wolverine (the wounded row exists); Wolverine's fought is the same act, dropped
+keep
+- Wolverine|fought|Magneto
++ Wolverine|defeated|Magneto|with Magneto being left wheelchair bound due to injuries inflicted by the X-Man Wolverine
++ X-Men|defeated|Magneto|A team of X-Men managed to foil his schemes
