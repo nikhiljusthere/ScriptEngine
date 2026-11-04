@@ -27,7 +27,9 @@ sys.path.insert(0, str(ROOT / "tools" / "train"))
 import draft_v2  # noqa: E402
 import verify_row_wiki as vrw  # noqa: E402
 
-MODALITY = ("actual", "planned", "attempted", "ordered", "claimed", "dreamed", "hypothetical")
+# "controlled" (owner 2026-11-04): an act done under another character's mind control or possession;
+# asserted_by names the controller, as it names the one who ordered an `ordered` act
+MODALITY = ("actual", "planned", "attempted", "ordered", "controlled", "claimed", "dreamed", "hypothetical")
 CERTAINTY = ("stated", "reported", "apparent", "denied")
 CANON = ("mcu", "comics", "alternate", "anime", "production", None)
 TAGS = ("dialogue", "list_header", "production", "citation", "apposition",
@@ -48,7 +50,8 @@ RELATIONS = (
     "dated", "married_to",
     # interaction
     "helped", "assisted", "protected", "contacted", "warned", "persuaded", "tricked", "ordered",
-    "hired", "paid", "gave", "took", "attacked", "interrogated", "apologised_to", "greeted",
+    "hired", "paid", "gave", "took", "attacked", "interrogated", "tortured", "apologised_to", "greeted",
+    # tortured (owner 2026-11-04): cruelty to a captive or helpless victim is no fight
     # possession / creation
     "created", "built", "stole", "used", "destroyed", "owns", "handed", "wielded", "wore",
     "piloted",

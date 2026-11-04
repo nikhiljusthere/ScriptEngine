@@ -80,7 +80,7 @@ SHORT_SYSTEM = (
     "for every other statement of who is what to whom; relation is one of: " + ", ".join(RELATIONS) +
     ". other_verb puts the passage's own verb in object; object is null when the relation takes none. "
     "modality: " + ", ".join(fact_gate.MODALITY) + "; certainty: " + ", ".join(fact_gate.CERTAINTY) +
-    "; asserted_by is the named character who planned, ordered, claimed or imagined it (null when "
+    "; asserted_by is the named character who planned, ordered, controlled, claimed or imagined it (null when "
     "modality is actual); canon: " + ", ".join(CANON) + " or null.\n"
     'tags: {"quote", "tag"} for each sentence that states no legal row; tag is one of: ' +
     ", ".join(fact_gate.TAGS) + ".\n"

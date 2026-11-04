@@ -39,7 +39,7 @@ GROUPS = {
     "relationship": {"trained", "mentored", "recruited", "allied_with", "joined", "left_group", "member_of",
                      "leader_of", "friend_of", "rival_of", "parent_of", "sibling_of", "married", "dated"},
     "interaction": {"helped", "assisted", "protected", "contacted", "warned", "persuaded", "tricked", "ordered",
-                    "hired", "paid", "gave", "took", "attacked", "interrogated", "apologised_to", "greeted"},
+                    "hired", "paid", "gave", "took", "attacked", "interrogated", "tortured", "apologised_to", "greeted"},
     "possession": {"created", "built", "stole", "used", "destroyed", "owns", "handed", "wielded", "wore", "piloted"},
     "identity": {"alias_of", "disguise_as", "revealed_as"},
     "state": {"gained_power", "lost_power", "transformed_into", "resides_at", "located_at", "dies", "born",

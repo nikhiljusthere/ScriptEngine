@@ -50,7 +50,7 @@ def test_twelve_verbs_unchanged_in_v2():
 
 
 def test_closed_enums_and_tag_set():
-    assert fg.MODALITY == ("actual", "planned", "attempted", "ordered", "claimed",
+    assert fg.MODALITY == ("actual", "planned", "attempted", "ordered", "controlled", "claimed",
                            "dreamed", "hypothetical")
     assert fg.CERTAINTY == ("stated", "reported", "apparent", "denied")
     # 2026-10-08 council: the three coverage tags that make a catalogued "no row" sentence legal
@@ -451,3 +451,18 @@ def test_short_capitalised_end_is_a_name():
     import big_flags as bf
     ev = [{"subject": "Peter", "verb": "met", "object": "MJ", "quote": "Peter later sought out MJ"}]
     assert not [f for f in bf.check(ev, "Peter later sought out MJ.")[0] if "garbage" in f]
+
+
+def test_torture_and_controlled_acts_are_in_the_vocabulary():
+    # owner 2026-11-04: torture of a captive is no fight; an act under mind control names its controller
+    w = "The Black Queen cruelly chained and tortured the X-Men. Under Mastermind's control, Phoenix attacked Cyclops."
+    rows = [{"quote": "The Black Queen cruelly chained and tortured the X-Men", "subject": "Phoenix",
+             "relation": "tortured", "object": "X-Men", "modality": "actual", "certainty": "stated",
+             "asserted_by": None, "canon": None},
+            {"quote": "Under Mastermind's control, Phoenix attacked Cyclops", "subject": "Phoenix",
+             "relation": "attacked", "object": "Cyclops", "modality": "controlled", "certainty": "stated",
+             "asserted_by": "Mastermind", "canon": None}]
+    for r in rows:
+        assert fg.validate(r) == []
+    bad = dict(rows[1], asserted_by=None)
+    assert fg.validate(bad)  # a controlled act must name its controller
