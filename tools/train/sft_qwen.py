@@ -156,7 +156,8 @@ def dev_generate(model, tok, rows, batch=8, max_new=None):
     if max_new is None:
         longest = max(len(r["messages"][2]["content"]) for r in rows)
         max_new = int(longest * 1.5 / 3) + 32  # chars->tokens cushion
-        max_new = min(max(max_new, 256), 2048)
+        # 4096, not 2048: v2 answers (events+facts+tags) reach 2,884 tokens on test (COMPOSE_V2_NOTES §6.3)
+        max_new = min(max(max_new, 256), 4096)
     model.eval()
     prompts = [render_prompt(tok, r["messages"]) for r in rows]
     order = sorted(range(len(rows)), key=lambda i: len(prompts[i]))
