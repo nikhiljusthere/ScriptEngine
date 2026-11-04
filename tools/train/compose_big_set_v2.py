@@ -36,8 +36,8 @@ runs only); a JJK earned-empty window anywhere; a window id, exact page or passa
 dev and test; dev_pool not inside dev; a big window on a gold page. Reported, not fatal (receipt
 `warnings`): base-page shares ("Denji" vs "Denji/History"; the gold ones are inherited from v1's split)
 and exact-sentence overlap; --drop-base-page-overlap leaves out the big windows on a dev/test base page.
-Always left out (receipt `big_dropped_sentence_overlap`): a big window repeating a >=40-char dev/test
-sentence word for word.
+Always left out (receipts `big_dropped_sentence_overlap`, `gold_train_dropped_sentence_overlap`): a big or
+gold train window repeating a >=40-char dev/test sentence word for word.
 
     scriptengine/.venv/bin/python tools/train/compose_big_set_v2.py --out-dir DIR
         [--empty-share 0.30] [--hard-share 0.75] [--empty-def all|events+facts|events]
@@ -243,6 +243,12 @@ def compose(a):
     # "Iron Monger/A.I.M. Operative Controller"): always left out, counted in the receipt
     held_sent = {x for s in ("dev", "test") for r in splits[s] for x in fact_gate.sentences(r["passage"])
                  if len(x) >= 40}
+    # the same rule for a gold train window: b190 (train, "Rakshas") and b3346 (dev, "Silat") narrate one passage
+    # from two pages and share two sentences (gold lint R_overlap_cross_split, ruling 2026-11-04)
+    gold_dropped_sent = [f"{r['id']}:{r['page']}" for r in splits["train"]
+                         if any(x in held_sent for x in fact_gate.sentences(r["passage"]))]
+    splits["train"] = [r for r in splits["train"]
+                       if not any(x in held_sent for x in fact_gate.sentences(r["passage"]))]
     eventful, empties, dropped_base, dropped_sent = [], [], 0, []
     for wid, rec in sorted(baud.items(), key=lambda kv: kv[1].get("b", 0)):
         w = src.get(wid)
@@ -333,6 +339,7 @@ def compose(a):
            "big_empty_taken": len(empties), "big_hard_empty_taken": hard_taken,
            "big_taken": len(big_rows), "big_dropped_by_cap": n_big_used - len(big_rows),
            "big_dropped_sentence_overlap": dropped_sent,
+           "gold_train_dropped_sentence_overlap": gold_dropped_sent,
            "big_empty_share": round(len(empties) / max(len(big_rows), 1), 4),
            **{s: len(final[s]) for s in SPLITS},
            "train_empty_share": {d: share(train, d) for d in EMPTY},
