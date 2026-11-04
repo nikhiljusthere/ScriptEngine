@@ -1,0 +1,27 @@
+@7563 rulings 2026-11-04: ESC (A74): the defeated row's own quote says the beaten side fled ("forcing him to flee") -> + Dracula|escaped|Marie Eisner; partner b7573 identical
+keep
++ Dracula|escaped|Marie Eisner|Marie dangled her cross charm in front of Dracula's face, forcing him to flee
+@7573 rulings 2026-11-04: as partner b7563 (A74: + Dracula|escaped|Marie Eisner for "forcing him to flee")
+keep
++ Dracula|escaped|Marie Eisner|Marie dangled her cross charm in front of Dracula's face, forcing him to flee
+@7564 rulings 2026-11-04: TORTURE IS NOT A FIGHT (owner): the Winter Guard torture the captured She-Hulk "to break her mind" -> tortured, not fought; "Dracula's vampires feasting on her" is part of the same torture (A63, his vampires) -> Dracula|tortured|She-Hulk; the capture has no stated fight -> captured alone (CAPTURED / SEALED AS OUTCOMES)
+keep
+- Winter Guard|fought|She-Hulk
+f- Winter Guard|other_verb|tortured
+f+ Winter Guard|tortured|She-Hulk|the Winter Guard tortured her to break her mind
+f+ Dracula|tortured|She-Hulk|which involved Dracula's vampires feasting on her
+@7580 rulings 2026-11-04: ESC (A74): the defeated row's quote says Dracula was "forced to flee the city" -> + Dracula|escaped|Golden Angel
+keep
++ Dracula|escaped|Golden Angel|Dracula was again confronted by the mysterious Golden Angel, and forced to flee the city
+@7600 rulings 2026-11-04: "NEARLY V": "She almost fed on his blood" -- the act did not happen -> actual/denied, not attempted
+keep
+f- Jubilee|other_verb|fed
+f+ Jubilee|other_verb|fed|She almost fed on his blood|actual|denied|
+@7696 rulings 2026-11-04: PASSIVE OUTCOMES WITH NO STATED DOER: "After Chiyou's defeat" closes the fight the window just narrates between Iron Fist, Ghost Fist and Chiyou, no other party present -> one defeated per winner; the fight is its own clause, fought stays; partner b7703 identical
+keep
++ Iron Fist|defeated|Chiyou|After Chiyou's defeat, Elektra slipped away unnoticed
++ Ghost Fist|defeated|Chiyou|After Chiyou's defeat, Elektra slipped away unnoticed
+@7703 rulings 2026-11-04: as partner b7696 (Iron Fist and Ghost Fist |defeated| Chiyou for "After Chiyou's defeat")
+keep
++ Iron Fist|defeated|Chiyou|After Chiyou's defeat, Elektra slipped away unnoticed
++ Ghost Fist|defeated|Chiyou|After Chiyou's defeat, Elektra slipped away unnoticed

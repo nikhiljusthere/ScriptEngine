@@ -1,0 +1,56 @@
+@1989 rulings 2026-11-04: Addendum 2, other_verb objects are the quote's own verb word under controlled ("shot in the head"), not the outcome name; the wounded row stays controlled, "purposely missed" stays her own actual act
+keep
+f- Mockingbird|other_verb|defeated
+f+ Mockingbird|other_verb|shot|shot in the head by Mockingbird who had been brainwashed by A.I.M.|controlled|stated|A.I.M.
+
+@2041 rulings 2026-11-04: Addendum 2, other_verb object is the quote's own verb ("flew away"), not captured/defeated; Addendum 3 one modality per row, the tried kill under the brainwashing is controlled
+keep
+f- Harpy|other_verb|captured
+f- Harpy|other_verb|defeated
+f+ Harpy|other_verb|flew|the Harpy flew away with the Hulk in her clutches|controlled|stated|M.O.D.O.K.
+f- Harpy|other_verb|kill
+f+ Harpy|other_verb|kill|right before she blasted and tried to kill the Hulk.|controlled|stated|M.O.D.O.K.
+
+@2292 rulings 2026-11-04: Flash's act against the controller is plain, but cutting off Maniac's control over the Inklings states no fight with Price; the fight is the weakening of Price's symbiote
+keep
+- Flash Thompson|fought|Lee Price
++ Flash Thompson|fought|Lee Price|Flash then weakened Price's symbiote
+
+@2744 rulings 2026-11-04: MIND CONTROL (owner), "Kilgrave enthralls his mother and has her stab herself": the stab is Louise's act controlled|stated|Kilgrave (controlled wins over ordered), the controller gets no plain killed, her death is her own state
+keep
+- Kilgrave|killed|Louise
+f+ Louise|dies|-|watches her die from her wounds
+f- Louise|other_verb|stab
+f+ Louise|other_verb|stab|Kilgrave enthralls his mother and has her stab herself for every year she left him without her|controlled|stated|Kilgrave
+
+@3138 rulings 2026-11-04: MIND CONTROL (owner), the squad battles the disciples under the "mind control of her whip" (stated, controller Do-S): Asami's attack is controlled|stated|Do-S, Do-S's own battle is plain; the uncovered battle sentence gets its rows
+keep
++ Do-S|fought|Atomic Samurai's Disciples|They battle the three disciples
+f+ Asami|attacked|Atomic Samurai's Disciples|They battle the three disciples, until Sweet Mask appears|controlled|stated|Do-S
+
+@3222 rulings 2026-11-04: Addendum 3 (b9001 shape), the brainwashed Narinki Squad attacks on Do-S's order: Do-S|ordered + the ordered attack as controlled|stated|Do-S (controlled wins)
+keep
+f+ Do-S|ordered|Narinki Squad|Do-S responds by ordering her slaves to attack the hero
+f+ Narinki Squad|other_verb|attack|Do-S responds by ordering her slaves to attack the hero|controlled|stated|Do-S
+
+@3664 rulings 2026-11-04: TORTURE (owner) + Addendum 3, Buu beats the injured Vegeta to a pulp, stated as "being tortured": the fight keeps its rows, the torture adds tortured
+keep
+f+ Majin Buu|tortured|Majin Vegeta|Enraged to see his father being tortured, Trunks saves Vegeta
+t- deictic|Enraged to see his father being tortured
+
+@3705 rulings 2026-11-04: Addendum 3 (b9001), Angel, Iceman and Jean "enthralled by the Mole Man ... and sent to battle Tyrannus": the sent battle is controlled|stated|Mole Man (controlled wins over ordered); Mole Man|ordered rows stay
+keep
+f- Angel|other_verb|battle
+f+ Angel|other_verb|battle|and sent to battle Tyrannus.|controlled|stated|Mole Man
+f- Iceman|other_verb|battle
+f+ Iceman|other_verb|battle|and sent to battle Tyrannus.|controlled|stated|Mole Man
+f- Jean|other_verb|battle
+f+ Jean|other_verb|battle|and sent to battle Tyrannus.|controlled|stated|Mole Man
+
+@3710 rulings 2026-11-04: INTERCEPTED ATTACKS, Longshot keeps Rahne "from attacking him further": saved for Shatterstar beside the fight (no mind control is real here, only accused)
+keep
++ Longshot|saved|Shatterstar|his kept from attacking him further by the Longshot
+
+@3780 rulings 2026-11-04: MIND CONTROL (owner), Loki "used the Scepter to turn Hulk against Rogers" until the mind control wears off: Hulk's attack is controlled|stated|Loki; Rogers' knockdown of the controlled Hulk stays plain
+keep
+f+ Hulk|attacked|Rogers|he used the Scepter to turn Hulk against Rogers|controlled|stated|Loki

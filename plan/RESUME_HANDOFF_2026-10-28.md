@@ -210,3 +210,18 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   Makima's control; b1989 "purposely missed any vitals"; outcome object named for a quote with no outcome verb).
 - Order for the next window: finish TC gold (21), the three big lists (resume points above), TC big (422, grouped),
   then step 4.
+
+## Update 2026-11-04 (night, second window, stopped at ~88% / weekly ~93%)
+- Big audit 20,500 -> 20,707 (RB1-RB3 remainders 149, T1 36, T2 15, D1 7); gold 4,191 -> 4,201 (D3G_01: the gold
+  torture/mind-control list is DONE, incl. b1989/b2041 re-check). One record per window, ledger sums match, recon
+  check: only logged exceptions. BRIEF.md Addenda 2-3 hold every decision of this window's agent questions.
+- compose v2 drops a gold train window that repeats a dev/test sentence (1a32dbee): b190 + "Robbery of the Russian
+  Nuclear Facility"; trial compose: 0 leaks, 0 errors.
+- DONE lists: gold rulings + gold TC; big list_R_B2. REMAINING big work, all with resume points and drafts:
+  notes_D1.md "STOPPED HERE" (RB3 drafts, Addendum-3 corrections b12511 b12550 b12634 b12346 b12392 b12405 b12319,
+  list_R_B3 b12993-b13969; RB1 lines b3097-end from notes_RB1.md), notes_D2.md (48 re-checked T2 drafts + b9001
+  b9537 b9567 b5972 + b12872 b12876 b12881 b13372 b13222; undecided b13659; unread b13797 b13919 b13976),
+  list_T1.txt from the b2462/b2605 group (~95, notes_T1.md / notes_D3.md). Roughly 250 windows, ~120 already drafted.
+- Owner-type questions still open in notes_D1/D2/D3/RB*/T*.md (left unchanged): e.g. "Conquistadores" as an end
+  (b13854), Betsy "involuntarily" (b9588/b9594), controller only implied (b2342, b2652, b2296).
+- Then step 4: gold lint re-run, compose v2 -> student_v2_short, check_v2_set rc=0, teacher re-score.

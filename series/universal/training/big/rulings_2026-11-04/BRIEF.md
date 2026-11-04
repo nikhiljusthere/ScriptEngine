@@ -100,3 +100,28 @@ The new relation `tortured` and modality `controlled` are in fact_gate (the dry-
 - Torture of a captive also seen as `defeated` (b1861) or as `fought` beside a capture (b10653 Nebula): `tortured`.
 - RESUME lists (`list_R_B1/B2/B3.txt`): read your predecessor's notes_<B1|B2|B3>.md first. Its drafts ("STOPPED HERE")
   must be re-read against the window before use; its "no change" decisions stand. Some lines also carry TC classes.
+
+## Addendum 3 (2026-11-04 night, decisions on the second round's questions)
+- Shooting, stabbing or killing a hostage/captive is NOT `tortured` (that is cruelty to make him suffer): write
+  wounded / killed as stated. Fix b12511, b12550 (RB3_*) if they carry `tortured` for a shot.
+- An arrest or capture of someone who does not resist is `captured` alone (no `defeated`): fix b12634.
+- A stun shot that knocks out a hostile target = `defeated` (knockout); no `wounded` unless an injury is stated.
+- "was informed / told that X had shot Y" (b12346): the act is known only from a report -> A113 claimed fact.
+- Possession: the possessed body's acts are the body owner's acts under the possessor's control (`B|attacked|C|...|
+  controlled|stated|A`), not the possessor's plain events (b12392: Victor under Jonah).
+- Two named controllers of one act: one controlled row per controller (asserted_by differs) (b12405).
+- Forced by threat or command ("made her stab") with no stated mind control: `ordered`, not `controlled` (b12319).
+- Hypnotised by A while obeying B's command: modality `controlled` (asserted_by A) + `B|ordered|X` (b9001).
+- A remotely piloted body or symbiote acts under its pilot's control: `controlled` (b8123 Dylan).
+- Brainwashing stated with no named controller, or only implied/ordered: plain events (b6150, b8902, b9312, b1159).
+- One modality per row: when an act is both attempted/ordered and controlled, `controlled` wins.
+- Any act can be controlled (arrivals, speech): yes (b526/b9628, b2226).
+- A torture that follows a fight the victim started: the fight keeps its outcome rows; the torture adds `tortured`.
+- Restraining a captive with no cruelty (b1503) is no torture: keep what the text states.
+- Intercepting a killing blow on a named person = `saved` (b6539 Kindred|saved|Spider-Man).
+- A foe who leaves under a stated threat (b6609 Galactus, Ultimate Nullifier) = `defeated` for the one who made the
+  threat, + `escaped` only if the text says he fled.
+- Partners differ where one window does not name the ends (b2514/b9590 vs b2841): leave the window without the
+  names as is and log the pair in recon/exceptions.txt (`C<id> bA~bB reason`).
+- Rows the scan did not flag but that contradict a ruling (e.g. `Controller|fought|Victim` for "enthralled",
+  "enslaved", "infected"): fix them when they are in a window you are editing.
