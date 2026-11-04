@@ -152,3 +152,16 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   events -- grep the corpus; add to the catalog.
 - Stage 8d plan (scheduled 15:31 IST 2026-11-03): apply accepted outcome proposals, re-run the gold lint, then 2 agents
   read work_gold.txt (170 windows; fix files GL001+), then re-snapshot compose and re-score the teacher.
+
+## Update 2026-11-04 (big outcome proposals applied; gold lint re-run clean)
+
+- Step 1 DONE: backup `big/big_audit_v2.jsonl.bak-pre-B912-B955`; B912-B919 + B950-B955 each re-checked
+  (`outcome_scan_big.py check`: 230 would apply, 0 refused; no window in two files) and submitted ONCE with `rv.sh fix`.
+  Audit 20,005 -> 20,235 lines (+230). Commit 8aa4f667. All big outcome proposals (ranks 1-2409) are now applied.
+- Step 2 DONE: `lint_gold.sh --regate` -> unreviewed 0, no REGATE_* class (0 gate refusals). The 15 GL001 windows
+  (submitted twice) have 0 doubled rows; a whole-gold check by row key (events s|v|o|quote, facts s|r|o|quote|modality,
+  tags tag|quote) finds 0 duplicates in 3,822 windows. Remaining lint classes are the known reviewed ones
+  (E_met_and_fight_same_pair 65 w, X_end_* 75 w, name_short_and_full 39 w, R_overlap_cross_split b190/b3346 ...).
+- NEXT: step 3 (open rulings -> gold27_system.md + BIG_REVIEW_PATTERNS.md; fact_gate.RANK allow-list needs the owner's
+  OK before any gate-code edit; de-duplicate b190/b3346 before compose), then step 4 (compose v2 dry run + teacher
+  re-score). Stopped at 86% of the 5-hour window to stay under the 96% stop.
