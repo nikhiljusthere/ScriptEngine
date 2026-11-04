@@ -107,7 +107,11 @@ RANK = re.compile(
     r"Professor|Chancellor|Director|Lord|Lady|King|Queen|Sir|Dame|Madam|President)\s"
     r"(?!of\b|in\b|Chaos\b|Carter\b|Lotus\b|Dark Wind\b|Loki\b|Goblin\b|Anti-Venom\b|Commander\b|Sun\b|Bad Vibes\b|"
     r"Dazzler\b|Cutlass\b|Nemesis\b|Spectrum\b|Stilt-Man\b|Hawkman\b|Avalon\b|Americat\b|Minerva\b|Valkyrie\b|"
-    r"Thor\b|Raptor\b|Ogun\b|Voodoo\b|Deathstrike\b|Mastermind\b|America\b|Marvel\b|Britain\b|Universe\b|Doom\b|Strange\b|Druid\b|Octopus\b|X\b|Xavier\b|Cobra\b|U\.K\.|Venom\b|Arthur\b|Hydra\b|Torch\b|Brood\b|\d)")
+    r"Thor\b|Raptor\b|Ogun\b|Voodoo\b|Deathstrike\b|Mastermind\b|America\b|Marvel\b|Britain\b|Universe\b|Doom\b|Strange\b|Druid\b|Octopus\b|X\b|Xavier\b|Cobra\b|U\.K\.|Venom\b|Arthur\b|Hydra\b|Torch\b|Brood\b|"
+    r"Kai\b|Vegeta\b|Cold\b|Piccolo\b|Kong\b|Mizuki\b|\d)")
+# Kai..Mizuki (owner OK 2026-11-04): titles that are part of the name. Stripped, "King Vegeta" became his son
+# "Vegeta" (self-pair b893), "King Kai" became "Kai" beside Kibito Kai and Old Kai (b1014, b3657), and the hero
+# alias "Captain Mizuki" made Mizuki|alias_of|Mizuki (b3543)
 # the bare rank words of RANK ("Agent", "Dr."): "Agent 33" is a codename RANK never strips (it stops at a digit),
 # but rows stripped by older code carry the bare "33" (gate audit 2026-10-13)
 RANK_WORD = re.compile(RANK.pattern[1:RANK.pattern.index(r")\s") + 1])

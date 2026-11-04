@@ -335,6 +335,14 @@ def test_rank_word_kept_when_the_window_names_the_codename():
     assert fg._end_ok("General Ross", "ordered", False, "t", None, "General Ross ordered the strike.")
 
 
+def test_title_that_is_part_of_the_name_is_kept():
+    # gold b893/b1014/b3543 (2026-11-04): the bare rest is another person or never used alone
+    for name in ("King Kai", "King Vegeta", "King Cold", "King Piccolo", "King Kong", "Captain Mizuki"):
+        assert fg.strip_rank(name, name + " appears.") == name
+        assert fg._end_ok(name, "met", False, "t") is None
+    assert fg.strip_rank("King T'Chaka", "King T'Chaka ruled.") == "T'Chaka"
+
+
 def test_crowd_word_inside_a_thing_object_is_no_crowd():
     # b8055 (2026-10-13): a power/item description is no person end; measured 57 historical drops recovered
     assert fg._end_ok("ability to entrance others with music", "gained_power", True, "t") is None
