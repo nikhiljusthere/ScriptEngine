@@ -1,0 +1,57 @@
+@153 rulings 2026-11-04: TEAM - "She aided the Avengers in stopping Egghead": the Black Widow shares the stop (defeated) with the Avengers
+keep
++ Black Widow|defeated|Egghead|She aided the Avengers in stopping Egghead
+@7384 rulings 2026-11-04: TEAM (overlap partner of b153, same sentence) - Natasha shares the stop of Egghead
+keep
++ Natasha|defeated|Egghead|She aided the Avengers in stopping Egghead
+@170 rulings 2026-11-04: CAPTURED AS OUTCOME - capture with no stated fight stays captured alone; the fought row quotes a memory scan of the captive, not a fight
+keep
+- Mister Sinister|fought|Bishop
+f+ Mister Sinister|other_verb|scanned|Sinister scanned his memories and fully learned about the existence of the Age of Apocalypse
+@201 rulings 2026-11-04: STOP - preventing Dracula from turning Britain into a vampire nation is a completed stop of a named villain's plot: defeated, other_verb goes
+keep
++ Brian Braddock|defeated|Dracula|preventing Dracula from turning Britain into a vampire nation
+f- Brian Braddock|other_verb|prevent
+@3392 rulings 2026-11-04: STOP (overlap partner of b201) - defeated Dracula, other_verb goes
+keep
++ Brian Braddock|defeated|Dracula|preventing Dracula from turning Britain into a vampire nation
+f- Brian Braddock|other_verb|prevent
+@217 rulings 2026-11-04: FW - the fought quote states a burn wound: wounded fact; Logan accepts the punishment and nothing is ended, so no defeated
+keep
+f+ Scott|wounded|Logan|Scott used his optic blast to severly burn Logan for what he did
+@218 rulings 2026-11-04: CAPTURED AS OUTCOME - the second clash prevents the Scorcher's theft and ends in his capture: defeated beside captured; the clashes are stated separately so fought stays
+keep
++ Peter|defeated|Scorcher|Later he clashed with the Scorcher again, preventing him from stealing documents from an Osborn Chemicals facility
+@259 rulings 2026-11-04: PASSIVE OUTCOMES (A8 refined) - Gorbo, mortally wounded trying to stop the Mole Man, with only the Mole Man opposing him and the encounter ending there: Harvey defeated Gorbo (no stated death, so not killed)
+keep
++ Harvey|defeated|Gorbo|Gorbo was mortally wounded trying to stop the Mole Man
+@263 rulings 2026-11-04: WBY - the sentence names the doer (the clash with the brute, the Hulk)
+keep
+f- Johnny|wounded|-
+f+ Hulk|wounded|Johnny|Johnny was injured when the Fantastic Four initially clashed with the brute
+@282 rulings 2026-11-04: STOP - Cap and Bucky foiled Monstro's sabotage plot: defeated for both, other_verb goes
+keep
++ Captain America|defeated|Monstro|Captain America and Bucky foiled a sabotage plot by the Japanese spy known as Monstro
++ Bucky|defeated|Monstro|Captain America and Bucky foiled a sabotage plot by the Japanese spy known as Monstro
+f- Captain America|other_verb|foiled
+@299 rulings 2026-11-04: NEAR-FINAL STATES - Maw pins Strange in the side of a building and nothing continues in the window: defeated; a wall pin is no seal (sealed = another dimension or world)
+keep
+- Maw|sealed|Strange
++ Maw|defeated|Strange|only for the latter to tackle Strange, telekinetically trapping him in the side of a nearby building
+@344 rulings 2026-11-04: A74 - "send the Sandman fleeing": the heroes beat him and he escapes; escaped rows exist, defeated was missing
+keep
++ Spider-Man|defeated|Flint|the two heroes easily defeated the Enforcers and send the Sandman fleeing
++ Human Torch|defeated|Flint|the two heroes easily defeated the Enforcers and send the Sandman fleeing
+@360 rulings 2026-11-04: ESC (A74) - the Black Order were driven away by the Phoenix: escaped beside defeated
+keep
++ Black Order|escaped|Phoenix|they were driven away by the Phoenix
+@374 rulings 2026-11-04: CAPTURED AS OUTCOME - apprehending Electro ends the stated fight: defeated beside captured; RESCUE MID-FIGHT - "no match for the brute" before Cap saves him: Hulk defeated Spider-Man
+keep
++ Spider-Man|defeated|Electro|Spider-Man and the Fantastic Four quickly apprehended Electro
++ Sue|defeated|Electro|Spider-Man and the Fantastic Four quickly apprehended Electro
++ Hulk|defeated|Spider-Man|Spider-Man tried to stop him but was no match for the brute
+@427 rulings 2026-11-04: STOP - stopping the League of Unicrons from assassinating the prince is a completed stop of a named group: defeated for Bucky and Cap, other_verb goes
+keep
++ Bucky|defeated|League of Unicrons|Bucky helped stop the League of Unicrons from assassinating Chinese royal Prince Tsaihoon
++ Captain America|defeated|League of Unicrons|Bucky helped stop the League of Unicrons from assassinating Chinese royal Prince Tsaihoon
+f- Bucky|other_verb|stop

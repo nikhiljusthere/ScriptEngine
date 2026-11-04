@@ -1,0 +1,87 @@
+@9471 rulings 2026-11-04: WBY - "shot ... with one of Hawkeye's arrows" names the doer (owner of the weapon, A120) -> Hawkeye|wounded|Anole replaces the doer-less row; the battle continues (no defeated)
+keep
+f- Anole|wounded|-
+f+ Hawkeye|wounded|Anole|Anole was shot in the abdomen with one of Hawkeye's arrows
+
+@9475 rulings 2026-11-04: WBY - same sentence as b9471 -> Hawkeye|wounded|Anole
+keep
+f- Anole|wounded|-
+f+ Hawkeye|wounded|Anole|Anole was shot in the abdomen with one of Hawkeye's arrows
+
+@9480 rulings 2026-11-04: TEAM - no partner is named (only "one of the X-Men"); "the Sentinel" is a species noun for one unnamed robot, no end (2026-10-28) -> the defeated row goes, the act stays as Anole's other_verb
+keep
+- Anole|defeated|Sentinel
+f+ Anole|other_verb|defeat|helped to defeat the Sentinel attacking Utopia
+
+@9495 rulings 2026-11-04: WBY/FW - "attacked by A.I.M. agents and mutated sea creatures, injuring Darkstar" names the doer -> A.I.M.|wounded|Darkstar replaces the doer-less row; Black Widow's team "allowed themselves to be captured" (no defeated)
+keep
+f- Darkstar|wounded|-
+f+ A.I.M.|wounded|Darkstar|were attacked by A.I.M. agents and mutated sea creatures, injuring Darkstar
+
+@9528 rulings 2026-11-04: FW - "shot JFK" is a stated wound; the window states no death (KILLED WITHOUT A STATED DEATH) -> wounded, fought stays
+keep
+f+ Bucky|wounded|JFK|he became the second gunman who shot JFK
+
+@9531 rulings 2026-11-04: TEAM - Falcon "helped Bucky to defeat the Grand Director": the helper gets the same row; the prevented train massacre names no villain in its clause (fact kept)
+keep
++ Falcon|defeated|Grand Director|then helped Bucky to defeat the Grand Director
+
+@9533 rulings 2026-11-04: FW - "an Old Bucky shot Bucky" is a stated wound; nothing decided -> wounded, fought stays
+keep
+f+ Old Bucky|wounded|Bucky|Immediately, an Old Bucky shot Bucky
+
+@9536 rulings 2026-11-04: Red Skull's capture of Cap has no fight (captured alone). STOP: stopping Fritz Krone's plot and foiling the Skull's poison plot are defeated (with the named helpers, TEAM); the plane battle "ended when the Skull fall off a plane" -> fought + defeated for the pair (Bucky's fought row was missing); the Yellow Hoods occupation ended by Bucky with Cap and Betty Ross (TEAM)
+keep
++ Bucky|defeated|Fritz Krone|Bucky also helped Captain America stop two similar plots to demoralize the American people with fantastic invasions. The first perpetuated by Nazi agent Fritz Krone
++ Captain America|defeated|Fritz Krone|Bucky also helped Captain America stop two similar plots to demoralize the American people with fantastic invasions. The first perpetuated by Nazi agent Fritz Krone
++ Bucky|fought|Red Skull|the pair clashed with the Red Skull
++ Bucky|defeated|Red Skull|The battle ended when the Skull fall off a plane to his seeming demise
++ Captain America|defeated|Red Skull|The battle ended when the Skull fall off a plane to his seeming demise
++ Human Torch|defeated|Red Skull|with the assistance of the Human Torch and Captain America foiled the Skull's plot to poison the population of the capital city
++ Captain America|defeated|Followers of the Yellow Hoods|Bucky then helped Captain America and Betty Ross end the Followers of the Yellow Hoods occupation
++ Betty Ross|defeated|Followers of the Yellow Hoods|Bucky then helped Captain America and Betty Ross end the Followers of the Yellow Hoods occupation
+
+@9544 rulings 2026-11-04: TEAM - Bucky "helped stopped Countess Mara" at Captain America's side, and liberated the island from the Black Talon "with an assist from Captain America and the Human Torch": the named partners get the same defeated rows
+keep
++ Captain America|defeated|Countess Mara|Back at Captain America's side, Bucky also helped stopped Countess Mara
++ Captain America|defeated|Black Talon|defended it from Nazis led by the Black Talon and liberated it with an assist from Captain America and the Human Torch
++ Human Torch|defeated|Black Talon|defended it from Nazis led by the Black Talon and liberated it with an assist from Captain America and the Human Torch
+
+@9558 rulings 2026-11-04: SEALED AS OUTCOME - Jennifer's banishing spell ends the stated fight with the Furies (gone for a decade) -> defeated + sealed; fought stays (separate sentence)
+keep
++ Jennifer|defeated|Furies|She banished the Furies for a decade from the spiritual plane with a crude spell
+
+@9575 rulings 2026-11-04: STOP - Merlin "thwarted numerous attempts" of Le Fay and imprisoned her -> defeated (thwarted fact goes) beside captured; Iron Man confronts Le Fay and forces her to reverse the spell, ending her plot -> defeated, the same-act met and forced fact go (A145, A89); partner b9589 identical for the shared sentences
+keep
+f- Merlin|other_verb|thwarted
++ Merlin|defeated|Le Fay|Merlin thwarted numerous attempts to bring ruin to Camelot, and eventually imprisoned her
+- Le Fay|met|Iron Man
+f- Iron Man|other_verb|forced
++ Iron Man|defeated|Le Fay|Iron Man decided to confront Le Fay himself and forced her to reverse the spell
+
+@9589 rulings 2026-11-04: as partner b9575 for the shared sentences (Iron Man forces Le Fay to reverse the spell -> defeated; met and forced fact go)
+keep
+- Le Fay|met|Iron Man
+f- Iron Man|other_verb|forced
++ Iron Man|defeated|Le Fay|Iron Man decided to confront Le Fay himself and forced her to reverse the spell
+
+@9585 rulings 2026-11-04: FW - the Sentry tears off her head but she reappears and destroys him (the wounded side wins, Morgan|defeated|Sentry exists) -> wounded; SEALED AS OUTCOME - Doom forces her into the cauldron "despite her screams and pleas", ending the contest (she is sent to 1,000,000 BC) -> defeated + sealed
+keep
+f+ Sentry|wounded|Morgan|the Sentry tore off her head
++ Doom|defeated|Morgan|Doom chanted a spell of a language that even she possessed no knowledge of to forcibly send the sorceress into her own enchanted cauldron, despite her screams and pleas
+
+@9588 rulings 2026-11-04: CAPTURED AS OUTCOME - the champions' battle Apocalypse set against Morgan ends with her loss and imprisonment -> defeated + captured; the dissection of a paralysed prisoner is no fight -> wounded facts for both doers; partner b9594 identical
+keep
+- Apocalypse|fought|Morgan Le Fay
+- Jamie Braddock|fought|Morgan Le Fay
+f+ Apocalypse|wounded|Morgan Le Fay|was subjected to a horrific and torturous dissection by both Apocalypse and Jamie Braddock
+f+ Jamie Braddock|wounded|Morgan Le Fay|was subjected to a horrific and torturous dissection by both Apocalypse and Jamie Braddock
++ Apocalypse|defeated|Morgan Le Fay|Betsy involuntarily defeated her brother, which allowed Apocalypse to name Jamie Braddock the new king of Avalon and imprisoned Le Fay
+
+@9594 rulings 2026-11-04: as partner b9588 (proxy battle lost + imprisoned -> defeated; dissection = wounded, not fought)
+keep
+- Apocalypse|fought|Morgan Le Fay
+- Jamie Braddock|fought|Morgan Le Fay
+f+ Apocalypse|wounded|Morgan Le Fay|was subjected to a horrific and torturous dissection by both Apocalypse and Jamie Braddock
+f+ Jamie Braddock|wounded|Morgan Le Fay|was subjected to a horrific and torturous dissection by both Apocalypse and Jamie Braddock
++ Apocalypse|defeated|Morgan Le Fay|Betsy involuntarily defeated her brother, which allowed Apocalypse to name Jamie Braddock the new king of Avalon and imprisoned Le Fay

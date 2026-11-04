@@ -1,0 +1,54 @@
+@11 rulings 2026-11-04: CAPTURED/SEALED AS OUTCOMES - the heroes forcing Warbringer through the portal ends the stated struggle: defeated beside sealed
+keep
++ Iron Man|defeated|Warbringer|Together, adult and teenage heroes successfully forced Warbringer through a portal
++ Captain America|defeated|Warbringer|Together, adult and teenage heroes successfully forced Warbringer through a portal
++ Vision|defeated|Warbringer|Together, adult and teenage heroes successfully forced Warbringer through a portal
++ Thor|defeated|Warbringer|Together, adult and teenage heroes successfully forced Warbringer through a portal
++ Spider-Man|defeated|Warbringer|Together, adult and teenage heroes successfully forced Warbringer through a portal
++ Ms. Marvel|defeated|Warbringer|Together, adult and teenage heroes successfully forced Warbringer through a portal
+@38 rulings 2026-11-04: ONE NAME PER PERSON ACROSS LAYERS - the fact gate strips Lord (fact row has Ghaur), events follow
+keep
+r Lord Ghaur=>Ghaur
+@49 rulings 2026-11-04: STOP - Mastermind's schemes thwarted by the X-Men is a completed stop of a named person's plot: defeated, other_verb goes
+keep
++ X-Men|defeated|Mastermind|his schemes were thwarted by the X-Men
+f- X-Men|other_verb|thwarted
+@52 rulings 2026-11-04: WBY - the sentence names the attacker (Magneto's attack)
+keep
+f- Wolverine|wounded|-
+f+ Magneto|wounded|Wolverine|Gravely wounded by Magneto's attack
+@57 rulings 2026-11-04: CAPTURED AS OUTCOME - the Facility attacks and tortures Mercury and the capture ends it; one stated act (A145) so defeated replaces fought
+keep
+- Facility|fought|Mercury
++ Facility|defeated|Mercury|who tortured and captured Mercury
+@58 rulings 2026-11-04: STOP - defeated rows for Lucifer and El Tigre already exist; the foiled/preventing other_verb facts go
+keep
+f- X-Men|other_verb|foiled
+f- X-Men|other_verb|preventing
+@59 rulings 2026-11-04: STOP - foiling the Murder Circus' plans is defeated; FW - gravely wounded Broo, nothing continues (Klaue test), one stated act so fought goes (A145)
+keep
++ X-Men|defeated|Murder Circus|foiled the Murder Circus' plans
+f- X-Men|other_verb|foiled
+f+ Hellfire Club|wounded|Broo|gravely wounded the student Broo
++ Hellfire Club|defeated|Broo|gravely wounded the student Broo
+- Hellfire Club|fought|Broo
+@105 rulings 2026-11-04: PASSIVE OUTCOMES (A8 refined) - listed row: Emma / Kitty Pryde / Exceptional defeated Sinister; the fight is its own sentence so fought stays
+keep
++ Emma|defeated|Sinister|Sinister was ultimately defeated
++ Kitty Pryde|defeated|Sinister|Sinister was ultimately defeated
++ Exceptional|defeated|Sinister|Sinister was ultimately defeated
+@110 rulings 2026-11-04: PASSIVE OUTCOMES (A8 refined) - the moon attack by Thanos is the only party; Peter regroups with his fellow defeated heroes after Thanos leaves
+keep
++ Thanos|defeated|Peter|regrouped with his fellow defeated heroes
++ Thanos|defeated|Drax|regrouped with his fellow defeated heroes
++ Thanos|defeated|Mantis|regrouped with his fellow defeated heroes
++ Thanos|defeated|Quill|regrouped with his fellow defeated heroes
+@122 rulings 2026-11-04: STOP - stopping Todt's plot and Crimorto's crimewave are completed stops of named persons: defeated, other_verb goes (TEAM: Cap and Bucky)
+keep
++ Bucky|defeated|Professor Todt|stopped Nazi operative Professor Todt's grisly plot
++ Bucky|defeated|Crimorto|Bucky aided Captain America in stopping the national crimewave commanded by Crimorto
++ Captain America|defeated|Crimorto|Bucky aided Captain America in stopping the national crimewave commanded by Crimorto
+f- Bucky|other_verb|stopped
+@139 rulings 2026-11-04: CAPTURED AS OUTCOME - the Variant's ambush ends with C-20 taken hostage: defeated beside captured; the ambush is stated separately so fought stays
+keep
++ Variant|defeated|C-20|the Variant Loki had taken Hunter C-20 hostage

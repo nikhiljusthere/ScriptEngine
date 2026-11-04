@@ -165,3 +165,33 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
 - NEXT: step 3 (open rulings -> gold27_system.md + BIG_REVIEW_PATTERNS.md; fact_gate.RANK allow-list needs the owner's
   OK before any gate-code edit; de-duplicate b190/b3346 before compose), then step 4 (compose v2 dry run + teacher
   re-score). Stopped at 86% of the 5-hour window to stay under the 96% stop.
+
+## Update 2026-11-04 (later): step 3 rulings decided; gold applied in full, big ~70% (stopped at 80% of the 5-hour window)
+
+- sft_qwen.py dev_generate cap 2048 -> 4096 committed on its own (ab2c5490).
+- RULINGS: every open question is decided factually and written to `plan/review_tools/gold27_system.md` ("Rulings
+  2026-11-04"): captured/sealed as outcomes, ally restraint, restrain-so-others-finish, passive outcomes (A8 refined),
+  rescue mid-fight, killed without a stated death, wounded winner vs race end, destroyed+reconstitutes, A113 self-
+  reports (and factive narration keeps the event), records of victories, possession ending a clash, near-final
+  states, temporary traps, intercepted attacks = saved, one name per person across layers, cross-split overlap, nearly V.
+  New patterns + candidate counts are in `plan/BIG_REVIEW_PATTERNS.md` (2026-11-04 block).
+- GATE (owner OK in chat): fact_gate.RANK keeps King Kai/Vegeta/Cold/Piccolo/Kong + Captain Mizuki (4077b27a, test added).
+- DATA (backups `*.bak-pre-rulings-2026-11-04` of both audits). Work dir `big/rulings_2026-11-04/` (copied into the
+  worktree): BRIEF.md (method), list_G/B1/B2/B3.txt, fix files, ledger_*.txt (one line per submitted file), notes_*.md
+  (per-window decisions, "For the owner", counts).
+  - GOLD: all 148 candidates read; 51 changed (G_01-G_04) + G_90 (the five RANK-hold windows b825 b893 b1014 b3543
+    b3657) + G_91 (the agent's owner questions: b30 forced retreat, b1530 Todo met Yuji, b1533/b1669 intercepted =
+    saved, b2064 group defeated). Gold audit 4,127 -> 4,188.
+  - BIG: 264 windows changed (B1_01-07 99, B2_01-07 90, B3_01-05 75); big audit 20,235 -> 20,499. Verified: new records
+    = ledger sums, one record per window, old prefix byte-identical. `recon.sh check all`: 133 DIFF pairs, 131 logged +
+    C556 (b6094/b6108, justified, now logged) + 1 pre-existing.
+  - BIG NOT DONE (resume with BRIEF.md, same lists, new agents, next file numbers B1_08 / B2_08 / B3_06):
+    B1 from b2139 (93 lines; b2139-b2251 viewed, nothing written); B2 from b6181 (85 lines; drafts for b6181-b6425 in
+    notes_B2.md "STOPPED HERE", re-read before use); B3 drafts for 18 windows b9783-b10667 + 5 undecided (b10743 b10761
+    b10768 b10778 b10848) in notes_B3.md "STOPPED HERE", unread b10871-b13969.
+  - Owner questions left unchanged are in notes_B1/B2/B3.md "For the owner" (b12398 clinically dead = killed?, torture
+    of captives written as fought, mind control still as fought b79/b653/b1242, b5562 Xorn self-pair, rank-name windows
+    b8054/b8927/b9603/b9984 — Emperor Prime, Dr. Steve, Captain Glory, King Arrkam may need more RANK entries).
+- NEXT: finish the big lists (step 3 remainder), then step 4: gold lint re-run (data changed), compose v2 with the
+  b190 rule (compose drops a gold train window repeating a >=40-char dev/test sentence — code change still to make),
+  check_v2_set.py rc=0, teacher re-score. Step 5 (GPU) only after the owner says go.

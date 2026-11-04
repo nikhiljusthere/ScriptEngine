@@ -1,0 +1,19 @@
+@825 rulings 2026-11-04: fact_gate.RANK keeps "King Kai" (owner OK 2026-11-04): the training is King Kai training Piccolo (stated trainer), not a bare other_verb
+keep
+f- Piccolo|other_verb|training
+f+ King Kai|trained|Piccolo|After training with King Kai and fusing with Nail
+@893 rulings 2026-11-04: fact_gate.RANK keeps "King Vegeta" (owner OK 2026-11-04), so the parent row is no longer a self pair; an author statement of an in-universe fact keeps the fact, the interview framing stays production
+keep
+f+ King Vegeta|parent_of|Vegeta|King Vegeta and his son Vegeta
+t- no_relation|the elite-class were made up
+@1014 rulings 2026-11-04: "Kai" was King Kai with the title stripped by the fact gate (a different person from Kibito Kai / Old Kai); the gate now keeps the name (owner OK 2026-11-04)
+keep
+r Kai=>King Kai
+@3543 rulings 2026-11-04: fact_gate.RANK keeps the hero alias "Captain Mizuki" (owner OK 2026-11-04): the alias row is legal now
+keep
+f+ Captain Mizuki|alias_of|Mizuki|also known by her hero alias Captain Mizuki
+@3657 rulings 2026-11-04: fact_gate.RANK keeps "King Kai" (owner OK 2026-11-04): his order to Vegeta was tagged only because the stripped "Kai" was a wrong end; speech act actual + the ordered act
+keep
+f+ King Kai|other_verb|tells|He then tells Vegeta to speak
+f+ Vegeta|other_verb|speak|He then tells Vegeta to speak|ordered|stated|King Kai
+t- no_relation|He then tells Vegeta to speak

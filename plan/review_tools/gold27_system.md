@@ -197,3 +197,75 @@ when it is a pause); killing vs. a destroyed body whose owner survives (defeated
 state fact, plus defeated only if it ends the encounter); fights with a stated winner (fought + defeated, not fought
 alone); temporary vs. permanent state facts (certainty/modality fields); who did it vs. who suffered it. When the text
 leaves the outcome open, write only what is stated.
+
+### Rulings 2026-11-04 (Claude, decided factually under the owner ruling of 2026-11-03)
+Each open question from the outcome audits, answered by the test "what state does the passage establish".
+- CAPTURED / SEALED AS OUTCOMES. A capture or seal that ENDS a stated fight or struggle (a `fought` row for the pair,
+  or stated resistance) carries two true rows: `defeated` + `captured`/`sealed` (b2957 "subdued and tied up"). A145
+  still applies: when the fight and the capture are one stated act, `defeated` replaces that `fought`. A capture
+  with no stated fight (an abduction, an arrest of someone who does not resist, taking an unconscious person) stays
+  `captured` alone. A seal that OPENS or continues a contest (a Domain Expansion that pulls the victim in to fight,
+  a trap the victim fights out of in the same scene) is `sealed` only, with no `defeated`.
+- ALLY RESTRAINING ALLY. Binding or stopping a friend for his own good or to stop his plan (b529 Himeno binds Aki)
+  is neither `fought` nor `defeated`: fact `Restrainer|other_verb|<the quote's verb>` (plus `wounded` if a wound is
+  stated). When the ally is hostile at that moment (berserk, possessed, mind-controlled, attacking) the normal fight
+  rules apply. An accidental hit or knockout of an ally (b6738) gives no `defeated`.
+- RESTRAINING SO OTHERS CAN FINISH. A restraint that holds the victim while a partner finishes him is part of the
+  joint outcome: when that act ends the encounter, the restrainer gets `Restrainer|defeated|Victim` beside the
+  finisher's own row (sealed/killed/captured/defeated) (Athena/Zeus b1044 set). When the window does not state the
+  end (Strange holds Ultron for Gamora, b4431/b12719), the restraint stays `fought`.
+- PASSIVE OUTCOMES WITH NO STATED DOER (A8, refined). A passive outcome ("Sinister was ultimately defeated", "was
+  impaled and died", "but were captured") is written for the opponents when it closes an encounter the window
+  narrates between named parties, in the same sentence or the narration of the same scene just before it, and no
+  other party (named, a crowd, minions, a third side) is present who could be the doer. One row per named member of
+  the winning side (A2). Otherwise A8 stands: no event (the victim's state as a fact, or a no_doer tag). Rows:
+  b105 Emma / Kitty Pryde / Exceptional |defeated| Sinister; b1778 Norman Osborn|killed|Ben; b5417 Intergalactic
+  Council|captured|Professor X. No row: b5383 (the Zealots fight beside Kaecilius), b7733, b900 (doer only context).
+- RESCUE MID-FIGHT. When the window states the victim beaten or subdued before the rescue ("no match for the brute",
+  "beaten near to death", "crushing Yuji's psyche and his body"), the beating is `defeated` and the rescuer gets
+  `saved`. A rescue that comes before any stated loss is `fought` + `saved` only.
+- KILLED WITHOUT A STATED DEATH. `killed` needs a death the window states (died, killed, dead, corpse, perished...)
+  or an act that is final for that being in the window. A destroyed, bisected or eaten body whose survival the
+  window leaves open is `defeated` (A53): b768 Denji|defeated|Spear Hybrid (b707: Whip tells Denji to spit him
+  out), b2692 Peter Quill|defeated|Ego ("Ego's corporeal form was destroyed": a body, not the being).
+- WOUNDED WINNER VS A RACE END. The wounded side's stated victory gives its leader or fighter `defeated` against the
+  named member of the losing side; a race is no end, so its named member takes the row (A2). b1982/b4267: Sreng|
+  fought|Nuada, Sreng|wounded|Nuada AND Nuada|defeated|Sreng ("Despite this, Nuada led the Tuatha to victory").
+- DESTROYED, THEN RECONSTITUTES. A body destroyed whose owner restores himself in the window was never dead:
+  `defeated` (A53), not `killed`, and no `awakened`; the restoration is `X|other_verb|reconstituted` (b4329/b7212
+  Molecule Man|defeated|Sentry).
+- SELF-REPORTED KILLS (A113). An act known only from the doer's own statement is no event: the speech act actual,
+  plus `Doer|other_verb|<verb>|quote|claimed|reported|Doer` (b3041 "he did so with Amy Minoru").
+- RECORDS OF VICTORIES. A stated record of past victories ("Among his most significant victories are ... foes
+  including X, Y, Z", b2290) is actual: one `defeated` per named individual foe, the description cut to the name
+  ("Red Skull wielding the Cosmic Cube" -> Red Skull, "N2 (Namor's clone)" -> N2), groups per A2, species and
+  unnamed foes no end. Ability statements ("able to overpower", "can defeat") stay capability tags.
+- POSSESSION ENDING A CLASH. Possession or incarnation that ends the encounter with the possessor in control is
+  `defeated` + `Possessor|other_verb|<verb>` (b1120, b1616 Sukuna takes Megumi's body). A145: when the attack and
+  the takeover are one stated act, `fought` goes.
+- NEAR-FINAL STATES. A subdue, disarm or pin with nothing continuing in the window is `defeated` (the Klaue test:
+  b12993 Hela/Thor, b13643 Jones/Simpson). A surrender immediately followed by a hostage-taking is a feint: no
+  `defeated` (b2670/b9610/b9618). A stop inside an ongoing exchange, or of a self-harm, is no `defeated` (b10506,
+  b11283, b12119). A stated loss inside a seal is `defeated` (b1609 Nanami "accepts his defeat": Mahito|defeated|Nanami).
+- ONE NAME PER PERSON ACROSS LAYERS. One string per person in events, facts and tags alike. The fact gate strips an
+  ordinary title (General Hale -> Hale, Dr. Gero -> Gero, Sir Lancelot -> Lancelot), so the window's event rows
+  follow that form (`r General Hale=>Hale`). A title that is part of the name, where the bare rest names someone
+  else or is never used alone for that person (King Kai beside Kibito Kai and Old Kai, King Vegeta beside his son
+  Vegeta, King Cold, King Piccolo, the hero alias Captain Mizuki), stays whole in every layer. That needs a
+  fact_gate.RANK allow-list entry (owner approval pending, 2026-11-04); until it lands, those windows (gold b825,
+  b893, b1014, b3543, b3657) are not edited.
+- CROSS-SPLIT OVERLAP. b190 (train) and b3346 (dev) narrate the same passage from two pages. Dev is the verified
+  split, so b190 leaves train: compose drops a gold train window that repeats a >=40-char dev/test sentence, the
+  rule it already applies to big windows.
+- "NEARLY V" / "ALMOST V". The act did not happen: `X|other_verb|V|quote|actual|denied`. A stated fight in which it
+  nearly happened keeps `fought` (A11 "nearly kill -> fought"); no `killed`/`defeated` for a near miss.
+- FACTIVE NARRATION VS A113. When the narrator states the act through a factive verb ("She reveals ... that she was
+  almost killed by Pseudo-Geto and had to escape", b1404; "discovers that", "learns that") the act is narrated as
+  true and keeps its event. A113 (claimed fact, no event) is for speech and report verbs that do not commit the
+  narrator: says, claims, explains, tells, boasts, recounts, alleges (b3041).
+- ENABLING ACTS. A partner's act that only enables the finisher, where the text credits the finisher ("allowing him
+  to defeat Stane", b3771), gives the enabler no outcome row; a restraint that holds the victim does (above).
+- TEMPORARY TRAPS. A trap the text marks as momentary inside a fight (Projection Sorcery's one-second frame b1659,
+  Naobito's frame b1516) or a Domain that opens the contest (b1168) is `sealed` only.
+- INTERCEPTED ATTACKS. Stopping an attack on a named person is `saved` for that person (A75; b1533, b1669), with
+  `defeated` only when the stop also ends the attacker's part.

@@ -1,0 +1,103 @@
+@7708 rulings 2026-11-04: "She worked to stop Logan" is a self-assigned task (A31, STOP purpose clause), the stop is never completed in the window -> planned
+keep
+f- Elektra|other_verb|stop
+f+ Elektra|other_verb|stop|She worked to stop Logan from killing others|planned|stated|Elektra
+
+@7872 rulings 2026-11-04: completed stops of named villains' schemes/crimes are defeated (2026-10-14 STOP ruling); the met rows had the same act (A145), the stopped/busted facts go
+keep
+- Human Torch|met|Wax Master
+- Toro|met|Wax Master
+- Human Torch|met|Invisible Terror
+- Toro|met|Invisible Terror
+- Human Torch|met|Mother Goose
+- Toro|met|Mother Goose
+f- Human Torch|other_verb|stopped
+f- Toro|other_verb|stopped
+f- Human Torch|other_verb|busted
+f- Toro|other_verb|busted
+f- Warren Louis|other_verb|using
++ Human Torch|defeated|Wax Master|The Torch and Toro stopped the ransom scheme of the Wax Master
++ Toro|defeated|Wax Master|The Torch and Toro stopped the ransom scheme of the Wax Master
++ Human Torch|defeated|Invisible Terror|stopped the Invisible Terror's revenge scheme
++ Toro|defeated|Invisible Terror|stopped the Invisible Terror's revenge scheme
++ Human Torch|defeated|House Killer|stopped the sabotage plot of the so-called House Killer
++ Toro|defeated|House Killer|stopped the sabotage plot of the so-called House Killer
++ Human Torch|defeated|Queen of Crime|the two heroes freed themselves and stopped her armored car robbery
++ Toro|defeated|Queen of Crime|the two heroes freed themselves and stopped her armored car robbery
++ Human Torch|defeated|Elmer Bright|The Torch and Toro also busted Elmer Bright's illegal gambling den
++ Toro|defeated|Elmer Bright|The Torch and Toro also busted Elmer Bright's illegal gambling den
++ Human Torch|defeated|Arch Murdock|busted up Arch Murdock's numbers racket
++ Toro|defeated|Arch Murdock|busted up Arch Murdock's numbers racket
++ Human Torch|defeated|Mother Goose|The Torch and Toro stopped the robberies of Mother Goose
++ Toro|defeated|Mother Goose|The Torch and Toro stopped the robberies of Mother Goose
++ Human Torch|defeated|King Cole|The Torch and Toro stopped the robberies of Mother Goose and "her" minion King Cole
++ Toro|defeated|King Cole|The Torch and Toro stopped the robberies of Mother Goose and "her" minion King Cole
++ Toro|defeated|Warren Louis|Toro also helped his fellow Young Allies prevent Warren Louis from using dirty tricks
+f+ Warren Louis|other_verb|using|prevent Warren Louis from using dirty tricks to keep their friend Knuckles O'Toole out of a soapbox derby race|attempted|stated|Warren Louis
+
+@7874 rulings 2026-11-04: "prevented the Vulture from stealing a rocket" is a completed stop of a named villain -> defeated (STOP ruling), the prevented facts go; the Psi Centurians (race) and the communist spies (crowd) stops keep their facts
+keep
+f- Human Torch|other_verb|prevented
+f- Toro|other_verb|prevented
++ Human Torch|defeated|Vulture|the Torch and Toro prevented the Vulture from stealing a rocket
++ Toro|defeated|Vulture|the Torch and Toro prevented the Vulture from stealing a rocket
+
+@7880 rulings 2026-11-04: CAPTURED AS OUTCOME - Toro and Bucky attack Axis (fought) and the capture ends that fight -> defeated + captured; fought stays (separate sentences)
+keep
++ Toro|defeated|Axis|Toro, Bucky, Gwen and Davey then assisted the Invaders in capturing Agent Axis
++ Bucky|defeated|Axis|Toro, Bucky, Gwen and Davey then assisted the Invaders in capturing Agent Axis
+
+@7894 rulings 2026-11-04: "stopping" the listed criminals is the defeated events (STOP ruling), the stopping facts are their twins; Dr. Smart was missing from the list
+keep
+f- Toro|other_verb|stopping
+f- Human Torch|other_verb|stopping
++ Toro|defeated|Smart|the brilliant Dr. Smart
++ Human Torch|defeated|Smart|the brilliant Dr. Smart
+
+@7946 rulings 2026-11-04: the capture is a pause - Rogue turns it around and Deathstrike runs away; the forced retreat is Rogue|defeated|Deathstrike beside the existing escaped row (A74), no defeated for Deathstrike's paused capture
+keep
++ Rogue|defeated|Lady Deathstrike|Rogue was able to absorb the powers of Sunfire and was now too powerful for Deathstrike who decided to run away
+
+@7997 rulings 2026-11-04: FW - stabbed through the chest with his own spear, nothing continues (Klaue test) -> wounded + defeated; one stated act, fought goes (A145)
+keep
+- Quicksilver|fought|Zeus' Huntsman
++ Quicksilver|defeated|Zeus' Huntsman|stabbed Zeus' Huntsman through the chest with his own spear
+f+ Quicksilver|wounded|Zeus' Huntsman|stabbed Zeus' Huntsman through the chest with his own spear
+
+@8110 rulings 2026-11-04: FW - stabbed through the heart is a stated wound; the outcome stays open (Venom "decided to finish Norman", not done) -> wounded only, fought stays
+keep
+f+ Venom symbiote|wounded|Norman|the Venom symbiote stabbed Norman through the heart
+
+@8326 rulings 2026-11-04: the stop of the Fiend's nuclear attack is his defeat (STOP ruling), already in X-Men|defeated|Fiend; the stop fact goes
+keep
+f- X-Men|other_verb|stop
+
+@8360 rulings 2026-11-04: FW - "She shot him with one of her arrows" is a stated wound; Logan turns on her, the exchange continues -> wounded only
+keep
+f+ Kate|wounded|Logan|She shot him with one of her arrows
+
+@8486 rulings 2026-11-04: STOP - "tasked with stopping them" is an assigned task, not a completed stop -> planned
+keep
+f- S.H.I.E.L.D.|other_verb|stopping
+f+ S.H.I.E.L.D.|other_verb|stopping|tasked with stopping them|planned|stated|S.H.I.E.L.D.
+
+@8573 rulings 2026-11-04: CAPTURED AS OUTCOME - Coulson fights Derik and turns him over to the authorities (a prisoner handed over, A37), ending the fight -> defeated + captured; Derik's own capture had no stated fight (captured alone); Thompson frees himself from Derik (escaped)
+keep
++ Coulson|defeated|Sebastian Derik|After turning Derik over to the proper authorities
++ Coulson|captured|Sebastian Derik|After turning Derik over to the proper authorities
++ Hank Thompson|escaped|Sebastian Derik|Thompson was able to free himself and Coulson
+
+@8688 rulings 2026-11-04: RESCUE MID-FIGHT - Quicksilver is "savagely" beaten before Medusa intervenes -> the beating is defeated (one act, fought goes), Medusa saved stays; ALLY RESTRAINING ALLY - Medusa stopping her husband is an other_verb fact
+keep
+- Black Bolt|fought|Quicksilver
++ Black Bolt|defeated|Quicksilver|began savagely beating Quicksilver until Medusa stopped him from killing him
+f+ Medusa|other_verb|stopped|Medusa stopped him from killing him
+
+@8693 rulings 2026-11-04: CAPTURED AS OUTCOME - the attack and the kidnapping of Blinky are one stated act -> defeated replaces that fought (A145) beside captured; both later outcomes (Lash's team bested, Black Bolt's surrender to the hostage threat) are true and stay
+keep
+- Lash|fought|Blinky
++ Lash|defeated|Blinky|they were attacked by Lash and his crew, who kidnapped Blinky
+
+@8719 rulings 2026-11-04: SEALED AS OUTCOME - Viper casts Spider-Woman into Chthon's dimension, ending their fight (she does not fight out; Viper later frees her) -> defeated + sealed; fought stays ("During a fight" stated apart)
+keep
++ Viper|defeated|Spider-Woman|Viper cast her through a portal to Chthon's dimension

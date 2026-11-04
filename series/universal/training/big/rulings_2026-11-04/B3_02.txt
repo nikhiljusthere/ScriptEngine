@@ -1,0 +1,73 @@
+@8753 rulings 2026-11-04: FW - "horribly disfigure Johnny" is a stated wound; the encounter continues (machine destroyed, escape) -> wounded only
+keep
+f+ Mole Man|wounded|Johnny|used his technology to horribly disfigure Johnny
+
+@8781 rulings 2026-11-04: FW - shot in the head, Logan lies on the ground and nothing continues between them (Klaue test) -> wounded + defeated; the shot is the one stated act, fought goes (A145); partner b8788 identical
+keep
+- Stryker|fought|Logan
++ Stryker|defeated|Logan|Stryker shot him in the head with adamantium bullets
+f+ Stryker|wounded|Logan|Stryker shot him in the head with adamantium bullets
+
+@8788 rulings 2026-11-04: as partner b8781 (shot in the head, nothing continues -> wounded + defeated, fought goes)
+keep
+- Stryker|fought|Logan
++ Stryker|defeated|Logan|Stryker shot him in the head with adamantium bullets
+f+ Stryker|wounded|Logan|Stryker shot him in the head with adamantium bullets
+
+@8783 rulings 2026-11-04: FW - "shot him in the head" is a stated wound; the abilities note states no outcome -> wounded only
+keep
+f+ Stryker|wounded|Logan|Colonel Stryker shot him in the head
+
+@8796 rulings 2026-11-04: FW - "shot in the head by Stryker" is a stated wound; no outcome stated -> wounded only
+keep
+f+ Stryker|wounded|Logan|he was shot in the head by Stryker
+
+@8791 rulings 2026-11-04: FW / ALLY - the stab is an involuntary panic attack on an ally, no conflict (A76; an accidental hit of an ally gives no fight/defeat) -> wound fact only, the fought row goes
+keep
+- Wolverine|fought|Shadowcat
+f+ Wolverine|wounded|Shadowcat|he started violently shaking and stabbed Shadowcat with his claws
+
+@8804 rulings 2026-11-04: throwing Candra off is not final - she throws Rhiannon's knife next (A83, NEAR-FINAL STATES: a stop inside an ongoing exchange is no defeated) -> fought
+keep
+- Rhiannon|defeated|Candra
++ Rhiannon|fought|Candra|Rhiannon throw her off with wind and dust
+
+@8892 rulings 2026-11-04: NEARLY V - "Rahne almost got herself killed" did not happen -> killed, actual, denied
+keep
+f- Rahne|other_verb|got
+f+ Rahne|other_verb|killed|Rahne almost got herself killed|actual|denied|
+
+@8895 rulings 2026-11-04: FW - the gunshot wound from her father (exchange continues) -> wounded only; tearing off Archangel's wings, nothing continues for him (Klaue test) -> wounded + defeated, fought stays (attack stated in its own sentence)
+keep
+f+ Reverend Craig|wounded|Rahne|Wolfsbane received a non-mortal gunshot wound from her father
+f+ Rahne|wounded|Archangel|She violently tore off his wings
++ Rahne|defeated|Archangel|She violently tore off his wings and stored them away in her room
+
+@8951 rulings 2026-11-04: CAPTURED AS OUTCOME - Quill resists (shoots needles at both, hurting Battlestar) and the arrest ends it -> defeated + captured for John and Lemar; Quill's attack on Lemar was missing (the wound row exists); the Resistants rows are the winners', no escape of a beaten side
+keep
++ John|defeated|Quill|They managed to arrest him without further incident
++ Lemar|defeated|Quill|They managed to arrest him without further incident
++ Quill|fought|Lemar|ran and shot his razor sharp needles at them, hurting Battlestar
+
+@8954 rulings 2026-11-04: the Watchdogs' hostage-taking has no stated fight (captured alone); John "tore into the Watchdogs" and nothing continues - he is left holding his parents (owner ruling: who is in control, does the exchange continue) -> defeated, one stated act so fought goes (A145)
+keep
+- John|fought|Watchdogs
++ John|defeated|Watchdogs|He snapped, and tore into the Watchdogs
+
+@9018 rulings 2026-11-04: TEAM - "defeat him with the help of Cable": the partner named in the clause gets the same row
+keep
++ Cable|defeated|Trask|the X-Men managed to narrowly defeat him with the help of Cable
+
+@9041 rulings 2026-11-04: CAPTURED AS OUTCOME - Hydra attacks Stark and Fury and Fury's capture ends that fight -> defeated + captured (fought stays, separate clauses); Mentallo/Fixer kidnap with no fight stays captured
+keep
++ Hydra|defeated|Nick Fury|While Stark was able to protect himself, Fury was captured
+
+@9046 rulings 2026-11-04: STOP - "Iron Man foiled this plot" of Dr. Strange (named villain), completed -> defeated beside his escape; the foiled fact goes
+keep
+f- Tony Stark|other_verb|foiled
++ Tony Stark|defeated|Carlo Strange|There with the aid of Strange's daughter, Iron Man foiled this plot
+
+@9125 rulings 2026-11-04: TEAM/fights with a stated winner - Kl'rt "together with Ronan fought the superhero team, only to be defeated": the fight is its own clause before the turn -> fought + defeated for both (fought rows were missing)
+keep
++ Kl'rt|fought|Fantastic Four|together with Ronan fought the superhero team
++ Ronan the Accuser|fought|Fantastic Four|together with Ronan fought the superhero team

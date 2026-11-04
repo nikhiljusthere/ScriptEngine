@@ -1,0 +1,81 @@
+@9177 rulings 2026-11-04: ESC - Hitman|defeated|Vulture's quote says the Vulture "is forced to retreat" and no escaped row exists -> + escaped (A74)
+keep
++ Vulture|escaped|Hitman|Vulture is forced to retreat after the Hitman sprays Mace into his face
+
+@9197 rulings 2026-11-04: STOP - the Vulture's racketeering "was thwarted by the Hobgoblin": a completed stop of a named person's crime -> Hobgoblin|defeated|Toomes, the thwarted fact goes
+keep
+f- Hobgoblin|other_verb|thwarted
++ Hobgoblin|defeated|Adrian Toomes|but was thwarted by the Hobgoblin
+
+@9199 rulings 2026-11-04: CAPTURED AS OUTCOME - Peter attacks Toomes and the capture ends that fight (Peter is taken to the lair) -> Toomes defeated + captured Peter; the attack is Peter's own act, so fought stays
+keep
++ Toomes|defeated|Peter|An enraged Peter attacked Toomes, forcing The Vulture to capture him
+
+@9225 rulings 2026-11-04: TEAM - "aided the Wasp and Yellowjacket in stopping Porcupine": the partners named in the clause get the same defeated row; the stopped Hulk/Sub-Mariner rampage is a stop of a brawl between others (no villain's plot) and keeps its fact
+keep
++ Wasp|defeated|Porcupine|aided the Wasp and Yellowjacket in stopping Porcupine
++ Yellowjacket|defeated|Porcupine|aided the Wasp and Yellowjacket in stopping Porcupine
+
+@9244 rulings 2026-11-04: TEAM - "defeat Ares alongside Brightwind": the partner named in the clause gets the same row
+keep
++ Brightwind|defeated|Ares|defeat Ares alongside Brightwind
+
+@9247 rulings 2026-11-04: STOP - "choosing to enter Legion's psyche to stop him" is a purpose clause -> planned (the subdue is the existing defeated row); X-Men|other_verb|restrained twins the captured event (A89)
+keep
+f- Magik|other_verb|stop
+f+ Magik|other_verb|stop|choosing to enter Legion's psyche to stop him|planned|stated|Magik
+f- X-Men|other_verb|restrained
+
+@9270 rulings 2026-11-04: STOP - Magnus, with Spider-Woman's help, thwarted Priscilla and Nathan's plan (completed stop of named plotters) -> defeated for both doers against both plotters; the thwarted fact goes
+keep
+f- Magnus|other_verb|thwarted
++ Magnus|defeated|Priscilla|Magnus deduced the truth about Nathan and, with Spider-Woman's help, thwarted the plan
++ Magnus|defeated|Nathan|Magnus deduced the truth about Nathan and, with Spider-Woman's help, thwarted the plan
++ Jessica Drew|defeated|Priscilla|Magnus deduced the truth about Nathan and, with Spider-Woman's help, thwarted the plan
++ Jessica Drew|defeated|Nathan|Magnus deduced the truth about Nathan and, with Spider-Woman's help, thwarted the plan
+
+@9282 rulings 2026-11-04: CAPTURED AS OUTCOME - Grimm attacks Wyatt twice and Wyatt has him arrested (A28: the one who has it done captures), ending the struggle -> defeated + captured
+keep
++ Wyatt|defeated|Brother Grimm|Brother Grimm first attempts to rob Wyatt, attacking him twice, and Wyatt has him arrested
+
+@9305 rulings 2026-11-04: SEALED AS OUTCOME - "attacked his son and buried him" is one stated act ending in a seal that lasts two centuries -> defeated replaces fought (A145) beside sealed
+keep
+- Charles|fought|Jonas
++ Charles|defeated|Jonas|Charles attacked his son and buried him beneath the property
+
+@9368 rulings 2026-11-04: FW - "ambushed and shot by Bishop", nothing continues in the window (Klaue test) -> wounded + defeated; one stated act, fought goes (A145); matches b7722 Bishop|defeated|Forge
+keep
+- Bishop|fought|Forge
++ Bishop|defeated|Forge|he was ambushed and shot by Bishop
+f+ Bishop|wounded|Forge|he was ambushed and shot by Bishop
+
+@9398 rulings 2026-11-04: FW - Samuels shoots Kevin repeatedly but the wounded side wins: Prime shrugs off the bullets and corners Samuels, who cuts his own throat -> wound + the wounded side's own defeated row (owner ruling 2026-11-03)
+keep
+f+ Samuels|wounded|Kevin|Samuels then shot him repeatedly
++ Kevin|defeated|Samuels|As Prime cornered Samuels, Samuels pulled out a knife and slit his throat
+
+@9417 rulings 2026-11-04: CAPTURED AS OUTCOME - inside the stated fight against Gross, he drugs Mantra and takes her hostage (she passes out) -> defeated + captured; fought stays (fight stated in its own sentence)
+keep
++ Gross|defeated|Eden Blake|Gross then drugged Mantra and took her hostage
+
+@9440 rulings 2026-11-04: STOP - the Femizons' plans "were stopped by Captain America" -> defeated for the tied members Superia (leader) and Screaming Mimi (A2), the same-act met goes; Mimi and Angar's completed prevention of the Avengers is defeated, the prevent facts go
+keep
+- Captain America|met|Superia
++ Captain America|defeated|Superia|However, their plans were stopped by Captain America
++ Captain America|defeated|Screaming Mimi|However, their plans were stopped by Captain America
+f- Screaming Mimi|other_verb|prevent
+f- Angar|other_verb|prevent
++ Screaming Mimi|defeated|Avengers|assisting in preventing the Avengers from ruining the ceremony
++ Angar|defeated|Avengers|assisting in preventing the Avengers from ruining the ceremony
+
+@9453 rulings 2026-11-04: STOP - "decided to stop Osborn" = the decision actual + stop planned (the stop is not what happens: a mutual knockout); partner b9455 identical
+keep
+f- Songbird|other_verb|stop
+f+ Songbird|other_verb|decided|Songbird decided to stop Osborn by herself
+f+ Songbird|other_verb|stop|Songbird decided to stop Osborn by herself|planned|stated|Songbird
+
+@9455 rulings 2026-11-04: as partner b9453 (decision actual + stop planned)
+keep
+f- Songbird|other_verb|stop
+f+ Songbird|other_verb|decided|Songbird decided to stop Osborn by herself
+f+ Songbird|other_verb|stop|Songbird decided to stop Osborn by herself|planned|stated|Songbird

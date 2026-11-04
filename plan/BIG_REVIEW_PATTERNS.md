@@ -623,3 +623,25 @@ Rulings applied (now also in gold27_system.md):
 Verified after: lint_work flags no unreviewed window; residual raw-lint rows are decided keeps (directional
 helped/contacted pairs, `try` = put on trial/taste, hedged kidnapping); recon `check all` = only logged exceptions
 (C809 fixed by L181).
+
+**2026-11-04 RULINGS PASS (open outcome questions decided; rulings in gold27_system.md "Rulings 2026-11-04").**
+Candidate scan of the final rows (heuristic classes; every hit read by an agent, most need no change), lists and
+per-window notes in `big/rulings_2026-11-04/` (list_*.txt, notes_*.md, fix files G_*/B1_*/B2_*/B3_*):
+| class | pattern | correct answer | candidate windows (gold / big) |
+|---|---|---|---|
+| STOP | stopped / prevented / foiled / thwarted / halted / repelled kept as an actual `other_verb` fact | a completed stop of a named person or his plot is the event `X|defeated|Villain` (2026-10-14) and the fact goes; a stop of a thing, of an ally, of a self-harm or inside an ongoing exchange stays a fact; "went to stop" is planned | 48 / 241 |
+| CAPT | fought + captured/sealed for a pair with no outcome | a capture/seal that ends the fight = defeated + captured/sealed; a Domain or trap that opens the contest = sealed only | 33 / 171 |
+| FW | a stated wound inside a fought quote (shot, stabbed, severed, impaled, set on fire) with no wounded fact | `Attacker|wounded|Victim` (+ defeated only when nothing continues) | 34 / 145 |
+| WBY | `Victim|wounded|-` where the sentence names the doer | `Doer|wounded|Victim` (who did it vs who suffered it) | 16 / 43 |
+| ESC | defeated row whose quote says the beaten side fled / retreated / went into hiding, no escaped | `Beaten|escaped|Winner` (A74) | 4 / 38 |
+| TEAM | a team-up outcome credited to one doer ("teaming up with X", "helped defeat") | the partner named in the same clause gets the row | 1 / 54 |
+| NEAR | "nearly V" / "almost V" written as V stated or attempted | `X|other_verb|V|...|actual|denied` (it did not happen); a stated fight keeps fought | 4 / 18 |
+| PATIENT | the patient written as subject ("X was attacked by Y" as X|attacked|Y) | reverse the roles | 0 / 1 |
+Also decided: ally restraint is no fight (b529); restraint while a partner finishes = restrainer defeated (Athena/Zeus);
+passive outcome closing a stated two-party encounter = the opponent's row (refines A8); rescue after a stated loss =
+defeated + saved; killed needs a stated death (b768, b2692 -> defeated); wounded winner gets defeated against the
+losing race's named member (Nuada|defeated|Sreng); destroyed + reconstitutes = defeated, no awakened (Sentry); A113
+for self-reported kills; records of victories = one defeated per named foe (b2290); possession that ends the clash =
+defeated; factive narration ("she reveals that she had to escape") keeps the event, speech verbs fall under A113.
+GATE FIX 2026-11-04 (owner OK, commit 4077b27a): fact_gate.RANK keeps King Kai / King Vegeta / King Cold / King
+Piccolo / King Kong / Captain Mizuki whole; gold b825 b893 b1014 b3543 b3657 re-fixed (G_90).

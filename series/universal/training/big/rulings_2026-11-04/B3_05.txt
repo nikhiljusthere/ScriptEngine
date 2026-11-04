@@ -1,0 +1,92 @@
+@9595 rulings 2026-11-04: STOP - Le Fay's attempt on She-Hulk's body "was thwarted by Dr. Strange", who also bound her to the astral form (sealed row exists): a completed stop of a named villain's plot ending the contest -> defeated, the thwarted fact goes
+keep
+f- Dr. Strange|other_verb|thwarted
++ Dr. Strange|defeated|Le Fay|That attempt was thwarted by Dr. Strange, who also employed magic to stop her from leaving the astral form
+
+@9656 rulings 2026-11-04: CAPTURED AS OUTCOME - Steve and Iron Man fight Loki "until the heroes were able to capture him" -> defeated + captured for both (fought kept: the fight clause precedes the "until" turn); the shared Thor sentences with partner b9647 need no change
+keep
++ Steve|defeated|Loki Laufeyson|Steve and Iron Man sparred with Loki, Loki able to gain backup through mind controlled agents and his powers of illusion, until the heroes were able to capture him
++ Iron Man|defeated|Loki Laufeyson|Steve and Iron Man sparred with Loki, Loki able to gain backup through mind controlled agents and his powers of illusion, until the heroes were able to capture him
+
+@9649 rulings 2026-11-04: CAPTURED AS OUTCOME - same sentence as b9656: the capture ends the fight -> defeated + captured for Steve and Iron Man
+keep
++ Steve|defeated|Loki|until the heroes were able to capture him
++ Iron Man|defeated|Loki|until the heroes were able to capture him
+
+@9660 rulings 2026-11-04: PASSIVE OUTCOME (A8 refined) - "Attuma is defeated" closes the fight the heroes just fought against Attuma, no other party present -> one defeated row per named hero; the Sakaar throw has no prior fight (sealed alone); partner b9665 identical
+keep
++ Captain America|defeated|Attuma|Attuma is defeated, and the heroes have retrieved the Nexus Shard
++ Captain Marvel|defeated|Attuma|Attuma is defeated, and the heroes have retrieved the Nexus Shard
++ Thor|defeated|Attuma|Attuma is defeated, and the heroes have retrieved the Nexus Shard
++ Doctor Strange|defeated|Attuma|Attuma is defeated, and the heroes have retrieved the Nexus Shard
++ Hulk|defeated|Attuma|Attuma is defeated, and the heroes have retrieved the Nexus Shard
++ Stingray|defeated|Attuma|Attuma is defeated, and the heroes have retrieved the Nexus Shard
+
+@9665 rulings 2026-11-04: as partner b9660 ("Attuma is defeated" closes the heroes' fight -> defeated per named hero)
+keep
++ Captain America|defeated|Attuma|Attuma is defeated, and the heroes have retrieved the Nexus Shard
++ Captain Marvel|defeated|Attuma|Attuma is defeated, and the heroes have retrieved the Nexus Shard
++ Thor|defeated|Attuma|Attuma is defeated, and the heroes have retrieved the Nexus Shard
++ Doctor Strange|defeated|Attuma|Attuma is defeated, and the heroes have retrieved the Nexus Shard
++ Hulk|defeated|Attuma|Attuma is defeated, and the heroes have retrieved the Nexus Shard
++ Stingray|defeated|Attuma|Attuma is defeated, and the heroes have retrieved the Nexus Shard
+
+@9674 rulings 2026-11-04: STOP - the stop of the Skull is completed by the killing (the killed event, most specific); the stop fact goes and the effort sentence keeps its own verb
+keep
+f- Captain America|other_verb|stop
+f+ Captain America|other_verb|launched|Captain America launched a last ditch effort to stop the Skull
+
+@9723 rulings 2026-11-04: SEALED AS OUTCOME - the Sandman attacks and Agatha turns his body into rock, ending his part of the fight -> defeated + sealed; the attack is his own act, so fought stays
+keep
++ Agatha Harkness|defeated|Sandman|Agatha turned the Sandman's body into rock
+
+@9737 rulings 2026-11-04: STOP - "the Avengers managed to thwart the ritual" of Agatha Harkness (completed stop of a named person's plot) -> defeated, the thwart fact goes; partner b9738 identical, b9742 lacks the sentence
+keep
+f- Avengers|other_verb|thwart
++ Avengers|defeated|Agatha Harkness|Despite this, the Avengers managed to thwart the ritual
+
+@9738 rulings 2026-11-04: as partner b9737 (thwarted ritual -> Avengers|defeated|Agatha Harkness)
+keep
+f- Avengers|other_verb|thwart
++ Avengers|defeated|Agatha Harkness|Despite this, the Avengers managed to thwart the ritual
+
+@9773 rulings 2026-11-04: ESC - "The X-Men forced them to retreat": the retreating side escaped the X-Men (A74), one row per named member; Exodus, who leads them, was missing from the defeated rows; partner b9799 identical
+keep
++ X-Men|defeated|Exodus|The X-Men forced them to retreat after a fight in Philadelphia
++ Exodus|escaped|X-Men|The X-Men forced them to retreat after a fight in Philadelphia
++ Black Tom|escaped|X-Men|The X-Men forced them to retreat after a fight in Philadelphia
++ Sabretooth|escaped|X-Men|The X-Men forced them to retreat after a fight in Philadelphia
++ Avalanche|escaped|X-Men|The X-Men forced them to retreat after a fight in Philadelphia
++ Mammomax|escaped|X-Men|The X-Men forced them to retreat after a fight in Philadelphia
++ Nocturne|escaped|X-Men|The X-Men forced them to retreat after a fight in Philadelphia
+
+@9799 rulings 2026-11-04: as partner b9773 (forced retreat -> escaped per member; X-Men|defeated|Exodus added)
+keep
++ X-Men|defeated|Exodus|The X-Men forced them to retreat after a fight in Philadelphia
++ Exodus|escaped|X-Men|The X-Men forced them to retreat after a fight in Philadelphia
++ Black Tom|escaped|X-Men|The X-Men forced them to retreat after a fight in Philadelphia
++ Sabretooth|escaped|X-Men|The X-Men forced them to retreat after a fight in Philadelphia
++ Avalanche|escaped|X-Men|The X-Men forced them to retreat after a fight in Philadelphia
++ Mammomax|escaped|X-Men|The X-Men forced them to retreat after a fight in Philadelphia
++ Nocturne|escaped|X-Men|The X-Men forced them to retreat after a fight in Philadelphia
+
+@9774 rulings 2026-11-04: CAPTURED AS OUTCOME - Magneto ambushes Quicksilver and the Scarlet Witch with robots and holds them captive -> defeated + captured; the ambush is stated in its own sentence, fought stays
+keep
++ Magneto|defeated|Quicksilver|their teammates were held captive by Magneto
++ Magneto|defeated|Scarlet Witch|their teammates were held captive by Magneto
+
+@9780 rulings 2026-11-04: CAPTURED AS OUTCOME - the duel between the two Magnetos ends with Joseph delivered to the authorities -> defeated + captured; Astra mortally wounded and forced to teleport him, nothing continues for her (Klaue test) -> defeated, one act so fought goes (wound row exists); partner b9793 identical
+keep
++ Magneto|defeated|Joseph|Magneto faced the choice of executing his doppelgänger, but chose to deliver him to the authorities, instead
+- Magneto|fought|Astra
++ Magneto|defeated|Astra|mortally wounded Astra to force her teleport him away from the battle
+
+@9793 rulings 2026-11-04: as partner b9780 (Joseph delivered to the authorities after the duel -> defeated; Astra mortally wounded and forced -> defeated, fought goes)
+keep
++ Magneto|defeated|Joseph|Magneto faced the choice of executing his doppelgänger, but chose to deliver him to the authorities, instead
+- Magneto|fought|Astra
++ Magneto|defeated|Astra|mortally wounded Astra to force her teleport him away from the battle
+
+@9782 rulings 2026-11-04: SEALED AS OUTCOME - the psychic combat ends with the Shadow King trapped and lobotomized inside Omega White's body -> defeated + sealed; fought stays (separate sentence)
+keep
++ Psylocke|defeated|Shadow King|the Shadow King was trapped and lobotomized by Psylocke inside the prison-body of Omega White

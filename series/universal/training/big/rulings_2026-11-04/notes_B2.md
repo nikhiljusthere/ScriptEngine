@@ -1,0 +1,194 @@
+# notes_B2 (rulings pass 2026-11-04, BIG set)
+
+## Per window
+- b3375 LISTED(A8) changed: "The whole squad was defeated" closes the squad-vs-Zodiac fight of the previous sentence -> Zodiac|defeated| x5 squad members.
+- b9059 PARTNER no change: the shared sentence has no rows here and the Zodiac fight is outside this window (A8 stands within the window).
+- b3379 CAPT no change: Lyja's seal opens the episode; the later fight ends in reconciliation, no defeat.
+- b3393 CAPT no change: Reyes chains Mitchell with no stated resistance -> captured alone.
+- b3410 FW changed: + Connors|wounded|Billy (shot).
+- b3422 CAPT changed: + Stephen Strange|defeated|Nightmare (superior, then banished).
+- b3434 STOP changed: f- Kamala Khan|other_verb|stopped (defeated|Grayson Blair exists). TEAM Spider-Man|defeated|Minerva already present.
+- b6724 PARTNER no change: already has the defeated rows and no stopped fact.
+- b3440 FW no change: the bullet bounced off Cage, no wound.
+- b3448 STOP changed: f- thwarted facts for Bucky / Captain America (defeated|Wolfgang exists).
+- b3450/b9276 FW no change: "faced off against" states no wound.
+- b3467 ESC changed: + Clash|escaped|Peter Parker.
+- b3516 NEAR changed: shot attempted -> actual/denied; no wound.
+- b3529 STOP no change: Teddy stops his ally Billy from killing the Warden (ally, self-restraint) -> fact kept.
+- b3577 STOP no change: Ikaris stops Druig inside the ongoing Emergence battle; Blade stops Dane (not a villain) -> facts kept.
+- b3579 STOP changed: Kamala + Multitude defeated Inventors, Inventors|escaped|Multitude, f- stop.
+- b3583/b9422 STOP no change: the Manhattan Project stopped a subway (a thing).
+- b3584/b9663 STOP no change: Vision cuts Ultron off inside the ongoing battle.
+- b3588 STOP changed: f- Thunderbolts|other_verb|thwarted.
+- b3635 ESC changed: + M.O.D.O.K.|escaped|Hulk.
+- b3637 FW no change: Hill shot AT the sentry, no wound stated.
+- b3669/b5758 FW changed: Falcon shot down -> Cable wounded + defeated Falcon, fought dropped (A145).
+- b3686/b7177 STOP no change: Ikaris stops the five Eternals' Uni-Mind attempt inside the ongoing Emergence confrontation (Sersi then turns Tiamut) -> fact kept.
+- b3743 STOP no change: "stopped by ... house" = visited.
+- b3745 FW no change: "without injury", no wound.
+- b3759 STOP changed: Kang|defeated|Janet, f- stopped.
+- b3767 STOP changed: Bucky|defeated|Von Bardas (prevented the launch of her plan), f- prevent.
+- b3771 STOP no change (owner): Logan "was stopped by the arrival of Steve Rogers" -- see For the owner.
+- b3798/b8272 LISTED(A8) changed: Iron Man + Space Friends |defeated|Korvac ("the villain was defeated").
+- b3807/b7288 FW changed: Doppelgänger|wounded|Dracula, Hannibal King|wounded|Doppelgänger.
+- b3808 CAPT changed: Uatu|defeated|Eminence; Byrdie/Kahhori (pin) and Carter/Storm (reinforce the trapping attack) |defeated| Executioner, Incarnate.
+- b3826 ESC changed: + Laufey|escaped|Odin.
+- b3877/b9099 FW changed: Carl shot Shriek, left for dead -> wounded + defeated, fought dropped.
+- b3879 FW changed: Bowen stab + holders -> defeated|Deschaine x4, Bowen|wounded|Deschaine, fought x4 dropped.
+- b3888 LISTED(near-final) changed: Gorr|defeated|Valkyrie (impaled, left weakened, nothing continues), fought dropped.
+- b3891 STOP no change: Loki stops his own body being pulled away (a thing / self).
+- b3899 group (b9274 b9275 b9281) CAPT no change: Hunt was knocked out by William, then taken -> capture of an unconscious person stays captured alone; Jacob did not subdue Hunt.
+- b3917 PARTNER no change: "Defeated once again, Visis was exiled" has no doer in the window (A8).
+- b9812 ESC changed: + Z'gma|escaped|Hulk, Z'gma|escaped|Jarella.
+- b3943 STOP no change: Kora stops her own escape attempt (self); capture with no fight stays captured alone.
+- b3978 CAPT no change: collar capture with no stated resistance; the separate ambush has no stated outcome (capability section).
+- b3984 CAPT changed: + Sentry|defeated|Ultron (clash ends in the banishment).
+- b4016 FW no change (owner): Ward shoots Peterson with the Night-Night Gun and the window ends -- outcome/wound not stated in words.
+- b4025/b10076 CAPT changed: + Omega Red|defeated|Trapster (capture ends their struggle).
+- b4045 WBY no change: doer is "the party" (unnamed), and the line is Hill's claim.
+- b4046 STOP changed: Peter|defeated|Beck, f- prevented.
+- b4061 WBY no change: "injured in battle", no doer.
+- b4108/b6925 STOP no change: a battle (a thing) stopped by Iron Lad's arrival, no villain.
+- b4112 WBY changed: Logan|wounded|Gabby replaces Gabby|wounded|-; + Hill|wounded|Logan.
+- b4137/b9757 ESC no change: Hercules|escaped|Ares already present; the beaten Ares did not flee.
+- b4174 CAPT/STOP changed: Loki|defeated|Banner (bolt, fall, rescue by Amora; fought dropped); Warriors Three|defeated|Banner (Hulk hostile at the moment), f- stopped.
+- b4183 STOP changed: Daredevil|defeated|Fisk, f- stopped.
+- b4188 NEAR changed: caused attempted -> actual/denied.
+- b4233 CAPT changed: Stryfe|defeated|Clan Chosen replaces fought (raid + capture one act).
+- b4239 LISTED(rescue mid-fight) changed: + Pluto|defeated|Monet.
+- b4263 TEAM changed: + Spymaster|defeated|Sandman, Electro.
+- b4281 STOP no change: prevented blame (no person).
+- b4283 CAPT no change: Torso's hostage-taking is mid-battle; he falls to his death (no doer).
+- b4291/b6442 STOP no change: they stopped Flexo, an ally.
+- b4294 FW no change: the USB arrow did no damage.
+- b4316 FW changed: "the soldier" is no end -> fought row dropped, Castle|other_verb|shot added.
+- b4322 FW changed: + Anthony Stark|wounded|- (injuries from battling the Mandarin and other foes).
+- b4329 LISTED(Sentry) changed: per ruling, Molecule Man|defeated|Sentry replaces killed, awakened dropped, + Sentry|other_verb|reconstituted.
+- b4330 CAPT changed: + Van Dyne|defeated|Kang (trap ends the struggle).
+- b4351 ESC no change: the beaten Brian did not flee (Briton fled Sat-Yr-9, escaped row exists). b8632 no change.
+- b8634/b8639 PARTNER changed: + Slaymaster|wounded|Betsy (blinded) -- FW in the shared sentence.
+- b4365 STOP no change: Fisk stops an unnamed teacher (no end, not a fight).
+- b4378 LISTED(rescue mid-fight) changed: + Iron Nail|defeated|Steve Rogers (serum neutralized, aged) before Falcon's rescue.
+- b4382 CAPT changed: + Hellfire|defeated|Pete Boggs (strike + locking ends it).
+- b4385 CAPT changed: Corina Ellis|fought|Jubilee was a torture of a prisoner -> other_verb tortured; no defeated (town capture by unnamed agents).
+- b4389 STOP no change: T'Challa stops Strange's rambling toast (ally, words).
+- b4391 FW no change: punches only; Thor|defeated|Danvers already present.
+- b4394 CAPT changed: Valkyrie|defeated|Thor replaces fought (resisting captive, Obedience Disk).
+- b4425 STOP no change: stopping the Emergence (a disaster, no named villain).
+- b4431 STOP/LISTED no change: ruling says Strange's binding of Ultron stays fought (end not stated); stopping an energy blast is a thing.
+- b4448 LISTED(A8) no change: Cap "directed an assault" -- his assault force is present as possible doer, so A8 stands for "plot is foiled / Bravo is killed".
+- b4454 CAPT no change: the Nur seal is a later, separate scene from the battle.
+- b4456 CAPT no change for the capture (no resistance); NEAR fixed: destroying -> actual/denied for Morbius, Frank Drake, Hannibal King.
+- b4463 FW changed: ally rule -- Hand shoots Garrett pre-emptively -> other_verb shot + wounded, fought dropped.
+- b4485 FW no change: the hook was dodged.
+- b4502/b7994 STOP changed: f- Rictor|other_verb|stop (defeated exists). b8014 no change (no shared sentence).
+- b4514 FW changed: + Logan|wounded|Gabby, + Maria Hill|wounded|Logan; no defeated (fight continues / ally).
+- b4555 TEAM no change: the partners are "a group of villains" (unnamed).
+- b7841 TEAM no change: as b4555 (unnamed "group of villains").
+- b4556 FW no change: shots barely made Hulk flinch, no wound.
+- b4591 WBY no change: injured in the battle against the Sentinels (no named doer).
+- b4657 CAPT changed: Wanda|defeated| Strange, Palmer (sealed after the ambush) and Chavez (her powers used).
+- b4664 STOP changed: Reed/Ben/Sue/Johnny |defeated|Molekevic, f- foiling.
+- b4694 FW changed: Sif|wounded|Destroyer; stated loss "no match for the construct" -> Destroyer|defeated| Sif, Fandral, Hogun, Volstagg; Destroyer|wounded|Volstagg.
+- b4697 FW changed: Alex Wilder stabs Bronwyn, nothing continues -> wounded + defeated, fought dropped.
+- b4722 STOP changed: Human Torch/Toro |defeated|Head, f- foiled; "stopped a Nazi plot" (no named villain) kept.
+- b4735 FW no change: capability list, stab "without exhibiting any discomfort".
+- b4761 STOP no change: Mole Man stopped a battle (his own Moloids).
+- b4781 STOP no change: Skrull invasion (race, no named villain).
+- b4802 CAPT changed: + Luke Cage|defeated|Willis Harold Stryker (passive "defeated and arrested" closing their showdown).
+- b4808 CAPT changed: Frightful Four|defeated| Reed, Ben replaces fought ("attacked and captured").
+- b4813 FW changed: + Minoru|wounded|Jonah.
+- b4851 TEAM no change: Thanos alone is the winner.
+- b4872 FW changed: + Bakuto|wounded|Wing, + Misty Knight|wounded|Bakuto.
+- b4880 STOP changed: Hercules|defeated|Ares, f- thwarted, - Hercules|met|Ares.
+- b4906 WBY changed: Toad|wounded|Wasp; + Pym, Beast |defeated|Whirlwind (passive closing the episode).
+- b4926 TEAM changed: + Kara Palamas|defeated|Bobbi Morse.
+- b4969 STOP no change: "briefly stopped to question" = paused.
+- b5001 LISTED(A8) changed: Avengers |defeated|+|sealed| Mephisto ("banished back to his realm" in the same sentence as the Avengers' act).
+- b5004 STOP no change: Thor prevents allies from putting down his goats.
+- b5047 CAPT no change: Odin's exile of Thor has no stated resistance -> sealed stays alone.
+- b5049/b9189 NEAR changed: gutted -> actual/denied (added to b9189 for the shared sentence).
+- b5066 FW changed: Franklin wounded + defeated Osborn, fought dropped, + Franklin|saved|Reed (A75).
+- b5072 STOP changed: Black Panther, Deathlok |defeated|Magnum, f- foiled.
+- b5145/b8894 CAPT changed: Genoshan Prelates|defeated| x5 replaces fought ("ambushed and kidnapped").
+- b5166 FW changed: + Phil Coulson|wounded|Hive (Hive gets up, no defeated).
+- b5187 CAPT no change: Stark is taken with no stated resistance; the later pistol-whip is of a captive.
+- b5203 STOP no change (owner): Simmons, Malick's captive, "halt[s] Malick from obtaining what he wanted" -- Malick stays in control, so no defeated.
+- b5208 FW changed: + Vision|wounded|Rhodes (accidental hit of an ally, no defeated).
+- b5251 LISTED no change: Reed/Ben|defeated|Wizard already present, consistent with the A8 refinement.
+- b5259/b9767 STOP no change: Naka stops Ares from leaving by a warning (no subdue, no fight).
+- b5262 CAPT no change: abduction with no fight; the hunt follows.
+- b5284 STOP no change: the symbiote stops Peter fleeing inside the ongoing exchange (defeated already present).
+- b5312 LISTED(near-final) changed: Mystique|defeated|Rahne Sinclair replaces fought (power robbed, encounter over for her).
+- b5332 STOP no change: Candra stops Gambit's breath inside an ongoing (friendly) fight.
+- b5341 STOP no change: stops an elevator (thing).
+- b5370 CAPT no change: the restraint is a pause; the nanites save Parker and the scene continues.
+- b5383 LISTED no change: ruling says no row (Zealots fight beside Kaecilius).
+- b5400 CAPT/TEAM changed: Runaways, PRIDE |defeated|Morgan le Fay replaces fought; + Ghost Rider|defeated|Aida.
+- b5416/b5418 STOP no change: the stopped Skrull is unnamed (no end).
+- b5417 LISTED changed: + Intergalactic Council|captured|Professor X (ruling row) and |defeated| (capture ends their attack).
+- b5422 STOP/FW changed: Avengers|defeated|Thanos, f- thwarted; + Mar-Vell|wounded|Super-Skrull.
+- b5434 WBY no change: attackers are an unnamed group of thugs.
+- b5451 STOP no change: "stopped believing".
+- b5463 NEAR changed: fell -> actual/denied.
+- b5483 CAPT no change: kidnapping with no stated fight; the Kindred confrontation has no stated winner.
+- b5507 STOP changed: Avengers Initiative|defeated|ICON, f- foiled.
+- b5516 WBY no change: "injured from feedback" (no doer).
+- b5526 FW no change: "a multitude of battles", no wound.
+- b5543 TEAM no change: partner unnamed.
+- b5562 LISTED no change (owner): Xorn is Jean's future self -- see For the owner.
+- b5577/b5587 CAPT changed: + Ancient One|defeated|Kaluu (her dispersal finishes him after Strange's win).
+- b5593 TEAM no change: the partner is Strange's own temporal counterpart (same person).
+- b5604 CAPT changed: X-Force|defeated|MLF replaces fought (ambush + capture one act).
+- b5605 STOP changed: Jean Grey|defeated|Cable (hostile at the moment), f- prevented.
+- b5697 STOP no change: the symbiote keeps itself from dying (self).
+- b5724 LISTED(A8) changed: + Nova, Rocket |defeated|Warbringer.
+- b5726 TEAM changed: + Cosmo|defeated|Ulik; FW no wound.
+- b5764 STOP changed: Rogers|defeated|Morgan Le Fay, f- foiled.
+- b5829 CAPT changed: Emma|defeated|Sebastian replaces fought.
+- b5924 STOP no change: Spider-Man stops his ally Elektra killing the cops.
+- b5977 FW no change: the neutralizer shot is a power loss (state fact present), fight continues.
+- b6046/b6049 STOP no change: a battle stopped by Gaea's arrival (a thing).
+- b6088 CAPT no change: Frightful Four kidnap the sleeping Thing (no fight) -> captured alone.
+- b6094 TEAM changed: + Spider-Man|defeated|Sinister Syndicate, + escaped, to match partner b6108's shared sentence. b6108 no change.
+- b6107/b10079 LISTED(P4) changed: P4 rows kept; + defeated x8 (4 heroes x Wizard/Medusa), + escaped x6 (completing the retreat). b10097 no change (shares only the Aron sentences).
+- b6224 STOP changed: Vision|defeated|Ultron-6, f- stopped.
+
+## STOPPED HERE (usage limit, 2026-11-04)
+Submitted: B2_01..B2_07 (see ledger_B2.txt). Resume at b6181 in list order (b10097 read: no change; b6224 already submitted in B2_07).
+Read but NOT submitted (draft decisions for the successor, re-read before use):
+- b6181 LISTED(rank name) no change: King Thanos vs Thanos waits on the RANK allow-list.
+- b6245 NEAR: Human Torch|other_verb|burned attempted -> actual/denied ("almost burned down New York").
+- b6311 LISTED(disarm) no change: Magneto|defeated|Thor (disarm) stays.
+- b6352 TEAM: + Captain America|defeated|Grey Gargoyle ("He then teamed up with Captain America and defeated the Grey Gargoyle").
+- b6355 STOP no change (robbers unnamed); A74: + Lizard|escaped|Peter Parker ("managed to fight him off").
+- b6401 TEAM: + Loki|defeated|Daemond ("Bobby helped defeat Daemond without killing him").
+- b6408 ESC: + Rama-Tut|escaped|Sue, |Reed ("saw Rama-Tut flee back to his own future"); f- Rama-Tut|other_verb|flee (A89 twin).
+- b6425 LISTED(A8): left as is (the Watcher is present as a possible doer of "After the Red Ghost was defeated"); TEAM: + Ben|defeated|Diablo.
+
+## For the owner (left unchanged)
+- b3771: Logan (on a rampage) "was stopped by the arrival of Steve Rogers" -- an ally's arrival halts him, no subdue: defeated or fact?
+- b4016: Ward "shot Peterson with the Night-Night Gun" and the window ends -- sedative shot: wounded? defeated (implied knockout)?
+- b5203: a captive (Simmons) "halt[s] Malick from obtaining what he wanted" -- the 2026-10-14 stop rule says defeated, but Malick stays in control; left as fact.
+- b5562: "able to overpower Xorn (her future self)" -- defeated would be a self-pair in meaning; not settled by the 11-04 rulings.
+- b3375/b9059: the A8 refinement gives rows in b3375 (fight narrated in-window) but not in partner b9059 (fight outside its window), so the shared sentence differs between partners.
+- b4448 / b6425: A8 kept because a possible doer is present (Cap's assault force; the Watcher) -- confirm that strict reading.
+- b5977 / b5312: a neutralizer "shot" treated as a power loss, not a wound.
+
+## New patterns
+- Torture / pistol-whipping of a captive stored as `fought` (b4385, b5187, b3393): not a fight; other_verb.
+- STOP facts often sit beside an already-present defeated row (b3434, b3448, b3588, b4502/b7994): plain f-.
+- Retreat rows written against only one hero of the winning side (b6107/b10079).
+- "stopped by" = visited / paused / stopped believing (b3743, b4969, b5451): cue noise.
+
+## Counts (windows b3375..b10079 in list order, 178 read; a window counts once per class it carries)
+- CAPT: read 34 / changed 22 / no change 12
+- ESC: read 6 / changed 4 / no change 2
+- FW: read 35 / changed 22 / no change 13
+- LISTED: read 17 / changed 12 / no change 5
+- NEAR: read 4 / changed 4 / no change 0
+- PARTNER: read 13 / changed 4 / no change 9
+- STOP: read 57 / changed 19 / no change 38
+- TEAM: read 12 / changed 6 / no change 6
+- WBY: read 7 / changed 2 / no change 5
+- Total: 178 read, 89 changed (+ b6224), 85 not yet done (from b6181).

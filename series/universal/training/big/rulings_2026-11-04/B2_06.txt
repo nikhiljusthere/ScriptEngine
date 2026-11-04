@@ -1,0 +1,56 @@
+@5072 rulings 2026-11-04: STOP: "His plans were foiled by Wakandan king the Black Panther and Deathlok" (Magnum's plot) -> both defeated Magnum, the foiled facts go (2026-10-14 ruling)
+keep
+f- Black Panther|other_verb|foiled
+f- Deathlok|other_verb|foiled
++ Black Panther|defeated|Magnum|His plans were foiled by Wakandan king the Black Panther and Deathlok
++ Deathlok|defeated|Magnum|His plans were foiled by Wakandan king the Black Panther and Deathlok
+@5145 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOMES: "ambushed and kidnapped by Genoshan Prelates" is a capture ending a stated ambush, one stated act -> defeated replaces fought beside captured (A145); partner b8894 identical
+keep
+- Genoshan Prelates|fought|Rahne
+- Genoshan Prelates|fought|Boom-Boom
+- Genoshan Prelates|fought|Rictor
+- Genoshan Prelates|fought|Storm
+- Genoshan Prelates|fought|Warlock
++ Genoshan Prelates|defeated|Rahne|as they were ambushed and kidnapped by Genoshan Prelates
++ Genoshan Prelates|defeated|Boom-Boom|as they were ambushed and kidnapped by Genoshan Prelates
++ Genoshan Prelates|defeated|Rictor|as they were ambushed and kidnapped by Genoshan Prelates
++ Genoshan Prelates|defeated|Storm|as they were ambushed and kidnapped by Genoshan Prelates
++ Genoshan Prelates|defeated|Warlock|as they were ambushed and kidnapped by Genoshan Prelates
+@8894 rulings 2026-11-04: as partner b5145 (ambushed and kidnapped -> defeated replaces fought beside captured)
+keep
+- Genoshan Prelates|fought|Rahne
+- Genoshan Prelates|fought|Boom-Boom
+- Genoshan Prelates|fought|Rictor
+- Genoshan Prelates|fought|Storm
+- Genoshan Prelates|fought|Warlock
++ Genoshan Prelates|defeated|Rahne|as they were ambushed and kidnapped by Genoshan Prelates
++ Genoshan Prelates|defeated|Boom-Boom|as they were ambushed and kidnapped by Genoshan Prelates
++ Genoshan Prelates|defeated|Rictor|as they were ambushed and kidnapped by Genoshan Prelates
++ Genoshan Prelates|defeated|Storm|as they were ambushed and kidnapped by Genoshan Prelates
++ Genoshan Prelates|defeated|Warlock|as they were ambushed and kidnapped by Genoshan Prelates
+@5166 rulings 2026-11-04: FW: "Coulson shot Hive twice" is a stated wound in the fought quote -> Phil Coulson|wounded|Hive; Hive gets up and staggers to the portal (continues), no defeated
+keep
+f+ Phil Coulson|wounded|Hive|Coulson shot Hive twice before he could kill Fitz
+@5208 rulings 2026-11-04: FW / ALLY: Vision "missed the beam and shot Rhodes instead" -> the stated wound gets its named doer (Vision|wounded|Rhodes); an accidental hit of an ally gives no defeated and no fought
+keep
+f+ Vision|wounded|Rhodes|Vision, distracted, missed the beam and shot Rhodes instead
+@5312 rulings 2026-11-04: NEAR-FINAL STATES (Klaue test): Mystique's neutralizer robs Rahne of her powers and her part in the attack ends there (she boards a plane, nothing continues) -> a lost power that ends the encounter = defeated; the firing is the whole act, fought goes (A145)
+keep
+- Mystique|fought|Rahne Sinclair
++ Mystique|defeated|Rahne Sinclair|Mystique fired the neutralizer (which Forge had originally created to remove Rogue's powers) at Wolfsbane
+@5400 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOMES: Morgan le Fay "was stopped by the Runaways and PRIDE, who used the book to imprison her in the Dark Dimension" -> the stop is defeated beside sealed and replaces that fought (one stated act, A145); TEAM: Ghost Rider "helped S.H.I.E.L.D. defeat her" -> Ghost Rider|defeated|Aida
+keep
+- Runaways|fought|Morgan le Fay
+- PRIDE|fought|Morgan le Fay
++ Runaways|defeated|Morgan le Fay|she was stopped by the Runaways and PRIDE
++ PRIDE|defeated|Morgan le Fay|she was stopped by the Runaways and PRIDE
++ Ghost Rider|defeated|Aida|who helped S.H.I.E.L.D. defeat her
+@5417 rulings 2026-11-04: PASSIVE OUTCOMES (A8 refined, b5417 named in the ruling): Professor X's group "attacked the Intergalactic Council directly, but were captured" -> Intergalactic Council|captured|Professor X; the capture ends their stated attack -> defeated too (CAPTURED / SEALED AS OUTCOMES)
+keep
++ Intergalactic Council|captured|Professor X|attacked the Intergalactic Council directly, but were captured as a result
++ Intergalactic Council|defeated|Professor X|attacked the Intergalactic Council directly, but were captured as a result
+@5422 rulings 2026-11-04: STOP: "the Avengers thwarted the invasion" (Thanos's invasion) -> Avengers|defeated|Thanos, the thwarted fact goes; FW: "his injuries from battling Mar-Vell" is a stated wound -> Mar-Vell|wounded|Super-Skrull
+keep
+f- Avengers|other_verb|thwarted
++ Avengers|defeated|Thanos|many of his troops were Skrulls who were slain when the Avengers thwarted the invasion
+f+ Mar-Vell|wounded|Super-Skrull|to heal his injuries from battling Mar-Vell

@@ -1,0 +1,70 @@
+@1126 rulings 2026-11-04: CAPTURED AS OUTCOME - the Gladiator's attack ends with Janice and Vincent captured: defeated beside captured (attack stated in its own sentence, fought stays)
+keep
++ Gladiator|defeated|Janice Cord|when they were captured by the Gladiator
++ Gladiator|defeated|Vincent Sandhurst|when they were captured by the Gladiator
+@1438 rulings 2026-11-04: FW - Organism 8 repeatedly injures Prime, tearing off his cape (part of his body): wounded; the fight continues (Prime hurls him), so no defeated; the chaining is a capture Prime breaks out of (no defeated)
+keep
+f+ Organism 8|wounded|Prime|the refreshed Organism 8 repeatedly injured Prime, even tearing off his cape, which was part of his body
+@1453 rulings 2026-11-04: PASSIVE OUTCOMES (A8 refined) - "Nightmare was defeated" closes the fight narrated in the same sentence between Strange, Nightmare and Morbius: one row per member of the winning side
+keep
++ Stephen Strange|defeated|Nightmare|all souls were returned to their proper bodies and Nightmare was defeated
++ Morbius|defeated|Nightmare|all souls were returned to their proper bodies and Nightmare was defeated
+@8134 rulings 2026-11-04: PASSIVE OUTCOMES (A8 refined, overlap partner of b1453; b8155 does not hold the sentence) - Strange and Morbius defeated Nightmare
+keep
++ Stephen Strange|defeated|Nightmare|all souls were returned to their proper bodies and Nightmare was defeated
++ Morbius|defeated|Nightmare|all souls were returned to their proper bodies and Nightmare was defeated
+@1505 rulings 2026-11-04: CAPTURED AS OUTCOME - Wenwu knocks his resisting children down and has them imprisoned: defeated beside captured; knockdown and imprisonment are one coordinated act, so defeated replaces fought (A145)
+keep
+- Wenwu|fought|Shang-Chi
+- Wenwu|fought|Xialing
++ Wenwu|defeated|Shang-Chi|he knocked them to the ground and ordered them to be imprisoned
++ Wenwu|defeated|Xialing|he knocked them to the ground and ordered them to be imprisoned
+@1545 rulings 2026-11-04: WBY - the sentence names the doer (injuries sustained while fighting the Hulk)
+keep
+f- Torch|wounded|-
+f+ Hulk|wounded|Torch|treated the Torch for injuries sustained while fighting the Hulk
+@1547 rulings 2026-11-04: CAPTURED AS OUTCOME - Turbocharge's grab opens a struggle Kelly fights out of: captured only, no defeated; her release is stated, so escaped was missing
+keep
++ Kelly|escaped|Turbocharge|Kelly punched him and made him let her go
+@3653 rulings 2026-11-04: as b1547 (overlap partner) - Kelly escaped Turbocharge
+keep
++ Kelly|escaped|Turbocharge|Kelly punched him and made him let her go
+@1590 rulings 2026-11-04: STOP - foiling Doctor Octopus' plans is a completed stop of a named villain: defeated, other_verb goes
+keep
++ Spider-Man|defeated|Doctor Octopus|of no use to Doctor Octopus, foiling his plans
+f- Spider-Man|other_verb|foiling
+@6096 rulings 2026-11-04: STOP (overlap partner of b1590) - Spider-Man defeated Doctor Octopus, other_verb goes
+keep
++ Spider-Man|defeated|Doctor Octopus|of no use to Doctor Octopus, foiling his plans
+f- Spider-Man|other_verb|foiling
+@1666 rulings 2026-11-04: TEAM - "Johnny helped free his teammates and defeat the Frightful Four" / "assisting his teammates in defeating the Mole Man": Reed, Sue and Ben share the defeats; "stopped employing Parker" is no stop (kept)
+keep
++ Reed|defeated|Paste-Pot Pete|Johnny helped free his teammates and defeat the Frightful Four
++ Sue|defeated|Paste-Pot Pete|Johnny helped free his teammates and defeat the Frightful Four
++ Ben|defeated|Paste-Pot Pete|Johnny helped free his teammates and defeat the Frightful Four
++ Reed|defeated|Sandman|Johnny helped free his teammates and defeat the Frightful Four
++ Sue|defeated|Sandman|Johnny helped free his teammates and defeat the Frightful Four
++ Ben|defeated|Sandman|Johnny helped free his teammates and defeat the Frightful Four
++ Reed|defeated|Medusa|Johnny helped free his teammates and defeat the Frightful Four
++ Sue|defeated|Medusa|Johnny helped free his teammates and defeat the Frightful Four
++ Ben|defeated|Medusa|Johnny helped free his teammates and defeat the Frightful Four
++ Reed|defeated|Mole Man|After assisting his teammates in defeating the Mole Man once again
++ Sue|defeated|Mole Man|After assisting his teammates in defeating the Mole Man once again
++ Ben|defeated|Mole Man|After assisting his teammates in defeating the Mole Man once again
+@6758 rulings 2026-11-04: TEAM (overlap partner of b1666; this window has no member list, so the group end stays) - Reed, Sue and Ben share the defeats of the Frightful Four and the Mole Man
+keep
++ Reed|defeated|Frightful Four|Johnny helped free his teammates and defeat the Frightful Four
++ Sue|defeated|Frightful Four|Johnny helped free his teammates and defeat the Frightful Four
++ Ben|defeated|Frightful Four|Johnny helped free his teammates and defeat the Frightful Four
++ Reed|defeated|Mole Man|After assisting his teammates in defeating the Mole Man once again
++ Sue|defeated|Mole Man|After assisting his teammates in defeating the Mole Man once again
++ Ben|defeated|Mole Man|After assisting his teammates in defeating the Mole Man once again
+@1676 rulings 2026-11-04: FW - the bullet pierces Kahhori's shoulder and she falls into the lake, ending the encounter (Klaue test): wounded + defeated; the shot is the one stated act, so fought goes (A145)
+keep
+f+ Luis|wounded|Kahhori|The bullet pierced her shoulder, causing her to fall into the lake
++ Luis|defeated|Kahhori|Suddenly, another conquistador, Luis arrived and shot Kahhori
+- Luis|fought|Kahhori
+@1728 rulings 2026-11-04: STOP - foiling the Mandarin's plan is a completed stop of a named villain: defeated, other_verb goes
+keep
++ Tony|defeated|Mandarin|Iron Man diverted the missile back to the Chinese, foiling the Mandarin's plan
+f- Tony|other_verb|foiling

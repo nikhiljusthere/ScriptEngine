@@ -1,0 +1,62 @@
+@1076 rulings 2026-11-04: NEARLY V - "nearly consumed": the act did not happen, certainty denied (not attempted); the fight row stays (A11)
+keep
+f- Jennix|other_verb|consumed
+f+ Jennix|other_verb|consumed|Otto was nearly consumed by Jennix|actual|denied|
+@1087 rulings 2026-11-04: STOP - Namor's plan thwarted by Susan Storm is a completed stop of a named person's plot: defeated, other_verb goes
+keep
++ Susan Storm|defeated|Namor|His plan was thwarted by Susan Storm
+f- Susan Storm|other_verb|thwarted
+@7254 rulings 2026-11-04: STOP (overlap partner of b1087) - Susan Storm defeated Namor, other_verb goes
+keep
++ Susan Storm|defeated|Namor|His plan was thwarted by Susan Storm
+f- Susan Storm|other_verb|thwarted
+@1094 rulings 2026-11-04: STOP - confronting Arnold Reese (Ares) and stopping his plans to incite war is defeated, other_verb goes
+keep
++ Aphrodite|defeated|Ares|She later confronted Arnold Reese who revealed his true identity, stopping his plans to incite war
+f- Aphrodite|other_verb|stopping
+@9765 rulings 2026-11-04: STOP (overlap partner of b1094; this window names her Venus) - Venus defeated Ares, other_verb goes
+keep
++ Venus|defeated|Ares|She later confronted Arnold Reese who revealed his true identity, stopping his plans to incite war
+f- Venus|other_verb|stopping
+@1136 rulings 2026-11-04: STOP - "went to stop Hawkeye" is a purpose clause (planned); the Helicarrier stop is of a thing (kept); PASSIVE OUTCOMES (A8 refined) - "tried to stop Loki, but was killed": the death closes the encounter with Loki in the same sentence, no other party
+keep
+f- Black Widow|other_verb|stop
+f+ Black Widow|other_verb|stop|Black Widow went to stop Hawkeye|planned|stated|Black Widow
++ Loki|killed|Phil Coulson|Phil Coulson tried to stop Loki, but was killed
+@1151 rulings 2026-11-04: FW - "where Sprite stabbed her": wounded fact (aftermath, no defeated stated)
+keep
+f+ Sprite|wounded|Sersi|Sersi regenerated her suit and wounds where Sprite stabbed her
+@1170 rulings 2026-11-04: FW - the point-blank stomach shot is a stated wound: wounded fact beside the killed row (shot and death are separate sentences, fought stays)
+keep
+f+ Gravik|wounded|Hill|only to be shot point-blank in the stomach, sending her into shock as she collapsed to the ground
+@1173 rulings 2026-11-04: TEAM - Shard "helped her brother defeat her": Shard gets the same defeated row as Bishop
+keep
++ Shard|defeated|Flamequake|Shard ultimately turned against Flamequake and helped her brother defeat her
+@1190 rulings 2026-11-04: STOP - Peter|defeated|Norman Osborn already covers stopping the Goblin's Serum Attack; the stopped fact goes
+keep
+f- Peter Parker|other_verb|stopped
+@1242 rulings 2026-11-04: STOP - the three villains' scheme (the Puppet Master is the one named) thwarted by the Avengers: defeated, other_verb goes
+keep
++ Avengers|defeated|Puppet Master|Ultimately, the three villains' scheme was thwarted by the Avengers
+f- Avengers|other_verb|thwarted
+@1295 rulings 2026-11-04: STOP - Layla "arrived to stop him" from a self-harm: the fact is kept (no defeated) but it is a purpose clause, so planned
+keep
+f- Layla Miller|other_verb|stop
+f+ Layla Miller|other_verb|stop|an older Layla Miller arrived to stop him|planned|stated|Layla Miller
+@1316 rulings 2026-11-04: STOP - the Champions of Los Angeles foiled Pluto's plot to invade Olympus: defeated, other_verb goes
+keep
++ Champions of Los Angeles|defeated|Pluto|after they had successfully foiled a plot by Pluto to invade Olympus
+f- Champions of Los Angeles|other_verb|foiled
+@1326 rulings 2026-11-04: CAPTURED/SEALED AS OUTCOMES - X-Man banishing Anole, Pixie and Beast to another plane ends the final battle: defeated beside sealed; one stated act, so defeated replaces fought (A145)
+keep
+- Nate Grey|fought|Anole
+- Nate Grey|fought|Pixie
+- Nate Grey|fought|Beast
++ Nate Grey|defeated|Anole|he made them vanish in an instant, including Anole
++ Nate Grey|defeated|Pixie|he made them vanish in an instant, including Anole
++ Nate Grey|defeated|Beast|he made them vanish in an instant, including Anole
+@12398 rulings 2026-11-04: FW - Janet's shot stops Victor's attack on Chase and nothing continues (he is clinically dead after): wounded + defeated; the shot is the one stated act, fought goes (A145)
+keep
+f+ Janet Stein|wounded|Victor|nearly killed his own son before being shot by Janet
++ Janet Stein|defeated|Victor|nearly killed his own son before being shot by Janet
+- Janet Stein|fought|Victor

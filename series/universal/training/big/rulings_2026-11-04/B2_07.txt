@@ -1,0 +1,77 @@
+@5463 rulings 2026-11-04: NEARLY V: "Peter almost fell to his death" -> the act did not happen: actual/denied
+keep
+f- Peter|other_verb|fell
+f+ Peter|other_verb|fell|Peter almost fell to his death|actual|denied|
+@5507 rulings 2026-11-04: STOP: ICON's raid on Wakanda "foiled by the Avengers" is a completed stop of a named group's crime (no member tied to it) -> Avengers Initiative|defeated|ICON, the foiled fact goes (2026-10-14 ruling)
+keep
+f- Avengers Initiative|other_verb|foiled
++ Avengers Initiative|defeated|ICON|ICON operatives attempted to pillage Wakanda's technology, but they were foiled by the Avengers
+@5577 rulings 2026-11-04: RESTRAINING / JOINT OUTCOME: after Strange defeats Kaluu, "the Ancient One disbursed his ancient foe's essence across the Earth", which finishes Kaluu in the fight both had with him -> Ancient One|defeated|Kaluu beside Strange's row (her other_verb stays); the old banishment row is a different event; partner b5587 identical
+keep
++ Ancient One|defeated|Kaluu|the Ancient One disbursed his ancient foe's essence across the Earth
+@5587 rulings 2026-11-04: as partner b5577 (the Ancient One's dispersal finishes Kaluu -> defeated)
+keep
++ Ancient One|defeated|Kaluu|the Ancient One disbursed his ancient foe's essence across the Earth
+@5604 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOMES: X-Force "lured the new MLF into ambush to capture and imprison them" and the interrogation follows -> a capture ending a stated ambush, one stated act: defeated replaces fought beside captured (A145)
+keep
+- X-Force|fought|MLF
++ X-Force|defeated|MLF|X-Force lured the new MLF into ambush to capture and imprison them
+@5605 rulings 2026-11-04: STOP: Cable, hostile at that moment (he came to kill Sara), "was prevented by the natives and Jean herself" -> a completed stop of a named person = Jean Grey|defeated|Cable (natives unnamed: no row), the prevented fact goes; the later talk keeps met
+keep
+f- Jean Grey|other_verb|prevented
++ Jean Grey|defeated|Cable|but was prevented by the natives and Jean herself
+@5724 rulings 2026-11-04: PASSIVE OUTCOMES (A8 refined): "Finally, the bad guy was defeated" closes the fight of the sentence before (Nova fought Warbringer while Rocket and Nova's allies held the fort), no third party -> one row per named member of the winning side
+keep
++ Nova|defeated|Warbringer|Finally, the bad guy was defeated
++ Rocket|defeated|Warbringer|Finally, the bad guy was defeated
+@5726 rulings 2026-11-04: TEAM: Rocket and company "beat him with the help of Cosmo" -> Cosmo, named in the same clause, gets the same defeated row; FW: Rocket's shot hit no one (no wound)
+keep
++ Cosmo|defeated|Ulik|beat him with the help of Cosmo
+@5764 rulings 2026-11-04: STOP: Rogers "formed a resistance group that foiled the ancient sorceress' plans" (Morgan Le Fay's plot) -> Rogers|defeated|Morgan Le Fay, the foiled fact goes (2026-10-14 ruling)
+keep
+f- Rogers|other_verb|foiled
++ Rogers|defeated|Morgan Le Fay|formed a resistance group that foiled the ancient sorceress' plans
+@5829 rulings 2026-11-04: CAPTURED / SEALED AS OUTCOMES + NEAR-FINAL: Emma "blinded and immobilized him in illusion" and then locks him in the Brig -> the immobilization ends the encounter = defeated beside captured; it is the whole fight, fought goes (A145)
+keep
+- Emma|fought|Sebastian
++ Emma|defeated|Sebastian|she blinded and immobilized him in illusion
+@6094 rulings 2026-11-04: TEAM: "Despite his misgivings about Spider-Man, Marko helped defeat the Sinister Syndicate who fled the scene" -> Spider-Man, named in the sentence, gets the same defeated + escaped rows, as partner b6108 has for this shared sentence (Silver Sable is not tied to the battle in this window)
+keep
++ Spider-Man|defeated|Sinister Syndicate|Despite his misgivings about Spider-Man, Marko helped defeat the Sinister Syndicate
++ Sinister Syndicate|escaped|Spider-Man|Marko helped defeat the Sinister Syndicate who fled the scene
+@6224 rulings 2026-11-04: STOP: "Vision stopped his creator from detonating the bomb" is a completed stop of Ultron-6's plot (his later escape already pairs with it) -> Vision|defeated|Ultron-6, the stopped fact goes (2026-10-14 ruling)
+keep
+f- Vision|other_verb|stopped
++ Vision|defeated|Ultron-6|Vision stopped his creator from detonating the bomb
+@6107 rulings 2026-11-04: LISTED P4 + ESC (A74): the incapacitation rows stay (RESCUE MID-FIGHT: subdued, then the Torch's rescue); "Outclassed by the veteran heroes, the Frightful Four decided to retreat" -> each named hero defeated the Wizard and Medusa (A2), and the escaped rows, written only against the Torch, are completed for the other heroes; partner b10079 identical
+keep
++ Human Torch|defeated|Wizard|Outclassed by the veteran heroes, the Frightful Four decided to retreat in the ensuing battle
++ Human Torch|defeated|Madame Medusa|Outclassed by the veteran heroes, the Frightful Four decided to retreat in the ensuing battle
++ Thing|defeated|Wizard|Outclassed by the veteran heroes, the Frightful Four decided to retreat in the ensuing battle
++ Thing|defeated|Madame Medusa|Outclassed by the veteran heroes, the Frightful Four decided to retreat in the ensuing battle
++ Mister Fantastic|defeated|Wizard|Outclassed by the veteran heroes, the Frightful Four decided to retreat in the ensuing battle
++ Mister Fantastic|defeated|Madame Medusa|Outclassed by the veteran heroes, the Frightful Four decided to retreat in the ensuing battle
++ Invisible Girl|defeated|Wizard|Outclassed by the veteran heroes, the Frightful Four decided to retreat in the ensuing battle
++ Invisible Girl|defeated|Madame Medusa|Outclassed by the veteran heroes, the Frightful Four decided to retreat in the ensuing battle
++ Wizard|escaped|Thing|setting their anti-gravity craft to self-destruct providing cover for the group to escape
++ Madame Medusa|escaped|Thing|setting their anti-gravity craft to self-destruct providing cover for the group to escape
++ Wizard|escaped|Mister Fantastic|setting their anti-gravity craft to self-destruct providing cover for the group to escape
++ Madame Medusa|escaped|Mister Fantastic|setting their anti-gravity craft to self-destruct providing cover for the group to escape
++ Wizard|escaped|Invisible Girl|setting their anti-gravity craft to self-destruct providing cover for the group to escape
++ Madame Medusa|escaped|Invisible Girl|setting their anti-gravity craft to self-destruct providing cover for the group to escape
+@10079 rulings 2026-11-04: as partner b6107 (outclassed and retreating -> defeated for each named hero, escaped completed)
+keep
++ Human Torch|defeated|Wizard|Outclassed by the veteran heroes, the Frightful Four decided to retreat in the ensuing battle
++ Human Torch|defeated|Madame Medusa|Outclassed by the veteran heroes, the Frightful Four decided to retreat in the ensuing battle
++ Thing|defeated|Wizard|Outclassed by the veteran heroes, the Frightful Four decided to retreat in the ensuing battle
++ Thing|defeated|Madame Medusa|Outclassed by the veteran heroes, the Frightful Four decided to retreat in the ensuing battle
++ Mister Fantastic|defeated|Wizard|Outclassed by the veteran heroes, the Frightful Four decided to retreat in the ensuing battle
++ Mister Fantastic|defeated|Madame Medusa|Outclassed by the veteran heroes, the Frightful Four decided to retreat in the ensuing battle
++ Invisible Girl|defeated|Wizard|Outclassed by the veteran heroes, the Frightful Four decided to retreat in the ensuing battle
++ Invisible Girl|defeated|Madame Medusa|Outclassed by the veteran heroes, the Frightful Four decided to retreat in the ensuing battle
++ Wizard|escaped|Thing|setting their anti-gravity craft to self-destruct providing cover for the group to escape
++ Madame Medusa|escaped|Thing|setting their anti-gravity craft to self-destruct providing cover for the group to escape
++ Wizard|escaped|Mister Fantastic|setting their anti-gravity craft to self-destruct providing cover for the group to escape
++ Madame Medusa|escaped|Mister Fantastic|setting their anti-gravity craft to self-destruct providing cover for the group to escape
++ Wizard|escaped|Invisible Girl|setting their anti-gravity craft to self-destruct providing cover for the group to escape
++ Madame Medusa|escaped|Invisible Girl|setting their anti-gravity craft to self-destruct providing cover for the group to escape
