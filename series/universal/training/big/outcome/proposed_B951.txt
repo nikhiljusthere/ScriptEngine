@@ -1,0 +1,88 @@
+@8578 outcome 2026-11-04: "Coulson shot Whitehall from behind before he could shoot Cal"; Whitehall never acts again and Cal is left wanting revenge -> wounded + defeated (Klaue pattern), the shot is the only act so fought dropped (saved stays); partner b8581 edited identically
+keep
+- Coulson|fought|Daniel Whitehall
++ Coulson|defeated|Daniel Whitehall|Coulson shot Whitehall from behind before he could shoot Cal
+f+ Coulson|wounded|Daniel Whitehall|Coulson shot Whitehall from behind before he could shoot Cal
+@8581 outcome 2026-11-04: as partner b8578 (Whitehall shot from behind, nothing continues -> wounded + defeated, fought dropped)
+keep
+- Coulson|fought|Daniel Whitehall
++ Coulson|defeated|Daniel Whitehall|Coulson shot Whitehall from behind before he could shoot Cal
+f+ Coulson|wounded|Daniel Whitehall|Coulson shot Whitehall from behind before he could shoot Cal
+@9279 outcome 2026-11-04: the Grimes began their career "battling Iron Man and being arrested in the process" -> the battle's stated outcome is their arrest: Iron Man defeated them (fight and outcome one statement: fought dropped, as b916)
+keep
+- Percy Grimes|fought|Iron Man
+- Barton Grimes|fought|Iron Man
++ Iron Man|defeated|Percy Grimes|battling Iron Man and being arrested in the process
++ Iron Man|defeated|Barton Grimes|battling Iron Man and being arrested in the process
+@9771 outcome 2026-11-04: "The X-Men fended off the Brotherhood in an epic battle for Kelly's life. The mutant terrorists were incarcerated" -> fended off = drove off = defeated (A74), one act so fought dropped (Mystique's escape stays)
+keep
+- X-Men|fought|Brotherhood
++ X-Men|defeated|Brotherhood|The X-Men fended off the Brotherhood in an epic battle for Kelly's life.
+@10175 outcome 2026-11-04: Namor "easily breaks M'Baku's knobkerrie and sends him flying backwards with a single punch. M'Baku struggles for air" and takes no further part -> wounded + defeated (M'Baku's attack is its own clause: fought stays)
+keep
++ Namor|defeated|M'Baku|Namor easily breaks M'Baku's knobkerrie and sends him flying backwards with a single punch
+f+ Namor|wounded|M'Baku|sends him flying backwards with a single punch. M'Baku struggles for air
+@10961 outcome 2026-11-04: Nebula "prevented Rael from succeeding, with Rael and Ronan both dead in the ensuing battle" -> stopping the plot = defeated (2026-10-14 ruling), not an other_verb fact; the prevention is the fought row's own quote, so fought dropped
+keep
+f- Nebula|other_verb|prevented
+- Nebula|fought|Rael
++ Nebula|defeated|Rael|prevented Rael from succeeding
+@11169 outcome 2026-11-04: Rhodes "used his sonic cannon to prevent Maximoff from using her powers" while she holds up the hangar -> disabling her ends her part = defeated (as b271 "disabled by Stark's armor"); the attacked fact stays
+keep
++ Rhodes|defeated|Maximoff|Rhodes arrived and used his sonic cannon to prevent Maximoff from using her powers
+@11463 outcome 2026-11-04: Wolverine goes to attack Nova "so she used her powers to bury him underground" and the talk goes on without him -> restraint that ends the encounter = defeated (one act, fought dropped)
+keep
+- Nova|fought|Wolverine
++ Nova|defeated|Wolverine|she used her powers to bury him underground
+@12112 outcome 2026-11-04: Vision uses "his powers to prevent Ultron from transferring his consciousness to the internet, and allowing the Avengers to successfully put an end to his plan" -> stopping him = defeated for Vision and the Avengers (2026-10-14 ruling); the prevention is the fought row's own quote (fought dropped) and the other_verb prevent fact repeats it
+keep
+f- Vision|other_verb|prevent
+- Vision|fought|Ultron
++ Vision|defeated|Ultron|using his powers to prevent Ultron from transferring his consciousness to the internet
++ Avengers|defeated|Ultron|allowing the Avengers to successfully put an end to his plan
+@12995 outcome 2026-11-04: "Hela struck Thor hard in the shoulder with a necrosword" -> a stated wound missing (the fight goes on, so no defeated)
+keep
+f+ Hela|wounded|Thor|Hela struck Thor hard in the shoulder with a necrosword
+@13243 outcome 2026-11-04: "Karolina Dean blasted back. The Magistrates were no match for her" -> stated winner of that exchange: Karolina defeated Magistrate (the blast is its own sentence: fought stays; Nico's seal follows)
+keep
++ Karolina Dean|defeated|Magistrate|The Magistrates were no match for her as their powers escaped through the shield.
+@13325 outcome 2026-11-04: "When Ant-Man stopped Kang from escaping, van Dyne told the Conqueror that it was over for him" -> stopping a person = defeated (2026-10-14 ruling; the fight is its own sentence: fought stays)
+keep
++ Scott Lang|defeated|Kang the Conqueror|When Ant-Man stopped Kang from escaping
+@13894 outcome 2026-11-04: "Volstagg became overwhelmed by the sheer numbers of the guards and was pinned to the floor" and is then arrested -> the guards subdue him and the fight ends = Einherjar defeated Volstagg (his own fight is its own sentence: fought stays; his goal succeeded, Thor escaped)
+keep
++ Einherjar|defeated|Volstagg|Volstagg became overwhelmed by the sheer numbers of the guards and was pinned to the floor
+@12406 outcome 2026-11-04: Sif "was forced to flee when Fandral had been wounded and they became outnumbered" by Laufey's army -> forced to flee = defeated + escaped (A74); only the escaped row exists
+keep
++ Laufey|defeated|Sif|but was forced to flee when Fandral had been wounded and they became outnumbered
+@1805 outcome 2026-11-04: "All these threats were stopped by the Human Torch and his partner Toro" (the Saint, Izan, the Javelin, the Metal Mobsters, Captain von Spitz) -> stopped = defeated (2026-10-14 ruling), the doers are named; none was written. The Young Allies "chased ... Khan out of New York" -> defeated stands + Khan escaped them (A74)
+keep
++ Human Torch|defeated|Saint|All these threats were stopped by the Human Torch and his partner Toro.
++ Toro|defeated|Saint|All these threats were stopped by the Human Torch and his partner Toro.
++ Human Torch|defeated|Izan|All these threats were stopped by the Human Torch and his partner Toro.
++ Toro|defeated|Izan|All these threats were stopped by the Human Torch and his partner Toro.
++ Human Torch|defeated|Javelin|All these threats were stopped by the Human Torch and his partner Toro.
++ Toro|defeated|Javelin|All these threats were stopped by the Human Torch and his partner Toro.
++ Human Torch|defeated|Metal Mobsters|All these threats were stopped by the Human Torch and his partner Toro.
++ Toro|defeated|Metal Mobsters|All these threats were stopped by the Human Torch and his partner Toro.
++ Human Torch|defeated|Captain von Spitz|All these threats were stopped by the Human Torch and his partner Toro.
++ Toro|defeated|Captain von Spitz|All these threats were stopped by the Human Torch and his partner Toro.
++ Khan|escaped|Young Allies|the Young Allies chased yet another Japanese spy named Khan out of New York
+@3217 outcome 2026-11-04: "Toro and the Allies stopped a crook named Shiv" -> the Young Allies are co-doers of the stop (only Toro's defeated row exists)
+keep
++ Young Allies|defeated|Shiv|Toro and the Allies stopped a crook named Shiv
+@6481 outcome 2026-11-04: "The others fought against Rama-Tut, forcing him to retreat in his time machine" -> defeated stands + the retreating side escaped (A74); row missing
+keep
++ Rama-Tut|escaped|Reed|forcing him to retreat in his time machine
+@9032 outcome 2026-11-04: "Iron Man and Thor then joined the battle, driving the Collector away" -> drove him off = defeated + the Collector escaped (A74), joining and driving away one act so fought dropped (Thor's defeat of Iron Man stands: the fight with him ended there)
+keep
+- Tony|fought|Collector
+- Thor|fought|Collector
++ Tony|defeated|Collector|Iron Man and Thor then joined the battle, driving the Collector away
++ Thor|defeated|Collector|Iron Man and Thor then joined the battle, driving the Collector away
++ Collector|escaped|Tony|driving the Collector away
++ Collector|escaped|Thor|driving the Collector away
+@9623 outcome 2026-11-04: the Hulk breaks into the Raft and "broke the Puppet Master's hands, then his arms and his legs"; nothing continues -> wounded (row exists) + defeated (Klaue pattern), one act so fought dropped
+keep
+- Hulk|fought|Puppet Master
++ Hulk|defeated|Puppet Master|He broke the Puppet Master's hands, then his arms and his legs on the principle of it for taking control of him.

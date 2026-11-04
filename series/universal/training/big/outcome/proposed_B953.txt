@@ -1,0 +1,91 @@
+@6445 outcome 2026-11-04: "While the Jury's attack failed" -> the attacked side prevails: Venom defeated the Jury (the attack row stays); Spider-Man "helped Eddie ... foil Roland Treece's plan" -> a foiled plot = defeated for both (2026-10-14 ruling), not other_verb facts
+keep
+f- Spider-Man|other_verb|foil
+f- Venom|other_verb|foil
++ Venom|defeated|Jury|While the Jury's attack failed
++ Spider-Man|defeated|Roland Treece|foil Roland Treece's plan to destroy the Underground City
++ Venom|defeated|Roland Treece|foil Roland Treece's plan to destroy the Underground City
+@6451 outcome 2026-11-04: "Eddie teamed up with Spider-Man to fight off the Thunderbolts ... forcing the Thunderbolts to retreat" -> fought off = drove off = defeated + escaped for Spider-Man too (A74; Eddie's defeated and the retreat from Eddie exist); fighting off is one act, so both fought rows dropped (as b11793); partner b8120 edited identically
+keep
+- Eddie|fought|Thunderbolts
+- Spider-Man|fought|Thunderbolts
++ Spider-Man|defeated|Thunderbolts|Eddie teamed up with Spider-Man to fight off the Thunderbolts
++ Thunderbolts|escaped|Spider-Man|forcing the Thunderbolts to retreat
+@8120 outcome 2026-11-04: as partner b6451 (fought off the Thunderbolts = defeated + escaped for Spider-Man, both fought rows dropped)
+keep
+- Eddie|fought|Thunderbolts
+- Spider-Man|fought|Thunderbolts
++ Spider-Man|defeated|Thunderbolts|Eddie teamed up with Spider-Man to fight off the Thunderbolts
++ Thunderbolts|escaped|Spider-Man|forcing the Thunderbolts to retreat
+@6638 outcome 2026-11-04: the Infinity Watch "had gone to fight Thor to find Warlock, but they had ended up failing and losing the Power Gem" -> stated loser of that fight: Thor defeated the Infinity Watch (the fight is its own clause: fought stays)
+keep
++ Thor|defeated|Infinity Watch|they had ended up failing and losing the Power Gem
+@6649 outcome 2026-11-04: Magma "responded by setting him on fire" -> a stated wound missing (Logan is then captured by Mesmero, not by her: no defeated for Magma)
+keep
+f+ Magma|wounded|Logan|she responded by setting him on fire
+@6938 outcome 2026-11-04: "Spider-Man remained behind to fight them but was no match for the Phoenixes' powers" -> stated loser: Colossus and Magik defeated Spider-Man (the fight is its own clause: fought stays; he only goads them afterwards)
+keep
++ Colossus|defeated|Spider-Man|but was no match for the Phoenixes' powers
++ Magik|defeated|Spider-Man|but was no match for the Phoenixes' powers
+@7878 outcome 2026-11-04: stopped/prevented acts against named villains are defeated events (2026-10-14 ruling, as b7889): "stopped the umbrella wielding criminal Wilbur the Great" (Torch and Toro), "prevented Captain Osaki from stealing" (Toro and the Young Allies -- not the Torch), "The Torch and Toro prevented Nazi spy the Wisp"; the other_verb stopped/prevented/stop facts repeat these (the Reptile stop already has defeated rows)
+keep
+f- Human Torch|other_verb|stopped
+f- Toro|other_verb|stopped
+f- Human Torch|other_verb|prevented
+f- Toro|other_verb|prevented
+f- Human Torch|other_verb|stop
+f- Toro|other_verb|stop
++ Human Torch|defeated|Wilbur the Great|stopped the umbrella wielding criminal Wilbur the Great
++ Toro|defeated|Wilbur the Great|stopped the umbrella wielding criminal Wilbur the Great
++ Toro|defeated|Captain Osaki|back home prevented Captain Osaki from stealing an allied plane
++ Young Allies|defeated|Captain Osaki|back home prevented Captain Osaki from stealing an allied plane
++ Human Torch|defeated|Wisp|The Torch and Toro prevented Nazi spy the Wisp from souring relations
++ Toro|defeated|Wisp|The Torch and Toro prevented Nazi spy the Wisp from souring relations
+@7912 outcome 2026-11-04: Reed tries to kill Sue, "only to be stopped by Johnny, who disfigured his face" -> stopping him = defeated + the disfigurement is a wound; one act so fought dropped (saved stays)
+keep
+- Johnny|fought|Reed Richards
++ Johnny|defeated|Reed Richards|only to be stopped by Johnny, who disfigured his face
+f+ Johnny|wounded|Reed Richards|who disfigured his face
+@7994 outcome 2026-11-04: as partner text b4502: "he stabbed Marrow to get away" -> a stated wound missing (Rictor stops him; no escape, no defeated over Marrow)
+keep
+f+ Pietro|wounded|Marrow|As he stabbed Marrow to get away
+@8297 outcome 2026-11-04: the heroes "uncovered the Wizard and Mysterio's involvement and while the two crooks attempted to flee, they were captured and turned over to the authorities" -> the heroes are the subject of the sentence: captured + defeated (subdued and handed over) for both crooks; none was written
+keep
++ Human Torch|captured|Bentley Wittman|while the two crooks attempted to flee, they were captured and turned over to the authorities
++ Spider-Man|captured|Bentley Wittman|while the two crooks attempted to flee, they were captured and turned over to the authorities
++ Human Torch|captured|Mysterio|while the two crooks attempted to flee, they were captured and turned over to the authorities
++ Spider-Man|captured|Mysterio|while the two crooks attempted to flee, they were captured and turned over to the authorities
++ Human Torch|defeated|Bentley Wittman|while the two crooks attempted to flee, they were captured and turned over to the authorities
++ Spider-Man|defeated|Bentley Wittman|while the two crooks attempted to flee, they were captured and turned over to the authorities
++ Human Torch|defeated|Mysterio|while the two crooks attempted to flee, they were captured and turned over to the authorities
++ Spider-Man|defeated|Mysterio|while the two crooks attempted to flee, they were captured and turned over to the authorities
+@9055 outcome 2026-11-04: Iron Man joined the Avengers, the Fantastic Four, the X-Men, Daredevil, Spider-Man and Doctor Strange "in forcing Sundown to stand down and turn himself over to the authorities" -> forced surrender = defeated for every joined party; the forcing is the only act, so fought dropped
+keep
+- Iron Man|fought|Sundown
+- Daredevil|fought|Sundown
+- Spider-Man|fought|Sundown
+- Doctor Strange|fought|Sundown
+- Avengers|fought|Sundown
+- Fantastic Four|fought|Sundown
+- X-Men|fought|Sundown
++ Iron Man|defeated|Sundown|in forcing Sundown to stand down and turn himself over to the authorities
++ Daredevil|defeated|Sundown|in forcing Sundown to stand down and turn himself over to the authorities
++ Spider-Man|defeated|Sundown|in forcing Sundown to stand down and turn himself over to the authorities
++ Doctor Strange|defeated|Sundown|in forcing Sundown to stand down and turn himself over to the authorities
++ Avengers|defeated|Sundown|in forcing Sundown to stand down and turn himself over to the authorities
++ Fantastic Four|defeated|Sundown|in forcing Sundown to stand down and turn himself over to the authorities
++ X-Men|defeated|Sundown|in forcing Sundown to stand down and turn himself over to the authorities
+@9949 outcome 2026-11-04: "The Angel next assisted authorities in stopping a bank robbery masterminded by mobster Tom Malone. The robbery is foiled" -> a foiled crime = defeated (2026-10-14 ruling); row missing
+keep
++ Angel|defeated|Tom Malone|The Angel next assisted authorities in stopping a bank robbery masterminded by mobster Tom Malone.
+@9985 outcome 2026-11-04: "Although the Thing lost the first bout, he got back up and continued after the Hulk" -> the exchange continues, so that loss is no outcome (as b4055): Hulk-defeated-Thing dropped; the encounter ends with "outnumbered, the Hulk fled" the Thing and the Human Torch -> forced to flee = defeated (A74; the escaped rows exist)
+keep
+- Hulk|defeated|Thing
++ Thing|defeated|Hulk|outnumbered, the Hulk fled through the New York subway system
++ Human Torch|defeated|Hulk|outnumbered, the Hulk fled through the New York subway system
+@10873 outcome 2026-11-04: Captain America "kicked in one of his blades that was still piercing Red Hulk's side" and "used his remaining wing that was charged up to stab Red Hulk" -> stated wounds missing (the fight goes on, so no defeated)
+keep
+f+ Captain America|wounded|Red Hulk|Captain America used his remaining wing that was charged up to stab Red Hulk
+@11491 outcome 2026-11-04: Stick's gas chokes Cage out, he "stumbled and fell to the ground" and Stick speaks to "the barely conscious Cage" -> incapacitated with nothing continuing = defeated (the attacked fact stays)
+keep
++ Stick|defeated|Cage|Cage was being choked out by the gas as he stumbled and fell to the ground due to its effects

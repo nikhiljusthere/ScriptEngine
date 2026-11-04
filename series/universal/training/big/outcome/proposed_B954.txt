@@ -1,0 +1,49 @@
+@12733 outcome 2026-11-04: "After disabling the effects of Carter's Time Stone with his own, Strange kept Carter and Kahhori from stopping him further" -> he disables and stops both = defeated (2026-10-14 ruling), not an other_verb fact; his attack on Kahhori is its own sentence (fought stays)
+keep
+f- Strange|other_verb|stopping
++ Strange|defeated|Kahhori|Strange kept Carter and Kahhori from stopping him further
++ Strange|defeated|Captain Carter|After disabling the effects of Carter's Time Stone with his own, Strange kept Carter and Kahhori from stopping him further
+@12919 outcome 2026-11-04: "Victor Stein had been shot by his wife Janet to protect their son Chase, and was in a critical condition" and falls into a coma -> wounded + defeated (Klaue pattern), the shot is the only act so fought dropped (protected stays)
+keep
+- Janet|fought|Victor Stein
++ Janet|defeated|Victor Stein|Victor Stein had been shot by his wife Janet to protect their son Chase
+f+ Janet|wounded|Victor Stein|Victor Stein had been shot by his wife Janet to protect their son Chase, and was in a critical condition
+@13323 outcome 2026-11-04: "Lang and Hope were able to stop Ghost, keeping van Dyne alive" -> stopping a person = defeated (2026-10-14 ruling); the saved rows stay
+keep
++ Scott Lang|defeated|Ghost|Lang and Hope were able to stop Ghost
++ Hope van Dyne|defeated|Ghost|Lang and Hope were able to stop Ghost
+@1002 outcome 2026-11-04: Pilgrim "rammed them off the side ... seriously injuring both Mahoney and Castle" -> the wounds have a stated doer (the passive wounded facts are replaced by Pilgrim's); Madani's rescue follows, so no defeated
+keep
+f- Mahoney|wounded|-
+f- Castle|wounded|-
+f+ Pilgrim|wounded|Mahoney|seriously injuring both Mahoney and Castle
+f+ Pilgrim|wounded|Castle|seriously injuring both Mahoney and Castle
+@7882 outcome 2026-11-04: "Toro aided the Human Torch in foiling the Saint, N-4, the fireproof Parrot, and the "King of the Crime Syndicates"" -> foiled villains = defeated (2026-10-14 ruling); none was written
+keep
++ Human Torch|defeated|Saint|Toro aided the Human Torch in foiling the Saint, N-4, the fireproof Parrot
++ Toro|defeated|Saint|Toro aided the Human Torch in foiling the Saint, N-4, the fireproof Parrot
++ Human Torch|defeated|N-4|Toro aided the Human Torch in foiling the Saint, N-4, the fireproof Parrot
++ Toro|defeated|N-4|Toro aided the Human Torch in foiling the Saint, N-4, the fireproof Parrot
++ Human Torch|defeated|Parrot|Toro aided the Human Torch in foiling the Saint, N-4, the fireproof Parrot
++ Toro|defeated|Parrot|Toro aided the Human Torch in foiling the Saint, N-4, the fireproof Parrot
++ Human Torch|defeated|King of the Crime Syndicates|the fireproof Parrot, and the "King of the Crime Syndicates"
++ Toro|defeated|King of the Crime Syndicates|the fireproof Parrot, and the "King of the Crime Syndicates"
+@575 outcome 2026-11-04: "before the Thinker could experiment on Spider-Man his simulacrum was destroyed by his old computer Quasimodo" -> a destroyed body whose owner survives = defeated (A53); row missing
+keep
++ Quasimodo|defeated|Mad Thinker|his simulacrum was destroyed by his old computer Quasimodo
+@3828 outcome 2026-11-04: after making the U.S. Agent fall, "the Purple Man fled to Canada" and John follows -> the Purple Man escaped him (defeated stands; the arrived-Canada row stays)
+keep
++ Purple Man|escaped|John|once he learned that the Purple Man fled to Canada
+@7561 outcome 2026-11-04: "the Avengers came to their rescue and drove away the Bloodcoven" -> drove away = defeated (row exists) + the driven-off side escaped (A74); row missing
+keep
++ Bloodcoven|escaped|Avengers|drove away the Bloodcoven
+@8693 outcome 2026-11-04: after besting Lash's team, "Black Bolt surrendered when Lash threatened to kill Blinky" and Lash reveals his scheme -> the encounter ends with Black Bolt yielding: Lash defeated Black Bolt (the besting rows stay: that hand-to-hand fight was won)
+keep
++ Lash|defeated|Black Bolt|However, Black Bolt surrendered when Lash threatened to kill Blinky.
+@11888 outcome 2026-11-04: "Kora was swiftly overpowered by May" but "Kora picked herself up" and blasts May -> the exchange continues, the overpowering is no outcome (as b4055): defeated dropped (the Kora-fought-May row covers the fight)
+keep
+- May|defeated|Kora
+@12424 outcome 2026-11-04: "she was defeated by Gorr and lost one of her arms during the battle" -> the wound has a stated doer: Gorr wounded Sif (replaces the passive Sif-wounded fact); defeated stands
+keep
+f- Sif|wounded|-
+f+ Gorr the God Butcher|wounded|Sif|she was defeated by Gorr and lost one of her arms during the battle

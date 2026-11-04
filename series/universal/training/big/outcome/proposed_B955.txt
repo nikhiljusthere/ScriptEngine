@@ -1,0 +1,59 @@
+@13486 outcome 2026-11-04: "Strange was able to use his own Time Stone to stop Ultron from getting the Soul Stone" -> stopping him = defeated (2026-10-14 ruling), not an other_verb fact (Ultron's brief subduing of Killmonger stays as hedged per A11)
+keep
+f- Strange|other_verb|stop
++ Strange|defeated|Ultron|Strange was able to use his own Time Stone to stop Ultron from getting the Soul Stone
+@13653 outcome 2026-11-04: Jessica throws Simpson across the room, but "he stood up and then attempted to attack Walker again" -> the exchange continues, the throw is no outcome (as b4055): Jessica's defeated becomes fought (Simpson then leaves believing Walker dead; his own defeated row stands)
+keep
+- Jessica Jones|defeated|Will Simpson
++ Jessica Jones|fought|Will Simpson|Jessica Jones then arrived and defended her friend, throwing Simpson across the room.
+@589 outcome 2026-11-04: Killmonger opened fire, "hitting Everett Ross in the back with a bullet" -> a stated wound missing (Ross is then saved and Killmonger escapes, so no defeated)
+keep
+f+ Erik Killmonger|wounded|Everett Ross|hitting Everett Ross in the back with a bullet
+@3038 outcome 2026-11-04: Wolfsbane attacks Angel, "tearing out his wings and delivering them to Reverend Craig"; nothing continues for Angel -> wounded + defeated (Klaue pattern), one act so fought dropped
+keep
+- Wolfsbane|fought|Angel
++ Wolfsbane|defeated|Angel|tearing out his wings and delivering them to Reverend Craig
+f+ Wolfsbane|wounded|Angel|tearing out his wings and delivering them to Reverend Craig
+@4645 outcome 2026-11-04: the brutal fight between Dumont and Madani "resulted in Dumont then being thrown out of her window and crippled upon landing" -> stated outcome of their fight: Madani wounded and defeated Dumont (the fight is its own clause: fought stays)
+keep
++ Dinah Madani|defeated|Krista Dumont|which had resulted in Dumont then being thrown out of her window and crippled upon landing
+f+ Dinah Madani|wounded|Krista Dumont|which had resulted in Dumont then being thrown out of her window and crippled upon landing
+@8734 outcome 2026-11-04: the Hulk "pounded the Chthon possessed Quicksilver" and "his host body was severely damaged" -> a stated wound missing (Chthon blasts the Hulk off and Vision seals him, so no defeated for the Hulk)
+keep
+f+ Hulk|wounded|Quicksilver|his host body was severely damaged
+@27 outcome 2026-11-04: "Cyclops tried to recapture Hope, but was fended off by Shou-Lao and Hope herself, who managed to nullify his powers and teleport him away to the Moon" -> fended off = defeated (A74), one act so the two fought rows are dropped
+keep
+- Shou-Lao|fought|Cyclops
+- Hope|fought|Cyclops
++ Shou-Lao|defeated|Cyclops|but was fended off by Shou-Lao and Hope herself
++ Hope|defeated|Cyclops|but was fended off by Shou-Lao and Hope herself
+@1865 outcome 2026-11-04: Ultron is "Injured and now too weak to move from Hulk's attack" when Wanda confronts him -> wounded + defeated (Klaue pattern), the attack is the only act so fought dropped
+keep
+- Hulk|fought|Ultron
++ Hulk|defeated|Ultron|Injured and now too weak to move from Hulk's attack
+f+ Hulk|wounded|Ultron|Injured and now too weak to move from Hulk's attack
+@8957 outcome 2026-11-04: "Walker stalled Ronan while the Avengers stopped his plan to use Ego the Living Planet as a weapon" -> stopping the plot = Avengers defeated Ronan (2026-10-14 ruling); Walker's own charge is fought (stays); partner b8961 edited identically
+keep
++ Avengers|defeated|Ronan the Accuser|Walker stalled Ronan while the Avengers stopped his plan to use Ego the Living Planet as a weapon
+@8961 outcome 2026-11-04: as partner b8957 (the Avengers stopped Ronan's plan = defeated)
+keep
++ Avengers|defeated|Ronan the Accuser|Walker stalled Ronan while the Avengers stopped his plan to use Ego the Living Planet as a weapon
+@10659 outcome 2026-11-04: the Titan group "allied with Star-Lord, Nebula, Mantis, and Drax to try to stop Thanos ... but the team on Titan was defeated" -> stated loser: Thanos defeated each member of the Titan team (the fight rows are their own sentence: fought stays)
+keep
++ Thanos|defeated|Iron Man|but the team on Titan was defeated
++ Thanos|defeated|Spider-Man|but the team on Titan was defeated
++ Thanos|defeated|Doctor Strange|but the team on Titan was defeated
++ Thanos|defeated|Star-Lord|but the team on Titan was defeated
++ Thanos|defeated|Nebula|but the team on Titan was defeated
++ Thanos|defeated|Mantis|but the team on Titan was defeated
++ Thanos|defeated|Drax|but the team on Titan was defeated
+@12113 outcome 2026-11-04: "Vision's durability was not enough to withstand a stab from Corvus Glaive's glaive" -> a stated wound missing (the fought row stays)
+keep
+f+ Corvus Glaive|wounded|Vision|Vision's durability was not enough to withstand a stab from Corvus Glaive's glaive
+@12807 outcome 2026-11-04: Cross taunts Ant-Man for "attempting to stop all his plans", then "watched in horror as Cross Technologies, along with his Yellowjacket research, was destroyed by the explosives Ant-Man had put in" -> his plan is ruined by Ant-Man = defeated (2026-10-14 ruling; the kick is its own act: fought stays)
+keep
++ Ant-Man|defeated|Cross|Cross watched in horror as Cross Technologies, along with his Yellowjacket research, was destroyed by the explosives Ant-Man had put in.
+@1303 outcome 2026-11-04: "Natasha was able to prevent Stalyenko from selling the Cold War nuclear weapons" -> stopping his deal = defeated (2026-10-14 ruling), not an other_verb fact; his kill attempt is its own clause (fought stays)
+keep
+f- Natasha|other_verb|prevent
++ Natasha|defeated|Stalyenko|Natasha was able to prevent Stalyenko from selling the Cold War nuclear weapons

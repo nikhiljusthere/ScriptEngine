@@ -1,0 +1,91 @@
+@1752 outcome 2026-11-04: one of the doctors helps Logan escape Sinister's lobotomy experiments -> Logan escaped Sinister; Creed "beat the Crocodilian until he went into hiding" -> the defeated row stands and the beaten side's going into hiding is an escape (A74)
+keep
++ Logan|escaped|Sinister|One night, one of the doctors helped Logan escape
++ Marmaduke Dix|escaped|Victor Creed|beat the Crocodilian until he went into hiding
+@2192 outcome 2026-11-04: Spider-Man "attempted to stop him, but swiftly learned that despite his superior experience he was outmatched", and leaves to recruit Venom -> stated loser of the fight: Carnage defeated Spider-Man (the attempt is its own clause: fought stays)
+keep
++ Carnage|defeated|Spider-Man|swiftly learned that despite his superior experience he was outmatched
+@2500 outcome 2026-11-04: Vuk's ray turns the Avengers to stone and Captain America is left alone; the encounter ends with them petrified -> paralysing that ends the encounter = defeated (one act, fought dropped)
+keep
+- Vuk|fought|Avengers
++ Vuk|defeated|Avengers|he turned the Avengers to stone for the Sub-Mariner
+@2697 outcome 2026-11-04: Eddie separates Carnage from Spider-Man, "which allowed Peter to dissolve Carnage into his compassion and light" -> the possession attempt ends with Carnage undone = Peter defeated Carnage (the bonding attempt is its own clause: fought stays)
+keep
++ Peter Parker|defeated|Carnage|which allowed Peter to dissolve Carnage into his compassion and light
+@3106 outcome 2026-11-04: Matt deflects Stick's arrow "to prevent him from killing the boy", and Stick disappears -> stopping a person = defeated (2026-10-14 ruling, as b3263), the deflection is the only act so fought dropped
+keep
+- Murdock|fought|Stick
++ Murdock|defeated|Stick|managed to deflect the arrow to prevent him from killing the boy
+@3650 outcome 2026-11-04: "Gorr managed to escape the fight, kidnapping the children" -> Gorr escaped Valkyrie, Thor and Mighty Thor (he wins the raid, so no defeated); the other_verb escape fact repeats it as an event
+keep
+f- Gorr the God Butcher|other_verb|escape
++ Gorr the God Butcher|escaped|Valkyrie|Gorr managed to escape the fight, kidnapping the children as he did
++ Gorr the God Butcher|escaped|Thor|Gorr managed to escape the fight, kidnapping the children as he did
++ Gorr the God Butcher|escaped|Mighty Thor|Gorr managed to escape the fight, kidnapping the children as he did
+@5253 outcome 2026-11-04: Ian Quinn is "the man who shot and almost killed her" -> a stated wound missing (the fought row stays; no outcome is stated)
+keep
+f+ Ian Quinn|wounded|Skye|the man who shot and almost killed her
+@5297 outcome 2026-11-04: Thanos rips the Mind Stone out of the just-revived Vision's forehead and completes the Gauntlet; nothing continues for Vision -> wounded + defeated (Klaue pattern; no death is stated in the window), one act so fought dropped
+keep
+- Thanos|fought|Vision
++ Thanos|defeated|Vision|he was able to rip out the Mind Stone from Vision's forehead
+f+ Thanos|wounded|Vision|he was able to rip out the Mind Stone from Vision's forehead
+@5468 outcome 2026-11-04: "After Spider-Man thwarted his attempt to hijack a plane" -> thwarting the act = defeated (2026-10-14 ruling); row missing
+keep
++ Spider-Man|defeated|Octopus|After Spider-Man thwarted his attempt to hijack a plane
+@6489 outcome 2026-11-04: in the first fight "the Sandman managed to escape" the Fantastic Four (Ben, Reed, Crystal); only the later escape from Ben is written -> Sandman escaped Reed and Crystal too
+keep
++ Sandman|escaped|Reed|while the Sandman managed to escape
++ Sandman|escaped|Crystal|while the Sandman managed to escape
+@6895 outcome 2026-11-04: "Even though Ultron's body was destroyed, it used the Internet to escape" the Avengers it attacked -> Ultron escaped the Avengers (the destroyer is unstated, so no defeated); the other_verb escape fact repeats it as an event
+keep
+f- Ultron|other_verb|escape
++ Ultron|escaped|Avengers|it used the Internet to escape
+@7379 outcome 2026-11-04: "While they were fighting, Bullseye killed the child and Natasha was badly beaten" -> stated outcome: Bullseye wounded and defeated Natasha (the fight is its own clause: fought stays)
+keep
++ Bullseye|defeated|Natasha|Bullseye killed the child and Natasha was badly beaten
+f+ Bullseye|wounded|Natasha|Natasha was badly beaten
+@7444 outcome 2026-11-04: attacked by S.H.I.E.L.D. agents, "he was able to escape the Tri-Carrier" -> he escaped the attackers too (only the place escape is written); partner b7449 edited identically
+keep
++ Peter Parker|escaped|S.H.I.E.L.D.|he was able to escape the Tri-Carrier
+@7449 outcome 2026-11-04: as partner b7444 (escaped the attacking S.H.I.E.L.D. agents)
+keep
++ Peter Parker|escaped|S.H.I.E.L.D.|he was able to escape the Tri-Carrier
+@7474 outcome 2026-11-04: "they managed to stop Carnage from escaping Ravencroft, Mister Sinister got away" -> stopping Carnage = defeated (2026-10-14 ruling; the fight is its own sentence: fought stays); Sinister escaped the heroes (only the place escape is written)
+keep
++ Ben|defeated|Carnage|Though they managed to stop Carnage from escaping Ravencroft
++ X-Men|defeated|Carnage|Though they managed to stop Carnage from escaping Ravencroft
++ Mister Sinister|escaped|Ben|Mister Sinister got away
++ Mister Sinister|escaped|X-Men|Mister Sinister got away
+@7887 outcome 2026-11-04: "they prevented the "Canadian Fuhrer's" bombings" and "the youths foiling the Owl's plan" are stopped plots = defeated (2026-10-14 ruling, as partner text b7889); the other_verb prevented fact and the hostile met row are replaced
+keep
+f- Human Torch|other_verb|prevented
+- Toro|met|Owl
++ Human Torch|defeated|Canadian Fuhrer|they prevented the "Canadian Fuhrer's" bombings of Canadian cities
++ Toro|defeated|Canadian Fuhrer|they prevented the "Canadian Fuhrer's" bombings of Canadian cities
++ Toro|defeated|Owl|which led to the youths foiling the Owl's plan to assist in a Japanese invasion of America
++ Young Allies|defeated|Owl|which led to the youths foiling the Owl's plan to assist in a Japanese invasion of America
+@8265 outcome 2026-11-04: "The reassembled Invaders attacked Machan's base, stopping his plan to completely submerge the Earth" -> stopping the plot = defeated, the attack and the stopping are one act (fought dropped); the failed attempt on Namor stays fought; partner b8277 edited identically
+keep
+- Jim|fought|Machan
+- Toro|fought|Machan
+- Namor|fought|Machan
++ Jim|defeated|Machan|The reassembled Invaders attacked Machan's base, stopping his plan to completely submerge the Earth.
++ Toro|defeated|Machan|The reassembled Invaders attacked Machan's base, stopping his plan to completely submerge the Earth.
++ Namor|defeated|Machan|The reassembled Invaders attacked Machan's base, stopping his plan to completely submerge the Earth.
+@8277 outcome 2026-11-04: as partner b8265 (the Invaders stop Machan's plan = defeated, fought dropped)
+keep
+- Jim|fought|Machan
+- Toro|fought|Machan
+- Namor|fought|Machan
++ Jim|defeated|Machan|The reassembled Invaders attacked Machan's base, stopping his plan to completely submerge the Earth.
++ Toro|defeated|Machan|The reassembled Invaders attacked Machan's base, stopping his plan to completely submerge the Earth.
++ Namor|defeated|Machan|The reassembled Invaders attacked Machan's base, stopping his plan to completely submerge the Earth.
+@8342 outcome 2026-11-04: "Mirage prevented Wayne from destroying Karami" and Wayne then works with them reluctantly -> stopping a person = defeated (2026-10-14 ruling, as b3263), the prevention is the only act so fought dropped (protected stays)
+keep
+- Mirage|fought|Jack Wayne
++ Mirage|defeated|Jack Wayne|However, Mirage prevented Wayne from destroying Karami
+@8428 outcome 2026-11-04: Jessica "foiled her plans to acquire the Darkhold" -> a foiled plot = defeated (2026-10-14 ruling), not an other_verb fact; running afoul of her is its own clause (fought stays)
+keep
+f- Jessica Drew|other_verb|foiled
++ Jessica Drew|defeated|Morgan Le Fay|foiled her plans to acquire the Darkhold

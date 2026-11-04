@@ -1,0 +1,74 @@
+@1582 gold: lint E_A145_same_sentence -- Maki's duel is its own clause and Ogi's cut is the other doer's act after "but": fought stays beside Ogi's defeated
+keep
+
+@1589 gold: lint E_A145_same_sentence -- Ryu smashing Sukuna and Sukuna destroying Ryu are acts of different doers ("though"): fought stays beside killed
+keep
+
+@1600 gold: lint E_A145_same_sentence -- Takuma's surprise attack was only attempted ("attempted to surprise attack him ... though he dispatched Takuma"): no fought (A11), an attempted attacked fact as for Kusakabe; Sukuna dispatching him stays defeated; Kusakabe is only prevented from striking (he is still standing and must fight next), so no defeated there
+keep
+- Takuma|fought|Sukuna
+f+ Takuma|attacked|Sukuna|Kusakabe and Takuma attempted to suprise attack him while he was in a building|attempted|stated|Takuma
+
+@1686 gold: lint F_A89_event_twin -- Nanami backing Yuji up is a different act from Yuji freeing Nanami later: keep; arriving where Yuji is = met (A48); "nearly ends the fight" is almost-V = denied (2026-11-03 ruling), not an attempt
+keep
++ Nanami|met|Yuji|Before it's too late, Nanami suddenly arrives to back up Yuji.
+f- Mahito|other_verb|ends
+f+ Mahito|other_verb|ends|Mahito gets behind him and nearly ends the fight.|actual|denied|
+
+@1694 gold: lint E_met_and_fight_same_pair -- Hakari returns to Charles and they talk at length before the annoyed kick: met stays
+keep
+
+@1723 gold: lint E_met_and_fight_same_pair -- Ogi greets Maki and tells her about the tools before the fight (a talk): met stays
+keep
+
+@1785 gold: lint E_met_and_fight_same_pair -- Yorozu's embrace and her stated wish come before Sukuna's slash (a separate meeting and a talk): met stays
+keep
+
+@1790 gold: lint name_short_and_full -- Team Nanami (a team) and Nanami (a person) are different ends: keep; but "Gojo" and "Satoru Gojo" are one person: one name (A4)
+keep
+r Gojo=>Satoru Gojo
+
+@1802 gold: lint name_short_and_full -- Loki and Kid Loki are two different people (Loki tells Kid Loki): keep
+keep
+
+@1813 gold: lint F_symmetric_both_dirs -- helped is directional and the window states a two-way deal (he helps her, she helps him in turn): both planned rows stay; finding Nitro as a recruit who agrees is recruited
+keep
+f+ Nada|recruited|Nitro|Nada eventually found an ideal recruit in the villain Nitro|actual|stated|
+
+@1847 gold: lint F_A134_attempt_word -- "trying out haircuts" is the verb itself (testing), not an attempt: keep. NOTE owner: Spider-Byte and Margo are not tied by any sentence of the window, so both names stay (open codename ruling)
+keep
+
+@1857 gold: lint E_met_and_fight_same_pair -- Namor presents himself and challenges Attuma to the Crimson Swim before defeating him (a talk): met stays
+keep
+
+@1875 gold: lint F_self_pair -- Cain|alias_of|Cain is a self pair: drop it; the Juggernaut alias row stays
+keep
+f- Cain|alias_of|Cain
+
+@1881 gold: lint E_A145_same_sentence,E_met_and_fight_same_pair -- "fought the enraged hero ..., until at the climax" is the fight before a turn: fought stays beside defeated; the hospital visit is a separate later meeting: met stays
+keep
+
+@1904 gold: lint name_short_and_full -- Ego and Alter Ego are two different planets: keep
+keep
+
+@1908 gold: lint F_symmetric_both_dirs -- "work together" is cooperation, one symmetric allied_with row instead of helped in both directions
+keep
+f- Spider-Man|helped|Hulk
+f- Hulk|helped|Spider-Man
+f+ Spider-Man|allied_with|Hulk|Spider-Man and Hulk work together to create a giant snowman using their special heroic skills.|actual|stated|
+
+@1926 gold: lint E_met_and_fight_same_pair -- facing off turns straight into the battle (no met from that line), but Daken's offer after the battle, which she refuses, is a stated talk: met re-quoted there; one name per person: the window gives her real name Laura ("impressed by Laura's skill", one of "the two"), so Laura in every row plus the codename row
+keep
+r X-23=>Laura
+- Laura|met|Daken
++ Laura|met|Daken|Daken offered her a place at his side, which she refused.
+f+ X-23|alias_of|Laura|When X-23, his father's clone and adopted daughter, arrived hunting a shadow from her past|actual|stated|
+
+@1931 gold: lint E_met_and_fight_same_pair -- T'Chaka confronts N'Jobu and Zuri confirms the suspicion before the stab (a talk): met stays; owner outcome ruling: the stab ends the encounter (nothing continues, the two return to Wakanda), so it is defeated + wounded, one act (A145: no separate fought)
+keep
+- T'Chaka|fought|N'Jobu
++ T'Chaka|defeated|N'Jobu|T'Chaka swiftly stabbed him before he had the chance
+f+ T'Chaka|wounded|N'Jobu|T'Chaka swiftly stabbed him before he had the chance|actual|stated|
+
+@1968 gold: lint E_met_and_fight_same_pair -- Sam orders the Kid to beat it and the Kid refuses before the draw (a talk): met stays
+keep

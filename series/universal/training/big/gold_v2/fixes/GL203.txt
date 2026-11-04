@@ -1,0 +1,56 @@
+@3094 gold: lint E_met_and_fight_same_pair -- Saitama arrives at the scene, watches the battle and the others' retreat, and Mirror speaks to him (brings up his hero name) before he destroys it, so the met stays; rows are correct
+keep
+
+@3095 gold: lint E_met_and_fight_same_pair,F_A89_event_twin -- meeting online first is remote contact before the restroom meeting (narrowed A89); Saitama wanders in and they learn he is a hero before they attack, so his mets stay; the decided help carries its plan
+keep
+f+ Saitama|other_verb|help|Saitama decides to help them get stronger|planned|stated|Saitama
+
+@3098 gold: lint E_met_and_fight_same_pair -- after the rescue a talk follows (Saitama demands, Crablante explains, Saitama mocks him) before the fight, so the met stays; rows are correct
+keep
+
+@3167 gold: lint E_A145_same_sentence -- "launch an attack on Garou, but they are all defeated" is an attack and an outcome by different doers, so fought stays; Tanktop Vegetarian was already beaten in the first encounter and is not tied to the later attack (A46), so his fought row goes
+keep
+- Tanktop Vegetarian|fought|Garou
+
+@3173 gold: lint E_A145_same_sentence -- "attacked by Sonic and Flash, but fends them off" is an attack and an outcome by different doers, so fought stays; Blast stops them and talks with all three before the hop (a meeting)
+keep
++ Blast|met|Void|Blast stops them, explaining that Void only put them through hell at the Ninja Village
++ Blast|met|Sonic|Blast stops them, explaining that Void only put them through hell at the Ninja Village
++ Blast|met|Flash|Blast stops them, explaining that Void only put them through hell at the Ninja Village
+
+@3192 gold: lint E_A145_same_sentence,E_met_and_fight_same_pair -- Bomb's speech "Before their clash" is a talk before the fight, so the met stays; "Their fight ensued, with Bomb ultimately defeating Bang" states the fight and then its winner, so fought + defeated stay (owner outcome ruling)
+keep
+
+@3202 gold: lint E_A145_same_sentence -- "sent to fight Vaccine Man, but is defeated" is a fight clause before a turn, so fought stays; the window states the monster's corpse after Saitama's win, so the outcome is a killing (outcome ruling; no separate dies fact beside killed)
+keep
+- Saitama|defeated|Vaccine Man
++ Saitama|killed|Vaccine Man|the monster is defeated by Saitama, Blue Fire, like the other heroes present, misunderstands the situation and sees King next to the monster's corpse
+f- Vaccine Man|dies|-
+
+@3227 gold: lint E_A145_same_sentence -- "survive attacks from ... Garou, though he was left severely injured and ... incapacitated" is a fight clause before a turn, so fought stays; "only going down later in the fight" states Deep Sea King's win
+keep
++ Deep Sea King|defeated|Puri-Puri Prisoner|He was able to endure some strikes from Deep Sea King, a powerful Demon-level monster, only going down later in the fight.
+
+@3268 gold: lint E_A145_same_sentence -- "trade blows with the Sea King until he is defeated" is a fight clause before a turn, and Mumen Rider's attempt and his fall are acts of different doers, so fought stays; rows are correct
+keep
+
+@3328 gold: lint name_short_and_full -- Fuzzy and the Fake Fuzzy (the AI that replaced him) are different entities; rows are correct
+keep
+
+@3386 gold: lint name_short_and_full -- Zeno and Future Zeno are two different characters; rows are correct
+keep
+
+@3405 gold: lint E_A145_same_sentence -- "fought the Mothers but was defeated" is a fight clause before a turn, so fought stays; rows are correct
+keep
+
+@3410 gold: lint F_A89_event_twin -- the contact is the remote approach before the in-person meeting on Muir Island (narrowed A89), so both stay; the meeting place was uncovered
+keep
+f+ Kitty Pride|located_at|Muir Island|The two met in Muir Island|actual|stated|
+f+ Colossus|located_at|Muir Island|The two met in Muir Island|actual|stated|
+
+@3420 gold: lint name_short_and_full -- She-Hulk and the Red She-Hulk are different people; rows are correct
+keep
+
+@3432 gold: lint F_A89_event_twin -- helping Marc find the Kingpin is a different act from rescuing him at the meeting, so both stay; "During the fight, although fighting very well, Echo was seemingly killed" states her fight before the turn (fought + defeated)
+keep
++ Maya|fought|Count Nefaria|During the fight, although fighting very well, Echo was seemingly killed by Nefaria's optic blast

@@ -1,0 +1,70 @@
+@2171 gold: lint name_short_and_full -- Genesis (the person) and the Genesis Horde (her army) are different entities; rows are correct
+keep
+
+@2187 gold: lint E_met_and_fight_same_pair -- the talk after the throw (demands, claims, the comparison) keeps the met; the wound + defeated rows follow the owner ruling 2026-11-03 (G221); the twins' met stays out (event gate refuses "Maximoff twins")
+keep
+
+@2204 gold: lint name_short_and_full -- Thor and Thor Girl are different people; burying the Bloodaxe in Desak's chest is a wound beside the defeat (outcome ruling; no death stated, so no killed)
+keep
+f+ Thor|wounded|Desak|Thor then buries the Bloodaxe into the chest of Desak, ending his threat.|actual|stated|
+
+@2232 gold: lint E_met_and_fight_same_pair -- forcing Eitri to design the gauntlet is a separate interaction before the later maiming, so the met stays; rows are correct
+keep
+
+@2245 gold: lint F_A89_event_twin -- helping Jessica investigate is a different act (and direction) from Jessica's rescue of Gwen from drowning, so both stay
+keep
+
+@2278 gold: lint E_met_and_fight_same_pair -- the bus encounter (mockery, threat, Sofia stops him) is a separate earlier meeting; the bathroom fight is later, so the mets stay
+keep
+
+@2287 gold: lint E_met_and_fight_same_pair -- Kelly reveals himself demanding to be taken to Garrett before Tekagi faces him, a talk before the fight, so the met stays; the three named ninjas are Snakeroot members; the tailing was uncovered
+keep
+f+ Budo|member_of|Snakeroot|he was attacked by three Snakeroot ninjas (Budo, Enteki and Tekagi|actual|stated|
+f+ Enteki|member_of|Snakeroot|he was attacked by three Snakeroot ninjas (Budo, Enteki and Tekagi|actual|stated|
+f+ Tekagi|member_of|Snakeroot|he was attacked by three Snakeroot ninjas (Budo, Enteki and Tekagi|actual|stated|
+f+ Kelly|other_verb|tailed|Kelly tailed Passim until he was attacked by three Snakeroot ninjas|actual|stated|
+
+@2297 gold: lint F_A89_event_twin -- Steven's phone call is remote contact before the in-person reunion in London (narrowed A89), so both stay
+keep
+
+@2326 gold: lint F_A89_event_twin -- the earlier anonymous call is remote contact, separate from the in-person talk (narrowed A89), so both stay
+keep
+
+@2330 gold: lint name_short_and_full -- Frank and Frank Jr. are father and son, two people; rows are correct
+keep
+
+@2369 gold: lint name_short_and_full -- Deadpool (the person) and the Deadpool Suit (an item) are different; "Feeling that ..." is a belief (suspected), not a verb; the told-to-stand-down order was uncovered
+keep
+f- Peter Wisdom|other_verb|Feeling
+f+ Peter Wisdom|suspected|-|Feeling that Deadpool would need his help|actual|stated|
+f+ Deadpool Corps|other_verb|stand|Wisdom told everyone to stand down as that Deadpool was with him|ordered|stated|Peter Wisdom
+
+@2459 gold: lint F_A89_event_twin -- Tina's call is remote, then Flores comes to the mansion in person (narrowed A89), so both stay
+keep
+
+@2461 gold: lint E_met_and_fight_same_pair -- Hela appears and declares herself queen (a talk) before throwing them off the Bifrost, so the mets stay; Thor finding Loki disguised in Asgard is a meeting ("found X" -> met)
+keep
++ Thor|met|Loki|He discovered that Loki was still alive and disguising himself as Odin to rule Asgard.
+
+@2463 gold: lint E_met_and_fight_same_pair -- after Jiayi's attack Hela is brought before her and a long talk follows (explained, assured, asked), so the met stays; rows are correct
+keep
+
+@2512 gold: lint name_short_and_full -- Stark and Howard Stark are father and son (relatives sharing a surname); rows are correct
+keep
+
+@2521 gold: lint E_met_and_fight_same_pair -- Triplett meets Hunter outside, comments and searches him (a meeting long before the later ambush), so the met stays; rows are correct
+keep
+
+@2524 gold: lint E_met_and_fight_same_pair -- Thor brought before Zeus as a prisoner is a separate moment before the later battle, so the met stays; rows are correct
+keep
+
+@2526 gold: lint name_short_and_full -- Loki and President Loki are different variants (A18), kept apart; rows are correct
+keep
+
+@2567 gold: lint E_A145_same_sentence -- "easily get an upperhand against Sam Wilson but only get defeated" is a fight clause before a turn, so fought stays; rows are correct
+keep
+
+@2571 gold: lint E_A145_same_sentence -- "began to fight until Gorgon eventually defeated her" and "restrain him but Mordis was too powerful ... before Gorgon crushed the lab" are fight clauses before a turn, so fought stays; the no_relation tag sat on the sentence that carries the fought row; finding Declan is a meeting (A34)
+keep
+t- no_relation|Gorgon was able to restrain him
++ Karnak|met|Evan Declan|Karnak then found Declan and freed him

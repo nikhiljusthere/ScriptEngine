@@ -1,0 +1,98 @@
+@1432 gold: lint R_overlap_inconsistent -- partners b1521/b1711 share the passage; b1432 rows are the reference (Gojo is the window's only form here; the arms wound is a doer-less passive, victim form)
+keep
+
+@1521 gold: lint R_overlap_inconsistent -- same rows as b1432 for the shared passage; nothing to change
+keep
+
+@1711 gold: lint R_overlap_inconsistent -- align with b1432/b1521: the arms sentence is a doer-less passive (victim form, A8); the imaginary mass and the building are no-doer lines (a thing as subject, a passive); Satoru Gojo stays (the window gives the full name)
+keep
+f- Satoru Gojo|wounded|Sukuna
+f+ Sukuna|wounded|-|Both Sukuna's cursed energy-reinforced arms are destroyed|actual|stated|
+t- no_relation|The imaginary mass
+t+ no_doer|The imaginary mass that rushes forth carves through Shibuya and Shinjuku to reach Sukuna.
+t+ no_doer|The building he and Uraume are on is decimated
+
+@190 gold: lint R_overlap_inconsistent -- align with b3346 on the 2 shared sentences: the trap is tricked (one act, the set rows are its twins); the party that escapes on Daiba's garudas includes Silat and Daiba (as b3346); Daiba's garudas. NOTE owner: b190 (train) and b3346 (dev+dev_pool) share 2 sentences (R_overlap_cross_split)
+keep
+f- Rickert|other_verb|set
+f- Silat|other_verb|set
+f+ Rickert|tricked|Rakshas|falls into a trap set by Rickert and Silat|actual|stated|
+f+ Silat|tricked|Rakshas|falls into a trap set by Rickert and Silat|actual|stated|
++ Silat|escaped|Rakshas|as they escape using Daiba's garudas
++ Daiba|escaped|Rakshas|as they escape using Daiba's garudas
+f+ Daiba|owns|garudas|using Daiba's garudas|actual|stated|
+
+@3346 gold: lint R_overlap_inconsistent -- align with b190: the resumed hunt; the escape quoted at the shared garuda sentence; the point-blank rocket that ends the pursuit and lets them escape is defeated (as b190 "stops the assassin"; owner outcome ruling: the encounter ends there). NOTE owner: cross-split overlap with b190
+keep
+f+ Rakshas|other_verb|resumes|True to his word, Rakshas resumes his hunt with a new mask,|actual|stated|
+- Rickert|escaped|Rakshas
+- Silat|escaped|Rakshas
+- Daiba|escaped|Rakshas
++ Rickert|escaped|Rakshas|as they escape using Daiba's garudas
++ Silat|escaped|Rakshas|as they escape using Daiba's garudas
++ Daiba|escaped|Rakshas|as they escape using Daiba's garudas
++ Rickert|defeated|Rakshas|However, Rickert fires a rocket at Rakshas from point-blank range when he pursued, allowing them to escape.
+
+@1084 gold: lint R_overlap_inconsistent -- the met pairs are the same as b1256 (symmetric, other quote); b1256 tags the moved-into line only because its Saori|other_verb|moved row holds the later move-out (one row per triple); nothing to change
+keep
+
+@1256 gold: lint R_overlap_inconsistent -- see b1084: same pairs; the moved-into line stays no_relation because the one moved row is the move-out; nothing to change
+keep
+
+@1201 gold: lint R_overlap_inconsistent -- align with b1223: the ordered verb in lower case (live); Kenjaku weighing Choso down
+keep
+f- Choso|other_verb|Live
+f+ Choso|other_verb|live|Yuki tells him to "Live as a Human".|ordered|stated|Yuki
+f+ Kenjaku|other_verb|weighs|before he weighs Choso down with his cursed technique|actual|stated|
+
+@1223 gold: lint R_overlap_inconsistent -- Yuki's heavy damage is a stated wound; Kenjaku survives (as b1201); Gojo prevented by Sukuna = defeated (2026-11-03 ruling "prevented by X"), the prevented fact is its twin; Kenjaku is one of the three who reach the agreement
+keep
+f+ Yuki|wounded|Kenjaku|manages to inflict heavy damage upon Kenjaku|actual|stated|
+f+ Kenjaku|other_verb|survives|Kenjaku however survives by using the late Kaori's innate technique|actual|stated|
+f- Sukuna|other_verb|prevented
++ Sukuna|defeated|Satoru Gojo|but is prevented from doing so by Sukuna.
+f+ Kenjaku|other_verb|reach|the three reach an agreement for Gojo and Sukuna to fight|actual|stated|
+
+@1485 gold: lint R_overlap_inconsistent -- align with b1675 (same passage): Ijichi's attempt to reason is persuaded attempted; the signal to begin is an order by Manami Suda (ordered + the ordered act); the twins are siblings; Gojo's Red
+keep
+f- Kiyotaka Ijichi|other_verb|reason
+f+ Kiyotaka Ijichi|persuaded|Nanako|When Ijichi tried to reason with them|attempted|stated|Kiyotaka Ijichi
+f+ Kiyotaka Ijichi|persuaded|Mimiko|When Ijichi tried to reason with them|attempted|stated|Kiyotaka Ijichi
+f+ Manami Suda|ordered|Nanako|After receiving the signal from Manami Suda to begin the Night Parade of a Hundred Demons|actual|stated|
+f+ Manami Suda|ordered|Mimiko|After receiving the signal from Manami Suda to begin the Night Parade of a Hundred Demons|actual|stated|
+f+ Mimiko|sibling_of|Nanako|the twins emerged from the cursed spirit and began attacking sorcerers.|actual|stated|
+f+ Satoru Gojo|used|Cursed Technique Reversal: Red|using Cursed Technique Reversal: Red|actual|stated|
+
+@1675 gold: lint R_overlap_inconsistent -- align with b1485: the hiding; the signal is an order (not a remote contact the window states); receiving/emerging/attacking acts replace the crowd tag; Mimiko is the one stunned (experiencer), not Gojo
+keep
+f+ Mimiko|other_verb|hid|On the night of December 24, Mimiko and Nanako hid inside one of Geto's cursed spirits in Shinjuku.|actual|stated|
+f+ Nanako|other_verb|hid|On the night of December 24, Mimiko and Nanako hid inside one of Geto's cursed spirits in Shinjuku.|actual|stated|
+f- Manami Suda|contacted|Mimiko
+f- Manami Suda|contacted|Nanako
+f+ Manami Suda|ordered|Mimiko|After receiving the signal from Manami Suda to begin the Night Parade of a Hundred Demons|actual|stated|
+f+ Manami Suda|ordered|Nanako|After receiving the signal from Manami Suda to begin the Night Parade of a Hundred Demons|actual|stated|
+f+ Mimiko|other_verb|begin|After receiving the signal from Manami Suda to begin the Night Parade of a Hundred Demons|ordered|stated|Manami Suda
+f+ Nanako|other_verb|begin|After receiving the signal from Manami Suda to begin the Night Parade of a Hundred Demons|ordered|stated|Manami Suda
+f+ Mimiko|other_verb|receiving|After receiving the signal from Manami Suda to begin the Night Parade of a Hundred Demons, the twins emerged from the cursed spirit and began attacking sorcerers.|actual|stated|
+f+ Nanako|other_verb|receiving|After receiving the signal from Manami Suda to begin the Night Parade of a Hundred Demons, the twins emerged from the cursed spirit and began attacking sorcerers.|actual|stated|
+f+ Mimiko|other_verb|emerged|After receiving the signal from Manami Suda to begin the Night Parade of a Hundred Demons, the twins emerged from the cursed spirit and began attacking sorcerers.|actual|stated|
+f+ Nanako|other_verb|emerged|After receiving the signal from Manami Suda to begin the Night Parade of a Hundred Demons, the twins emerged from the cursed spirit and began attacking sorcerers.|actual|stated|
+f+ Mimiko|other_verb|attacking|the twins emerged from the cursed spirit and began attacking sorcerers.|actual|stated|
+f+ Nanako|other_verb|attacking|the twins emerged from the cursed spirit and began attacking sorcerers.|actual|stated|
+t- crowd_end|began attacking sorcerers
+f- Satoru Gojo|other_verb|stunned
+f+ Mimiko|other_verb|stunned|Mimiko was stunned by Gojo’s immense power when he casually exorcised a giant cursed spirit|actual|stated|
+
+@1854 gold: lint R_overlap_inconsistent -- the symmetric sibling row in b2155's direction (Billie, the window subject, "had a brother named Miles")
+keep
+f- Miles|sibling_of|Billie Mariana Morales
+f+ Billie Mariana Morales|sibling_of|Miles|she also had a brother named Miles|actual|stated|
+
+@2155 gold: lint R_overlap_inconsistent -- reference direction for the sibling row; rest checked
+keep
+
+@3723 gold: lint R_overlap_inconsistent -- the extra member_of row names the Council of Kangs, which only b3723's window states (b3728 starts after that sentence); legitimate difference
+keep
+
+@3728 gold: lint R_overlap_inconsistent -- see b3723: the Council is not named in this window, so no member_of row; nothing to change
+keep

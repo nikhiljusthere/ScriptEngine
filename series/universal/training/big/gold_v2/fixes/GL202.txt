@@ -1,0 +1,79 @@
+@2584 gold: lint F_A125_copula -- causative "has" is no verb (A125); the victims are an unnamed crowd ("the Blood members"), so the sentence is a crowd_end tag
+keep
+f- Daimon|other_verb|has
+t+ crowd_end|Daimon has the Blood members on top of makeshift execution positions.
+
+@2638 gold: lint F_A89_event_twin -- assisting Black Widow against the Chitauri (and launching her onto a chariot) are acts apart from saving her from the explosion (narrowed A89), so both stay
+keep
+
+@2648 gold: lint E_A145_same_sentence -- "Bruno ... attacked Morse, but she quickly defeated him" is an attack and an outcome by different doers, so fought stays; rows are correct
+keep
+
+@2666 gold: lint E_met_and_fight_same_pair -- Page arrives at his door for questioning before he turns on her, so the met stays; the tried hostage use was uncovered
+keep
+f+ Schoonover|other_verb|use|Schoonover turned on Page and tried to use her to escape|attempted|stated|Schoonover
+
+@2677 gold: lint name_short_and_full -- Chicago (a city) and the Chicago Police Department (an organisation) are different; Zbyszewski's preparation was uncovered
+keep
+f+ Zbyszewski|other_verb|engage|While Chicago Police Department Officer Zbyszewski prepared to engage the threat|planned|stated|Zbyszewski
+
+@2723 gold: lint E_A145_same_sentence -- "Walker confronted Morgenthau, but she easily overpowered him" is an attack and an outcome by different doers, so fought stays; rows are correct
+keep
+
+@2744 gold: lint E_A145_same_sentence -- Louise stabbing Kilgrave and Kilgrave killing Louise are acts of different doers, so fought stays; Kilgrave's father is never named in the window ("his father"; "David Thompson" is outside knowledge), so his rows go and Kilgrave's telling stays as his own act
+keep
+f- Kilgrave|ordered|David Thompson
+f- David Thompson|parent_of|Kilgrave
+f- David Thompson|other_verb|cut
+f+ Kilgrave|other_verb|tells|He then tells his father to cut out his own heart.|actual|stated|
+
+@2746 gold: lint E_met_and_fight_same_pair -- the celebration with Sqqd'li is a meeting before Groot later knocks him out, so the mets stay; rows are correct
+keep
+
+@2764 gold: lint E_met_and_fight_same_pair -- Bushmaster breaking down the door and Dillard shooting him is one hostile confrontation that becomes the fight: no met for Dillard (A145); Tilda Johnson, whom he does not fight, keeps hers
+keep
+- Bushmaster|met|Mariah Dillard
+
+@2773 gold: lint E_A145_same_sentence -- Stark's drone attack and Killmonger's kill are acts of different doers, so fought stays; rows are correct
+keep
+
+@2785 gold: lint E_A145_same_sentence -- "fought the other Defenders ..., but the Hand leaders lost" is a fight clause before a turn, so fought stays; having to retreat after losing is also an escape from the Defenders (A74)
+keep
++ Madame Gao|escaped|Defenders|but the Hand leaders lost and they had to retreat to the hole
++ Murakami|escaped|Defenders|but the Hand leaders lost and they had to retreat to the hole
++ Bakuto|escaped|Defenders|but the Hand leaders lost and they had to retreat to the hole
+
+@2802 gold: lint name_short_and_full -- Helstrom (Daimon) and Ana Helstrom are siblings sharing a surname, two people; rows are correct
+keep
+
+@2816 gold: lint F_kidnapped_fact -- "seems to have been captured" is hedged, so it stays a fact with certainty apparent (2026-10-28 ruling: hedged kidnapping), no event; "near" is no located_at
+keep
+
+@2834 gold: lint E_met_and_fight_same_pair -- Shirahoshi appears before Noah and offers her life (a talk) before Decken throws the knife, so the met stays; rows are correct
+keep
+
+@2835 gold: lint E_met_and_fight_same_pair -- the Impel Down meeting is years after their fights, so the met stays; the tried rescue of Ace was uncovered
+keep
+f+ Luffy|other_verb|rescue|worked with him to escape and to try and rescue his brother, Ace.|attempted|stated|Luffy
+f+ Crocodile|other_verb|rescue|worked with him to escape and to try and rescue his brother, Ace.|attempted|stated|Crocodile
+
+@2836 gold: lint F_A89_event_twin -- shielding Momonosuke and Shinobu from the attacks is the rescue itself (A62 shielding = saved), so the actual protected facts go (A89) and Shinobu gets her saved event; the tasked protection stays as Luffy's order; "feared" is not a word of the quote and the sentence is covered
+keep
+f- Yamato|protected|Momonosuke
+f+ Yamato|protected|Momonosuke|However, Yamato was tasked with protecting Momonosuke by Luffy|ordered|stated|Luffy
+f- Yamato|protected|Shinobu
++ Yamato|saved|Shinobu|he would later take much effort and damage protecting both him and Shinobu
+f- Momonosuke|other_verb|feared
+
+@2838 gold: lint name_short_and_full -- the Marines and the Neo Marines are different organisations; rows are correct
+keep
+
+@2920 gold: lint name_short_and_full -- Bellamy (the captain) and the Bellamy Pirates (the crew) are different entities; rows are correct
+keep
+
+@2945 gold: lint E_met_and_fight_same_pair -- the letter, Ace's refusal and Draw's reply are a talk before the attack, so the met stays; rows are correct
+keep
+
+@2965 gold: lint name_short_and_full -- Kuja (the tribe Shakky becomes empress of) vs the Kuja Pirates, and Rocks vs the Rocks Pirates, are different entities; Rayleigh is Roger's first mate
+keep
+f+ Silvers Rayleigh|member_of|Roger Pirates|he discovered she had left a love note for his first mate, Silvers Rayleigh|actual|stated|

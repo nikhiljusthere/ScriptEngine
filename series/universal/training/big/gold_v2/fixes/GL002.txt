@@ -1,0 +1,113 @@
+@1711 gold: lint R_overlap_inconsistent -- repair: GL001 was submitted twice, so the two no_doer tags were doubled; one of each
+keep
+t- no_doer|The imaginary mass
+t- no_doer|The building he and Uraume
+t+ no_doer|The imaginary mass that rushes forth carves through Shibuya and Shinjuku to reach Sukuna.
+t+ no_doer|The building he and Uraume are on is decimated
+
+@39 gold: lint E_met_and_fight_same_pair -- the private discussion is a separate meeting before the slap: met stays; a gazebo and a small bridge are description places (no located_at, the doer's verb instead); Locus arrives; Griffith's telling is a plain speech act (actual/stated); Rickert's own telling and walking off
+keep
+f- Griffith|located_at|gazebo
+f+ Griffith|other_verb|settle|Griffith and his inner circle settle themselves in a gazebo|actual|stated|
+f- Rickert|located_at|bridge
+f+ Rickert|other_verb|standing|Rickert standing nearby on a small bridge|actual|stated|
+f+ Locus|other_verb|arrives|before Locus arrives with Rickert standing nearby on a small bridge|actual|stated|
+f- Griffith|other_verb|telling
+f+ Griffith|other_verb|telling|Griffith telling his entourage that Rickert merely rejected an offer of camaraderie|actual|stated|
+f+ Rickert|other_verb|tells|Rickert tells Griffith that he cannot truly hate him|actual|stated|
+f+ Rickert|other_verb|walking|before walking off with Griffith telling his entourage|actual|stated|
+
+@104 gold: lint E_met_and_fight_same_pair -- "when they first met three years prior" is a separate past meeting (a stated past act in a recollection): met stays; Guts shifting his gaze
+keep
+f+ Guts|other_verb|shifts|Guts shifts his gaze toward Griffith|actual|stated|
+
+@110 gold: lint E_met_and_fight_same_pair -- Zodd approaches and states what he wants before the battle (a talk): met stays; "states that he wants to resume" = speech act actual + resume planned; the advice carries the advised act; Zodd departs; Guts leaves; the blaming people are a crowd
+keep
+f- Zodd|other_verb|wants
+f+ Zodd|other_verb|states|Approaching Guts, Zodd states that he wants to resume where they left off.|actual|stated|
+f+ Zodd|other_verb|resume|he wants to resume where they left off.|planned|stated|Zodd
+f+ Guts|other_verb|save|advising Guts to save his woman.|ordered|stated|Zodd
+f+ Zodd|other_verb|departs|Zodd departs to resume his task|actual|stated|
+t- no_relation|Though Rita
+t+ no_relation|Though Rita is glad the people infected by the Mandragoras are returning to normal
+t+ crowd_end|the people in question find their loved ones dead and blame Guts
+f+ Guts|other_verb|leaves|as he leaves without defending himself.|actual|stated|
+
+@162 gold: lint F_A134_attempt_word -- "try it on someone else" is the verb itself (test), ordered by Daiba: correct as is
+keep
+
+@264 gold: lint E_met_and_fight_same_pair -- Hisagi appears and tells Hitsugaya of the order before the attack (a talk): met stays
+keep
+
+@289 gold: lint F_A89_event_twin -- Shoota running to Yui's side is a separate act from Yui saving him (reverse direction, later moment): keep; Rangiku destroying the clone, Yui ducking, Rangiku seeing the Cloning Arrancar
+keep
+f+ Rangiku|other_verb|destroying|After running forward and destroying another Arrancar clone with a second swing|actual|stated|
+f+ Yui|other_verb|ducks|who ducks instinctively and is blown forward by an explosion of force from behind|actual|stated|
+f+ Rangiku|other_verb|sees|Rangiku sees the dust cloud behind Yui clearing to reveal the massive Cloning Arrancar|actual|stated|
+
+@358 gold: lint name_short_and_full -- the Sookyoku (the execution device) and Sookyoku Hill are different things (a thing located at a place): keep
+keep
+
+@537 gold: lint E_met_and_fight_same_pair -- Makima takes them to Kishibe, who agrees to train them: a meeting separate from the training, met stays; the training kills of the immortal Denji are temporary (owner outcome ruling: a body destroyed whose owner survives = defeated, not killed); Kishibe trains both; the explained mission is the ordered capture; the Future Devil decides to form a contract (planned)
+keep
+- Kishibe|killed|Denji
++ Kishibe|defeated|Denji|he constantly nearly-kills Power and kills Denji.
+f+ Kishibe|trained|Denji|As Power is semi-immortal and Denji immortal, Kishibe's training is brutal|actual|stated|
+f+ Kishibe|trained|Power|As Power is semi-immortal and Denji immortal, Kishibe's training is brutal|actual|stated|
+f+ Denji|other_verb|capture|Kishibe explains to Denji and Power that their new mission is to capture the Katana Man and Sawatari|ordered|stated|Kishibe
+f+ Power|other_verb|capture|Kishibe explains to Denji and Power that their new mission is to capture the Katana Man and Sawatari|ordered|stated|Kishibe
+f+ Future Devil|other_verb|form|the Future Devil decides to form a contract with him|planned|stated|Future Devil
+
+@627 gold: lint E_met_and_fight_same_pair -- Katana Man meets Denji and talks (the apology demand, declined) before the fight: met stays; the fight is its own clause before the cut that defeats him (fought + defeated); cut in half = a stated wound beside the defeat (owner outcome ruling); Denji declines
+keep
+f+ Denji|other_verb|declines|to which he declines the offer|actual|stated|
++ Denji|fought|Katana Man|They take their fight outside on top of a building and then a train
+f+ Denji|wounded|Katana Man|cuts him in half, defeating him|actual|stated|
+
+@647 gold: lint E_met_and_fight_same_pair -- Kobeni shows up where they are (joining people) well before her stab: met stays; the devil chasing them; Aki's decision carries the planned use; Denji's want carries the planned kill
+keep
+f+ Eternity Devil|other_verb|chasing|starts chasing Aki, Himeno and Denji|actual|stated|
+f+ Aki|other_verb|use|Aki decides to use his sword|planned|stated|Aki
+f+ Denji|other_verb|kill|Denji wants to kill the Gun Devil too|planned|stated|Denji
+
+@704 gold: lint E_met_and_fight_same_pair -- the introduction is a separate meeting before the beating: met stays
+keep
+
+@738 gold: lint E_met_and_fight_same_pair -- Denji attempts to negotiate before the fight (a talk): met stays; his realizing is learned
+keep
+f+ Denji|learned|-|realizing he has no other choice but to fight him.|actual|stated|
+
+@825 gold: lint E_A145_same_sentence -- Piccolo's fight and Frieza overpowering him are acts of different doers: fought stays beside Frieza's defeated; the fact gate strips "King Kai" to "Kai" (rank prefix), a wrong name, so the training is written as Piccolo's own act (gate quirk, owner: fact_gate.RANK allow-list)
+keep
+f- Kai|trained|Piccolo
+f+ Piccolo|other_verb|training|After training with King Kai and fusing with Nail|actual|stated|
+
+@830 gold: lint name_short_and_full -- Mecha Frieza and Frieza (the father in "Frieza's son") stay as the window names them (a form name, A156); the fact gate strips "King Cold" to "Cold" (rank prefix), a wrong name, so the three Cold backup rows are kept out (gate quirk; the met rows keep King Cold)
+keep
+f- Kuriza|helped|Cold
+f- Abo|helped|Cold
+f- Cado|helped|Cold
+
+@875 gold: lint name_short_and_full -- Cell and the Cell Juniors are different beings: keep; Bulma removed the bomb; 16's planned self-destruction; Cell's attempt to anger Gohan
+keep
+f+ Bulma|other_verb|removed|his bomb was removed by Bulma and her father because it was too dangerous.|actual|stated|
+f+ Android 16|other_verb|destroy|he will destroy himself along with Cell.|planned|stated|Android 16
+f+ Cell|other_verb|anger|in attempt to anger Gohan|attempted|stated|Cell
+
+@893 gold: lint F_self_pair -- the fact gate strips "King Vegeta" to "Vegeta" (rank prefix), so the parent row is a self pair; kept out (gate quirk, owner: fact_gate.RANK allow-list) and the clause tagged
+keep
+f- Vegeta|parent_of|Vegeta
+t+ no_relation|the elite-class were made up of only King Vegeta and his son Vegeta.
+
+@905 gold: lint E_met_and_fight_same_pair -- challenging Goku to a fight is a talk before the fight: met stays
+keep
+
+@907 gold: lint name_short_and_full -- Goku and Future Goku are different people (two timelines): keep
+keep
+
+@931 gold: lint name_short_and_full -- Gohan and Future Gohan are different people: keep
+keep
+
+@944 gold: lint name_short_and_full -- the Future variants, Goku Black and Goku are different people: keep; the first battle line "Goku vs. Vegeta" had no row while every other real pair line has one
+keep
++ Goku|fought|Vegeta|Goku vs. Vegeta

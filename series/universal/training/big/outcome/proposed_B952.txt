@@ -1,0 +1,68 @@
+@9984 outcome 2026-11-04: "The Hulk overpowered the Executioner and his forces and sent them fleeing" -> defeated stands + the fleeing side escaped (A74); row missing
+keep
++ Executioner|escaped|Hulk|sent them fleeing
+@35 outcome 2026-11-04: Strange leads the Avengers to Wanda, "a fight broke out. Subdued by the Eye of Agamotto, the Scarlet Witch was defeated and surrendered" -> stated loser of the fight they are in, subdued by Strange's Eye: Doctor Strange and the Avengers defeated her (the fight is its own sentence: fought stays)
+keep
++ Doctor Strange|defeated|Scarlet Witch|Subdued by the Eye of Agamotto, the Scarlet Witch was defeated and surrendered to Magneto
++ Avengers|defeated|Scarlet Witch|Subdued by the Eye of Agamotto, the Scarlet Witch was defeated and surrendered to Magneto
+@2810 outcome 2026-11-04: "He also managed to shut down the Maker's mind" states a past feat that ended the Maker -> defeated (A29, as b6478 "could knock out"), one act so fought dropped; partner b6182 edited identically
+keep
+- Thanos|fought|Maker
++ Thanos|defeated|Maker|He also managed to shut down the Maker's mind
+@6182 outcome 2026-11-04: as partner b2810 (shutting down the Maker's mind = defeated, fought dropped)
+keep
+- Thanos|fought|Maker
++ Thanos|defeated|Maker|He also managed to shut down the Maker's mind
+@7055 outcome 2026-11-04: Spider-Man and Captain America fight Red Raven and "Raven eventually surrendered" -> stated loser of the fight: both defeated him (the fight rows are their own sentences: fought stays)
+keep
++ Spider-Man|defeated|Red Raven|Raven eventually surrendered
++ Captain America|defeated|Red Raven|Raven eventually surrendered
+@385 outcome 2026-11-04: "Steven and Carol would manage to defeat the villain by arresting him" -> the text states both the defeat and the arrest: defeated rows missing next to the captured rows (one act, two true rows)
+keep
++ Steven|defeated|Magnitron|Steven and Carol would manage to defeat the villain by arresting him.
++ Carol|defeated|Magnitron|Steven and Carol would manage to defeat the villain by arresting him.
+@389 outcome 2026-11-04: "S.H.I.E.L.D. arrived and prevented the ritual's completion, seizing the egg" -> stopping the Zealots' ritual = defeated (2026-10-14 ruling), not an other_verb fact; the later fight for the egg is its own sentence (fought stays)
+keep
+f- S.H.I.E.L.D.|other_verb|prevented
++ S.H.I.E.L.D.|defeated|Zealots|S.H.I.E.L.D. arrived and prevented the ritual's completion, seizing the egg in the process.
+@782 outcome 2026-11-04: "This theft was foiled by Namor the Sub-Mariner" -> foiling the theft = Namor defeated the Puppet Master (not a met: hostile), and the base is destroyed "as he fled" Namor's tidal wave -> escaped
+keep
+- Namor the Sub-Mariner|met|Puppet Master
++ Namor the Sub-Mariner|defeated|Puppet Master|This theft was foiled by Namor the Sub-Mariner
++ Puppet Master|escaped|Namor the Sub-Mariner|destroying it as he fled
+@1045 outcome 2026-11-04: Thor hurls Stormbreaker "burying itself deep in his chest" -> the wound has a stated doer: Thor wounded Thanos (the passive Thanos-wounded fact is replaced); Thanos still acts afterwards, so no defeated
+keep
+f- Thanos|wounded|-
+f+ Thor|wounded|Thanos|Thanos could do nothing to stop Stormbreaker from burying itself deep in his chest
+@1174 outcome 2026-11-04: "Otto shattered Scorpion's jaw, blinded the Vulture" -> two stated wounds (fought stays; no outcome of the encounters is stated)
+keep
+f+ Otto|wounded|Scorpion|Otto shattered Scorpion's jaw
+f+ Otto|wounded|Vulture|blinded the Vulture
+@2282 outcome 2026-11-04: they "protected the plans for the P-31 bomber from the terrorist for hire known as Black Hand" -> foiled his theft = defeated (2026-10-14 ruling), for both Bucky and Captain America, one act so fought dropped; "Reuniting with the Young Allies, Bucky helps stop ... the Green Death" -> the Young Allies are co-doers
+keep
+- Bucky|fought|Black Hand
++ Bucky|defeated|Black Hand|protected the plans for the P-31 bomber from the terrorist for hire known as Black Hand
++ Captain America|defeated|Black Hand|protected the plans for the P-31 bomber from the terrorist for hire known as Black Hand
++ Young Allies|defeated|Green Death|Reuniting with the Young Allies, Bucky helps stop the radioactive Nazi the Green Death
+@2310 outcome 2026-11-04: Quinn shoots Skye "in the stomach ... and another time at point blank range" and leaves her "badly injured ... crawling to the door" -> wounded + defeated (Klaue pattern), the shooting is the only act so fought dropped
+keep
+- Quinn|fought|Skye
++ Quinn|defeated|Skye|who shot her in the stomach without saying anything, and another time at point blank range
+f+ Quinn|wounded|Skye|who shot her in the stomach without saying anything, and another time at point blank range
+@2519 outcome 2026-11-04: Mister Fantastic turns the Thing human "so that Thundra would forfeit the battle and flee" -> a forfeited duel = Thing defeated Thundra + she fled him (A74); the challenge is its own clause (fought stays)
+keep
++ Thing|defeated|Thundra|so that Thundra would forfeit the battle and flee
++ Thundra|escaped|Thing|so that Thundra would forfeit the battle and flee
+@2952 outcome 2026-11-04: Sersi "was also stabbed through the stomach with a knife by Sprite" -> a stated wound missing; it only "initially" disables her and she joins the Uni-Mind, so no defeated
+keep
+f+ Sprite|wounded|Sersi|She was also stabbed through the stomach with a knife by Sprite
+@3462 outcome 2026-11-04: Hive's plan "failed after the Inhuman S.H.I.E.L.D. agent, Lincoln Campbell, sacrificed himself and died in a nuclear explosion with Hive inside a Quinjet" -> Campbell's sacrifice kills Hive (the dies fact exists, the killer is named)
+keep
++ Lincoln Campbell|killed|Hive|Lincoln Campbell, sacrificed himself and died in a nuclear explosion with Hive inside a Quinjet in space
+@3952 outcome 2026-11-04: the Spider-Army's final attack ends with "The ritual was stopped, and the Inheritors were exiled ... With the Inheritors neutralized" -> stated outcome of their attack: defeated + exiled (sealed); the attack is its own sentence (fought stays)
+keep
++ Spider-Army|defeated|Inheritors|With the Inheritors neutralized
++ Spider-Army|sealed|Inheritors|the Inheritors were exiled with no means to return home
+@4502 outcome 2026-11-04: "he stabbed Marrow to get away" -> a stated wound missing (Rictor stops him right after, so no escape and no defeated over Marrow)
+keep
+f+ Pietro|wounded|Marrow|As he stabbed Marrow to get away

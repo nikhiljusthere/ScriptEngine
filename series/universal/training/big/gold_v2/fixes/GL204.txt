@@ -1,0 +1,63 @@
+@3434 gold: lint E_met_and_fight_same_pair,name_short_and_full -- the Beast's arrival at the filtration plant is a separate encounter before the later tracked-down battle, so the met stays; one name per person: the fact gate strips "Warlord"/"Lord", so the events use the same bare forms (Krang, Arno)
+keep
+r Warlord Krang=>Krang
+r Lord Arno=>Arno
+
+@3463 gold: lint name_short_and_full -- Pym (the person) and Pym Technologies (his company) are different entities; a company is no place (A65), so attending its presentation is no arrived
+keep
+- Pym|arrived|Pym Technologies
+f+ Pym|other_verb|attend|much to the surprise of everyone, Pym did indeed attend|actual|stated|
+
+@3484 gold: lint E_met_and_fight_same_pair -- the long talk (Megumi's question, Mai's reply, Aoi's questions and explanation) precedes the attack, so the met stays; rows are correct
+keep
+
+@3497 gold: lint E_met_and_fight_same_pair -- the discussion about the Culling Game rules precedes the blows, so the met stays; rows are correct
+keep
+
+@3498 gold: lint F_A89_event_twin -- helping split up their opponents is a separate act after the rescue (narrowed A89), so both stay; rows are correct
+keep
+
+@3513 gold: lint E_met_and_fight_same_pair -- Gojo shows up and asks what is going on, then fights Sukuna; knocking out Yuji afterwards is a separate later act, so the met stays; rows are correct
+keep
+
+@3543 gold: lint F_self_pair -- the fact gate strips "Captain" from the hero alias "Captain Mizuki", so the alias row is the illegal self pair Mizuki|alias_of|Mizuki; kept out (gate quirk, needs a fact_gate.RANK allow-list entry); the sentence stays covered by the member_of row
+keep
+f- Mizuki|alias_of|Mizuki
+
+@3657 gold: lint name_short_and_full -- "Kai" in the rows is King Kai with the "King" stripped by the fact gate (rank prefix), a silent wrong entity next to Kibito Kai (a different person); King Kai's rows are kept out (gate quirk, needs a RANK allow-list entry like King Cobra) and his sentence tagged no_relation; Vegeta's own planned speech stays; Vegeta's ki remark was uncovered
+keep
+f- Kai|ordered|Vegeta
+f- Vegeta|other_verb|speak
+f+ Vegeta|other_verb|speak|Vegeta then wants to somehow speak to all the Earthlings at once, like Babidi did.|planned|stated|Vegeta
+t+ no_relation|He then tells Vegeta to speak, and he could even speak to the whole universe if he wants.
+t+ no_relation|It won't be just a little bit of ki; they'll make the people give more.
+
+@3700 gold: lint E_met_and_fight_same_pair -- Xavier meets his brother to convince him (a talk) before Cain attacks, so the met stays; Cain's attack on the students includes Anna, "the last one standing against him" (fought + defeated, outcome ruling); "Cain Marko's powers" and "magical power" are description objects, not window ends
+keep
++ Cain Marko|fought|Anna|but Cain attacked him and his students; Anna was the last one standing against him
+f- Anna|used|Cain Marko's powers
+f+ Anna|other_verb|use|she was forced to use his powers, absorbing all of his powers and passing him out|actual|stated|
+f- Cain Marko|owns|magical power
+
+@3718 gold: lint name_short_and_full -- Hydra (the organisation) and Hydra Steve (the person) are different entities; rows are correct
+keep
+
+@3755 gold: lint name_short_and_full -- the X-Men and the Dark X-Men are different teams; rows are correct
+keep
+
+@3780 gold: lint E_met_and_fight_same_pair -- the reunion with Rogers is a meeting; Hulk then attacks only under Loki's mind control (A116) before Rogers knocks him down, so the met stays; rows are correct
+keep
+
+@3791 gold: lint E_met_and_fight_same_pair -- al-Wazar's talk and offer precede Stane's attack, so the met stays; rows are correct
+keep
+
+@3795 gold: lint F_A89_event_twin -- Johnson's call is remote, then they talk inside the convent (narrowed A89), so both stay; the kinship quote now names Adina; Adina argues with O'Reilly in person (met)
+keep
+f- Adina|parent_of|Johnson
+f+ Adina|parent_of|Johnson|Adina argued, but O'Reilly told her that her son could handle himself.|actual|stated|
++ O'Reilly|met|Adina|Adina argued, but O'Reilly told her that her son could handle himself.
+
+@3822 gold: lint F_A125_copula -- "had an argument" has no act verb (A125: copula "had"); the sentence stays covered by the discovered, kept and dated rows
+keep
+f- Stein|other_verb|had
+f- Yorkes|other_verb|had

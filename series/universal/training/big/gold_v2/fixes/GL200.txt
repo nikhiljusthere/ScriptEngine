@@ -1,0 +1,64 @@
+@1969 gold: lint E_met_and_fight_same_pair -- the request and the refusal are a talk before the seizure attempt, so the met stays; the purpose clause (study) was uncovered
+keep
+f+ Doom|other_verb|study|so that Doom could study the "Vampiric Verses"|planned|stated|Doom
+
+@1995 gold: lint E_met_and_fight_same_pair -- the Monster's confrontations (the Doombots turned on them, then the admission talk) are separate from the later brief fight, so the met stays; the exploration of Castle Doom was uncovered
+keep
+f+ Cage|other_verb|explored|they explored the ruins of Castle Doom|actual|stated|
+f+ Namor|other_verb|explored|they explored the ruins of Castle Doom|actual|stated|
+
+@2004 gold: lint E_A145_same_sentence -- "A fight between them soon then broke out, but Wolverine gained the advantage" is a fight clause before a turn, so fought stays; the impaling is a wound beside the defeat (owner outcome ruling); catching up with the captured Wolverine is a meeting; the drain is Wolverine's hypothetical, no capability
+keep
+f+ Wolverine|wounded|Omega Red|Wolverine gained the advantage by impaling Omega Red with the bars of one of the prison cells|actual|stated|
++ Omega Red|met|Wolverine|Eventually, Omega Red caught up with Wolverine
+t- capability|knowing that otherwise Omega Red
+f+ Omega Red|other_verb|drain|knowing that otherwise Omega Red would use his powers to completely drain the life energies of all the prisoners|hypothetical|stated|Wolverine
+
+@2005 gold: lint name_short_and_full -- Britannia (the person) and the Britannia Project (the team) are different entities; fighting Knull's forces is a fight with the named head (A63)
+keep
++ Ruth|fought|Knull|While fighting Knull's forces too, Choir was infected by a symbiote
+t- no_relation|While fighting Knull's forces too
+
+@2010 gold: lint E_met_and_fight_same_pair -- the long talk (Eddie waiting, the reveal, the demands) precedes the killing, so the met stays; one name per person: the fact gate strips "President", and the events must use the same form (Thompson)
+keep
+r President Thompson=>Thompson
+
+@2017 gold: lint name_short_and_full -- one name per person: the window gives the bare "Bongface" and the fact gate strips the "Doctor" rank, so the events use Bongface too
+keep
+r Doctor Bongface=>Bongface
+
+@2019 gold: lint E_met_and_fight_same_pair -- the clearing-up talk after the first fight is a separate meeting, so the met stays; the Rocketeers' enmity and tracking, and Rom's conviction, were uncovered
+keep
+f+ Rocketeers|rival_of|Brock Jones|They were being hunted by his enemies, the criminal organization known as the Rocketeers|actual|stated|
+f+ Rocketeers|other_verb|tracked|the Rocketeers tracked Brock's location and arrived in town|actual|stated|
+f+ Rom|suspected|-|the knight became convinced that Brock was more than capable of protecting Clairton|actual|stated|
+
+@2063 gold: lint E_A145_same_sentence -- "led ... against Mar-Vell only to be defeated" and "attacked Thanos, forcing him to kill Drax" are attacks by one side and outcomes by the other (different doers), so fought stays; being alerted is learning
+keep
+t- no_relation|Which alerted Mar-Vell
+f+ Mar-Vell|learned|-|Which alerted Mar-Vell to his presence in the Cancerverse.|actual|stated|
+
+@2066 gold: lint name_short_and_full -- the Avengers and the Avengers Compound are a team and a place; the brutal damage to the benevolent Ultron is a wound (outcome ruling)
+keep
+f+ Ultron-11|wounded|Ultron-12|a version of Ultron-11 brutally damaged the benevolent Ultron|actual|stated|
+
+@2093 gold: lint name_short_and_full -- the Avengers and the Mighty Avengers are different teams; rows are correct
+keep
+
+@2122 gold: lint name_short_and_full -- "Doom" (killed in the first reality) and "Victor von Doom" (the Earth X section) are different characters (A18), so the names stay apart
+keep
+
+@2125 gold: lint F_A89_event_twin -- the phone contact during the separate confrontations is a remote act apart from the earlier in-person "meeting back up" (narrowed A89), so both stay
+keep
+
+@2127 gold: lint E_met_and_fight_same_pair -- the bullying scene is a separate encounter long before the final fight, so the met stays; turning the surrendered outlaw over to the sheriff is a capture (A37, outcome ruling)
+keep
++ Clay Harder|captured|Bull Yaeger|After turning the outlaws over to the sheriff
+
+@2143 gold: lint E_A145_same_sentence -- "He was opposed by ... the Defenders, and was soon forced to retreat" is one coordinated act of the same doers: defeated + escaped, drop fought; Richmond's teammates ties him to the Defenders
+keep
+- Defenders|fought|Smithers
+f+ Kyle Richmond|member_of|Defenders|He was opposed by Richmond's teammates, the Defenders|actual|stated|
+
+@2166 gold: lint E_A145_same_sentence -- "engaged the Horsemen of Apocalypse in battle, but were defeated" is a fight clause before a turn, so fought stays; rows are correct
+keep

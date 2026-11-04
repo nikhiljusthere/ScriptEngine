@@ -1,0 +1,141 @@
+@1015 gold: lint name_short_and_full -- Zeno and Future Zeno are two different beings: keep
+keep
+
+@1033 gold: lint E_met_and_fight_same_pair -- the confrontation turns straight into the fight (no talk between the parties; the whispering is between Nobara and Akari): no met (A145); the place they are confronted is a located_at for all three
+keep
+- Haruta Shigemo|met|Nobara Kugisaki
+- Haruta Shigemo|met|Akari Nitta
+f+ Nobara Kugisaki|located_at|Shoto Bunkamura Street|Nobara and Akari are confronted by the curse user Haruta Shigemo on Shoto Bunkamura Street|actual|stated|
+f+ Akari Nitta|located_at|Shoto Bunkamura Street|Nobara and Akari are confronted by the curse user Haruta Shigemo on Shoto Bunkamura Street|actual|stated|
+f+ Haruta Shigemo|located_at|Shoto Bunkamura Street|Nobara and Akari are confronted by the curse user Haruta Shigemo on Shoto Bunkamura Street|actual|stated|
+
+@1048 gold: lint E_A145_same_sentence -- Maki's contending is its own clause after the "Although ... eventually overpowered" turn, and the overpowering is Hanami's act: fought stays beside Hanami's defeated
+keep
+
+@1062 gold: lint E_met_and_fight_same_pair,name_short_and_full -- the hideout meeting is a talk (the accusation, the vow) before any fight: met stays; "clashed with Mahito, who shifted blame" is the verbal clash, the fight is the deployment of the puppets (fought re-quoted there); Mahito's inclination to kill; Mechamaru is the name Kokichi goes by (the puppet he deactivates): kept as the window names it, linked once by alias_of (A156); the Mechamaru puppets are a thing he uses
+keep
+- Kokichi|fought|Mahito
++ Kokichi|fought|Mahito|deploying multiple Mechamaru puppets to fight the curse.
+f+ Kokichi|other_verb|accusing|Accusing the cursed spirit and curse user of violating the binding vow and hurting Kyoto students|actual|stated|
+f+ Kokichi|other_verb|clashed|Kokichi clashed with Mahito, who shifted blame onto Hanami.|actual|stated|
+f+ Mahito|other_verb|kill|Despite Mahito's initial inclination to kill Kokichi instead of honoring their agreement|planned|stated|Mahito
+f+ Mechamaru|alias_of|Kokichi|Kokichi informed Miwa that he will be sleeping, deactivating the Mechamaru puppet.|actual|stated|
+
+@1071 gold: lint name_short_and_full -- Naoya and Naoya Zenin are one person: one name (the fullest form in the window, A4)
+keep
+r Naoya=>Naoya Zenin
+
+@1074 gold: lint E_A145_same_sentence -- the holding off and the incapacitation are separate sentences and separate doers' acts: fought stays beside Hanami's defeated
+keep
+
+@1082 gold: lint E_A145_same_sentence,E_met_and_fight_same_pair -- Kenjaku assures Hazenoki before the battle starts (a talk): met stays; "engage in battle and after a short time ... defeated and killed" states the fight as its own clause before the turn: fought stays beside killed
+keep
+
+@1093 gold: lint E_met_and_fight_same_pair -- the long talk inside the fight (why he came, the upper classman, "the first time they've met") keeps the met (b1876 convention); Kinji's stated willingness to listen
+keep
+f+ Kinji|other_verb|listen|but he'll listen to what they have to say|planned|stated|Kinji
+
+@1098 gold: lint E_A145_same_sentence -- the blows from Yuji and from Naoya are their own sentences; "come out on top" is the separate outcome: fought rows stay beside Choso's defeated rows
+keep
+
+@1104 gold: lint E_met_and_fight_same_pair -- Usami confronts Masaki and orders him not to move (a talk) before paralysing him: met stays
+keep
+
+@1106 gold: lint E_met_and_fight_same_pair -- Suguru asks why Toji is here and Toji reveals the killing before Suguru retaliates (a talk): met stays; Riko is escorted to the Tomb too; her wish to remain (planned); demanding Toji die is the ordered act
+keep
++ Riko|arrived|Tomb of the Star|Suguru escorts Riko to the Tomb of the Star
+f+ Riko|other_verb|remain|states that she wants to remain with Kuroi and everyone.|planned|stated|Riko
+f+ Toji|other_verb|die|and demanding Toji die.|ordered|stated|Suguru
+
+@1116 gold: lint E_A145_same_sentence -- the battle and the defeat are separate sentences and different doers: fought stays; "nearly enough to exorcise" is almost-V = the verb with certainty denied (2026-11-03 ruling), not an attempt
+keep
+f- Kokichi Muta|other_verb|exorcise
+f+ Kokichi Muta|other_verb|exorcise|It was nearly enough to exorcise the special grade curse|actual|denied|
+
+@1134 gold: lint E_A145_same_sentence -- the attack and the paralysis are separate sentences (outcome audit, accepted): fought stays beside defeated
+keep
+
+@1144 gold: lint E_met_and_fight_same_pair -- the attack on Osada's appearance gets no met, but Osada then introduces himself and explains his aim (a stated talk after the opening attack): met stays, quoted on the introduction
+keep
+
+@1148 gold: lint E_met_and_fight_same_pair -- they call out to Kusakabe and Panda and demand surrender, which is declined (a talk) before the fight: met stays; "the latter" are both Kusakabe and Panda; the advised retreat is the ordered act
+keep
+f+ Atsuya Kusakabe|other_verb|declined|they demanded Kusakabe and Panda to surrender, which the latter declined.|actual|stated|
+f+ Toshihisa|other_verb|retreat|When Kusakabe advised them to retreat|ordered|stated|Atsuya Kusakabe
+f+ Manami Suda|other_verb|retreat|When Kusakabe advised them to retreat|ordered|stated|Atsuya Kusakabe
+
+@1183 gold: lint F_A89_event_twin -- the helped fact (Yuji reclaims his body thanks to Megumi's words) is a different act from the earlier rescue that Megumi reveals: keep
+keep
+
+@1211 gold: lint E_met_and_fight_same_pair -- Sukuna asks what the boy expects to accomplish before the attacks (a talk): met stays
+keep
+
+@1214 gold: lint E_met_and_fight_same_pair -- the meeting (Hakari explains the fever and his invitation) comes long before the attack: met stays
+keep
+
+@1233 gold: lint E_A145_same_sentence -- "Maki's fight with Miwa" and "Maki easily overpowers her" are separate sentences: fought stays beside defeated; Panda's hope to meet the rival (planned)
+keep
+f+ Panda|other_verb|meet|hopes to meet the rival sorcerer one day.|planned|stated|Panda
+
+@1262 gold: lint F_A125_copula -- causative "has a mouth appear" is no act of its own; the sentence is covered by Sukuna's eats row: drop the has row
+keep
+f- Sukuna|other_verb|has
+
+@1292 gold: lint E_A145_same_sentence,E_met_and_fight_same_pair -- the later following and listening to Megumi's explanation is a separate meeting after the sneak attack: met stays; "Sukuna battled Mahoraga" and "how Sukuna defeated Mahoraga" are separate sentences: fought stays; Sukuna arrives where Haruta is and they talk: met (A34)
+keep
++ Sukuna|met|Haruta|Haruta tried to talk to Sukuna, but Sukuna told him to shut up.
+
+@1299 gold: lint E_A145_same_sentence -- the ambush and the later defeat of Reggie are separate sentences: fought stays; the draining is done by Hanami's bud, not by Megumi (the patient is no subject, A110; a power of a named character is its owner's act, A120)
+keep
+f- Megumi|other_verb|drained
+f+ Hanami|other_verb|drained|Hanami struck Megumi with a cursed bud that drained his cursed energy and injured his gut|actual|stated|
+
+@1314 gold: lint E_met_and_fight_same_pair -- Yuji greets Sukuna and talks to him inside the domain, a separate moment after the attacks: met stays
+keep
+
+@1322 gold: lint E_A145_same_sentence -- the punches and kick of the fight and the ripping out of Jogo's head are separate sentences: fought stays beside defeated
+keep
+
+@1323 gold: lint E_met_and_fight_same_pair -- Nanami asks Haruta about his allies before Haruta attacks (a talk): met stays; "hoping to buy time" is the planned buy; Haruta's wondering
+keep
+f- Nobara|other_verb|hoping
+f+ Nobara|other_verb|buy|hoping to buy time|planned|stated|Nobara
+f+ Haruta|other_verb|wondered|As Haruta wondered about who to kill first|actual|stated|
+
+@1353 gold: lint E_met_and_fight_same_pair -- Kanemori demands an exorcism and Suguru asks Manami about the money before the killing (a talk): met stays; the demand is an order with its ordered act; Kanemori paid them
+keep
+f+ Kanemori|ordered|Suguru Geto|Kanemori, a donor to their religious group appeared and demanded Suguru exorcise his curse|actual|stated|
+f+ Suguru Geto|other_verb|exorcise|appeared and demanded Suguru exorcise his curse|ordered|stated|Kanemori
+f+ Kanemori|paid|Suguru Geto|Suguru then asked Manami on how much money Kanemori paid them|actual|stated|
+
+@1405 gold: lint E_met_and_fight_same_pair -- the met is the greeting now; the killing is a past act a year earlier: two different moments, keep
+keep
+
+@1407 gold: lint F_A125_copula -- "had a total 190 points" is no act: drop the had row, tag the sentence
+keep
+f- Yuta|other_verb|had
+t+ no_relation|Yuta had a total 190 points after the ordeal.
+
+@1411 gold: lint E_met_and_fight_same_pair -- the encounter turns into the fight with no talk (Haruta is only glad to see them; Akari runs, he faces off against Nobara): no met (A145), the encounter is kept as Haruta's own act; slicing Akari's legs is a stated wound beside her defeat
+keep
+- Haruta|met|Nobara
+- Haruta|met|Akari Nitta
+f+ Haruta|other_verb|encountered|After patrolling for a while, Haruta encountered Nobara and Akari Nitta.|actual|stated|
+f+ Haruta|wounded|Akari Nitta|immobilize her by slicing her legs|actual|stated|
+
+@1417 gold: lint E_met_and_fight_same_pair -- the arrival meeting with Megumi's wondering and Mai's taunts comes before the fight: met stays; Maki distracting Mai
+keep
+f+ Maki|other_verb|distracted|Maki showed up and distracted Mai long enough for Nobara to put her in a chokehold|actual|stated|
+
+@1511 gold: lint E_met_and_fight_same_pair -- the confrontation leads to a flight, a deception and a lure long before the incapacitation: met stays; one name: the window gives "Masaki Takeda" (the alias row would be a self pair once the one name is used; his real name is not in the window); he only fled (tripped while fleeing, no escape achieved); revealed with no object (A115); the lure
+keep
+r Masaki=>Masaki Takeda
+f- Masaki Takeda|alias_of|Masaki Takeda
+- Masaki Takeda|escaped|Tsurugi Okkotsu
+f+ Masaki Takeda|other_verb|fleeing|When Masaki tripped while fleeing from Tsurugi|actual|stated|
+f- Masaki Takeda|other_verb|revealed
+f+ Masaki Takeda|revealed|-|revealed his true form and intentions to Tsurugi|actual|stated|
+f+ Masaki Takeda|other_verb|luring|luring them to a house where he had buried one of his victims|actual|stated|
+
+@1526 gold: lint E_met_and_fight_same_pair -- Nanami is confronted and the two have a small chat before Mahito kills him (a talk): met stays
+keep
