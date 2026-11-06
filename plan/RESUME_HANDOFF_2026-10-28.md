@@ -225,3 +225,16 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
 - Owner-type questions still open in notes_D1/D2/D3/RB*/T*.md (left unchanged): e.g. "Conquistadores" as an end
   (b13854), Betsy "involuntarily" (b9588/b9594), controller only implied (b2342, b2652, b2296).
 - Then step 4: gold lint re-run, compose v2 -> student_v2_short, check_v2_set rc=0, teacher re-score.
+
+## Update 2026-11-06 (step 3 DONE: the big rulings pass is finished)
+- Big audit 20,707 -> 20,848 (+141, one record per window, ledger sums match: E1 40, E2 57, E3 12, E4 16, E5 11,
+  M_02 5); old prefix byte-identical; gold unchanged at 4,201 (E5: gold b532 needs no change). `recon.sh check all`:
+  133 DIFF pairs, all in recon/exceptions.txt (new: C370 b3375~b9059, C628 b7563~b7573, C451 b4256~b4877).
+- Every step-3 list is done: list_R_B1/R_B3 rest + Addendum-3 corrections (E1), T2 drafts + D2 tail (E2),
+  list_T1 rest (E3/E4), the open owner questions (E5 + M_02).
+- Decisions (owner delegated): BRIEF.md Addendum 4 (old "For the owner" questions) and Addendum 5 (this round's).
+  New patterns: BIG_REVIEW_PATTERNS.md "2026-11-06 RULINGS PASS, LAST ROUND".
+- Left for the owner: more fact_gate.RANK entries (b8054 Emperor Prime, b9603 Captain Glory, b9984 King Arrkam,
+  b8927 Dr. Steve keep the full name in events, the stripped form in facts). Tool limit: apply_edits keeps one fact
+  per s|r|o|modality, so two controllers of one act get one row (Add.5, b12405).
+- NEXT: step 4 (gold lint re-run, compose v2 -> student_v2_short, check_v2_set rc=0, teacher re-score).

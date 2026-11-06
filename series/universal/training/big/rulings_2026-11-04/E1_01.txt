@@ -1,0 +1,75 @@
+@12511 rulings 2026-11-04 Addendum 3: shooting a hostage/captive is NOT tortured (no cruelty to make him suffer) -> the tortured fact from RB3_04 goes; Bakuto|wounded|Joy and captured stay
+keep
+f- Bakuto|tortured|Joy
+
+@12550 rulings 2026-11-04 Addendum 3: as b12511 - Bakuto shoots the hostage Joy through the gut as a threat to Rand: wounded, not tortured -> the tortured fact goes; wounded and captured stay
+keep
+f- Bakuto|tortured|Joy
+
+@12634 rulings 2026-11-04 Addendum 3: an arrest of someone who does not resist is captured alone (Wilson only argues and watches O'Connor leave) -> the defeated row from RB3_04 goes, captured stays
+keep
+- Fahey|defeated|Wilson
+
+@12346 rulings 2026-11-04 Addendum 3 / A113: "Cottonmouth informed Mariah Dillard that he had shot Scarfe" - the shooting is known only from Cottonmouth's own report (a tells/informs verb, not factive) -> no fought event; the shot as claimed/reported by Cottonmouth
+keep
+- Cottonmouth|fought|Scarfe
+f+ Cottonmouth|other_verb|shot|Cottonmouth informed Mariah Dillard that he had shot Scarfe|claimed|reported|Cottonmouth
+
+@12392 rulings 2026-11-04 Addendum 3 (possession): Jonah "possessed Victor"; the possessed body's acts are Victor Stein's acts under Jonah's control, not Jonah's plain events -> Jonah's captured/defeated rows go; Victor's abduction, attack and capture become controlled facts asserted_by Jonah (Jonah|other_verb|possessed stays)
+keep
+- Jonah|captured|Karolina Dean
+- Jonah|captured|Chase Stein
+- Jonah|captured|Janet Stein
+- Jonah|defeated|Chase Stein
+- Jonah|defeated|Janet Stein
+f+ Victor Stein|other_verb|abducted|she was actually abducted by Jonah, who possessed Victor|controlled|stated|Jonah
+f+ Victor Stein|attacked|Chase Stein|Jonah also attacked Chase and Janet Stein, capturing them both|controlled|stated|Jonah
+f+ Victor Stein|attacked|Janet Stein|Jonah also attacked Chase and Janet Stein, capturing them both|controlled|stated|Jonah
+f+ Victor Stein|other_verb|capturing|Jonah also attacked Chase and Janet Stein, capturing them both|controlled|stated|Jonah
+
+@12319 rulings 2026-11-04 Addendum 3: "Kthara stopped Hastings and made her stab Helstrom" is compulsion with no stated mind control -> ordered, not controlled: Kthara|ordered|Hastings + Hastings's stab as an ordered act (asserted_by Kthara), the Kthara|other_verb|made fact goes; WBY in the same sentence: the stab names the doer -> Hastings|wounded|Helstrom (ordered) replaces Helstrom|wounded|-
+keep
+f- Kthara|other_verb|made
+f+ Kthara|ordered|Hastings|Kthara stopped Hastings and made her stab Helstrom
+f+ Hastings|other_verb|stab|Kthara stopped Hastings and made her stab Helstrom|ordered|stated|Kthara
+f- Helstrom|wounded|-
+f+ Hastings|wounded|Helstrom|made her stab Helstrom, who started feeling the pain caused by the dagger|ordered|stated|Kthara
+
+@12790 rulings 2026-11-04 Addendum 4 (b12790 named): Vulture's seal holds Spider-Man in the truck and ends their stated fight (fought row: flying at him to rip the bag away) -> sealed + defeated; "Determined to get away before Spider-Man could disrupt his plans ... made his escape" says he fled from Spider-Man -> escaped stays; the lost loot gives no row
+keep
++ Vulture|defeated|Spider-Man|Vulture shut off the Matter Phase Disrupter, sealing Spider-Man in the truck
+
+@12884 rulings 2026-11-04 TORTURE IS NOT A FIGHT: "During the torture of Frank Castle, Rawlins wished to ensure the dazed Castle felt every bit of pain" - cruelty to a captive -> tortured, the fought row goes; Castle's escape stays
+keep
+- Rawlins|fought|Frank Castle
+f+ Rawlins|tortured|Frank Castle|During the torture of Frank Castle, Rawlins wished to ensure the dazed Castle felt every bit of pain being inflicted upon him
+
+@12890 rulings 2026-11-04 TORTURE IS NOT A FIGHT: Rawlins pushes his fingers into the captive Castle's wound to keep him awake -> tortured, the fought row goes; the stated wound -> Castle|wounded|-
+keep
+- Rawlins|fought|Castle
+f+ Rawlins|tortured|Castle|Rawlins attempted to keep Castle awake by pushing his fingers into Castle's wound
+f+ Castle|wounded|-|pushing his fingers into Castle's wound
+
+@12962 rulings 2026-11-04 TORTURE IS NOT A FIGHT: "Underwood tied him to a chair and beat him" - beating a bound captive -> tortured, the fought row goes (captured stays); MIND CONTROL: "Fennhoff then hypnotized Stark ... in reality, he was flying a plane" -> Stark's flying is controlled, asserted_by Johann Fennhoff
+keep
+- Dottie Underwood|fought|Howard Stark
+f+ Dottie Underwood|tortured|Howard Stark|Underwood tied him to a chair and beat him
+f- Howard Stark|other_verb|flying
+f+ Howard Stark|other_verb|flying|he was flying a plane and was preparing to spread the Midnight Oil|controlled|stated|Johann Fennhoff
+
+@12972 rulings 2026-11-04 Addendum 4 (b12972 named): capture after stated resistance ("As he went for his gun, Underwood quickly held him at gunpoint and captured him") -> defeated + captured; Pike's traffic stop (other_verb stopped) is no STOP outcome, stays
+keep
++ Dottie Underwood|defeated|Pike|As he went for his gun, Underwood quickly held him at gunpoint and captured him
+
+@12993 rulings 2026-11-04 NEAR-FINAL STATES (b12993 named): Hela slices Thor, he drops to his knees, she claims "her victory" and takes his eye; nothing continues -> Hela|defeated|Thor beside fought (Thor's own "trying to fight back" is a separate clause) and wounded
+keep
++ Hela|defeated|Thor|Hela then commented that her victory was so obvious even a blind man could see it
+
+@12999 rulings 2026-11-04 FW: "when Thor impaled her with Gungnir" and "after Valkyrie stabbed her with Dragonfang" are stated wounds ("heal from her wounds") -> wounded per attacker; she heals and nothing ends in the window -> no defeated
+keep
+f+ Thor|wounded|Hela|when Thor impaled her with Gungnir
+f+ Valkyrie|wounded|Hela|after Valkyrie stabbed her with Dragonfang
+
+@13009 rulings 2026-11-04 FW: "Valkyrie then stabbed her from behind with Dragonfang" is a stated wound -> Valkyrie|wounded|Hela; Thor's lightning finishes (Thor|defeated|Hela exists); the stab only enables it (ENABLING ACTS, no outcome row for Valkyrie)
+keep
+f+ Valkyrie|wounded|Hela|Valkyrie then stabbed her from behind with Dragonfang

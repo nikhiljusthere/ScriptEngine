@@ -1,0 +1,68 @@
+@3203 rulings 2026-11-04 WBY: "three other cyborgs who had been wounded by Wolverine in the past -- former Hellfire Club soldiers Cole, Macon, and Reese" names the doer -> Wolverine|wounded|<each> replaces <each>|wounded|-; partner b7935 edited identically
+keep
+f- Cole|wounded|-
+f- Macon|wounded|-
+f- Reese|wounded|-
+f+ Wolverine|wounded|Cole|She teamed up with three other cyborgs who had been wounded by Wolverine in the past
+f+ Wolverine|wounded|Macon|She teamed up with three other cyborgs who had been wounded by Wolverine in the past
+f+ Wolverine|wounded|Reese|She teamed up with three other cyborgs who had been wounded by Wolverine in the past
+
+@7935 rulings 2026-11-04 WBY: as partner b3203 (the cyborgs "wounded by Wolverine" -> Wolverine|wounded|Cole/Macon/Reese)
+keep
+f- Cole|wounded|-
+f- Macon|wounded|-
+f- Reese|wounded|-
+f+ Wolverine|wounded|Cole|She teamed up with three other cyborgs who had been wounded by Wolverine in the past
+f+ Wolverine|wounded|Macon|She teamed up with three other cyborgs who had been wounded by Wolverine in the past
+f+ Wolverine|wounded|Reese|She teamed up with three other cyborgs who had been wounded by Wolverine in the past
+
+@3219 rulings 2026-11-04 FW: "slashing the Titan's legs with his knives" is a stated wound -> Drax the Destroyer|wounded|Thanos (Thanos wins: Thanos's own defeated rows stand); LISTED disarm: Thanos|defeated|Doctor Strange kept (NEAR-FINAL STATES: disarm with nothing continuing in the window)
+keep
+f+ Drax the Destroyer|wounded|Thanos|slashing the Titan's legs with his knives
+
+@3283 rulings 2026-11-04 MIND CONTROL: the implant "placed him under Nguyen's control. Nguyen has Amadeus defeat the other Agents" -> the defeat is Amadeus's act under Nguyen's stated control: modality controlled (one modality per row, controlled wins over ordered, Add.3); the earlier fight with Namor is by his own will (no change); the tsunami stop is of a thing (no change); partner b9523 edited identically
+keep
+f- Amadeus|other_verb|defeat
+f+ Amadeus|other_verb|defeat|Nguyen has Amadeus defeat the other Agents|controlled|stated|Nguyen
+
+@9523 rulings 2026-11-04 MIND CONTROL: as partner b3283 (Amadeus defeats the other Agents under Nguyen's implant control -> controlled|stated|Nguyen)
+keep
+f- Amadeus|other_verb|defeat
+f+ Amadeus|other_verb|defeat|Nguyen has Amadeus defeat the other Agents|controlled|stated|Nguyen
+
+@3287 rulings 2026-11-04 FW: "He shot Andre in the shoulder, and the latter required medical attention" is a stated wound -> Wilder|wounded|Andre; no subdue or end of an encounter is stated (abilities note), so fought stays and no defeated
+keep
+f+ Wilder|wounded|Andre|He shot Andre in the shoulder, and the latter required medical attention
+
+@3319 rulings 2026-11-04 "NEARLY V": "nearly transforming into Bedlam" did not happen -> actual/denied (not attempted)
+keep
+f- Eddie|other_verb|transforming
+f+ Eddie|other_verb|transforming|nearly transforming into Bedlam|actual|denied|
+
+@3331 rulings 2026-11-04 FW no wound; plain error in the flagged row: "a difficult fight against several Avengers" is an indefinite end ("several Avengers" is A5's own example) -> the Ultron|fought|Avengers row goes; the passive "Ultron was forced into ..." keeps no row (A8, doers a crowd)
+keep
+- Ultron|fought|Avengers
+t+ crowd_end|After a difficult fight against several Avengers
+
+@8312 rulings 2026-11-04 MIND CONTROL: "they captured Spider-Man and hypnotized him into joining their ranks" -> Spider-Man's joining is controlled, asserted_by Frightful Four; the capture is the controllers' own act (no change); partners b10080 b10093 edited identically
+keep
+f- Spider-Man|joined|Frightful Four
+f+ Spider-Man|joined|Frightful Four|hypnotized him into joining their ranks|controlled|stated|Frightful Four
+
+@10080 rulings 2026-11-04 MIND CONTROL: as partner b8312 (Spider-Man hypnotized into joining -> controlled|stated|Frightful Four); LISTED A8 no change: "the rest of the Frightful Four were easily defeated" keeps no row (Blastaar is a third side attacking them, partners b3335 b6102)
+keep
+f- Spider-Man|joined|Frightful Four
+f+ Spider-Man|joined|Frightful Four|hypnotized him into joining their ranks|controlled|stated|Frightful Four
+
+@10093 rulings 2026-11-04 MIND CONTROL: as partner b8312 (Spider-Man hypnotized into joining -> controlled|stated|Frightful Four)
+keep
+f- Spider-Man|joined|Frightful Four
+f+ Spider-Man|joined|Frightful Four|hypnotized him into joining their ranks|controlled|stated|Frightful Four
+
+@3338 rulings 2026-11-04 LISTED species end: "the Deviant" is an unnamed member of a species (A5/A52, a race is no end) -> the fought and defeated rows go; Ikaris's acts stay as facts with the quote's verbs, the sentence tagged crowd_end
+keep
+- Ikaris|fought|Deviant
+- Ikaris|defeated|Deviant
+f+ Ikaris|other_verb|shooting|while shooting his optic lasers at it
+f+ Ikaris|other_verb|punches|He punches the Deviant into the ground
+t+ crowd_end|He punches the Deviant into the ground

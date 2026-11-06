@@ -1,0 +1,92 @@
+@7582 rulings 2026-11-04: TORTURE IS NOT A FIGHT (owner), "the Red Widow tortured Dracula by rounding up and killing his consorts": tortured, no fought
+keep
+- Red Widow|fought|Dracula
+f+ Red Widow|tortured|Dracula|the Red Widow tortured Dracula by rounding up and killing his consorts
+
+@7583 rulings 2026-11-04: A116 + TORTURE ruling (owner), Dracula enthralls Angelica and feeds on the helpless girl, no fight stated: the thrall is his own fact (kept), the feeding is other_verb, no fought
+keep
+- Dracula|fought|Angelica Neal
+f+ Dracula|other_verb|fed|Dracula enthralled and fed on Angelica Neal
+
+@7595 rulings 2026-11-04: MIND CONTROL (owner), Abscissa is Mojo's "enslaved minion", "brainwashed by Mojo": her part in capturing Jubilee is a controlled fact asserted_by Mojo; Mojo's own capture stays
+keep
+- Abscissa|captured|Jubilee
+f+ Abscissa|other_verb|captured|she ended up being captured by the tyrant Mojo and his enslaved minion, Abscissa|controlled|stated|Mojo
+
+@7597 rulings 2026-11-04: TORTURE IS NOT A FIGHT (owner), the captive Nezumi is "an obvious victim to physical abuse at the hand of her coworker Moneta" ("the torture"): missing tortured row
+keep
+f+ Moneta|tortured|Nezumi Sen|Nezumi was an obvious victim to physical abuse at the hand of her coworker Moneta
+
+@7886 rulings 2026-11-04: MIND CONTROL (owner), Toro fights the Sub-Mariner while drugged, collared and brainwashed into serving the Mad Thinker ("enslaving and brainwashing him"): Toro's side of the battle is a controlled attack asserted_by Mad Thinker; the Sub-Mariner's side of "a battle between Toro and the Sub-Mariner" is his plain fought; Toro's attack on the Thinker after his memory returns stays plain
+keep
+- Thomas Raymond|fought|Sub-Mariner
++ Sub-Mariner|fought|Thomas Raymond|in a battle between Toro and the Sub-Mariner
+f+ Thomas Raymond|attacked|Sub-Mariner|in a battle between Toro and the Sub-Mariner, the collar was damaged so that it could not hurt him|controlled|stated|Mad Thinker
+
+@8102 rulings 2026-11-04: A116 / MIND CONTROL ruling, a telepath entering a mind and a counter-spell are mental control acts, not a stated attack: no fought; Xavier's act is his own other_verb
+keep
+- Xavier|fought|Maximoff
+f+ Xavier|other_verb|entered|After Professor X entered Earth-838 Wanda's mind
+
+@8123 rulings 2026-11-04: TORTURE IS NOT A FIGHT (owner), the knocked-out Eddie is bonded and tormented "with a nightmare of his worst fears coming to pass": missing tortured row; Addendum 3 (b8123): the Venom symbiote "remotely piloted by Dylan" attacks under its pilot's control: controlled attack asserted_by Dylan, no plain fought
+keep
+- Venom symbiote|fought|Dark Carnage symbiote
+f+ Venom symbiote|attacked|Dark Carnage symbiote|Carnage was attacked by the Venom symbiote, which was being remotely piloted by Dylan|controlled|stated|Dylan
+f+ Dark Carnage symbiote|tortured|Eddie|enabling the Dark Carnage symbiote to bond to him and torment him with a nightmare of his worst fears coming to pass
+
+@2859 rulings 2026-11-04: MIND CONTROL (owner), Man-Wolf attacks Misty while under "Carnage's control" (Morbius later convinces him to free himself): a controlled attack asserted_by Carnage, no plain fought (partner b8151 edited identically)
+keep
+- Man-Wolf|fought|Misty Knight
+f+ Man-Wolf|attacked|Misty Knight|she was about to be killed by Demagoblin and the Man-Wolf|controlled|stated|Carnage
+
+@8151 rulings 2026-11-04: MIND CONTROL (owner), Man-Wolf attacks Misty while under "Carnage's control" (Morbius later convinces him to free himself): a controlled attack asserted_by Carnage, no plain fought (partner b2859 edited identically); TORT hit Morbius|defeated|Melter is a real beating of free opponents, kept
+keep
+- Man-Wolf|fought|Misty Knight
+f+ Man-Wolf|attacked|Misty Knight|she was about to be killed by Demagoblin and the Man-Wolf|controlled|stated|Carnage
+
+@8184 rulings 2026-11-04: MIND CONTROL (owner), Shakari "subjected them to a powerful form of mind control: they were turned against the X-Men": Lorna's and Alex's battle is controlled (asserted_by Shakari); the X-Men's side of the "massive battle" and Storm's defeat of Polaris are their plain acts; Addendum 3 one modality: the attempted assassination under control is controlled (controlled wins)
+keep
+- Lorna|fought|X-Men
+- Alex|fought|X-Men
+f+ Lorna|attacked|X-Men|A massive battle ensued at Kennedy International Airport, with the duo battling the X-Men|controlled|stated|Shakari
+f+ Alex|attacked|X-Men|A massive battle ensued at Kennedy International Airport, with the duo battling the X-Men|controlled|stated|Shakari
+f- Lorna|other_verb|assassinate
+f+ Lorna|other_verb|assassinate|they were turned against the X-Men and attempted to assassinate Prof. Xavier|controlled|stated|Shakari
+f- Alex|other_verb|assassinate
+f+ Alex|other_verb|assassinate|they were turned against the X-Men and attempted to assassinate Prof. Xavier|controlled|stated|Shakari
++ X-Men|fought|Lorna|A massive battle ensued at Kennedy International Airport, with the duo battling the X-Men
++ X-Men|fought|Alex|A massive battle ensued at Kennedy International Airport, with the duo battling the X-Men
+
+@8199 rulings 2026-11-04: TORTURE IS NOT A FIGHT (owner), "K'Tor captured and tortured Professor X": tortured relation (not other_verb), capture kept, the stated wound added for the victim; plain error in a TORT-hit row: Korvus is only "sent ... to fight" Rachel (A19 purpose clause), an ordered act, not a fought event
+keep
+f- K'Tor|other_verb|tortured
+f+ K'Tor|tortured|Professor X|K'Tor captured and tortured Professor X
+f+ Professor X|wounded|-|with a wounded Professor X forced to attend
+- Korvus|fought|Rachel
+f+ K'Tor|ordered|Korvus|sent Rook'shir's last remaining descendant, Korvus, to fight a vengeful Rachel
+f+ Korvus|other_verb|fight|sent Rook'shir's last remaining descendant, Korvus, to fight a vengeful Rachel|ordered|stated|K'Tor
+
+@8332 rulings 2026-11-04: MIND CONTROL (owner), "Legion, while under the control of the Shadow King, also assaulted ... Destiny" and kills her in that assault: the assault, the probe and the kill are controlled facts asserted_by Shadow King; the victim's death is written as usual
+keep
+- Legion|killed|Destiny
+f+ Legion|attacked|Destiny|Legion, while under the control of the Shadow King, also assaulted the elderly precog, Destiny|controlled|stated|Shadow King
+f+ Legion|other_verb|killed|Legion struck out with a telepathic blast and killed Destiny|controlled|stated|Shadow King
+f- Legion|other_verb|probed
+f+ Legion|other_verb|probed|Legion probed Destiny's mind, only to see visions of his own uncertain future|controlled|stated|Shadow King
+f+ Destiny|dies|-|killed Destiny before she could show him anymore
+
+@8582 rulings 2026-11-04: TORTURE IS NOT A FIGHT (owner), Coulson "subdued Sebastian Derik ... even after being tortured by him": missing tortured row for Derik; Coulson's subdue is a real fight and stays
+keep
+f+ Sebastian Derik|tortured|Coulson|subdued Sebastian Derik, an expert assassin, even after being tortured by him
+
+@8637 rulings 2026-11-04: MIND CONTROL (owner), "Betsy took control of Brian's body, forcing him to kill Jamie": the kill is Brian's controlled act asserted_by Betsy, not Betsy's plain killed; the victim's death as usual (partner b8646 edited identically)
+keep
+- Betsy|killed|Jamie
+f+ Brian|other_verb|kill|Betsy took control of Brian's body, forcing him to kill Jamie|controlled|stated|Betsy
+f+ Jamie|dies|-|Betsy took control of Brian's body, forcing him to kill Jamie
+
+@8646 rulings 2026-11-04: MIND CONTROL (owner), "Betsy took control of Brian's body, forcing him to kill Jamie": the kill is Brian's controlled act asserted_by Betsy, not Betsy's plain killed; the victim's death as usual (partner b8637 edited identically)
+keep
+- Betsy|killed|Jamie Braddock
+f+ Brian|other_verb|kill|Betsy took control of Brian's body, forcing him to kill Jamie|controlled|stated|Betsy
+f+ Jamie Braddock|dies|-|Betsy took control of Brian's body, forcing him to kill Jamie

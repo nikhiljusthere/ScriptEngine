@@ -1,0 +1,52 @@
+@4016 rulings 2026-11-04 Addendum 4: a Night-Night Gun (sedative) shot that knocks out the hostile Peterson and ends the window = defeated, no wounded; shot and outcome are one stated act (A145), so fought goes
+keep
+- Ward|fought|Peterson
++ Ward|defeated|Peterson|Ward suddenly shot Peterson with the Night-Night Gun
+
+@10667 rulings 2026-11-04 Addendum 4: Hunter stuns his allies Skye and May with an I.C.E.R. to chase Creel alone = ALLY RESTRAINING ALLY, no fought/defeated; other_verb with the quote's verb (one fact covers both allies, no injury stated)
+keep
+- Hunter|fought|Skye
+- Hunter|fought|May
+f+ Hunter|other_verb|shot|Hunter shot them from the back with an I.C.E.R.
+
+@2041 rulings 2026-11-04 Addendum 4: Norman stabs the held, sin-filled Peter to cure him = ally act, no fought; other_verb stabbed (the wounded fact stays)
+keep
+- Norman|fought|Peter
+f+ Norman|other_verb|stabbed|Norman stabbed Peter and extracted his sins from him
+
+@653 rulings 2026-11-04 Addendum 4: "freed from A.I.M.'s hypnosis" is mind control written as fought (A116): drop the fought, the control is A.I.M.'s other_verb fact with the quote's own word
+keep
+- A.I.M.|fought|Michael
+f+ A.I.M.|other_verb|hypnosis|freed from A.I.M.'s hypnosis by Clea
+
+@1453 rulings 2026-11-04 Addendum 4: torture after a fight the victim started keeps the fight's outcome row (Add.3): Morbius's rampage ends with Slaughter beaten -> restore defeated on that clause; tortured stays (same sentence in partner b8155, same row there)
+keep
++ Morbius|defeated|Vic Slaughter|ending his rampage with torturing Slaughter and burying him alive
+
+@8155 rulings 2026-11-04 Addendum 4: as partner b1453 (shared sentence): restore Morbius|defeated|Vic Slaughter on the clause that ends the rampage; tortured stays
+keep
++ Morbius|defeated|Vic Slaughter|ending his rampage with torturing Slaughter and burying him alive
+
+@7573 rulings 2026-11-04 Addendum 4: Father Eisner stakes Dracula after the villagers tied him to a stake = killing a bound captive, no fight and no torture (Add.3); the window states the death ("the execution", Marie later "resurrecting the vampire") -> killed (awakened stays, clinical-death ruling); partner b7563 lacks the capture sentence and stays (logged in recon/exceptions.txt)
+keep
+- Eisner|fought|Dracula
+- Eisner|defeated|Dracula
++ Eisner|killed|Dracula|drove a stake into his chest. Present at the execution
+
+@6539 rulings 2026-11-04 Addendum 3/4: Kindred's centipede stops Osborn from killing Spider-Man = intercepted attack -> Kindred|saved|Spider-Man; no defeated (Spider-Man defeats Osborn after it); the stopped fact stays (inside the ongoing exchange)
+keep
++ Kindred|saved|Spider-Man|was stopped from killing him by Kindred's implanted centipede
+
+@6609 rulings 2026-11-04 Addendum 3/4: Galactus leaves under the threat of the Ultimate Nullifier that Johnny brought -> Johnny|defeated|Galactus (the threat-maker); no escaped (the text says "left", not fled)
+keep
++ Johnny|defeated|Galactus|Soon Johnny returned to Earth with the Ultimate Nullifier, the one thing that Galactus feared
+
+@8302 rulings 2026-11-04 Addendum 4: the Puppet Master "unleashing the Dragon Man android" on his cohorts; the window states no puppet control of Dragon Man -> an ordered act (Add.2): Puppet Master|ordered|Dragon Man plus Dragon Man's act as an ordered fact with the quote's verb; Dragon Man's plain rows stay (A64)
+keep
+f+ Puppet Master|ordered|Dragon Man|unleashing the Dragon Man android upon them, forcing the Wizard to flee
+f+ Dragon Man|other_verb|forcing|unleashing the Dragon Man android upon them, forcing the Wizard to flee|ordered|stated|Puppet Master
+
+@68 rulings 2026-11-04 Addendum 4: Mojo de-ages the captured X-Men for his televised entertainment = TORT ruling (cruelty to captives), not a fight: fought goes, tortured added; captured and the de-aging other_verb stay
+keep
+- Mojo|fought|X-Men
+f+ Mojo|tortured|X-Men|subsequently capturing the X-Men and de-aging them for his televised entertainment

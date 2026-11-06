@@ -645,3 +645,21 @@ for self-reported kills; records of victories = one defeated per named foe (b229
 defeated; factive narration ("she reveals that she had to escape") keeps the event, speech verbs fall under A113.
 GATE FIX 2026-11-04 (owner OK, commit 4077b27a): fact_gate.RANK keeps King Kai / King Vegeta / King Cold / King
 Piccolo / King Kong / Captain Mizuki whole; gold b825 b893 b1014 b3543 b3657 re-fixed (G_90).
+
+**2026-11-06 RULINGS PASS, LAST ROUND (torture / mind control / possession; decisions in
+`big/rulings_2026-11-04/BRIEF.md` Addenda 4-5).** Agents E1-E5 + main-session M_02, 141 big windows changed.
+| class | error | fix | seen (windows) |
+|---|---|---|---|
+| POSS | a possessor credited with the possessed body's acts ("Drumm in Victoria Hand killed", "Doctor Octopus in Spider-Man's body") | `Host|attacked/other_verb|...|controlled|stated|Possessor`, the victim's own state as usual | b9567 b5972 b13222 b3378 b4730 b12392 |
+| CTRL-OUTCOME | a mind-controlled person's act written as his plain `defeated`/`captured` | the controlled fact (`Host|other_verb|<quote verb>|...|controlled|stated|A`) | b4439 b4491 b5471 b3136 |
+| CTRL-ORDER | an ordered act by someone under stated mind control written `ordered` | one modality per row: `controlled` wins | b9537 b11198 b9779 b8184 |
+| PILOT | a hero's armor / a symbiote steered remotely | `controlled` (asserted_by the pilot); the opponent's fight back is plain | b2728 b8123 |
+| ENCHANT | enchantments/hypnosis listed in a powers section as one `fought` per victim | A116: the controller's other_verb fact; purpose clauses `planned` | b3388 b653 b79 |
+| TORT-WORD | "tortured"/"tormented" stated but the row is `fought` or other_verb tormented | `T|tortured|V` | b4892 b5292 b6962 b4684 b68 |
+| CAPT-TORT | a CAPTURED-ruling `defeated` turned into `tortured` when torture follows an ambush | keep the defeated + captured, add tortured | b9774 b1453/b8155 |
+| SELF-REPORT | a doer's own report of a takedown written as an event ("informed him about taking down Morse") | A113 claimed fact | b3901 b12346 |
+| STANDIN | a stand-in robot written as the person in `fought` ("had a robot acting in his place") | drop the person's row | b2783 |
+| ALLY-STUN | stunning or stabbing an ally to stop or cure him written as `fought` | `X|other_verb|<quote verb>` (+ wounded if stated) | b10667 b2041 |
+| CROWD-END | a class/army noun used as an end ("Conquistadores", "the Deviant", "several Avengers") | drop the row, tag `crowd_end` (A5, A94) | b13854 b13863 b3338 b3331 |
+Tool limit found: `apply_edits` de-duplicates facts by subject|relation|object|modality, so two rows that differ only
+in asserted_by (two controllers, two claimants) cannot be stored; the ruling keeps one controlled row (Add.5).

@@ -1,0 +1,81 @@
+@2580 rulings 2026-11-04: Thor is Thanos' hostage ("threatening to kill Thor if he doesn't comply") and "Thanos responds by torturing Thor with the Power Stone" -> tortured, not fought (TORTURE IS NOT A FIGHT); no injury stated
+keep
+- Thanos|fought|Thor
+f+ Thanos|tortured|Thor|Thanos responds by torturing Thor with the Power Stone
+
+@2640 rulings 2026-11-04: the Puppet Master "used his special clay to take control of the Sub-Mariner and force him to capture Sue" -> the capture is Namor's controlled act asserted_by the Puppet Master (MIND CONTROL ruling); the control is the controller's other_verb, not a fight (A116); no plain captured for either (as b2226)
+keep
+- Puppet Master|fought|Sub-Mariner
+- Sub-Mariner|captured|Sue
+- Puppet Master|captured|Sue
+f+ Puppet Master|other_verb|control|used his special clay to take control of the Sub-Mariner
+f+ Sub-Mariner|other_verb|capture|force him to capture Sue|controlled|stated|Puppet Master
+
+@2728 rulings 2026-11-04: "The Thinker took control of Iron Man's armor, steering him to fight M.O.D.O.K." -> a remotely piloted body acts under its pilot's control (Add.3 b8123): Iron Man's attack is controlled|stated|Thinker; the control is the Thinker's other_verb, not a fight (A116); M.O.D.O.K.'s own act against the controlled Iron Man is plain
+keep
+- Thinker|fought|Iron Man
+- Iron Man|fought|M.O.D.O.K.
+f+ Thinker|other_verb|took|The Thinker took control of Iron Man's armor
+f+ Iron Man|attacked|M.O.D.O.K.|steering him to fight M.O.D.O.K.|controlled|stated|Thinker
++ M.O.D.O.K.|fought|Iron Man|M.O.D.O.K. grabbed his foe
+
+@2783 rulings 2026-11-04: Dragon Man is "unleashed" by the Puppet Master with no stated mind control -> ordered, not controlled (Add.2, Add.4); its fight with the Wizard stays plain (A64). Plain errors in the listed rows: the attacked "Mad Thinker" was "a robot acting in his place" (no fight with the person); the Wizard's defeat is quoted on the wrong clause (A74: he fled)
+keep
+- Dragon Man|fought|Mad Thinker
+- Dragon Man|defeated|Wizard
++ Dragon Man|defeated|Wizard|the Wizard fled from the android dragon
+f- Phillip Masters|other_verb|unleashed
+f+ Phillip Masters|ordered|Dragon Man|The Puppet Master then unleashed the Dragon Man
+
+@2990 rulings 2026-11-04: MIND CONTROL (owner), Moondragon "possessed by Dragon of the Moon, seemingly killed most of the members of the Defenders": a controlled act (the quote's verb, hedged as apparent), asserted_by Dragon of the Moon, no plain defeated (as T2 b6397, same sentence)
+keep
+- Moondragon|defeated|Defenders
+f+ Moondragon|other_verb|killed|Moondragon, who was possessed by Dragon of the Moon, seemingly killed most of the members of the Defenders|controlled|apparent|Dragon of the Moon
+
+@3136 rulings 2026-11-04: Loki's plan is "use the Doom Ray to take control of Galactus" and he "demonstrated this, having Galactus destroy Asteroid M" -> Galactus acts under stated control; one modality per row, controlled wins over ordered (Add.3)
+keep
+f- Galactus|destroyed|Asteroid M
+f+ Galactus|destroyed|Asteroid M|having Galactus destroy Asteroid M|controlled|stated|Loki
+
+@3378 rulings 2026-11-04: "after Doctor Octopus had taken over Spider-Man's body, he easily punched off the Scorpion's ... jaw" -> possession: the possessed body's act is the body owner's act under the possessor's control (Add.3 b12392), with the quote's own verb and the stated wound; no plain event for Doctor Octopus. Also a stated wound in the Starblood fight ("bleed") had no wounded row (owner ruling 2026-11-03)
+keep
+- Doctor Octopus|defeated|Scorpion
+f+ Peter Parker|other_verb|punched|after Doctor Octopus had taken over Spider-Man's body, he easily punched off the Scorpion's|controlled|stated|Doctor Octopus
+f+ Peter Parker|wounded|Scorpion|after Doctor Octopus had taken over Spider-Man's body, he easily punched off the Scorpion's|controlled|stated|Doctor Octopus
+f+ Peter Parker|wounded|Xanto Starblood|was able to make Doctor Starblood bleed twice in their fight
+
+@3388 rulings 2026-11-04: Sylvie's enchantments (taking hold of minds and bodies) were written as fought -> A116 / MIND CONTROL ruling: the control is her other_verb with the quote's verb; Alioth's act under it is controlled|stated|Sylvie Laufeydottir; the pruning of Ravonna is only a purpose clause ("to take over his body and prune") -> planned (A19)
+keep
+- Sylvie Laufeydottir|fought|Alioth
+- Sylvie Laufeydottir|fought|Randy
+- Sylvie Laufeydottir|fought|Hudson
+- Sylvie Laufeydottir|fought|Hunter X-05
+- Sylvie Laufeydottir|fought|Ravonna Renslayer
+f+ Sylvie Laufeydottir|other_verb|make|She was able to make Alioth allow them to pass
+f+ Alioth|other_verb|allow|She was able to make Alioth allow them to pass to the Citadel at the End of Time|controlled|stated|Sylvie Laufeydottir
+f+ Sylvie Laufeydottir|other_verb|enchanted|She also enchanted Randy and Hudson.
+f+ Sylvie Laufeydottir|other_verb|prune|later did so again to take over his body and prune Ravonna Renslayer|planned|stated|Sylvie Laufeydottir
+
+@3517 rulings 2026-11-04: "fighting the Fantastic Four while possessing Reed's body" -> possession: the possessed body's act is Reed's act under the symbiote's control (Add.3 b12392, A116), not the possessor's plain fought
+keep
+- symbiote|fought|Fantastic Four
+f+ Reed|attacked|Fantastic Four|fighting the Fantastic Four while possessing Reed's body|controlled|stated|symbiote
+
+@3655 rulings 2026-11-04: Izel "went to go in Johnson's body" is an attempted possession, not a fight (A116); Yo-Yo stops it by being possessed instead: an intercepted attack on Daisy = saved (INTERCEPTED ATTACKS), no fight stated; Izel's escape in Yo-Yo's body is the host's act under the possessor's control (Add.3 b12392)
+keep
+- Izel|fought|Daisy Johnson
+- Yo-Yo Rodriguez|fought|Izel
++ Yo-Yo Rodriguez|saved|Daisy Johnson|but was stopped by Rodriguez, who instead became possessed by Izel
+f+ Izel|other_verb|go|went to go in Johnson's body|attempted|stated|Izel
+- Izel|departed|Lighthouse
+f+ Yo-Yo Rodriguez|other_verb|escape|which she used to escape from the Lighthouse|controlled|stated|Izel
+
+@3798 rulings 2026-11-04: "Under Korvac's control, the Human Torch joined him" -> the joining is a controlled act asserted_by Korvac (MIND CONTROL ruling; any act can be controlled, Add.3); partner b8272 edited identically
+keep
+f- Human Torch|allied_with|Korvac
+f+ Human Torch|allied_with|Korvac|Under Korvac's control, the Human Torch joined him in his search for the Power Cosmic|controlled|stated|Korvac
+
+@8272 rulings 2026-11-04: "Under Korvac's control, the Human Torch joined him" -> the joining is a controlled act asserted_by Korvac (MIND CONTROL ruling; any act can be controlled, Add.3); partner b3798 edited identically
+keep
+f- Human Torch|allied_with|Korvac
+f+ Human Torch|allied_with|Korvac|Under Korvac's control, the Human Torch joined him in his search for the Power Cosmic|controlled|stated|Korvac

@@ -125,3 +125,91 @@ The new relation `tortured` and modality `controlled` are in fact_gate (the dry-
   names as is and log the pair in recon/exceptions.txt (`C<id> bA~bB reason`).
 - Rows the scan did not flag but that contradict a ruling (e.g. `Controller|fought|Victim` for "enthralled",
   "enslaved", "infected"): fix them when they are in a window you are editing.
+
+## Addendum 4 (2026-11-06, Claude, decisions on the open "For the owner" questions; owner delegated)
+Decided factually under the owner rulings of 2026-11-03/04. Each line: the rule, then the windows it settles.
+- Capture after STATED resistance ("went for his gun", "tried to fight back") = `defeated` + `captured` (the CAPTURED
+  ruling's "stated resistance"): b12972 Dottie Underwood|defeated|Pike.
+- "made it clear that", "revealed that", "it became clear that" narrate the act as true (factive) -> the event stays;
+  A113 is only for says/claims/tells/explains/boasts (b13643 Will Simpson|killed|Clemons kept).
+- A plural class or army noun with no proper organization name ("Conquistadores", "soldiers", "the guards", "the
+  villagers") is a crowd (A5): no end; a named member tied to the act takes the row. A named organization
+  (Ten Rings, Watchdogs, S.H.I.E.L.D., the FBI, A.I.M., HYDRA) is an end (b13854 b13859 b13863; b1973 b724 b6277
+  FBI kept).
+- A stop of a named person's attack that ends his part (Osiris stops Spector's punch at Harrow and forbids violence)
+  = STOP rule + INTERCEPTED ATTACKS: `Stopper|defeated|Attacker` + `Stopper|saved|Target`, the other_verb fact goes
+  (b13741). A halt by mere arrival with no subdue stays a fact (b3771). A stop of one instance of a continuing scheme
+  whose head is absent and the scheme goes on stays a fact (b7522, b5203).
+- Control stated but no controller named for THAT person (Betsy "involuntarily" b9588/b9594; an army brainwashed as a
+  group with named members not individually tied b6477/b6763; "the enthralled Hernandez" b2342; "the
+  mind-controlled Pike" b2652): plain events (Add.3 "no named controller").
+- WILL DECIDES with a symbiote/possessor: when the window gives the host his own will or motive ("his sadism",
+  "vengefully", b6522; Otto "by his own power" b5687) the acts are the host's plain events.
+- A creature or ally "unleashed" / "sent" on a target by a master: `ordered` (Add.2); `controlled` only if the window
+  states the master controls its mind/body (b8302: read the window; Puppet Master's puppet control stated ->
+  controlled|stated|Puppet Master, else ordered).
+- A stun/sedative shot (I.C.E.R., Night-Night Gun) that knocks out a HOSTILE target and ends the encounter =
+  `defeated`, no `wounded` (Add.3; b4016 Ward|defeated|Peterson if the window ends there). Stunning an ALLY to stop
+  him (b10667 Hunter stuns Skye/May to chase Creel alone) = ALLY RESTRAINING ALLY: `Hunter|other_verb|<quote verb>`
+  per ally, no fought/defeated.
+- Stabbing a held ally to cure him (b2041 big: Norman stabs the sin-filled Peter) = ally act: `Norman|other_verb|
+  stabbed|Peter` + the wounded row; no fought.
+- Mind manipulation / hypnosis written as `fought` (b79 Mastermind's illusions in Phoenix's mind, b653 "freed from
+  A.I.M.'s hypnosis", b1242 Puppet Master's commands): A116 - drop the fought, the control is the controller's
+  `other_verb` fact with the quote's own verb; Phoenix/Michael/Iron Man's acts under it follow the controlled rule
+  when stated.
+- Torture of a captive after a fight the victim started keeps the fight's outcome row (Add.3): b1453/b8155 restore
+  `Morbius|defeated|Vic Slaughter` on the clause that ends the rampage; `tortured` stays.
+- Killing/staking a bound captive is no torture and no fight (Add.3): b7573 Eisner stakes the tied Dracula ->
+  `killed` only if the window states the death, else `Marie Eisner|other_verb|staked` (+ `wounded`); b7563 (no
+  capture sentence) stays; log the pair in recon/exceptions.txt.
+- Add.3 decisions that were noted but may not be applied yet: b6539 + `Kindred|saved|Spider-Man`; b6609
+  `<threat-maker>|defeated|Galactus`. Check current rows before adding.
+- A8 strict reading confirmed (b4448 b6425 b2763/b9551 b664/b4486 no row); a neutralizer shot is a power loss
+  (b5977 b5312); "tore into the Watchdogs" with nothing continuing = defeated (b8954); "killed" by a named doer with
+  a later return stays killed + awakened (clinical-death ruling, b9585); a seal the victim leaves in the same scene
+  is sealed only (b7537).
+- Partners whose context differs (A8 refinement b3375 vs b9059; b7563 vs b7573): leave the window without the
+  context as is and log the pair in recon/exceptions.txt (Add.3).
+- Rank names in events vs the fact-gate form (b8054 Emperor Prime/Lieutenant Madrox, b9603 Captain Glory, b9984
+  King Arrkam, b8927 Dr. Steve): ONE NAME PER PERSON - when the window itself uses the bare name for that person
+  ("Prime", "Glory", "Arrkam", "Steve"), rename the event rows to the bare form (`r Old=>New`); no new RANK entry.
+- Torture/de-aging of a captive written as `fought` (b68, and b39/b79 if not already fixed by T1_01): TORT ruling.
+- A seal that holds the victim while the sealer flees (b12790 Vulture seals Spider-Man in the truck, leaves his loot):
+  `sealed` (+ `defeated` only if the seal ends a stated fight between them); the sealer's flight is `escaped` only if
+  the text says he fled from the victim; the lost loot gives no outcome row.
+- Agents' NEW owner-type questions (2026-11-06 round): leave the window unchanged, list it under "For the owner" in
+  your notes; the coordinator decides and records it here (Addendum 5).
+
+## Addendum 5 (2026-11-06, Claude, decisions on the E1-E5 round's questions; owner delegated)
+- TWO CONTROLLERS, ONE ROW (revises Add.3 b12405). The fix tool keeps one fact per subject|relation|object|modality,
+  so a second `controlled` row that differs only in asserted_by cannot be stored. One controlled row per act;
+  asserted_by = the controller whose stated power does the controlling (b12405: Lorelei's enchantment); the partner's
+  part is his own fact (`Grant Ward|other_verb|taken`, already present). b12405 stays as it is.
+- A creature, robot or minions a named master sends against targets ("unleashed his Punisher robot upon them",
+  "symbiotes controlled by Venom"): A63 - the master keeps the `fought`/`defeated` row (b6609, b4277/b6962). The
+  controlled modality is for a NAMED person acting under control.
+- Possession of an unnamed body (Wanda in her unnamed Earth-838 self, b4657): no named host to credit, so the
+  possessor's plain events stay.
+- One blow to a captive (b5187 pistol-whip for a wrong name) is neither fought nor tortured: `X|other_verb|hit`
+  (M_02). Torture needs cruelty meant to make the victim suffer (repeated beating, tormenting).
+- Symbiote possession with the host later freeing himself (b2834/b6813 Peter as Spider-Carnage fights MJ): the host's
+  act is `controlled|stated|<symbiote>`; the other side's fight back is her plain event (M_02).
+- Brainwasher unnamed, only his own controller named (b2885/b8362 "a scientist controlled by Black Cat"): the
+  control of the doer has no named controller -> plain events.
+- Same-name host and person (b3610 adult Jean Grey possessed by the Phoenix Force beside young Jean Grey): left as
+  is (A18; no clean name for the host).
+- "made his escape attempt" with the escape not completed: no `escaped` (keep only what is stated); b2945 left as
+  the predecessor wrote it unless the window states the escape succeeded.
+- Confirmed as decided by E1-E5: b7573 Eisner|killed|Dracula (stated execution; the later resurrection does not undo
+  it - clinical-death ruling); b13047 no row for an absent helper of a stopped group; b3097 "nearly" covers only the
+  decapitation; b3349/b4157 implied doer = A8 no row; gold b532 no row for unnamed summoners; b653 a noun is allowed
+  as the other_verb object when the quote has no verb for the act; b9774 tortured beside the CAPTURED-ruling
+  defeated (Add.3: torture after a fight keeps the fight's outcome); b13659 controlled attacked for an
+  "assassination attempt" while enthralled.
+- Outside-class errors found by E3 and fixed in M_02: b2996 Logan|killed|Sabretooth on "destroyed his body" ->
+  fought + defeated; b3463 WBY -> Nico|wounded|Robert Minoru.
+- Still with the owner (needs a fact_gate.RANK change, owner approval): rank names whose bare form the window never
+  uses for that person: b8054 Emperor Prime / Lieutenant Madrox (bare "Prime" also names Jamie Prime in the same
+  window), b9603 Captain Glory, b9984 King Arrkam, b8927 Dr. Steve. Events keep the full name; facts carry the
+  gate-stripped form. Small inconsistency, left until the owner decides on more RANK entries.

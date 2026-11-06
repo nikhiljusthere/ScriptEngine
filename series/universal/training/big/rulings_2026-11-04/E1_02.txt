@@ -1,0 +1,78 @@
+@13111 rulings 2026-11-04 STOP (2026-10-14 ruling): "When his plans were foiled by Sam Wilson, Leader surrendered" - a completed stop of a named person's plot that ends in his surrender -> Sam Wilson|defeated|Sterns, the foiled fact goes
+keep
+f- Sam Wilson|other_verb|foiled
++ Sam Wilson|defeated|Sterns|When his plans were foiled by Sam Wilson, Leader surrendered
+
+@13124 rulings 2026-11-04 FW: "Black Widow shot him in the leg" is a stated wound -> Black Widow|wounded|Sterns; the window leaves the outcome open (backup arrives, Voelker finds him) -> no defeated, fought stays
+keep
+f+ Black Widow|wounded|Sterns|Black Widow shot him in the leg
+
+@13243 rulings 2026-11-04 SEALED AS OUTCOME: Nico Minoru fights the Magistrates (fought row) and ends it with a spell "that made the Magistrates vanish, leaving no trace" -> defeated beside sealed
+keep
++ Nico Minoru|defeated|Magistrate|She used this to cast a spell that made the Magistrates vanish, leaving no trace
+
+@13370 rulings 2026-11-04 SEALED AS OUTCOME + A145: "As Wong fights Cull, trapping him in the Arctic with his Sling Ring" - the fight and the trapping are one stated act -> defeated replaces fought, sealed stays
+keep
+- Wong|fought|Cull
++ Wong|defeated|Cull|As Wong fights Cull, trapping him in the Arctic with his Sling Ring
+
+@13371 rulings 2026-11-04 ESC (A74): "Together, they force Proxima Midnight and a heavily wounded Corvus Glaive to retreat" -> each forced to retreat escaped each named member of the side that forced it; the stated wound (doer not named) -> Corvus Glaive|wounded|-
+keep
++ Proxima Midnight|escaped|Rogers|Together, they force Proxima Midnight and a heavily wounded Corvus Glaive to retreat
++ Proxima Midnight|escaped|Falcon|Together, they force Proxima Midnight and a heavily wounded Corvus Glaive to retreat
++ Proxima Midnight|escaped|Black Widow|Together, they force Proxima Midnight and a heavily wounded Corvus Glaive to retreat
++ Proxima Midnight|escaped|Vision|Together, they force Proxima Midnight and a heavily wounded Corvus Glaive to retreat
++ Proxima Midnight|escaped|Wanda Maximoff|Together, they force Proxima Midnight and a heavily wounded Corvus Glaive to retreat
++ Corvus Glaive|escaped|Rogers|Together, they force Proxima Midnight and a heavily wounded Corvus Glaive to retreat
++ Corvus Glaive|escaped|Falcon|Together, they force Proxima Midnight and a heavily wounded Corvus Glaive to retreat
++ Corvus Glaive|escaped|Black Widow|Together, they force Proxima Midnight and a heavily wounded Corvus Glaive to retreat
++ Corvus Glaive|escaped|Vision|Together, they force Proxima Midnight and a heavily wounded Corvus Glaive to retreat
++ Corvus Glaive|escaped|Wanda Maximoff|Together, they force Proxima Midnight and a heavily wounded Corvus Glaive to retreat
+f+ Corvus Glaive|wounded|-|Together, they force Proxima Midnight and a heavily wounded Corvus Glaive to retreat
+
+@13417 rulings 2026-11-04 CAPTURED AS OUTCOME: "the Ten Rings attacked and failed to kill Stark, and they instead kidnapped him" - the capture ends the stated attack -> defeated + captured; the attack is stated as its own clause, so fought stays (Ten Rings is a named organization, Add.4)
+keep
++ Ten Rings|defeated|Stark|the Ten Rings attacked and failed to kill Stark, and they instead kidnapped him
+
+@13643 rulings 2026-11-04 NEAR-FINAL STATES (b13643 named): Jones pins and disarms Simpson; his last try ends "but was quickly disarmed yet again", nothing continues -> Jessica Jones|defeated|Will Simpson beside fought; Will Simpson|killed|Clemons kept (Add.4: "made it clear that" is factive)
+keep
++ Jessica Jones|defeated|Will Simpson|but was quickly disarmed yet again
+
+@13737 rulings 2026-11-04 FW: "after being stabbed by Sprite" is a stated wound -> Sprite|wounded|Sersi (she heals; no defeated)
+keep
+f+ Sprite|wounded|Sersi|she is quickly better after being stabbed by Sprite
+
+@13741 rulings 2026-11-04 Addendum 4 (b13741 named): Osiris stops Spector's punch at Harrow and forbids violence, ending Spector's part -> STOP + INTERCEPTED ATTACKS: Osiris|defeated|Marc Spector + Osiris|saved|Arthur Harrow, the stopped fact goes
+keep
+f- Osiris|other_verb|stopped
++ Osiris|defeated|Marc Spector|When Spector, as Khonshu, attempted to punch Harrow, Osiris had then stopped him and told him they would not allow violence there
++ Osiris|saved|Arthur Harrow|When Spector, as Khonshu, attempted to punch Harrow, Osiris had then stopped him and told him they would not allow violence there
+
+@13854 rulings 2026-11-04 Addendum 4 (b13854 named): "the Conquistadores" is a plural class noun with no proper organization name -> a crowd (A5), no end; no named member is tied to the act -> the arrived and defeated rows go, the sentence is tagged crowd_end
+keep
+- Conquistadores|arrived|Sky World
+- Kahhori|defeated|Conquistadores
+t+ crowd_end|As the army charged, Kahhori took their weapons, leading them to flee in fear
+
+@13863 rulings 2026-11-04 Addendum 4 (b13863 named): "attacked by the Conquistadores" is a crowd end (A5/A94) -> the fact goes, tag crowd_end; STOP: "joined forces with Captain Carter to stop Strange once and for all. After they succeeded" is a completed stop of a named person -> defeated for both named partners (TEAM), the stop fact goes
+keep
+f- Conquistadores|attacked|Kahhori's village
+t+ crowd_end|Kahhori is a young Mohawk woman whose village was attacked by the Conquistadores
+f- Kahhori|other_verb|stop
++ Kahhori|defeated|Doctor Strange|joined forces with Captain Carter to stop Strange once and for all. After they succeeded
++ Peggy Carter|defeated|Doctor Strange|joined forces with Captain Carter to stop Strange once and for all. After they succeeded
+
+@3097 rulings 2026-11-04 "NEARLY V": "nearly decapitating the former" did not happen -> decapitating actual/denied (the fight keeps fought, A11)
+keep
+f- Kasady|other_verb|decapitating
+f+ Kasady|other_verb|decapitating|nearly decapitating the former and impaling the latter|actual|denied|
+
+@3119 rulings 2026-11-04 CAPTURED AS OUTCOME: "Jubilee held her own by blasting the M-Squad's energy tractor beams, but was eventually caught" - the capture ends a stated fight (fought row) -> M-Squad|defeated|Jubilee beside captured
+keep
++ M-Squad|defeated|Jubilee|Jubilee held her own by blasting the M-Squad's energy tractor beams, but was eventually caught
+
+@3201 rulings 2026-11-04 TEAM + RECORDS OF VICTORIES: "thwarted the Hunger entity with the help of Galactus" - the partner named in the clause shares the defeat -> Galactus|defeated|Hunger; plain error in the same rows: the help is Galactus's (A136) -> Galactus|helped|Thanos replaces Thanos|helped|Galactus
+keep
++ Galactus|defeated|Hunger|thwarted the Hunger entity with the help of Galactus
+f- Thanos|helped|Galactus
+f+ Galactus|helped|Thanos|thwarted the Hunger entity with the help of Galactus

@@ -1,0 +1,71 @@
+@11717 rulings 2026-11-04: addendum 2 (ordered vs controlled), "he had Clemons attack her" on Kilgrave's command (no mind control of Clemons stated in the window): an ordered act asserted_by Kilgrave, not a plain fought; Kilgrave|ordered|Oscar Clemons already present
+keep
+- Oscar Clemons|fought|Jones
+f+ Oscar Clemons|other_verb|attack|so he had Clemons attack her, enabling him to get away during the chaos|ordered|stated|Kilgrave
+
+@12381 rulings 2026-11-04: MIND CONTROL (owner), Geoffrey "fell under le Fay's influence through a Crow Necklace, which caused him to briefly detain" Victor and Stacey until "the enchantment was broken": a controlled act asserted_by Morgan le Fay, no plain captured; Dagger's hit that frees him stays plain
+keep
+- Geoffrey|captured|Victor
+- Geoffrey|captured|Stacey
+f+ Geoffrey|other_verb|detain|fell under le Fay's influence through a Crow Necklace, which caused him to briefly detain fellow PRIDE members Victor and Stacey|controlled|stated|Morgan le Fay
+
+@9001 rulings 2026-11-04 Addendum 3 (b9001: hypnotised by A while obeying B's command = controlled asserted_by A, + B|ordered|X): Sauron hypnotized Storm; "On Garokk's command, Storm was unleashed upon the Savage Land, and used her powers": her unleashing and her use of powers are controlled acts asserted_by Sauron (no plain arrived); Garokk|ordered|Storm already present
+keep
+- Storm|arrived|Savage Land
+f+ Storm|other_verb|unleashed|On Garokk's command, Storm was unleashed upon the Savage Land|controlled|stated|Sauron
+f- Storm|used|powers
+f+ Storm|used|powers|used her powers to drive the weather into a frenzy|controlled|stated|Sauron
+
+@9537 rulings 2026-11-04 Addendum 3 (one modality: controlled wins over ordered): Lady Lotus "used her powers to put them under her control" and then ordered Bucky to attack Muroc Army Airfield: the ordered attack is a controlled act asserted_by Lady Lotus
+keep
+f- Bucky|other_verb|attack
+f+ Bucky|other_verb|attack|Lady Lotus then ordered Bucky and the others to pilot a B-17 and P-40 to attack Muroc Army Airfield|controlled|stated|Lady Lotus
+
+@9567 rulings 2026-11-04 Addendum 3 (possession, b12392): "Jennifer was attacked by Daniel Drumm, possessing Victoria Hand" and "killed by Drumm's mad assault": the possessed body's acts are Victoria Hand's under Drumm's control, not Drumm's plain events; the victim's death written as usual; Drumm's possessing stays his own fact
+keep
+- Daniel Drumm|fought|Jennifer
+- Daniel Drumm|killed|Jennifer
+f+ Victoria Hand|attacked|Jennifer|Jennifer was attacked by Daniel Drumm, possessing Victoria Hand, in her home in Miami|controlled|stated|Daniel Drumm
+f+ Victoria Hand|other_verb|killed|In fact, Jennifer had been killed by Drumm's mad assault|controlled|stated|Daniel Drumm
+f+ Jennifer|dies|-|In fact, Jennifer had been killed by Drumm's mad assault
+
+@5972 rulings 2026-11-04 Addendum 3 (possession, b12392): "In possession of Wolverine's body, Hellverine ... after killing John Wraith": the kill is Wolverine's body's act under Hellverine's control, not Hellverine's plain killed; the victim's death written as usual
+keep
+- Hellverine|killed|John Wraith
+f+ Wolverine|other_verb|killing|after killing John Wraith|controlled|stated|Hellverine
+f+ John Wraith|dies|-|after killing John Wraith
+
+@12872 rulings 2026-11-04: TORTURE IS NOT A FIGHT (owner), "Rawlins continued torturing him, striking Castle without mercy" (Castle his prisoner, b12876): tortured, no fought
+keep
+- Rawlins|fought|Castle
+f+ Rawlins|tortured|Castle|Rawlins continued torturing him, striking Castle without mercy
+
+@12876 rulings 2026-11-04: TORTURE IS NOT A FIGHT (owner), "Rawlins had kept his sidearm on him while he tortured Frank Castle" (Castle freed only by Russo): tortured, no fought
+keep
+- Rawlins|fought|Frank Castle
+f+ Rawlins|tortured|Frank Castle|Rawlins had kept his sidearm on him while he tortured Frank Castle
+
+@12881 rulings 2026-11-04: TORTURE IS NOT A FIGHT (owner), Rawlins "used this understanding of the human body to inflict torture upon" Ahmad Zubair and later on Frank Castle "whom he ensured suffered horrifically": tortured, no fought
+keep
+- Rawlins|fought|Ahmad Zubair
+- Rawlins|fought|Frank Castle
+f+ Rawlins|tortured|Ahmad Zubair|Rawlins used this understanding of the human body to inflict torture upon both Ahmad Zubair
+f+ Rawlins|tortured|Frank Castle|later used the same torture techniques of knowing how to inflict the most amount of agony onto a subject while keeping them alive on Frank Castle
+
+@13372 rulings 2026-11-04: TORTURE IS NOT A FIGHT (owner), Strange is held on Maw's Q-Ship and rescued "from Maw's torture": tortured, no fought; the rescue and Maw's death stay
+keep
+- Ebony Maw|fought|Doctor Strange
+f+ Ebony Maw|tortured|Doctor Strange|Stark and Parker successfully rescue Strange from Maw's torture
+
+@13222 rulings 2026-11-04 Addendum 3 (possession, b12392): "While possessing the body of Victor Stein, the Magistrate was able to hold his own against Nico Minoru ... to truly defeat her": the possessed body's fight and win are Victor Stein's acts under the Magistrate's control (outcome as other_verb with the quote's verb), not the possessor's plain defeated
+keep
+- Magistrate|defeated|Nico Minoru
+f+ Victor Stein|attacked|Nico Minoru|While possessing the body of Victor Stein, the Magistrate was able to hold his own against Nico Minoru|controlled|stated|Magistrate
+f+ Victor Stein|other_verb|defeat|although he ultimately resorted to his Gibborim powers to truly defeat her|controlled|stated|Magistrate
+
+@13659 rulings 2026-11-04 MIND CONTROL (owner) + FW: the assassination attempt on Trish Walker "while he was enthralled by Kilgrave" is a stated act under a named controller with no row: a controlled attack asserted_by Kilgrave; the shootings of Hank, McManus and Fortner are on "his own black ops mission" (his own will: plain fought kept) and each states the shot: wounded added
+keep
+f+ Will Simpson|attacked|Trish Walker|using it during an assassination attempt against Trish Walker while he was enthralled by Kilgrave|controlled|stated|Kilgrave
+f+ Will Simpson|wounded|Hank|using it to shoot Hank while trying to kill Kilgrave
+f+ Will Simpson|wounded|McManus|to shoot McManus and Fortner when they were sent by Kozlov
+f+ Will Simpson|wounded|Fortner|to shoot McManus and Fortner when they were sent by Kozlov
