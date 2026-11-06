@@ -268,3 +268,19 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   <best>/test_preds.jsonl --teacher` against the .523 marvel+mcu bar.
 - A separate session ("9b-weight-edit") was started on the owner's request to edit the 9B weights for extraction;
   it must not use the GPU while this run is going.
+
+## Update 2026-11-06 21:25 (step 5 PAUSED by the owner; the GPU chain keeps running unattended)
+- Micro-batch 2 OOMed on both seeds (dense batches, ~31 GB). The chain `/mnt/PROJECTS/student_runs_big/step5_v2_after.sh`
+  (PID 493524, log `step5_v2_after.log`) re-trains at micro-batch 1 x accum 16 (~24-28 GB, no allocator warnings),
+  ~137 min/epoch. The OOM dirs are kept as `*.failed-HHMM`.
+- Seed 2 DONE (`9B-v2-short-a16-lr1e-4-s2`, rc=0). dev_pool (151) events F1: e1 .588 [.474-.697] (marvel+mcu .564),
+  e2 .585 (marvel+mcu .514); `best/` = e1. The teacher on the same dev_pool: .472 [.356-.576], marvel+mcu .427.
+  The CIs overlap, so this is not a win until the seed 1 result and the one-time test score are in.
+- Seed 1 started 19:53 (sft PID 570368); epoch 1 ends ~22:10, epoch 2 ~00:30. Then the chain writes
+  `<run>/test_preds.jsonl` for both seeds (~01:00, "=== ALL DONE"). The weight-edit session's waiter
+  (`tools/train/wsp_run.sh`, PID 498258) then runs its dev_pool sweep on the free GPU (~2-3 h).
+- GOTCHA: `score_subsets.py --teacher` run from this worktree prints NO teacher line. The teacher drafts
+  (`series/<s>/training/labels/draft_frozen.jsonl`) exist only in the main checkout (series/ is gitignored) and ROOT
+  is the script's repo. Set `score_subsets.ROOT = Path('/home/goblin/ScriptEngine')` (that reproduces test .570/.523).
+- TO RESUME: check the log for "=== ALL DONE". Pick the seed/epoch on dev_pool (seed 1 vs seed 2 e1). Run
+  score_layers_v2 for all three layers. Then score test ONCE against the .523 marvel+mcu bar, update this file and commit.
