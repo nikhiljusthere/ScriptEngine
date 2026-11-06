@@ -231,6 +231,9 @@ def directions(acts, bad, ref):
     """Per layer: unit d = normalize(mean_bad - mean_ref) and a split-half AUC (d from even samples, scored on
     odd), so a layer is chosen by how well its direction separates held-out decisions, not by fit."""
     import torch
+    n = {c: len(acts["out"].get(c, [])) for c in (bad, ref)}
+    if min(n.values()) < 8:
+        raise SystemExit(f"too few decisions for a direction: {n}")
     B, R = acts["out"][bad].float(), acts["out"][ref].float()
     res = []
     for l in range(B.shape[1]):
