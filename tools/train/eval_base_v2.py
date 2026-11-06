@@ -9,7 +9,10 @@ is below the v2 test answers (2026-11-03 dry run, 9B tokenizer: test answer p99 
 15 of 292 over 1,024). Default --max-new here is 4096.
 
     ~/train-env/bin/python tools/train/eval_base_v2.py --model M --adapter BEST --in test.jsonl --out preds.jsonl \
-        [--only-series marvel,mcu] [--system-file F] [--batch 8] [--max-new 4096]
+        [--only-series marvel,mcu] [--system-file F] [--batch 8] [--max-new 4096] [--edit EDIT.pt]
+
+--edit: a wsp_edit.py weight-space edit, applied in memory after the adapter is merged (so an edit sweep
+needs no 18 GB checkpoint per point).
 
 GPU-only (the four-gate GPU rule); written 2026-11-03 without a GPU run: smoke it on a few windows first.
 """
@@ -52,6 +55,7 @@ def main():
     ap.add_argument("--only-series", default=None, help="comma list, e.g. marvel,mcu")
     ap.add_argument("--batch", type=int, default=8)
     ap.add_argument("--max-new", type=int, default=4096)
+    ap.add_argument("--edit")
     a = ap.parse_args()
     import torch
     from transformers import AutoTokenizer, AutoModelForImageTextToText
@@ -66,6 +70,11 @@ def main():
     if a.adapter:
         from peft import PeftModel
         m = PeftModel.from_pretrained(m, a.adapter)
+    if a.edit:
+        from wsp_edit import apply_edit
+        if a.adapter:
+            m = m.merge_and_unload()  # the edit's deltas were computed on the merged weights
+        print(f"edit {a.edit}: {apply_edit(m, a.edit):,} weights changed")
     m.eval()
     prompts = []
     for r in rows:
