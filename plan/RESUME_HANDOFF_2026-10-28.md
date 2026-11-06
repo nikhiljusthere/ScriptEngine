@@ -284,3 +284,8 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   is the script's repo. Set `score_subsets.ROOT = Path('/home/goblin/ScriptEngine')` (that reproduces test .570/.523).
 - TO RESUME: check the log for "=== ALL DONE". Pick the seed/epoch on dev_pool (seed 1 vs seed 2 e1). Run
   score_layers_v2 for all three layers. Then score test ONCE against the .523 marvel+mcu bar, update this file and commit.
+- 21:35 UPDATE: the owner stopped all GPU work. Killed: the seed 1 sft (PID 570368, ~1.5 h into epoch 1, partial
+  dir `9B-v2-short-a16-lr1e-4-s1` has no checkpoint), the chain driver 493524 and the weight-edit waiter 498258. The GPU
+  is free. TO RESUME: re-train seed 1 from scratch (move the partial dir aside first; ~4.5 h at micro-batch 1). Then
+  test preds for both seeds (eval_base_v2 --adapter <run>/best). Then re-arm `tools/train/wsp_run.sh` (branch
+  claude/sad-mirzakhani-287aec) if the weight edit is still wanted.
