@@ -238,3 +238,18 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   b8927 Dr. Steve keep the full name in events, the stripped form in facts). Tool limit: apply_edits keeps one fact
   per s|r|o|modality, so two controllers of one act get one row (Add.5, b12405).
 - NEXT: step 4 (gold lint re-run, compose v2 -> student_v2_short, check_v2_set rc=0, teacher re-score).
+
+## Update 2026-11-06 (step 4 DONE: final compose v2 + teacher re-score; step 5 waits for the owner)
+- Gold lint (GOLD_LINT_REPORT §6): `lint_gold.sh --regate` -> UNREVIEWED 0, no REGATE_* class (0 gate refusals);
+  `lint_gold_fix.sh build/apply` -> proposal 0, STALE 0, missing 0 (nothing to apply); lint_gold.json and
+  work_gold.txt rebuilt. Remaining classes are the known reviewed ones.
+- Compose (COMPOSE_V2_NOTES §7, defaults: --empty-def all, no --drop-base-page-overlap, short system prompt) from a
+  snapshot of big 20,848 / gold 4,201 lines -> `series/universal/training/student_v2_short`: train 17,312, dev 215,
+  dev_pool 151, test 292. Leaks: sentence>=40ch train&dev 0, train&test 0, dev&test 0; gold train windows dropped for
+  a repeated dev/test sentence: Rakshas, Robbery of the Russian Nuclear Facility. 166 big train windows on a test
+  base page kept (owner open decision §6.5). Max total tokens: no row over 4096 in dev/test.
+- `check_v2_set.py` -> rc=0, "errors": 0 (`student_v2_short/check.json`).
+- Teacher (frozen 35B drafter) on the revised test, events: all n=292 F1 .570 [.484-.659]; marvel+mcu n=123
+  F1 .523 [.415-.639] (P .571 R .482). SHIP BAR: the student must beat .523 on this same marvel+mcu test (old gold
+  bar was .602).
+- STEP 5 (GPU training, BIG_REVIEW_HANDOFF.md §4 with D=student_v2_short) NOT started: waits for the owner's go.
