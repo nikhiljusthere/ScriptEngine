@@ -253,3 +253,18 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   F1 .523 [.415-.639] (P .571 R .482). SHIP BAR: the student must beat .523 on this same marvel+mcu test (old gold
   bar was .602).
 - STEP 5 (GPU training, BIG_REVIEW_HANDOFF.md §4 with D=student_v2_short) NOT started: waits for the owner's go.
+
+## Update 2026-11-06 (step 5 STARTED on the owner's go)
+- Smoke (`/mnt/PROJECTS/student_runs_big/v2-smoke`, 64 train / 8 dev, 4 steps): sft_qwen trains and dev-scores v2
+  rows (the event scorer reads v2 gold: gold-as-pred F1 1.0), saves the adapter to `<out>/best`; eval_base_v2's GPU
+  path works (4 test windows in 20 s, 3/4 valid after 4 steps). The adapter path is `<out>/best`, not `<out>`.
+- Full run: `/mnt/PROJECTS/student_runs_big/step5_v2.sh` (driver PID 417510, log `step5_v2.log`), seeds 1 and 2
+  in turn: rank 16, alpha 16, lr 1e-4, 2 epochs, --patience 99, --loss-norm step, micro 2 x accum 8, --max-len 4096
+  (17,302 train rows, 10 over-long dropped; 1,082 steps/epoch), select on dev_pool; then eval_base_v2 test preds per
+  seed (`<out>/test_preds.jsonl`). Out dirs `9B-v2-short-a16-lr1e-4-s{1,2}`. Started 14:12 IST; the card sits at
+  ~31.3 of 32.6 GB with two non-fatal allocator OOM warnings at the start. If it OOMs: micro 1 x accum 16.
+- After it finishes: choose the seed/epoch on dev_pool (score_subsets --teacher on dev_pool, score_layers_v2 for
+  all three layers), then score test ONCE: `score_subsets.py --gold student_v2_short/test.jsonl --pred
+  <best>/test_preds.jsonl --teacher` against the .523 marvel+mcu bar.
+- A separate session ("9b-weight-edit") was started on the owner's request to edit the 9B weights for extraction;
+  it must not use the GPU while this run is going.
