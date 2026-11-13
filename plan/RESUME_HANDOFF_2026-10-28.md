@@ -345,3 +345,9 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   on the 150 holdout train windows; only its 64 dev windows are a clean baseline (report both).
 - NEXT: S3 scorer (per line: class, people set, event triples; wrong-person and missed lines) + a source-blind
   audit sheet; S4 continuity.py agreement. Report S1-S4 to the owner before anything goes to a store.
+- Step 2a/2b result (seed 2 best over 500 TRAIN windows, `v3/mine_preds_s2.jsonl`, 1,763 s, 496/500 valid): the
+  same-quote swaps are a long tail (1,470 unmatched gold rows; top pairs are tag-name swaps and outright misses:
+  list_header/no_relation/citation tags with no student row 29/26/22, met/fought/defeated events missed 15/12/11).
+  No dominant encoding pair. Statement-level F1 on these trained windows .675 [.655-.695], the same as on unseen
+  dev (.678): the gap is missed statements, not encodings, so normalising targets alone will not move it.
+  Gates: coverage .944 (big-set windows pull it down), verbatim .995, illegal 5/3,010, JSON 496/500.
