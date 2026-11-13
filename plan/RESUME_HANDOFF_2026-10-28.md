@@ -323,3 +323,25 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   (log `v3/chain.driver.log`): G-s1, G-s2 (non-Marvel gold only, 3 epochs), F-s1 (full v3, 2 epochs), FG-s1
   (F-s1 + 1 epoch on non-Marvel gold, lr 5e-5), each scored on dev_v3 (`<arm>/dev_v3_preds.jsonl`). ~12 h.
   Everything writes under the HDD runs folder `.../student_runs_big/v3`: do not move it while the chain runs.
+
+## Update 2026-11-14 (later): owner re-prioritised to JJK true 100%; per-line side test S1 done, S2 queued
+- Owner (relayed by the 9B analysis session): MCU is out with Marvel; then "get JJK to true 100% first, stop the
+  naruto pull", with a per-line side test on JJK. ON HOLD: the multi-series v3 arms (the queued `v3/chain.sh` was
+  stopped before it trained anything, PID 794676), HxH/DB/Naruto labelling, any second seed of the old recipe.
+  KEPT: step 2a (mining, running) and 2b (statement-level re-score).
+- Guard rails: JJK store work only on a copy (`~/student_runs_big/jjk_side/facts_copy.db`, from
+  series/jjk/facts.db 2026-11-14); no write to the live store, no re-index, no branch merge without the owner.
+- S1 (`tools/train/perline_candidates.py`, out `jjk_side/s1`): JJK holdout = 150 gold train windows on 59 whole
+  pages (seed 7) + the 64 JJK dev windows = 214. Candidate list per window = the page's node, its edge targets,
+  and every node whose name/alias occurs in the passage: median 46, p90 107. Coverage of the gold's ends (name rule
+  eval_extraction.same): events .976, fact subjects .989, fact objects .930, all .980 (>= the ~95% bar, so no list
+  fix before training). Top uncovered: first-name-only mentions with no alias (Toge, Noritoshi, Megumi, Riko),
+  places, items.
+- S2 (`tools/train/perline_build.py`, data `jjk_side/s2data`): v2 labels re-projected per sentence to the `meaning`
+  target (class event / standing state / trait / trivia, people as candidate numbers, events [verb, s#, o#]);
+  train = non-Marvel gold minus the JJK holdout pages, from the stores of each series (read-only, immutable).
+  Driver `jjk_side/s2.sh` (log `s2.driver.log`): waits for the mining job, trains `perline-s1` (r16 a16 lr1e-4,
+  3 epochs, OUT/last), then holdout preds for it and for seed 2 (`seed2_holdout_preds.jsonl`). NOTE: seed 2 trained
+  on the 150 holdout train windows; only its 64 dev windows are a clean baseline (report both).
+- NEXT: S3 scorer (per line: class, people set, event triples; wrong-person and missed lines) + a source-blind
+  audit sheet; S4 continuity.py agreement. Report S1-S4 to the owner before anything goes to a store.
