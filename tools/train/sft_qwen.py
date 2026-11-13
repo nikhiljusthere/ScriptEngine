@@ -226,6 +226,8 @@ def main():
     ap.add_argument("--seed", type=int, default=1)
     ap.add_argument("--max-steps", type=int, default=None)
     ap.add_argument("--full-ft", action="store_true")
+    ap.add_argument("--save-last", action="store_true", help="also save the final epoch's adapter to OUT/last")
+    ap.add_argument("--init-adapter", default=None, help="continue training this LoRA adapter dir (LoRA only)")
     ap.add_argument("--rare-x", type=int, default=1)
     # epochs without a dev-F1 gain before stopping (the best checkpoint is
     # kept either way); published 4B extraction fine-tunes peak at epochs
@@ -303,7 +305,14 @@ def main():
         peft_cfg = LoraConfig(r=a.rank, lora_alpha=alpha, lora_dropout=a.dropout,
                               target_modules=targets, use_rslora=True,
                               task_type="CAUSAL_LM")
-        model = get_peft_model(model, peft_cfg)
+        if a.init_adapter:
+            # step 3a of the 2026-11-14 analysis: a last stage on non-Marvel gold continues a trained adapter
+            # (its own rank/alpha/targets come from the adapter's config; --rank/--alpha are ignored).
+            from peft import PeftModel
+            model = PeftModel.from_pretrained(model, a.init_adapter, is_trainable=True)
+            print("init adapter:", a.init_adapter)
+        else:
+            model = get_peft_model(model, peft_cfg)
         model.print_trainable_parameters()
 
     # Non-reentrant checkpointing + input grads: with LoRA on frozen embeddings,
@@ -402,6 +411,8 @@ def main():
                 break
         if stop:
             break
+    if a.save_last:  # the annealed end of the cosine schedule, scored offline on dev_v3 (2026-11-14 yardstick)
+        model.save_pretrained(out / "last"); tok.save_pretrained(out / "last")
     final = {"best_dev_f1": best, "epochs_run": epoch, "steps": step,
              "config": vars(a), "targets": len(targets), "out": str(out)}
     json.dump(final, open(out / "final.json", "w"), indent=1)

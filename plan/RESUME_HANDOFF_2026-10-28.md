@@ -289,3 +289,37 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   is free. TO RESUME: re-train seed 1 from scratch (move the partial dir aside first; ~4.5 h at micro-batch 1). Then
   test preds for both seeds (eval_base_v2 --adapter <run>/best). Then re-arm `tools/train/wsp_run.sh` (branch
   claude/sad-mirzakhani-287aec) if the weight edit is still wanted.
+
+## Update 2026-11-14 (step 5 re-planned: Marvel out, new yardstick, v3 arms queued)
+- Owner scope change (relayed by the Fable analysis session, `docs/9B_STUDENT_ANALYSIS_2026-11-14.md` in worktree
+  `9b-model-extraction-analysis-a7e9c9`): Marvel is out; targets DB, Naruto, JJK, HxH. "Claude level" is NOT
+  gold-agreement F1 (a blind Opus scores events .60 / facts .36 / tags .50 on 55 dev_pool windows, below seed 2);
+  the bar is the source-blind row audit (seed 2: 5.1% wrong rows, ~20% statements missed; gold 1.0% wrong).
+  The old .523 Marvel+MCU test bar no longer applies. Test stays sealed.
+- Runs moved by the storage session to `/media/goblin/HDD/Ubuntu Offload/projects_drive/training/student_runs_big/`
+  (link `~/student_runs_big`); the seed-1 retrain was stopped there at 04:17 (rc=143). Not re-run as it was.
+- GOTCHA: `/mnt/PROJECTS` is now mounted `ntfs3`, which does not follow the HF cache's Interix links (`IntxLNK`
+  files): `config.json` "is not a valid JSON file". `~/models/Qwen3.5-9B` holds real symlinks to the resolved
+  blobs; use `--model /home/goblin/models/Qwen3.5-9B`.
+- Step 1a: `tools/train/split_v3_dev.py` -> `series/universal/training/student_v3_split`: dev_v3 = 635 windows
+  outside Marvel/MCU (482 held-out gold train windows on 313 whole pages, 20% per series, seed 7, + the 153 old
+  non-Marvel dev windows; jjk 230, others 66-75), page overlap with train 0, sentence leak drops 4, dev/test sentence
+  overlap 0. Train 16,826.
+- Step 1b/1c: `tools/train/score_v3.py` (statement-level score through `tools/train/statement_norm.py`, events +
+  facts pooled, crowd_end/no_doer soft FPs, any-name tag coverage; gates: sentence coverage, verbatim, illegal rows,
+  JSON). `tools/train/mine_swaps.py` lists same-quote label swaps; on the peer's 180 train windows they are a long
+  tail, no dominant pair.
+- Baseline, seed 2 on the 153 old non-Marvel dev windows (clean: never trained): statements F1 e1 .678 [.650-.706],
+  e2 .692 [.666-.719]; coverage .991, verbatim .997-1.000, illegal 0, JSON 153/153. On the 55 shared dev_pool
+  windows: seed 2 statements .611, blind Opus .510.
+- NEW BAR (before training): on dev_v3, statement F1 with CI plus gates coverage >= .99, verbatim >= .997, illegal 0;
+  then the blind row audit on the final candidate, target <= 2% wrong rows and <= 10% missed (a goal, not a result).
+- Step 2c: `tools/train/compose_v3.py` -> `student_v3` (full, 875 windows changed: object-less discovered and
+  other_verb realize/learn/notice/discover/deduce/figure -> learned; believe/think/suspect/assume -> suspected) and
+  `student_v3_nm` (non-Marvel gold only, 1,814; 87 changed: that gold already used one encoding). dev_mon = the 89
+  non-Marvel dev_pool windows (per-epoch monitor only). Gold files untouched.
+- `sft_qwen.py`: `--init-adapter DIR` (continue a LoRA adapter) and `--save-last` (OUT/last = annealed end).
+- GPU: step 2a mining (seed 2 on 500 train windows, `v3/mine_preds_s2.jsonl`), then the chain `v3/chain.sh`
+  (log `v3/chain.driver.log`): G-s1, G-s2 (non-Marvel gold only, 3 epochs), F-s1 (full v3, 2 epochs), FG-s1
+  (F-s1 + 1 epoch on non-Marvel gold, lr 5e-5), each scored on dev_v3 (`<arm>/dev_v3_preds.jsonl`). ~12 h.
+  Everything writes under the HDD runs folder `.../student_runs_big/v3`: do not move it while the chain runs.
