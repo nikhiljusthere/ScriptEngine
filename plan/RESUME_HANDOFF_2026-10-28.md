@@ -447,3 +447,15 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   refresh from the gold first (`perline_refresh_gold.py --gold <main-repo path>`, latest record per id) and re-resolve
   candidates for those windows (name forms changed, e.g. "Maki Zenin" -> "Maki"), then train. Nothing runs before that go.
 - Format defects still open: analysis worktree `docs/train_audit_2026-11-14/FINDINGS.md` section 2; owner questions in `OPEN_RULINGS.md`.
+
+### Update 2026-11-14 20:48: owner go ("Start training"), per-line run 2 launched on refreshed labels
+- Refresh: `tools/train/perline_refresh_gold.py` now takes `--stores DIR --jjk-db COPY` (one resolver per series) and
+  `--identity`. Output `~/student_runs_local/jjk_side/s3data/` (train/dev_mon/holdout). Identity proof: all 1,966
+  unchanged windows rebuild byte-equal from the same store copies (stores + `jjk_side/facts_resolver.db`).
+- Changed-window list holds 184 ids (all in train); all 184 rows now equal the gold's latest record; per-line targets
+  changed in 131 (fact-only edits do not reach the target); 2,150 train windows, all equal to latest gold;
+  holdout.jsonl / holdout_fixed.jsonl / dev_mon.jsonl untouched (md5 84bcf51a / 730de589 / 17f84259).
+- Run: `~/student_runs_local/jjk_side/s3d.sh` -> `perline-s2/` (same recipe + seed 1 as perline-s1), log
+  `perline-s2.log`, driver `s3d.driver.log`, trainer PID 303558; ~32 min train + ~4 min holdout preds; copies to
+  `.../student_runs_big/jjk_side/refreshed/` at the end ("S3D DONE"). Next: score holdout preds vs `holdout_fixed.jsonl`
+  with `perline_score.py` and compare to perline-s1 (S3 automatic numbers above).
