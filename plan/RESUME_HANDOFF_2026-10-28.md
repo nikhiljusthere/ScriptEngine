@@ -417,3 +417,15 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   whether those extras are wrong or the gold is sparse is what the blind audit decides.
 - S3 blind audit: `tools/train/perline_sheet.py` -> `jjk_side/audit/sheet_dev64.txt` (306 lines, 157 agreed, 149
   judged A/B blind by one Opus subagent -> `verdicts_dev64.txt`; unblind with `perline_sheet.py --unblind`).
+- S3 BLIND AUDIT RESULT (64 clean JJK dev windows, 306 lines; 149 disagreeing lines judged A/B blind by one Opus
+  judge, 157 agreed lines taken as ok, so both rates are floors): wrong lines per-line 15/306 = 4.9%, seed 2 16/306 =
+  5.2% (a tie); missed lines per-line 86/306 = 28.1%, seed 2 97/306 = 31.7%. Pairs (per-line, seed 2): ok/miss 44,
+  miss/miss 37, miss/ok 29, ok/ok 12, rest <=7. So the per-line model's extra names (automatic "wrong-person" .284 vs
+  .206) were mostly valid people the gold leaves out, not wrong persons. Both still miss a person or act on ~3 in 10
+  lines by the judge's strict standard (which counts any omitted participant or act).
+- S1-S4 VERDICT: the per-line list-picking approach is AS ACCURATE as seed 2 on wrong rows (4.9% vs 5.2%), a little
+  more complete (28% vs 32% missed lines; 0.8% vs 4.6% lines left empty), and its events are corroborated by other
+  pages as often as the gold's (.867 vs .878; seed 2 .781). It does not by itself close the gap to the <=2% wrong /
+  <=10% missed goal. The format as built is test-only (no modality, dropped off-list participants, no typed state
+  pairs). Nothing has been written to any store. Next decisions are the owner's: whether to design the production
+  per-line format (fields in the train-audit findings) and train it, and the store alias gaps (Miyo, Usami, Kinji...).
