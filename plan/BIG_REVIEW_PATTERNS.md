@@ -661,5 +661,6 @@ Piccolo / King Kong / Captain Mizuki whole; gold b825 b893 b1014 b3543 b3657 re-
 | STANDIN | a stand-in robot written as the person in `fought` ("had a robot acting in his place") | drop the person's row | b2783 |
 | ALLY-STUN | stunning or stabbing an ally to stop or cure him written as `fought` | `X|other_verb|<quote verb>` (+ wounded if stated) | b10667 b2041 |
 | CROWD-END | a class/army noun used as an end ("Conquistadores", "the Deviant", "several Avengers") | drop the row, tag `crowd_end` (A5, A94) | b13854 b13863 b3338 b3331 |
+| SHOWS-UP | a named character "shows up" where a named companion is (owner ruling 2026-11-14, BRIEF Addendum 6) | `X|met|companion` for each named companion present; no `other_verb` "shows" beside it; NOT for the one X then fights (A145), "did not show up", or an unnamed party | b3512 b3515 b1229 |
 Tool limit found: `apply_edits` de-duplicates facts by subject|relation|object|modality, so two rows that differ only
 in asserted_by (two controllers, two claimants) cannot be stored; the ruling keeps one controlled row (Add.5).

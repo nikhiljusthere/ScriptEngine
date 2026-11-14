@@ -388,3 +388,7 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   `~/student_runs_local/jjk_side/holdout_fixed.jsonl` (`tools/train/perline_refresh_gold.py`: latest record per id,
   re-projected; exactly those 11 windows changed). Seed 2 on the corrected 64 dev windows: class .908, is-event .955,
   exact people .647, wrong-person .206, missed .046, triples .539; corroboration gold .875 vs seed 2 .781.
+- Owner ruling "shows up between companions -> met" (BRIEF Addendum 6; catalog line SHOWS-UP in
+  BIG_REVIEW_PATTERNS.md): gold 4,216 lines, b3512 b3515 (dev) and b1229 (train, but one of the 150 JJK windows held
+  out for the per-line test, so not in its training data). holdout_fixed.jsonl now carries all 14 corrected windows.
+  Not swept: the 14k big set; three non-companion "show up" gold cases (b1088 b2995 b723) left as they are.
