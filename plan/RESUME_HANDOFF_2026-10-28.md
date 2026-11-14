@@ -392,3 +392,16 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   BIG_REVIEW_PATTERNS.md): gold 4,216 lines, b3512 b3515 (dev) and b1229 (train, but one of the 150 JJK windows held
   out for the per-line test, so not in its training data). holdout_fixed.jsonl now carries all 14 corrected windows.
   Not swept: the 14k big set; three non-companion "show up" gold cases (b1088 b2995 b723) left as they are.
+- PER-LINE FORMAT IS A TEST FORMAT ONLY (the analysis session's train audit, its
+  `docs/train_audit_2026-11-14/FINDINGS.md`, measured on s2data/train.jsonl): no modality (142 event lines are only a
+  plan/attempt/order/claim; 1,124 of 8,195 fact rows non-actual, folded in unmarked); a participant off the list is
+  silently dropped (146 of 2,811 triples lose a needed object); fact_gate.sentences splits after "Dr."/"vs." (171
+  lines) and leaves 504 lines under 12 chars; `event` is 63% of lines and mixes acts, speech, crowds, plans (478 with
+  nobody); 244 relationship/identity/possession lines lose relation and direction; `people` mixes characters, items,
+  places, techniques. So S3 compares LIST-PICKING only, and the report says so. A production format needs: class +
+  modality; characters and things apart; event triples; a typed pair for state lines; a slot for a named participant
+  not on the list; typed candidates from node labels; citation markers kept with their sentence.
+- Passage text: 2,131 of the 2,150 per-line train passages confirmed against the stored pages; 22 have parser holes
+  (17 Bleach: dropped terms, `{{W|...}}` residue, table-style residue; list `passages_with_text_holes.json` there) -> a
+  wikitext.py / overrides fix + re-window, not labels. A blind second reading of the train labels is being calibrated
+  by that session; it will say when train gold rows change.
