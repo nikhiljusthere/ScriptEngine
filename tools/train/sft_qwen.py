@@ -399,8 +399,10 @@ def main():
                 "gen_tokens_per_s": round(tps, 2), "seconds": round(time.time() - t0, 1)}
         metrics.write(json.dumps(line) + "\n"); metrics.flush()
         print("epoch", json.dumps(line), flush=True)
+        # a dev file whose answers carry no `events` key (the per-line target, 2026-11-14) scores f1 None:
+        # keep `best` a number, or the next epoch's comparison raises (it killed perline-s1 at epoch 2)
         if (sel["f1"] or 0) > best:
-            best, bad_epochs = sel["f1"], 0
+            best, bad_epochs = sel["f1"] or 0, 0
             model.save_pretrained(out / "best")
             tok.save_pretrained(out / "best")
             print(f"  new best dev F1 {best} -> saved {out/'best'}")
