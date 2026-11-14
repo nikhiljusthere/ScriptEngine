@@ -437,3 +437,13 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   missing); one fought/met per pair per window means the other sentences of the same fight carry no triple; a
   narrated act tagged no_relation for an unnamed participant becomes `trivia`. Audit state: the analysis worktree's
   `docs/train_audit_2026-11-14/STATE.md`.
+
+### Update 2026-11-14 (late): train-window gold audit finished, still on HOLD
+- Peer list of changed windows: `/home/goblin/ScriptEngine/.claude/worktrees/9b-model-extraction-analysis-a7e9c9/docs/train_audit_2026-11-14/fixes/changed_windows.json`
+  (181 of the 2,150 per-line train windows; fixes G133-G153; jjk 106, onepiece 18, csm 15, bleach 12, opm 11, db 10, berserk 9).
+- Live gold is `/home/goblin/ScriptEngine/series/universal/training/big/gold_v2/gold_audit_v2.jsonl` = 4,409 lines
+  (this worktree's copy is a stale 4,201; always pass the main-repo path as `--gold`).
+- `~/student_runs_local/jjk_side/s2data/train.jsonl` still has the OLD targets for those 181 windows. On the owner's go:
+  refresh from the gold first (`perline_refresh_gold.py --gold <main-repo path>`, latest record per id) and re-resolve
+  candidates for those windows (name forms changed, e.g. "Maki Zenin" -> "Maki"), then train. Nothing runs before that go.
+- Format defects still open: analysis worktree `docs/train_audit_2026-11-14/FINDINGS.md` section 2; owner questions in `OPEN_RULINGS.md`.
