@@ -459,3 +459,15 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   `perline-s2.log`, driver `s3d.driver.log`, trainer PID 303558; ~32 min train + ~4 min holdout preds; copies to
   `.../student_runs_big/jjk_side/refreshed/` at the end ("S3D DONE"). Next: score holdout preds vs `holdout_fixed.jsonl`
   with `perline_score.py` and compare to perline-s1 (S3 automatic numbers above).
+
+### Update 2026-11-14 21:35: per-line run 2 (refreshed labels) DONE and scored
+- `~/student_runs_local/jjk_side/perline-s2` (copy `.../student_runs_big/jjk_side/refreshed/`): train 20:48-21:20,
+  loss .0805 -> .0434 -> .0245 (run 1 .079 -> .043 -> .026), holdout preds 214/214 valid per-line JSON.
+- perline_score.py vs `holdout_fixed.jsonl` (run 1 re-scored, reproduces S3 exactly). All 214 windows, run 1 -> run 2:
+  class .931 -> .920; is-event F1 .966 -> .962; exact people .606 -> .606; wrong-person lines .267 -> .246; missed .008
+  -> .008; triples F1 .564 -> .547; verbs .670 -> .649. Dev 64: class .948/.944, wrong-person .284/.275, missed 2 -> 0,
+  triples .566/.519.
+- Paired window bootstrap (2,000, s2 - s1, 95% CI): class [-.021, -.001]; wrong-person [-.043, +.004]; triples
+  [-.065, +.027]. Reading: the corrected labels (131 of 2,150 targets) move nothing measurable on one seed; class is
+  ~1 pt lower at the edge of noise. These are gold-agreement numbers, not the bar (blind row audit); no blind audit of
+  run 2 has been run. Watcher note: its epoch test was broken (`grep -c || echo 0` -> "0\n0"); finish/death still fired.
