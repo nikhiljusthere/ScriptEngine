@@ -351,3 +351,32 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   No dominant encoding pair. Statement-level F1 on these trained windows .675 [.655-.695], the same as on unseen
   dev (.678): the gap is missed statements, not encodings, so normalising targets alone will not move it.
   Gates: coverage .944 (big-set windows pull it down), verbatim .995, illegal 5/3,010, JSON 496/500.
+
+## Update 2026-11-14 (afternoon): power loss, mapping bug fixed, per-line S2 re-run on fixed data
+- 06:15 IST the PC went down mid-run (no shutdown sequence; an unattended kernel 7.0.0-43 + NVIDIA module update
+  installed at 06:08-06:09 while training; a checkpoint write to the NTFS HDD at 06:14; cause unknown). Up again
+  14:46. The S2b retrain was lost (epoch 1 only, kept as `jjk_side/perline-s1.crashed-power-0615`); seed 2's holdout
+  preds (`jjk_side/seed2_holdout_preds.jsonl`) were complete. Precaution since then: live run output goes to the
+  ext4 root (`~/student_runs_local/`) and is copied to the HDD runs folder when a run ends.
+- MAPPING BUG (found by the 9B analysis session's gold audit, its `docs/gold_audit_2026-11-14/FINDINGS.md`):
+  perline_build `num()` mapped a gold name to the first alphabetical candidate sharing ONE word (eval_extraction.same):
+  "Toji" -> the battle page "Satoru Gojo vs. Toji Fushiguro", "Yuji" -> Kento Nanami (a sentence alias), other-language
+  nodes, chapter pages; 22-30% of JJK ends wrong. The run training on it was stopped by PID (7974/7978); its data kept
+  as `s2data.bad-mapping`. Every S1/S2/S3/S4 number before this point is void.
+- FIX: `perline_candidates.Resolver` uses the engine's own resolver (scriptengine/ingest/events.py
+  participant_candidates + pick_candidate: no battle/chapter/episode/arc pages, exact names and aliases only, the
+  page's links break ties) on store COPIES (`~/student_runs_local/stores/<series>.db`; FactStore may write), drops
+  other-language nodes and sentence-like aliases. Spot check: 53 of 2,553 resolved holdout ends map to a name sharing
+  no word, all wiki aliases (Pseudo-Geto -> Kenjaku, Maru -> Marulu Val Vol Yelvori, Mechamaru -> Kokichi Muta).
+- S1 strict (`jjk_side/s1_strict`): gold ends resolved AND on the candidate list .958 (events .960, fact subjects
+  .972, fact objects .860); candidates median 33, p90 84. Misses are names the store has no alias for (Miyo 25,
+  Usami 10, Yoshinobu 6, Kinji 6, Jabaloma 5, Rin 5) and places/items: a store alias gap, not a list gap.
+- Seed 2 baseline through the fixed resolver (perline_score.py; dev = the 64 clean windows): class .905, is-event
+  F1 .953, exact people .644, wrong-person lines .209, missed lines .042, triples F1 .539 (all 214: .895/.947/.681/
+  .177/.055/.642). S4 store corroboration (same verb+pair stated on another page): gold .886 (dev .862), seed 2 .840
+  (dev .781); before the fix both read ~.39.
+- S2 re-run (`~/student_runs_local/jjk_side/s2d.sh`, log `s2d.driver.log`; final line reads "S2C DONE", a sed slip):
+  perline-s1 on the fixed s2data, then holdout preds; copied to `.../student_runs_big/jjk_side/fixed/`.
+- The v2 gold on the 64 clean JJK windows (the analysis session's read of all 676 rows): 1.5% wrong by its own rules,
+  ~7% of events missing, 3 uncovered sentences. Fit to rank two systems, not an absolute yardstick. No gold row is to
+  be edited without the owner.

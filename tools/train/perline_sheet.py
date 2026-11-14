@@ -20,7 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fact_gate  # noqa: E402
 import score_layers_v2 as sl  # noqa: E402
 from perline_build import project  # noqa: E402
-from perline_candidates import load_store  # noqa: E402
+from perline_candidates import Resolver  # noqa: E402
 from perline_score import parse_lines  # noqa: E402
 
 
@@ -58,10 +58,7 @@ def main():
     a = ap.parse_args()
     if a.unblind:
         return unblind(a)
-    names, al = load_store(a.db)[:2]
-    forms_of = collections.defaultdict(set)
-    for n, nm in names.items():
-        forms_of[nm] |= {nm} | al.get(n, set())
+    R = Resolver(a.db)
     pl = {json.loads(l)["id"]: json.loads(l).get("raw", "") for l in open(a.perline)}
     v2 = sl.load(a.v2)
     rng = random.Random(a.seed)
@@ -71,8 +68,7 @@ def main():
         cands = r["candidates"]
         P = parse_lines(pl.get(r["id"], ""))[0]
         p = v2.get(r["id"], {"events": [], "facts": [], "tags": []})
-        V = {x["n"]: x for x in project(dict(r, **{k: p[k] for k in ("events", "facts", "tags")}), cands,
-                                         [forms_of[x] or {x} for x in cands])[0]["lines"]}
+        V = {x["n"]: x for x in project(dict(r, **{k: p[k] for k in ("events", "facts", "tags")}), cands, r["candidate_ids"], R)[0]["lines"]}
         sents = fact_gate.sentences(r["passage"])
         block = []
         for n, s in enumerate(sents, 1):

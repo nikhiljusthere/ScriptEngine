@@ -25,7 +25,7 @@ sys.path.insert(0, str(ROOT / "tools")); sys.path.insert(0, str(ROOT / "tools" /
 import eval_extraction as ee  # noqa: E402
 import fact_gate  # noqa: E402
 import score_layers_v2 as sl  # noqa: E402
-from perline_candidates import candidates, load_store  # noqa: E402
+from perline_candidates import Resolver  # noqa: E402
 
 GROUP = {r: g for g, rels in sl.GROUPS.items() for r in rels}
 CHANGE = {"dies", "wounded", "healed", "kidnapped", "born", "transformed_into", "gained_power", "lost_power"}
@@ -42,13 +42,13 @@ def on(q, s):
     return bool(q) and (q in s or s in q)
 
 
-def project(row, cands, forms):
+def project(row, cands, cand_ids, resolver):
+    """cand_ids: the window's candidate node ids (numbered from 1); a name maps to a number only when the engine's
+    resolver names that node (Resolver.resolve), never by a shared word (the 2026-11-14 mapping bug)."""
     sents = fact_gate.sentences(row["passage"])
+    pos = {n: i for i, n in enumerate(cand_ids, 1)}
     def num(name):
-        if not name: return None
-        for i, fs in enumerate(forms, 1):
-            if any(ee.same(name, x) for x in fs): return i
-        return None
+        return pos.get(resolver.resolve(name, row)) if name else None
     lines = []
     for n, s in enumerate(sents, 1):
         ev = [e for e in row["events"] if on(e.get("quote"), s)]
@@ -80,14 +80,12 @@ def project(row, cands, forms):
     return {"lines": lines}, user
 
 
-def build(row, store, names_of):
-    cand_ids = candidates(row, store)
-    names, al = store[0], store[1]
-    cands = [names[n] for n in cand_ids]
-    forms = [{names[n]} | al.get(n, set()) for n in cand_ids]
-    target, user = project(row, cands, forms)
+def build(row, R, names_of=None):
+    cand_ids = R.candidates(row)
+    cands = [R.names[n] for n in cand_ids]
+    target, user = project(row, cands, cand_ids, R)
     out = {k: row[k] for k in ("id", "series", "page", "section", "passage", "events", "facts", "tags")}
-    out.update(candidates=cands, target=target, split=row.get("split", "train"),
+    out.update(candidates=cands, candidate_ids=cand_ids, target=target, split=row.get("split", "train"),
                messages=[{"role": "system", "content": SYSTEM}, {"role": "user", "content": user},
                          {"role": "assistant", "content": json.dumps(target, ensure_ascii=False)}])
     return out
@@ -96,7 +94,7 @@ def build(row, store, names_of):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--train-src", required=True); ap.add_argument("--jjk-holdout", required=True)
-    ap.add_argument("--jjk-train-ids", required=True); ap.add_argument("--stores", required=True)
+    ap.add_argument("--jjk-train-ids", required=True); ap.add_argument("--stores", required=True, help="dir of store COPIES named <series>.db")
     ap.add_argument("--jjk-db", required=True); ap.add_argument("--out", required=True)
     a = ap.parse_args()
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
@@ -104,9 +102,9 @@ def main():
     stores, n, skipped = {}, 0, {}
     def store_for(s):
         if s not in stores:
-            db = a.jjk_db if s == "jjk" else f"{a.stores}/{s}/facts.db"
+            db = a.jjk_db if s == "jjk" else f"{a.stores}/{s}.db"   # COPIES: FactStore may write
             try:
-                stores[s] = load_store(f"{db}?immutable=1" if s != "jjk" else db)
+                stores[s] = Resolver(db)
             except Exception as e:
                 stores[s] = None; skipped[s] = str(e)[:120]
         return stores[s]

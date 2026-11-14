@@ -35,11 +35,8 @@ def main():
     ap.add_argument("--db", required=True, help="the series store copy the candidate lists came from (aliases)")
     a = ap.parse_args()
     data = [json.loads(l) for l in open(a.data)]
-    from perline_candidates import load_store
-    names, al = load_store(a.db)[:2]
-    forms_of = collections.defaultdict(set)
-    for n, nm in names.items():
-        forms_of[nm] |= {nm} | al.get(n, set())
+    from perline_candidates import Resolver
+    R = Resolver(a.db)
     systems = {}
     if a.perline:
         raw = {json.loads(l)["id"]: json.loads(l).get("raw", "") for l in open(a.perline)}
@@ -59,8 +56,7 @@ def main():
                 else:
                     p = preds.get(r["id"], {"events": [], "facts": [], "tags": []})
                     cands = r["candidates"]  # same name + alias forms the gold projection used (perline_build.build)
-                    t, _ = project(dict(r, events=p["events"], facts=p["facts"], tags=p["tags"]), cands,
-                                   [forms_of[c] or {c} for c in cands])
+                    t, _ = project(dict(r, events=p["events"], facts=p["facts"], tags=p["tags"]), cands, r["candidate_ids"], R)
                     pl = {x["n"]: x for x in t["lines"]}
                     C["valid"] += 1
                 C["windows"] += 1

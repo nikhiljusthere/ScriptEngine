@@ -14,7 +14,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import score_layers_v2 as sl  # noqa: E402
 from perline_build import project  # noqa: E402
-from perline_candidates import load_store  # noqa: E402
+from perline_candidates import Resolver  # noqa: E402
 from perline_score import parse_lines  # noqa: E402
 
 
@@ -26,10 +26,7 @@ def main():
     data = [json.loads(l) for l in open(a.data)]
     c = sqlite3.connect(f"file:{a.db}?mode=ro", uri=True)
     node = {nm: i for i, nm in c.execute("select id, name from nodes")}
-    names, al = load_store(a.db)[:2]
-    forms_of = collections.defaultdict(set)
-    for n, nm in names.items():
-        forms_of[nm] |= {nm} | al.get(n, set())
+    R = Resolver(a.db)
     groups = collections.defaultdict(list)
     for v, s, o, page, arc in c.execute("select verb, subject_node, object_node, doc_title, arc_index from events where subject_node is not null"):
         key = (v, frozenset([s, o]) if o is not None else frozenset([s]))
@@ -51,8 +48,7 @@ def main():
                     lines = list(parse_lines(preds.get(r["id"], ""))[0].values())
                 else:
                     p = preds.get(r["id"], {"events": [], "facts": [], "tags": []})
-                    lines = project(dict(r, **{k: p[k] for k in ("events", "facts", "tags")}), cands,
-                                    [forms_of[x] or {x} for x in cands])[0]["lines"]
+                    lines = project(dict(r, **{k: p[k] for k in ("events", "facts", "tags")}), cands, r["candidate_ids"], R)[0]["lines"]
                 for ln in lines:
                     for t in ln.get("events") or []:
                         if not (isinstance(t, list) and len(t) == 3): continue

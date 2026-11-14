@@ -12,8 +12,68 @@ or any alias).
 import argparse, collections, json, random, re, sqlite3, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "tools"))
+sys.path.insert(0, str(ROOT / "tools")); sys.path.insert(0, str(ROOT))
 import eval_extraction as ee  # noqa: E402
+
+# Fix 2026-11-14 (the 9B analysis session's gold audit, docs/gold_audit_2026-11-14/FINDINGS.md): the first version
+# matched a gold name to the FIRST alphabetical candidate sharing one word with it (eval_extraction.same), so
+# "Toji" became the battle page "Satoru Gojo vs. Toji Fushiguro", "Yuji" became Kento Nanami through a sentence
+# alias, and 22-30% of JJK ends went to the wrong number. Names now go through the engine's own participant
+# resolver (scriptengine/ingest/events.py: participant_candidates + pick_candidate), which leaves out battle /
+# chapter / episode / arc pages and resolves exact names and aliases only, using the page's own links to break
+# ties. Run with the scriptengine venv; FactStore may write, so point it at a COPY of each store.
+OTHER_LANG = re.compile(r"^[A-Z][a-z](?:-[A-Za-z]+)?:")
+
+
+def _sentence_like(key):
+    return len(key) < 3 or len(key.split()) > 4 or "(" in key or ")" in key or ":" in key
+
+
+class Resolver:
+    def __init__(self, db):
+        from scriptengine.ingest import events as ev
+        from scriptengine.stores.facts import FactStore
+        self.ev = ev
+        st = FactStore(db)
+        c = st.connection
+        self.pc = {k: [x for x in v if not OTHER_LANG.match(x[1])] for k, v in ev.participant_candidates(st).items()}
+        self.pc = {k: v for k, v in self.pc.items() if v}
+        self.names = {int(i): n for i, n in c.execute("select id, name from nodes")}
+        self.eligible = {x[0] for v in self.pc.values() for x in v}
+        self.doc_node = {t: int(n) for t, n in c.execute("select d.title, n.id from documents d join nodes n on n.document_id = d.id")}
+        self.out_edges = collections.defaultdict(set)
+        for a_, b_ in c.execute("select source_id, target_id from edges"):
+            self.out_edges[int(a_)].add(int(b_))
+        self.keys = [k for k in self.pc if not _sentence_like(k)]
+        self.key_re = {k: re.compile(r"(?<!\w)" + re.escape(k) + r"(?!\w)", re.I) for k in self.keys}
+
+    def root(self, page):
+        return self.doc_node.get(page) or self.doc_node.get(page.split("/")[0])
+
+    def resolve(self, name, row):
+        if not name:
+            return None
+        cands = self.pc.get(name.strip().lower())
+        if not cands:
+            return None
+        r = self.root(row["page"])
+        hit = self.ev.pick_candidate(cands, name, linked=self.out_edges.get(r, set()) if r else set(), self_page=row["page"])
+        return hit[0] if isinstance(hit, tuple) else None
+
+    def candidates(self, row):
+        r = self.root(row["page"])
+        out = set()
+        if r is not None:
+            if r in self.eligible: out.add(r)
+            base = self.doc_node.get(row["page"].split("/")[0])
+            if base in self.eligible: out.add(base)
+            out |= self.out_edges.get(r, set()) & self.eligible
+        low = row["passage"].lower()
+        for k in self.keys:
+            if k in low and self.key_re[k].search(row["passage"]):
+                n = self.resolve(k, row)
+                if n is not None: out.add(n)
+        return sorted(out, key=lambda n: self.names[n])
 
 
 def load_store(db):
@@ -75,21 +135,24 @@ def main():
         if p in dev_pages: continue
         hold.add(p); got += sum(r["page"] == p for r in train)
     held = [dict(r, split="holdout") for r in train if r["page"] in hold] + [dict(r, split="dev") for r in dev]
-    store = load_store(a.db)
-    names, al = store[0], store[1]
+    R = Resolver(a.db)
+    names = R.names
     cov = collections.Counter(); tot = collections.Counter(); sizes = []; miss = collections.Counter()
+    unres = collections.Counter()
     with open(out / "holdout.jsonl", "w") as f:
         for r in held:
-            cand = candidates(r, store)
-            sizes.append(len(cand))
-            forms = [(names[n], {names[n]} | al.get(n, set())) for n in cand]
+            cand = R.candidates(r)
+            sizes.append(len(cand)); cs = set(cand)
             for k, v in ends(r):
                 tot[k] += 1
-                if any(any(ee.same(v, x) for x in fs) for _, fs in forms):
+                n = R.resolve(v, r)
+                if n is None:
+                    unres[k] += 1; miss["(unresolved) " + v] += 1
+                elif n in cs:
                     cov[k] += 1
                 else:
-                    miss[v] += 1
-            f.write(json.dumps(dict(r, candidates=[names[n] for n in cand]), ensure_ascii=False) + "\n")
+                    miss["(not listed) " + v] += 1
+            f.write(json.dumps(dict(r, candidates=[names[n] for n in cand], candidate_ids=cand), ensure_ascii=False) + "\n")
     tr_ids = {r["id"] for r in train if r["page"] not in hold}
     json.dump(sorted(tr_ids), open(out / "train_ids.json", "w"))
     sizes.sort()
@@ -97,6 +160,7 @@ def main():
            "from_dev": len(dev), "held_pages": len(hold), "train_windows_left": len(tr_ids),
            "candidates_median": sizes[len(sizes) // 2], "candidates_p90": sizes[int(len(sizes) * .9)],
            "coverage": {k: f"{cov[k]}/{tot[k]} = {cov[k] / tot[k]:.3f}" for k in tot},
+           "unresolved_by_engine": dict(unres),
            "coverage_all": f"{sum(cov.values())}/{sum(tot.values())} = {sum(cov.values()) / sum(tot.values()):.3f}",
            "top_uncovered": miss.most_common(40)}
     json.dump(rep, open(out / "s1_report.json", "w"), indent=1, ensure_ascii=False)
