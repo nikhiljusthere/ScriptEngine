@@ -405,3 +405,15 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   (17 Bleach: dropped terms, `{{W|...}}` residue, table-style residue; list `passages_with_text_holes.json` there) -> a
   wikitext.py / overrides fix + re-window, not labels. A blind second reading of the train labels is being calibrated
   by that session; it will say when train gold rows change.
+- S2 DONE (`~/student_runs_local/jjk_side/perline-s1`, copied to `.../student_runs_big/jjk_side/fixed/`): 3 epochs on
+  the fixed s2data (2,150 windows, train loss .079 -> .043), holdout preds 214/214 valid per-line JSON.
+- S3 automatic, against the corrected gold re-projected per line (64 clean dev windows; all 214 in brackets), per-line
+  vs seed 2. LIST-PICKING ONLY (the format is test-only, see above):
+  class .948 vs .908 (.931/.896); is-event F1 .974 vs .955; exact people .582 vs .647 (.606/.682); lines naming
+  someone the gold does not .284 vs .206 (.267/.176); lines with nobody where the gold names someone .008 vs .046
+  (.008/.056); event triples F1 .566 vs .540 (.564/.641; seed 2 trained on the 150 holdout windows); verbs .667 vs .613.
+  S4 store corroboration (same verb+pair on another page): gold .878, per-line .867, seed 2 .781 (dev); all 214:
+  .890 / .843 / .840. Reading: the per-line model rarely leaves a line empty but names more people than the gold;
+  whether those extras are wrong or the gold is sparse is what the blind audit decides.
+- S3 blind audit: `tools/train/perline_sheet.py` -> `jjk_side/audit/sheet_dev64.txt` (306 lines, 157 agreed, 149
+  judged A/B blind by one Opus subagent -> `verdicts_dev64.txt`; unblind with `perline_sheet.py --unblind`).
