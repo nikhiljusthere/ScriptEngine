@@ -380,3 +380,11 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
 - The v2 gold on the 64 clean JJK windows (the analysis session's read of all 676 rows): 1.5% wrong by its own rules,
   ~7% of events missing, 3 uncovered sentences. Fit to rank two systems, not an absolute yardstick. No gold row is to
   be edited without the owner.
+- GOLD CORRECTED (owner-approved, done by the 9B analysis session, 2026-11-14 15:17): gold_audit_v2.jsonl 4,201 ->
+  4,213 lines, 11 JJK DEV windows (b3467 b3469 b3472 b3476 b3477 b3486 b3488 b3498 b3505 b3511 b3517; +18/-9 rows;
+  fixes gold_v2/fixes/G130-G131; backup .bak-pre-audit-2026-11-14). Training sets are unaffected (dev windows only);
+  STALE until recomposed: student_v2_short/dev(+dev_pool).jsonl, student_v3_split/dev_v3.jsonl (on hold with the
+  multi-series work), and lint_gold.sh has not been re-run. The per-line evaluation uses
+  `~/student_runs_local/jjk_side/holdout_fixed.jsonl` (`tools/train/perline_refresh_gold.py`: latest record per id,
+  re-projected; exactly those 11 windows changed). Seed 2 on the corrected 64 dev windows: class .908, is-event .955,
+  exact people .647, wrong-person .206, missed .046, triples .539; corroboration gold .875 vs seed 2 .781.
