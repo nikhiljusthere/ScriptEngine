@@ -1,0 +1,236 @@
+# Per-wiki handling for Narutopedia (naruto.fandom.com).
+#
+# Measured on the crawl of 2026-11-14 (re-crawled with the declarations below):
+# 8,039 articles enumerated, 7,795 on disk, 244 skipped (159 disambiguation, 81
+# `{{Soft redirect}}` stubs, 3 deletion candidates, 1 browse page), 0 failed.
+#
+# Audit after these declarations: typed 91.2% (was 84.1%), facts/page 13.55
+# (9.71), edges resolved 82.7% (67.4%), sentences with a chapter 12.4% and with
+# an episode 7.7% (both 0%). The sourcing check fails against its 25% floor, and
+# that is the wiki rather than an unread shape: see "Why sourcing is low" below.
+
+# --- Where the infobox is ----------------------------------------------------
+#
+# An article here does not contain its infobox. It says
+#
+#     {{Infobox}}
+#
+# and `Template:Infobox` expands that to `{{Infobox:<article title>}}`, a page in
+# a namespace of its own (ns 112) holding the real call:
+#
+#     {{Infobox/Naruto/Character
+#     |kanji=ブルービー
+#     |affiliations=Kumogakure
+#     |ref=<ref name="db4">Fourth Databook, page 208</ref>
+#     ...
+#
+# 1,453 of 7,795 articles work this way, every character page among them. The
+# crawl fetches the main namespace, so without this each of them stored zero
+# facts, and the named references the infobox defines (`<ref name="db4"/>`,
+# reused all through the prose) resolved to nothing.
+transcluded_pages:
+  - template: Infobox
+    page: "Infobox:{title}"
+
+# --- Redirects ---------------------------------------------------------------
+#
+# This wiki links through its redirects rather than around them: prose writes
+# `[[Sasuke]]`, `[[Sakura]]`, `[[Tobi]]`, `[[Nine-Tails]]`, not
+# `[[Sasuke Uchiha|Sasuke]]`. With no redirect titles recorded, 42,017 of
+# 128,720 links pointed at nothing (67.4% resolved, under the audit's 70% floor)
+# and the ten most-linked "missing" pages were all redirects: Sasuke 1,012,
+# Sakura 734, Shikamaru 538.
+redirect_aliases: true
+
+# --- Page types ---------------------------------------------------------------
+#
+# Every infobox is assembled from sub-templates that also carry the word
+# "infobox": `Infobox/Naruto/Character` calls `Infobox/Naruto/Character/JutsuList`,
+# `.../Kekkei Genkai`, `.../Contracts`. Typing prefers the longest template name
+# a page transcludes, so the first audit filed 421 characters as
+# `naruto_character_jutsulist`, 73 as `naruto_character_kekkei_genkai`, 107
+# teams as `naruto_team_icons` and 68 volumes as `naruto_volume_chapter`. These
+# are parts of a box, never the subject of a page.
+structural_infoboxes:
+  - "Infobox icon"
+  - "Infobox icon/fname"
+  - "Infobox/Animanga/End"
+  - "Infobox/Character/Appears"
+  - "Infobox/Character/End"
+  - "Infobox/Character/ExtendedName"
+  - "Infobox/Character/Loyalty"
+  - "Infobox/Character/Naruto/Akatsuki"
+  - "Infobox/Character/Naruto/Ninja"
+  - "Infobox/Character/Origin"
+  - "Infobox/Character/Other"
+  - "Infobox/Character/Personal"
+  - "Infobox/Character/Start"
+  - "Infobox/Character/Voice"
+  - "Infobox/Debut"
+  - "Infobox/Doc"
+  - "Infobox/Episode/End"
+  - "Infobox/Episode/Other"
+  - "Infobox/Hook"
+  - "Infobox/Hook.list"
+  - "Infobox/Jutsu/Derived"
+  - "Infobox/Jutsu/Derived/List"
+  - "Infobox/Jutsu/Draft"
+  - "Infobox/Jutsu/GenTypeCat"
+  - "Infobox/Jutsu/GenTypeCats"
+  - "Infobox/Jutsu/GenTypeClass"
+  - "Infobox/Jutsu/GenTypeClasses"
+  - "Infobox/Jutsu/User/AdditionalInfo"
+  - "Infobox/Jutsu/User/AffiliationIcons"
+  - "Infobox/Jutsu/User/Summons"
+  - "Infobox/Jutsu/UserLoyalty"
+  - "Infobox/Naruto/Chapter/DefaultText"
+  - "Infobox/Naruto/Chapter/EpisodeList"
+  - "Infobox/Naruto/Character/Contracts"
+  - "Infobox/Naruto/Character/Jinchūriki"
+  - "Infobox/Naruto/Character/JutsuList"
+  - "Infobox/Naruto/Character/JutsuList2"
+  - "Infobox/Naruto/Character/Kekkei Genkai"
+  - "Infobox/Naruto/Character/Stats"
+  - "Infobox/Naruto/Genetic/UserList"
+  # Not a subject box either, though it reads like one: no page leads with it
+  # (zero votes in discovery), but team pages transclude it, and being one
+  # character longer than `Infobox/Naruto/Team` it filed 108 teams, Akatsuki
+  # and the Allied Shinobi Forces among them, as `media`.
+  - "Infobox/Naruto/Media"
+  - "Infobox/Naruto/MediaCleaner"
+  - "Infobox/Naruto/Team/Icons"
+  - "Infobox/Naruto/Volume/Chapter"
+  - "Infobox/Naruto/Volume/Draft"
+  - "Infobox/Naruto/Volume/List"
+  - "Infobox/Slideshow"
+  - "Infobox/Tabber"
+
+# The subject boxes sit under `Infobox/Naruto/`, which would make every type id
+# start with the wiki's name (`naruto_character`, `naruto_episode`). The engine's
+# defaults for what a script is about, and what it is never about, are written
+# against the plain ids, so these are named the way every other wiki's are.
+# `Infobox/Jutsu`, `Infobox/Tools` and `Infobox/Village` already slug to `jutsu`,
+# `tools` and `village` and are left as the wiki names them.
+type_aliases:
+  "Infobox/Naruto/Character": character
+  "Infobox/Naruto/Episode": episode
+  "Infobox/Naruto/Chapter": chapter
+  "Infobox/Naruto/Volume": volume
+  "Infobox/Naruto/Movie": movie
+  "Infobox/Naruto/OVA": ova
+  "Infobox/Naruto/VideoGame": game
+  "Infobox/Naruto/Book": book
+  "Infobox/Naruto/Team": team
+  "Infobox/Naruto/Clan": clan
+  "Infobox/Naruto/Genetic": genetic
+  "Infobox/Naruto/Chakra": chakra
+
+# --- Citations ----------------------------------------------------------------
+#
+# Narutopedia cites in prose inside an HTML `<ref>`, naming the work every time,
+# and reuses each one by name (`<ref name="c542"/>`):
+#
+#     <ref>''Naruto'' chapter 396, page 7</ref>
+#     <ref>''Naruto: Shippūden'' episode 90</ref>
+#     <ref>''Boruto'' episode 281</ref>
+#     <ref>''Boruto: Two Blue Vortex'' chapter 31, page 19</ref>
+#
+# 17,580 references on 2,140 pages (counted with the infobox pages inlined);
+# these rules locate 12,482 of them. What is left is databooks, novels, films,
+# games and the forms listed at the bottom.
+#
+# This is six works, not one, and they all number from 1: three manga and three
+# anime. Each range below is read off the wiki's own instalment pages (the
+# `chapter` / `episode` number in each infobox and its `shippuden`, `boruto`,
+# `blue vortex` flags), not assumed:
+#
+#     Naruto manga          chapters 1-710     (Chapter N)
+#     Naruto anime          episodes 1-220     (Episode N)
+#     Naruto: Shippūden     episodes 1-500     (Shippuden Episode N)
+#     Boruto manga          chapters 0-80      (Boruto Chapter N)
+#     Boruto anime          episodes 1-293     (Boruto Episode N)
+#     Two Blue Vortex       chapters 1-38, ongoing   (Vortex Chapter N)
+#
+# The original series is unprefixed, as the main series is on every other wiki
+# here. A label is one plain word because that is what the marker grammar in
+# `retrieve/citations.py` reads back out of the prose: `Shippūden` with its
+# macron does not match `[A-Z][A-Za-z']*`, so `(Shippūden Episode 5)` would be
+# read as Episode 5 of the original anime. Hence `Shippuden`, and `Vortex`.
+#
+# Every rule is anchored to the start of the reference and allows only markup
+# and punctuation between the work and the number. That is deliberate. A looser
+# `Boruto.*chapter` would file `''Boruto: Two Vortex'' Chapter 15` (a typo for
+# the sequel) under the first Boruto manga, whose chapter 15 is a different
+# story, and `''Naruto: Innocent Heart, Demonic Blood'' chapter 10` (a novel)
+# under the manga. Anything the rules do not match renders nothing.
+citation_ref_tags:
+  - match: '^[\s''"\[]*Naruto:?\s*Shipp[ūu]den[''\]\s,"]*episodes?\s+(\d+(?:-\d+)?)'
+    as: episode
+    work: Shippuden
+  - match: '^[\s''"\[]*Boruto(?::\s*Naruto Next Generations)?[''\]\s,"]*episodes?\s+(\d+(?:-\d+)?)'
+    as: episode
+    work: Boruto
+  # The original anime ended at 220, so the number is held to 1-220. One
+  # reference on `Minato Namikaze` reads `''Naruto'' episode 474`: either a
+  # Shippūden episode under the wrong name or the continuous numbering the
+  # official site uses (220 + 254). It cannot be told which, so it is not read.
+  - match: '^[\s''"\[]*Naruto[''\]\s,"]*episodes?\s+((?:220|2[01]\d|1\d\d|[1-9]\d?)(?:-\d+)?)(?!\d)'
+    as: episode
+  - match: '^[\s''"\[]*Boruto:?[''\s]*Two Blue Vortex[''\]\s,"]*chapters?\s+(\d+(?:-\d+)?)'
+    as: chapter
+    work: Vortex
+  - match: '^[\s''"\[]*Boruto(?::\s*Naruto Next Generations)?[''\]\s,"]*chapters?\s+(\d+(?:-\d+)?)'
+    as: chapter
+    work: Boruto
+  # `(?![\d+])` keeps `chapter 700+3` from being read as Chapter 700; see below.
+  - match: '^[\s''"\[]*Naruto[''\]\s,"]*chapters?\s+(\d+(?:-\d+)?)(?![\d+])'
+    as: chapter
+
+# Deliberately unmapped. Each is a real source; none is read, because reading it
+# would mean deciding something the wiki did not say.
+#
+#   * `''Naruto'' chapter 700+3` (109 references, 700+1 to 700+10). The ten
+#     Naruto Gaiden chapters. Their own pages are numbered 701-710, so the
+#     reference form and the page number disagree, and `(Chapter 700+3)` is not
+#     a number the marker grammar can carry. Not converted here.
+#   * `Chapter 71, page 7`, `Episode 142`, `Volume 58, page 79` with no work
+#     named (about 65). Six works share those numbers.
+#   * Volumes, named or not (about 105): mostly covers, author notes and the
+#     profile pages between chapters. The chapter is what a script tags with.
+#   * Databooks (`Fourth Databook, page 208`, `''[[Sha no Sho]]''`), novels and
+#     their chapters (`''Konoha Shinden'' chapter 1`), films, games, the card
+#     game, V-Jump: about 3,400. Not instalments of the story.
+#   * Misspelt works (`Shipppūden`, `Shipūden`, `Borut`, `Twin Blue Vortex`,
+#     about 10) and references wrapped in a link
+#     (`[[Resonance|''Naruto: Shippūden'' episode 261]]`, about 6).
+#
+# One reference these rules do read is wrong at the source and cannot be
+# guarded: `''Boruto: Two Blue Vortex'' chapter 75` on `Amado Sanzu`. The sequel
+# has 38 chapters and is still running, so no upper bound can be declared; it
+# is most likely Boruto chapter 75.
+#
+# No `episode_map`. 492 episode pages list the chapters they adapt (`chapters =
+# 314, 318`), so the wiki does state the adaptation, but the engine holds it as
+# one chapter-number -> episode-number table. Here chapter 5 exists in three
+# manga and episode 5 in three anime, all on one episode page type told apart
+# only by infobox flags, so a single table would answer with the wrong series.
+# A reference therefore keeps the chapter or the episode the wiki wrote, and is
+# not completed with the other.
+
+# --- Why sourcing is low ------------------------------------------------------
+#
+# 12.4% of prose sentences reach a chapter. Measured by page type, none of the
+# gap is a citation shape left unread:
+#
+#   * Character pages hold 51% of the prose, and 727 of 1,455 carry no `<ref>`
+#     at all. On the rest, 6,680 of 8,929 references are located; the 2,239 left
+#     cite databooks (`Fourth Databook, page 208`), `Jin no Sho`, `Sha no Sho`,
+#     novels and a game site. Counting episodes too, character prose is 26.5%
+#     sourced: Shippūden and Boruto filler arcs cite only episodes, and the
+#     audit floor counts chapters.
+#   * Episode and chapter pages hold 23% of the prose and cite nothing, because
+#     each one *is* the instalment. They are titled by name ("Know Pain"), not
+#     "Chapter 429", so `citations.locator_from_title` cannot read them; the
+#     number is in the infobox (`chapter = 429`, `episode = 83` with its
+#     `shippuden` / `boruto anime` flags). Reading a locator from an instalment
+#     page's infobox would be a new generic mechanism, not a declaration here.

@@ -13,6 +13,8 @@ Status: **live** = read by the engine today · **tool** = read only by `tools/` 
 | `skip_categories` | ingest/ontology.py | categories whose pages are skipped at crawl/index | marvel, mcu |
 | `skip_patterns` | ingest/ontology.py | title patterns skipped (disambiguation handling hook) | marvel |
 | `alias_fact_keys` | ingest/ontology.py | infobox keys harvested as aliases (`currentalias`) | marvel |
+| `transcluded_pages` | ingest/transclusion.py, ingest/crawler.py | an article whose infobox lives on a page of its own: the bare call it writes (`template: Infobox`) and the page that call stands for (`page: "Infobox:{title}"`). The crawl fetches that page and inlines it before parsing, so facts, typing and named refs all read one text. Off unless declared | naruto |
+| `redirect_aliases` | ingest/crawler.py | `true` records every main-namespace title that redirects to an article as one of its names (`page.redirects` → aliases, audit link resolution). For a wiki that links through its redirects (`[[Sasuke]]`). One extra request per batch. Off unless declared | naruto |
 | `disambig_list_keys` | ingest/alias_align.py | disambiguation-page list fields → alias alignment (C3) | marvel |
 | `identity_fields` | config.py | infobox keys used for identity questions (C1 page-gen) | csm, marvel, mcu |
 | `prune_types` | cli.py | page types removed from the index | bleach, db, onepiece |

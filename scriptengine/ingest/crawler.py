@@ -57,6 +57,12 @@ from scriptengine.ingest.ontology import (
     learn_field_labels,
     slugify_type as _slug,
 )
+from scriptengine.ingest.transclusion import (
+    PageTransclusion,
+    declared_transclusions,
+    inline as inline_transcluded,
+    targets as transclusion_targets,
+)
 from scriptengine.ingest.wikitext import (
     collect_ref_definitions,
     extract_citations,
@@ -92,6 +98,13 @@ _ALIAS_FACT_KEYS = ("name", "romaji", "alias", "aliases", "othername", "eng name
 
 class EnumerationFailed(RuntimeError):
     """The wiki would not return its page list. Distinct from an empty wiki."""
+
+class FetchFailed(RuntimeError):
+    """A request a page depends on was not answered. Distinct from "not there".
+
+    Raised inside a batch so the whole batch is reported failed and fetched
+    again on the next run, instead of being written to disk incomplete.
+    """
 
 class CrawlStalled(RuntimeError):
     """No page completed for the stall window while work remained.
@@ -370,6 +383,141 @@ class WikiCrawler:
                 }
             )
         return pages
+
+    async def fetch_wikitext(self, base: str, titles: list[str]) -> dict[str, str]:
+        """Raw wikitext of pages in any namespace, keyed by the title asked for.
+
+        For the pages an article is transcluded from (`transclusion.py`). The
+        keys are the titles as requested, not as the wiki spells them: the API
+        normalises `Infobox:Blue_B` and follows a redirect, and the caller only
+        knows the name it built. A page that does not exist is simply absent.
+
+        Raises `FetchFailed` when the wiki does not answer, rather than
+        returning nothing. "This article has no data page" and "the request was
+        throttled" must not look the same: the second would write a page to
+        disk without its infobox, and nothing downstream could tell.
+        """
+        found: dict[str, str] = {}
+        for index in range(0, len(titles), BATCH_SIZE):
+            asked = titles[index : index + BATCH_SIZE]
+            data = await self._get(
+                base,
+                {
+                    "action": "query",
+                    "titles": "|".join(asked),
+                    "prop": "revisions",
+                    "rvprop": "content",
+                    "rvslots": "main",
+                    "format": "json",
+                    "formatversion": "2",
+                    "redirects": "1",
+                },
+            )
+            if not data or "error" in data:
+                raise FetchFailed(
+                    f"the wiki did not return {len(asked)} transcluded pages "
+                    f"({self._last_error or (data or {}).get('error', 'no response')})"
+                )
+            query = data.get("query") or {}
+            content = {
+                page.get("title", ""): (
+                    (page["revisions"][0].get("slots") or {}).get("main", {})
+                ).get("content", "")
+                for page in query.get("pages", [])
+                if not page.get("missing") and page.get("revisions")
+            }
+            normalised = {n["from"]: n["to"] for n in query.get("normalized", [])}
+            redirected = {r["from"]: r["to"] for r in query.get("redirects", [])}
+            for title in asked:
+                landed = normalised.get(title, title)
+                landed = redirected.get(landed, landed)
+                if landed in content:
+                    found[title] = content[landed]
+        return found
+
+    async def fetch_redirects(self, base: str, titles: list[str]) -> dict[str, list[str]]:
+        """The main-namespace titles that redirect to each page.
+
+        `redirects=1` on the page fetch only *follows* a redirect; it never says
+        which titles lead to an article, and since redirects are excluded from
+        enumeration, no page ever learned its own. This asks directly.
+
+        The wiki caps `prop=redirects` at 500 entries per response across the
+        whole batch and hands back a continuation for the rest, which is
+        followed here: stopping at the first response would give the first few
+        articles in a batch all their names and the last ones none, with nothing
+        to say it had happened.
+        """
+        found: dict[str, list[str]] = {}
+        for index in range(0, len(titles), BATCH_SIZE):
+            asked = titles[index : index + BATCH_SIZE]
+            resume: dict[str, str] = {}
+            while True:
+                data = await self._get(
+                    base,
+                    {
+                        "action": "query",
+                        "titles": "|".join(asked),
+                        "prop": "redirects",
+                        "rdprop": "title",
+                        "rdnamespace": "0",
+                        "rdlimit": "max",
+                        "format": "json",
+                        "formatversion": "2",
+                        **resume,
+                    },
+                )
+                if not data or "error" in data:
+                    raise FetchFailed(
+                        f"the wiki did not return redirects for {len(asked)} pages "
+                        f"({self._last_error or (data or {}).get('error', 'no response')})"
+                    )
+                for page in (data.get("query") or {}).get("pages", []):
+                    names = [r.get("title", "") for r in page.get("redirects", [])]
+                    if names:
+                        found.setdefault(page.get("title", ""), []).extend(names)
+                resume = {str(k): str(v) for k, v in (data.get("continue") or {}).items()}
+                if not resume:
+                    break
+        return {title: sorted(set(n for n in names if n)) for title, names in found.items()}
+
+    async def _inline_transcluded(
+        self,
+        base: str,
+        fetched: list[dict[str, Any]],
+        rules: tuple[PageTransclusion, ...],
+    ) -> tuple[int, list[str]]:
+        """Replace each article's declared bare call with the page it stands for.
+
+        Done on the fetched wikitext, before `build_page`, so the article is
+        typed, its facts read and its named references collected from the same
+        text every other wiki supplies in one piece. One extra request per
+        batch, and only for a series that declares `transcluded_pages:`.
+
+        Returns how many articles changed and which data pages did not exist.
+        """
+        wanted: dict[str, None] = {}
+        for parse in fetched:
+            for target in transclusion_targets(
+                parse.get("title", ""), parse.get("wikitext", ""), rules
+            ):
+                wanted.setdefault(target)
+        if not wanted:
+            return 0, []
+
+        sources = await self.fetch_wikitext(base, list(wanted))
+        changed = 0
+        absent: list[str] = []
+        for parse in fetched:
+            before = parse.get("wikitext", "")
+            after, missing = inline_transcluded(
+                parse.get("title", ""), before, rules, sources
+            )
+            if after != before:
+                parse["wikitext"] = after
+                changed += 1
+            absent.extend(missing)
+        return changed, absent
 
     async def _learn_labels(
         self, base: str, title: str, page_type: str, ontology: Ontology
@@ -655,6 +803,18 @@ class WikiCrawler:
             len(ontology.types), ", ".join(ontology.types) or "(none)",
         )
 
+        # Two things the batched fetch does not bring home, each off unless the
+        # series declares it. `transcluded_pages:` is for a wiki that keeps an
+        # article's infobox on a separate page (`transclusion.py`).
+        # `redirect_aliases:` records the titles that redirect to each article:
+        # a wiki whose prose links `[[Sasuke]]` rather than `[[Sasuke Uchiha]]`
+        # resolved 67.4% of its links without them, against a 70% floor.
+        transclusions = declared_transclusions(overrides)
+        want_redirects = bool((overrides or {}).get("redirect_aliases"))
+        inlined_pages = 0
+        absent_pages: list[str] = []
+        redirects_recorded = 0
+
         # A capped crawl only needs enough titles to fill the cap. Ask for a
         # margin so that skipped pages (galleries, disambiguations) still leave
         # `max_pages` worth of real content.
@@ -724,7 +884,7 @@ class WikiCrawler:
                     return
 
         async def worker() -> None:
-            nonlocal written
+            nonlocal written, inlined_pages, redirects_recorded
             while not stalled.is_set():
                 batch: list[str] = []
                 while len(batch) < BATCH_SIZE:
@@ -739,6 +899,23 @@ class WikiCrawler:
                 try:
                     async with semaphore:
                         fetched = await self.fetch_batch(base, batch)
+                        # Both raise rather than return short, so a throttled
+                        # request fails the batch (re-fetched on the next run)
+                        # instead of writing fifty pages without their infobox.
+                        if transclusions and fetched:
+                            changed, absent = await self._inline_transcluded(
+                                base, fetched, transclusions
+                            )
+                            inlined_pages += changed
+                            absent_pages.extend(absent)
+                        if want_redirects and fetched:
+                            landing = await self.fetch_redirects(
+                                base, [parse.get("title", "") for parse in fetched]
+                            )
+                            for parse in fetched:
+                                names = landing.get(parse.get("title", ""), [])
+                                parse["redirects"] = [{"from": name} for name in names]
+                                redirects_recorded += len(names)
 
                     returned = {parse.get("title", "") for parse in fetched}
                     failed.extend(t for t in batch if t not in returned)
@@ -824,6 +1001,17 @@ class WikiCrawler:
             "skipped": skipped[:200],
             "failed": failed[:200],
         }
+        # Present only when declared, so an undeclared series' manifest keeps
+        # the shape it has always had. Counts cover this run, like
+        # `pages_fetched_this_run`: a resumed crawl skips pages already on disk.
+        if transclusions:
+            manifest["transcluded_pages"] = {
+                "inlined_this_run": inlined_pages,
+                "missing": sorted(set(absent_pages)),
+            }
+        if want_redirects:
+            manifest["redirects_recorded_this_run"] = redirects_recorded
+
         # A capped run deliberately enumerates a slice, so it must not overwrite
         # the full title list the audit resolves links against.
         #

@@ -13,6 +13,19 @@
 type_aliases:
   # "Character Template": character
 
+# Crawl-time shapes. Both are read by `crawl`, so declare them BEFORE crawling
+# (or re-run `crawl --refresh` after): they change what lands on disk.
+#
+# An article that says only `{{Infobox}}` keeps its infobox on a page of its
+# own. Symptom: `with infobox` far below `pages typed` in the audit, character
+# pages with zero facts, `<ref name="x"/>` reuses that resolve to nothing.
+# transcluded_pages:
+#   - { template: Infobox, page: "Infobox:{title}" }
+#
+# A wiki that links through its redirects (`[[Sasuke]]`, not `[[Sasuke Uchiha|Sasuke]]`).
+# Symptom: `edges resolved` low and the audit's `top_dangling` are all redirects.
+# redirect_aliases: true
+
 # Categories / title patterns skipped at crawl + index (disambiguation, galleries).
 skip_categories: []
 # skip_patterns: []
