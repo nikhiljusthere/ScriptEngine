@@ -429,3 +429,11 @@ Read-only outcome audits (owner's general outcome-state ruling) finished, NOTHIN
   <=10% missed goal. The format as built is test-only (no modality, dropped off-list participants, no typed state
   pairs). Nothing has been written to any store. Next decisions are the owner's: whether to design the production
   per-line format (fields in the train-audit findings) and train it, and the store alias gaps (Miyo, Usami, Kinji...).
+- HOLD (owner, relayed 2026-11-14 evening: "Just fix all these passages, and wait for my go to start trainin"): NO
+  training run of any kind until the owner says go in their own words. The analysis session is re-reading the gold of
+  the 2,150 per-line train windows (blind second reading + adjudication against the pages; fixes G133 onward) and will
+  send the changed-window list; rebuild s2data / recompose in ONE pass after that, never edit gold rows here.
+  For that rebuild (per-line target): `people` today holds only the subject of an other_verb row (the one acted on is
+  missing); one fought/met per pair per window means the other sentences of the same fight carry no triple; a
+  narrated act tagged no_relation for an unnamed participant becomes `trivia`. Audit state: the analysis worktree's
+  `docs/train_audit_2026-11-14/STATE.md`.
