@@ -1,0 +1,23 @@
+@341 gold: 2026-11-14 audit, met table ('X arrived where Y was') / Add.6 -- Isshin returns to where Ryūken is and slays the Hollow confronting him
+keep
++ Isshin|met|Ryūken|but was slain by Isshin who had returned
+
+@294 gold: 2026-11-14 audit, A113 (Add.3 b12346 'informed') + A39 -- the Shisuikyō killing is only what Aizen informs Seigen, and the doer is an item
+keep
+- Shisuikyō|killed|Konoka
+f+ Shisuikyō|other_verb|killed|it was because the Shisuikyō killed her|claimed|reported|Aizen
+
+@393 gold: 2026-11-14 audit, step 5/A145 + A106/A147 -- 'battles Uryū' is stated apart from the knockout; 'they are all revived' is awakened
+keep
++ Senjumaru|fought|Uryū|Senjumaru battles Uryū and swiftly incapacitates him
++ Haschwalth|awakened|-|they are all revived and empowered by Yhwach's Auswählen
++ Schutzstaffel|awakened|-|they are all revived and empowered by Yhwach's Auswählen
+
+@593 gold: 2026-11-14 audit, met table ('confronted X') + section B -- Makima confronting Denji is a met event, not an other_verb fact
+keep
++ Makima|met|Denji|Makima notices he is feeling down and confronts him to tell her why
+f- Makima|other_verb|confronts
+
+@526 gold: 2026-11-14 audit, met table ('approached X', 'came to see X') / Add.6 -- Yoshida comes to Denji, calls him away, hands back his card and pays him
+keep
++ Yoshida|met|Denji|only to be called away by Yoshida

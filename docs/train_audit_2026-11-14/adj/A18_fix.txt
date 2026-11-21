@@ -1,0 +1,46 @@
+@3042 gold: 2026-11-14 audit, A34 -- the rescuer comes to the captive: met + saved
+keep
++ Luffy|met|Law|when Luffy came to rescue him
+
+@3040 gold: 2026-11-14 audit, A75 / Add.3 -- interfering in Burgess's attempt to kill Luffy saves Luffy; the event replaces the interfered fact (A89)
+keep
++ Sabo|saved|Luffy|when he interfered in his attempts to kill Luffy
+f- Sabo|other_verb|interfered
+
+@2835 gold: 2026-11-14 audit, step 3 / A19 -- "worked with him to escape" is a purpose; the window never states the escape, so it is a planned fact
+keep
+- Luffy|escaped|Impel Down
+- Crocodile|escaped|Impel Down
+f+ Luffy|other_verb|escape|worked with him to escape|planned|stated|Luffy
+f+ Crocodile|other_verb|escape|worked with him to escape|planned|stated|Crocodile
+
+@2854 gold: 2026-11-14 audit, step 5 arrived / A78 -- entering the Whole Cake Chateau and being pulled into the Mirro-World reach proper-named places
+keep
++ Jinbe|arrived|Whole Cake Chateau|by entering the Whole Cake Chateau
++ Jinbe|arrived|Mirro-World|Chopper and Carrot pulled them into the Mirro-World
++ Nami|arrived|Mirro-World|Chopper and Carrot pulled them into the Mirro-World
+
+@2888 gold: 2026-11-14 audit, Addendum 6 / B.7 -- Xiao reappears where the crew is; Luffy is among them (s3)
+keep
++ Xiao|met|Luffy|Xiao reappears and gives them the Dial
+
+@2995 gold: 2026-11-14 audit, met table / A45 / A57 -- Kizaru shows up where Edison sees him (his fight is with Luffy); "they" who captured York includes Vegapunk
+keep
++ Kizaru|met|Edison|Kizaru suddenly showed up in the Control Room
++ Vegapunk|captured|York|after they had captured the traitor York
+
+@2873 gold: 2026-11-14 audit, A151 / A109 -- boarding at the station places them there but never says they came there
+keep
+- Sanji|arrived|Blue Station
+- CP9|arrived|Blue Station
+- Nico Robin|arrived|Blue Station
+- Franky|arrived|Blue Station
+f+ Sanji|located_at|Blue Station|Sanji snuck aboard here
+f+ CP9|located_at|Blue Station|this is where the CP9 boarded the train
+f+ Nico Robin|located_at|Blue Station|the CP9 boarded the train with Nico Robin and Franky
+f+ Franky|located_at|Blue Station|the CP9 boarded the train with Nico Robin and Franky
+
+@3251 gold: 2026-11-14 audit, A34 / A132 -- the finder reaches the trapped Child Emperor and saves him: met + saved; the event replaces the discovered fact
+keep
++ Puri-Puri Prisoner|met|Child Emperor|after locating Child Emperor
+f- Puri-Puri Prisoner|discovered|-

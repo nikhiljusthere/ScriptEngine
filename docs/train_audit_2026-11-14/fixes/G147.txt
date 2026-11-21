@@ -1,0 +1,39 @@
+@1159 gold: 2026-11-14 audit, step 5 saved / A89 -- first aid that dulls pain is the healed fact, not a rescue (no stated danger of death)
+keep
+- Arata|saved|Yuji
+
+@1456 gold: 2026-11-14 audit, step 5 met / Add.6 -- Yuji enters where Nanami is and they speak in person
+keep
++ Yuji|met|Nanami|Haibara's spirit points Nanami to Yuji as he enters the station
+
+@1502 gold: 2026-11-14 audit, step 5 met / Add.6 -- Megumi breaks in where Maki, Nanami and Naobito are (no met with Dagon, A145)
+keep
++ Megumi|met|Maki|Suddenly Megumi breaks into the domain by using his domain
++ Megumi|met|Nanami|Suddenly Megumi breaks into the domain by using his domain
++ Megumi|met|Naobito|Suddenly Megumi breaks into the domain by using his domain
+f- Megumi|other_verb|breaks
+
+@1537 gold: 2026-11-14 audit, step 5 met / Add.6 / section B -- Toji enters where Maki, Naobito and Megumi are (no met with Dagon, A145); the met replaces the enters fact
+keep
++ Toji|met|Maki|Suddenly Toji enters through the hole, much to the surprised of everyone.
++ Toji|met|Naobito|Suddenly Toji enters through the hole, much to the surprised of everyone.
++ Toji|met|Megumi|Suddenly Toji enters through the hole, much to the surprised of everyone.
+f- Toji|other_verb|enters
+
+@1442 gold: 2026-11-14 audit, step 5 verb rules / A145 -- the Smallpox Deity's attack on Mei Mei is stated separately from her killing blow
+keep
++ Smallpox Deity|fought|Mei Mei|As Smallpox Deity attacks Mei Mei
+
+@1056 gold: 2026-11-14 audit, step 1 / A114 / section B -- narrated punches are fought events, never `attacked` fact twins
+keep
++ Sukuna|fought|Megumi|He even punched Megumi so hard, the raindrops in that area dispersed.
++ Sukuna|fought|Jogo|Sukuna punched Jogo through numerous skyscrapers
++ Sukuna|fought|Yuji|he was able to easily pierce through Yuji's gut
+f- Sukuna|attacked|Megumi
+f- Sukuna|attacked|Jogo
+f- Sukuna|attacked|Yuji
+
+@1735 gold: 2026-11-14 audit, step 5 verb rules / A145 / A96 -- Yuji's countered attacks are a fight stated separately from the defeating kick
+keep
++ Yuji|fought|Sukuna|Sukuna effortlessly countered all of Yuji's attacks
+f- Yuji|other_verb|attack

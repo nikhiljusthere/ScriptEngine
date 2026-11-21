@@ -1,0 +1,74 @@
+@802 gold: 2026-11-14 audit, step 5 arrived / A109 -- Piccolo flies to the proper-named Lookout and meets Dende there
+keep
++ Piccolo|arrived|Lookout|Piccolo flies to the Lookout to ask Dende
+
+@837 gold: 2026-11-14 audit, step 5 fought / A42 -- Ki Blasts fired to raise dust are no attack on Gamisalas
+keep
+- Gohan|fought|Gamisalas
+
+@957 gold: 2026-11-14 audit, met table (a visit) / Addendum 6 -- Yajirobe later brings Senzu Beans to Goku in the hospital in person
+keep
++ Yajirobe|met|Goku|He later delivers a new crop of Senzu Beans to Goku in the hospital
+
+@1600 gold: 2026-11-14 audit, step 5 verb rules (interception = fought attacker vs target + saved) / A75 -- Sukuna's slashes at Higuruma were made and blocked
+keep
++ Sukuna|fought|Higuruma|Kusakabe used Simple Domain to protect Higuruma from Sukuna's slashes
+
+@1130 gold: 2026-11-14 audit, STOP ruling (ongoing exchange) / Add.4 -- Naobito's stop of Dagon did not end Dagon's part; the battle goes on
+keep
+- Naobito|defeated|Dagon
+f+ Naobito|other_verb|stopped|he hadn't stopped Dagon earlier
+
+@1330 gold: 2026-11-14 audit, A110 / example 9 -- the severing of Mimiko's head names no doer
+keep
+- Sukuna|killed|Mimiko
+t+ no_doer|Suddenly, Mimiko's head is severed in a very violent fashion.
+
+@1311 gold: 2026-11-14 audit, A138 -- Megumi is carried to the Shibuya Tollgate and arrives there
+keep
++ Megumi|arrived|Shibuya Tollgate|dropping off Megumi at the Shibuya Tollgate
+
+@1315 gold: 2026-11-14 audit, met table (X arrived where Y was) / Addendum 6 / section B -- Choso arrives where Yuji is
+keep
++ Choso|met|Yuji|Suddenly, Choso also arrives on the battlefield, surprising Yuji
+f- Choso|other_verb|arrives
+
+@1782 gold: 2026-11-14 audit, met NO (talking in a meeting already under way) / Addendum 6 -- a continued conversation is no meeting; Choso meets both people there
+keep
+- Pseudo-Geto|met|Yuji
+f+ Pseudo-Geto|other_verb|continues|Pseudo-Geto continues his conversation with Yuji about all the techniques he's acquired
++ Choso|met|Yuji|Choso appears and unveils a shocking revelation about the man controlling Suguru Geto's body
+
+@1065 gold: 2026-11-14 audit, table sealed (ice) + Addendum 6 -- ice encasing Yuji and Maki is sealed; Uraume appears beside her ally Sukuna
+keep
++ Uraume|sealed|Yuji|This creates a large mass of ice that incases Yuji and Maki without harming Sukuna
++ Uraume|sealed|Maki|This creates a large mass of ice that incases Yuji and Maki without harming Sukuna
++ Uraume|met|Sukuna|Uraume has appeared and they make themselves known
+f- Uraume|other_verb|creates
+
+@1640 gold: 2026-11-14 audit, Addendum 6 -- Gojo appears before his named students: met each, replaces the appears fact
+keep
++ Satoru Gojo|met|Yuta|Gojo appears before them completely devoid of his normally annoying persona
++ Satoru Gojo|met|Maki|Gojo appears before them completely devoid of his normally annoying persona
++ Satoru Gojo|met|Hakari|Gojo appears before them completely devoid of his normally annoying persona
++ Satoru Gojo|met|Yuji|Gojo appears before them completely devoid of his normally annoying persona
+f- Satoru Gojo|other_verb|appears
+
+@1593 gold: 2026-11-14 audit, table fought (restraining during a fight) -- Rika restrains Sukuna in the fight
+keep
++ Rika|fought|Sukuna|as Yuji and Rika restrain Sukuna
+f- Rika|other_verb|restrain
+
+@1422 gold: 2026-11-14 audit, table met + Addendum 6, table fought (dodged attack) -- Ui Ui arrives where Kusakabe is; Sukuna's attack on Ui Ui misses
+keep
++ Ui Ui|met|Kusakabe|As Ui Ui arrives to teleport him away
++ Sukuna|fought|Ui Ui|Ui Ui vanishes instantly, causing Sukuna’s attack to miss
+
+@1668 gold: 2026-11-14 audit, Addendum 6 / A34 -- Yuji appears where Nanami is and frees him: met beside saved, replaces the appears fact
+keep
++ Yuji|met|Nanami|Suddenly, Yuji appears from the roof
+f- Yuji|other_verb|appears
+
+@1307 gold: 2026-11-14 audit, step 3 attack in passing / A145 -- Satoru's energy wave hit Toji, separate from the earlier fight Toji won
+keep
++ Satoru|fought|Toji|the energy wave Satoru used didn't break any of his bones

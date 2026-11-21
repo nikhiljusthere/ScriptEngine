@@ -1,0 +1,27 @@
+@1444 gold: 2026-11-14 audit, Add.6 / table met -- Yuji breaks into the domain where Nanami is: met replaces the breaks fact
+keep
++ Yuji|met|Nanami|Yuji breaks into Mahito's domain from the outside
+f- Yuji|other_verb|breaks
+
+@1584 gold: 2026-11-14 audit, A1 / table fought -- Yuji's barrage of punches on Kechizu is an attack told in passing
+keep
++ Yuji|fought|Kechizu|he's been grievously injured by Yuji's barrage of punches
+
+@1547 gold: 2026-11-14 audit, Add.6 / table met -- Team Mei Mei regroups with Yuji: a reunion is met
+keep
++ Mei Mei|met|Yuji|Team Mei Mei regroups, and the grade 1 sorcerer commends Yuji for his performance
++ Ui Ui|met|Yuji|Team Mei Mei regroups, and the grade 1 sorcerer commends Yuji for his performance
+t- no_relation|Team Mei Mei regroups
+
+@1345 gold: 2026-11-14 audit, A145 / table killed -- the axe blow is stated, Ebina's death is not: fought, not killed
+keep
+- Mei Mei|killed|Niji Ebina
++ Mei Mei|fought|Niji Ebina|swinging her axe down on Ebina
+
+@1404 gold: 2026-11-14 audit, A40 / step 3 -- almost killed by Pseudo-Geto is an attack made that failed: fought
+keep
++ Pseudo-Geto|fought|Mei Mei|she was almost killed by Pseudo-Geto
+
+@1348 gold: 2026-11-14 audit, Add.6 / table met -- Todo comes back to Mai: met
+keep
++ Todo|met|Mai|Once Todo comes back to her

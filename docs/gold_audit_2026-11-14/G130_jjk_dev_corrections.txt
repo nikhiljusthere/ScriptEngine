@@ -1,0 +1,58 @@
+@3488 gold: 2026-11-14 audit, A88 -- the quote's own verb word (asks, says, tells), not a past form
+keep
+f- Mahito|other_verb|asked
+f+ Mahito|other_verb|asks|who asks about Jogo
+f- Mahito|other_verb|said
+f+ Mahito|other_verb|says|Mahito says he's glad to see that they're safe,
+f- Geto|other_verb|told
+f+ Geto|other_verb|tells|Geto tells Jogo that they will carry out Gojo's sealing
+
+@3476 gold: 2026-11-14 audit, A88 -- the quote's own verb word (tell)
+keep
+f- Shoko|other_verb|told
+f+ Shoko|other_verb|tell|Shoko went on to tell him
+
+@3467 gold: 2026-11-14 audit, A88 the quote's own verb words (says, asks); A6 a summoning and a threat are no attack (the page states the attack only later, in Battle: "sends Rainbow Dragon at him"), the encounter is met; the uncovered reveal sentence gets its own verb (a second revealed/- row cannot be stored; the kill it reports is left unwritten, open question)
+keep
+f- Toji|other_verb|said
+f+ Toji|other_verb|says|He says their conversation was a good show and it's time to finish things up now.
+f- Suguru|other_verb|asked
+f+ Suguru|other_verb|asks|Suguru asks why Toji is there.
+- Suguru|fought|Toji
++ Toji|met|Suguru|Suguru asks why Toji is there
+f+ Toji|other_verb|grins|Toji grins and reveals he killed Satoru Gojo
+
+@3472 gold: 2026-11-14 audit, A8/A110 -- a passive with no doer in the window is no event; the window names neither the exorcist nor Kuchisake-Onna (A112; the slicing is in the page's previous paragraph)
+keep
+- Toji|killed|Kuchisake-Onna
+t+ no_doer|The cursed spirit is instantly exorcised
+
+@3469 gold: 2026-11-14 audit, A112/A130 -- the window's own name: it says only "the dragon-like curse" (Rainbow Dragon is named in the page's previous paragraph, not in this window)
+keep
+- Toji|killed|Rainbow Dragon
++ Toji|killed|dragon-like curse|exorcising it by diving down through the air and bisecting it in an instant
+
+@3486 gold: 2026-11-14 audit, A101 -- the uncovered sentence has a named doer (She = Maki): a fact row with the passage's verb
+keep
+f+ Maki|other_verb|slashed|She violently slashed apart the Zenin fighters apart while dual-wielding the swords.
+
+@3511 gold: 2026-11-14 audit, A133 -- finding out is learned/-
+keep
+f+ Megumi|learned|-|finds that the cursed object is not there
+
+@3498 gold: 2026-11-14 audit, A120 -- the explosions are Hazenoki's attack on Megumi: fought (the wounded fact stays)
+keep
++ Hazenoki|fought|Megumi|he's worn down by Hazenoki's relentless explosions
+
+@3517 gold: 2026-11-14 audit, a stated fight ("the fight between ..."): the two sorcerers against the cursed spirit that was Naoya (the window sets Maki against him, the page has Kamo beside her)
+keep
++ Maki Zenin|fought|Naoya Zenin|the fight between Maki Zenin, Noritoshi Kamo and the cursed spirit that was Naoya Zenin
++ Noritoshi Kamo|fought|Naoya Zenin|the fight between Maki Zenin, Noritoshi Kamo and the cursed spirit that was Naoya Zenin
+
+@3505 gold: 2026-11-14 audit, one met row per newcomer-person pair -- "they are all surprised" includes Maki, whom Megumi has just reached inside the domain
+keep
++ Toji|met|Maki|they are all surprised when Toji suddenly comes through it
+
+@3477 gold: 2026-11-14 audit, the table's "X arrived where Y was" -- Megumi arrives where Yuta is
+keep
++ Megumi|met|Yuta|Megumi and his friends arrived to where Yuta was being berated

@@ -1,0 +1,45 @@
+@802 gold: 2026-11-14 audit, step 5 arrived / A109 -- Piccolo flies to the proper-named Lookout and meets Dende there
+keep
++ Piccolo|arrived|Lookout|Piccolo flies to the Lookout to ask Dende
+
+@837 gold: 2026-11-14 audit, step 5 fought / A42 -- Ki Blasts fired to raise dust are no attack on Gamisalas
+keep
+- Gohan|fought|Gamisalas
+
+@957 gold: 2026-11-14 audit, met table (a visit) / Addendum 6 -- Yajirobe later brings Senzu Beans to Goku in the hospital in person
+keep
++ Yajirobe|met|Goku|He later delivers a new crop of Senzu Beans to Goku in the hospital
+
+@1060 gold: 2026-11-14 audit, met table (X arrived where Y was) / Addendum 6 -- Kusakabe comes to Yuta and Maki and is then with them
+keep
++ Kusakabe|met|Yuta|accompanied his students among fellow surviving sorcerers to "save Yuta" from Maki's wrath
++ Kusakabe|met|Maki|accompanied his students among fellow surviving sorcerers to "save Yuta" from Maki's wrath
+
+@1600 gold: 2026-11-14 audit, step 5 verb rules (interception = fought attacker vs target + saved) / A75 -- Sukuna's slashes at Higuruma were made and blocked
+keep
++ Sukuna|fought|Higuruma|Kusakabe used Simple Domain to protect Higuruma from Sukuna's slashes
+
+@1130 gold: 2026-11-14 audit, STOP ruling (ongoing exchange) / Add.4 -- Naobito's stop of Dagon did not end Dagon's part; the battle goes on
+keep
+- Naobito|defeated|Dagon
+f+ Naobito|other_verb|stopped|he hadn't stopped Dagon earlier
+
+@1330 gold: 2026-11-14 audit, A110 / example 9 -- the severing of Mimiko's head names no doer
+keep
+- Sukuna|killed|Mimiko
+t+ no_doer|Suddenly, Mimiko's head is severed in a very violent fashion.
+
+@1311 gold: 2026-11-14 audit, A138 -- Megumi is carried to the Shibuya Tollgate and arrives there
+keep
++ Megumi|arrived|Shibuya Tollgate|dropping off Megumi at the Shibuya Tollgate
+
+@1315 gold: 2026-11-14 audit, met table (X arrived where Y was) / Addendum 6 / section B -- Choso arrives where Yuji is
+keep
++ Choso|met|Yuji|Suddenly, Choso also arrives on the battlefield, surprising Yuji
+f- Choso|other_verb|arrives
+
+@1782 gold: 2026-11-14 audit, met NO (talking in a meeting already under way) / Addendum 6 -- a continued conversation is no meeting; Choso meets both people there
+keep
+- Pseudo-Geto|met|Yuji
+f+ Pseudo-Geto|other_verb|continues|Pseudo-Geto continues his conversation with Yuji about all the techniques he's acquired
++ Choso|met|Yuji|Choso appears and unveils a shocking revelation about the man controlling Suguru Geto's body
