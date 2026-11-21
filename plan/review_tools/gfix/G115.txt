@@ -1,0 +1,173 @@
+@1137 gold: the battle's named place
+keep
+t- no_relation|It occurred in the Tokyo No. 2 Colony
+f+ Panda|located_at|Tokyo No. 2 Colony|It occurred in the Tokyo No. 2 Colony during the Culling Game.|actual|stated|
+f+ Hajime Kashimo|located_at|Tokyo No. 2 Colony|It occurred in the Tokyo No. 2 Colony during the Culling Game.|actual|stated|
+
+@1138 gold: page-title names are no window text; the nullified punch is an attack made; the hiding happened
+keep
+r Yuji Itadori=>Yuji
+r Megumi Fushiguro=>Megumi
+f- Yuji|attacked|Awasaka
++ Yuji|fought|Awasaka|Yuji's punch is nullified but Toad's tongue does serious damage to Awasaka's lower left torso
+f- Megumi|other_verb|hide
+f+ Megumi|other_verb|hide|Megumi appears to be attacking at the same time but this is to hide the Toad shikigami behind him.|actual|stated|
+
+@1139 gold: one name
+keep
+r Miwa=>Kasumi Miwa
+
+@1140 gold: ok
+keep
+
+@1141 gold: the tonfa use is a narrated occurrence
+keep
+t- capability|and after nearly two months
+f+ Megumi|used|tonfa|and after nearly two months of training, Megumi was able to use a pair of tonfa for the Goodwill Event.|actual|stated|
+
+@1142 gold: the gathering has named doers
+keep
+f+ Inumaki|other_verb|gather|leading to Inumaki, Panda, and fellow surviving sorcerers to gather together to "save Yuta" from her scolding.|actual|stated|
+f+ Panda|other_verb|gather|leading to Inumaki, Panda, and fellow surviving sorcerers to gather together to "save Yuta" from her scolding.|actual|stated|
+
+@1143 gold: joining the fight against Sukuna is fought; an adjective; noticing = learned; Maki's ask; Sukuna's feeling
+keep
+- Maki|met|Sukuna
++ Maki|fought|Sukuna|However, Maki suddenly appears to join the fight, surprising Sukuna.
+f- Sukuna|other_verb|confident
+f- Sukuna|other_verb|notices
+f+ Sukuna|learned|-|Sukuna notices that Maki wasn't damaged by Nue's haphazard attack and recognizes she's no small-fry.|actual|stated|
+f+ Maki|other_verb|asks|Maki apologizes for being late and asks for a quick explanation.|actual|stated|
+f+ Sukuna|other_verb|feel|He can feel his cursed energy output fluctuating|actual|stated|
+
+@1144 gold: a doer-less assignment; explaining is speech with a planned rescue; an intention is planned; the grab and the chastising (the talk after the attack keeps the met)
+keep
+f- Tsurugi|other_verb|assigned
+f- Yuka|other_verb|assigned
+f- Maru|other_verb|assigned
+t+ no_doer|After the incident was reported to Jujutsu High, Tsurugi, Yuka, and Maru were assigned a mission to exterminate the mysterious "shark" seen swimming through the forest.
+f- Osada|other_verb|desire
+f+ Osada|other_verb|explained|Osada introduced himself and explained his desire to save Toranosuke|actual|stated|
+f+ Osada|other_verb|save|explained his desire to save Toranosuke|planned|stated|Osada
+f- Tsurugi|other_verb|intention
+f+ Tsurugi|other_verb|exterminate|which conflicted with Tsurugi's intention to exterminate the beast.|planned|stated|Tsurugi
+f+ Maru|other_verb|grabbed|When Maru grabbed him, Osada revealed his identity, surprising both sorcerers.|actual|stated|
+f+ Osada|other_verb|chastising|After chastising them for calling him old|actual|stated|
+
+@1145 gold: one act is the kill; the tried verb; realizing = learned; Nobara stops
+keep
+- Nobara|fought|Kechizu
+f- Kechizu|other_verb|attempting
+f+ Kechizu|other_verb|devour|Kechizu makes the last ditch effort to try and take her life, attempting to devour her from behind.|attempted|stated|Kechizu
+f- Nobara|other_verb|realize
+f- Yuji|other_verb|realize
+f+ Nobara|learned|-|Both of them realize that the Death Paintings aren't just cursed spirits, they are flesh and blood.|actual|stated|
+f+ Yuji|learned|-|Both of them realize that the Death Paintings aren't just cursed spirits, they are flesh and blood.|actual|stated|
+f+ Nobara|other_verb|stops|Nobara also stops because she is surprised that Kechizu's body isn't disappearing|actual|stated|
+
+@1146 gold: a narrative sentence is no citation
+keep
+t- citation|Uraume's Ice Formation
+t+ citation|(Chapter 136, Episode 47)
+t+ citation|(Chapter 143, Episode 49)
+
+@1147 gold: one name each; recognising = learned; a body and a puppet are no doers
+keep
+r Geto=>Pseudo-Geto
+r Satoru=>Gojo
+f- Gojo|discovered|Pseudo-Geto
+f+ Gojo|learned|-|Gojo recognizes whoever is standing in front of him as an imposter.|actual|stated|
+f- Suguru's body|helped|Pseudo-Geto
+f- Mechamaru's puppet|contacted|Yuji
+f+ Mechamaru|contacted|Yuji|Meanwhile, one of Mechamaru's smaller puppets tries to contact Yuji.|attempted|stated|Mechamaru
+
+@1148 gold: one name; choosing is actual with a planned help; Larue stops the quarrel; the orders carry their acts; the commanders are a crowd (the demand precedes the fight, the mets stay)
+keep
+r Manami=>Manami Suda
+f- Manami Suda|helped|Pseudo-Geto
+f- Toshihisa|helped|Pseudo-Geto
+f+ Manami Suda|other_verb|chose|Manami Suda and Toshihisa chose to help Pseudo-Geto|actual|stated|
+f+ Toshihisa|other_verb|chose|Manami Suda and Toshihisa chose to help Pseudo-Geto|actual|stated|
+f+ Manami Suda|helped|Pseudo-Geto|Manami Suda and Toshihisa chose to help Pseudo-Geto|planned|stated|Manami Suda
+f+ Toshihisa|helped|Pseudo-Geto|Manami Suda and Toshihisa chose to help Pseudo-Geto|planned|stated|Toshihisa
+f- Larue|helped|Toshihisa
+f+ Larue|other_verb|stopped|This conflict of interest almost led to a fight until Larue stopped them.|actual|stated|
+f+ Larue|other_verb|reminded|Larue had them agree to part ways, but reminded them that they will always be family.|actual|stated|
+f+ Atsuya Kusakabe|other_verb|surrender|they demanded Kusakabe and Panda to surrender|ordered|stated|Toshihisa
+f+ Panda|other_verb|surrender|they demanded Kusakabe and Panda to surrender|ordered|stated|Toshihisa
+f+ Toshihisa|other_verb|remain|Toshihisa was among the sorcerers who Sukuna ordered to remain still|ordered|stated|Sukuna
+t- no_relation|Sometime after Geto's body
+t+ crowd_end|Sometime after Geto's body was taken over by Pseudo-Geto, Geto's commanders with the exception of Miguel discussed their course of action.
+f+ Pseudo-Geto|other_verb|taken|Sometime after Geto's body was taken over by Pseudo-Geto|actual|stated|
+
+@1149 gold: Maki fights too; the goal is planned; she tells him; wondering = suspected; Sukuna parries
+keep
++ Maki|fought|Sukuna|Yuji and Maki follow up with rapid-fire punches, but Sukuna continues to parry and deflect them all.
+f- Yuji|other_verb|stop
+f+ Yuji|other_verb|stop|She gets assurance from Yuji that their goal is to stop Sukuna even if it means killing him|planned|stated|Yuji
+f- Yuji|other_verb|tells
+f+ Maki|other_verb|tells|and then tells him that things are going to speed up from this point on.|actual|stated|
+f- Maki|suspected|Sukuna
+f+ Maki|suspected|-|Maki wonders if he can heal from wounds from the Split Soul Katana.|actual|stated|
+f+ Sukuna|other_verb|parry|but Sukuna continues to parry and deflect them all.|actual|stated|
+
+@1150 gold: the shot was fired; a belief is actual; Yuji stomps
+keep
+f- Choso|other_verb|fire
+f+ Choso|other_verb|fire|Choso compresses the blood in his hand to the limit and reinforces it with cursed energy in order to fire a Blood Meteorite straight into Yuji's liver|actual|stated|
+f- Yuji|suspected|-
+f+ Yuji|suspected|-|because he thought Choso was out of projectiles thanks to Mechamaru's water trick|actual|stated|
+t- deictic|The two combatants take a moment
+t+ no_relation|The two combatants take a moment to face off and assume their fighting stances while water violently breaks the appliances and floods the room from every direction.
+t- deictic|However, he stomps
+f+ Yuji|other_verb|stomps|However, he stomps on the ground and regains his focus.|actual|stated|
+
+@1151 gold: the tried verbs; Yuji retaliates; a force is no doer
+keep
+f- Yuji|other_verb|tries
+f+ Yuji|other_verb|punch|Yuji avoids the attack and tries to punch him|attempted|stated|Yuji
+f- Mahito|other_verb|tries
+f+ Mahito|other_verb|stab|tries but fails to stab through Yuji's head|attempted|stated|Mahito
+f+ Yuji|other_verb|retaliates|The sorcerer retaliates with strikes to Mahito's torso, pushing him back.|actual|stated|
+t- deictic|The force from the exchange
+t+ no_doer|The force from the exchange snaps the elevator's cables, causing it to plummet.
+
+@1152 gold: one name in the window's form; a sorcerer is an occupation
+keep
+r Yuta Okkotsu=>Yuta
+f- Yuta|became|jujutsu sorcerer
+f+ Yuta|other_verb|agrees|Rather than die in total isolation, Yuta agrees to become a jujutsu sorcerer.|actual|stated|
+
+@1153 gold: a covered sentence needs no tag
+keep
+t- crowd_end|Higuruma and his fellow sorcerers
+
+@1154 gold: the window's names; protectiveness is no act; amplifying is no first power; copying; an ability is no doer
+keep
+r Ryu Ishigori=>Ryu
+r Takako Uro=>Uro
+f- Rika|protected|Yuta
+f- Rika|gained_power|-
+f+ Rika|other_verb|amplified|Driven by her protectiveness over Yuta, Rika amplified her power even further during the climax of the battle|actual|stated|
+f- Yuta|learned|Uro's innate technique
+f+ Yuta|other_verb|copy|which Rika devoured, allowing Yuta to copy Uro's innate technique.|actual|stated|
+f- Uro's ability to manipulate space|protected|Yuta
+f- Uro's ability to manipulate space|other_verb|created
+t+ no_relation|Copying Uro's ability to manipulate space is what protected Yuta from a potential fight-ending Granite Blast from Ryu.
+t+ no_relation|Additionally, it created an opening for Rika to counterattack, which served as a diversion for Yuta to redirect Ryu's blast back down on him.
+
+@1155 gold: the Maki fight; a participle and a technique are no verbs; the tried punch is no attacked twin; deducing = learned; the wound is Naoya's; the slap
+keep
++ Naoya|fought|Maki|He continues attacking Maki, who's unable to fight back.
+f- Naoya|other_verb|Resolving
+f- Naoya|attacked|Maki
+f+ Naoya|other_verb|use|Naoya builds up his speed and tries to use it to punch through Maki.|attempted|stated|Naoya
+f- Maki|other_verb|Shiranui-Gata
+f+ Maki|other_verb|use|Maki prepares to use Shiranui-Gata to grab him.|planned|stated|Maki
+f- Maki|discovered|-
+f+ Maki|learned|-|Maki surprises him by revealing that she deduced the rules of Projection Sorcery|actual|stated|
+f- Maki|other_verb|-
+f+ Maki|other_verb|avoid|allowing her to avoid its effects by making 24 movements per second.|actual|stated|
+f- Maki|wounded|-
+f+ Naoya|wounded|-|leaving him bleeding and wounded.|actual|stated|
+f+ Naoya|other_verb|slaps|Instead of directly attacking Maki, Naoya slaps her and gets behind her|actual|stated|

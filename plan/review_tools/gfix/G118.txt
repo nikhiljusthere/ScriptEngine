@@ -1,0 +1,156 @@
+@1189 gold: the ask carries its act; a rank is no capability; the narrated mission
+keep
+f+ Utahime|other_verb|avoid|with Yoshinobu Gakuganji asking her to avoid fighting|ordered|stated|Yoshinobu Gakuganji
+t- capability|Utahime is a capable semi-grade 1
+t+ no_relation|Utahime is a capable semi-grade 1 sorcerer who mainly acts as support for her allies.
+t- capability|Although primarily a support sorcerer
+f+ Utahime|other_verb|went|Although primarily a support sorcerer, Utahime still goes on dangerous missions, such as when she went to save the students from potential curse users or cursed spirits|actual|stated|
+
+@1190 gold: Dagon is not named in the window
+keep
+- Dagon|sealed|Maki
+- Dagon|sealed|Nanami
+t+ no_doer|Maki and Nanami are trapped inside the domain as well.
+
+@1191 gold: the second meeting; the quote's verbs; a noun; a clause reveal
+keep
++ Toji|met|Shiu Kong|Later at a boat racing track, Toji met with Shiu again
+f- Shiu Kong|other_verb|asked
+f+ Shiu Kong|other_verb|asking|Shiu left but not before asking Toji how Megumi was doing.|actual|stated|
+f- Toji|other_verb|asked
+f+ Toji|other_verb|asking|Toji responded by asking who that person was.|actual|stated|
+f- Toji|other_verb|intention
+f+ Toji|other_verb|wear|The intention being that hitmen and assassins would slowly wear Gojo down before Toji made his move.|planned|stated|Toji
+f- Toji|revealed|Shiu Kong
+f+ Toji|revealed|-|informing him that he had used the 30 million yen service fee to put a bounty on Riko.|actual|stated|
+
+@1192 gold: escaping Shibuya; an item is no doer; guarding the area
+keep
+- Pseudo-Geto|departed|Shibuya
++ Pseudo-Geto|escaped|Shibuya|but Pseudo-Geto protected the area long enough to eventually escape Shibuya with Prison Realm in hand.
+f- Prison Realm|other_verb|took
+t+ no_doer|Prison Realm took hold
+t- no_relation|Pseudo-Geto protected the area
+f+ Pseudo-Geto|other_verb|protected|but Pseudo-Geto protected the area long enough to eventually escape Shibuya|actual|stated|
+
+@1193 gold: one act: defeats and kills
+keep
+- Megumi|defeated|Reggie
+
+@1194 gold: speech is actual; traits; the stated plan; the brutalizing has a doer
+keep
+f- Sukuna|other_verb|proclaiming
+f+ Sukuna|other_verb|proclaiming|proclaiming his superiority over it.|actual|stated|
+t- capability|he is highly dismissive
+t+ no_relation|he is highly dismissive of his opponents and rarely takes them seriously
+t- capability|Sukuna is highly intelligent
+t+ no_relation|Sukuna is highly intelligent and manipulative,
+f+ Sukuna|other_verb|stating|even explicitly stating he would kill Satoru Gojo to his face.|actual|stated|
+f+ Sukuna|other_verb|kill|even explicitly stating he would kill Satoru Gojo to his face.|planned|stated|Sukuna
+t- crowd_end|brutalizing a Finger Bearer
+f+ Sukuna|other_verb|brutalizing|brutalizing a Finger Bearer while being patronizing|actual|stated|
+t- deictic|However, these brutish traits
+t+ no_relation|However, these brutish traits are not to be confused for stupidity.
+
+@1195 gold: a covered sentence needs no tag
+keep
+t- no_relation|Megumi Fushiguro vs. Noritoshi Kamo is
+
+@1196 gold: evolving is no awakening; recognizing = learned; traits
+keep
+- Dagon|awakened|-
+f+ Dagon|other_verb|evolved|When Dagon evolved, Naobito instantly recognized that he was just a cursed womb before.|actual|stated|
+f- Naobito|discovered|-
+f+ Naobito|learned|-|Naobito instantly recognized that he was just a cursed womb before.|actual|stated|
+f+ Naobito|other_verb|recognized|Despite being the only one to resist Dagon's shikigami, Naobito recognized that the situation still didn't favor him.|actual|stated|
+t- capability|Great Tactical Intellect
+t+ no_relation|Great Tactical Intellect: Naobito is very observant and takes mental notes of the progress of a situation.
+t- capability|He stays one step ahead
+t+ no_relation|He stays one step ahead of his opponent by playing to his strengths and applying them appropriately during the fight.
+
+@1197 gold: an adjective is no verb; the battle's named place
+keep
+f- Mahito|other_verb|special
+t- no_relation|It takes place in Shibuya Station
+f+ Yuji Itadori|located_at|Shibuya Station|It takes place in Shibuya Station and a nearby alleyway during the latter stages of the Shibuya Incident.|actual|stated|
+f+ Nobara Kugisaki|located_at|Shibuya Station|It takes place in Shibuya Station and a nearby alleyway during the latter stages of the Shibuya Incident.|actual|stated|
+f+ Mahito|located_at|Shibuya Station|It takes place in Shibuya Station and a nearby alleyway during the latter stages of the Shibuya Incident.|actual|stated|
+
+@1198 gold: reborn as a curse is a transformation; a noun
+keep
+f- Naoya Zenin|became|vengeful curse
+f+ Naoya Zenin|transformed_into|vengeful curse|allowing him to be reborn a vengeful curse that is as grotesque as it is powerful.|actual|stated|
+f- Naoya Zenin|other_verb|evolution
+
+@1199 gold: the quote's verbs; finding is no discovery object; the knockout blow is the defeat
+keep
+f- Yuta|other_verb|took
+f+ Yuta|other_verb|takes|Yuta takes Yuji's body to the area where the fight began|actual|stated|
+f- Yuta|other_verb|off
+f+ Yuta|other_verb|walks|Yuta walks behind Choso and takes the Death Painting off guard.|actual|stated|
+f- Yuta|discovered|Naoya
+f+ Yuta|other_verb|finds|and finds Naoya defeated by Choso.|actual|stated|
+f- Yuta|attacked|Choso
+
+@1200 gold: the window's name; the healing was tried; Yuta stays
+keep
+r Toge Inumaki=>Toge
+f- Yuta|healed|Maki
+f- Yuta|healed|Panda
+f- Yuta|healed|Toge
+f+ Yuta|healed|Maki|Yuta then tried his best to heal them and managed to defeat Geto.|attempted|stated|Yuta
+f+ Yuta|healed|Panda|Yuta then tried his best to heal them and managed to defeat Geto.|attempted|stated|Yuta
+f+ Yuta|healed|Toge|Yuta then tried his best to heal them and managed to defeat Geto.|attempted|stated|Yuta
+t- no_relation|Finding him to be a very talented
+f+ Yuta|other_verb|remained|Finding him to be a very talented sorcerer, Yuta remained as a classmate with his friends.|actual|stated|
+
+@1201 gold: the wearing-down fight; the telling carries its act; the last attack; Tengen's distraction
+keep
++ Yuki|fought|Kenjaku|Yuki and Choso continue to wear Kenjaku down before he weighs Choso down with his cursed technique
++ Choso|fought|Kenjaku|Yuki and Choso continue to wear Kenjaku down before he weighs Choso down with his cursed technique
+f- Yuki|persuaded|Choso
+f+ Yuki|other_verb|tells|Yuki tells him to "Live as a Human".|actual|stated|
+f+ Choso|other_verb|Live|Yuki tells him to "Live as a Human".|ordered|stated|Yuki
+f+ Yuki|other_verb|kill|Yuki uses one last attack with Star Rage creating a black hole to kill Kenjaku.|attempted|stated|Yuki
+f+ Tengen|other_verb|distracting|Due to Tengen distracting Kenjaku|actual|stated|
+
+@1202 gold: unnamed shikigami; the quote's verbs; Maki attacks; both surround
+keep
++ Maki|fought|Dagon|Maki comes up behind Dagon while the curse blocks a flying knee from the old man.
+f- Dagon|created|shikigami
+f+ Dagon|other_verb|summons|Before Playful Cloud hits, Dagon summons two large shikigami from his body to repel the sorcerers.|actual|stated|
+f- shikigami|other_verb|pushes
+f- Naobito|destroyed|shikigami
+f- Maki|used|shikigami
+f+ Maki|other_verb|exorcises|Maki exorcises her shikigami as well|actual|stated|
+f+ Maki|other_verb|surround|allowing them both to surround Dagon.|actual|stated|
+
+@1203 gold: the tried verb; explaining is no reveal; a body is the defeat's twin; the told act
+keep
+f- Gojo|other_verb|try
+f- Yuji|other_verb|try
+f+ Gojo|other_verb|stop|Gojo and Yuji try to stop them but the two have already escaped.|attempted|stated|Gojo
+f+ Yuji|other_verb|stop|Gojo and Yuji try to stop them but the two have already escaped.|attempted|stated|Yuji
+f- Gojo|revealed|Jogo
+f- Gojo|revealed|Yuji
+f- Gojo|destroyed|Jogo's body
+f+ Yuji|other_verb|leave|Gojo then tells Yuji to not leave his side|ordered|denied|Gojo
+
+@1204 gold: freezing an area is no sealing; noticing = learned; the freeze has a doer
+keep
+- Uraume|sealed|Maki
+- Uraume|sealed|Yuji
+f- Sukuna|other_verb|notices
+f+ Sukuna|learned|-|Sukuna notices someone else has arrived|actual|stated|
+f+ Uraume|other_verb|freeze|They freeze the entire area in front of Sukuna with a massive wave of ice.|actual|stated|
+
+@1205 gold: the first-years are unnamed in the window; Mahito transforms the man; an unnamed curse
+keep
+- Yuji|arrived|Yasohachi Bridge
+- Nobara|arrived|Yasohachi Bridge
+- Megumi|arrived|Yasohachi Bridge
+t+ crowd_end|At the same time, the three Jujutsu High first-years arrive at Yasohachi Bridge.
+f- Mahito|transformed_into|cursed spirit
+f+ Mahito|other_verb|transforming|Mahito does so by forcing the womb down his throat, transforming him into a cursed spirit.|actual|stated|
+f- Mahito|apologised_to|cursed spirit
+f+ Mahito|other_verb|apologizes|Mahito apologizes and asks the newly incarnated curse if they can run some errands for him.|actual|stated|

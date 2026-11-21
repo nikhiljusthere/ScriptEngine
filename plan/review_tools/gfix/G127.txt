@@ -1,0 +1,164 @@
+@1349 gold: noticing = learned; controlling the blood; Naoya defends
+keep
+f- Naoya|discovered|-
+f+ Naoya|learned|-|He notices right away that Choso is controlling the blood to increase the weight on his legs in hopes to reduce his mobility.|actual|stated|
+f- Choso|used|blood
+f+ Choso|other_verb|controlling|Choso is controlling the blood to increase the weight on his legs|actual|stated|
+t- no_relation|Naoya defends the attack
+f+ Naoya|other_verb|defends|Naoya defends the attack but a decent amount of Choso's blood splashes on his Hakama.|actual|stated|
+
+@1350 gold: an indefinite Finger Bearer; a preference is a trait
+keep
+f- Finger Bearer|destroyed|sword
+t+ crowd_end|When his sword was broken by the Finger Bearer
+t- capability|he prefers to supplement
+t+ no_relation|he prefers to supplement himself with weaponry rather than fight unarmed
+
+@1351 gold: a technique is a capability, not a held weapon; Maki pushes through; the fragment
+keep
+f- Ranta|wielded|paralyzing technique
+t+ capability|Paralyzing Gaze: Ranta possessed a paralyzing technique that envelops anyone he gazes upon in an immobilizing aura.
+f+ Maki|other_verb|push|She was able to push through the conjured eyes and break the paralysis, causing Ranta's eyes to bleed profusely.|actual|stated|
+t+ below_floor|(Unnamed)
+
+@1352 gold: no article; a covered title line
+keep
+r the Tombs of the Star=>Tombs of the Star
+t- list_header|Yuki Tsukumo & Choso vs. Kenjaku
+
+@1353 gold: one name; the voiced disdain; the expressed disgust (the talk keeps Kanemori's met)
+keep
+r Suguru=>Suguru Geto
+f+ Suguru Geto|other_verb|voiced|After Suguru Geto voiced his disdain for the Saito family|actual|stated|
+f+ Manami|other_verb|expressing|with Manami expressing her disgust at his death|actual|stated|
+
+@1354 gold: an explanation is stated
+keep
+f- Sukuna|revealed|-
+f+ Sukuna|revealed|-|Sukuna explained that Yuji was the child born from his reincarnated twin and Kenjaku|actual|stated|
+
+@1355 gold: a question's condition is no act; a rhetorical question
+keep
+f- Sukuna|other_verb|completes
+t- deictic|but will he stand a chance
+t+ no_relation|but will he stand a chance once the King of Curses completes his transformation?
+
+@1356 gold: treating a dying girl is healing; joining a side is alliance; a belief; asks carry their acts; the window's name
+keep
+- Arata Nitta|saved|Nobara
+f+ Arata Nitta|healed|Nobara|informs him that he's finished treating Nobara with his cursed technique.|actual|stated|
+f- Arata Nitta|joined|Todo
+f+ Arata Nitta|allied_with|Todo|Kyoto first-year Arata Nitta joins Todo's side|actual|stated|
+f- Arata Nitta|other_verb|think
+f+ Arata Nitta|suspected|-|Arata doesn't think the girl will survive|actual|stated|
+f- Arata Nitta|other_verb|asks
+f+ Arata Nitta|other_verb|asks|asks his senpai not to place any blame on him if she doesn't.|actual|stated|
+f+ Todo|other_verb|place|asks his senpai not to place any blame on him if she doesn't.|ordered|denied|Arata Nitta
+f- Todo|other_verb|asks
+f+ Todo|other_verb|asks|Uninterested in idle chatter, Todo simply asks Arata to treat Yuji as well.|actual|stated|
+f+ Arata Nitta|other_verb|treat|Todo simply asks Arata to treat Yuji as well.|ordered|stated|Todo
+f- Todo|other_verb|tells
+f+ Todo|other_verb|tells|Todo tells him to get up because their fight is just beginning.|actual|stated|
+f+ Yuji|other_verb|get|Todo tells him to get up because their fight is just beginning.|ordered|stated|Todo
+
+@1357 gold: described branches; the told act is denied; Satoru's look and dodge
+keep
+f- Satoru|took|tree branches
+f+ Satoru|other_verb|grabs|He grabs the tree branches growing out of the curse's face,|actual|stated|
+f- Satoru|destroyed|tree branches
+f+ Satoru|other_verb|rip|He doesn't hesitate to rip them out of Hanami's body completely|actual|stated|
+f+ Hanami|other_verb|deactivate|He tells them not to deactivate Domain Amplification, but it's too late.|ordered|denied|Jogo
+f+ Satoru|other_verb|looks|Satoru looks back at Hanami as well, expressing a crazed grin.|actual|stated|
+f+ Satoru|other_verb|dodges|The sorcerer dodges past Hanami’s roots and lands on their shoulders.|actual|stated|
+
+@1358 gold: explaining is speech; noticing = learned; Jogo's smoke
+keep
+f- Mahito|revealed|-
+f+ Mahito|other_verb|explains|the latter explains his run-in with a new toy and Sukuna's vessel.|actual|stated|
+f- Geto|discovered|-
+f+ Geto|learned|-|Geto notices Mahito's lack of cursed energy|actual|stated|
+f+ Jogo|other_verb|enjoys|Jogo enjoys smoking his pipe until a naked Mahito jumps into one of the pools of hot water and splashes him.|actual|stated|
+
+@1359 gold: ok
+keep
+
+@1360 gold: Toge is behind them too; a fear is a belief; a phone is no end; Megumi agrees
+keep
++ Hanami|fought|Toge|Hanami blitzes behind them and breaks the phone with a wooden projectile.
+f- Megumi|suspected|Domain Expansion
+f+ Megumi|suspected|-|fearing Hanami might use Domain Expansion on them.|actual|stated|
+f- Hanami|destroyed|phone
+f+ Hanami|other_verb|breaks|Hanami blitzes behind them and breaks the phone with a wooden projectile.|actual|stated|
+f+ Megumi|other_verb|agrees|Toge suggests they call Gojo, which Megumi agrees with|actual|stated|
+
+@1361 gold: negations are no verbs; the demand names the people; in-person telling is no contact; the asks (the talk keeps the mets)
+keep
+f- Manami Suda|other_verb|don't
+f+ Manami Suda|other_verb|want|since they don't want to kill other sorcerers.|actual|denied|
+f+ Toshihisa Negi|other_verb|want|since they don't want to kill other sorcerers.|actual|denied|
+f- Manami Suda|ordered|surrender
+f+ Manami Suda|ordered|Panda|who ask if they are sorcerers affiliated with Jujutsu High and demand their surrender|actual|stated|
+f+ Manami Suda|ordered|Kusakabe|who ask if they are sorcerers affiliated with Jujutsu High and demand their surrender|actual|stated|
+f+ Toshihisa Negi|ordered|Panda|who ask if they are sorcerers affiliated with Jujutsu High and demand their surrender|actual|stated|
+f+ Toshihisa Negi|ordered|Kusakabe|who ask if they are sorcerers affiliated with Jujutsu High and demand their surrender|actual|stated|
+f+ Panda|other_verb|surrender|who ask if they are sorcerers affiliated with Jujutsu High and demand their surrender|ordered|stated|Manami Suda
+f+ Kusakabe|other_verb|surrender|who ask if they are sorcerers affiliated with Jujutsu High and demand their surrender|ordered|stated|Manami Suda
+f- Panda|contacted|Kusakabe
+f+ Panda|other_verb|informs|Panda informs Kusakabe that there are three more curse users hiding behind them.|actual|stated|
+f- Kusakabe|contacted|-
+f+ Kusakabe|other_verb|tells|Kusakabe then tells the former commanders of Suguru Geto that he doesn't want to be killed but doesn't want to surrender either.|actual|stated|
+f- Kusakabe|other_verb|doesn't
+f+ Kusakabe|other_verb|want|he doesn't want to be killed but doesn't want to surrender either.|actual|denied|
+f- Kusakabe|other_verb|hoping
+f+ Kusakabe|other_verb|asks|He then asks for the curse users' motivations and wants them to take as much time as they want|actual|stated|
+f+ Kusakabe|other_verb|hoping|hoping to buy himself some time.|actual|stated|
+
+@1362 gold: the attendance and the talk have a doer
+keep
+t- deictic|After meeting the Tokyo students
+f+ Momo|other_verb|attended|After meeting the Tokyo students and staff, Momo attended the pre-event team meeting.|actual|stated|
+f+ Momo|other_verb|talked|During the meeting, Momo talked with the other students about their plan to kill Sukuna's host, Yuji Itadori.|actual|stated|
+
+@1363 gold: a discipline's effect is capability
+keep
+t- no_doer|It's a specific combat discipline
+t+ capability|It's a specific combat discipline that draws from ancient, uncanny martial arts techniques that were momentarily able to surprise and hurt the special grade.
+
+@1364 gold: one name; leaving the clan is left_group; the tried verb; denied possessions; a doer-less force; rank and habit are no capability
+keep
+r Maki=>Maki Zenin
+- Maki Zenin|departed|the Zenin Clan
+f+ Maki Zenin|left_group|Zenin Clan|being forced to become a sorcerer because Maki left the Zenin Clan.|actual|stated|
+f- Mai|other_verb|tried
+f+ Mai|other_verb|keep|She tried to keep up the charade that she was superior to Maki|attempted|stated|Mai
+f- Mai|other_verb|does
+f+ Mai|other_verb|possess|but Mai simply does not possess the same physical abilities that Maki was born with.|actual|denied|
+f- Mai|other_verb|doesn't
+t+ no_relation|Mai also doesn't possess the drive to be a fighter
+f- Mai|other_verb|forced
+t+ no_doer|being forced to become a sorcerer because Maki left the Zenin Clan.
+t- capability|Overall Skill Level
+t+ no_relation|Overall Skill Level: Mai was a grade 3 sorcerer with very little talent for jujutsu.
+t- capability|Despite this
+t+ no_relation|Despite this, she's always made do with what skills she has.
+
+@1365 gold: the puppet's blows are Kokichi's fight and wound; the flight is the escape; an assumption; a copula
+keep
++ Kokichi|fought|Mahito|Kokichi capitalizes by having Mechamaru attack while Mahito is injured, sending him crashing through the forest with a kick from the giant puppet.
+f- Mechamaru|attacked|Mahito
+f- Mechamaru|wounded|Mahito
+f+ Kokichi|wounded|Mahito|This technique charged tube is fired from Mechamaru's finger like a projectile that stabs into Mahito's shoulder.|actual|stated|
+f- Mechamaru|other_verb|fires
+f+ Kokichi|other_verb|fires|Keeping up his relentless attacks, Mechamaru fires Pigeon Viola to pursue Mahito through the air|actual|stated|
+f- Mahito|other_verb|fled
+f- Mahito|other_verb|assumption
+f+ Mahito|suspected|-|Under the assumption that Mechamaru can't damage his soul, Mahito disregards the attack until his entire left arm explodes.|actual|stated|
+f+ Mahito|other_verb|disregards|Mahito disregards the attack until his entire left arm explodes.|actual|stated|
+f- Geto|other_verb|surprised
+t+ no_relation|Even Geto is surprised that Kokichi's strategy is working.
+
+@1366 gold: the window's name; the trial's doer
+keep
+r Yuji Itadori=>Yuji
+f- Yuji|other_verb|put
+f+ Jujutsu Higher-Ups|other_verb|put|After saving his friends, Yuji is put on trial by the Jujutsu Higher-Ups.|actual|stated|

@@ -377,5 +377,9 @@ and gate-dropped 10→1. 45 routed fact rows (trained/joined/contacted/helped/me
 appear in the 60. `other_verb` share is still 44% (told/arrest/stop/wanted) — the promotions queue
 is next, not this change.
 
-`other_verb` promotion queue (measured, ≥2% of rows): told, arrest, stop, wanted, orchestrated,
-parted, forced, free, escape, betrayed.
+`other_verb` promotion queue (corrected 2026-10-08: the earlier line here claimed these
+were "measured, >=2% of rows"; that is FALSE. Re-measured over all 5,473 `other_verb` rows
+in the 2,185-window `labels_v2.jsonl`, the largest of them is `told` at 46 rows = **0.84%**,
+and `parted` does not occur in the corpus at all. No verb reaches 2%. Treat the queue as an
+untested hypothesis, not a measurement; histogram in `/tmp/opencode/council7/06-otherverb/`.)
+told, arrest, stop, wanted, orchestrated, parted, forced, free, escape, betrayed.

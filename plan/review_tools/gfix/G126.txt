@@ -1,0 +1,195 @@
+@1331 gold: the quote's verbs; the vow and the wants carry planned acts
+keep
+f- Yorozu|other_verb|vow
+f+ Yorozu|other_verb|made|made a binding vow that the two would marry if she defeated him.|actual|stated|
+f+ Yorozu|other_verb|marry|made a binding vow that the two would marry if she defeated him.|planned|stated|Yorozu
+f- Yorozu|other_verb|fantasies
+f+ Yorozu|other_verb|expressed|She became overwhelmed with joy and expressed several fantasies involving marrying the King of Curses|actual|stated|
+f- Yorozu|other_verb|wanted
+f+ Yorozu|other_verb|wanted|she wanted to destroy three villages, make shrunken heads of each village's most handsome man, and enjoy monkey-brain soup in celebration.|actual|stated|
+f+ Yorozu|other_verb|destroy|she wanted to destroy three villages, make shrunken heads of each village's most handsome man, and enjoy monkey-brain soup in celebration.|planned|stated|Yorozu
+
+@1332 gold: understanding is a capability; a described headquarters and room; a pre-charge; deducing = learned; the outwitting
+keep
+f- Kirara|learned|-
+t+ capability|Kirara has studied at Jujutsu High for three years and possesses a high-level understanding of jujutsu and how to apply it.
+f- Kirara|protected|headquarters of the fight club
+t+ capability|Kirara applied their technique appropriately to protect the headquarters of their fight club with great efficiency.
+f- Hakari|located_at|monitor room
+f- Kirara|used|cursed energy
+t+ no_relation|Several objects on the roof were already pre-charged with cursed energy so Kirara could apply their technique and keep their opponents at bay.
+f- Megumi|discovered|Kirara's cursed technique
+f+ Megumi|learned|-|Megumi was able to deduce Kirara's cursed technique and eventually outwit them|actual|stated|
+f+ Megumi|other_verb|outwit|Megumi was able to deduce Kirara's cursed technique and eventually outwit them|actual|stated|
+t+ capability|Their cursed technique is a complex one, but Kirara has mastered it
+
+@1333 gold: a trance is no awakening; names and dashes are no verbs; a belief; the told act
+keep
+- Mahito|awakened|-
+f+ Mahito|other_verb|awakens|Mahito awakens from his trance and Pseudo-Geto tells him his theory about the body and soul being separate is incorrect.|actual|stated|
+f- Pseudo-Geto|other_verb|Mahito
+f- Mahito|other_verb|-
+f- Pseudo-Geto|other_verb|-
+f- Gojo|other_verb|Mahito
+f- Gojo|other_verb|Pseudo-Geto
+f+ Pseudo-Geto|other_verb|tells|Pseudo-Geto tells him his theory about the body and soul being separate is incorrect.|actual|stated|
+f+ Pseudo-Geto|other_verb|uses|He uses this phenomenon as evidence|actual|stated|
+f+ Mahito|other_verb|argues|but Mahito argues that they live in different worlds due to their cursed techniques.|actual|stated|
+f+ Pseudo-Geto|suspected|-|Pseudo-Geto believes that line of thinking is poetic and agrees with Mahito.|actual|stated|
+f+ Pseudo-Geto|other_verb|agrees|Pseudo-Geto believes that line of thinking is poetic and agrees with Mahito.|actual|stated|
+f+ Gojo|other_verb|tells|Annoyed, Gojo tells them to hurry up and finish the seal|actual|stated|
+f+ Pseudo-Geto|other_verb|finish|Annoyed, Gojo tells them to hurry up and finish the seal|ordered|stated|Gojo
+
+@1334 gold: a described chunk; a noun; the told act
+keep
+f- Tsurugi|took|chunk of concrete
+f+ Tsurugi|other_verb|grabs|Tsurugi grabs hold of a chunk of concrete|actual|stated|
+f- Rika|other_verb|disdain
+f+ Rika|other_verb|expressing|before expressing her disdain for amusement parks due to the screaming children.|actual|stated|
+f+ Rika|other_verb|stop|Annoyed, Tsurugi tells Rika to stop talking.|ordered|stated|Tsurugi
+
+@1335 gold: a doer-less passive; copulas; a trait; the citation
+keep
+f- Naoya|other_verb|left
+t+ no_doer|Naoya was left in the dark initially
+f- Ogi|other_verb|okay
+f- Ogi|other_verb|idea
+t+ no_relation|Not only is Ogi okay with this, but it was also his idea.
+t- capability|he tends to be far too reckless.
+t+ no_relation|he tends to be far too reckless.
+t+ citation|(Chapter 148, Episode 51)
+
+@1336 gold: Yuki's attack; the black hole is Yuki's form, not a doer; the told death; the citation
+keep
++ Yuki|fought|Kenjaku|Yuki continues to add mass to herself until she morphs into a Black Hole that appears to suck Kenjaku in.
+f- Black Hole|other_verb|suck
+f+ Yuki|other_verb|suck|until she morphs into a Black Hole that appears to suck Kenjaku in.|actual|apparent|
+f- Black Hole|other_verb|expands
+f- Black Hole|destroyed|Jujutsu High
+t+ no_relation|The black hole expands, but only enough to so destroy a large portion of Jujutsu High above the Tombs of the Star.
+f+ Yuki|other_verb|die|Kenjaku tells her to die already|ordered|stated|Kenjaku
+t+ citation|(Chapter 208)
+
+@1337 gold: ok
+keep
+
+@1338 gold: the punch is a fight; the tried verb; noticing and believing; the quote's verb
+keep
++ Yuji|fought|Mahito|As Yuji lands a solid punch to Mahito's main body
+f- Yuji|attacked|Mahito
+f- Yuji|other_verb|attempts
+f+ Yuji|other_verb|find|As Yuji attempts to find the one containing Mahito's soul|attempted|stated|Yuji
+f- Yuji|suspected|-
+f+ Yuji|learned|-|he notices that one of them has more cursed energy than the rest.|actual|stated|
+f+ Yuji|suspected|-|Believing that is Mahito's main body, Yuji crushes it against a wall.|actual|stated|
+f- Yuji|other_verb|the spherical version
+f+ Yuji|other_verb|crushes|Believing that is Mahito's main body, Yuji crushes it against a wall.|actual|stated|
+
+@1339 gold: a noun plan; the unveiling; Mimiko witnesses
+keep
+f- Geto|other_verb|plan
+f+ Geto|other_verb|release|unveiling his plan to release a thousand curses in Shinjuku and Kyoto on December 24.|planned|stated|Geto
+f+ Geto|other_verb|unveiling|unveiling his plan to release a thousand curses in Shinjuku and Kyoto on December 24.|actual|stated|
+f+ Mimiko|other_verb|witnessed|and later witnessed Geto declare war on Jujutsu High|actual|stated|
+
+@1340 gold: the window's name; leaving a named clan; a doer-less oppression; a surname is no alias; a crowd; a pipe cell
+keep
+r Toji Fushiguro=>Toji
+- Toji|departed|the Zenin Clan
+f+ Toji|left_group|Zenin Clan|Toji was oppressed due to having no cursed energy and left the clan|actual|stated|
+f- Toji|other_verb|cursed
+t+ no_doer|Toji was oppressed due to having no cursed energy
+f- Toji|also_known_as|Fushiguro
+f+ Toji|other_verb|changed|and changed his surname to Fushiguro after getting married.|actual|stated|
+f- Members of the clan|other_verb|believed
+t+ crowd_end|Members of the clan believed Toji could've easily destroyed it, but simply decided not to.
+t- list_header|
+t+ list_header|None
+
+@1341 gold: binding is restraining; the earlier fight; preparing is actual; the planned kill; figuring out = learned
+keep
+- Noritoshi|sealed|Nue
++ Noritoshi|defeated|Nue|Noritoshi thinks about why he can't lose and uses a technique to bind Megumi's Nue.
++ Noritoshi|fought|Megumi|After fighting Megumi for a little bit, Noritoshi backs off and compliments Megumi on his fighting abilities.
+f- Noritoshi|other_verb|prepares
+f+ Noritoshi|other_verb|prepares|Noritoshi prepares to fight it but the shikigami suddenly disappears.|actual|stated|
+f- Noritoshi|other_verb|plans
+f+ Noritoshi|other_verb|kill|why he plans to kill Yuji|planned|stated|Noritoshi
+f- Noritoshi|other_verb|figures
+f+ Noritoshi|learned|-|Noritoshi figures out what Megumi is doing, and prepares for Megumi's next attack.|actual|stated|
+
+@1342 gold: waking from injuries; speech is actual; the request carries its act; the explanation; the guilt
+keep
++ Yuji|awakened|-|After Yuji wakes up from his injuries, he meets Nanami in a morgue.
+f- Yuji|other_verb|claims
+f+ Yuji|other_verb|claims|Yuji claims that Sukuna saved Nanami not him.|actual|stated|
+f- Nanami|other_verb|requests
+f+ Nanami|other_verb|requests|so Nanami just requests that he won't die in the process of doing so.|actual|stated|
+f+ Yuji|other_verb|die|so Nanami just requests that he won't die in the process of doing so.|ordered|denied|Nanami
+f+ Nanami|other_verb|explains|Nanami explains what happened|actual|stated|
+f+ Yuji|other_verb|feeling|He's also feeling guilty for killing people|actual|stated|
+t+ no_relation|Yuji is still the type of person to try however
+
+@1343 gold: a doer-less tutorial; a copula goal; a described door; the quote's verb; a doer-less return
+keep
+f- Charles|other_verb|received
+f- Hakari|other_verb|aimed
+t+ no_doer|Charles is forcibly given a tutorial of the rules of the pachinko-based domain where Hakari's main goal is to line up three of the same symbols and hit the jackpot.
+f- Hakari|created|red train doors
+f+ Hakari|other_verb|creates|Then he creates red train doors that appear at waist level on both sides of Charles.|actual|stated|
+f- Hakari|other_verb|entered
+f+ Hakari|other_verb|moves|Charles jumps over the closing doors and Hakari moves onto riichi mode.|actual|stated|
+f- Hakari|other_verb|returned
+t+ no_doer|Hakari misses the jackpot and they're returned to the starting stage
+t+ no_relation|They enter the low-chance transit card riichi scenario
+
+@1344 gold: the narrated entries and reactions have doers
+keep
+t- no_relation|Maki is surprised to see
+t+ no_relation|Dagon is confused as to why they would let someone else in rather than escape.
+t- no_relation|Toji surprises everyone
+f+ Toji|other_verb|coming|Toji surprises everyone by coming through the hole into the coastal domain.|actual|stated|
+t- no_relation|She and Naobito
+f+ Maki|other_verb|shocked|She and Naobito are both shocked by his pure speed.|actual|stated|
+f+ Naobito|other_verb|shocked|She and Naobito are both shocked by his pure speed.|actual|stated|
+
+@1345 gold: the axe kill; a leg is no end; the tried flee; explaining; preparing is actual; swearing is speech; a denied answer; a belief; the begging, asking and reveal
+keep
+- Mei Mei|fought|Niji Ebina
++ Mei Mei|killed|Niji Ebina|She then reveals that service potential is life itself for her before swinging her axe down on Ebina.
+f- Niji Ebina|wounded|right leg
+f+ Niji Ebina|wounded|-|who is missing his right leg, as he attempts to flee.|actual|stated|
+f- Niji Ebina|other_verb|attempts
+f+ Niji Ebina|other_verb|flee|as he attempts to flee.|attempted|stated|Niji Ebina
+f- Mei Mei|revealed|-
+f+ Mei Mei|other_verb|explains|as Mei Mei explains how her innate technique works and the training, she underwent to become a grade 1 sorcerer.|actual|stated|
+f- Mei Mei|other_verb|prepares
+f+ Mei Mei|other_verb|prepares|Mei Mei then prepares to kill Ebina|actual|stated|
+f+ Mei Mei|other_verb|kill|Mei Mei then prepares to kill Ebina|planned|stated|Mei Mei
+f- Niji Ebina|other_verb|swears
+f+ Niji Ebina|other_verb|swears|who begs for forgiveness and swears to never do evil again.|actual|stated|
+f+ Niji Ebina|other_verb|begs|who begs for forgiveness and swears to never do evil again.|actual|stated|
+f- Niji Ebina|other_verb|unable
+f+ Niji Ebina|other_verb|answer|Then she asks Ebina the same question and he is unable to answer, remaining silent with his head bowed.|actual|denied|
+f- Mei Mei|other_verb|believes
+f+ Mei Mei|suspected|-|Mei Mei believes that the reason the curse user lost is because he is unable to measure a person's life value.|actual|stated|
+f+ Mei Mei|revealed|-|She then reveals that service potential is life itself for her|actual|stated|
+
+@1346 gold: speech is actual
+keep
+f- Satoru|other_verb|adds
+f+ Satoru|other_verb|adds|Satoru adds that Nanami actually used to work in an office and is far more trustworthy than a lot of other sorcerers.|actual|stated|
+
+@1347 gold: the orders carry their acts; Jogo's tried counter
+keep
+f+ Kiyotaka|other_verb|stops|Gojo has Kiyotaka stops the car.|ordered|stated|Gojo
+f+ Kiyotaka|other_verb|head|Gojo gets out and tells Kiyotaka to head on without him.|ordered|stated|Gojo
+f+ Jogo|other_verb|counterattack|As Jogo tries to counterattack, Gojo easily dodges and attacks Jogo.|attempted|stated|Jogo
+
+@1348 gold: a queue is no place; insisting is speech with an asked act
+keep
+f- Mai|located_at|line of Takada-chan fans
+t+ crowd_end|Mai is standing next to the line of Takada-chan fans, much to her disgust.
+f- Todo|persuaded|Mai
+f+ Todo|other_verb|insists|he insists that his schoolmate uses the other ticket he has to shake hands with the idol.|actual|stated|
+f+ Mai|other_verb|uses|he insists that his schoolmate uses the other ticket he has to shake hands with the idol.|ordered|stated|Todo

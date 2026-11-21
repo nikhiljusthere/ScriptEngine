@@ -1,0 +1,199 @@
+@1241 gold: one name; the order carries its act; a patient is no subject; committee members are crowds; Usami leaves
+keep
+r Maru=>Marulu
+f+ Mino|other_verb|delete|who had been ordered by Usami to delete footage of Maru and Tsurugi fighting|ordered|stated|Usami
+f- Mino|other_verb|alarms
+f+ Usami|other_verb|leaving|criticizing his colleague for endangering both Japan and humanity before leaving the meeting.|actual|stated|
+t- deictic|before leaving the meeting.
+t- no_doer|A committee of jujutsu sorcerers
+t+ crowd_end|A committee of jujutsu sorcerers reviews the recording of Maru's fight with Masaki Takeda.
+t- no_doer|When one member questions
+t+ crowd_end|When one member questions whether Simurians should be granted such autonomy on Earth,
+t- no_doer|Another committee member argues
+t+ crowd_end|Another committee member argues that Maru's attempt to harm Tsurugi should classify Simurians as threats under Article 7 of the Jujutsu Regulations.
+
+@1242 gold: the narrated moves have named doers
+keep
+t- no_relation|Dagon retreats back
+f+ Dagon|other_verb|retreats|Dagon retreats back to levitating into the air but Naobito is way ahead of him.|actual|stated|
+t- no_relation|Dagon realizes that he can't
+f+ Dagon|learned|-|Dagon realizes that he can't use his techniques as Naobito blitzes behind him again|actual|stated|
+t- no_relation|Then the old man slams
+f+ Naobito|other_verb|slams|Then the old man slams Dagon onto the ground, cracking the floor from the impact.|actual|stated|
+t- no_relation|The special grade curse realizes
+f+ Dagon|other_verb|admitting|The special grade curse realizes he can't fight back due to Naobito's pure speed and skills, admitting he's even faster than Jogo.|actual|stated|
+
+@1243 gold: a seeming exorcism is defeated with an apparent death; beliefs and realizations; a copula; a cockpit is no doer
+keep
++ Kokichi|defeated|Mahito|This forces Mahito's body to explode and the domain to disappear, seemingly exorcising the cursed spirit.
+f- Kokichi|other_verb|explode
+f- Kokichi|other_verb|exorcising
+f+ Mahito|dies|-|This forces Mahito's body to explode and the domain to disappear, seemingly exorcising the cursed spirit.|actual|apparent|
+f- Kokichi|other_verb|believes
+f+ Kokichi|suspected|-|Mechamaru roars in victory and Kokichi believes he's done it.|actual|stated|
+f- Geto|discovered|-
+f+ Geto|learned|-|Impressed, Geto realizes that Kokichi uses Simple Domain to neutralize Mahito's cursed technique in order to injure him.|actual|stated|
+f- Mahito|other_verb|vulnerable
+t+ no_relation|Even inside his own Domain Expansion, Mahito was still vulnerable to this.
+f- cockpit area's front section|other_verb|crashes
+t+ no_doer|but suddenly the cockpit area's front section crashes open.
+
+@1244 gold: no article; the cemetery's named place; a passive dispatch; table cells with no pipe; descriptions
+keep
+r the Mei Mei Team=>Mei Mei Team
+f- Mei Mei Team|located_at|Aoyama Cemetery
+f+ Mei Mei Team|located_at|Harajuku|The Mei Mei Team was initially posted here during the Shibuya Incident at 8:39 PM.|actual|stated|
+f- Mei Mei Team|other_verb|dispatched
+t+ no_doer|When concerns arose over enemy activity at Meiji-Jinguemae, the Mei Mei Team was dispatched to handle it.
+t- list_header|Location
+t+ list_header|Location
+t+ list_header|Description
+t- list_header|A famous cemetery
+t+ no_relation|A famous cemetery located in Harajuku, Shibuya.
+t- list_header|It is in close
+t+ no_relation|It is in close proximany to Meiji-Jinguemae Station.
+
+@1245 gold: a cursed object is told nothing
+keep
+f- Geto|ordered|Prison Realm
+f+ Geto|other_verb|orders|In the present, Geto orders Prison Realm to open.|actual|stated|
+
+@1246 gold: the narrated moves have named doers
+keep
+t- no_relation|However, Reggie pecks
+f+ Reggie|other_verb|pecks|However, Reggie pecks away at him with varying degrees of small attacks.|actual|stated|
+t- no_relation|Megumi is forced
+f+ Megumi|other_verb|unleash|Megumi is forced to unleash a big move to counter and turn the battle in his favor.|actual|stated|
+
+@1247 gold: the higher-ups are a crowd; the informing is Naoya's side of the deal
+keep
+f- Yuta|tricked|higher-ups
+t+ crowd_end|He was able to trick the higher-ups into thinking it was a real execution
+f- Yuta|other_verb|inform
+f+ Naoya Zenin|other_verb|informing|he healed Naoya Zenin in exchange for informing the higher-ups that Yuji was executed.|actual|stated|
+
+@1248 gold: the window's names; a described classroom; a noun; the mission carries its act; a want is actual, the stopping planned; the departure
+keep
+r Suguru Geto=>Geto
+r Masamichi Yaga=>Masamichi
+f- Geto|located_at|classroom
+f- Gojo|located_at|classroom
+f- Shoko|located_at|classroom
+f+ Gojo|other_verb|discuss|where they discuss the importance of a curtain.|actual|stated|
+f+ Shoko|other_verb|discuss|where they discuss the importance of a curtain.|actual|stated|
+f- Geto|other_verb|argument
+f+ Geto|other_verb|get|Geto and Gojo then get into an argument about the strong protecting the weak which almost ends with them fighting.|actual|stated|
+f+ Gojo|other_verb|get|Geto and Gojo then get into an argument about the strong protecting the weak which almost ends with them fighting.|actual|stated|
+f+ Geto|other_verb|escort|to escort the new Star Plasma Vessel to Tokyo Jujutsu High.|ordered|stated|Masamichi
+f+ Gojo|other_verb|escort|to escort the new Star Plasma Vessel to Tokyo Jujutsu High.|ordered|stated|Masamichi
+f- Q|other_verb|want
+f- Time Vessel Association|other_verb|want
+f+ Q|other_verb|stop|Q and the Time Vessel Association, who want to stop them.|planned|stated|Q
+f+ Time Vessel Association|other_verb|stop|Q and the Time Vessel Association, who want to stop them.|planned|stated|Time Vessel Association
+t- deictic|After being informed about the mission
+f+ Gojo|other_verb|head|After being informed about the mission, Gojo and Geto head out.|actual|stated|
+f+ Geto|other_verb|head|After being informed about the mission, Gojo and Geto head out.|actual|stated|
+
+@1249 gold: all four refuse; both chalk it up; the citation
+keep
+f+ Maki|other_verb|refuse|However, Yuta, Maki, Inumaki, and Panda (who were present) refuse to leave the corridor|actual|stated|
+f+ Inumaki|other_verb|refuse|However, Yuta, Maki, Inumaki, and Panda (who were present) refuse to leave the corridor|actual|stated|
+f+ Panda|other_verb|refuse|However, Yuta, Maki, Inumaki, and Panda (who were present) refuse to leave the corridor|actual|stated|
+f+ Gojo|other_verb|chalk|ultimately they both chalk it up to confusion or possible truth.|actual|stated|
+t+ citation|(Chapter 261)
+
+@1250 gold: both appear with Jogo; realizing = learned
+keep
++ Satoru|met|Jogo|They both suddenly appear back on the battlefield with Jogo.
+f- Jogo|other_verb|realizes
+f+ Jogo|learned|-|Jogo realizes that Yuji is Sukuna's vessel|actual|stated|
+
+@1251 gold: a suspended-death body is no meeting; the feeding; a noun
+keep
+- Sukuna|met|Megumi
+f- Sukuna|other_verb|plans
+f+ Mimiko Hasaba|other_verb|fed|After Mimiko Hasaba, Nanako Hasaba, and Jogo fed an unconscious Yuji 11 of Sukuna's fingers to awaken him|actual|stated|
+f+ Nanako Hasaba|other_verb|fed|After Mimiko Hasaba, Nanako Hasaba, and Jogo fed an unconscious Yuji 11 of Sukuna's fingers to awaken him|actual|stated|
+f+ Jogo|other_verb|fed|After Mimiko Hasaba, Nanako Hasaba, and Jogo fed an unconscious Yuji 11 of Sukuna's fingers to awaken him|actual|stated|
+
+@1252 gold: Nanami is not slain here; the break-in and the touch
+keep
+f- Nanami|dies|-
+f+ Yuji|other_verb|breaks|Before Nanami is slain, Yuji breaks into the Domain from the outside.|actual|stated|
+f+ Mahito|other_verb|touch|This forces Mahito to touch Sukuna's soul once again, irritating him.|actual|stated|
+t- deictic|This forces Mahito
+t- deictic|With that, Mahito's Domain
+t+ no_relation|With that, Mahito's Domain crumbles and the battle comes to an end.
+
+@1253 gold: the wound is Mechamaru's; retiring is the defeat's twin
+keep
+f- Panda|wounded|right arm
+f+ Panda|wounded|Mechamaru|A single cursed energy-enhanced palm strike in his Gorilla Mode sent Mechamaru flying out of the forest they were fighting in and rendered its right arm inoperable|actual|stated|
+f- Panda|other_verb|retired
+
+@1254 gold: a post-mortem fantasy is no contact (dreamed, as in b1211); a belief; things are no doers; the citation
+keep
+f- Sukuna|contacted|Kashimo
+f+ Sukuna|other_verb|speaks|In a post-mortem fantasy, Sukuna speaks to Kashimo to conclude their conversation about strength.|dreamed|apparent|Sukuna
+f- Sukuna|other_verb|explains
+f+ Sukuna|other_verb|explains|He explains to Kashimo that those who challenged him in the past were never cursing him.|dreamed|apparent|Sukuna
+f- Sukuna|other_verb|believes
+f+ Sukuna|suspected|-|Sukuna believes Gojo and Kashimo are greedy because they lament the solitude all the same.|dreamed|apparent|Sukuna
+f- Kashimo|other_verb|asks
+f+ Kashimo|other_verb|asks|Kashimo asks Sukuna if he ever becomes malcontent but the King of Curses explains that all humans are as unique as they are fleeting.|dreamed|apparent|Kashimo
+f+ Sukuna|other_verb|respond|They wanted the recognition of the strongest and it's only proper for the strongest to respond to that love in kind.|dreamed|apparent|Sukuna
+f- Sukuna|other_verb|considers
+t+ no_relation|This makes devouring them the perfect pass time for Sukuna until his end.
+f- Hakari|other_verb|releasing
+t+ no_relation|Following Kashimo's defeat, Hakari's domain barrier shatters, releasing him and Uraume.
+t+ citation|(Chapter 238)
+
+@1255 gold: speech acts are actual; realizing = learned; a speculation is a belief; one verb word; Tsurugi leaves
+keep
+f- Yuka|other_verb|remarks
+f+ Yuka|other_verb|remarks|Yuka remarks that she expected as much from an amateur|actual|stated|
+f- Yuka|other_verb|explains
+f+ Yuka|other_verb|explains|Yuka explains that the road they traveled was under the influence of a physical gaze-manipulation curse|actual|stated|
+f- Yuka|other_verb|speculates
+f+ Yuka|suspected|-|She speculates that a barrier technique is set to activate and capture anyone who follows the path in the prescribed order|actual|stated|
+f- Maru|other_verb|realizes
+f+ Maru|learned|-|something Maru realizes could be used to quietly abduct children.|actual|stated|
+f- Yuka|other_verb|brushes off
+f+ Yuka|other_verb|brushes|Impressed, Maru praises Yuka's insight, which she brushes off, though not without a smug expression.|actual|stated|
+f- Tsurugi|other_verb|stating
+f+ Tsurugi|other_verb|stating|After stating that he needs to retrieve a tool, he walks away, leaving Maru and Yuka alone.|actual|stated|
+f+ Tsurugi|other_verb|walks|After stating that he needs to retrieve a tool, he walks away, leaving Maru and Yuka alone.|actual|stated|
+f- Maru|other_verb|expresses
+f+ Maru|other_verb|expresses|He expresses his hope that the Okkotsu siblings will reconcile|actual|stated|
+f- Yuka|other_verb|insisting
+f+ Yuka|other_verb|insisting|Yuka, however, dismisses his concern, insisting that he is projecting|actual|stated|
+f- Yuka|other_verb|reaffirms
+f+ Yuka|other_verb|reaffirms|She reaffirms that she doesn't care about him, as long as she can reclaim her ring.|actual|stated|
+
+@1256 gold: a nickname place; an adjective; gave takes the recipients; a belief; Nobara's trip and Fumi's sight
+keep
+f- Saori|resides_at|secret base
+t+ no_relation|The "secret base" was actually the house of a girl named Saori.
+f- Saori|other_verb|older
+t+ no_relation|Saori was older than Fumi and moved into the village after her.
+f- Saori|gave|black tea and sweets
+f+ Saori|gave|Nobara|would welcome Nobara and Fumi every time they would randomly visit by providing them with black tea and sweets.|actual|stated|
+f+ Saori|gave|Fumi|would welcome Nobara and Fumi every time they would randomly visit by providing them with black tea and sweets.|actual|stated|
+f- Fumi|other_verb|believed
+f+ Fumi|suspected|-|Fumi believed Nobara changed after meeting Saori, becoming more refined.|actual|stated|
+f+ Nobara|other_verb|took|One day while they were still kids, Nobara took Fumi to her "secret base".|actual|stated|
+f+ Fumi|other_verb|saw|It was the first time she saw Nobara cry and so she wasn't able to remember much else of the event.|actual|stated|
+
+@1257 gold: ok
+keep
+
+@1258 gold: unsealing Gojo is a release; a crowd fragment; the agreed fight
+keep
+f- Kirara|assisted|Gojo
+f- Hakari|assisted|Gojo
++ Kirara|saved|Gojo|Kirara rejoined Hakari along with fellow Jujutsu High students as they went about the process of unsealing Gojo.
++ Hakari|saved|Gojo|Kirara rejoined Hakari along with fellow Jujutsu High students as they went about the process of unsealing Gojo.
+t- deictic|giving the sorcerers
+t+ no_relation|giving the sorcerers a month to prepare.
+f+ Gojo|other_verb|fight|with an agreement being made between Gojo and Sukuna to fight on December 24|planned|stated|Gojo
+f+ Sukuna|other_verb|fight|with an agreement being made between Gojo and Sukuna to fight on December 24|planned|stated|Sukuna

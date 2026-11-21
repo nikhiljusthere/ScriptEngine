@@ -1,0 +1,139 @@
+@1119 gold: rename only to the window's form; an unnamed victim; an adjective
+keep
+r Satoru Gojo=>Gojo
+t+ crowd_end|Kenjaku murders a female sorcerer who was fleeing from him
+f- Iori Hazenoki|other_verb|aware
+t+ no_relation|Unlike the woman, who was questioning Kenjaku's motives, Hazenoki is fully aware of why Kenjaku is attacking.
+
+@1120 gold: the forced act; speech is actual; Yuji's look
+keep
+f+ Megumi|other_verb|eat|Sukuna forces Megumi to eat his severed pinky finger|ordered|stated|Sukuna
+f- Sukuna|other_verb|told
+f+ Sukuna|other_verb|told|he told the sorcerer he'd see something interesting.|actual|stated|
+f+ Yuji|other_verb|looks|As Yuji looks to see that his friend has been taken over|actual|stated|
+
+@1121 gold: one says row
+keep
+f- Kenjaku|other_verb|says
+f+ Kenjaku|other_verb|says|Kenjaku thanks Yuki and Tengen for the warm-up and says the latter has atoned for their tedious existence.|actual|stated|
+
+@1122 gold: Yuki heals herself, Garuda fights beside her; Choso rejoins the fight
+keep
+f- Yuki|helped|Garuda
+f- Garuda|healed|-
+f+ Yuki|healed|-|Yuki continues to fight with Garuda, buying time for her to use reverse cursed technique to heal.|actual|stated|
++ Choso|fought|Kenjaku|During this time, Choso rejoins the fight.
+
+@1123 gold: the quote's verb; quirks are traits
+keep
+f- Yaga|other_verb|likes
+f+ Yaga|other_verb|liking|Yaga is also known for liking cute stuff, which is in direct contrast to his sternness.|actual|stated|
+t- capability|Yaga has a few personality quirks
+t+ no_relation|Yaga has a few personality quirks that distinguish him from being an overly serious man.
+
+@1124 gold: figuring = learned; decisions and preparations are actual, their acts planned; the denied plan
+keep
+f- Gojo|other_verb|figures
+f+ Gojo|learned|-|he figures about what the enemy's intentions and decides to move towards the basement.|actual|stated|
+f- Gojo|other_verb|decides
+f+ Gojo|other_verb|decides|decides to move towards the basement.|actual|stated|
+f+ Gojo|other_verb|move|decides to move towards the basement.|planned|stated|Gojo
+f- Gojo|other_verb|prepares
+f+ Gojo|other_verb|fight|Gojo then prepares to fight against the three.|planned|stated|Gojo
+f- Gojo|other_verb|planning
+f+ Gojo|other_verb|run|since he is not planning to run away.|planned|denied|Gojo
+
+@1125 gold: the tried verb; the pummelling is a fight and a wound; Naobito looks
+keep
+f- Dagon|other_verb|attempt
+f+ Dagon|other_verb|use|Dagon attempt to use another hand sign but Naobito tells him not to even think about it.|attempted|stated|Dagon
+f- Naobito|destroyed|Dagon's fingers
++ Naobito|fought|Dagon|The sorcerer pummels Dagon's mid-section as well as his hands with rapid-fire downward punches, destroying his fingers.
+f+ Naobito|wounded|Dagon|The sorcerer pummels Dagon's mid-section as well as his hands with rapid-fire downward punches, destroying his fingers.|actual|stated|
+t- no_relation|Surprised by the development
+f+ Naobito|other_verb|looks|Surprised by the development, Naobito looks out to the vast ocean beside him.|actual|stated|
+
+@1126 gold: non-verb objects; the Red hit is its own blow; Gojo's race
+keep
+f- Mahoraga|other_verb|Gojo's
+f+ Sukuna|other_verb|fights|Mahoraga's wheel turns as Sukuna fights, signaling a countdown until he adapts to Gojo's technique.|actual|stated|
+f- Sukuna|other_verb|Infinity
+f+ Gojo|other_verb|fights|Gojo fights to win before that happens.|actual|stated|
+f- Gojo|attacked|Sukuna
++ Gojo|fought|Sukuna|Gojo uses advantageous timing to hit Sukuna with Red.
+f- Mahoraga|other_verb|field
+f+ Mahoraga|other_verb|retakes|Mahoraga retakes the field.|actual|stated|
+f- Mahoraga|other_verb|Infinity
+f+ Mahoraga|other_verb|adapted|It's adapted to the Infinity and slashes Gojo across the shoulder.|actual|stated|
+t- deictic|It appears as if Gojo
+t+ no_relation|It appears as if Gojo has won until the wheel turns again
+t- deictic|causing the wheel to fall
+t+ no_relation|causing the wheel to fall from his head.
+
+@1127 gold: unnamed sorcerers are a crowd; requesting is the verb; Tengen's distraction
+keep
+f- Tengen|recruited|strong sorcerers
+f+ Tengen|other_verb|requested|Tengen requested strong sorcerers for protection because they are a non-combatant.|actual|stated|
+f- Tengen|helped|strong sorcerers
+t+ crowd_end|Even so, Tengen supported the aforementioned sorcerers in battle.
+f+ Tengen|other_verb|served|Tengen also served as a distraction where they could in order to give Yuki and Choso any advantage possible.|actual|stated|
+
+@1128 gold: one name; learning of an event; the order carries its act, taking people is no theft
+keep
+r Ino=>Takuma Ino
+f- Kento Nanami|learned|Satoru's sealing
+f+ Kento Nanami|learned|-|After learning of Satoru's sealing, Kento Nanami ordered Takuma Ino to take Yuji and Megumi to dispel the curtain.|actual|stated|
+f- Takuma Ino|took|Yuji
+f- Takuma Ino|took|Megumi
+f+ Takuma Ino|other_verb|take|Kento Nanami ordered Takuma Ino to take Yuji and Megumi to dispel the curtain.|ordered|stated|Kento Nanami
+
+@1129 gold: ok
+keep
+
+@1130 gold: stopping Dagon is defeated
+keep
++ Naobito|defeated|Dagon|humiliated by the fact she would have died if he hadn't stopped Dagon earlier.
+
+@1131 gold: ok
+keep
+
+@1132 gold: Maki's mother is an unnamed relative; gloating is speech; non-verb objects; Maki leaves
+keep
+- Maki's mother|killed|Naoya
+f+ Naoya|dies|-|so he was killed without putting up a fight.|actual|stated|
+t+ crowd_end|However, Maki's mother, who was also on the verge of death, walked up to Naoya from behind and stabbed him in the back.
+f- Maki's mother|other_verb|verge
+f- Naoya|other_verb|too
+f- Naoya|other_verb|gloat
+f+ Naoya|other_verb|gloating|gloating to himself that she didn't finish him off.|actual|stated|
+f+ Maki|other_verb|leaves|After Maki leaves, Naoya tries to crawl to safety|actual|stated|
+
+@1133 gold: the morgue meeting, Shoko's arrival and the greeting are mets; speech is actual; the told act
+keep
++ Gojo|met|Kiyotaka|Gojo meets at the morgue with Kiyotaka.
++ Gojo|met|Shoko|When Shoko shows up to examine the body
++ Gojo|met|Yuji|Gojo greets Yuji about him returning to life.
+f- Gojo|greeted|Yuji
+f- Gojo|other_verb|talks
+f+ Gojo|other_verb|talks|Gojo talks about how Yuji's death during the mission was planned by the higher ups and that he should just kill them all.|actual|stated|
+f- Gojo|other_verb|tells
+f+ Gojo|other_verb|tells|Gojo tells her to make use to him.|actual|stated|
+f+ Shoko|other_verb|make|Gojo tells her to make use to him.|ordered|stated|Gojo
+f+ Gojo|other_verb|leaves|Gojo then leaves with Shoko|actual|stated|
+
+@1134 gold: the Kyoto students are a crowd; noticing = learned; Momo informs
+keep
+f- Kyoto students|other_verb|decided
+t+ crowd_end|After the Kyoto students decided to let Todo handle Yuji
+f- Momo|discovered|-
+f+ Momo|learned|-|Momo landed in a tree and noticed that Megumi's Nue electro-shock wings paralyzed her|actual|stated|
+t- crowd_end|she informed the others
+f+ Momo|other_verb|informed|she informed the others about his location and how Aoi Todo was currently fighting him.|actual|stated|
+
+@1135 gold: hiding a finger is no fight; Uraume's reading
+keep
+- Satoru Gojo|defeated|Uraume
+f+ Uraume|other_verb|takes|Uraume takes this as a second humiliating defeat at the hands of Gojo while cursing their aching wound.|actual|stated|
+
+@1136 gold: ok (the pit throw as in b1085)
+keep

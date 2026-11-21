@@ -1,0 +1,137 @@
+@1085 gold: a name is no verb; feeling and suspecting are two sentences
+keep
+f- Ogi Zenin|other_verb|Maki
+f+ Ogi Zenin|other_verb|walks|He walks out of the room, calling him a stain on his life.|actual|stated|
+f+ Ogi Zenin|other_verb|calling|He walks out of the room, calling him a stain on his life.|actual|stated|
+f- Mai|suspected|-
+f+ Mai|other_verb|feels|Mai feels that Maki still has a heartbeat, seeing she's tough as usual.|actual|stated|
+f+ Mai|suspected|-|She suspected that this day would come.|actual|stated|
+
+@1086 gold: a description is no alias; Daido's narrated cry; everyone is a crowd
+keep
+f- Naoya Zenin|alias_of|cursed spirit
+t- dialogue|Upon seeing Maki's katana
+f+ Daido|other_verb|shouted|Upon seeing Maki's katana, Daido cried tears of joys and enthusiastically shouted "katana!!".|actual|stated|
+t- no_relation|everyone nearby was overwhelmed
+t+ crowd_end|everyone nearby was overwhelmed by a fear-inducing sensation.
+
+@1087 gold: the telling carries its act; the entry has named doers; readying to fight
+keep
+f+ Utahime|other_verb|go|Gakuganji tells Utahime to go ahead in order to save the students.|ordered|stated|Gakuganji
+f+ Gakuganji|other_verb|fight|the old man arms himself with his guitar and readies to fight.|planned|stated|Gakuganji
+t- no_relation|Following the cursed spirit's abrupt invasion
+f+ Gakuganji|other_verb|enter|Gakuganji and Utahime enter through the curtain and are immediately met with a heavy presence.|actual|stated|
+f+ Utahime|other_verb|enter|Gakuganji and Utahime enter through the curtain and are immediately met with a heavy presence.|actual|stated|
+
+@1088 gold: one name; a description is no alias; realizing = learned; the higher-ups and the classmates are crowds or the three named; introducing is no greeting
+keep
+r Yuta=>Yuta Okkotsu
+f- Rika Orimoto|also_known_as|curse
+t+ no_doer|After a major incident involving the curse that was Rika Orimoto resulted in the deaths of a few jujutsu sorcerers, Gojo is assigned to secretly execute the human cursed by the cursed spirit, Yuta Okkotsu.
+f- Gojo|discovered|Yuta Okkotsu
+f+ Gojo|learned|-|Realizing Yuta's potential, Gojo instead brings him back to Tokyo Jujutsu High|actual|stated|
+f- Gojo|persuaded|higher-ups
+f- Gojo|warned|classmates
+f+ Gojo|warned|Maki Zenin|As the three notice that Yuta is cursed and prepare to attack him, Gojo tries to warn them|attempted|stated|Gojo
+f+ Gojo|warned|Panda|As the three notice that Yuta is cursed and prepare to attack him, Gojo tries to warn them|attempted|stated|Gojo
+f+ Gojo|warned|Toge Inumaki|As the three notice that Yuta is cursed and prepare to attack him, Gojo tries to warn them|attempted|stated|Gojo
+f- Gojo|greeted|Yuta Okkotsu
+f+ Gojo|other_verb|informs|Gojo then informs the class of Yuta's situation and formally introduces the students to their new classmate.|actual|stated|
+f- Gojo|other_verb|teams
+f+ Gojo|other_verb|pairs|Gojo then pairs the students up for their lesson.|actual|stated|
+
+@1089 gold: the trip to Tokyo Jujutsu High; the planned meeting; Miguel stays
+keep
++ Suguru Geto|arrived|Tokyo Jujutsu High|Geto brought Mimiko Hasaba, Nanako Hasaba and Larue to Tokyo Jujutsu High
++ Mimiko Hasaba|arrived|Tokyo Jujutsu High|Geto brought Mimiko Hasaba, Nanako Hasaba and Larue to Tokyo Jujutsu High
++ Nanako Hasaba|arrived|Tokyo Jujutsu High|Geto brought Mimiko Hasaba, Nanako Hasaba and Larue to Tokyo Jujutsu High
++ Larue|arrived|Tokyo Jujutsu High|Geto brought Mimiko Hasaba, Nanako Hasaba and Larue to Tokyo Jujutsu High
+f+ Suguru Geto|other_verb|meet|so he could meet with Yuta while Miguel and the others stayed behind.|planned|stated|Suguru Geto
+f+ Miguel|other_verb|stayed|while Miguel and the others stayed behind.|actual|stated|
+
+@1090 gold: an unnamed stabber; taking a person is no theft; the talk has a doer
+keep
+f- enemy|wounded|Kiyotaka
+f+ Kiyotaka|wounded|-|Suddenly Kiyotaka is stabbed by an enemy and falls to the ground.|actual|stated|
+f- Nanami|took|Kiyotaka
+f+ Nanami|other_verb|takes|takes him to Shoko for further treatment.|actual|stated|
+t- no_relation|talks with her about exiting
+f+ Kiyotaka|other_verb|talks|talks with her about exiting the screen surrounding Shibuya and getting in contact with the other assistant managers.|actual|stated|
+t- deictic|falls to the ground.
+
+@1091 gold: the tried verb
+keep
+f- Yuji|other_verb|launching
+f+ Yuji|other_verb|keep|Yuji tries to keep Higuruma away by launching several theater chairs at his opponent.|attempted|stated|Yuji
+f+ Yuji|other_verb|launching|Yuji tries to keep Higuruma away by launching several theater chairs at his opponent.|actual|stated|
+
+@1092 gold: an unnamed colony; Megumi's purpose; a described rule; the taunt and reveal are Tsumiki's (Yorozu)
+keep
+- Tsumiki Fushiguro|arrived|Tokyo No. 1 Colony
+f+ Tsumiki|other_verb|entered|When Tsumiki entered the colony, Megumi immediately transferred 100 points to her|actual|stated|
+f- Tsumiki|other_verb|invite
+f+ Tsumiki|other_verb|invite|so she could invite Kiyotaka Ijichi in as a substitute.|planned|stated|Megumi
+f- Tsumiki|created|a rule allowing players entry and exit across colony borders
+f+ Tsumiki|other_verb|add|Tsumiki instead uses the points to add a rule that would allow players entry and exit across colony borders.|actual|stated|
+f- Kogane|other_verb|taunted
+f- Kogane|revealed_as|Yorozu
+f+ Tsumiki|other_verb|taunted|who taunted Megumi by revealing that she was an incarnated sorcerer named Yorozu all along.|actual|stated|
+f+ Tsumiki|revealed_as|Yorozu|who taunted Megumi by revealing that she was an incarnated sorcerer named Yorozu all along.|actual|stated|
+
+@1093 gold: names are no verbs; the telling carries its act; Kinji's claim; Yuji's bleeding and wondering
+keep
+f- Yuji|other_verb|Megumi
+f- Yuji|other_verb|Panda
+f+ Yuji|other_verb|tells|who tells Megumi and Panda to stay out of his fight.|actual|stated|
+f+ Megumi|other_verb|stay|who tells Megumi and Panda to stay out of his fight.|ordered|stated|Yuji
+f+ Panda|other_verb|stay|who tells Megumi and Panda to stay out of his fight.|ordered|stated|Yuji
+f+ Yuji|wounded|-|however, blood squirts out of Yuji's nose|actual|stated|
+f+ Kinji|other_verb|claims|Kinji punches Yuji which ends him flying back and claims that's what he thought|actual|stated|
+f+ Yuji|other_verb|wonders|as Yuji wonders about Kinji's punches which are painful|actual|stated|
+
+@1094 gold: a described hospital; the grandmother is no end; a doer-less treatment; the climb has a doer
+keep
+f- Rika|located_at|hospital
+f- Rika|helped|paternal grandmother
+f- paternal grandmother|other_verb|believed
+t+ crowd_end|Rika was then taken in by her paternal grandmother, who strongly believed she killed her parents.
+f- Yuta Okkotsu|other_verb|treated
+t- no_doer|A year later, two days before
+f+ Rika|other_verb|climbing|A year later, two days before she entered elementary school, Rika went mountain climbing with her father.|actual|stated|
+
+@1095 gold: a game is no group
+keep
+f- Dhruv|joined|Culling Game
+f+ Dhruv|other_verb|partook|Dhruv partook in the Culling Game|actual|stated|
+
+@1096 gold: ok
+keep
+
+@1097 gold: the tried verb; a wish is actual, the concealing planned
+keep
+f- Yuta|other_verb|tries
+f+ Yuta|other_verb|avoid|Aware he's being watched, Yuta tries to avoid displaying his true power|attempted|stated|Yuta
+f- Yuta|other_verb|wanted
+f+ Yuta|other_verb|conceal|one of the abilities Yuta wanted to conceal.|planned|stated|Yuta
+
+@1098 gold: Yuji's hits are their own fight sentence; pressing on is narrated
+keep
++ Yuji|fought|Choso|He was able to withstand multiple hits from Yuji
+t- capability|Choso continued to press on
+f+ Choso|other_verb|continued|Choso continued to press on even after his lengthy duel with Yuji as a testament to his stamina as well.|actual|stated|
+
+@1099 gold: page-title names are no window text; the command carries its act; noticing = learned
+keep
+r Toge Inumaki=>Toge
+r Megumi Fushiguro=>Megumi
+r Noritoshi Kamo=>Noritoshi
+f+ Toge|learned|-|He notices Megumi and Noritoshi down below|actual|stated|
+f+ Megumi|other_verb|run|immediately commands them both to run away, allowing them to dodge the crashing roots.|ordered|stated|Toge
+f+ Noritoshi|other_verb|run|immediately commands them both to run away, allowing them to dodge the crashing roots.|ordered|stated|Toge
+
+@1100 gold: one name; a suggestion is speech; Jogo's refusal and tried kill
+keep
+r Satoru=>Satoru Gojo
+f+ Geto|other_verb|suggests|Geto suggests that together they focus on trying to seal Satoru Gojo inside the special grade cursed object: Prison Realm.|actual|stated|
+f+ Jogo|other_verb|refuses|Jogo initially refuses and tries to kill Satoru himself in exchange for Prison Realm.|actual|stated|
+f+ Jogo|other_verb|kill|Jogo initially refuses and tries to kill Satoru himself in exchange for Prison Realm.|attempted|stated|Jogo

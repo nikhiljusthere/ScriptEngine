@@ -1,0 +1,182 @@
+@1156 gold: only Naobito of the three is named; the window's form; Naobito's blows; described barrier and seal
+keep
+r Naobito Zenin=>Naobito
+- Dagon|sealed|Kento Nanami
+- Dagon|sealed|Maki Zenin
+t+ crowd_end|After Naobito crushed his hands, Dagon resorted to drawing a cursed seal on his abdomen, casting his Domain Expansion and trapping all three sorcerers inside it.
++ Naobito|fought|Dagon|Using his cursed technique, Naobito overwhelmed Dagon with his speed, preventing the curse from using his techniques.
+f+ Naobito|wounded|Dagon|After Naobito crushed his hands|actual|stated|
+f- Dagon|created|water barrier
+f+ Dagon|other_verb|creating|managed to fend off their attacks before defending himself by creating a water barrier.|actual|stated|
+f- Dagon|created|cursed seal
+f+ Dagon|other_verb|drawing|Dagon resorted to drawing a cursed seal on his abdomen|actual|stated|
+t+ crowd_end|Dagon was then attacked by all three
+t- no_relation|The three started to rush
+t+ crowd_end|The three started to rush Dagon down with fast attacks, which forced Dagon to retreat into the air.
+
+@1157 gold: bullies and kids are crowds; an unnamed club; Junpei's wish
+keep
+f- bullies|other_verb|claim
+f- bullies|other_verb|demand
+f- Shota Ito|allied_with|bullies
+f- other kids|other_verb|run
+f- Junpei Yoshino|leader_of|movie club
+f+ Junpei Yoshino|other_verb|run|Junpei Yoshino used to run the movie club at Satozakura High School with a few likeminded friends.|actual|stated|
+t+ crowd_end|They're interrupted by a few bullies who claim to be using the room for themselves.
+t+ crowd_end|They demand everyone leaves
+f+ Junpei Yoshino|other_verb|wants|but Junpei wants one of his DVDs first.|actual|stated|
+t+ crowd_end|This irritates one of the students, who decides to start beating Junpei.
+t+ crowd_end|The other kids run away scared
+
+@1158 gold: blood in the eyes is no wound; preparing is actual, the finish planned; Yuji checks
+keep
+f- Yuji|wounded|-
+t+ no_relation|The blood gets in Yuji's eyes, leaving him vulnerable to an attack from behind
+f- Mahito|other_verb|prepares
+f+ Mahito|other_verb|prepares|as Mahito transforms his arm into a spiked club and prepares to finish him.|actual|stated|
+f+ Mahito|other_verb|finish|prepares to finish him.|planned|stated|Mahito
+t- crowd_end|Yuji checks on the condition
+f+ Yuji|other_verb|checks|Yuji checks on the condition of one of the injured people|actual|stated|
+
+@1159 gold: the window's name; Todo intercepts Mahito's attack; clause objects; Yuji's statement, Todo's ask, Arata's retreat
+keep
+r Arata Nitta=>Arata
++ Mahito|fought|Todo|Attracted to Yuji's misery, Mahito attacks but Todo uses Boogie Woogie to keep him away.
++ Todo|saved|Yuji|Attracted to Yuji's misery, Mahito attacks but Todo uses Boogie Woogie to keep him away.
+f- Yuji|revealed|Todo
+f+ Yuji|revealed|-|Yuji reveals all the horrors he's gone through to Todo|actual|stated|
+f- Arata|revealed|Nobara
+f+ Arata|revealed|-|states she has a chance of survival|actual|stated|
+f+ Yuji|other_verb|states|and states he cannot forgive himself.|actual|stated|
+f+ Todo|other_verb|asks|and asks Yuji what he's been entrusted with|actual|stated|
+f+ Arata|other_verb|retreating|before retreating with her.|actual|stated|
+
+@1160 gold: the window's name; a belief; memories are no doer
+keep
+r Pseudo-Geto=>Geto
+f- Jogo|other_verb|believed
+f+ Jogo|suspected|-|Jogo believed this to be an impossible task|actual|stated|
+f- three years of memories|other_verb|race
+t+ no_relation|Upon seeing Geto, three years of memories race through Satoru's mind
+
+@1161 gold: a denial; a thing and a crowd are no subjects; Yuji's reveal; proposing is speech
+keep
+f- Nobara|other_verb|denies
+f+ Nobara|other_verb|denies|she denies knowing where he is either,|actual|denied|
+f- barriers|other_verb|possibly
+f- Todo|other_verb|must
+t+ crowd_end|For starters, they must exorcise cursed spirits immediately after they are born and teach the current generation how to use barrier and exorcism techniques.
+f+ Yuji|other_verb|reveal|before hearing him reveal that Todo will be helping them in their efforts to form countermeasures without any new sorcerers being born.|actual|stated|
+f- Yuji|other_verb|proposes
+f+ Yuji|other_verb|proposes|When Yuji proposes that when he dies he should be made into a cursed object,|actual|stated|
+
+@1162 gold: escaping the colony; the named power; size is no capability
+keep
+- Sukuna|departed|Tokyo No. 1 Colony
++ Sukuna|escaped|Tokyo No. 1 Colony|He also used Nue to escape the colony following his fight with Yuji, Hana, and Maki.
+f- Sukuna|gained_power|-
+f+ Sukuna|gained_power|Ten Shadows Technique|Sukuna seized Megumi's body and gained access to his Ten Shadows Technique.|actual|stated|
+t- capability|which was much larger
+t+ no_relation|which was much larger and more powerful than Megumi's version of the shikigami.
+t- capability|It was roughly the size
+t+ no_relation|It was roughly the size of a building
+
+@1163 gold: a described technique; the citation
+keep
+f- Uraume|used|technique
+f+ Uraume|other_verb|bisect|As his final act, Uraume used his technique to bisect his neck|actual|stated|
+t+ citation|(Chapter 268)
+
+@1164 gold: a wish and a decision are actual; the explaining; Nobara talks too; a speech is no doer
+keep
+f- Yoshinobu Gakuganji|other_verb|wanted
+f+ Yoshinobu Gakuganji|other_verb|wanted|Momo and Nobara talked about how principal Yoshinobu Gakuganji wanted the Kyoto students to kill Yuji.|actual|stated|
+f+ Nobara|other_verb|talked|Momo and Nobara talked about how principal Yoshinobu Gakuganji wanted the Kyoto students to kill Yuji.|actual|stated|
+f- Momo|other_verb|decided
+f+ Momo|other_verb|decided|Momo then got upset about how Nobara insulted Mai Zenin and decided to teach her a lesson.|actual|stated|
+f- Momo|other_verb|-
+f+ Momo|other_verb|explained|Momo then explained that female sorcerers were expected to be flawless, both physically and skill-wise, unlike men who didn't face these prejudices.|actual|stated|
+t+ no_relation|Her speech further angered Nobara.
+
+@1165 gold: an unnamed group
+keep
+f- Ogami|joined|Pseudo-Geto's group
+f+ Ogami|other_verb|joined|Ogami met Pseudo-Geto and joined his group.|actual|stated|
+
+@1166 gold: one name; a self-sacrifice is no killing; a described dome; Yuji and Todo charge Sukuna; the emergence
+keep
+r Todo=>Aoi Todo
+- Sukuna|killed|Choso
+f+ Choso|dies|-|After Yuji thanks him for being his older brother, Choso's body disintegrates and the dome collapses|actual|stated|
+f- Choso|created|blood dome
+f+ Choso|other_verb|conjures|Choso conjures a blood dome to shield himself and Yuji from the blast|actual|stated|
++ Yuji|fought|Sukuna|Yuji charges back into battle alongside Todo, exploiting Sukuna's temporary inability to use cursed techniques after expanding his domain.
++ Aoi Todo|fought|Sukuna|Yuji charges back into battle alongside Todo, exploiting Sukuna's temporary inability to use cursed techniques after expanding his domain.
+t- no_relation|Through the smoke
+f+ Sukuna|other_verb|emerge|Through the smoke, Sukuna and Todo emerge.|actual|stated|
+f+ Aoi Todo|other_verb|emerge|Through the smoke, Sukuna and Todo emerge.|actual|stated|
+
+@1167 gold: no attack before the kill; a described sword; Ogi's narrated perceptions
+keep
+- Ogi|fought|Maki
+f- Maki|wielded|new sword
+t- no_relation|Ogi feels a strange
+f+ Ogi|other_verb|feels|Ogi feels a strange sensation emerging from the training room.|actual|stated|
+t- no_relation|He turns around and notices
+f+ Ogi|learned|-|He turns around and notices that all the curse spirits have vanished.|actual|stated|
+t- no_relation|He sees Maki and Mai
+f+ Ogi|other_verb|sees|He sees Maki and Mai at the doorway.|actual|stated|
+t- no_relation|He then feels an old sensation
+f+ Ogi|other_verb|forget|He then feels an old sensation that he tried to forget: the fear of Toji Zenin, which he sees in Maki.|attempted|stated|Ogi
+f+ Ogi|other_verb|challenges|As he challenges her to fight|actual|stated|
+
+@1168 gold: Mechamaru's hook is Kokichi's fight; a belief; noticing = learned; the dodge
+keep
++ Kokichi|fought|Mahito|He's unable to escape Mechamaru's next right hook, which sends the curse reeling back through the trees.
+f+ Mahito|other_verb|avoids|He narrowly avoids another downward punching fist by retreating on the backfoot.|actual|stated|
+f+ Kokichi|suspected|-|as Kokichi believes he can achieve his dream to meet up with his classmates.|actual|stated|
+f+ Kokichi|learned|-|This fantasy dispurses when Kokichi notices Mahito's gaze|actual|stated|
+
+@1169 gold: the quote's verbs; the tried verb; a resolution is actual with a planned act; realizing = learned
+keep
+f- Kusakabe|other_verb|owes
+f+ Kusakabe|other_verb|owing|relaying it back to owing Yaga even after his death.|actual|stated|
+f- Kusakabe|other_verb|worried
+f+ Kusakabe|other_verb|troubled|the idea Yaga would feel sad not being able to fight alongside him troubled Kusakabe|actual|stated|
+f- Kusakabe|other_verb|resolves
+f+ Kusakabe|other_verb|resolves|he then resolves himself to finish things with Sukuna|actual|stated|
+f+ Kusakabe|other_verb|finish|he then resolves himself to finish things with Sukuna|planned|stated|Kusakabe
+f- Kusakabe|other_verb|attempt
+f+ Kusakabe|other_verb|pierce|Kusakabe then activates Hazy Moon in an attempt to pierce Sukuna's heart|attempted|stated|Kusakabe
+f- Kusakabe|other_verb|realizes
+f+ Kusakabe|learned|-|Kusakabe realizes Sukuna will attempt to use the world cutting slash dismantle next|actual|stated|
+
+@1170 gold: unlocking a power is no awakening; a description is no state; a self pair; a technique is no doer
+keep
+- Yuta|awakened|-
+f- Yuta|gained_power|-
+f+ Yuta|gained_power|reverse cursed technique|unlock the ability to heal their injures with reverse cursed technique.|actual|stated|
+f- Yuta|became|highly proficient user of reverse cursed technique
+t+ no_relation|Since first using it to heal his friends, Yuta has become a highly proficient user of reverse cursed technique.
+f- Yuta|healed|self
+f+ Yuta|healed|-|to heal himself after getting hit by any big move.|actual|stated|
+f- reverse cursed technique|other_verb|drained
+f+ Yuta|other_verb|drained|This helped him avoid long-term damage but severely drained his cursed energy.|actual|stated|
+t- capability|Shortly after, he healed Naoya
+t- deictic|He did so after less
+t+ no_relation|He did so after less than a year's worth of experience in jujutsu.
+
+@1171 gold: Choso attacks too; the slams are the fights, not attacked twins; a power is no doer
+keep
++ Choso|fought|Kenjaku|Choso and Garuda surprise attack Kenjaku from two sides using the falling debris as cover.
+f- Kenjaku|attacked|Choso
+f- Star Rage|other_verb|powered
+t+ no_doer|While Yuki is healing, Star Rage is powered down
+
+@1172 gold: one name; the effort is an attempt
+keep
+r Yuki=>Yuki Tsukumo
+f- Yuki Tsukumo|other_verb|take
+f- Tengen|other_verb|take
+f+ Yuki Tsukumo|other_verb|take|they execute their own last-ditch effort to take out the curse user once and for all.|attempted|stated|Yuki Tsukumo
+f+ Tengen|other_verb|take|they execute their own last-ditch effort to take out the curse user once and for all.|attempted|stated|Tengen

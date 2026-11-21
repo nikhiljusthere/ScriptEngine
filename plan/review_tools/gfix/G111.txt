@@ -1,0 +1,131 @@
+@1070 gold: Geto is not in the window and a cursed object is no doer; realizing = learned
+keep
+- Geto|sealed|Satoru
+t+ no_doer|The cursed object ensnares the sorcerer, immobilizing him and cutting off all access to cursed energy.
+f- Satoru|other_verb|realizes
+f+ Satoru|learned|-|Satoru quickly realizes his enemies have got him now and this is checkmate for the battle.|actual|stated|
+
+@1071 gold: a narrated overpowering of Yuji and Naoya is defeated; noting is speech, an adjective is no verb
+keep
++ Choso|defeated|Naoya|Choso excels in unarmed combat and was able to overpower two powerful combatants that fight exclusively at close range, Yuji and Naoya.
++ Choso|defeated|Yuji|Choso excels in unarmed combat and was able to overpower two powerful combatants that fight exclusively at close range, Yuji and Naoya.
+f- Choso|other_verb|tough
+f+ Naoya Zenin|other_verb|noted|As noted by Naoya Zenin, Choso is exceptionally tough.|actual|stated|
+t- capability|Choso excels in unarmed combat
+
+@1072 gold: a habit is no capability
+keep
+t- capability|using her jujutsu to freely commit murders
+t+ no_relation|using her jujutsu to freely commit murders
+
+@1073 gold: Yuji is the other shaman; an eye is no thing end; Mahito's focus and dodge
+keep
++ Yuji|fought|Mahito|However, the shamans parry his attack and nearly strike him before Mahito escapes by shrinking his body.
+f- Mahito|created|eye
+f+ Mahito|other_verb|creates|Mahito creates an eye on his hand to watch Yuji|actual|stated|
+f+ Mahito|other_verb|focuses|while he mainly focuses on taking out Nanami.|actual|stated|
+f+ Mahito|other_verb|escapes|before Mahito escapes by shrinking his body.|actual|stated|
+t- deictic|to watch Yuji
+t- no_relation|while he mainly focuses
+t- crowd_end|However, the shamans parry
+
+@1074 gold: Maki joins the fight; Toge's blast
+keep
++ Maki|fought|Hanami|His last ditch effort buys them enough time for Maki to join the fight.
+f+ Toge|other_verb|blast|Toge uses the last of his strength to blast Hanami away.|actual|stated|
+
+@1075 gold: doer-less passives and a wheel are no subjects
+keep
+f- Sukuna|other_verb|incapacitated
+f- Mahoraga's wheel|other_verb|falls
+f- Gojo|other_verb|dragged
+t+ no_doer|Sukuna is incapacitated while standing and the Mahoraga's wheel falls from his head.
+t+ no_doer|Gojo is dragged down into Sukuna's shadow
+
+@1076 gold: awakening as a sorcerer is no awakened; the reveal is no one's; a talent comparison is no rivalry
+keep
+- Higuruma|awakened|-
+f+ Higuruma|other_verb|awakened|Having awakened as a jujutsu sorcerer only less than two months ago|actual|stated|
+f- Sukuna|revealed|-
+f- Higuruma|rival_of|Satoru Gojo
+
+@1077 gold: the encounter turns into the fight; noticing/figuring = learned; the narrated blows; the planned kill
+keep
+- Yuji|met|Choso
+f- Choso|learned|Yuji's technique
+f+ Choso|learned|-|which Choso notices how Yuji's technique works|actual|stated|
+f- Yuji|other_verb|figures
+f+ Yuji|learned|-|figures how he will attack from now on|actual|stated|
+f+ Yuji|other_verb|block|Yuji manages to block the attack but dodges the others attack|actual|stated|
+f+ Yuji|other_verb|lands|Yuji gets close enough and lands a blow on Choso|actual|stated|
+f+ Yuji|other_verb|think|Yuji takes the time to think about what damage Choso's attack has done to him|actual|stated|
+f+ Choso|other_verb|kill|Choso becomes enrages after hearing this and prepares to kill Yuji.|planned|stated|Choso
+
+@1078 gold: the discussion
+keep
+f+ Megumi|other_verb|discussed|They discussed the Culling Game and what happened to Gojo|actual|stated|
+f+ Tsumiki|other_verb|discussed|They discussed the Culling Game and what happened to Gojo|actual|stated|
+
+@1079 gold: named places; a doer-less informing; a decision is actual with a planned act; the split
+keep
+f+ Mei Mei|located_at|Aoyama Cemetery|Mei Mei is with her brother Ui Ui and Yuji at Aoyama Cemetery|actual|stated|
+f+ Ui Ui|located_at|Aoyama Cemetery|Mei Mei is with her brother Ui Ui and Yuji at Aoyama Cemetery|actual|stated|
+f+ Yuji|located_at|Aoyama Cemetery|Mei Mei is with her brother Ui Ui and Yuji at Aoyama Cemetery|actual|stated|
+f+ Satoru Gojo|located_at|Shibuya|while Satoru Gojo handles the situation at Shibuya.|actual|stated|
+t+ no_doer|they are informed about the situation at the station.
+f- Mei Mei|used|her power
+f+ Mei Mei|other_verb|uses|Mei Mei uses her power on some crows to investigate what is happening in the station.|actual|stated|
+f- Mei Mei|other_verb|decides
+f+ Mei Mei|other_verb|decides|Mei Mei decides to heads over to platform B5F with Ui Ui and wait for Yuji.|actual|stated|
+f+ Mei Mei|other_verb|heads|Mei Mei decides to heads over to platform B5F with Ui Ui and wait for Yuji.|planned|stated|Mei Mei
+f+ Mei Mei|other_verb|enter|which Mei Mei and Ui Ui enter through one entrance while Yuji head in through another.|actual|stated|
+f+ Ui Ui|other_verb|enter|which Mei Mei and Ui Ui enter through one entrance while Yuji head in through another.|actual|stated|
+f+ Yuji|other_verb|head|while Yuji head in through another.|actual|stated|
+
+@1080 gold: Noritoshi's narrated shot
+keep
+t- no_relation|While standing on the left hallway
+f+ Noritoshi|other_verb|fires|While standing on the left hallway on the floor above Megumi, who stands at the bottom of a set of stairs, Noritoshi fires his arrows.|actual|stated|
+
+@1081 gold: the hunt began; splitting is no transformation; claiming is speech
+keep
+f- Mahito|other_verb|hunt
+f- Choso|other_verb|hunt
+f- Jogo|other_verb|hunt
+f+ Mahito|other_verb|hunt|Mahito, Choso, and Jogo then began their hunt for Yuji.|actual|stated|
+f+ Choso|other_verb|hunt|Mahito, Choso, and Jogo then began their hunt for Yuji.|actual|stated|
+f+ Jogo|other_verb|hunt|Mahito, Choso, and Jogo then began their hunt for Yuji.|actual|stated|
+f- Mahito|transformed_into|two of himself
+f+ Mahito|other_verb|split|Mahito split into two of himself and blocked off his competition.|actual|stated|
+f- Nobara Kugisaki|other_verb|claiming
+f+ Nobara Kugisaki|other_verb|claiming|claiming he's only known for being a coward and fleeing.|actual|stated|
+
+@1082 gold: noticing = learned (a talk precedes the fight, the met stays)
+keep
+f- Kenjaku|other_verb|notices
+f+ Kenjaku|learned|-|Kenjaku notices the shift in Cursed Energy and goes to see who left Shinjuku.|actual|stated|
+
+@1083 gold: Daido's attack and wound; the stab is its own fight; a vision is no contact; a belief; a described sword; the denied attention
+keep
++ Daido|fought|Naoya|Daido attempts to slash Naoya and his arm comes off as a result.
+f+ Daido|wounded|-|Daido attempts to slash Naoya and his arm comes off as a result.|actual|stated|
+f- Maki|took|sword
+f+ Maki|other_verb|grabs|Maki grabs onto the sword and stabs Naoya through the back with it while he's distracted.|actual|stated|
+f- Maki|attacked|Naoya
++ Maki|fought|Naoya|stabs Naoya through the back with it while he's distracted.
+f- Maki|contacted|Mai
+f+ Maki|other_verb|meets|In her heart, Maki meets with Mai and confirms that she was able to break away from everything.|actual|stated|
+f- Naoya|other_verb|believes
+f+ Naoya|suspected|-|Naoya believes Maki can't move due to the domain's rules|actual|stated|
+t- deictic|Naoya doesn't pay him any mind
+f+ Naoya|other_verb|pay|Naoya doesn't pay him any mind as he's thinking|actual|denied|
+
+@1084 gold: Saori welcomes Nobara too; the house line; an adjective and an unnamed village; a belief
+keep
++ Saori|met|Nobara|Saori was always home and would welcome Nobara and Fumi every time they would randomly visit.
+t+ no_relation|This place was actually a girl name Saori's house.
+f- Saori|other_verb|older
+f- Saori|resides_at|village
+f+ Saori|other_verb|moved|Saori was older than Fumi and moved into the village after her.|actual|stated|
+f- Fumi|other_verb|believed
+f+ Fumi|suspected|-|Fumi believed Nobara changed after meeting Saori, becoming more refined.|actual|stated|

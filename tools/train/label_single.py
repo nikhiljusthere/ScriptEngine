@@ -214,12 +214,25 @@ def fact_gate_keep(rows, window, wiki=None):
 # REJECTS the option outright with HTTP 400 "chat_template_option_not_supported". Sending it anyway
 # turns every request into an instant error, so we detect it once and then omit it.
 THINK_KW = {"supported": True}
+# Same idea for the explicit prompt-cache breakpoint (see ask()).
+CACHE_BREAKPOINT = {"on": True}
 
 
 def ask(url, model, doc, user, thinking, max_tokens, timeout=1800, history=()):
+    """One request. The system prompt is sent as an array part carrying an explicit
+    prompt-cache breakpoint: ninfer sets allow_engine_automatic_shared_prefixes=false on
+    every /v1/chat/completions request (src/serve/openai_common.cpp:177), so without an
+    explicit breakpoint it re-prefills the whole 17.6K-token procedure doc per window
+    (measured: prefix_cache_hit_tokens median 0 across 44,307 requests). Breakpoints are
+    parsed only on the array content path (openai_chat_request.cpp:356), so plain-string
+    content cannot carry one. Token-neutral: same prompt tokens either way."""
+    sysmsg = ([{"role": "system", "content": [
+                {"type": "text", "text": doc,
+                 "prompt_cache_breakpoint": {"mode": "explicit"}}]}] if CACHE_BREAKPOINT["on"]
+              else [{"role": "system", "content": doc}])
     body = {"model": model, "temperature": 0.6 if thinking else 0.0, "top_p": 0.95,
             "max_tokens": max_tokens,
-            "messages": [{"role": "system", "content": doc}, {"role": "user", "content": user}, *history]}
+            "messages": sysmsg + [{"role": "user", "content": user}, *history]}
     if THINK_KW["supported"]:
         body["chat_template_kwargs"] = {"enable_thinking": bool(thinking)}
     req = urllib.request.Request(url, json.dumps(body).encode(), {"Content-Type": "application/json"})
@@ -230,6 +243,14 @@ def ask(url, model, doc, user, thinking, max_tokens, timeout=1800, history=()):
         if "chat_template_option_not_supported" in detail:
             THINK_KW["supported"] = False
             body.pop("chat_template_kwargs", None)
+            req = urllib.request.Request(url, json.dumps(body).encode(),
+                                         {"Content-Type": "application/json"})
+            m = json.loads(urllib.request.urlopen(req, timeout=timeout).read())["choices"][0]["message"]
+        elif "invalid_cache_breakpoint" in detail or "prompt_cache_breakpoint" in detail:
+            # server build without breakpoint support: drop it and never send it again
+            CACHE_BREAKPOINT["on"] = False
+            body["messages"] = ([{"role": "system", "content": doc},
+                                 {"role": "user", "content": user}, *history])
             req = urllib.request.Request(url, json.dumps(body).encode(),
                                          {"Content-Type": "application/json"})
             m = json.loads(urllib.request.urlopen(req, timeout=timeout).read())["choices"][0]["message"]
