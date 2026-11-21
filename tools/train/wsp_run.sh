@@ -70,6 +70,16 @@ echo "=== unedited adapter on dev_pool $(date -Is)"
 $P tools/train/eval_base_v2.py --model $M --adapter $BEST --in $D/dev_pool.jsonl --out $OUT/pool-adapter.jsonl \
   && PREDS=(--pred $OUT/pool-adapter.jsonl "${PREDS[@]}")
 echo "=== scores $(date -Is)"
-$P tools/train/score_subsets.py --gold $D/dev_pool.jsonl "${PREDS[@]}" --teacher
+# the teacher drafts (series/<s>/training/labels/draft_frozen.jsonl) live only in the main checkout; run from a
+# worktree, score_subsets --teacher silently prints no teacher line (step-5 handoff 2026-11-06 21:25)
+$P - "${PREDS[@]}" <<EOF
+import sys
+from pathlib import Path
+sys.path.insert(0, "tools/train")
+import score_subsets as ss
+ss.ROOT = Path("/home/goblin/ScriptEngine")
+sys.argv = ["score_subsets.py", "--gold", "$D/dev_pool.jsonl", *sys.argv[1:], "--teacher"]
+ss.main()
+EOF
 $P tools/train/score_layers_v2.py --gold $D/dev_pool.jsonl "${PREDS[@]}"
 echo "=== STAGE A DONE $(date -Is)"
