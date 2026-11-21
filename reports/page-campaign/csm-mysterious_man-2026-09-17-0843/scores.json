@@ -1,0 +1,181 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Mysterious Man?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Mysterious Man?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Mysterious Man?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Mysterious Man?",
+      "found": [],
+      "missing": [
+        "Typhoon Devil Contract"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the aliases of Mysterious Man?",
+      "found": [],
+      "missing": [
+        "Mohawk Man"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the affiliations of Mysterious Man?",
+      "found": [],
+      "missing": [
+        "Unknown"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Mysterious Man's name?",
+      "id": "csm-pg-mysterious_man-001",
+      "subject": "Mysterious Man",
+      "accept": "all",
+      "expected": [
+        "\u8b0e\u306e\u7537"
+      ],
+      "found": [
+        "\u8b0e\u306e\u7537"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Mysterious Man's name?",
+      "id": "csm-pg-mysterious_man-002",
+      "subject": "Mysterious Man",
+      "accept": "all",
+      "expected": [
+        "Nazo no Otoko"
+      ],
+      "found": [
+        "Nazo no Otoko"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Mysterious Man's gender?",
+      "id": "csm-pg-mysterious_man-003",
+      "subject": "Mysterious Man",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Mysterious Man?",
+      "id": "csm-pg-mysterious_man-004",
+      "subject": "Mysterious Man",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Mysterious Man's occupation?",
+      "id": "csm-pg-mysterious_man-005",
+      "subject": "Mysterious Man",
+      "accept": "all",
+      "expected": [
+        "Private Devil Hunter"
+      ],
+      "found": [
+        "Private Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 0,
+    "canon_total": 3,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 3,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 3,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Hadaji Sakagami's name?",
+      "id": "csm-pg-hadaji_sakagami-001",
+      "subject": "Hadaji Sakagami",
+      "accept": "all",
+      "expected": [
+        "\u962a\u4e0a\u30cf\u30c0\u30b8"
+      ],
+      "found": [
+        "\u962a\u4e0a\u30cf\u30c0\u30b8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Hadaji Sakagami's name?",
+      "id": "csm-pg-hadaji_sakagami-002",
+      "subject": "Hadaji Sakagami",
+      "accept": "all",
+      "expected": [
+        "Sakagami Hadaji"
+      ],
+      "found": [
+        "Sakagami Hadaji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Hadaji Sakagami's gender?",
+      "id": "csm-pg-hadaji_sakagami-003",
+      "subject": "Hadaji Sakagami",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Hadaji Sakagami?",
+      "id": "csm-pg-hadaji_sakagami-004",
+      "subject": "Hadaji Sakagami",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Hadaji Sakagami's occupation?",
+      "id": "csm-pg-hadaji_sakagami-005",
+      "subject": "Hadaji Sakagami",
+      "accept": "all",
+      "expected": [
+        "Minister of Internal Affairs and Communication"
+      ],
+      "found": [
+        "Minister of Internal Affairs and Communication"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

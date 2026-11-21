@@ -1,0 +1,229 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Grape Devil?",
+      "set": "Devils",
+      "confidence": "exact",
+      "returned": 88,
+      "available": 88,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the enemies of Grape Devil?",
+      "found": [],
+      "missing": [
+        "Galgali",
+        "Kobeni Higashiyama"
+      ],
+      "members": [
+        "AIDS Devil",
+        "Accident Devil",
+        "Aging Devil",
+        "Angel Devil",
+        "Arnolone Syndrome Devil",
+        "Bat Devil",
+        "Bitterness Devil",
+        "Bucky",
+        "Car Devil",
+        "Carpenter Bee Devil",
+        "Centipede Devil",
+        "Claw Devil",
+        "Cockroach Devil",
+        "Coffee Devil",
+        "Curse Devil",
+        "Darkness Devil",
+        "Death Devil",
+        "Doll Devil",
+        "Ear Devil",
+        "Equality Devil",
+        "Eternity Devil",
+        "Fairness Devil",
+        "Falling Devil",
+        "Fami",
+        "Famine Devil",
+        "Fire Devil",
+        "Fish Devil",
+        "Four Horsemen",
+        "Fox Devil",
+        "Frog Devil",
+        "Future Devil",
+        "Ghost Devil",
+        "Grape Devil",
+        "Gravity Devil",
+        "Guillotine Devil",
+        "Gun Devil",
+        "Hell Devil",
+        "House Devil",
+        "Justice Devil",
+        "Knife Devil",
+        "Leech Devil",
+        "Legs Devil",
+        "Light of a Star That Breaks Children's Minds Devil",
+        "Lion Devil",
+        "Locust Devil",
+        "Makima",
+        "Mannequin Devil",
+        "Mantis Devil",
+        "Marshmallow Devil",
+        "Mold Devil",
+        "Moon Devil",
+        "Moray Eel Devil",
+        "Mount Hio Eruption Devil",
+        "Mouth Devil",
+        "Muscle Devil",
+        "Nayuta",
+        "Nazi Devil",
+        "Needle Devil",
+        "Nuclear Weapons Devil",
+        "Octopus Devil",
+        "People Devil",
+        "Pig Devil",
+        "Pillbug Devil",
+        "Pingtsi",
+        "Pochita",
+        "Power",
+        "Princi",
+        "Punishment Devil",
+        "SOA Devil",
+        "STD Devil",
+        "Sea Cucumber Devil",
+        "Sickness Devil",
+        "Sixth Sense Devil",
+        "Skin Devil",
+        "Snake Devil",
+        "Snow Devil",
+        "Stag Beetle Devil",
+        "Stone Devil",
+        "Suicide Devil",
+        "Tank Devil",
+        "Teeth Devil",
+        "Tomato Devil",
+        "Trauma Devil",
+        "Typhoon Devil",
+        "Weapon Devils",
+        "World War II Devil",
+        "Yoru",
+        "Zombie Devil"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Grape Devil's name?",
+      "id": "csm-pg-grape_devil-001",
+      "subject": "Grape Devil",
+      "accept": "all",
+      "expected": [
+        "\u30d6\u30c9\u30a6\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u30d6\u30c9\u30a6\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Grape Devil's name?",
+      "id": "csm-pg-grape_devil-002",
+      "subject": "Grape Devil",
+      "accept": "all",
+      "expected": [
+        "Bud\u014d no Akuma"
+      ],
+      "found": [
+        "Bud\u014d no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Grape Devil?",
+      "id": "csm-pg-grape_devil-003",
+      "subject": "Grape Devil",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Grape Devil's gender?",
+      "id": "csm-pg-grape_devil-004",
+      "subject": "Grape Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Grape Devil's occupation?",
+      "id": "csm-pg-grape_devil-005",
+      "subject": "Grape Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Devil"
+      ],
+      "found": [
+        "Wild Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 0,
+    "canon_total": 2,
+    "canon_recall": 0.0,
+    "members_returned": 88,
+    "exact_answers": 0,
+    "exact_of": 1,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 1,
+    "at_recall_80": 0,
+    "confident_and_wrong": [
+      "What are all the enemies of Grape Devil?"
+    ],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

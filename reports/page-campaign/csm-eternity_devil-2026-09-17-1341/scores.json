@@ -1,0 +1,227 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Eternity Devil?",
+      "set": "Every named technique of Eternity Devil",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Eternity Devil?",
+      "set": "Every ally of Eternity Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Eternity Devil?",
+      "set": "Every enemy of Eternity Devil",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Eternity Devil?",
+      "set": "Eternity Devil's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Eternity Devil?",
+      "found": [
+        "Pocket Reality Creation",
+        "Time Stop",
+        "Looped Environment",
+        "Avatar Creation"
+      ],
+      "missing": [],
+      "members": [
+        "Avatar Creation",
+        "Looped Environment",
+        "Pocket Reality Creation",
+        "Time Stop"
+      ]
+    },
+    {
+      "query": "What are all the allies of Eternity Devil?",
+      "found": [
+        "Gun Devil",
+        "Fami"
+      ],
+      "missing": [],
+      "members": [
+        "Fami",
+        "Gun Devil"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Eternity Devil?",
+      "found": [
+        "Denji",
+        "Himeno",
+        "Asa Mitaka",
+        "Hirofumi Yoshida",
+        "Yoru"
+      ],
+      "missing": [],
+      "members": [
+        "Asa Mitaka",
+        "Denji",
+        "Himeno",
+        "Hirofumi Yoshida",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Eternity Devil?",
+      "found": [
+        "Fami"
+      ],
+      "missing": [],
+      "members": [
+        "Fami"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Eternity Devil's name?",
+      "id": "csm-pg-eternity_devil-001",
+      "subject": "Eternity Devil",
+      "accept": "all",
+      "expected": [
+        "\u6c38\u9060\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u6c38\u9060\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Eternity Devil's name?",
+      "id": "csm-pg-eternity_devil-002",
+      "subject": "Eternity Devil",
+      "accept": "all",
+      "expected": [
+        "Eien no Akuma"
+      ],
+      "found": [
+        "Eien no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Eternity Devil's gender?",
+      "id": "csm-pg-eternity_devil-003",
+      "subject": "Eternity Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Eternity Devil?",
+      "id": "csm-pg-eternity_devil-004",
+      "subject": "Eternity Devil",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Eternity Devil's occupation?",
+      "id": "csm-pg-eternity_devil-005",
+      "subject": "Eternity Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Devil"
+      ],
+      "found": [
+        "Wild Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 12,
+    "canon_total": 12,
+    "canon_recall": 1.0,
+    "members_returned": 12,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

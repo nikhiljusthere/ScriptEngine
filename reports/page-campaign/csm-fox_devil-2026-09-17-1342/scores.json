@@ -1,0 +1,193 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Fox Devil?",
+      "set": "Every named technique of Fox Devil",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Fox Devil?",
+      "set": "Every ally of Fox Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Fox Devil?",
+      "set": "Fox Devil's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Fox Devil?",
+      "found": [
+        "Enhanced Strength",
+        "Enhanced Durability",
+        "Blood Consumption"
+      ],
+      "missing": [],
+      "members": [
+        "Blood Consumption",
+        "Enhanced Durability",
+        "Enhanced Strength"
+      ]
+    },
+    {
+      "query": "What are all the allies of Fox Devil?",
+      "found": [
+        "Aki Hayakawa",
+        "Hirokazu Arai"
+      ],
+      "missing": [],
+      "members": [
+        "Aki Hayakawa",
+        "Hirokazu Arai"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Fox Devil?",
+      "found": [
+        "Public Safety Devil Hunters"
+      ],
+      "missing": [],
+      "members": [
+        "Public Safety Devil Hunters"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Fox Devil's name?",
+      "id": "csm-pg-fox_devil-001",
+      "subject": "Fox Devil",
+      "accept": "all",
+      "expected": [
+        "\u72d0\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u72d0\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Fox Devil's name?",
+      "id": "csm-pg-fox_devil-002",
+      "subject": "Fox Devil",
+      "accept": "all",
+      "expected": [
+        "Kitsune no Akuma"
+      ],
+      "found": [
+        "Kitsune no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Fox Devil?",
+      "id": "csm-pg-fox_devil-003",
+      "subject": "Fox Devil",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Fox Devil's gender?",
+      "id": "csm-pg-fox_devil-004",
+      "subject": "Fox Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Fox Devil's occupation?",
+      "id": "csm-pg-fox_devil-005",
+      "subject": "Fox Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Devil (formerly) Contract Devil"
+      ],
+      "found": [
+        "Wild Devil (formerly) Contract Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 6,
+    "canon_total": 6,
+    "canon_recall": 1.0,
+    "members_returned": 6,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

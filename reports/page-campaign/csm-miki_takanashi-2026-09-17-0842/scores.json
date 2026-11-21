@@ -1,0 +1,113 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Miki Takanashi's name?",
+      "id": "csm-pg-miki_takanashi-001",
+      "subject": "Miki Takanashi",
+      "accept": "all",
+      "expected": [
+        "\u9ad8\u68a8\u30df\u30ad"
+      ],
+      "found": [
+        "\u9ad8\u68a8\u30df\u30ad"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Miki Takanashi's name?",
+      "id": "csm-pg-miki_takanashi-002",
+      "subject": "Miki Takanashi",
+      "accept": "all",
+      "expected": [
+        "Takanashi Miki"
+      ],
+      "found": [
+        "Takanashi Miki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Miki Takanashi's gender?",
+      "id": "csm-pg-miki_takanashi-003",
+      "subject": "Miki Takanashi",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Miki Takanashi?",
+      "id": "csm-pg-miki_takanashi-004",
+      "subject": "Miki Takanashi",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Miki Takanashi's occupation?",
+      "id": "csm-pg-miki_takanashi-005",
+      "subject": "Miki Takanashi",
+      "accept": "all",
+      "expected": [
+        "Minister of Economy, Trade, and Industry"
+      ],
+      "found": [
+        "Minister of Economy, Trade, and Industry"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

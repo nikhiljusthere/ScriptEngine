@@ -1,0 +1,250 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Future Devil?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Future Devil?",
+      "set": "Devils (Affiliation)",
+      "confidence": "exact",
+      "returned": 88,
+      "available": 88,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Future Devil?",
+      "found": [],
+      "missing": [
+        "Precognition"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the affiliations of Future Devil?",
+      "found": [],
+      "missing": [
+        "Public Safety Devil Hunters"
+      ],
+      "members": [
+        "Yoru",
+        "Power",
+        "Leech Devil",
+        "Fire Devil",
+        "Guillotine Devil",
+        "Legs Devil",
+        "Teeth Devil",
+        "Justice Devil",
+        "Eternity Devil",
+        "Death Devil",
+        "Fami",
+        "Famine Devil",
+        "Makima",
+        "Nayuta",
+        "Bucky",
+        "Tank Devil",
+        "House Devil",
+        "Bat Devil",
+        "Aging Devil",
+        "Angel Devil",
+        "Centipede Devil",
+        "Ear Devil",
+        "Fox Devil",
+        "Future Devil",
+        "Pillbug Devil",
+        "Princi",
+        "Stag Beetle Devil",
+        "Pingtsi",
+        "Typhoon Devil",
+        "Doll Devil",
+        "Hell Devil",
+        "Gun Devil",
+        "Nazi Devil",
+        "Pochita",
+        "Zombie Devil",
+        "Accident Devil",
+        "Falling Devil",
+        "Lion Devil",
+        "Moray Eel Devil",
+        "Nuclear Weapons Devil",
+        "World War II Devil",
+        "AIDS Devil",
+        "Arnolone Syndrome Devil",
+        "Bitterness Devil",
+        "Car Devil",
+        "Carpenter Bee Devil",
+        "Claw Devil",
+        "Cockroach Devil",
+        "Coffee Devil",
+        "Curse Devil",
+        "Darkness Devil",
+        "Equality Devil",
+        "Fairness Devil",
+        "Fish Devil",
+        "Four Horsemen",
+        "Frog Devil",
+        "Ghost Devil",
+        "Grape Devil",
+        "Gravity Devil",
+        "Knife Devil",
+        "Light of a Star That Breaks Children's Minds Devil",
+        "Locust Devil",
+        "Mannequin Devil",
+        "Mantis Devil",
+        "Marshmallow Devil",
+        "Mold Devil",
+        "Moon Devil",
+        "Mount Hio Eruption Devil",
+        "Mouth Devil",
+        "Muscle Devil",
+        "Needle Devil",
+        "Octopus Devil",
+        "People Devil",
+        "Pig Devil",
+        "Punishment Devil",
+        "SOA Devil",
+        "STD Devil",
+        "Sea Cucumber Devil",
+        "Sickness Devil",
+        "Sixth Sense Devil",
+        "Skin Devil",
+        "Snake Devil",
+        "Snow Devil",
+        "Stone Devil",
+        "Suicide Devil",
+        "Tomato Devil",
+        "Trauma Devil",
+        "Weapon Devils"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Future Devil's name?",
+      "id": "csm-pg-future_devil-001",
+      "subject": "Future Devil",
+      "accept": "all",
+      "expected": [
+        "\u672a\u6765\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u672a\u6765\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Future Devil's name?",
+      "id": "csm-pg-future_devil-002",
+      "subject": "Future Devil",
+      "accept": "all",
+      "expected": [
+        "Mirai no Akuma"
+      ],
+      "found": [
+        "Mirai no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Future Devil?",
+      "id": "csm-pg-future_devil-003",
+      "subject": "Future Devil",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Future Devil's gender?",
+      "id": "csm-pg-future_devil-004",
+      "subject": "Future Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Future Devil's occupation?",
+      "id": "csm-pg-future_devil-005",
+      "subject": "Future Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Devil (formerly) Contract Devil"
+      ],
+      "found": [
+        "Wild Devil (formerly) Contract Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 0,
+    "canon_total": 2,
+    "canon_recall": 0.0,
+    "members_returned": 88,
+    "exact_answers": 0,
+    "exact_of": 2,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 2,
+    "at_recall_80": 0,
+    "confident_and_wrong": [
+      "What are all the affiliations of Future Devil?"
+    ],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

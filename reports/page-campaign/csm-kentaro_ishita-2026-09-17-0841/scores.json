@@ -1,0 +1,113 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Kentaro Ishita's name?",
+      "id": "csm-pg-kentaro_ishita-001",
+      "subject": "Kentaro Ishita",
+      "accept": "all",
+      "expected": [
+        "\u77f3\u591a\u30b1\u30f3\u30bf\u30ed\u30a6"
+      ],
+      "found": [
+        "\u77f3\u591a\u30b1\u30f3\u30bf\u30ed\u30a6"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Kentaro Ishita's name?",
+      "id": "csm-pg-kentaro_ishita-002",
+      "subject": "Kentaro Ishita",
+      "accept": "all",
+      "expected": [
+        "Ishita Kentar\u014d"
+      ],
+      "found": [
+        "Ishita Kentar\u014d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Kentaro Ishita's gender?",
+      "id": "csm-pg-kentaro_ishita-003",
+      "subject": "Kentaro Ishita",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Kentaro Ishita?",
+      "id": "csm-pg-kentaro_ishita-004",
+      "subject": "Kentaro Ishita",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Kentaro Ishita's occupation?",
+      "id": "csm-pg-kentaro_ishita-005",
+      "subject": "Kentaro Ishita",
+      "accept": "all",
+      "expected": [
+        "Prime Minister of Japan"
+      ],
+      "found": [
+        "Prime Minister of Japan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

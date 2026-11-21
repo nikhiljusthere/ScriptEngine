@@ -1,0 +1,167 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Nomo?",
+      "set": "Every named technique of Nomo",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Nomo?",
+      "set": "Nomo's affiliations",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Nomo?",
+      "found": [
+        "Enhanced Durability",
+        "Fox Devil Contract"
+      ],
+      "missing": [],
+      "members": [
+        "Enhanced Durability",
+        "Fox Devil Contract"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Nomo?",
+      "found": [
+        "Public Safety Devil Hunters",
+        "Tokyo Division 2"
+      ],
+      "missing": [],
+      "members": [
+        "Public Safety Devil Hunters",
+        "Tokyo Division 2"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Nomo's name?",
+      "id": "csm-pg-nomo-001",
+      "subject": "Nomo",
+      "accept": "all",
+      "expected": [
+        "\u91ce\u8302"
+      ],
+      "found": [
+        "\u91ce\u8302"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Nomo's name?",
+      "id": "csm-pg-nomo-002",
+      "subject": "Nomo",
+      "accept": "all",
+      "expected": [
+        "Nomo"
+      ],
+      "found": [
+        "Nomo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Nomo's gender?",
+      "id": "csm-pg-nomo-003",
+      "subject": "Nomo",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Nomo?",
+      "id": "csm-pg-nomo-004",
+      "subject": "Nomo",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Nomo's occupation?",
+      "id": "csm-pg-nomo-005",
+      "subject": "Nomo",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

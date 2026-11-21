@@ -1,0 +1,41 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Contract?",
+      "id": "csm-pg-contract-001",
+      "subject": "Contract",
+      "accept": "all",
+      "expected": [
+        "Warning: This page covers major spoilers regarding the identity or fates of certain characters."
+      ],
+      "found": [
+        "Warning: This page covers major spoilers regarding the identity or fates of certain characters."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 1,
+    "fact_present": 1
+  }
+}

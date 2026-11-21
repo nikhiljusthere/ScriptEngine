@@ -1,0 +1,251 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Galgali?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 4,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Galgali?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 4,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Galgali?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Galgali?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Galgali?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Galgali?",
+      "found": [],
+      "missing": [
+        "Enhanced Strength",
+        "Poison Resistance",
+        "Body Transformation",
+        "Hand-to-Hand Combat"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the allies of Galgali?",
+      "found": [],
+      "missing": [
+        "Makima",
+        "Kobeni Higashiyama",
+        "Aki Hayakawa",
+        "Hirofumi Yoshida"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the enemies of Galgali?",
+      "found": [],
+      "missing": [
+        "Reze",
+        "Grape Devil"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the aliases of Galgali?",
+      "found": [],
+      "missing": [
+        "Violence Fiend Violence Devil"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the affiliations of Galgali?",
+      "found": [],
+      "missing": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 4"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Galgali's name?",
+      "id": "csm-pg-galgali-001",
+      "subject": "Galgali",
+      "accept": "all",
+      "expected": [
+        "\u30ac\u30eb\u30ac\u30ea"
+      ],
+      "found": [
+        "\u30ac\u30eb\u30ac\u30ea"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Galgali's name?",
+      "id": "csm-pg-galgali-002",
+      "subject": "Galgali",
+      "accept": "all",
+      "expected": [
+        "Garugari"
+      ],
+      "found": [
+        "Garugari"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Galgali?",
+      "id": "csm-pg-galgali-003",
+      "subject": "Galgali",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Galgali's occupation?",
+      "id": "csm-pg-galgali-004",
+      "subject": "Galgali",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Galgali's gender?",
+      "id": "csm-pg-galgali-005",
+      "subject": "Galgali",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Galgali's height?",
+      "id": "csm-pg-galgali-006",
+      "subject": "Galgali",
+      "accept": "all",
+      "expected": [
+        "178 cm (5'10\")"
+      ],
+      "found": [
+        "178 cm (5'10\")"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 5,
+    "canon_found": 0,
+    "canon_total": 13,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 5,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "5/5",
+    "at_recall_zero": 5,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

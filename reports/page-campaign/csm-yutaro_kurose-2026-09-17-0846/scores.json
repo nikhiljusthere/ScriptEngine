@@ -1,0 +1,184 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the allies of Yutaro Kurose?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 6,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Yutaro Kurose?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 3,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Yutaro Kurose?",
+      "found": [],
+      "missing": [
+        "Aki Hayakawa",
+        "Michiko Tendo",
+        "Subaru",
+        "Denji",
+        "Tomono",
+        "Punishment Devil"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the affiliations of Yutaro Kurose?",
+      "found": [],
+      "missing": [
+        "Public Safety Devil Hunters",
+        "Kyoto Division 1",
+        "Makima (postmortem)"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Yutaro Kurose's name?",
+      "id": "csm-pg-yutaro_kurose-001",
+      "subject": "Yutaro Kurose",
+      "accept": "all",
+      "expected": [
+        "\u9ed2\u702c \u30e6\u30a6\u30bf\u30ed\u30a6"
+      ],
+      "found": [
+        "\u9ed2\u702c \u30e6\u30a6\u30bf\u30ed\u30a6"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Yutaro Kurose's name?",
+      "id": "csm-pg-yutaro_kurose-002",
+      "subject": "Yutaro Kurose",
+      "accept": "all",
+      "expected": [
+        "Kurose Y\u016btar\u014d"
+      ],
+      "found": [
+        "Kurose Y\u016btar\u014d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Yutaro Kurose's gender?",
+      "id": "csm-pg-yutaro_kurose-003",
+      "subject": "Yutaro Kurose",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Yutaro Kurose's height?",
+      "id": "csm-pg-yutaro_kurose-004",
+      "subject": "Yutaro Kurose",
+      "accept": "all",
+      "expected": [
+        "165 cm (5'5\")"
+      ],
+      "found": [
+        "165 cm (5'5\")"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Yutaro Kurose?",
+      "id": "csm-pg-yutaro_kurose-005",
+      "subject": "Yutaro Kurose",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Yutaro Kurose's occupation?",
+      "id": "csm-pg-yutaro_kurose-006",
+      "subject": "Yutaro Kurose",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 0,
+    "canon_total": 9,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 2,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 2,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

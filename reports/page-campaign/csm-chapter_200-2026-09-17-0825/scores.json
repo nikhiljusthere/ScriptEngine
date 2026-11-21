@@ -1,0 +1,203 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Chapter 200's title?",
+      "id": "csm-pg-chapter_200-001",
+      "subject": "Chapter 200",
+      "accept": "all",
+      "expected": [
+        "Toxic Couple"
+      ],
+      "found": [
+        "Toxic Couple"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which volume does Chapter 200 appear?",
+      "id": "csm-pg-chapter_200-002",
+      "subject": "Chapter 200",
+      "accept": "all",
+      "expected": [
+        "22"
+      ],
+      "found": [
+        "22"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which chapter does Chapter 200 appear?",
+      "id": "csm-pg-chapter_200-003",
+      "subject": "Chapter 200",
+      "accept": "all",
+      "expected": [
+        "200"
+      ],
+      "found": [
+        "200"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the Japanese title of Chapter 200?",
+      "id": "csm-pg-chapter_200-004",
+      "subject": "Chapter 200",
+      "accept": "all",
+      "expected": [
+        "\u6709\u5bb3\u306a\u4e8c\u4eba"
+      ],
+      "found": [
+        "\u6709\u5bb3\u306a\u4e8c\u4eba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji title of Chapter 200?",
+      "id": "csm-pg-chapter_200-005",
+      "subject": "Chapter 200",
+      "accept": "all",
+      "expected": [
+        "Y\u016bgaina Futari"
+      ],
+      "found": [
+        "Y\u016bgaina Futari"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "On which page does Chapter 200 appear?",
+      "id": "csm-pg-chapter_200-006",
+      "subject": "Chapter 200",
+      "accept": "all",
+      "expected": [
+        "15"
+      ],
+      "found": [
+        "15"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What date is associated with Chapter 200?",
+      "id": "csm-pg-chapter_200-007",
+      "subject": "Chapter 200",
+      "accept": "all",
+      "expected": [
+        "April 16, 2025"
+      ],
+      "found": [
+        "April 16, 2025"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which arc does Chapter 200 appear?",
+      "id": "csm-pg-chapter_200-008",
+      "subject": "Chapter 200",
+      "accept": "all",
+      "expected": [
+        "War Devil arc"
+      ],
+      "found": [
+        "War Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Chapter 200?",
+      "id": "csm-pg-chapter_200-009",
+      "subject": "Chapter 200",
+      "accept": "all",
+      "expected": [
+        "Chapter 199"
+      ],
+      "found": [
+        "Chapter 199"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Chapter 200?",
+      "id": "csm-pg-chapter_200-010",
+      "subject": "Chapter 200",
+      "accept": "all",
+      "expected": [
+        "Chapter 201"
+      ],
+      "found": [
+        "Chapter 201"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 10,
+    "fact_present": 10
+  }
+}

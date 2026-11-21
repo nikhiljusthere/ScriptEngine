@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Mount Hio Eruption Devil's name?",
+      "id": "csm-pg-mount_hio_eruption_devil-001",
+      "subject": "Mount Hio Eruption Devil",
+      "accept": "all",
+      "expected": [
+        "\u6bd4\u5c3e\u5c71\u5927\u5674\u706b\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u6bd4\u5c3e\u5c71\u5927\u5674\u706b\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Mount Hio Eruption Devil's name?",
+      "id": "csm-pg-mount_hio_eruption_devil-002",
+      "subject": "Mount Hio Eruption Devil",
+      "accept": "all",
+      "expected": [
+        "Hio-san Funka no Akuma"
+      ],
+      "found": [
+        "Hio-san Funka no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Mount Hio Eruption Devil's gender?",
+      "id": "csm-pg-mount_hio_eruption_devil-003",
+      "subject": "Mount Hio Eruption Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Mount Hio Eruption Devil?",
+      "id": "csm-pg-mount_hio_eruption_devil-004",
+      "subject": "Mount Hio Eruption Devil",
+      "accept": "all",
+      "expected": [
+        "Erased (original timeline)"
+      ],
+      "found": [
+        "Erased (original timeline)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

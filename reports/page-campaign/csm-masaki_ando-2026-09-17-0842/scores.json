@@ -1,0 +1,138 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Masaki Ando?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Masaki Ando?",
+      "found": [],
+      "missing": [
+        "Public Safety Devil Hunters",
+        "Tokyo Division 2"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Masaki Ando's name?",
+      "id": "csm-pg-masaki_ando-001",
+      "subject": "Masaki Ando",
+      "accept": "all",
+      "expected": [
+        "\u5b89\u85e4 \u30de\u30b5\u30ad"
+      ],
+      "found": [
+        "\u5b89\u85e4 \u30de\u30b5\u30ad"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Masaki Ando's name?",
+      "id": "csm-pg-masaki_ando-002",
+      "subject": "Masaki Ando",
+      "accept": "all",
+      "expected": [
+        "And\u014d Masaki"
+      ],
+      "found": [
+        "And\u014d Masaki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Masaki Ando's gender?",
+      "id": "csm-pg-masaki_ando-003",
+      "subject": "Masaki Ando",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Masaki Ando?",
+      "id": "csm-pg-masaki_ando-004",
+      "subject": "Masaki Ando",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Masaki Ando's occupation?",
+      "id": "csm-pg-masaki_ando-005",
+      "subject": "Masaki Ando",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 0,
+    "canon_total": 2,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 1,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 1,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

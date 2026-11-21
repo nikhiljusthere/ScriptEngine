@@ -1,0 +1,221 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Chapter 85's title?",
+      "id": "csm-pg-chapter_85-001",
+      "subject": "Chapter 85",
+      "accept": "all",
+      "expected": [
+        "Bloody Good Gut Feeling"
+      ],
+      "found": [
+        "Bloody Good Gut Feeling"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which volume does Chapter 85 appear?",
+      "id": "csm-pg-chapter_85-002",
+      "subject": "Chapter 85",
+      "accept": "all",
+      "expected": [
+        "10"
+      ],
+      "found": [
+        "10"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which chapter does Chapter 85 appear?",
+      "id": "csm-pg-chapter_85-003",
+      "subject": "Chapter 85",
+      "accept": "all",
+      "expected": [
+        "85"
+      ],
+      "found": [
+        "85"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the Japanese title of Chapter 85?",
+      "id": "csm-pg-chapter_85-004",
+      "subject": "Chapter 85",
+      "accept": "all",
+      "expected": [
+        "\u8d85\u8df3\u8178\u30fb\u80c3\u80c3\u809d\u8840"
+      ],
+      "found": [
+        "\u8d85\u8df3\u8178\u30fb\u80c3\u80c3\u809d\u8840"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji title of Chapter 85?",
+      "id": "csm-pg-chapter_85-005",
+      "subject": "Chapter 85",
+      "accept": "all",
+      "expected": [
+        "Ch\u014d Ch\u014d Ch\u014d - \u012a Kanji"
+      ],
+      "found": [
+        "Ch\u014d Ch\u014d Ch\u014d - \u012a Kanji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "On which page does Chapter 85 appear?",
+      "id": "csm-pg-chapter_85-006",
+      "subject": "Chapter 85",
+      "accept": "all",
+      "expected": [
+        "23"
+      ],
+      "found": [
+        "23"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What date is associated with Chapter 85?",
+      "id": "csm-pg-chapter_85-007",
+      "subject": "Chapter 85",
+      "accept": "all",
+      "expected": [
+        "September 20, 2020"
+      ],
+      "found": [
+        "September 20, 2020"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What issue is Chapter 85 from?",
+      "id": "csm-pg-chapter_85-008",
+      "subject": "Chapter 85",
+      "accept": "all",
+      "expected": [
+        "Issue 2020-42"
+      ],
+      "found": [
+        "Issue 2020-42"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which arc does Chapter 85 appear?",
+      "id": "csm-pg-chapter_85-009",
+      "subject": "Chapter 85",
+      "accept": "all",
+      "expected": [
+        "Control Devil arc"
+      ],
+      "found": [
+        "Control Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Chapter 85?",
+      "id": "csm-pg-chapter_85-010",
+      "subject": "Chapter 85",
+      "accept": "all",
+      "expected": [
+        "Chapter 84"
+      ],
+      "found": [
+        "Chapter 84"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Chapter 85?",
+      "id": "csm-pg-chapter_85-011",
+      "subject": "Chapter 85",
+      "accept": "all",
+      "expected": [
+        "Chapter 86"
+      ],
+      "found": [
+        "Chapter 86"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 11,
+    "fact_present": 11
+  }
+}

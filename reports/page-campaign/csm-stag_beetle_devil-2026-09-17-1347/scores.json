@@ -1,0 +1,141 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Stag Beetle Devil?",
+      "set": "Stag Beetle Devil's affiliations",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Stag Beetle Devil?",
+      "found": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 6"
+      ],
+      "missing": [],
+      "members": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 6"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Stag Beetle Devil's name?",
+      "id": "csm-pg-stag_beetle_devil-001",
+      "subject": "Stag Beetle Devil",
+      "accept": "all",
+      "expected": [
+        "\u30af\u30ef\u30ac\u30bf\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u30af\u30ef\u30ac\u30bf\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Stag Beetle Devil's name?",
+      "id": "csm-pg-stag_beetle_devil-002",
+      "subject": "Stag Beetle Devil",
+      "accept": "all",
+      "expected": [
+        "Kuwagata no Akuma"
+      ],
+      "found": [
+        "Kuwagata no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Stag Beetle Devil?",
+      "id": "csm-pg-stag_beetle_devil-003",
+      "subject": "Stag Beetle Devil",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Stag Beetle Devil's gender?",
+      "id": "csm-pg-stag_beetle_devil-004",
+      "subject": "Stag Beetle Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Stag Beetle Devil's occupation?",
+      "id": "csm-pg-stag_beetle_devil-005",
+      "subject": "Stag Beetle Devil",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

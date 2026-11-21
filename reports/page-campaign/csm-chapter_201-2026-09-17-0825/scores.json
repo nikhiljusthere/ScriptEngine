@@ -1,0 +1,203 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Chapter 201's title?",
+      "id": "csm-pg-chapter_201-001",
+      "subject": "Chapter 201",
+      "accept": "all",
+      "expected": [
+        "Terror Looks Like This!"
+      ],
+      "found": [
+        "Terror Looks Like This!"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which volume does Chapter 201 appear?",
+      "id": "csm-pg-chapter_201-002",
+      "subject": "Chapter 201",
+      "accept": "all",
+      "expected": [
+        "22"
+      ],
+      "found": [
+        "22"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which chapter does Chapter 201 appear?",
+      "id": "csm-pg-chapter_201-003",
+      "subject": "Chapter 201",
+      "accept": "all",
+      "expected": [
+        "201"
+      ],
+      "found": [
+        "201"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the Japanese title of Chapter 201?",
+      "id": "csm-pg-chapter_201-004",
+      "subject": "Chapter 201",
+      "accept": "all",
+      "expected": [
+        "\u6050\u6016\u3063\u3066\u306e\u306f\u3053\u3046\uff01"
+      ],
+      "found": [
+        "\u6050\u6016\u3063\u3066\u306e\u306f\u3053\u3046\uff01"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji title of Chapter 201?",
+      "id": "csm-pg-chapter_201-005",
+      "subject": "Chapter 201",
+      "accept": "all",
+      "expected": [
+        "Ky\u014dfutte no wa k\u014d!"
+      ],
+      "found": [
+        "Ky\u014dfutte no wa k\u014d!"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "On which page does Chapter 201 appear?",
+      "id": "csm-pg-chapter_201-006",
+      "subject": "Chapter 201",
+      "accept": "all",
+      "expected": [
+        "15"
+      ],
+      "found": [
+        "15"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What date is associated with Chapter 201?",
+      "id": "csm-pg-chapter_201-007",
+      "subject": "Chapter 201",
+      "accept": "all",
+      "expected": [
+        "April 30, 2025"
+      ],
+      "found": [
+        "April 30, 2025"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which arc does Chapter 201 appear?",
+      "id": "csm-pg-chapter_201-008",
+      "subject": "Chapter 201",
+      "accept": "all",
+      "expected": [
+        "War Devil arc"
+      ],
+      "found": [
+        "War Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Chapter 201?",
+      "id": "csm-pg-chapter_201-009",
+      "subject": "Chapter 201",
+      "accept": "all",
+      "expected": [
+        "Chapter 200"
+      ],
+      "found": [
+        "Chapter 200"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Chapter 201?",
+      "id": "csm-pg-chapter_201-010",
+      "subject": "Chapter 201",
+      "accept": "all",
+      "expected": [
+        "Chapter 202"
+      ],
+      "found": [
+        "Chapter 202"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 10,
+    "fact_present": 10
+  }
+}

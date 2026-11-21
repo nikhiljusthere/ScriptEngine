@@ -1,0 +1,221 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Chapter 55's title?",
+      "id": "csm-pg-chapter_55-001",
+      "subject": "Chapter 55",
+      "accept": "all",
+      "expected": [
+        "Let's Go"
+      ],
+      "found": [
+        "Let's Go"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which volume does Chapter 55 appear?",
+      "id": "csm-pg-chapter_55-002",
+      "subject": "Chapter 55",
+      "accept": "all",
+      "expected": [
+        "7"
+      ],
+      "found": [
+        "7"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which chapter does Chapter 55 appear?",
+      "id": "csm-pg-chapter_55-003",
+      "subject": "Chapter 55",
+      "accept": "all",
+      "expected": [
+        "55"
+      ],
+      "found": [
+        "55"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the Japanese title of Chapter 55?",
+      "id": "csm-pg-chapter_55-004",
+      "subject": "Chapter 55",
+      "accept": "all",
+      "expected": [
+        "\u30ec\u30c3\u30c4\u30b4\u30fc"
+      ],
+      "found": [
+        "\u30ec\u30c3\u30c4\u30b4\u30fc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji title of Chapter 55?",
+      "id": "csm-pg-chapter_55-005",
+      "subject": "Chapter 55",
+      "accept": "all",
+      "expected": [
+        "Rettsu G\u014d"
+      ],
+      "found": [
+        "Rettsu G\u014d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "On which page does Chapter 55 appear?",
+      "id": "csm-pg-chapter_55-006",
+      "subject": "Chapter 55",
+      "accept": "all",
+      "expected": [
+        "19"
+      ],
+      "found": [
+        "19"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What date is associated with Chapter 55?",
+      "id": "csm-pg-chapter_55-007",
+      "subject": "Chapter 55",
+      "accept": "all",
+      "expected": [
+        "January 27, 2020"
+      ],
+      "found": [
+        "January 27, 2020"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What issue is Chapter 55 from?",
+      "id": "csm-pg-chapter_55-008",
+      "subject": "Chapter 55",
+      "accept": "all",
+      "expected": [
+        "Issue 2020-09"
+      ],
+      "found": [
+        "Issue 2020-09"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which arc does Chapter 55 appear?",
+      "id": "csm-pg-chapter_55-009",
+      "subject": "Chapter 55",
+      "accept": "all",
+      "expected": [
+        "International Assassins arc"
+      ],
+      "found": [
+        "International Assassins arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Chapter 55?",
+      "id": "csm-pg-chapter_55-010",
+      "subject": "Chapter 55",
+      "accept": "all",
+      "expected": [
+        "Chapter 54"
+      ],
+      "found": [
+        "Chapter 54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Chapter 55?",
+      "id": "csm-pg-chapter_55-011",
+      "subject": "Chapter 55",
+      "accept": "all",
+      "expected": [
+        "Chapter 56"
+      ],
+      "found": [
+        "Chapter 56"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 11,
+    "fact_present": 11
+  }
+}

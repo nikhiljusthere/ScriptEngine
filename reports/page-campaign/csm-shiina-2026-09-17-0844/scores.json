@@ -1,0 +1,160 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the allies of Shiina?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Shiina?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Shiina?",
+      "found": [],
+      "missing": [
+        "Furuno",
+        "Kishibe"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the affiliations of Shiina?",
+      "found": [],
+      "missing": [
+        "Police Force"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Shiina's name?",
+      "id": "csm-pg-shiina-001",
+      "subject": "Shiina",
+      "accept": "all",
+      "expected": [
+        "\u690e\u540d"
+      ],
+      "found": [
+        "\u690e\u540d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Shiina's name?",
+      "id": "csm-pg-shiina-002",
+      "subject": "Shiina",
+      "accept": "all",
+      "expected": [
+        "Shiina"
+      ],
+      "found": [
+        "Shiina"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Shiina's gender?",
+      "id": "csm-pg-shiina-003",
+      "subject": "Shiina",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Shiina?",
+      "id": "csm-pg-shiina-004",
+      "subject": "Shiina",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Shiina's occupation?",
+      "id": "csm-pg-shiina-005",
+      "subject": "Shiina",
+      "accept": "all",
+      "expected": [
+        "Police Officer Riot Soldier"
+      ],
+      "found": [
+        "Police Officer Riot Soldier"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 0,
+    "canon_total": 3,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 2,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 2,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

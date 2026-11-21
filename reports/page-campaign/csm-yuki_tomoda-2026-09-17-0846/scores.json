@@ -1,0 +1,113 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Yuki Tomoda's name?",
+      "id": "csm-pg-yuki_tomoda-001",
+      "subject": "Yuki Tomoda",
+      "accept": "all",
+      "expected": [
+        "\u53cb\u7530\u30e6\u30a6\u30ad"
+      ],
+      "found": [
+        "\u53cb\u7530\u30e6\u30a6\u30ad"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Yuki Tomoda's name?",
+      "id": "csm-pg-yuki_tomoda-002",
+      "subject": "Yuki Tomoda",
+      "accept": "all",
+      "expected": [
+        "Tomoda Y\u016bki"
+      ],
+      "found": [
+        "Tomoda Y\u016bki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Yuki Tomoda's gender?",
+      "id": "csm-pg-yuki_tomoda-003",
+      "subject": "Yuki Tomoda",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Yuki Tomoda?",
+      "id": "csm-pg-yuki_tomoda-004",
+      "subject": "Yuki Tomoda",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Yuki Tomoda's occupation?",
+      "id": "csm-pg-yuki_tomoda-005",
+      "subject": "Yuki Tomoda",
+      "accept": "all",
+      "expected": [
+        "Chief of Cabinet Secretary"
+      ],
+      "found": [
+        "Chief of Cabinet Secretary"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

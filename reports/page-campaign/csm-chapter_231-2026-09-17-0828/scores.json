@@ -1,0 +1,203 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Chapter 231's title?",
+      "id": "csm-pg-chapter_231-001",
+      "subject": "Chapter 231",
+      "accept": "all",
+      "expected": [
+        "Goodbye, Pochita"
+      ],
+      "found": [
+        "Goodbye, Pochita"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which volume does Chapter 231 appear?",
+      "id": "csm-pg-chapter_231-002",
+      "subject": "Chapter 231",
+      "accept": "all",
+      "expected": [
+        "24"
+      ],
+      "found": [
+        "24"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which chapter does Chapter 231 appear?",
+      "id": "csm-pg-chapter_231-003",
+      "subject": "Chapter 231",
+      "accept": "all",
+      "expected": [
+        "231"
+      ],
+      "found": [
+        "231"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the Japanese title of Chapter 231?",
+      "id": "csm-pg-chapter_231-004",
+      "subject": "Chapter 231",
+      "accept": "all",
+      "expected": [
+        "\u3055\u3088\u306a\u3089\u30dd\u30c1\u30bf"
+      ],
+      "found": [
+        "\u3055\u3088\u306a\u3089\u30dd\u30c1\u30bf"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji title of Chapter 231?",
+      "id": "csm-pg-chapter_231-005",
+      "subject": "Chapter 231",
+      "accept": "all",
+      "expected": [
+        "Sayonara Pochita"
+      ],
+      "found": [
+        "Sayonara Pochita"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "On which page does Chapter 231 appear?",
+      "id": "csm-pg-chapter_231-006",
+      "subject": "Chapter 231",
+      "accept": "all",
+      "expected": [
+        "15"
+      ],
+      "found": [
+        "15"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What date is associated with Chapter 231?",
+      "id": "csm-pg-chapter_231-007",
+      "subject": "Chapter 231",
+      "accept": "all",
+      "expected": [
+        "March 11, 2026"
+      ],
+      "found": [
+        "March 11, 2026"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which arc does Chapter 231 appear?",
+      "id": "csm-pg-chapter_231-008",
+      "subject": "Chapter 231",
+      "accept": "all",
+      "expected": [
+        "War Devil arc"
+      ],
+      "found": [
+        "War Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Chapter 231?",
+      "id": "csm-pg-chapter_231-009",
+      "subject": "Chapter 231",
+      "accept": "all",
+      "expected": [
+        "Chapter 230"
+      ],
+      "found": [
+        "Chapter 230"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Chapter 231?",
+      "id": "csm-pg-chapter_231-010",
+      "subject": "Chapter 231",
+      "accept": "all",
+      "expected": [
+        "Chapter 232"
+      ],
+      "found": [
+        "Chapter 232"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 10,
+    "fact_present": 10
+  }
+}

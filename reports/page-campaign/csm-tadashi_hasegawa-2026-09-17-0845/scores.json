@@ -1,0 +1,113 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Tadashi Hasegawa's name?",
+      "id": "csm-pg-tadashi_hasegawa-001",
+      "subject": "Tadashi Hasegawa",
+      "accept": "all",
+      "expected": [
+        "\u9577\u8c37\u5ddd\u30bf\u30c0\u30b7"
+      ],
+      "found": [
+        "\u9577\u8c37\u5ddd\u30bf\u30c0\u30b7"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Tadashi Hasegawa's name?",
+      "id": "csm-pg-tadashi_hasegawa-002",
+      "subject": "Tadashi Hasegawa",
+      "accept": "all",
+      "expected": [
+        "Hasegawa Tadashi"
+      ],
+      "found": [
+        "Hasegawa Tadashi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Tadashi Hasegawa's gender?",
+      "id": "csm-pg-tadashi_hasegawa-003",
+      "subject": "Tadashi Hasegawa",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Tadashi Hasegawa?",
+      "id": "csm-pg-tadashi_hasegawa-004",
+      "subject": "Tadashi Hasegawa",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Tadashi Hasegawa's occupation?",
+      "id": "csm-pg-tadashi_hasegawa-005",
+      "subject": "Tadashi Hasegawa",
+      "accept": "all",
+      "expected": [
+        "Minister of Finance (formerly)"
+      ],
+      "found": [
+        "Minister of Finance (formerly)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

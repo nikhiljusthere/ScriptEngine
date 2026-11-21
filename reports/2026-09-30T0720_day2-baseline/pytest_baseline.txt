@@ -1,0 +1,2105 @@
+........................................................................ [  4%]
+........................................................................ [  9%]
+...............F........................................................ [ 14%]
+........................................................................ [ 19%]
+........................................................................ [ 24%]
+........................................................................ [ 28%]
+................F............FF............XX........................... [ 33%]
+........................................................................ [ 38%]
+........................................................................ [ 43%]
+..............................FFF....................................... [ 48%]
+........................................................................ [ 53%]
+........................................................................ [ 57%]
+........................................................................ [ 62%]
+........................................................................ [ 67%]
+........................................................................ [ 72%]
+........................................................................ [ 77%]
+........................................................................ [ 82%]
+........................................................................ [ 86%]
+................................................................FF...... [ 91%]
+........................................................................ [ 96%]
+....................................................                     [100%]
+=================================== FAILURES ===================================
+_____________ test_drawn_panel_subjects_satisfy_their_class_filter _____________
+
+    def test_drawn_panel_subjects_satisfy_their_class_filter():
+        """Every panel row must satisfy its own class filter (v2 invariant)."""
+        rows = [
+            __import__("json").loads(l)
+>           for l in blind_panel._panel_path("marvel").read_text().splitlines()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            if l.strip()
+        ]
+
+tests/test_blind_panel_universe.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/goblin/ScriptEngine/reports/marvel/blind_panel_2026-09-30.jsonl')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/goblin/ScriptEngine/reports/marvel/blind_panel_2026-09-30.jsonl'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+______________ TestAdjudicatedArc.test_majority_share_is_bounded _______________
+
+self = <test_continuity.TestAdjudicatedArc object at 0x7283e9bcf9b0>
+jjk_store = <scriptengine.stores.facts.FactStore object at 0x7283d66e1be0>
+
+    def test_majority_share_is_bounded(self, jjk_store):
+        for verb, parts in (
+            ("fought", ["Sukuna", "Yuji Itadori"]),
+            ("awakened", ["Nobara Kugisaki"]),
+        ):
+            result = continuity.adjudicated_arc(jjk_store, verb=verb, participants=parts)
+>           assert 0.0 < result["majority_share"] <= 1.0
+E           assert 0.0 < 0.0
+
+tests/test_continuity.py:73: AssertionError
+_______ TestRunGold.test_every_frozen_case_holds_against_the_live_store ________
+
+self = <test_continuity.TestRunGold object at 0x7283e9c096d0>
+jjk_store = <scriptengine.stores.facts.FactStore object at 0x7283d66e1be0>
+
+    def test_every_frozen_case_holds_against_the_live_store(self, jjk_store):
+        gold = json.loads(GOLD_PATH.read_text(encoding="utf-8"))
+        result = continuity.run_gold(jjk_store, gold["cases"])
+        # The set was frozen from this store, so a case only breaks if a
+        # re-index moved the adjudicated arc. That is exactly the failure the
+        # gold set exists to catch.
+        assert result["total"] == len(gold["cases"])
+        for row in result["cases"]:
+>           assert row["held"], (row["verb"], row["participants"])
+E           AssertionError: ('saved', ['Rika', 'Yuta Okkotsu'])
+E           assert False
+
+tests/test_continuity.py:184: AssertionError
+________________ TestRunGold.test_a_moved_event_breaks_its_case ________________
+
+self = <test_continuity.TestRunGold object at 0x7283e9c099d0>
+jjk_store = <scriptengine.stores.facts.FactStore object at 0x7283d66e1be0>
+
+    def test_a_moved_event_breaks_its_case(self, jjk_store):
+        # A case whose expected arc no longer matches the live adjudication is
+        # reported broken, not silently passed.
+        gold = json.loads(GOLD_PATH.read_text(encoding="utf-8"))
+        doctored = [dict(case) for case in gold["cases"]]
+        doctored[0]["actual_arc_index"] = -1  # an arc that nothing is filed in
+        result = continuity.run_gold(jjk_store, doctored)
+>       assert result["broken"] == 1
+E       assert 9 == 1
+
+tests/test_continuity.py:193: AssertionError
+___________________ test_research_returns_bundle_and_prompt ____________________
+
+    @contextlib.contextmanager
+    def map_httpcore_exceptions() -> typing.Iterator[None]:
+        global HTTPCORE_EXC_MAP
+        if len(HTTPCORE_EXC_MAP) == 0:
+            HTTPCORE_EXC_MAP = _load_httpcore_exceptions()
+        try:
+>           yield
+
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py:250: in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py:256: in handle_request
+    raise exc from None
+scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py:236: in handle_request
+    response = connection.handle_request(
+scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py:101: in handle_request
+    raise exc
+scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py:78: in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py:124: in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py:207: in connect_tcp
+    with map_exceptions(exc_map):
+/usr/lib/python3.12/contextlib.py:158: in __exit__
+    self.gen.throw(value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+map = {<class 'TimeoutError'>: <class 'httpcore.ConnectTimeout'>, <class 'OSError'>: <class 'httpcore.ConnectError'>}
+
+    @contextlib.contextmanager
+    def map_exceptions(map: ExceptionMapping) -> typing.Iterator[None]:
+        try:
+            yield
+        except Exception as exc:  # noqa: PIE786
+            for from_exc, to_exc in map.items():
+                if isinstance(exc, from_exc):
+>                   raise to_exc(exc) from exc
+E                   httpcore.ConnectError: [Errno 111] Connection refused
+
+scriptengine/.venv/lib/python3.12/site-packages/httpcore/_exceptions.py:14: ConnectError
+
+The above exception was the direct cause of the following exception:
+
+subject = 'Shibuya Incident', series = 'jjk', mode = 'auto', words = 3000
+intro = True, token_budget = 0
+
+    @mcp.tool()
+    def research(
+        subject: str,
+        series: str = "jjk",
+        mode: str = "auto",
+        words: int = 6000,
+        intro: bool = True,
+        token_budget: int = 0,
+    ) -> dict[str, Any]:
+        """Research a script topic.
+    
+        Returns the ordered, cited context for `subject` (the same bundle
+        `POST /context` serves) plus `prompt`, the bundle rendered as plain text
+        with the house writing rules appended. Write the script from that prompt:
+        it states the only chapter/episode numbers you may tag with.
+    
+        `mode` is auto (the engine reads the topic: "Every Rank of Curse" is a
+        roster, anything else is a narrative), narrative, roster or qa. `words` is
+        the target script length; the context budget is `words * 8` unless
+        `token_budget` is given.
+    
+        Needs the API up: `python -m scriptengine.api.main`.
+        """
+        settings = get_settings()
+        url = f"http://{settings.api_host}:{settings.api_port}/context"
+        payload = {
+            "series": series,
+            "query": subject,
+            "mode": mode,
+            "token_budget": token_budget or _budget_for(words),
+            "top_k": 12,
+            "as_prompt": True,
+            "words": words,
+            "intro": intro,
+            "rules": True,
+        }
+        try:
+            # Generous: a service that has not answered since it started loads the
+            # embedder and reranker on this first call.
+>           response = httpx.post(url, json=payload, timeout=180.0)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+scriptengine/mcp/server.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_api.py:304: in post
+    return request(
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_api.py:109: in request
+    return client.request(
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py:249: in handle_request
+    with map_httpcore_exceptions():
+/usr/lib/python3.12/contextlib.py:158: in __exit__
+    self.gen.throw(value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    @contextlib.contextmanager
+    def map_httpcore_exceptions() -> typing.Iterator[None]:
+        global HTTPCORE_EXC_MAP
+        if len(HTTPCORE_EXC_MAP) == 0:
+            HTTPCORE_EXC_MAP = _load_httpcore_exceptions()
+        try:
+            yield
+        except Exception as exc:
+            mapped_exc = None
+    
+            for from_exc, to_exc in HTTPCORE_EXC_MAP.items():
+                if not isinstance(exc, from_exc):
+                    continue
+                # We want to map to the most specific exception we can find.
+                # Eg if `exc` is an `httpcore.ReadTimeout`, we want to map to
+                # `httpx.ReadTimeout`, not just `httpx.TimeoutException`.
+                if mapped_exc is None or issubclass(to_exc, mapped_exc):
+                    mapped_exc = to_exc
+    
+            if mapped_exc is None:  # pragma: no cover
+                raise
+    
+            message = str(exc)
+>           raise mapped_exc(message) from exc
+E           httpx.ConnectError: [Errno 111] Connection refused
+
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py:118: ConnectError
+
+The above exception was the direct cause of the following exception:
+
+self = FastMCP('scriptengine'), name = 'research'
+arguments = {'subject': 'Shibuya Incident', 'series': 'jjk', 'words': 3000}
+version = None, run_middleware = False
+
+    async def call_tool(
+        self,
+        name: str,
+        arguments: dict[str, Any] | None = None,
+        *,
+        version: VersionSpec | None = None,
+        run_middleware: bool = True,
+    ) -> ToolResult:
+        """Call a tool by name.
+    
+        This is the public API for executing tools. By default, middleware is applied.
+    
+        Args:
+            name: The tool name
+            arguments: Tool arguments (optional)
+            version: Specific version to call. If None, calls highest version.
+            run_middleware: If True (default), apply the middleware chain.
+                Set to False when called from middleware to avoid re-applying.
+    
+        Returns:
+            ToolResult.
+    
+        A guard tool that requests client input (SEP-2322 multi-round-trip)
+        returns an ``InputRequiredToolResult`` (a ``ToolResult`` subclass); it
+        flows back through the middleware chain as an ordinary result and the
+        wire handler unwraps it into an ``InputRequiredResult`` on the response.
+    
+        Raises:
+            NotFoundError: If tool not found or disabled
+            ToolError: If tool execution fails
+            ValidationError: If arguments fail validation
+        """
+        # Note: fn_key enrichment happens here after finding the tool.
+        # For mounted servers, the parent's provider sets fn_key to the
+        # namespaced key before delegating, ensuring correct Docket routing.
+    
+        from fastmcp.server.providers.addressing import (
+            parse_hashed_backend_name,
+        )
+    
+        # Two routing paths:
+        #   1. Hashed-name path — backend tools that opted into
+        #      app-callable visibility. Recognized by their
+        #      `<hash>_<local_name>` format and resolved via the
+        #      reverse-hash map. Address is known eagerly.
+        #   2. Display-name path — everything else. Goes through normal
+        #      `get_tool` aggregation/transforms. Address is determined
+        #      after resolution by walking the registry.
+        async with fastmcp.server.context.Context(fastmcp=self) as ctx:
+            if run_middleware:
+                mw_context = MiddlewareContext[CallToolRequestParams](
+                    message=mcp_types.CallToolRequestParams(
+                        name=name,
+                        arguments=arguments or {},
+                        # Reflect the continuation fields (SEP-2322) so middleware
+                        # reading `context.message` sees a continuation round as
+                        # such, not as an initial call. These are recovered from
+                        # the raw wire request (unsealed to plaintext by the
+                        # request-state boundary); they drive middleware
+                        # visibility only — `call_next` routes on name/arguments.
+                        input_responses=ctx.input_responses,
+                        request_state=ctx.request_state,
+                        _meta=_version_request_meta(version),
+                    ),
+                    source="client",
+                    type="request",
+                    method="tools/call",
+                    fastmcp_context=ctx,
+                )
+                # Extension tools/call interceptors compose here, at the
+                # innermost point of dispatch: the FastMCP middleware chain wraps
+                # the whole thing (so it observes every call), and the
+                # interceptors sit between it and the tool body (so each is the
+                # last gate before execution).
+                dispatched = await self._dispatch_component_middleware(
+                    context=mw_context,
+                    call_next=self._compose_tool_call_interceptors(
+                        lambda context: self.call_tool(
+                            context.message.name,
+                            context.message.arguments or {},
+                            version=version,
+                            run_middleware=False,
+                        )
+                    ),
+                )
+                # Above the chain, so a Prefab payload is re-addressed however
+                # it was produced — middleware can answer a call itself, and
+                # such a result never reaches the core path below.
+                return await self._rebind_prefab_tool_names(dispatched)
+    
+            # Core logic: find and execute tool
+            with server_span(
+                f"tools/call {name}",
+                "tools/call",
+                self.name,
+                "tool",
+                name,
+                tool_name=name,
+            ) as span:
+                # Try normal display-name resolution first.
+                tool: Tool | None = await self.get_tool(name, version=version)
+    
+                # If that fails, try hashed-name dispatch. This walks
+                # the provider tree recursively (same pattern as the old
+                # get_app_tool) looking for a tool whose stored hash
+                # matches the parsed prefix.
+                if tool is None:
+                    hashed = parse_hashed_backend_name(name)
+                    if hashed is not None:
+                        digest, local_name = hashed
+                        tool = await self.get_tool_by_hash(digest, local_name)
+                        if tool is not None:
+                            # Auth still applies on the bypass path.
+                            skip_auth, token = _get_auth_context()
+                            if not skip_auth and tool.auth is not None:
+                                try:
+                                    auth_ctx = AuthContext(token=token, component=tool)
+                                    if not await run_auth_checks(tool.auth, auth_ctx):
+                                        raise NotFoundError(f"Unknown tool: {name!r}")
+                                except AuthorizationError:
+                                    raise NotFoundError(
+                                        f"Unknown tool: {name!r}"
+                                    ) from None
+    
+                if tool is None:
+                    raise NotFoundError(f"Unknown tool: {name!r}")
+                span.set_attributes(tool.get_span_attributes())
+                try:
+>                   return await tool._run(arguments or {})
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/server.py:1492: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/base.py:440: in _run
+    return await self.run(arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py:389: in run
+    result = await self._run_body(
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py:430: in _run_body
+    result = await self._execute(
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py:477: in _execute
+    result = await call_sync_fn_in_threadpool(
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/utilities/async_utils.py:34: in call_sync_fn_in_threadpool
+    return await run_sync_in_threadpool(functools.partial(fn, *args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/anyio/to_thread.py:65: in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+scriptengine/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py:2641: in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py:1033: in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py:441: in validate_python
+    return self.validator.validate_python(
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py:89: in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+subject = 'Shibuya Incident', series = 'jjk', mode = 'auto', words = 3000
+intro = True, token_budget = 0
+
+    @mcp.tool()
+    def research(
+        subject: str,
+        series: str = "jjk",
+        mode: str = "auto",
+        words: int = 6000,
+        intro: bool = True,
+        token_budget: int = 0,
+    ) -> dict[str, Any]:
+        """Research a script topic.
+    
+        Returns the ordered, cited context for `subject` (the same bundle
+        `POST /context` serves) plus `prompt`, the bundle rendered as plain text
+        with the house writing rules appended. Write the script from that prompt:
+        it states the only chapter/episode numbers you may tag with.
+    
+        `mode` is auto (the engine reads the topic: "Every Rank of Curse" is a
+        roster, anything else is a narrative), narrative, roster or qa. `words` is
+        the target script length; the context budget is `words * 8` unless
+        `token_budget` is given.
+    
+        Needs the API up: `python -m scriptengine.api.main`.
+        """
+        settings = get_settings()
+        url = f"http://{settings.api_host}:{settings.api_port}/context"
+        payload = {
+            "series": series,
+            "query": subject,
+            "mode": mode,
+            "token_budget": token_budget or _budget_for(words),
+            "top_k": 12,
+            "as_prompt": True,
+            "words": words,
+            "intro": intro,
+            "rules": True,
+        }
+        try:
+            # Generous: a service that has not answered since it started loads the
+            # embedder and reranker on this first call.
+            response = httpx.post(url, json=payload, timeout=180.0)
+        except httpx.ConnectError as error:
+>           raise ValueError(
+                f"The ScriptEngine API is not answering on {url}. Start it with: "
+                "python -m scriptengine.api.main"
+            ) from error
+E           ValueError: The ScriptEngine API is not answering on http://127.0.0.1:8000/context. Start it with: python -m scriptengine.api.main
+
+scriptengine/mcp/server.py:96: ValueError
+
+The above exception was the direct cause of the following exception:
+
+    @pytest.mark.asyncio
+    async def test_research_returns_bundle_and_prompt():
+>       result = await mcp.call_tool(
+            "research",
+            {"subject": "Shibuya Incident", "series": "jjk", "words": 3000},
+        )
+
+tests/test_mcp_server.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/server.py:1438: in call_tool
+    dispatched = await self._dispatch_component_middleware(
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/server.py:596: in _dispatch_component_middleware
+    return await self._run_middleware(context, call_next, phase="all")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/server.py:575: in _run_middleware
+    return await chain(context)
+           ^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/server.py:570: in wrapped
+    return await mw(context, call_next)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/middleware/middleware.py:158: in __call__
+    return await handler_chain(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/middleware/middleware.py:131: in wrapper
+    return await handler(context, call_next=call_next)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/middleware/middleware.py:209: in on_message
+    return await call_next(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/middleware/middleware.py:131: in wrapper
+    return await handler(context, call_next=call_next)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/middleware/middleware.py:216: in on_request
+    return await call_next(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/middleware/middleware.py:131: in wrapper
+    return await handler(context, call_next=call_next)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/middleware/middleware.py:244: in on_call_tool
+    return await call_next(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FastMCP('scriptengine'), name = 'research'
+arguments = {'subject': 'Shibuya Incident', 'series': 'jjk', 'words': 3000}
+version = None, run_middleware = False
+
+    async def call_tool(
+        self,
+        name: str,
+        arguments: dict[str, Any] | None = None,
+        *,
+        version: VersionSpec | None = None,
+        run_middleware: bool = True,
+    ) -> ToolResult:
+        """Call a tool by name.
+    
+        This is the public API for executing tools. By default, middleware is applied.
+    
+        Args:
+            name: The tool name
+            arguments: Tool arguments (optional)
+            version: Specific version to call. If None, calls highest version.
+            run_middleware: If True (default), apply the middleware chain.
+                Set to False when called from middleware to avoid re-applying.
+    
+        Returns:
+            ToolResult.
+    
+        A guard tool that requests client input (SEP-2322 multi-round-trip)
+        returns an ``InputRequiredToolResult`` (a ``ToolResult`` subclass); it
+        flows back through the middleware chain as an ordinary result and the
+        wire handler unwraps it into an ``InputRequiredResult`` on the response.
+    
+        Raises:
+            NotFoundError: If tool not found or disabled
+            ToolError: If tool execution fails
+            ValidationError: If arguments fail validation
+        """
+        # Note: fn_key enrichment happens here after finding the tool.
+        # For mounted servers, the parent's provider sets fn_key to the
+        # namespaced key before delegating, ensuring correct Docket routing.
+    
+        from fastmcp.server.providers.addressing import (
+            parse_hashed_backend_name,
+        )
+    
+        # Two routing paths:
+        #   1. Hashed-name path — backend tools that opted into
+        #      app-callable visibility. Recognized by their
+        #      `<hash>_<local_name>` format and resolved via the
+        #      reverse-hash map. Address is known eagerly.
+        #   2. Display-name path — everything else. Goes through normal
+        #      `get_tool` aggregation/transforms. Address is determined
+        #      after resolution by walking the registry.
+        async with fastmcp.server.context.Context(fastmcp=self) as ctx:
+            if run_middleware:
+                mw_context = MiddlewareContext[CallToolRequestParams](
+                    message=mcp_types.CallToolRequestParams(
+                        name=name,
+                        arguments=arguments or {},
+                        # Reflect the continuation fields (SEP-2322) so middleware
+                        # reading `context.message` sees a continuation round as
+                        # such, not as an initial call. These are recovered from
+                        # the raw wire request (unsealed to plaintext by the
+                        # request-state boundary); they drive middleware
+                        # visibility only — `call_next` routes on name/arguments.
+                        input_responses=ctx.input_responses,
+                        request_state=ctx.request_state,
+                        _meta=_version_request_meta(version),
+                    ),
+                    source="client",
+                    type="request",
+                    method="tools/call",
+                    fastmcp_context=ctx,
+                )
+                # Extension tools/call interceptors compose here, at the
+                # innermost point of dispatch: the FastMCP middleware chain wraps
+                # the whole thing (so it observes every call), and the
+                # interceptors sit between it and the tool body (so each is the
+                # last gate before execution).
+                dispatched = await self._dispatch_component_middleware(
+                    context=mw_context,
+                    call_next=self._compose_tool_call_interceptors(
+                        lambda context: self.call_tool(
+                            context.message.name,
+                            context.message.arguments or {},
+                            version=version,
+                            run_middleware=False,
+                        )
+                    ),
+                )
+                # Above the chain, so a Prefab payload is re-addressed however
+                # it was produced — middleware can answer a call itself, and
+                # such a result never reaches the core path below.
+                return await self._rebind_prefab_tool_names(dispatched)
+    
+            # Core logic: find and execute tool
+            with server_span(
+                f"tools/call {name}",
+                "tools/call",
+                self.name,
+                "tool",
+                name,
+                tool_name=name,
+            ) as span:
+                # Try normal display-name resolution first.
+                tool: Tool | None = await self.get_tool(name, version=version)
+    
+                # If that fails, try hashed-name dispatch. This walks
+                # the provider tree recursively (same pattern as the old
+                # get_app_tool) looking for a tool whose stored hash
+                # matches the parsed prefix.
+                if tool is None:
+                    hashed = parse_hashed_backend_name(name)
+                    if hashed is not None:
+                        digest, local_name = hashed
+                        tool = await self.get_tool_by_hash(digest, local_name)
+                        if tool is not None:
+                            # Auth still applies on the bypass path.
+                            skip_auth, token = _get_auth_context()
+                            if not skip_auth and tool.auth is not None:
+                                try:
+                                    auth_ctx = AuthContext(token=token, component=tool)
+                                    if not await run_auth_checks(tool.auth, auth_ctx):
+                                        raise NotFoundError(f"Unknown tool: {name!r}")
+                                except AuthorizationError:
+                                    raise NotFoundError(
+                                        f"Unknown tool: {name!r}"
+                                    ) from None
+    
+                if tool is None:
+                    raise NotFoundError(f"Unknown tool: {name!r}")
+                span.set_attributes(tool.get_span_attributes())
+                try:
+                    return await tool._run(arguments or {})
+                except ValidationError as e:
+                    # Argument-validation failure (a bad call). FunctionTool
+                    # converts pydantic's call-validation error into fastmcp's
+                    # ValidationError (see #4128) so it can be filtered as a
+                    # client error. Log the underlying detail without a URL or
+                    # traceback, matching the previous pydantic-error logging.
+                    cause = e.__cause__
+                    detail = (
+                        cause.errors(include_url=False)
+                        if isinstance(cause, PydanticValidationError)
+                        else str(e)
+                    )
+                    logger.warning("Invalid arguments for tool %r: %s", name, detail)
+                    raise
+                except FastMCPError as e:
+                    logger.log(
+                        e.log_level, f"Error calling tool {name!r}", exc_info=False
+                    )
+                    raise
+                except PydanticValidationError as e:
+                    # A pydantic error that is NOT an argument-validation failure
+                    # (e.g. raised by a non-FunctionTool's own validation). Kept
+                    # for backward compatibility.
+                    logger.warning(
+                        "Invalid arguments for tool %r: %s",
+                        name,
+                        e.errors(include_url=False),
+                    )
+                    raise
+                except Exception as e:
+                    # Most MCPErrors raised under a tool describe how the call
+                    # went — a timeout, an upstream error a proxy forwarded —
+                    # and are masked into an `isError` result like any other
+                    # failure. A missing-client-capability error is different:
+                    # it says the request cannot be serviced at all, and
+                    # SEP-2575 requires it on the wire as -32021 (HTTP 400).
+                    # Flattening it into a result would drop the code and tell
+                    # the client the call had succeeded.
+                    if (
+                        isinstance(e, MCPError)
+                        and e.error.code == MISSING_REQUIRED_CLIENT_CAPABILITY
+                    ):
+                        logger.debug(
+                            "Tool %r requires a client capability the client did "
+                            "not declare",
+                            name,
+                        )
+                        raise
+                    logger.exception(f"Error calling tool {name!r}")
+                    # Handle actionable errors that should reach the LLM
+                    # even when masking is enabled
+                    if get_http_status_code(e) == 429:
+                        raise ToolError(
+                            "Rate limited by upstream API, please retry later"
+                        ) from e
+                    if is_timeout_error(e):
+                        raise ToolError(
+                            "Upstream request timed out, please retry"
+                        ) from e
+                    # Standard masking logic
+                    if self._mask_error_details:
+                        raise ToolError(f"Error calling tool {name!r}") from e
+>                   raise ToolError(f"Error calling tool {name!r}: {e}") from e
+E                   fastmcp.exceptions.ToolError: Error calling tool 'research': The ScriptEngine API is not answering on http://127.0.0.1:8000/context. Start it with: python -m scriptengine.api.main
+
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/server.py:1555: ToolError
+----------------------------- Captured stderr call -----------------------------
+[09/30/26 07:19:35] Error calling tool 'research'                               
+                    ╭─────────── Traceback (most recent call last) ────────────╮
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/httpx/_transports/default.py:101 in    │
+                    │ map_httpcore_exceptions                                  │
+                    │                                                          │
+                    │    98 │   if len(HTTPCORE_EXC_MAP) == 0:                 │
+                    │    99 │   │   HTTPCORE_EXC_MAP = _load_httpcore_exceptio │
+                    │   100 │   try:                                           │
+                    │ ❱ 101 │   │   yield                                      │
+                    │   102 │   except Exception as exc:                       │
+                    │   103 │   │   mapped_exc = None                          │
+                    │   104                                                    │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/httpx/_transports/default.py:250 in    │
+                    │ handle_request                                           │
+                    │                                                          │
+                    │   247 │   │   │   extensions=request.extensions,         │
+                    │   248 │   │   )                                          │
+                    │   249 │   │   with map_httpcore_exceptions():            │
+                    │ ❱ 250 │   │   │   resp = self._pool.handle_request(req)  │
+                    │   251 │   │                                              │
+                    │   252 │   │   assert isinstance(resp.stream, typing.Iter │
+                    │   253                                                    │
+                    │                                                          │
+                    │                 ... 6 frames hidden ...                  │
+                    │                                                          │
+                    │ /usr/lib/python3.12/contextlib.py:158 in __exit__        │
+                    │                                                          │
+                    │   155 │   │   │   │   # tell if we get the same exceptio │
+                    │   156 │   │   │   │   value = typ()                      │
+                    │   157 │   │   │   try:                                   │
+                    │ ❱ 158 │   │   │   │   self.gen.throw(value)              │
+                    │   159 │   │   │   except StopIteration as exc:           │
+                    │   160 │   │   │   │   # Suppress StopIteration *unless*  │
+                    │   161 │   │   │   │   # was passed to throw().  This pre │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/httpcore/_exceptions.py:14 in          │
+                    │ map_exceptions                                           │
+                    │                                                          │
+                    │   11 │   except Exception as exc:  # noqa: PIE786        │
+                    │   12 │   │   for from_exc, to_exc in map.items():        │
+                    │   13 │   │   │   if isinstance(exc, from_exc):           │
+                    │ ❱ 14 │   │   │   │   raise to_exc(exc) from exc          │
+                    │   15 │   │   raise  # pragma: nocover                    │
+                    │   16                                                     │
+                    │   17                                                     │
+                    ╰──────────────────────────────────────────────────────────╯
+                    ConnectError: [Errno 111] Connection refused                
+                                                                                
+                    The above exception was the direct cause of the following   
+                    exception:                                                  
+                                                                                
+                    ╭─────────── Traceback (most recent call last) ────────────╮
+                    │ /home/goblin/ScriptEngine/scriptengine/mcp/server.py:94  │
+                    │ in research                                              │
+                    │                                                          │
+                    │    91 │   try:                                           │
+                    │    92 │   │   # Generous: a service that has not answere │
+                    │    93 │   │   # embedder and reranker on this first call │
+                    │ ❱  94 │   │   response = httpx.post(url, json=payload, t │
+                    │    95 │   except httpx.ConnectError as error:            │
+                    │    96 │   │   raise ValueError(                          │
+                    │    97 │   │   │   f"The ScriptEngine API is not answerin │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/httpx/_api.py:304 in post              │
+                    │                                                          │
+                    │   301 │                                                  │
+                    │   302 │   **Parameters**: See `httpx.request`.           │
+                    │   303 │   """                                            │
+                    │ ❱ 304 │   return request(                                │
+                    │   305 │   │   "POST",                                    │
+                    │   306 │   │   url,                                       │
+                    │   307 │   │   content=content,                           │
+                    │                                                          │
+                    │                 ... 7 frames hidden ...                  │
+                    │                                                          │
+                    │ /usr/lib/python3.12/contextlib.py:158 in __exit__        │
+                    │                                                          │
+                    │   155 │   │   │   │   # tell if we get the same exceptio │
+                    │   156 │   │   │   │   value = typ()                      │
+                    │   157 │   │   │   try:                                   │
+                    │ ❱ 158 │   │   │   │   self.gen.throw(value)              │
+                    │   159 │   │   │   except StopIteration as exc:           │
+                    │   160 │   │   │   │   # Suppress StopIteration *unless*  │
+                    │   161 │   │   │   │   # was passed to throw().  This pre │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/httpx/_transports/default.py:118 in    │
+                    │ map_httpcore_exceptions                                  │
+                    │                                                          │
+                    │   115 │   │   │   raise                                  │
+                    │   116 │   │                                              │
+                    │   117 │   │   message = str(exc)                         │
+                    │ ❱ 118 │   │   raise mapped_exc(message) from exc         │
+                    │   119                                                    │
+                    │   120                                                    │
+                    │   121 class ResponseStream(SyncByteStream):              │
+                    ╰──────────────────────────────────────────────────────────╯
+                    ConnectError: [Errno 111] Connection refused                
+                                                                                
+                    The above exception was the direct cause of the following   
+                    exception:                                                  
+                                                                                
+                    ╭─────────── Traceback (most recent call last) ────────────╮
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/fastmcp/server/server.py:1492 in       │
+                    │ call_tool                                                │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/fastmcp/tools/base.py:440 in _run      │
+                    │                                                          │
+                    │                 ... 8 frames hidden ...                  │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/fastmcp/tools/function_tool.py:89 in   │
+                    │ wrapper                                                  │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/mcp/server.py:96  │
+                    │ in research                                              │
+                    │                                                          │
+                    │    93 │   │   # embedder and reranker on this first call │
+                    │    94 │   │   response = httpx.post(url, json=payload, t │
+                    │    95 │   except httpx.ConnectError as error:            │
+                    │ ❱  96 │   │   raise ValueError(                          │
+                    │    97 │   │   │   f"The ScriptEngine API is not answerin │
+                    │    98 │   │   │   "python -m scriptengine.api.main"      │
+                    │    99 │   │   ) from error                               │
+                    ╰──────────────────────────────────────────────────────────╯
+                    ValueError: The ScriptEngine API is not answering on        
+                    http://127.0.0.1:8000/context. Start it with: python -m     
+                    scriptengine.api.main                                       
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1541 Error calling tool 'research'
+Traceback (most recent call last):
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/goblin/ScriptEngine/scriptengine/mcp/server.py", line 94, in research
+    response = httpx.post(url, json=payload, timeout=180.0)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_api.py", line 304, in post
+    return request(
+           ^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_api.py", line 109, in request
+    return client.request(
+           ^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/server.py", line 1492, in call_tool
+    return await tool._run(arguments or {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/base.py", line 440, in _run
+    return await self.run(arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py", line 389, in run
+    result = await self._run_body(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py", line 430, in _run_body
+    result = await self._execute(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py", line 477, in _execute
+    result = await call_sync_fn_in_threadpool(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/utilities/async_utils.py", line 34, in call_sync_fn_in_threadpool
+    return await run_sync_in_threadpool(functools.partial(fn, *args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py", line 441, in validate_python
+    return self.validator.validate_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py", line 89, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/mcp/server.py", line 96, in research
+    raise ValueError(
+ValueError: The ScriptEngine API is not answering on http://127.0.0.1:8000/context. Start it with: python -m scriptengine.api.main
+____________________ test_research_rejects_unindexed_series ____________________
+
+    @pytest.mark.asyncio
+    async def test_research_rejects_unindexed_series():
+        # Over the wire the stdio server turns this into an error result for the
+        # client; call_tool in-process wraps it in a ToolError.
+>       with pytest.raises(ToolError, match="not indexed"):
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'not indexed'
+E         Actual message: "Error calling tool 'research': The ScriptEngine API is not answering on http://127.0.0.1:8000/context. Start it with: python -m scriptengine.api.main"
+
+tests/test_mcp_server.py:38: AssertionError
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'research'                               
+                    ╭─────────── Traceback (most recent call last) ────────────╮
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/httpx/_transports/default.py:101 in    │
+                    │ map_httpcore_exceptions                                  │
+                    │                                                          │
+                    │    98 │   if len(HTTPCORE_EXC_MAP) == 0:                 │
+                    │    99 │   │   HTTPCORE_EXC_MAP = _load_httpcore_exceptio │
+                    │   100 │   try:                                           │
+                    │ ❱ 101 │   │   yield                                      │
+                    │   102 │   except Exception as exc:                       │
+                    │   103 │   │   mapped_exc = None                          │
+                    │   104                                                    │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/httpx/_transports/default.py:250 in    │
+                    │ handle_request                                           │
+                    │                                                          │
+                    │   247 │   │   │   extensions=request.extensions,         │
+                    │   248 │   │   )                                          │
+                    │   249 │   │   with map_httpcore_exceptions():            │
+                    │ ❱ 250 │   │   │   resp = self._pool.handle_request(req)  │
+                    │   251 │   │                                              │
+                    │   252 │   │   assert isinstance(resp.stream, typing.Iter │
+                    │   253                                                    │
+                    │                                                          │
+                    │                 ... 6 frames hidden ...                  │
+                    │                                                          │
+                    │ /usr/lib/python3.12/contextlib.py:158 in __exit__        │
+                    │                                                          │
+                    │   155 │   │   │   │   # tell if we get the same exceptio │
+                    │   156 │   │   │   │   value = typ()                      │
+                    │   157 │   │   │   try:                                   │
+                    │ ❱ 158 │   │   │   │   self.gen.throw(value)              │
+                    │   159 │   │   │   except StopIteration as exc:           │
+                    │   160 │   │   │   │   # Suppress StopIteration *unless*  │
+                    │   161 │   │   │   │   # was passed to throw().  This pre │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/httpcore/_exceptions.py:14 in          │
+                    │ map_exceptions                                           │
+                    │                                                          │
+                    │   11 │   except Exception as exc:  # noqa: PIE786        │
+                    │   12 │   │   for from_exc, to_exc in map.items():        │
+                    │   13 │   │   │   if isinstance(exc, from_exc):           │
+                    │ ❱ 14 │   │   │   │   raise to_exc(exc) from exc          │
+                    │   15 │   │   raise  # pragma: nocover                    │
+                    │   16                                                     │
+                    │   17                                                     │
+                    ╰──────────────────────────────────────────────────────────╯
+                    ConnectError: [Errno 111] Connection refused                
+                                                                                
+                    The above exception was the direct cause of the following   
+                    exception:                                                  
+                                                                                
+                    ╭─────────── Traceback (most recent call last) ────────────╮
+                    │ /home/goblin/ScriptEngine/scriptengine/mcp/server.py:94  │
+                    │ in research                                              │
+                    │                                                          │
+                    │    91 │   try:                                           │
+                    │    92 │   │   # Generous: a service that has not answere │
+                    │    93 │   │   # embedder and reranker on this first call │
+                    │ ❱  94 │   │   response = httpx.post(url, json=payload, t │
+                    │    95 │   except httpx.ConnectError as error:            │
+                    │    96 │   │   raise ValueError(                          │
+                    │    97 │   │   │   f"The ScriptEngine API is not answerin │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/httpx/_api.py:304 in post              │
+                    │                                                          │
+                    │   301 │                                                  │
+                    │   302 │   **Parameters**: See `httpx.request`.           │
+                    │   303 │   """                                            │
+                    │ ❱ 304 │   return request(                                │
+                    │   305 │   │   "POST",                                    │
+                    │   306 │   │   url,                                       │
+                    │   307 │   │   content=content,                           │
+                    │                                                          │
+                    │                 ... 7 frames hidden ...                  │
+                    │                                                          │
+                    │ /usr/lib/python3.12/contextlib.py:158 in __exit__        │
+                    │                                                          │
+                    │   155 │   │   │   │   # tell if we get the same exceptio │
+                    │   156 │   │   │   │   value = typ()                      │
+                    │   157 │   │   │   try:                                   │
+                    │ ❱ 158 │   │   │   │   self.gen.throw(value)              │
+                    │   159 │   │   │   except StopIteration as exc:           │
+                    │   160 │   │   │   │   # Suppress StopIteration *unless*  │
+                    │   161 │   │   │   │   # was passed to throw().  This pre │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/httpx/_transports/default.py:118 in    │
+                    │ map_httpcore_exceptions                                  │
+                    │                                                          │
+                    │   115 │   │   │   raise                                  │
+                    │   116 │   │                                              │
+                    │   117 │   │   message = str(exc)                         │
+                    │ ❱ 118 │   │   raise mapped_exc(message) from exc         │
+                    │   119                                                    │
+                    │   120                                                    │
+                    │   121 class ResponseStream(SyncByteStream):              │
+                    ╰──────────────────────────────────────────────────────────╯
+                    ConnectError: [Errno 111] Connection refused                
+                                                                                
+                    The above exception was the direct cause of the following   
+                    exception:                                                  
+                                                                                
+                    ╭─────────── Traceback (most recent call last) ────────────╮
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/fastmcp/server/server.py:1492 in       │
+                    │ call_tool                                                │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/fastmcp/tools/base.py:440 in _run      │
+                    │                                                          │
+                    │                 ... 8 frames hidden ...                  │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/fastmcp/tools/function_tool.py:89 in   │
+                    │ wrapper                                                  │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/mcp/server.py:96  │
+                    │ in research                                              │
+                    │                                                          │
+                    │    93 │   │   # embedder and reranker on this first call │
+                    │    94 │   │   response = httpx.post(url, json=payload, t │
+                    │    95 │   except httpx.ConnectError as error:            │
+                    │ ❱  96 │   │   raise ValueError(                          │
+                    │    97 │   │   │   f"The ScriptEngine API is not answerin │
+                    │    98 │   │   │   "python -m scriptengine.api.main"      │
+                    │    99 │   │   ) from error                               │
+                    ╰──────────────────────────────────────────────────────────╯
+                    ValueError: The ScriptEngine API is not answering on        
+                    http://127.0.0.1:8000/context. Start it with: python -m     
+                    scriptengine.api.main                                       
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1541 Error calling tool 'research'
+Traceback (most recent call last):
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/goblin/ScriptEngine/scriptengine/mcp/server.py", line 94, in research
+    response = httpx.post(url, json=payload, timeout=180.0)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_api.py", line 304, in post
+    return request(
+           ^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_api.py", line 109, in request
+    return client.request(
+           ^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/server.py", line 1492, in call_tool
+    return await tool._run(arguments or {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/base.py", line 440, in _run
+    return await self.run(arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py", line 389, in run
+    result = await self._run_body(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py", line 430, in _run_body
+    result = await self._execute(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py", line 477, in _execute
+    result = await call_sync_fn_in_threadpool(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/utilities/async_utils.py", line 34, in call_sync_fn_in_threadpool
+    return await run_sync_in_threadpool(functools.partial(fn, *args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py", line 441, in validate_python
+    return self.validator.validate_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py", line 89, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/mcp/server.py", line 96, in research
+    raise ValueError(
+ValueError: The ScriptEngine API is not answering on http://127.0.0.1:8000/context. Start it with: python -m scriptengine.api.main
+___________________ test_research_bare_character_name_is_qa ____________________
+
+    @contextlib.contextmanager
+    def map_httpcore_exceptions() -> typing.Iterator[None]:
+        global HTTPCORE_EXC_MAP
+        if len(HTTPCORE_EXC_MAP) == 0:
+            HTTPCORE_EXC_MAP = _load_httpcore_exceptions()
+        try:
+>           yield
+
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py:250: in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py:256: in handle_request
+    raise exc from None
+scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py:236: in handle_request
+    response = connection.handle_request(
+scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py:101: in handle_request
+    raise exc
+scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py:78: in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py:124: in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py:207: in connect_tcp
+    with map_exceptions(exc_map):
+/usr/lib/python3.12/contextlib.py:158: in __exit__
+    self.gen.throw(value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+map = {<class 'TimeoutError'>: <class 'httpcore.ConnectTimeout'>, <class 'OSError'>: <class 'httpcore.ConnectError'>}
+
+    @contextlib.contextmanager
+    def map_exceptions(map: ExceptionMapping) -> typing.Iterator[None]:
+        try:
+            yield
+        except Exception as exc:  # noqa: PIE786
+            for from_exc, to_exc in map.items():
+                if isinstance(exc, from_exc):
+>                   raise to_exc(exc) from exc
+E                   httpcore.ConnectError: [Errno 111] Connection refused
+
+scriptengine/.venv/lib/python3.12/site-packages/httpcore/_exceptions.py:14: ConnectError
+
+The above exception was the direct cause of the following exception:
+
+subject = 'Maki Zenin', series = 'jjk', mode = 'auto', words = 2000
+intro = True, token_budget = 0
+
+    @mcp.tool()
+    def research(
+        subject: str,
+        series: str = "jjk",
+        mode: str = "auto",
+        words: int = 6000,
+        intro: bool = True,
+        token_budget: int = 0,
+    ) -> dict[str, Any]:
+        """Research a script topic.
+    
+        Returns the ordered, cited context for `subject` (the same bundle
+        `POST /context` serves) plus `prompt`, the bundle rendered as plain text
+        with the house writing rules appended. Write the script from that prompt:
+        it states the only chapter/episode numbers you may tag with.
+    
+        `mode` is auto (the engine reads the topic: "Every Rank of Curse" is a
+        roster, anything else is a narrative), narrative, roster or qa. `words` is
+        the target script length; the context budget is `words * 8` unless
+        `token_budget` is given.
+    
+        Needs the API up: `python -m scriptengine.api.main`.
+        """
+        settings = get_settings()
+        url = f"http://{settings.api_host}:{settings.api_port}/context"
+        payload = {
+            "series": series,
+            "query": subject,
+            "mode": mode,
+            "token_budget": token_budget or _budget_for(words),
+            "top_k": 12,
+            "as_prompt": True,
+            "words": words,
+            "intro": intro,
+            "rules": True,
+        }
+        try:
+            # Generous: a service that has not answered since it started loads the
+            # embedder and reranker on this first call.
+>           response = httpx.post(url, json=payload, timeout=180.0)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+scriptengine/mcp/server.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_api.py:304: in post
+    return request(
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_api.py:109: in request
+    return client.request(
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py:249: in handle_request
+    with map_httpcore_exceptions():
+/usr/lib/python3.12/contextlib.py:158: in __exit__
+    self.gen.throw(value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    @contextlib.contextmanager
+    def map_httpcore_exceptions() -> typing.Iterator[None]:
+        global HTTPCORE_EXC_MAP
+        if len(HTTPCORE_EXC_MAP) == 0:
+            HTTPCORE_EXC_MAP = _load_httpcore_exceptions()
+        try:
+            yield
+        except Exception as exc:
+            mapped_exc = None
+    
+            for from_exc, to_exc in HTTPCORE_EXC_MAP.items():
+                if not isinstance(exc, from_exc):
+                    continue
+                # We want to map to the most specific exception we can find.
+                # Eg if `exc` is an `httpcore.ReadTimeout`, we want to map to
+                # `httpx.ReadTimeout`, not just `httpx.TimeoutException`.
+                if mapped_exc is None or issubclass(to_exc, mapped_exc):
+                    mapped_exc = to_exc
+    
+            if mapped_exc is None:  # pragma: no cover
+                raise
+    
+            message = str(exc)
+>           raise mapped_exc(message) from exc
+E           httpx.ConnectError: [Errno 111] Connection refused
+
+scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py:118: ConnectError
+
+The above exception was the direct cause of the following exception:
+
+self = FastMCP('scriptengine'), name = 'research'
+arguments = {'subject': 'Maki Zenin', 'series': 'jjk', 'words': 2000}
+version = None, run_middleware = False
+
+    async def call_tool(
+        self,
+        name: str,
+        arguments: dict[str, Any] | None = None,
+        *,
+        version: VersionSpec | None = None,
+        run_middleware: bool = True,
+    ) -> ToolResult:
+        """Call a tool by name.
+    
+        This is the public API for executing tools. By default, middleware is applied.
+    
+        Args:
+            name: The tool name
+            arguments: Tool arguments (optional)
+            version: Specific version to call. If None, calls highest version.
+            run_middleware: If True (default), apply the middleware chain.
+                Set to False when called from middleware to avoid re-applying.
+    
+        Returns:
+            ToolResult.
+    
+        A guard tool that requests client input (SEP-2322 multi-round-trip)
+        returns an ``InputRequiredToolResult`` (a ``ToolResult`` subclass); it
+        flows back through the middleware chain as an ordinary result and the
+        wire handler unwraps it into an ``InputRequiredResult`` on the response.
+    
+        Raises:
+            NotFoundError: If tool not found or disabled
+            ToolError: If tool execution fails
+            ValidationError: If arguments fail validation
+        """
+        # Note: fn_key enrichment happens here after finding the tool.
+        # For mounted servers, the parent's provider sets fn_key to the
+        # namespaced key before delegating, ensuring correct Docket routing.
+    
+        from fastmcp.server.providers.addressing import (
+            parse_hashed_backend_name,
+        )
+    
+        # Two routing paths:
+        #   1. Hashed-name path — backend tools that opted into
+        #      app-callable visibility. Recognized by their
+        #      `<hash>_<local_name>` format and resolved via the
+        #      reverse-hash map. Address is known eagerly.
+        #   2. Display-name path — everything else. Goes through normal
+        #      `get_tool` aggregation/transforms. Address is determined
+        #      after resolution by walking the registry.
+        async with fastmcp.server.context.Context(fastmcp=self) as ctx:
+            if run_middleware:
+                mw_context = MiddlewareContext[CallToolRequestParams](
+                    message=mcp_types.CallToolRequestParams(
+                        name=name,
+                        arguments=arguments or {},
+                        # Reflect the continuation fields (SEP-2322) so middleware
+                        # reading `context.message` sees a continuation round as
+                        # such, not as an initial call. These are recovered from
+                        # the raw wire request (unsealed to plaintext by the
+                        # request-state boundary); they drive middleware
+                        # visibility only — `call_next` routes on name/arguments.
+                        input_responses=ctx.input_responses,
+                        request_state=ctx.request_state,
+                        _meta=_version_request_meta(version),
+                    ),
+                    source="client",
+                    type="request",
+                    method="tools/call",
+                    fastmcp_context=ctx,
+                )
+                # Extension tools/call interceptors compose here, at the
+                # innermost point of dispatch: the FastMCP middleware chain wraps
+                # the whole thing (so it observes every call), and the
+                # interceptors sit between it and the tool body (so each is the
+                # last gate before execution).
+                dispatched = await self._dispatch_component_middleware(
+                    context=mw_context,
+                    call_next=self._compose_tool_call_interceptors(
+                        lambda context: self.call_tool(
+                            context.message.name,
+                            context.message.arguments or {},
+                            version=version,
+                            run_middleware=False,
+                        )
+                    ),
+                )
+                # Above the chain, so a Prefab payload is re-addressed however
+                # it was produced — middleware can answer a call itself, and
+                # such a result never reaches the core path below.
+                return await self._rebind_prefab_tool_names(dispatched)
+    
+            # Core logic: find and execute tool
+            with server_span(
+                f"tools/call {name}",
+                "tools/call",
+                self.name,
+                "tool",
+                name,
+                tool_name=name,
+            ) as span:
+                # Try normal display-name resolution first.
+                tool: Tool | None = await self.get_tool(name, version=version)
+    
+                # If that fails, try hashed-name dispatch. This walks
+                # the provider tree recursively (same pattern as the old
+                # get_app_tool) looking for a tool whose stored hash
+                # matches the parsed prefix.
+                if tool is None:
+                    hashed = parse_hashed_backend_name(name)
+                    if hashed is not None:
+                        digest, local_name = hashed
+                        tool = await self.get_tool_by_hash(digest, local_name)
+                        if tool is not None:
+                            # Auth still applies on the bypass path.
+                            skip_auth, token = _get_auth_context()
+                            if not skip_auth and tool.auth is not None:
+                                try:
+                                    auth_ctx = AuthContext(token=token, component=tool)
+                                    if not await run_auth_checks(tool.auth, auth_ctx):
+                                        raise NotFoundError(f"Unknown tool: {name!r}")
+                                except AuthorizationError:
+                                    raise NotFoundError(
+                                        f"Unknown tool: {name!r}"
+                                    ) from None
+    
+                if tool is None:
+                    raise NotFoundError(f"Unknown tool: {name!r}")
+                span.set_attributes(tool.get_span_attributes())
+                try:
+>                   return await tool._run(arguments or {})
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/server.py:1492: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/base.py:440: in _run
+    return await self.run(arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py:389: in run
+    result = await self._run_body(
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py:430: in _run_body
+    result = await self._execute(
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py:477: in _execute
+    result = await call_sync_fn_in_threadpool(
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/utilities/async_utils.py:34: in call_sync_fn_in_threadpool
+    return await run_sync_in_threadpool(functools.partial(fn, *args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/anyio/to_thread.py:65: in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+scriptengine/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py:2641: in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py:1033: in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py:441: in validate_python
+    return self.validator.validate_python(
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py:89: in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+subject = 'Maki Zenin', series = 'jjk', mode = 'auto', words = 2000
+intro = True, token_budget = 0
+
+    @mcp.tool()
+    def research(
+        subject: str,
+        series: str = "jjk",
+        mode: str = "auto",
+        words: int = 6000,
+        intro: bool = True,
+        token_budget: int = 0,
+    ) -> dict[str, Any]:
+        """Research a script topic.
+    
+        Returns the ordered, cited context for `subject` (the same bundle
+        `POST /context` serves) plus `prompt`, the bundle rendered as plain text
+        with the house writing rules appended. Write the script from that prompt:
+        it states the only chapter/episode numbers you may tag with.
+    
+        `mode` is auto (the engine reads the topic: "Every Rank of Curse" is a
+        roster, anything else is a narrative), narrative, roster or qa. `words` is
+        the target script length; the context budget is `words * 8` unless
+        `token_budget` is given.
+    
+        Needs the API up: `python -m scriptengine.api.main`.
+        """
+        settings = get_settings()
+        url = f"http://{settings.api_host}:{settings.api_port}/context"
+        payload = {
+            "series": series,
+            "query": subject,
+            "mode": mode,
+            "token_budget": token_budget or _budget_for(words),
+            "top_k": 12,
+            "as_prompt": True,
+            "words": words,
+            "intro": intro,
+            "rules": True,
+        }
+        try:
+            # Generous: a service that has not answered since it started loads the
+            # embedder and reranker on this first call.
+            response = httpx.post(url, json=payload, timeout=180.0)
+        except httpx.ConnectError as error:
+>           raise ValueError(
+                f"The ScriptEngine API is not answering on {url}. Start it with: "
+                "python -m scriptengine.api.main"
+            ) from error
+E           ValueError: The ScriptEngine API is not answering on http://127.0.0.1:8000/context. Start it with: python -m scriptengine.api.main
+
+scriptengine/mcp/server.py:96: ValueError
+
+The above exception was the direct cause of the following exception:
+
+    @pytest.mark.asyncio
+    async def test_research_bare_character_name_is_qa():
+        # A bare name routes qa (the router's bare-name rule: a name that asks
+        # nothing is a lookup, not a story - router.py "A bare name ... is a
+        # lookup, not a story"). Auto mode delegates to the router, so the
+        # bundle's mode is qa, not narrative.
+>       result = await mcp.call_tool(
+            "research",
+            {"subject": "Maki Zenin", "series": "jjk", "words": 2000},
+        )
+
+tests/test_mcp_server.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/server.py:1438: in call_tool
+    dispatched = await self._dispatch_component_middleware(
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/server.py:596: in _dispatch_component_middleware
+    return await self._run_middleware(context, call_next, phase="all")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/server.py:575: in _run_middleware
+    return await chain(context)
+           ^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/server.py:570: in wrapped
+    return await mw(context, call_next)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/middleware/middleware.py:158: in __call__
+    return await handler_chain(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/middleware/middleware.py:131: in wrapper
+    return await handler(context, call_next=call_next)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/middleware/middleware.py:209: in on_message
+    return await call_next(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/middleware/middleware.py:131: in wrapper
+    return await handler(context, call_next=call_next)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/middleware/middleware.py:216: in on_request
+    return await call_next(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/middleware/middleware.py:131: in wrapper
+    return await handler(context, call_next=call_next)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/middleware/middleware.py:244: in on_call_tool
+    return await call_next(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FastMCP('scriptengine'), name = 'research'
+arguments = {'subject': 'Maki Zenin', 'series': 'jjk', 'words': 2000}
+version = None, run_middleware = False
+
+    async def call_tool(
+        self,
+        name: str,
+        arguments: dict[str, Any] | None = None,
+        *,
+        version: VersionSpec | None = None,
+        run_middleware: bool = True,
+    ) -> ToolResult:
+        """Call a tool by name.
+    
+        This is the public API for executing tools. By default, middleware is applied.
+    
+        Args:
+            name: The tool name
+            arguments: Tool arguments (optional)
+            version: Specific version to call. If None, calls highest version.
+            run_middleware: If True (default), apply the middleware chain.
+                Set to False when called from middleware to avoid re-applying.
+    
+        Returns:
+            ToolResult.
+    
+        A guard tool that requests client input (SEP-2322 multi-round-trip)
+        returns an ``InputRequiredToolResult`` (a ``ToolResult`` subclass); it
+        flows back through the middleware chain as an ordinary result and the
+        wire handler unwraps it into an ``InputRequiredResult`` on the response.
+    
+        Raises:
+            NotFoundError: If tool not found or disabled
+            ToolError: If tool execution fails
+            ValidationError: If arguments fail validation
+        """
+        # Note: fn_key enrichment happens here after finding the tool.
+        # For mounted servers, the parent's provider sets fn_key to the
+        # namespaced key before delegating, ensuring correct Docket routing.
+    
+        from fastmcp.server.providers.addressing import (
+            parse_hashed_backend_name,
+        )
+    
+        # Two routing paths:
+        #   1. Hashed-name path — backend tools that opted into
+        #      app-callable visibility. Recognized by their
+        #      `<hash>_<local_name>` format and resolved via the
+        #      reverse-hash map. Address is known eagerly.
+        #   2. Display-name path — everything else. Goes through normal
+        #      `get_tool` aggregation/transforms. Address is determined
+        #      after resolution by walking the registry.
+        async with fastmcp.server.context.Context(fastmcp=self) as ctx:
+            if run_middleware:
+                mw_context = MiddlewareContext[CallToolRequestParams](
+                    message=mcp_types.CallToolRequestParams(
+                        name=name,
+                        arguments=arguments or {},
+                        # Reflect the continuation fields (SEP-2322) so middleware
+                        # reading `context.message` sees a continuation round as
+                        # such, not as an initial call. These are recovered from
+                        # the raw wire request (unsealed to plaintext by the
+                        # request-state boundary); they drive middleware
+                        # visibility only — `call_next` routes on name/arguments.
+                        input_responses=ctx.input_responses,
+                        request_state=ctx.request_state,
+                        _meta=_version_request_meta(version),
+                    ),
+                    source="client",
+                    type="request",
+                    method="tools/call",
+                    fastmcp_context=ctx,
+                )
+                # Extension tools/call interceptors compose here, at the
+                # innermost point of dispatch: the FastMCP middleware chain wraps
+                # the whole thing (so it observes every call), and the
+                # interceptors sit between it and the tool body (so each is the
+                # last gate before execution).
+                dispatched = await self._dispatch_component_middleware(
+                    context=mw_context,
+                    call_next=self._compose_tool_call_interceptors(
+                        lambda context: self.call_tool(
+                            context.message.name,
+                            context.message.arguments or {},
+                            version=version,
+                            run_middleware=False,
+                        )
+                    ),
+                )
+                # Above the chain, so a Prefab payload is re-addressed however
+                # it was produced — middleware can answer a call itself, and
+                # such a result never reaches the core path below.
+                return await self._rebind_prefab_tool_names(dispatched)
+    
+            # Core logic: find and execute tool
+            with server_span(
+                f"tools/call {name}",
+                "tools/call",
+                self.name,
+                "tool",
+                name,
+                tool_name=name,
+            ) as span:
+                # Try normal display-name resolution first.
+                tool: Tool | None = await self.get_tool(name, version=version)
+    
+                # If that fails, try hashed-name dispatch. This walks
+                # the provider tree recursively (same pattern as the old
+                # get_app_tool) looking for a tool whose stored hash
+                # matches the parsed prefix.
+                if tool is None:
+                    hashed = parse_hashed_backend_name(name)
+                    if hashed is not None:
+                        digest, local_name = hashed
+                        tool = await self.get_tool_by_hash(digest, local_name)
+                        if tool is not None:
+                            # Auth still applies on the bypass path.
+                            skip_auth, token = _get_auth_context()
+                            if not skip_auth and tool.auth is not None:
+                                try:
+                                    auth_ctx = AuthContext(token=token, component=tool)
+                                    if not await run_auth_checks(tool.auth, auth_ctx):
+                                        raise NotFoundError(f"Unknown tool: {name!r}")
+                                except AuthorizationError:
+                                    raise NotFoundError(
+                                        f"Unknown tool: {name!r}"
+                                    ) from None
+    
+                if tool is None:
+                    raise NotFoundError(f"Unknown tool: {name!r}")
+                span.set_attributes(tool.get_span_attributes())
+                try:
+                    return await tool._run(arguments or {})
+                except ValidationError as e:
+                    # Argument-validation failure (a bad call). FunctionTool
+                    # converts pydantic's call-validation error into fastmcp's
+                    # ValidationError (see #4128) so it can be filtered as a
+                    # client error. Log the underlying detail without a URL or
+                    # traceback, matching the previous pydantic-error logging.
+                    cause = e.__cause__
+                    detail = (
+                        cause.errors(include_url=False)
+                        if isinstance(cause, PydanticValidationError)
+                        else str(e)
+                    )
+                    logger.warning("Invalid arguments for tool %r: %s", name, detail)
+                    raise
+                except FastMCPError as e:
+                    logger.log(
+                        e.log_level, f"Error calling tool {name!r}", exc_info=False
+                    )
+                    raise
+                except PydanticValidationError as e:
+                    # A pydantic error that is NOT an argument-validation failure
+                    # (e.g. raised by a non-FunctionTool's own validation). Kept
+                    # for backward compatibility.
+                    logger.warning(
+                        "Invalid arguments for tool %r: %s",
+                        name,
+                        e.errors(include_url=False),
+                    )
+                    raise
+                except Exception as e:
+                    # Most MCPErrors raised under a tool describe how the call
+                    # went — a timeout, an upstream error a proxy forwarded —
+                    # and are masked into an `isError` result like any other
+                    # failure. A missing-client-capability error is different:
+                    # it says the request cannot be serviced at all, and
+                    # SEP-2575 requires it on the wire as -32021 (HTTP 400).
+                    # Flattening it into a result would drop the code and tell
+                    # the client the call had succeeded.
+                    if (
+                        isinstance(e, MCPError)
+                        and e.error.code == MISSING_REQUIRED_CLIENT_CAPABILITY
+                    ):
+                        logger.debug(
+                            "Tool %r requires a client capability the client did "
+                            "not declare",
+                            name,
+                        )
+                        raise
+                    logger.exception(f"Error calling tool {name!r}")
+                    # Handle actionable errors that should reach the LLM
+                    # even when masking is enabled
+                    if get_http_status_code(e) == 429:
+                        raise ToolError(
+                            "Rate limited by upstream API, please retry later"
+                        ) from e
+                    if is_timeout_error(e):
+                        raise ToolError(
+                            "Upstream request timed out, please retry"
+                        ) from e
+                    # Standard masking logic
+                    if self._mask_error_details:
+                        raise ToolError(f"Error calling tool {name!r}") from e
+>                   raise ToolError(f"Error calling tool {name!r}: {e}") from e
+E                   fastmcp.exceptions.ToolError: Error calling tool 'research': The ScriptEngine API is not answering on http://127.0.0.1:8000/context. Start it with: python -m scriptengine.api.main
+
+scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/server.py:1555: ToolError
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'research'                               
+                    ╭─────────── Traceback (most recent call last) ────────────╮
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/httpx/_transports/default.py:101 in    │
+                    │ map_httpcore_exceptions                                  │
+                    │                                                          │
+                    │    98 │   if len(HTTPCORE_EXC_MAP) == 0:                 │
+                    │    99 │   │   HTTPCORE_EXC_MAP = _load_httpcore_exceptio │
+                    │   100 │   try:                                           │
+                    │ ❱ 101 │   │   yield                                      │
+                    │   102 │   except Exception as exc:                       │
+                    │   103 │   │   mapped_exc = None                          │
+                    │   104                                                    │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/httpx/_transports/default.py:250 in    │
+                    │ handle_request                                           │
+                    │                                                          │
+                    │   247 │   │   │   extensions=request.extensions,         │
+                    │   248 │   │   )                                          │
+                    │   249 │   │   with map_httpcore_exceptions():            │
+                    │ ❱ 250 │   │   │   resp = self._pool.handle_request(req)  │
+                    │   251 │   │                                              │
+                    │   252 │   │   assert isinstance(resp.stream, typing.Iter │
+                    │   253                                                    │
+                    │                                                          │
+                    │                 ... 6 frames hidden ...                  │
+                    │                                                          │
+                    │ /usr/lib/python3.12/contextlib.py:158 in __exit__        │
+                    │                                                          │
+                    │   155 │   │   │   │   # tell if we get the same exceptio │
+                    │   156 │   │   │   │   value = typ()                      │
+                    │   157 │   │   │   try:                                   │
+                    │ ❱ 158 │   │   │   │   self.gen.throw(value)              │
+                    │   159 │   │   │   except StopIteration as exc:           │
+                    │   160 │   │   │   │   # Suppress StopIteration *unless*  │
+                    │   161 │   │   │   │   # was passed to throw().  This pre │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/httpcore/_exceptions.py:14 in          │
+                    │ map_exceptions                                           │
+                    │                                                          │
+                    │   11 │   except Exception as exc:  # noqa: PIE786        │
+                    │   12 │   │   for from_exc, to_exc in map.items():        │
+                    │   13 │   │   │   if isinstance(exc, from_exc):           │
+                    │ ❱ 14 │   │   │   │   raise to_exc(exc) from exc          │
+                    │   15 │   │   raise  # pragma: nocover                    │
+                    │   16                                                     │
+                    │   17                                                     │
+                    ╰──────────────────────────────────────────────────────────╯
+                    ConnectError: [Errno 111] Connection refused                
+                                                                                
+                    The above exception was the direct cause of the following   
+                    exception:                                                  
+                                                                                
+                    ╭─────────── Traceback (most recent call last) ────────────╮
+                    │ /home/goblin/ScriptEngine/scriptengine/mcp/server.py:94  │
+                    │ in research                                              │
+                    │                                                          │
+                    │    91 │   try:                                           │
+                    │    92 │   │   # Generous: a service that has not answere │
+                    │    93 │   │   # embedder and reranker on this first call │
+                    │ ❱  94 │   │   response = httpx.post(url, json=payload, t │
+                    │    95 │   except httpx.ConnectError as error:            │
+                    │    96 │   │   raise ValueError(                          │
+                    │    97 │   │   │   f"The ScriptEngine API is not answerin │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/httpx/_api.py:304 in post              │
+                    │                                                          │
+                    │   301 │                                                  │
+                    │   302 │   **Parameters**: See `httpx.request`.           │
+                    │   303 │   """                                            │
+                    │ ❱ 304 │   return request(                                │
+                    │   305 │   │   "POST",                                    │
+                    │   306 │   │   url,                                       │
+                    │   307 │   │   content=content,                           │
+                    │                                                          │
+                    │                 ... 7 frames hidden ...                  │
+                    │                                                          │
+                    │ /usr/lib/python3.12/contextlib.py:158 in __exit__        │
+                    │                                                          │
+                    │   155 │   │   │   │   # tell if we get the same exceptio │
+                    │   156 │   │   │   │   value = typ()                      │
+                    │   157 │   │   │   try:                                   │
+                    │ ❱ 158 │   │   │   │   self.gen.throw(value)              │
+                    │   159 │   │   │   except StopIteration as exc:           │
+                    │   160 │   │   │   │   # Suppress StopIteration *unless*  │
+                    │   161 │   │   │   │   # was passed to throw().  This pre │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/httpx/_transports/default.py:118 in    │
+                    │ map_httpcore_exceptions                                  │
+                    │                                                          │
+                    │   115 │   │   │   raise                                  │
+                    │   116 │   │                                              │
+                    │   117 │   │   message = str(exc)                         │
+                    │ ❱ 118 │   │   raise mapped_exc(message) from exc         │
+                    │   119                                                    │
+                    │   120                                                    │
+                    │   121 class ResponseStream(SyncByteStream):              │
+                    ╰──────────────────────────────────────────────────────────╯
+                    ConnectError: [Errno 111] Connection refused                
+                                                                                
+                    The above exception was the direct cause of the following   
+                    exception:                                                  
+                                                                                
+                    ╭─────────── Traceback (most recent call last) ────────────╮
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/fastmcp/server/server.py:1492 in       │
+                    │ call_tool                                                │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/fastmcp/tools/base.py:440 in _run      │
+                    │                                                          │
+                    │                 ... 8 frames hidden ...                  │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/.venv/lib/python3 │
+                    │ .12/site-packages/fastmcp/tools/function_tool.py:89 in   │
+                    │ wrapper                                                  │
+                    │                                                          │
+                    │ /home/goblin/ScriptEngine/scriptengine/mcp/server.py:96  │
+                    │ in research                                              │
+                    │                                                          │
+                    │    93 │   │   # embedder and reranker on this first call │
+                    │    94 │   │   response = httpx.post(url, json=payload, t │
+                    │    95 │   except httpx.ConnectError as error:            │
+                    │ ❱  96 │   │   raise ValueError(                          │
+                    │    97 │   │   │   f"The ScriptEngine API is not answerin │
+                    │    98 │   │   │   "python -m scriptengine.api.main"      │
+                    │    99 │   │   ) from error                               │
+                    ╰──────────────────────────────────────────────────────────╯
+                    ValueError: The ScriptEngine API is not answering on        
+                    http://127.0.0.1:8000/context. Start it with: python -m     
+                    scriptengine.api.main                                       
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1541 Error calling tool 'research'
+Traceback (most recent call last):
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/goblin/ScriptEngine/scriptengine/mcp/server.py", line 94, in research
+    response = httpx.post(url, json=payload, timeout=180.0)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_api.py", line 304, in post
+    return request(
+           ^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_api.py", line 109, in request
+    return client.request(
+           ^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/server/server.py", line 1492, in call_tool
+    return await tool._run(arguments or {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/base.py", line 440, in _run
+    return await self.run(arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py", line 389, in run
+    result = await self._run_body(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py", line 430, in _run_body
+    result = await self._execute(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py", line 477, in _execute
+    result = await call_sync_fn_in_threadpool(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/utilities/async_utils.py", line 34, in call_sync_fn_in_threadpool
+    return await run_sync_in_threadpool(functools.partial(fn, *args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py", line 441, in validate_python
+    return self.validator.validate_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/fastmcp/tools/function_tool.py", line 89, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/goblin/ScriptEngine/scriptengine/mcp/server.py", line 96, in research
+    raise ValueError(
+ValueError: The ScriptEngine API is not answering on http://127.0.0.1:8000/context. Start it with: python -m scriptengine.api.main
+_________ TestBackfill.test_section_signal_recovers_the_arc_named_rows _________
+
+self = <test_timeaxis.TestBackfill object at 0x7283e7512060>
+jjk_store = <scriptengine.stores.facts.FactStore object at 0x7283e58ef0b0>
+
+    def test_section_signal_recovers_the_arc_named_rows(self, jjk_store):
+        # The ledger: 995 events sit under arc-named sections on off-chain pages
+        # (mostly character/synopsis). The section signal places exactly those.
+        section_map = timeaxis.section_arc_index(jjk_store)
+        timeaxis.backfill_event_arc_index(jjk_store)
+        connection = jjk_store.connection
+        placed = 0
+        for sid, (pos, page) in section_map.items():
+            placed += connection.execute(
+                "SELECT COUNT(*) FROM events WHERE section_id = ? AND arc_key = ?"
+                " COLLATE NOCASE AND arc_index = ?",
+                (sid, page, pos),
+            ).fetchone()[0]
+>       assert placed == 995
+E       assert 2311 == 995
+
+tests/test_timeaxis.py:205: AssertionError
+___________ TestBackfill.test_citation_signal_places_the_cited_rows ____________
+
+self = <test_timeaxis.TestBackfill object at 0x7283e7512390>
+jjk_store = <scriptengine.stores.facts.FactStore object at 0x7283e58ef0b0>
+
+    def test_citation_signal_places_the_cited_rows(self, jjk_store):
+        # The third, weakest signal (R4): a row the page and section signals left
+        # off the axis is grounded by the wiki's own in-text citation -- the
+        # paragraph that states it, or a section cited at least twice into one
+        # arc. The tally counts rows placed by right, so a settled re-run reports
+        # the same number; the residue it cannot ground keeps arc_index NULL.
+        tally = timeaxis.backfill_event_arc_index(jjk_store)
+>       assert tally["citations"] == 90
+E       assert 1335 == 90
+
+tests/test_timeaxis.py:214: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_blind_panel_universe.py::test_drawn_panel_subjects_satisfy_their_class_filter
+FAILED tests/test_continuity.py::TestAdjudicatedArc::test_majority_share_is_bounded
+FAILED tests/test_continuity.py::TestRunGold::test_every_frozen_case_holds_against_the_live_store
+FAILED tests/test_continuity.py::TestRunGold::test_a_moved_event_breaks_its_case
+FAILED tests/test_mcp_server.py::test_research_returns_bundle_and_prompt - fa...
+FAILED tests/test_mcp_server.py::test_research_rejects_unindexed_series - Ass...
+FAILED tests/test_mcp_server.py::test_research_bare_character_name_is_qa - fa...
+FAILED tests/test_timeaxis.py::TestBackfill::test_section_signal_recovers_the_arc_named_rows
+FAILED tests/test_timeaxis.py::TestBackfill::test_citation_signal_places_the_cited_rows
+9 failed, 1481 passed, 2 xpassed in 302.49s (0:05:02)

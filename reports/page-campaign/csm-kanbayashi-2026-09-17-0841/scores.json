@@ -1,0 +1,101 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Kanbayashi?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Kanbayashi?",
+      "found": [],
+      "missing": [
+        "House Devil (formerly, coerced)"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Kanbayashi's gender?",
+      "id": "csm-pg-kanbayashi-001",
+      "subject": "Kanbayashi",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Kanbayashi?",
+      "id": "csm-pg-kanbayashi-002",
+      "subject": "Kanbayashi",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Kanbayashi's occupation?",
+      "id": "csm-pg-kanbayashi-003",
+      "subject": "Kanbayashi",
+      "accept": "all",
+      "expected": [
+        "Inn Owner"
+      ],
+      "found": [
+        "Inn Owner"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 0,
+    "canon_total": 1,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 1,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 1,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

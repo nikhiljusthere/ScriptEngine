@@ -1,0 +1,205 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the allies of Michiko Tendo?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 4,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Michiko Tendo?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Michiko Tendo?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 3,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Michiko Tendo?",
+      "found": [],
+      "missing": [
+        "Yutaro Kurose",
+        "Subaru",
+        "Denji",
+        "Punishment Devil"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the enemies of Michiko Tendo?",
+      "found": [],
+      "missing": [
+        "Aldo",
+        "Joey"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the affiliations of Michiko Tendo?",
+      "found": [],
+      "missing": [
+        "Public Safety Devil Hunters",
+        "Kyoto Division 1",
+        "Makima (postmortem)"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Michiko Tendo's name?",
+      "id": "csm-pg-michiko_tendo-001",
+      "subject": "Michiko Tendo",
+      "accept": "all",
+      "expected": [
+        "\u5929\u7ae5 \u30df\u30c1\u30b3"
+      ],
+      "found": [
+        "\u5929\u7ae5 \u30df\u30c1\u30b3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Michiko Tendo's name?",
+      "id": "csm-pg-michiko_tendo-002",
+      "subject": "Michiko Tendo",
+      "accept": "all",
+      "expected": [
+        "Tend\u014d Michiko"
+      ],
+      "found": [
+        "Tend\u014d Michiko"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Michiko Tendo's gender?",
+      "id": "csm-pg-michiko_tendo-003",
+      "subject": "Michiko Tendo",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Michiko Tendo's height?",
+      "id": "csm-pg-michiko_tendo-004",
+      "subject": "Michiko Tendo",
+      "accept": "all",
+      "expected": [
+        "175 cm (5'9\")"
+      ],
+      "found": [
+        "175 cm (5'9\")"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Michiko Tendo?",
+      "id": "csm-pg-michiko_tendo-005",
+      "subject": "Michiko Tendo",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Michiko Tendo's occupation?",
+      "id": "csm-pg-michiko_tendo-006",
+      "subject": "Michiko Tendo",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 0,
+    "canon_total": 9,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 3,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 3,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

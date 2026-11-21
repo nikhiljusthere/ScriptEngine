@@ -62,38 +62,25 @@ relaunch `serve_35b.sh`.
 `tools/train/`. NInfer serves exactly one name; a mismatch is an instant
 `model_not_found`. This already cost one restart.
 
-## 3. The method — this was decided, do not re-litigate
+## 3. The method — one window at a time, inline
 
-**Direct LLM calls for the row verdicts. Inline judgment for the missed-event
-pass and for genuinely ambiguous rows. A 5% blind audit before the full run.**
+Owner directive: **one window at a time, inline, no background LLM calls, no auto-verifiers.**
+For each window you do the full pipeline yourself:
 
-Why: `verify_row_wiki.py` already calls the model **once per row**, each with a
-fresh context holding only the passage, that row, its siblings, and a wiki card
-read straight from SQLite. That structure is the quality argument — it makes
-rule drift at row 6,000 and "this looks like the row I approved earlier"
-structurally impossible, and an inline session carries exactly that accumulated
-state as noise. The tooling is also already built and has run over 1,000+
-windows. Pool 1 is only ~1,764 rows total: under 2 hours at this speed, versus
-6,000+ judgment cycles that would not fit in any one context.
+1. **Read the passage** from the input file.
+2. **Fetch every related wiki page** — the subject and object of every candidate
+   row, plus any other named entities in the passage. Use
+   `tools/train/wiki_card.py "Subject" "verb" "Object"` for each end.
+3. **Confirm or deny each row** against the strict rules (§4 below), using the
+   wiki cards to check entity types. Default `no` — a row must be affirmatively
+   proven.
+4. **Missed-event pass:** re-read the passage once more for events none of the
+   drafts listed.
+5. **Save** one validated line per window.
+6. **Move to the next.**
 
-Where inline genuinely wins, and where you should spend your own attention:
-
-- **The missed-event pass.** Under-detection leaves no bad row for the mechanical
-  gate to catch. This needs a fresh reading of the passage.
-- **Ambiguous rows** — where the guideline and §5/§5a do not settle it.
-
-**Run the tools with `--workers 2`.** That matches `--max-concurrency 2`; a third
-worker only queues.
-
-```bash
-G=series/jjk/training/gold; T=series/jjk/training/v1/train.jsonl
-PY=scriptengine/.venv/bin/python
-$PY tools/train/verify_row_wiki.py --series jjk --data $T \
-  --cand $G/cand_q6_train.jsonl --out <out>.jsonl --workers 2
-```
-
-Defaults are already correct (`:18081`, `qwen3.6-35b-a3b-ninfer`). It resumes by
-itself: a window counts as done only when its line has `ok: true`.
+This is the method used to produce `gold600.jsonl`. It is correct for quality,
+slower for wall-clock, and exactly what the owner ordered.
 
 ## 4. The rules
 

@@ -1,0 +1,41 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is the history of Reze?",
+      "id": "csm-pg-reze_history-001",
+      "subject": "Reze/History",
+      "accept": "all",
+      "expected": [
+        "Reze was one of many children taken by the USSR and placed in a special government program to make super-soldiers dedicated to the country."
+      ],
+      "found": [
+        "Reze was one of many children taken by the USSR and placed in a special government program to make super-soldiers dedicated to the country."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 1,
+    "fact_present": 1
+  }
+}

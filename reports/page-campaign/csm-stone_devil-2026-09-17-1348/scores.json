@@ -1,0 +1,139 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Stone Devil?",
+      "set": "Every named technique of Stone Devil",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Stone Devil?",
+      "found": [
+        "Petrification"
+      ],
+      "missing": [],
+      "members": [
+        "Petrification"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Stone Devil's name?",
+      "id": "csm-pg-stone_devil-001",
+      "subject": "Stone Devil",
+      "accept": "all",
+      "expected": [
+        "\u77f3\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u77f3\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Stone Devil's name?",
+      "id": "csm-pg-stone_devil-002",
+      "subject": "Stone Devil",
+      "accept": "all",
+      "expected": [
+        "Ishi no Akuma"
+      ],
+      "found": [
+        "Ishi no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Stone Devil?",
+      "id": "csm-pg-stone_devil-003",
+      "subject": "Stone Devil",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Stone Devil's gender?",
+      "id": "csm-pg-stone_devil-004",
+      "subject": "Stone Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Stone Devil's occupation?",
+      "id": "csm-pg-stone_devil-005",
+      "subject": "Stone Devil",
+      "accept": "all",
+      "expected": [
+        "Contract Devil"
+      ],
+      "found": [
+        "Contract Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

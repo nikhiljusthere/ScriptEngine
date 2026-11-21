@@ -1,0 +1,41 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is the history of Fami?",
+      "id": "csm-pg-fami_history-001",
+      "subject": "Fami/History",
+      "accept": "all",
+      "expected": [
+        "At some point, the Famine Devil and her sisters alongside the Weapon Devils fought against Chainsaw Man in Hell."
+      ],
+      "found": [
+        "At some point, the Famine Devil and her sisters alongside the Weapon Devils fought against Chainsaw Man in Hell."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 1,
+    "fact_present": 1
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Darkness Devil?",
+      "set": "Every named technique of Darkness Devil",
+      "confidence": "declared",
+      "returned": 10,
+      "available": 10,
+      "canon": 10,
+      "found": 10,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Darkness Devil?",
+      "set": "Every enemy of Darkness Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Darkness Devil?",
+      "found": [
+        "Immense Speed",
+        "Immense Strength",
+        "Nigh-Absolute Immortality",
+        "Immense Healing Factor",
+        "Darkness Manipulation",
+        "Blade of Darkness",
+        "Force Manipulation",
+        "Regeneration Nullification",
+        "Shapeshifting",
+        "Devil Manifestation"
+      ],
+      "missing": [],
+      "members": [
+        "Blade of Darkness",
+        "Darkness Manipulation",
+        "Devil Manifestation",
+        "Force Manipulation",
+        "Immense Healing Factor",
+        "Immense Speed",
+        "Immense Strength",
+        "Nigh-Absolute Immortality",
+        "Regeneration Nullification",
+        "Shapeshifting"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Darkness Devil?",
+      "found": [
+        "Princi",
+        "Makima"
+      ],
+      "missing": [],
+      "members": [
+        "Makima",
+        "Princi"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Darkness Devil's name?",
+      "id": "csm-pg-darkness_devil-001",
+      "subject": "Darkness Devil",
+      "accept": "all",
+      "expected": [
+        "\u95c7\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u95c7\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Darkness Devil's name?",
+      "id": "csm-pg-darkness_devil-002",
+      "subject": "Darkness Devil",
+      "accept": "all",
+      "expected": [
+        "Yami no Akuma"
+      ],
+      "found": [
+        "Yami no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Darkness Devil?",
+      "id": "csm-pg-darkness_devil-003",
+      "subject": "Darkness Devil",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Darkness Devil?",
+      "id": "csm-pg-darkness_devil-004",
+      "subject": "Darkness Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Darkness Devil's gender?",
+      "id": "csm-pg-darkness_devil-005",
+      "subject": "Darkness Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Darkness Devil's occupation?",
+      "id": "csm-pg-darkness_devil-006",
+      "subject": "Darkness Devil",
+      "accept": "all",
+      "expected": [
+        "Primal Fear Wild Contract Devil"
+      ],
+      "found": [
+        "Primal Fear Wild Contract Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 12,
+    "canon_total": 12,
+    "canon_recall": 1.0,
+    "members_returned": 12,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

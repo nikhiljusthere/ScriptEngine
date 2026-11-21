@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for AIDS Devil's name?",
+      "id": "csm-pg-aids_devil-001",
+      "subject": "AIDS Devil",
+      "accept": "all",
+      "expected": [
+        "\u30a8\u30a4\u30ba\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u30a8\u30a4\u30ba\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of AIDS Devil's name?",
+      "id": "csm-pg-aids_devil-002",
+      "subject": "AIDS Devil",
+      "accept": "all",
+      "expected": [
+        "Eizu no Akuma"
+      ],
+      "found": [
+        "Eizu no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is AIDS Devil's gender?",
+      "id": "csm-pg-aids_devil-003",
+      "subject": "AIDS Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of AIDS Devil?",
+      "id": "csm-pg-aids_devil-004",
+      "subject": "AIDS Devil",
+      "accept": "all",
+      "expected": [
+        "Erased (original timeline)"
+      ],
+      "found": [
+        "Erased (original timeline)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

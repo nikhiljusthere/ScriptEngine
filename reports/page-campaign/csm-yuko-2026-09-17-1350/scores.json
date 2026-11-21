@@ -1,0 +1,237 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Yuko?",
+      "set": "Every named technique of Yuko",
+      "confidence": "declared",
+      "returned": 6,
+      "available": 6,
+      "canon": 6,
+      "found": 6,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Yuko?",
+      "set": "Every enemy of Yuko",
+      "confidence": "declared",
+      "returned": 7,
+      "available": 7,
+      "canon": 7,
+      "found": 7,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the families of Yuko?",
+      "set": "Every family of Yuko",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Yuko?",
+      "set": "Yuko's affiliations",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Yuko?",
+      "found": [
+        "Fire Devil Contract",
+        "Mind Reading",
+        "Sharp Claws",
+        "Devil Transformation",
+        "Enhanced Strength",
+        "Enhanced Speed"
+      ],
+      "missing": [],
+      "members": [
+        "Devil Transformation",
+        "Enhanced Speed",
+        "Enhanced Strength",
+        "Fire Devil Contract",
+        "Mind Reading",
+        "Sharp Claws"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Yuko?",
+      "found": [
+        "Yoru",
+        "Denji",
+        "Asa Mitaka",
+        "Fake Chainsaw Man",
+        "Seigi Akoku",
+        "Bat Devil",
+        "Furio"
+      ],
+      "missing": [],
+      "members": [
+        "Asa Mitaka",
+        "Bat Devil",
+        "Denji",
+        "Fake Chainsaw Man",
+        "Furio",
+        "Seigi Akoku",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the families of Yuko?",
+      "found": [
+        "Death Devil",
+        "Fami"
+      ],
+      "missing": [],
+      "members": [
+        "Death Devil",
+        "Fami"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Yuko?",
+      "found": [
+        "Fourth East High School",
+        "Devil Hunter Club"
+      ],
+      "missing": [],
+      "members": [
+        "Devil Hunter Club",
+        "Fourth East High School"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Yuko's name?",
+      "id": "csm-pg-yuko-001",
+      "subject": "Yuko",
+      "accept": "all",
+      "expected": [
+        "\u30e6\u30a6\u30b3"
+      ],
+      "found": [
+        "\u30e6\u30a6\u30b3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Yuko's name?",
+      "id": "csm-pg-yuko-002",
+      "subject": "Yuko",
+      "accept": "all",
+      "expected": [
+        "Y\u016bko"
+      ],
+      "found": [
+        "Y\u016bko"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Yuko's gender?",
+      "id": "csm-pg-yuko-003",
+      "subject": "Yuko",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Yuko?",
+      "id": "csm-pg-yuko-004",
+      "subject": "Yuko",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Yuko's occupation?",
+      "id": "csm-pg-yuko-005",
+      "subject": "Yuko",
+      "accept": "all",
+      "expected": [
+        "High School Student Devil Hunter"
+      ],
+      "found": [
+        "High School Student Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 17,
+    "canon_total": 17,
+    "canon_recall": 1.0,
+    "members_returned": 17,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Takashi Inoue's name?",
+      "id": "csm-pg-takashi_inoue-001",
+      "subject": "Takashi Inoue",
+      "accept": "all",
+      "expected": [
+        "\u4e95\u4e0a \u30bf\u30ab\u30b7"
+      ],
+      "found": [
+        "\u4e95\u4e0a \u30bf\u30ab\u30b7"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Takashi Inoue's name?",
+      "id": "csm-pg-takashi_inoue-002",
+      "subject": "Takashi Inoue",
+      "accept": "all",
+      "expected": [
+        "Inoue Takashi"
+      ],
+      "found": [
+        "Inoue Takashi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Takashi Inoue's gender?",
+      "id": "csm-pg-takashi_inoue-003",
+      "subject": "Takashi Inoue",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Takashi Inoue?",
+      "id": "csm-pg-takashi_inoue-004",
+      "subject": "Takashi Inoue",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Takashi Inoue's occupation?",
+      "id": "csm-pg-takashi_inoue-005",
+      "subject": "Takashi Inoue",
+      "accept": "all",
+      "expected": [
+        "Civilian"
+      ],
+      "found": [
+        "Civilian"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

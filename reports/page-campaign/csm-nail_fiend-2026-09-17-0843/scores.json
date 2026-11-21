@@ -1,0 +1,312 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Nail Fiend?",
+      "set": "Fiends",
+      "confidence": "exact",
+      "returned": 13,
+      "available": 13,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Nail Fiend?",
+      "set": "Fiends",
+      "confidence": "exact",
+      "returned": 13,
+      "available": 13,
+      "canon": 8,
+      "found": 2,
+      "recall": 0.25,
+      "precision": 0.154,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Nail Fiend?",
+      "set": "Fiends",
+      "confidence": "exact",
+      "returned": 13,
+      "available": 13,
+      "canon": 2,
+      "found": 1,
+      "recall": 0.5,
+      "precision": 0.077,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Nail Fiend?",
+      "set": "Fiends",
+      "confidence": "exact",
+      "returned": 13,
+      "available": 13,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Nail Fiend?",
+      "set": "Fiends (Affiliation)",
+      "confidence": "exact",
+      "returned": 13,
+      "available": 13,
+      "canon": 3,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Nail Fiend?",
+      "found": [],
+      "missing": [
+        "Enhanced Physique"
+      ],
+      "members": [
+        "Aki Hayakawa",
+        "Asa Mitaka",
+        "Beam",
+        "Cosmo",
+        "Galgali",
+        "Gun Devil",
+        "Loneliness Fiend",
+        "Long",
+        "Nail Fiend",
+        "Pingtsi",
+        "Power",
+        "Tsugihagi",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the allies of Nail Fiend?",
+      "found": [
+        "Asa Mitaka",
+        "Yoru"
+      ],
+      "missing": [
+        "Katana Man",
+        "Fami",
+        "Denji",
+        "Seigi Akoku",
+        "Haruka Iseumi",
+        "Nobana Higashiyama"
+      ],
+      "members": [
+        "Aki Hayakawa",
+        "Asa Mitaka",
+        "Beam",
+        "Cosmo",
+        "Galgali",
+        "Gun Devil",
+        "Loneliness Fiend",
+        "Long",
+        "Nail Fiend",
+        "Pingtsi",
+        "Power",
+        "Tsugihagi",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Nail Fiend?",
+      "found": [
+        "Asa Mitaka"
+      ],
+      "missing": [
+        "Quanxi"
+      ],
+      "members": [
+        "Aki Hayakawa",
+        "Asa Mitaka",
+        "Beam",
+        "Cosmo",
+        "Galgali",
+        "Gun Devil",
+        "Loneliness Fiend",
+        "Long",
+        "Nail Fiend",
+        "Pingtsi",
+        "Power",
+        "Tsugihagi",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Nail Fiend?",
+      "found": [],
+      "missing": [
+        "Nail (by Public Safety) Nail Devil"
+      ],
+      "members": [
+        "Aki Hayakawa",
+        "Asa Mitaka",
+        "Beam",
+        "Cosmo",
+        "Galgali",
+        "Gun Devil",
+        "Loneliness Fiend",
+        "Long",
+        "Nail Fiend",
+        "Pingtsi",
+        "Power",
+        "Tsugihagi",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Nail Fiend?",
+      "found": [],
+      "missing": [
+        "Public Safety Devil Hunters (formerly)",
+        "Tokyo Special Division 7 (formerly)",
+        "Katana Man"
+      ],
+      "members": [
+        "Yoru",
+        "Power",
+        "Aki Hayakawa",
+        "Beam",
+        "Galgali",
+        "Nail Fiend",
+        "Cosmo",
+        "Long",
+        "Pingtsi",
+        "Tsugihagi",
+        "Gun Devil",
+        "Asa Mitaka",
+        "Loneliness Fiend"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Nail Fiend's name?",
+      "id": "csm-pg-nail_fiend-001",
+      "subject": "Nail Fiend",
+      "accept": "all",
+      "expected": [
+        "\u91d8\u306e\u9b54\u4eba"
+      ],
+      "found": [
+        "\u91d8\u306e\u9b54\u4eba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Nail Fiend's name?",
+      "id": "csm-pg-nail_fiend-002",
+      "subject": "Nail Fiend",
+      "accept": "all",
+      "expected": [
+        "Kugi no Majin"
+      ],
+      "found": [
+        "Kugi no Majin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Nail Fiend's gender?",
+      "id": "csm-pg-nail_fiend-003",
+      "subject": "Nail Fiend",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Nail Fiend?",
+      "id": "csm-pg-nail_fiend-004",
+      "subject": "Nail Fiend",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Nail Fiend's occupation?",
+      "id": "csm-pg-nail_fiend-005",
+      "subject": "Nail Fiend",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter (formerly) Wild Fiend"
+      ],
+      "found": [
+        "Public Safety Devil Hunter (formerly) Wild Fiend"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 5,
+    "canon_found": 3,
+    "canon_total": 15,
+    "canon_recall": 0.2,
+    "members_returned": 65,
+    "exact_answers": 0,
+    "exact_of": 5,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0462,
+    "precision_over": "5/5",
+    "at_recall_zero": 3,
+    "at_recall_80": 0,
+    "confident_and_wrong": [
+      "What are all the named techniques of Nail Fiend?",
+      "What are all the allies of Nail Fiend?",
+      "What are all the aliases of Nail Fiend?",
+      "What are all the affiliations of Nail Fiend?"
+    ],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

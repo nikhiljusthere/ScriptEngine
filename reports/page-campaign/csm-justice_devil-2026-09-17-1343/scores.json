@@ -1,0 +1,169 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Justice Devil?",
+      "set": "Every named technique of Justice Devil",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Justice Devil?",
+      "set": "Justice Devil's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Justice Devil?",
+      "found": [
+        "Immense Speed",
+        "Immense Strength",
+        "Regeneration",
+        "Shapeshifting"
+      ],
+      "missing": [],
+      "members": [
+        "Immense Speed",
+        "Immense Strength",
+        "Regeneration",
+        "Shapeshifting"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Justice Devil?",
+      "found": [
+        "Falling Devil (Customer)"
+      ],
+      "missing": [],
+      "members": [
+        "Falling Devil (Customer)"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Justice Devil's name?",
+      "id": "csm-pg-justice_devil-001",
+      "subject": "Justice Devil",
+      "accept": "all",
+      "expected": [
+        "\u6b63\u7fa9\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u6b63\u7fa9\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Justice Devil's name?",
+      "id": "csm-pg-justice_devil-002",
+      "subject": "Justice Devil",
+      "accept": "all",
+      "expected": [
+        "Seigi no Akuma"
+      ],
+      "found": [
+        "Seigi no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Justice Devil's gender?",
+      "id": "csm-pg-justice_devil-003",
+      "subject": "Justice Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Justice Devil?",
+      "id": "csm-pg-justice_devil-004",
+      "subject": "Justice Devil",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Justice Devil's occupation?",
+      "id": "csm-pg-justice_devil-005",
+      "subject": "Justice Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Devil"
+      ],
+      "found": [
+        "Wild Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 5,
+    "canon_total": 5,
+    "canon_recall": 1.0,
+    "members_returned": 5,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

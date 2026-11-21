@@ -1,0 +1,113 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "Which saga does International Assassins arc belong to?",
+      "id": "csm-pg-international_assassins_arc-001",
+      "subject": "International Assassins arc",
+      "accept": "all",
+      "expected": [
+        "Public Safety Saga"
+      ],
+      "found": [
+        "Public Safety Saga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Which chapters are included in International Assassins arc?",
+      "id": "csm-pg-international_assassins_arc-002",
+      "subject": "International Assassins arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 53 - 70"
+      ],
+      "found": [
+        "Chapter 53 - 70"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Which episodes are included in International Assassins arc?",
+      "id": "csm-pg-international_assassins_arc-003",
+      "subject": "International Assassins arc",
+      "accept": "all",
+      "expected": [
+        "TBA"
+      ],
+      "found": [
+        "TBA"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before International Assassins arc?",
+      "id": "csm-pg-international_assassins_arc-004",
+      "subject": "International Assassins arc",
+      "accept": "all",
+      "expected": [
+        "Bomb Girl arc"
+      ],
+      "found": [
+        "Bomb Girl arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after International Assassins arc?",
+      "id": "csm-pg-international_assassins_arc-005",
+      "subject": "International Assassins arc",
+      "accept": "all",
+      "expected": [
+        "Gun Devil arc"
+      ],
+      "found": [
+        "Gun Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

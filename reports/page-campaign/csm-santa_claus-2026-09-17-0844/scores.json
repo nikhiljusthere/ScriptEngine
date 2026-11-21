@@ -1,0 +1,279 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Santa Claus?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 11,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Santa Claus?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 3,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the subordinates of Santa Claus?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the superiors of Santa Claus?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Santa Claus?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Santa Claus?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Santa Claus?",
+      "found": [],
+      "missing": [
+        "Doll Creation",
+        "Perfect Doll Creation",
+        "Mind Transfer",
+        "Curse Devil Contract",
+        "Hell Devil Contract",
+        "Enhanced Doll Devil Power",
+        "Enhanced Strength",
+        "Enhanced Speed",
+        "Enhanced Intelligence",
+        "Immense Regeneration",
+        "Devil Transformation"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the enemies of Santa Claus?",
+      "found": [],
+      "missing": [
+        "Denji",
+        "Quanxi",
+        "Cosmo"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the subordinates of Santa Claus?",
+      "found": [],
+      "missing": [
+        "Tolka",
+        "Makima"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the superiors of Santa Claus?",
+      "found": [],
+      "missing": [
+        "Tolka",
+        "Hell Devil"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the affiliations of Santa Claus?",
+      "found": [],
+      "missing": [
+        "Germany (possible ruse)"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the aliases of Santa Claus?",
+      "found": [],
+      "missing": [
+        "Santa Claus Master The Puppeteer Tolka\u2019s Master"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Santa Claus's name?",
+      "id": "csm-pg-santa_claus-001",
+      "subject": "Santa Claus",
+      "accept": "all",
+      "expected": [
+        "\u30b5\u30f3\u30bf\u30af\u30ed\u30fc\u30b9"
+      ],
+      "found": [
+        "\u30b5\u30f3\u30bf\u30af\u30ed\u30fc\u30b9"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Santa Claus's name?",
+      "id": "csm-pg-santa_claus-002",
+      "subject": "Santa Claus",
+      "accept": "all",
+      "expected": [
+        "Santa Kur\u014dsu"
+      ],
+      "found": [
+        "Santa Kur\u014dsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Santa Claus's gender?",
+      "id": "csm-pg-santa_claus-003",
+      "subject": "Santa Claus",
+      "accept": "all",
+      "expected": [
+        "Unknown Female (presumably)"
+      ],
+      "found": [
+        "Unknown Female (presumably)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Santa Claus?",
+      "id": "csm-pg-santa_claus-004",
+      "subject": "Santa Claus",
+      "accept": "all",
+      "expected": [
+        "Incapacitated"
+      ],
+      "found": [
+        "Incapacitated"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Santa Claus's occupation?",
+      "id": "csm-pg-santa_claus-005",
+      "subject": "Santa Claus",
+      "accept": "all",
+      "expected": [
+        "Private Devil Hunter"
+      ],
+      "found": [
+        "Private Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Santa Claus?",
+      "id": "csm-pg-santa_claus-006",
+      "subject": "Santa Claus",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 6,
+    "canon_found": 0,
+    "canon_total": 20,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 6,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "6/6",
+    "at_recall_zero": 6,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "scriptengine-intruder",
+  "description": "Rejects closed-set members that are not a named item of the requested set for the subject (text = precision_filter state JSON).",
+  "questions": {
+    "not_named_member": {
+      "type": "noul",
+      "instructions": "The text describes one candidate member of a requested set for a fiction-wiki subject (fields set_requested, subject, candidate, extracted_row, candidate_page, mentions_on_subject_pages). Is the candidate NOT a named member of that set for that subject (a generic trait, the wrong kind of thing, another character's, or non-canon)?",
+      "criteria": {"true": "Not a named member of the set for this subject", "false": "A named member of the set for this subject"}
+    }
+  },
+  "min_scores": {},
+  "reject_nouls": {"not_named_member": 0.9},
+  "min_confidence": 0.0
+}

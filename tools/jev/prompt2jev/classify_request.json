@@ -1,0 +1,126 @@
+{
+  "model": "jev-latest",
+  "state": {
+    "entity": {
+      "series": "db",
+      "title": "Spirit Bomb Super Saiyan",
+      "wiki_categories": "Saiyans, Supportive techniques, Techniques, Transformations",
+      "wiki_class_field": "Transformation",
+      "known_users": "Future Trunks, Goku, Ultra Fusion, Vegeta, Dragon Ball Fusions, Dragon Ball Z: Shin Budokai, Dragon Ball Xenoverse 2",
+      "inventor": "(none recorded)",
+      "description": "Spirit Bomb Super Saiyan is the result of a Super Saiyan becoming empowered via absorbing a Spirit Bomb."
+    }
+  },
+  "questions": {
+    "semantic_type": {
+      "type": "choice",
+      "instructions": {
+        "question": "What kind of entity is `entity.title` on this wiki?",
+        "focus": "Judge the entity itself, not the beings who happen to have used it."
+      },
+      "criteria": {
+        "technique": "A learned or performed move, attack or skill the being uses.",
+        "transformation": "A form the being's body reaches and changes into.",
+        "power_up": "A temporary boost that amplifies the being without being a form of its own.",
+        "fusion": "A being or state that exists only because two or more beings merged.",
+        "trait": "An inherent characteristic, physical property or innate feature, not something performed.",
+        "character": "A person or being.",
+        "race": "A species, race or clan.",
+        "item": "An object or artifact.",
+        "location": "A place or world.",
+        "organization": "A group, team or institution.",
+        "event": "A battle, arc or happening.",
+        "media": "An episode, chapter, film, game or other publication.",
+        "unknown": "None of the above, or the page does not say enough to tell."
+      }
+    },
+    "race_exclusive": {
+      "type": "noul",
+      "instructions": {
+        "question": "Can only members of one species, race or clan ever have `entity.title`?",
+        "focus": "Judge the entity itself, not the beings who happen to have used it."
+      },
+      "criteria": {
+        "true": "Only one race can have it. A form that needs a trigger (a full moon, a ritual) is still race-exclusive if only that race responds to the trigger.",
+        "false": "Beings of more than one race can have it, or it is not tied to race."
+      }
+    },
+    "biologically_intrinsic": {
+      "type": "noul",
+      "instructions": {
+        "question": "Does `entity.title` come from what the being is?",
+        "focus": "Judge the entity itself, not the beings who happen to have used it."
+      },
+      "criteria": {
+        "true": "It comes from the being's own nature. Latent potential that another character draws out is still intrinsic: the power was already theirs.",
+        "false": "It is learned, given, or comes from outside the being."
+      }
+    },
+    "externally_granted": {
+      "type": "noul",
+      "instructions": {
+        "question": "Does the power of `entity.title` itself come from a source outside the being?",
+        "focus": "Judge the entity itself, not the beings who happen to have used it."
+      },
+      "criteria": {
+        "true": "It comes from an artifact, a wish, a parasite, a serum, or absorbing another being's energy.",
+        "false": "It was already the being's; an outside condition at most triggers something the being already had."
+      }
+    },
+    "teachable": {
+      "type": "noul",
+      "instructions": {
+        "question": "Can another being learn `entity.title` given training or instruction?",
+        "focus": "Judge the entity itself, not the beings who happen to have used it."
+      },
+      "criteria": {
+        "true": "Others can learn it by training or instruction.",
+        "false": "It cannot be taught; it is innate, granted, or unique."
+      }
+    },
+    "stackable": {
+      "type": "noul",
+      "instructions": {
+        "question": "Can `entity.title` be active at the same time as another form, amplifying it?",
+        "focus": "Judge the entity itself, not the beings who happen to have used it."
+      },
+      "criteria": {
+        "true": "It is active on top of another form and amplifies it.",
+        "false": "It replaces the current form, or it is not a form-like state at all."
+      }
+    },
+    "temporary": {
+      "type": "noul",
+      "instructions": {
+        "question": "Does `entity.title` wear off on its own?",
+        "focus": "Judge the entity itself, not the beings who happen to have used it."
+      },
+      "criteria": {
+        "true": "It ends by itself after a time or once its energy is spent.",
+        "false": "It lasts until the being chooses to end it, or it is permanent."
+      }
+    },
+    "requires_artifact": {
+      "type": "noul",
+      "instructions": {
+        "question": "Does obtaining or keeping `entity.title` need an object?",
+        "focus": "Judge the entity itself, not the beings who happen to have used it."
+      },
+      "criteria": {
+        "true": "An object is needed to obtain it or keep it active.",
+        "false": "No object is needed."
+      }
+    },
+    "requires_fusion": {
+      "type": "noul",
+      "instructions": {
+        "question": "Does `entity.title` exist only because two or more beings merged?",
+        "focus": "Judge the entity itself, not the beings who happen to have used it."
+      },
+      "criteria": {
+        "true": "It exists only through two or more beings merging.",
+        "false": "No merging of beings is involved."
+      }
+    }
+  }
+}

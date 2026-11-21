@@ -1,0 +1,252 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Locust Devil?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 3,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Locust Devil?",
+      "set": "Devils",
+      "confidence": "exact",
+      "returned": 88,
+      "available": 88,
+      "canon": 2,
+      "found": 1,
+      "recall": 0.5,
+      "precision": 0.011,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Locust Devil?",
+      "found": [],
+      "missing": [
+        "Swarm Manifestation",
+        "Immense Durability",
+        "Immense Strength"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the enemies of Locust Devil?",
+      "found": [
+        "Yoru"
+      ],
+      "missing": [
+        "Denji"
+      ],
+      "members": [
+        "AIDS Devil",
+        "Accident Devil",
+        "Aging Devil",
+        "Angel Devil",
+        "Arnolone Syndrome Devil",
+        "Bat Devil",
+        "Bitterness Devil",
+        "Bucky",
+        "Car Devil",
+        "Carpenter Bee Devil",
+        "Centipede Devil",
+        "Claw Devil",
+        "Cockroach Devil",
+        "Coffee Devil",
+        "Curse Devil",
+        "Darkness Devil",
+        "Death Devil",
+        "Doll Devil",
+        "Ear Devil",
+        "Equality Devil",
+        "Eternity Devil",
+        "Fairness Devil",
+        "Falling Devil",
+        "Fami",
+        "Famine Devil",
+        "Fire Devil",
+        "Fish Devil",
+        "Four Horsemen",
+        "Fox Devil",
+        "Frog Devil",
+        "Future Devil",
+        "Ghost Devil",
+        "Grape Devil",
+        "Gravity Devil",
+        "Guillotine Devil",
+        "Gun Devil",
+        "Hell Devil",
+        "House Devil",
+        "Justice Devil",
+        "Knife Devil",
+        "Leech Devil",
+        "Legs Devil",
+        "Light of a Star That Breaks Children's Minds Devil",
+        "Lion Devil",
+        "Locust Devil",
+        "Makima",
+        "Mannequin Devil",
+        "Mantis Devil",
+        "Marshmallow Devil",
+        "Mold Devil",
+        "Moon Devil",
+        "Moray Eel Devil",
+        "Mount Hio Eruption Devil",
+        "Mouth Devil",
+        "Muscle Devil",
+        "Nayuta",
+        "Nazi Devil",
+        "Needle Devil",
+        "Nuclear Weapons Devil",
+        "Octopus Devil",
+        "People Devil",
+        "Pig Devil",
+        "Pillbug Devil",
+        "Pingtsi",
+        "Pochita",
+        "Power",
+        "Princi",
+        "Punishment Devil",
+        "SOA Devil",
+        "STD Devil",
+        "Sea Cucumber Devil",
+        "Sickness Devil",
+        "Sixth Sense Devil",
+        "Skin Devil",
+        "Snake Devil",
+        "Snow Devil",
+        "Stag Beetle Devil",
+        "Stone Devil",
+        "Suicide Devil",
+        "Tank Devil",
+        "Teeth Devil",
+        "Tomato Devil",
+        "Trauma Devil",
+        "Typhoon Devil",
+        "Weapon Devils",
+        "World War II Devil",
+        "Yoru",
+        "Zombie Devil"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Locust Devil's name?",
+      "id": "csm-pg-locust_devil-001",
+      "subject": "Locust Devil",
+      "accept": "all",
+      "expected": [
+        "\u30d0\u30c3\u30bf\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u30d0\u30c3\u30bf\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Locust Devil's name?",
+      "id": "csm-pg-locust_devil-002",
+      "subject": "Locust Devil",
+      "accept": "all",
+      "expected": [
+        "Batta no Akuma"
+      ],
+      "found": [
+        "Batta no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Locust Devil?",
+      "id": "csm-pg-locust_devil-003",
+      "subject": "Locust Devil",
+      "accept": "all",
+      "expected": [
+        "Erased (original timeline) Unknown (new timeline)"
+      ],
+      "found": [
+        "Erased (original timeline) Unknown (new timeline)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Locust Devil's gender?",
+      "id": "csm-pg-locust_devil-004",
+      "subject": "Locust Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Locust Devil's occupation?",
+      "id": "csm-pg-locust_devil-005",
+      "subject": "Locust Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Devil"
+      ],
+      "found": [
+        "Wild Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 1,
+    "canon_total": 5,
+    "canon_recall": 0.2,
+    "members_returned": 88,
+    "exact_answers": 0,
+    "exact_of": 2,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0114,
+    "precision_over": "2/2",
+    "at_recall_zero": 1,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

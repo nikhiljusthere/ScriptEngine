@@ -1,0 +1,229 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Zombie Devil?",
+      "set": "Every named technique of Zombie Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the creations of Zombie Devil?",
+      "set": "Every creation of Zombie Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Zombie Devil?",
+      "set": "Zombie Devil's affiliations",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Zombie Devil?",
+      "found": [
+        "Zombie Creation",
+        "Blood Consumption"
+      ],
+      "missing": [],
+      "members": [
+        "Blood Consumption",
+        "Zombie Creation"
+      ]
+    },
+    {
+      "query": "What are all the creations of Zombie Devil?",
+      "found": [
+        "Katana Man",
+        "Akane Sawatari"
+      ],
+      "missing": [],
+      "members": [
+        "Akane Sawatari",
+        "Katana Man"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Zombie Devil?",
+      "found": [
+        "Yakuza (formerly)",
+        "Makima (brainwashed)"
+      ],
+      "missing": [],
+      "members": [
+        "Makima (brainwashed)",
+        "Yakuza (formerly)"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Zombie Devil's name?",
+      "id": "csm-pg-zombie_devil-001",
+      "subject": "Zombie Devil",
+      "accept": "all",
+      "expected": [
+        "\u30be\u30f3\u30d3\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u30be\u30f3\u30d3\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Zombie Devil's name?",
+      "id": "csm-pg-zombie_devil-002",
+      "subject": "Zombie Devil",
+      "accept": "all",
+      "expected": [
+        "Zonbi no Akuma"
+      ],
+      "found": [
+        "Zonbi no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Zombie Devil?",
+      "id": "csm-pg-zombie_devil-003",
+      "subject": "Zombie Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Zombie Devil's gender?",
+      "id": "csm-pg-zombie_devil-004",
+      "subject": "Zombie Devil",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Zombie Devil?",
+      "id": "csm-pg-zombie_devil-005",
+      "subject": "Zombie Devil",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Zombie Devil's occupation?",
+      "id": "csm-pg-zombie_devil-006",
+      "subject": "Zombie Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Devil\nContract Devil"
+      ],
+      "found": [
+        "Wild Devil\nContract Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Zombie Devil's birthday?",
+      "id": "csm-pg-zombie_devil-007",
+      "subject": "Zombie Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 6,
+    "canon_total": 6,
+    "canon_recall": 1.0,
+    "members_returned": 6,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 7,
+    "fact_present": 7
+  }
+}

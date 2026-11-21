@@ -1,0 +1,206 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Spear Hybrid?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 5,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Spear Hybrid?",
+      "set": "Hybrids",
+      "confidence": "exact",
+      "returned": 8,
+      "available": 8,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 0.375,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the superiors of Spear Hybrid?",
+      "set": "Hybrids",
+      "confidence": "exact",
+      "returned": 8,
+      "available": 8,
+      "canon": 2,
+      "found": 1,
+      "recall": 0.5,
+      "precision": 0.125,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Spear Hybrid?",
+      "set": "Hybrids",
+      "confidence": "exact",
+      "returned": 8,
+      "available": 8,
+      "canon": 3,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Spear Hybrid?",
+      "found": [],
+      "missing": [
+        "Hybrid Transformation",
+        "Augmented Body",
+        "Spear Generation",
+        "Blood Consumption",
+        "Nigh-Immortality"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the allies of Spear Hybrid?",
+      "found": [
+        "Barem Bridge",
+        "Whip Hybrid",
+        "Miri Sugo"
+      ],
+      "missing": [],
+      "members": [
+        "Barem Bridge",
+        "Denji",
+        "Katana Man",
+        "Miri Sugo",
+        "Quanxi",
+        "Reze",
+        "Spear Hybrid",
+        "Whip Hybrid"
+      ]
+    },
+    {
+      "query": "What are all the superiors of Spear Hybrid?",
+      "found": [
+        "Barem Bridge"
+      ],
+      "missing": [
+        "Makima"
+      ],
+      "members": [
+        "Barem Bridge",
+        "Denji",
+        "Katana Man",
+        "Miri Sugo",
+        "Quanxi",
+        "Reze",
+        "Spear Hybrid",
+        "Whip Hybrid"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Spear Hybrid?",
+      "found": [],
+      "missing": [
+        "Makima (brainwashed)",
+        "Tokyo Special Division 5 (formerly)",
+        "Chainsaw Man Church"
+      ],
+      "members": [
+        "Barem Bridge",
+        "Denji",
+        "Katana Man",
+        "Miri Sugo",
+        "Quanxi",
+        "Reze",
+        "Spear Hybrid",
+        "Whip Hybrid"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is the status of Spear Hybrid?",
+      "id": "csm-pg-spear_hybrid-001",
+      "subject": "Spear Hybrid",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Spear Hybrid's occupation?",
+      "id": "csm-pg-spear_hybrid-002",
+      "subject": "Spear Hybrid",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter (brainwashed)"
+      ],
+      "found": [
+        "Public Safety Devil Hunter (brainwashed)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Spear Hybrid's gender?",
+      "id": "csm-pg-spear_hybrid-003",
+      "subject": "Spear Hybrid",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 4,
+    "canon_total": 13,
+    "canon_recall": 0.3077,
+    "members_returned": 24,
+    "exact_answers": 0,
+    "exact_of": 4,
+    "exact_rate": 0.0,
+    "precision_closed": 0.1667,
+    "precision_over": "4/4",
+    "at_recall_zero": 2,
+    "at_recall_80": 1,
+    "confident_and_wrong": [
+      "What are all the affiliations of Spear Hybrid?"
+    ],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

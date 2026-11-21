@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Sea Cucumber Devil's name?",
+      "id": "csm-pg-sea_cucumber_devil-001",
+      "subject": "Sea Cucumber Devil",
+      "accept": "all",
+      "expected": [
+        "\u30ca\u30de\u30b3\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u30ca\u30de\u30b3\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Sea Cucumber Devil's name?",
+      "id": "csm-pg-sea_cucumber_devil-002",
+      "subject": "Sea Cucumber Devil",
+      "accept": "all",
+      "expected": [
+        "Namako no Akuma"
+      ],
+      "found": [
+        "Namako no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Sea Cucumber Devil?",
+      "id": "csm-pg-sea_cucumber_devil-003",
+      "subject": "Sea Cucumber Devil",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Sea Cucumber Devil's occupation?",
+      "id": "csm-pg-sea_cucumber_devil-004",
+      "subject": "Sea Cucumber Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Devil"
+      ],
+      "found": [
+        "Wild Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

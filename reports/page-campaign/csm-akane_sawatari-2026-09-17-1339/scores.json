@@ -1,0 +1,335 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Akane Sawatari?",
+      "set": "Every named technique of Akane Sawatari",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Akane Sawatari?",
+      "set": "Every ally of Akane Sawatari",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Akane Sawatari?",
+      "set": "Every enemy of Akane Sawatari",
+      "confidence": "declared",
+      "returned": 6,
+      "available": 6,
+      "canon": 6,
+      "found": 6,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the subordinates of Akane Sawatari?",
+      "set": "Every subordinate of Akane Sawatari",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the superiors of Akane Sawatari?",
+      "set": "Every superior of Akane Sawatari",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Akane Sawatari?",
+      "set": "Akane Sawatari's affiliations",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Akane Sawatari?",
+      "set": "Akane Sawatari's aliases",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Akane Sawatari?",
+      "found": [
+        "Snake Devil Contract",
+        "Swallow it whole",
+        "Spit it out",
+        "Tail"
+      ],
+      "missing": [],
+      "members": [
+        "Snake Devil Contract",
+        "Spit it out",
+        "Swallow it whole",
+        "Tail"
+      ]
+    },
+    {
+      "query": "What are all the allies of Akane Sawatari?",
+      "found": [
+        "Katana Man",
+        "Kobeni Higashiyama"
+      ],
+      "missing": [],
+      "members": [
+        "Katana Man",
+        "Kobeni Higashiyama"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Akane Sawatari?",
+      "found": [
+        "Aki Hayakawa",
+        "Denji",
+        "Kobeni Higashiyama",
+        "Himeno",
+        "Beam",
+        "Princi"
+      ],
+      "missing": [],
+      "members": [
+        "Aki Hayakawa",
+        "Beam",
+        "Denji",
+        "Himeno",
+        "Kobeni Higashiyama",
+        "Princi"
+      ]
+    },
+    {
+      "query": "What are all the subordinates of Akane Sawatari?",
+      "found": [
+        "Katana Man",
+        "Makima",
+        "Ghost Devil",
+        "Galgali",
+        "Snake Devil"
+      ],
+      "missing": [],
+      "members": [
+        "Galgali",
+        "Ghost Devil",
+        "Katana Man",
+        "Makima",
+        "Snake Devil"
+      ]
+    },
+    {
+      "query": "What are all the superiors of Akane Sawatari?",
+      "found": [
+        "Katana Man",
+        "Makima"
+      ],
+      "missing": [],
+      "members": [
+        "Katana Man",
+        "Makima"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Akane Sawatari?",
+      "found": [
+        "Gun Devil (ruse)",
+        "Yakuza (formerly)",
+        "Makima (postmortem)"
+      ],
+      "missing": [],
+      "members": [
+        "Gun Devil (ruse)",
+        "Makima (postmortem)",
+        "Yakuza (formerly)"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Akane Sawatari?",
+      "found": [
+        "Hoodie Girl",
+        "Snake Girl (by Kishibe)"
+      ],
+      "missing": [],
+      "members": [
+        "Hoodie Girl",
+        "Snake Girl (by Kishibe)"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Akane Sawatari's name?",
+      "id": "csm-pg-akane_sawatari-001",
+      "subject": "Akane Sawatari",
+      "accept": "all",
+      "expected": [
+        "\u6ca2\u6e21 \u30a2\u30ab\u30cd"
+      ],
+      "found": [
+        "\u6ca2\u6e21 \u30a2\u30ab\u30cd"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Akane Sawatari's name?",
+      "id": "csm-pg-akane_sawatari-002",
+      "subject": "Akane Sawatari",
+      "accept": "all",
+      "expected": [
+        "Sawatari Akane"
+      ],
+      "found": [
+        "Sawatari Akane"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Akane Sawatari's gender?",
+      "id": "csm-pg-akane_sawatari-003",
+      "subject": "Akane Sawatari",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Akane Sawatari's height?",
+      "id": "csm-pg-akane_sawatari-004",
+      "subject": "Akane Sawatari",
+      "accept": "all",
+      "expected": [
+        "165 cm (5'5\")"
+      ],
+      "found": [
+        "165 cm (5'5\")"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Akane Sawatari?",
+      "id": "csm-pg-akane_sawatari-005",
+      "subject": "Akane Sawatari",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Akane Sawatari's occupation?",
+      "id": "csm-pg-akane_sawatari-006",
+      "subject": "Akane Sawatari",
+      "accept": "all",
+      "expected": [
+        "Private Devil Hunter"
+      ],
+      "found": [
+        "Private Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 7,
+    "canon_found": 24,
+    "canon_total": 24,
+    "canon_recall": 1.0,
+    "members_returned": 24,
+    "exact_answers": 7,
+    "exact_of": 7,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "7/7",
+    "at_recall_zero": 0,
+    "at_recall_80": 7,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

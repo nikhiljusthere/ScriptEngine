@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "Which saga does Falling Devil arc belong to?",
+      "id": "csm-pg-falling_devil_arc-001",
+      "subject": "Falling Devil arc",
+      "accept": "all",
+      "expected": [
+        "Academy Saga"
+      ],
+      "found": [
+        "Academy Saga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Which chapters are included in Falling Devil arc?",
+      "id": "csm-pg-falling_devil_arc-002",
+      "subject": "Falling Devil arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 121 - 131"
+      ],
+      "found": [
+        "Chapter 121 - 131"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Falling Devil arc?",
+      "id": "csm-pg-falling_devil_arc-003",
+      "subject": "Falling Devil arc",
+      "accept": "all",
+      "expected": [
+        "Dating Denji arc"
+      ],
+      "found": [
+        "Dating Denji arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Falling Devil arc?",
+      "id": "csm-pg-falling_devil_arc-004",
+      "subject": "Falling Devil arc",
+      "accept": "all",
+      "expected": [
+        "Chainsaw Man Church arc"
+      ],
+      "found": [
+        "Chainsaw Man Church arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

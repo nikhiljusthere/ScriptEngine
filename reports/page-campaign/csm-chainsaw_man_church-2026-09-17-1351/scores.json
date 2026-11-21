@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "Which series does Chainsaw Man Church belong to?",
+      "id": "csm-pg-chainsaw_man_church-001",
+      "subject": "Chainsaw Man Church",
+      "accept": "all",
+      "expected": [
+        "Chainsaw Man Church"
+      ],
+      "found": [
+        "Chainsaw Man Church"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Chainsaw Man Church's allegiance?",
+      "id": "csm-pg-chainsaw_man_church-002",
+      "subject": "Chainsaw Man Church",
+      "accept": "all",
+      "expected": [
+        "Chainsaw Man (Supposedly) Death Devil (de facto)"
+      ],
+      "found": [
+        "Chainsaw Man (Supposedly) Death Devil (de facto)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Who are Chainsaw Man Church's notable members?",
+      "id": "csm-pg-chainsaw_man_church-003",
+      "subject": "Chainsaw Man Church",
+      "accept": "all",
+      "expected": [
+        "Death Devil (\"Brains\")\nHaruka Iseumi (\"Face\")\nFire Devil (\"Contractee\")\nFake Chainsaw Man\nAsa Mitaka\nYoru (via Asa)\nWeapon Hybrids"
+      ],
+      "found": [
+        "Death Devil (\"Brains\")\nHaruka Iseumi (\"Face\")\nFire Devil (\"Contractee\")\nFake Chainsaw Man\nAsa Mitaka\nYoru (via Asa)\nWeapon Hybrids"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which manga chapter does Chainsaw Man Church first appear?",
+      "id": "csm-pg-chainsaw_man_church-004",
+      "subject": "Chainsaw Man Church",
+      "accept": "all",
+      "expected": [
+        "Chapter 115 (Mentioned)\nChapter 132"
+      ],
+      "found": [
+        "Chapter 115 (Mentioned)\nChapter 132"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

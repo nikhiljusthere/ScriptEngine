@@ -1,0 +1,307 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Pochita?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 10,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Pochita?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 11,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Pochita?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 16,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the rivals of Pochita?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 3,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the romantics of Pochita?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Pochita?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Pochita?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Pochita?",
+      "found": [],
+      "missing": [
+        "Immense Speed",
+        "Immense Durability",
+        "Immense Strength",
+        "Immense Healing Factor",
+        "Immense Hearing",
+        "Devil Erasure",
+        "Chainsaw Appendage",
+        "Chain Entanglement",
+        "Body Assimilation",
+        "Devil Transformation"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the allies of Pochita?",
+      "found": [],
+      "missing": [
+        "Denji",
+        "Makima",
+        "Kobeni Higashiyama",
+        "Power",
+        "Hirofumi Yoshida",
+        "Yoru",
+        "Death Devil",
+        "Asa Mitaka",
+        "Famine Devil",
+        "Katana Man",
+        "Ear Devil"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the enemies of Pochita?",
+      "found": [],
+      "missing": [
+        "Makima",
+        "Reze",
+        "Yoru",
+        "Aging Devil",
+        "Katana Man",
+        "Death Devil",
+        "Famine Devil",
+        "Asa Mitaka",
+        "Fami",
+        "Whip Hybrid",
+        "Hell Devil",
+        "Ear Devil",
+        "World War II Devil",
+        "Centipede Devil",
+        "Cockroach Devil",
+        "Accident Devil"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the rivals of Pochita?",
+      "found": [],
+      "missing": [
+        "Yoru",
+        "Katana Man",
+        "Makima"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the romantics of Pochita?",
+      "found": [],
+      "missing": [
+        "Asa Mitaka",
+        "Makima"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the aliases of Pochita?",
+      "found": [],
+      "missing": [
+        "Chainsaw Chainsaw Devil Chainsaw Man Hero of Hell Black Chainsaw Man"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the affiliations of Pochita?",
+      "found": [],
+      "missing": [
+        "Yakuza (formerly)",
+        "Denji"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Pochita's name?",
+      "id": "csm-pg-pochita-001",
+      "subject": "Pochita",
+      "accept": "all",
+      "expected": [
+        "\u30dd\u30c1\u30bf"
+      ],
+      "found": [
+        "\u30dd\u30c1\u30bf"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Pochita's name?",
+      "id": "csm-pg-pochita-002",
+      "subject": "Pochita",
+      "accept": "all",
+      "expected": [
+        "Pochita"
+      ],
+      "found": [
+        "Pochita"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Pochita's gender?",
+      "id": "csm-pg-pochita-003",
+      "subject": "Pochita",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Pochita?",
+      "id": "csm-pg-pochita-004",
+      "subject": "Pochita",
+      "accept": "all",
+      "expected": [
+        "Erased (original timeline) Unknown (new timeline)"
+      ],
+      "found": [
+        "Erased (original timeline) Unknown (new timeline)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Pochita's occupation?",
+      "id": "csm-pg-pochita-005",
+      "subject": "Pochita",
+      "accept": "all",
+      "expected": [
+        "Wild Devil (formerly) Contract Devil Denji's Heart"
+      ],
+      "found": [
+        "Wild Devil (formerly) Contract Devil Denji's Heart"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 7,
+    "canon_found": 0,
+    "canon_total": 45,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 7,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "7/7",
+    "at_recall_zero": 7,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

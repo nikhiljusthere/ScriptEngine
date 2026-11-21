@@ -1,0 +1,139 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Tsugihagi?",
+      "set": "Tsugihagi's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Tsugihagi?",
+      "found": [
+        "Quanxi and the Fiends"
+      ],
+      "missing": [],
+      "members": [
+        "Quanxi and the Fiends"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Tsugihagi's name?",
+      "id": "csm-pg-tsugihagi-001",
+      "subject": "Tsugihagi",
+      "accept": "all",
+      "expected": [
+        "\u30c4\u30ae\u30cf\u30ae"
+      ],
+      "found": [
+        "\u30c4\u30ae\u30cf\u30ae"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Tsugihagi's name?",
+      "id": "csm-pg-tsugihagi-002",
+      "subject": "Tsugihagi",
+      "accept": "all",
+      "expected": [
+        "Tsugihagi"
+      ],
+      "found": [
+        "Tsugihagi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Tsugihagi's gender?",
+      "id": "csm-pg-tsugihagi-003",
+      "subject": "Tsugihagi",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Tsugihagi?",
+      "id": "csm-pg-tsugihagi-004",
+      "subject": "Tsugihagi",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Tsugihagi's occupation?",
+      "id": "csm-pg-tsugihagi-005",
+      "subject": "Tsugihagi",
+      "accept": "all",
+      "expected": [
+        "Private Devil Hunter"
+      ],
+      "found": [
+        "Private Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

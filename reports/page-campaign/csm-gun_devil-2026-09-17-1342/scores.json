@@ -1,0 +1,255 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Gun Devil?",
+      "set": "Every named technique of Gun Devil",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Gun Devil?",
+      "set": "Every ally of Gun Devil",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Gun Devil?",
+      "set": "Every enemy of Gun Devil",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Gun Devil?",
+      "set": "Gun Devil's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Gun Devil?",
+      "set": "Gun Devil's affiliations",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Gun Devil?",
+      "found": [
+        "Bullet Flesh",
+        "Passive Regeneration",
+        "Bullet Projection"
+      ],
+      "missing": [],
+      "members": [
+        "Bullet Flesh",
+        "Bullet Projection",
+        "Passive Regeneration"
+      ]
+    },
+    {
+      "query": "What are all the allies of Gun Devil?",
+      "found": [
+        "Reze",
+        "Yoru",
+        "Eternity Devil"
+      ],
+      "missing": [],
+      "members": [
+        "Eternity Devil",
+        "Reze",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Gun Devil?",
+      "found": [
+        "Denji",
+        "Aki Hayakawa",
+        "Himeno",
+        "Makima"
+      ],
+      "missing": [],
+      "members": [
+        "Aki Hayakawa",
+        "Denji",
+        "Himeno",
+        "Makima"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Gun Devil?",
+      "found": [
+        "Gun"
+      ],
+      "missing": [],
+      "members": [
+        "Gun"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Gun Devil?",
+      "found": [
+        "USA (formerly)",
+        "Soviet Union (formerly)",
+        "Multiple Governments Across The Globe",
+        "Yoru"
+      ],
+      "missing": [],
+      "members": [
+        "Multiple Governments Across The Globe",
+        "Soviet Union (formerly)",
+        "USA (formerly)",
+        "Yoru"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Gun Devil's name?",
+      "id": "csm-pg-gun_devil-001",
+      "subject": "Gun Devil",
+      "accept": "all",
+      "expected": [
+        "\u9283\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u9283\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Gun Devil's name?",
+      "id": "csm-pg-gun_devil-002",
+      "subject": "Gun Devil",
+      "accept": "all",
+      "expected": [
+        "J\u016b no Akuma"
+      ],
+      "found": [
+        "J\u016b no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Gun Devil?",
+      "id": "csm-pg-gun_devil-003",
+      "subject": "Gun Devil",
+      "accept": "all",
+      "expected": [
+        "Deceased (48%) Alive (52%)"
+      ],
+      "found": [
+        "Deceased (48%) Alive (52%)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Gun Devil's occupation?",
+      "id": "csm-pg-gun_devil-004",
+      "subject": "Gun Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Devil (formerly)\nContract Devil for the USA\nContract Devil for Governments"
+      ],
+      "found": [
+        "Wild Devil (formerly)\nContract Devil for the USA\nContract Devil for Governments"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Gun Devil?",
+      "id": "csm-pg-gun_devil-005",
+      "subject": "Gun Devil",
+      "accept": "all",
+      "expected": [
+        "15 years (of known existence)"
+      ],
+      "found": [
+        "15 years (of known existence)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 5,
+    "canon_found": 15,
+    "canon_total": 15,
+    "canon_recall": 1.0,
+    "members_returned": 15,
+    "exact_answers": 5,
+    "exact_of": 5,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "5/5",
+    "at_recall_zero": 0,
+    "at_recall_80": 5,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

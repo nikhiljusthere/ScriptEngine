@@ -1,0 +1,113 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Needle Devil's name?",
+      "id": "csm-pg-needle_devil-001",
+      "subject": "Needle Devil",
+      "accept": "all",
+      "expected": [
+        "\u91dd\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u91dd\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Needle Devil's name?",
+      "id": "csm-pg-needle_devil-002",
+      "subject": "Needle Devil",
+      "accept": "all",
+      "expected": [
+        "Hari no Akuma"
+      ],
+      "found": [
+        "Hari no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Needle Devil?",
+      "id": "csm-pg-needle_devil-003",
+      "subject": "Needle Devil",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Needle Devil's gender?",
+      "id": "csm-pg-needle_devil-004",
+      "subject": "Needle Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Needle Devil's occupation?",
+      "id": "csm-pg-needle_devil-005",
+      "subject": "Needle Devil",
+      "accept": "all",
+      "expected": [
+        "Contract Devil"
+      ],
+      "found": [
+        "Contract Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

@@ -216,3 +216,29 @@ ability_headings:
   - Supreme King Haki
   - Tactical Skills
   - Marksmanship
+# Universal dataset (plan/UNIVERSAL_DATASET_PLAN.md, 2026-10-04, decision 1):
+# one verb inventory for every wiki -- the shared 9 plus these outcome verbs.
+# A student trained across wikis sees one inventory and never has to learn
+# when a verb is forbidden; the outcome verbs carry the match-up brain goal.
+events:
+  extra_verbs: [defeated, captured, escaped]
+
+# Chapter <-> episode adaptation (retrieve/citations.declared_episode_map).
+# Episodes are titled by name; the number is the infobox `#` (recaps read
+# "Recap 1": not a number, so they map nothing). Anime episode pages only, not
+# the live-action series.
+episode_map:
+  links:
+    - {relation: chapter, from: episode}
+    - {relation: anime, from: chapter}
+  chapter_number: [title]
+  episode_number: ['#', title]
+  episode_labels: [episode_box]
+
+# Sections the default boilerplate list drops that this wiki writes as content
+# (chunk-containment, scratch re-index 2026-10-06: these closed the residue).
+content_sections:
+  - navigation    # "Coating Mechanics / Navigation" is sailing prose; navboxes here are "Site Navigation"
+  - gallery       # its gallery sections open with prose ("The following maps are known to exist ...")
+  - notes
+  - references

@@ -1,0 +1,203 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Chapter 137's title?",
+      "id": "csm-pg-chapter_137-001",
+      "subject": "Chapter 137",
+      "accept": "all",
+      "expected": [
+        "Chu Chu Lovely Muni Muni Mura Mura"
+      ],
+      "found": [
+        "Chu Chu Lovely Muni Muni Mura Mura"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which volume does Chapter 137 appear?",
+      "id": "csm-pg-chapter_137-002",
+      "subject": "Chapter 137",
+      "accept": "all",
+      "expected": [
+        "16"
+      ],
+      "found": [
+        "16"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which chapter does Chapter 137 appear?",
+      "id": "csm-pg-chapter_137-003",
+      "subject": "Chapter 137",
+      "accept": "all",
+      "expected": [
+        "137"
+      ],
+      "found": [
+        "137"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the Japanese title of Chapter 137?",
+      "id": "csm-pg-chapter_137-004",
+      "subject": "Chapter 137",
+      "accept": "all",
+      "expected": [
+        "\u30c1\u30e5\u30fc\u30c1\u30e5\u30fc\u30e9\u30d6\u30ea\u30fc\u30e0\u30cb\u30e0\u30cb\u30e0\u30e9\u30e0\u30e9"
+      ],
+      "found": [
+        "\u30c1\u30e5\u30fc\u30c1\u30e5\u30fc\u30e9\u30d6\u30ea\u30fc\u30e0\u30cb\u30e0\u30cb\u30e0\u30e9\u30e0\u30e9"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji title of Chapter 137?",
+      "id": "csm-pg-chapter_137-005",
+      "subject": "Chapter 137",
+      "accept": "all",
+      "expected": [
+        "Ch\u016b ch\u016b rabur\u012b muni muni mura mura"
+      ],
+      "found": [
+        "Ch\u016b ch\u016b rabur\u012b muni muni mura mura"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "On which page does Chapter 137 appear?",
+      "id": "csm-pg-chapter_137-006",
+      "subject": "Chapter 137",
+      "accept": "all",
+      "expected": [
+        "17"
+      ],
+      "found": [
+        "17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What date is associated with Chapter 137?",
+      "id": "csm-pg-chapter_137-007",
+      "subject": "Chapter 137",
+      "accept": "all",
+      "expected": [
+        "July 26, 2023"
+      ],
+      "found": [
+        "July 26, 2023"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which arc does Chapter 137 appear?",
+      "id": "csm-pg-chapter_137-008",
+      "subject": "Chapter 137",
+      "accept": "all",
+      "expected": [
+        "Chainsaw Man Church arc"
+      ],
+      "found": [
+        "Chainsaw Man Church arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Chapter 137?",
+      "id": "csm-pg-chapter_137-009",
+      "subject": "Chapter 137",
+      "accept": "all",
+      "expected": [
+        "Chapter 136"
+      ],
+      "found": [
+        "Chapter 136"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Chapter 137?",
+      "id": "csm-pg-chapter_137-010",
+      "subject": "Chapter 137",
+      "accept": "all",
+      "expected": [
+        "Chapter 138"
+      ],
+      "found": [
+        "Chapter 138"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 10,
+    "fact_present": 10
+  }
+}

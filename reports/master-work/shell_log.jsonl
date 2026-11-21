@@ -1,0 +1,264 @@
+{"ts":"2026-09-08T23:17:19+05:30","event":"START","pid":"23215","cmd":"/bin/bash -c BASE=$(grep -c \"^- \" reports/master-work/decisions.md)
+for i in $(seq 1 20); do
+  N=$(grep -c \"^- \" reports/master-work/decisions.md)
+  if [ \"$N\" -gt \"$BASE\" ]; then
+    echo \"NEW DECISION LINE:\"; grep \"^- \""}
+{"ts":"2026-09-08T23:17:29+05:30","event":"START","pid":"23349","cmd":"/bin/bash -c BASE=$(grep -c \"^- \" reports/master-work/decisions.md)
+for i in $(seq 1 20); do
+  N=$(grep -c \"^- \" reports/master-work/decisions.md)
+  if [ \"$N\" -gt \"$BASE\" ]; then
+    echo \"NEW DECISION LINE:\"; grep \"^- \""}
+{"ts":"2026-09-08T23:17:35+05:30","event":"END","pid":"23349","dur_s":"6"}
+{"ts":"2026-09-08T23:17:45+05:30","event":"END","pid":"23215","dur_s":"26"}
+{"ts":"2026-09-09T02:42:06+05:30","event":"START","pid":"14373","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -rn \"def build_context\" scriptengine/ | head -3; grep -rn \"passages\" scriptengine/api/context.py | head -20 "}
+{"ts":"2026-09-09T02:42:22+05:30","event":"END","pid":"14373","dur_s":"16"}
+{"ts":"2026-09-09T03:35:57+05:30","event":"START","pid":"27071","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && for i in $(seq 1 16); do   open=$(scriptengine/.venv/bin/python -c \"import socket; s=socket.socket(); s.settimeout(1); print(s.connect_ex(('127.0.0.1',8000))==0)\")   if [ \"$op"}
+{"ts":"2026-09-09T03:38:27+05:30","event":"END","pid":"27071","dur_s":"150"}
+{"ts":"2026-09-09T03:39:02+05:30","event":"START","pid":"27771","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && nvidia-smi --query-gpu=memory.used,memory.total --format=csv,noheader && CENSUS_DEVICE=cuda scriptengine/.venv/bin/python tools/census_dimensions.py --series csm 2>&1 | tail -"}
+{"ts":"2026-09-09T03:39:02+05:30","event":"START","pid":"27774","cmd":"scriptengine/.venv/bin/python tools/census_dimensions.py --series csm "}
+{"ts":"2026-09-09T03:39:38+05:30","event":"END","pid":"27774","dur_s":"36"}
+{"ts":"2026-09-09T03:39:38+05:30","event":"END","pid":"27771","dur_s":"36"}
+{"ts":"2026-09-09T03:39:43+05:30","event":"START","pid":"28072","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && CENSUS_DEVICE=cuda scriptengine/.venv/bin/python tools/census_doors.py --series csm 2>&1 | tail -18 "}
+{"ts":"2026-09-09T03:39:43+05:30","event":"START","pid":"28073","cmd":"scriptengine/.venv/bin/python tools/census_doors.py --series csm "}
+{"ts":"2026-09-09T03:40:03+05:30","event":"END","pid":"28072","dur_s":"20"}
+{"ts":"2026-09-09T03:40:03+05:30","event":"END","pid":"28073","dur_s":"20"}
+{"ts":"2026-09-09T03:40:08+05:30","event":"START","pid":"28322","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && for i in $(seq 1 20); do   open=$(scriptengine/.venv/bin/python -c \"import socket; s=socket.socket(); s.settimeout(1); print(s.connect_ex(('127.0.0.1',8000))==0)\")   if [ \"$op"}
+{"ts":"2026-09-09T03:43:09+05:30","event":"END","pid":"28322","dur_s":"181"}
+{"ts":"2026-09-09T04:20:16+05:30","event":"START","pid":"38850","cmd":"/bin/bash -c grep -rn \"vocabulary\|INF.*KEY\|infobox\" scriptengine/ingest/*.py | grep -in \"vocabulary\|param\" | head -15; echo ---; grep -rn \"anime_debut\|manga_debut\" scriptengine/ series/csm/overrides.yaml 2>/dev/null "}
+{"ts":"2026-09-09T04:20:21+05:30","event":"END","pid":"38850","dur_s":"5"}
+{"ts":"2026-09-09T04:20:51+05:30","event":"START","pid":"38967","cmd":"/bin/bash -c grep -rn \"IDENTITY_FIELDS\" scriptengine/ | head -5; echo ---; grep -rn \"key_map\|keymap\|infobox_map\" series/csm/overrides.yaml scriptengine/ | head -5; echo ---; sed -n '14,18p' plan/CSM_2PHASE_PLAN.md "}
+{"ts":"2026-09-09T04:21:01+05:30","event":"END","pid":"38967","dur_s":"10"}
+{"ts":"2026-09-09T04:32:29+05:30","event":"START","pid":"41443","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && END=$(( $(date +%s) + 3480 )) && while [ $(date +%s) -lt $END ]; do if ! pgrep -f 'span-recall.*sanity 400' >/dev/null; then echo \"$(date -u +%H:%M:%S) gate process exited\"; b"}
+{"ts":"2026-09-09T05:30:27+05:30","event":"END","pid":"41443","dur_s":"3478"}
+{"ts":"2026-09-09T05:36:28+05:30","event":"START","pid":"56378","cmd":"grep -rn def load_rosters scriptengine/ "}
+{"ts":"2026-09-09T05:36:33+05:30","event":"END","pid":"56378","dur_s":"5"}
+{"ts":"2026-09-09T05:42:20+05:30","event":"START","pid":"57778","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && for f in series/*/overrides.yaml; do echo \"== $f\"; grep -n \"alias\|_aliases\" \"$f\" | head -8; done 2>/dev/null; echo; echo \"== engine fields referenced from overrides across wh"}
+{"ts":"2026-09-09T05:42:30+05:30","event":"END","pid":"57778","dur_s":"10"}
+{"ts":"2026-09-09T05:45:41+05:30","event":"START","pid":"58578","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 14 scriptengine/.venv/bin/python - <<'EOF' from scriptengine.config import series_paths from scriptengine.retrieve.router import route  cases = [     (\"csm\", \"How many"}
+{"ts":"2026-09-09T05:45:46+05:30","event":"END","pid":"58578","dur_s":"5"}
+{"ts":"2026-09-09T05:46:01+05:30","event":"START","pid":"58660","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -rn \"identity_fields\|identity-keys\|key_map\|keymap\|infobox_map\|fact_keys\" scriptengine/ series/ tools/ 2>/dev/null | grep -v __pycache__ | head; echo \"=== page-sweep "}
+{"ts":"2026-09-09T05:46:21+05:30","event":"END","pid":"58660","dur_s":"20"}
+{"ts":"2026-09-09T05:46:46+05:30","event":"START","pid":"58854","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -rn \"_resolves_a_set\" scriptengine/ tests/ | grep -v \"def _resolves_a_set\" "}
+{"ts":"2026-09-09T05:46:56+05:30","event":"END","pid":"58854","dur_s":"10"}
+{"ts":"2026-09-09T05:49:32+05:30","event":"START","pid":"59496","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 14 scriptengine/.venv/bin/python - <<'EOF' from scriptengine.config import series_paths, SeriesPaths import tempfile, pathlib from scriptengine.retrieve.router import "}
+{"ts":"2026-09-09T05:49:37+05:30","event":"END","pid":"59496","dur_s":"5"}
+{"ts":"2026-09-09T05:53:53+05:30","event":"START","pid":"60509","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && time (timeout 60 scriptengine/.venv/bin/python -m pytest tests/test_csm_router_count_rule.py -q 2>&1 | tail -5) "}
+{"ts":"2026-09-09T05:53:58+05:30","event":"END","pid":"60509","dur_s":"5"}
+{"ts":"2026-09-09T05:54:54+05:30","event":"START","pid":"60735","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && time (timeout 120 scriptengine/.venv/bin/python -m pytest tests/test_router.py -q 2>&1 | tail -5) "}
+{"ts":"2026-09-09T05:55:39+05:30","event":"END","pid":"60735","dur_s":"45"}
+{"ts":"2026-09-09T05:56:09+05:30","event":"START","pid":"61164","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && for c in TestSignals TestRoute TestBattlesInRouting TestSubjectPreference TestArcsAreASetOnlyWhenAsked; do timeout 14 scriptengine/.venv/bin/python -m pytest \"tests/test_route"}
+{"ts":"2026-09-09T05:56:19+05:30","event":"START","pid":"61213","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && for c in TestPhrasingRobustFieldQuestions TestPandaGaps TestG17SingleFieldPlural TestG20OnceFrontedMechanism TestGetoGaps; do timeout 14 scriptengine/.venv/bin/python -m pytes"}
+{"ts":"2026-09-09T05:56:19+05:30","event":"END","pid":"61164","dur_s":"10"}
+{"ts":"2026-09-09T05:56:39+05:30","event":"START","pid":"61308","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && for c in TestShokoGaps TestEp14HowMechanism TestEpisodeAnchoredQa TestG28OoaListAsk TestG29SingleValuePredicate; do timeout 14 scriptengine/.venv/bin/python -m pytest \"tests/t"}
+{"ts":"2026-09-09T05:56:39+05:30","event":"END","pid":"61213","dur_s":"20"}
+{"ts":"2026-09-09T05:57:09+05:30","event":"END","pid":"61308","dur_s":"30"}
+{"ts":"2026-09-09T05:57:49+05:30","event":"START","pid":"61597","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && git diff --cached --stat; echo ===; git status --porcelain | grep -E \"router|csm_router\"; echo ===; timeout 14 scriptengine/.venv/bin/python -m pytest tests/test_csm_router_co"}
+{"ts":"2026-09-09T05:57:54+05:30","event":"END","pid":"61597","dur_s":"5"}
+{"ts":"2026-09-09T06:02:40+05:30","event":"START","pid":"62797","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -n \"_resolves_a_set\" scriptengine/retrieve/router.py tests/*.py | grep -v \"^scriptengine/retrieve/router.py:82[7-9]\" && echo ---- && time (scriptengine/.venv/bin/python -"}
+{"ts":"2026-09-09T06:02:45+05:30","event":"END","pid":"62797","dur_s":"5"}
+{"ts":"2026-09-09T06:05:16+05:30","event":"START","pid":"63549","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 60 scriptengine/.venv/bin/python -m pytest tests/test_csm_router_count_rule.py -q 2>&1 | tail -3 "}
+{"ts":"2026-09-09T06:05:21+05:30","event":"END","pid":"63549","dur_s":"5"}
+{"ts":"2026-09-09T06:06:41+05:30","event":"START","pid":"64203","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && time scriptengine/.venv/bin/python -m pytest tests/test_csm_router_count_rule.py -q 2>&1 | tail -3 "}
+{"ts":"2026-09-09T06:06:46+05:30","event":"END","pid":"64203","dur_s":"5"}
+{"ts":"2026-09-09T06:07:46+05:30","event":"START","pid":"64843","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 14 scriptengine/.venv/bin/python -m pytest tests/test_csm_router_count_rule.py -q 2>&1 | tail -3 "}
+{"ts":"2026-09-09T06:07:51+05:30","event":"END","pid":"64843","dur_s":"5"}
+{"ts":"2026-09-09T06:10:57+05:30","event":"START","pid":"65806","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m pytest tests/test_csm_router_count_rule.py -q 2>&1 | tail -3; scriptengine/.venv/bin/python -c \" from scriptengine.config import series_paths "}
+{"ts":"2026-09-09T06:11:02+05:30","event":"END","pid":"65806","dur_s":"5"}
+{"ts":"2026-09-09T06:13:53+05:30","event":"START","pid":"66657","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 14 scriptengine/.venv/bin/python - <<'EOF' from scriptengine.config import series_paths from scriptengine.retrieve.router import route from scriptengine.retrieve.roste"}
+{"ts":"2026-09-09T06:13:58+05:30","event":"END","pid":"66657","dur_s":"5"}
+{"ts":"2026-09-09T06:16:58+05:30","event":"START","pid":"67608","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 60 scriptengine/.venv/bin/python -c \" from scriptengine.config import series_paths from scriptengine.retrieve.router import route qs = {  'jjk': ['How many 1v1 battles"}
+{"ts":"2026-09-09T06:17:03+05:30","event":"END","pid":"67608","dur_s":"5"}
+{"ts":"2026-09-09T06:18:03+05:30","event":"START","pid":"68062","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -n \"_SCOPE_PHRASE\" scriptengine/retrieve/router.py && echo \"=== 11-test file ===\" && timeout 30 scriptengine/.venv/bin/python -m pytest tests/test_csm_router_count_rule.p"}
+{"ts":"2026-09-09T06:18:08+05:30","event":"END","pid":"68062","dur_s":"5"}
+{"ts":"2026-09-09T06:25:25+05:30","event":"START","pid":"70419","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -n \"_resolves_a_set\" -r scriptengine/ tests/ | grep -v \"\.pyc\"; echo ===; grep -n \"how many\" series/*/overrides.yaml | awk -F: '{print $1\":\"$2}' | sort | uniq -c | sort -"}
+{"ts":"2026-09-09T06:25:30+05:30","event":"END","pid":"70419","dur_s":"5"}
+{"ts":"2026-09-09T06:32:26+05:30","event":"START","pid":"71988","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m pytest tests/test_csm_router_count_rule.py -q 2>&1 | tail -3 && scriptengine/.venv/bin/python -m pytest tests/ --collect-only -q 2>&1 | tail -"}
+{"ts":"2026-09-09T06:32:32+05:30","event":"START","pid":"72047","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python - <<'EOF' import re from scriptengine.config import series_paths from scriptengine.retrieve.router import route from scriptengine.retrieve.roster"}
+{"ts":"2026-09-09T06:32:32+05:30","event":"END","pid":"71988","dur_s":"6"}
+{"ts":"2026-09-09T06:32:42+05:30","event":"END","pid":"72047","dur_s":"10"}
+{"ts":"2026-09-09T06:41:33+05:30","event":"START","pid":"73473","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && time scriptengine/.venv/bin/python -m pytest tests/test_csm_router_count_rule.py -q 2>&1 | tail -2 "}
+{"ts":"2026-09-09T06:41:33+05:30","event":"START","pid":"73474","cmd":"scriptengine/.venv/bin/python -m pytest tests/test_csm_router_count_rule.py -q "}
+{"ts":"2026-09-09T06:41:38+05:30","event":"END","pid":"73473","dur_s":"5"}
+{"ts":"2026-09-09T06:41:38+05:30","event":"END","pid":"73474","dur_s":"5"}
+{"ts":"2026-09-09T06:43:08+05:30","event":"START","pid":"73726","cmd":"/bin/bash -c ps aux | grep -E 'scriptengine.api.main' | grep -v grep | awk '{print $2}' | head -3; PID=$(ps aux | grep -E 'scriptengine.api.main' | grep -v grep | awk '{print $2}' | head -1); echo \"stopping $PID\"; kill $"}
+{"ts":"2026-09-09T06:43:13+05:30","event":"END","pid":"73726","dur_s":"5"}
+{"ts":"2026-09-09T06:43:19+05:30","event":"START","pid":"73780","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m pytest tests/ -q 2>&1 | tail -4 "}
+{"ts":"2026-09-09T06:43:19+05:30","event":"START","pid":"73781","cmd":"scriptengine/.venv/bin/python -m pytest tests/ -q "}
+{"ts":"2026-09-09T06:46:29+05:30","event":"END","pid":"73780","dur_s":"190"}
+{"ts":"2026-09-09T06:46:29+05:30","event":"END","pid":"73781","dur_s":"190"}
+{"ts":"2026-09-09T06:46:55+05:30","event":"START","pid":"75116","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m pytest tests/ -q -rx 2>&1 | grep -i xpassed | head -4 "}
+{"ts":"2026-09-09T06:46:55+05:30","event":"START","pid":"75117","cmd":"scriptengine/.venv/bin/python -m pytest tests/ -q -rx "}
+{"ts":"2026-09-09T06:50:06+05:30","event":"END","pid":"75117","dur_s":"191"}
+{"ts":"2026-09-09T06:50:06+05:30","event":"END","pid":"75116","dur_s":"191"}
+{"ts":"2026-09-09T06:50:11+05:30","event":"START","pid":"76458","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m scriptengine.cli eval --series jjk 2>&1 | tail -6 "}
+{"ts":"2026-09-09T06:50:11+05:30","event":"START","pid":"76459","cmd":"scriptengine/.venv/bin/python -m scriptengine.cli eval --series jjk "}
+{"ts":"2026-09-09T06:51:01+05:30","event":"END","pid":"76459","dur_s":"50"}
+{"ts":"2026-09-09T06:51:01+05:30","event":"END","pid":"76458","dur_s":"50"}
+{"ts":"2026-09-09T06:51:41+05:30","event":"START","pid":"76881","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m scriptengine.cli eval --series jjk > /tmp/gate2_eval_jjk.txt 2>&1; echo \"rc=$?\"; grep -E 'scored|exact|canon|31' /tmp/gate2_eval_jjk.txt | tai"}
+{"ts":"2026-09-09T06:51:41+05:30","event":"START","pid":"76882","cmd":"scriptengine/.venv/bin/python -m scriptengine.cli eval --series jjk "}
+{"ts":"2026-09-09T06:52:26+05:30","event":"END","pid":"76882","dur_s":"45"}
+{"ts":"2026-09-09T06:52:26+05:30","event":"END","pid":"76881","dur_s":"45"}
+{"ts":"2026-09-09T06:53:01+05:30","event":"START","pid":"77329","cmd":"/bin/bash -c for i in $(seq 1 12); do H=$(curl -s -m 2 http://localhost:8000/health); case \"$H\" in *'\"device\"') break;; esac; sleep 3; done; echo \"$H\" | head -c 160; echo; ps aux | grep 'scriptengine.api.main' | grep -v "}
+{"ts":"2026-09-09T06:53:41+05:30","event":"END","pid":"77329","dur_s":"40"}
+{"ts":"2026-09-09T06:53:46+05:30","event":"START","pid":"77523","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m scriptengine.cli span-recall --series jjk --probe 400 > /tmp/gate3_spanrecall.txt 2>&1; echo \"rc=$?\"; tail -8 /tmp/gate3_spanrecall.txt "}
+{"ts":"2026-09-09T06:53:46+05:30","event":"START","pid":"77524","cmd":"scriptengine/.venv/bin/python -m scriptengine.cli span-recall --series jjk --probe 400 "}
+{"ts":"2026-09-09T07:53:48+05:30","event":"END","pid":"77524","dur_s":"3602"}
+{"ts":"2026-09-09T07:53:48+05:30","event":"END","pid":"77523","dur_s":"3602"}
+{"ts":"2026-09-09T07:54:33+05:30","event":"START","pid":"99148","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -rn 'def recall' scriptengine/ | head -3 && grep -n 'sample' scriptengine/eval/span_recall.py 2>/dev/null | head -8; ls scriptengine/eval/ | head -20 "}
+{"ts":"2026-09-09T07:54:33+05:30","event":"START","pid":"99149","cmd":"grep -rn def recall scriptengine/ "}
+{"ts":"2026-09-09T07:54:38+05:30","event":"END","pid":"99148","dur_s":"5"}
+{"ts":"2026-09-09T07:54:38+05:30","event":"END","pid":"99149","dur_s":"5"}
+{"ts":"2026-09-09T07:55:03+05:30","event":"START","pid":"99227","cmd":"/bin/bash -c for i in $(seq 1 240); do if ! pgrep -f 'span-recall --series jjk' > /dev/null; then echo \"[$(date -u +%H:%M:%SZ)] process ended (iter $i)\"; break; fi; LAST=$(grep -oE '[0-9]+/400 .*' /tmp/gate3_spanrecall_2"}
+{"ts":"2026-09-09T08:55:08+05:30","event":"END","pid":"99227","dur_s":"3605"}
+{"ts":"2026-09-09T08:55:38+05:30","event":"START","pid":"114805","cmd":"/bin/bash -c for i in $(seq 1 80); do if ! pgrep -f 'span-recall --series jjk' > /dev/null; then echo \"[$(date -u +%H:%M:%SZ)] process ended (iter $i)\"; break; fi; if grep -q 'Live probe' /tmp/gate3_spanrecall_2.txt; the"}
+{"ts":"2026-09-09T09:01:11+05:30","event":"END","pid":"114805","dur_s":"333"}
+{"ts":"2026-09-09T09:02:16+05:30","event":"START","pid":"116353","cmd":"/bin/bash -c for i in $(seq 1 40); do pgrep -f 'canon-run --series opm' > /dev/null || { echo \"[$(date -u +%H:%M:%SZ)] ENDED (iter $i)\"; break; }; if [ $((i % 10)) -eq 1 ]; then echo \"[$(date -u +%H:%M:%SZ)] $(tail -1 /t"}
+{"ts":"2026-09-09T09:12:21+05:30","event":"END","pid":"116353","dur_s":"605"}
+{"ts":"2026-09-09T09:20:38+05:30","event":"START","pid":"121209","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -rn \"csm-fact-06\" --include=\"*.py\" --include=\"*.json\" --include=\"*.jsonl\" --include=\"*.md\" -l . 2>/dev/null | grep -v node_modules | head; echo ---; ls reports/csm/ | hea"}
+{"ts":"2026-09-09T09:20:43+05:30","event":"END","pid":"121209","dur_s":"5"}
+{"ts":"2026-09-09T09:29:26+05:30","event":"START","pid":"123114","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 14 curl -s -m 13 -X POST http://127.0.0.1:8000/context -H 'Content-Type: application/json' -d '{\"series\":\"csm\",\"query\":\"What is Denji'\"'\"'s hybrid transformation trigg"}
+{"ts":"2026-09-09T09:29:36+05:30","event":"END","pid":"123114","dur_s":"10"}
+{"ts":"2026-09-09T09:30:26+05:30","event":"START","pid":"123354","cmd":"/bin/bash -c ls -la /tmp/r2_fact06_bank.json; cat /tmp/r2_fact06_bank.json | head -c 200; echo; echo \"--- retry (warm call) ---\"; cd /home/goblin/ScriptEngine && time (timeout 14 curl -s -m 13 -X POST http://127.0.0.1:80"}
+{"ts":"2026-09-09T09:30:31+05:30","event":"END","pid":"123354","dur_s":"5"}
+{"ts":"2026-09-09T09:40:49+05:30","event":"START","pid":"125580","cmd":"timeout 14 scriptengine/.venv/bin/python /tmp/r2_diag.py "}
+{"ts":"2026-09-09T09:40:54+05:30","event":"END","pid":"125580","dur_s":"5"}
+{"ts":"2026-09-09T09:46:41+05:30","event":"START","pid":"126951","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 14 curl -s -m 13 -X POST http://127.0.0.1:8000/context -H 'Content-Type: application/json' -d '{\"series\":\"csm\",\"query\":\"While Yoru believes that Nayuta is likely dead,"}
+{"ts":"2026-09-09T09:46:56+05:30","event":"END","pid":"126951","dur_s":"15"}
+{"ts":"2026-09-09T09:47:46+05:30","event":"START","pid":"127217","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && time (timeout 14 curl -s -m 13 -X POST http://127.0.0.1:8000/context -H 'Content-Type: application/json' -d '{\"series\":\"csm\",\"query\":\"While Yoru believes that Nayuta is likely"}
+{"ts":"2026-09-09T09:48:02+05:30","event":"END","pid":"127217","dur_s":"16"}
+{"ts":"2026-09-09T10:06:27+05:30","event":"START","pid":"131252","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && source scriptengine/.venv/bin/activate && timeout 60 python - <<'EOF' from scriptengine.config import series_paths from scriptengine.retrieve.roster import build_roster paths "}
+{"ts":"2026-09-09T10:06:32+05:30","event":"END","pid":"131252","dur_s":"5"}
+{"ts":"2026-09-09T10:10:48+05:30","event":"START","pid":"132798","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && source scriptengine/.venv/bin/activate && timeout 120 python -m pytest tests/test_csm_fixtures.py tests/test_csm_router_count_rule.py tests/test_ability_owner.py -q 2>&1 | tai"}
+{"ts":"2026-09-09T10:10:53+05:30","event":"END","pid":"132798","dur_s":"5"}
+{"ts":"2026-09-09T10:11:29+05:30","event":"START","pid":"132979","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 14 scriptengine/.venv/bin/python -m pytest tests/test_retrieve.py tests/test_csm_fixtures.py tests/test_stores.py -q 2>&1 | tail -15 "}
+{"ts":"2026-09-09T10:11:34+05:30","event":"START","pid":"133038","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && source scriptengine/.venv/bin/activate && timeout 120 python -m pytest tests/test_roster.py tests/test_roster_scoring.py tests/test_roster_validation.py tests/test_ability_cla"}
+{"ts":"2026-09-09T10:11:39+05:30","event":"END","pid":"132979","dur_s":"10"}
+{"ts":"2026-09-09T10:11:44+05:30","event":"END","pid":"133038","dur_s":"10"}
+{"ts":"2026-09-09T10:11:54+05:30","event":"START","pid":"133130","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 14 scriptengine/.venv/bin/python -m pytest tests/test_retrieve.py -q 2>&1 | tail -4 "}
+{"ts":"2026-09-09T10:11:59+05:30","event":"END","pid":"133130","dur_s":"5"}
+{"ts":"2026-09-09T10:12:39+05:30","event":"START","pid":"133437","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && git stash push -m r2guard scriptengine/retrieve/hybrid.py -q && timeout 14 scriptengine/.venv/bin/python -m pytest tests/test_retrieve.py -q -k \"QueryCoverRecallGuard\" 2>&1 | "}
+{"ts":"2026-09-09T10:12:44+05:30","event":"END","pid":"133437","dur_s":"5"}
+{"ts":"2026-09-09T10:13:59+05:30","event":"START","pid":"134043","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 14 scriptengine/.venv/bin/python -m pytest tests/test_stores.py -q 2>&1 | tail -3 "}
+{"ts":"2026-09-09T10:14:15+05:30","event":"END","pid":"134043","dur_s":"16"}
+{"ts":"2026-09-09T10:14:35+05:30","event":"START","pid":"134228","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 14 scriptengine/.venv/bin/python -m pytest tests/test_stores.py -q 2>&1 | tail -2; timeout 14 scriptengine/.venv/bin/python -m pytest tests/test_context.py -q -k \"Floo"}
+{"ts":"2026-09-09T10:15:05+05:30","event":"END","pid":"134228","dur_s":"30"}
+{"ts":"2026-09-09T10:15:25+05:30","event":"START","pid":"134555","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 14 scriptengine/.venv/bin/python -m pytest tests/test_stores.py 2>&1 | tail -1 "}
+{"ts":"2026-09-09T10:15:35+05:30","event":"START","pid":"134604","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -n \"^from typing\|^import typing\|from typing import\" scriptengine/retrieve/roster.py | head -3; source scriptengine/.venv/bin/activate && timeout 60 python -m pytest tes"}
+{"ts":"2026-09-09T10:15:40+05:30","event":"END","pid":"134604","dur_s":"5"}
+{"ts":"2026-09-09T10:15:40+05:30","event":"END","pid":"134555","dur_s":"15"}
+{"ts":"2026-09-09T10:15:55+05:30","event":"START","pid":"134735","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 14 scriptengine/.venv/bin/python -m pytest tests/test_stores.py::TestPassagesForSubject tests/test_stores.py::TestSubjectNodeName -v 2>&1 | tail -10 "}
+{"ts":"2026-09-09T10:16:00+05:30","event":"END","pid":"134735","dur_s":"5"}
+{"ts":"2026-09-09T10:17:25+05:30","event":"START","pid":"135179","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -n 'class TestPass' tests/test_stores.py | head -3; scriptengine/.venv/bin/python -m pytest tests/test_csm_roster_scoping.py tests/test_csm_fixtures.py tests/test_csm_rou"}
+{"ts":"2026-09-09T10:17:25+05:30","event":"START","pid":"135182","cmd":"scriptengine/.venv/bin/python -m pytest tests/test_csm_roster_scoping.py tests/test_csm_fixtures.py tests/test_csm_router_count_rule.py tests/test_ability_owner.py tests/test_retrieve.py -q "}
+{"ts":"2026-09-09T10:17:35+05:30","event":"START","pid":"135261","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m pytest tests/test_roster.py tests/test_roster_scoring.py tests/test_roster_validation.py tests/test_ability_class.py tests/test_ability_extrac"}
+{"ts":"2026-09-09T10:17:35+05:30","event":"START","pid":"135262","cmd":"scriptengine/.venv/bin/python -m pytest tests/test_roster.py tests/test_roster_scoring.py tests/test_roster_validation.py tests/test_ability_class.py tests/test_ability_extraction.py tests/test_stores.py::TestPassagesFor"}
+{"ts":"2026-09-09T10:17:35+05:30","event":"END","pid":"135179","dur_s":"10"}
+{"ts":"2026-09-09T10:17:35+05:30","event":"END","pid":"135182","dur_s":"10"}
+{"ts":"2026-09-09T10:17:45+05:30","event":"END","pid":"135262","dur_s":"10"}
+{"ts":"2026-09-09T10:17:45+05:30","event":"END","pid":"135261","dur_s":"10"}
+{"ts":"2026-09-09T10:21:16+05:30","event":"START","pid":"136454","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && echo \"=== level-0 consumers (chunk level=0) in retrieve ===\"; grep -rn \"level = 0\|level=0\|IN (0, 2)\|c.level\|level IN\" scriptengine/stores/facts.py | head; echo \"=== caller"}
+{"ts":"2026-09-09T10:21:21+05:30","event":"END","pid":"136454","dur_s":"5"}
+{"ts":"2026-09-09T10:21:46+05:30","event":"START","pid":"136540","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && echo \"=== closed_members references (expect parse + build_roster only) ===\"; grep -rn \"closed_members\" scriptengine/ series/ tests/ 2>/dev/null | grep -v \"__pycache__\"; echo \""}
+{"ts":"2026-09-09T10:22:06+05:30","event":"END","pid":"136540","dur_s":"20"}
+{"ts":"2026-09-09T10:22:41+05:30","event":"START","pid":"136853","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 20 scriptengine/.venv/bin/python -m pytest tests/test_csm_roster_scoping.py tests/test_retrieve.py -q 2>&1 | tail -15 "}
+{"ts":"2026-09-09T10:22:46+05:30","event":"END","pid":"136853","dur_s":"5"}
+{"ts":"2026-09-09T10:25:02+05:30","event":"START","pid":"138156","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -n \"def widen_umbrella\" -A 40 scriptengine/retrieve/roster.py | sed -n '1,45p' && grep -rn \"closed_members\|ability_sections_umbrella\|ability_row_sections\" series/ | gre"}
+{"ts":"2026-09-09T10:25:07+05:30","event":"END","pid":"138156","dur_s":"5"}
+{"ts":"2026-09-09T10:25:37+05:30","event":"START","pid":"138315","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 120 scriptengine/.venv/bin/python -m pytest tests/test_csm_roster_scoping.py tests/test_retrieve.py -q 2>&1 | tail -5 "}
+{"ts":"2026-09-09T10:25:42+05:30","event":"END","pid":"138315","dur_s":"5"}
+{"ts":"2026-09-09T10:26:47+05:30","event":"START","pid":"138528","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -n \"def _declared_name\" -A 8 scriptengine/retrieve/roster.py | head -12 && grep -rn \"build_roster(\" scriptengine/ | grep -v \"def build_roster\" | head && sed -n '400,436p'"}
+{"ts":"2026-09-09T10:26:52+05:30","event":"END","pid":"138528","dur_s":"5"}
+{"ts":"2026-09-09T10:30:03+05:30","event":"START","pid":"140081","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m pytest tests/test_csm_roster_scoping.py tests/test_retrieve.py -q 2>&1 | tail -5 "}
+{"ts":"2026-09-09T10:30:08+05:30","event":"END","pid":"140081","dur_s":"5"}
+{"ts":"2026-09-09T10:34:19+05:30","event":"START","pid":"141856","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m pytest tests/test_retrieve.py tests/test_csm_fixtures.py tests/test_csm_roster_scoping.py -q 2>&1 | tail -3 "}
+{"ts":"2026-09-09T10:34:24+05:30","event":"START","pid":"141908","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m pytest tests/ --collect-only -q 2>&1 | tail -2; git diff --cached --stat | wc -l; git status --porcelain | grep -c '^' "}
+{"ts":"2026-09-09T10:34:24+05:30","event":"END","pid":"141856","dur_s":"5"}
+{"ts":"2026-09-09T10:34:29+05:30","event":"END","pid":"141908","dur_s":"5"}
+{"ts":"2026-09-09T10:36:44+05:30","event":"START","pid":"143334","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 60 scriptengine/.venv/bin/python -m pytest tests/test_csm_roster_scoping.py \"tests/test_retrieve.py::TestQueryCoverage\" \"tests/test_retrieve.py::TestQueryCoverRecallGu"}
+{"ts":"2026-09-09T10:36:49+05:30","event":"END","pid":"143334","dur_s":"5"}
+{"ts":"2026-09-09T10:39:10+05:30","event":"START","pid":"144594","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -n \"_deduplicate\" -A 14 scriptengine/retrieve/hybrid.py | sed -n 1,20p && echo ===TESTS=== && scriptengine/.venv/bin/python -m pytest tests/test_retrieve.py tests/test_cs"}
+{"ts":"2026-09-09T10:39:15+05:30","event":"END","pid":"144594","dur_s":"5"}
+{"ts":"2026-09-09T10:41:45+05:30","event":"START","pid":"146113","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -rn \"passages_for_subject\" scriptengine/ tests/ | grep -v \"\.pyc\" "}
+{"ts":"2026-09-09T10:41:50+05:30","event":"END","pid":"146113","dur_s":"5"}
+{"ts":"2026-09-09T10:42:41+05:30","event":"START","pid":"146284","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m pytest tests/test_retrieve.py tests/test_csm_fixtures.py tests/test_csm_roster_scoping.py -q 2>&1 | tail -3 "}
+{"ts":"2026-09-09T10:42:46+05:30","event":"END","pid":"146284","dur_s":"5"}
+{"ts":"2026-09-09T10:53:18+05:30","event":"START","pid":"151076","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 120 scriptengine/.venv/bin/python -m pytest tests/test_retrieve.py tests/test_csm_fixtures.py tests/test_csm_roster_scoping.py -q 2>&1 | tail -3 "}
+{"ts":"2026-09-09T10:53:23+05:30","event":"END","pid":"151076","dur_s":"5"}
+{"ts":"2026-09-09T10:54:18+05:30","event":"START","pid":"151266","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 60 scriptengine/.venv/bin/python -m pytest tests/ --collect-only -q 2>&1 | tail -2 "}
+{"ts":"2026-09-09T10:54:23+05:30","event":"END","pid":"151266","dur_s":"5"}
+{"ts":"2026-09-09T10:56:34+05:30","event":"START","pid":"152673","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && sed -n '1980,1995p' scriptengine/stores/facts.py && echo \"===callers===\" && grep -rn \"passages_for_subject\" scriptengine/ tests/ | grep -v \".venv\" "}
+{"ts":"2026-09-09T10:56:39+05:30","event":"END","pid":"152673","dur_s":"5"}
+{"ts":"2026-09-09T10:58:24+05:30","event":"START","pid":"153034","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -rn \"def load_overrides\" scriptengine/ | grep -v pyc; sed -n '29,95p' tests/test_roster.py "}
+{"ts":"2026-09-09T10:58:34+05:30","event":"END","pid":"153034","dur_s":"10"}
+{"ts":"2026-09-09T11:10:21+05:30","event":"START","pid":"154665","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && echo \"=== 1. 3-file battery (expect 42 passed + 2 xpassed) ===\" && scriptengine/.venv/bin/python -m pytest tests/test_retrieve.py tests/test_csm_fixtures.py tests/test_csm_ros"}
+{"ts":"2026-09-09T11:10:21+05:30","event":"START","pid":"154666","cmd":"scriptengine/.venv/bin/python -m pytest tests/test_retrieve.py tests/test_csm_fixtures.py tests/test_csm_roster_scoping.py -q "}
+{"ts":"2026-09-09T11:10:26+05:30","event":"END","pid":"154666","dur_s":"5"}
+{"ts":"2026-09-09T11:10:26+05:30","event":"END","pid":"154665","dur_s":"5"}
+{"ts":"2026-09-09T11:11:06+05:30","event":"START","pid":"154904","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -rn '\.warning\s*=' scriptengine/ | head -5; grep -rn 'warning' scriptengine/retrieve/roster.py | wc -l; grep -c 'warning' scriptengine/retrieve/roster.py; grep -rn 'def "}
+{"ts":"2026-09-09T11:11:06+05:30","event":"START","pid":"154905","cmd":"grep -rn \.warning\s*= scriptengine/ "}
+{"ts":"2026-09-09T11:11:11+05:30","event":"END","pid":"154904","dur_s":"5"}
+{"ts":"2026-09-09T11:11:11+05:30","event":"END","pid":"154905","dur_s":"5"}
+{"ts":"2026-09-09T11:11:21+05:30","event":"START","pid":"154951","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && echo \"=== pre-gate battery (expect 42 passed + 2 xpassed) ===\" && scriptengine/.venv/bin/python -m pytest tests/test_retrieve.py tests/test_csm_fixtures.py tests/test_csm_rost"}
+{"ts":"2026-09-09T11:11:21+05:30","event":"START","pid":"154985","cmd":"scriptengine/.venv/bin/python -m pytest tests/ --collect-only -q "}
+{"ts":"2026-09-09T11:11:26+05:30","event":"START","pid":"155044","cmd":"scriptengine/.venv/bin/python -m pytest tests/test_roster.py tests/test_roster_scoring.py tests/test_roster_validation.py -q "}
+{"ts":"2026-09-09T11:11:26+05:30","event":"END","pid":"154985","dur_s":"5"}
+{"ts":"2026-09-09T11:11:31+05:30","event":"END","pid":"155044","dur_s":"5"}
+{"ts":"2026-09-09T11:11:31+05:30","event":"END","pid":"154951","dur_s":"10"}
+{"ts":"2026-09-09T11:11:46+05:30","event":"START","pid":"155094","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && kill 77291 2>/dev/null; sleep 2; ps -p 77291 >/dev/null 2>&1 && echo \"STILL UP\" || echo \":8000 stopped\"; nvidia-smi --query-gpu=memory.used,memory.free --format=csv,noheader "}
+{"ts":"2026-09-09T11:11:51+05:30","event":"START","pid":"155116","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m pytest tests/ -q 2>&1 | tail -3 "}
+{"ts":"2026-09-09T11:11:51+05:30","event":"START","pid":"155117","cmd":"scriptengine/.venv/bin/python -m pytest tests/ -q "}
+{"ts":"2026-09-09T11:11:51+05:30","event":"END","pid":"155094","dur_s":"5"}
+{"ts":"2026-09-09T11:15:07+05:30","event":"START","pid":"156299","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m scriptengine.cli eval --series jjk 2>&1 | tail -5 "}
+{"ts":"2026-09-09T11:15:07+05:30","event":"START","pid":"156300","cmd":"scriptengine/.venv/bin/python -m scriptengine.cli eval --series jjk "}
+{"ts":"2026-09-09T11:15:07+05:30","event":"END","pid":"155116","dur_s":"196"}
+{"ts":"2026-09-09T11:15:07+05:30","event":"END","pid":"155117","dur_s":"196"}
+{"ts":"2026-09-09T11:15:57+05:30","event":"START","pid":"156657","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m scriptengine.cli eval --series jjk 2>/dev/null | grep -v 'ImportError\|qdrant_client\|shutting down\|^  File' | tail -8; echo \"=== eval.json ="}
+{"ts":"2026-09-09T11:15:57+05:30","event":"START","pid":"156658","cmd":"scriptengine/.venv/bin/python -m scriptengine.cli eval --series jjk "}
+{"ts":"2026-09-09T11:15:57+05:30","event":"END","pid":"156299","dur_s":"50"}
+{"ts":"2026-09-09T11:15:57+05:30","event":"END","pid":"156300","dur_s":"50"}
+{"ts":"2026-09-09T11:16:48+05:30","event":"END","pid":"156657","dur_s":"51"}
+{"ts":"2026-09-09T11:16:48+05:30","event":"END","pid":"156658","dur_s":"51"}
+{"ts":"2026-09-09T11:20:28+05:30","event":"START","pid":"157373","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && setsid nohup scriptengine/.venv/bin/python -m scriptengine.cli span-recall --series jjk --probe 400 > /tmp/gate3_probe.log 2>&1 < /dev/null & echo \"gate-3 probe launched (sets"}
+{"ts":"2026-09-09T11:21:28+05:30","event":"END","pid":"157373","dur_s":"60"}
+{"ts":"2026-09-09T11:22:03+05:30","event":"START","pid":"157682","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && TS=$(date -u +%Y-%m-%dT%H:%M:%SZ) && cat >> reports/master-work/work_log.md <<'EOF' [$TS] R-2+R-3 GATE RUN IN PROGRESS (one-copy 150k ordering, Qwen untouched at 26,726 MiB): "}
+{"ts":"2026-09-09T11:30:01+05:30","event":"END","pid":"157682","dur_s":"478"}
+{"ts":"2026-09-09T11:33:52+05:30","event":"START","pid":"160020","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && TS=$(date -u +%Y-%m-%dT%H:%M:%SZ) && cat >> reports/master-work/work_log.md <<'EOF' [$TS] GATE-3 INCIDENT ACK + RECOVERY (A's 11:31 IST decision is the record; B lines for com"}
+{"ts":"2026-09-09T11:43:52+05:30","event":"END","pid":"160020","dur_s":"600"}
+{"ts":"2026-09-09T11:46:33+05:30","event":"START","pid":"162647","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && awk '/^### D18/{s=NR} /^### D19/{print \"D19 already at\", NR; exit} END{print \"D18 starts at\", s}' plan/drift_log.md; for i in $(seq 1 22); do ROWS=$(wc -l < reports/span-recal"}
+{"ts":"2026-09-09T11:57:33+05:30","event":"END","pid":"162647","dur_s":"660"}
+{"ts":"2026-09-09T11:58:23+05:30","event":"START","pid":"165250","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && cat > /tmp/csm_iter1_records/drift_d19_body.txt <<'EOF' ### D19 — CSM unit-3 iteration 1: the R-2 + R-3 council AMEND, the shared four gates, the class re-sweeps (2026-09-09"}
+{"ts":"2026-09-09T12:09:24+05:30","event":"END","pid":"165250","dur_s":"661"}
+{"ts":"2026-09-09T12:09:54+05:30","event":"START","pid":"168185","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && for i in $(seq 1 22); do ROWS=$(wc -l < reports/span-recall/jjk/recall_verbatim.jsonl); if [ $ROWS -ge 4454 ] || ! kill -0 159612 2>/dev/null; then echo \"t=$((i*30))s ledger=$"}
+{"ts":"2026-09-09T12:14:57+05:30","event":"END","pid":"168185","dur_s":"303"}
+{"ts":"2026-09-10T02:16:36+05:30","event":"START","pid":"60487","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && TS=$(date -u +%Y-%m-%dT%H:%M:%SZ) && echo \"[$TS] P1.1 STEP 3 START (gate legs on CUDA :8000 pid 58239; Qwen pid 58178 @100k, 25.1/32.6 GB used, 7.5 GB headroom - sanctioned 10"}
+{"ts":"2026-09-10T02:16:36+05:30","event":"START","pid":"60489","cmd":"scriptengine/.venv/bin/python -m scriptengine.cli span-recall --series jjk --probe 400 "}
+{"ts":"2026-09-10T02:20:58+05:30","event":"END","pid":"60487","dur_s":"262"}
+{"ts":"2026-09-10T02:20:58+05:30","event":"END","pid":"60489","dur_s":"262"}
+{"ts":"2026-09-10T02:21:08+05:30","event":"START","pid":"62269","cmd":"/bin/bash -c kill -0 58178 && nvidia-smi --query-gpu=memory.used,utilization.gpu --format=csv,noheader && cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m scriptengine.cli canon-run --series opm --skip-ev"}
+{"ts":"2026-09-10T02:21:08+05:30","event":"START","pid":"62272","cmd":"scriptengine/.venv/bin/python -m scriptengine.cli canon-run --series opm --skip-eval "}
+{"ts":"2026-09-10T02:21:29+05:30","event":"END","pid":"62272","dur_s":"21"}
+{"ts":"2026-09-10T02:21:29+05:30","event":"END","pid":"62269","dur_s":"21"}
+{"ts":"2026-09-10T02:21:54+05:30","event":"START","pid":"62393","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m scriptengine.cli span-recall --series csm --panel reports/csm/panel_csm_parta.json --door qa 2>&1 | tail -n 30 "}
+{"ts":"2026-09-10T02:21:54+05:30","event":"START","pid":"62394","cmd":"scriptengine/.venv/bin/python -m scriptengine.cli span-recall --series csm --panel reports/csm/panel_csm_parta.json --door qa "}
+{"ts":"2026-09-10T02:21:59+05:30","event":"END","pid":"62393","dur_s":"5"}
+{"ts":"2026-09-10T02:21:59+05:30","event":"END","pid":"62394","dur_s":"5"}
+{"ts":"2026-09-10T02:33:40+05:30","event":"START","pid":"63356","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && time scriptengine/.venv/bin/python /tmp/csm_iter1_records/resweep_partb.py "}
+{"ts":"2026-09-10T02:33:40+05:30","event":"START","pid":"63357","cmd":"scriptengine/.venv/bin/python /tmp/csm_iter1_records/resweep_partb.py "}
+{"ts":"2026-09-10T02:33:45+05:30","event":"END","pid":"63356","dur_s":"5"}
+{"ts":"2026-09-10T02:33:45+05:30","event":"END","pid":"63357","dur_s":"5"}
+{"ts":"2026-09-10T03:09:50+05:30","event":"START","pid":"70259","cmd":"grep -rn def subject_has_set scriptengine/ "}
+{"ts":"2026-09-10T03:09:55+05:30","event":"END","pid":"70259","dur_s":"5"}
+{"ts":"2026-09-10T03:17:56+05:30","event":"START","pid":"71150","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && scriptengine/.venv/bin/python -m pytest tests/test_router.py tests/test_context.py tests/test_csm_router_count_rule.py tests/test_csm_roster_scoping.py -q 2>&1 | tail -30 "}
+{"ts":"2026-09-10T03:17:56+05:30","event":"START","pid":"71151","cmd":"scriptengine/.venv/bin/python -m pytest tests/test_router.py tests/test_context.py tests/test_csm_router_count_rule.py tests/test_csm_roster_scoping.py -q "}
+{"ts":"2026-09-10T03:19:11+05:30","event":"END","pid":"71151","dur_s":"75"}
+{"ts":"2026-09-10T03:19:11+05:30","event":"END","pid":"71150","dur_s":"75"}
+{"ts":"2026-09-10T03:19:46+05:30","event":"START","pid":"71734","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && grep -rn \"SCRIPTENGINE_DEVICE\" scriptengine/ | head && echo \"=== where device is read/set ===\" && grep -rn \"SCRIPTENGINE_DEVICE\|environ.get\|getenv\" scriptengine/model/*.py s"}
+{"ts":"2026-09-10T03:19:46+05:30","event":"START","pid":"71735","cmd":"grep -rn SCRIPTENGINE_DEVICE scriptengine/ "}
+{"ts":"2026-09-10T03:19:51+05:30","event":"END","pid":"71735","dur_s":"5"}
+{"ts":"2026-09-10T03:19:51+05:30","event":"END","pid":"71734","dur_s":"5"}
+{"ts":"2026-09-10T04:05:03+05:30","event":"START","pid":"89808","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && RD=/tmp/pi-subagents-uid-1000/async-subagent-runs/429d9efa-d600-4448-af21-3f90ff14a4ac for i in 1 2 3; do   echo \"--- check $i ($(date -u +%H:%M:%S)) ---\"   python3 -c \"import"}
+{"ts":"2026-09-10T04:05:08+05:30","event":"END","pid":"89808","dur_s":"5"}
+{"ts":"2026-09-10T04:12:55+05:30","event":"START","pid":"93749","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine for i in 1 2 3 4; do   echo \"--- check $i ($(date -u +%H:%M:%S)) ---\"   python3 -c \"import json d=json.load(open('/tmp/pi-subagents-uid-1000/async-subagent-runs/429d9efa-d600-444"}
+{"ts":"2026-09-10T04:13:05+05:30","event":"END","pid":"93749","dur_s":"10"}
+{"ts":"2026-09-10T04:14:06+05:30","event":"START","pid":"94968","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine for i in 1 2 3; do   echo \"--- check $i ($(date -u +%H:%M:%S)) ---\"   python3 -c \"import json d=json.load(open('/tmp/pi-subagents-uid-1000/async-subagent-runs/429d9efa-d600-4448-"}
+{"ts":"2026-09-10T04:14:16+05:30","event":"END","pid":"94968","dur_s":"10"}

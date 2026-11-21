@@ -1,0 +1,113 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Snake Devil's name?",
+      "id": "csm-pg-snake_devil-001",
+      "subject": "Snake Devil",
+      "accept": "all",
+      "expected": [
+        "\u30d8\u30d3\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u30d8\u30d3\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Snake Devil's name?",
+      "id": "csm-pg-snake_devil-002",
+      "subject": "Snake Devil",
+      "accept": "all",
+      "expected": [
+        "Hebi no Akuma"
+      ],
+      "found": [
+        "Hebi no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Snake Devil's gender?",
+      "id": "csm-pg-snake_devil-003",
+      "subject": "Snake Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Snake Devil?",
+      "id": "csm-pg-snake_devil-004",
+      "subject": "Snake Devil",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Snake Devil's occupation?",
+      "id": "csm-pg-snake_devil-005",
+      "subject": "Snake Devil",
+      "accept": "all",
+      "expected": [
+        "Wild Contract Devil"
+      ],
+      "found": [
+        "Wild Contract Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

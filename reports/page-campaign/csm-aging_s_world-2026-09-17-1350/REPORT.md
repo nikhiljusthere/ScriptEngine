@@ -1,0 +1,24 @@
+# Page campaign csm/aging_s_world — 2026-09-17-1350
+
+Batch `_csm_page_aging_s_world.json`: 1 questions (0 set, 1 fact), scored against the live server (started 2026-09-17T13:38:35+00:00), 0.9s wall clock.
+
+## Headline
+
+| | |
+|---|---:|
+| **questions passed** | **1/1** |
+| set questions exact | 0/0 (0.0%) |
+| canon items recovered | 0/0 (0.0%) |
+| fact answers present | 1/1 |
+
+## Failures to triage
+
+None. The batch is at 100%.
+
+## All questions
+
+| passed | kind | question | basis / confidence | detail |
+|---|---|---|---|---|
+| **yes** | fact | What is Aging's World? | `routed qa` / `-` | Aging's World 老いの世界 Oi no Sekai is an alternate realm created by the Aging Devil. |
+
+Triage rule: a miss is either a **gold error** (the batch's answer is not what the cited page documents -- fix the batch) or an **engine gap** (undeclared roster, stolen routing, missing link -- declare it in `series/<name>/overrides.yaml` with a comment naming this question).

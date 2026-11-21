@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Kobeni's car's name?",
+      "id": "csm-pg-kobeni_s_car-001",
+      "subject": "Kobeni's car",
+      "accept": "all",
+      "expected": [
+        "\u30b3\u30d9\u30cb\u306e\u611b\u8eca"
+      ],
+      "found": [
+        "\u30b3\u30d9\u30cb\u306e\u611b\u8eca"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Kobeni's car's name?",
+      "id": "csm-pg-kobeni_s_car-002",
+      "subject": "Kobeni's car",
+      "accept": "all",
+      "expected": [
+        "Kobeni no Aisha"
+      ],
+      "found": [
+        "Kobeni no Aisha"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Kobeni's car?",
+      "id": "csm-pg-kobeni_s_car-003",
+      "subject": "Kobeni's car",
+      "accept": "all",
+      "expected": [
+        "Destroyed"
+      ],
+      "found": [
+        "Destroyed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

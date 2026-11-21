@@ -1,0 +1,203 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Chapter 102's title?",
+      "id": "csm-pg-chapter_102-001",
+      "subject": "Chapter 102",
+      "accept": "all",
+      "expected": [
+        "Save the Cat"
+      ],
+      "found": [
+        "Save the Cat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which volume does Chapter 102 appear?",
+      "id": "csm-pg-chapter_102-002",
+      "subject": "Chapter 102",
+      "accept": "all",
+      "expected": [
+        "12"
+      ],
+      "found": [
+        "12"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which chapter does Chapter 102 appear?",
+      "id": "csm-pg-chapter_102-003",
+      "subject": "Chapter 102",
+      "accept": "all",
+      "expected": [
+        "102"
+      ],
+      "found": [
+        "102"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the Japanese title of Chapter 102?",
+      "id": "csm-pg-chapter_102-004",
+      "subject": "Chapter 102",
+      "accept": "all",
+      "expected": [
+        "\u30bb\u30fc\u30d6\u30b6\u30ad\u30e3\u30c3\u30c8"
+      ],
+      "found": [
+        "\u30bb\u30fc\u30d6\u30b6\u30ad\u30e3\u30c3\u30c8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji title of Chapter 102?",
+      "id": "csm-pg-chapter_102-005",
+      "subject": "Chapter 102",
+      "accept": "all",
+      "expected": [
+        "S\u0113bu za Kyatto"
+      ],
+      "found": [
+        "S\u0113bu za Kyatto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "On which page does Chapter 102 appear?",
+      "id": "csm-pg-chapter_102-006",
+      "subject": "Chapter 102",
+      "accept": "all",
+      "expected": [
+        "48"
+      ],
+      "found": [
+        "48"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What date is associated with Chapter 102?",
+      "id": "csm-pg-chapter_102-007",
+      "subject": "Chapter 102",
+      "accept": "all",
+      "expected": [
+        "August 17, 2022"
+      ],
+      "found": [
+        "August 17, 2022"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which arc does Chapter 102 appear?",
+      "id": "csm-pg-chapter_102-008",
+      "subject": "Chapter 102",
+      "accept": "all",
+      "expected": [
+        "Justice Devil arc"
+      ],
+      "found": [
+        "Justice Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Chapter 102?",
+      "id": "csm-pg-chapter_102-009",
+      "subject": "Chapter 102",
+      "accept": "all",
+      "expected": [
+        "Chapter 101"
+      ],
+      "found": [
+        "Chapter 101"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Chapter 102?",
+      "id": "csm-pg-chapter_102-010",
+      "subject": "Chapter 102",
+      "accept": "all",
+      "expected": [
+        "Chapter 103"
+      ],
+      "found": [
+        "Chapter 103"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 10,
+    "fact_present": 10
+  }
+}

@@ -1,0 +1,399 @@
+{
+  "tool": "jev-calibrate",
+  "version": "0.1.11",
+  "createdAt": "2026-09-23T20:53:58.807Z",
+  "split": "all",
+  "runs": 1,
+  "provider": "typesafe",
+  "modelRequested": "jev-latest",
+  "modelsAnswered": [
+    "decider-0.8b-v1"
+  ],
+  "checked": 50,
+  "notChecked": [],
+  "requests": 50,
+  "seconds": 271.926,
+  "warnings": [
+    "split \"all\" mixes tune and holdout examples: use it to look around, not to report a result. The held-out examples it judges are recorded as seen."
+  ],
+  "questions": [
+    {
+      "id": "canon_member",
+      "type": "noul",
+      "revision": "846be5f1dbde",
+      "decision": {
+        "threshold": 0.5
+      },
+      "verdict": "unusable",
+      "reason": "AUC 0.47 is below 0.85, and at 0.50 precision 0.50 and recall 0.08 miss the targets",
+      "counts": {
+        "true": 25,
+        "false": 25
+      },
+      "noul": {
+        "at": {
+          "threshold": 0.5,
+          "tp": 2,
+          "fp": 2,
+          "tn": 23,
+          "fn": 23,
+          "accuracy": 0.5,
+          "precision": 0.5,
+          "recall": 0.08,
+          "falsePositiveRate": 0.08
+        },
+        "reliability": [
+          {
+            "from": 0,
+            "to": 0.2,
+            "count": 15,
+            "meanPredicted": 0.11357333333333335,
+            "observed": 0.4666666666666667
+          },
+          {
+            "from": 0.2,
+            "to": 0.4,
+            "count": 23,
+            "meanPredicted": 0.3168304347826087,
+            "observed": 0.6086956521739131
+          },
+          {
+            "from": 0.4,
+            "to": 0.6,
+            "count": 12,
+            "meanPredicted": 0.4736083333333334,
+            "observed": 0.3333333333333333
+          },
+          {
+            "from": 0.6,
+            "to": 0.8,
+            "count": 0
+          },
+          {
+            "from": 0.8,
+            "to": 1,
+            "count": 0
+          }
+        ],
+        "meanPositive": 0.28854399999999997,
+        "meanNegative": 0.29841600000000007,
+        "auc": 0.4704,
+        "brier": 0.3172767696,
+        "suggested": {
+          "threshold": 0.52275,
+          "tp": 1,
+          "fp": 0,
+          "tn": 25,
+          "fn": 24,
+          "accuracy": 0.52,
+          "precision": 1,
+          "recall": 0.04,
+          "falsePositiveRate": 0
+        }
+      },
+      "outcomes": [
+        {
+          "id": "canon-001",
+          "label": true,
+          "value": 0.2512,
+          "correct": false
+        },
+        {
+          "id": "canon-002",
+          "label": true,
+          "value": 0.3124,
+          "correct": false
+        },
+        {
+          "id": "canon-003",
+          "label": true,
+          "value": 0.4697,
+          "correct": false
+        },
+        {
+          "id": "canon-004",
+          "label": true,
+          "value": 0.3256,
+          "correct": false
+        },
+        {
+          "id": "canon-005",
+          "label": true,
+          "value": 0.0906,
+          "correct": false
+        },
+        {
+          "id": "canon-006",
+          "label": true,
+          "value": 0.3668,
+          "correct": false
+        },
+        {
+          "id": "canon-007",
+          "label": true,
+          "value": 0.3528,
+          "correct": false
+        },
+        {
+          "id": "canon-008",
+          "label": true,
+          "value": 0.1189,
+          "correct": false
+        },
+        {
+          "id": "canon-009",
+          "label": true,
+          "value": 0.2291,
+          "correct": false
+        },
+        {
+          "id": "canon-010",
+          "label": true,
+          "value": 0.1627,
+          "correct": false
+        },
+        {
+          "id": "canon-011",
+          "label": true,
+          "value": 0.2512,
+          "correct": false
+        },
+        {
+          "id": "canon-012",
+          "label": true,
+          "value": 0.3668,
+          "correct": false
+        },
+        {
+          "id": "canon-013",
+          "label": true,
+          "value": 0.0958,
+          "correct": false
+        },
+        {
+          "id": "canon-014",
+          "label": true,
+          "value": 0.2512,
+          "correct": false
+        },
+        {
+          "id": "canon-015",
+          "label": true,
+          "value": 0.3528,
+          "correct": false
+        },
+        {
+          "id": "canon-016",
+          "label": true,
+          "value": 0.2995,
+          "correct": false
+        },
+        {
+          "id": "canon-017",
+          "label": true,
+          "value": 0.1255,
+          "correct": false
+        },
+        {
+          "id": "canon-018",
+          "label": true,
+          "value": 0.2512,
+          "correct": false
+        },
+        {
+          "id": "canon-019",
+          "label": true,
+          "value": 0.189,
+          "correct": false
+        },
+        {
+          "id": "canon-020",
+          "label": true,
+          "value": 0.3668,
+          "correct": false
+        },
+        {
+          "id": "canon-021",
+          "label": true,
+          "value": 0.1627,
+          "correct": false
+        },
+        {
+          "id": "canon-022",
+          "label": true,
+          "value": 0.41,
+          "correct": false
+        },
+        {
+          "id": "canon-023",
+          "label": true,
+          "value": 0.5,
+          "correct": true
+        },
+        {
+          "id": "canon-024",
+          "label": true,
+          "value": 0.381,
+          "correct": false
+        },
+        {
+          "id": "canon-025",
+          "label": true,
+          "value": 0.5303,
+          "correct": true
+        },
+        {
+          "id": "intruder-001",
+          "label": false,
+          "value": 0.4848,
+          "correct": true
+        },
+        {
+          "id": "intruder-002",
+          "label": false,
+          "value": 0.4546,
+          "correct": true
+        },
+        {
+          "id": "intruder-003",
+          "label": false,
+          "value": 0.4697,
+          "correct": true
+        },
+        {
+          "id": "intruder-004",
+          "label": false,
+          "value": 0.0409,
+          "correct": true
+        },
+        {
+          "id": "intruder-005",
+          "label": false,
+          "value": 0.1394,
+          "correct": true
+        },
+        {
+          "id": "intruder-006",
+          "label": false,
+          "value": 0.1255,
+          "correct": true
+        },
+        {
+          "id": "intruder-007",
+          "label": false,
+          "value": 0.0486,
+          "correct": true
+        },
+        {
+          "id": "intruder-008",
+          "label": false,
+          "value": 0.3668,
+          "correct": true
+        },
+        {
+          "id": "intruder-009",
+          "label": false,
+          "value": 0.4546,
+          "correct": true
+        },
+        {
+          "id": "intruder-010",
+          "label": false,
+          "value": 0.2995,
+          "correct": true
+        },
+        {
+          "id": "intruder-011",
+          "label": false,
+          "value": 0.5152,
+          "correct": false
+        },
+        {
+          "id": "intruder-012",
+          "label": false,
+          "value": 0.2512,
+          "correct": true
+        },
+        {
+          "id": "intruder-013",
+          "label": false,
+          "value": 0.3124,
+          "correct": true
+        },
+        {
+          "id": "intruder-014",
+          "label": false,
+          "value": 0.1468,
+          "correct": true
+        },
+        {
+          "id": "intruder-015",
+          "label": false,
+          "value": 0.3668,
+          "correct": true
+        },
+        {
+          "id": "intruder-016",
+          "label": false,
+          "value": 0.1255,
+          "correct": true
+        },
+        {
+          "id": "intruder-017",
+          "label": false,
+          "value": 0.2995,
+          "correct": true
+        },
+        {
+          "id": "intruder-018",
+          "label": false,
+          "value": 0.3124,
+          "correct": true
+        },
+        {
+          "id": "intruder-019",
+          "label": false,
+          "value": 0.0858,
+          "correct": true
+        },
+        {
+          "id": "intruder-020",
+          "label": false,
+          "value": 0.3391,
+          "correct": true
+        },
+        {
+          "id": "intruder-021",
+          "label": false,
+          "value": 0.381,
+          "correct": true
+        },
+        {
+          "id": "intruder-022",
+          "label": false,
+          "value": 0.5152,
+          "correct": false
+        },
+        {
+          "id": "intruder-023",
+          "label": false,
+          "value": 0.4396,
+          "correct": true
+        },
+        {
+          "id": "intruder-024",
+          "label": false,
+          "value": 0.0459,
+          "correct": true
+        },
+        {
+          "id": "intruder-025",
+          "label": false,
+          "value": 0.4396,
+          "correct": true
+        }
+      ]
+    }
+  ],
+  "costUsd": 0.000339192
+}

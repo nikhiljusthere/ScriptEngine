@@ -1,0 +1,113 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Shin Toma's name?",
+      "id": "csm-pg-shin_toma-001",
+      "subject": "Shin Toma",
+      "accept": "all",
+      "expected": [
+        "\u6238\u9593\u30b7\u30f3"
+      ],
+      "found": [
+        "\u6238\u9593\u30b7\u30f3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Shin Toma's name?",
+      "id": "csm-pg-shin_toma-002",
+      "subject": "Shin Toma",
+      "accept": "all",
+      "expected": [
+        "Toma Shin"
+      ],
+      "found": [
+        "Toma Shin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Shin Toma's gender?",
+      "id": "csm-pg-shin_toma-003",
+      "subject": "Shin Toma",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Shin Toma?",
+      "id": "csm-pg-shin_toma-004",
+      "subject": "Shin Toma",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Shin Toma's occupation?",
+      "id": "csm-pg-shin_toma-005",
+      "subject": "Shin Toma",
+      "accept": "all",
+      "expected": [
+        "Minister of Defense"
+      ],
+      "found": [
+        "Minister of Defense"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

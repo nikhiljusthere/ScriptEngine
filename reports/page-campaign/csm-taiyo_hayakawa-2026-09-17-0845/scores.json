@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Taiyo Hayakawa's name?",
+      "id": "csm-pg-taiyo_hayakawa-001",
+      "subject": "Taiyo Hayakawa",
+      "accept": "all",
+      "expected": [
+        "\u65e9\u5ddd\u30bf\u30a4\u30e8\u30a6"
+      ],
+      "found": [
+        "\u65e9\u5ddd\u30bf\u30a4\u30e8\u30a6"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Taiyo Hayakawa's name?",
+      "id": "csm-pg-taiyo_hayakawa-002",
+      "subject": "Taiyo Hayakawa",
+      "accept": "all",
+      "expected": [
+        "Hayakawa Taiy\u014d"
+      ],
+      "found": [
+        "Hayakawa Taiy\u014d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Taiyo Hayakawa's gender?",
+      "id": "csm-pg-taiyo_hayakawa-003",
+      "subject": "Taiyo Hayakawa",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Taiyo Hayakawa?",
+      "id": "csm-pg-taiyo_hayakawa-004",
+      "subject": "Taiyo Hayakawa",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

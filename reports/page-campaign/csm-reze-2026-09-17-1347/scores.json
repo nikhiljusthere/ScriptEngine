@@ -1,0 +1,391 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Reze?",
+      "set": "Every named technique of Reze",
+      "confidence": "declared",
+      "returned": 16,
+      "available": 16,
+      "canon": 16,
+      "found": 16,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Reze?",
+      "set": "Every ally of Reze",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Reze?",
+      "set": "Every enemy of Reze",
+      "confidence": "declared",
+      "returned": 12,
+      "available": 12,
+      "canon": 12,
+      "found": 12,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the subordinates of Reze?",
+      "set": "Every subordinate of Reze",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the superiors of Reze?",
+      "set": "Every superior of Reze",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Reze?",
+      "set": "Reze's affiliations",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Reze?",
+      "set": "Reze's aliases",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Reze?",
+      "found": [
+        "Enhanced Strength",
+        "Enhanced Speed",
+        "Hybrid Transformation",
+        "Augmented Durability",
+        "Explosion Creation",
+        "Explosive Propulsion",
+        "Augmented Strength",
+        "Augmented Speed",
+        "Explosive Spark",
+        "Self-Detonation",
+        "Torpedo Transformation",
+        "Blood Consumption",
+        "Nigh-Immortality",
+        "Knifemanship",
+        "Hand-to-Hand Combat",
+        "Bilingual"
+      ],
+      "missing": [],
+      "members": [
+        "Augmented Durability",
+        "Augmented Speed",
+        "Augmented Strength",
+        "Bilingual",
+        "Blood Consumption",
+        "Enhanced Speed",
+        "Enhanced Strength",
+        "Explosion Creation",
+        "Explosive Propulsion",
+        "Explosive Spark",
+        "Hand-to-Hand Combat",
+        "Hybrid Transformation",
+        "Knifemanship",
+        "Nigh-Immortality",
+        "Self-Detonation",
+        "Torpedo Transformation"
+      ]
+    },
+    {
+      "query": "What are all the allies of Reze?",
+      "found": [
+        "Typhoon Devil",
+        "Denji",
+        "Gun Devil"
+      ],
+      "missing": [],
+      "members": [
+        "Denji",
+        "Gun Devil",
+        "Typhoon Devil"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Reze?",
+      "found": [
+        "Beam",
+        "Nomo",
+        "Kato",
+        "Tanabe",
+        "Aki Hayakawa",
+        "Denji",
+        "Makima",
+        "Pochita",
+        "Kobeni Higashiyama",
+        "Angel Devil",
+        "Galgali",
+        "Masaki Ando"
+      ],
+      "missing": [],
+      "members": [
+        "Aki Hayakawa",
+        "Angel Devil",
+        "Beam",
+        "Denji",
+        "Galgali",
+        "Kato",
+        "Kobeni Higashiyama",
+        "Makima",
+        "Masaki Ando",
+        "Nomo",
+        "Pochita",
+        "Tanabe"
+      ]
+    },
+    {
+      "query": "What are all the subordinates of Reze?",
+      "found": [
+        "Typhoon Devil",
+        "Makima"
+      ],
+      "missing": [],
+      "members": [
+        "Makima",
+        "Typhoon Devil"
+      ]
+    },
+    {
+      "query": "What are all the superiors of Reze?",
+      "found": [
+        "Aki Hayakawa",
+        "Kobeni Higashiyama",
+        "Makima"
+      ],
+      "missing": [],
+      "members": [
+        "Aki Hayakawa",
+        "Kobeni Higashiyama",
+        "Makima"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Reze?",
+      "found": [
+        "Gun Devil (ruse)",
+        "Soviet Union (formerly)",
+        "Makima (brainwashed)",
+        "Tokyo Special Division 5 (formerly)"
+      ],
+      "missing": [],
+      "members": [
+        "Gun Devil (ruse)",
+        "Makima (brainwashed)",
+        "Soviet Union (formerly)",
+        "Tokyo Special Division 5 (formerly)"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Reze?",
+      "found": [
+        "Lady Reze",
+        "Bomb",
+        "Bomb Girl"
+      ],
+      "missing": [],
+      "members": [
+        "Bomb",
+        "Bomb Girl",
+        "Lady Reze"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Reze's name?",
+      "id": "csm-pg-reze-001",
+      "subject": "Reze",
+      "accept": "all",
+      "expected": [
+        "\u30ec\u30bc"
+      ],
+      "found": [
+        "\u30ec\u30bc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Reze's name?",
+      "id": "csm-pg-reze-002",
+      "subject": "Reze",
+      "accept": "all",
+      "expected": [
+        "Reze"
+      ],
+      "found": [
+        "Reze"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Reze's gender?",
+      "id": "csm-pg-reze-003",
+      "subject": "Reze",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Reze?",
+      "id": "csm-pg-reze-004",
+      "subject": "Reze",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Reze's occupation?",
+      "id": "csm-pg-reze-005",
+      "subject": "Reze",
+      "accept": "all",
+      "expected": [
+        "Spy (formerly) Waitress (formerly)"
+      ],
+      "found": [
+        "Spy (formerly) Waitress (formerly)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Reze?",
+      "id": "csm-pg-reze-006",
+      "subject": "Reze",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Reze's birthday?",
+      "id": "csm-pg-reze-007",
+      "subject": "Reze",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 7,
+    "canon_found": 43,
+    "canon_total": 43,
+    "canon_recall": 1.0,
+    "members_returned": 43,
+    "exact_answers": 7,
+    "exact_of": 7,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "7/7",
+    "at_recall_zero": 0,
+    "at_recall_80": 7,
+    "confident_and_wrong": [],
+    "fact_questions": 7,
+    "fact_present": 7
+  }
+}

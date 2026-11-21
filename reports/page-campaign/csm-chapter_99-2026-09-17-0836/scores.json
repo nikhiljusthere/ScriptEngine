@@ -1,0 +1,203 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Chapter 99's title?",
+      "id": "csm-pg-chapter_99-001",
+      "subject": "Chapter 99",
+      "accept": "all",
+      "expected": [
+        "Two Birds"
+      ],
+      "found": [
+        "Two Birds"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which volume does Chapter 99 appear?",
+      "id": "csm-pg-chapter_99-002",
+      "subject": "Chapter 99",
+      "accept": "all",
+      "expected": [
+        "12"
+      ],
+      "found": [
+        "12"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which chapter does Chapter 99 appear?",
+      "id": "csm-pg-chapter_99-003",
+      "subject": "Chapter 99",
+      "accept": "all",
+      "expected": [
+        "99"
+      ],
+      "found": [
+        "99"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the Japanese title of Chapter 99?",
+      "id": "csm-pg-chapter_99-004",
+      "subject": "Chapter 99",
+      "accept": "all",
+      "expected": [
+        "\uff12\u7fbd"
+      ],
+      "found": [
+        "\uff12\u7fbd"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji title of Chapter 99?",
+      "id": "csm-pg-chapter_99-005",
+      "subject": "Chapter 99",
+      "accept": "all",
+      "expected": [
+        "Ni wa"
+      ],
+      "found": [
+        "Ni wa"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "On which page does Chapter 99 appear?",
+      "id": "csm-pg-chapter_99-006",
+      "subject": "Chapter 99",
+      "accept": "all",
+      "expected": [
+        "24"
+      ],
+      "found": [
+        "24"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What date is associated with Chapter 99?",
+      "id": "csm-pg-chapter_99-007",
+      "subject": "Chapter 99",
+      "accept": "all",
+      "expected": [
+        "July 20, 2022"
+      ],
+      "found": [
+        "July 20, 2022"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which arc does Chapter 99 appear?",
+      "id": "csm-pg-chapter_99-008",
+      "subject": "Chapter 99",
+      "accept": "all",
+      "expected": [
+        "Justice Devil arc"
+      ],
+      "found": [
+        "Justice Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Chapter 99?",
+      "id": "csm-pg-chapter_99-009",
+      "subject": "Chapter 99",
+      "accept": "all",
+      "expected": [
+        "Chapter 98"
+      ],
+      "found": [
+        "Chapter 98"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Chapter 99?",
+      "id": "csm-pg-chapter_99-010",
+      "subject": "Chapter 99",
+      "accept": "all",
+      "expected": [
+        "Chapter 100"
+      ],
+      "found": [
+        "Chapter 100"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 10,
+    "fact_present": 10
+  }
+}

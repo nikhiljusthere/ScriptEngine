@@ -1,0 +1,221 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Chapter 61's title?",
+      "id": "csm-pg-chapter_61-001",
+      "subject": "Chapter 61",
+      "accept": "all",
+      "expected": [
+        "News Reporter"
+      ],
+      "found": [
+        "News Reporter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which volume does Chapter 61 appear?",
+      "id": "csm-pg-chapter_61-002",
+      "subject": "Chapter 61",
+      "accept": "all",
+      "expected": [
+        "7"
+      ],
+      "found": [
+        "7"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which chapter does Chapter 61 appear?",
+      "id": "csm-pg-chapter_61-003",
+      "subject": "Chapter 61",
+      "accept": "all",
+      "expected": [
+        "61"
+      ],
+      "found": [
+        "61"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the Japanese title of Chapter 61?",
+      "id": "csm-pg-chapter_61-004",
+      "subject": "Chapter 61",
+      "accept": "all",
+      "expected": [
+        "\u30cb\u30e5\u30fc\u30b9\u30ec\u30dd\u30fc\u30bf\u30fc"
+      ],
+      "found": [
+        "\u30cb\u30e5\u30fc\u30b9\u30ec\u30dd\u30fc\u30bf\u30fc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji title of Chapter 61?",
+      "id": "csm-pg-chapter_61-005",
+      "subject": "Chapter 61",
+      "accept": "all",
+      "expected": [
+        "Ny\u016bsu Rep\u014dt\u0101"
+      ],
+      "found": [
+        "Ny\u016bsu Rep\u014dt\u0101"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "On which page does Chapter 61 appear?",
+      "id": "csm-pg-chapter_61-006",
+      "subject": "Chapter 61",
+      "accept": "all",
+      "expected": [
+        "21"
+      ],
+      "found": [
+        "21"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What date is associated with Chapter 61?",
+      "id": "csm-pg-chapter_61-007",
+      "subject": "Chapter 61",
+      "accept": "all",
+      "expected": [
+        "March 9, 2020"
+      ],
+      "found": [
+        "March 9, 2020"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What issue is Chapter 61 from?",
+      "id": "csm-pg-chapter_61-008",
+      "subject": "Chapter 61",
+      "accept": "all",
+      "expected": [
+        "Issue 2020-15"
+      ],
+      "found": [
+        "Issue 2020-15"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which arc does Chapter 61 appear?",
+      "id": "csm-pg-chapter_61-009",
+      "subject": "Chapter 61",
+      "accept": "all",
+      "expected": [
+        "International Assassins arc"
+      ],
+      "found": [
+        "International Assassins arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Chapter 61?",
+      "id": "csm-pg-chapter_61-010",
+      "subject": "Chapter 61",
+      "accept": "all",
+      "expected": [
+        "Chapter 60"
+      ],
+      "found": [
+        "Chapter 60"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Chapter 61?",
+      "id": "csm-pg-chapter_61-011",
+      "subject": "Chapter 61",
+      "accept": "all",
+      "expected": [
+        "Chapter 62"
+      ],
+      "found": [
+        "Chapter 62"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 11,
+    "fact_present": 11
+  }
+}

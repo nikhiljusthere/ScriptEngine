@@ -1,0 +1,203 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Chapter 129's title?",
+      "id": "csm-pg-chapter_129-001",
+      "subject": "Chapter 129",
+      "accept": "all",
+      "expected": [
+        "Save Me, Chainsaw Man"
+      ],
+      "found": [
+        "Save Me, Chainsaw Man"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which volume does Chapter 129 appear?",
+      "id": "csm-pg-chapter_129-002",
+      "subject": "Chapter 129",
+      "accept": "all",
+      "expected": [
+        "15"
+      ],
+      "found": [
+        "15"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which chapter does Chapter 129 appear?",
+      "id": "csm-pg-chapter_129-003",
+      "subject": "Chapter 129",
+      "accept": "all",
+      "expected": [
+        "129"
+      ],
+      "found": [
+        "129"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the Japanese title of Chapter 129?",
+      "id": "csm-pg-chapter_129-004",
+      "subject": "Chapter 129",
+      "accept": "all",
+      "expected": [
+        "\u52a9\u3051\u3066\u30c1\u30a7\u30f3\u30bd\u30fc\u30de\u30f3"
+      ],
+      "found": [
+        "\u52a9\u3051\u3066\u30c1\u30a7\u30f3\u30bd\u30fc\u30de\u30f3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji title of Chapter 129?",
+      "id": "csm-pg-chapter_129-005",
+      "subject": "Chapter 129",
+      "accept": "all",
+      "expected": [
+        "Tasukete Chens\u014dman"
+      ],
+      "found": [
+        "Tasukete Chens\u014dman"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "On which page does Chapter 129 appear?",
+      "id": "csm-pg-chapter_129-006",
+      "subject": "Chapter 129",
+      "accept": "all",
+      "expected": [
+        "18"
+      ],
+      "found": [
+        "18"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What date is associated with Chapter 129?",
+      "id": "csm-pg-chapter_129-007",
+      "subject": "Chapter 129",
+      "accept": "all",
+      "expected": [
+        "May 10, 2023"
+      ],
+      "found": [
+        "May 10, 2023"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which arc does Chapter 129 appear?",
+      "id": "csm-pg-chapter_129-008",
+      "subject": "Chapter 129",
+      "accept": "all",
+      "expected": [
+        "Falling Devil arc"
+      ],
+      "found": [
+        "Falling Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Chapter 129?",
+      "id": "csm-pg-chapter_129-009",
+      "subject": "Chapter 129",
+      "accept": "all",
+      "expected": [
+        "Chapter 128"
+      ],
+      "found": [
+        "Chapter 128"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Chapter 129?",
+      "id": "csm-pg-chapter_129-010",
+      "subject": "Chapter 129",
+      "accept": "all",
+      "expected": [
+        "Chapter 130"
+      ],
+      "found": [
+        "Chapter 130"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 10,
+    "fact_present": 10
+  }
+}

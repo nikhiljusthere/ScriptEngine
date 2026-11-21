@@ -1,0 +1,41 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is the history of Fumiko Mifune?",
+      "id": "csm-pg-fumiko_mifune_history-001",
+      "subject": "Fumiko Mifune/History",
+      "accept": "all",
+      "expected": [
+        "At the age of 14, Fumiko made a contract with the STD Devil, which allowed her to overwrite anyone who engaged in sexual intercourse with her, turning them into a perfect duplicate of herself and linking them into a shared hivemind."
+      ],
+      "found": [
+        "At the age of 14, Fumiko made a contract with the STD Devil, which allowed her to overwrite anyone who engaged in sexual intercourse with her, turning them into a perfect duplicate of herself and linking them into a shared hivemind."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 1,
+    "fact_present": 1
+  }
+}

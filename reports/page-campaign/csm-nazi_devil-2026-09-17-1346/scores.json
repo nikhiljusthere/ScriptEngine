@@ -1,0 +1,121 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Nazi Devil?",
+      "set": "Nazi Devil's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Nazi Devil?",
+      "found": [
+        "World War II Devil \u2020"
+      ],
+      "missing": [],
+      "members": [
+        "World War II Devil \u2020"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Nazi Devil's name?",
+      "id": "csm-pg-nazi_devil-001",
+      "subject": "Nazi Devil",
+      "accept": "all",
+      "expected": [
+        "\u30ca\u30c1\u30b9\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u30ca\u30c1\u30b9\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Nazi Devil's name?",
+      "id": "csm-pg-nazi_devil-002",
+      "subject": "Nazi Devil",
+      "accept": "all",
+      "expected": [
+        "Nachisu no Akuma"
+      ],
+      "found": [
+        "Nachisu no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Nazi Devil's gender?",
+      "id": "csm-pg-nazi_devil-003",
+      "subject": "Nazi Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Nazi Devil?",
+      "id": "csm-pg-nazi_devil-004",
+      "subject": "Nazi Devil",
+      "accept": "all",
+      "expected": [
+        "Erased (original timeline)"
+      ],
+      "found": [
+        "Erased (original timeline)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

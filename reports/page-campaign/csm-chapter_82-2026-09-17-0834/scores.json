@@ -1,0 +1,221 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Chapter 82's title?",
+      "id": "csm-pg-chapter_82-001",
+      "subject": "Chapter 82",
+      "accept": "all",
+      "expected": [
+        "Always Eat a Hearty Breakfast"
+      ],
+      "found": [
+        "Always Eat a Hearty Breakfast"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which volume does Chapter 82 appear?",
+      "id": "csm-pg-chapter_82-002",
+      "subject": "Chapter 82",
+      "accept": "all",
+      "expected": [
+        "10"
+      ],
+      "found": [
+        "10"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which chapter does Chapter 82 appear?",
+      "id": "csm-pg-chapter_82-003",
+      "subject": "Chapter 82",
+      "accept": "all",
+      "expected": [
+        "82"
+      ],
+      "found": [
+        "82"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the Japanese title of Chapter 82?",
+      "id": "csm-pg-chapter_82-004",
+      "subject": "Chapter 82",
+      "accept": "all",
+      "expected": [
+        "\u671d\u98df\u306f\u3057\u3063\u304b\u308a"
+      ],
+      "found": [
+        "\u671d\u98df\u306f\u3057\u3063\u304b\u308a"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji title of Chapter 82?",
+      "id": "csm-pg-chapter_82-005",
+      "subject": "Chapter 82",
+      "accept": "all",
+      "expected": [
+        "Ch\u014dshoku wa Shikkari"
+      ],
+      "found": [
+        "Ch\u014dshoku wa Shikkari"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "On which page does Chapter 82 appear?",
+      "id": "csm-pg-chapter_82-006",
+      "subject": "Chapter 82",
+      "accept": "all",
+      "expected": [
+        "19"
+      ],
+      "found": [
+        "19"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What date is associated with Chapter 82?",
+      "id": "csm-pg-chapter_82-007",
+      "subject": "Chapter 82",
+      "accept": "all",
+      "expected": [
+        "August 30, 2020"
+      ],
+      "found": [
+        "August 30, 2020"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What issue is Chapter 82 from?",
+      "id": "csm-pg-chapter_82-008",
+      "subject": "Chapter 82",
+      "accept": "all",
+      "expected": [
+        "Issue 2020-39"
+      ],
+      "found": [
+        "Issue 2020-39"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which arc does Chapter 82 appear?",
+      "id": "csm-pg-chapter_82-009",
+      "subject": "Chapter 82",
+      "accept": "all",
+      "expected": [
+        "Control Devil arc"
+      ],
+      "found": [
+        "Control Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Chapter 82?",
+      "id": "csm-pg-chapter_82-010",
+      "subject": "Chapter 82",
+      "accept": "all",
+      "expected": [
+        "Chapter 81"
+      ],
+      "found": [
+        "Chapter 81"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Chapter 82?",
+      "id": "csm-pg-chapter_82-011",
+      "subject": "Chapter 82",
+      "accept": "all",
+      "expected": [
+        "Chapter 83"
+      ],
+      "found": [
+        "Chapter 83"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 11,
+    "fact_present": 11
+  }
+}

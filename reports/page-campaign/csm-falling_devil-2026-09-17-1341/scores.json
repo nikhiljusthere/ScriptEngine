@@ -1,0 +1,279 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Falling Devil?",
+      "set": "Every named technique of Falling Devil",
+      "confidence": "declared",
+      "returned": 19,
+      "available": 19,
+      "canon": 19,
+      "found": 19,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Falling Devil?",
+      "set": "Every enemy of Falling Devil",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the superiors of Falling Devil?",
+      "set": "Every superior of Falling Devil",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Falling Devil?",
+      "set": "Falling Devil's affiliations",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Falling Devil?",
+      "found": [
+        "Nigh-Absolute Immortality",
+        "Immense Healing Factor",
+        "Hell Connection",
+        "Gravity Manipulation",
+        "Traumatic Anti-Gravity",
+        "Levitation",
+        "Area Denial",
+        "Targeted Control",
+        "Energy Beam",
+        "Thought Manipulation",
+        "Emotion Manipulation",
+        "Psychic Assault",
+        "Trauma based anti-gravity powers",
+        "Body Control",
+        "Object Creation",
+        "Immense Strength",
+        "Immense Speed",
+        "Enhanced Smell",
+        "Low Durability"
+      ],
+      "missing": [],
+      "members": [
+        "Area Denial",
+        "Body Control",
+        "Emotion Manipulation",
+        "Energy Beam",
+        "Enhanced Smell",
+        "Gravity Manipulation",
+        "Hell Connection",
+        "Immense Healing Factor",
+        "Immense Speed",
+        "Immense Strength",
+        "Levitation",
+        "Low Durability",
+        "Nigh-Absolute Immortality",
+        "Object Creation",
+        "Psychic Assault",
+        "Targeted Control",
+        "Thought Manipulation",
+        "Trauma based anti-gravity powers",
+        "Traumatic Anti-Gravity"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Falling Devil?",
+      "found": [
+        "Asa Mitaka",
+        "Denji",
+        "Justice Devil",
+        "Yoru"
+      ],
+      "missing": [],
+      "members": [
+        "Asa Mitaka",
+        "Denji",
+        "Justice Devil",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the superiors of Falling Devil?",
+      "found": [
+        "Fami",
+        "Death Devil",
+        "Famine Devil"
+      ],
+      "missing": [],
+      "members": [
+        "Death Devil",
+        "Fami",
+        "Famine Devil"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Falling Devil?",
+      "found": [
+        "Yoru (transformed)",
+        "Death Devil (brainwashed) \u2020",
+        "Justice Devil \u2020"
+      ],
+      "missing": [],
+      "members": [
+        "Death Devil (brainwashed) \u2020",
+        "Justice Devil \u2020",
+        "Yoru (transformed)"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Falling Devil's name?",
+      "id": "csm-pg-falling_devil-001",
+      "subject": "Falling Devil",
+      "accept": "all",
+      "expected": [
+        "\u843d\u4e0b\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u843d\u4e0b\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Falling Devil's name?",
+      "id": "csm-pg-falling_devil-002",
+      "subject": "Falling Devil",
+      "accept": "all",
+      "expected": [
+        "Rakka no Akuma"
+      ],
+      "found": [
+        "Rakka no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Falling Devil's gender?",
+      "id": "csm-pg-falling_devil-003",
+      "subject": "Falling Devil",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Falling Devil?",
+      "id": "csm-pg-falling_devil-004",
+      "subject": "Falling Devil",
+      "accept": "all",
+      "expected": [
+        "Incapacitated"
+      ],
+      "found": [
+        "Incapacitated"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Falling Devil?",
+      "id": "csm-pg-falling_devil-005",
+      "subject": "Falling Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Falling Devil's occupation?",
+      "id": "csm-pg-falling_devil-006",
+      "subject": "Falling Devil",
+      "accept": "all",
+      "expected": [
+        "Primal Fear Wild Devil Hell's Chef Yoru's Pawn Death's Pawn (formally)"
+      ],
+      "found": [
+        "Primal Fear Wild Devil Hell's Chef Yoru's Pawn Death's Pawn (formally)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 29,
+    "canon_total": 29,
+    "canon_recall": 1.0,
+    "members_returned": 29,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

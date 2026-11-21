@@ -129,7 +129,7 @@ def fmt(e):
     return f'{e.get("subject")} ={e.get("verb")}=> {e.get("object")} | quote: "{e.get("quote")}"'
 
 
-def ask(url, model, user, effort):
+def ask(url, model, user, effort, template_kwargs=True):
     kwargs = {"enable_thinking": True}
     if effort:
         kwargs["reasoning_effort"] = effort
@@ -148,6 +148,10 @@ def ask(url, model, user, effort):
         body = {"model": model, "temperature": 0.6, "top_p": 0.95, "max_tokens": budget,
                 "messages": [{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}],
                 "chat_template_kwargs": kwargs}
+        if not template_kwargs:
+            # ninfer servers reject chat_template_kwargs with HTTP 400 (2026-10-04
+            # bake-off); they reason by default.
+            del body["chat_template_kwargs"]
         try:
             req = urllib.request.Request(url, json.dumps(body).encode(), {"Content-Type": "application/json"})
             m = json.loads(urllib.request.urlopen(req, timeout=3600).read())["choices"][0]["message"]
@@ -172,6 +176,8 @@ def main():
     ap.add_argument("--model", default="qwen3.6-35b-a3b-ninfer")
     ap.add_argument("--effort", default="medium")
     ap.add_argument("--workers", type=int, default=3)
+    ap.add_argument("--no-template-kwargs", action="store_true",
+                    help="omit chat_template_kwargs (ninfer servers reject them)")
     a = ap.parse_args()
     wiki = Wiki(ROOT / "series" / a.series / "facts.db")
     rows = {json.loads(l)["id"]: json.loads(l) for l in open(a.data)}
@@ -179,7 +185,10 @@ def main():
     for c in a.cand:
         for l in open(c):
             r = json.loads(l)
-            if r.get("ok"):
+            # Pre-verified candidates carry ok:true; raw drafts from opencode
+            # sessions omit the field entirely. Accept both forms so the same
+            # tool works on pool-A (raw drafts) and pool-B (pre-verfied).
+            if "ok" not in r or r["ok"] is True:
                 cand[r["id"]] = r["events"]
     want = [i for i in (json.load(open(a.ids)) if a.ids else cand) if i in cand and i in rows]
     done = set()
@@ -212,7 +221,7 @@ def main():
             others = "\n".join(f"- {fmt(x)}" for m, x in enumerate(evs) if m != n and dup[m] is None) or "(none)"
             user = (f"Passage:\n{passage(rows[i])}\n\nROW TO CHECK:\n{fmt(e)}\n\nOther rows from this passage:\n{others}"
                     f"\n\nWIKI EVIDENCE:\n{card}" + (f"\nWIKI FLAGS: {'; '.join(flags)}" if flags else ""))
-            ok, rule = ask(a.url, a.model, user, a.effort)
+            ok, rule = ask(a.url, a.model, user, a.effort, not a.no_template_kwargs)
             out.append({"n": n, "ok": ok, "rule": rule, "card": card, "flags": flags})
         return {"id": i, "rows": out, "ok": all(r["ok"] is not None for r in out)}
 

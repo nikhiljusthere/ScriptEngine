@@ -1,0 +1,203 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Chapter 187's title?",
+      "id": "csm-pg-chapter_187-001",
+      "subject": "Chapter 187",
+      "accept": "all",
+      "expected": [
+        "Barf!"
+      ],
+      "found": [
+        "Barf!"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which volume does Chapter 187 appear?",
+      "id": "csm-pg-chapter_187-002",
+      "subject": "Chapter 187",
+      "accept": "all",
+      "expected": [
+        "21"
+      ],
+      "found": [
+        "21"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which chapter does Chapter 187 appear?",
+      "id": "csm-pg-chapter_187-003",
+      "subject": "Chapter 187",
+      "accept": "all",
+      "expected": [
+        "187"
+      ],
+      "found": [
+        "187"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the Japanese title of Chapter 187?",
+      "id": "csm-pg-chapter_187-004",
+      "subject": "Chapter 187",
+      "accept": "all",
+      "expected": [
+        "\u30b2\u30ed\u308c\uff01"
+      ],
+      "found": [
+        "\u30b2\u30ed\u308c\uff01"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji title of Chapter 187?",
+      "id": "csm-pg-chapter_187-005",
+      "subject": "Chapter 187",
+      "accept": "all",
+      "expected": [
+        "Gerore!"
+      ],
+      "found": [
+        "Gerore!"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "On which page does Chapter 187 appear?",
+      "id": "csm-pg-chapter_187-006",
+      "subject": "Chapter 187",
+      "accept": "all",
+      "expected": [
+        "15"
+      ],
+      "found": [
+        "15"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What date is associated with Chapter 187?",
+      "id": "csm-pg-chapter_187-007",
+      "subject": "Chapter 187",
+      "accept": "all",
+      "expected": [
+        "December 18, 2024"
+      ],
+      "found": [
+        "December 18, 2024"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which arc does Chapter 187 appear?",
+      "id": "csm-pg-chapter_187-008",
+      "subject": "Chapter 187",
+      "accept": "all",
+      "expected": [
+        "Aging Devil arc"
+      ],
+      "found": [
+        "Aging Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Chapter 187?",
+      "id": "csm-pg-chapter_187-009",
+      "subject": "Chapter 187",
+      "accept": "all",
+      "expected": [
+        "Chapter 186"
+      ],
+      "found": [
+        "Chapter 186"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Chapter 187?",
+      "id": "csm-pg-chapter_187-010",
+      "subject": "Chapter 187",
+      "accept": "all",
+      "expected": [
+        "Chapter 188"
+      ],
+      "found": [
+        "Chapter 188"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 10,
+    "fact_present": 10
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Legs Devil?",
+      "set": "Legs Devil's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Legs Devil?",
+      "found": [
+        "Death Devil (brainwashed)"
+      ],
+      "missing": [],
+      "members": [
+        "Death Devil (brainwashed)"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is the romaji of Legs Devil's name?",
+      "id": "csm-pg-legs_devil-001",
+      "subject": "Legs Devil",
+      "accept": "all",
+      "expected": [
+        "Ashi no Akuma"
+      ],
+      "found": [
+        "Ashi no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What are the kanji for Legs Devil's name?",
+      "id": "csm-pg-legs_devil-002",
+      "subject": "Legs Devil",
+      "accept": "all",
+      "expected": [
+        "\u8db3\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u8db3\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Legs Devil's gender?",
+      "id": "csm-pg-legs_devil-003",
+      "subject": "Legs Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Legs Devil?",
+      "id": "csm-pg-legs_devil-004",
+      "subject": "Legs Devil",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Legs Devil's occupation?",
+      "id": "csm-pg-legs_devil-005",
+      "subject": "Legs Devil",
+      "accept": "all",
+      "expected": [
+        "Death's Pawn (formerly) Wild Devil"
+      ],
+      "found": [
+        "Death's Pawn (formerly) Wild Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

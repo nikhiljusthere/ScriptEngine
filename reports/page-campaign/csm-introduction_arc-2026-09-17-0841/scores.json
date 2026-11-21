@@ -1,0 +1,113 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "Which saga does Introduction arc belong to?",
+      "id": "csm-pg-introduction_arc-001",
+      "subject": "Introduction arc",
+      "accept": "all",
+      "expected": [
+        "Public Safety Saga"
+      ],
+      "found": [
+        "Public Safety Saga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Which chapters are included in Introduction arc?",
+      "id": "csm-pg-introduction_arc-002",
+      "subject": "Introduction arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 1 - 4"
+      ],
+      "found": [
+        "Chapter 1 - 4"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Which episodes are included in Introduction arc?",
+      "id": "csm-pg-introduction_arc-003",
+      "subject": "Introduction arc",
+      "accept": "all",
+      "expected": [
+        "Episode 1 - 2"
+      ],
+      "found": [
+        "Episode 1 - 2"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Introduction arc?",
+      "id": "csm-pg-introduction_arc-004",
+      "subject": "Introduction arc",
+      "accept": "all",
+      "expected": [
+        "N/A"
+      ],
+      "found": [
+        "N/A"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Introduction arc?",
+      "id": "csm-pg-introduction_arc-005",
+      "subject": "Introduction arc",
+      "accept": "all",
+      "expected": [
+        "Bat Devil arc"
+      ],
+      "found": [
+        "Bat Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

@@ -114,6 +114,22 @@ measured weak spots on these big Marvel/MCU pages:
 - R7 "X arrived with the defeated Y" after X confronted/battled Y -> X defeated Y.
 - R8 A villain's magic/power used to manipulate or control someone -> fought.
 
+- R9 "X met his end thanks to the efforts of Y" -> Y killed X (stated death + doer). "wreck <named robot>" -> killed.
+- R10 Disguise reveals ("Valkyrie ... revealed to be Enchantress", "Omega ... Ultron-7", "the Stranger ... the Toad", "Ultron's bride, now named Jocasta") -> the revealed identity in every row.
+- R11 "the Inhumans" stays on the species list even as the royal-family team -> no row; "a Kree armada", "several Avengers", "former/active Avengers", "a Space Phantom" -> crowds/indefinites, no row.
+- R12 R4 extends to allying: "joining Steve Rogers, Magneto and ..." after an escape, "joined forces with", "had been joined by Enchantress", "joined by their last member" -> no met.
+- R13 "forced X through a portal" -> sealed; "teleport him away to the Moon" -> captured (teleport against his will) + X arrived Moon; "transport them to a pocket universe" -> sealed.
+- R14 "staged a power coup against" one's ruler / "severed her alliance with" -> betrayed. Disbanding the team / "drove them out of the mansion" -> NOT betrayed (departed the place).
+- R15 "assembled by X" / "recruited by X" -> X met each named recruit; "parted ways with <group>" / "left the team" -> departed the group.
+- R16 Self-inflicted deaths (suicide, "took her own life") -> no row: the gate refuses subject == object.
+- R17 Passive "were freed" with no "by" -> no saved row, even right after a named hero's attack.
+- R18 "was exorcized of the power by X" -> X defeated him; "stripped X of his power", "possessed Thor", "tortured them" -> fought.
+- R19 G.2 scope: expand a group only to members the window ties to that event; "dozens/most of the Avengers" with no member tied -> group row stays.
+- R20 "imprisoned in Limbo", "ensnared in the confines of Mojoverse" (trapped in a dimension) -> sealed, not captured.
+- R21 "<group> led by X" as the doer ("apprehended by Freedom Force ... led by Mystique") -> the named leader X (example 4), no group row.
+- R22 Gate quirk: "Rachel" is classed as a place and refused as an object (fine as a subject); such rows cannot be written.
+- R23 "helped X when his powers went out of control" -> no saved (helping); "came to their rescue" -> saved; "driven off by X" -> X defeated him.
+
 ## 3. When labeling finishes (~11:00)
 
 1. Confirm `labels.jsonl.status` says done 14000/14000 and the runner exited.

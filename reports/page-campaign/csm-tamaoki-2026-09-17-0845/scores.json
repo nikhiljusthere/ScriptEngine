@@ -1,0 +1,163 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the allies of Tamaoki?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 4,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Tamaoki?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Tamaoki?",
+      "found": [],
+      "missing": [
+        "Kusakabe",
+        "Denji",
+        "Hirofumi Yoshida",
+        "Quanxi"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the affiliations of Tamaoki?",
+      "found": [],
+      "missing": [
+        "Public Safety Devil Hunters",
+        "Miyagi Division 2"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is the status of Tamaoki?",
+      "id": "csm-pg-tamaoki-001",
+      "subject": "Tamaoki",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Tamaoki's occupation?",
+      "id": "csm-pg-tamaoki-002",
+      "subject": "Tamaoki",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter\nDenji\u2019s Bodyguard (formerly)"
+      ],
+      "found": [
+        "Public Safety Devil Hunter\nDenji\u2019s Bodyguard (formerly)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Tamaoki's gender?",
+      "id": "csm-pg-tamaoki-003",
+      "subject": "Tamaoki",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What are the kanji for Tamaoki's name?",
+      "id": "csm-pg-tamaoki-004",
+      "subject": "Tamaoki",
+      "accept": "all",
+      "expected": [
+        "\u7389\u7f6e"
+      ],
+      "found": [
+        "\u7389\u7f6e"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Tamaoki's name?",
+      "id": "csm-pg-tamaoki-005",
+      "subject": "Tamaoki",
+      "accept": "all",
+      "expected": [
+        "Tamaoki"
+      ],
+      "found": [
+        "Tamaoki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 0,
+    "canon_total": 6,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 2,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 2,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

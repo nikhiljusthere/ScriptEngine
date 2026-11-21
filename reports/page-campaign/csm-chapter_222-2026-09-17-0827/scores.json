@@ -1,0 +1,203 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Chapter 222's title?",
+      "id": "csm-pg-chapter_222-001",
+      "subject": "Chapter 222",
+      "accept": "all",
+      "expected": [
+        "Denji Man"
+      ],
+      "found": [
+        "Denji Man"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which volume does Chapter 222 appear?",
+      "id": "csm-pg-chapter_222-002",
+      "subject": "Chapter 222",
+      "accept": "all",
+      "expected": [
+        "23"
+      ],
+      "found": [
+        "23"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which chapter does Chapter 222 appear?",
+      "id": "csm-pg-chapter_222-003",
+      "subject": "Chapter 222",
+      "accept": "all",
+      "expected": [
+        "222"
+      ],
+      "found": [
+        "222"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the Japanese title of Chapter 222?",
+      "id": "csm-pg-chapter_222-004",
+      "subject": "Chapter 222",
+      "accept": "all",
+      "expected": [
+        "\u30c7\u30f3\u30b8\u30fc\u30de\u30f3"
+      ],
+      "found": [
+        "\u30c7\u30f3\u30b8\u30fc\u30de\u30f3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji title of Chapter 222?",
+      "id": "csm-pg-chapter_222-005",
+      "subject": "Chapter 222",
+      "accept": "all",
+      "expected": [
+        "Denj\u012bman"
+      ],
+      "found": [
+        "Denj\u012bman"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "On which page does Chapter 222 appear?",
+      "id": "csm-pg-chapter_222-006",
+      "subject": "Chapter 222",
+      "accept": "all",
+      "expected": [
+        "15"
+      ],
+      "found": [
+        "15"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What date is associated with Chapter 222?",
+      "id": "csm-pg-chapter_222-007",
+      "subject": "Chapter 222",
+      "accept": "all",
+      "expected": [
+        "December 3, 2025"
+      ],
+      "found": [
+        "December 3, 2025"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which arc does Chapter 222 appear?",
+      "id": "csm-pg-chapter_222-008",
+      "subject": "Chapter 222",
+      "accept": "all",
+      "expected": [
+        "War Devil arc"
+      ],
+      "found": [
+        "War Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Chapter 222?",
+      "id": "csm-pg-chapter_222-009",
+      "subject": "Chapter 222",
+      "accept": "all",
+      "expected": [
+        "Chapter 221"
+      ],
+      "found": [
+        "Chapter 221"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Chapter 222?",
+      "id": "csm-pg-chapter_222-010",
+      "subject": "Chapter 222",
+      "accept": "all",
+      "expected": [
+        "Chapter 223"
+      ],
+      "found": [
+        "Chapter 223"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 10,
+    "fact_present": 10
+  }
+}

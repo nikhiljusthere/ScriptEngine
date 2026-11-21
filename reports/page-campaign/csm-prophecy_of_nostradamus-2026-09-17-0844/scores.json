@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Prophecy of Nostradamus's allegiance?",
+      "id": "csm-pg-prophecy_of_nostradamus-001",
+      "subject": "Prophecy of Nostradamus",
+      "accept": "all",
+      "expected": [
+        "Devils"
+      ],
+      "found": [
+        "Devils"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Who are Prophecy of Nostradamus's notable members?",
+      "id": "csm-pg-prophecy_of_nostradamus-002",
+      "subject": "Prophecy of Nostradamus",
+      "accept": "all",
+      "expected": [
+        "Death Devil"
+      ],
+      "found": [
+        "Death Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which manga chapter does Prophecy of Nostradamus first appear?",
+      "id": "csm-pg-prophecy_of_nostradamus-003",
+      "subject": "Prophecy of Nostradamus",
+      "accept": "all",
+      "expected": [
+        "Chapter 122 (Mentioned)"
+      ],
+      "found": [
+        "Chapter 122 (Mentioned)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

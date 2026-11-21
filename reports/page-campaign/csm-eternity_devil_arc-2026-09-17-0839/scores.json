@@ -1,0 +1,113 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "Which saga does Eternity Devil arc belong to?",
+      "id": "csm-pg-eternity_devil_arc-001",
+      "subject": "Eternity Devil arc",
+      "accept": "all",
+      "expected": [
+        "Public Safety Saga"
+      ],
+      "found": [
+        "Public Safety Saga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Which chapters are included in Eternity Devil arc?",
+      "id": "csm-pg-eternity_devil_arc-002",
+      "subject": "Eternity Devil arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 14 - 22"
+      ],
+      "found": [
+        "Chapter 14 - 22"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Which episodes are included in Eternity Devil arc?",
+      "id": "csm-pg-eternity_devil_arc-003",
+      "subject": "Eternity Devil arc",
+      "accept": "all",
+      "expected": [
+        "Episode 5 - 7"
+      ],
+      "found": [
+        "Episode 5 - 7"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Eternity Devil arc?",
+      "id": "csm-pg-eternity_devil_arc-004",
+      "subject": "Eternity Devil arc",
+      "accept": "all",
+      "expected": [
+        "Bat Devil arc"
+      ],
+      "found": [
+        "Bat Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Eternity Devil arc?",
+      "id": "csm-pg-eternity_devil_arc-005",
+      "subject": "Eternity Devil arc",
+      "accept": "all",
+      "expected": [
+        "Katana Man arc"
+      ],
+      "found": [
+        "Katana Man arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

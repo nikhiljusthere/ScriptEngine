@@ -1,0 +1,161 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the allies of Furuno?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Furuno?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Furuno?",
+      "found": [],
+      "missing": [
+        "Shiina",
+        "Kishibe"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the affiliations of Furuno?",
+      "found": [],
+      "missing": [
+        "Public Safety Devil Hunters",
+        "Tokyo Division 2"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Furuno's name?",
+      "id": "csm-pg-furuno-001",
+      "subject": "Furuno",
+      "accept": "all",
+      "expected": [
+        "\u53e4\u91ce"
+      ],
+      "found": [
+        "\u53e4\u91ce"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Furuno's name?",
+      "id": "csm-pg-furuno-002",
+      "subject": "Furuno",
+      "accept": "all",
+      "expected": [
+        "Furuno"
+      ],
+      "found": [
+        "Furuno"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Furuno's gender?",
+      "id": "csm-pg-furuno-003",
+      "subject": "Furuno",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Furuno?",
+      "id": "csm-pg-furuno-004",
+      "subject": "Furuno",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Furuno's occupation?",
+      "id": "csm-pg-furuno-005",
+      "subject": "Furuno",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 0,
+    "canon_total": 4,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 2,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 2,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is the history of Hirofumi Yoshida?",
+      "id": "csm-pg-hirofumi_yoshida_history-001",
+      "subject": "Hirofumi Yoshida/History",
+      "accept": "all",
+      "expected": [
+        "Upon finding out that Denji's existence has been revealed through the media, Makima orders her subordinates to get several Public Safety Devil Hunters and hires Yoshida to protect Denji from the onslaught of assassins targeting him from all over the world for one month.(Chapter 53) Makima later introduces Yoshida, Kusakabe, and Tamaoki to Denji as part of his personal security."
+      ],
+      "found": [
+        "Upon finding out that Denji's existence has been revealed through the media, Makima orders her subordinates to get several Public Safety Devil Hunters and hires Yoshida to protect Denji from the onslaught of assassins targeting him from all over the world for one month.(Chapter 53) Makima later introduces Yoshida, Kusakabe, and Tamaoki to Denji as part of his personal security."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 1,
+    "fact_present": 1
+  }
+}

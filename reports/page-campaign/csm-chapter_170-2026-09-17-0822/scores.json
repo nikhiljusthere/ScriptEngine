@@ -1,0 +1,203 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Chapter 170's title?",
+      "id": "csm-pg-chapter_170-001",
+      "subject": "Chapter 170",
+      "accept": "all",
+      "expected": [
+        "How to Eat Sushi"
+      ],
+      "found": [
+        "How to Eat Sushi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which volume does Chapter 170 appear?",
+      "id": "csm-pg-chapter_170-002",
+      "subject": "Chapter 170",
+      "accept": "all",
+      "expected": [
+        "19"
+      ],
+      "found": [
+        "19"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which chapter does Chapter 170 appear?",
+      "id": "csm-pg-chapter_170-003",
+      "subject": "Chapter 170",
+      "accept": "all",
+      "expected": [
+        "170"
+      ],
+      "found": [
+        "170"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the Japanese title of Chapter 170?",
+      "id": "csm-pg-chapter_170-004",
+      "subject": "Chapter 170",
+      "accept": "all",
+      "expected": [
+        "\u5bff\u53f8\u306e\u98df\u3079\u65b9"
+      ],
+      "found": [
+        "\u5bff\u53f8\u306e\u98df\u3079\u65b9"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji title of Chapter 170?",
+      "id": "csm-pg-chapter_170-005",
+      "subject": "Chapter 170",
+      "accept": "all",
+      "expected": [
+        "Sushi no Tabekata"
+      ],
+      "found": [
+        "Sushi no Tabekata"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "On which page does Chapter 170 appear?",
+      "id": "csm-pg-chapter_170-006",
+      "subject": "Chapter 170",
+      "accept": "all",
+      "expected": [
+        "15"
+      ],
+      "found": [
+        "15"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What date is associated with Chapter 170?",
+      "id": "csm-pg-chapter_170-007",
+      "subject": "Chapter 170",
+      "accept": "all",
+      "expected": [
+        "July 3, 2024"
+      ],
+      "found": [
+        "July 3, 2024"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which arc does Chapter 170 appear?",
+      "id": "csm-pg-chapter_170-008",
+      "subject": "Chapter 170",
+      "accept": "all",
+      "expected": [
+        "Aging Devil arc"
+      ],
+      "found": [
+        "Aging Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Chapter 170?",
+      "id": "csm-pg-chapter_170-009",
+      "subject": "Chapter 170",
+      "accept": "all",
+      "expected": [
+        "Chapter 169"
+      ],
+      "found": [
+        "Chapter 169"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Chapter 170?",
+      "id": "csm-pg-chapter_170-010",
+      "subject": "Chapter 170",
+      "accept": "all",
+      "expected": [
+        "Chapter 171"
+      ],
+      "found": [
+        "Chapter 171"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 10,
+    "fact_present": 10
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Barem Bridge?",
+      "set": "Every named technique of Barem Bridge",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Barem Bridge?",
+      "set": "Every ally of Barem Bridge",
+      "confidence": "declared",
+      "returned": 6,
+      "available": 6,
+      "canon": 6,
+      "found": 6,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Barem Bridge?",
+      "set": "Every enemy of Barem Bridge",
+      "confidence": "declared",
+      "returned": 6,
+      "available": 6,
+      "canon": 6,
+      "found": 6,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the subordinates of Barem Bridge?",
+      "set": "Every subordinate of Barem Bridge",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the superiors of Barem Bridge?",
+      "set": "Every superior of Barem Bridge",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Barem Bridge?",
+      "set": "Barem Bridge's affiliations",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Barem Bridge?",
+      "found": [
+        "Hybrid Transformation",
+        "Augmented Body",
+        "Flamethrowers",
+        "Blood Consumption",
+        "Nigh-Immortality"
+      ],
+      "missing": [],
+      "members": [
+        "Augmented Body",
+        "Blood Consumption",
+        "Flamethrowers",
+        "Hybrid Transformation",
+        "Nigh-Immortality"
+      ]
+    },
+    {
+      "query": "What are all the allies of Barem Bridge?",
+      "found": [
+        "Makima",
+        "Miri Sugo",
+        "Whip Hybrid",
+        "Spear Hybrid",
+        "Fami",
+        "Fumiko Mifune"
+      ],
+      "missing": [],
+      "members": [
+        "Fami",
+        "Fumiko Mifune",
+        "Makima",
+        "Miri Sugo",
+        "Spear Hybrid",
+        "Whip Hybrid"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Barem Bridge?",
+      "found": [
+        "Denji",
+        "Nayuta",
+        "Hirofumi Yoshida",
+        "Asa Mitaka",
+        "Haruka Iseumi",
+        "Nobana Higashiyama"
+      ],
+      "missing": [],
+      "members": [
+        "Asa Mitaka",
+        "Denji",
+        "Haruka Iseumi",
+        "Hirofumi Yoshida",
+        "Nayuta",
+        "Nobana Higashiyama"
+      ]
+    },
+    {
+      "query": "What are all the subordinates of Barem Bridge?",
+      "found": [
+        "Haruka Iseumi",
+        "Nobana Higashiyama",
+        "Miri Sugo",
+        "Whip Hybrid",
+        "Spear Hybrid"
+      ],
+      "missing": [],
+      "members": [
+        "Haruka Iseumi",
+        "Miri Sugo",
+        "Nobana Higashiyama",
+        "Spear Hybrid",
+        "Whip Hybrid"
+      ]
+    },
+    {
+      "query": "What are all the superiors of Barem Bridge?",
+      "found": [
+        "Makima",
+        "Fami",
+        "Miri Sugo"
+      ],
+      "missing": [],
+      "members": [
+        "Fami",
+        "Makima",
+        "Miri Sugo"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Barem Bridge?",
+      "found": [
+        "Makima (brainwashed)",
+        "Tokyo Special Division 5 (formerly)",
+        "Fami",
+        "Chainsaw Man Church"
+      ],
+      "missing": [],
+      "members": [
+        "Chainsaw Man Church",
+        "Fami",
+        "Makima (brainwashed)",
+        "Tokyo Special Division 5 (formerly)"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Barem Bridge's name?",
+      "id": "csm-pg-barem_bridge-001",
+      "subject": "Barem Bridge",
+      "accept": "all",
+      "expected": [
+        "\u30d0\u30eb\u30a8\u30e0\u30fb\u30d6\u30ea\u30c3\u30c1"
+      ],
+      "found": [
+        "\u30d0\u30eb\u30a8\u30e0\u30fb\u30d6\u30ea\u30c3\u30c1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Barem Bridge's name?",
+      "id": "csm-pg-barem_bridge-002",
+      "subject": "Barem Bridge",
+      "accept": "all",
+      "expected": [
+        "Baruemu Buritchi"
+      ],
+      "found": [
+        "Baruemu Buritchi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Barem Bridge?",
+      "id": "csm-pg-barem_bridge-003",
+      "subject": "Barem Bridge",
+      "accept": "all",
+      "expected": [
+        "Erased (original timeline)"
+      ],
+      "found": [
+        "Erased (original timeline)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Barem Bridge's occupation?",
+      "id": "csm-pg-barem_bridge-004",
+      "subject": "Barem Bridge",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter (brainwashed) Chainsaw Man Church Contractor"
+      ],
+      "found": [
+        "Public Safety Devil Hunter (brainwashed) Chainsaw Man Church Contractor"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Barem Bridge's gender?",
+      "id": "csm-pg-barem_bridge-005",
+      "subject": "Barem Bridge",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 6,
+    "canon_found": 29,
+    "canon_total": 29,
+    "canon_recall": 1.0,
+    "members_returned": 29,
+    "exact_answers": 6,
+    "exact_of": 6,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "6/6",
+    "at_recall_zero": 0,
+    "at_recall_80": 6,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

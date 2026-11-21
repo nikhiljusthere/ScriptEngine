@@ -1,0 +1,28 @@
+{
+  "questions": {
+    "canon_member": {
+      "type": "noul",
+      "instructions": "Does `candidate.item` belong in the answer to `roster.question` about `roster.subject`? Judge the item against the question as the wiki's own canon would answer it.",
+      "criteria": {
+        "true": "The item is one of the subject's own techniques, abilities, forms or members that the question asks for, in the series' canon.",
+        "false": "The item is someone else's, a generic trait or category rather than the kind of thing asked for, a section heading, or not canon for the subject."
+      }
+    }
+  },
+  "decisions": {
+    "canon_member": {
+      "threshold": 0.5
+    }
+  },
+  "settings": {
+    "holdoutFraction": 0.5,
+    "minPerClass": 5,
+    "targets": {
+      "precision": 0.9,
+      "recall": 0.8,
+      "auc": 0.85,
+      "accuracy": 0.9,
+      "coverage": 0.5
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Furio?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Furio?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Furio?",
+      "found": [],
+      "missing": [
+        "Marksmanship"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the affiliations of Furio?",
+      "found": [],
+      "missing": [
+        "Fourth East High School",
+        "Devil Hunter Club"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is the status of Furio?",
+      "id": "csm-pg-furio-001",
+      "subject": "Furio",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Furio's occupation?",
+      "id": "csm-pg-furio-002",
+      "subject": "Furio",
+      "accept": "all",
+      "expected": [
+        "High School Student Devil Hunter"
+      ],
+      "found": [
+        "High School Student Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Furio's gender?",
+      "id": "csm-pg-furio-003",
+      "subject": "Furio",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What are the kanji for Furio's name?",
+      "id": "csm-pg-furio-004",
+      "subject": "Furio",
+      "accept": "all",
+      "expected": [
+        "\u30d5\u30ea\u30aa"
+      ],
+      "found": [
+        "\u30d5\u30ea\u30aa"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Furio's name?",
+      "id": "csm-pg-furio-005",
+      "subject": "Furio",
+      "accept": "all",
+      "expected": [
+        "Furio"
+      ],
+      "found": [
+        "Furio"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 0,
+    "canon_total": 3,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 2,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 2,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

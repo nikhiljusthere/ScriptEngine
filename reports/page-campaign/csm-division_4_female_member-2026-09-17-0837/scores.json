@@ -1,0 +1,171 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Division 4 Female Member?",
+      "set": "Female",
+      "confidence": "exact",
+      "returned": 31,
+      "available": 31,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Division 4 Female Member?",
+      "found": [],
+      "missing": [
+        "Tokyo Special Division 4"
+      ],
+      "members": [
+        "Akane Sawatari",
+        "Asa Mitaka",
+        "Asa Mitaka's Mother",
+        "Asa Mitaka's caretaker",
+        "Class President",
+        "Cosmo",
+        "Death Devil",
+        "Division 4 Female Member",
+        "Falling Devil",
+        "Fami",
+        "Famine Devil",
+        "Fumiko Mifune",
+        "Himeno",
+        "Kobeni Higashiyama",
+        "Leech Devil",
+        "Long",
+        "Makima",
+        "Michiko Tendo",
+        "Minami Nakano",
+        "Nayuta",
+        "Pingtsi",
+        "Power",
+        "Princi",
+        "Quanxi",
+        "Reze",
+        "Santa Claus",
+        "Sato (Buddy Stories)",
+        "Tsugihagi",
+        "Whip Hybrid",
+        "Yoru",
+        "Yuko"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Division 4 Female Member's gender?",
+      "id": "csm-pg-division_4_female_member-001",
+      "subject": "Division 4 Female Member",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Division 4 Female Member?",
+      "id": "csm-pg-division_4_female_member-002",
+      "subject": "Division 4 Female Member",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Division 4 Female Member's birthday?",
+      "id": "csm-pg-division_4_female_member-003",
+      "subject": "Division 4 Female Member",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Division 4 Female Member?",
+      "id": "csm-pg-division_4_female_member-004",
+      "subject": "Division 4 Female Member",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Division 4 Female Member's occupation?",
+      "id": "csm-pg-division_4_female_member-005",
+      "subject": "Division 4 Female Member",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 0,
+    "canon_total": 1,
+    "canon_recall": 0.0,
+    "members_returned": 31,
+    "exact_answers": 0,
+    "exact_of": 1,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 1,
+    "at_recall_80": 0,
+    "confident_and_wrong": [
+      "What are all the affiliations of Division 4 Female Member?"
+    ],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

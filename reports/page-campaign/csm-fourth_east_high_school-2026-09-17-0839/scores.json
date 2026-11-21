@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What type of song is Fourth East High School?",
+      "id": "csm-pg-fourth_east_high_school-001",
+      "subject": "Fourth East High School",
+      "accept": "all",
+      "expected": [
+        "High School"
+      ],
+      "found": [
+        "High School"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What services does Fourth East High School provide?",
+      "id": "csm-pg-fourth_east_high_school-002",
+      "subject": "Fourth East High School",
+      "accept": "all",
+      "expected": [
+        "Education"
+      ],
+      "found": [
+        "Education"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which manga chapter does Fourth East High School first appear?",
+      "id": "csm-pg-fourth_east_high_school-003",
+      "subject": "Fourth East High School",
+      "accept": "all",
+      "expected": [
+        "Chapter 98"
+      ],
+      "found": [
+        "Chapter 98"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Which series does Fourth East High School belong to?",
+      "id": "csm-pg-fourth_east_high_school-004",
+      "subject": "Fourth East High School",
+      "accept": "all",
+      "expected": [
+        "Fourth East High School"
+      ],
+      "found": [
+        "Fourth East High School"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

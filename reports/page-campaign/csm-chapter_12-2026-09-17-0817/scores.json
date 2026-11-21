@@ -1,0 +1,239 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Chapter 12's title?",
+      "id": "csm-pg-chapter_12-001",
+      "subject": "Chapter 12",
+      "accept": "all",
+      "expected": [
+        "Squeeze"
+      ],
+      "found": [
+        "Squeeze"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which volume does Chapter 12 appear?",
+      "id": "csm-pg-chapter_12-002",
+      "subject": "Chapter 12",
+      "accept": "all",
+      "expected": [
+        "2"
+      ],
+      "found": [
+        "2"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which chapter does Chapter 12 appear?",
+      "id": "csm-pg-chapter_12-003",
+      "subject": "Chapter 12",
+      "accept": "all",
+      "expected": [
+        "12"
+      ],
+      "found": [
+        "12"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the Japanese title of Chapter 12?",
+      "id": "csm-pg-chapter_12-004",
+      "subject": "Chapter 12",
+      "accept": "all",
+      "expected": [
+        "\u63c9\u3080"
+      ],
+      "found": [
+        "\u63c9\u3080"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji title of Chapter 12?",
+      "id": "csm-pg-chapter_12-005",
+      "subject": "Chapter 12",
+      "accept": "all",
+      "expected": [
+        "Momu"
+      ],
+      "found": [
+        "Momu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "On which page does Chapter 12 appear?",
+      "id": "csm-pg-chapter_12-006",
+      "subject": "Chapter 12",
+      "accept": "all",
+      "expected": [
+        "19"
+      ],
+      "found": [
+        "19"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What date is associated with Chapter 12?",
+      "id": "csm-pg-chapter_12-007",
+      "subject": "Chapter 12",
+      "accept": "all",
+      "expected": [
+        "March 4, 2019"
+      ],
+      "found": [
+        "March 4, 2019"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What issue is Chapter 12 from?",
+      "id": "csm-pg-chapter_12-008",
+      "subject": "Chapter 12",
+      "accept": "all",
+      "expected": [
+        "Issue 2019-14"
+      ],
+      "found": [
+        "Issue 2019-14"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which episode does Chapter 12 appear?",
+      "id": "csm-pg-chapter_12-009",
+      "subject": "Chapter 12",
+      "accept": "all",
+      "expected": [
+        "Episode 4 Episode 5"
+      ],
+      "found": [
+        "Episode 4 Episode 5"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which arc does Chapter 12 appear?",
+      "id": "csm-pg-chapter_12-010",
+      "subject": "Chapter 12",
+      "accept": "all",
+      "expected": [
+        "Bat Devil arc"
+      ],
+      "found": [
+        "Bat Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Chapter 12?",
+      "id": "csm-pg-chapter_12-011",
+      "subject": "Chapter 12",
+      "accept": "all",
+      "expected": [
+        "Chapter 11"
+      ],
+      "found": [
+        "Chapter 11"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Chapter 12?",
+      "id": "csm-pg-chapter_12-012",
+      "subject": "Chapter 12",
+      "accept": "all",
+      "expected": [
+        "Chapter 13"
+      ],
+      "found": [
+        "Chapter 13"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 12,
+    "fact_present": 12
+  }
+}

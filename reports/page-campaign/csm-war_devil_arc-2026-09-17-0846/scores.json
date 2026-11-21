@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "Which saga does War Devil arc belong to?",
+      "id": "csm-pg-war_devil_arc-001",
+      "subject": "War Devil arc",
+      "accept": "all",
+      "expected": [
+        "Academy Saga"
+      ],
+      "found": [
+        "Academy Saga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Which chapters are included in War Devil arc?",
+      "id": "csm-pg-war_devil_arc-002",
+      "subject": "War Devil arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 191 - 232"
+      ],
+      "found": [
+        "Chapter 191 - 232"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before War Devil arc?",
+      "id": "csm-pg-war_devil_arc-003",
+      "subject": "War Devil arc",
+      "accept": "all",
+      "expected": [
+        "Aging Devil arc"
+      ],
+      "found": [
+        "Aging Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

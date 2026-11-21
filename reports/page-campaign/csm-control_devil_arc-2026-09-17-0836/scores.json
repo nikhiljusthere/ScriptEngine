@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "Which saga does Control Devil arc belong to?",
+      "id": "csm-pg-control_devil_arc-001",
+      "subject": "Control Devil arc",
+      "accept": "all",
+      "expected": [
+        "Public Safety Saga"
+      ],
+      "found": [
+        "Public Safety Saga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Which chapters are included in Control Devil arc?",
+      "id": "csm-pg-control_devil_arc-002",
+      "subject": "Control Devil arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 80 - 97"
+      ],
+      "found": [
+        "Chapter 80 - 97"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Control Devil arc?",
+      "id": "csm-pg-control_devil_arc-003",
+      "subject": "Control Devil arc",
+      "accept": "all",
+      "expected": [
+        "Gun Devil arc"
+      ],
+      "found": [
+        "Gun Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Control Devil arc?",
+      "id": "csm-pg-control_devil_arc-004",
+      "subject": "Control Devil arc",
+      "accept": "all",
+      "expected": [
+        "Justice Devil arc"
+      ],
+      "found": [
+        "Justice Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

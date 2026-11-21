@@ -1,0 +1,185 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Kusakabe?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Kusakabe?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 4,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Kusakabe?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Kusakabe?",
+      "found": [],
+      "missing": [
+        "Stone Devil Contract"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the allies of Kusakabe?",
+      "found": [],
+      "missing": [
+        "Denji",
+        "Power",
+        "Hirofumi Yoshida",
+        "Tamaoki"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the affiliations of Kusakabe?",
+      "found": [],
+      "missing": [
+        "Public Safety Devil Hunters",
+        "Miyagi Division 2"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is the status of Kusakabe?",
+      "id": "csm-pg-kusakabe-001",
+      "subject": "Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Kusakabe's occupation?",
+      "id": "csm-pg-kusakabe-002",
+      "subject": "Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter\nDenji\u2019s Bodyguard (formerly)"
+      ],
+      "found": [
+        "Public Safety Devil Hunter\nDenji\u2019s Bodyguard (formerly)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Kusakabe's gender?",
+      "id": "csm-pg-kusakabe-003",
+      "subject": "Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Kusakabe's name?",
+      "id": "csm-pg-kusakabe-004",
+      "subject": "Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Kusakabe"
+      ],
+      "found": [
+        "Kusakabe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What are the kanji for Kusakabe's name?",
+      "id": "csm-pg-kusakabe-005",
+      "subject": "Kusakabe",
+      "accept": "all",
+      "expected": [
+        "\u65e5\u4e0b\u90e8"
+      ],
+      "found": [
+        "\u65e5\u4e0b\u90e8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 0,
+    "canon_total": 7,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 3,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 3,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

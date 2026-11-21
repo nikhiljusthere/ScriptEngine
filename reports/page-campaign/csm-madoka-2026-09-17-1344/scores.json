@@ -1,0 +1,141 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Madoka?",
+      "set": "Madoka's affiliations",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Madoka?",
+      "found": [
+        "Public Safety Devil Hunters (formerly)",
+        "Tokyo Special Division 4 (formerly)"
+      ],
+      "missing": [],
+      "members": [
+        "Public Safety Devil Hunters (formerly)",
+        "Tokyo Special Division 4 (formerly)"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Madoka's name?",
+      "id": "csm-pg-madoka-001",
+      "subject": "Madoka",
+      "accept": "all",
+      "expected": [
+        "\u5186"
+      ],
+      "found": [
+        "\u5186"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Madoka's name?",
+      "id": "csm-pg-madoka-002",
+      "subject": "Madoka",
+      "accept": "all",
+      "expected": [
+        "Madoka"
+      ],
+      "found": [
+        "Madoka"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Madoka's gender?",
+      "id": "csm-pg-madoka-003",
+      "subject": "Madoka",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Madoka?",
+      "id": "csm-pg-madoka-004",
+      "subject": "Madoka",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Madoka's occupation?",
+      "id": "csm-pg-madoka-005",
+      "subject": "Madoka",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter (formerly)"
+      ],
+      "found": [
+        "Public Safety Devil Hunter (formerly)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

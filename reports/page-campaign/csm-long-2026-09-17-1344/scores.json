@@ -1,0 +1,241 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Long?",
+      "set": "Every named technique of Long",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Long?",
+      "set": "Every ally of Long",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Long?",
+      "set": "Every enemy of Long",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the subordinates of Long?",
+      "set": "Every subordinate of Long",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Long?",
+      "set": "Long's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Long?",
+      "found": [
+        "Hand-to-Hand Combat"
+      ],
+      "missing": [],
+      "members": [
+        "Hand-to-Hand Combat"
+      ]
+    },
+    {
+      "query": "What are all the allies of Long?",
+      "found": [
+        "Quanxi",
+        "Power"
+      ],
+      "missing": [],
+      "members": [
+        "Power",
+        "Quanxi"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Long?",
+      "found": [
+        "Aldo",
+        "Quanxi"
+      ],
+      "missing": [],
+      "members": [
+        "Aldo",
+        "Quanxi"
+      ]
+    },
+    {
+      "query": "What are all the subordinates of Long?",
+      "found": [
+        "Power",
+        "Quanxi"
+      ],
+      "missing": [],
+      "members": [
+        "Power",
+        "Quanxi"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Long?",
+      "found": [
+        "Quanxi and the Fiends"
+      ],
+      "missing": [],
+      "members": [
+        "Quanxi and the Fiends"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Long's name?",
+      "id": "csm-pg-long-001",
+      "subject": "Long",
+      "accept": "all",
+      "expected": [
+        "\u30ed\u30f3"
+      ],
+      "found": [
+        "\u30ed\u30f3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Long's name?",
+      "id": "csm-pg-long-002",
+      "subject": "Long",
+      "accept": "all",
+      "expected": [
+        "Ron"
+      ],
+      "found": [
+        "Ron"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Long?",
+      "id": "csm-pg-long-003",
+      "subject": "Long",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Long's gender?",
+      "id": "csm-pg-long-004",
+      "subject": "Long",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Long's occupation?",
+      "id": "csm-pg-long-005",
+      "subject": "Long",
+      "accept": "all",
+      "expected": [
+        "Private Devil Hunter"
+      ],
+      "found": [
+        "Private Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 5,
+    "canon_found": 8,
+    "canon_total": 8,
+    "canon_recall": 1.0,
+    "members_returned": 8,
+    "exact_answers": 5,
+    "exact_of": 5,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "5/5",
+    "at_recall_zero": 0,
+    "at_recall_80": 5,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

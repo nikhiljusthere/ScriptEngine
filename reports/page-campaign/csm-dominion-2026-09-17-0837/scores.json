@@ -1,0 +1,137 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Dominion?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Dominion?",
+      "found": [],
+      "missing": [
+        "Public Safety Devil Hunters"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Dominion's name?",
+      "id": "csm-pg-dominion-001",
+      "subject": "Dominion",
+      "accept": "all",
+      "expected": [
+        "\u30c9\u30df\u30cb\u30aa\u30f3"
+      ],
+      "found": [
+        "\u30c9\u30df\u30cb\u30aa\u30f3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Dominion's name?",
+      "id": "csm-pg-dominion-002",
+      "subject": "Dominion",
+      "accept": "all",
+      "expected": [
+        "Dominion"
+      ],
+      "found": [
+        "Dominion"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Dominion's gender?",
+      "id": "csm-pg-dominion-003",
+      "subject": "Dominion",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Dominion?",
+      "id": "csm-pg-dominion-004",
+      "subject": "Dominion",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Dominion's occupation?",
+      "id": "csm-pg-dominion-005",
+      "subject": "Dominion",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 0,
+    "canon_total": 1,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 1,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 1,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

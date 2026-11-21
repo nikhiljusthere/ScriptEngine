@@ -1,0 +1,235 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Fake Chainsaw Man?",
+      "set": "Every named technique of Fake Chainsaw Man",
+      "confidence": "declared",
+      "returned": 6,
+      "available": 6,
+      "canon": 6,
+      "found": 6,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Fake Chainsaw Man?",
+      "set": "Every enemy of Fake Chainsaw Man",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the superiors of Fake Chainsaw Man?",
+      "set": "Every superior of Fake Chainsaw Man",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Fake Chainsaw Man?",
+      "set": "Fake Chainsaw Man's affiliations",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Fake Chainsaw Man?",
+      "set": "Fake Chainsaw Man's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Fake Chainsaw Man?",
+      "found": [
+        "Fire Devil Contract",
+        "Chainsaw Manifestation",
+        "Body Absorption",
+        "Enhanced Strength",
+        "Enhanced Durability",
+        "Enhanced Speed"
+      ],
+      "missing": [],
+      "members": [
+        "Body Absorption",
+        "Chainsaw Manifestation",
+        "Enhanced Durability",
+        "Enhanced Speed",
+        "Enhanced Strength",
+        "Fire Devil Contract"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Fake Chainsaw Man?",
+      "found": [
+        "Denji",
+        "Yuko",
+        "Asa Mitaka"
+      ],
+      "missing": [],
+      "members": [
+        "Asa Mitaka",
+        "Denji",
+        "Yuko"
+      ]
+    },
+    {
+      "query": "What are all the superiors of Fake Chainsaw Man?",
+      "found": [
+        "Denji",
+        "Death Devil"
+      ],
+      "missing": [],
+      "members": [
+        "Death Devil",
+        "Denji"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Fake Chainsaw Man?",
+      "found": [
+        "Chainsaw Man Church",
+        "Death Devil (brainwashed)"
+      ],
+      "missing": [],
+      "members": [
+        "Chainsaw Man Church",
+        "Death Devil (brainwashed)"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Fake Chainsaw Man?",
+      "found": [
+        "Chainsaw Man (self-proclaimed)"
+      ],
+      "missing": [],
+      "members": [
+        "Chainsaw Man (self-proclaimed)"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Fake Chainsaw Man's name?",
+      "id": "csm-pg-fake_chainsaw_man-001",
+      "subject": "Fake Chainsaw Man",
+      "accept": "all",
+      "expected": [
+        "\u507d\u30c1\u30a7\u30f3\u30bd\u30fc\u30de\u30f3"
+      ],
+      "found": [
+        "\u507d\u30c1\u30a7\u30f3\u30bd\u30fc\u30de\u30f3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Fake Chainsaw Man's name?",
+      "id": "csm-pg-fake_chainsaw_man-002",
+      "subject": "Fake Chainsaw Man",
+      "accept": "all",
+      "expected": [
+        "Nise Chens\u014dman"
+      ],
+      "found": [
+        "Nise Chens\u014dman"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Fake Chainsaw Man's gender?",
+      "id": "csm-pg-fake_chainsaw_man-003",
+      "subject": "Fake Chainsaw Man",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Fake Chainsaw Man?",
+      "id": "csm-pg-fake_chainsaw_man-004",
+      "subject": "Fake Chainsaw Man",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 5,
+    "canon_found": 14,
+    "canon_total": 14,
+    "canon_recall": 1.0,
+    "members_returned": 14,
+    "exact_answers": 5,
+    "exact_of": 5,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "5/5",
+    "at_recall_zero": 0,
+    "at_recall_80": 5,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

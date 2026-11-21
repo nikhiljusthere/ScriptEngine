@@ -1,0 +1,251 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Aging Devil?",
+      "set": "Every named technique of Aging Devil",
+      "confidence": "declared",
+      "returned": 7,
+      "available": 7,
+      "canon": 7,
+      "found": 7,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Aging Devil?",
+      "set": "Every enemy of Aging Devil",
+      "confidence": "declared",
+      "returned": 6,
+      "available": 6,
+      "canon": 6,
+      "found": 6,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Aging Devil?",
+      "set": "Aging Devil's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Aging Devil?",
+      "set": "Aging Devil's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Aging Devil?",
+      "found": [
+        "Nigh-Absolute Immortality",
+        "Immense Healing Factor",
+        "Hell Connection",
+        "Time Manipulation",
+        "Rapid-Onset Aging",
+        "Remote Harm",
+        "Aging's World"
+      ],
+      "missing": [],
+      "members": [
+        "Aging's World",
+        "Hell Connection",
+        "Immense Healing Factor",
+        "Nigh-Absolute Immortality",
+        "Rapid-Onset Aging",
+        "Remote Harm",
+        "Time Manipulation"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Aging Devil?",
+      "found": [
+        "Pochita",
+        "Yoru",
+        "Denji",
+        "Hirofumi Yoshida",
+        "Fumiko Mifune",
+        "Aging Devil's Victim"
+      ],
+      "missing": [],
+      "members": [
+        "Aging Devil's Victim",
+        "Denji",
+        "Fumiko Mifune",
+        "Hirofumi Yoshida",
+        "Pochita",
+        "Yoru"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Aging Devil?",
+      "found": [
+        "Aging (by Public Safety)"
+      ],
+      "missing": [],
+      "members": [
+        "Aging (by Public Safety)"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Aging Devil?",
+      "found": [
+        "Public Safety Devil Hunters"
+      ],
+      "missing": [],
+      "members": [
+        "Public Safety Devil Hunters"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Aging Devil's name?",
+      "id": "csm-pg-aging_devil-001",
+      "subject": "Aging Devil",
+      "accept": "all",
+      "expected": [
+        "\u8001\u3044\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u8001\u3044\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Aging Devil's name?",
+      "id": "csm-pg-aging_devil-002",
+      "subject": "Aging Devil",
+      "accept": "all",
+      "expected": [
+        "Oi no Akuma"
+      ],
+      "found": [
+        "Oi no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Aging Devil's gender?",
+      "id": "csm-pg-aging_devil-003",
+      "subject": "Aging Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Aging Devil?",
+      "id": "csm-pg-aging_devil-004",
+      "subject": "Aging Devil",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Aging Devil's occupation?",
+      "id": "csm-pg-aging_devil-005",
+      "subject": "Aging Devil",
+      "accept": "all",
+      "expected": [
+        "Primal Fear Wild Devil Contract Devil"
+      ],
+      "found": [
+        "Primal Fear Wild Devil Contract Devil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Aging Devil?",
+      "id": "csm-pg-aging_devil-006",
+      "subject": "Aging Devil",
+      "accept": "all",
+      "expected": [
+        "2,000+"
+      ],
+      "found": [
+        "2,000+"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 15,
+    "canon_total": 15,
+    "canon_recall": 1.0,
+    "members_returned": 15,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Sixth Sense Devil's name?",
+      "id": "csm-pg-sixth_sense_devil-001",
+      "subject": "Sixth Sense Devil",
+      "accept": "all",
+      "expected": [
+        "\u7b2c\u516d\u611f\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u7b2c\u516d\u611f\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Sixth Sense Devil's name?",
+      "id": "csm-pg-sixth_sense_devil-002",
+      "subject": "Sixth Sense Devil",
+      "accept": "all",
+      "expected": [
+        "Dairokkan no Akuma"
+      ],
+      "found": [
+        "Dairokkan no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Sixth Sense Devil's gender?",
+      "id": "csm-pg-sixth_sense_devil-003",
+      "subject": "Sixth Sense Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Sixth Sense Devil?",
+      "id": "csm-pg-sixth_sense_devil-004",
+      "subject": "Sixth Sense Devil",
+      "accept": "all",
+      "expected": [
+        "Erased (original timeline)"
+      ],
+      "found": [
+        "Erased (original timeline)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

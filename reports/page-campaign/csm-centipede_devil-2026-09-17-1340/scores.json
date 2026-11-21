@@ -1,0 +1,167 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the allies of Centipede Devil?",
+      "set": "Every ally of Centipede Devil",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Centipede Devil?",
+      "set": "Centipede Devil's affiliations",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Centipede Devil?",
+      "found": [
+        "Stag Beetle Devil",
+        "Pillbug Devil"
+      ],
+      "missing": [],
+      "members": [
+        "Pillbug Devil",
+        "Stag Beetle Devil"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Centipede Devil?",
+      "found": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 6"
+      ],
+      "missing": [],
+      "members": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 6"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Centipede Devil's name?",
+      "id": "csm-pg-centipede_devil-001",
+      "subject": "Centipede Devil",
+      "accept": "all",
+      "expected": [
+        "\u30e0\u30ab\u30c7\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u30e0\u30ab\u30c7\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Centipede Devil's name?",
+      "id": "csm-pg-centipede_devil-002",
+      "subject": "Centipede Devil",
+      "accept": "all",
+      "expected": [
+        "Mukade no Akuma"
+      ],
+      "found": [
+        "Mukade no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Centipede Devil?",
+      "id": "csm-pg-centipede_devil-003",
+      "subject": "Centipede Devil",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Centipede Devil's gender?",
+      "id": "csm-pg-centipede_devil-004",
+      "subject": "Centipede Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Centipede Devil's occupation?",
+      "id": "csm-pg-centipede_devil-005",
+      "subject": "Centipede Devil",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Yakuza's allegiance?",
+      "id": "csm-pg-yakuza-001",
+      "subject": "Yakuza",
+      "accept": "all",
+      "expected": [
+        "Themselves\nZombie Devil (controlled)\nGun Devil (ruse)"
+      ],
+      "found": [
+        "Themselves\nZombie Devil (controlled)\nGun Devil (ruse)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Who are Yakuza's notable members?",
+      "id": "csm-pg-yakuza-002",
+      "subject": "Yakuza",
+      "accept": "all",
+      "expected": [
+        "Unnamed boss \u2020\nKatana Man (formerly)"
+      ],
+      "found": [
+        "Unnamed boss \u2020\nKatana Man (formerly)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Which series does Yakuza belong to?",
+      "id": "csm-pg-yakuza-003",
+      "subject": "Yakuza",
+      "accept": "all",
+      "expected": [
+        "Yakuza"
+      ],
+      "found": [
+        "Yakuza"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "In which manga chapter does Yakuza first appear?",
+      "id": "csm-pg-yakuza-004",
+      "subject": "Yakuza",
+      "accept": "all",
+      "expected": [
+        "Chapter 1"
+      ],
+      "found": [
+        "Chapter 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Who are Yakuza's affiliates?",
+      "id": "csm-pg-yakuza-005",
+      "subject": "Yakuza",
+      "accept": "all",
+      "expected": [
+        "Denji's Father (formerly) \u2020 Denji (coerced; formerly) Akane Sawatari (formerly) \u2020"
+      ],
+      "found": [
+        "Denji's Father (formerly) \u2020 Denji (coerced; formerly) Akane Sawatari (formerly) \u2020"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What type of song is Yakuza?",
+      "id": "csm-pg-yakuza-006",
+      "subject": "Yakuza",
+      "accept": "all",
+      "expected": [
+        "Criminal"
+      ],
+      "found": [
+        "Criminal"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

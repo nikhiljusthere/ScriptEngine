@@ -1,0 +1,135 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the allies of Meowy?",
+      "set": "Every ally of Meowy",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the superiors of Meowy?",
+      "set": "Every superior of Meowy",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Meowy?",
+      "found": [
+        "Kishibe",
+        "Power",
+        "Denji"
+      ],
+      "missing": [],
+      "members": [
+        "Denji",
+        "Kishibe",
+        "Power"
+      ]
+    },
+    {
+      "query": "What are all the superiors of Meowy?",
+      "found": [
+        "Power",
+        "Denji",
+        "Nayuta"
+      ],
+      "missing": [],
+      "members": [
+        "Denji",
+        "Nayuta",
+        "Power"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Meowy's name?",
+      "id": "csm-pg-meowy-001",
+      "subject": "Meowy",
+      "accept": "all",
+      "expected": [
+        "\u30cb\u30e3\u30fc\u30b3"
+      ],
+      "found": [
+        "\u30cb\u30e3\u30fc\u30b3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Meowy's name?",
+      "id": "csm-pg-meowy-002",
+      "subject": "Meowy",
+      "accept": "all",
+      "expected": [
+        "Ny\u0101ko"
+      ],
+      "found": [
+        "Ny\u0101ko"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Meowy?",
+      "id": "csm-pg-meowy-003",
+      "subject": "Meowy",
+      "accept": "all",
+      "expected": [
+        "Deceased (original timeline) Alive (new timeline)"
+      ],
+      "found": [
+        "Deceased (original timeline) Alive (new timeline)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 6,
+    "canon_total": 6,
+    "canon_recall": 1.0,
+    "members_returned": 6,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Division 4 Male Member?",
+      "set": "Male (Affiliation)",
+      "confidence": "exact",
+      "returned": 67,
+      "available": 67,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Division 4 Male Member?",
+      "found": [],
+      "missing": [
+        "Tokyo Special Division 4"
+      ],
+      "members": [
+        "Division 4 Male Member",
+        "Fake Chainsaw Man",
+        "Bucky",
+        "Furio",
+        "Haruka Iseumi",
+        "Nobana Higashiyama",
+        "Seigi Akoku",
+        "Tanaka",
+        "Kanbayashi",
+        "Barem Bridge",
+        "Miri Sugo",
+        "Spear Hybrid",
+        "Denji",
+        "Shiina",
+        "Bat Devil",
+        "Aging Devil's Victim",
+        "Aki Hayakawa",
+        "Angel Devil",
+        "Beam",
+        "Division 2 Vice Captain",
+        "Ear Devil",
+        "Furuno",
+        "Fushi",
+        "Galgali",
+        "Hirofumi Yoshida",
+        "Hirokazu Arai",
+        "Kato",
+        "Kishibe",
+        "Kusakabe",
+        "Madoka",
+        "Masaki Ando",
+        "Nakamura",
+        "Nomo",
+        "Pillbug Devil",
+        "Sato",
+        "Subaru",
+        "Takagi",
+        "Tamaoki",
+        "Tanabe",
+        "Yutaro Kurose",
+        "Tolka",
+        "Aldo",
+        "Joey",
+        "Mysterious Man",
+        "Debt Collector",
+        "Denji's Father",
+        "Katana Man",
+        "Pochita",
+        "Zombie Devil",
+        "Asa Mitaka's Father",
+        "Cockroach Devil",
+        "Crambon",
+        "Hadaji Sakagami",
+        "Kentaro Ishita",
+        "Kenzo",
+        "Loneliness Fiend",
+        "Miki Takanashi",
+        "Muscle Devil",
+        "Shin Toma",
+        "Shinohara",
+        "Shuzo Mishima",
+        "Tadashi Hasegawa",
+        "Taiyo Hayakawa",
+        "Takashi Inoue",
+        "Tomono",
+        "Yokota",
+        "Yuki Tomoda"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is Division 4 Male Member's gender?",
+      "id": "csm-pg-division_4_male_member-001",
+      "subject": "Division 4 Male Member",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Division 4 Male Member?",
+      "id": "csm-pg-division_4_male_member-002",
+      "subject": "Division 4 Male Member",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Division 4 Male Member's birthday?",
+      "id": "csm-pg-division_4_male_member-003",
+      "subject": "Division 4 Male Member",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Division 4 Male Member?",
+      "id": "csm-pg-division_4_male_member-004",
+      "subject": "Division 4 Male Member",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Division 4 Male Member's occupation?",
+      "id": "csm-pg-division_4_male_member-005",
+      "subject": "Division 4 Male Member",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 0,
+    "canon_total": 1,
+    "canon_recall": 0.0,
+    "members_returned": 67,
+    "exact_answers": 0,
+    "exact_of": 1,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 1,
+    "at_recall_80": 0,
+    "confident_and_wrong": [
+      "What are all the affiliations of Division 4 Male Member?"
+    ],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

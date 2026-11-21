@@ -1,0 +1,271 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Galgali?",
+      "set": "Every named technique of Galgali",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Galgali?",
+      "set": "Every ally of Galgali",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Galgali?",
+      "set": "Every enemy of Galgali",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Galgali?",
+      "set": "Galgali's aliases",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Galgali?",
+      "set": "Galgali's affiliations",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Galgali?",
+      "found": [
+        "Enhanced Strength",
+        "Poison Resistance",
+        "Body Transformation",
+        "Hand-to-Hand Combat"
+      ],
+      "missing": [],
+      "members": [
+        "Body Transformation",
+        "Enhanced Strength",
+        "Hand-to-Hand Combat",
+        "Poison Resistance"
+      ]
+    },
+    {
+      "query": "What are all the allies of Galgali?",
+      "found": [
+        "Makima",
+        "Kobeni Higashiyama",
+        "Aki Hayakawa",
+        "Hirofumi Yoshida"
+      ],
+      "missing": [],
+      "members": [
+        "Aki Hayakawa",
+        "Hirofumi Yoshida",
+        "Kobeni Higashiyama",
+        "Makima"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Galgali?",
+      "found": [
+        "Reze",
+        "Grape Devil"
+      ],
+      "missing": [],
+      "members": [
+        "Grape Devil",
+        "Reze"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Galgali?",
+      "found": [
+        "Violence Fiend",
+        "Violence Devil"
+      ],
+      "missing": [],
+      "members": [
+        "Violence Devil",
+        "Violence Fiend"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Galgali?",
+      "found": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 4"
+      ],
+      "missing": [],
+      "members": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 4"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Galgali's name?",
+      "id": "csm-pg-galgali-001",
+      "subject": "Galgali",
+      "accept": "all",
+      "expected": [
+        "\u30ac\u30eb\u30ac\u30ea"
+      ],
+      "found": [
+        "\u30ac\u30eb\u30ac\u30ea"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Galgali's name?",
+      "id": "csm-pg-galgali-002",
+      "subject": "Galgali",
+      "accept": "all",
+      "expected": [
+        "Garugari"
+      ],
+      "found": [
+        "Garugari"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Galgali?",
+      "id": "csm-pg-galgali-003",
+      "subject": "Galgali",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Galgali's occupation?",
+      "id": "csm-pg-galgali-004",
+      "subject": "Galgali",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Galgali's gender?",
+      "id": "csm-pg-galgali-005",
+      "subject": "Galgali",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Galgali's height?",
+      "id": "csm-pg-galgali-006",
+      "subject": "Galgali",
+      "accept": "all",
+      "expected": [
+        "178 cm (5'10\")"
+      ],
+      "found": [
+        "178 cm (5'10\")"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 5,
+    "canon_found": 14,
+    "canon_total": 14,
+    "canon_recall": 1.0,
+    "members_returned": 14,
+    "exact_answers": 5,
+    "exact_of": 5,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "5/5",
+    "at_recall_zero": 0,
+    "at_recall_80": 5,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

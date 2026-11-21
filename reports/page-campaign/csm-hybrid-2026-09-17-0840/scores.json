@@ -1,0 +1,55 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Hybrid?",
+      "set": "Hybrids",
+      "confidence": "partial",
+      "returned": 8,
+      "available": 8,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Hybrid?",
+      "found": [],
+      "missing": [
+        "Devil Hunters Weapon Devils Chainsaw Man Church"
+      ],
+      "members": [
+        "Barem Bridge",
+        "Denji",
+        "Katana Man",
+        "Miri Sugo",
+        "Quanxi",
+        "Reze",
+        "Spear Hybrid",
+        "Whip Hybrid"
+      ]
+    }
+  ],
+  "facts": [],
+  "summary": {
+    "questions": 1,
+    "canon_found": 0,
+    "canon_total": 1,
+    "canon_recall": 0.0,
+    "members_returned": 8,
+    "exact_answers": 0,
+    "exact_of": 1,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 1,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 0,
+    "fact_present": 0
+  }
+}

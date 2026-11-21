@@ -1,0 +1,187 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Mysterious Man?",
+      "set": "Every named technique of Mysterious Man",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Mysterious Man?",
+      "set": "Mysterious Man's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Mysterious Man?",
+      "set": "Mysterious Man's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Mysterious Man?",
+      "found": [
+        "Typhoon Devil Contract"
+      ],
+      "missing": [],
+      "members": [
+        "Typhoon Devil Contract"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Mysterious Man?",
+      "found": [
+        "Mohawk Man"
+      ],
+      "missing": [],
+      "members": [
+        "Mohawk Man"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Mysterious Man?",
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "members": [
+        "Unknown"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Mysterious Man's name?",
+      "id": "csm-pg-mysterious_man-001",
+      "subject": "Mysterious Man",
+      "accept": "all",
+      "expected": [
+        "\u8b0e\u306e\u7537"
+      ],
+      "found": [
+        "\u8b0e\u306e\u7537"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Mysterious Man's name?",
+      "id": "csm-pg-mysterious_man-002",
+      "subject": "Mysterious Man",
+      "accept": "all",
+      "expected": [
+        "Nazo no Otoko"
+      ],
+      "found": [
+        "Nazo no Otoko"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Mysterious Man's gender?",
+      "id": "csm-pg-mysterious_man-003",
+      "subject": "Mysterious Man",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Mysterious Man?",
+      "id": "csm-pg-mysterious_man-004",
+      "subject": "Mysterious Man",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Mysterious Man's occupation?",
+      "id": "csm-pg-mysterious_man-005",
+      "subject": "Mysterious Man",
+      "accept": "all",
+      "expected": [
+        "Private Devil Hunter"
+      ],
+      "found": [
+        "Private Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

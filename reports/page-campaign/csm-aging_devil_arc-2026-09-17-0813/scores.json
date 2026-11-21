@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "Which saga does Aging Devil arc belong to?",
+      "id": "csm-pg-aging_devil_arc-001",
+      "subject": "Aging Devil arc",
+      "accept": "all",
+      "expected": [
+        "Academy Saga"
+      ],
+      "found": [
+        "Academy Saga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "Which chapters are included in Aging Devil arc?",
+      "id": "csm-pg-aging_devil_arc-002",
+      "subject": "Aging Devil arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 156 - 190"
+      ],
+      "found": [
+        "Chapter 156 - 190"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes before Aging Devil arc?",
+      "id": "csm-pg-aging_devil_arc-003",
+      "subject": "Aging Devil arc",
+      "accept": "all",
+      "expected": [
+        "Chainsaw Man Church arc"
+      ],
+      "found": [
+        "Chainsaw Man Church arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What comes after Aging Devil arc?",
+      "id": "csm-pg-aging_devil_arc-004",
+      "subject": "Aging Devil arc",
+      "accept": "all",
+      "expected": [
+        "War Devil arc"
+      ],
+      "found": [
+        "War Devil arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

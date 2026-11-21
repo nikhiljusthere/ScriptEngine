@@ -1,4 +1,39 @@
-# RESUME PROMPT — JJK VERIFY-7000 INLINE WORKFLOW (FINAL)
+# RESUME PROMPT — JJK VERIFY-7000 INLINE WORKFLOW (FINAL v2)
+
+## ⛔ ABSOLUTE RULE — ONE WINDOW AT A TIME, INLINE, NO DEVIATION
+
+### You MUST do EVERYTHING in this single session, EXACTLY this way:
+
+1. **ONE window per turn.** Not a batch. Not a group. One window → read it → verify it → save it → THEN the next. No exceptions.
+2. **NO background LLM calls. NO subagents. NO scripts. NO automation.** Every verification step runs in your own active context.
+3. **Exhaustive fact-checking on EVERY window.** You WILL:
+   - Read the passage thoroughly (no skimming)
+   - Look up EVERY named entity in the wiki (both ends of every event)
+   - Apply ALL strict rules mentally before accepting or rejecting anything
+   - Do a missed-event pass on EVERY window (re-read for things the drafts missed)
+   - Quote ≥ 12 chars verbatim for every accepted row
+4. **Save immediately after each window.** Write the JSONL line, atomic-rename, log completion. The monitor updates live — you SEE each dot cross the finish line.
+5. **If you catch yourself batching, parallelizing, or skipping:** STOP. Rewrite the last step. The process is the quality guarantee.
+
+**This is non-negotiable.** A slow, correct pass beats a fast, flawed one. Every window deserves human-quality attention.
+
+### TRUNCATION SAFEGUARD — READ FULL PASSAGE BEFORE ANALYZING
+
+**CRITICAL: The harness truncates shell output when total bytes per tool call exceed its internal limit (~2000-2500 bytes including headers/formatting). Every individual tool call is independently limited.**
+
+The safe protocol:
+6. Extract the passage to a temp file FIRST (one small tool call):
+   `sed -n 'NR=Np' file | python3 -c "import json,sys;d=json.loads(sys.stdin.read());open('/tmp/wNN.txt','w').write(d['passage'])"`
+7. Read the file in chunks using `head -c N` / `tail -c +M`, **each chunk ≤500 chars** (SEPARATE tool calls):
+   - Chunk 1: `head -c 500 /tmp/wNN.txt`
+   - Chunk 2: `tail -c +501 /tmp/wNN.txt | head -c 500`
+   - Continue until empty. Even a single 800-char output can be silently truncated.
+8. After reading ALL chunks, concatenate them mentally to reconstruct the full passage before analysis.
+9. Always verify at the end that all expected content is accounted for.
+10. **Multi-page wiki lookups are allowed and encouraged.** When an event involves characters not on the page itself, or when the page title differs from the subject name, search for the other end on the wiki too. One event row per pair; each entity must be verified as a valid named character/group before being used.
+11. **If a passage's source data appears truncated (ends mid-word like "wi" instead of "with"), note this explicitly and do your best with available text — never invent missing content.**
+
+---
 
 Paste everything below into a new opencode session. It is fully self-contained.
 
@@ -9,21 +44,35 @@ Paste everything below into a new opencode session. It is fully self-contained.
 Manual, inline verification of **every** JJK training window — **one at a time**.
 No background LLM calls, no auto-verifiers, no batch scripts. You read the
 passage, fetch every related wiki page, confirm every fact under strict rules,
-save one validated line, then move to the next.
+save one validated line, then IMMEDIATELY move to the next window.
 
 This method produced `gold600.jsonl`. It is correct for quality, slower for
 wall-clock, and exactly what the owner ordered.
 
-**Order:**
+### Structure
+
+- **Pool A (opencode sessions):** 3 × 500 = 1,500 main windows across MIMO / Nemotron / SpaceBunny
+  - Each pool has 5 pilot batches (31 windows each, P1–P5) seeded within
+  - Process ALL pools together, one window at a time
+- **Pool B (Qwen windows):** cand_q6_train.jsonl — Phase 2
+- **v1/train.jsonl subset:** Phase 3
+- **Empty re-read:** Phase 4, ~2,265 windows
+
+**Grand total: 7,000 windows**
+
+Each pool's output (`mimo_out.jsonl`, `nemotron_out.jsonl`, `spacebunny_out.jsonl`) accumulates verified results. The [monitor dashboard](#21-live-progress-monitor) updates in real-time as you save — watch the bars grow.
+
+### Order
+
 - Phase 0: Blind audit sample (10 random windows across pools)
-- Phase 1: pool A — ~1,500 opencode-session windows (3×500 main + 5×31 pilots)
-- Phase 2: pool B — ~1,000 Qwen windows (already partially done, re-verify under stricter rules)
-- Phase 3: rest of v1/train.jsonl (~4,375 total unique)
-- Phase 4: the 2,265 `empty` windows (re-read for false negatives)
+- Phase 1: Pool A — opencode-session windows, one at a time
+- Phase 2: Pool B — Qwen windows (re-verify under stricter rules)
+- Phase 3: v1/train.jsonl subset
+- Phase 4: Empty re-read (~2,265 windows for false-negative hunting)
 
 ### Phase 0: Blind audit sample (RUN BEFORE PHASE 1)
 
-Pick **10 random windows** across different pools. Mix of empty/dense, known-good/known-empty. Verify each inline under strict rules. Confirm:
+Pick **10 random windows** across different pools. Mix of empty/dense, known-good/known-empty. Verify each ONE AT A TIME under strict rules. Confirm:
 - Model correctly rejects false positives under stricter rules
 - It catches missed events on dense passages
 - Output JSON format is consistent

@@ -1,0 +1,257 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Whip Hybrid?",
+      "set": "Every named technique of Whip Hybrid",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Whip Hybrid?",
+      "set": "Every ally of Whip Hybrid",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Whip Hybrid?",
+      "set": "Every enemy of Whip Hybrid",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the superiors of Whip Hybrid?",
+      "set": "Every superior of Whip Hybrid",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Whip Hybrid?",
+      "set": "Whip Hybrid's affiliations",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Whip Hybrid?",
+      "found": [
+        "Hybrid Transformation",
+        "Augmented Body",
+        "Whips",
+        "Blood Consumption",
+        "Nigh-Immortality"
+      ],
+      "missing": [],
+      "members": [
+        "Augmented Body",
+        "Blood Consumption",
+        "Hybrid Transformation",
+        "Nigh-Immortality",
+        "Whips"
+      ]
+    },
+    {
+      "query": "What are all the allies of Whip Hybrid?",
+      "found": [
+        "Spear Hybrid",
+        "Miri Sugo",
+        "Barem Bridge"
+      ],
+      "missing": [],
+      "members": [
+        "Barem Bridge",
+        "Miri Sugo",
+        "Spear Hybrid"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Whip Hybrid?",
+      "found": [
+        "Pochita",
+        "Denji",
+        "Fumiko Mifune"
+      ],
+      "missing": [],
+      "members": [
+        "Denji",
+        "Fumiko Mifune",
+        "Pochita"
+      ]
+    },
+    {
+      "query": "What are all the superiors of Whip Hybrid?",
+      "found": [
+        "Makima",
+        "Barem Bridge"
+      ],
+      "missing": [],
+      "members": [
+        "Barem Bridge",
+        "Makima"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Whip Hybrid?",
+      "found": [
+        "Makima (brainwashed)",
+        "Tokyo Special Division 5 (formerly)",
+        "Chainsaw Man Church"
+      ],
+      "missing": [],
+      "members": [
+        "Chainsaw Man Church",
+        "Makima (brainwashed)",
+        "Tokyo Special Division 5 (formerly)"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What is the status of Whip Hybrid?",
+      "id": "csm-pg-whip_hybrid-001",
+      "subject": "Whip Hybrid",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Whip Hybrid's occupation?",
+      "id": "csm-pg-whip_hybrid-002",
+      "subject": "Whip Hybrid",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter (brainwashed)"
+      ],
+      "found": [
+        "Public Safety Devil Hunter (brainwashed)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Whip Hybrid's gender?",
+      "id": "csm-pg-whip_hybrid-003",
+      "subject": "Whip Hybrid",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Whip Hybrid?",
+      "id": "csm-pg-whip_hybrid-004",
+      "subject": "Whip Hybrid",
+      "accept": "all",
+      "expected": [
+        "81"
+      ],
+      "found": [
+        "81"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Whip Hybrid's birthday?",
+      "id": "csm-pg-whip_hybrid-005",
+      "subject": "Whip Hybrid",
+      "accept": "all",
+      "expected": [
+        "1917"
+      ],
+      "found": [
+        "1917"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 5,
+    "canon_found": 16,
+    "canon_total": 16,
+    "canon_recall": 1.0,
+    "members_returned": 16,
+    "exact_answers": 5,
+    "exact_of": 5,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "5/5",
+    "at_recall_zero": 0,
+    "at_recall_80": 5,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

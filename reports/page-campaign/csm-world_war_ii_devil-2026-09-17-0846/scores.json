@@ -1,0 +1,119 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of World War II Devil?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 1,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of World War II Devil?",
+      "found": [],
+      "missing": [
+        "Yoru"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for World War II Devil's name?",
+      "id": "csm-pg-world_war_ii_devil-001",
+      "subject": "World War II Devil",
+      "accept": "all",
+      "expected": [
+        "\u7b2c\u4e8c\u6b21\u4e16\u754c\u5927\u6226\u306e\u60aa\u9b54\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u7b2c\u4e8c\u6b21\u4e16\u754c\u5927\u6226\u306e\u60aa\u9b54\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of World War II Devil's name?",
+      "id": "csm-pg-world_war_ii_devil-002",
+      "subject": "World War II Devil",
+      "accept": "all",
+      "expected": [
+        "Dainiji Sekai Taisen no Akuma"
+      ],
+      "found": [
+        "Dainiji Sekai Taisen no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is World War II Devil's gender?",
+      "id": "csm-pg-world_war_ii_devil-003",
+      "subject": "World War II Devil",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of World War II Devil?",
+      "id": "csm-pg-world_war_ii_devil-004",
+      "subject": "World War II Devil",
+      "accept": "all",
+      "expected": [
+        "Erased (original timeline)"
+      ],
+      "found": [
+        "Erased (original timeline)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 0,
+    "canon_total": 1,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 1,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 1,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

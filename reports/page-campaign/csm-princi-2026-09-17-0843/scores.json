@@ -1,0 +1,202 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Princi?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Princi?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Princi?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Princi?",
+      "found": [],
+      "missing": [
+        "Intangibility",
+        "Summoning"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the enemies of Princi?",
+      "found": [],
+      "missing": [
+        "Akane Sawatari",
+        "Darkness Devil"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the affiliations of Princi?",
+      "found": [],
+      "missing": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 4"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Princi's name?",
+      "id": "csm-pg-princi-001",
+      "subject": "Princi",
+      "accept": "all",
+      "expected": [
+        "\u30d7\u30ea\u30f3\u30b7"
+      ],
+      "found": [
+        "\u30d7\u30ea\u30f3\u30b7"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Princi's name?",
+      "id": "csm-pg-princi-002",
+      "subject": "Princi",
+      "accept": "all",
+      "expected": [
+        "Purinshi"
+      ],
+      "found": [
+        "Purinshi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Princi's gender?",
+      "id": "csm-pg-princi-003",
+      "subject": "Princi",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Princi's height?",
+      "id": "csm-pg-princi-004",
+      "subject": "Princi",
+      "accept": "all",
+      "expected": [
+        "180 cm (5'11\")"
+      ],
+      "found": [
+        "180 cm (5'11\")"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Princi?",
+      "id": "csm-pg-princi-005",
+      "subject": "Princi",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Princi's occupation?",
+      "id": "csm-pg-princi-006",
+      "subject": "Princi",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 0,
+    "canon_total": 6,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 3,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 3,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

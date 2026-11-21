@@ -41,13 +41,17 @@ def parse(text):
     return [x for x in ev if isinstance(x, dict)] if isinstance(ev, list) else None
 
 
-def ask(system, user, url, model, max_tokens, temperature=0.6, effort=None):
+def ask(system, user, url, model, max_tokens, temperature=0.6, effort=None, template_kwargs=True):
     kwargs = {"enable_thinking": True}
     if effort:
         kwargs["reasoning_effort"] = effort
     body = {"model": model, "temperature": temperature, "top_p": 0.95, "max_tokens": max_tokens,
             "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
             "chat_template_kwargs": kwargs}
+    if not template_kwargs:
+        # ninfer (:18080/:18081) rejects chat_template_kwargs with HTTP 400
+        # (2026-10-04 bake-off: 269/269 "failed"); it thinks by default.
+        del body["chat_template_kwargs"]
     for attempt in range(3):
         try:
             req = urllib.request.Request(url, json.dumps(body).encode(), {"Content-Type": "application/json"})
@@ -73,6 +77,8 @@ def main():
     ap.add_argument("--effort", default=None, help="reasoning_effort: xhigh (default) | medium | low")
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--max-tokens", type=int, default=14000)
+    ap.add_argument("--no-template-kwargs", action="store_true",
+                    help="omit chat_template_kwargs (ninfer servers reject them; they think by default)")
     a = ap.parse_args()
     rows = [json.loads(l) for l in open(a.data)]
     if a.ids:
@@ -88,7 +94,7 @@ def main():
 
     def job(r):
         ev, raw, rlen, fin = ask(system, r["messages"][1]["content"], a.url, a.model, a.max_tokens,
-                                 a.temperature, a.effort)
+                                 a.temperature, a.effort, not a.no_template_kwargs)
         return {"id": r["id"], "events": ev if ev is not None else [], "ok": ev is not None,
                 "finish": fin, "reasoning_chars": rlen}
 

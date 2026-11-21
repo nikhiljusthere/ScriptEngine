@@ -169,9 +169,12 @@ reports/*/answers.md
 /cuda-keyring_1.1-1_all.deb
 /cuda-keyring_1.1-1_all.deb.1
 
-# Local opencode config (machine-specific: model + MCP paths) and its backup
+# Local opencode config (machine-specific: model + MCP paths) and its backups.
+# The dated backups (`.bak-pre-strata`, `.bak-pre-q8`, ...) are one per model
+# switch; they describe this machine's servers, not the project.
 /opencode.json
 /opencode.json.bak
+/opencode.json.bak-*
 
 # Local agent worktrees
 /.claude/

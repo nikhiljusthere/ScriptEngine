@@ -1,0 +1,310 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Kobeni Higashiyama?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 6,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Kobeni Higashiyama?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 10,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the enemies of Kobeni Higashiyama?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 5,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the subordinates of Kobeni Higashiyama?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 4,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the superiors of Kobeni Higashiyama?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 5,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Kobeni Higashiyama?",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 3,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Kobeni Higashiyama?",
+      "found": [],
+      "missing": [
+        "Enhanced Strength",
+        "Enhanced Agility",
+        "Knifemanship",
+        "Marksmanship",
+        "Driving",
+        "Dancing"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the allies of Kobeni Higashiyama?",
+      "found": [],
+      "missing": [
+        "Aki Hayakawa",
+        "Himeno",
+        "Denji",
+        "Power",
+        "Hirokazu Arai",
+        "Akane Sawatari",
+        "Kishibe",
+        "Pochita",
+        "Hirofumi Yoshida",
+        "Galgali"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the enemies of Kobeni Higashiyama?",
+      "found": [],
+      "missing": [
+        "Akane Sawatari",
+        "Reze",
+        "Power",
+        "Katana Man",
+        "Grape Devil"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the subordinates of Kobeni Higashiyama?",
+      "found": [],
+      "missing": [
+        "Aki Hayakawa",
+        "Reze",
+        "Himeno",
+        "Kishibe"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the superiors of Kobeni Higashiyama?",
+      "found": [],
+      "missing": [
+        "Hirokazu Arai",
+        "Himeno",
+        "Kishibe",
+        "Pochita",
+        "Makima"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the affiliations of Kobeni Higashiyama?",
+      "found": [],
+      "missing": [
+        "Public Safety Devil Hunters (formerly)",
+        "Tokyo Special Division 4 (formerly)",
+        "Family Burger Restaurant (formerly)"
+      ],
+      "members": []
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Kobeni Higashiyama's name?",
+      "id": "csm-pg-kobeni_higashiyama-001",
+      "subject": "Kobeni Higashiyama",
+      "accept": "all",
+      "expected": [
+        "\u6771\u5c71 \u30b3\u30d9\u30cb"
+      ],
+      "found": [
+        "\u6771\u5c71 \u30b3\u30d9\u30cb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Kobeni Higashiyama's name?",
+      "id": "csm-pg-kobeni_higashiyama-002",
+      "subject": "Kobeni Higashiyama",
+      "accept": "all",
+      "expected": [
+        "Higashiyama Kobeni"
+      ],
+      "found": [
+        "Higashiyama Kobeni"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "How old is Kobeni Higashiyama?",
+      "id": "csm-pg-kobeni_higashiyama-003",
+      "subject": "Kobeni Higashiyama",
+      "accept": "all",
+      "expected": [
+        "20 (Chapter 10-???)"
+      ],
+      "found": [
+        "20 (Chapter 10-???)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Kobeni Higashiyama's gender?",
+      "id": "csm-pg-kobeni_higashiyama-004",
+      "subject": "Kobeni Higashiyama",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Kobeni Higashiyama's height?",
+      "id": "csm-pg-kobeni_higashiyama-005",
+      "subject": "Kobeni Higashiyama",
+      "accept": "all",
+      "expected": [
+        "155 cm (5'1\")"
+      ],
+      "found": [
+        "155 cm (5'1\")"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Kobeni Higashiyama?",
+      "id": "csm-pg-kobeni_higashiyama-006",
+      "subject": "Kobeni Higashiyama",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Kobeni Higashiyama's occupation?",
+      "id": "csm-pg-kobeni_higashiyama-007",
+      "subject": "Kobeni Higashiyama",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter (formerly) Waitress (formerly)"
+      ],
+      "found": [
+        "Public Safety Devil Hunter (formerly) Waitress (formerly)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 6,
+    "canon_found": 0,
+    "canon_total": 33,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 6,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "6/6",
+    "at_recall_zero": 6,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 7,
+    "fact_present": 7
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "rows": [
+    {
+      "series": "csm",
+      "query": "What are all the named techniques of Angel Devil?",
+      "set": "Every named technique of Angel Devil",
+      "confidence": "declared",
+      "returned": 6,
+      "available": 6,
+      "canon": 6,
+      "found": 6,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the allies of Angel Devil?",
+      "set": "Every ally of Angel Devil",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the affiliations of Angel Devil?",
+      "set": "Angel Devil's affiliations",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "csm",
+      "query": "What are all the aliases of Angel Devil?",
+      "set": "Angel Devil's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Angel Devil?",
+      "found": [
+        "Enhanced Reflexes",
+        "Angelic Wings",
+        "Lifespan Absorption",
+        "Lifespan Weapons",
+        "Spearmanship",
+        "Swordsmanship"
+      ],
+      "missing": [],
+      "members": [
+        "Angelic Wings",
+        "Enhanced Reflexes",
+        "Lifespan Absorption",
+        "Lifespan Weapons",
+        "Spearmanship",
+        "Swordsmanship"
+      ]
+    },
+    {
+      "query": "What are all the allies of Angel Devil?",
+      "found": [
+        "Aki Hayakawa",
+        "Denji",
+        "Beam"
+      ],
+      "missing": [],
+      "members": [
+        "Aki Hayakawa",
+        "Beam",
+        "Denji"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Angel Devil?",
+      "found": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 4"
+      ],
+      "missing": [],
+      "members": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 4"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Angel Devil?",
+      "found": [
+        "Angel"
+      ],
+      "missing": [],
+      "members": [
+        "Angel"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "csm",
+      "query": "What are the kanji for Angel Devil's name?",
+      "id": "csm-pg-angel_devil-001",
+      "subject": "Angel Devil",
+      "accept": "all",
+      "expected": [
+        "\u30a8\u30f3\u30b8\u30a7\u30eb \u5929\u4f7f\u306e\u60aa\u9b54"
+      ],
+      "found": [
+        "\u30a8\u30f3\u30b8\u30a7\u30eb \u5929\u4f7f\u306e\u60aa\u9b54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the romaji of Angel Devil's name?",
+      "id": "csm-pg-angel_devil-002",
+      "subject": "Angel Devil",
+      "accept": "all",
+      "expected": [
+        "Enjeru Tenshi no Akuma"
+      ],
+      "found": [
+        "Enjeru Tenshi no Akuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is the status of Angel Devil?",
+      "id": "csm-pg-angel_devil-003",
+      "subject": "Angel Devil",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Angel Devil's occupation?",
+      "id": "csm-pg-angel_devil-004",
+      "subject": "Angel Devil",
+      "accept": "all",
+      "expected": [
+        "Public Safety Devil Hunter"
+      ],
+      "found": [
+        "Public Safety Devil Hunter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Angel Devil's gender?",
+      "id": "csm-pg-angel_devil-005",
+      "subject": "Angel Devil",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "csm",
+      "query": "What is Angel Devil's height?",
+      "id": "csm-pg-angel_devil-006",
+      "subject": "Angel Devil",
+      "accept": "all",
+      "expected": [
+        "155 cm (5'1\")"
+      ],
+      "found": [
+        "155 cm (5'1\")"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 12,
+    "canon_total": 12,
+    "canon_recall": 1.0,
+    "members_returned": 12,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

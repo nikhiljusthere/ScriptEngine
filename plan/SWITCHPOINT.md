@@ -1328,3 +1328,53 @@ Owner: label ~12k NEW Marvel/MCU windows (biggest unused pages) with one ninfer-
 
 - **2026-10-07 ~22:30 — FACT LAYER CHECKPOINT, everything stopped (owner: "checkpoint here and stop everything").**
   Fact layer v2 on the 35B: `labels_v2.jsonl` has 2,051 rows (806 `claude-events+v2-facts` — step 5 complete; ~1,245 `v2-full` — step 6 stopped at 2,029/5,405, 5.2 w/min). ALL runners killed by exact PID; the 35B ninfer server is down; GPU free (330 MiB). Where things stand: worktree `big-review-flags` commits through `1efdd30e` (progress log + proposals + labeller + gate fixes). To resume: (1) `tools/train/ops/serve_35b_64k.sh` (35B on :18081); (2) step 6 command over `/tmp/opencode/b807_5405_ids.jsonl` (`--workers 8 --provenance v2-full`); (3) batch C over the remaining 8,595 ids after that. Both the event layer (windowing labels) and the fact layer ride in every row, one pass, no separate v1 labelling. Claude reviews/proposals pending in `plan/FACT_LAYER_PROPOSALS_FOR_CLAUDE.md` — it must sign the store round-trip proposal before that work is claimed.
+- 2026-10-09T03:03:58+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1746MiB
+- 2026-10-09T06:37:52+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1746MiB
+
+## 2026-10-10 — GPU -> ninfer 35B for the v1 hints+repair labeller; Claude resumes the big review at b837 (owner)
+Found at resume: GPU idle (15 MiB) — no ninfer 27B, no labeller, no opencode process (nothing to stop). labels.jsonl 5,405 rows (v1); labels_v2.jsonl 4,093 rows, v2 run stopped 2026-10-08 11:37 at 4085/5405. Review cursor 836 (b807-b836 = fit-test Set B, adjudicated 2026-10-10). v2 pilot never passed its stop bar (F1 .561/.590 < .60, logged PARTIAL), so per the owner the v1 labeller (label_single.py, hints+repair default) resumes into labels.jsonl toward 14,000. Fit test: Haiku/Sonnet not fit (plan/MODEL_FIT_TEST.md @ bbc15e60). Next: serve_35b_64k.sh (:18081, 8 lanes) -> label_single.py resume.
+
+## 2026-10-11 ~23:40 — GPU restored; ninfer 35B + v2 labeller resumed; Claude review resumes at b3967
+Found at resume: machine rebooted into kernel 7.0.0-38 with no NVIDIA module for it (nvidia-smi failed; only 7.0.0-34 had linux-modules-nvidia-595-open). Installed linux-modules-nvidia-595-open-7.0.0-38-generic + the hwe meta (owner-approved sudo); after reboot the RTX 5090 is visible (driver 595.99.02, 15 MiB used). Nothing was running (no 27B, no labeller). labels_v2.jsonl 11,963/14,000; review_cursor_v2 3966 (committed 00019a6a). /tmp id lists were lost in the reboot: the remaining ids are rebuilt as big_in minus labels_v2. Next: serve_35b_64k.sh (:18081, 8 lanes) -> label_single.py --schema v2 --provenance v2-full on the remaining ids.
+
+## 2026-10-13 — GPU -> ninfer 27B for the gate-rule audit (owner: "Use 27B for this research work, you continue reviewing")
+The 35B (PID 6843, :18081) was idle (labels_v2.jsonl 14,000/14,000 done, no labeller). Claude's big review v2 is at
+review_cursor_v2 = 7984 (worktree big-review-flags @ f38af4b3). The 27B audits every gate-drop reason (dropped events/
+facts/tags in labels_v2.jsonl) for false rejections (like "Po" refused as too short) and name changes across a story;
+results go to the job scratchpad and BIG_REVIEW_PATTERNS.md. To resume labelling: serve_35b_64k.sh (:18081).
+- 2026-10-12T23:20:03+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1746MiB
+
+## 2026-10-14 — GPU (idle, nothing loaded) -> ninfer 35B for the gold v2 backfill (owner: full plan, gold gets facts+tags)
+Overlap reconciliation of the 14k big v2 windows is done (worktree big-review-flags @ 13c42d70). Owner chose the full plan:
+lint+fix the 14k final rows, then bring the 3,822 unique gold windows (student_clean train/dev/dev_pool/test) to v2:
+the 35B adds facts+tags with the gold events fixed (label_single.py --schema v2 --add-only), Claude re-reviews every gold
+window (events too), then compose events+facts+tags and train the 9B. Data: series/universal/training/big/gold_v2/.
+To stop: the ninfer-serve PID and the label_single PID (exact PIDs, logged in gold_v2/run.log).
+
+## 2026-10-14 ~07:30 — GPU: ninfer 35B (gold v2 backfill done) -> ninfer 27B at 100k for the lint pre-review (owner: "Use 27B instead ... You will have to review their answers anyways")
+Terminal Claude session owns all remaining work (plan/RESUME_HANDOFF_2026-10-14b.md). The 35B finishes gold_v2/gold_labels_v2.jsonl
+(3,822 windows), then is stopped by exact PID (ninfer-serve 672061) and the 27B is started with qwen-switch.sh 100k. The 27B
+pre-reviews the 1,379 lint windows (big/lint/work_all.txt -> big/lint/pre27/b<n>.txt via plan/review_tools/pre27.sh);
+Claude reviews every answer before `rv.sh fix`. Gold review mode: BV2_SET=gold (big_review_v2.py). To resume: worktree
+big-review-flags, pre27.sh run (skips done windows); the review cursor is the set of b's in the lint fix files.
+- 2026-10-14T07:25:52+05:30 qwen-switch: ctx=102400 (mode 100k), api=off, free=7215MiB
+- 2026-10-19T19:32:25+05:30 qwen-switch: ctx=102400 (mode 100k), api=off, free=7216MiB
+- 2026-10-27T23:08:36+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1746MiB
+- 2026-10-27T23:52:02+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1746MiB
+
+## 2026-10-28 — GPU (idle, nothing loaded) -> ninfer 27B at 100k for the rest of the lint pre-review (Claude session resumes the lint pass)
+Found at resume: GPU idle (16 MiB), no runner, no server. Lint reading pass: 1,325/1,655 work_all windows reviewed and submitted
+(through b9544, fix files big/lint/fixes/L001-L128, worktree big-review-flags @ 3930597b); 330 remain (86 already have a 27B
+pre-review in big/lint/pre27/). Gold v2 labels done (3,822), gold review not started. Next: qwen-switch.sh 100k -> pre27.sh run
+on the remaining windows (skips done ones); Claude reviews each answer and submits via rv.sh fix. To stop: the ninfer-serve PID
+(exact) and the pre27 runner PID.
+- 2026-10-28T03:07:12+05:30 qwen-switch: ctx=102400 (mode 100k), api=off, free=7216MiB
+- 2026-11-02T17:31:28+05:30 qwen-switch: ctx=204800 (mode 204800), api=off, free=3670MiB
+- 2026-11-02T17:50:03+05:30 qwen-switch: ctx=204800 (mode 204800), api=off, free=3670MiB
+- 2026-11-06T22:13:38+05:30 qwen-switch: ctx=102400 (mode 100k), api=off, free=6871MiB
+- 2026-11-06T22:29:43+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1308MiB
+- 2026-11-06T23:21:13+05:30 qwen-switch: ctx=204800 (mode 204800), api=off, free=3270MiB
+- 2026-11-10T15:44:05+05:30 qwen-switch: ctx=204800 (mode 204800), api=off, free=3458MiB
+- 2026-11-16T15:39:00+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1379MiB
+- 2026-11-16T16:26:27+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1451MiB
+- 2026-11-18T19:54:04+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1347MiB
